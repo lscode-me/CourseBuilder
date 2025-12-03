@@ -55,6 +55,12 @@
 | [09_Compose](./09_Compose/) | Docker Compose & Swarm | Multi-container apps, Docker Swarm |
 | [10_Kubernetes](./10_Kubernetes/) | Kubernetes | Pods, Deployments, Services, kubectl |
 
+### Раздел 5: Альтернативные подходы
+
+| Модуль | Тема | Описание |
+|--------|------|----------|
+| [11_Systemd](./11_Systemd/) | systemd-nspawn | Системные контейнеры, machinectl, интеграция с systemd |
+
 ---
 
 ## 🎯 Learning Path
@@ -85,11 +91,12 @@
          │         │    │         │    │ & Swarm │
          └─────────┘    └─────────┘    └─────────┘
                               │
-                              ▼
-                        ┌───────────┐
-                        │Kubernetes │
-                        │           │
-                        └───────────┘
+              ┌───────────────┴───────────────┐
+              ▼                               ▼
+        ┌───────────┐                  ┌───────────┐
+        │Kubernetes │                  │ systemd-  │
+        │           │                  │  nspawn   │
+        └───────────┘                  └───────────┘
 ```
 
 ---
@@ -147,7 +154,9 @@ sudo apt install -y \
     skopeo \
     lxc \
     bridge-utils \
-    jq
+    jq \
+    systemd-container \
+    debootstrap
 
 # Minikube
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
@@ -168,8 +177,9 @@ sudo install kubectl /usr/local/bin/kubectl
 | Технологии контейнеров | 4-6 | 2-3 часа | 4-5 часов |
 | Docker и сети | 7-8 | 2-3 часа | 4-5 часов |
 | Оркестрация | 9-10 | 2-3 часа | 4-5 часов |
+| Альтернативные подходы | 11 | 1-2 часа | 2-3 часа |
 
-**Общее время:** ~25-30 часов (включая практику)
+**Общее время:** ~28-35 часов (включая практику)
 
 ---
 
@@ -191,6 +201,8 @@ sudo install kubectl /usr/local/bin/kubectl
 
 ✅ Понимать архитектуру Kubernetes
 
+✅ Использовать systemd-nspawn для системных контейнеров
+
 ---
 
 ## 📚 Дополнительные ресурсы
@@ -207,6 +219,7 @@ sudo install kubectl /usr/local/bin/kubectl
 - [Docker Documentation](https://docs.docker.com/)
 - [OCI Specifications](https://opencontainers.org/)
 - [CNCF Landscape](https://landscape.cncf.io/)
+- [systemd-nspawn Documentation](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html)
 
 ### Сертификации
 
@@ -225,4 +238,5 @@ sudo install kubectl /usr/local/bin/kubectl
 Курс поддерживается в актуальном состоянии. При обнаружении устаревшей информации создайте issue или pull request.
 
 ---
+
 
