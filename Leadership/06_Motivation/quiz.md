@@ -6,145 +6,156 @@
 
 ## Question 1: Внутренняя vs Внешняя
 
+
 Что является примером внутренней (intrinsic) мотивации?
 
-A) Зарплата и бонусы
+A) Интерес к работе и чувство достижения
 
-B) Интерес к работе и чувство достижения
+B) Избегание наказания
 
-C) Избегание наказания
+C) Повышение статуса
 
-D) Повышение статуса
+D) Зарплата и бонусы
 
 ---
 
 ## Question 2: Herzberg Two-Factor
 
+
 Согласно теории Herzberg, что создаёт мотивацию?
 
-A) Устранение плохих условий работы
+A) Достижения, признание, интересная работа, ответственность, рост
 
-B) Высокая зарплата
+B) Хорошие отношения с коллегами
 
-C) Достижения, признание, интересная работа, ответственность, рост
+C) Устранение плохих условий работы
 
-D) Хорошие отношения с коллегами
+D) Высокая зарплата
 
 ---
 
 ## Question 3: Drive Model
 
+
 Какие три компонента составляют модель Drive (Daniel Pink)?
 
-A) Money, Status, Power
+A) Speed, Quality, Cost
 
-B) Autonomy, Mastery, Purpose
+B) Plan, Do, Check
 
-C) Speed, Quality, Cost
+C) Autonomy, Mastery, Purpose
 
-D) Plan, Do, Check
+D) Money, Status, Power
 
 ---
 
 ## Question 4: Autonomy
 
+
 Что включает автономия на работе?
 
-A) Только время работы
+A) Полное отсутствие supervision
 
-B) Контроль над тем, КАК, КОГДА, ГДЕ и С КЕМ работать
+B) Только время работы
 
-C) Полное отсутствие supervision
+C) Работа в одиночку
 
-D) Работа в одиночку
+D) Контроль над тем, КАК, КОГДА, ГДЕ и С КЕМ работать
 
 ---
 
 ## Question 5: Mastery
 
+
 Какое утверждение о Mastery верно?
 
-A) Mastery достигается быстро
+A) Mastery is asymptote — никогда полностью не достигается, процесс важнее
 
-B) Mastery is asymptote — никогда полностью не достигается, процесс важнее
+B) Mastery — только для экспертов
 
-C) Mastery не требует усилий
+C) Mastery достигается быстро
 
-D) Mastery — только для экспертов
+D) Mastery не требует усилий
 
 ---
 
 ## Question 6: Purpose
 
+
 Как создать Purpose для команды?
 
-A) Скрывать информацию о пользователях
+A) Изолировать команду от конечных результатов
 
-B) Связывать задачи с impact на пользователей, показывать истории успеха
+B) Скрывать информацию о пользователях
 
 C) Фокусироваться только на технических метриках
 
-D) Изолировать команду от конечных результатов
+D) Связывать задачи с impact на пользователей, показывать истории успеха
 
 ---
 
 ## Question 7: Индивидуальные различия
 
+
 Какой подход к мотивации правильный?
 
-A) Универсальная мотивация работает для всех
+A) Мотивация не важна для senior developers
 
 B) Нужно узнавать индивидуальные мотиваторы каждого человека
 
 C) Все мотивируются только деньгами
 
-D) Мотивация не важна для senior developers
+D) Универсальная мотивация работает для всех
 
 ---
 
 ## Question 8: Карта мотиваторов
 
+
 Что должна включать "карта мотиваторов" сотрудника?
 
-A) Только зарплатные ожидания
+A) Личные проблемы
 
-B) Топ мотиваторы, демотиваторы, тип recognition, карьерные цели
+B) Только технические навыки
 
-C) Только технические навыки
+C) Топ мотиваторы, демотиваторы, тип recognition, карьерные цели
 
-D) Личные проблемы
+D) Только зарплатные ожидания
 
 ---
 
 ## Question 9: Flow State
 
+
 Какие условия необходимы для состояния Flow?
 
-A) Очень лёгкие задачи
+A) Отсутствие feedback
 
-B) Clear goals, immediate feedback, challenge-skill balance, uninterrupted time
+B) Постоянные прерывания
 
-C) Постоянные прерывания
+C) Clear goals, immediate feedback, challenge-skill balance, uninterrupted time
 
-D) Отсутствие feedback
+D) Очень лёгкие задачи
 
 ---
 
 ## Question 10: Challenge-Skill Balance
 
+
 Что происходит, если задачи слишком лёгкие по сравнению с навыками?
 
-A) Flow state
+A) Тревога (Anxiety)
 
-B) Тревога (Anxiety)
+B) Мотивация
 
-C) Скука (Boredom)
+C) Flow state
 
-D) Мотивация
+D) Скука (Boredom)
 
 ---
 
 ## Question 11: 70-20-10 Model
+
 
 Согласно модели 70-20-10, где происходит большинство развития?
 
@@ -160,41 +171,44 @@ D) 70% — конференции
 
 ## Question 12: Stretch Assignment
 
+
 Что такое Stretch Assignment?
 
-A) Задача значительно выше текущих навыков
+A) Задача ниже уровня квалификации
 
 B) Задача немного выходящая за пределы текущих навыков
 
-C) Рутинная задача
+C) Задача значительно выше текущих навыков
 
-D) Задача ниже уровня квалификации
+D) Рутинная задача
 
 ---
 
 ## Question 13: IDP
 
+
 Что такое IDP (Individual Development Plan)?
 
-A) План отпусков
+A) Финансовый план
 
-B) Структурированный план развития навыков и карьеры сотрудника
+B) План отпусков
 
 C) Технический документ
 
-D) Финансовый план
+D) Структурированный план развития навыков и карьеры сотрудника
 
 ---
 
 ## Question 14: Recognition
 
+
 Какие принципы effective recognition?
 
 A) Delayed, General, Formal, Standardized
 
-B) Timely, Specific, Sincere, Personalized
+B) Annual, Vague, Mandatory, Same for all
 
-C) Annual, Vague, Mandatory, Same for all
+C) Timely, Specific, Sincere, Personalized
 
 D) Редко, кратко, формально
 
@@ -202,25 +216,27 @@ D) Редко, кратко, формально
 
 ## Question 15: Burnout
 
+
 Какие три измерения burnout по Maslach?
 
-A) Speed, Quality, Cost
+A) Work, Life, Balance
 
-B) Exhaustion, Cynicism, Inefficacy
+B) Happy, Sad, Neutral
 
-C) Happy, Sad, Neutral
+C) Speed, Quality, Cost
 
-D) Work, Life, Balance
+D) Exhaustion, Cynicism, Inefficacy
 
 ---
 
 ## Question 16: Признаки демотивации
 
+
 Какой признак может указывать на демотивацию?
 
-A) Активное участие в обсуждениях
+A) Высокое качество работы
 
-B) Высокое качество работы
+B) Активное участие в обсуждениях
 
 C) Снижение качества, меньше участия, cynicism
 
@@ -230,41 +246,44 @@ D) Просьбы о новых задачах
 
 ## Question 17: Junior Developers
 
+
 Что важно для мотивации junior developers?
 
 A) Полная автономия без guidance
 
-B) Learning, mentorship, clear feedback, small wins
+B) Отсутствие feedback
 
 C) Только сложные задачи без поддержки
 
-D) Отсутствие feedback
+D) Learning, mentorship, clear feedback, small wins
 
 ---
 
 ## Question 18: Senior Developers
 
+
 Что важно для мотивации senior developers?
 
-A) Микроменеджмент
+A) Отсутствие recognition
 
-B) Autonomy, technical challenges, influence на решения
+B) Микроменеджмент
 
 C) Только рутинные задачи
 
-D) Отсутствие recognition
+D) Autonomy, technical challenges, influence на решения
 
 ---
 
 ## Question 19: Gallup Q12
 
+
 Какой вопрос входит в Gallup Q12 для измерения engagement?
 
-A) "Какая у тебя зарплата?"
+A) "Сколько часов ты работаешь?"
 
 B) "Я получил признание за хорошую работу за последние 7 дней"
 
-C) "Сколько часов ты работаешь?"
+C) "Какая у тебя зарплата?"
 
 D) "Какой у тебя стаж?"
 
@@ -272,58 +291,42 @@ D) "Какой у тебя стаж?"
 
 ## Question 20: Помощь при burnout
 
+
 Как помочь сотруднику с burnout?
 
-A) Увеличить нагрузку
+A) Игнорировать проблему
 
 B) Снизить нагрузку реально, дать отдых, устранить root cause
 
-C) Игнорировать проблему
+C) Критиковать за низкую производительность
 
-D) Критиковать за низкую производительность
+D) Увеличить нагрузку
+
+---
 
 ---
 
 ## Answer Key
 
-1. **B** - Intrinsic мотивация: интерес к работе и чувство достижения
-
-2. **C** - Мотивационные факторы Herzberg: достижения, признание, интересная работа, ответственность, рост
-
-3. **B** - Drive Model: Autonomy, Mastery, Purpose
-
-4. **B** - Autonomy: контроль над КАК, КОГДА, ГДЕ и С КЕМ работать
-
-5. **B** - Mastery is asymptote — процесс важнее, никогда полностью не достигается
-
-6. **B** - Purpose: связывать задачи с impact, показывать истории успеха пользователей
-
+1. **A** - Intrinsic мотивация: интерес к работе и чувство достижения
+2. **A** - Мотивационные факторы Herzberg: достижения, признание, интересная работа, ответственность, рост
+3. **C** - Drive Model: Autonomy, Mastery, Purpose
+4. **D** - Autonomy: контроль над КАК, КОГДА, ГДЕ и С КЕМ работать
+5. **A** - Mastery is asymptote — процесс важнее, никогда полностью не достигается
+6. **D** - Purpose: связывать задачи с impact, показывать истории успеха пользователей
 7. **B** - Нужно узнавать индивидуальные мотиваторы каждого человека
-
-8. **B** - Карта мотиваторов: топ мотиваторы, демотиваторы, тип recognition, карьерные цели
-
-9. **B** - Flow: clear goals, immediate feedback, challenge-skill balance, uninterrupted time
-
-10. **C** - Слишком лёгкие задачи → Скука (Boredom)
-
+8. **C** - Карта мотиваторов: топ мотиваторы, демотиваторы, тип recognition, карьерные цели
+9. **C** - Flow: clear goals, immediate feedback, challenge-skill balance, uninterrupted time
+10. **D** - Слишком лёгкие задачи → Скука (Boredom)
 11. **B** - 70% развития через on-the-job experience (реальные проекты)
-
 12. **B** - Stretch Assignment — задача немного за пределами текущих навыков
-
-13. **B** - IDP — структурированный план развития навыков и карьеры
-
-14. **B** - Effective recognition: Timely, Specific, Sincere, Personalized
-
-15. **B** - Burnout по Maslach: Exhaustion, Cynicism, Inefficacy
-
+13. **D** - IDP — структурированный план развития навыков и карьеры
+14. **C** - Effective recognition: Timely, Specific, Sincere, Personalized
+15. **D** - Burnout по Maslach: Exhaustion, Cynicism, Inefficacy
 16. **C** - Признаки демотивации: снижение качества, меньше участия, cynicism
-
-17. **B** - Junior: learning, mentorship, clear feedback, small wins
-
-18. **B** - Senior: autonomy, technical challenges, influence на решения
-
+17. **D** - Junior: learning, mentorship, clear feedback, small wins
+18. **D** - Senior: autonomy, technical challenges, influence на решения
 19. **B** - Gallup Q12: "Я получил признание за хорошую работу за последние 7 дней"
-
 20. **B** - При burnout: снизить нагрузку, дать отдых, устранить root cause
 
 ---

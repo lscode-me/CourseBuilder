@@ -6,19 +6,21 @@
 
 ## Question 1: Async-First
 
+
 Что означает принцип Async-First?
 
-A) Всё общение только синхронное
+A) Никогда не использовать видео
 
-B) Async должен быть default, sync — exception
+B) Только email
 
-C) Никогда не использовать видео
+C) Всё общение только синхронное
 
-D) Только email
+D) Async должен быть default, sync — exception
 
 ---
 
 ## Question 2: When to Sync
+
 
 Когда sync communication предпочтительнее?
 
@@ -34,89 +36,96 @@ D) Code reviews
 
 ## Question 3: Async Message
 
+
 Какой элемент важен в async сообщении?
 
-A) Только "Hi"
+A) Ожидание немедленного ответа
 
-B) Полный context, clear ask, deadline для ответа
+B) Только "Hi"
 
-C) Ожидание немедленного ответа
+C) Без структуры
 
-D) Без структуры
+D) Полный context, clear ask, deadline для ответа
 
 ---
 
 ## Question 4: Time Zone Overlap
 
+
 Как использовать overlap hours между time zones?
 
-A) Для рутинных задач
+A) Для написания документации
 
-B) Для sync meetings и высокоприоритетных обсуждений
+B) Не использовать
 
-C) Не использовать
+C) Для sync meetings и высокоприоритетных обсуждений
 
-D) Для написания документации
+D) Для рутинных задач
 
 ---
 
 ## Question 5: Meeting Rotation
 
+
 Зачем rotate meeting times?
 
-A) Чтобы запутать команду
+A) Rotation не нужен
 
-B) Чтобы "боль" от неудобного времени распределялась между locations
+B) Чтобы запутать команду
 
-C) Rotation не нужен
+C) Чтобы уменьшить количество митингов
 
-D) Чтобы уменьшить количество митингов
+D) Чтобы "боль" от неудобного времени распределялась между locations
 
 ---
 
 ## Question 6: Remote Culture
 
+
 Как строить culture в remote команде?
 
-A) Само собой произойдёт
+A) Игнорировать culture
 
-B) Intentional efforts: virtual coffee, team events, interest channels
+B) Только рабочие разговоры
 
-C) Только рабочие разговоры
+C) Intentional efforts: virtual coffee, team events, interest channels
 
-D) Игнорировать culture
+D) Само собой произойдёт
 
 ---
 
 ## Question 7: Video On
 
+
 Почему рекомендуется video ON для team meetings?
 
-A) Для surveillance
+A) Чтобы все устали
 
-B) Building connection, better engagement, non-verbal communication
+B) Video не важен
 
-C) Video не важен
+C) Для surveillance
 
-D) Чтобы все устали
+D) Building connection, better engagement, non-verbal communication
 
 ---
 
 ## Question 8: Hofstede Power Distance
 
+
 Что означает High Power Distance?
 
-A) Плоская организация
+A) Hierarchy important, defer to authority
 
-B) Hierarchy important, defer to authority
+B) Challenge authority OK
 
-C) Challenge authority OK
+C) Плоская организация
 
 D) Нет структуры
 
 ---
 
 ## Question 9: Direct vs Indirect
+
 
 Как адаптировать feedback для культуры с indirect communication?
 
@@ -132,13 +141,14 @@ D) Только публично
 
 ## Question 10: Remote Onboarding
 
+
 Что важно для remote onboarding?
 
 A) Пустить на самотёк
 
-B) Structured program, buddy system, over-documentation
+B) Только документация
 
-C) Только документация
+C) Structured program, buddy system, over-documentation
 
 D) Только видео-звонки
 
@@ -146,13 +156,14 @@ D) Только видео-звонки
 
 ## Question 11: Output vs Presence
 
+
 Что измерять в remote work?
 
-A) Часы online
+A) Output и outcomes, deliverables, quality
 
-B) Output и outcomes, deliverables, quality
+B) Количество сообщений
 
-C) Количество сообщений
+C) Часы online
 
 D) Activity metrics
 
@@ -160,75 +171,81 @@ D) Activity metrics
 
 ## Question 12: Async Standup
 
+
 Как организовать async standup?
 
 A) Sync звонок каждый день
 
-B) Пост в канал к определённому времени: done, today, blockers
+B) Не делать standup
 
 C) Email каждый час
 
-D) Не делать standup
+D) Пост в канал к определённому времени: done, today, blockers
 
 ---
 
 ## Question 13: Trust in Remote
 
+
 Как строить trust в remote команде?
 
-A) Микроменеджмент
+A) Постоянный контроль
 
-B) Clear expectations, regular check-ins, assume good intent, focus on outcomes
+B) Не доверять никому
 
-C) Постоянный контроль
+C) Clear expectations, regular check-ins, assume good intent, focus on outcomes
 
-D) Не доверять никому
+D) Микроменеджмент
 
 ---
 
 ## Question 14: Buddy System
 
+
 Для чего нужен buddy при remote onboarding?
 
-A) Для формальности
+A) Daily check-ins, safe space для вопросов, social connection
 
-B) Daily check-ins, safe space для вопросов, social connection
+B) Для контроля
 
 C) Buddy не нужен
 
-D) Для контроля
+D) Для формальности
 
 ---
 
 ## Question 15: Hub and Spoke Risk
 
+
 Какой risk у модели Hub and Spoke?
 
-A) Слишком много офисов
+A) Нет офиса
 
-B) Remote = second-class citizens
+B) Слишком много remote
 
-C) Нет офиса
+C) Слишком много офисов
 
-D) Слишком много remote
+D) Remote = second-class citizens
 
 ---
 
 ## Question 16: Follow-the-Sun
 
+
 Что такое Follow-the-Sun?
 
-A) Работа только днём
+A) APAC → EMEA → Americas — handoff работы между time zones
 
-B) APAC → EMEA → Americas — handoff работы между time zones
+B) Remote-first
 
-C) Один офис
+C) Работа только днём
 
-D) Remote-first
+D) Один офис
 
 ---
 
 ## Question 17: Cultural Silence
+
 
 Как интерпретировать молчание в meeting?
 
@@ -244,87 +261,73 @@ D) Не обращать внимания
 
 ## Question 18: In-Person Value
 
+
 Зачем team offsites 1-2x в год?
 
-A) Тратить бюджет
+A) Только для работы
 
-B) Accelerates trust, recharges relationships, shared memories
+B) Offsites не нужны
 
-C) Offsites не нужны
+C) Тратить бюджет
 
-D) Только для работы
+D) Accelerates trust, recharges relationships, shared memories
 
 ---
 
 ## Question 19: Home Office
 
+
 Что компания должна предоставить для remote работы?
 
 A) Ничего
 
-B) Equipment budget, internet stipend, ergonomic setup
+B) Только доступ к email
 
-C) Только laptop
+C) Equipment budget, internet stipend, ergonomic setup
 
-D) Только доступ к email
+D) Только laptop
 
 ---
 
 ## Question 20: Remote 1-on-1
 
+
 Какие вопросы добавить в remote 1-on-1?
 
-A) Только о задачах
+A) Только технические вопросы
 
-B) "Чувствуешь ли связь с командой?", "Что делает remote сложным?"
+B) Только о задачах
 
-C) Никаких вопросов
+C) "Чувствуешь ли связь с командой?", "Что делает remote сложным?"
 
-D) Только технические вопросы
+D) Никаких вопросов
+
+---
 
 ---
 
 ## Answer Key
 
-1. **B** - Async-First: async default, sync exception
-
+1. **D** - Async-First: async default, sync exception
 2. **B** - Sync для urgent, complex decisions, emotional conversations
-
-3. **B** - Context, clear ask, deadline
-
-4. **B** - Overlap для sync meetings и высокоприоритетных обсуждений
-
-5. **B** - Rotation распределяет неудобство между locations
-
-6. **B** - Intentional: virtual coffee, events, interest channels
-
-7. **B** - Video: connection, engagement, non-verbal communication
-
-8. **B** - High Power Distance: hierarchy important, defer to authority
-
+3. **D** - Context, clear ask, deadline
+4. **C** - Overlap для sync meetings и высокоприоритетных обсуждений
+5. **D** - Rotation распределяет неудобство между locations
+6. **C** - Intentional: virtual coffee, events, interest channels
+7. **D** - Video: connection, engagement, non-verbal communication
+8. **A** - High Power Distance: hierarchy important, defer to authority
 9. **B** - Indirect cultures: soften language, private, ask preferences
-
-10. **B** - Remote onboarding: structure, buddy, documentation
-
-11. **B** - Measure output и outcomes, не hours online
-
-12. **B** - Async standup: пост к определённому времени
-
-13. **B** - Trust: expectations, check-ins, good intent, outcomes
-
-14. **B** - Buddy: daily check-ins, questions, social connection
-
-15. **B** - Hub and Spoke risk: remote = second-class citizens
-
-16. **B** - Follow-the-Sun: handoff между time zones
-
+10. **C** - Remote onboarding: structure, buddy, documentation
+11. **A** - Measure output и outcomes, не hours online
+12. **D** - Async standup: пост к определённому времени
+13. **C** - Trust: expectations, check-ins, good intent, outcomes
+14. **A** - Buddy: daily check-ins, questions, social connection
+15. **D** - Hub and Spoke risk: remote = second-class citizens
+16. **A** - Follow-the-Sun: handoff между time zones
 17. **B** - Silence: depends on culture, don't assume agreement
-
-18. **B** - Offsites: trust, relationships, shared memories
-
-19. **B** - Equipment, internet, ergonomic setup
-
-20. **B** - Remote 1-on-1: connection, difficulties вопросы
+18. **D** - Offsites: trust, relationships, shared memories
+19. **C** - Equipment, internet, ergonomic setup
+20. **C** - Remote 1-on-1: connection, difficulties вопросы
 
 ---
 

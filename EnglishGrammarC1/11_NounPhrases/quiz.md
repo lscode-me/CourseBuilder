@@ -6,6 +6,7 @@
 
 ## Question 1: Countable/Uncountable
 
+
 Which word is UNCOUNTABLE in English?
 
 A) idea
@@ -20,33 +21,36 @@ D) opinion
 
 ## Question 2: Much/Many
 
+
 "I don't have ___ time."
 
-A) many
+A) much
 
-B) much
+B) few
 
 C) a lot
 
-D) few
+D) many
 
 ---
 
 ## Question 3: Much/Many
 
+
 "There aren't ___ people here."
 
 A) much
 
-B) many
+B) little
 
 C) a little
 
-D) little
+D) many
 
 ---
 
 ## Question 4: Few vs A Few
+
 
 "She has ___ friends, so she's very lonely."
 
@@ -62,19 +66,21 @@ D) a little
 
 ## Question 5: Little vs A Little
 
+
 "I have ___ money, so I can buy lunch."
 
-A) few
+A) a few
 
 B) little
 
-C) a little
+C) few
 
-D) a few
+D) a little
 
 ---
 
 ## Question 6: Some/Any
+
 
 "Would you like ___ coffee?"
 
@@ -82,13 +88,14 @@ A) any
 
 B) some
 
-C) no
+C) few
 
-D) few
+D) no
 
 ---
 
 ## Question 7: Some/Any
+
 
 "I don't have ___ questions."
 
@@ -96,63 +103,67 @@ A) some
 
 B) any
 
-C) no
+C) none
 
-D) none
+D) no
 
 ---
 
 ## Question 8: Uncountable Agreement
 
+
 "The news ___ good today."
 
-A) are
+A) were
 
-B) is
+B) have been
 
-C) were
+C) are
 
-D) have been
+D) is
 
 ---
 
 ## Question 9: Uncountable Error
 
+
 Which sentence is INCORRECT?
 
-A) I need some information.
+A) I have a lot of work.
 
 B) She gave me an advice.
 
-C) The furniture is new.
+C) I need some information.
 
-D) I have a lot of work.
+D) The furniture is new.
 
 ---
 
 ## Question 10: Each/Every
 
+
 "___ student received a certificate."
 
-A) Each
+A) Every
 
-B) Every
+B) Each
 
-C) Both A and B are correct
+C) All
 
-D) All
+D) Both A and B are correct
 
 ---
 
 ## Question 11: Another/Other
 
+
 "Can I have ___ cup of coffee?"
 
 A) other
 
-B) another
+B) others
 
-C) others
+C) another
 
 D) the other
 
@@ -160,41 +171,44 @@ D) the other
 
 ## Question 12: Either/Neither
 
+
 "___ option is acceptable to me."
 
 A) Both
 
 B) Neither
 
-C) Either
+C) None
 
-D) None
+D) Either
 
 ---
 
 ## Question 13: All/Both
 
+
 "___ of my parents work."
 
-A) All
+A) Each
 
 B) Both
 
-C) Every
+C) All
 
-D) Each
+D) Every
 
 ---
 
 ## Question 14: Adjective Order
 
+
 Which is the correct order?
 
-A) A wooden old beautiful table
+A) An old wooden beautiful table
 
-B) A beautiful old wooden table
+B) A wooden old beautiful table
 
-C) An old wooden beautiful table
+C) A beautiful old wooden table
 
 D) A beautiful wooden old table
 
@@ -202,33 +216,36 @@ D) A beautiful wooden old table
 
 ## Question 15: Quantifier with Uncountable
 
+
 "How ___ money do you need?"
 
-A) many
+A) a lot
 
 B) much
 
-C) few
+C) many
 
-D) a lot
+D) few
 
 ---
 
 ## Question 16: Plural/Singular
 
+
 Which is correct?
 
-A) Mathematics are difficult.
+A) A mathematics is required.
 
-B) Mathematics is difficult.
+B) The mathematics are interesting.
 
-C) The mathematics are interesting.
+C) Mathematics is difficult.
 
-D) A mathematics is required.
+D) Mathematics are difficult.
 
 ---
 
 ## Question 17: The Other
+
 
 "I have two books. One is fiction, ___ is non-fiction."
 
@@ -236,51 +253,56 @@ A) another
 
 B) other
 
-C) the other
+C) others
 
-D) others
+D) the other
 
 ---
 
 ## Question 18: No/None
 
+
 "___ of them came to the party."
 
-A) No
+A) Any
 
-B) None
+B) Nothing
 
-C) Any
+C) No
 
-D) Nothing
+D) None
 
 ---
 
 ## Question 19: A Lot Of
 
+
 Where is "a lot of" MOST natural?
 
-A) In questions
+A) In negative sentences
 
-B) In negative sentences
+B) With uncountable only
 
-C) In affirmative sentences
+C) In questions
 
-D) With uncountable only
+D) In affirmative sentences
 
 ---
 
 ## Question 20: Piece of
 
+
 How do you make "advice" countable?
 
-A) advices
+A) some advices
 
-B) an advice
+B) a piece of advice
 
-C) a piece of advice
+C) advices
 
-D) some advices
+D) an advice
+
+---
 
 ---
 
@@ -289,25 +311,25 @@ D) some advices
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | "Advice" is uncountable in English. You can't say "an advice" or "advices." |
-| 2 | B | "Time" is uncountable → "much." |
-| 3 | B | "People" is countable (plural) → "many." |
+| 2 | A | "Time" is uncountable → "much." |
+| 3 | D | "People" is countable (plural) → "many." |
 | 4 | B | "Few" (without "a") = negative meaning, almost none, hence lonely. |
-| 5 | C | "A little" = positive meaning, enough for something. Money is uncountable. |
+| 5 | D | "A little" = positive meaning, enough for something. Money is uncountable. |
 | 6 | B | Offers use "some." "Would you like some coffee?" |
 | 7 | B | Negative sentences use "any." "I don't have any questions." |
-| 8 | B | "News" is uncountable singular. "The news is..." |
+| 8 | D | "News" is uncountable singular. "The news is..." |
 | 9 | B | "Advice" is uncountable. Cannot say "an advice." |
-| 10 | C | Both "each" and "every" work with singular nouns. |
-| 11 | B | "Another" = one more. "Another cup of coffee." |
-| 12 | C | "Either" = one or the other, both acceptable. |
+| 10 | D | Both "each" and "every" work with singular nouns. |
+| 11 | C | "Another" = one more. "Another cup of coffee." |
+| 12 | D | "Either" = one or the other, both acceptable. |
 | 13 | B | "Both" for two things. "Both of my parents." |
-| 14 | B | Opinion → Age → Material. "A beautiful old wooden table." |
+| 14 | C | Opinion → Age → Material. "A beautiful old wooden table." |
 | 15 | B | "Money" is uncountable → "How much money?" |
-| 16 | B | "-ics" subjects are singular. "Mathematics is difficult." |
-| 17 | C | "The other" = the specific remaining one of two. |
-| 18 | B | "None" as pronoun. "None of them came." |
-| 19 | C | "A lot of" is most natural in affirmative sentences. |
-| 20 | C | Use "a piece of" to make uncountables countable. |
+| 16 | C | "-ics" subjects are singular. "Mathematics is difficult." |
+| 17 | D | "The other" = the specific remaining one of two. |
+| 18 | D | "None" as pronoun. "None of them came." |
+| 19 | D | "A lot of" is most natural in affirmative sentences. |
+| 20 | B | Use "a piece of" to make uncountables countable. |
 
 ---
 

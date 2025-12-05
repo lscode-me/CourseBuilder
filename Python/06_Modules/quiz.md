@@ -6,41 +6,44 @@
 
 ## Question 1: Импорт модуля
 
+
 Как импортировать весь модуль math?
 
-A) `include math`
+A) `require math`
 
 B) `import math`
 
 C) `using math`
 
-D) `require math`
+D) `include math`
 
 ---
 
 ## Question 2: Импорт функции
 
+
 Как импортировать только функцию sqrt из модуля math?
 
-A) `import sqrt from math`
+A) `import math.sqrt`
 
-B) `from math import sqrt`
+B) `math import sqrt`
 
-C) `import math.sqrt`
+C) `import sqrt from math`
 
-D) `math import sqrt`
+D) `from math import sqrt`
 
 ---
 
 ## Question 3: Псевдоним модуля
 
+
 Как создать псевдоним для импортированного модуля?
 
-A) `import numpy -> np`
+A) `import numpy alias np`
 
-B) `import numpy alias np`
+B) `import numpy as np`
 
-C) `import numpy as np`
+C) `import numpy -> np`
 
 D) `from numpy import as np`
 
@@ -48,139 +51,149 @@ D) `from numpy import as np`
 
 ## Question 4: Звёздочный импорт
 
+
 Почему `from module import *` считается плохой практикой?
 
 A) Работает медленнее
 
-B) Загрязняет пространство имён, может перезаписать переменные
+B) Не поддерживается в Python 3
 
-C) Не поддерживается в Python 3
+C) Вызывает ошибку синтаксиса
 
-D) Вызывает ошибку синтаксиса
+D) Загрязняет пространство имён, может перезаписать переменные
 
 ---
 
 ## Question 5: __name__
 
+
 Что содержит переменная `__name__` при прямом запуске скрипта?
 
-A) Имя файла
+A) None
 
-B) `"__main__"`
+B) Имя файла
 
 C) Путь к файлу
 
-D) None
+D) `"__main__"`
 
 ---
 
 ## Question 6: Условный блок main
 
+
 Для чего используется `if __name__ == "__main__":`?
 
-A) Для оптимизации кода
+A) Для создания главной функции
 
-B) Для выполнения кода только при прямом запуске, не при импорте
+B) Для оптимизации кода
 
-C) Для создания главной функции
+C) Для документации
 
-D) Для документации
+D) Для выполнения кода только при прямом запуске, не при импорте
 
 ---
 
 ## Question 7: Пакет Python
 
+
 Что делает файл `__init__.py` в директории?
 
 A) Инициализирует переменные
 
-B) Делает директорию пакетом Python
+B) Запускает тесты
 
-C) Запускает тесты
+C) Удаляет временные файлы
 
-D) Удаляет временные файлы
+D) Делает директорию пакетом Python
 
 ---
 
 ## Question 8: Относительный импорт
 
+
 Какой синтаксис для относительного импорта из родительского пакета?
 
-A) `from . import module`
+A) `import ../module`
 
-B) `from .. import module`
+B) `from . import module`
 
-C) `from parent import module`
+C) `from .. import module`
 
-D) `import ../module`
+D) `from parent import module`
 
 ---
 
 ## Question 9: sys.path
 
+
 Что содержит `sys.path`?
 
-A) Версию Python
+A) Список директорий для поиска модулей
 
-B) Список директорий для поиска модулей
+B) Переменные окружения
 
 C) Путь к интерпретатору
 
-D) Переменные окружения
+D) Версию Python
 
 ---
 
 ## Question 10: Порядок поиска модулей
 
+
 В каком порядке Python ищет модули?
 
 A) Стандартная библиотека → site-packages → текущая директория
 
-B) Текущая директория → стандартная библиотека → site-packages
+B) Порядок случайный
 
-C) site-packages → текущая директория → стандартная библиотека
+C) Текущая директория → стандартная библиотека → site-packages
 
-D) Порядок случайный
+D) site-packages → текущая директория → стандартная библиотека
 
 ---
 
 ## Question 11: pip install
 
+
 Как установить конкретную версию пакета?
 
-A) `pip install package v1.0`
+A) `pip install package@1.0`
 
-B) `pip install package==1.0`
+B) `pip install package v1.0`
 
-C) `pip install package@1.0`
+C) `pip install package:1.0`
 
-D) `pip install package:1.0`
+D) `pip install package==1.0`
 
 ---
 
 ## Question 12: requirements.txt
 
+
 Как установить все пакеты из requirements.txt?
 
-A) `pip install requirements.txt`
+A) `pip requirements.txt install`
 
-B) `pip install -r requirements.txt`
+B) `pip install --from requirements.txt`
 
-C) `pip install --from requirements.txt`
+C) `pip install requirements.txt`
 
-D) `pip requirements.txt install`
+D) `pip install -r requirements.txt`
 
 ---
 
 ## Question 13: __all__
 
+
 Что определяет список `__all__` в модуле?
 
-A) Все функции модуля
+A) Зависимости модуля
 
-B) Что экспортируется при `from module import *`
+B) Все функции модуля
 
-C) Зависимости модуля
+C) Что экспортируется при `from module import *`
 
 D) Приватные переменные
 
@@ -188,19 +201,21 @@ D) Приватные переменные
 
 ## Question 14: Пространства имён
 
+
 Как получить доступ к функции sin после `import math`?
 
-A) `sin()`
+A) `math->sin()`
 
-B) `math.sin()`
+B) `sin()`
 
-C) `math->sin()`
+C) `sin@math()`
 
-D) `sin@math()`
+D) `math.sin()`
 
 ---
 
 ## Question 15: Конфликт имён
+
 
 Что произойдёт при выполнении этого кода?
 
@@ -210,11 +225,11 @@ from sys import path
 print(path)
 ```
 
-A) Ошибка импорта
+A) Выведет os.path
 
-B) Выведет os.path
+B) Выведет sys.path
 
-C) Выведет sys.path
+C) Ошибка импорта
 
 D) Выведет оба
 
@@ -222,71 +237,78 @@ D) Выведет оба
 
 ## Question 16: Перезагрузка модуля
 
+
 Как перезагрузить уже импортированный модуль?
 
-A) `reload(module)`
+A) `module.reload()`
 
 B) `import module` повторно
 
 C) `importlib.reload(module)`
 
-D) `module.reload()`
+D) `reload(module)`
 
 ---
 
 ## Question 17: Namespace Package
 
+
 Что такое namespace package (PEP 420)?
 
-A) Пакет с __init__.py
+A) Зашифрованный пакет
 
-B) Пакет без __init__.py, распределённый по нескольким директориям
+B) Пакет с __init__.py
 
-C) Зашифрованный пакет
+C) Пакет только для импорта
 
-D) Пакет только для импорта
+D) Пакет без __init__.py, распределённый по нескольким директориям
 
 ---
 
 ## Question 18: Циклические импорты
 
+
 Как избежать циклических импортов?
 
-A) Использовать import внутри функции
+A) Использовать typing.TYPE_CHECKING
 
-B) Реорганизовать структуру модулей
+B) Все варианты
 
-C) Использовать typing.TYPE_CHECKING
+C) Использовать import внутри функции
 
-D) Все варианты
+D) Реорганизовать структуру модулей
 
 ---
 
 ## Question 19: setup.py
 
+
 Для чего используется файл setup.py?
 
-A) Для настройки IDE
+A) Для документации
 
 B) Для конфигурации установки пакета
 
 C) Для запуска тестов
 
-D) Для документации
+D) Для настройки IDE
 
 ---
 
 ## Question 20: pyproject.toml
 
+
 Что такое pyproject.toml?
 
-A) Файл проекта PyCharm
+A) Конфигурация pytest
 
 B) Современный стандарт конфигурации Python проекта (PEP 518)
 
-C) Конфигурация pytest
+C) Файл для Docker
 
-D) Файл для Docker
+D) Файл проекта PyCharm
+
+---
 
 ---
 
@@ -295,23 +317,23 @@ D) Файл для Docker
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | `import math` импортирует весь модуль math. |
-| 2 | B | `from math import sqrt` импортирует только sqrt в текущее пространство имён. |
-| 3 | C | `import numpy as np` создаёт псевдоним np для numpy. |
-| 4 | B | `import *` импортирует всё, что может конфликтовать с существующими именами. |
-| 5 | B | При прямом запуске `__name__` равно `"__main__"`. При импорте — имя модуля. |
-| 6 | B | Код внутри блока выполняется только при прямом запуске скрипта. |
-| 7 | B | `__init__.py` делает директорию пакетом (в Python 3 не обязателен для namespace packages). |
-| 8 | B | `from ..` — импорт из родительского пакета. `.` — из текущего. |
-| 9 | B | `sys.path` — список директорий, где Python ищет модули. |
-| 10 | B | Сначала текущая директория, затем PYTHONPATH, стандартная библиотека, site-packages. |
-| 11 | B | `package==1.0` — точная версия. `>=1.0` — минимальная. |
-| 12 | B | `-r` или `--requirement` указывает файл со списком пакетов. |
-| 13 | B | `__all__` определяет публичный API модуля для `import *`. |
-| 14 | B | После `import math` функции доступны через `math.function()`. |
-| 15 | C | Второй импорт перезаписывает первый. `path` = `sys.path`. |
+| 2 | D | `from math import sqrt` импортирует только sqrt в текущее пространство имён. |
+| 3 | B | `import numpy as np` создаёт псевдоним np для numpy. |
+| 4 | D | `import *` импортирует всё, что может конфликтовать с существующими именами. |
+| 5 | D | При прямом запуске `__name__` равно `"__main__"`. При импорте — имя модуля. |
+| 6 | D | Код внутри блока выполняется только при прямом запуске скрипта. |
+| 7 | D | `__init__.py` делает директорию пакетом (в Python 3 не обязателен для namespace packages). |
+| 8 | C | `from ..` — импорт из родительского пакета. `.` — из текущего. |
+| 9 | A | `sys.path` — список директорий, где Python ищет модули. |
+| 10 | C | Сначала текущая директория, затем PYTHONPATH, стандартная библиотека, site-packages. |
+| 11 | D | `package==1.0` — точная версия. `>=1.0` — минимальная. |
+| 12 | D | `-r` или `--requirement` указывает файл со списком пакетов. |
+| 13 | C | `__all__` определяет публичный API модуля для `import *`. |
+| 14 | D | После `import math` функции доступны через `math.function()`. |
+| 15 | B | Второй импорт перезаписывает первый. `path` = `sys.path`. |
 | 16 | C | `importlib.reload(module)` перезагружает модуль. В Python 2 была встроенная `reload()`. |
-| 17 | B | Namespace package может быть распределён по нескольким директориям без `__init__.py`. |
-| 18 | D | Все методы помогают избежать или обойти циклические импорты. |
+| 17 | D | Namespace package может быть распределён по нескольким директориям без `__init__.py`. |
+| 18 | B | Все методы помогают избежать или обойти циклические импорты. |
 | 19 | B | `setup.py` — скрипт для сборки и установки пакета (setuptools). |
 | 20 | B | `pyproject.toml` — современный стандарт конфигурации проекта (PEP 517, 518). |
 

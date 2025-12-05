@@ -6,13 +6,14 @@
 
 ## Question 1: Файл зеркала
 
+
 В каком файле указывается URL зеркала для pkg_add?
 
 A) /etc/pkg.conf
 
-B) /etc/installurl
+B) /etc/apt/sources.list
 
-C) /etc/apt/sources.list
+C) /etc/installurl
 
 D) /etc/mirrors.conf
 
@@ -20,97 +21,104 @@ D) /etc/mirrors.conf
 
 ## Question 2: Установка пакета
 
+
 Какая команда устанавливает пакет в OpenBSD?
 
 A) apt-get install
 
-B) yum install
+B) pkg install
 
 C) pkg_add
 
-D) pkg install
+D) yum install
 
 ---
 
 ## Question 3: Обновление пакетов
 
+
 Какая команда обновляет все установленные пакеты?
 
-A) pkg_update -a
+A) pkg_add --upgrade
 
-B) pkg_add -u
+B) pkg_update -a
 
-C) pkg_upgrade
+C) pkg_add -u
 
-D) pkg_add --upgrade
+D) pkg_upgrade
 
 ---
 
 ## Question 4: Flavors
 
+
 Что такое flavors в системе пакетов OpenBSD?
 
-A) Разные версии пакета
+A) Цветовые схемы интерфейса
 
-B) Варианты пакета с разными опциями сборки
+B) Типы лицензий
 
-C) Цветовые схемы интерфейса
+C) Варианты пакета с разными опциями сборки
 
-D) Типы лицензий
+D) Разные версии пакета
 
 ---
 
 ## Question 5: Список пакетов
 
+
 Какая команда показывает список установленных пакетов?
 
 A) pkg_list
 
-B) pkg_info
+B) rpm -qa
 
 C) dpkg -l
 
-D) rpm -qa
+D) pkg_info
 
 ---
 
 ## Question 6: Удаление пакета
 
+
 Какая команда удаляет пакет?
 
-A) pkg_remove
+A) pkg_uninstall
 
-B) pkg_delete
+B) pkg_remove
 
-C) pkg_del
+C) pkg_delete
 
-D) pkg_uninstall
+D) pkg_del
 
 ---
 
 ## Question 7: Поиск пакета
 
+
 Какой флаг pkg_info используется для поиска пакетов в репозитории?
 
 A) -s
 
-B) -Q
+B) -l
 
-C) -f
+C) -Q
 
-D) -l
+D) -f
 
 ---
 
 ## Question 8: Файлы пакета
 
+
 Какой флаг pkg_info показывает файлы, установленные пакетом?
 
 A) -f
 
-B) -L
+B) -l
 
-C) -l
+C) -L
 
 D) -F
 
@@ -118,11 +126,12 @@ D) -F
 
 ## Question 9: Ports
 
+
 Где находится дерево портов в OpenBSD?
 
-A) /opt/ports
+A) /usr/ports
 
-B) /usr/ports
+B) /opt/ports
 
 C) /var/ports
 
@@ -132,67 +141,72 @@ D) /ports
 
 ## Question 10: Сборка порта
 
+
 Какая команда собирает и устанавливает порт?
 
-A) make all
+A) ./configure && make && make install
 
-B) make build install
+B) make all
 
 C) make install clean
 
-D) ./configure && make && make install
+D) make build install
 
 ---
 
 ## Question 11: pkg_add или ports
 
+
 Когда следует использовать ports вместо pkg_add?
 
-A) Всегда, ports быстрее
+A) Когда нужны специфические опции сборки
 
-B) Когда нужны специфические опции сборки
+B) Ports устарел, всегда используйте pkg_add
 
-C) Для системных утилит
+C) Всегда, ports быстрее
 
-D) Ports устарел, всегда используйте pkg_add
+D) Для системных утилит
 
 ---
 
 ## Question 12: Зависимости
 
+
 Какая команда показывает, от каких пакетов зависит указанный?
 
-A) pkg_info -R
+A) pkg_info -f
 
-B) pkg_info -f
+B) pkg_info -R
 
-C) pkg_info -d
+C) pkg_depends
 
-D) pkg_depends
+D) pkg_info -d
 
 ---
 
 ## Question 13: Orphan пакеты
 
+
 Какая команда удаляет пакеты без зависящих от них?
 
-A) pkg_delete -o
+A) pkg_delete -a
 
-B) pkg_delete -a
+B) pkg_autoremove
 
-C) pkg_autoremove
+C) pkg_clean
 
-D) pkg_clean
+D) pkg_delete -o
 
 ---
 
 ## Question 14: Поиск файла
 
+
 Какая команда находит пакет по установленному файлу?
 
-A) pkg_info -f /path
+A) pkg_info -E /path
 
-B) pkg_info -E /path
+B) pkg_info -f /path
 
 C) pkg_which /path
 
@@ -202,15 +216,16 @@ D) which -p /path
 
 ## Question 15: PKG_PATH
 
+
 Для чего используется переменная PKG_PATH?
 
-A) Путь к установленным пакетам
+A) Логи установки
 
 B) URL репозитория пакетов
 
 C) Кэш загруженных пакетов
 
-D) Логи установки
+D) Путь к установленным пакетам
 
 ---
 
@@ -220,20 +235,20 @@ D) Логи установки
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | /etc/installurl — стандартный файл для указания зеркала в OpenBSD |
+| 1 | C | /etc/installurl — стандартный файл для указания зеркала в OpenBSD |
 | 2 | C | pkg_add — команда установки пакетов в OpenBSD |
-| 3 | B | pkg_add -u обновляет все установленные пакеты |
-| 4 | B | Flavors — варианты пакета с разными опциями (например, с GUI или без) |
-| 5 | B | pkg_info без аргументов показывает список установленных пакетов |
-| 6 | B | pkg_delete удаляет установленные пакеты |
-| 7 | B | pkg_info -Q ищет пакеты в репозитории |
-| 8 | B | pkg_info -L показывает список файлов пакета |
-| 9 | B | /usr/ports — стандартное расположение дерева портов |
+| 3 | C | pkg_add -u обновляет все установленные пакеты |
+| 4 | C | Flavors — варианты пакета с разными опциями (например, с GUI или без) |
+| 5 | D | pkg_info без аргументов показывает список установленных пакетов |
+| 6 | C | pkg_delete удаляет установленные пакеты |
+| 7 | C | pkg_info -Q ищет пакеты в репозитории |
+| 8 | C | pkg_info -L показывает список файлов пакета |
+| 9 | A | /usr/ports — стандартное расположение дерева портов |
 | 10 | C | make install clean — компилирует, устанавливает и очищает |
-| 11 | B | Ports используют для кастомных опций сборки или свежих версий |
-| 12 | B | pkg_info -f показывает зависимости (dependencies) пакета |
-| 13 | B | pkg_delete -a удаляет пакеты-сироты (orphans) |
-| 14 | B | pkg_info -E находит пакет, которому принадлежит файл |
+| 11 | A | Ports используют для кастомных опций сборки или свежих версий |
+| 12 | A | pkg_info -f показывает зависимости (dependencies) пакета |
+| 13 | A | pkg_delete -a удаляет пакеты-сироты (orphans) |
+| 14 | A | pkg_info -E находит пакет, которому принадлежит файл |
 | 15 | B | PKG_PATH — альтернатива /etc/installurl для указания URL репозитория |
 
 ---

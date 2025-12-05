@@ -6,19 +6,21 @@
 
 ## Question 1: DevOps vs SRE
 
+
 Какой основной фокус SRE по сравнению с DevOps?
 
-A) Скорость разработки
+A) Marketing
 
-B) Reliability и scalability
+B) UI/UX
 
-C) UI/UX
+C) Reliability и scalability
 
-D) Marketing
+D) Скорость разработки
 
 ---
 
 ## Question 2: Platform Engineering
+
 
 Чем занимается Platform Engineer?
 
@@ -34,33 +36,36 @@ D) Sales
 
 ## Question 3: Entry Level
 
+
 Какие навыки важны для Junior DevOps?
 
-A) Только soft skills
+A) Только cloud
 
 B) Linux, Git, Scripting, Containers basics
 
-C) Только Kubernetes
+C) Только soft skills
 
-D) Только cloud
+D) Только Kubernetes
 
 ---
 
 ## Question 4: CKA
 
+
 Что такое CKA?
 
-A) Cloud Knowledge Assessment
+A) Certified Knowledge Architect
 
-B) Certified Kubernetes Administrator
+B) Container Key Access
 
-C) Certified Knowledge Architect
+C) Certified Kubernetes Administrator
 
-D) Container Key Access
+D) Cloud Knowledge Assessment
 
 ---
 
 ## Question 5: Career Tracks
+
 
 Какие два основных карьерных трека существуют?
 
@@ -76,71 +81,78 @@ D) DevOps и Developer
 
 ## Question 6: Platform Engineering Trend
 
+
 Почему Platform Engineering — тренд?
 
-A) Это дешевле
+A) Не требует навыков
 
-B) Улучшает developer experience и productivity
+B) Заменяет DevOps
 
-C) Не требует навыков
+C) Улучшает developer experience и productivity
 
-D) Заменяет DevOps
+D) Это дешевле
 
 ---
 
 ## Question 7: Soft Skills
 
+
 Какой soft skill критичен для DevOps/SRE?
 
 A) Только coding
 
-B) Communication и collaboration
+B) Только менеджмент
 
-C) Только менеджмент
+C) Только продажи
 
-D) Только продажи
+D) Communication и collaboration
 
 ---
 
 ## Question 8: Senior Expectations
 
+
 Что ожидается от Senior DevOps/SRE?
 
-A) Только выполнение задач
+A) Только документация
 
-B) Технический лидерство, архитектура, менторинг
+B) Только on-call
 
-C) Только on-call
+C) Технический лидерство, архитектура, менторинг
 
-D) Только документация
+D) Только выполнение задач
 
 ---
 
 ## Question 9: Learning
 
+
 Как эффективно развиваться в DevOps?
 
-A) Только читать книги
+A) Ждать training от компании
 
 B) Hands-on практика, сертификации, community
 
-C) Только смотреть видео
+C) Только читать книги
 
-D) Ждать training от компании
+D) Только смотреть видео
 
 ---
 
 ## Question 10: Interview Prep
 
+
 Что важно при подготовке к DevOps интервью?
 
-A) Только теория
+A) Только soft skills
 
-B) Portfolio проектов, system design практика, STAR stories
+B) Только сертификации
 
-C) Только сертификации
+C) Только теория
 
-D) Только soft skills
+D) Portfolio проектов, system design практика, STAR stories
+
+---
 
 ---
 
@@ -148,16 +160,16 @@ D) Только soft skills
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | SRE фокус на reliability и scalability |
+| 1 | C | SRE фокус на reliability и scalability |
 | 2 | B | Platform Engineer создаёт IDP и developer tools |
 | 3 | B | Junior нужны core skills: Linux, Git, scripting, containers |
-| 4 | B | CKA = Certified Kubernetes Administrator |
+| 4 | C | CKA = Certified Kubernetes Administrator |
 | 5 | B | IC (технический путь) и Management (people путь) |
-| 6 | B | Platform Engineering улучшает DX и productivity |
-| 7 | B | Communication и collaboration критичны |
-| 8 | B | Senior: tech leadership, architecture, mentoring |
+| 6 | C | Platform Engineering улучшает DX и productivity |
+| 7 | D | Communication и collaboration критичны |
+| 8 | C | Senior: tech leadership, architecture, mentoring |
 | 9 | B | Практика + сертификации + community |
-| 10 | B | Portfolio, system design, behavioral stories |
+| 10 | D | Portfolio, system design, behavioral stories |
 
 ---
 

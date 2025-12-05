@@ -6,33 +6,36 @@
 
 ## Question 1: Healthy Conflict
 
+
 Какой тип конфликта может быть полезен?
 
-A) Relationship conflict (личные attacks)
+A) Task conflict (дебаты о решениях и подходах)
 
-B) Task conflict (дебаты о решениях и подходах)
+B) Все конфликты вредны
 
-C) Все конфликты вредны
+C) Passive-aggressive behavior
 
-D) Passive-aggressive behavior
+D) Relationship conflict (личные attacks)
 
 ---
 
 ## Question 2: Thomas-Kilmann Collaborating
 
+
 Когда использовать Collaborating стиль?
 
-A) Когда issue trivial
+A) Когда нужно быстрое решение без обсуждения
 
-B) Когда важный issue, есть время, нужен commitment
+B) Когда хотите избежать конфликта
 
-C) Когда нужно быстрое решение без обсуждения
+C) Когда issue trivial
 
-D) Когда хотите избежать конфликта
+D) Когда важный issue, есть время, нужен commitment
 
 ---
 
 ## Question 3: Positions vs Interests
+
 
 Что такое "Interest" в conflict resolution?
 
@@ -48,109 +51,117 @@ D) Финансовый интерес
 
 ## Question 4: When to Mediate
 
+
 Когда лидеру следует вмешаться в конфликт?
 
 A) При каждом disagreement
 
-B) Когда конфликт влияет на работу и стороны не могут решить сами
+B) Только если просят
 
 C) Никогда
 
-D) Только если просят
+D) Когда конфликт влияет на работу и стороны не могут решить сами
 
 ---
 
 ## Question 5: Mediator Role
 
+
 Что должен делать медиатор?
 
-A) Принять сторону
+A) Stay neutral, listen, focus on behavior, find common ground
 
-B) Stay neutral, listen, focus on behavior, find common ground
+B) Принять сторону
 
-C) Обвинить обе стороны
+C) Навязать своё решение
 
-D) Навязать своё решение
+D) Обвинить обе стороны
 
 ---
 
 ## Question 6: DESC Framework
 
+
 Что означает "D" в DESC?
 
 A) Decide
 
-B) Describe — объективно описать ситуацию
+B) Demand
 
-C) Demand
+C) Deny
 
-D) Deny
+D) Describe — объективно описать ситуацию
 
 ---
 
 ## Question 7: Handling Defensive Reaction
 
+
 Как реагировать на defensive reaction?
 
-A) Атаковать в ответ
+A) Угрожать
 
-B) "Я не критикую тебя, пытаюсь решить проблему. Помоги понять твой perspective"
+B) Закончить разговор
 
-C) Закончить разговор
+C) "Я не критикую тебя, пытаюсь решить проблему. Помоги понять твой perspective"
 
-D) Угрожать
+D) Атаковать в ответ
 
 ---
 
 ## Question 8: Task vs Relationship Conflict
 
+
 Что такое Relationship Conflict?
 
-A) Disagreement о технических решениях
+A) Обсуждение процессов
 
 B) Межличностные tensions, "не могу с ним работать"
 
-C) Обсуждение процессов
+C) Здоровые дебаты
 
-D) Здоровые дебаты
+D) Disagreement о технических решениях
 
 ---
 
 ## Question 9: Resolution Process
 
+
 Какой первый шаг в resolution process?
 
-A) Навязать решение
+A) Acknowledge — "Я вижу, есть разногласие"
 
-B) Acknowledge — "Я вижу, есть разногласие"
+B) Игнорировать
 
-C) Blame одну сторону
+C) Навязать решение
 
-D) Игнорировать
+D) Blame одну сторону
 
 ---
 
 ## Question 10: Competing Style
 
+
 Когда использовать Competing (win-lose) стиль?
 
-A) Когда issue не важен
+A) Когда нужно quick decision, unpopular action, critical situation
 
-B) Когда нужно quick decision, unpopular action, critical situation
+B) Когда issue не важен
 
-C) Когда хотите build goodwill
+C) Всегда
 
-D) Всегда
+D) Когда хотите build goodwill
 
 ---
 
 ## Question 11: Avoiding Style
 
+
 Когда Avoiding стиль уместен?
 
-A) Для важных issues
+A) Trivial issue, need to cool down, no chance of winning
 
-B) Trivial issue, need to cool down, no chance of winning
+B) Для важных issues
 
 C) Когда нужен commitment
 
@@ -160,13 +171,14 @@ D) Никогда
 
 ## Question 12: Common Ground
 
+
 Зачем искать common ground в конфликте?
 
 A) Чтобы победить
 
-B) Чтобы найти shared goals и build на них решение
+B) Common ground не важен
 
-C) Common ground не важен
+C) Чтобы найти shared goals и build на них решение
 
 D) Чтобы избежать решения
 
@@ -174,41 +186,44 @@ D) Чтобы избежать решения
 
 ## Question 13: Toxic Team Member
 
+
 Как действовать с toxic team member?
 
-A) Игнорировать
+A) Публично критиковать
 
-B) Document → private feedback → monitor → warning/PIP → termination if needed
+B) Игнорировать
 
 C) Сразу уволить без предупреждения
 
-D) Публично критиковать
+D) Document → private feedback → monitor → warning/PIP → termination if needed
 
 ---
 
 ## Question 14: Escalation
 
+
 Когда escalate конфликт к HR/руководителю?
 
-A) При каждом disagreement
+A) Legal/ethical concerns, harassment, safety, pattern despite intervention
 
-B) Legal/ethical concerns, harassment, safety, pattern despite intervention
+B) Только по поводу зарплаты
 
 C) Никогда
 
-D) Только по поводу зарплаты
+D) При каждом disagreement
 
 ---
 
 ## Question 15: Self-Management
 
+
 Что делать перед сложным разговором?
 
-A) Ничего
+A) Накрутить себя
 
-B) Calm down, separate facts from interpretation, plan key points
+B) Ничего
 
-C) Накрутить себя
+C) Calm down, separate facts from interpretation, plan key points
 
 D) Отменить разговор
 
@@ -216,55 +231,59 @@ D) Отменить разговор
 
 ## Question 16: Conflict Prevention
 
+
 Как предотвратить конфликты?
 
-A) Избегать всех обсуждений
+A) Конфликты неизбежны, prevention не работает
 
-B) Clear expectations, regular feedback, team norms
+B) Не общаться
 
-C) Не общаться
+C) Clear expectations, regular feedback, team norms
 
-D) Конфликты неизбежны, prevention не работает
+D) Избегать всех обсуждений
 
 ---
 
 ## Question 17: Disagree and Commit
 
+
 Что означает "Disagree and commit"?
 
 A) Всегда соглашаться
 
-B) После обсуждения и решения — все поддерживают, даже если были против
+B) Никогда не соглашаться
 
-C) Никогда не соглашаться
+C) Саботировать решения
 
-D) Саботировать решения
+D) После обсуждения и решения — все поддерживают, даже если были против
 
 ---
 
 ## Question 18: Mediation Ground Rules
 
+
 Какие ground rules для mediation?
 
-A) Прерывать друг друга
+A) Respectful, no interrupting, goal: solution not blame
 
-B) Respectful, no interrupting, goal: solution not blame
+B) Без правил
 
 C) Blame обязателен
 
-D) Без правил
+D) Прерывать друг друга
 
 ---
 
 ## Question 19: Emotional Reaction
 
+
 Как реагировать если собеседник расплакался?
 
-A) Игнорировать
+A) Критиковать за эмоции
 
-B) "Вижу, это upset. Хочешь паузу? Можем продолжить когда готов"
+B) Игнорировать
 
-C) Критиковать за эмоции
+C) "Вижу, это upset. Хочешь паузу? Можем продолжить когда готов"
 
 D) Закончить и уйти
 
@@ -272,59 +291,43 @@ D) Закончить и уйти
 
 ## Question 20: Follow Up
 
+
 Зачем follow up после resolution?
 
-A) Не нужен
+A) Только для documentation
 
-B) Check in что agreement выполняется
+B) Чтобы повторить конфликт
 
-C) Чтобы повторить конфликт
+C) Check in что agreement выполняется
 
-D) Только для documentation
+D) Не нужен
+
+---
 
 ---
 
 ## Answer Key
 
-1. **B** - Task conflict о решениях может быть полезен
-
-2. **B** - Collaborating: важный issue, время, нужен commitment
-
+1. **A** - Task conflict о решениях может быть полезен
+2. **D** - Collaborating: важный issue, время, нужен commitment
 3. **B** - Interest: underlying need, почему хочет
-
-4. **B** - Вмешиваться когда влияет на работу, стороны не могут решить
-
-5. **B** - Медиатор: neutral, listen, behavior, common ground
-
-6. **B** - D = Describe объективно
-
-7. **B** - "Не критикую, решаем проблему, помоги понять"
-
+4. **D** - Вмешиваться когда влияет на работу, стороны не могут решить
+5. **A** - Медиатор: neutral, listen, behavior, common ground
+6. **D** - D = Describe объективно
+7. **C** - "Не критикую, решаем проблему, помоги понять"
 8. **B** - Relationship: межличностные tensions
-
-9. **B** - Acknowledge: "Я вижу разногласие"
-
-10. **B** - Competing: quick decision, unpopular, critical
-
-11. **B** - Avoiding: trivial, cool down, no chance
-
-12. **B** - Common ground: shared goals для решения
-
-13. **B** - Document → feedback → monitor → warning → termination
-
-14. **B** - Escalate: legal/ethical, harassment, safety, pattern
-
-15. **B** - Calm down, facts, plan points
-
-16. **B** - Prevention: expectations, feedback, norms
-
-17. **B** - Disagree and commit: поддержать решение после обсуждения
-
-18. **B** - Ground rules: respect, no interrupting, solution not blame
-
-19. **B** - Предложить паузу, продолжить когда готов
-
-20. **B** - Follow up: check что agreement выполняется
+9. **A** - Acknowledge: "Я вижу разногласие"
+10. **A** - Competing: quick decision, unpopular, critical
+11. **A** - Avoiding: trivial, cool down, no chance
+12. **C** - Common ground: shared goals для решения
+13. **D** - Document → feedback → monitor → warning → termination
+14. **A** - Escalate: legal/ethical, harassment, safety, pattern
+15. **C** - Calm down, facts, plan points
+16. **C** - Prevention: expectations, feedback, norms
+17. **D** - Disagree and commit: поддержать решение после обсуждения
+18. **A** - Ground rules: respect, no interrupting, solution not blame
+19. **C** - Предложить паузу, продолжить когда готов
+20. **C** - Follow up: check что agreement выполняется
 
 ---
 

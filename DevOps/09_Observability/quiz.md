@@ -6,139 +6,149 @@
 
 ## Question 1: Monitoring vs Observability
 
+
 Чем observability отличается от мониторинга?
 
-A) Observability дешевле
+A) Это одно и то же
 
-B) Monitoring — предопределённые проверки, Observability — исследование неизвестных проблем
+B) Observability только для микросервисов
 
-C) Это одно и то же
+C) Observability дешевле
 
-D) Observability только для микросервисов
+D) Monitoring — предопределённые проверки, Observability — исследование неизвестных проблем
 
 ---
 
 ## Question 2: Three Pillars
 
+
 Какие три столпа observability?
 
-A) CPU, Memory, Disk
+A) HTTP, TCP, UDP
 
-B) Logs, Metrics, Traces
+B) CPU, Memory, Disk
 
 C) Prometheus, Grafana, Alertmanager
 
-D) HTTP, TCP, UDP
+D) Logs, Metrics, Traces
 
 ---
 
 ## Question 3: Structured Logging
 
+
 Почему structured logging (JSON) лучше plain text?
 
-A) JSON красивее
+A) Легче парсить, искать, агрегировать
 
-B) Легче парсить, искать, агрегировать
+B) Быстрее записывается
 
-C) Меньше размер файлов
+C) JSON красивее
 
-D) Быстрее записывается
+D) Меньше размер файлов
 
 ---
 
 ## Question 4: Traces
 
+
 Что показывает distributed trace?
 
-A) Только ошибки
+A) Путь запроса через сервисы с timing информацией
 
-B) Путь запроса через сервисы с timing информацией
+B) Количество пользователей
 
-C) Размер базы данных
+C) Только ошибки
 
-D) Количество пользователей
+D) Размер базы данных
 
 ---
 
 ## Question 5: Span
 
+
 Что такое span в контексте tracing?
 
-A) Период времени без активности
+A) Единица работы в trace (операция в одном сервисе)
 
-B) Единица работы в trace (операция в одном сервисе)
+B) Ошибка в логах
 
-C) Ошибка в логах
+C) Тип метрики
 
-D) Тип метрики
+D) Период времени без активности
 
 ---
 
 ## Question 6: Trace ID
 
+
 Для чего используется trace_id?
 
-A) Для аутентификации
+A) Для версионирования
 
 B) Для связывания всех spans одного запроса через сервисы
 
-C) Для шифрования
+C) Для аутентификации
 
-D) Для версионирования
+D) Для шифрования
 
 ---
 
 ## Question 7: OpenTelemetry
 
+
 Что такое OpenTelemetry?
 
-A) Протокол мониторинга
+A) Облачный сервис
 
 B) Стандарт и SDK для инструментации (logs, metrics, traces)
 
-C) Облачный сервис
+C) База данных
 
-D) База данных
+D) Протокол мониторинга
 
 ---
 
 ## Question 8: Context Propagation
 
+
 Что такое context propagation в distributed tracing?
 
-A) Распространение ошибок
+A) Копирование логов
 
 B) Передача trace context между сервисами через headers
 
-C) Копирование логов
+C) Синхронизация времени
 
-D) Синхронизация времени
+D) Распространение ошибок
 
 ---
 
 ## Question 9: Log Levels
 
+
 Какой log level использовать для нормальных событий в production?
 
-A) DEBUG
+A) INFO
 
-B) INFO
+B) ERROR
 
 C) WARNING
 
-D) ERROR
+D) DEBUG
 
 ---
 
 ## Question 10: Correlation
 
+
 Как связать логи с traces?
 
 A) По timestamp
 
-B) Добавлять trace_id в логи
+B) Использовать одинаковые имена файлов
 
-C) Использовать одинаковые имена файлов
+C) Добавлять trace_id в логи
 
 D) Невозможно связать
 
@@ -146,39 +156,42 @@ D) Невозможно связать
 
 ## Question 11: ELK Stack
 
+
 Что входит в ELK Stack?
 
-A) Express, Linux, Kubernetes
+A) Envoy, Linkerd, Kong
 
-B) Elasticsearch, Logstash, Kibana
+B) Etcd, Loki, Kafka
 
-C) Envoy, Linkerd, Kong
+C) Elasticsearch, Logstash, Kibana
 
-D) Etcd, Loki, Kafka
+D) Express, Linux, Kubernetes
 
 ---
 
 ## Question 12: Jaeger
 
+
 Для чего используется Jaeger?
 
-A) Для сбора метрик
+A) Для CI/CD
 
 B) Для distributed tracing visualization
 
 C) Для логирования
 
-D) Для CI/CD
+D) Для сбора метрик
 
 ---
 
 ## Question 13: Instrumentation
 
+
 Что такое auto-instrumentation?
 
-A) Ручная настройка каждой функции
+A) Автоматическое добавление tracing без изменения кода
 
-B) Автоматическое добавление tracing без изменения кода
+B) Ручная настройка каждой функции
 
 C) Автоматическое логирование в файлы
 
@@ -188,25 +201,27 @@ D) Генерация документации
 
 ## Question 14: High Cardinality
 
+
 Почему high cardinality в логах может быть проблемой?
 
-A) Логи становятся красивее
+A) High cardinality не проблема
 
-B) Растёт размер индекса и стоимость хранения
+B) Логи быстрее записываются
 
-C) Логи быстрее записываются
+C) Растёт размер индекса и стоимость хранения
 
-D) High cardinality не проблема
+D) Логи становятся красивее
 
 ---
 
 ## Question 15: Debugging Workflow
 
+
 Какой типичный workflow debugging с observability?
 
-A) Только смотреть логи
+A) Metrics → Traces → Logs (от общего к деталям)
 
-B) Metrics → Traces → Logs (от общего к деталям)
+B) Только смотреть логи
 
 C) Только смотреть метрики
 
@@ -214,25 +229,27 @@ D) Перезагрузить сервер
 
 ---
 
+---
+
 ## Answer Key
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Observability позволяет исследовать неизвестные проблемы |
-| 2 | B | Logs, Metrics, Traces — три столпа |
-| 3 | B | JSON легко парсить и искать |
-| 4 | B | Trace показывает путь запроса через сервисы |
-| 5 | B | Span — единица работы, операция в сервисе |
+| 1 | D | Observability позволяет исследовать неизвестные проблемы |
+| 2 | D | Logs, Metrics, Traces — три столпа |
+| 3 | A | JSON легко парсить и искать |
+| 4 | A | Trace показывает путь запроса через сервисы |
+| 5 | A | Span — единица работы, операция в сервисе |
 | 6 | B | trace_id связывает все spans одного запроса |
 | 7 | B | OpenTelemetry — стандарт для instrumentation |
 | 8 | B | Context propagation — передача trace context через headers |
-| 9 | B | INFO для нормальных событий |
-| 10 | B | trace_id в логах для корреляции |
-| 11 | B | Elasticsearch, Logstash, Kibana |
+| 9 | A | INFO для нормальных событий |
+| 10 | C | trace_id в логах для корреляции |
+| 11 | C | Elasticsearch, Logstash, Kibana |
 | 12 | B | Jaeger для distributed tracing visualization |
-| 13 | B | Auto-instrumentation добавляет tracing автоматически |
-| 14 | B | High cardinality увеличивает размер индекса и стоимость |
-| 15 | B | Metrics → Traces → Logs (от общего к деталям) |
+| 13 | A | Auto-instrumentation добавляет tracing автоматически |
+| 14 | C | High cardinality увеличивает размер индекса и стоимость |
+| 15 | A | Metrics → Traces → Logs (от общего к деталям) |
 
 ---
 

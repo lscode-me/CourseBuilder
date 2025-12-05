@@ -6,61 +6,66 @@
 
 ## Question 1: docker compose up
 
+
 Какой флаг запускает сервисы в фоновом режиме?
 
-A) -b
+A) -f
 
-B) -d
+B) --background
 
-C) -f
+C) -d
 
-D) --background
+D) -b
 
 ---
 
 ## Question 2: depends_on
 
+
 Как дождаться готовности базы данных перед запуском приложения?
 
 A) depends_on: [db]
 
-B) depends_on: db: condition: service_healthy
+B) requires: db
 
 C) wait_for: db
 
-D) requires: db
+D) depends_on: db: condition: service_healthy
 
 ---
 
 ## Question 3: Volumes в Compose
 
+
 Как определить named volume в docker-compose.yml?
 
-A) Только в секции volumes сервиса
+A) В секции volumes сервиса и на верхнем уровне файла
 
-B) В секции volumes сервиса и на верхнем уровне файла
+B) Volumes не поддерживаются в Compose
 
 C) Только на верхнем уровне файла
 
-D) Volumes не поддерживаются в Compose
+D) Только в секции volumes сервиса
 
 ---
 
 ## Question 4: Networks
 
+
 Какой тип сети используется для изоляции от интернета?
 
-A) driver: bridge
+A) isolated: true
 
-B) internal: true
+B) external: false
 
-C) isolated: true
+C) internal: true
 
-D) external: false
+D) driver: bridge
 
 ---
 
 ## Question 5: Profiles
+
 
 Как запустить сервисы с профилем debug?
 
@@ -76,6 +81,7 @@ D) docker compose up debug
 
 ## Question 6: Environment variables
 
+
 Как использовать переменную окружения из .env файла?
 
 A) ${VAR_NAME}
@@ -90,13 +96,14 @@ D) {{VAR_NAME}}
 
 ## Question 7: Swarm init
 
+
 Какая команда инициализирует Swarm кластер?
 
-A) docker swarm create
+A) docker cluster init
 
 B) docker swarm init
 
-C) docker cluster init
+C) docker swarm create
 
 D) docker init swarm
 
@@ -104,13 +111,14 @@ D) docker init swarm
 
 ## Question 8: Swarm replicas
 
+
 Как масштабировать сервис до 5 реплик?
 
-A) docker service replicas web 5
+A) docker service update --replicas=5 web
 
-B) docker service scale web=5
+B) docker service replicas web 5
 
-C) docker service update --replicas=5 web
+C) docker service scale web=5
 
 D) Оба B и C правильны
 
@@ -118,95 +126,102 @@ D) Оба B и C правильны
 
 ## Question 9: Overlay network
 
+
 Для чего нужен overlay network в Swarm?
 
 A) Для шифрования данных
 
 B) Для связи контейнеров на разных нодах
 
-C) Для ускорения сети
+C) Для изоляции от интернета
 
-D) Для изоляции от интернета
+D) Для ускорения сети
 
 ---
 
 ## Question 10: Swarm secrets
 
+
 Как создать secret в Swarm?
 
 A) docker secret create name ./file
 
-B) docker swarm secret add name ./file
+B) docker service secret create name ./file
 
-C) docker service secret create name ./file
+C) docker config create secret name ./file
 
-D) docker config create secret name ./file
+D) docker swarm secret add name ./file
 
 ---
 
 ## Question 11: Stack deploy
 
+
 Какая команда деплоит stack из docker-compose.yml в Swarm?
 
-A) docker compose deploy
+A) docker service deploy -f docker-compose.yml
 
 B) docker stack deploy -c docker-compose.yml myapp
 
 C) docker swarm deploy docker-compose.yml
 
-D) docker service deploy -f docker-compose.yml
+D) docker compose deploy
 
 ---
 
 ## Question 12: Node availability
 
+
 Какое значение availability выводит ноду из обслуживания?
 
 A) inactive
 
-B) pause
+B) drain
 
-C) drain
+C) disabled
 
-D) disabled
+D) pause
 
 ---
 
 ## Question 13: Update config
 
+
 Какой параметр определяет количество одновременно обновляемых реплик?
 
-A) concurrency
+A) parallelism
 
-B) parallelism
+B) concurrency
 
-C) batch_size
+C) simultaneous
 
-D) simultaneous
+D) batch_size
 
 ---
 
 ## Question 14: Extension fields
 
+
 Как определить переиспользуемый блок конфигурации в Compose?
 
-A) &name
+A) @name
 
-B) x-name
+B) template-name
 
-C) template-name
+C) &name
 
-D) @name
+D) x-name
 
 ---
 
 ## Question 15: Healthcheck в Compose
 
+
 Какой параметр определяет время ожидания перед первой проверкой?
 
-A) initial_delay
+A) start_period
 
-B) start_period
+B) initial_delay
 
 C) wait_time
 
@@ -216,27 +231,29 @@ D) startup_delay
 
 ## Question 16: docker compose down
 
+
 Какой флаг удаляет volumes при остановке?
 
-A) -r
+A) --remove-volumes
 
-B) -v
+B) --clean
 
-C) --remove-volumes
+C) -r
 
-D) --clean
+D) -v
 
 ---
 
 ## Question 17: Swarm managers
 
+
 Какое рекомендуемое количество manager нод?
 
 A) 2
 
-B) Чётное число
+B) Нечётное число (3, 5, 7)
 
-C) Нечётное число (3, 5, 7)
+C) Чётное число
 
 D) Минимум 5
 
@@ -244,13 +261,14 @@ D) Минимум 5
 
 ## Question 18: Rolling update order
 
+
 Какой order запускает новый контейнер перед остановкой старого?
 
-A) start-first
+A) new-first
 
-B) new-first
+B) rolling
 
-C) rolling
+C) start-first
 
 D) blue-green
 
@@ -258,13 +276,14 @@ D) blue-green
 
 ## Question 19: Compose override
 
+
 Какой файл автоматически применяется вместе с docker-compose.yml?
 
-A) docker-compose.local.yml
+A) docker-compose.dev.yml
 
-B) docker-compose.override.yml
+B) docker-compose.local.yml
 
-C) docker-compose.dev.yml
+C) docker-compose.override.yml
 
 D) docker-compose.extra.yml
 
@@ -272,13 +291,14 @@ D) docker-compose.extra.yml
 
 ## Question 20: Placement constraints
 
+
 Как ограничить сервис только worker нодами?
 
-A) node.type == worker
+A) placement: worker
 
-B) node.role == worker
+B) node.type == worker
 
-C) placement: worker
+C) node.role == worker
 
 D) only_workers: true
 
@@ -290,10 +310,10 @@ D) only_workers: true
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | -d (detached) запускает сервисы в фоновом режиме |
-| 2 | B | condition: service_healthy ждёт прохождения healthcheck |
-| 3 | B | Named volumes определяются и в сервисе, и на верхнем уровне |
-| 4 | B | internal: true создаёт сеть без доступа к внешним сетям |
+| 1 | C | -d (detached) запускает сервисы в фоновом режиме |
+| 2 | D | condition: service_healthy ждёт прохождения healthcheck |
+| 3 | A | Named volumes определяются и в сервисе, и на верхнем уровне |
+| 4 | C | internal: true создаёт сеть без доступа к внешним сетям |
 | 5 | A | --profile указывает профиль для запуска |
 | 6 | A | ${VAR_NAME} — синтаксис для переменных в Compose |
 | 7 | B | docker swarm init инициализирует Swarm кластер |
@@ -301,15 +321,15 @@ D) only_workers: true
 | 9 | B | Overlay network позволяет контейнерам на разных хостах общаться |
 | 10 | A | docker secret create name создаёт secret |
 | 11 | B | docker stack deploy -c file name деплоит stack |
-| 12 | C | drain перемещает все tasks с ноды |
-| 13 | B | parallelism определяет количество одновременно обновляемых реплик |
-| 14 | B | x- префикс для extension fields в Compose |
-| 15 | B | start_period — время до первой проверки здоровья |
-| 16 | B | -v удаляет named volumes |
-| 17 | C | Нечётное число для Raft consensus (3, 5, 7) |
-| 18 | A | start-first запускает новый контейнер перед остановкой старого |
-| 19 | B | docker-compose.override.yml автоматически применяется |
-| 20 | B | node.role == worker ограничивает placement |
+| 12 | B | drain перемещает все tasks с ноды |
+| 13 | A | parallelism определяет количество одновременно обновляемых реплик |
+| 14 | D | x- префикс для extension fields в Compose |
+| 15 | A | start_period — время до первой проверки здоровья |
+| 16 | D | -v удаляет named volumes |
+| 17 | B | Нечётное число для Raft consensus (3, 5, 7) |
+| 18 | C | start-first запускает новый контейнер перед остановкой старого |
+| 19 | C | docker-compose.override.yml автоматически применяется |
+| 20 | C | node.role == worker ограничивает placement |
 
 ---
 

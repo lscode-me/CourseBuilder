@@ -6,39 +6,42 @@
 
 ## Question 1: WebSocket определение
 
+
 Что такое WebSocket?
 
-A) Новая версия HTTP протокола
+A) Тип базы данных
 
 B) Протокол полнодуплексной связи поверх TCP
 
 C) Замена REST API
 
-D) Тип базы данных
+D) Новая версия HTTP протокола
 
 ---
 
 ## Question 2: Handshake
 
+
 Как начинается WebSocket соединение?
 
-A) С TCP SYN пакета напрямую
+A) С TLS handshake
 
 B) С HTTP GET запроса с заголовком Upgrade: websocket
 
-C) С UDP пакета
+C) С TCP SYN пакета напрямую
 
-D) С TLS handshake
+D) С UDP пакета
 
 ---
 
 ## Question 3: Порт
 
+
 На каком порту по умолчанию работает WebSocket (ws://)?
 
-A) 443
+A) 8080
 
-B) 8080
+B) 443
 
 C) 80 (как HTTP)
 
@@ -48,13 +51,14 @@ D) 9000
 
 ## Question 4: HTTP статус
 
+
 Какой HTTP статус-код возвращается при успешном WebSocket handshake?
 
 A) 200 OK
 
-B) 101 Switching Protocols
+B) 301 Redirect
 
-C) 301 Redirect
+C) 101 Switching Protocols
 
 D) 426 Upgrade Required
 
@@ -62,11 +66,12 @@ D) 426 Upgrade Required
 
 ## Question 5: Преимущество
 
+
 Какое главное преимущество WebSocket перед HTTP polling?
 
-A) Лучшее шифрование
+A) Двунаправленная связь с низкими накладными расходами
 
-B) Двунаправленная связь с низкими накладными расходами
+B) Лучшее шифрование
 
 C) Поддержка больших файлов
 
@@ -76,27 +81,29 @@ D) Лучшая совместимость
 
 ## Question 6: Opcode
 
+
 Какой opcode используется для текстовых сообщений?
 
-A) 0x0
+A) 0x8
 
-B) 0x1
+B) 0x9
 
-C) 0x8
+C) 0x0
 
-D) 0x9
+D) 0x1
 
 ---
 
 ## Question 7: Маскирование
 
+
 Кто должен маскировать данные в WebSocket?
 
-A) Только сервер
+A) И клиент, и сервер
 
 B) Только клиент
 
-C) И клиент, и сервер
+C) Только сервер
 
 D) Никто
 
@@ -104,27 +111,29 @@ D) Никто
 
 ## Question 8: Ping/Pong
 
+
 Для чего используются Ping/Pong фреймы?
 
 A) Для отправки данных
 
 B) Для поддержания соединения (keep-alive)
 
-C) Для шифрования
+C) Для сжатия
 
-D) Для сжатия
+D) Для шифрования
 
 ---
 
 ## Question 9: ASGI событие
 
+
 Какое событие ASGI отправляется при получении WebSocket сообщения?
 
-A) websocket.message
+A) websocket.receive
 
-B) websocket.receive
+B) websocket.data
 
-C) websocket.data
+C) websocket.message
 
 D) websocket.incoming
 
@@ -132,53 +141,57 @@ D) websocket.incoming
 
 ## Question 10: Close code
 
+
 Что означает close code 1000?
 
 A) Ошибка протокола
 
 B) Нормальное закрытие соединения
 
-C) Потеря соединения
+C) Серверная ошибка
 
-D) Серверная ошибка
+D) Потеря соединения
 
 ---
 
 ## Question 11: JavaScript API
 
+
 Какое событие JavaScript вызывается при получении сообщения?
 
-A) ws.ondata
+A) ws.onincoming
 
-B) ws.onmessage
+B) ws.onreceive
 
-C) ws.onreceive
+C) ws.onmessage
 
-D) ws.onincoming
+D) ws.ondata
 
 ---
 
 ## Question 12: Масштабирование
 
+
 Как масштабировать WebSocket на несколько серверов?
 
-A) Невозможно масштабировать
+A) Использовать UDP
 
-B) Использовать Redis Pub/Sub или sticky sessions
+B) Просто добавить больше серверов
 
-C) Просто добавить больше серверов
+C) Невозможно масштабировать
 
-D) Использовать UDP
+D) Использовать Redis Pub/Sub или sticky sessions
 
 ---
 
 ## Question 13: Sec-WebSocket-Key
 
+
 Для чего используется Sec-WebSocket-Key?
 
-A) Для шифрования данных
+A) Для подтверждения, что сервер понимает WebSocket
 
-B) Для подтверждения, что сервер понимает WebSocket
+B) Для шифрования данных
 
 C) Для аутентификации пользователя
 
@@ -188,29 +201,33 @@ D) Для сжатия данных
 
 ## Question 14: Размер overhead
 
+
 Какой минимальный overhead у WebSocket фрейма?
 
 A) Как у HTTP (сотни байт)
 
 B) 2-14 байт
 
-C) 0 байт
+C) 1 килобайт
 
-D) 1 килобайт
+D) 0 байт
 
 ---
 
 ## Question 15: Закрытие соединения
 
+
 Какой opcode используется для закрытия соединения?
 
-A) 0x0
+A) 0xF
 
 B) 0x1
 
 C) 0x8
 
-D) 0xF
+D) 0x0
+
+---
 
 ---
 
@@ -221,16 +238,16 @@ D) 0xF
 | 1 | B | WebSocket — протокол полнодуплексной (двунаправленной) связи поверх TCP |
 | 2 | B | WebSocket начинается с HTTP GET запроса с заголовками Upgrade: websocket |
 | 3 | C | ws:// использует порт 80, wss:// — порт 443 (как HTTP/HTTPS) |
-| 4 | B | 101 Switching Protocols означает успешный переход на WebSocket |
-| 5 | B | Двунаправленная связь без накладных расходов HTTP на каждое сообщение |
-| 6 | B | Opcode 0x1 — текст (UTF-8), 0x2 — бинарные данные |
+| 4 | C | 101 Switching Protocols означает успешный переход на WebSocket |
+| 5 | A | Двунаправленная связь без накладных расходов HTTP на каждое сообщение |
+| 6 | D | Opcode 0x1 — текст (UTF-8), 0x2 — бинарные данные |
 | 7 | B | Клиент → Сервер: данные маскируются; Сервер → Клиент: без маски |
 | 8 | B | Ping (0x9) и Pong (0xA) используются для проверки активности соединения |
-| 9 | B | ASGI событие websocket.receive содержит text или bytes |
+| 9 | A | ASGI событие websocket.receive содержит text или bytes |
 | 10 | B | Close code 1000 — нормальное закрытие без ошибок |
-| 11 | B | onmessage вызывается при получении данных от сервера |
-| 12 | B | Redis Pub/Sub или sticky sessions решают проблему broadcast между серверами |
-| 13 | B | Sec-WebSocket-Accept вычисляется из Key для подтверждения протокола |
+| 11 | C | onmessage вызывается при получении данных от сервера |
+| 12 | D | Redis Pub/Sub или sticky sessions решают проблему broadcast между серверами |
+| 13 | A | Sec-WebSocket-Accept вычисляется из Key для подтверждения протокола |
 | 14 | B | Минимальный заголовок фрейма — 2 байта, максимум 14 для больших сообщений |
 | 15 | C | Opcode 0x8 (Close) для закрытия соединения с опциональным кодом и причиной |
 

@@ -6,33 +6,36 @@
 
 ## Question 1: Запуск контейнера
 
+
 Какой флаг запускает контейнер в detached mode?
 
 A) -i
 
 B) -t
 
-C) -d
+C) -r
 
-D) -r
+D) -d
 
 ---
 
 ## Question 2: Port mapping
 
+
 Как опубликовать порт 80 контейнера на порт 8080 только для localhost?
 
-A) -p 8080:80
+A) -p 80:8080
 
 B) -p 127.0.0.1:8080:80
 
 C) -p localhost:8080:80
 
-D) -p 80:8080
+D) -p 8080:80
 
 ---
 
 ## Question 3: ENTRYPOINT vs CMD
+
 
 Что произойдёт при docker run myimage arg1, если Dockerfile содержит ENTRYPOINT ["echo"] CMD ["hello"]?
 
@@ -40,47 +43,50 @@ A) echo hello
 
 B) echo arg1
 
-C) arg1
+C) hello arg1
 
-D) hello arg1
+D) arg1
 
 ---
 
 ## Question 4: Multi-stage builds
 
+
 Какова главная цель multi-stage builds?
 
 A) Ускорение сборки
 
-B) Уменьшение размера финального образа
+B) Параллельная сборка
 
-C) Улучшение безопасности
+C) Уменьшение размера финального образа
 
-D) Параллельная сборка
+D) Улучшение безопасности
 
 ---
 
 ## Question 5: Кеширование слоёв
 
+
 Какой порядок инструкций оптимален для кеширования при сборке Python-приложения?
 
-A) COPY . . → RUN pip install
+A) COPY requirements.txt . → RUN pip install → COPY . .
 
-B) RUN pip install → COPY . .
+B) Порядок не влияет
 
-C) COPY requirements.txt . → RUN pip install → COPY . .
+C) COPY . . → RUN pip install
 
-D) Порядок не влияет
+D) RUN pip install → COPY . .
 
 ---
 
 ## Question 6: Volumes vs Bind mounts
 
+
 Какое преимущество volumes перед bind mounts?
 
-A) Быстрее работают
+A) Управляются Docker, работают на любой платформе
 
-B) Управляются Docker, работают на любой платформе
+B) Быстрее работают
 
 C) Занимают меньше места
 
@@ -90,33 +96,36 @@ D) Поддерживают больше файловых систем
 
 ## Question 7: docker exec
 
+
 Как выполнить интерактивную команду sh в запущенном контейнере?
 
-A) docker run -it container sh
+A) docker start -it container sh
 
-B) docker exec -it container sh
+B) docker run -it container sh
 
-C) docker attach container sh
+C) docker exec -it container sh
 
-D) docker start -it container sh
+D) docker attach container sh
 
 ---
 
 ## Question 8: Логи контейнера
 
+
 Какая команда показывает логи в реальном времени?
 
-A) docker logs container
+A) docker logs -r container
 
-B) docker logs -f container
+B) docker logs container
 
-C) docker logs --live container
+C) docker logs -f container
 
-D) docker logs -r container
+D) docker logs --live container
 
 ---
 
 ## Question 9: Resource limits
+
 
 Как ограничить контейнер использованием 1.5 CPU?
 
@@ -132,13 +141,14 @@ D) --max-cpu=1.5
 
 ## Question 10: Health check
 
+
 Какой параметр HEALTHCHECK определяет интервал проверки?
 
 A) --timeout
 
-B) --interval
+B) --period
 
-C) --period
+C) --interval
 
 D) --frequency
 
@@ -146,33 +156,36 @@ D) --frequency
 
 ## Question 11: USER instruction
 
+
 Для чего используется инструкция USER в Dockerfile?
 
 A) Аутентификация при pull
 
-B) Запуск процессов от указанного пользователя
+B) Настройка SSH
 
 C) Ограничение доступа к volume
 
-D) Настройка SSH
+D) Запуск процессов от указанного пользователя
 
 ---
 
 ## Question 12: .dockerignore
 
+
 Что делает файл .dockerignore?
 
-A) Игнорирует контейнеры
+A) Блокирует порты
 
-B) Исключает файлы из build context
+B) Игнорирует контейнеры
 
 C) Скрывает образы
 
-D) Блокирует порты
+D) Исключает файлы из build context
 
 ---
 
 ## Question 13: docker inspect
+
 
 Как получить только IP-адрес контейнера?
 
@@ -180,61 +193,65 @@ A) docker inspect --ip container
 
 B) docker inspect -f '{{.NetworkSettings.IPAddress}}' container
 
-C) docker ip container
+C) docker network ip container
 
-D) docker network ip container
+D) docker ip container
 
 ---
 
 ## Question 14: Restart policy
 
+
 Какая restart policy перезапускает контейнер, кроме случая ручной остановки?
 
-A) always
+A) unless-stopped
 
 B) on-failure
 
-C) unless-stopped
+C) no
 
-D) no
+D) always
 
 ---
 
 ## Question 15: docker tag
 
+
 Какая команда создаёт тег для push в registry?
 
-A) docker tag myapp:1.0 registry/myapp:1.0
+A) docker label myapp:1.0 registry/myapp:1.0
 
-B) docker rename myapp:1.0 registry/myapp:1.0
+B) docker copy myapp:1.0 registry/myapp:1.0
 
-C) docker copy myapp:1.0 registry/myapp:1.0
+C) docker tag myapp:1.0 registry/myapp:1.0
 
-D) docker label myapp:1.0 registry/myapp:1.0
+D) docker rename myapp:1.0 registry/myapp:1.0
 
 ---
 
 ## Question 16: Read-only filesystem
 
+
 Как запустить контейнер с read-only root filesystem?
 
-A) --ro
+A) --read-only
 
-B) --read-only
+B) --readonly
 
-C) --readonly
+C) --immutable
 
-D) --immutable
+D) --ro
 
 ---
 
 ## Question 17: Capabilities
 
+
 Как удалить все capabilities из контейнера?
 
-A) --no-caps
+A) --cap-drop=ALL
 
-B) --cap-drop=ALL
+B) --no-caps
 
 C) --capabilities=none
 
@@ -244,13 +261,14 @@ D) --drop-all-caps
 
 ## Question 18: Storage driver
 
+
 Какой storage driver рекомендуется для Docker?
 
-A) aufs
+A) devicemapper
 
-B) overlay2
+B) aufs
 
-C) devicemapper
+C) overlay2
 
 D) vfs
 
@@ -258,13 +276,14 @@ D) vfs
 
 ## Question 19: docker system prune
 
+
 Что удаляет docker system prune -a?
 
 A) Только остановленные контейнеры
 
-B) Все неиспользуемые данные (контейнеры, сети, образы, volumes)
+B) Только dangling images
 
-C) Только dangling images
+C) Все неиспользуемые данные (контейнеры, сети, образы, volumes)
 
 D) Только volumes
 
@@ -272,15 +291,16 @@ D) Только volumes
 
 ## Question 20: Build context
 
+
 Что означает точка в команде docker build -t myapp .?
 
-A) Текущая версия
+A) Скрытые файлы
 
-B) Build context — текущая директория
+B) Все файлы рекурсивно
 
-C) Все файлы рекурсивно
+C) Текущая версия
 
-D) Скрытые файлы
+D) Build context — текущая директория
 
 ---
 
@@ -290,26 +310,26 @@ D) Скрытые файлы
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | -d (detached) запускает контейнер в фоновом режиме |
+| 1 | D | -d (detached) запускает контейнер в фоновом режиме |
 | 2 | B | -p 127.0.0.1:8080:80 публикует только на localhost |
 | 3 | B | ENTRYPOINT фиксирован (echo), arg1 заменяет CMD |
-| 4 | B | Multi-stage позволяет исключить build tools из финального образа |
-| 5 | C | Сначала requirements.txt для кеширования pip install |
-| 6 | B | Volumes управляются Docker и независимы от хоста |
-| 7 | B | docker exec -it выполняет команду в запущенном контейнере |
-| 8 | B | -f (follow) показывает логи в реальном времени |
+| 4 | C | Multi-stage позволяет исключить build tools из финального образа |
+| 5 | A | Сначала requirements.txt для кеширования pip install |
+| 6 | A | Volumes управляются Docker и независимы от хоста |
+| 7 | C | docker exec -it выполняет команду в запущенном контейнере |
+| 8 | C | -f (follow) показывает логи в реальном времени |
 | 9 | B | --cpus="1.5" ограничивает использование CPU |
-| 10 | B | --interval определяет интервал между проверками |
-| 11 | B | USER задаёт пользователя для запуска процессов |
-| 12 | B | .dockerignore исключает файлы из build context |
+| 10 | C | --interval определяет интервал между проверками |
+| 11 | D | USER задаёт пользователя для запуска процессов |
+| 12 | D | .dockerignore исключает файлы из build context |
 | 13 | B | -f с Go template извлекает конкретное поле |
-| 14 | C | unless-stopped перезапускает, кроме ручной остановки |
-| 15 | A | docker tag создаёт новый тег для образа |
-| 16 | B | --read-only делает root filesystem read-only |
-| 17 | B | --cap-drop=ALL удаляет все Linux capabilities |
-| 18 | B | overlay2 — рекомендуемый storage driver |
-| 19 | B | prune -a удаляет все неиспользуемые ресурсы |
-| 20 | B | Точка указывает build context (текущую директорию) |
+| 14 | A | unless-stopped перезапускает, кроме ручной остановки |
+| 15 | C | docker tag создаёт новый тег для образа |
+| 16 | A | --read-only делает root filesystem read-only |
+| 17 | A | --cap-drop=ALL удаляет все Linux capabilities |
+| 18 | C | overlay2 — рекомендуемый storage driver |
+| 19 | C | prune -a удаляет все неиспользуемые ресурсы |
+| 20 | D | Точка указывает build context (текущую директорию) |
 
 ---
 

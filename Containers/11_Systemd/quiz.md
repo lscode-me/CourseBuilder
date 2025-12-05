@@ -6,6 +6,7 @@
 
 ## Question 1: Определение systemd-nspawn
 
+
 Какой тип контейнеров создаёт systemd-nspawn?
 
 A) Application containers — один процесс, без init системы
@@ -20,53 +21,57 @@ D) Serverless функции
 
 ## Question 2: Сравнение с Docker
 
+
 Какое главное отличие systemd-nspawn от Docker в плане образов?
 
-A) systemd-nspawn использует OCI-совместимые образы
+A) systemd-nspawn работает с директориями, tar-архивами и raw образами вместо layered images
 
-B) systemd-nspawn работает с директориями, tar-архивами и raw образами вместо layered images
+B) systemd-nspawn использует OverlayFS слои как Docker
 
-C) systemd-nspawn скачивает образы из Docker Hub
+C) systemd-nspawn использует OCI-совместимые образы
 
-D) systemd-nspawn использует OverlayFS слои как Docker
+D) systemd-nspawn скачивает образы из Docker Hub
 
 ---
 
 ## Question 3: Запуск контейнера
 
+
 Что делает флаг `-b` в команде `systemd-nspawn -b -D /var/lib/machines/debian`?
 
-A) Запускает контейнер в background
+A) Включает bridge networking
 
-B) Запускает boot sequence — init систему контейнера
+B) Запускает контейнер в background
 
-C) Включает bridge networking
+C) Создаёт bind mount
 
-D) Создаёт bind mount
+D) Запускает boot sequence — init систему контейнера
 
 ---
 
 ## Question 4: Директория машин
 
+
 Какая директория является стандартным местом для хранения машин systemd-nspawn?
 
-A) /var/containers/
+A) /etc/systemd/machines/
 
-B) /home/machines/
+B) /var/lib/machines/
 
-C) /var/lib/machines/
+C) /home/machines/
 
-D) /etc/systemd/machines/
+D) /var/containers/
 
 ---
 
 ## Question 5: machinectl
 
+
 Какая команда используется для просмотра списка запущенных машин?
 
-A) `systemd-nspawn --list`
+A) `machinectl list`
 
-B) `machinectl list`
+B) `systemd-nspawn --list`
 
 C) `nspawn-ctl ps`
 
@@ -76,47 +81,51 @@ D) `systemctl list-machines`
 
 ## Question 6: Сетевые режимы
 
+
 Какой флаг создаёт virtual ethernet pair между хостом и контейнером?
 
-A) `--network-bridge`
+A) `--private-network`
 
-B) `--private-network`
+B) `--network-host`
 
 C) `--network-veth`
 
-D) `--network-host`
+D) `--network-bridge`
 
 ---
 
 ## Question 7: Конфигурационные файлы
 
+
 Где должен располагаться файл конфигурации `.nspawn` для машины с именем "webserver"?
 
-A) /var/lib/machines/webserver.nspawn
+A) ~/.config/nspawn/webserver.nspawn
 
 B) /etc/systemd/nspawn/webserver.nspawn
 
 C) /etc/machines/webserver.conf
 
-D) ~/.config/nspawn/webserver.nspawn
+D) /var/lib/machines/webserver.nspawn
 
 ---
 
 ## Question 8: Capabilities
 
+
 Какая команда запустит контейнер с дополнительной capability CAP_NET_ADMIN?
 
-A) `systemd-nspawn --add-cap=NET_ADMIN -D /path`
+A) `systemd-nspawn --capability=CAP_NET_ADMIN -D /path`
 
-B) `systemd-nspawn --capability=CAP_NET_ADMIN -D /path`
+B) `systemd-nspawn --grant=CAP_NET_ADMIN -D /path`
 
 C) `systemd-nspawn --cap-add=NET_ADMIN -D /path`
 
-D) `systemd-nspawn --grant=CAP_NET_ADMIN -D /path`
+D) `systemd-nspawn --add-cap=NET_ADMIN -D /path`
 
 ---
 
 ## Question 9: Bind mounts
+
 
 Какой флаг используется для монтирования директории хоста в контейнер в режиме только для чтения?
 
@@ -124,61 +133,65 @@ A) `--mount-ro`
 
 B) `--bind-readonly`
 
-C) `--bind-ro`
+C) `--read-bind`
 
-D) `--read-bind`
+D) `--bind-ro`
 
 ---
 
 ## Question 10: Boot mode
 
+
 Что произойдёт, если запустить `systemd-nspawn -D /var/lib/machines/debian` без флага `-b`?
 
-A) Контейнер не запустится
+A) Будет выдана ошибка "Boot flag required"
 
 B) Запустится интерактивный shell вместо init системы
 
-C) Контейнер запустится в background
+C) Контейнер не запустится
 
-D) Будет выдана ошибка "Boot flag required"
+D) Контейнер запустится в background
 
 ---
 
 ## Question 11: Private network
 
+
 Что делает флаг `--private-network`?
 
-A) Создаёт veth pair к хосту
+A) Отключает сеть полностью
 
-B) Подключает контейнер к bridge
+B) Создаёт полностью изолированную сеть (только loopback)
 
-C) Создаёт полностью изолированную сеть (только loopback)
+C) Подключает контейнер к bridge
 
-D) Отключает сеть полностью
+D) Создаёт veth pair к хосту
 
 ---
 
 ## Question 12: machinectl shell
 
+
 Какая команда позволяет выполнить команду внутри запущенной машины "debian"?
 
-A) `machinectl exec debian /bin/ls`
+A) `systemctl shell debian /bin/ls`
 
-B) `machinectl shell debian /bin/ls`
+B) `machinectl run debian /bin/ls`
 
-C) `machinectl run debian /bin/ls`
+C) `machinectl shell debian /bin/ls`
 
-D) `systemctl shell debian /bin/ls`
+D) `machinectl exec debian /bin/ls`
 
 ---
 
 ## Question 13: Volatile режим
 
+
 Что означает опция `--volatile=yes`?
 
-A) Контейнер будет автоматически удалён после остановки
+A) Root filesystem будет overlay — изменения не сохраняются
 
-B) Root filesystem будет overlay — изменения не сохраняются
+B) Контейнер будет автоматически удалён после остановки
 
 C) Контейнер запустится в режиме высокой производительности
 
@@ -188,13 +201,14 @@ D) Логи будут храниться в памяти
 
 ## Question 14: Экспорт образа
 
+
 Какая команда экспортирует машину "debian" в tar-архив?
 
-A) `machinectl tar-export debian debian.tar.gz`
+A) `systemd-nspawn --export debian.tar.gz`
 
 B) `machinectl export-tar debian debian.tar.gz`
 
-C) `systemd-nspawn --export debian.tar.gz`
+C) `machinectl tar-export debian debian.tar.gz`
 
 D) `nspawn export debian > debian.tar.gz`
 
@@ -202,13 +216,14 @@ D) `nspawn export debian > debian.tar.gz`
 
 ## Question 15: systemd интеграция
 
+
 Какой systemd unit отвечает за автозапуск машины "myserver"?
 
 A) `systemd-nspawn-myserver.service`
 
-B) `systemd-nspawn@myserver.service`
+B) `machine-myserver.service`
 
-C) `machine-myserver.service`
+C) `systemd-nspawn@myserver.service`
 
 D) `nspawn-myserver.service`
 
@@ -216,33 +231,36 @@ D) `nspawn-myserver.service`
 
 ## Question 16: Journald
 
+
 Какая команда показывает логи контейнера "debian" через journald?
 
-A) `journalctl -u debian`
+A) `machinectl logs debian`
 
-B) `journalctl --container=debian`
+B) `journalctl -u debian`
 
-C) `journalctl -M debian`
+C) `journalctl --container=debian`
 
-D) `machinectl logs debian`
+D) `journalctl -M debian`
 
 ---
 
 ## Question 17: User namespaces
 
+
 Какой флаг включает user namespace с автоматическим выбором UID/GID mapping?
 
-A) `--private-users=pick`
+A) `--map-users=auto`
 
-B) `--user-namespace=auto`
+B) `--userns=random`
 
-C) `--userns=random`
+C) `--user-namespace=auto`
 
-D) `--map-users=auto`
+D) `--private-users=pick`
 
 ---
 
 ## Question 18: .nspawn секции
+
 
 Какая секция в .nspawn файле отвечает за настройку сети?
 
@@ -254,39 +272,43 @@ Bridge=br0
 
 A) [Exec]
 
-B) [Files]
+B) [Network]
 
-C) [Network]
+C) [Networking]
 
-D) [Networking]
+D) [Files]
 
 ---
 
 ## Question 19: Клонирование машины
 
+
 Какая команда создаст копию машины "debian" с именем "debian-test"?
 
-A) `machinectl copy debian debian-test`
+A) `cp -r /var/lib/machines/debian /var/lib/machines/debian-test`
 
 B) `machinectl clone debian debian-test`
 
-C) `machinectl duplicate debian debian-test`
+C) `machinectl copy debian debian-test`
 
-D) `cp -r /var/lib/machines/debian /var/lib/machines/debian-test`
+D) `machinectl duplicate debian debian-test`
 
 ---
 
 ## Question 20: Сравнение подходов
 
+
 Для какого сценария systemd-nspawn подходит лучше, чем Docker?
 
-A) Микросервисная архитектура с сотнями контейнеров
+A) Развёртывание в Kubernetes кластере
 
 B) Запуск stateless приложений из Docker Hub
 
-C) Тестирование systemd unit-файлов и системного ПО
+C) Микросервисная архитектура с сотнями контейнеров
 
-D) Развёртывание в Kubernetes кластере
+D) Тестирование systemd unit-файлов и системного ПО
+
+---
 
 ---
 
@@ -295,25 +317,25 @@ D) Развёртывание в Kubernetes кластере
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | systemd-nspawn создаёт system containers с полной ОС и init системой (systemd), в отличие от application containers |
-| 2 | B | systemd-nspawn работает напрямую с директориями, tar-архивами или raw disk images, без OCI layers и registry |
-| 3 | B | Флаг `-b` (boot) запускает init систему контейнера, а не просто shell |
-| 4 | C | `/var/lib/machines/` — стандартная директория для systemd-machined и systemd-nspawn |
-| 5 | B | `machinectl list` показывает запущенные машины |
+| 2 | A | systemd-nspawn работает напрямую с директориями, tar-архивами или raw disk images, без OCI layers и registry |
+| 3 | D | Флаг `-b` (boot) запускает init систему контейнера, а не просто shell |
+| 4 | B | `/var/lib/machines/` — стандартная директория для systemd-machined и systemd-nspawn |
+| 5 | A | `machinectl list` показывает запущенные машины |
 | 6 | C | `--network-veth` создаёт virtual ethernet pair: host0 в контейнере и ve-<name> на хосте |
 | 7 | B | Файлы `.nspawn` располагаются в `/etc/systemd/nspawn/` |
-| 8 | B | Правильный синтаксис: `--capability=CAP_NET_ADMIN` |
-| 9 | C | `--bind-ro` создаёт read-only bind mount |
+| 8 | A | Правильный синтаксис: `--capability=CAP_NET_ADMIN` |
+| 9 | D | `--bind-ro` создаёт read-only bind mount |
 | 10 | B | Без `-b` запускается интерактивный shell (по умолчанию /bin/bash или /bin/sh) |
-| 11 | C | `--private-network` создаёт изолированную сеть только с loopback интерфейсом |
-| 12 | B | `machinectl shell <machine> <command>` выполняет команду в машине |
-| 13 | B | `--volatile=yes` создаёт overlay над root filesystem, изменения не сохраняются после остановки |
+| 11 | B | `--private-network` создаёт изолированную сеть только с loopback интерфейсом |
+| 12 | C | `machinectl shell <machine> <command>` выполняет команду в машине |
+| 13 | A | `--volatile=yes` создаёт overlay над root filesystem, изменения не сохраняются после остановки |
 | 14 | B | `machinectl export-tar` экспортирует машину в tar-архив |
-| 15 | B | systemd использует template unit `systemd-nspawn@.service`, имя машины указывается после @ |
-| 16 | C | `journalctl -M <machine>` показывает логи конкретной машины |
-| 17 | A | `--private-users=pick` включает user namespace с автоматическим выбором свободного диапазона |
-| 18 | C | Секция `[Network]` отвечает за сетевые настройки в .nspawn файлах |
+| 15 | C | systemd использует template unit `systemd-nspawn@.service`, имя машины указывается после @ |
+| 16 | D | `journalctl -M <machine>` показывает логи конкретной машины |
+| 17 | D | `--private-users=pick` включает user namespace с автоматическим выбором свободного диапазона |
+| 18 | B | Секция `[Network]` отвечает за сетевые настройки в .nspawn файлах |
 | 19 | B | `machinectl clone` создаёт копию машины (образа) |
-| 20 | C | systemd-nspawn идеален для тестирования systemd и системного ПО благодаря полной поддержке init системы |
+| 20 | D | systemd-nspawn идеален для тестирования systemd и системного ПО благодаря полной поддержке init системы |
 
 ---
 

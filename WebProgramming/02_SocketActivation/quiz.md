@@ -6,41 +6,44 @@
 
 ## Question 1: Концепция Socket Activation
 
+
 Что происходит при использовании socket activation в systemd?
 
-A) Демон сам открывает сокет при старте системы
+A) Каждое соединение обрабатывается отдельным процессом systemd
 
-B) systemd открывает сокет, демон запускается при первом соединении
+B) Демон запускается при старте системы, но не слушает порт
 
-C) Демон запускается при старте системы, но не слушает порт
+C) Демон сам открывает сокет при старте системы
 
-D) Каждое соединение обрабатывается отдельным процессом systemd
+D) systemd открывает сокет, демон запускается при первом соединении
 
 ---
 
 ## Question 2: Переменные окружения
 
+
 Какие переменные окружения устанавливает systemd при socket activation?
 
-A) SOCKET_FD и SOCKET_PID
+A) SD_SOCKET и SD_PID
 
 B) LISTEN_FDS и LISTEN_PID
 
-C) SD_SOCKET и SD_PID
+C) SYSTEMD_SOCKET и SYSTEMD_FDS
 
-D) SYSTEMD_SOCKET и SYSTEMD_FDS
+D) SOCKET_FD и SOCKET_PID
 
 ---
 
 ## Question 3: Файловый дескриптор
 
+
 С какого номера начинаются файловые дескрипторы, переданные от systemd?
 
-A) 0
+A) 1
 
-B) 1
+B) 2
 
-C) 2
+C) 0
 
 D) 3
 
@@ -48,19 +51,21 @@ D) 3
 
 ## Question 4: Accept=yes vs Accept=no
 
+
 Что происходит при настройке `Accept=yes` в socket unit?
 
 A) systemd принимает соединения и запускает новый процесс для каждого
 
-B) Один процесс демона обрабатывает все соединения
+B) systemd отклоняет все соединения кроме первого
 
 C) Соединения ставятся в очередь до запуска демона
 
-D) systemd отклоняет все соединения кроме первого
+D) Один процесс демона обрабатывает все соединения
 
 ---
 
 ## Question 5: Имя service unit
+
 
 Как должен называться service unit для socket с Accept=yes?
 
@@ -76,27 +81,29 @@ D) myservice.socket.service
 
 ## Question 6: Shell HTTP сервер
 
+
 В shell-скрипте для inetd-style сервера, куда нужно писать HTTP ответ?
 
 A) В stderr
 
-B) В файл /tmp/response
+B) В stdout
 
-C) В stdout
+C) В переменную окружения RESPONSE
 
-D) В переменную окружения RESPONSE
+D) В файл /tmp/response
 
 ---
 
 ## Question 7: Преимущества socket activation
 
+
 Какое из преимуществ НЕ относится к socket activation?
 
 A) Быстрая загрузка системы
 
-B) Экономия памяти
+B) Автоматическое шифрование трафика
 
-C) Автоматическое шифрование трафика
+C) Экономия памяти
 
 D) Отсутствие потери соединений при перезапуске демона
 
@@ -104,47 +111,51 @@ D) Отсутствие потери соединений при перезап�
 
 ## Question 8: Python socket.fromfd()
 
+
 Для чего используется `socket.fromfd()` в контексте socket activation?
 
-A) Для создания нового сокета
+A) Для закрытия сокета
 
-B) Для получения socket-объекта из существующего файлового дескриптора
+B) Для привязки сокета к порту
 
-C) Для закрытия сокета
+C) Для создания нового сокета
 
-D) Для привязки сокета к порту
+D) Для получения socket-объекта из существующего файлового дескриптора
 
 ---
 
 ## Question 9: systemd ListenStream
 
+
 Что означает параметр `ListenStream=8080` в socket unit?
 
-A) UDP порт 8080
+A) Максимум 8080 соединений
 
 B) TCP порт 8080
 
 C) Unix socket по пути 8080
 
-D) Максимум 8080 соединений
+D) UDP порт 8080
 
 ---
 
 ## Question 10: inetd
 
+
 Что такое inetd?
 
 A) Современный init-демон для Linux
 
-B) "Супердемон", который слушает порты и запускает сервисы по требованию
+B) Демон для шифрования соединений
 
 C) Интернет-демон для DNS
 
-D) Демон для шифрования соединений
+D) "Супердемон", который слушает порты и запускает сервисы по требованию
 
 ---
 
 ## Question 11: HTTP в shell
+
 
 Какой символ используется для обозначения конца строки в HTTP протоколе?
 
@@ -160,53 +171,57 @@ D) `\0` (NULL)
 
 ## Question 12: Отладка
 
+
 Какая команда показывает все сокеты, управляемые systemd?
 
-A) `systemctl list-units`
+A) `ss -systemd`
 
 B) `systemctl list-sockets`
 
-C) `ss -systemd`
+C) `netstat --systemd`
 
-D) `netstat --systemd`
+D) `systemctl list-units`
 
 ---
 
 ## Question 13: xinetd
 
+
 Чем xinetd отличается от классического inetd?
 
-A) Работает только с UDP
+A) Работает только на BSD системах
 
 B) Поддерживает более детальную конфигурацию и контроль доступа
 
-C) Не поддерживает TCP
+C) Работает только с UDP
 
-D) Работает только на BSD системах
+D) Не поддерживает TCP
 
 ---
 
 ## Question 14: Безопасность
 
+
 Какой параметр в service unit предотвращает получение новых привилегий процессом?
 
-A) ProtectSystem=strict
+A) PrivilegeEscalation=no
 
 B) NoNewPrivileges=yes
 
-C) PrivilegeEscalation=no
+C) SecureBits=no-new
 
-D) SecureBits=no-new
+D) ProtectSystem=strict
 
 ---
 
 ## Question 15: MIME типы
 
+
 Какой MIME тип следует использовать для JSON ответа?
 
-A) text/json
+A) application/json
 
-B) application/json
+B) text/json
 
 C) text/javascript
 
@@ -214,25 +229,27 @@ D) application/javascript
 
 ---
 
+---
+
 ## Answer Key
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Socket activation: systemd открывает сокет при загрузке, демон запускается при первом подключении |
+| 1 | D | Socket activation: systemd открывает сокет при загрузке, демон запускается при первом подключении |
 | 2 | B | LISTEN_FDS — количество переданных FD, LISTEN_PID — PID процесса-получателя |
 | 3 | D | Переданные FD начинаются с 3 (SD_LISTEN_FDS_START), т.к. 0-2 это stdin/stdout/stderr |
 | 4 | A | Accept=yes — systemd сам делает accept() и запускает новый процесс для каждого соединения |
 | 5 | B | Символ @ означает шаблонный (template) unit для создания экземпляров |
-| 6 | C | В inetd-style сервере stdout напрямую подключён к клиентскому соединению |
-| 7 | C | Шифрование не связано с socket activation; оно обеспечивается TLS отдельно |
-| 8 | B | socket.fromfd() создаёт Python socket объект из существующего файлового дескриптора |
+| 6 | B | В inetd-style сервере stdout напрямую подключён к клиентскому соединению |
+| 7 | B | Шифрование не связано с socket activation; оно обеспечивается TLS отдельно |
+| 8 | D | socket.fromfd() создаёт Python socket объект из существующего файлового дескриптора |
 | 9 | B | ListenStream создаёт TCP сокет (stream), ListenDatagram — UDP |
-| 10 | B | inetd — Internet super-server daemon, слушает порты и запускает сервисы при подключении |
+| 10 | D | inetd — Internet super-server daemon, слушает порты и запускает сервисы при подключении |
 | 11 | B | HTTP использует CRLF (\r\n) для разделения строк |
 | 12 | B | `systemctl list-sockets` показывает все socket units и их состояние |
 | 13 | B | xinetd (extended inetd) добавляет ACL, лимиты соединений, детальное логирование |
 | 14 | B | NoNewPrivileges=yes предотвращает escalation через setuid/setgid/capabilities |
-| 15 | B | application/json — правильный MIME тип для JSON данных |
+| 15 | A | application/json — правильный MIME тип для JSON данных |
 
 ---
 

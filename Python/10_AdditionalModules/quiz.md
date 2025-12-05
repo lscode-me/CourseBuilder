@@ -6,11 +6,12 @@
 
 ## Question 1: pip
 
+
 Что такое pip?
 
-A) Интерпретатор Python
+A) Менеджер пакетов Python
 
-B) Менеджер пакетов Python
+B) Интерпретатор Python
 
 C) Библиотека для работы с изображениями
 
@@ -20,27 +21,29 @@ D) Фреймворк для веб-разработки
 
 ## Question 2: Установка пакета
 
+
 Как установить последнюю версию пакета requests?
 
-A) `python install requests`
+A) `pip get requests`
 
-B) `pip install requests`
+B) `python install requests`
 
-C) `pip get requests`
+C) `import requests --install`
 
-D) `import requests --install`
+D) `pip install requests`
 
 ---
 
 ## Question 3: requests
 
+
 Какой метод отправляет GET-запрос в библиотеке requests?
 
-A) `requests.fetch()`
+A) `requests.download()`
 
-B) `requests.get()`
+B) `requests.fetch()`
 
-C) `requests.download()`
+C) `requests.get()`
 
 D) `requests.read()`
 
@@ -48,55 +51,59 @@ D) `requests.read()`
 
 ## Question 4: requests response
 
+
 Как получить JSON из ответа requests?
 
-A) `response.text`
+A) `json.loads(response)`
 
-B) `response.json()`
+B) `response.content`
 
-C) `response.content`
+C) `response.text`
 
-D) `json.loads(response)`
+D) `response.json()`
 
 ---
 
 ## Question 5: HTTP Status Code
 
+
 Какое свойство содержит код статуса HTTP?
 
 A) `response.code`
 
-B) `response.status_code`
+B) `response.status`
 
-C) `response.http_code`
+C) `response.status_code`
 
-D) `response.status`
+D) `response.http_code`
 
 ---
 
 ## Question 6: requests POST
 
+
 Как отправить POST-запрос с JSON-данными?
 
-A) `requests.post(url, data=json_data)`
+A) `requests.send(url, method='POST', data=data)`
 
 B) `requests.post(url, json=data_dict)`
 
-C) `requests.send(url, method='POST', data=data)`
+C) `requests.post(url).json(data_dict)`
 
-D) `requests.post(url).json(data_dict)`
+D) `requests.post(url, data=json_data)`
 
 ---
 
 ## Question 7: NumPy
 
+
 Для чего используется NumPy?
 
 A) Веб-разработка
 
-B) Числовые вычисления и работа с массивами
+B) Машинное обучение
 
-C) Машинное обучение
+C) Числовые вычисления и работа с массивами
 
 D) Парсинг HTML
 
@@ -104,19 +111,21 @@ D) Парсинг HTML
 
 ## Question 8: NumPy массив
 
+
 Как создать NumPy массив?
 
 A) `numpy.array([1, 2, 3])`
 
-B) `numpy.list([1, 2, 3])`
+B) `numpy.create([1, 2, 3])`
 
-C) `numpy.create([1, 2, 3])`
+C) `numpy.new([1, 2, 3])`
 
-D) `numpy.new([1, 2, 3])`
+D) `numpy.list([1, 2, 3])`
 
 ---
 
 ## Question 9: NumPy операции
+
 
 Что выведет следующий код?
 
@@ -126,17 +135,18 @@ a = np.array([1, 2, 3])
 print(a * 2)
 ```
 
-A) [1, 2, 3, 1, 2, 3]
+A) 6
 
-B) [2, 4, 6]
+B) Error
 
-C) 6
+C) [2, 4, 6]
 
-D) Error
+D) [1, 2, 3, 1, 2, 3]
 
 ---
 
 ## Question 10: Pandas
+
 
 Что такое DataFrame в Pandas?
 
@@ -144,119 +154,127 @@ A) Одномерный массив
 
 B) Двумерная табличная структура данных
 
-C) Словарь
+C) График
 
-D) График
+D) Словарь
 
 ---
 
 ## Question 11: Создание DataFrame
 
+
 Как создать DataFrame из словаря?
 
-A) `pd.DataFrame(dict)`
+A) `pd.create(dict)`
 
-B) `pd.from_dict(dict)`
+B) `pd.DataFrame(dict)`
 
-C) `pd.create(dict)`
+C) `DataFrame.new(dict)`
 
-D) `DataFrame.new(dict)`
+D) `pd.from_dict(dict)`
 
 ---
 
 ## Question 12: Чтение CSV
 
+
 Какая функция читает CSV файл в Pandas?
 
-A) `pd.load_csv()`
+A) `pd.import_csv()`
 
-B) `pd.read_csv()`
+B) `pd.csv_read()`
 
-C) `pd.import_csv()`
+C) `pd.load_csv()`
 
-D) `pd.csv_read()`
+D) `pd.read_csv()`
 
 ---
 
 ## Question 13: Выбор колонки
 
+
 Как выбрать колонку 'name' из DataFrame df?
 
-A) `df.name` или `df['name']`
+A) `df->name`
 
-B) `df.column('name')`
+B) `df.name` или `df['name']`
 
 C) `df.get_column('name')`
 
-D) `df->name`
+D) `df.column('name')`
 
 ---
 
 ## Question 14: Flask
 
+
 Что такое Flask?
 
-A) База данных
+A) Микро веб-фреймворк
 
-B) Микро веб-фреймворк
+B) Тестовый фреймворк
 
 C) ORM библиотека
 
-D) Тестовый фреймворк
+D) База данных
 
 ---
 
 ## Question 15: Flask маршрут
 
+
 Как определить маршрут в Flask?
 
-A) `@app.route('/')`
+A) `@app.url('/')`
 
-B) `@route('/')`
+B) `@app.route('/')`
 
 C) `app.path('/')`
 
-D) `@app.url('/')`
+D) `@route('/')`
 
 ---
 
 ## Question 16: Flask запуск
 
+
 Как запустить Flask-приложение в режиме отладки?
 
-A) `app.run(debug=True)`
+A) Оба варианта A и C
 
 B) `app.start(debug=True)`
 
-C) `flask run --debug`
+C) `app.run(debug=True)`
 
-D) Оба варианта A и C
+D) `flask run --debug`
 
 ---
 
 ## Question 17: pytest
 
+
 Как обозначается тестовая функция в pytest?
 
-A) Начинается с `test_`
+A) Любое имя
 
-B) Декоратор `@test`
+B) Наследует от TestCase
 
-C) Наследует от TestCase
+C) Декоратор `@test`
 
-D) Любое имя
+D) Начинается с `test_`
 
 ---
 
 ## Question 18: pytest assert
 
+
 Какой синтаксис проверки в pytest?
 
-A) `self.assertEqual(a, b)`
+A) `expect(a).toBe(b)`
 
 B) `assert a == b`
 
-C) `expect(a).toBe(b)`
+C) `self.assertEqual(a, b)`
 
 D) `verify(a == b)`
 
@@ -264,39 +282,42 @@ D) `verify(a == b)`
 
 ## Question 19: pytest фикстуры
 
+
 Для чего используются фикстуры в pytest?
 
-A) Для форматирования кода
+A) Для отчётов
 
-B) Для подготовки тестового окружения
+B) Для форматирования кода
 
 C) Для параллельного выполнения
 
-D) Для отчётов
+D) Для подготовки тестового окружения
 
 ---
 
 ## Question 20: Beautiful Soup
 
+
 Для чего используется Beautiful Soup?
 
 A) Веб-разработка
 
-B) Парсинг HTML/XML
+B) Машинное обучение
 
 C) Работа с базами данных
 
-D) Машинное обучение
+D) Парсинг HTML/XML
 
 ---
 
 ## Question 21: Pillow
 
+
 Что такое Pillow?
 
-A) Веб-фреймворк
+A) Библиотека для обработки изображений
 
-B) Библиотека для обработки изображений
+B) Веб-фреймворк
 
 C) ORM
 
@@ -306,57 +327,63 @@ D) Тестовый фреймворк
 
 ## Question 22: SQLAlchemy
 
+
 Что такое SQLAlchemy?
 
-A) База данных
+A) Веб-фреймворк
 
-B) ORM и инструменты для работы с базами данных
+B) Библиотека для тестирования
 
-C) Веб-фреймворк
+C) ORM и инструменты для работы с базами данных
 
-D) Библиотека для тестирования
+D) База данных
 
 ---
 
 ## Question 23: virtualenv vs venv
 
+
 В чём разница между virtualenv и venv?
 
-A) venv встроен в Python 3, virtualenv — сторонний пакет
+A) virtualenv быстрее
 
-B) virtualenv быстрее
+B) Нет разницы
 
-C) venv не работает на Windows
+C) venv встроен в Python 3, virtualenv — сторонний пакет
 
-D) Нет разницы
+D) venv не работает на Windows
 
 ---
 
 ## Question 24: requirements.txt
 
+
 Как создать requirements.txt с текущими пакетами?
 
-A) `pip save > requirements.txt`
+A) `pip export requirements.txt`
 
 B) `pip freeze > requirements.txt`
 
-C) `pip list > requirements.txt`
+C) `pip save > requirements.txt`
 
-D) `pip export requirements.txt`
+D) `pip list > requirements.txt`
 
 ---
 
 ## Question 25: PyPI
 
+
 Что такое PyPI?
 
-A) Python Package Index — репозиторий пакетов
+A) Python Performance Index
 
-B) Python Programming Interface
+B) Python Project Installer
 
-C) Python Performance Index
+C) Python Programming Interface
 
-D) Python Project Installer
+D) Python Package Index — репозиторий пакетов
+
+---
 
 ---
 
@@ -364,31 +391,31 @@ D) Python Project Installer
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | pip (Pip Installs Packages) — стандартный менеджер пакетов Python. |
-| 2 | B | `pip install package` устанавливает пакет из PyPI. |
-| 3 | B | `requests.get(url)` отправляет GET-запрос. |
-| 4 | B | `response.json()` автоматически парсит JSON-ответ. |
-| 5 | B | `status_code` содержит HTTP-код: 200, 404, 500 и т.д. |
+| 1 | A | pip (Pip Installs Packages) — стандартный менеджер пакетов Python. |
+| 2 | D | `pip install package` устанавливает пакет из PyPI. |
+| 3 | C | `requests.get(url)` отправляет GET-запрос. |
+| 4 | D | `response.json()` автоматически парсит JSON-ответ. |
+| 5 | C | `status_code` содержит HTTP-код: 200, 404, 500 и т.д. |
 | 6 | B | `json=data_dict` автоматически сериализует и устанавливает Content-Type. |
-| 7 | B | NumPy — библиотека для эффективных числовых вычислений и массивов. |
+| 7 | C | NumPy — библиотека для эффективных числовых вычислений и массивов. |
 | 8 | A | `np.array()` создаёт ndarray из списка или другого итерируемого. |
-| 9 | B | NumPy поддерживает векторизованные операции: [1,2,3] * 2 = [2,4,6]. |
+| 9 | C | NumPy поддерживает векторизованные операции: [1,2,3] * 2 = [2,4,6]. |
 | 10 | B | DataFrame — двумерная таблица с именованными колонками и индексом. |
-| 11 | A | `pd.DataFrame(dict)` — основной способ создания из словаря. |
-| 12 | B | `pd.read_csv('file.csv')` читает CSV в DataFrame. |
-| 13 | A | `df['name']` или `df.name` (для имён без спецсимволов). |
-| 14 | B | Flask — легковесный веб-фреймворк для Python. |
-| 15 | A | `@app.route('/path')` связывает URL с функцией. |
-| 16 | D | Оба способа работают: `app.run(debug=True)` и `flask run --debug`. |
-| 17 | A | pytest автоматически находит функции, начинающиеся с `test_`. |
+| 11 | B | `pd.DataFrame(dict)` — основной способ создания из словаря. |
+| 12 | D | `pd.read_csv('file.csv')` читает CSV в DataFrame. |
+| 13 | B | `df['name']` или `df.name` (для имён без спецсимволов). |
+| 14 | A | Flask — легковесный веб-фреймворк для Python. |
+| 15 | B | `@app.route('/path')` связывает URL с функцией. |
+| 16 | A | Оба способа работают: `app.run(debug=True)` и `flask run --debug`. |
+| 17 | D | pytest автоматически находит функции, начинающиеся с `test_`. |
 | 18 | B | pytest использует стандартный `assert` с улучшенными сообщениями. |
-| 19 | B | Фикстуры готовят данные/ресурсы для тестов, управляют setup/teardown. |
-| 20 | B | Beautiful Soup (bs4) парсит HTML/XML и позволяет навигацию по DOM. |
-| 21 | B | Pillow (PIL fork) — библиотека для обработки изображений. |
-| 22 | B | SQLAlchemy — ORM и SQL toolkit для Python. |
-| 23 | A | venv — встроенный модуль Python 3.3+. virtualenv — сторонний, с дополнительными фичами. |
+| 19 | D | Фикстуры готовят данные/ресурсы для тестов, управляют setup/teardown. |
+| 20 | D | Beautiful Soup (bs4) парсит HTML/XML и позволяет навигацию по DOM. |
+| 21 | A | Pillow (PIL fork) — библиотека для обработки изображений. |
+| 22 | C | SQLAlchemy — ORM и SQL toolkit для Python. |
+| 23 | C | venv — встроенный модуль Python 3.3+. virtualenv — сторонний, с дополнительными фичами. |
 | 24 | B | `pip freeze` выводит установленные пакеты в формате requirements. |
-| 25 | A | PyPI (Python Package Index) — официальный репозиторий Python-пакетов. |
+| 25 | D | PyPI (Python Package Index) — официальный репозиторий Python-пакетов. |
 
 ---
 

@@ -6,25 +6,27 @@
 
 ## Question 1: Shift Left
 
+
 Что означает "Shift Left" в DevSecOps?
 
-A) Сдвинуть security проверки в конец pipeline
+A) Внедрить security проверки максимально рано в pipeline
 
-B) Внедрить security проверки максимально рано в pipeline
+B) Игнорировать security на начальных этапах
 
-C) Перенести security в отдельную команду
+C) Сдвинуть security проверки в конец pipeline
 
-D) Игнорировать security на начальных этапах
+D) Перенести security в отдельную команду
 
 ---
 
 ## Question 2: SAST
 
+
 Что такое SAST?
 
-A) Dynamic security testing
+A) Static Application Security Testing — анализ исходного кода
 
-B) Static Application Security Testing — анализ исходного кода
+B) Dynamic security testing
 
 C) Software Audit System Test
 
@@ -34,113 +36,123 @@ D) Security API Scanning Tool
 
 ## Question 3: SCA
 
+
 Что проверяет SCA (Software Composition Analysis)?
 
-A) Код приложения
+A) Network traffic
 
 B) Уязвимости в зависимостях (dependencies)
 
-C) Network traffic
+C) User permissions
 
-D) User permissions
+D) Код приложения
 
 ---
 
 ## Question 4: DAST
 
+
 Когда выполняется DAST?
 
-A) При компиляции кода
+A) При написании кода
 
-B) При запущенном приложении (runtime)
+B) При code review
 
-C) При написании кода
+C) При компиляции кода
 
-D) При code review
+D) При запущенном приложении (runtime)
 
 ---
 
 ## Question 5: Secrets
 
+
 Как правильно управлять секретами?
 
-A) Хардкодить в коде
+A) Передавать через email
 
-B) Использовать secrets management tools (Vault, AWS SM)
+B) Хардкодить в коде
 
-C) Хранить в .env файле в Git
+C) Использовать secrets management tools (Vault, AWS SM)
 
-D) Передавать через email
+D) Хранить в .env файле в Git
 
 ---
 
 ## Question 6: Container Security
 
+
 Какая практика НЕ является best practice для Docker security?
 
-A) Использовать non-root user
+A) Read-only filesystem
 
-B) Использовать latest tag
+B) Минимизировать количество packages
 
-C) Минимизировать количество packages
+C) Использовать latest tag
 
-D) Read-only filesystem
+D) Использовать non-root user
 
 ---
 
 ## Question 7: Trivy
 
+
 Для чего используется Trivy?
 
-A) Для CI/CD
+A) Для мониторинга
 
-B) Для сканирования containers и IaC на уязвимости
+B) Для логирования
 
-C) Для мониторинга
+C) Для CI/CD
 
-D) Для логирования
+D) Для сканирования containers и IaC на уязвимости
 
 ---
 
 ## Question 8: GitLeaks
 
+
 Что проверяет GitLeaks?
 
 A) Memory leaks в коде
 
-B) Секреты и credentials в Git history
+B) Performance issues
 
 C) Network leaks
 
-D) Performance issues
+D) Секреты и credentials в Git history
 
 ---
 
 ## Question 9: OPA
 
+
 Для чего используется OPA (Open Policy Agent)?
 
-A) Мониторинг
+A) Логирование
 
-B) Policy as Code — проверка соответствия политикам
+B) CI/CD
 
-C) Логирование
+C) Policy as Code — проверка соответствия политикам
 
-D) CI/CD
+D) Мониторинг
 
 ---
 
 ## Question 10: Security Responsibility
 
+
 Кто отвечает за безопасность в DevSecOps?
 
-A) Только security team
+A) Только developers
 
 B) Все участники (developers, ops, security)
 
-C) Только developers
+C) Только security team
 
 D) Только management
+
+---
 
 ---
 
@@ -148,15 +160,15 @@ D) Только management
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Shift Left = security проверки максимально рано |
-| 2 | B | SAST — статический анализ исходного кода |
+| 1 | A | Shift Left = security проверки максимально рано |
+| 2 | A | SAST — статический анализ исходного кода |
 | 3 | B | SCA проверяет уязвимости в зависимостях |
-| 4 | B | DAST тестирует работающее приложение |
-| 5 | B | Secrets management tools (Vault, AWS SM) |
-| 6 | B | latest tag — плохая практика (нет воспроизводимости) |
-| 7 | B | Trivy сканирует containers и IaC |
-| 8 | B | GitLeaks ищет секреты в Git history |
-| 9 | B | OPA — Policy as Code |
+| 4 | D | DAST тестирует работающее приложение |
+| 5 | C | Secrets management tools (Vault, AWS SM) |
+| 6 | C | latest tag — плохая практика (нет воспроизводимости) |
+| 7 | D | Trivy сканирует containers и IaC |
+| 8 | D | GitLeaks ищет секреты в Git history |
+| 9 | C | OPA — Policy as Code |
 | 10 | B | В DevSecOps все отвечают за безопасность |
 
 ---

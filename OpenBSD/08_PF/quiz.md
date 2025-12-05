@@ -6,19 +6,21 @@
 
 ## Question 1: Конфигурация PF
 
+
 В каком файле находится конфигурация PF?
 
-A) /etc/firewall.conf
+A) /etc/pf.conf
 
-B) /etc/pf.conf
+B) /etc/firewall.conf
 
-C) /etc/iptables.conf
+C) /etc/pf/rules.conf
 
-D) /etc/pf/rules.conf
+D) /etc/iptables.conf
 
 ---
 
 ## Question 2: Включение PF
+
 
 Какая команда включает PF?
 
@@ -34,41 +36,44 @@ D) service pf start
 
 ## Question 3: Действие block
 
+
 Что делает действие `block` по умолчанию?
 
-A) Отбрасывает пакет без уведомления
+A) Отправляет RST отправителю
 
-B) Отправляет RST отправителю
+B) Отбрасывает пакет без уведомления
 
-C) Логирует и пропускает
+C) Зависит от настройки block-policy
 
-D) Зависит от настройки block-policy
+D) Логирует и пропускает
 
 ---
 
 ## Question 4: Ключевое слово quick
 
+
 Что делает ключевое слово `quick` в правиле?
 
-A) Ускоряет обработку пакета
+A) Включает быстрый режим PF
 
-B) Немедленно применяет действие без проверки остальных правил
+B) Ускоряет обработку пакета
 
-C) Добавляет правило в начало списка
+C) Немедленно применяет действие без проверки остальных правил
 
-D) Включает быстрый режим PF
+D) Добавляет правило в начало списка
 
 ---
 
 ## Question 5: Stateful filtering
 
+
 Что делает опция `keep state`?
 
 A) Сохраняет конфигурацию
 
-B) Отслеживает состояние соединения
+B) Блокирует stateful пакеты
 
-C) Блокирует stateful пакеты
+C) Отслеживает состояние соединения
 
 D) Включает persist режим
 
@@ -76,13 +81,14 @@ D) Включает persist режим
 
 ## Question 6: Таблицы
 
+
 Какая команда добавляет IP в таблицу bruteforce?
 
-A) pfctl -t bruteforce -a 192.168.1.1
+A) pftable add bruteforce 192.168.1.1
 
-B) pfctl -t bruteforce -T add 192.168.1.1
+B) pfctl -t bruteforce -a 192.168.1.1
 
-C) pftable add bruteforce 192.168.1.1
+C) pfctl -t bruteforce -T add 192.168.1.1
 
 D) pfctl --table bruteforce --add 192.168.1.1
 
@@ -90,97 +96,104 @@ D) pfctl --table bruteforce --add 192.168.1.1
 
 ## Question 7: NAT
 
+
 Какое ключевое слово используется для NAT исходящего трафика?
 
-A) snat
+A) nat-to
 
-B) masquerade
+B) snat
 
-C) nat-to
+C) outbound-nat
 
-D) outbound-nat
+D) masquerade
 
 ---
 
 ## Question 8: Port forwarding
 
+
 Какое ключевое слово используется для перенаправления портов?
 
-A) port-forward
+A) rdr-to
 
-B) dnat
+B) redirect
 
-C) rdr-to
+C) port-forward
 
-D) redirect
+D) dnat
 
 ---
 
 ## Question 9: Логирование
 
+
 Какой интерфейс используется для просмотра логов PF?
 
-A) log0
+A) firewall0
 
-B) pf0
+B) pflog0
 
-C) pflog0
+C) log0
 
-D) firewall0
+D) pf0
 
 ---
 
 ## Question 10: Просмотр правил
 
+
 Какая команда показывает активные правила PF?
 
-A) pfctl -l
+A) pfctl --rules
 
-B) pfctl -sr
+B) pfctl -l
 
-C) pfctl --rules
+C) pf status
 
-D) pf status
+D) pfctl -sr
 
 ---
 
 ## Question 11: Синтаксис проверка
 
+
 Как проверить синтаксис pf.conf без применения?
 
 A) pfctl -c /etc/pf.conf
 
-B) pfctl -nf /etc/pf.conf
+B) pfctl -t /etc/pf.conf
 
-C) pfctl -t /etc/pf.conf
+C) pf test /etc/pf.conf
 
-D) pf test /etc/pf.conf
+D) pfctl -nf /etc/pf.conf
 
 ---
 
 ## Question 12: Группа интерфейсов
 
+
 Какой макрос обычно используется для внешнего интерфейса?
 
-A) $external
+A) $wan
 
-B) $ext_if
+B) $outside
 
-C) $outside
+C) $ext_if
 
-D) $wan
+D) $external
 
 ---
 
 ## Question 13: Защита от SYN flood
 
+
 Какая опция защищает от SYN flood атак?
 
-A) syn-protect state
+A) synproxy state
 
-B) synproxy state
+B) flood-protect
 
-C) flood-protect
+C) syn-protect state
 
 D) anti-syn state
 
@@ -188,13 +201,14 @@ D) anti-syn state
 
 ## Question 14: scrub
 
+
 Для чего используется директива scrub?
 
-A) Очистка логов
+A) Нормализация пакетов
 
-B) Нормализация пакетов
+B) Удаление правил
 
-C) Удаление правил
+C) Очистка логов
 
 D) Сброс состояний
 
@@ -202,15 +216,16 @@ D) Сброс состояний
 
 ## Question 15: Просмотр состояний
 
+
 Какая команда показывает таблицу состояний соединений?
 
-A) pfctl -st
+A) pfctl -ss
 
-B) pfctl -ss
+B) pfctl -sc
 
-C) pfctl -sc
+C) pfctl -state
 
-D) pfctl -state
+D) pfctl -st
 
 ---
 
@@ -220,21 +235,21 @@ D) pfctl -state
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | /etc/pf.conf — стандартный файл конфигурации PF |
+| 1 | A | /etc/pf.conf — стандартный файл конфигурации PF |
 | 2 | B | pfctl -e (enable) включает PF |
-| 3 | D | Зависит от set block-policy (drop или return) |
-| 4 | B | quick немедленно применяет действие без обработки остальных правил |
-| 5 | B | keep state создаёт запись состояния для отслеживания соединения |
-| 6 | B | pfctl -t bruteforce -T add IP — синтаксис добавления в таблицу |
-| 7 | C | nat-to используется для Source NAT в OpenBSD |
-| 8 | C | rdr-to (redirect to) — перенаправление входящего трафика |
-| 9 | C | pflog0 — псевдоинтерфейс для логирования PF |
-| 10 | B | pfctl -sr (show rules) показывает правила фильтрации |
-| 11 | B | pfctl -nf (no-action, file) проверяет синтаксис без применения |
-| 12 | B | $ext_if — общепринятый макрос для внешнего интерфейса |
-| 13 | B | synproxy state проксирует TCP handshake для защиты от SYN flood |
-| 14 | B | scrub нормализует пакеты (фрагментация, TTL, и т.д.) |
-| 15 | B | pfctl -ss (show states) показывает таблицу состояний |
+| 3 | C | Зависит от set block-policy (drop или return) |
+| 4 | C | quick немедленно применяет действие без обработки остальных правил |
+| 5 | C | keep state создаёт запись состояния для отслеживания соединения |
+| 6 | C | pfctl -t bruteforce -T add IP — синтаксис добавления в таблицу |
+| 7 | A | nat-to используется для Source NAT в OpenBSD |
+| 8 | A | rdr-to (redirect to) — перенаправление входящего трафика |
+| 9 | B | pflog0 — псевдоинтерфейс для логирования PF |
+| 10 | D | pfctl -sr (show rules) показывает правила фильтрации |
+| 11 | D | pfctl -nf (no-action, file) проверяет синтаксис без применения |
+| 12 | C | $ext_if — общепринятый макрос для внешнего интерфейса |
+| 13 | A | synproxy state проксирует TCP handshake для защиты от SYN flood |
+| 14 | A | scrub нормализует пакеты (фрагментация, TTL, и т.д.) |
+| 15 | A | pfctl -ss (show states) показывает таблицу состояний |
 
 ---
 

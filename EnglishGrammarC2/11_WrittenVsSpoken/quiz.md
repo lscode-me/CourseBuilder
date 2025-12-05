@@ -6,25 +6,27 @@
 
 ## Question 1: Spoken Ellipsis
 
+
 "Sounds good" is:
 
-A) Grammatically incorrect
+A) Normal spoken English (ellipsis of "It")
 
-B) Normal spoken English (ellipsis of "It")
+B) Grammatically incorrect
 
-C) Only acceptable in writing
+C) Rude and informal
 
-D) Rude and informal
+D) Only acceptable in writing
 
 ---
 
 ## Question 2: Vague Language
 
+
 In spoken English, "There were like thirty people or something" is:
 
-A) Incorrect and should be avoided
+A) Natural and appropriate for casual speech
 
-B) Natural and appropriate for casual speech
+B) Incorrect and should be avoided
 
 C) Only used by uneducated speakers
 
@@ -34,27 +36,29 @@ D) Formal register
 
 ## Question 3: Discourse Markers
 
+
 "So basically what happened was..." is:
 
-A) Poor grammar to avoid
+A) A natural way to organize spoken narrative
 
-B) A natural way to organize spoken narrative
+B) Only for academic writing
 
-C) Only for academic writing
+C) Rude
 
-D) Rude
+D) Poor grammar to avoid
 
 ---
 
 ## Question 4: Contractions
 
+
 In spoken English:
 
-A) Contractions should be avoided
+A) Contractions are always used
 
-B) Contractions are always used
+B) Contractions are optional
 
-C) Contractions are optional
+C) Contractions should be avoided
 
 D) Contractions are rude
 
@@ -62,55 +66,59 @@ D) Contractions are rude
 
 ## Question 5: Heads and Tails
 
+
 "Your sister, is she coming?" is:
 
 A) Grammatically wrong
 
-B) Left dislocation (head) — common in speech
+B) Too formal for conversation
 
 C) Only used in writing
 
-D) Too formal for conversation
+D) Left dislocation (head) — common in speech
 
 ---
 
 ## Question 6: "Gonna"
 
+
 "I'm gonna do it" in spoken English is:
 
-A) Incorrect
+A) Only for uneducated speakers
 
 B) Natural and very common
 
-C) Only for uneducated speakers
+C) Too formal
 
-D) Too formal
+D) Incorrect
 
 ---
 
 ## Question 7: Response Tokens
 
+
 Which is a natural backchannel in English conversation?
 
-A) "I hear your words"
+A) "I acknowledge your statement"
 
-B) "Mm-hmm" / "Uh-huh"
+B) "Please continue"
 
-C) "I acknowledge your statement"
+C) "Mm-hmm" / "Uh-huh"
 
-D) "Please continue"
+D) "I hear your words"
 
 ---
 
 ## Question 8: Russian Interference
 
+
 Russian speakers often sound ___ in spoken English:
 
-A) Too informal
+A) Too formal
 
-B) Too formal
+B) Too casual
 
-C) Too casual
+C) Too informal
 
 D) Perfectly natural
 
@@ -118,13 +126,14 @@ D) Perfectly natural
 
 ## Question 9: Tag Questions
 
+
 "It's nice, isn't it?" is:
 
-A) Incorrect grammar
+A) Common in spoken English
 
-B) Common in spoken English
+B) Only for written English
 
-C) Only for written English
+C) Incorrect grammar
 
 D) Too informal
 
@@ -132,89 +141,96 @@ D) Too informal
 
 ## Question 10: Written vs Spoken
 
+
 Which is more appropriate for casual spoken English?
 
-A) "I would like to purchase a coffee."
+A) "I wish to acquire coffee."
 
-B) "Can I get a coffee?"
+B) "Might I procure a caffeinated beverage?"
 
-C) "Might I procure a caffeinated beverage?"
+C) "Can I get a coffee?"
 
-D) "I wish to acquire coffee."
+D) "I would like to purchase a coffee."
 
 ---
 
 ## Question 11: "Be Like" Reporting
 
+
 "And she's like, 'No way!'" is:
 
-A) Completely incorrect
+A) Formal language
 
 B) Very common in informal spoken English
 
-C) Only for teenagers
+C) Completely incorrect
 
-D) Formal language
+D) Only for teenagers
 
 ---
 
 ## Question 12: Sentence Structure
 
+
 Spoken English typically uses:
 
-A) Long complex sentences with multiple subordinate clauses
+A) Only passive constructions
 
-B) Short units chained together
+B) Long complex sentences with multiple subordinate clauses
 
 C) No sentences at all
 
-D) Only passive constructions
+D) Short units chained together
 
 ---
 
 ## Question 13: Vague Category Markers
 
+
 "...and stuff like that" is:
 
-A) Bad grammar
+A) A common spoken category marker
 
-B) A common spoken category marker
+B) Rude
 
 C) Academic language
 
-D) Rude
+D) Bad grammar
 
 ---
 
 ## Question 14: Missing Subject
 
+
 "Got a minute?" (meaning "Have you got a minute?") is:
 
 A) Incorrect
 
-B) Normal spoken ellipsis
+B) Slang to avoid
 
-C) Slang to avoid
+C) British only
 
-D) British only
+D) Normal spoken ellipsis
 
 ---
 
 ## Question 15: Progressive with "Always"
 
+
 "She's always complaining!" in spoken English:
 
-A) Is incorrect (should be "She always complains")
+A) Is only for written English
 
-B) Expresses emotion/irritation naturally
+B) Is incorrect (should be "She always complains")
 
 C) Is too formal
 
-D) Is only for written English
+D) Expresses emotion/irritation naturally
 
 ---
 
 ## Question 16: Hyper-Formality
+
 
 Speaking very formally in casual contexts:
 
@@ -230,57 +246,63 @@ D) Is more native-like
 
 ## Question 17: Echo Question
 
+
 "You did WHAT?" is:
 
-A) Grammatically incorrect
+A) Only American English
 
-B) A natural spoken form expressing surprise
+B) Too informal
 
-C) Too informal
+C) Grammatically incorrect
 
-D) Only American English
+D) A natural spoken form expressing surprise
 
 ---
 
 ## Question 18: Fillers
 
+
 "Um" and "uh" in speech are:
 
-A) Signs of poor English
+A) To be completely avoided
 
-B) Normal hesitation markers
+B) Only for non-native speakers
 
-C) To be completely avoided
+C) Signs of poor English
 
-D) Only for non-native speakers
+D) Normal hesitation markers
 
 ---
 
 ## Question 19: Invariant Tag
 
+
 "You're coming, yeah?" is:
 
 A) Incorrect (should be "aren't you?")
 
-B) Common informal invariant tag
+B) Too formal
 
-C) Only for British English
+C) Common informal invariant tag
 
-D) Too formal
+D) Only for British English
 
 ---
 
 ## Question 20: Mode Matching
 
+
 When should you use full formal grammar?
 
-A) In all situations
+A) In casual conversation
 
-B) In academic papers and formal documents
+B) Never
 
-C) In casual conversation
+C) In all situations
 
-D) Never
+D) In academic papers and formal documents
+
+---
 
 ---
 
@@ -288,26 +310,26 @@ D) Never
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | "Sounds good" = normal ellipsis of "It sounds good" in spoken English. |
-| 2 | B | Vague language ("like", "or something") is natural in casual speech. |
-| 3 | B | Discourse markers organize spoken narrative naturally. |
-| 4 | B | Contractions are always used in natural spoken English. |
-| 5 | B | Left dislocation (heads) is common in spoken English. |
+| 1 | A | "Sounds good" = normal ellipsis of "It sounds good" in spoken English. |
+| 2 | A | Vague language ("like", "or something") is natural in casual speech. |
+| 3 | A | Discourse markers organize spoken narrative naturally. |
+| 4 | A | Contractions are always used in natural spoken English. |
+| 5 | D | Left dislocation (heads) is common in spoken English. |
 | 6 | B | "Gonna" is natural and very common in spoken English. |
-| 7 | B | "Mm-hmm", "Uh-huh" are natural backchannels showing listening. |
-| 8 | B | Russian speakers often transfer formal style to spoken English. |
-| 9 | B | Tag questions are very common in spoken English. |
-| 10 | B | "Can I get..." is natural casual spoken English. |
+| 7 | C | "Mm-hmm", "Uh-huh" are natural backchannels showing listening. |
+| 8 | A | Russian speakers often transfer formal style to spoken English. |
+| 9 | A | Tag questions are very common in spoken English. |
+| 10 | C | "Can I get..." is natural casual spoken English. |
 | 11 | B | "Be like" for reported speech is very common informally. |
-| 12 | B | Spoken English uses short units chained together. |
-| 13 | B | "And stuff like that" is a common vague category marker. |
-| 14 | B | Subject ellipsis is normal in spoken questions. |
-| 15 | B | Progressive with "always" expresses emotion naturally in speech. |
+| 12 | D | Spoken English uses short units chained together. |
+| 13 | A | "And stuff like that" is a common vague category marker. |
+| 14 | D | Subject ellipsis is normal in spoken questions. |
+| 15 | D | Progressive with "always" expresses emotion naturally in speech. |
 | 16 | B | Hyper-formality sounds unnatural and creates awkward distance. |
-| 17 | B | Echo questions express surprise naturally in spoken English. |
-| 18 | B | Fillers are normal hesitation markers in speech. |
-| 19 | B | Invariant tags ("yeah?", "right?") are common in informal speech. |
-| 20 | B | Formal grammar for formal contexts; spoken grammar for conversation. |
+| 17 | D | Echo questions express surprise naturally in spoken English. |
+| 18 | D | Fillers are normal hesitation markers in speech. |
+| 19 | C | Invariant tags ("yeah?", "right?") are common in informal speech. |
+| 20 | D | Formal grammar for formal contexts; spoken grammar for conversation. |
 
 ---
 

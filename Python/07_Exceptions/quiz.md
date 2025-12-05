@@ -6,33 +6,36 @@
 
 ## Question 1: Базовый класс исключений
 
+
 Какой класс является базовым для всех встроенных исключений?
 
-A) `Error`
+A) `Throwable`
 
-B) `Exception`
+B) `Error`
 
 C) `BaseException`
 
-D) `Throwable`
+D) `Exception`
 
 ---
 
 ## Question 2: try/except
 
+
 Что произойдёт если исключение не перехвачено?
 
-A) Программа продолжит выполнение
+A) Исключение будет проигнорировано
 
-B) Программа завершится с traceback
+B) Программа продолжит выполнение
 
-C) Исключение будет проигнорировано
+C) Вернётся None
 
-D) Вернётся None
+D) Программа завершится с traceback
 
 ---
 
 ## Question 3: Множественные except
+
 
 Что выведет следующий код?
 
@@ -49,19 +52,20 @@ A) ValueError
 
 B) ZeroDivisionError
 
-C) Оба
+C) Ничего
 
-D) Ничего
+D) Оба
 
 ---
 
 ## Question 4: Порядок except
 
+
 Почему важен порядок блоков except?
 
-A) Для производительности
+A) Более специфичные исключения должны быть раньше общих
 
-B) Более специфичные исключения должны быть раньше общих
+B) Для производительности
 
 C) Порядок не важен
 
@@ -71,47 +75,51 @@ D) Для читаемости кода
 
 ## Question 5: Перехват нескольких исключений
 
+
 Какой синтаксис для перехвата нескольких типов исключений одним блоком?
 
-A) `except ValueError, TypeError:`
+A) `except [ValueError, TypeError]:`
 
 B) `except ValueError or TypeError:`
 
 C) `except (ValueError, TypeError):`
 
-D) `except [ValueError, TypeError]:`
+D) `except ValueError, TypeError:`
 
 ---
 
 ## Question 6: Доступ к исключению
 
+
 Как получить доступ к объекту исключения?
 
-A) `except Error e:`
+A) `except Error as e:`
 
-B) `except Error as e:`
+B) `except Error e:`
 
-C) `except e = Error:`
+C) `catch(Error e):`
 
-D) `catch(Error e):`
+D) `except e = Error:`
 
 ---
 
 ## Question 7: else в try
 
+
 Когда выполняется блок else в try/except?
 
-A) Всегда
+A) После finally
 
 B) Если исключение было перехвачено
 
-C) Если исключение НЕ возникло
+C) Всегда
 
-D) После finally
+D) Если исключение НЕ возникло
 
 ---
 
 ## Question 8: finally
+
 
 Когда выполняется блок finally?
 
@@ -127,13 +135,14 @@ D) Только при явном вызове
 
 ## Question 9: raise
 
+
 Как повторно вызвать текущее исключение?
 
-A) `throw`
+A) `raise`
 
-B) `raise`
+B) `reraise`
 
-C) `reraise`
+C) `throw`
 
 D) `raise Exception`
 
@@ -141,61 +150,66 @@ D) `raise Exception`
 
 ## Question 10: Создание исключения
 
+
 Как вызвать исключение с сообщением?
 
 A) `raise ValueError, "message"`
 
-B) `raise ValueError("message")`
+B) `error ValueError("message")`
 
-C) `throw ValueError("message")`
+C) `raise ValueError("message")`
 
-D) `error ValueError("message")`
+D) `throw ValueError("message")`
 
 ---
 
 ## Question 11: Цепочка исключений
 
+
 Как сохранить информацию об оригинальном исключении?
 
-A) `raise NewError from original`
+A) `raise NewError(original)`
 
-B) `raise NewError(original)`
+B) `raise NewError from original`
 
-C) `raise NewError.chain(original)`
+C) `raise NewError + original`
 
-D) `raise NewError + original`
+D) `raise NewError.chain(original)`
 
 ---
 
 ## Question 12: Пользовательские исключения
 
+
 От какого класса следует наследовать пользовательские исключения?
 
-A) `BaseException`
+A) `Exception`
 
-B) `Exception`
+B) `object`
 
 C) `Error`
 
-D) `object`
+D) `BaseException`
 
 ---
 
 ## Question 13: KeyError
 
+
 Когда возникает KeyError?
 
 A) При обращении к несуществующему индексу списка
 
-B) При обращении к несуществующему ключу словаря
+B) При нажатии клавиши
 
-C) При нажатии клавиши
+C) При обращении к несуществующему ключу словаря
 
 D) При ошибке шифрования
 
 ---
 
 ## Question 14: IndexError vs KeyError
+
 
 Что выведет следующий код?
 
@@ -209,23 +223,24 @@ except IndexError:
     print("IndexError")
 ```
 
-A) KeyError
+A) 3
 
-B) IndexError
+B) KeyError
 
-C) None
+C) IndexError
 
-D) 3
+D) None
 
 ---
 
 ## Question 15: TypeError
 
+
 Когда возникает TypeError?
 
-A) При ошибке синтаксиса
+A) При операции с несовместимыми типами
 
-B) При операции с несовместимыми типами
+B) При ошибке синтаксиса
 
 C) При обращении к несуществующему атрибуту
 
@@ -235,6 +250,7 @@ D) При делении на ноль
 
 ## Question 16: AttributeError
 
+
 Что вызовет следующий код?
 
 ```python
@@ -242,39 +258,41 @@ x = 5
 x.append(10)
 ```
 
-A) TypeError
+A) IndexError
 
 B) AttributeError
 
 C) ValueError
 
-D) IndexError
+D) TypeError
 
 ---
 
 ## Question 17: assert
 
+
 Что делает оператор `assert`?
 
-A) Проверяет условие и вызывает AssertionError если оно ложно
+A) Создаёт новую переменную
 
-B) Выводит сообщение в консоль
+B) Проверяет условие и вызывает AssertionError если оно ложно
 
-C) Создаёт новую переменную
+C) Импортирует модуль
 
-D) Импортирует модуль
+D) Выводит сообщение в консоль
 
 ---
 
 ## Question 18: Отключение assert
 
+
 Как отключить assert в production?
 
-A) `python --no-assert script.py`
+A) `assert.disable()`
 
 B) `python -O script.py`
 
-C) `assert.disable()`
+C) `python --no-assert script.py`
 
 D) Нельзя отключить
 
@@ -282,83 +300,89 @@ D) Нельзя отключить
 
 ## Question 19: EAFP
 
+
 Что означает принцип EAFP?
 
 A) Error Always Follows Protocol
 
-B) Easier to Ask Forgiveness than Permission
+B) Error Analysis For Python
 
 C) Exception And Finally Processing
 
-D) Error Analysis For Python
+D) Easier to Ask Forgiveness than Permission
 
 ---
 
 ## Question 20: EAFP vs LBYL
 
+
 Какой код соответствует принципу EAFP?
 
 A) `if key in dict: value = dict[key]`
 
-B) `try: value = dict[key] except KeyError: ...`
+B) `if dict.has_key(key): ...`
 
-C) `value = dict.get(key, default)`
+C) `try: value = dict[key] except KeyError: ...`
 
-D) `if dict.has_key(key): ...`
+D) `value = dict.get(key, default)`
 
 ---
 
 ## Question 21: Context Manager
 
+
 Что гарантирует конструкция `with open(...) as f:`?
 
-A) Быстрое чтение файла
+A) Закрытие файла даже при исключении
 
-B) Закрытие файла даже при исключении
+B) Кэширование файла
 
-C) Кэширование файла
+C) Блокировку файла
 
-D) Блокировку файла
+D) Быстрое чтение файла
 
 ---
 
 ## Question 22: __enter__ и __exit__
 
+
 Какие методы нужны для создания контекстного менеджера?
 
-A) `__start__` и `__stop__`
+A) `__enter__` and `__exit__`
 
-B) `__enter__` and `__exit__`
+B) `__open__` и `__close__`
 
-C) `__open__` и `__close__`
+C) `__init__` и `__del__`
 
-D) `__init__` и `__del__`
+D) `__start__` и `__stop__`
 
 ---
 
 ## Question 23: suppress
 
+
 Что делает `contextlib.suppress`?
 
-A) Подавляет вывод в консоль
+A) Игнорирует указанные исключения
 
-B) Игнорирует указанные исключения
+B) Записывает исключения в лог
 
-C) Записывает исключения в лог
+C) Останавливает выполнение
 
-D) Останавливает выполнение
+D) Подавляет вывод в консоль
 
 ---
 
 ## Question 24: Логирование исключений
 
+
 Как правильно логировать исключение с traceback?
 
-A) `logger.error(str(e))`
+A) `logger.exception("Error")`
 
-B) `logger.exception("Error")`
+B) `logger.error(e.traceback)`
 
-C) `logger.error(e.traceback)`
+C) `logger.error(str(e))`
 
 D) `print(traceback)`
 
@@ -366,15 +390,18 @@ D) `print(traceback)`
 
 ## Question 25: Иерархия исключений
 
+
 Какое исключение является подклассом ArithmeticError?
 
-A) ValueError
+A) KeyError
 
 B) ZeroDivisionError
 
 C) TypeError
 
-D) KeyError
+D) ValueError
+
+---
 
 ---
 
@@ -383,29 +410,29 @@ D) KeyError
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | C | `BaseException` — корень иерархии. `Exception` — для "обычных" исключений. |
-| 2 | B | Неперехваченное исключение завершает программу с выводом traceback. |
+| 2 | D | Неперехваченное исключение завершает программу с выводом traceback. |
 | 3 | B | Деление на ноль вызывает ZeroDivisionError, который и перехватывается. |
-| 4 | B | Более специфичные (дочерние) исключения должны быть раньше родительских. |
+| 4 | A | Более специфичные (дочерние) исключения должны быть раньше родительских. |
 | 5 | C | Кортеж исключений в скобках: `except (ValueError, TypeError):`. |
-| 6 | B | Синтаксис Python 3: `except Error as e:`. |
-| 7 | C | `else` выполняется, если в try-блоке НЕ возникло исключение. |
+| 6 | A | Синтаксис Python 3: `except Error as e:`. |
+| 7 | D | `else` выполняется, если в try-блоке НЕ возникло исключение. |
 | 8 | C | `finally` выполняется всегда — для очистки ресурсов. |
-| 9 | B | Пустой `raise` повторно вызывает текущее исключение. |
-| 10 | B | `raise ValueError("message")` — стандартный синтаксис Python 3. |
-| 11 | A | `raise NewError from original` сохраняет цепочку (exception chaining). |
-| 12 | B | Пользовательские исключения должны наследовать от `Exception`. |
-| 13 | B | KeyError — доступ к несуществующему ключу словаря. |
-| 14 | B | Выход за границы списка — IndexError, не KeyError. |
-| 15 | B | TypeError — операция с несовместимыми типами (напр., "2" + 2). |
+| 9 | A | Пустой `raise` повторно вызывает текущее исключение. |
+| 10 | C | `raise ValueError("message")` — стандартный синтаксис Python 3. |
+| 11 | B | `raise NewError from original` сохраняет цепочку (exception chaining). |
+| 12 | A | Пользовательские исключения должны наследовать от `Exception`. |
+| 13 | C | KeyError — доступ к несуществующему ключу словаря. |
+| 14 | C | Выход за границы списка — IndexError, не KeyError. |
+| 15 | A | TypeError — операция с несовместимыми типами (напр., "2" + 2). |
 | 16 | B | int не имеет метода append — AttributeError. |
-| 17 | A | `assert condition, "message"` — проверка инвариантов. |
+| 17 | B | `assert condition, "message"` — проверка инвариантов. |
 | 18 | B | Флаг `-O` (optimize) отключает assert и `__debug__`. |
-| 19 | B | EAFP — "Проще попросить прощения, чем разрешения" — пробуй, ловий исключения. |
-| 20 | B | EAFP: сначала пробуем, потом обрабатываем исключение. |
-| 21 | B | `with` гарантирует вызов `__exit__` (закрытие) даже при исключении. |
-| 22 | B | Контекстный менеджер требует `__enter__` и `__exit__`. |
-| 23 | B | `suppress(ValueError)` тихо игнорирует ValueError в блоке with. |
-| 24 | B | `logger.exception()` автоматически добавляет traceback. |
+| 19 | D | EAFP — "Проще попросить прощения, чем разрешения" — пробуй, ловий исключения. |
+| 20 | C | EAFP: сначала пробуем, потом обрабатываем исключение. |
+| 21 | A | `with` гарантирует вызов `__exit__` (закрытие) даже при исключении. |
+| 22 | A | Контекстный менеджер требует `__enter__` и `__exit__`. |
+| 23 | A | `suppress(ValueError)` тихо игнорирует ValueError в блоке with. |
+| 24 | A | `logger.exception()` автоматически добавляет traceback. |
 | 25 | B | ZeroDivisionError, OverflowError, FloatingPointError — подклассы ArithmeticError. |
 
 ---

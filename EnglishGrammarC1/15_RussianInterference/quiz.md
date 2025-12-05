@@ -6,19 +6,21 @@
 
 ## Question 1: Articles
 
+
 Which sentence is correct?
 
-A) She is beautiful woman.
+A) She is the beautiful woman. (first mention)
 
 B) She is a beautiful woman.
 
-C) She is the beautiful woman. (first mention)
+C) She beautiful woman.
 
-D) She beautiful woman.
+D) She is beautiful woman.
 
 ---
 
 ## Question 2: Missing "Be"
+
 
 Which sentence has a Russian interference error?
 
@@ -34,13 +36,14 @@ D) She appears intelligent.
 
 ## Question 3: "I Am Agree"
 
+
 Which is correct?
 
-A) I am agree with you.
+A) I agree with you.
 
-B) I agree with you.
+B) I am agreeing with you.
 
-C) I am agreeing with you.
+C) I am agree with you.
 
 D) I have agree with you.
 
@@ -48,13 +51,14 @@ D) I have agree with you.
 
 ## Question 4: "Feel Myself"
 
+
 Which is correct?
 
-A) I feel myself tired.
+A) I feel tired.
 
-B) I feel myself bad.
+B) I feel myself tired.
 
-C) I feel tired.
+C) I feel myself bad.
 
 D) I feel myself hungry.
 
@@ -62,67 +66,72 @@ D) I feel myself hungry.
 
 ## Question 5: Dependent Prepositions
 
+
 "It depends ___ the weather."
 
-A) from
+A) of
 
-B) of
+B) about
 
-C) on
+C) from
 
-D) about
+D) on
 
 ---
 
 ## Question 6: "Explain"
 
+
 Which is correct?
 
-A) Can you explain me this rule?
+A) Can you explain about this rule me?
 
 B) Can you explain this rule to me?
 
 C) Can you explain me about this rule?
 
-D) Can you explain about this rule me?
+D) Can you explain me this rule?
 
 ---
 
 ## Question 7: Present Perfect for Duration
 
+
 "I ___ here for 5 years."
 
-A) live
+A) am living
 
-B) am living
+B) have lived
 
-C) have lived
+C) lived
 
-D) lived
+D) live
 
 ---
 
 ## Question 8: Future After "When"
 
+
 Which is correct?
 
-A) When I will arrive, I will call you.
+A) When I arrive, I will call you.
 
-B) When I arrive, I will call you.
+B) When I will arrive, I call you.
 
-C) When I will arrive, I call you.
+C) When I arrived, I will call you.
 
-D) When I arrived, I will call you.
+D) When I will arrive, I will call you.
 
 ---
 
 ## Question 9: Word Order
 
+
 Which has correct word order?
 
-A) I yesterday bought a book.
+A) Yesterday I a book bought.
 
-B) Yesterday I a book bought.
+B) I yesterday bought a book.
 
 C) I bought yesterday a book.
 
@@ -132,27 +141,29 @@ D) I bought a book yesterday.
 
 ## Question 10: Uncountable Nouns
 
+
 Which is INCORRECT?
 
-A) I need some advice.
+A) The advice was helpful.
 
-B) I need an advice.
+B) I need some advice.
 
 C) I need a piece of advice.
 
-D) The advice was helpful.
+D) I need an advice.
 
 ---
 
 ## Question 11: False Friends - "Actual"
 
+
 "This is a very ___ problem." (meaning: current, relevant)
 
-A) actual
+A) actually
 
-B) current
+B) actual
 
-C) actually
+C) current
 
 D) real
 
@@ -160,69 +171,74 @@ D) real
 
 ## Question 12: Double Subject
 
+
 Which has a Russian interference error?
 
-A) My brother works in a bank.
+A) The bank is where my brother works.
 
-B) My brother he works in a bank.
+B) He works in a bank.
 
-C) He works in a bank.
+C) My brother works in a bank.
 
-D) The bank is where my brother works.
+D) My brother he works in a bank.
 
 ---
 
 ## Question 13: Since vs For
 
+
 "I have known him ___ 2015."
 
-A) for
+A) during
 
 B) since
 
-C) from
+C) for
 
-D) during
+D) from
 
 ---
 
 ## Question 14: Born
 
+
 Which is correct?
 
-A) I born in Moscow.
+A) I have born in Moscow.
 
 B) I am born in Moscow.
 
-C) I was born in Moscow.
+C) I born in Moscow.
 
-D) I have born in Moscow.
+D) I was born in Moscow.
 
 ---
 
 ## Question 15: Make vs Do
 
+
 Which is correct?
 
-A) I did a mistake.
+A) I was making mistake.
 
-B) I made a mistake.
+B) I did a mistake.
 
 C) I have done a mistake.
 
-D) I was making mistake.
+D) I made a mistake.
 
 ---
 
 ## Question 16: Conditional
 
+
 Which is correct?
 
 A) If I would have time, I would help.
 
-B) If I had time, I would help.
+B) If I would had time, I would help.
 
-C) If I would had time, I would help.
+C) If I had time, I would help.
 
 D) If I have time, I would help.
 
@@ -230,19 +246,21 @@ D) If I have time, I would help.
 
 ## Question 17: "Marry"
 
+
 Which is correct?
 
-A) She married with John.
+A) She married to John.
 
-B) She married to John.
+B) She was married with John.
 
 C) She married John.
 
-D) She was married with John.
+D) She married with John.
 
 ---
 
 ## Question 18: Direct vs Polite
+
 
 Which is most appropriate when asking a stranger for directions?
 
@@ -258,19 +276,21 @@ D) I need to know where the station is.
 
 ## Question 19: "Listen"
 
+
 Which is correct?
 
-A) Listen me carefully.
+A) Listen on me carefully.
 
-B) Listen to me carefully.
+B) Listen at me carefully.
 
-C) Listen at me carefully.
+C) Listen to me carefully.
 
-D) Listen on me carefully.
+D) Listen me carefully.
 
 ---
 
 ## Question 20: "Interested"
+
 
 Which is correct?
 
@@ -278,9 +298,11 @@ A) I'm interested of this topic.
 
 B) I'm interested about this topic.
 
-C) I'm interested in this topic.
+C) I'm interested for this topic.
 
-D) I'm interested for this topic.
+D) I'm interested in this topic.
+
+---
 
 ---
 
@@ -290,24 +312,24 @@ D) I'm interested for this topic.
 |---|--------|-------------|
 | 1 | B | Classification needs "a." "She is a beautiful woman." |
 | 2 | B | Missing copula "is." Russian doesn't require it in present. |
-| 3 | B | "Agree" is a verb, not adjective. "I agree" not "I am agree." |
-| 4 | C | "Feel" doesn't need reflexive in English. "I feel tired." |
-| 5 | C | "Depend ON" — not "from" (Russian "от"). |
+| 3 | A | "Agree" is a verb, not adjective. "I agree" not "I am agree." |
+| 4 | A | "Feel" doesn't need reflexive in English. "I feel tired." |
+| 5 | D | "Depend ON" — not "from" (Russian "от"). |
 | 6 | B | "Explain something TO someone" — not "explain someone." |
-| 7 | C | Duration up to now = Present Perfect. "Have lived for 5 years." |
-| 8 | B | Present tense after "when" for future. "When I arrive..." |
+| 7 | B | Duration up to now = Present Perfect. "Have lived for 5 years." |
+| 8 | A | Present tense after "when" for future. "When I arrive..." |
 | 9 | D | Time adverbs typically go at end. "I bought a book yesterday." |
-| 10 | B | "Advice" is uncountable. Can't say "an advice." |
-| 11 | B | "Actual" ≠ "актуальный." Use "current" or "relevant." |
-| 12 | B | Double subject "My brother he..." is Russian pattern. |
+| 10 | D | "Advice" is uncountable. Can't say "an advice." |
+| 11 | C | "Actual" ≠ "актуальный." Use "current" or "relevant." |
+| 12 | D | Double subject "My brother he..." is Russian pattern. |
 | 13 | B | "Since" for point in time (2015). "For" for period. |
-| 14 | C | "Was born" — passive form required. |
-| 15 | B | "Make a mistake" — not "do a mistake." |
-| 16 | B | No "would" in if-clause. "If I had time, I would help." |
+| 14 | D | "Was born" — passive form required. |
+| 15 | D | "Make a mistake" — not "do a mistake." |
+| 16 | C | No "would" in if-clause. "If I had time, I would help." |
 | 17 | C | "Marry someone" — no preposition. |
 | 18 | C | Indirect question + "please" is polite in English. |
-| 19 | B | "Listen TO" — preposition required. |
-| 20 | C | "Interested IN" — standard preposition. |
+| 19 | C | "Listen TO" — preposition required. |
+| 20 | D | "Interested IN" — standard preposition. |
 
 ---
 

@@ -6,83 +6,89 @@
 
 ## Question 1: Управление службами
 
+
 Какая команда используется для управления службами в OpenBSD?
 
-A) systemctl
+A) initctl
 
-B) service
+B) systemctl
 
 C) rcctl
 
-D) initctl
+D) service
 
 ---
 
 ## Question 2: Включение службы
 
+
 Какая команда включает автозапуск службы?
 
-A) rcctl start sshd
+A) rcctl add sshd
 
-B) rcctl enable sshd
+B) rcctl autostart sshd
 
-C) rcctl autostart sshd
+C) rcctl start sshd
 
-D) rcctl add sshd
+D) rcctl enable sshd
 
 ---
 
 ## Question 3: Конфигурация служб
 
+
 В каком файле хранятся локальные настройки служб?
 
-A) /etc/rc.conf
+A) /etc/init.conf
 
 B) /etc/rc.conf.local
 
-C) /etc/services.conf
+C) /etc/rc.conf
 
-D) /etc/init.conf
+D) /etc/services.conf
 
 ---
 
 ## Question 4: Каталог rc.d
 
+
 Где находятся скрипты управления службами?
 
-A) /etc/init.d/
+A) /etc/services.d/
 
 B) /etc/rc.d/
 
 C) /usr/lib/systemd/
 
-D) /etc/services.d/
+D) /etc/init.d/
 
 ---
 
 ## Question 5: Статус службы
 
+
 Какая команда проверяет, запущена ли служба?
 
-A) rcctl status sshd
+A) rcctl running sshd
 
 B) rcctl check sshd
 
-C) rcctl running sshd
+C) rcctl is-active sshd
 
-D) rcctl is-active sshd
+D) rcctl status sshd
 
 ---
 
 ## Question 6: Список служб
 
+
 Какая команда показывает все запущенные службы?
 
-A) rcctl list running
+A) rcctl show active
 
-B) rcctl ls started
+B) rcctl list running
 
-C) rcctl show active
+C) rcctl ls started
 
 D) rcctl ps
 
@@ -90,53 +96,57 @@ D) rcctl ps
 
 ## Question 7: Флаги службы
 
+
 Как установить флаги запуска для службы?
 
-A) rcctl flags httpd "-f /etc/httpd.conf"
+A) rcctl config httpd flags="-f /etc/httpd.conf"
 
-B) rcctl set httpd flags "-f /etc/httpd.conf"
+B) rcctl flags httpd "-f /etc/httpd.conf"
 
-C) rcctl config httpd flags="-f /etc/httpd.conf"
+C) rcctl -f httpd "-f /etc/httpd.conf"
 
-D) rcctl -f httpd "-f /etc/httpd.conf"
+D) rcctl set httpd flags "-f /etc/httpd.conf"
 
 ---
 
 ## Question 8: Пакетные службы
 
+
 Какая переменная определяет порядок запуска пакетных служб?
 
 A) services_order
 
-B) pkg_scripts
+B) rc_packages
 
 C) daemon_order
 
-D) rc_packages
+D) pkg_scripts
 
 ---
 
 ## Question 9: Перезапуск службы
 
+
 Какая команда перезапускает службу?
 
 A) rcctl reload sshd
 
-B) rcctl restart sshd
+B) rcctl reset sshd
 
 C) rcctl reboot sshd
 
-D) rcctl reset sshd
+D) rcctl restart sshd
 
 ---
 
 ## Question 10: rc.d скрипт
 
+
 Какая переменная указывает путь к исполняемому файлу в rc.d скрипте?
 
-A) executable
+A) binary
 
-B) binary
+B) executable
 
 C) daemon
 
@@ -146,71 +156,76 @@ D) program
 
 ## Question 11: Пользователь службы
 
+
 Какая переменная определяет пользователя для запуска службы?
 
 A) run_as
 
-B) user
+B) daemon_user
 
-C) daemon_user
+C) service_user
 
-D) service_user
+D) user
 
 ---
 
 ## Question 12: Отключение службы
 
+
 Как отключить службу (убрать из автозапуска)?
 
-A) rcctl stop sshd
+A) rcctl delete sshd
 
-B) rcctl disable sshd
+B) rcctl remove sshd
 
-C) rcctl remove sshd
+C) rcctl stop sshd
 
-D) rcctl delete sshd
+D) rcctl disable sshd
 
 ---
 
 ## Question 13: Перечитывание конфигурации
 
+
 Какая команда перечитывает конфигурацию без перезапуска?
 
 A) rcctl restart nginx
 
-B) rcctl reload nginx
+B) rcctl reconfig nginx
 
 C) rcctl refresh nginx
 
-D) rcctl reconfig nginx
+D) rcctl reload nginx
 
 ---
 
 ## Question 14: Встроенный веб-сервер
 
+
 Как называется встроенный веб-сервер OpenBSD?
 
-A) apache
+A) lighttpd
 
-B) nginx
+B) apache
 
 C) httpd
 
-D) lighttpd
+D) nginx
 
 ---
 
 ## Question 15: Логи служб
 
+
 В каком файле искать общие логи демонов?
 
-A) /var/log/syslog
+A) /var/log/services
 
-B) /var/log/daemon
+B) /var/log/syslog
 
-C) /var/log/services
+C) /var/log/rc.log
 
-D) /var/log/rc.log
+D) /var/log/daemon
 
 ---
 
@@ -221,20 +236,20 @@ D) /var/log/rc.log
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | C | rcctl — стандартная утилита управления службами в OpenBSD |
-| 2 | B | rcctl enable добавляет службу в автозапуск |
+| 2 | D | rcctl enable добавляет службу в автозапуск |
 | 3 | B | /etc/rc.conf.local — файл для локальных настроек (не редактируйте rc.conf!) |
 | 4 | B | /etc/rc.d/ содержит скрипты управления службами |
 | 5 | B | rcctl check проверяет, запущена ли служба |
-| 6 | B | rcctl ls started показывает все запущенные службы |
-| 7 | B | rcctl set service flags "..." устанавливает флаги |
-| 8 | B | pkg_scripts определяет порядок запуска пакетных служб |
-| 9 | B | rcctl restart перезапускает службу (stop + start) |
+| 6 | C | rcctl ls started показывает все запущенные службы |
+| 7 | D | rcctl set service flags "..." устанавливает флаги |
+| 8 | D | pkg_scripts определяет порядок запуска пакетных служб |
+| 9 | D | rcctl restart перезапускает службу (stop + start) |
 | 10 | C | daemon — путь к исполняемому файлу в rc.d скрипте |
-| 11 | C | daemon_user — пользователь для запуска службы |
-| 12 | B | rcctl disable убирает службу из автозапуска |
-| 13 | B | rcctl reload отправляет SIGHUP для перечитывания конфигурации |
+| 11 | B | daemon_user — пользователь для запуска службы |
+| 12 | D | rcctl disable убирает службу из автозапуска |
+| 13 | D | rcctl reload отправляет SIGHUP для перечитывания конфигурации |
 | 14 | C | httpd — простой встроенный веб-сервер OpenBSD |
-| 15 | B | /var/log/daemon содержит логи демонов |
+| 15 | D | /var/log/daemon содержит логи демонов |
 
 ---
 

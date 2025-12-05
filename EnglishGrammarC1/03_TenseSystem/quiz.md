@@ -6,13 +6,14 @@
 
 ## Question 1: Tense vs Aspect
 
+
 What is the difference between "tense" and "aspect" in English grammar?
 
-A) They are synonyms
+A) Tense is for verbs; Aspect is for nouns
 
 B) Tense = when (past/present/future); Aspect = how the action is viewed (simple/continuous/perfect)
 
-C) Tense is for verbs; Aspect is for nouns
+C) They are synonyms
 
 D) Tense is formal; Aspect is informal
 
@@ -20,19 +21,21 @@ D) Tense is formal; Aspect is informal
 
 ## Question 2: Present Perfect vs Past Simple
 
+
 Choose the correct sentence: "I ___ my keys. Can you help me find them?"
 
-A) lost
+A) have lost
 
-B) have lost
+B) lost
 
-C) was losing
+C) had lost
 
-D) had lost
+D) was losing
 
 ---
 
 ## Question 3: Time Markers
+
 
 Which time expression requires Past Simple (not Present Perfect)?
 
@@ -48,13 +51,14 @@ D) ever
 
 ## Question 4: Duration Until Now
 
+
 How do you say "Я живу здесь 5 лет" in English?
 
-A) I live here 5 years.
+A) I am living here for 5 years.
 
-B) I am living here for 5 years.
+B) I have been living here for 5 years.
 
-C) I have been living here for 5 years.
+C) I live here 5 years.
 
 D) I lived here for 5 years.
 
@@ -62,19 +66,21 @@ D) I lived here for 5 years.
 
 ## Question 5: Future After "When"
 
+
 Which sentence is correct?
 
-A) When I will arrive, I'll call you.
+A) When I arrived, I'll call you.
 
-B) When I arrive, I will call you.
+B) When I will arrive, I'll call you.
 
-C) When I arrive, I call you.
+C) When I arrive, I will call you.
 
-D) When I arrived, I'll call you.
+D) When I arrive, I call you.
 
 ---
 
 ## Question 6: Stative Verbs
+
 
 Which sentence is INCORRECT?
 
@@ -82,21 +88,22 @@ A) I know the answer.
 
 B) I'm understanding you better now.
 
-C) She loves chocolate.
+C) This book belongs to me.
 
-D) This book belongs to me.
+D) She loves chocolate.
 
 ---
 
 ## Question 7: Present Simple vs Continuous
 
+
 "What ___ you ___ ?" — "I'm a software developer."
 
 A) are / doing
 
-B) do / do
+B) are / do
 
-C) are / do
+C) do / do
 
 D) do / doing
 
@@ -104,13 +111,14 @@ D) do / doing
 
 ## Question 8: Present Perfect Continuous
 
+
 Which sentence best shows duration of activity leading to now?
 
-A) I wrote three reports today.
+A) I've been writing reports all day.
 
-B) I've been writing reports all day.
+B) I was writing a report.
 
-C) I was writing a report.
+C) I wrote three reports today.
 
 D) I had written a report.
 
@@ -118,27 +126,29 @@ D) I had written a report.
 
 ## Question 9: Past Perfect
 
+
 "When I arrived at the party, everyone ___."
 
-A) left
+A) has left
 
-B) was leaving
+B) left
 
-C) has left
+C) had left
 
-D) had left
+D) was leaving
 
 ---
 
 ## Question 10: Life Experience
 
+
 "___ you ever ___ to Australia?"
 
-A) Did / go
+A) Were / going
 
-B) Have / been
+B) Did / go
 
-C) Were / going
+C) Have / been
 
 D) Had / gone
 
@@ -146,75 +156,81 @@ D) Had / gone
 
 ## Question 11: Verb with Dual Meaning
 
+
 "I ___ about your offer." (= considering)
 
-A) think
+A) have thought
 
-B) am thinking
+B) was thinking
 
-C) have thought
+C) am thinking
 
-D) was thinking
+D) think
 
 ---
 
 ## Question 12: Going To vs Will
 
+
 Someone looks at dark clouds and says:
 
 A) "It will rain."
 
-B) "It's going to rain."
+B) "It's raining."
 
-C) "It's raining."
+C) "It rained."
 
-D) "It rained."
+D) "It's going to rain."
 
 ---
 
 ## Question 13: Narrative Tenses
 
+
 "I ___ down the street when I ___ an old friend."
 
-A) walked / was seeing
+A) had walked / saw
 
-B) was walking / saw
+B) walked / was seeing
 
-C) had walked / saw
+C) walked / had seen
 
-D) walked / had seen
+D) was walking / saw
 
 ---
 
 ## Question 14: Used to vs Would
 
+
 Which sentence is INCORRECT?
 
 A) I used to live in Moscow.
 
-B) I would live in Moscow.
+B) We would often go to the cinema.
 
-C) We would often go to the cinema.
+C) This used to be a restaurant.
 
-D) This used to be a restaurant.
+D) I would live in Moscow.
 
 ---
 
 ## Question 15: Russian Interference
 
+
 What is the typical error Russian speakers make with "I know him for 10 years"?
 
-A) Wrong verb
+A) Wrong preposition
 
-B) Missing Present Perfect (should be "I've known")
+B) Wrong word order
 
-C) Wrong preposition
+C) Missing Present Perfect (should be "I've known")
 
-D) Wrong word order
+D) Wrong verb
 
 ---
 
 ## Question 16: Perfect Infinitive
+
 
 "He seems ___ early." (It appears he left)
 
@@ -230,57 +246,63 @@ D) to be leaving
 
 ## Question 17: Future Continuous
 
+
 "This time tomorrow, I ___ to London."
 
-A) will fly
+A) am flying
 
-B) will be flying
+B) will fly
 
-C) am flying
+C) fly
 
-D) fly
+D) will be flying
 
 ---
 
 ## Question 18: Present for Scheduled Future
 
+
 "The concert ___ at 8 pm."
 
-A) will start
+A) is going to start
 
-B) is going to start
+B) is starting
 
-C) starts
+C) will start
 
-D) is starting
+D) starts
 
 ---
 
 ## Question 19: Past Simple or Present Perfect?
 
+
 "___ the new James Bond film yet?"
 
-A) Did you see
+A) Had you seen
 
 B) Have you seen
 
-C) Were you seeing
+C) Did you see
 
-D) Had you seen
+D) Were you seeing
 
 ---
 
 ## Question 20: Tense Shift Error
 
+
 Which sentence contains a tense error typical for Russian speakers?
 
-A) I've been waiting for an hour.
+A) I had finished before she arrived.
 
-B) She has worked here since 2015.
+B) If it will rain, we'll stay home.
 
-C) If it will rain, we'll stay home.
+C) I've been waiting for an hour.
 
-D) I had finished before she arrived.
+D) She has worked here since 2015.
+
+---
 
 ---
 
@@ -289,25 +311,25 @@ D) I had finished before she arrived.
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | Tense indicates TIME (past/present/future). Aspect indicates HOW the action is viewed (complete, in progress, connected to another time). |
-| 2 | B | "Have lost" (Present Perfect) connects to NOW — the keys are still lost, you need help finding them. Past Simple would suggest a past event, not current relevance. |
+| 2 | A | "Have lost" (Present Perfect) connects to NOW — the keys are still lost, you need help finding them. Past Simple would suggest a past event, not current relevance. |
 | 3 | C | "Yesterday" is a specific, finished time → Past Simple. "Already," "just," "ever" typically go with Present Perfect. |
-| 4 | C | For duration up to now, use Present Perfect (Continuous). "I have been living" shows the action started in the past and continues now. |
-| 5 | B | After "when" (time clause), use Present Simple for future reference. No "will" in the time clause. |
+| 4 | B | For duration up to now, use Present Perfect (Continuous). "I have been living" shows the action started in the past and continues now. |
+| 5 | C | After "when" (time clause), use Present Simple for future reference. No "will" in the time clause. |
 | 6 | B | "Understand" is a stative verb. We don't usually say "I'm understanding." Correct: "I understand you better now." |
-| 7 | B | "What do you do?" asks about profession/job (routine). "What are you doing?" asks about current activity. |
-| 8 | B | Present Perfect Continuous emphasizes the DURATION of activity. "I've been writing" shows ongoing process. |
-| 9 | D | Past Perfect "had left" shows the action happened BEFORE the other past action (arriving). |
-| 10 | B | "Have you ever been" — life experience question uses Present Perfect. "Been to" is idiomatic for "visited." |
-| 11 | B | "Think" as mental process (considering) uses Continuous. "I think" as opinion uses Simple. |
-| 12 | B | "Going to" is used for predictions based on present EVIDENCE (seeing the clouds). |
-| 13 | B | "Was walking" (background action in progress) + "saw" (main event that interrupted). Classic narrative tense combination. |
-| 14 | B | "Would" is NOT used for past states, only for repeated past actions. "I used to live" is correct for past state. |
-| 15 | B | Russian uses present tense for ongoing states. English requires Present Perfect: "I've known him for 10 years." |
+| 7 | C | "What do you do?" asks about profession/job (routine). "What are you doing?" asks about current activity. |
+| 8 | A | Present Perfect Continuous emphasizes the DURATION of activity. "I've been writing" shows ongoing process. |
+| 9 | C | Past Perfect "had left" shows the action happened BEFORE the other past action (arriving). |
+| 10 | C | "Have you ever been" — life experience question uses Present Perfect. "Been to" is idiomatic for "visited." |
+| 11 | C | "Think" as mental process (considering) uses Continuous. "I think" as opinion uses Simple. |
+| 12 | D | "Going to" is used for predictions based on present EVIDENCE (seeing the clouds). |
+| 13 | D | "Was walking" (background action in progress) + "saw" (main event that interrupted). Classic narrative tense combination. |
+| 14 | D | "Would" is NOT used for past states, only for repeated past actions. "I used to live" is correct for past state. |
+| 15 | C | Russian uses present tense for ongoing states. English requires Present Perfect: "I've known him for 10 years." |
 | 16 | B | "To have left" (perfect infinitive) expresses action earlier than the main verb. "He seems to have left" = It seems he left. |
-| 17 | B | Future Continuous "will be flying" describes action in progress at a specific future time. |
-| 18 | C | Present Simple "starts" is used for scheduled, timetabled events. |
+| 17 | D | Future Continuous "will be flying" describes action in progress at a specific future time. |
+| 18 | D | Present Simple "starts" is used for scheduled, timetabled events. |
 | 19 | B | "Yet" signals Present Perfect. "Have you seen...yet?" asks about experience up to now. |
-| 20 | C | "If it will rain" is wrong. After "if" (conditional), use Present Simple: "If it rains, we'll stay home." |
+| 20 | B | "If it will rain" is wrong. After "if" (conditional), use Present Simple: "If it rains, we'll stay home." |
 
 ---
 

@@ -6,139 +6,149 @@
 
 ## Question 1: Hiring Bar
 
+
 Какой принцип описывает "hiring bar"?
 
 A) Нанимать кого угодно
 
-B) Нанимать людей, которые поднимают средний уровень команды
+B) Нанимать самого дешёвого
 
-C) Нанимать только друзей
+C) Нанимать людей, которые поднимают средний уровень команды
 
-D) Нанимать самого дешёвого
+D) Нанимать только друзей
 
 ---
 
 ## Question 2: Cost of Bad Hire
 
+
 Почему важно избегать bad hire?
 
-A) Bad hire дёшево исправить
+A) Bad hire улучшает команду
 
-B) Прямые и indirect costs могут превысить годовую зарплату + время
+B) Это не важно
 
-C) Bad hire улучшает команду
+C) Bad hire дёшево исправить
 
-D) Это не важно
+D) Прямые и indirect costs могут превысить годовую зарплату + время
 
 ---
 
 ## Question 3: Job Description
 
+
 Чего следует избегать в Job Description?
 
-A) Realistic requirements
+A) "10 лет опыта в технологии, которой 5 лет"
 
-B) "10 лет опыта в технологии, которой 5 лет"
+B) Честное описание роли
 
-C) Честное описание роли
+C) Описание benefits
 
-D) Описание benefits
+D) Realistic requirements
 
 ---
 
 ## Question 4: Referrals
 
+
 Почему referrals считаются лучшим источником кандидатов?
 
-A) Они самые дешёвые
+A) Referrals не работают
 
-B) Quality + cultural fit, быстрее и дешевле
+B) Они единственный источник
 
-C) Они единственный источник
+C) Они самые дешёвые
 
-D) Referrals не работают
+D) Quality + cultural fit, быстрее и дешевле
 
 ---
 
 ## Question 5: Diversity Sourcing
 
+
 Как улучшить diversity в sourcing?
 
-A) Использовать только referrals
+A) Нанимать только из одного источника
 
-B) Diverse sourcing channels, blind review, diverse interview panels
+B) Игнорировать diversity
 
-C) Нанимать только из одного источника
+C) Использовать только referrals
 
-D) Игнорировать diversity
+D) Diverse sourcing channels, blind review, diverse interview panels
 
 ---
 
 ## Question 6: Structured Interviews
 
+
 Зачем нужны structured interviews?
 
-A) Для усложнения процесса
+A) Чтобы задавать случайные вопросы
 
-B) Consistent across candidates, reduces bias, better predictions
+B) Structured interviews хуже
 
-C) Structured interviews хуже
+C) Consistent across candidates, reduces bias, better predictions
 
-D) Чтобы задавать случайные вопросы
+D) Для усложнения процесса
 
 ---
 
 ## Question 7: Scorecard
 
+
 Что включает interview scorecard?
 
-A) Только имя кандидата
+A) Competencies, questions, scores, notes
 
-B) Competencies, questions, scores, notes
+B) Только зарплатные ожидания
 
 C) Только финальное решение
 
-D) Только зарплатные ожидания
+D) Только имя кандидата
 
 ---
 
 ## Question 8: Coding Interview
 
+
 Какая best practice для coding interview?
 
-A) Gotcha questions и obscure algorithms
+A) Real-world problems, allow docs, focus on process
 
-B) Real-world problems, allow docs, focus on process
+B) Только whiteboard без компьютера
 
 C) Максимальный time pressure
 
-D) Только whiteboard без компьютера
+D) Gotcha questions и obscure algorithms
 
 ---
 
 ## Question 9: STAR Method
 
+
 Что означает STAR в behavioral interview?
 
-A) Stars rating
+A) Situation, Task, Action, Result
 
-B) Situation, Task, Action, Result
+B) Simple, Technical, Analytical, Random
 
 C) Start, Talk, Ask, Review
 
-D) Simple, Technical, Analytical, Random
+D) Stars rating
 
 ---
 
 ## Question 10: Bias in Interviews
 
+
 Что такое "Affinity bias"?
 
 A) Предпочтение кандидатов похожих на себя
 
-B) Объективная оценка
+B) Отсутствие bias
 
-C) Отсутствие bias
+C) Объективная оценка
 
 D) Отвержение всех кандидатов
 
@@ -146,25 +156,27 @@ D) Отвержение всех кандидатов
 
 ## Question 11: Debrief Process
 
+
 Когда интервьюеры должны submit feedback?
 
-A) После обсуждения с другими
+A) Только устно
 
 B) BEFORE debrief meeting, независимо
 
 C) Никогда
 
-D) Только устно
+D) После обсуждения с другими
 
 ---
 
 ## Question 12: Red Flags
 
+
 Что является strong "No Hire" signal?
 
-A) Nervousness
+A) Blame without ownership, disrespectful behavior
 
-B) Blame without ownership, disrespectful behavior
+B) Nervousness
 
 C) Unconventional background
 
@@ -174,55 +186,59 @@ D) Asking questions
 
 ## Question 13: When in Doubt
 
+
 Как решать при неуверенности в кандидате (culture concerns)?
 
-A) Всегда нанимать
+A) Спросить HR
 
-B) Lean towards "no"
+B) Всегда нанимать
 
 C) Подбросить монетку
 
-D) Спросить HR
+D) Lean towards "no"
 
 ---
 
 ## Question 14: Onboarding Week 1
 
+
 Какой goal для end of Week 1 onboarding?
 
-A) Полностью продуктивен
+A) Promoted
 
-B) Has all access, met team, understands first tasks
+B) Полностью продуктивен
 
-C) Уволился
+C) Has all access, met team, understands first tasks
 
-D) Promoted
+D) Уволился
 
 ---
 
 ## Question 15: Onboarding Month 3
 
+
 Какой goal для end of Month 3?
 
-A) Ещё не начал работать
+A) Fully productive, contributing independently, integrated
 
-B) Fully productive, contributing independently, integrated
+B) Ещё не начал работать
 
-C) Только получил access
+C) Ещё onboarding
 
-D) Ещё onboarding
+D) Только получил access
 
 ---
 
 ## Question 16: Buddy Role
 
+
 Какая роль buddy в onboarding?
 
-A) Performance evaluation
+A) Answer questions, navigate culture, social connection, NOT evaluation
 
-B) Answer questions, navigate culture, social connection, NOT evaluation
+B) Manager substitute
 
-C) Manager substitute
+C) Performance evaluation
 
 D) Technical mentor only
 
@@ -230,27 +246,29 @@ D) Technical mentor only
 
 ## Question 17: Take-Home vs Live
 
+
 Какой плюс take-home assignment?
 
-A) Больше stress
+A) Less stress, realistic environment, can show best work
 
-B) Less stress, realistic environment, can show best work
+B) Verifies skills directly
 
-C) Faster process
+C) Больше stress
 
-D) Verifies skills directly
+D) Faster process
 
 ---
 
 ## Question 18: System Design Interview
 
+
 Что оценивается в system design interview?
 
-A) Только скорость
+A) Clarifying questions, trade-offs, communication, depth
 
-B) Clarifying questions, trade-offs, communication, depth
+B) Только код
 
-C) Только код
+C) Только скорость
 
 D) Только naming
 
@@ -258,19 +276,21 @@ D) Только naming
 
 ## Question 19: First 90 Days
 
+
 Почему первые 90 дней критичны?
 
-A) Они не важны
+A) 20% turnover в первые 45 дней, experience shapes engagement
 
-B) 20% turnover в первые 45 дней, experience shapes engagement
+B) Они не важны
 
-C) После 90 дней увольнения невозможны
+C) Onboarding заканчивается в день 1
 
-D) Onboarding заканчивается в день 1
+D) После 90 дней увольнения невозможны
 
 ---
 
 ## Question 20: Setting Expectations
+
 
 Почему важно быть честным о challenges во время hiring?
 
@@ -278,52 +298,35 @@ A) Чтобы отпугнуть кандидатов
 
 B) Right expectations = less disappointment, self-selection, trust
 
-C) Скрывать проблемы лучше
+C) Candidates не слушают
 
-D) Candidates не слушают
+D) Скрывать проблемы лучше
+
+---
 
 ---
 
 ## Answer Key
 
-1. **B** - Нанимать людей, которые поднимают средний уровень команды
-
-2. **B** - Costs могут превысить годовую зарплату + потерянное время
-
-3. **B** - Unrealistic requirements как "10 лет в 5-летней технологии"
-
-4. **B** - Referrals: quality + cultural fit, быстрее и дешевле
-
-5. **B** - Diverse channels, blind review, diverse panels
-
-6. **B** - Structured: consistent, reduces bias, better predictions
-
-7. **B** - Scorecard: competencies, questions, scores, notes
-
-8. **B** - Real-world problems, allow docs, focus on process
-
-9. **B** - STAR: Situation, Task, Action, Result
-
+1. **C** - Нанимать людей, которые поднимают средний уровень команды
+2. **D** - Costs могут превысить годовую зарплату + потерянное время
+3. **A** - Unrealistic requirements как "10 лет в 5-летней технологии"
+4. **D** - Referrals: quality + cultural fit, быстрее и дешевле
+5. **D** - Diverse channels, blind review, diverse panels
+6. **C** - Structured: consistent, reduces bias, better predictions
+7. **A** - Scorecard: competencies, questions, scores, notes
+8. **A** - Real-world problems, allow docs, focus on process
+9. **A** - STAR: Situation, Task, Action, Result
 10. **A** - Affinity bias: предпочтение похожих на себя
-
 11. **B** - Feedback BEFORE debrief meeting, независимо
-
-12. **B** - Red flags: blame without ownership, disrespectful
-
-13. **B** - При culture concerns lean towards "no"
-
-14. **B** - Week 1: access, met team, understands first tasks
-
-15. **B** - Month 3: fully productive, independent, integrated
-
-16. **B** - Buddy: questions, culture, social, NOT evaluation
-
-17. **B** - Take-home: less stress, realistic, best work
-
-18. **B** - System design: clarifying questions, trade-offs, communication
-
-19. **B** - 20% turnover в первые 45 дней, experience shapes engagement
-
+12. **A** - Red flags: blame without ownership, disrespectful
+13. **D** - При culture concerns lean towards "no"
+14. **C** - Week 1: access, met team, understands first tasks
+15. **A** - Month 3: fully productive, independent, integrated
+16. **A** - Buddy: questions, culture, social, NOT evaluation
+17. **A** - Take-home: less stress, realistic, best work
+18. **A** - System design: clarifying questions, trade-offs, communication
+19. **A** - 20% turnover в первые 45 дней, experience shapes engagement
 20. **B** - Честность: right expectations, self-selection, trust
 
 ---

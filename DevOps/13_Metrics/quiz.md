@@ -6,13 +6,14 @@
 
 ## Question 1: DORA
 
+
 Что такое DORA?
 
 A) Инструмент мониторинга
 
-B) Исследовательская группа, изучающая DevOps практики
+B) CI/CD платформа
 
-C) CI/CD платформа
+C) Исследовательская группа, изучающая DevOps практики
 
 D) Методология разработки
 
@@ -20,19 +21,21 @@ D) Методология разработки
 
 ## Question 2: Four Keys
 
+
 Какие четыре ключевые метрики DORA?
 
-A) CPU, Memory, Disk, Network
+A) Code Coverage, Bugs, Technical Debt, Velocity
 
 B) Deployment Frequency, Lead Time, Change Failure Rate, MTTR
 
-C) Availability, Latency, Throughput, Errors
+C) CPU, Memory, Disk, Network
 
-D) Code Coverage, Bugs, Technical Debt, Velocity
+D) Availability, Latency, Throughput, Errors
 
 ---
 
 ## Question 3: Elite Performers
+
 
 Как часто Elite performers деплоят?
 
@@ -40,63 +43,67 @@ A) Раз в месяц
 
 B) Раз в неделю
 
-C) On-demand (несколько раз в день)
+C) Раз в квартал
 
-D) Раз в квартал
+D) On-demand (несколько раз в день)
 
 ---
 
 ## Question 4: Lead Time
 
+
 Что измеряет Lead Time for Changes?
 
-A) Время написания кода
+A) Время от commit до production
 
-B) Время от commit до production
+B) Время code review
 
-C) Время code review
+C) Время тестирования
 
-D) Время тестирования
+D) Время написания кода
 
 ---
 
 ## Question 5: Change Failure Rate
 
+
 Что показывает Change Failure Rate?
 
-A) Количество строк кода
+A) Количество багов
 
-B) Процент деплоев, вызывающих сбои
+B) Количество строк кода
 
 C) Скорость разработки
 
-D) Количество багов
+D) Процент деплоев, вызывающих сбои
 
 ---
 
 ## Question 6: MTTR Elite
 
+
 Какой MTTR у Elite performers?
 
-A) < 1 month
+A) < 1 hour
 
-B) < 1 week
+B) < 1 day
 
-C) < 1 day
+C) < 1 week
 
-D) < 1 hour
+D) < 1 month
 
 ---
 
 ## Question 7: Throughput vs Stability
 
+
 Как связаны скорость (throughput) и стабильность?
 
 A) Выше скорость = ниже стабильность
 
-B) Elite performers имеют высокую скорость И высокую стабильность
+B) Не связаны
 
-C) Не связаны
+C) Elite performers имеют высокую скорость И высокую стабильность
 
 D) Стабильность важнее скорости всегда
 
@@ -104,13 +111,14 @@ D) Стабильность важнее скорости всегда
 
 ## Question 8: Data Sources
 
+
 Откуда брать данные для Deployment Frequency?
 
-A) Опросы разработчиков
+A) Финансовые отчёты
 
-B) CI/CD pipeline, Git tags, Kubernetes events
+B) Опросы разработчиков
 
-C) Финансовые отчёты
+C) CI/CD pipeline, Git tags, Kubernetes events
 
 D) Ручной подсчёт
 
@@ -118,29 +126,33 @@ D) Ручной подсчёт
 
 ## Question 9: Improvement
 
+
 Как улучшить высокий Lead Time?
 
-A) Нанять больше разработчиков
+A) Реже деплоить
 
-B) Оптимизировать CI, уменьшить batch size, trunk-based development
+B) Увеличить количество тестов
 
-C) Увеличить количество тестов
+C) Оптимизировать CI, уменьшить batch size, trunk-based development
 
-D) Реже деплоить
+D) Нанять больше разработчиков
 
 ---
 
 ## Question 10: Measurement
 
+
 Как часто нужно измерять DORA метрики?
 
-A) Раз в год
+A) Только при проблемах
 
-B) Непрерывно (автоматически)
+B) Раз в квартал вручную
 
-C) Раз в квартал вручную
+C) Непрерывно (автоматически)
 
-D) Только при проблемах
+D) Раз в год
+
+---
 
 ---
 
@@ -148,16 +160,16 @@ D) Только при проблемах
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | DORA — DevOps Research and Assessment |
+| 1 | C | DORA — DevOps Research and Assessment |
 | 2 | B | DF, Lead Time, CFR, MTTR — четыре ключевые метрики |
-| 3 | C | Elite performers деплоят on-demand |
-| 4 | B | Lead Time = время от commit до production |
-| 5 | B | CFR = % деплоев, вызывающих сбои |
-| 6 | D | Elite MTTR < 1 hour |
-| 7 | B | Elite: высокая скорость И высокая стабильность |
-| 8 | B | CI/CD, Git, K8s — автоматические источники |
-| 9 | B | Оптимизация CI, меньше batch, trunk-based |
-| 10 | B | Непрерывное автоматическое измерение |
+| 3 | D | Elite performers деплоят on-demand |
+| 4 | A | Lead Time = время от commit до production |
+| 5 | D | CFR = % деплоев, вызывающих сбои |
+| 6 | A | Elite MTTR < 1 hour |
+| 7 | C | Elite: высокая скорость И высокая стабильность |
+| 8 | C | CI/CD, Git, K8s — автоматические источники |
+| 9 | C | Оптимизация CI, меньше batch, trunk-based |
+| 10 | C | Непрерывное автоматическое измерение |
 
 ---
 

@@ -6,13 +6,14 @@
 
 ## Question 1: Generic Reference
 
+
 Which sentence correctly expresses a general truth about water?
 
-A) The water is essential for life.
+A) Water is essential for life.
 
-B) A water is essential for life.
+B) The water is essential for life.
 
-C) Water is essential for life.
+C) A water is essential for life.
 
 D) Waters are essential for life.
 
@@ -20,27 +21,29 @@ D) Waters are essential for life.
 
 ## Question 2: Classification
 
+
 Complete the sentence: "My sister is ___ excellent doctor."
 
 A) the
 
-B) a
+B) (no article)
 
-C) an
+C) a
 
-D) (no article)
+D) an
 
 ---
 
 ## Question 3: Shared Knowledge
 
+
 Why do we say "Can you close THE door?" and not "Can you close A door?"
 
 A) Because "door" is always used with "the"
 
-B) Because both speaker and listener know which door (situational reference)
+B) Because "door" is uncountable
 
-C) Because "door" is uncountable
+C) Because both speaker and listener know which door (situational reference)
 
 D) Because we're being polite
 
@@ -48,41 +51,44 @@ D) Because we're being polite
 
 ## Question 4: Geographic Names
 
+
 Which sentence is correct?
 
-A) I visited the France last summer.
+A) The Thames flows through London.
 
 B) The Mount Everest is the highest peak.
 
 C) She lives in Netherlands.
 
-D) The Thames flows through London.
+D) I visited the France last summer.
 
 ---
 
 ## Question 5: Abstract Concepts
 
+
 Choose the correct sentence:
 
-A) The love is blind.
+A) A love is blind.
 
-B) Love is blind.
+B) An love is blind.
 
-C) A love is blind.
+C) Love is blind.
 
-D) An love is blind.
+D) The love is blind.
 
 ---
 
 ## Question 6: First Mention
 
+
 Which article should fill the blank? "Yesterday I saw ___ strange bird in my garden."
 
 A) the
 
-B) a
+B) (no article)
 
-C) (no article)
+C) a
 
 D) some
 
@@ -90,41 +96,44 @@ D) some
 
 ## Question 7: Institution vs Building
 
+
 What's the difference between "He's in prison" and "He's at the prison"?
 
-A) No difference, both are correct
+A) "In prison" is British; "at the prison" is American
 
-B) "In prison" means as a prisoner; "at the prison" means visiting/at the building
+B) No difference, both are correct
 
-C) "In prison" is British; "at the prison" is American
+C) "In prison" is informal; "at the prison" is formal
 
-D) "In prison" is informal; "at the prison" is formal
+D) "In prison" means as a prisoner; "at the prison" means visiting/at the building
 
 ---
 
 ## Question 8: Languages
 
+
 Choose the correct sentence:
 
 A) I'm learning the Japanese.
 
-B) I'm learning a Japanese.
+B) I'm learning Japanese.
 
-C) I'm learning Japanese.
+C) I'm learning an Japanese.
 
-D) I'm learning an Japanese.
+D) I'm learning a Japanese.
 
 ---
 
 ## Question 9: Uncountable Nouns
 
+
 Which sentence is INCORRECT?
 
-A) Can you give me some advice?
+A) I need information about the project.
 
-B) I need information about the project.
+B) That was a useful piece of news.
 
-C) That was a useful piece of news.
+C) Can you give me some advice?
 
 D) I received an important information.
 
@@ -132,33 +141,36 @@ D) I received an important information.
 
 ## Question 10: Plural Generic
 
+
 How do you say "Dogs are loyal animals" thinking about articles?
 
 A) The dogs are loyal animals.
 
 B) A dogs are loyal animals.
 
-C) Dogs are loyal animals.
+C) Some dogs are loyal animals.
 
-D) Some dogs are loyal animals.
+D) Dogs are loyal animals.
 
 ---
 
 ## Question 11: Specifying Phrase
 
+
 Why does "the book on the table" use "the"?
 
-A) Books always take "the"
+A) The phrase "on the table" specifies which book
 
-B) The phrase "on the table" specifies which book
+B) Tables require "the"
 
-C) It's a proper noun
+C) Books always take "the"
 
-D) Tables require "the"
+D) It's a proper noun
 
 ---
 
 ## Question 12: Russian Interference
+
 
 Which error is typical for Russian speakers?
 
@@ -174,41 +186,44 @@ D) Using "a" with uncountable nouns
 
 ## Question 13: Fixed Expressions
 
+
 Which phrase is correct?
 
-A) by the car
+A) by cars
 
-B) by a car
+B) by car
 
-C) by car
+C) by a car
 
-D) by cars
+D) by the car
 
 ---
 
 ## Question 14: Proper Nouns with Articles
 
+
 What does "There's a Mr. Johnson here to see you" imply?
 
-A) You know Mr. Johnson well
+A) You don't know this Mr. Johnson personally
 
-B) Mr. Johnson is famous
+B) Mr. Johnson is the only one
 
-C) You don't know this Mr. Johnson personally
+C) You know Mr. Johnson well
 
-D) Mr. Johnson is the only one
+D) Mr. Johnson is famous
 
 ---
 
 ## Question 15: Superlatives
 
+
 Complete: "This is ___ best restaurant in town."
 
-A) a
+A) an
 
-B) an
+B) the
 
-C) the
+C) a
 
 D) (no article)
 
@@ -216,55 +231,59 @@ D) (no article)
 
 ## Question 16: Same Word, Different Articles
 
+
 What's the difference between "Let's have lunch" and "The lunch was delicious"?
 
-A) No difference
+A) "Have lunch" is informal; "the lunch" is formal
 
-B) "Have lunch" = the meal as institution; "the lunch" = specific meal
+B) "Have lunch" is imperative; "the lunch" is past
 
-C) "Have lunch" is imperative; "the lunch" is past
+C) No difference
 
-D) "Have lunch" is informal; "the lunch" is formal
+D) "Have lunch" = the meal as institution; "the lunch" = specific meal
 
 ---
 
 ## Question 17: Generic THE
 
+
 In academic writing, "The tiger is endangered" means:
 
-A) One specific tiger is endangered
+A) Tigers in general are endangered
 
-B) Tigers in general are endangered
+B) Some tigers are endangered
 
-C) The tiger at the zoo is endangered
+C) One specific tiger is endangered
 
-D) Some tigers are endangered
+D) The tiger at the zoo is endangered
 
 ---
 
 ## Question 18: Error Correction
 
+
 Which sentence has an article error?
 
-A) She's going to university next year.
+A) I work at a large company.
 
-B) I work at a large company.
+B) She's going to university next year.
 
-C) The President gave speech yesterday.
+C) Life in the city can be stressful.
 
-D) Life in the city can be stressful.
+D) The President gave speech yesterday.
 
 ---
 
 ## Question 19: Decision Process
 
+
 You want to say you need to buy a car (any car, you don't have one yet). Which article?
 
-A) the car (because cars are specific objects)
+A) a car (because it's any car, first mention)
 
-B) a car (because it's any car, first mention)
+B) (no article) (because it's a generic concept)
 
-C) (no article) (because it's a generic concept)
+C) the car (because cars are specific objects)
 
 D) some car (because it's uncertain)
 
@@ -272,15 +291,18 @@ D) some car (because it's uncertain)
 
 ## Question 20: Complex Case
 
+
 "I studied ___ history of ___ Russia at ___ university."
 
-A) the / the / the
+A) ∅ / ∅ / the
 
-B) the / ∅ / ∅
+B) the / the / the
 
 C) ∅ / the / a
 
-D) ∅ / ∅ / the
+D) the / ∅ / ∅
+
+---
 
 ---
 
@@ -288,26 +310,26 @@ D) ∅ / ∅ / the
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | "Water" as a generic concept takes zero article. "The water" would mean specific water. |
-| 2 | C | Classification requires an indefinite article. "An" because "excellent" starts with a vowel sound. |
-| 3 | B | THE signals shared knowledge. Both people know which door — the one in the room. |
-| 4 | D | Rivers take THE. Countries without "republic/kingdom/states" take zero article. Mountains take zero article. |
-| 5 | B | Abstract concepts used generically take zero article. "Love" here means love in general. |
-| 6 | B | First mention of a singular countable noun = indefinite article A/AN. "A strange bird" — you don't know which one. |
-| 7 | B | "In prison" = functioning as prisoner. "At the prison" = at the building (as visitor, worker, etc.) |
-| 8 | C | Languages take zero article. We don't say "the Japanese" or "a Japanese" when referring to the language. |
+| 1 | A | "Water" as a generic concept takes zero article. "The water" would mean specific water. |
+| 2 | D | Classification requires an indefinite article. "An" because "excellent" starts with a vowel sound. |
+| 3 | C | THE signals shared knowledge. Both people know which door — the one in the room. |
+| 4 | A | Rivers take THE. Countries without "republic/kingdom/states" take zero article. Mountains take zero article. |
+| 5 | C | Abstract concepts used generically take zero article. "Love" here means love in general. |
+| 6 | C | First mention of a singular countable noun = indefinite article A/AN. "A strange bird" — you don't know which one. |
+| 7 | D | "In prison" = functioning as prisoner. "At the prison" = at the building (as visitor, worker, etc.) |
+| 8 | B | Languages take zero article. We don't say "the Japanese" or "a Japanese" when referring to the language. |
 | 9 | D | "Information" is uncountable. We can't say "an information." Correct: "some information" or "a piece of information." |
-| 10 | C | Generic reference with plural nouns = zero article. "Dogs" means all dogs in general. |
-| 11 | B | The phrase "on the table" specifies which book, making it identifiable to the listener → THE. |
+| 10 | D | Generic reference with plural nouns = zero article. "Dogs" means all dogs in general. |
+| 11 | A | The phrase "on the table" specifies which book, making it identifiable to the listener → THE. |
 | 12 | B | Russian has no articles, so speakers often add "the" to generic concepts, translating from Russian definite context. |
-| 13 | C | "By car" (means of transport) is a fixed expression with zero article. Same as "by bus," "by train." |
-| 14 | C | "A Mr. Johnson" means "a person called Mr. Johnson" — someone you don't know. It marks unfamiliarity. |
-| 15 | C | Superlatives require THE definite article. "The best," "the most," "the first," etc. |
-| 16 | B | "Have lunch" = meal as institution (zero article). "The lunch" = that specific lunch we ate. |
-| 17 | B | In formal/academic writing, "the + singular" can represent the whole class. "The tiger" = tigers as a species. |
-| 18 | C | Should be "The President gave A speech" — "speech" is a singular countable noun, first mention, needs an article. |
-| 19 | B | "A car" — you want any car, it's a first mention, and you're not specifying which one. Classic indefinite article use. |
-| 20 | B | "The history OF Russia" (specifying phrase), "Russia" (country name = ∅), "university" (institution = ∅ in BrE). |
+| 13 | B | "By car" (means of transport) is a fixed expression with zero article. Same as "by bus," "by train." |
+| 14 | A | "A Mr. Johnson" means "a person called Mr. Johnson" — someone you don't know. It marks unfamiliarity. |
+| 15 | B | Superlatives require THE definite article. "The best," "the most," "the first," etc. |
+| 16 | D | "Have lunch" = meal as institution (zero article). "The lunch" = that specific lunch we ate. |
+| 17 | A | In formal/academic writing, "the + singular" can represent the whole class. "The tiger" = tigers as a species. |
+| 18 | D | Should be "The President gave A speech" — "speech" is a singular countable noun, first mention, needs an article. |
+| 19 | A | "A car" — you want any car, it's a first mention, and you're not specifying which one. Classic indefinite article use. |
+| 20 | D | "The history OF Russia" (specifying phrase), "Russia" (country name = ∅), "university" (institution = ∅ in BrE). |
 
 ---
 

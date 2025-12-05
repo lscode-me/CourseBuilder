@@ -6,27 +6,29 @@
 
 ## Question 1: Мониторинг
 
+
 Какая утилита предоставляет интерактивный мониторинг системы?
 
 A) htop
 
 B) systat
 
-C) monitor
+C) watch
 
-D) watch
+D) monitor
 
 ---
 
 ## Question 2: Логи
 
+
 В каком файле находятся общие системные сообщения?
 
-A) /var/log/syslog
+A) /var/log/system
 
 B) /var/log/messages
 
-C) /var/log/system
+C) /var/log/syslog
 
 D) /var/log/kern.log
 
@@ -34,13 +36,14 @@ D) /var/log/kern.log
 
 ## Question 3: Патчи безопасности
 
+
 Какая команда устанавливает патчи безопасности?
 
-A) pkg_add -u
+A) syspatch
 
 B) openbsd-update
 
-C) syspatch
+C) pkg_add -u
 
 D) security-update
 
@@ -48,13 +51,14 @@ D) security-update
 
 ## Question 4: Ротация логов
 
+
 Какая утилита управляет ротацией логов в OpenBSD?
 
 A) logrotate
 
-B) newsyslog
+B) rotatelog
 
-C) rotatelog
+C) newsyslog
 
 D) syslog-rotate
 
@@ -62,111 +66,119 @@ D) syslog-rotate
 
 ## Question 5: Резервное копирование
 
+
 Какая команда создаёт полный бэкап файловой системы?
 
 A) tar
 
 B) rsync
 
-C) dump
+C) backup
 
-D) backup
+D) dump
 
 ---
 
 ## Question 6: cron формат
 
+
 Что означает запись "0 3 * * *" в crontab?
 
-A) Каждую третью минуту
+A) Третьего числа каждого месяца
 
-B) В 3:00 каждый день
+B) Каждую третью минуту
 
 C) Каждые 3 часа
 
-D) Третьего числа каждого месяца
+D) В 3:00 каждый день
 
 ---
 
 ## Question 7: Системные скрипты
 
+
 Какой файл выполняется ежедневно?
 
-A) /etc/cron.daily
+A) /etc/daily.sh
 
-B) /etc/daily
+B) /etc/cron.daily
 
-C) /etc/daily.sh
+C) /var/cron/daily
 
-D) /var/cron/daily
+D) /etc/daily
 
 ---
 
 ## Question 8: Обновление системы
 
+
 Какая утилита обновляет систему между релизами?
 
-A) upgrade
+A) openbsd-upgrade
 
 B) sysupgrade
 
-C) openbsd-upgrade
+C) release-upgrade
 
-D) release-upgrade
+D) upgrade
 
 ---
 
 ## Question 9: Информация о системе
 
+
 Какая команда показывает сообщения загрузки ядра?
 
-A) bootlog
+A) dmesg
 
-B) dmesg
+B) bootlog
 
-C) kernlog
+C) syslog
 
-D) syslog
+D) kernlog
 
 ---
 
 ## Question 10: Дисковое пространство
 
+
 Какая команда показывает использование дисков?
 
-A) disk -h
+A) du -h
 
-B) df -h
+B) disk -h
 
-C) du -h
+C) space -h
 
-D) space -h
+D) df -h
 
 ---
 
 ## Question 11: Сетевая статистика
 
+
 Какая команда показывает сетевые соединения?
 
-A) netstat -an
+A) connections
 
 B) ss -an
 
-C) connections
+C) ipstat
 
-D) ipstat
+D) netstat -an
 
 ---
 
 ## Question 12: Периодические скрипты
 
+
 Куда добавлять локальные ежедневные задачи?
 
-A) /etc/cron.d/daily
+A) /etc/daily.local
 
-B) /etc/daily.local
+B) /etc/daily/local
 
-C) /etc/daily/local
+C) /etc/cron.d/daily
 
 D) /etc/local.daily
 
@@ -174,41 +186,44 @@ D) /etc/local.daily
 
 ## Question 13: Датчики
 
+
 Какая команда показывает температуру и другие датчики?
 
-A) sensors
+A) temp
 
 B) sysctl hw.sensors
 
-C) hwmon
+C) sensors
 
-D) temp
+D) hwmon
 
 ---
 
 ## Question 14: Просмотр crontab
 
+
 Какая команда показывает текущий crontab?
 
-A) cron -l
+A) crontab -l
 
-B) crontab -l
+B) show cron
 
 C) cat /etc/crontab
 
-D) show cron
+D) cron -l
 
 ---
 
 ## Question 15: Проверка файловой системы
 
+
 Какая команда проверяет целостность файловой системы?
 
 A) fscheck
 
-B) fsck
+B) checkfs
 
-C) checkfs
+C) fsck
 
 D) diskcheck
 
@@ -222,19 +237,19 @@ D) diskcheck
 |---|--------|-------------|
 | 1 | B | systat — интерактивная утилита мониторинга с различными представлениями |
 | 2 | B | /var/log/messages — основной файл системных сообщений |
-| 3 | C | syspatch устанавливает бинарные патчи безопасности |
-| 4 | B | newsyslog — утилита ротации логов в BSD системах |
-| 5 | C | dump создаёт полный бэкап файловой системы на уровне блоков |
-| 6 | B | 0 минут, 3 часа, любой день = в 3:00 каждый день |
-| 7 | B | /etc/daily выполняется ежедневно через cron |
+| 3 | A | syspatch устанавливает бинарные патчи безопасности |
+| 4 | C | newsyslog — утилита ротации логов в BSD системах |
+| 5 | D | dump создаёт полный бэкап файловой системы на уровне блоков |
+| 6 | D | 0 минут, 3 часа, любой день = в 3:00 каждый день |
+| 7 | D | /etc/daily выполняется ежедневно через cron |
 | 8 | B | sysupgrade обновляет OpenBSD между релизами |
-| 9 | B | dmesg показывает сообщения ядра, включая загрузку |
-| 10 | B | df -h показывает использование дисков в читаемом формате |
-| 11 | A | netstat -an показывает все соединения в числовом формате |
-| 12 | B | /etc/daily.local — место для локальных ежедневных задач |
+| 9 | A | dmesg показывает сообщения ядра, включая загрузку |
+| 10 | D | df -h показывает использование дисков в читаемом формате |
+| 11 | D | netstat -an показывает все соединения в числовом формате |
+| 12 | A | /etc/daily.local — место для локальных ежедневных задач |
 | 13 | B | sysctl hw.sensors показывает данные датчиков |
-| 14 | B | crontab -l показывает crontab текущего пользователя |
-| 15 | B | fsck проверяет и восстанавливает файловую систему |
+| 14 | A | crontab -l показывает crontab текущего пользователя |
+| 15 | C | fsck проверяет и восстанавливает файловую систему |
 
 ---
 

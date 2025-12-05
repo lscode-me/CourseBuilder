@@ -6,53 +6,57 @@
 
 ## Question 1: MAKE vs DO
 
+
 Choose the correct collocation:
 
-A) do a mistake
+A) have a mistake
 
 B) make a mistake
 
-C) have a mistake
+C) take a mistake
 
-D) take a mistake
+D) do a mistake
 
 ---
 
 ## Question 2: Heavy vs Strong
 
+
 Choose the natural collocation:
 
-A) strong rain
+A) big rain
 
-B) heavy rain
+B) hard rain
 
-C) big rain
+C) heavy rain
 
-D) hard rain
+D) strong rain
 
 ---
 
 ## Question 3: Delexical TAKE
 
+
 Complete: "Let's ___ a break."
 
-A) make
+A) have
 
 B) do
 
-C) take
+C) make
 
-D) have
+D) take
 
 ---
 
 ## Question 4: Adverb-Adjective
 
+
 Choose the natural collocation:
 
-A) very unlikely
+A) deeply unlikely
 
-B) deeply unlikely
+B) very unlikely
 
 C) highly unlikely
 
@@ -62,69 +66,74 @@ D) strongly unlikely
 
 ## Question 5: Russian Calque
 
+
 "Делать фото" in English is:
 
-A) make a photo
+A) have a photo
 
-B) do a photo
+B) take a photo
 
-C) take a photo
+C) do a photo
 
-D) have a photo
+D) make a photo
 
 ---
 
 ## Question 6: Preposition Collocation
 
+
 "Depend ___" — complete with the correct preposition:
 
-A) from
+A) by
 
 B) of
 
 C) on
 
-D) by
+D) from
 
 ---
 
 ## Question 7: Extreme Adjective
 
+
 "Very ___" is unnatural with which word?
 
-A) interesting
+A) important
 
-B) unique
+B) interesting
 
-C) important
+C) difficult
 
-D) difficult
+D) unique
 
 ---
 
 ## Question 8: Business Idiom
 
+
 "Think outside the box" means:
 
-A) Think inside a container
+A) Think about boxes
 
-B) Think creatively and unconventionally
+B) Think inside a container
 
-C) Think about boxes
+C) Move outside the office
 
-D) Move outside the office
+D) Think creatively and unconventionally
 
 ---
 
 ## Question 9: HAVE Collocation
 
+
 Which is NOT a natural collocation with HAVE?
 
 A) have a meeting
 
-B) have a decision
+B) have an effect
 
-C) have an effect
+C) have a decision
 
 D) have difficulty
 
@@ -132,41 +141,44 @@ D) have difficulty
 
 ## Question 10: Binomial
 
+
 Which order is correct?
 
-A) white and black
+A) Both are equally common
 
-B) black and white
+B) Neither is used
 
-C) Both are equally common
+C) black and white
 
-D) Neither is used
+D) white and black
 
 ---
 
 ## Question 11: Academic Collocation
 
+
 "___ conclusions" — the most formal option is:
 
-A) make conclusions
+A) draw conclusions
 
-B) do conclusions
+B) take conclusions
 
-C) draw conclusions
+C) make conclusions
 
-D) take conclusions
+D) do conclusions
 
 ---
 
 ## Question 12: Intensifying Adverb
 
+
 "___ disappointed" — choose the natural collocation:
 
-A) heavily disappointed
+A) bitterly disappointed
 
-B) bitterly disappointed
+B) strongly disappointed
 
-C) strongly disappointed
+C) heavily disappointed
 
 D) deeply disappointed
 
@@ -174,19 +186,21 @@ D) deeply disappointed
 
 ## Question 13: False Friend
 
+
 Russian "актуальный" (meaning current/relevant) translates as:
 
-A) actual
+A) real
 
-B) current / relevant
+B) active
 
-C) active
+C) actual
 
-D) real
+D) current / relevant
 
 ---
 
 ## Question 14: GIVE Collocation
+
 
 Which is natural?
 
@@ -194,27 +208,29 @@ A) give advice
 
 B) give a crime
 
-C) give a mistake
+C) give a photo
 
-D) give a photo
+D) give a mistake
 
 ---
 
 ## Question 15: Register Awareness
 
+
 "Kick the bucket" (meaning to die) is:
 
 A) Appropriate for a formal obituary
 
-B) Informal/slang, inappropriate for formal contexts
+B) Academic language
 
-C) Academic language
+C) Business jargon
 
-D) Business jargon
+D) Informal/slang, inappropriate for formal contexts
 
 ---
 
 ## Question 16: Widely + Adjective
+
 
 Choose the natural collocation:
 
@@ -222,65 +238,71 @@ A) widely difficult
 
 B) widely tired
 
-C) widely known
+C) widely happy
 
-D) widely happy
+D) widely known
 
 ---
 
 ## Question 17: Commit Collocation
 
+
 "Commit ___" is natural with:
 
-A) a mistake
+A) a photo
 
 B) a crime
 
-C) a photo
+C) a decision
 
-D) a decision
+D) a mistake
 
 ---
 
 ## Question 18: DO Collocation
 
+
 Which is correct with DO?
 
-A) do a decision
+A) do a suggestion
 
-B) do research
+B) do a complaint
 
-C) do a suggestion
+C) do research
 
-D) do a complaint
+D) do a decision
 
 ---
 
 ## Question 19: Deeply + Adjective
 
+
 "Deeply ___" is natural with:
 
-A) unlikely
+A) successful
 
-B) concerned
+B) available
 
-C) available
+C) unlikely
 
-D) successful
+D) concerned
 
 ---
 
 ## Question 20: Collocation Error
 
+
 Which sentence has a collocation error?
 
-A) She made a serious mistake.
+A) They took action immediately.
 
 B) There was heavy traffic this morning.
 
-C) He did a big progress in his studies.
+C) She made a serious mistake.
 
-D) They took action immediately.
+D) He did a big progress in his studies.
+
+---
 
 ---
 
@@ -289,25 +311,25 @@ D) They took action immediately.
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | "Make a mistake" — make is used with mistakes, not do. |
-| 2 | B | "Heavy rain" is the natural collocation; "strong" is used with wind. |
-| 3 | C | "Take a break" — take is the correct delexical verb here. |
+| 2 | C | "Heavy rain" is the natural collocation; "strong" is used with wind. |
+| 3 | D | "Take a break" — take is the correct delexical verb here. |
 | 4 | C | "Highly unlikely" — highly collocates with probability/likelihood. |
-| 5 | C | "Take a photo" — Russian "делать" doesn't translate to "make" here. |
+| 5 | B | "Take a photo" — Russian "делать" doesn't translate to "make" here. |
 | 6 | C | "Depend on" — not "from" (Russian interference from "от"). |
-| 7 | B | "Unique" is an absolute adjective; use "truly unique" not "very unique." |
-| 8 | B | "Think outside the box" = think creatively, unconventionally. |
-| 9 | B | "Have a decision" is wrong; use "make/take a decision." |
-| 10 | B | "Black and white" is the fixed binomial order. |
-| 11 | C | "Draw conclusions" is the academic collocation. |
-| 12 | B | "Bitterly disappointed" — bitterly collocates with disappointment. |
-| 13 | B | "Актуальный" = current/relevant; "actual" = real/true. |
+| 7 | D | "Unique" is an absolute adjective; use "truly unique" not "very unique." |
+| 8 | D | "Think outside the box" = think creatively, unconventionally. |
+| 9 | C | "Have a decision" is wrong; use "make/take a decision." |
+| 10 | C | "Black and white" is the fixed binomial order. |
+| 11 | A | "Draw conclusions" is the academic collocation. |
+| 12 | A | "Bitterly disappointed" — bitterly collocates with disappointment. |
+| 13 | D | "Актуальный" = current/relevant; "actual" = real/true. |
 | 14 | A | "Give advice" is the natural collocation. |
-| 15 | B | "Kick the bucket" is informal/slang, not for formal use. |
-| 16 | C | "Widely known" — widely collocates with knowledge/availability. |
+| 15 | D | "Kick the bucket" is informal/slang, not for formal use. |
+| 16 | D | "Widely known" — widely collocates with knowledge/availability. |
 | 17 | B | "Commit a crime" — commit is the verb for crimes. |
-| 18 | B | "Do research" — research takes "do" or "conduct." |
-| 19 | B | "Deeply concerned" — deeply collocates with emotions. |
-| 20 | C | "Did big progress" is wrong; use "made great progress." |
+| 18 | C | "Do research" — research takes "do" or "conduct." |
+| 19 | D | "Deeply concerned" — deeply collocates with emotions. |
+| 20 | D | "Did big progress" is wrong; use "made great progress." |
 
 ---
 

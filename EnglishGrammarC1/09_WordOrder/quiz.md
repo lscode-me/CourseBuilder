@@ -6,33 +6,36 @@
 
 ## Question 1: Basic Word Order
 
+
 Which sentence has correct word order?
 
-A) I yesterday bought a new car.
+A) Bought I yesterday a new car.
 
-B) Yesterday I a new car bought.
+B) I bought a new car yesterday.
 
-C) I bought a new car yesterday.
+C) Yesterday I a new car bought.
 
-D) Bought I yesterday a new car.
+D) I yesterday bought a new car.
 
 ---
 
 ## Question 2: Adverb Position
 
+
 Which sentence is correct?
 
-A) She speaks very well English.
+A) She English speaks very well.
 
-B) She English speaks very well.
+B) She speaks English very well.
 
-C) She speaks English very well.
+C) She speaks very well English.
 
 D) Very well she speaks English.
 
 ---
 
 ## Question 3: Frequency Adverbs
+
 
 Where should "always" go?
 
@@ -42,35 +45,37 @@ A) Position 1
 
 B) Position 2
 
-C) Position 3
+C) Position 4
 
-D) Position 4
+D) Position 3
 
 ---
 
 ## Question 4: Negative Inversion
 
+
 "Never ___ such a beautiful sunset."
 
-A) I have seen
+A) I saw
 
-B) have I seen
+B) did I saw
 
-C) I saw
+C) I have seen
 
-D) did I saw
+D) have I seen
 
 ---
 
 ## Question 5: Only Inversion
 
+
 "Only after the meeting ___ the truth."
 
 A) I learned
 
-B) did I learn
+B) I did learn
 
-C) I did learn
+C) did I learn
 
 D) learned I
 
@@ -78,19 +83,21 @@ D) learned I
 
 ## Question 6: Conditional Inversion
 
+
 "___ I known about the problem, I would have helped."
 
-A) If
+A) Had
 
-B) Had
+B) Did
 
-C) Did
+C) If
 
 D) Would
 
 ---
 
 ## Question 7: It-Cleft
+
 
 "It was ___ who broke the window."
 
@@ -106,33 +113,36 @@ D) Either A or B
 
 ## Question 8: What-Cleft
 
+
 "___ is a good night's sleep."
 
-A) What I need
+A) That I need
 
-B) Which I need
+B) I need what
 
-C) That I need
+C) What I need
 
-D) I need what
+D) Which I need
 
 ---
 
 ## Question 9: Embedded Question
 
+
 Which sentence is correct?
 
-A) I don't know where is she.
+A) I don't know where is she living.
 
 B) I don't know where she is.
 
-C) I don't know where is she living.
+C) I don't know she is where.
 
-D) I don't know she is where.
+D) I don't know where is she.
 
 ---
 
 ## Question 10: Subject Question
+
 
 "___ happened last night?"
 
@@ -148,33 +158,36 @@ D) What was
 
 ## Question 11: End-Weight
 
+
 Which sentence follows the end-weight principle?
 
-A) I gave to the woman who helped me a book.
+A) I gave a book to the woman who helped me.
 
-B) I gave a book to the woman who helped me.
+B) I gave to the woman who helped me a book.
 
-C) To the woman who helped me I gave a book.
+C) A book I gave to the woman who helped me.
 
-D) A book I gave to the woman who helped me.
+D) To the woman who helped me I gave a book.
 
 ---
 
 ## Question 12: Extraposition
 
+
 Which is the more natural word order?
 
-A) That he lied was obvious.
+A) Obvious was that he lied.
 
-B) It was obvious that he lied.
+B) He lied was obvious.
 
-C) Obvious was that he lied.
+C) It was obvious that he lied.
 
-D) He lied was obvious.
+D) That he lied was obvious.
 
 ---
 
 ## Question 13: Emphatic Do
+
 
 "I ___ tell you the truth yesterday!"
 
@@ -182,21 +195,22 @@ A) do
 
 B) did
 
-C) was
+C) have
 
-D) have
+D) was
 
 ---
 
 ## Question 14: Inversion After So
 
+
 "So beautiful ___ that I couldn't stop looking."
 
-A) was the painting
+A) did the painting
 
-B) the painting was
+B) was the painting
 
-C) did the painting
+C) the painting was
 
 D) the painting did
 
@@ -204,13 +218,14 @@ D) the painting did
 
 ## Question 15: Russian Interference
 
+
 Which error is typical for Russian speakers?
 
-A) "I have seen never such a thing."
+A) "Yesterday I bought a book."
 
-B) "Yesterday I bought a book."
+B) "She speaks English well."
 
-C) "She speaks English well."
+C) "I have seen never such a thing."
 
 D) "I very much like this idea."
 
@@ -218,72 +233,79 @@ D) "I very much like this idea."
 
 ## Question 16: Fronting
 
+
 Which sentence uses fronting for emphasis?
 
 A) She likes coffee very much.
 
 B) Coffee she likes, but tea she hates.
 
-C) She really likes coffee.
+C) Coffee is what she likes.
 
-D) Coffee is what she likes.
+D) She really likes coffee.
 
 ---
 
 ## Question 17: Question Formation
 
+
 Which question is correctly formed?
 
-A) What means this word?
+A) This word means what?
 
-B) What does this word mean?
+B) What this word means?
 
-C) What this word means?
+C) What does this word mean?
 
-D) This word means what?
+D) What means this word?
 
 ---
 
 ## Question 18: No Sooner
 
+
 "No sooner ___ than it started raining."
 
-A) I arrived
+A) had I arrived
 
-B) had I arrived
+B) I arrived
 
-C) I had arrived
+C) did I arrived
 
-D) did I arrived
+D) I had arrived
 
 ---
 
 ## Question 19: Cleft for Correction
 
+
 Someone says: "John called you."
 You correct: "No, ___ Mike who called me."
 
-A) he was
+A) it was
 
-B) it is
+B) there was
 
-C) it was
+C) he was
 
-D) there was
+D) it is
 
 ---
 
 ## Question 20: Indirect Question
 
+
 "Can you tell me ___?"
 
 A) where is the station
 
-B) where the station is
+B) is where the station
 
-C) the station where is
+C) where the station is
 
-D) is where the station
+D) the station where is
+
+---
 
 ---
 
@@ -291,26 +313,26 @@ D) is where the station
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | Standard SVO + time adverbial at end. |
-| 2 | C | Adverb of manner ("very well") comes after the object. |
+| 1 | B | Standard SVO + time adverbial at end. |
+| 2 | B | Adverb of manner ("very well") comes after the object. |
 | 3 | B | Frequency adverbs go before the main verb but after "be." "She is always late." |
-| 4 | B | Negative adverb at start → inversion. "Never have I seen." |
-| 5 | B | "Only" at start → inversion. "Only after... did I learn." |
-| 6 | B | Conditional inversion: "Had I known" = "If I had known." |
+| 4 | D | Negative adverb at start → inversion. "Never have I seen." |
+| 5 | C | "Only" at start → inversion. "Only after... did I learn." |
+| 6 | A | Conditional inversion: "Had I known" = "If I had known." |
 | 7 | D | After "be" in cleft, both subject ("he") and object ("him") forms are used. |
-| 8 | A | What-cleft structure: "What I need is..." |
+| 8 | C | What-cleft structure: "What I need is..." |
 | 9 | B | Embedded questions use statement word order: "where she is." |
 | 10 | C | Subject questions have no inversion. "What happened?" |
-| 11 | B | Long phrases go at the end (end-weight principle). |
-| 12 | B | Extraposition moves the that-clause to end: "It was obvious that..." |
+| 11 | A | Long phrases go at the end (end-weight principle). |
+| 12 | C | Extraposition moves the that-clause to end: "It was obvious that..." |
 | 13 | B | Emphatic "did" for past tense emphasis. |
-| 14 | A | After "so + adjective," inversion: "So beautiful was the painting." |
+| 14 | B | After "so + adjective," inversion: "So beautiful was the painting." |
 | 15 | D | Russian speakers often put "very much" in the wrong position. Correct: "I like this idea very much." |
 | 16 | B | Object fronted for contrast/emphasis: "Coffee she likes, but..." |
-| 17 | B | Correct question: auxiliary + subject + verb. "What does this word mean?" |
-| 18 | B | "No sooner" triggers inversion: "No sooner had I arrived." |
-| 19 | C | It-cleft for correction: "It was Mike who..." |
-| 20 | B | Indirect questions use statement order: "where the station is." |
+| 17 | C | Correct question: auxiliary + subject + verb. "What does this word mean?" |
+| 18 | A | "No sooner" triggers inversion: "No sooner had I arrived." |
+| 19 | A | It-cleft for correction: "It was Mike who..." |
+| 20 | C | Indirect questions use statement order: "where the station is." |
 
 ---
 

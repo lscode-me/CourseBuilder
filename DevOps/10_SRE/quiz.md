@@ -6,6 +6,7 @@
 
 ## Question 1: Определение SRE
 
+
 Как Ben Treynor определяет SRE?
 
 A) Новая методология разработки
@@ -20,33 +21,36 @@ D) Только мониторинг
 
 ## Question 2: Error Budget
 
+
 Что такое Error Budget?
 
-A) Бюджет на исправление ошибок
+A) Стоимость разработки
 
 B) Допустимое количество downtime/ошибок (1 - SLO)
 
-C) Стоимость разработки
+C) Количество разработчиков
 
-D) Количество разработчиков
+D) Бюджет на исправление ошибок
 
 ---
 
 ## Question 3: Toil
 
+
 Что НЕ является характеристикой toil?
 
-A) Manual (ручная работа)
+A) Automatable (автоматизируемая)
 
-B) Repetitive (повторяющаяся)
+B) Strategic (стратегическая)
 
-C) Strategic (стратегическая)
+C) Manual (ручная работа)
 
-D) Automatable (автоматизируемая)
+D) Repetitive (повторяющаяся)
 
 ---
 
 ## Question 4: 50% Rule
+
 
 Какой процент времени SRE должен тратить на toil (максимум)?
 
@@ -54,13 +58,14 @@ A) 100%
 
 B) 75%
 
-C) 50%
+C) 25%
 
-D) 25%
+D) 50%
 
 ---
 
 ## Question 5: Error Budget Exhausted
+
 
 Что делать, если error budget исчерпан?
 
@@ -76,6 +81,7 @@ D) Уволить команду
 
 ## Question 6: SRE vs DevOps
 
+
 Как соотносятся SRE и DevOps?
 
 A) Это конкуренты
@@ -90,57 +96,63 @@ D) Они не связаны
 
 ## Question 7: Nine 9s
 
+
 Сколько минут downtime в год допускает 99.99% SLO?
 
-A) 8.76 часов
+A) 52.6 минут
 
-B) 52.6 минут
+B) 3.65 дней
 
 C) 5.26 минут
 
-D) 3.65 дней
+D) 8.76 часов
 
 ---
 
 ## Question 8: Toil Examples
 
+
 Что из перечисленного является toil?
 
 A) Написание автоматизации
 
-B) Ручной перезапуск сервиса при сбое
+B) Design review
 
-C) Design review
+C) Postmortem analysis
 
-D) Postmortem analysis
+D) Ручной перезапуск сервиса при сбое
 
 ---
 
 ## Question 9: On-Call
 
+
 Какая лучшая практика для on-call?
 
 A) Один человек всегда on-call
 
-B) Только actionable алерты с runbooks
+B) Алерты на всё подряд
 
-C) Алерты на всё подряд
+C) Без эскалации
 
-D) Без эскалации
+D) Только actionable алерты с runbooks
 
 ---
 
 ## Question 10: PRR
 
+
 Что такое Production Readiness Review?
 
 A) Code review
 
-B) Чеклист готовности сервиса к production
+B) Performance тест
 
-C) Performance тест
+C) Чеклист готовности сервиса к production
 
 D) Security audit
+
+---
 
 ---
 
@@ -150,14 +162,14 @@ D) Security audit
 |---|--------|-------------|
 | 1 | B | Классическое определение SRE от создателя |
 | 2 | B | Error Budget = 1 - SLO |
-| 3 | C | Toil tactical, не strategic |
-| 4 | C | Максимум 50% на toil, остальное на engineering |
+| 3 | B | Toil tactical, не strategic |
+| 4 | D | Максимум 50% на toil, остальное на engineering |
 | 5 | B | При исчерпании budget — фокус на reliability |
 | 6 | B | "class SRE implements DevOps" |
-| 7 | B | 99.99% = 52.6 минут/год |
-| 8 | B | Ручной перезапуск — классический toil |
-| 9 | B | Только actionable алерты с документацией |
-| 10 | B | PRR — чеклист готовности к production |
+| 7 | A | 99.99% = 52.6 минут/год |
+| 8 | D | Ручной перезапуск — классический toil |
+| 9 | D | Только actionable алерты с документацией |
+| 10 | C | PRR — чеклист готовности к production |
 
 ---
 

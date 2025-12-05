@@ -6,25 +6,27 @@
 
 ## Question 1: Минимальная единица
 
+
 Что является минимальной единицей развёртывания в Kubernetes?
 
 A) Container
 
-B) Pod
+B) Service
 
-C) Deployment
+C) Pod
 
-D) Service
+D) Deployment
 
 ---
 
 ## Question 2: Control Plane
 
+
 Какой компонент хранит всё состояние кластера?
 
-A) API Server
+A) Scheduler
 
-B) Scheduler
+B) API Server
 
 C) etcd
 
@@ -34,13 +36,14 @@ D) Controller Manager
 
 ## Question 3: kubelet
 
+
 Какова роль kubelet?
 
-A) Балансировка нагрузки
+A) Хранение конфигурации
 
 B) Управление жизненным циклом Pods на ноде
 
-C) Хранение конфигурации
+C) Балансировка нагрузки
 
 D) Маршрутизация трафика
 
@@ -48,13 +51,14 @@ D) Маршрутизация трафика
 
 ## Question 4: Service Types
 
+
 Какой тип Service создаёт внешний load balancer в cloud?
 
-A) ClusterIP
+A) LoadBalancer
 
-B) NodePort
+B) ClusterIP
 
-C) LoadBalancer
+C) NodePort
 
 D) ExternalName
 
@@ -62,13 +66,14 @@ D) ExternalName
 
 ## Question 5: Deployment
 
+
 Что обеспечивает Deployment?
 
 A) Хранение данных
 
-B) Сетевую изоляцию
+B) Декларативные обновления и ReplicaSet
 
-C) Декларативные обновления и ReplicaSet
+C) Сетевую изоляцию
 
 D) DNS резолвинг
 
@@ -76,211 +81,226 @@ D) DNS резолвинг
 
 ## Question 6: kubectl apply
 
+
 Что делает команда kubectl apply -f manifest.yaml?
 
-A) Удаляет ресурсы из файла
+A) Валидирует файл без применения
 
-B) Создаёт или обновляет ресурсы из файла
+B) Удаляет ресурсы из файла
 
-C) Валидирует файл без применения
+C) Показывает diff между файлом и кластером
 
-D) Показывает diff между файлом и кластером
+D) Создаёт или обновляет ресурсы из файла
 
 ---
 
 ## Question 7: ConfigMap
 
+
 Для чего используется ConfigMap?
 
-A) Хранение чувствительных данных
+A) Хранение образов
 
-B) Хранение конфигурации (не секретной)
+B) Хранение volumes
 
-C) Хранение образов
+C) Хранение конфигурации (не секретной)
 
-D) Хранение volumes
+D) Хранение чувствительных данных
 
 ---
 
 ## Question 8: Secret
 
+
 В каком формате хранятся данные в Secret по умолчанию?
 
-A) Plain text
+A) Hashed
 
 B) Base64 encoded
 
 C) Encrypted
 
-D) Hashed
+D) Plain text
 
 ---
 
 ## Question 9: Namespace
 
+
 Как получить Pods из всех namespaces?
 
-A) kubectl get pods --all
+A) kubectl get pods *
 
-B) kubectl get pods -A
+B) kubectl get pods --all
 
-C) kubectl get pods *
+C) kubectl get pods --global
 
-D) kubectl get pods --global
+D) kubectl get pods -A
 
 ---
 
 ## Question 10: Rolling Update
 
+
 Какой параметр определяет максимальное количество недоступных Pods при обновлении?
 
-A) maxSurge
+A) updateBatch
 
-B) maxUnavailable
+B) minAvailable
 
-C) minAvailable
+C) maxUnavailable
 
-D) updateBatch
+D) maxSurge
 
 ---
 
 ## Question 11: Probes
 
+
 Какой probe проверяет готовность Pod принимать трафик?
 
-A) livenessProbe
+A) healthProbe
 
 B) readinessProbe
 
-C) startupProbe
+C) livenessProbe
 
-D) healthProbe
+D) startupProbe
 
 ---
 
 ## Question 12: PersistentVolumeClaim
 
+
 Что делает PersistentVolumeClaim?
 
 A) Создаёт физическое хранилище
 
-B) Запрашивает storage у PersistentVolume
+B) Шифрует данные
 
-C) Удаляет данные при удалении Pod
+C) Запрашивает storage у PersistentVolume
 
-D) Шифрует данные
+D) Удаляет данные при удалении Pod
 
 ---
 
 ## Question 13: Labels и Selectors
 
+
 Как Service находит Pods для маршрутизации?
 
 A) По имени Pod
 
-B) По IP адресу
+B) По namespace
 
-C) По selector, соответствующему labels
+C) По IP адресу
 
-D) По namespace
+D) По selector, соответствующему labels
 
 ---
 
 ## Question 14: DNS в Kubernetes
 
+
 Какой формат DNS имени для Service в namespace production?
 
-A) service.production
+A) service.production.svc.cluster.local
 
-B) service.production.cluster
+B) production.service.k8s
 
-C) service.production.svc.cluster.local
+C) service.production.cluster
 
-D) production.service.k8s
+D) service.production
 
 ---
 
 ## Question 15: Ingress
 
+
 Для чего используется Ingress?
 
-A) Внутренняя маршрутизация между Pods
+A) Хранение секретов
 
-B) HTTP/HTTPS маршрутизация извне в кластер
+B) Мониторинг
 
-C) Хранение секретов
+C) HTTP/HTTPS маршрутизация извне в кластер
 
-D) Мониторинг
+D) Внутренняя маршрутизация между Pods
 
 ---
 
 ## Question 16: Resource limits
 
+
 Как ограничить Pod использованием максимум 512Mi памяти?
 
-A) memory: 512Mi
+A) limits.memory: 512Mi
 
-B) limits.memory: 512Mi
+B) maxMemory: 512Mi
 
 C) resources.limits.memory: "512Mi"
 
-D) maxMemory: 512Mi
+D) memory: 512Mi
 
 ---
 
 ## Question 17: kubectl exec
 
+
 Как выполнить интерактивную команду sh в Pod?
 
-A) kubectl run pod sh
+A) kubectl exec -it pod -- sh
 
-B) kubectl exec -it pod -- sh
+B) kubectl shell pod
 
-C) kubectl shell pod
+C) kubectl connect pod sh
 
-D) kubectl connect pod sh
+D) kubectl run pod sh
 
 ---
 
 ## Question 18: ReplicaSet
 
+
 Кто управляет ReplicaSet?
 
-A) Pod
+A) Deployment
 
-B) Deployment
+B) kubelet
 
 C) Service
 
-D) kubelet
+D) Pod
 
 ---
 
 ## Question 19: Port Forward
 
+
 Как прокинуть порт 8080 локально на порт 80 Pod'а?
 
-A) kubectl forward 8080:80 pod
+A) kubectl proxy 8080:80 pod
 
-B) kubectl port-forward pod/name 8080:80
+B) kubectl tunnel 8080:80 pod
 
-C) kubectl proxy 8080:80 pod
+C) kubectl forward 8080:80 pod
 
-D) kubectl tunnel 8080:80 pod
+D) kubectl port-forward pod/name 8080:80
 
 ---
 
 ## Question 20: Network Policy
 
+
 Для чего используется NetworkPolicy?
 
-A) Настройка DNS
+A) Ограничение сетевого трафика между Pods
 
-B) Ограничение сетевого трафика между Pods
+B) Шифрование трафика
 
 C) Балансировка нагрузки
 
-D) Шифрование трафика
+D) Настройка DNS
 
 ---
 
@@ -290,26 +310,26 @@ D) Шифрование трафика
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Pod — минимальная единица развёртывания, может содержать несколько контейнеров |
+| 1 | C | Pod — минимальная единица развёртывания, может содержать несколько контейнеров |
 | 2 | C | etcd — распределённое хранилище для всего состояния кластера |
 | 3 | B | kubelet — агент на каждой ноде, управляет жизненным циклом Pods |
-| 4 | C | LoadBalancer создаёт внешний LB в cloud-провайдерах |
-| 5 | C | Deployment управляет ReplicaSet и обеспечивает декларативные обновления |
-| 6 | B | apply создаёт ресурсы или обновляет существующие |
-| 7 | B | ConfigMap хранит конфигурацию в виде key-value пар |
+| 4 | A | LoadBalancer создаёт внешний LB в cloud-провайдерах |
+| 5 | B | Deployment управляет ReplicaSet и обеспечивает декларативные обновления |
+| 6 | D | apply создаёт ресурсы или обновляет существующие |
+| 7 | C | ConfigMap хранит конфигурацию в виде key-value пар |
 | 8 | B | Данные в Secret хранятся в base64 (не шифруются по умолчанию) |
-| 9 | B | -A или --all-namespaces показывает ресурсы из всех namespaces |
-| 10 | B | maxUnavailable определяет максимальное количество недоступных Pods |
+| 9 | D | -A или --all-namespaces показывает ресурсы из всех namespaces |
+| 10 | C | maxUnavailable определяет максимальное количество недоступных Pods |
 | 11 | B | readinessProbe определяет готовность Pod принимать трафик |
-| 12 | B | PVC запрашивает storage, который предоставляет PV |
-| 13 | C | Service использует selector для поиска Pods по labels |
-| 14 | C | Полный DNS: service.namespace.svc.cluster.local |
-| 15 | B | Ingress обеспечивает HTTP/HTTPS маршрутизацию извне |
+| 12 | C | PVC запрашивает storage, который предоставляет PV |
+| 13 | D | Service использует selector для поиска Pods по labels |
+| 14 | A | Полный DNS: service.namespace.svc.cluster.local |
+| 15 | C | Ingress обеспечивает HTTP/HTTPS маршрутизацию извне |
 | 16 | C | resources.limits.memory: "512Mi" в spec контейнера |
-| 17 | B | kubectl exec -it pod -- sh для интерактивной команды |
-| 18 | B | Deployment создаёт и управляет ReplicaSet |
-| 19 | B | kubectl port-forward pod/name localPort:podPort |
-| 20 | B | NetworkPolicy ограничивает ingress/egress трафик между Pods |
+| 17 | A | kubectl exec -it pod -- sh для интерактивной команды |
+| 18 | A | Deployment создаёт и управляет ReplicaSet |
+| 19 | D | kubectl port-forward pod/name localPort:podPort |
+| 20 | A | NetworkPolicy ограничивает ingress/egress трафик между Pods |
 
 ---
 

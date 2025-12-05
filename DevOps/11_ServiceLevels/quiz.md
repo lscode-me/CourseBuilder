@@ -6,19 +6,21 @@
 
 ## Question 1: SLI
 
+
 Что такое SLI?
 
-A) Service Level Insurance
+A) Внутренняя цель команды
 
-B) Количественная метрика надёжности сервиса
+B) Контракт с клиентом
 
-C) Контракт с клиентом
+C) Количественная метрика надёжности сервиса
 
-D) Внутренняя цель команды
+D) Service Level Insurance
 
 ---
 
 ## Question 2: SLO
+
 
 Что такое SLO?
 
@@ -26,91 +28,97 @@ A) Юридический контракт
 
 B) Целевое значение SLI
 
-C) Тип метрики
+C) Инструмент мониторинга
 
-D) Инструмент мониторинга
+D) Тип метрики
 
 ---
 
 ## Question 3: SLA
 
+
 Что отличает SLA от SLO?
 
-A) SLA = SLO
+A) SLA не измеряется
 
 B) SLA — юридический контракт с последствиями
 
-C) SLA всегда выше SLO
+C) SLA = SLO
 
-D) SLA не измеряется
+D) SLA всегда выше SLO
 
 ---
 
 ## Question 4: Error Budget
 
+
 Как рассчитывается Error Budget?
 
-A) SLO - 100%
+A) 100% - SLO (или 1 - SLO)
 
-B) 100% - SLO (или 1 - SLO)
+B) SLA - SLO
 
-C) SLA - SLO
+C) SLI / SLO
 
-D) SLI / SLO
+D) SLO - 100%
 
 ---
 
 ## Question 5: 99.9% SLO
 
+
 Сколько минут downtime в месяц допускает 99.9% SLO?
 
-A) 7.2 часа
+A) ~4.3 минуты
 
-B) ~43 минуты
+B) 0 минут
 
-C) ~4.3 минуты
+C) ~43 минуты
 
-D) 0 минут
+D) 7.2 часа
 
 ---
 
 ## Question 6: Good SLI
 
+
 Что НЕ является хорошим SLI?
 
-A) % successful HTTP requests
+A) P99 response time
 
-B) P99 response time
+B) % successful logins
 
-C) CPU usage
+C) % successful HTTP requests
 
-D) % successful logins
+D) CPU usage
 
 ---
 
 ## Question 7: Budget Exhausted
 
+
 Что делать при исчерпании error budget?
 
-A) Продолжать релизить фичи
+A) Остановить feature releases, фокус на reliability
 
-B) Остановить feature releases, фокус на reliability
+B) Продолжать релизить фичи
 
-C) Увеличить SLO
+C) Игнорировать
 
-D) Игнорировать
+D) Увеличить SLO
 
 ---
 
 ## Question 8: SLO vs SLA
 
+
 Какое соотношение правильное?
 
 A) SLO = SLA
 
-B) SLO < SLA (менее строгий)
+B) SLO > SLA (более строгий)
 
-C) SLO > SLA (более строгий)
+C) SLO < SLA (менее строгий)
 
 D) Не связаны
 
@@ -118,29 +126,33 @@ D) Не связаны
 
 ## Question 9: Availability SLI
 
+
 Как измеряется availability SLI?
 
-A) CPU usage
+A) Disk space
 
-B) successful_requests / total_requests
+B) Memory usage
 
-C) Memory usage
+C) successful_requests / total_requests
 
-D) Disk space
+D) CPU usage
 
 ---
 
 ## Question 10: Burn Rate
 
+
 Что показывает burn rate в SLO alerting?
 
-A) Температуру сервера
+A) Скорость расходования error budget
 
-B) Скорость расходования error budget
+B) Размер логов
 
-C) Количество пользователей
+C) Температуру сервера
 
-D) Размер логов
+D) Количество пользователей
+
+---
 
 ---
 
@@ -148,16 +160,16 @@ D) Размер логов
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | SLI — количественная метрика надёжности |
+| 1 | C | SLI — количественная метрика надёжности |
 | 2 | B | SLO — target value для SLI |
 | 3 | B | SLA — юридический контракт с компенсациями |
-| 4 | B | Error Budget = 1 - SLO |
-| 5 | B | 0.1% от 43200 минут = ~43 минуты |
-| 6 | C | CPU usage не user-centric |
-| 7 | B | При исчерпании — фокус на reliability |
-| 8 | C | SLO строже, чтобы иметь запас до SLA |
-| 9 | B | Availability = successful / total requests |
-| 10 | B | Burn rate — скорость расходования budget |
+| 4 | A | Error Budget = 1 - SLO |
+| 5 | C | 0.1% от 43200 минут = ~43 минуты |
+| 6 | D | CPU usage не user-centric |
+| 7 | A | При исчерпании — фокус на reliability |
+| 8 | B | SLO строже, чтобы иметь запас до SLA |
+| 9 | C | Availability = successful / total requests |
+| 10 | A | Burn rate — скорость расходования budget |
 
 ---
 

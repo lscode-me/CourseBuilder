@@ -6,13 +6,14 @@
 
 ## Question 1: Pragmatic Meaning
 
+
 "That's an interesting approach" from a manager often means:
 
-A) They are genuinely interested
+A) They want more information
 
 B) They have doubts or disagree
 
-C) They want more information
+C) They are genuinely interested
 
 D) They are enthusiastic
 
@@ -20,13 +21,14 @@ D) They are enthusiastic
 
 ## Question 2: Face-Saving
 
+
 A request threatens hearer's "negative face" because it:
 
 A) Insults them
 
-B) Imposes on their freedom
+B) Ignores their existence
 
-C) Ignores their existence
+C) Imposes on their freedom
 
 D) Praises them excessively
 
@@ -34,19 +36,21 @@ D) Praises them excessively
 
 ## Question 3: Politeness Level
 
+
 Rank from LEAST to MOST polite: (1) "Give me the file" (2) "Could you give me the file?" (3) "I was wondering if you might be able to send the file"
 
-A) 1, 2, 3 (least to most)
+A) 3, 2, 1
 
-B) 3, 2, 1
+B) All equally polite
 
 C) 2, 1, 3
 
-D) All equally polite
+D) 1, 2, 3 (least to most)
 
 ---
 
 ## Question 4: Understatement
+
 
 "That's not bad" usually means:
 
@@ -62,83 +66,89 @@ D) I don't care
 
 ## Question 5: Social Formula
 
+
 "We should do lunch sometime" typically means:
 
 A) A concrete invitation to lunch
 
-B) A social formula with no real intention
+B) A rejection
 
-C) A formal business request
+C) A social formula with no real intention
 
-D) A rejection
+D) A formal business request
 
 ---
 
 ## Question 6: Register Match
 
+
 For a formal business email to a CEO, which opening is appropriate?
 
-A) "Hey there!"
+A) "Hi!"
 
-B) "Hi!"
+B) "Hey there!"
 
-C) "Dear Mr./Ms. [Name],"
+C) "Yo!"
 
-D) "Yo!"
+D) "Dear Mr./Ms. [Name],"
 
 ---
 
 ## Question 7: Diplomatic Disagreement
 
+
 The most diplomatic way to disagree is:
 
-A) "I disagree completely."
+A) "No."
 
 B) "That's wrong."
 
 C) "I wonder if there might be another perspective."
 
-D) "No."
+D) "I disagree completely."
 
 ---
 
 ## Question 8: Russian Interference
 
+
 Russian speakers often sound ___ in English professional contexts:
 
-A) Too indirect
+A) Too casual
 
 B) Too direct
 
-C) Too formal
+C) Too indirect
 
-D) Too casual
+D) Too formal
 
 ---
 
 ## Question 9: Implied Criticism
 
+
 "With the greatest respect..." usually signals:
 
-A) Deep respect
+A) Agreement
 
-B) Upcoming disagreement or criticism
+B) Deep respect
 
-C) Agreement
+C) Confusion
 
-D) Confusion
+D) Upcoming disagreement or criticism
 
 ---
 
 ## Question 10: Register Feature
 
+
 Which is appropriate for formal writing?
 
 A) Contractions (don't, can't)
 
-B) Phrasal verbs (find out, carry out)
+B) Full forms and Latinate vocabulary
 
-C) Full forms and Latinate vocabulary
+C) Phrasal verbs (find out, carry out)
 
 D) Slang and idioms
 
@@ -146,27 +156,29 @@ D) Slang and idioms
 
 ## Question 11: Request Softening
 
+
 "I was just wondering if you could possibly help" uses which softening devices?
 
-A) Hedges ("just", "possibly")
+A) Direct statements
 
-B) Intensifiers
+B) Hedges ("just", "possibly")
 
-C) Imperatives
+C) Intensifiers
 
-D) Direct statements
+D) Imperatives
 
 ---
 
 ## Question 12: Polite Refusal
 
+
 The most diplomatic refusal is:
 
-A) "No, I can't do that."
+A) "I'm afraid that might be difficult."
 
-B) "That's impossible."
+B) "No, I can't do that."
 
-C) "I'm afraid that might be difficult."
+C) "That's impossible."
 
 D) "Absolutely not."
 
@@ -174,41 +186,44 @@ D) "Absolutely not."
 
 ## Question 13: Compliment Response
 
+
 In English, the appropriate response to "Great presentation!" is:
 
-A) "It was nothing special."
+A) "No, it wasn't good."
 
 B) "Thank you! I'm glad it went well."
 
-C) "No, it wasn't good."
+C) "You're wrong."
 
-D) "You're wrong."
+D) "It was nothing special."
 
 ---
 
 ## Question 14: "I'll Bear That in Mind"
 
+
 This phrase usually indicates:
 
-A) Strong commitment to act
+A) Polite dismissal—unlikely to act
 
-B) Polite dismissal—unlikely to act
+B) Confusion
 
-C) Confusion
+C) Enthusiastic agreement
 
-D) Enthusiastic agreement
+D) Strong commitment to act
 
 ---
 
 ## Question 15: British vs American
 
+
 Generally, British English is:
 
-A) More direct than American English
+A) Identical to American English
 
-B) More indirect than American English
+B) More direct than American English
 
-C) Identical to American English
+C) More indirect than American English
 
 D) Less polite than American English
 
@@ -216,13 +231,14 @@ D) Less polite than American English
 
 ## Question 16: Indirect Speech Act
 
+
 "It's cold in here" (said to someone near the window) functions as:
 
-A) A statement about temperature
+A) An indirect request to close the window
 
-B) An indirect request to close the window
+B) A complaint about the building
 
-C) A complaint about the building
+C) A statement about temperature
 
 D) An invitation to leave
 
@@ -230,57 +246,63 @@ D) An invitation to leave
 
 ## Question 17: Email Closing
 
+
 For a professional but not overly formal email, use:
 
-A) "Yours faithfully,"
+A) "XOXO"
 
 B) "Kind regards,"
 
-C) "Cheers mate,"
+C) "Yours faithfully,"
 
-D) "XOXO"
+D) "Cheers mate,"
 
 ---
 
 ## Question 18: Small Talk
 
+
 In English business culture:
 
-A) Small talk is unnecessary and wastes time
+A) Small talk is only for social events
 
 B) Small talk is expected before business
 
 C) Small talk is considered rude
 
-D) Small talk is only for social events
+D) Small talk is unnecessary and wastes time
 
 ---
 
 ## Question 19: Self-Deprecation
 
+
 English speakers often respond to praise by:
 
-A) Strongly agreeing
+A) Ignoring the comment
 
 B) Minimizing their achievement
 
-C) Demanding more praise
+C) Strongly agreeing
 
-D) Ignoring the comment
+D) Demanding more praise
 
 ---
 
 ## Question 20: Giving Feedback
 
+
 "There might be some room for improvement" diplomatically means:
 
-A) It's perfect
+A) No changes needed
 
-B) There are problems that need fixing
+B) It's excellent
 
-C) No changes needed
+C) It's perfect
 
-D) It's excellent
+D) There are problems that need fixing
+
+---
 
 ---
 
@@ -289,25 +311,25 @@ D) It's excellent
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | "Interesting" from a manager is often damning with faint praise—signals doubt. |
-| 2 | B | Negative face = freedom from imposition; requests impose on this. |
-| 3 | A | Direct imperative < conditional < past modal with hedging (most polite). |
+| 2 | C | Negative face = freedom from imposition; requests impose on this. |
+| 3 | D | Direct imperative < conditional < past modal with hedging (most polite). |
 | 4 | C | Understatement: "not bad" typically means "good." |
-| 5 | B | Social formula—often said without genuine intention to arrange lunch. |
-| 6 | C | "Dear Mr./Ms. [Name]" is appropriate formal business register. |
+| 5 | C | Social formula—often said without genuine intention to arrange lunch. |
+| 6 | D | "Dear Mr./Ms. [Name]" is appropriate formal business register. |
 | 7 | C | "I wonder if..." is diplomatic; direct disagreement is impolite. |
 | 8 | B | Russian communication style transfers as too direct in English. |
-| 9 | B | "With the greatest respect" typically precedes disagreement or criticism. |
-| 10 | C | Formal writing uses full forms and avoids contractions and phrasal verbs. |
-| 11 | A | "Just" and "possibly" are hedges that soften the request. |
-| 12 | C | "I'm afraid that might be difficult" is diplomatic refusal language. |
+| 9 | D | "With the greatest respect" typically precedes disagreement or criticism. |
+| 10 | B | Formal writing uses full forms and avoids contractions and phrasal verbs. |
+| 11 | B | "Just" and "possibly" are hedges that soften the request. |
+| 12 | A | "I'm afraid that might be difficult" is diplomatic refusal language. |
 | 13 | B | Accept compliments gracefully in English; deflecting seems odd. |
-| 14 | B | Usually a polite way to dismiss a suggestion without committing. |
-| 15 | B | British English is generally more indirect than American. |
-| 16 | B | Statement functions as indirect request for action. |
+| 14 | A | Usually a polite way to dismiss a suggestion without committing. |
+| 15 | C | British English is generally more indirect than American. |
+| 16 | A | Statement functions as indirect request for action. |
 | 17 | B | "Kind regards" is appropriately professional but not stiff. |
 | 18 | B | Small talk is expected and valued in English business culture. |
 | 19 | B | Self-deprecation is common; minimizing achievements shows modesty. |
-| 20 | B | Diplomatic way to say there are problems; not actually praise. |
+| 20 | D | Diplomatic way to say there are problems; not actually praise. |
 
 ---
 

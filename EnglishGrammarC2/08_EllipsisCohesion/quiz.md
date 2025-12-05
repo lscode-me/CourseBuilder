@@ -6,19 +6,21 @@
 
 ## Question 1: Ellipsis Definition
 
+
 Ellipsis is:
 
-A) Adding extra words for emphasis
+A) Replacing words with synonyms
 
 B) Omitting words that are understood from context
 
-C) Replacing words with synonyms
+C) Adding extra words for emphasis
 
 D) Changing sentence structure
 
 ---
 
 ## Question 2: Verbal Ellipsis
+
 
 Complete: "Can you swim?" — "Yes, I ___."
 
@@ -34,6 +36,7 @@ D) do
 
 ## Question 3: Substitution with ONE
 
+
 Complete: "I don't like this shirt. Show me another ___."
 
 A) shirt
@@ -48,25 +51,27 @@ D) that
 
 ## Question 4: SO for Clause Substitution
 
+
 "Will it rain?" — "I hope ___."
 
-A) so
+A) not so
 
-B) it
+B) that
 
-C) that
+C) it
 
-D) not so
+D) so
 
 ---
 
 ## Question 5: SO with Inversion
 
+
 "She's tall." — "___ is her brother."
 
-A) So
+A) Too
 
-B) Too
+B) So
 
 C) Also
 
@@ -76,69 +81,74 @@ D) As well
 
 ## Question 6: NEITHER Pattern
 
+
 "I can't sing." — "___ can I."
 
-A) So
+A) Neither
 
-B) Neither
+B) So
 
-C) Either
+C) Also
 
-D) Also
+D) Either
 
 ---
 
 ## Question 7: Given-New Principle
 
+
 Information structure typically places:
 
-A) New information before given information
+A) All important information at the beginning
 
-B) Given (known) information before new information
+B) New information before given information
 
-C) All important information at the beginning
+C) All technical terms at the end
 
-D) All technical terms at the end
+D) Given (known) information before new information
 
 ---
 
 ## Question 8: Reference with Demonstratives
 
+
 "He made several suggestions. ___ were all rejected."
 
-A) This
+A) That
 
-B) These
+B) This
 
-C) That
+C) It
 
-D) It
+D) These
 
 ---
 
 ## Question 9: Discourse Marker
 
+
 "The data are inconclusive. ___, some patterns emerge."
 
-A) Therefore
+A) Consequently
 
-B) However
+B) Therefore
 
-C) Consequently
+C) Furthermore
 
-D) Furthermore
+D) However
 
 ---
 
 ## Question 10: Russian Interference
 
+
 Which shows typical Russian speaker over-repetition?
 
-A) "I bought a book. It's interesting."
+A) "I bought an interesting book to read."
 
-B) "I bought a book. The book is interesting. I will read the book."
+B) "I bought a book. It's interesting."
 
-C) "I bought an interesting book to read."
+C) "I bought a book. The book is interesting. I will read the book."
 
 D) "I bought a book, which is interesting."
 
@@ -146,13 +156,14 @@ D) "I bought a book, which is interesting."
 
 ## Question 11: End Weight
 
+
 Which follows the end-weight principle better?
 
-A) "That he would succeed was obvious to everyone."
+A) Both are equally good.
 
-B) "It was obvious to everyone that he would succeed."
+B) "That he would succeed was obvious to everyone."
 
-C) Both are equally good.
+C) "It was obvious to everyone that he would succeed."
 
 D) Neither follows end weight.
 
@@ -160,11 +171,12 @@ D) Neither follows end weight.
 
 ## Question 12: Comparative Ellipsis
 
+
 "She works harder than I ___" — what's omitted?
 
-A) do
+A) work
 
-B) work
+B) do
 
 C) am
 
@@ -174,39 +186,42 @@ D) can
 
 ## Question 13: Lexical Reference
 
+
 "A new study was published. The ___ focused on climate change."
 
 A) study
 
-B) research
+B) thing
 
-C) thing
+C) finding
 
-D) finding
+D) research
 
 ---
 
 ## Question 14: Topic Chain
 
+
 Which maintains better topic consistency?
 
-A) "The economy grew. Exports drove growth. 3% was the expansion rate."
+A) Both are equally good.
 
-B) "The economy grew. It expanded by 3%, driven by exports."
+B) Neither maintains the topic.
 
-C) Both are equally good.
+C) "The economy grew. Exports drove growth. 3% was the expansion rate."
 
-D) Neither maintains the topic.
+D) "The economy grew. It expanded by 3%, driven by exports."
 
 ---
 
 ## Question 15: Gapping
 
+
 "She plays tennis and he ___ golf."
 
-A) plays
+A) (nothing—verb omitted)
 
-B) (nothing—verb omitted)
+B) plays
 
 C) does
 
@@ -216,47 +231,51 @@ D) is playing
 
 ## Question 16: Pronoun Clarity
 
+
 "John saw Peter when he was leaving." This is:
 
-A) Clear (obviously refers to John)
+A) Grammatically incorrect
 
 B) Clear (obviously refers to Peter)
 
-C) Ambiguous (unclear who "he" refers to)
+C) Clear (obviously refers to John)
 
-D) Grammatically incorrect
+D) Ambiguous (unclear who "he" refers to)
 
 ---
 
 ## Question 17: DO Substitution
 
+
 "He plays guitar, and so ___ his brother."
 
-A) is
+A) has
 
-B) does
+B) plays
 
-C) has
+C) is
 
-D) plays
+D) does
 
 ---
 
 ## Question 18: Missing Marker
 
+
 "The results were significant. They support the hypothesis." Adding what would improve flow?
 
 A) "Moreover" at the start of second sentence
 
-B) Nothing—it's already perfect
+B) "The" before "results"
 
-C) "The" before "results"
+C) Nothing—it's already perfect
 
 D) "Therefore" at the end
 
 ---
 
 ## Question 19: SUCH Reference
+
 
 "He showed great courage. ___ bravery should be recognized."
 
@@ -272,15 +291,18 @@ D) The
 
 ## Question 20: Coordination Ellipsis
 
+
 "She bought bread and ___ butter."
 
-A) she bought
+A) (nothing—subject and verb omitted)
 
-B) (nothing—subject and verb omitted)
+B) did buy
 
-C) did buy
+C) she bought
 
 D) she did buy
+
+---
 
 ---
 
@@ -291,23 +313,23 @@ D) she did buy
 | 1 | B | Ellipsis = omitting words understood from context. |
 | 2 | B | Verbal ellipsis after modal: "I can" (swim is omitted). |
 | 3 | B | "One" substitutes for singular countable noun "shirt." |
-| 4 | A | "So" substitutes for clause after "hope": "I hope so." |
-| 5 | A | "So + auxiliary + subject" for "also": "So is her brother." |
-| 6 | B | "Neither can I" for negative agreement. |
-| 7 | B | Given-new: known information typically precedes new. |
-| 8 | B | "These" (plural) refers back to "several suggestions." |
-| 9 | B | "However" signals contrast (inconclusive, but patterns emerge). |
-| 10 | B | Repeating "the book" three times is over-repetition. |
-| 11 | B | Heavy clauses go at the end (end weight principle). |
-| 12 | B | "Work" is omitted: "harder than I work." |
-| 13 | B | "Research" is a synonym that varies lexis while maintaining reference. |
-| 14 | B | Keeping "economy/it" as topic maintains consistency. |
-| 15 | B | Gapping: verb is omitted in second coordinated clause. |
-| 16 | C | Ambiguous—"he" could refer to either John or Peter. |
-| 17 | B | "Does" substitutes for verb phrase "plays guitar." |
+| 4 | D | "So" substitutes for clause after "hope": "I hope so." |
+| 5 | B | "So + auxiliary + subject" for "also": "So is her brother." |
+| 6 | A | "Neither can I" for negative agreement. |
+| 7 | D | Given-new: known information typically precedes new. |
+| 8 | D | "These" (plural) refers back to "several suggestions." |
+| 9 | D | "However" signals contrast (inconclusive, but patterns emerge). |
+| 10 | C | Repeating "the book" three times is over-repetition. |
+| 11 | C | Heavy clauses go at the end (end weight principle). |
+| 12 | A | "Work" is omitted: "harder than I work." |
+| 13 | D | "Research" is a synonym that varies lexis while maintaining reference. |
+| 14 | D | Keeping "economy/it" as topic maintains consistency. |
+| 15 | A | Gapping: verb is omitted in second coordinated clause. |
+| 16 | D | Ambiguous—"he" could refer to either John or Peter. |
+| 17 | D | "Does" substitutes for verb phrase "plays guitar." |
 | 18 | A | "Moreover" would show additive relationship, improving flow. |
 | 19 | C | "Such" refers back to the description "great courage." |
-| 20 | B | Subject and verb omitted: "She bought bread and [she bought] butter." |
+| 20 | A | Subject and verb omitted: "She bought bread and [she bought] butter." |
 
 ---
 

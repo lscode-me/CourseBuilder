@@ -6,27 +6,29 @@
 
 ## Question 1: vmm
 
+
 Как называется гипервизор в OpenBSD?
 
-A) KVM
+A) vmm
 
 B) bhyve
 
-C) vmm
+C) xen
 
-D) xen
+D) KVM
 
 ---
 
 ## Question 2: vmd
 
+
 Какая команда управляет виртуальными машинами?
 
-A) vm
+A) vmctl
 
-B) vmctl
+B) virsh
 
-C) virsh
+C) vm
 
 D) vbox
 
@@ -34,83 +36,89 @@ D) vbox
 
 ## Question 3: Создание VM диска
 
+
 Какая команда создаёт диск для виртуальной машины?
 
-A) vmctl disk create
+A) vmctl create -s 10G disk.qcow2
 
-B) vmctl create -s 10G disk.qcow2
+B) dd if=/dev/zero of=disk.qcow2
 
-C) qemu-img create disk.qcow2
+C) vmctl disk create
 
-D) dd if=/dev/zero of=disk.qcow2
+D) qemu-img create disk.qcow2
 
 ---
 
 ## Question 4: CARP
 
+
 Для чего используется CARP?
 
-A) Шифрование трафика
+A) Логирование
 
-B) Отказоустойчивость (failover)
+B) Шифрование трафика
 
 C) Сжатие данных
 
-D) Логирование
+D) Отказоустойчивость (failover)
 
 ---
 
 ## Question 5: CARP параметр
 
+
 Что определяет параметр advskew в CARP?
 
-A) Скорость интерфейса
+A) Интервал проверки
 
-B) Приоритет (меньше = выше приоритет)
+B) Размер пакета
 
-C) Интервал проверки
+C) Приоритет (меньше = выше приоритет)
 
-D) Размер пакета
+D) Скорость интерфейса
 
 ---
 
 ## Question 6: pfsync
 
+
 Для чего используется pfsync?
 
-A) Синхронизация файлов
+A) Синхронизация состояний PF между нодами
 
-B) Синхронизация состояний PF между нодами
+B) Резервное копирование
 
-C) Резервное копирование
+C) Мониторинг
 
-D) Мониторинг
+D) Синхронизация файлов
 
 ---
 
 ## Question 7: Сборка ядра
 
+
 Где находятся исходники ядра?
 
 A) /usr/src/kernel
 
-B) /usr/src/sys
+B) /opt/kernel
 
-C) /var/src/kern
+C) /usr/src/sys
 
-D) /opt/kernel
+D) /var/src/kern
 
 ---
 
 ## Question 8: Конфигурация ядра
 
+
 Где находятся файлы конфигурации ядра для amd64?
 
-A) /etc/kernel.conf
+A) /boot/kernel.conf
 
-B) /usr/src/sys/arch/amd64/conf
+B) /etc/kernel.conf
 
-C) /boot/kernel.conf
+C) /usr/src/sys/arch/amd64/conf
 
 D) /usr/src/conf/amd64
 
@@ -118,69 +126,74 @@ D) /usr/src/conf/amd64
 
 ## Question 9: IP forwarding
 
+
 Какой sysctl включает пересылку IP пакетов?
 
-A) net.ipv4.ip_forward
+A) net.inet.ip.forwarding
 
-B) net.inet.ip.forwarding
+B) ip.forward.enable
 
 C) net.core.forwarding
 
-D) ip.forward.enable
+D) net.ipv4.ip_forward
 
 ---
 
 ## Question 10: WireGuard
 
+
 Какой интерфейс создаётся для WireGuard?
 
-A) vpn0
+A) wire0
 
 B) tun0
 
 C) wg0
 
-D) wire0
+D) vpn0
 
 ---
 
 ## Question 11: WireGuard порт
 
+
 Какой UDP порт использует WireGuard по умолчанию?
 
 A) 443
 
-B) 1194
+B) 500
 
-C) 51820
+C) 1194
 
-D) 500
+D) 51820
 
 ---
 
 ## Question 12: Подключение к консоли VM
 
+
 Какая команда подключает к консоли виртуальной машины?
 
-A) vmctl attach vmname
+A) vmctl tty vmname
 
-B) vmctl console vmname
+B) vmctl attach vmname
 
 C) vmctl connect vmname
 
-D) vmctl tty vmname
+D) vmctl console vmname
 
 ---
 
 ## Question 13: Откат ядра
 
+
 Как загрузить старое ядро?
 
-A) boot /kernel.old
+A) boot /bsd.old
 
-B) boot /obsd
+B) boot /kernel.old
 
-C) boot /bsd.old
+C) boot /obsd
 
 D) boot -o
 
@@ -188,29 +201,31 @@ D) boot -o
 
 ## Question 14: ktrace
 
+
 Для чего используется ktrace?
 
-A) Трассировка сетевого трафика
+A) Трассировка файловой системы
 
 B) Трассировка системных вызовов
 
-C) Трассировка маршрутов
+C) Трассировка сетевого трафика
 
-D) Трассировка файловой системы
+D) Трассировка маршрутов
 
 ---
 
 ## Question 15: DHCP для роутера
 
+
 Какой флаг указывает интерфейс для dhcpd?
 
-A) rcctl set dhcpd interface em1
+A) rcctl set dhcpd flags em1
 
-B) rcctl set dhcpd flags em1
+B) rcctl set dhcpd -i em1
 
 C) rcctl set dhcpd listen em1
 
-D) rcctl set dhcpd -i em1
+D) rcctl set dhcpd interface em1
 
 ---
 
@@ -220,21 +235,21 @@ D) rcctl set dhcpd -i em1
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | vmm (Virtual Machine Monitor) — гипервизор в ядре OpenBSD |
-| 2 | B | vmctl — утилита для управления виртуальными машинами |
-| 3 | B | vmctl create -s SIZE FILE создаёт диск для VM |
-| 4 | B | CARP обеспечивает отказоустойчивость через виртуальный IP |
-| 5 | B | advskew определяет приоритет: 0 = master, 100 = backup |
-| 6 | B | pfsync синхронизирует таблицы состояний PF между нодами |
-| 7 | B | /usr/src/sys содержит исходники ядра |
-| 8 | B | Конфигурации ядра в /usr/src/sys/arch/ARCH/conf |
-| 9 | B | net.inet.ip.forwarding=1 включает IP forwarding |
+| 1 | A | vmm (Virtual Machine Monitor) — гипервизор в ядре OpenBSD |
+| 2 | A | vmctl — утилита для управления виртуальными машинами |
+| 3 | A | vmctl create -s SIZE FILE создаёт диск для VM |
+| 4 | D | CARP обеспечивает отказоустойчивость через виртуальный IP |
+| 5 | C | advskew определяет приоритет: 0 = master, 100 = backup |
+| 6 | A | pfsync синхронизирует таблицы состояний PF между нодами |
+| 7 | C | /usr/src/sys содержит исходники ядра |
+| 8 | C | Конфигурации ядра в /usr/src/sys/arch/ARCH/conf |
+| 9 | A | net.inet.ip.forwarding=1 включает IP forwarding |
 | 10 | C | wg0 — имя WireGuard интерфейса |
-| 11 | C | WireGuard по умолчанию использует UDP порт 51820 |
-| 12 | B | vmctl console vmname подключает к консоли VM |
-| 13 | B | boot /obsd загружает предыдущее ядро (original bsd) |
+| 11 | D | WireGuard по умолчанию использует UDP порт 51820 |
+| 12 | D | vmctl console vmname подключает к консоли VM |
+| 13 | C | boot /obsd загружает предыдущее ядро (original bsd) |
 | 14 | B | ktrace трассирует системные вызовы процесса |
-| 15 | B | rcctl set dhcpd flags em1 указывает интерфейс |
+| 15 | A | rcctl set dhcpd flags em1 указывает интерфейс |
 
 ---
 

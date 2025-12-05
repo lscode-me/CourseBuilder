@@ -6,13 +6,14 @@
 
 ## Question 1: Manager of Managers
 
+
 Что главное меняется при переходе от EM к Director?
 
-A) Меньше работы
+A) Больше coding
 
 B) Impact через менеджеров, фокус на strategy и systems
 
-C) Больше coding
+C) Меньше работы
 
 D) Только больше зарплата
 
@@ -20,13 +21,14 @@ D) Только больше зарплата
 
 ## Question 2: 1-on-1 с менеджерами
 
+
 На чём фокус 1-on-1 с менеджерами (в отличие от ICs)?
 
-A) Только технические детали
+A) Только задачи
 
-B) Team health, их развитие как лидеров, strategy alignment
+B) Только технические детали
 
-C) Только задачи
+C) Team health, их развитие как лидеров, strategy alignment
 
 D) Code review
 
@@ -34,11 +36,12 @@ D) Code review
 
 ## Question 3: Coaching vs Directing
 
+
 Когда использовать coaching вместо directing?
 
-A) В кризис
+A) Когда есть development opportunity и менеджер может figure it out
 
-B) Когда есть development opportunity и менеджер может figure it out
+B) В кризис
 
 C) Всегда directing
 
@@ -48,89 +51,96 @@ D) Никогда coaching
 
 ## Question 4: Skip-Level Purpose
 
+
 Зачем нужны skip-level 1-on-1?
 
-A) Чтобы micromanage
+A) Performance review
 
-B) Unfiltered view, culture check, build trust, career conversations
+B) Чтобы undermining менеджера
 
-C) Чтобы undermining менеджера
+C) Unfiltered view, culture check, build trust, career conversations
 
-D) Performance review
+D) Чтобы micromanage
 
 ---
 
 ## Question 5: Handling Manager Complaints
 
+
 Как реагировать если IC жалуется на менеджера на skip-level?
 
-A) Сразу уволить менеджера
+A) Listen, clarify, don't commit, verify with data, address if pattern
 
-B) Listen, clarify, don't commit, verify with data, address if pattern
+B) Рассказать менеджеру кто жаловался
 
 C) Игнорировать
 
-D) Рассказать менеджеру кто жаловался
+D) Сразу уволить менеджера
 
 ---
 
 ## Question 6: Common Mistake
 
+
 Какая common mistake нового Director?
 
-A) Делегировать достаточно
+A) Coaching
 
 B) Micromanaging менеджеров, solving проблемы за них
 
 C) Доверять менеджерам
 
-D) Coaching
+D) Делегировать достаточно
 
 ---
 
 ## Question 7: Executive Communication
 
+
 Что нужно executives в коммуникации?
 
 A) Технические детали
 
-B) Business impact, clear asks, risks, no surprises
+B) Длинные документы
 
 C) Только хорошие новости
 
-D) Длинные документы
+D) Business impact, clear asks, risks, no surprises
 
 ---
 
 ## Question 8: Executive Presence
 
+
 Что включает executive presence?
 
-A) Только громкий голос
+A) Избегание вопросов
 
-B) Clarity, confidence, composure
+B) Только громкий голос
 
-C) Aggressive behavior
+C) Clarity, confidence, composure
 
-D) Избегание вопросов
+D) Aggressive behavior
 
 ---
 
 ## Question 9: Time Horizon
 
+
 Какой time horizon для Director?
 
 A) Дни
 
-B) Quarters to year
+B) Часы
 
-C) Часы
+C) 10+ лет
 
-D) 10+ лет
+D) Quarters to year
 
 ---
 
 ## Question 10: Conway's Law
+
 
 Что утверждает Conway's Law?
 
@@ -146,13 +156,14 @@ D) Teams должны быть большими
 
 ## Question 11: Team Design
 
+
 Какой принцип хорошего team design?
 
-A) Teams own проекты временно
+A) Teams own products/services, minimize dependencies
 
-B) Teams own products/services, minimize dependencies
+B) Максимальные dependencies
 
-C) Максимальные dependencies
+C) Teams own проекты временно
 
 D) Teams размером 50+ человек
 
@@ -160,19 +171,21 @@ D) Teams размером 50+ человек
 
 ## Question 12: When to Reorg
 
+
 Когда делать reorg?
 
-A) Каждый месяц
+A) Никогда
 
-B) Когда strategy changed, structure блокирует goals
+B) Каждую неделю
 
-C) Никогда
+C) Каждый месяц
 
-D) Каждую неделю
+D) Когда strategy changed, structure блокирует goals
 
 ---
 
 ## Question 13: Portfolio Thinking
+
 
 Какое типичное allocation для tech debt?
 
@@ -180,150 +193,140 @@ A) 0%
 
 B) ~20%
 
-C) 100%
+C) 90%
 
-D) 90%
+D) 100%
 
 ---
 
 ## Question 14: Coaching Framework
 
+
 Какой первый шаг в coaching менеджера?
 
-A) Сразу дать solution
+A) Ask about the situation
 
-B) Ask about the situation
+B) Сразу дать solution
 
-C) Criticize
+C) Ignore
 
-D) Ignore
+D) Criticize
 
 ---
 
 ## Question 15: Org Health Indicators
 
+
 Какой indicator team health?
 
-A) Только revenue
+A) Количество митингов
 
 B) Engagement scores, turnover rate, promotion rate
 
-C) Количество митингов
+C) Lines of code
 
-D) Lines of code
+D) Только revenue
 
 ---
 
 ## Question 16: Strategic Questions
 
+
 Какой стратегический вопрос для Director?
 
 A) "Какой task сделать сегодня?"
 
-B) "Где мы должны быть через год? Какие capabilities нужны?"
+B) "Какой обед заказать?"
 
 C) "Какой код написать?"
 
-D) "Какой обед заказать?"
+D) "Где мы должны быть через год? Какие capabilities нужны?"
 
 ---
 
 ## Question 17: Building Leadership Pipeline
 
+
 Как развивать leadership pipeline?
 
-A) Не развивать
+A) Ждать пока сами вырастут
 
-B) Identify high-potentials, stretch opportunities, coaching, succession planning
+B) Нанимать только извне
 
-C) Ждать пока сами вырастут
+C) Identify high-potentials, stretch opportunities, coaching, succession planning
 
-D) Нанимать только извне
+D) Не развивать
 
 ---
 
 ## Question 18: Intervention Pattern
 
+
 Если команда struggling, какой первый вопрос?
 
-A) Сразу уволить всех
+A) Игнорировать
 
-B) "Manager issue или team issue? Какой support нужен?"
+B) Добавить больше людей без анализа
 
-C) Игнорировать
+C) Сразу уволить всех
 
-D) Добавить больше людей без анализа
+D) "Manager issue или team issue? Какой support нужен?"
 
 ---
 
 ## Question 19: Self-Care
 
+
 Какие challenges на senior levels?
 
-A) Меньше stress
+A) Challenges нет
 
-B) More responsibility less control, political complexity, loneliness
+B) Меньше stress
 
-C) Challenges нет
+C) Больше свободного времени
 
-D) Больше свободного времени
+D) More responsibility less control, political complexity, loneliness
 
 ---
 
 ## Question 20: Leadership Team Dynamics
 
+
 Что важно для leadership team?
 
-A) Competition между leaders
+A) Blame culture
 
 B) Shared goals, healthy debate, support publicly, disagree and commit
 
-C) Секреты друг от друга
+C) Competition между leaders
 
-D) Blame culture
+D) Секреты друг от друга
+
+---
 
 ---
 
 ## Answer Key
 
 1. **B** - Impact через менеджеров, фокус на strategy и systems
-
-2. **B** - Team health, их развитие, strategy alignment
-
-3. **B** - Coaching когда development opportunity, могут figure it out
-
-4. **B** - Skip-level: unfiltered view, culture, trust, career
-
-5. **B** - Listen, clarify, don't commit, verify, address if pattern
-
+2. **C** - Team health, их развитие, strategy alignment
+3. **A** - Coaching когда development opportunity, могут figure it out
+4. **C** - Skip-level: unfiltered view, culture, trust, career
+5. **A** - Listen, clarify, don't commit, verify, address if pattern
 6. **B** - Micromanaging менеджеров, solving за них
-
-7. **B** - Business impact, clear asks, risks, no surprises
-
-8. **B** - Clarity, confidence, composure
-
-9. **B** - Director: quarters to year
-
+7. **D** - Business impact, clear asks, risks, no surprises
+8. **C** - Clarity, confidence, composure
+9. **D** - Director: quarters to year
 10. **B** - Org structure mirrors communication structure
-
-11. **B** - Teams own products, minimize dependencies
-
-12. **B** - Reorg когда strategy changed, structure blocks goals
-
+11. **A** - Teams own products, minimize dependencies
+12. **D** - Reorg когда strategy changed, structure blocks goals
 13. **B** - Tech debt ~20%
-
-14. **B** - Coaching: first ask about situation
-
+14. **A** - Coaching: first ask about situation
 15. **B** - Team health: engagement, turnover, promotion rate
-
-16. **B** - Strategic: где через год, какие capabilities
-
-17. **B** - Pipeline: high-potentials, stretch, coaching, succession
-
-18. **B** - Manager vs team issue, какой support
-
-19. **B** - More responsibility, complexity, loneliness
-
+16. **D** - Strategic: где через год, какие capabilities
+17. **C** - Pipeline: high-potentials, stretch, coaching, succession
+18. **D** - Manager vs team issue, какой support
+19. **D** - More responsibility, complexity, loneliness
 20. **B** - Shared goals, healthy debate, support, disagree and commit
 
 ---
