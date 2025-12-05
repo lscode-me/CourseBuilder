@@ -308,35 +308,41 @@ D) Скрывать проблемы лучше
 
 ## Answer Key
 
-1. **C** - Нанимать людей, которые поднимают средний уровень команды
-2. **D** - Costs могут превысить годовую зарплату + потерянное время
-3. **A** - Unrealistic requirements как "10 лет в 5-летней технологии"
-4. **D** - Referrals: quality + cultural fit, быстрее и дешевле
-5. **D** - Diverse channels, blind review, diverse panels
-6. **C** - Structured: consistent, reduces bias, better predictions
-7. **A** - Scorecard: competencies, questions, scores, notes
-8. **A** - Real-world problems, allow docs, focus on process
-9. **A** - STAR: Situation, Task, Action, Result
-10. **A** - Affinity bias: предпочтение похожих на себя
-11. **B** - Feedback BEFORE debrief meeting, независимо
-12. **A** - Red flags: blame without ownership, disrespectful
-13. **D** - При culture concerns lean towards "no"
-14. **C** - Week 1: access, met team, understands first tasks
-15. **A** - Month 3: fully productive, independent, integrated
-16. **A** - Buddy: questions, culture, social, NOT evaluation
-17. **A** - Take-home: less stress, realistic, best work
-18. **A** - System design: clarifying questions, trade-offs, communication
-19. **A** - 20% turnover в первые 45 дней, experience shapes engagement
-20. **B** - Честность: right expectations, self-selection, trust
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | C | Нанимать людей, которые поднимают средний уровень команды |
+| 2 | D | Costs могут превысить годовую зарплату + потерянное время |
+| 3 | A | Unrealistic requirements как "10 лет в 5-летней технологии" |
+| 4 | D | Referrals: quality + cultural fit, быстрее и дешевле |
+| 5 | D | Diverse channels, blind review, diverse panels |
+| 6 | C | Structured: consistent, reduces bias, better predictions |
+| 7 | A | Scorecard: competencies, questions, scores, notes |
+| 8 | A | Real-world problems, allow docs, focus on process |
+| 9 | A | STAR: Situation, Task, Action, Result |
+| 10 | A | Affinity bias: предпочтение похожих на себя |
+| 11 | B | Feedback BEFORE debrief meeting, независимо |
+| 12 | A | Red flags: blame without ownership, disrespectful |
+| 13 | D | При culture concerns lean towards "no" |
+| 14 | C | Week 1: access, met team, understands first tasks |
+| 15 | A | Month 3: fully productive, independent, integrated |
+| 16 | A | Buddy: questions, culture, social, NOT evaluation |
+| 17 | A | Take-home: less stress, realistic, best work |
+| 18 | A | System design: clarifying questions, trade-offs, communication |
+| 19 | A | 20% turnover в первые 45 дней, experience shapes engagement |
+| 20 | B | Честность: right expectations, self-selection, trust |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы готовы к hiring и onboarding
-- **14-17 правильных (70-89%)**: Хорошо. Повторите structured interviews и biases
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы готовы к hiring и onboarding. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите structured interviews и biases. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 

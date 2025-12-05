@@ -308,35 +308,41 @@ D) Написать roadmap
 
 ## Answer Key
 
-1. **A** - How engineering achieves goals, investments, trade-offs
-2. **C** - Strategy: why/what, quarters/years; Tactics: how, weeks/months
-3. **A** - Company → Business → Product → Eng Strategy
-4. **B** - Build when core competency, strategic, long-term
-5. **D** - Pay when blocks development, reliability issues, slows velocity
-6. **D** - Annual: themes, goals, headcount, major investments
-7. **B** - Product work: 60-70%
-8. **A** - "Security by default — built in, not added"
-9. **C** - DORA: deployment frequency, lead time, failure rate, restore time
-10. **C** - "Handle 2x load, 99.9% uptime" - measurable
-11. **D** - First: create urgency — why now?
-12. **A** - Narrative: direction, why, what enables, how
-13. **D** - Stream-aligned, Platform, Enabling, Complicated subsystem
-14. **A** - Antipattern: too many priorities, not connected to business
-15. **D** - Good: clear choices, explicit trade-offs, explainable
-16. **C** - Headcount: growth, scaling, initiatives, attrition
-17. **B** - Boring for core, new for experiments
-18. **A** - Good roadmap: tied to goals, realistic, flexible
-19. **C** - To execs: business impact, progress, risks, needs
-20. **A** - First: understand business context
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | A | How engineering achieves goals, investments, trade-offs |
+| 2 | C | Strategy: why/what, quarters/years; Tactics: how, weeks/months |
+| 3 | A | Company → Business → Product → Eng Strategy |
+| 4 | B | Build when core competency, strategic, long-term |
+| 5 | D | Pay when blocks development, reliability issues, slows velocity |
+| 6 | D | Annual: themes, goals, headcount, major investments |
+| 7 | B | Product work: 60-70% |
+| 8 | A | "Security by default — built in, not added" |
+| 9 | C | DORA: deployment frequency, lead time, failure rate, restore time |
+| 10 | C | "Handle 2x load, 99.9% uptime" - measurable |
+| 11 | D | First: create urgency — why now? |
+| 12 | A | Narrative: direction, why, what enables, how |
+| 13 | D | Stream-aligned, Platform, Enabling, Complicated subsystem |
+| 14 | A | Antipattern: too many priorities, not connected to business |
+| 15 | D | Good: clear choices, explicit trade-offs, explainable |
+| 16 | C | Headcount: growth, scaling, initiatives, attrition |
+| 17 | B | Boring for core, new for experiments |
+| 18 | A | Good roadmap: tied to goals, realistic, flexible |
+| 19 | C | To execs: business impact, progress, risks, needs |
+| 20 | A | First: understand business context |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы понимаете strategic thinking
-- **14-17 правильных (70-89%)**: Хорошо. Повторите planning и communication
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы понимаете strategic thinking. Поздравляем с завершением курса! |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите planning и communication. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 

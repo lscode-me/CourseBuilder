@@ -308,35 +308,41 @@ D) Никогда
 
 ## Answer Key
 
-1. **A** - Continuous: ongoing feedback, regular 1-on-1, no surprises
-2. **B** - Key Result: quantitative metric для измерения прогресса
-3. **A** - M = Measurable
-4. **A** - Self-assessment: achievements, highlights, challenges, growth
-5. **B** - No surprises: continuous feedback до review
-6. **D** - Career conversations quarterly, отдельно от review
-7. **C** - Уже работает на следующем уровне consistently
-8. **C** - Calibration: consistency, fair standards
-9. **A** - Understand WHY перед action
-10. **D** - PIP = Performance Improvement Plan
-11. **B** - PIP период: 30-90 дней
-12. **A** - PIP: specific, support, check-ins, document
-13. **A** - Warning signs: missed deadlines, quality issues, disengagement
-14. **D** - Development plan: current, target, gaps, actions, timeline
-15. **C** - Career ladders: transparent expectations
-16. **A** - High performer → higher raises; below → no raise/PIP
-17. **C** - ~60% individual, ~40% team
-18. **C** - Specific с examples, balanced
-19. **C** - ~70% achievement для stretch OKRs
-20. **C** - После documented failure с HR review
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | A | Continuous: ongoing feedback, regular 1-on-1, no surprises |
+| 2 | B | Key Result: quantitative metric для измерения прогресса |
+| 3 | A | M = Measurable |
+| 4 | A | Self-assessment: achievements, highlights, challenges, growth |
+| 5 | B | No surprises: continuous feedback до review |
+| 6 | D | Career conversations quarterly, отдельно от review |
+| 7 | C | Уже работает на следующем уровне consistently |
+| 8 | C | Calibration: consistency, fair standards |
+| 9 | A | Understand WHY перед action |
+| 10 | D | PIP = Performance Improvement Plan |
+| 11 | B | PIP период: 30-90 дней |
+| 12 | A | PIP: specific, support, check-ins, document |
+| 13 | A | Warning signs: missed deadlines, quality issues, disengagement |
+| 14 | D | Development plan: current, target, gaps, actions, timeline |
+| 15 | C | Career ladders: transparent expectations |
+| 16 | A | High performer → higher raises; below → no raise/PIP |
+| 17 | C | ~60% individual, ~40% team |
+| 18 | C | Specific с examples, balanced |
+| 19 | C | ~70% achievement для stretch OKRs |
+| 20 | C | После documented failure с HR review |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы понимаете performance management
-- **14-17 правильных (70-89%)**: Хорошо. Повторите PIP и goal setting
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы понимаете performance management. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите PIP и goal setting. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 

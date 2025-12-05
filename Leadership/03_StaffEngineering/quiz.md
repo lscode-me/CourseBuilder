@@ -308,35 +308,41 @@ D) Чтобы игнорировать бизнес и фокусировать�
 
 ## Answer Key
 
-1. **D** - Staff имеет качественно другой scope — влияние на несколько команд, не "super Senior"
-2. **A** - Impact = Technical Depth × Scope × Influence — все три фактора должны быть высокими
-3. **C** - Tech Lead работает в партнёрстве с EM, 50-70% времени в одной команде
-4. **A** - Solver решает сложнейшие проблемы, перемещается между командами, "тушит пожары"
-5. **A** - Architect фокусируется на архитектуре и дизайне, пишет больше спецификаций, чем кода
-6. **A** - Right Hand подходит тем, кто комфортен в политической среде и понимает бизнес
-7. **A** - Writing критичен — документы читают больше людей, чем код Staff Engineer
-8. **D** - Influence without authority — влияние через экспертизу и убеждение, без прямого управления
-9. **C** - Staff Project — cross-team scope, significant business impact, требует leadership без authority
-10. **C** - Visibility создаётся через writing, speaking и networking
-11. **D** - Примерное распределение: 30-40% coding, 20-30% design/review, 15-25% meetings, 10-15% mentoring
-12. **D** - Партнёрство: Staff отвечает за technical аспекты, EM за people
-13. **D** - Protected time для coding, high-impact tasks, prototyping для exploration
-14. **B** - Staff НЕ должен брать всю работу на себя и решать все проблемы лично
-15. **B** - Technical skills необходимы, но недостаточны — нужны также communication и leadership
-16. **B** - В startup больше hands-on coding, в enterprise больше organizational work
-17. **C** - Staff ищет high-impact проблемы сам, спрашивает leadership о болях
-18. **B** - Gap analysis оценивает навыки: technical depth, scope, writing, speaking, mentoring
-19. **B** - Promotion packet: summary impact, примеры работы, testimonials, метрики
-20. **C** - Strategic thinking нужен для alignment технических решений с бизнес-целями
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | D | Staff имеет качественно другой scope — влияние на несколько команд, не "super Senior" |
+| 2 | A | Impact = Technical Depth × Scope × Influence — все три фактора должны быть высокими |
+| 3 | C | Tech Lead работает в партнёрстве с EM, 50-70% времени в одной команде |
+| 4 | A | Solver решает сложнейшие проблемы, перемещается между командами, "тушит пожары" |
+| 5 | A | Architect фокусируется на архитектуре и дизайне, пишет больше спецификаций, чем кода |
+| 6 | A | Right Hand подходит тем, кто комфортен в политической среде и понимает бизнес |
+| 7 | A | Writing критичен — документы читают больше людей, чем код Staff Engineer |
+| 8 | D | Influence without authority — влияние через экспертизу и убеждение, без прямого управления |
+| 9 | C | Staff Project — cross-team scope, significant business impact, требует leadership без authority |
+| 10 | C | Visibility создаётся через writing, speaking и networking |
+| 11 | D | Примерное распределение: 30-40% coding, 20-30% design/review, 15-25% meetings, 10-15% mentoring |
+| 12 | D | Партнёрство: Staff отвечает за technical аспекты, EM за people |
+| 13 | D | Protected time для coding, high-impact tasks, prototyping для exploration |
+| 14 | B | Staff НЕ должен брать всю работу на себя и решать все проблемы лично |
+| 15 | B | Technical skills необходимы, но недостаточны — нужны также communication и leadership |
+| 16 | B | В startup больше hands-on coding, в enterprise больше organizational work |
+| 17 | C | Staff ищет high-impact проблемы сам, спрашивает leadership о болях |
+| 18 | B | Gap analysis оценивает навыки: technical depth, scope, writing, speaking, mentoring |
+| 19 | B | Promotion packet: summary impact, примеры работы, testimonials, метрики |
+| 20 | C | Strategic thinking нужен для alignment технических решений с бизнес-целями |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы хорошо понимаете роль Staff Engineer
-- **14-17 правильных (70-89%)**: Хорошо. Повторите разделы об архетипах и навыках
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию полностью
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал заново
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы хорошо понимаете роль Staff Engineer. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите разделы об архетипах и навыках. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию полностью. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал заново. |
 
 ---
 

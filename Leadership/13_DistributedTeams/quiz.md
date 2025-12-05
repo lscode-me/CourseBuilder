@@ -308,35 +308,41 @@ D) Никаких вопросов
 
 ## Answer Key
 
-1. **D** - Async-First: async default, sync exception
-2. **B** - Sync для urgent, complex decisions, emotional conversations
-3. **D** - Context, clear ask, deadline
-4. **C** - Overlap для sync meetings и высокоприоритетных обсуждений
-5. **D** - Rotation распределяет неудобство между locations
-6. **C** - Intentional: virtual coffee, events, interest channels
-7. **D** - Video: connection, engagement, non-verbal communication
-8. **A** - High Power Distance: hierarchy important, defer to authority
-9. **B** - Indirect cultures: soften language, private, ask preferences
-10. **C** - Remote onboarding: structure, buddy, documentation
-11. **A** - Measure output и outcomes, не hours online
-12. **D** - Async standup: пост к определённому времени
-13. **C** - Trust: expectations, check-ins, good intent, outcomes
-14. **A** - Buddy: daily check-ins, questions, social connection
-15. **D** - Hub and Spoke risk: remote = second-class citizens
-16. **A** - Follow-the-Sun: handoff между time zones
-17. **B** - Silence: depends on culture, don't assume agreement
-18. **D** - Offsites: trust, relationships, shared memories
-19. **C** - Equipment, internet, ergonomic setup
-20. **C** - Remote 1-on-1: connection, difficulties вопросы
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | D | Async-First: async default, sync exception |
+| 2 | B | Sync для urgent, complex decisions, emotional conversations |
+| 3 | D | Context, clear ask, deadline |
+| 4 | C | Overlap для sync meetings и высокоприоритетных обсуждений |
+| 5 | D | Rotation распределяет неудобство между locations |
+| 6 | C | Intentional: virtual coffee, events, interest channels |
+| 7 | D | Video: connection, engagement, non-verbal communication |
+| 8 | A | High Power Distance: hierarchy important, defer to authority |
+| 9 | B | Indirect cultures: soften language, private, ask preferences |
+| 10 | C | Remote onboarding: structure, buddy, documentation |
+| 11 | A | Measure output и outcomes, не hours online |
+| 12 | D | Async standup: пост к определённому времени |
+| 13 | C | Trust: expectations, check-ins, good intent, outcomes |
+| 14 | A | Buddy: daily check-ins, questions, social connection |
+| 15 | D | Hub and Spoke risk: remote = second-class citizens |
+| 16 | A | Follow-the-Sun: handoff между time zones |
+| 17 | B | Silence: depends on culture, don't assume agreement |
+| 18 | D | Offsites: trust, relationships, shared memories |
+| 19 | C | Equipment, internet, ergonomic setup |
+| 20 | C | Remote 1-on-1: connection, difficulties вопросы |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы понимаете distributed teams
-- **14-17 правильных (70-89%)**: Хорошо. Повторите async communication и cultural differences
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы понимаете distributed teams. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите async communication и cultural differences. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 

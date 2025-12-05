@@ -308,35 +308,41 @@ D) Не нужен
 
 ## Answer Key
 
-1. **A** - Task conflict о решениях может быть полезен
-2. **D** - Collaborating: важный issue, время, нужен commitment
-3. **B** - Interest: underlying need, почему хочет
-4. **D** - Вмешиваться когда влияет на работу, стороны не могут решить
-5. **A** - Медиатор: neutral, listen, behavior, common ground
-6. **D** - D = Describe объективно
-7. **C** - "Не критикую, решаем проблему, помоги понять"
-8. **B** - Relationship: межличностные tensions
-9. **A** - Acknowledge: "Я вижу разногласие"
-10. **A** - Competing: quick decision, unpopular, critical
-11. **A** - Avoiding: trivial, cool down, no chance
-12. **C** - Common ground: shared goals для решения
-13. **D** - Document → feedback → monitor → warning → termination
-14. **A** - Escalate: legal/ethical, harassment, safety, pattern
-15. **C** - Calm down, facts, plan points
-16. **C** - Prevention: expectations, feedback, norms
-17. **D** - Disagree and commit: поддержать решение после обсуждения
-18. **A** - Ground rules: respect, no interrupting, solution not blame
-19. **C** - Предложить паузу, продолжить когда готов
-20. **C** - Follow up: check что agreement выполняется
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | A | Task conflict о решениях может быть полезен |
+| 2 | D | Collaborating: важный issue, время, нужен commitment |
+| 3 | B | Interest: underlying need, почему хочет |
+| 4 | D | Вмешиваться когда влияет на работу, стороны не могут решить |
+| 5 | A | Медиатор: neutral, listen, behavior, common ground |
+| 6 | D | D = Describe объективно |
+| 7 | C | "Не критикую, решаем проблему, помоги понять" |
+| 8 | B | Relationship: межличностные tensions |
+| 9 | A | Acknowledge: "Я вижу разногласие" |
+| 10 | A | Competing: quick decision, unpopular, critical |
+| 11 | A | Avoiding: trivial, cool down, no chance |
+| 12 | C | Common ground: shared goals для решения |
+| 13 | D | Document → feedback → monitor → warning → termination |
+| 14 | A | Escalate: legal/ethical, harassment, safety, pattern |
+| 15 | C | Calm down, facts, plan points |
+| 16 | C | Prevention: expectations, feedback, norms |
+| 17 | D | Disagree and commit: поддержать решение после обсуждения |
+| 18 | A | Ground rules: respect, no interrupting, solution not blame |
+| 19 | C | Предложить паузу, продолжить когда готов |
+| 20 | C | Follow up: check что agreement выполняется |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы понимаете conflict resolution
-- **14-17 правильных (70-89%)**: Хорошо. Повторите frameworks и медиацию
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы понимаете conflict resolution. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите frameworks и медиацию. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 

@@ -308,35 +308,41 @@ D) Секреты друг от друга
 
 ## Answer Key
 
-1. **B** - Impact через менеджеров, фокус на strategy и systems
-2. **C** - Team health, их развитие, strategy alignment
-3. **A** - Coaching когда development opportunity, могут figure it out
-4. **C** - Skip-level: unfiltered view, culture, trust, career
-5. **A** - Listen, clarify, don't commit, verify, address if pattern
-6. **B** - Micromanaging менеджеров, solving за них
-7. **D** - Business impact, clear asks, risks, no surprises
-8. **C** - Clarity, confidence, composure
-9. **D** - Director: quarters to year
-10. **B** - Org structure mirrors communication structure
-11. **A** - Teams own products, minimize dependencies
-12. **D** - Reorg когда strategy changed, structure blocks goals
-13. **B** - Tech debt ~20%
-14. **A** - Coaching: first ask about situation
-15. **B** - Team health: engagement, turnover, promotion rate
-16. **D** - Strategic: где через год, какие capabilities
-17. **C** - Pipeline: high-potentials, stretch, coaching, succession
-18. **D** - Manager vs team issue, какой support
-19. **D** - More responsibility, complexity, loneliness
-20. **B** - Shared goals, healthy debate, support, disagree and commit
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | B | Impact через менеджеров, фокус на strategy и systems |
+| 2 | C | Team health, их развитие, strategy alignment |
+| 3 | A | Coaching когда development opportunity, могут figure it out |
+| 4 | C | Skip-level: unfiltered view, culture, trust, career |
+| 5 | A | Listen, clarify, don't commit, verify, address if pattern |
+| 6 | B | Micromanaging менеджеров, solving за них |
+| 7 | D | Business impact, clear asks, risks, no surprises |
+| 8 | C | Clarity, confidence, composure |
+| 9 | D | Director: quarters to year |
+| 10 | B | Org structure mirrors communication structure |
+| 11 | A | Teams own products, minimize dependencies |
+| 12 | D | Reorg когда strategy changed, structure blocks goals |
+| 13 | B | Tech debt ~20% |
+| 14 | A | Coaching: first ask about situation |
+| 15 | B | Team health: engagement, turnover, promotion rate |
+| 16 | D | Strategic: где через год, какие capabilities |
+| 17 | C | Pipeline: high-potentials, stretch, coaching, succession |
+| 18 | D | Manager vs team issue, какой support |
+| 19 | D | More responsibility, complexity, loneliness |
+| 20 | B | Shared goals, healthy debate, support, disagree and commit |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы понимаете senior leadership
-- **14-17 правильных (70-89%)**: Хорошо. Повторите managing managers и strategy
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы понимаете senior leadership. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите managing managers и strategy. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 

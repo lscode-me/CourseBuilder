@@ -308,35 +308,41 @@ D) Write for the reader, include context (why), keep updated
 
 ## Answer Key
 
-1. **B** - Stakeholder — любой, кто влияет на вашу работу или на кого она влияет
-2. **C** - Manage Closely: High Power + High Interest
-3. **A** - Разные аудитории имеют разные needs и уровень понимания
-4. **B** - Executives: business impact, timeline, risks, decisions needed
-5. **A** - BLUF = главное сообщение в начале
-6. **D** - TL;DR, Highlights, In Progress, Risks, Needs, Team Notes
-7. **D** - Сообщать раньше, чтобы stakeholders могли помочь
-8. **A** - Credibility + Relationships + Communication
-9. **A** - Найти allies, согласовать, прийти вместе к decision-maker
-10. **B** - Помочь другим сначала → они более склонны помочь вам
-11. **B** - Желаемый outcome, факты, perspective, эмоции
-12. **C** - State intent, share facts, invite perspective, listen
-13. **C** - "[Action Required] Budget Approval by Friday"
-14. **C** - Thread conversations, use @mentions sparingly
-15. **B** - Hook, Problem, Solution, Evidence, Ask
-16. **C** - Кратко, recommendation focused, business impact
-17. **B** - What, when, impact, contact, status
-18. **B** - Assume good intent, understand constraints, common goals
-19. **C** - Факты и данные более убедительны, чем мнения
-20. **D** - Write for reader, include context, keep updated
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | B | Stakeholder — любой, кто влияет на вашу работу или на кого она влияет |
+| 2 | C | Manage Closely: High Power + High Interest |
+| 3 | A | Разные аудитории имеют разные needs и уровень понимания |
+| 4 | B | Executives: business impact, timeline, risks, decisions needed |
+| 5 | A | BLUF = главное сообщение в начале |
+| 6 | D | TL;DR, Highlights, In Progress, Risks, Needs, Team Notes |
+| 7 | D | Сообщать раньше, чтобы stakeholders могли помочь |
+| 8 | A | Credibility + Relationships + Communication |
+| 9 | A | Найти allies, согласовать, прийти вместе к decision-maker |
+| 10 | B | Помочь другим сначала → они более склонны помочь вам |
+| 11 | B | Желаемый outcome, факты, perspective, эмоции |
+| 12 | C | State intent, share facts, invite perspective, listen |
+| 13 | C | "[Action Required] Budget Approval by Friday" |
+| 14 | C | Thread conversations, use @mentions sparingly |
+| 15 | B | Hook, Problem, Solution, Evidence, Ask |
+| 16 | C | Кратко, recommendation focused, business impact |
+| 17 | B | What, when, impact, contact, status |
+| 18 | B | Assume good intent, understand constraints, common goals |
+| 19 | C | Факты и данные более убедительны, чем мнения |
+| 20 | D | Write for reader, include context, keep updated |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы понимаете принципы коммуникации
-- **14-17 правильных (70-89%)**: Хорошо. Повторите influence и difficult conversations
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы понимаете принципы коммуникации. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите influence и difficult conversations. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 

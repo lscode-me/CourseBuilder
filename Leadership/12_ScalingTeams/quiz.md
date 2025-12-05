@@ -308,35 +308,41 @@ D) Нет структуры
 
 ## Answer Key
 
-1. **B** - 7-8 человек максимум для одного менеджера
-2. **A** - 1-on-1 поверхностные, нет времени на development — признак
-3. **B** - По продукту: clear ownership, end-to-end responsibility
-4. **C** - По слоям: handoffs, slower end-to-end delivery
-5. **C** - Stream-aligned: aligned с business, end-to-end delivery
-6. **D** - Platform: internal product, self-service для других команд
-7. **B** - Высокая cognitive load: shallow understanding, quality страдает
-8. **A** - Level 7: полное делегирование с доверием
-9. **B** - Identify, give opportunities, coach, gradual transition
-10. **D** - Масштабирование требует делегирования, совокупный output выше
-11. **D** - Documentation, rituals, hiring, leaders model values
-12. **B** - Communication paths = n(n-1)/2, больше людей = больше overhead
-13. **D** - Shared goals, cross-team projects, rotation
-14. **C** - Squad: cross-functional team с end-to-end ownership
-15. **B** - Functional: handoffs и silos
-16. **B** - Enabling: помогает adopt capabilities, temporary support
-17. **A** - All-hands, updates, documentation, Slack channels
-18. **A** - Minimal process, empower teams, reduce approvals
-19. **B** - 15: extended team, coordination возможна
-20. **A** - Matrix: dual reporting, flexibility, complexity
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | B | 7-8 человек максимум для одного менеджера |
+| 2 | A | 1-on-1 поверхностные, нет времени на development — признак |
+| 3 | B | По продукту: clear ownership, end-to-end responsibility |
+| 4 | C | По слоям: handoffs, slower end-to-end delivery |
+| 5 | C | Stream-aligned: aligned с business, end-to-end delivery |
+| 6 | D | Platform: internal product, self-service для других команд |
+| 7 | B | Высокая cognitive load: shallow understanding, quality страдает |
+| 8 | A | Level 7: полное делегирование с доверием |
+| 9 | B | Identify, give opportunities, coach, gradual transition |
+| 10 | D | Масштабирование требует делегирования, совокупный output выше |
+| 11 | D | Documentation, rituals, hiring, leaders model values |
+| 12 | B | Communication paths = n(n-1)/2, больше людей = больше overhead |
+| 13 | D | Shared goals, cross-team projects, rotation |
+| 14 | C | Squad: cross-functional team с end-to-end ownership |
+| 15 | B | Functional: handoffs и silos |
+| 16 | B | Enabling: помогает adopt capabilities, temporary support |
+| 17 | A | All-hands, updates, documentation, Slack channels |
+| 18 | A | Minimal process, empower teams, reduce approvals |
+| 19 | B | 15: extended team, coordination возможна |
+| 20 | A | Matrix: dual reporting, flexibility, complexity |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных (90-100%)**: Отлично! Вы понимаете масштабирование команд
-- **14-17 правильных (70-89%)**: Хорошо. Повторите Team Topologies и делегирование
-- **10-13 правильных (50-69%)**: Удовлетворительно. Рекомендуется перечитать лекцию
-- **Менее 10 правильных (< 50%)**: Необходимо внимательно изучить материал
+Подсчитайте количество правильных ответов:
+
+| Результат | Оценка | Рекомендации |
+|-----------|--------|--------------|
+| **18-20 правильных (90-100%)** | 🏆 Отлично! | Вы понимаете масштабирование команд. Переходите к следующему модулю. |
+| **14-17 правильных (70-89%)** | ✅ Хорошо | Повторите Team Topologies и делегирование. |
+| **10-13 правильных (50-69%)** | ⚠️ Удовлетворительно | Рекомендуется перечитать лекцию. |
+| **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
 
