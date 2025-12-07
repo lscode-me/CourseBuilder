@@ -377,14 +377,45 @@ for variant in vcf:
 
 ---
 
-## Дополнительные Ресурсы
+## 🚀 Следующие Шаги
 
-**GATK Best Practices**
-https://gatk.broadinstitute.org/hc/en-us/sections/360007226651
+**Связанные модули:**
+- [CLI Tools](../04_CLI_Tools/) — детальная работа с samtools, bcftools, bedtools
+- [Эпигенетика](../05_Epigenetics_Markers/) — GWAS, фармакогенетика, клиническая интерпретация
 
-**BWA Manual**
-http://bio-bwa.sourceforge.net/bwa.shtml
+**Практические задачи для закрепления:**
+1. Запустите FastQC на FASTQ файле и проанализируйте метрики
+2. Выполните полный alignment с BWA и получите отсортированный BAM
+3. Пометьте дубликаты с Picard и посчитайте процент дубликатов
+4. Вызовите варианты с GATK HaplotypeCaller
+5. Отфильтруйте VCF: QUAL ≥ 30, DP ≥ 20, только PASS
+6. Аннотируйте варианты с SnpEff и найдите HIGH impact
 
-**SnpEff Documentation**
-https://pcingola.github.io/SnpEff/
+> **💡 Совет:** Напишите bash-скрипт, автоматизирующий весь пайплайн с логированием каждого шага.
+
+**Для углублённого изучения:**
+- Somatic variant calling (для онкологии)
+- Joint calling для когорт пациентов
+- Structural variant calling (большие перестройки)
+
+---
+
+## 📚 Дополнительные Ресурсы
+
+### GATK Best Practices
+- [GATK Best Practices Workflows](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651) — Официальные best practices от Broad Institute
+- [GATK Tutorials](https://gatk.broadinstitute.org/hc/en-us/sections/360007226531) — Пошаговые туториалы
+- [GATK Workshop Materials](https://gatk.broadinstitute.org/hc/en-us/sections/360007226831) — Материалы воркшопов
+
+### Инструменты
+- [BWA](http://bio-bwa.sourceforge.net/) — Burrows-Wheeler Aligner
+- [GATK](https://gatk.broadinstitute.org/) — Genome Analysis Toolkit
+- [Picard Tools](https://broadinstitute.github.io/picard/) — Манипуляции с SAM/BAM
+- [SnpEff](https://pcingola.github.io/SnpEff/) — Аннотация и предсказание эффектов
+- [VEP](https://www.ensembl.org/vep) — Variant Effect Predictor от Ensembl
+
+### Справочные Данные
+- [GATK Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360035890811) — Референсы и known sites
+- [gnomAD](https://gnomad.broadinstitute.org/) — Популяционные частоты вариантов
+- [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) — Клиническая значимость вариантов
 

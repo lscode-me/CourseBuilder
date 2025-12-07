@@ -377,5 +377,38 @@ print(f"Pneumonia probability: {prediction[0][1]:.2%}")
 
 ---
 
-Happy learning! 🏥🖼️
+## 🚀 Следующие Шаги
+
+**Связанные модули:**
+- [Medical Terminology](../01_Terminology/) — HL7, FHIR, стандарты обмена данными
+- [EHR Systems](../02_EHR_Systems/) — интеграция изображений в EHR
+- [Security & Privacy](../03_Security_Privacy/) — защита медицинских изображений
+
+**Идеи для практики:**
+1. **DICOM Viewer** — чтение DICOM, отображение изображения, метаданные, windowing controls
+2. **Metadata Extractor** — извлечение Patient info, Study, Series из серии DICOM файлов
+3. **DICOM Anonymizer** — де-идентификация DICOM: удаление Patient Name, ID, DOB
+4. **3D Reconstruction** — создание 3D модели из CT серии с визуализацией
+5. **Basic Segmentation** — thresholding, morphological operations, overlay на изображение
+
+---
+
+## 📚 Дополнительные Ресурсы
+
+**DICOM:**
+- [DICOM Standard](https://www.dicomstandard.org/) — официальный стандарт DICOM
+- [pydicom Documentation](https://pydicom.github.io/) — Python библиотека для DICOM
+- [DICOM Library](https://www.dicomlibrary.com/) — примеры DICOM файлов
+
+**Viewers:**
+- [OHIF Viewer](https://ohif.org/) — open source DICOM viewer (web)
+- [3D Slicer](https://www.slicer.org/) — powerful 3D visualization
+- [Weasis](https://nroduit.github.io/en/) — standalone DICOM viewer
+
+**Datasets:**
+- [The Cancer Imaging Archive](https://www.cancerimagingarchive.net/) — публичные медицинские изображения
+- [NIH Chest X-ray Dataset](https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community) — большой датасет для AI
+
+**AI/ML:**
+- [Medical Segmentation Decathlon](http://medicaldecathlon.com/) — соревнования по сегментации
 

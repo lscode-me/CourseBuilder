@@ -336,19 +336,39 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
 
 ---
 
-## Дополнительные Ресурсы
+## 🚀 Следующие Шаги
 
-**SAMtools Documentation**
-http://www.htslib.org/doc/samtools.html
+**Связанные модули:**
+- [Variant Calling](../03_Variant_Calling/) — полный пайплайн с использованием CLI инструментов
+- [Эпигенетика](../05_Epigenetics_Markers/) — продвинутые анализы и клиническая интерпретация
 
-**BCFtools Documentation**
-http://www.htslib.org/doc/bcftools.html
+**Практические задачи для закрепления:**
+1. Получите статистику BAM файла: total/mapped/properly paired reads
+2. Отфильтруйте BAM: MAPQ ≥ 30, properly paired, не дубликаты
+3. Извлеките риды из конкретных регионов (BED файл)
+4. Подсчитайте SNPs и Indels отдельно из VCF файла
+5. Найдите варианты в экзонах (пересечение VCF и BED)
+6. Подсчитайте среднее покрытие по генам
+7. Создайте subset FASTQ файла (100,000 случайных ридов)
 
-**BEDtools Documentation**
-https://bedtools.readthedocs.io/
+> **💡 Совет:** Напишите bash-скрипт, комбинирующий несколько инструментов в один pipeline.
 
-**seqtk GitHub**
-https://github.com/lh3/seqtk
+**Для углублённого изучения:**
+- AWK и sed для продвинутой обработки текста
+- Snakemake/Nextflow для воспроизводимых пайплайнов
+- Параллельная обработка с GNU parallel
 
-Happy learning! 🧬💻
+---
+
+## 📚 Дополнительные Ресурсы
+
+### Документация
+- [SAMtools](http://www.htslib.org/doc/samtools.html) — Полная документация samtools
+- [BCFtools](http://www.htslib.org/doc/bcftools.html) — Документация bcftools
+- [BEDTools](https://bedtools.readthedocs.io/) — Руководство по bedtools
+- [seqtk](https://github.com/lh3/seqtk) — GitHub репозиторий seqtk
+
+### Туториалы
+- [SAMtools Tutorial](https://davetang.org/wiki/tiki-index.php?page=SAMtools) — Практические примеры
+- [BEDTools Tutorial](https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html) — Подробные примеры использования
 

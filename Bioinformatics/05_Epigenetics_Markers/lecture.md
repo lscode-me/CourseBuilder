@@ -805,31 +805,67 @@ print(patient.generate_report())
 - ✅ **Фармакогенетика** — подбор лекарств по генотипу
 - ✅ **Биомаркеры** — различные типы от геномных до метаболомных
 
-### Следующие Шаги
+## 🚀 Следующие Шаги
 
-В следующих модулях мы рассмотрим практические инструменты для работы с геномными данными и анализа вариантов.
+**Связанные модули:**
+- [Основы Биоинформатики](../01_Basics/) — базовые концепции ДНК, РНК, мутаций
+- [Variant Calling](../03_Variant_Calling/) — обнаружение вариантов из данных секвенирования
+
+**Практические задачи для закрепления:**
+1. Напишите функцию анализа метилирования промотора (определение статуса гена)
+2. Реализуйте интерпретатор комбинаций гистоновых меток
+3. Создайте упрощённый GWAS анализ с визуализацией Manhattan plot
+4. Реализуйте систему фармакогенетических рекомендаций по генотипу
+5. Напишите функцию сравнения STR-профилей для установления родства
+
+> **💡 Совет:** Используйте реальные данные из GWAS Catalog и PharmGKB для тестирования.
+
+**Для углублённого изучения:**
+- Эпигенетические часы Horvath и их применение
+- Полигенные шкалы риска (PRS)
+- Интеграция мульти-омиксных данных
 
 ---
 
-## Дополнительные Ресурсы
+## 📚 Дополнительные Ресурсы
 
-### Базы данных
+### Базы Данных
 
-- [dbSNP](https://www.ncbi.nlm.nih.gov/snp/) — база SNP
-- [GWAS Catalog](https://www.ebi.ac.uk/gwas/) — каталог GWAS исследований
-- [PharmGKB](https://www.pharmgkb.org/) — фармакогенетика
-- [ENCODE](https://www.encodeproject.org/) — эпигеномные данные
+**Эпигеномика:**
+- [ENCODE](https://www.encodeproject.org/) — Энциклопедия элементов ДНК
+- [Roadmap Epigenomics](http://www.roadmapepigenomics.org/) — Эпигеномные карты тканей человека
+- [GEO](https://www.ncbi.nlm.nih.gov/geo/) — Репозиторий геномных данных
+
+**Генетические маркеры:**
+- [dbSNP](https://www.ncbi.nlm.nih.gov/snp/) — База данных SNP
+- [GWAS Catalog](https://www.ebi.ac.uk/gwas/) — Каталог GWAS исследований
+- [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) — Клиническая значимость вариантов
+- [gnomAD](https://gnomad.broadinstitute.org/) — Частоты вариантов в популяциях
+
+**Фармакогенетика:**
+- [PharmGKB](https://www.pharmgkb.org/) — База фармакогенетических данных
+- [CPIC](https://cpicpgx.org/) — Клинические рекомендации по фармакогенетике
 
 ### Инструменты
 
-- [Plink](https://www.cog-genomics.org/plink/) — анализ GWAS
-- [Bismark](https://www.bioinformatics.babraham.ac.uk/projects/bismark/) — анализ метилирования
-- [HOMER](http://homer.ucsd.edu/) — анализ ChIP-seq (гистоны)
+**Анализ метилирования:**
+- [Bismark](https://www.bioinformatics.babraham.ac.uk/projects/bismark/) — Анализ бисульфитного секвенирования
+- [methylKit](https://bioconductor.org/packages/methylKit/) — R-пакет для анализа метилирования
 
-### Для чтения
+**Анализ гистонов (ChIP-seq):**
+- [MACS2](https://github.com/macs3-project/MACS) — Поиск пиков в ChIP-seq
+- [HOMER](http://homer.ucsd.edu/) — Анализ ChIP-seq и мотивов
+- [deepTools](https://deeptools.readthedocs.io/) — Визуализация и анализ
 
-- [Nature Reviews Genetics: Epigenetics](https://www.nature.com/nrg/)
-- [GWAS tutorial](https://github.com/MareesAT/GWA_tutorial)
+**GWAS:**
+- [PLINK](https://www.cog-genomics.org/plink/) — Стандартный инструмент для GWAS
+- [LocusZoom](http://locuszoom.org/) — Визуализация GWAS результатов
+
+### Учебные Материалы
+
+- [Coursera: Epigenetic Control of Gene Expression](https://www.coursera.org/learn/epigenetics) — Курс по эпигенетике
+- [GWAS Tutorial](https://github.com/MareesAT/GWA_tutorial) — Подробный туториал с кодом
+- [PharmGKB Education](https://www.pharmgkb.org/page/education) — Материалы по фармакогенетике
 
 
 

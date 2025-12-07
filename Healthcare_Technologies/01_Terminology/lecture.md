@@ -2533,19 +2533,39 @@ def get_all_patients():
 
 ---
 
-## Дополнительные Ресурсы
+## 🚀 Следующие Шаги
 
-**HL7 Standards**
-https://www.hl7.org/
+**Связанные модули:**
+- [EHR Systems](../02_EHR_Systems/) — системы электронных медицинских записей
+- [Security & Privacy](../03_Security_Privacy/) — HIPAA, GDPR и безопасность данных
+- [Medical Imaging](../04_Medical_Imaging/) — DICOM и обработка изображений
 
-**FHIR Specification**
-https://www.hl7.org/fhir/
+**Идеи для практики:**
+1. **HL7 v2 Parser** — парсинг сообщения, извлечение Patient ID, Name, DOB, Gender
+2. **FHIR Patient Resource** — создание ресурса с identifier, name, gender, birthDate, address
+3. **FHIR API Client** — CRUD операции с FHIR сервером (POST/GET/PUT Patient)
+4. **HL7 to FHIR Converter** — конвертация ADT сообщения в FHIR Patient
+5. **FHIR Observation** — создание Blood Pressure observation с LOINC кодами
 
-**DICOM Standard**
-https://www.dicomstandard.org/
+---
 
-**ICD-10 Codes**
-https://www.icd10data.com/
+## 📚 Дополнительные Ресурсы
 
-Happy learning! 🏥
+**Стандарты HL7:**
+- [HL7 International](https://www.hl7.org/) — официальный сайт HL7
+- [FHIR Specification](https://www.hl7.org/fhir/) — полная спецификация FHIR
+- [FHIR Tutorial](https://www.hl7.org/fhir/overview.html) — введение в FHIR
+
+**Python библиотеки:**
+- [python-hl7](https://python-hl7.readthedocs.io/) — парсинг HL7 v2 сообщений
+- [fhir.resources](https://pypi.org/project/fhir.resources/) — Python FHIR models
+- [HAPI FHIR](https://hapifhir.io/) — open source FHIR сервер
+
+**Классификаторы:**
+- [ICD-10](https://www.icd10data.com/) — база ICD-10 кодов
+- [SNOMED CT](https://www.snomed.org/) — систематизированная медицинская номенклатура
+- [LOINC](https://loinc.org/) — коды для лабораторных наблюдений
+
+**DICOM:**
+- [DICOM Standard](https://www.dicomstandard.org/) — официальный стандарт DICOM
 

@@ -306,5 +306,32 @@ csrf = CSRFProtect(app)
 
 ---
 
-Happy learning! 🏥🔒
+## 🚀 Следующие Шаги
+
+**Связанные модули:**
+- [Medical Terminology](../01_Terminology/) — базовая терминология и стандарты
+- [EHR Systems](../02_EHR_Systems/) — архитектура EHR систем
+- [Medical Imaging](../04_Medical_Imaging/) — DICOM и защита изображений
+
+**Идеи для практики:**
+1. **De-identification Service** — удаление 18 HIPAA идентификаторов, сохранение агрегированных данных
+2. **Audit Logger** — логирование доступа к PHI, поиск по логам, alerts для аномалий
+3. **RBAC System** — роли (Doctor, Nurse, Admin, Billing) и permissions
+4. **Encryption Service** — encrypt/decrypt функции, key management, field-level encryption
+5. **Breach Detection** — анализ audit logs, обнаружение аномалий, автоматические alerts
+
+---
+
+## 📚 Дополнительные Ресурсы
+
+**HIPAA:**
+- [HHS HIPAA](https://www.hhs.gov/hipaa/index.html) — официальный сайт HIPAA
+- [HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html) — технические требования
+
+**GDPR:**
+- [GDPR Official](https://gdpr.eu/) — полный текст GDPR
+
+**Security:**
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/) — основные уязвимости веб-приложений
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) — framework для кибербезопасности
 

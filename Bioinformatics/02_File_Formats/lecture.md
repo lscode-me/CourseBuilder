@@ -581,23 +581,54 @@ faToTwoBit genome.fasta genome.2bit
 
 ### Следующие Шаги
 
-В следующем модуле мы рассмотрим **Variant Calling Пайплайны** — как из FASTQ файлов получить VCF с вариантами.
+**Связанные модули:**
+- [Variant Calling](../03_Variant_Calling/) — как из FASTQ файлов получить VCF с вариантами
+- [CLI Tools](../04_CLI_Tools/) — работа с файлами через командную строку
+
+**Практические задачи для закрепления:**
+1. Напишите парсер FASTA файла с подсчётом статистик (длина, GC-содержание)
+2. Реализуйте фильтрацию FASTQ по качеству (avg_quality >= 30)
+3. Напишите функцию декодирования SAM FLAG в читаемый формат
+4. Разберите CIGAR строку на операции и подсчитайте длину на референсе
+5. Прочитайте VCF и отфильтруйте только PASS SNPs с качеством >= 30
+
+> **💡 Совет:** Используйте BioPython и pysam для проверки — сравните вывод вашего кода с библиотечным.
+
+**Для углублённого изучения:**
+- CRAM формат — более компактная альтернатива BAM
+- GFF/GTF форматы для аннотации генов
+- BigWig/BigBed для визуализации в браузерах генома
 
 ---
 
-## Дополнительные Ресурсы
+## 📚 Дополнительные Ресурсы
 
-### Спецификации
-- [SAM/BAM Format](https://samtools.github.io/hts-specs/SAMv1.pdf)
-- [VCF Format](https://samtools.github.io/hts-specs/VCFv4.3.pdf)
-- [BED Format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1)
+### Официальные Спецификации
+- [SAM/BAM/CRAM Format Specification](https://samtools.github.io/hts-specs/) — Все спецификации в одном месте
+- [VCF Format v4.3](https://samtools.github.io/hts-specs/VCFv4.3.pdf) — Детальное описание VCF
+- [BED Format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) — Описание от UCSC
+- [FASTQ Format](https://en.wikipedia.org/wiki/FASTQ_format) — Подробное описание
 
-### Инструменты
-- [samtools](http://www.htslib.org/) — работа с SAM/BAM
-- [bcftools](http://www.htslib.org/) — работа с VCF
-- [bedtools](https://bedtools.readthedocs.io/) — операции с BED
+### Инструменты Командной Строки
+- [SAMtools](http://www.htslib.org/) — Работа с SAM/BAM/CRAM файлами
+- [BCFtools](http://www.htslib.org/) — Работа с VCF/BCF файлами
+- [BEDTools](https://bedtools.readthedocs.io/) — Операции с геномными интервалами
+- [seqtk](https://github.com/lh3/seqtk) — Быстрая обработка FASTA/FASTQ
+- [Tabix](http://www.htslib.org/doc/tabix.html) — Индексация tab-delimited файлов
 
-### Практика
-- [Example Files](https://github.com/samtools/samtools/tree/develop/examples)
-- [1000 Genomes Data](https://www.internationalgenome.org/data)
+### Python Библиотеки
+- [BioPython SeqIO](https://biopython.org/wiki/SeqIO) — Работа с FASTA/FASTQ
+- [pysam](https://pysam.readthedocs.io/) — Python интерфейс для SAM/BAM/VCF
+- [PyVCF](https://pyvcf.readthedocs.io/) — Парсер VCF файлов
+- [pybedtools](https://daler.github.io/pybedtools/) — Python обёртка для BEDTools
+
+### Визуализация
+- [IGV](https://software.broadinstitute.org/software/igv/) — Integrative Genomics Viewer
+- [UCSC Genome Browser](https://genome.ucsc.edu/) — Веб-браузер геномных данных
+- [JBrowse](https://jbrowse.org/) — Современный геномный браузер
+
+### Примеры Данных
+- [SAMtools Examples](https://github.com/samtools/samtools/tree/develop/examples) — Примеры файлов
+- [1000 Genomes Data](https://www.internationalgenome.org/data) — Реальные геномные данные
+- [GIAB Reference Materials](https://www.nist.gov/programs-projects/genome-bottle) — Эталонные данные
 

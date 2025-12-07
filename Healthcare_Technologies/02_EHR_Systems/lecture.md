@@ -226,5 +226,32 @@ FHIR.oauth2.authorize({
 
 ---
 
-Happy learning! 🏥💻
+## 🚀 Следующие Шаги
+
+**Связанные модули:**
+- [Medical Terminology](../01_Terminology/) — HL7, FHIR, ICD-10 стандарты
+- [Security & Privacy](../03_Security_Privacy/) — HIPAA, GDPR и безопасность
+- [Medical Imaging](../04_Medical_Imaging/) — DICOM и PACS системы
+
+**Идеи для практики:**
+1. **Database Schema** — проектирование схемы БД: Patients, Encounters, Medications, Observations
+2. **FHIR API Mock Server** — простой FHIR сервер на Flask с endpoints GET/POST /Patient
+3. **HL7 MLLP Receiver** — TCP сервер для приёма HL7 сообщений и отправки ACK
+4. **CDSS Rule Engine** — проверка drug-drug interactions и allergy checking
+5. **HIE Query Router** — федеративный запрос к нескольким источникам с агрегацией
+
+---
+
+## 📚 Дополнительные Ресурсы
+
+**Open Source EHR системы:**
+- [OpenEMR](https://www.open-emr.org/) — open source EHR система
+- [OpenMRS](https://openmrs.org/) — open source medical record system
+
+**SMART on FHIR:**
+- [SMART Health IT](https://smarthealthit.org/) — документация и примеры
+- [SMART App Gallery](https://gallery.smarthealthit.org/) — примеры SMART приложений
+
+**HIE:**
+- [Health Information Exchange](https://www.healthit.gov/topic/health-it-and-health-information-exchange-basics) — обзор от HealthIT.gov
 

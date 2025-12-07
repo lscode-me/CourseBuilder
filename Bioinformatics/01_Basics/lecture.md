@@ -1117,23 +1117,52 @@ GC% = (количество G + количество C) / общая длина 
 
 ### Следующие Шаги
 
-В следующем модуле мы рассмотрим **Форматы Файлов в Биоинформатике** — как именно хранятся и структурированы все эти данные (FASTQ, SAM/BAM, VCF, BED).
+**Связанные модули:**
+- [Форматы Файлов](../02_File_Formats/) — как хранятся геномные данные (FASTQ, SAM/BAM, VCF, BED)
+- [Эпигенетика и Маркеры](../05_Epigenetics_Markers/) — регуляция генов, GWAS, фармакогенетика
+
+**Практические задачи для закрепления:**
+1. Реализуйте функцию `gc_content()` — подсчёт GC-содержания последовательности
+2. Напишите `reverse_complement()` — обратная комплементарная последовательность
+3. Создайте простой парсер FASTA файла без использования BioPython
+4. Реализуйте поиск всех открытых рамок считывания (ORF) в последовательности
+5. Напишите функцию для расчёта температуры плавления (Tm) коротких последовательностей
+
+> **💡 Совет:** Попробуйте решить задачи самостоятельно, затем сверьтесь с BioPython для проверки корректности.
+
+**Для углублённого изучения:**
+- Альтернативный сплайсинг и его роль в создании разнообразия белков
+- Механизмы репарации ДНК и их связь с онкологией
+- Некодирующие РНК (lncRNA, miRNA) и их регуляторные функции
 
 ---
 
-## Дополнительные Ресурсы
+## 📚 Дополнительные Ресурсы
 
-### Интерактивные Инструменты
-- [NCBI BLAST](https://blast.ncbi.nlm.nih.gov/) - Поиск похожих последовательностей
-- [UCSC Genome Browser](https://genome.ucsc.edu/) - Визуализация генома
-- [Ensembl](https://www.ensembl.org/) - База данных генов
+### Интерактивные Обучающие Платформы
+- [Rosalind](https://rosalind.info/) — Задачи по биоинформатике (аналог LeetCode для био). Отличный способ практиковаться через код.
+- [Genetic Science Learning Center](https://learn.genetics.utah.edu/) — Интерактивные анимации и визуализации биологических процессов.
+- [DNA Learning Center](https://www.dnalc.org/) — 3D анимации, виртуальные лаборатории, интерактивные уроки.
 
-### Для Чтения
-- [Rosalind](http://rosalind.info/) - Задачи по биоинформатике (как Project Euler для био)
-- [An Introduction to Genetics for Engineers](https://www.youtube.com/watch?v=gKmM8fmjp_k) - Видео
-- `man biopython` или документация: https://biopython.org/
+### Книги и Туториалы
+- [Bioinformatics Data Skills](https://www.oreilly.com/library/view/bioinformatics-data-skills/9781449367480/) by Vince Buffalo — Лучшая книга для программистов, входящих в биоинформатику.
+- [BioPython Tutorial](https://biopython.org/DIST/docs/tutorial/Tutorial.html) — Официальный туториал по основной Python библиотеке для биоинформатики.
+- [Molecular Biology of the Cell](https://www.ncbi.nlm.nih.gov/books/NBK21054/) — Бесплатный онлайн учебник для глубокого погружения.
 
-### Визуализация
-- [DNA Learning Center](https://www.dnalc.org/) - Интерактивные анимации
-- [Genetic Science Learning Center](https://learn.genetics.utah.edu/) - Визуальные материалы
+### Браузеры Генома и Базы Данных
+- [UCSC Genome Browser](https://genome.ucsc.edu/) — Мощный браузер генома с визуализацией генов и вариантов.
+- [Ensembl](https://www.ensembl.org/) — База данных генов с хорошим API для программного доступа.
+- [NCBI GenBank](https://www.ncbi.nlm.nih.gov/genbank/) — Крупнейшая база последовательностей ДНК.
+
+### Видео Курсы
+- [Introduction to Genomic Technologies (Coursera)](https://www.coursera.org/learn/introduction-genomics) — Вводный курс от Johns Hopkins.
+- [DNA, RNA, and Proteins (Khan Academy)](https://www.khanacademy.org/science/biology/dna-as-the-genetic-material) — Базовые видео с хорошей визуализацией.
+
+### Сообщества
+- [Biostars](https://www.biostars.org/) — Q&A сообщество биоинформатиков (аналог Stack Overflow).
+- [r/bioinformatics](https://www.reddit.com/r/bioinformatics/) — Reddit сообщество для новостей и обсуждений.
+
+### Русскоязычные Ресурсы
+- [Постнаука - Биология](https://postnauka.ru/themes/biology) — Короткие лекции и статьи на русском.
+- [Биомолекула](https://biomolecula.ru/) — Научно-популярный портал о современной биологии.
 
