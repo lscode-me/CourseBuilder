@@ -195,7 +195,71 @@ The man who called yesterday...
 → "which one?" is answered by the following phrase
 ```
 
-### 4.2 Unique Items
+### 4.2 Anecdotal Examples: When Wrong Articles Create Comedy
+
+Неправильный артикль может полностью изменить смысл — и создать комический эффект:
+
+**Example 1: The Bar Joke**
+```
+A man walks into a bar.
+He orders a pint.
+A man drinks it straight away.
+
+Wait... WHO drank it?!
+```
+
+Проблема: второй раз использовали "A man" вместо "THE man". По правилам английского, "a man" означает **другой** человек. Получается, что кто-то третий выпил пиво!
+
+**Правильная версия:**
+```
+A man walks into a bar.
+He orders a pint.
+THE man drinks it straight away.
+```
+
+**Example 2: The Job Interview**
+```
+Interviewer: "Tell me about yourself."
+Candidate: "I am honest person."
+
+(pause)
+
+Interviewer: "...A honest person, or THE honest person?"
+```
+
+Без артикля звучит так, будто человек говорит на ломаном английском. А с артиклем "THE honest person" — будто он единственный честный человек в мире!
+
+**Example 3: The Romantic Disaster**
+```
+She: "I want to marry a rich man."
+He: "I want to marry THE woman I love."
+
+She: "That's so sweet! Who is she?"
+```
+
+"A rich man" = любой богатый (она ищет категорию). "THE woman" = конкретная женщина (он любит кого-то определённого). Комизм в том, что она не поняла, что речь о ней.
+
+**Example 4: The Murder Mystery**
+```
+Detective: "The killer left a fingerprint."
+Assistant: "A fingerprint? Or THE fingerprint?"
+Detective: "...Does it matter?"
+Assistant: "A fingerprint means we found one of many. 
+           THE fingerprint means we found THE one that solves the case."
+```
+
+**Example 5: The Restaurant Order**
+```
+Waiter: "Would you like a dessert?"
+Customer: "No, THE dessert. That one. On that table. 
+           Bring me THAT person's cake."
+```
+
+"A dessert" = любой из меню. "THE dessert" = конкретный, который я вижу.
+
+**Takeaway:** Articles are not decoration — they carry meaning!
+
+### 4.3 Unique Items
 
 Use **THE** for items that are one-of-a-kind in the context:
 
@@ -207,7 +271,7 @@ the beginning, the end, the middle
 the first, the second, the last, the only
 ```
 
-### 4.3 Superlatives and Ordinals
+### 4.4 Superlatives and Ordinals
 
 **THE** is required with superlatives and ordinal numbers:
 
@@ -228,7 +292,7 @@ vs.
 "It's the best movie I've ever seen." (full form)
 ```
 
-### 4.4 Specifying Context
+### 4.5 Specifying Context
 
 **THE** is used when a phrase specifies which one:
 
