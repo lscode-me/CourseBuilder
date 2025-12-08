@@ -154,6 +154,66 @@ D) Только management
 
 ---
 
+## Question 11: Compliance as Code
+
+
+Что такое Compliance as Code?
+
+A) Ручная проверка compliance раз в год
+
+B) Описание и автоматическая проверка compliance-требований в виде кода
+
+C) Документация compliance в Word файлах
+
+D) Проверка compliance только аудиторами
+
+---
+
+## Question 12: AWS Config
+
+
+Для чего используется AWS Config?
+
+A) Deployment приложений
+
+B) Автоматический мониторинг compliance AWS ресурсов
+
+C) CI/CD pipeline
+
+D) Логирование приложений
+
+---
+
+## Question 13: Cloud Custodian
+
+
+Что позволяет делать Cloud Custodian?
+
+A) Только мониторинг облачных ресурсов
+
+B) Определять policies и автоматически remediate non-compliant ресурсы
+
+C) Только генерировать отчёты
+
+D) Управлять DNS
+
+---
+
+## Question 14: Compliance Frameworks
+
+
+Какой framework НЕ относится к compliance стандартам?
+
+A) SOC 2
+
+B) PCI DSS
+
+C) DORA metrics
+
+D) HIPAA
+
+---
+
 ---
 
 ## Answer Key
@@ -170,6 +230,10 @@ D) Только management
 | 8 | D | GitLeaks ищет секреты в Git history |
 | 9 | C | OPA — Policy as Code |
 | 10 | B | В DevSecOps все отвечают за безопасность |
+| 11 | B | Compliance as Code — автоматизация compliance требований |
+| 12 | B | AWS Config мониторит compliance AWS ресурсов |
+| 13 | B | Cloud Custodian — policy engine с auto-remediation |
+| 14 | C | DORA metrics — метрики DevOps, не compliance framework |
 
 ---
 
@@ -177,10 +241,10 @@ D) Только management
 
 | Результат | Оценка | Рекомендации |
 |-----------|--------|--------------|
-| **9-10 правильных (90-100%)** | 🏆 Отлично! | Переходите к Career. |
-| **7-8 правильных (70-89%)** | ✅ Хорошо | Повторите container security. |
-| **5-6 правильных (50-69%)** | ⚠️ Удовлетворительно | Перечитайте типы тестирования. |
-| **Менее 5 правильных (<50%)** | 📚 Нужно повторить | Изучите основы DevSecOps. |
+| **13-14 правильных (90-100%)** | 🏆 Отлично! | Переходите к Career. |
+| **10-12 правильных (70-89%)** | ✅ Хорошо | Повторите Compliance as Code. |
+| **7-9 правильных (50-69%)** | ⚠️ Удовлетворительно | Перечитайте типы тестирования. |
+| **Менее 7 правильных (<50%)** | 📚 Нужно повторить | Изучите основы DevSecOps. |
 
 ---
 
