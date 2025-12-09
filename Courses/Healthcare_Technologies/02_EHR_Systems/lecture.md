@@ -1,14 +1,34 @@
 # Системы Электронных Медицинских Записей (EHR)
+## Архитектура, интеграция и SMART on FHIR
 
 ---
 
-## Введение
+## 📋 Prerequisites
+
+Перед началом этого модуля вы должны:
+- Пройти модуль [01_Terminology](../01_Terminology/) — медицинская терминология
+- Понимать основы HL7 и FHIR
+- Иметь опыт работы с REST API
+
+---
+
+## 🎯 Learning Objectives
+
+После завершения этого модуля вы сможете:
+- Объяснять разницу между EHR и EMR системами
+- Описывать архитектуру современной EHR системы
+- Интегрировать приложения через HL7 интерфейсы
+- Разрабатывать SMART on FHIR приложения
+
+---
+
+## 1. Введение
 
 Electronic Health Record (EHR) системы — это цифровая версия медицинской карты пациента. В этом модуле мы рассмотрим архитектуру и функциональность современных EHR систем.
 
 ---
 
-## 1. EHR vs EMR
+## 2. EHR vs EMR
 
 | Характеристика | EMR | EHR |
 |----------------|-----|-----|
@@ -254,4 +274,27 @@ FHIR.oauth2.authorize({
 
 **HIE:**
 - [Health Information Exchange](https://www.healthit.gov/topic/health-it-and-health-information-exchange-basics) — обзор от HealthIT.gov
+
+---
+
+## 💡 Key Takeaways
+
+- **EHR ≠ EMR**: EHR охватывает данные из множества организаций, EMR — только одну
+- **SMART on FHIR** — стандарт для безопасного запуска приложений внутри EHR
+- **CDSS** — системы поддержки принятия решений, встроенные в EHR
+- **HIE** — обмен данными между организациями (pull vs push модели)
+- **Interoperability** — главная проблема Healthcare IT, FHIR её решает
+
+---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [03_Security_Privacy](../03_Security_Privacy/) — Безопасность и HIPAA
+- [04_Medical_Imaging](../04_Medical_Imaging/) — Медицинские изображения и DICOM
+
+**Практика:**
+1. Изучите API документацию публичного EHR sandbox (Epic, Cerner)
+2. Создайте простое SMART on FHIR приложение
+3. Реализуйте HL7 MLLP receiver на Python
 

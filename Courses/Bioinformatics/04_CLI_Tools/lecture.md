@@ -1,14 +1,34 @@
 # Биоинформатические CLI Инструменты
+## SAMtools, BCFtools, BEDtools и другие
 
 ---
 
-## Введение
+## 📋 Prerequisites
+
+Перед началом этого модуля вы должны:
+- Пройти модуль [02_File_Formats](../02_File_Formats/) — форматы файлов
+- Понимать структуру SAM/BAM, VCF, BED файлов
+- Иметь опыт работы с командной строкой Linux/macOS
+
+---
+
+## 🎯 Learning Objectives
+
+После завершения этого модуля вы сможете:
+- Использовать SAMtools для работы с BAM файлами
+- Применять BCFtools для фильтрации и анализа VCF
+- Выполнять операции с геномными интервалами через BEDtools
+- Строить эффективные пайплайны из CLI инструментов
+
+---
+
+## 1. Введение
 
 Командная строка — основной интерфейс работы в биоинформатике. В этом модуле вы освоите ключевые инструменты для обработки геномных данных.
 
 ---
 
-## 1. SAMtools — Swiss Army Knife для SAM/BAM
+## 2. SAMtools — Swiss Army Knife для SAM/BAM
 
 ### 1.1 Основные команды
 
@@ -371,4 +391,26 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
 ### Туториалы
 - [SAMtools Tutorial](https://davetang.org/wiki/tiki-index.php?page=SAMtools) — Практические примеры
 - [BEDTools Tutorial](https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html) — Подробные примеры использования
+
+---
+
+## 💡 Key Takeaways
+
+- **SAMtools** — универсальный инструмент для BAM: view, sort, index, flagstat, depth
+- **BCFtools** — манипуляции с VCF: filter, query, stats, merge
+- **BEDtools** — операции над интервалами: intersect, subtract, coverage
+- **Пайпы критичны** — `|` позволяет строить эффективные цепочки команд
+- **Индексация обязательна** — без .bai/.tbi файлов быстрый доступ к регионам невозможен
+
+---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [05_Epigenetics_Markers](../05_Epigenetics_Markers/) — Эпигенетика и генетические маркеры
+
+**Практика:**
+1. Отфильтруйте BAM: MAPQ ≥ 30, properly paired, не дубликаты
+2. Извлеките варианты из VCF в определённых регионах (BED файл)
+3. Подсчитайте среднее покрытие по генам из GTF/BED файла
 

@@ -1,8 +1,29 @@
 # Пайплайны Variant Calling
+## От сырых данных FASTQ до аннотированных вариантов VCF
 
 ---
 
-## Введение
+## 📋 Prerequisites
+
+Перед началом этого модуля вы должны:
+- Пройти модуль [02_File_Formats](../02_File_Formats/) — форматы файлов
+- Понимать структуру FASTQ, BAM, VCF файлов
+- Иметь опыт работы с командной строкой Linux/macOS
+
+---
+
+## 🎯 Learning Objectives
+
+После завершения этого модуля вы сможете:
+- Описывать полный пайплайн variant calling от FASTQ до VCF
+- Выполнять выравнивание ридов с BWA
+- Применять GATK Best Practices для поиска вариантов
+- Аннотировать варианты с SnpEff/VEP
+- Фильтровать варианты по качеству и функциональному эффекту
+
+---
+
+## 1. Введение
 
 Variant calling — это процесс идентификации генетических вариантов (отличий от референса) из данных секвенирования. Это ключевой этап анализа геномных данных, особенно в клинической диагностике.
 
@@ -418,4 +439,27 @@ for variant in vcf:
 - [GATK Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360035890811) — Референсы и known sites
 - [gnomAD](https://gnomad.broadinstitute.org/) — Популяционные частоты вариантов
 - [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) — Клиническая значимость вариантов
+
+---
+
+## 💡 Key Takeaways
+
+- **Пайплайн стандартизирован**: FASTQ → BWA → BAM → GATK → VCF → Annotation
+- **Quality Control на каждом этапе**: FastQC, flagstat, VariantEval
+- **GATK Best Practices** — индустриальный стандарт для germline variant calling
+- **Фильтрация критична**: QUAL, DP, AF — основные метрики качества вариантов
+- **Аннотация добавляет смысл**: SnpEff/VEP показывают функциональный эффект вариантов
+
+---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [04_CLI_Tools](../04_CLI_Tools/) — Инструменты командной строки (samtools, bcftools)
+- [05_Epigenetics_Markers](../05_Epigenetics_Markers/) — Эпигенетика и маркеры
+
+**Практика:**
+1. Установите GATK и запустите HaplotypeCaller на тестовых данных
+2. Отфильтруйте VCF по QUAL ≥ 30 и DP ≥ 10
+3. Аннотируйте варианты с SnpEff и найдите HIGH impact мутации
 
