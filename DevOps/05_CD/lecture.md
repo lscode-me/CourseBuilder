@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [04_CI](../04_CI/) — Continuous Integration
 - Понимать Docker и контейнеризацию
 - Иметь базовые знания о Kubernetes (опционально)
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать Continuous Delivery и Continuous Deployment
 - Проектировать deployment pipeline
 - Применять различные стратегии развёртывания (blue-green, canary, rolling)

@@ -16,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Создавать и управлять S3 buckets
 - Выбирать правильный storage class
 - Настраивать lifecycle policies

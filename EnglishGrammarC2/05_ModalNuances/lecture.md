@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать основные значения модальных глаголов (can, could, may, might, must, should, will, would)
 - Понимать разницу между ability, permission, и obligation
 - Уметь использовать модальные глаголы для выражения возможности и вероятности
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать **epistemic** (знание) и **deontic** (долженствование) значения модалов
 - Использовать модальные глаголы для **hedging** в академическом и деловом письме
 - Применять **diplomatic** формулировки для sensitive communication
@@ -211,6 +213,7 @@ can contribute to depression."
 ### 3.2 Why Hedge?
 
 Academic writing hedges because:
+
 - Research rarely proves things absolutely
 - Claims should be proportional to evidence
 - Other interpretations exist

@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Владеть широким словарным запасом
 - Понимать разницу между formal и informal регистрами
 - Знать базовые фразовые глаголы
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Распознавать и использовать **продвинутые коллокации**
 - Понимать **delexical verbs** (have, take, make, give, do)
 - Применять идиомы **в правильных контекстах**
@@ -374,6 +376,7 @@ Results show "heavy rain" is 100x more common
 ### 7.3 Collocation Dictionaries
 
 Recommended resources:
+
 - Oxford Collocations Dictionary
 - Macmillan Collocations Dictionary
 - LDOCE (Longman) — includes collocations

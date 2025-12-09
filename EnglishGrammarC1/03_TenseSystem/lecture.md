@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать формы всех 12 времён английского языка
 - Понимать базовое различие между Simple, Continuous, Perfect
 - Уметь образовывать вопросы и отрицания во всех временах
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать Tense (время) и Aspect (вид) как отдельные категории
 - Выбирать между Present Perfect и Past Simple осознанно
 - Использовать Perfect Continuous формы естественно
@@ -69,6 +71,7 @@ Russian has **2 aspects** (совершенный / несовершенный),
 
 ```
 Russian:
+
 - "Я читал" (imperfective) — was reading / read / used to read
 - "Я прочитал" (perfective) — read / have read / had read
 

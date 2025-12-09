@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти все предыдущие модули курса
 - Иметь устойчивый уровень C1+
 - Осознавать свои типичные ошибки
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Идентифицировать **последние следы** русского акцента в грамматике
 - Понимать **глубинные причины** fossilized errors
 - Применять **стратегии исправления** устойчивых ошибок
@@ -381,6 +383,7 @@ Rate each area (1-5, where 5 = no issues):
 ### 11.2 Active Noticing
 
 When reading/listening, ask:
+
 - "Would I have phrased it this way?"
 - "What did the author choose that I wouldn't?"
 - "Why did they use THE here?"
@@ -430,6 +433,7 @@ By completing this course, you have:
 ### 12.2 The Path Forward
 
 Language learning never stops. At C2, you:
+
 - Continue to refine
 - Maintain through use
 - Learn new vocabulary
@@ -498,6 +502,7 @@ You have completed:
 **Native-Like Command for Advanced Russian Speakers**
 
 Skills acquired:
+
 - Article mastery
 - Tense as style
 - Subjunctive and modals

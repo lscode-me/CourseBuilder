@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать формы пассивного залога во всех временах
 - Понимать разницу между active и passive voice
 - Владеть participle forms (past participle)
@@ -18,6 +19,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать, КОГДА использовать пассивный залог (а когда не нужно)
 - Использовать пассив с модальными глаголами и perfect forms
 - Применять каузативные конструкции (have/get something done)
@@ -202,6 +204,7 @@ In informal English, "get" can replace "be":
 ```
 
 **Connotations:** Get-passive often implies:
+
 - Informal register
 - Something happened to the subject (often unexpected/unfortunate)
 - The subject was somewhat involved
@@ -300,6 +303,7 @@ Some verbs can be both transitive AND intransitive with the same meaning:
 "The door opened." (intransitive: it happened)
 
 Both focus on the same action, but:
+
 - Active transitive: agent does it
 - Ergative intransitive: it happens (no agent needed)
 ```

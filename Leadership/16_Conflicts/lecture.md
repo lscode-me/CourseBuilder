@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Уметь давать feedback (модуль 05)
 - Проводить 1-on-1 (модуль 04)
 - Понимать командную динамику
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Распознавать типы конфликтов
 - Применять frameworks для разрешения конфликтов
 - Вести сложные разговоры эффективно
@@ -77,21 +79,25 @@ Impact: Может быть полезен, нужна clarity
 
 ```
 Resource scarcity:
+
 - Конкуренция за ресурсы
 - Приоритизация проектов
 - Headcount allocation
 
 Communication:
+
 - Misunderstandings
 - Information gaps
 - Different communication styles
 
 Goals:
+
 - Misaligned incentives
 - Different priorities
 - Individual vs team goals
 
 Personalities:
+
 - Working style differences
 - Value differences
 - Past history
@@ -240,6 +246,7 @@ Step 7: Follow Up
 
 ```
 ✅ DO:
+
 - Stay neutral
 - Listen actively
 - Ask clarifying questions
@@ -248,6 +255,7 @@ Step 7: Follow Up
 - Redirect personal attacks
 
 ❌ DON'T:
+
 - Take sides
 - Impose solution
 - Blame either party
@@ -399,16 +407,19 @@ What can you do differently?"
 
 ```
 Clear expectations:
+
 - Roles and responsibilities defined
 - Decision-making process clear
 - Communication norms established
 
 Regular feedback:
+
 - Issues addressed early
 - No buildup of resentment
 - Open dialogue encouraged
 
 Team norms:
+
 - How we disagree
 - How we make decisions
 - How we give feedback
@@ -427,6 +438,7 @@ Team norms:
 **Team agreement:**
 ```
 "We commit to:
+
 - Attack problems, not people
 - Listen to understand, not respond
 - Assume good intent
@@ -441,6 +453,7 @@ Team norms:
 
 ```
 Escalate to your manager / HR:
+
 - Legal/ethical concerns
 - Harassment / discrimination
 - Safety issues

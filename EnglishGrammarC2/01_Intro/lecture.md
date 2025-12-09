@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого курса вы должны:
+
 - Иметь подтверждённый уровень C1 (IELTS 7.5+, CAE Grade A/B)
 - Свободно владеть всеми грамматическими временами
 - Уметь писать связные академические тексты
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Определить конкретные различия между C1 и C2 уровнями
 - Диагностировать свои "blind spots" и fossilized errors
 - Понять концепцию "near-native" competence
@@ -327,6 +329,7 @@ If you got these wrong, focus on Modules 05 and 10 (Modals and Pragmatics).
 **1. NOTICE — Замечать**
 ```
 Reading authentic texts and noticing:
+
 - Why did the writer choose this structure?
 - How does this differ from what I would write?
 - What's the effect of this choice?
@@ -335,6 +338,7 @@ Reading authentic texts and noticing:
 **2. DISCRIMINATE — Различать**
 ```
 Before producing, learn to HEAR/SEE the difference:
+
 - Which sounds more natural?
 - Which is more formal?
 - Which is more hedged?
@@ -343,6 +347,7 @@ Before producing, learn to HEAR/SEE the difference:
 **3. ANALYSE — Анализировать**
 ```
 Understand WHY something works:
+
 - Corpus evidence
 - Pragmatic principles
 - Register requirements
@@ -351,6 +356,7 @@ Understand WHY something works:
 **4. PRODUCE — Производить**
 ```
 Finally, practice producing:
+
 - With feedback
 - In appropriate contexts
 - With conscious attention
@@ -362,12 +368,14 @@ At C1+, your **receptive** knowledge (what you understand) is much greater than 
 
 ```
 What you understand when reading:
+
 - Stylistic inversion
 - Complex hedging
 - Subtle irony
 - Register shifts
 
 What you typically produce:
+
 - Simpler structures
 - Less hedging
 - More direct style
@@ -489,6 +497,7 @@ C2 means moving **freely** along this continuum.
 ### 7.2 What This Course Does NOT Cover
 
 This is not a comprehensive grammar course. We assume you know:
+
 - All tense forms and basic usage
 - Passive voice, reported speech
 - Conditionals (types 0-3)

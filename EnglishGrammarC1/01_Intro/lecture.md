@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого курса вы должны:
+
 - Иметь уровень B2+ (IELTS 6.5-7.0, FCE Grade A/B)
 - Знать основные грамматические времена английского языка
 - Уметь строить сложные предложения (compound, complex)
@@ -20,6 +21,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Определить свои слабые места в грамматике на основе типичного профиля B2
 - Понять различия между B2 и C1 уровнями
 - Осознать специфические проблемы русскоязычных изучающих
@@ -37,6 +39,7 @@
 ### 1.1 From Rules to Choices
 
 На уровне B2 грамматика — это набор **правил**:
+
 - Present Perfect используется для действий, связанных с настоящим
 - Артикль "the" ставится перед определённым существительным
 - После "if" не используется "will"
@@ -122,6 +125,7 @@ I set for myself at the beginning of the year."
 **1. Достаточность для коммуникации:**
 ```
 На B2 вас понимают. Вы можете:
+
 - Вести деловую переписку
 - Участвовать в совещаниях
 - Читать профессиональную литературу
@@ -142,6 +146,7 @@ I set for myself at the beginning of the year."
 **3. Input без notice:**
 ```
 Вы много читаете и слушаете, но не замечаете детали:
+
 - Артикли "проглатываются" в речи
 - Времена кажутся взаимозаменяемыми
 - Нюансы модальных глаголов ускользают
@@ -154,6 +159,7 @@ I set for myself at the beginning of the year."
 **1. Noticing (замечание):**
 ```
 Специально обращать внимание на формы:
+
 - Почему здесь "the", а не "a"?
 - Почему автор выбрал Past Perfect?
 - Почему "would" а не "will"?
@@ -162,6 +168,7 @@ I set for myself at the beginning of the year."
 **2. Deliberate practice (осознанная практика):**
 ```
 Не просто "больше писать", а:
+
 - Писать → получать feedback → анализировать → исправлять
 - Фокусироваться на одной проблеме за раз
 ```
@@ -169,6 +176,7 @@ I set for myself at the beginning of the year."
 **3. Error analysis (анализ ошибок):**
 ```
 Вести список своих типичных ошибок:
+
 - Какие ошибки вы делаете чаще всего?
 - В каком контексте?
 - Почему? (влияние русского?)
@@ -419,6 +427,7 @@ Common European Framework of Reference (CEFR) определяет C1 так:
 Dictionary says: "Possible" and "probable" are both adjectives
 
 Corpus shows:
+
 - "quite possible" — very common
 - "quite probable" — rare
 - "highly probable" — common
@@ -510,6 +519,7 @@ COLLOCATION = words that "go together"
 FOSSILIZATION = errors that become permanent habits
 
 These errors are hard to fix because:
+
 - They don't block communication
 - You've repeated them 1000s of times
 - No one corrects you
@@ -548,16 +558,19 @@ Based on frequency of errors, recommended order:
 
 ```
 HIGH PRIORITY (most frequent errors):
+
 1. Articles — affects almost every sentence
 2. Tenses — aspect vs tense confusion
 3. Prepositions — many false friends
 
 MEDIUM PRIORITY:
+
 4. Word order — especially with adverbs
 5. Gerunds/infinitives — трудно предсказать
 6. Collocations — translate patterns
 
 REFINEMENT (for C1+ polish):
+
 7. Modals — nuanced hedging
 8. Conditionals — mixed conditionals
 9. Inversion — for sophisticated style

@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модули [User Management](../05_UserManagement/) и [Services](../09_Services/)
 - Понимать права доступа Unix
 - Знать основы сетевой безопасности
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать и использовать механизмы pledge и unveil
 - Настраивать securelevel для защиты системы
 - Применять best practices безопасности OpenBSD

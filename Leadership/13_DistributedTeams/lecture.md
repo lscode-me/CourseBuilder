@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать основы team management
 - Иметь опыт remote или hybrid работы
 - Понимать важность коммуникации
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Организовывать работу в разных часовых поясах
 - Выстраивать async-first communication
 - Учитывать культурные различия в команде
@@ -64,24 +66,28 @@
 
 ```
 Communication:
+
 - Нет casual conversations
 - Harder to read body language
 - Information asymmetry
 - Time zone gaps
 
 Collaboration:
+
 - Harder to pair/mob
 - Delay in responses
 - Meeting scheduling hell
 - Whiteboarding challenges
 
 Culture:
+
 - Isolation and loneliness
 - Us vs Them (office vs remote)
 - Different cultural norms
 - Trust harder to build
 
 Management:
+
 - Visibility проблема
 - Performance оценить сложнее
 - Onboarding harder
@@ -130,6 +136,7 @@ Management:
 **Writing:**
 ```markdown
 ✅ DO:
+
 - Include all context (receiver doesn't know background)
 - State what you need clearly
 - Give deadline for response
@@ -137,6 +144,7 @@ Management:
 - Over-communicate rather than under
 
 ❌ DON'T:
+
 - "Hey, got a minute?" (without context)
 - Expect immediate response
 - Use sync tools for async
@@ -152,6 +160,7 @@ Hi team,
 Context: We're deciding on authentication for the new API.
 
 Options:
+
 1. OAuth2 + JWT (recommended) — pros/cons
 2. API Keys — pros/cons
 
@@ -166,16 +175,19 @@ If I don't hear objections, we'll go with Option 1.
 
 ```
 Written communication:
+
 - Slack/Teams (threads!)
 - Email (formal)
 - Notion/Confluence (documentation)
 - Linear/Jira (work tracking)
 
 Video:
+
 - Loom/Vidyard (async video updates)
 - Recorded meetings
 
 Collaboration:
+
 - Figma/Miro (async whiteboarding)
 - Google Docs (async editing)
 - GitHub/GitLab (code async)
@@ -240,14 +252,17 @@ Week 3: 12pm PST / 8pm GMT / 4am SGT (EMEA-friendly)
 Post in #team-standup by 10am YOUR TIME:
 
 Done yesterday:
+
 - [task 1]
 - [task 2]
 
 Today:
+
 - [task 1]
 - [task 2]
 
 Blockers:
+
 - [if any]
 ```
 
@@ -263,16 +278,19 @@ Blockers:
 
 ```markdown
 Virtual Coffee:
+
 - Randomly paired weekly chats
 - 15-30 min, no agenda
 - Tools: Donut for Slack
 
 Virtual Team Events:
+
 - Online games (Jackbox, Among Us)
 - Virtual happy hours (with moderation)
 - Shared activities (cooking, trivia)
 
 Interest Channels:
+
 - #random, #pets, #books
 - Non-work conversations
 - Building human connections
@@ -302,6 +320,7 @@ Interest Channels:
 - Just hanging out
 
 Value:
+
 - Accelerates trust
 - Recharges relationships
 - Creates shared memories
@@ -355,6 +374,7 @@ Some cultures: Direct feedback = normal
 Other cultures: Direct feedback = offensive
 
 Adaptation:
+
 - Know your team members' preferences
 - Private vs public feedback
 - Soften language when needed
@@ -367,6 +387,7 @@ Some cultures: Speak up expected
 Other cultures: Speaking up = disrespectful
 
 Adaptation:
+
 - Explicitly invite input
 - Use written pre-work
 - Allow async input after
@@ -379,6 +400,7 @@ Some cultures: Debate is healthy
 Other cultures: Disagreement = conflict
 
 Adaptation:
+
 - Frame as "exploring options"
 - Use data and facts
 - Separate idea from person

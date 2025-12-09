@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модули по CI/CD и Processes
 - Понимать DevOps lifecycle
 - Иметь опыт работы с Git и deployment pipelines
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснить DORA четыре ключевые метрики
 - Измерять deployment frequency и lead time
 - Отслеживать change failure rate и MTTR

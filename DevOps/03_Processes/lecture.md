@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [01_Intro](../01_Intro/) — Введение в DevOps
 - Пройти модуль [02_Methodologies](../02_Methodologies/) — Методологии
 - Понимать базовые концепции Agile и Scrum
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Описать полный жизненный цикл DevOps (DevOps lifecycle)
 - Организовать процесс планирования работы
 - Внедрить ключевые ceremonies для DevOps команды
@@ -354,6 +356,7 @@ Estimated capacity: 56 story points
 
 ## 2. Team Round-robin (10 min)
 Каждый член команды:
+
 - Что сделал вчера
 - Что планирую сегодня
 - Блокеры
@@ -705,6 +708,7 @@ We will use PostgreSQL 15 for User Service.
 
 ## 4. Rollback Criteria
 Rollback immediately if:
+
 - Error rate > 5%
 - P99 latency > 2x baseline
 - Any critical alert fires
@@ -836,6 +840,7 @@ MAJOR.MINOR.PATCH
   └────────────── Breaking changes
 
 Examples:
+
 - 1.0.0 → 1.0.1 (bug fix)
 - 1.0.1 → 1.1.0 (new feature)
 - 1.1.0 → 2.0.0 (breaking change)

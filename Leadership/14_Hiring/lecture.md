@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать роль лидера в формировании команды
 - Иметь опыт участия в интервью
 - Понимать культуру своей команды
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Определять hiring needs и писать job descriptions
 - Проводить структурированные интервью
 - Оценивать кандидатов без bias
@@ -40,6 +42,7 @@
 **Indirect costs плохого найма:**
 ```
 Bad hire за $100K/год:
+
 - 6 месяцев низкой productivity: $50K
 - Team productivity loss: $30K
 - Management time: $20K
@@ -154,10 +157,12 @@ Realistic, specific, inclusive, honest
 
 ```
 Problem:
+
 - Referrals → similar people
 - Same sources → same profiles
 
 Solutions:
+
 - Diverse sourcing channels
 - Blind resume review
 - Diverse interview panels
@@ -279,11 +284,13 @@ Solutions:
 **Take-Home:**
 ```
 Плюсы:
+
 - Меньше stress
 - Realistic environment
 - Can show best work
 
 Минусы:
+
 - Time investment (для кандидата)
 - Can be "helped" by others
 - Longer process
@@ -292,11 +299,13 @@ Solutions:
 **Live Coding:**
 ```
 Плюсы:
+
 - See thought process
 - Verify skills directly
 - Faster decision
 
 Минусы:
+
 - Stress affects performance
 - Not realistic environment
 - Favors extroverts
@@ -313,6 +322,7 @@ Solutions:
 "Tell me about a time when [situation]"
 
 Кандидат отвечает по STAR:
+
 - Situation: контекст
 - Task: задача
 - Action: что сделал
@@ -384,6 +394,7 @@ without formal authority."
 
 ```
 🚨 Strong "No Hire" signals:
+
 - Misrepresentation of experience
 - Disrespectful to anyone
 - Can't explain their own work
@@ -404,11 +415,13 @@ without formal authority."
 **When in doubt:**
 ```
 Lean towards "no" for:
+
 - Culture concerns
 - Integrity concerns
 - "Not sure" feeling from multiple interviewers
 
 Consider "yes" for:
+
 - Skills gap that's trainable
 - Nervousness that affected performance
 - Non-traditional background with potential
@@ -422,16 +435,19 @@ Consider "yes" for:
 
 ```
 By end of Week 1:
+
 - Has all access and tools
 - Met immediate team
 - Understands first tasks
 
 By end of Month 1:
+
 - Delivered first small contribution
 - Understands team processes
 - Building relationships
 
 By end of Month 3:
+
 - Fully productive
 - Contributing independently
 - Integrated into culture
@@ -500,6 +516,7 @@ By end of Month 3:
 **During hiring:**
 ```
 Be honest about:
+
 - Real challenges
 - Growth opportunities
 - Team dynamics

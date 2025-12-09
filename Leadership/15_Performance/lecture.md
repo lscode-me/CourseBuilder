@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать основы feedback (модуль 05)
 - Проводить регулярные 1-on-1 (модуль 04)
 - Быть готовым к сложным разговорам
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Проводить эффективные performance reviews
 - Устанавливать и отслеживать цели
 - Разрабатывать карьерные планы для сотрудников
@@ -34,6 +36,7 @@
 **Старый подход:**
 ```
 Annual review:
+
 - Раз в год
 - Surprise feedback
 - Ranking и rating
@@ -43,6 +46,7 @@ Annual review:
 **Современный подход:**
 ```
 Continuous:
+
 - Ongoing feedback
 - Regular 1-on-1
 - No surprises at review
@@ -118,11 +122,13 @@ T - Time-bound: Clear deadline
 **Balance:**
 ```
 Individual goals:
+
 - Personal development
 - Specific deliverables
 - Career growth
 
 Team goals:
+
 - Shared outcomes
 - Collaboration incentives
 - Collective success
@@ -390,6 +396,7 @@ Team goals:
 
 ```
 🚨 Warning signs:
+
 - Missed deadlines consistently
 - Quality issues
 - Negative peer feedback
@@ -463,6 +470,7 @@ HR: _________ Date: _____
 
 ```
 ✅ DO:
+
 - Be specific and measurable
 - Provide real support
 - Regular check-ins
@@ -471,6 +479,7 @@ HR: _________ Date: _____
 - Involve HR
 
 ❌ DON'T:
+
 - Use PIP as termination paperwork
 - Set impossible goals
 - Ignore during PIP period
@@ -499,6 +508,7 @@ HR: _________ Date: _____
 **Components:**
 ```
 Total Compensation:
+
 - Base salary
 - Bonus / Variable
 - Equity / Stock

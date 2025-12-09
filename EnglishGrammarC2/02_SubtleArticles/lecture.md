@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать базовые правила артиклей (a/an/the/∅)
 - Понимать различие между countable и uncountable nouns
 - Уметь применять "shared knowledge" principle для THE
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать тонкие случаи, где правила не дают однозначного ответа
 - Использовать "zero article + abstract noun" vs "the + abstract noun" корректно
 - Применять THE с уникальными и ситуационно-определёнными референтами
@@ -29,6 +31,7 @@
 ### 1.1 The Problem at C2
 
 At C1, you know the rules:
+
 - A/AN for new, singular, countable, non-specific
 - THE for known, shared, specific
 - ∅ for generic or uncountable
@@ -162,6 +165,7 @@ The technology behind this product is proprietary.
 ### 2.5 Test: Generic or Specific?
 
 Ask yourself:
+
 1. Am I talking about ALL instances of this concept? → ∅
 2. Can I add "the one that..." or "this particular..."? → THE
 3. Is it modified in a specifying way? → THE
@@ -273,12 +277,14 @@ The elderly need better healthcare. (not "needs")
 ### 4.3 Not All Adjectives Work
 
 This pattern works mainly with:
+
 - Social groups: the poor, the rich, the unemployed
 - Age groups: the young, the elderly
 - Nationalities: the French, the British, the Japanese
 - Physical states: the blind, the deaf, the disabled
 
 It doesn't work with:
+
 - Personality traits: ❌ "the intelligent" ❌ "the happy"
 - Temporary states: ❌ "the tired" ❌ "the hungry"
 
@@ -581,6 +587,7 @@ BUT: The smartphone in my pocket is ringing. (instance)
 ### 10.1 Notice in Reading
 
 When reading, ask for each THE or ∅:
+
 - Why did the author choose this?
 - What would change if they used the other?
 

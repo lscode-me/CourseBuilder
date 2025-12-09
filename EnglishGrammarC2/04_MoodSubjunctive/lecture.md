@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать все типы условных предложений (0, 1, 2, 3, mixed)
 - Понимать конструкции "I wish" и "If only"
 - Уметь использовать Past Simple для нереального настоящего
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать концепцию **grammatical mood** в английском
 - Использовать **were-subjunctive** ("If I were you") корректно
 - Применять **mandative subjunctive** ("I suggest that he be...") в формальных контекстах
@@ -39,6 +41,7 @@
 ### 1.2 The English Subjunctive: Weak but Present
 
 English has a **weak subjunctive** compared to Romance languages. It survives in:
+
 - **Were-subjunctive**: "If I were you..."
 - **Mandative subjunctive**: "I recommend that he be present."
 - **Formulaic expressions**: "God save the Queen", "Be that as it may"
@@ -46,6 +49,7 @@ English has a **weak subjunctive** compared to Romance languages. It survives in
 ### 1.3 Why C2 Learners Need This
 
 At C2, you encounter subjunctive in:
+
 - Formal writing
 - Legal and official documents
 - Academic prose
@@ -277,6 +281,7 @@ These are **memorized chunks**, not productive grammar.
 ### 4.2 Usage Notes
 
 These expressions are:
+
 - Fixed (don't change them)
 - Often formal or archaic
 - Sometimes ironic in modern usage
@@ -502,6 +507,7 @@ To-infinitive: "I suggest for him to be present." (informal)
 ### 9.3 When NOT to Use Subjunctive
 
 Don't use mandative subjunctive when:
+
 - The clause is a fact (indicative meaning)
 - The context is very informal
 

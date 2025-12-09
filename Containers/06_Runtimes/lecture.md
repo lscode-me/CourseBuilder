@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать OCI спецификации и runC
 - Знать основы namespaces и cgroups
 - Иметь опыт работы с Docker
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать high-level и low-level container runtimes
 - Работать с containerd напрямую через ctr и nerdctl
 - Использовать Podman как альтернативу Docker

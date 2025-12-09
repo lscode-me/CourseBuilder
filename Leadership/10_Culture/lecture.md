@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать роль лидера в формировании команды
 - Иметь опыт работы в разных командах/компаниях
 - Интересоваться soft skills и team dynamics
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать влияние культуры на performance команды
 - Создавать психологическую безопасность в команде
 - Формировать и поддерживать командные ценности
@@ -88,11 +90,13 @@ Culture = Values × Behaviors × Habits × Stories
 
 ```
 Что НЕ влияет на эффективность:
+
 - Состав команды (интроверты vs экстраверты)
 - Опыт и образование
 - Размер команды
 
 Что ВЛИЯЕТ:
+
 1. Psychological Safety (главный фактор!)
 2. Dependability
 3. Structure & Clarity
@@ -115,6 +119,7 @@ Culture = Values × Behaviors × Habits × Stories
 
 ```
 Red flags:
+
 - Высокая текучесть
 - Blame culture ("это не я")
 - Информация скрывается
@@ -152,6 +157,7 @@ Red flags:
 
 ```markdown
 ✅ DO:
+
 - Признавайте свои ошибки публично
 - Задавайте вопросы команде
 - Благодарите за несогласие
@@ -159,6 +165,7 @@ Red flags:
 - "Я не знаю" — OK ответ
 
 ❌ DON'T:
+
 - Наказывать за ошибки
 - Игнорировать concerns
 - Быть "всегда правым"
@@ -272,6 +279,7 @@ Red flags:
 "Нам нужен человек, который разделяет ценности И добавляет diversity"
 
 Вопросы:
+
 - Разделяет ли core values?
 - Какую perspective/experience добавит?
 - Как расширит наше thinking?
@@ -282,11 +290,13 @@ Red flags:
 **Вопросы:**
 ```
 Values alignment:
+
 - "Расскажи о ситуации, когда ты не согласился с решением команды"
 - "Как ты давал feedback, который был неприятным?"
 - "Расскажи об ошибке и что ты сделал"
 
 Diversity of thought:
+
 - "Какой опыт у тебя отличается от большинства?"
 - "Когда ты менял своё мнение?"
 ```
@@ -299,6 +309,7 @@ Diversity of thought:
 
 ```
 Culture change is SLOW because:
+
 - Habits глубоко укоренены
 - Incentives часто противоречат
 - Resistance от тех, кому выгоден status quo
@@ -397,6 +408,7 @@ Culture change is SLOW because:
 
 ```
 Remote/distributed teams:
+
 - Меньше casual interactions
 - Culture spreads slower
 - Сложнее читать signals
@@ -431,6 +443,7 @@ Remote/distributed teams:
 
 ```
 🚨 Warning signs:
+
 - Blame culture
 - Information hoarding
 - Political decisions

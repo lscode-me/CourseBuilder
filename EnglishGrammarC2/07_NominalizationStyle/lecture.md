@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать разницу между formal и informal регистрами
 - Уметь строить сложные предложения
 - Знать пассивный залог
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Использовать **номинализацию** для создания академического стиля
 - Применять **impersonal constructions** уместно
 - Строить предложения с высокой **информационной плотностью**
@@ -57,6 +59,7 @@ Nominal: "The rapid growth of the economy..."
 ### 1.3 Why Nominalize?
 
 Nominalization serves academic purposes:
+
 - **Density** — packing more information per sentence
 - **Objectivity** — removing human actors
 - **Abstraction** — discussing concepts, not events
@@ -275,6 +278,7 @@ Post: "based on recent climate models"
 ### 5.1 Why Passive Is Common
 
 Passive voice in academic writing:
+
 - Focuses on **what was done**, not who did it
 - Creates **objectivity**
 - Is **expected** in certain sections (Methods, Results)

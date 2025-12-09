@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [06_IaC](../06_IaC/) — Infrastructure as Code
 - Понимать основы Kubernetes
 - Знать Git workflow (branches, PRs, merges)
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснить принципы и преимущества GitOps
 - Настроить GitOps workflow с ArgoCD
 - Организовать структуру репозиториев для GitOps
@@ -87,6 +89,7 @@ gitops_principles = {
 └─────────┘     └─────────┘     └─────────┘
 
 Проблемы:
+
 - CI системе нужны credentials к кластеру
 - Drift между Git и actual state
 - Нет continuous reconciliation
@@ -111,6 +114,7 @@ gitops_principles = {
               (reconciles)
 
 Преимущества:
+
 - Credentials остаются в кластере
 - Continuous reconciliation
 - Self-healing

@@ -5,6 +5,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать базовые концепции облачных вычислений
 - Знать структуру AWS (регионы, аккаунты)
 - Иметь доступ к AWS аккаунту
@@ -18,6 +19,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Создавать и управлять IAM пользователями, группами и ролями
 - Писать и понимать IAM политики
 - Применять принцип наименьших привилегий
@@ -633,6 +635,7 @@ evaluate_policy_example()
 Scenario: Bob requests s3:GetObject on bucket-A/confidential/file.txt
 
 Evaluation:
+
 1. Check explicit DENY in any policy...
    → Bucket policy has DENY for s3:GetObject on confidential/*
    → RESULT: DENIED

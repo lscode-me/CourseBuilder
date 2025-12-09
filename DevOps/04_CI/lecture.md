@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [03_Processes](../03_Processes/) — Процессы DevOps
 - Знать основы Git (branches, merge, pull requests)
 - Иметь опыт написания тестов (unit tests)
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснить принципы и практики Continuous Integration
 - Настроить CI pipeline с GitHub Actions или GitLab CI
 - Применять trunk-based development

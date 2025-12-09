@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать стандартный порядок слов в английском (SVO)
 - Понимать вопросительную инверсию
 - Уметь строить сложные предложения
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Использовать **negative inversion** для эмфазы ("Never have I seen...")
 - Применять **cleft sentences** для фокусирования ("It was John who...")
 - Строить **fronted structures** для контраста и потока информации
@@ -44,6 +46,7 @@ Subject + Verb + Object
 ### 1.2 Why Use Marked Structures?
 
 Marked structures serve:
+
 - **Emphasis** — highlighting important information
 - **Contrast** — showing opposition
 - **Information flow** — given before new
@@ -53,6 +56,7 @@ Marked structures serve:
 ### 1.3 The Risk
 
 **Overusing** marked structures sounds:
+
 - Pompous
 - Unnatural
 - Non-native
@@ -187,6 +191,7 @@ In formal/written English, conditions can be expressed **without "if"** using in
 ### 3.3 Usage Notes
 
 Conditional inversion is:
+
 - **Formal** — used in writing, speeches, formal contexts
 - **Literary** — common in fiction and journalism
 - **Emphatic** — sounds more serious/dramatic
@@ -500,6 +505,7 @@ We needed to act quickly."
 ### 8.4 Russian Speakers' Issues
 
 Russian speakers may:
+
 1. **Underuse** these structures (sound flat)
 2. **Overuse** when they learn them (sound pompous)
 3. Use them in **wrong contexts** (too casual)

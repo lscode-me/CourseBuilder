@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Владеть письменным английским на высоком уровне
 - Иметь опыт устного общения с носителями
 - Понимать понятие регистра
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать **грамматические различия** между письменным и устным английским
 - Использовать **spoken grammar features** в разговоре
 - Избегать **чрезмерной формальности** в устной речи
@@ -46,6 +48,7 @@
 ### 1.3 Why This Matters
 
 If you speak like you write, you sound:
+
 - Robotic
 - Overly formal
 - Non-native
@@ -446,6 +449,7 @@ Very informal:
 ### 10.2 Danger of Hyper-Formality
 
 Speaking too formally:
+
 - Creates distance
 - Sounds robotic
 - Marks you as non-native

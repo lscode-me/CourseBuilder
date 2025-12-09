@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать роль Team Lead / Engineering Manager
 - Иметь базовое представление о Agile/Scrum
 - Работать в команде разработки
@@ -18,6 +19,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Определять, какие процессы нужны команде
 - Внедрять процессы постепенно без сопротивления
 - Создавать эффективные workflows для разных активностей
@@ -95,16 +97,19 @@
 ## Code Review Policy
 
 ### When PR is Ready:
+
 - [ ] All tests pass
 - [ ] Self-review completed
 - [ ] Description explains WHY, not just WHAT
 
 ### Review Requirements:
+
 - 1 approval required (2 for critical paths)
 - Review within 24h
 - No "LGTM" without reading code
 
 ### Merge Policy:
+
 - Squash and merge
 - Author merges after approval
 - Delete branch after merge
@@ -247,22 +252,26 @@
 ## Code Review Guidelines
 
 ### Author Checklist:
+
 - [ ] Tests written and passing
 - [ ] Self-review done
 - [ ] PR description complete
 - [ ] Related ticket linked
 
 ### Reviewer Checklist:
+
 - [ ] Understand the context
 - [ ] Check logic and edge cases
 - [ ] Verify tests cover changes
 - [ ] Leave actionable comments
 
 ### SLA:
+
 - Initial review: 4 hours (business hours)
 - Follow-up: 2 hours
 
 ### Approval Requirements:
+
 - 1 approval for features
 - 2 approvals for critical paths
 ```
@@ -274,12 +283,14 @@
 ## Release Process
 
 ### Pre-release:
+
 1. All PRs merged to main
 2. All tests green
 3. Changelog updated
 4. Version bumped
 
 ### Release Steps:
+
 1. Create release branch
 2. Run full test suite
 3. Deploy to staging
@@ -290,6 +301,7 @@
 8. Announce in #releases
 
 ### Rollback Trigger:
+
 - Error rate > 1%
 - P1 bug discovered
 - Performance degradation > 20%
@@ -302,6 +314,7 @@
 ## Incident Response Process
 
 ### Severity Levels:
+
 - P1: Production down, all users affected
 - P2: Major feature broken, many users affected
 - P3: Minor issue, workaround exists
@@ -316,6 +329,7 @@
 | P4 | 1 day | As scheduled |
 
 ### Incident Flow:
+
 1. Detect → Alert fires or user report
 2. Triage → Assess severity
 3. Communicate → Status page, Slack
@@ -331,19 +345,23 @@
 ## On-call Policy
 
 ### Rotation:
+
 - Weekly rotation
 - Primary + Secondary on-call
 - Handoff: Monday 10:00 AM
 
 ### Expectations:
+
 - Response within 15 minutes for P1
 - Laptop and internet access required
 - No need to be at desk, but reachable
 
 ### Compensation:
+
 - [определяется политикой компании]
 
 ### Handoff Template:
+
 - Active issues
 - Recent deployments
 - Upcoming changes
@@ -357,6 +375,7 @@
 ## Documentation Guidelines
 
 ### What to Document:
+
 - Architecture decisions (ADRs)
 - Runbooks for operations
 - API contracts
@@ -364,17 +383,20 @@
 - Process descriptions
 
 ### Where:
+
 - Architecture: /docs/architecture/
 - Runbooks: /docs/runbooks/
 - API: Generated from code
 - Processes: Confluence/Notion
 
 ### When to Update:
+
 - With every significant change
 - Owner responsible for keeping current
 - Quarterly review of key docs
 
 ### Documentation Quality:
+
 - Answer: Why, What, How
 - Include examples
 - Keep up to date (or delete)
@@ -541,14 +563,17 @@ Output: Action items for improvement
 ### Owner: [имя]
 
 ### What's working well:
+
 - [пункт 1]
 - [пункт 2]
 
 ### What's not working:
+
 - [пункт 1]
 - [пункт 2]
 
 ### Proposed changes:
+
 - [изменение 1]
 - [изменение 2]
 

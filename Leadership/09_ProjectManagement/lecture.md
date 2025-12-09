@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать роль Team Lead / Engineering Manager
 - Иметь опыт работы в проектах с deadlines
 - Понимать основы Agile/Scrum
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать роли Team Lead и Project Manager
 - Понимать, когда нужен отдельный PM, а когда нет
 - Эффективно взаимодействовать с PM
@@ -150,16 +152,19 @@ Tech Lead                — техническая экспертиза
 
 ```
 Planning:
+
 - Участие в estimation
 - Декомпозиция работы
 - Выявление технических рисков
 
 Execution:
+
 - Убирание блокеров
 - Technical decisions
 - Code review bottlenecks
 
 Tracking:
+
 - Progress monitoring
 - Risk communication
 - Scope discussions
@@ -175,12 +180,14 @@ Tracking:
 **Risk identification:**
 ```
 Технические риски:
+
 - Незнакомые технологии
 - Интеграции с внешними системами
 - Performance concerns
 - Security requirements
 
 Organizational риски:
+
 - Зависимости от других команд
 - Key people отпуска/уход
 - Changing requirements
@@ -250,6 +257,7 @@ PM: "Нужно сделать к пятнице"
 TL: "Это невозможно качественно"
 
 Решение:
+
 - Объясните технические constraints
 - Предложите варианты (scope cut, phased delivery)
 - Escalate если нет согласия
@@ -258,6 +266,7 @@ TL: "Это невозможно качественно"
 **"PM не понимает technical complexity":**
 ```
 Решение:
+
 - Объясняйте в бизнес-терминах
 - Используйте аналогии
 - Показывайте риски для пользователей
@@ -266,6 +275,7 @@ TL: "Это невозможно качественно"
 **"PM микроменеджит команду":**
 ```
 Решение:
+
 - Обсудите роли и границы
 - Предложите альтернативы (status updates)
 - Escalate к общему руководителю если нужно

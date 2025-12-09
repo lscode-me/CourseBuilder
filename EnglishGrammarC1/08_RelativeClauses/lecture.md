@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать relative pronouns (who, which, that, whose, whom)
 - Понимать структуру сложноподчинённого предложения
 - Владеть participle forms (present and past participles)
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать defining и non-defining relative clauses
 - Правильно использовать пунктуацию с relative clauses
 - Выбирать между who/which/that

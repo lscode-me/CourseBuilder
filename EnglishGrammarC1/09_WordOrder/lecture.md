@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать базовый порядок слов в английском (SVO)
 - Понимать структуру вопросов
 - Владеть различными временами
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Использовать inversion для emphasis и formal style
 - Применять fronting для information flow
 - Строить cleft sentences для фокусировки
@@ -228,6 +230,7 @@ Focus on breaking: "It was breaking the window that John did."
 ### 5.1 The Principle
 
 English tends to put:
+
 - **Longer/heavier** elements at the end
 - **New/important** information at the end
 

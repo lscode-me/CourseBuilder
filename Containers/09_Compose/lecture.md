@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Уметь работать с Docker CLI
 - Понимать сетевые режимы Docker
 - Знать основы YAML
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Создавать docker-compose.yml для многоконтейнерных приложений
 - Использовать profiles, secrets и configs
 - Настраивать Docker Swarm кластер

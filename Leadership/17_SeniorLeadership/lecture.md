@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Иметь опыт управления командой 10+ человек
 - Понимать основы всех предыдущих модулей курса
 - Интересоваться переходом на senior leadership
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать различия между управлением людьми и управлением менеджерами
 - Развивать и коучить менеджеров в вашей организации
 - Создавать системы и процессы для масштабирования
@@ -60,21 +62,25 @@
 
 ```
 Building Leaders:
+
 - Hire и develop менеджеров
 - Coach и mentor
 - Succession planning
 
 Creating Systems:
+
 - Processes для scale
 - Communication mechanisms
 - Decision frameworks
 
 Strategic Work:
+
 - Org design
 - Headcount planning
 - Cross-org initiatives
 
 Executive Interface:
+
 - Represent eng to business
 - Budget discussions
 - Strategic planning
@@ -107,18 +113,21 @@ Executive Interface:
 
 ```
 Team Health:
+
 - "How is your team doing?"
 - "Who's struggling? Who's excelling?"
 - "Any flight risks?"
 - "What's morale like?"
 
 Their Leadership:
+
 - "What's challenging you as a manager?"
 - "What did you learn this week?"
 - "Where do you need help?"
 - "What decision was hardest?"
 
 Strategy:
+
 - "Are we working on the right things?"
 - "What should we stop doing?"
 - "What's blocking your team's success?"
@@ -196,11 +205,13 @@ What opportunities do you see to develop that?"
 **Format:**
 ```
 NOT:
+
 - Performance review
 - Complaint session
 - Undermining manager
 
 YES:
+
 - "How are things going?"
 - "What's working well on your team?"
 - "What would make your work better?"
@@ -302,16 +313,19 @@ YES:
 **Components:**
 ```
 Clarity:
+
 - Concise communication
 - Bottom line up front
 - Structured thinking
 
 Confidence:
+
 - Speak with conviction
 - Own your area
 - Admit what you don't know
 
 Composure:
+
 - Stay calm under pressure
 - Handle tough questions
 - Don't get defensive
@@ -343,6 +357,7 @@ Composure:
 
 ```
 For your org:
+
 - Where should we be in 1 year? 3 years?
 - What capabilities do we need to build?
 - What should we stop doing?

@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти основные модули курса
 - Осознавать свои типичные ошибки
 - Быть готовым к целенаправленной практике
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Распознавать типичные русские interference patterns
 - Понимать причины этих ошибок
 - Применять стратегии исправления
@@ -359,6 +361,7 @@ Prioritize fixing your top 3 errors first.
 ### 4.1 Awareness
 
 First, recognize the pattern:
+
 - Keep an error log
 - Record yourself speaking
 - Get feedback from teachers/native speakers
@@ -366,6 +369,7 @@ First, recognize the pattern:
 ### 4.2 Deliberate Practice
 
 Target specific errors:
+
 - Write sentences focusing on one structure
 - Overcorrect initially
 - Use checklists before submitting writing
@@ -373,6 +377,7 @@ Target specific errors:
 ### 4.3 Noticing
 
 When reading/listening:
+
 - Pay attention to articles
 - Notice prepositions with verbs
 - Observe how natives phrase things

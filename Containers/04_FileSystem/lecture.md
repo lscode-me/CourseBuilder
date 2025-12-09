@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать основы файловых систем Linux
 - Знать mount namespaces
 - Иметь базовое представление о Docker-образах
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснить принцип работы union filesystems
 - Настраивать и использовать OverlayFS
 - Понимать структуру слоёв Docker-образов
@@ -441,6 +443,7 @@ docker inspect test-nginx --format '{{json .GraphDriver.Data}}' | jq
 ### 6.1 Операции чтения
 
 При чтении файла OverlayFS:
+
 1. Проверяет наличие в upperdir
 2. Если нет — ищет в lowerdirs (сверху вниз)
 3. Возвращает первый найденный файл
@@ -636,6 +639,7 @@ systemctl restart docker
 ### 9.1 Проблема с OverlayFS без root
 
 Обычный OverlayFS требует:
+
 - CAP_SYS_ADMIN capability
 - Или root-права
 

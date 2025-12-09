@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать роль лидера в организации
 - Иметь опыт взаимодействия с разными stakeholders
 - Быть готовым развивать навыки влияния
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Идентифицировать и управлять stakeholders
 - Адаптировать коммуникацию под аудиторию
 - Эффективно делать reporting "наверх"
@@ -36,6 +38,7 @@
 **Типичные stakeholders Team Lead:**
 ```
 Internal:
+
 - Ваш руководитель (EM, Director)
 - Ваша команда
 - Другие команды
@@ -45,6 +48,7 @@ Internal:
 - DevOps/SRE
 
 External:
+
 - Клиенты/пользователи
 - Vendors
 - Partners
@@ -84,16 +88,19 @@ External:
 ## Stakeholder: [Name/Role]
 
 ### Profile:
+
 - Power: High/Medium/Low
 - Interest: High/Medium/Low
 - Attitude: Supportive/Neutral/Resistant
 
 ### Needs:
+
 - Какая информация нужна?
 - Какой уровень детализации?
 - Какие concerns?
 
 ### Communication:
+
 - Channel: Email/Slack/Meeting/Report
 - Frequency: Daily/Weekly/Monthly/As needed
 - Format: Brief/Detailed/Technical/Business
@@ -132,18 +139,21 @@ timeline 3 месяца, начинаем с design phase."
 
 ```
 Executive Level:
+
 - Impact на бизнес
 - High-level timeline
 - Key risks
 - Decisions needed
 
 Management Level:
+
 - Status и progress
 - Resource needs
 - Dependencies
 - Detailed risks
 
 Team Level:
+
 - Technical details
 - Implementation decisions
 - Day-to-day blockers
@@ -239,6 +249,7 @@ Concise, balanced, actionable
 ### 4.1 Почему это важно
 
 Как лидер, вы часто должны влиять на людей, которые вам не подчиняются:
+
 - Другие команды
 - Stakeholders
 - Executives
@@ -355,6 +366,7 @@ Concise, balanced, actionable
 
 ```
 Prepare:
+
 - Outcome: Приходить вовремя
 - Facts: Опоздал на 5 из 8 standups
 - Their perspective: Может есть причина?
@@ -370,6 +382,7 @@ During:
 "Понимаю. Как мы можем решить это?"
 
 After:
+
 - Договорились о конкретном плане
 - Check-in через неделю
 ```
@@ -409,6 +422,7 @@ Best,
 
 ```
 ✅ DO:
+
 - Thread conversations
 - Use @mentions sparingly
 - Set status when unavailable
@@ -416,6 +430,7 @@ Best,
 - Use appropriate channel
 
 ❌ DON'T:
+
 - @channel/@here without need
 - Send 10 messages instead of 1
 - Expect immediate response
@@ -466,12 +481,14 @@ Best,
 
 ```
 Preparation:
+
 - Know your audience
 - Practice out loud
 - Prepare for questions
 - Have backup slides
 
 Delivery:
+
 - Start strong (no "um, so...")
 - Maintain eye contact
 - Speak slowly
@@ -479,6 +496,7 @@ Delivery:
 - Tell stories, not just facts
 
 Handling Questions:
+
 - Repeat/clarify question
 - Answer concisely
 - "I don't know, I'll find out" is OK

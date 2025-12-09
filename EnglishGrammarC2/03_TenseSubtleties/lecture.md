@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Свободно владеть всеми 12 временами английского языка
 - Понимать разницу между tense (время) и aspect (вид)
 - Уверенно различать Present Perfect и Past Simple
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Использовать времена как **стилистический инструмент**, а не только для передачи времени
 - Применять Historic Present для создания вовлечённости
 - Выбирать между tense options на основе **эффекта**, а не только правил
@@ -39,6 +41,7 @@ Future: "She will arrive tomorrow."       → future time
 ### 1.2 The C2 View
 
 At C2 level, tenses are also about:
+
 - **Perspective** (how you frame the event)
 - **Distance** (emotional closeness)
 - **Vividness** (narrative impact)
@@ -77,6 +80,7 @@ runs up to me and just grabs my bag!"
 ### 2.2 Effect
 
 The Historic Present:
+
 - Brings the listener INTO the story
 - Creates a "you are there" feeling
 - Increases engagement
@@ -109,6 +113,7 @@ it was my ex-boyfriend's brother!"
 ```
 
 Note: The switches are **intuitive**, not random. They mark:
+
 - Foreground (key events) → often Present
 - Background (setting, thoughts) → often Past
 
@@ -241,6 +246,7 @@ The progressive **distances** you from the request.
 ### 4.5 When NOT to Use Progressive
 
 Avoid with **stative verbs** (as you know), but also recognize:
+
 - Overusing progressive can sound **non-native**
 - Not every action in progress needs progressive:
   
@@ -339,11 +345,13 @@ English has many ways to express future, each with nuance:
 ### 6.2 Will vs Going To: The Real Difference
 
 **Will** for:
+
 - Spontaneous decisions: "I'll have the fish."
 - Predictions (opinion-based): "I think it'll rain."
 - Promises: "I'll help you."
 
 **Going to** for:
+
 - Pre-made plans: "I'm going to study medicine."
 - Predictions (evidence-based): "Look at those clouds—it's going to rain."
 
@@ -582,6 +590,7 @@ these findings."
 ### 10.1 Present Simple
 
 Use for:
+
 - Facts and truths
 - Academic citations (endorsing)
 - Headlines
@@ -590,6 +599,7 @@ Use for:
 ### 10.2 Present Continuous
 
 Use for:
+
 - Actions in progress
 - Temporary situations
 - Annoyance (with "always")
@@ -599,6 +609,7 @@ Use for:
 ### 10.3 Past Simple
 
 Use for:
+
 - Completed events
 - Narrative backbone
 - Neutral citations
@@ -607,6 +618,7 @@ Use for:
 ### 10.4 Past Continuous
 
 Use for:
+
 - Background in narrative
 - Simultaneous past events
 - Polite distancing
@@ -615,6 +627,7 @@ Use for:
 ### 10.5 Present Perfect
 
 Use for:
+
 - Recent relevance
 - Life experience
 - Unfinished time periods
@@ -623,6 +636,7 @@ Use for:
 ### 10.6 Past Perfect
 
 Use for:
+
 - Earlier than past
 - Flashbacks in narrative
 - Hypothetical past

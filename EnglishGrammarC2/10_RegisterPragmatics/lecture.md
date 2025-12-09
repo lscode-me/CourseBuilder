@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать разницу между formal и informal English
 - Знать основы модальных глаголов для вежливости
 - Иметь опыт профессиональной коммуникации на английском
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать **pragmatic meaning** (что люди реально имеют в виду)
 - Применять **face-saving strategies** в деликатных ситуациях
 - Различать **регистры** и переключаться между ними
@@ -28,6 +30,7 @@
 ### 1.1 Definition
 
 **Pragmatics** = the study of meaning in context:
+
 - What speakers **mean** vs what they **say**
 - How context affects interpretation
 - Social rules of language use
@@ -108,6 +111,7 @@ Some speech acts **threaten face**:
 ### 3.1 Why English Is Indirect
 
 English professional culture values **indirectness** for:
+
 - Showing respect
 - Giving "outs"
 - Avoiding confrontation

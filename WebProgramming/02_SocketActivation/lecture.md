@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать HTTP протокол (предыдущий модуль)
 - Знать основы работы с сокетами
 - Иметь базовые знания systemd или inetd
@@ -20,6 +21,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать концепцию socket activation
 - Создавать systemd socket units
 - Писать простые веб-серверы на shell и Python
@@ -801,6 +803,7 @@ User=www-data
 #!/usr/bin/env python3
 """
 http_server.py — полноценный HTTP сервер с поддержкой:
+
 - Socket activation (systemd)
 - Статические файлы
 - Простой роутинг

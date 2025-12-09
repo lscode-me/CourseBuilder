@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Иметь опыт управления несколькими командами
 - Понимать основы предыдущих модулей курса
 - Интересоваться стратегической работой в engineering
@@ -19,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Разрабатывать и артикулировать engineering strategy
 - Связывать техническую работу с business goals
 - Создавать roadmaps и планировать по quarters
@@ -117,6 +119,7 @@ Team Plans (who builds what)
 
 ```
 Consider:
+
 - Core competency? → Build
 - Commodity? → Buy
 - Time to market critical? → Buy
@@ -128,12 +131,14 @@ Consider:
 
 ```
 When to pay down:
+
 - Blocking feature development
 - Causing reliability issues
 - Slowing velocity significantly
 - Creating security risks
 
 When to accept:
+
 - One-time feature
 - Short-lived system
 - Speed matters more
@@ -144,6 +149,7 @@ When to accept:
 
 ```
 Platform investment когда:
+
 - Multiple teams need similar capabilities
 - Consistency matters (security, compliance)
 - Scale benefits exceed build cost
@@ -186,6 +192,7 @@ Q4: Planning for next year
 - Major investments
 
 Output:
+
 - Annual goals
 - Investment areas
 - Headcount plan
@@ -196,16 +203,19 @@ Output:
 
 ```
 6 weeks before quarter:
+
 - Review roadmap
 - Capacity planning
 - Dependencies identified
 
 2 weeks before:
+
 - Commitments finalized
 - Resources allocated
 - Risks identified
 
 During quarter:
+
 - Weekly progress tracking
 - Adjustments as needed
 - Mid-quarter review
@@ -270,12 +280,14 @@ Needed headcount =
 
 ```
 Where to invest:
+
 - Areas with biggest business impact
 - Bottlenecks that limit growth
 - Strategic new capabilities
 - Teams that are stretched thin
 
 Where to reduce:
+
 - Mature, stable areas
 - Declining products
 - Areas being deprecated
@@ -290,6 +302,7 @@ Where to reduce:
 
 ```
 Questions:
+
 - What's our target architecture?
 - What are current pain points?
 - What should we standardize?
@@ -365,6 +378,7 @@ Questions:
 Objective: Scale platform for growth
 
 Key Results:
+
 - Handle 2x current load
 - 99.9% uptime
 - Deploy 10x per day
@@ -434,6 +448,7 @@ Key Results:
 
 ```
 Your narrative explains:
+
 - Where engineering is going
 - Why these choices
 - What it enables
@@ -445,16 +460,19 @@ Your narrative explains:
 **Different audiences:**
 ```
 Board/Executives:
+
 - Business impact
 - ROI of investments
 - Risks and mitigations
 
 Product:
+
 - What's possible when
 - Trade-offs of choices
 - Capacity and velocity
 
 Engineering:
+
 - Technical direction
 - Career opportunities
 - Why decisions were made
@@ -489,16 +507,19 @@ Engineering:
 
 ```
 Early stage:
+
 - Generalist teams
 - Less specialization
 - Move fast, break things
 
 Growth stage:
+
 - Some specialization
 - Platform investment
 - Process introduction
 
 Scale stage:
+
 - Specialized teams
 - Mature platforms
 - Efficient processes
@@ -508,6 +529,7 @@ Scale stage:
 
 ```
 Engineering culture includes:
+
 - How we make decisions
 - How we handle failure
 - How we share knowledge
