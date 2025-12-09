@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Infrastructure as Code
+# Infrastructure as Code
 
 ---
 

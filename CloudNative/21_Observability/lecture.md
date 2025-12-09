@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Observability: Logs, Metrics, Traces
+# Observability: Logs, Metrics, Traces
 
 ---
 

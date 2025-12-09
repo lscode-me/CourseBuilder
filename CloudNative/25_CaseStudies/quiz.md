@@ -5,56 +5,78 @@
 
 ## Question 1: E-commerce Cart
 
+
 Какой сервис лучше для хранения shopping cart?
 
 A) Aurora
-B) DynamoDB
-C) S3
-D) ElastiCache
+
+B) S3
+
+C) ElastiCache
+
+D) DynamoDB
 
 ---
 
 ## Question 2: Real-time Analytics
 
+
 Какой сервис использовать для ingestion streaming данных?
 
 A) S3
-B) Kinesis Data Streams
-C) Athena
-D) Redshift
+
+B) Redshift
+
+C) Kinesis Data Streams
+
+D) Athena
 
 ---
 
 ## Question 3: Serverless Benefits
 
+
 Какое главное преимущество serverless архитектуры?
 
-A) Всегда дешевле
-B) Scale to zero и pay per use
+A) Scale to zero и pay per use
+
+B) Проще debugging
+
 C) Быстрее контейнеров
-D) Проще debugging
+
+D) Всегда дешевле
 
 ---
 
 ## Question 4: Microservices Communication
 
+
 Какой сервис AWS обеспечивает service mesh с mTLS?
 
-A) API Gateway
+A) App Mesh (или Istio на EKS)
+
 B) ALB
-C) App Mesh (или Istio на EKS)
-D) Route 53
+
+C) Route 53
+
+D) API Gateway
 
 ---
 
 ## Question 5: Architecture Choice
 
+
 Какая архитектура лучше для MVP/стартапа?
 
-A) Kubernetes с микросервисами
-B) Serverless (Lambda + API Gateway + DynamoDB)
+A) Serverless (Lambda + API Gateway + DynamoDB)
+
+B) Kubernetes с микросервисами
+
 C) EC2 с monolith
+
 D) Multi-region active-active
+
+---
 
 ---
 
@@ -62,11 +84,11 @@ D) Multi-region active-active
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | DynamoDB: низкая latency, auto-scaling, TTL для expiration сессий. Aurora — для транзакционных данных. |
-| 2 | B | Kinesis Data Streams: real-time ingestion с sub-second latency. S3/Athena — для batch. |
-| 3 | B | Serverless: автоматическое масштабирование до нуля, оплата только за использование. |
-| 4 | C | App Mesh (AWS) или Istio (на EKS) обеспечивают service mesh с mTLS, traffic management. |
-| 5 | B | Serverless: быстрый старт, минимум ops, дёшево при низком трафике, масштабируется при росте. |
+| 1 | D | DynamoDB: низкая latency, auto-scaling, TTL для expiration сессий. Aurora — для транзакционных данных. |
+| 2 | C | Kinesis Data Streams: real-time ingestion с sub-second latency. S3/Athena — для batch. |
+| 3 | A | Serverless: автоматическое масштабирование до нуля, оплата только за использование. |
+| 4 | A | App Mesh (AWS) или Istio (на EKS) обеспечивают service mesh с mTLS, traffic management. |
+| 5 | A | Serverless: быстрый старт, минимум ops, дёшево при низком трафике, масштабируется при росте. |
 
 ---
 

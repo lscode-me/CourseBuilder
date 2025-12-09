@@ -1,5 +1,4 @@
-# Cloud Native Development
-## API Gateway
+# API Gateway
 
 ---
 

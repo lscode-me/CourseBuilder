@@ -1,5 +1,4 @@
-# Cloud Native Development
-## EC2: Elastic Compute Cloud
+# EC2: Elastic Compute Cloud
 
 ---
 

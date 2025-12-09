@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Введение в Cloud Native
+# Введение в Cloud Native
 
 ---
 

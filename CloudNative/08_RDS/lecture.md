@@ -1,5 +1,4 @@
-# Cloud Native Development
-## RDS: Relational Database Service
+# RDS: Relational Database Service
 
 ---
 

@@ -1,5 +1,4 @@
-# Cloud Native Development
-## CI/CD в облаке
+# CI/CD в облаке
 
 ---
 

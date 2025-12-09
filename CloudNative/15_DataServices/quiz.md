@@ -5,56 +5,78 @@
 
 ## Question 1: OLTP vs OLAP
 
+
 Какой тип workload характерен для Redshift?
 
-A) OLTP (транзакции)
-B) OLAP (аналитика)
-C) Caching
-D) Streaming
+A) Caching
+
+B) Streaming
+
+C) OLAP (аналитика)
+
+D) OLTP (транзакции)
 
 ---
 
 ## Question 2: Athena Pricing
 
+
 Как оплачивается Athena?
 
 A) Per-hour
-B) Per-query based on data scanned
+
+B) Per-row returned
+
 C) Фиксированная месячная плата
-D) Per-row returned
+
+D) Per-query based on data scanned
 
 ---
 
 ## Question 3: Data Format
 
+
 Какой формат данных рекомендуется для Athena/Redshift?
 
-A) CSV
-B) JSON
+A) JSON
+
+B) XML
+
 C) Parquet/ORC (columnar)
-D) XML
+
+D) CSV
 
 ---
 
 ## Question 4: Kinesis Firehose
 
+
 Что делает Kinesis Firehose?
 
-A) Обрабатывает данные с помощью SQL
-B) Загружает streaming данные в destinations (S3, Redshift)
-C) Хранит данные 365 дней
-D) Запускает Lambda функции
+A) Хранит данные 365 дней
+
+B) Запускает Lambda функции
+
+C) Загружает streaming данные в destinations (S3, Redshift)
+
+D) Обрабатывает данные с помощью SQL
 
 ---
 
 ## Question 5: Partitioning
 
+
 Зачем партиционировать данные в S3 для Athena?
 
 A) Для шифрования
+
 B) Для уменьшения объёма сканируемых данных и стоимости
+
 C) Для увеличения скорости записи
+
 D) Для репликации
+
+---
 
 ---
 
@@ -62,10 +84,10 @@ D) Для репликации
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Redshift — OLAP система для сложной аналитики, агрегаций, BI. RDS/DynamoDB — для OLTP. |
-| 2 | B | Athena: $5 per TB scanned. Использование Parquet и partitions критично для снижения стоимости. |
+| 1 | C | Redshift — OLAP система для сложной аналитики, агрегаций, BI. RDS/DynamoDB — для OLTP. |
+| 2 | D | Athena: $5 per TB scanned. Использование Parquet и partitions критично для снижения стоимости. |
 | 3 | C | Columnar форматы (Parquet, ORC) позволяют читать только нужные колонки, сжимаются лучше. |
-| 4 | B | Firehose — managed service для загрузки streaming данных в S3, Redshift, OpenSearch без кода. |
+| 4 | C | Firehose — managed service для загрузки streaming данных в S3, Redshift, OpenSearch без кода. |
 | 5 | B | Partitioning позволяет Athena сканировать только нужные partitions, снижая cost и время запроса. |
 
 ---

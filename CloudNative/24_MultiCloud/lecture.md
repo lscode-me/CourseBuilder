@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Multi-Cloud и Cloud Agnostic
+# Multi-Cloud и Cloud Agnostic
 
 ---
 

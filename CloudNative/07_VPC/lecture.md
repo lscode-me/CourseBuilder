@@ -1,5 +1,4 @@
-# Cloud Native Development
-## VPC: Virtual Private Cloud
+# VPC: Virtual Private Cloud
 
 ---
 

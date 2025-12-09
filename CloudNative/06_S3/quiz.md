@@ -5,13 +5,14 @@
 
 ## Question 1: Durability
 
+
 Какова durability S3 Standard?
 
-A) 99.9%
+A) 99.999999999% (11 nines)
 
-B) 99.99%
+B) 99.9%
 
-C) 99.999999999% (11 nines)
+C) 99.99%
 
 D) 100%
 
@@ -19,167 +20,179 @@ D) 100%
 
 ## Question 2: Storage Classes
 
+
 Какой storage class рекомендуется для данных с неизвестным паттерном доступа?
 
-A) S3 Standard
+A) S3 Glacier
 
-B) S3 Intelligent-Tiering
+B) S3 One Zone-IA
 
-C) S3 Glacier
+C) S3 Intelligent-Tiering
 
-D) S3 One Zone-IA
+D) S3 Standard
 
 ---
 
 ## Question 3: Object Size
 
+
 Какой максимальный размер одного объекта в S3?
 
-A) 5 GB
+A) 100 GB
 
-B) 100 GB
+B) Unlimited
 
 C) 5 TB
 
-D) Unlimited
+D) 5 GB
 
 ---
 
 ## Question 4: Bucket Names
 
+
 Какое утверждение о bucket names ВЕРНО?
 
-A) Могут начинаться с цифры
+A) Могут быть изменены после создания
 
 B) Глобально уникальны во всём AWS
 
-C) Могут содержать заглавные буквы
+C) Могут начинаться с цифры
 
-D) Могут быть изменены после создания
+D) Могут содержать заглавные буквы
 
 ---
 
 ## Question 5: Versioning
 
+
 Что происходит при "удалении" объекта в bucket с включённым versioning?
 
-A) Объект полностью удаляется
+A) Удаляются все версии объекта
 
 B) Создаётся delete marker, старые версии сохраняются
 
-C) Удаляются все версии объекта
+C) Versioning автоматически отключается
 
-D) Versioning автоматически отключается
+D) Объект полностью удаляется
 
 ---
 
 ## Question 6: Encryption
 
+
 Какой тип шифрования S3 использует по умолчанию с 2023 года?
 
-A) Нет шифрования
+A) Client-side encryption
 
 B) SSE-S3 (AES-256)
 
-C) SSE-KMS
+C) Нет шифрования
 
-D) Client-side encryption
+D) SSE-KMS
 
 ---
 
 ## Question 7: Glacier Retrieval
 
+
 Какое минимальное время retrieval для S3 Glacier Deep Archive (Standard retrieval)?
 
-A) Мгновенно
+A) 1-5 минут
 
-B) 1-5 минут
+B) Мгновенно
 
-C) 1-12 часов
+C) 12-48 часов
 
-D) 12-48 часов
+D) 1-12 часов
 
 ---
 
 ## Question 8: Lifecycle
 
+
 Что можно настроить через S3 Lifecycle Policy?
 
-A) Только удаление объектов
+A) Переход между storage classes и expiration
 
-B) Переход между storage classes и expiration
+B) Только удаление объектов
 
-C) Только шифрование
+C) Только репликацию
 
-D) Только репликацию
+D) Только шифрование
 
 ---
 
 ## Question 9: Block Public Access
 
+
 На каком уровне можно настроить Block Public Access?
 
-A) Только на уровне bucket
+A) На уровне bucket и аккаунта
 
-B) Только на уровне аккаунта
+B) Только на уровне bucket
 
-C) На уровне bucket и аккаунта
+C) На уровне объекта
 
-D) На уровне объекта
+D) Только на уровне аккаунта
 
 ---
 
 ## Question 10: Presigned URLs
 
+
 Для чего используются Presigned URLs?
 
-A) Для постоянного публичного доступа
+A) Для временного доступа без IAM credentials
 
-B) Для временного доступа без IAM credentials
+B) Для версионирования
 
 C) Для шифрования данных
 
-D) Для версионирования
+D) Для постоянного публичного доступа
 
 ---
 
 ## Question 11: Cross-Region Replication
 
+
 Что требуется для настройки S3 Cross-Region Replication?
 
-A) Versioning включён на source bucket
+A) Premium support plan
 
-B) Только destination bucket
+B) Versioning включён на source bucket
 
-C) Оба bucket в одном регионе
+C) Только destination bucket
 
-D) Premium support plan
+D) Оба bucket в одном регионе
 
 ---
 
 ## Question 12: Multipart Upload
 
+
 Для файлов какого размера рекомендуется Multipart Upload?
 
-A) > 5 MB
+A) > 1 GB
 
 B) > 50 MB
 
-C) > 100 MB
+C) > 5 MB
 
-D) > 1 GB
+D) > 100 MB
 
 ---
 
 ## Question 13: Pricing
 
+
 За что НЕ нужно платить в S3?
 
-A) Storage (GB/month)
+A) PUT requests
 
-B) Data transfer IN
+B) Storage (GB/month)
 
-C) PUT requests
+C) Data transfer IN
 
 D) GET requests
 
@@ -187,29 +200,33 @@ D) GET requests
 
 ## Question 14: S3 Select
 
+
 Что позволяет S3 Select?
 
-A) Выбирать storage class
+A) Выбирать тип шифрования
 
 B) Выполнять SQL запросы к данным без скачивания объекта
 
 C) Выбирать регион bucket
 
-D) Выбирать тип шифрования
+D) Выбирать storage class
 
 ---
 
 ## Question 15: Event Notifications
 
+
 Куда S3 может отправлять event notifications?
 
-A) Только в Lambda
+A) Lambda, SQS, SNS, EventBridge
 
-B) Lambda, SQS, SNS, EventBridge
+B) Только в SNS
 
-C) Только в CloudWatch
+C) Только в Lambda
 
-D) Только в SNS
+D) Только в CloudWatch
+
+---
 
 ---
 
@@ -217,21 +234,21 @@ D) Только в SNS
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | S3 Standard обеспечивает 99.999999999% (11 nines) durability — данные практически невозможно потерять. |
-| 2 | B | S3 Intelligent-Tiering автоматически перемещает данные между классами на основе паттернов доступа. |
+| 1 | A | S3 Standard обеспечивает 99.999999999% (11 nines) durability — данные практически невозможно потерять. |
+| 2 | C | S3 Intelligent-Tiering автоматически перемещает данные между классами на основе паттернов доступа. |
 | 3 | C | Максимальный размер объекта — 5 TB. Для загрузки используйте Multipart Upload. |
 | 4 | B | Bucket names глобально уникальны во всём AWS. Должны быть lowercase, 3-63 символа. |
 | 5 | B | При versioning "удаление" создаёт delete marker. Старые версии сохраняются и могут быть восстановлены. |
 | 6 | B | С января 2023 все новые объекты автоматически шифруются SSE-S3 (AES-256). |
-| 7 | D | S3 Glacier Deep Archive Standard retrieval: 12-48 часов. Bulk: до 48 часов. Expedited недоступен. |
-| 8 | B | Lifecycle Policy настраивает transitions между storage classes и expiration (автоудаление). |
-| 9 | C | Block Public Access можно настроить на уровне bucket и на уровне всего аккаунта. |
-| 10 | B | Presigned URLs предоставляют временный доступ к объекту без необходимости IAM credentials у получателя. |
-| 11 | A | Для CRR требуется versioning на source bucket. Destination bucket может быть в другом регионе и аккаунте. |
-| 12 | C | AWS рекомендует Multipart Upload для файлов > 100 MB. Обязательно для файлов > 5 GB. |
-| 13 | B | Data transfer IN (загрузка в S3) бесплатна. Платите за storage, requests, и data transfer OUT. |
+| 7 | C | S3 Glacier Deep Archive Standard retrieval: 12-48 часов. Bulk: до 48 часов. Expedited недоступен. |
+| 8 | A | Lifecycle Policy настраивает transitions между storage classes и expiration (автоудаление). |
+| 9 | A | Block Public Access можно настроить на уровне bucket и на уровне всего аккаунта. |
+| 10 | A | Presigned URLs предоставляют временный доступ к объекту без необходимости IAM credentials у получателя. |
+| 11 | B | Для CRR требуется versioning на source bucket. Destination bucket может быть в другом регионе и аккаунте. |
+| 12 | D | AWS рекомендует Multipart Upload для файлов > 100 MB. Обязательно для файлов > 5 GB. |
+| 13 | C | Data transfer IN (загрузка в S3) бесплатна. Платите за storage, requests, и data transfer OUT. |
 | 14 | B | S3 Select позволяет выполнять SQL запросы (SELECT) к CSV, JSON, Parquet файлам без полного скачивания. |
-| 15 | B | S3 Event Notifications можно отправлять в Lambda, SQS, SNS, и Amazon EventBridge. |
+| 15 | A | S3 Event Notifications можно отправлять в Lambda, SQS, SNS, и Amazon EventBridge. |
 
 ---
 

@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Messaging: SQS, SNS, EventBridge
+# Messaging: SQS, SNS, EventBridge
 
 ---
 

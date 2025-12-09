@@ -1,5 +1,4 @@
-# Cloud Native Development
-## DynamoDB: NoSQL Database
+# DynamoDB: NoSQL Database
 
 ---
 

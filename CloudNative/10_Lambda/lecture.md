@@ -1,5 +1,4 @@
-# Cloud Native Development
-## AWS Lambda: Serverless Compute
+# AWS Lambda: Serverless Compute
 
 ---
 

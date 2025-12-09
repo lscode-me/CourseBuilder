@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Модели облачных сервисов: IaaS, PaaS, SaaS, FaaS
+# Модели облачных сервисов: IaaS, PaaS, SaaS, FaaS
 
 ---
 

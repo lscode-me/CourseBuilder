@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Containers: ECS, EKS, Fargate
+# Containers: ECS, EKS, Fargate
 
 ---
 

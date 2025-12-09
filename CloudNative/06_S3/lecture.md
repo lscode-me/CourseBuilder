@@ -1,5 +1,4 @@
-# Cloud Native Development
-## S3: Simple Storage Service
+# S3: Simple Storage Service
 
 ---
 

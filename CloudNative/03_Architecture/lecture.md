@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Архитектура облаков: Регионы, Availability Zones, Edge
+# Архитектура облаков: Регионы, Availability Zones, Edge
 
 ---
 

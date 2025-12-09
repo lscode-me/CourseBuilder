@@ -1,5 +1,4 @@
-# Cloud Native Development
-## The Twelve-Factor App
+# The Twelve-Factor App
 
 ---
 

@@ -1,5 +1,4 @@
-# Cloud Native Development
-## Data Services: Analytics и Streaming
+# Data Services: Analytics и Streaming
 
 ---
 

@@ -7,27 +7,29 @@
 
 ## Question 1: Instance Types
 
+
 Что означает "m" в названии инстанса m5.xlarge?
 
-A) Memory optimized
+A) Machine learning
 
-B) General purpose (balanced)
+B) Memory optimized
 
-C) Machine learning
+C) Micro instance
 
-D) Micro instance
+D) General purpose (balanced)
 
 ---
 
 ## Question 2: Graviton
 
+
 Какое главное преимущество Graviton (ARM) инстансов?
 
 A) Только для ML workloads
 
-B) Лучшее соотношение цена/производительность
+B) Только для Windows
 
-C) Только для Windows
+C) Лучшее соотношение цена/производительность
 
 D) Бесплатны в Free Tier
 
@@ -35,67 +37,72 @@ D) Бесплатны в Free Tier
 
 ## Question 3: Spot Instances
 
+
 Какова максимальная скидка на Spot Instances по сравнению с On-Demand?
 
 A) До 30%
 
-B) До 50%
+B) До 90%
 
-C) До 70%
+C) До 50%
 
-D) До 90%
+D) До 70%
 
 ---
 
 ## Question 4: EBS Types
 
+
 Какой тип EBS volume рекомендуется для большинства workloads?
 
-A) gp2
+A) io2
 
-B) gp3
+B) st1
 
-C) io2
+C) gp2
 
-D) st1
+D) gp3
 
 ---
 
 ## Question 5: Auto Scaling
 
+
 Что определяет Launch Template?
 
-A) Количество инстансов в группе
+A) Health check интервал
 
-B) Конфигурацию инстансов (AMI, type, user data)
+B) Политики масштабирования
 
-C) Политики масштабирования
+C) Количество инстансов в группе
 
-D) Health check интервал
+D) Конфигурацию инстансов (AMI, type, user data)
 
 ---
 
 ## Question 6: Placement Groups
 
+
 Какой тип Placement Group обеспечивает минимальную латентность?
 
-A) Spread
+A) Partition
 
-B) Partition
+B) Default
 
-C) Cluster
+C) Spread
 
-D) Default
+D) Cluster
 
 ---
 
 ## Question 7: Reserved Instances
 
+
 На какой срок можно купить Reserved Instance?
 
-A) 1 месяц или 1 год
+A) 1 год или 3 года
 
-B) 1 год или 3 года
+B) 1 месяц или 1 год
 
 C) Только 3 года
 
@@ -105,113 +112,123 @@ D) От 1 до 5 лет
 
 ## Question 8: Instance Metadata
 
+
 По какому адресу доступен Instance Metadata Service?
 
-A) http://localhost/metadata
+A) http://169.254.169.254/latest/meta-data/
 
-B) http://169.254.169.254/latest/meta-data/
+B) http://ec2.internal/metadata
 
 C) http://aws.amazon.com/metadata
 
-D) http://ec2.internal/metadata
+D) http://localhost/metadata
 
 ---
 
 ## Question 9: User Data
 
+
 Когда выполняется User Data script?
 
-A) При каждой перезагрузке
+A) Каждый час
 
-B) Только при первом запуске инстанса
+B) Вручную администратором
 
-C) Вручную администратором
+C) При каждой перезагрузке
 
-D) Каждый час
+D) Только при первом запуске инстанса
 
 ---
 
 ## Question 10: AMI
 
+
 Что НЕ включено в AMI?
 
-A) Операционная система
+A) Instance type
 
-B) Установленное ПО
+B) Операционная система
 
-C) Instance type
+C) Конфигурация EBS
 
-D) Конфигурация EBS
+D) Установленное ПО
 
 ---
 
 ## Question 11: T-series Burstable
 
+
 Как работает burstable performance в T-серии инстансов?
 
-A) CPU всегда работает на максимуме
+A) Подключается дополнительный CPU при нагрузке
 
-B) Накапливаются CPU credits, которые тратятся при высокой нагрузке
+B) CPU всегда работает на максимуме
 
 C) Автоматически увеличивается размер инстанса
 
-D) Подключается дополнительный CPU при нагрузке
+D) Накапливаются CPU credits, которые тратятся при высокой нагрузке
 
 ---
 
 ## Question 12: EBS Snapshots
 
+
 Куда сохраняются EBS snapshots?
 
-A) На тот же EBS volume
+A) На другой EC2 инстанс
 
-B) В S3 (managed AWS)
+B) В Glacier
 
-C) В Glacier
+C) В S3 (managed AWS)
 
-D) На другой EC2 инстанс
+D) На тот же EBS volume
 
 ---
 
 ## Question 13: Security Groups
 
+
 На каком уровне работают Security Groups для EC2?
 
-A) На уровне VPC
+A) На уровне региона
 
 B) На уровне subnet
 
-C) На уровне инстанса (ENI)
+C) На уровне VPC
 
-D) На уровне региона
+D) На уровне инстанса (ENI)
 
 ---
 
 ## Question 14: Savings Plans
 
+
 Чем Compute Savings Plan отличается от EC2 Instance Savings Plan?
 
 A) Ничем
 
-B) Compute SP применяется к любым instance types и регионам
+B) EC2 Instance SP дешевле
 
-C) EC2 Instance SP дешевле
+C) Compute SP только для Lambda
 
-D) Compute SP только для Lambda
+D) Compute SP применяется к любым instance types и регионам
 
 ---
 
 ## Question 15: Auto Scaling Health Check
 
+
 Какой тип health check рекомендуется при использовании ALB?
 
 A) EC2
 
-B) ELB
+B) None
 
 C) Custom
 
-D) None
+D) ELB
+
+---
 
 ---
 
@@ -219,21 +236,21 @@ D) None
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | "M" означает General Purpose — сбалансированные ресурсы CPU и памяти. C = Compute, R = Memory, T = Burstable. |
-| 2 | B | Graviton (ARM) инстансы обеспечивают до 40% лучшее price/performance по сравнению с x86 аналогами. |
-| 3 | D | Spot Instances могут быть до 90% дешевле On-Demand, но могут быть прерваны. |
-| 4 | B | gp3 рекомендуется вместо gp2 — позволяет настраивать IOPS и throughput независимо и стоит дешевле. |
-| 5 | B | Launch Template определяет конфигурацию инстансов: AMI, instance type, security groups, user data и т.д. |
-| 6 | C | Cluster Placement Group размещает все инстансы в одном rack, обеспечивая минимальную латентность (< 1ms). |
-| 7 | B | Reserved Instances доступны на 1 год или 3 года. 3-летний срок даёт большую скидку. |
-| 8 | B | IMDS доступен по адресу http://169.254.169.254/latest/meta-data/ изнутри инстанса. |
-| 9 | B | User Data выполняется только при первом запуске инстанса (first boot). Для повторного выполнения нужны дополнительные настройки. |
-| 10 | C | Instance type не включён в AMI. AMI содержит ОС, ПО, конфигурацию EBS, но размер выбирается при запуске. |
-| 11 | B | T-инстансы накапливают CPU credits когда не используют полный CPU, и тратят их при burst нагрузке. |
-| 12 | B | EBS snapshots хранятся в S3, управляемом AWS. Вы не видите их в своих S3 buckets. |
-| 13 | C | Security Groups работают на уровне ENI (Elastic Network Interface), прикреплённого к инстансу. |
-| 14 | B | Compute Savings Plan даёт гибкость: любой instance type, family, размер, регион, OS. EC2 Instance SP привязан к family в регионе. |
-| 15 | B | При использовании ALB рекомендуется ELB health check — он проверяет реальную доступность приложения через target group. |
+| 1 | D | "M" означает General Purpose — сбалансированные ресурсы CPU и памяти. C = Compute, R = Memory, T = Burstable. |
+| 2 | C | Graviton (ARM) инстансы обеспечивают до 40% лучшее price/performance по сравнению с x86 аналогами. |
+| 3 | B | Spot Instances могут быть до 90% дешевле On-Demand, но могут быть прерваны. |
+| 4 | D | gp3 рекомендуется вместо gp2 — позволяет настраивать IOPS и throughput независимо и стоит дешевле. |
+| 5 | D | Launch Template определяет конфигурацию инстансов: AMI, instance type, security groups, user data и т.д. |
+| 6 | D | Cluster Placement Group размещает все инстансы в одном rack, обеспечивая минимальную латентность (< 1ms). |
+| 7 | A | Reserved Instances доступны на 1 год или 3 года. 3-летний срок даёт большую скидку. |
+| 8 | A | IMDS доступен по адресу http://169.254.169.254/latest/meta-data/ изнутри инстанса. |
+| 9 | D | User Data выполняется только при первом запуске инстанса (first boot). Для повторного выполнения нужны дополнительные настройки. |
+| 10 | A | Instance type не включён в AMI. AMI содержит ОС, ПО, конфигурацию EBS, но размер выбирается при запуске. |
+| 11 | D | T-инстансы накапливают CPU credits когда не используют полный CPU, и тратят их при burst нагрузке. |
+| 12 | C | EBS snapshots хранятся в S3, управляемом AWS. Вы не видите их в своих S3 buckets. |
+| 13 | D | Security Groups работают на уровне ENI (Elastic Network Interface), прикреплённого к инстансу. |
+| 14 | D | Compute Savings Plan даёт гибкость: любой instance type, family, размер, регион, OS. EC2 Instance SP привязан к family в регионе. |
+| 15 | D | При использовании ALB рекомендуется ELB health check — он проверяет реальную доступность приложения через target group. |
 
 ---
 

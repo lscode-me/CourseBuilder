@@ -1,5 +1,4 @@
-# Cloud Native Development
-## CDN: CloudFront
+# CDN: CloudFront
 
 ---
 
