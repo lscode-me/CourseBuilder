@@ -1,8 +1,8 @@
-# 📚 Сводка по стандартам курса Python.LS
+# 📚 Сводка по стандартам CourseBuilder
 
 ## 📖 Обзор документов
 
-Создано три ключевых документа для обеспечения качества и единообразия курса:
+Создано шесть ключевых документов для обеспечения качества и единообразия всех курсов:
 
 ### 1. **LECTURE_STANDARD.md** — Полный стандарт лекций
 **Назначение:** Детальное руководство по созданию и оформлению лекций  
@@ -51,28 +51,78 @@
 - Секцию Answer Key с пояснениями
 - Scoring Guide
 
+### 5. **GENERATION_GUIDE.md** — Руководство по генерации лекций
+**Назначение:** Инструкция по созданию лекций из course.txt  
+**Для кого:** Все, кто генерирует контент (включая AI)  
+**Когда использовать:** При старте работы над новым курсом
+
+**Содержит:**
+- Процесс генерации от course.txt до готового модуля
+- Структуру папок курса
+- Промпт для AI-генерации
+- Чеклист финализации
+
+### 6. **LECTURE_EXAMPLE.md** — Образцовая лекция
+**Назначение:** Эталонный пример готовой лекции  
+**Для кого:** Все авторы  
+**Когда использовать:** Как референс при создании новых лекций
+
+**Содержит:**
+- Полную лекцию, соответствующую всем стандартам
+- Демонстрацию правильного форматирования
+- Примеры всех обязательных секций
+
+---
+
+## 📖 Глоссарий терминов
+
+Для единообразия во всех документах используются следующие термины:
+
+| Термин | Определение | Пример |
+|--------|-------------|--------|
+| **Курс** | Полный учебный курс по теме | Git, Python, DevOps |
+| **Модуль** | Папка с материалами по одной теме | `03_Branching/` |
+| **Лекция** | Файл `lecture.md` — основной контент модуля | `lecture.md` |
+| **Квиз** | Файл `quiz.md` — вопросы для проверки знаний | `quiz.md` |
+| **course.txt** | Файл-шаблон структуры курса | `Courses_templates/Git/course.txt` |
+
+**Структура:**
+```
+Курс (Git)
+├── Модуль (01_Intro)
+│   ├── Лекция (lecture.md)
+│   └── Квиз (quiz.md)
+├── Модуль (02_Basics)
+│   ├── Лекция (lecture.md)
+│   └── Квиз (quiz.md)
+└── ...
+```
+
 ---
 
 ## 🎯 Workflow: Как использовать стандарты
 
-### Сценарий 1: Создание новой лекции
+### Сценарий 1: Создание нового курса / модуля
 
 ```
-1. Копировать LECTURE_TEMPLATE.md
+1. Изучить GENERATION_GUIDE.md
    ↓
-2. Заполнить все секции согласно LECTURE_STANDARD.md
+2. Взять course.txt из Courses_templates/[CourseName]/
    ↓
-3. Создать quiz.md из QUIZ_TEMPLATE.md (10-30 вопросов)
+3. Создать структуру папок в Courses/[CourseName]/
    ↓
-4. Проверить себя по LECTURE_CHECKLIST.md
+4. Для каждого модуля:
+   ├─ Копировать LECTURE_TEMPLATE.md → lecture.md
+   ├─ Заполнить согласно LECTURE_STANDARD.md
+   ├─ Использовать LECTURE_EXAMPLE.md как референс
+   ├─ Создать quiz.md из QUIZ_TEMPLATE.md
+   └─ Проверить по LECTURE_CHECKLIST.md
    ↓
 5. Отправить на review
    ↓
 6. Ревьюер проверяет по LECTURE_CHECKLIST.md
    ↓
-7. Внести правки
-   ↓
-8. Финальная проверка → Публикация
+7. Внести правки → Публикация
 ```
 
 ### Сценарий 2: Редактирование существующей лекции
@@ -125,7 +175,7 @@
 | Learning Objectives | 3 | 4 | 5 |
 | Key Takeaways | 3 | 4 | 5 |
 | Время чтения (мин) | 30 | 35-40 | 45 |
-| **Вопросов в quiz.md** | 10 | 15-20 | 30 |
+| **Вопросов в quiz.md** | 20 | 25-30 | 40 |
 
 ### Качественные метрики
 | Аспект | Критерий |
@@ -156,7 +206,7 @@
 - ✅ Learning Objectives (3-5)
 - ✅ Key Takeaways (3-5)
 - ✅ Next Steps с ссылками
-- ✅ **Quiz.md файл создан** (10-30 вопросов)
+- ✅ **Quiz.md файл создан** (20-40 вопросов)
 
 ### Качество контента
 - ✅ Весь код исполняемый
@@ -183,10 +233,10 @@
 - 📚 От концепции к применению
 - 🚀 Мотивация через практические примеры
 
-**Применяется к:**
-- ✅ Python модулям (приведение к стилю)
-- ✅ Linux модулям (сохранение стиля)
-- ✅ Всем новым модулям
+**Применяется ко ВСЕМ курсам:**
+- ✅ Технические курсы (Git, Python, Linux, DevOps, и др.)
+- ✅ Гуманитарные курсы (Leadership, English, и др.)
+- ✅ Все новые модули
 
 ### Что НЕ делать:
 
@@ -343,32 +393,33 @@ Approved → Published
 
 **Overall Status:** 🟡 In Progress
 
-### Modules Audited
-- Python: 10/10 ✅
-- Linux: 14/14 ✅
-- **Total: 24/24 (100%)**
+### Courses Progress
+- Git: 12/12 ✅
+- DevOps: 15/15 ✅
+- Containers: 11/11 ✅
+- **Total modules: 38/38 (100%)**
 
 ### Average Score
-- Python modules: 118/140 (84%)
-- Linux modules: 125/140 (89%)
-- **Course average: 122/140 (87%)**
+- Git modules: 128/155 (83%)
+- DevOps modules: 135/155 (87%)
+- Containers modules: 130/155 (84%)
+- **Overall average: 131/155 (85%)**
 
 ### Distribution
-- 130+ (Excellent): 6 modules (25%)
-- 115-129 (Good): 12 modules (50%)
-- 100-114 (Needs work): 5 modules (21%)
-- <100 (Critical): 1 module (4%)
+- 140+ (Excellent): 10 modules (26%)
+- 125-139 (Good): 18 modules (47%)
+- 110-124 (Needs work): 8 modules (21%)
+- <110 (Critical): 2 modules (6%)
 
 ### Critical Issues
 - [ ] 3 modules with broken links
 - [ ] 5 modules missing Prerequisites
 - [ ] 2 modules with non-working code
-- [ ] 8 modules need length adjustment
 
 ### Next Actions
-1. Fix critical issues (1 module)
-2. Improve "needs work" modules (5 modules)
-3. Polish "good" modules to "excellent" (12 modules)
+1. Fix critical issues (2 modules)
+2. Improve "needs work" modules (8 modules)
+3. Polish "good" modules to "excellent" (18 modules)
 ```
 
 ---
@@ -401,10 +452,11 @@ Approved → Published
 
 **Обязательно:**
 - LECTURE_STANDARD.md (полностью)
-- 3 примера отличных модулей
+- GENERATION_GUIDE.md (процесс создания)
+- LECTURE_EXAMPLE.md (образцовая лекция)
 
 **Желательно:**
-- "The Zen of Python" (PEP 20)
+- 3 примера отличных модулей из существующих курсов
 - Примеры плохих модулей (что не делать)
 
 ---
@@ -490,9 +542,9 @@ Approved → Published
 
 ---
 
-**Версия:** 1.1  
-**Дата:** 2024-12-02  
-**Maintainers:** Course Team  
-**Следующий review:** После фазы 1 унификации
+**Версия:** 2.0  
+**Дата:** 2024-12-09  
+**Maintainers:** CourseBuilder Team  
+**Следующий review:** После создания первых 3 курсов
 
 
