@@ -12,6 +12,7 @@ Git
 10_CodeReview pull requests, merge requests, код-ревью, best practices.
 11_Hooks pre-commit, pre-push, автоматизация проверок.
 12_Advanced cherry-pick, bisect, reflog, submodules, worktrees.
+13_GitArchitecture внутри git, bare, blobs, references, hash, diff
 
 Требования: терминал, любая ОС.
 
