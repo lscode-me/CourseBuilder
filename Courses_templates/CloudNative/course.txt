@@ -1,0 +1,31 @@
+CloudNative
+Курс по облачной разработке от базовых концепций до Cloud Native архитектуры. Построен на примере AWS.
+01_Intro история облаков, эволюция, зачем нужны, основные провайдеры.
+02_ServiceModels IaaS, PaaS, SaaS, FaaS, Shared Responsibility Model.
+03_Architecture регионы, Availability Zones, Edge Locations, глобальная инфраструктура.
+04_IAM пользователи, роли, политики, SSO, Federation, OIDC.
+05_EC2 инстансы, типы, AMI, EBS, Auto Scaling, Spot/Reserved.
+06_S3 buckets, классы хранения, lifecycle, версионирование, безопасность.
+07_VPC сети, подсети, маршрутизация, NAT, Security Groups, NACLs.
+08_RDS движки БД, Multi-AZ, Read Replicas, Aurora, резервное копирование.
+09_DynamoDB модель данных, ключи, индексы, DAX, DynamoDB Streams.
+10_Lambda функции, триггеры, слои, холодный старт, лимиты.
+11_Containers ECS, EKS, Fargate, ECR, оркестрация контейнеров.
+12_Messaging SQS, SNS, EventBridge, паттерны интеграции.
+13_APIGateway REST API, HTTP API, WebSocket, авторизация, throttling.
+14_CDN CloudFront, Edge Locations, Lambda@Edge, кеширование.
+15_DataServices Redshift, Athena, Kinesis, Glue, озёра данных.
+16_IaC CloudFormation, Terraform, CDK, Pulumi — сравнение и практика.
+17_CICD CodeCommit, CodeBuild, CodePipeline, CodeDeploy.
+18_CloudNativeIntro CNCF, принципы Cloud Native, отличия от традиционной разработки.
+19_TwelveFactorApp 12 принципов современных приложений с примерами.
+20_Microservices паттерны, коммуникация, service mesh, API design.
+21_Observability CloudWatch, X-Ray, логирование, метрики, трейсы.
+22_Security Shared Responsibility, шифрование, WAF, Shield, best practices.
+23_CostManagement Cost Explorer, Budgets, Reserved/Spot, оптимизация затрат.
+24_MultiCloud Cloud Agnostic, абстракции, когда нужен multi-cloud.
+25_CaseStudies реальные архитектуры, разбор решений, anti-patterns.
+
+Требования: AWS аккаунт, AWS CLI, Terraform, Docker, базовые знания сетей и БД.
+
+

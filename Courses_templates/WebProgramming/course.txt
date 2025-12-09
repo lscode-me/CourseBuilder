@@ -1,0 +1,15 @@
+WebProgramming
+Курс по веб-программированию в Linux — от низкоуровневых сокетов до современных фреймворков.
+01_HTTP HTTP/1.0, HTTP/1.1, HTTP/2, структура запросов/ответов, статусы.
+02_SocketActivation systemd socket activation, эмуляция веб-сервера.
+03_WebServers Apache, Nginx, OpenBSD httpd, Caddy — сравнение и настройка.
+04_CGI CGI, FastCGI, SCGI — эволюция gateway интерфейсов.
+05_WSGI Python WSGI, middleware, Flask/Django deployment.
+06_ASGI асинхронный ASGI, uvicorn, Starlette.
+07_WebSockets WebSocket протокол, real-time приложения.
+08_Architecture архитектура современных веб-приложений.
+09_Database взаимодействие веб-приложений с базами данных.
+
+Требования: Linux, Python 3.10+, базовые знания TCP/IP и сетей.
+
+

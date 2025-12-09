@@ -1,0 +1,18 @@
+IT_Basics
+Курс по фундаментальным концепциям IT: данные, форматы, кодировки — источник множества проблем.
+01_Intro что такое данные, информация, форматы.
+02_NumberSystems биты, байты, hex, binary, endianness.
+03_Encodings ASCII, Unicode, UTF-8, история и проблемы кодировок.
+04_FileFormats текстовые vs бинарные, magic numbers, MIME types.
+05_JSON синтаксис JSON, валидация, инструмент jq.
+06_YAML синтаксис YAML, особенности, сравнение с JSON.
+07_Markup HTML, XML, Markdown — языки разметки.
+08_ConfigFiles INI, TOML, .env, properties — конфигурационные файлы.
+09_TabularData CSV, TSV, парсинг и генерация табличных данных.
+10_Compression gzip, bzip2, tar, архивы — сжатие данных.
+11_Checksums MD5, SHA, контрольные суммы и их применение.
+12_DataTransfer Base64, URL encoding, MIME types — кодирование для передачи.
+
+Требования: терминал Linux/macOS/WSL, текстовый редактор.
+
+
