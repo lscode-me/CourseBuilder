@@ -9,19 +9,23 @@
 
 
 
+
+
 За что отвечает КЛИЕНТ в Shared Responsibility Model?
 
-A) IAM, шифрование данных, security groups
+A) Hypervisor patching
 
 B) Hardware maintenance
 
-C) Hypervisor patching
+C) Физическая безопасность дата-центров
 
-D) Физическая безопасность дата-центров
+D) IAM, шифрование данных, security groups
 
 ---
 
 ## Question 2: Least Privilege
+
+
 
 
 
@@ -45,19 +49,23 @@ D) Минимум IAM пользователей
 
 
 
+
+
 Какой сервис рекомендуется для хранения database credentials с автоматической ротацией?
 
-A) Secrets Manager
+A) IAM
 
-B) IAM
+B) KMS
 
-C) KMS
+C) Secrets Manager
 
 D) Parameter Store Standard
 
 ---
 
 ## Question 4: WAF
+
+
 
 
 
@@ -81,6 +89,8 @@ D) Brute force на SSH
 
 
 
+
+
 Что делает GuardDuty?
 
 A) Шифрует данные
@@ -94,6 +104,8 @@ D) Сканирует EC2 на уязвимости
 ---
 
 ## Question 6: Inspector
+
+
 
 
 
@@ -115,15 +127,17 @@ D) Шифрует данные
 
 
 
+
+
 Для чего используется Security Hub?
 
-A) Только для IAM
+A) Только для encryption
 
-B) Только для encryption
+B) Только для IAM
 
-C) Только для logging
+C) Централизованный security dashboard и findings aggregation
 
-D) Централизованный security dashboard и findings aggregation
+D) Только для logging
 
 ---
 
@@ -132,19 +146,23 @@ D) Централизованный security dashboard и findings aggregation
 
 
 
+
+
 Что обнаруживает Amazon Macie?
 
-A) Sensitive data (PII) в S3 buckets
+A) SQL injection
 
-B) DDoS attacks
+B) Malware
 
-C) SQL injection
+C) Sensitive data (PII) в S3 buckets
 
-D) Malware
+D) DDoS attacks
 
 ---
 
 ## Question 9: KMS
+
+
 
 
 
@@ -166,19 +184,23 @@ D) Только AWS managed
 
 
 
+
+
 Что логирует CloudTrail?
 
 A) Только errors
 
-B) API calls и management events в AWS account
+B) Только S3
 
-C) Только S3
+C) Только EC2
 
-D) Только EC2
+D) API calls и management events в AWS account
 
 ---
 
 ## Question 11: IAM Access Analyzer
+
+
 
 
 
@@ -200,19 +222,23 @@ D) Находит ресурсы shared с external entities
 
 
 
+
+
 Для чего используются AWS Config Rules?
 
-A) Для continuous compliance checking resources
+A) Для logging
 
-B) Для deployment
+B) Для billing
 
-C) Для logging
+C) Для continuous compliance checking resources
 
-D) Для billing
+D) Для deployment
 
 ---
 
 ## Question 13: Network Firewall
+
+
 
 
 
@@ -234,6 +260,8 @@ D) Для API protection
 
 
 
+
+
 Что даёт Shield Advanced по сравнению со Standard?
 
 A) DDoS cost protection, 24/7 DRT, advanced mitigation
@@ -247,6 +275,8 @@ D) Только logging
 ---
 
 ## Question 15: IAM Policies
+
+
 
 
 
@@ -268,6 +298,8 @@ D) Только managed
 
 
 
+
+
 Что делают Service Control Policies в Organizations?
 
 A) Ограничивают permissions во всех accounts organization
@@ -285,15 +317,17 @@ D) Только для billing
 
 
 
+
+
 Для чего используется AWS Private CA?
 
-A) Для public certificates
+A) Для API keys
 
 B) Для private PKI и internal certificates
 
-C) Для SSH keys
+C) Для public certificates
 
-D) Для API keys
+D) Для SSH keys
 
 ---
 
@@ -302,19 +336,23 @@ D) Для API keys
 
 
 
+
+
 Что делает AWS Firewall Manager?
 
-A) Только для SGs
+A) Centralized management security policies across accounts
 
-B) Создаёт firewalls
+B) Только для WAF
 
-C) Centralized management security policies across accounts
+C) Только для SGs
 
-D) Только для WAF
+D) Создаёт firewalls
 
 ---
 
 ## Question 19: Detective
+
+
 
 
 
@@ -336,15 +374,17 @@ D) Investigates security findings с graph analysis
 
 
 
+
+
 Как реализовать Zero Trust в AWS?
 
-A) IAM, Verified Access, private endpoints, encryption everywhere
+A) Shield только
 
-B) VPN только
+B) Firewall только
 
-C) Shield только
+C) IAM, Verified Access, private endpoints, encryption everywhere
 
-D) Firewall только
+D) VPN только
 
 ---
 
@@ -354,25 +394,25 @@ D) Firewall только
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | Клиент отвечает за "security IN the cloud": IAM, данные, encryption, network config. AWS — за "security OF the cloud". |
+| 1 | D | Клиент отвечает за "security IN the cloud": IAM, данные, encryption, network config. AWS — за "security OF the cloud". |
 | 2 | C | Least Privilege: давать только те permissions, которые необходимы для выполнения конкретной задачи. |
-| 3 | A | Secrets Manager имеет built-in rotation для RDS, Redshift, DocumentDB credentials. |
+| 3 | C | Secrets Manager имеет built-in rotation для RDS, Redshift, DocumentDB credentials. |
 | 4 | B | WAF защищает от application-layer атак: SQL injection, XSS, OWASP Top 10. Shield — для DDoS. |
 | 5 | B | GuardDuty анализирует CloudTrail, VPC Flow Logs, DNS logs для обнаружения угроз и аномалий. |
 | 6 | B | Inspector: vulnerability scanning |
-| 7 | D | Security Hub: centralized dashboard |
-| 8 | A | Macie: PII detection в S3 |
+| 7 | C | Security Hub: centralized dashboard |
+| 8 | C | Macie: PII detection в S3 |
 | 9 | C | KMS: AWS managed, Customer managed, Customer provided |
-| 10 | B | CloudTrail: API calls и events |
+| 10 | D | CloudTrail: API calls и events |
 | 11 | D | Access Analyzer: finds external sharing |
-| 12 | A | Config Rules: continuous compliance |
+| 12 | C | Config Rules: continuous compliance |
 | 13 | B | Network Firewall: network-level IDS/IPS |
 | 14 | A | Shield Advanced: DDoS cost protection, DRT |
 | 15 | B | Identity, Resource, Boundaries, SCPs policies |
 | 16 | A | SCPs: ограничения для всей organization |
 | 17 | B | Private CA: internal certificates |
-| 18 | C | Firewall Manager: centralized security policies |
+| 18 | A | Firewall Manager: centralized security policies |
 | 19 | D | Detective: investigates with graph analysis |
-| 20 | A | Zero Trust: IAM, Verified Access, private endpoints |
+| 20 | C | Zero Trust: IAM, Verified Access, private endpoints |
 
 ---

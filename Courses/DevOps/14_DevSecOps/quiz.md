@@ -10,19 +10,23 @@
 
 
 
+
+
 Что означает "Shift Left" в DevSecOps?
 
-A) Сдвинуть security проверки в конец pipeline
+A) Игнорировать security на начальных этапах
 
-B) Внедрить security проверки максимально рано в pipeline
+B) Перенести security в отдельную команду
 
-C) Перенести security в отдельную команду
+C) Внедрить security проверки максимально рано в pipeline
 
-D) Игнорировать security на начальных этапах
+D) Сдвинуть security проверки в конец pipeline
 
 ---
 
 ## Question 2: SAST
+
+
 
 
 
@@ -46,15 +50,17 @@ D) Security API Scanning Tool
 
 
 
+
+
 Что проверяет SCA (Software Composition Analysis)?
 
-A) Network traffic
+A) User permissions
 
 B) Уязвимости в зависимостях (dependencies)
 
-C) User permissions
+C) Код приложения
 
-D) Код приложения
+D) Network traffic
 
 ---
 
@@ -64,19 +70,23 @@ D) Код приложения
 
 
 
+
+
 Когда выполняется DAST?
 
-A) При написании кода
+A) При code review
 
-B) При code review
+B) При запущенном приложении (runtime)
 
 C) При компиляции кода
 
-D) При запущенном приложении (runtime)
+D) При написании кода
 
 ---
 
 ## Question 5: Secrets
+
+
 
 
 
@@ -100,19 +110,23 @@ D) Хранить в .env файле в Git
 
 
 
+
+
 Какая практика НЕ является best practice для Docker security?
 
-A) Использовать latest tag
+A) Использовать non-root user
 
-B) Использовать non-root user
+B) Использовать latest tag
 
-C) Минимизировать количество packages
+C) Read-only filesystem
 
-D) Read-only filesystem
+D) Минимизировать количество packages
 
 ---
 
 ## Question 7: Trivy
+
+
 
 
 
@@ -136,6 +150,8 @@ D) Для сканирования containers и IaC на уязвимости
 
 
 
+
+
 Что проверяет GitLeaks?
 
 A) Memory leaks в коде
@@ -154,19 +170,23 @@ D) Performance issues
 
 
 
+
+
 Для чего используется OPA (Open Policy Agent)?
 
-A) Логирование
+A) CI/CD
 
-B) CI/CD
+B) Мониторинг
 
 C) Policy as Code — проверка соответствия политикам
 
-D) Мониторинг
+D) Логирование
 
 ---
 
 ## Question 10: Security Responsibility
+
+
 
 
 
@@ -190,15 +210,17 @@ D) Только management
 
 
 
+
+
 Что такое Compliance as Code?
 
-A) Ручная проверка compliance раз в год
+A) Проверка compliance только аудиторами
 
 B) Описание и автоматическая проверка compliance-требований в виде кода
 
-C) Документация compliance в Word файлах
+C) Ручная проверка compliance раз в год
 
-D) Проверка compliance только аудиторами
+D) Документация compliance в Word файлах
 
 ---
 
@@ -208,15 +230,17 @@ D) Проверка compliance только аудиторами
 
 
 
+
+
 Для чего используется AWS Config?
 
-A) CI/CD pipeline
+A) Автоматический мониторинг compliance AWS ресурсов
 
-B) Deployment приложений
+B) Логирование приложений
 
-C) Логирование приложений
+C) Deployment приложений
 
-D) Автоматический мониторинг compliance AWS ресурсов
+D) CI/CD pipeline
 
 ---
 
@@ -226,15 +250,17 @@ D) Автоматический мониторинг compliance AWS ресурс
 
 
 
+
+
 Что позволяет делать Cloud Custodian?
 
-A) Определять policies и автоматически remediate non-compliant ресурсы
+A) Управлять DNS
 
-B) Только генерировать отчёты
+B) Только мониторинг облачных ресурсов
 
-C) Управлять DNS
+C) Определять policies и автоматически remediate non-compliant ресурсы
 
-D) Только мониторинг облачных ресурсов
+D) Только генерировать отчёты
 
 ---
 
@@ -244,19 +270,23 @@ D) Только мониторинг облачных ресурсов
 
 
 
+
+
 Какой framework НЕ относится к compliance стандартам?
 
-A) DORA metrics
+A) PCI DSS
 
-B) SOC 2
+B) HIPAA
 
-C) HIPAA
+C) SOC 2
 
-D) PCI DSS
+D) DORA metrics
 
 ---
 
 ## Question 15: Runtime Security
+
+
 
 
 
@@ -278,19 +308,23 @@ D) Только сканирование образов
 
 
 
+
+
 Что такое Zero Trust в DevSecOps?
 
-A) Доверять всему внутри сети
+A) Только для внешних пользователей
 
-B) Не доверять по умолчанию, проверять каждый запрос
+B) Доверять всему внутри сети
 
 C) Отключить все проверки
 
-D) Только для внешних пользователей
+D) Не доверять по умолчанию, проверять каждый запрос
 
 ---
 
 ## Question 17: Security Champions
+
+
 
 
 
@@ -312,6 +346,8 @@ D) Специалисты по безопасности
 
 
 
+
+
 Когда проводить threat modeling?
 
 A) Только при инцидентах
@@ -329,6 +365,8 @@ D) Раз в год
 
 
 
+
+
 Что такое SBOM?
 
 A) Software Budget of Materials
@@ -342,6 +380,8 @@ D) System Build Operation Mode
 ---
 
 ## Question 20: Security Gates
+
+
 
 
 
@@ -364,22 +404,22 @@ D) Firewall rules
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Shift Left = security проверки максимально рано |
+| 1 | C | Shift Left = security проверки максимально рано |
 | 2 | A | SAST — статический анализ исходного кода |
 | 3 | B | SCA проверяет уязвимости в зависимостях |
-| 4 | D | DAST тестирует работающее приложение |
+| 4 | B | DAST тестирует работающее приложение |
 | 5 | B | Secrets management tools (Vault, AWS SM) |
-| 6 | A | latest tag — плохая практика (нет воспроизводимости) |
+| 6 | B | latest tag — плохая практика (нет воспроизводимости) |
 | 7 | D | Trivy сканирует containers и IaC |
 | 8 | B | GitLeaks ищет секреты в Git history |
 | 9 | C | OPA — Policy as Code |
 | 10 | B | В DevSecOps все отвечают за безопасность |
 | 11 | B | Compliance as Code — автоматизация compliance требований |
-| 12 | D | AWS Config мониторит compliance AWS ресурсов |
-| 13 | A | Cloud Custodian — policy engine с auto-remediation |
-| 14 | A | DORA metrics — метрики DevOps, не compliance framework |
+| 12 | A | AWS Config мониторит compliance AWS ресурсов |
+| 13 | C | Cloud Custodian — policy engine с auto-remediation |
+| 14 | D | DORA metrics — метрики DevOps, не compliance framework |
 | 15 | C | Runtime security: Falco, network policies, monitoring |
-| 16 | B | Zero Trust: не доверять по умолчанию, проверять каждый запрос |
+| 16 | D | Zero Trust: не доверять по умолчанию, проверять каждый запрос |
 | 17 | C | Security Champions — разработчики продвигающие security |
 | 18 | B | Threat modeling на ранних этапах дизайна |
 | 19 | C | SBOM — Software Bill of Materials |

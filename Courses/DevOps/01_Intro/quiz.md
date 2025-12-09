@@ -10,19 +10,23 @@
 
 
 
+
+
 Что из перечисленного лучше всего описывает DevOps?
 
-A) Культура, практики и философия, направленные на сотрудничество Dev и Ops
+A) Набор инструментов для автоматизации инфраструктуры
 
-B) Методология разработки программного обеспечения, заменяющая Agile
+B) Должность инженера, который управляет CI/CD pipeline
 
-C) Набор инструментов для автоматизации инфраструктуры
+C) Культура, практики и философия, направленные на сотрудничество Dev и Ops
 
-D) Должность инженера, который управляет CI/CD pipeline
+D) Методология разработки программного обеспечения, заменяющая Agile
 
 ---
 
 ## Question 2: История DevOps
+
+
 
 
 
@@ -46,13 +50,15 @@ D) 2011
 
 
 
+
+
 Какой принцип НЕ относится к "The Three Ways" из философии DevOps?
 
-A) Feedback (Amplify Feedback Loops)
+A) Continuous Learning
 
-B) Zero Downtime Deployment
+B) Feedback (Amplify Feedback Loops)
 
-C) Continuous Learning
+C) Zero Downtime Deployment
 
 D) Flow (Systems Thinking)
 
@@ -64,19 +70,23 @@ D) Flow (Systems Thinking)
 
 
 
+
+
 Что из перечисленного является практикой First Way (Flow)?
 
-A) A/B тестирование
+A) Выделение 20% времени на эксперименты
 
 B) Уменьшение размера batch и ограничение WIP
 
-C) Выделение 20% времени на эксперименты
+C) Проведение blameless postmortems
 
-D) Проведение blameless postmortems
+D) A/B тестирование
 
 ---
 
 ## Question 5: CALMS Framework
+
+
 
 
 
@@ -100,19 +110,23 @@ D) Leadership
 
 
 
+
+
 Какая метрика НЕ является частью DORA Four Keys?
 
 A) Deployment frequency
 
-B) Lines of code per sprint
+B) Lead time for changes
 
-C) Lead time for changes
+C) Mean time to recovery
 
-D) Mean time to recovery
+D) Lines of code per sprint
 
 ---
 
 ## Question 7: DevOps vs SRE
+
+
 
 
 
@@ -136,15 +150,17 @@ D) DevOps — это часть SRE
 
 
 
+
+
 Почему создание отдельной роли "DevOps Engineer" между Dev и Ops считается анти-паттерном?
 
-A) Это создаёт новый silo вместо устранения существующих
+A) DevOps Engineer не может знать и Dev, и Ops
 
-B) DevOps Engineers слишком дорогие
+B) Это замедляет deployment frequency
 
-C) DevOps Engineer не может знать и Dev, и Ops
+C) Это создаёт новый silo вместо устранения существующих
 
-D) Это замедляет deployment frequency
+D) DevOps Engineers слишком дорогие
 
 ---
 
@@ -154,19 +170,23 @@ D) Это замедляет deployment frequency
 
 
 
+
+
 Согласно исследованию DORA, каким deployment frequency отличаются Elite performers?
 
-A) Раз в неделю
+A) On-demand (по требованию)
 
-B) On-demand (по требованию)
+B) Раз в день
 
-C) Раз в день
+C) Раз в неделю
 
 D) Раз в месяц
 
 ---
 
 ## Question 10: Традиционная проблема
+
+
 
 
 
@@ -190,6 +210,8 @@ D) Dev писали код на Java, Ops предпочитали Python
 
 
 
+
+
 Какая практика относится к Second Way (Feedback)?
 
 A) Мониторинг и алертинг
@@ -208,15 +230,17 @@ D) Feature flags
 
 
 
+
+
 Что из перечисленного является примером "waste" (потерь) в контексте Lean DevOps?
 
 A) Автоматические тесты
 
-B) Code review
+B) Документация
 
-C) Документация
+C) Ожидание approval
 
-D) Ожидание approval
+D) Code review
 
 ---
 
@@ -226,13 +250,15 @@ D) Ожидание approval
 
 
 
+
+
 Что означает принцип "You build it, you run it"?
 
-A) Разработчик должен сам собирать свой компьютер
+A) Нельзя использовать CI/CD — всё вручную
 
-B) Нельзя использовать CI/CD — всё вручную
+B) Команда несёт полную ответственность за свой сервис в production
 
-C) Команда несёт полную ответственность за свой сервис в production
+C) Разработчик должен сам собирать свой компьютер
 
 D) Build и run должны выполняться в одной команде терминала
 
@@ -244,19 +270,23 @@ D) Build и run должны выполняться в одной команде
 
 
 
+
+
 Что характеризует модель "Platform Team"?
 
-A) Ops полностью заменяется на cloud services
+A) Внешняя компания управляет инфраструктурой
 
-B) Внешняя компания управляет инфраструктурой
+B) Централизованная команда создаёт инструменты для product команд
 
 C) Каждая команда сама создаёт свою инфраструктуру
 
-D) Централизованная команда создаёт инструменты для product команд
+D) Ops полностью заменяется на cloud services
 
 ---
 
 ## Question 15: Third Way
+
+
 
 
 
@@ -280,19 +310,23 @@ D) Ограничение Work in Progress
 
 
 
+
+
 Что из перечисленного НЕ является типичной областью автоматизации в DevOps?
 
 A) Testing
 
-B) Infrastructure provisioning
+B) Принятие бизнес-решений о приоритетах
 
-C) Build и packaging
+C) Infrastructure provisioning
 
-D) Принятие бизнес-решений о приоритетах
+D) Build и packaging
 
 ---
 
 ## Question 17: История DevOps
+
+
 
 
 
@@ -316,6 +350,8 @@ D) Google
 
 
 
+
+
 Какой уровень зрелости DevOps характеризуется Chaos engineering и AIOps?
 
 A) Level 3: Advanced
@@ -334,15 +370,17 @@ D) Level 2: Intermediate
 
 
 
+
+
 Какой основной фокус Site Reliability Engineering по сравнению с DevOps?
 
-A) Скорость разработки
+A) Улучшение UX
 
-B) Надёжность и reliability engineering
+B) Снижение затрат на инфраструктуру
 
-C) Снижение затрат на инфраструктуру
+C) Надёжность и reliability engineering
 
-D) Улучшение UX
+D) Скорость разработки
 
 ---
 
@@ -352,13 +390,15 @@ D) Улучшение UX
 
 
 
+
+
 Согласно исследованию DORA, во сколько раз Elite performers деплоят чаще, чем Low performers?
 
-A) В 50 раз
+A) В 1000 раз
 
-B) В 1000 раз
+B) В 10 раз
 
-C) В 10 раз
+C) В 50 раз
 
 D) В 208 раз
 
@@ -370,25 +410,25 @@ D) В 208 раз
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | DevOps — это прежде всего культура и практики сотрудничества, а не инструменты или должность |
+| 1 | C | DevOps — это прежде всего культура и практики сотрудничества, а не инструменты или должность |
 | 2 | C | Первая DevOpsDays состоялась в Генте (Бельгия) в 2009 году, организованная Patrick Debois |
-| 3 | B | Three Ways: Flow, Feedback, Continuous Learning. Zero Downtime — это практика, но не один из "путей" |
+| 3 | C | Three Ways: Flow, Feedback, Continuous Learning. Zero Downtime — это практика, но не один из "путей" |
 | 4 | B | Уменьшение batch size и ограничение WIP — практики First Way для оптимизации потока |
 | 5 | A | CALMS: Culture, Automation, Lean, Measurement, Sharing |
-| 6 | B | DORA Four Keys: Deployment frequency, Lead time, Change failure rate, MTTR. Lines of code — vanity metric |
+| 6 | D | DORA Four Keys: Deployment frequency, Lead time, Change failure rate, MTTR. Lines of code — vanity metric |
 | 7 | A | Google описывает SRE как конкретную реализацию DevOps с фокусом на reliability |
-| 8 | A | Создание отдельной роли создаёт новую "стену" между командами вместо устранения существующей |
-| 9 | B | Elite performers деплоят по требованию — несколько раз в день или чаще |
+| 8 | C | Создание отдельной роли создаёт новую "стену" между командами вместо устранения существующей |
+| 9 | A | Elite performers деплоят по требованию — несколько раз в день или чаще |
 | 10 | C | Основной конфликт: Dev хотели частых изменений (скорость), Ops хотели минимума изменений (стабильность) |
 | 11 | A | Мониторинг и алертинг — это практики обратной связи (Second Way) |
-| 12 | D | Ожидание (delays) — один из 7 типов waste. Тесты, review и документация добавляют ценность |
-| 13 | C | Принцип означает полную ответственность команды за сервис от разработки до эксплуатации |
-| 14 | D | Platform Team создаёт общие инструменты и платформу, которые используют product команды |
+| 12 | C | Ожидание (delays) — один из 7 типов waste. Тесты, review и документация добавляют ценность |
+| 13 | B | Принцип означает полную ответственность команды за сервис от разработки до эксплуатации |
+| 14 | B | Platform Team создаёт общие инструменты и платформу, которые используют product команды |
 | 15 | A | Blameless postmortems — практика Third Way, создающая культуру обучения на ошибках |
-| 16 | D | Автоматизируются технические задачи, но бизнес-решения остаются за людьми |
+| 16 | B | Автоматизируются технические задачи, но бизнес-решения остаются за людьми |
 | 17 | A | John Allspaw и Paul Hammond из Flickr представили этот знаменитый доклад |
 | 18 | C | Elite level характеризуется продвинутыми практиками вроде Chaos Engineering и AIOps |
-| 19 | B | SRE фокусируется на reliability и применяет software engineering к операциям |
+| 19 | C | SRE фокусируется на reliability и применяет software engineering к операциям |
 | 20 | D | По данным DORA, Elite performers деплоят в 208 раз чаще, чем Low performers |
 
 ---

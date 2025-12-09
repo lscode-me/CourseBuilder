@@ -9,6 +9,8 @@
 
 
 
+
+
 Какой тип workload характерен для Redshift?
 
 A) Caching
@@ -22,6 +24,8 @@ D) OLTP (транзакции)
 ---
 
 ## Question 2: Athena Pricing
+
+
 
 
 
@@ -45,6 +49,8 @@ D) Per-hour
 
 
 
+
+
 Какой формат данных рекомендуется для Athena/Redshift?
 
 A) JSON
@@ -63,15 +69,17 @@ D) Parquet/ORC (columnar)
 
 
 
+
+
 Что делает Kinesis Firehose?
 
-A) Хранит данные 365 дней
+A) Загружает streaming данные в destinations (S3, Redshift)
 
 B) Запускает Lambda функции
 
-C) Загружает streaming данные в destinations (S3, Redshift)
+C) Обрабатывает данные с помощью SQL
 
-D) Обрабатывает данные с помощью SQL
+D) Хранит данные 365 дней
 
 ---
 
@@ -81,15 +89,17 @@ D) Обрабатывает данные с помощью SQL
 
 
 
+
+
 Зачем партиционировать данные в S3 для Athena?
 
-A) Для репликации
+A) Для уменьшения объёма сканируемых данных и стоимости
 
-B) Для шифрования
+B) Для увеличения скорости записи
 
-C) Для уменьшения объёма сканируемых данных и стоимости
+C) Для репликации
 
-D) Для увеличения скорости записи
+D) Для шифрования
 
 ---
 
@@ -98,15 +108,17 @@ D) Для увеличения скорости записи
 
 
 
+
+
 Что делает Redshift Spectrum?
 
-A) Monitoring
+A) Бэкапы
 
-B) Бэкапы
+B) Monitoring
 
-C) Ускоряет Redshift
+C) Запросы к данным в S3 без загрузки в Redshift
 
-D) Запросы к данным в S3 без загрузки в Redshift
+D) Ускоряет Redshift
 
 ---
 
@@ -115,19 +127,23 @@ D) Запросы к данным в S3 без загрузки в Redshift
 
 
 
+
+
 Для чего используется AWS Glue?
 
-A) Только storage
+A) ETL, Data Catalog, crawlers для metadata
 
-B) Только ETL
+B) Только SQL
 
-C) Только SQL
+C) Только ETL
 
-D) ETL, Data Catalog, crawlers для metadata
+D) Только storage
 
 ---
 
 ## Question 8: QuickSight
+
+
 
 
 
@@ -149,6 +165,8 @@ D) ETL tool
 
 
 
+
+
 Для чего используется Lake Formation?
 
 A) Создание озёр
@@ -162,6 +180,8 @@ D) Только storage
 ---
 
 ## Question 10: OpenSearch
+
+
 
 
 
@@ -183,19 +203,23 @@ D) Для batch analytics
 
 
 
+
+
 Для чего используется Amazon EMR?
 
-A) Monitoring
+A) Big data processing с Spark, Hadoop, Presto
 
-B) Email service
+B) Messaging
 
-C) Messaging
+C) Email service
 
-D) Big data processing с Spark, Hadoop, Presto
+D) Monitoring
 
 ---
 
 ## Question 12: Data Pipeline
+
+
 
 
 
@@ -217,6 +241,8 @@ D) Orchestration для data movement и transformation
 
 
 
+
+
 Какие типы jobs поддерживает Glue?
 
 A) Только Scala
@@ -234,15 +260,17 @@ D) Spark (Python/Scala) и Python Shell
 
 
 
+
+
 Для чего используются Athena Workgroups?
 
-A) Только для users
+A) Только для storage
 
 B) Для cost control, query limits, IAM isolation
 
-C) Только для storage
+C) Только для monitoring
 
-D) Только для monitoring
+D) Только для users
 
 ---
 
@@ -251,15 +279,17 @@ D) Только для monitoring
 
 
 
+
+
 Что делает Kinesis Data Analytics?
 
-A) Real-time SQL/Flink на streaming data
+A) Storage
 
-B) ETL
+B) Batch processing
 
-C) Batch processing
+C) ETL
 
-D) Storage
+D) Real-time SQL/Flink на streaming data
 
 ---
 
@@ -268,19 +298,23 @@ D) Storage
 
 
 
+
+
 Какое преимущество Redshift Serverless?
 
-A) Быстрее
+A) Auto-scaling, pay per use, no cluster management
 
-B) Дешевле
+B) Больше storage
 
-C) Больше storage
+C) Дешевле
 
-D) Auto-scaling, pay per use, no cluster management
+D) Быстрее
 
 ---
 
 ## Question 17: Data Exchange
+
+
 
 
 
@@ -302,19 +336,23 @@ D) Database
 
 
 
+
+
 Для чего используется AWS Clean Rooms?
 
-A) Secure data collaboration без sharing raw data
+A) ETL
 
-B) Storage
+B) Data cleaning
 
-C) ETL
+C) Secure data collaboration без sharing raw data
 
-D) Data cleaning
+D) Storage
 
 ---
 
 ## Question 19: MSK
+
+
 
 
 
@@ -336,15 +374,17 @@ D) Managed Kafka for streaming
 
 
 
+
+
 Для чего используется Amazon DataZone?
 
-A) Compute
+A) Data governance и cataloging across organization
 
-B) DNS service
+B) Storage
 
-C) Data governance и cataloging across organization
+C) Compute
 
-D) Storage
+D) DNS service
 
 ---
 
@@ -357,22 +397,22 @@ D) Storage
 | 1 | B | Redshift — OLAP система для сложной аналитики, агрегаций, BI. RDS/DynamoDB — для OLTP. |
 | 2 | A | Athena: $5 per TB scanned. Использование Parquet и partitions критично для снижения стоимости. |
 | 3 | D | Columnar форматы (Parquet, ORC) позволяют читать только нужные колонки, сжимаются лучше. |
-| 4 | C | Firehose — managed service для загрузки streaming данных в S3, Redshift, OpenSearch без кода. |
-| 5 | C | Partitioning позволяет Athena сканировать только нужные partitions, снижая cost и время запроса. |
-| 6 | D | Spectrum запрашивает S3 без загрузки |
-| 7 | D | Glue: ETL, Data Catalog, crawlers |
+| 4 | A | Firehose — managed service для загрузки streaming данных в S3, Redshift, OpenSearch без кода. |
+| 5 | A | Partitioning позволяет Athena сканировать только нужные partitions, снижая cost и время запроса. |
+| 6 | C | Spectrum запрашивает S3 без загрузки |
+| 7 | A | Glue: ETL, Data Catalog, crawlers |
 | 8 | A | QuickSight — serverless BI |
 | 9 | C | Lake Formation — simplified data lake |
 | 10 | C | OpenSearch для full-text search и logs |
-| 11 | D | EMR для big data (Spark, Hadoop) |
+| 11 | A | EMR для big data (Spark, Hadoop) |
 | 12 | D | Data Pipeline — data orchestration |
 | 13 | D | Glue: Spark и Python Shell jobs |
 | 14 | B | Workgroups: cost control, limits, isolation |
-| 15 | A | Kinesis Analytics: real-time SQL/Flink |
-| 16 | D | Redshift Serverless: auto-scaling, pay per use |
+| 15 | D | Kinesis Analytics: real-time SQL/Flink |
+| 16 | A | Redshift Serverless: auto-scaling, pay per use |
 | 17 | B | Data Exchange: third-party data marketplace |
-| 18 | A | Clean Rooms: secure collaboration |
+| 18 | C | Clean Rooms: secure collaboration |
 | 19 | D | MSK: managed Kafka |
-| 20 | C | DataZone: data governance и cataloging |
+| 20 | A | DataZone: data governance и cataloging |
 
 ---

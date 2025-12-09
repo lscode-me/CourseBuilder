@@ -11,6 +11,8 @@
 
 
 
+
+
 Сколько минимум Availability Zones обычно имеет AWS регион?
 
 A) 6
@@ -24,6 +26,8 @@ D) 3
 ---
 
 ## Question 2: Физическая изоляция
+
+
 
 
 
@@ -47,6 +51,8 @@ D) Только программная изоляция
 
 
 
+
+
 Какова типичная латентность между Availability Zones в одном регионе?
 
 A) 10-20 ms
@@ -65,19 +71,23 @@ D) < 0.1 ms
 
 
 
+
+
 Какой из сервисов AWS является ГЛОБАЛЬНЫМ (не привязан к региону)?
 
-A) Lambda
+A) EC2
 
-B) EC2
+B) IAM
 
-C) IAM
+C) Lambda
 
 D) RDS
 
 ---
 
 ## Question 5: Выбор региона
+
+
 
 
 
@@ -101,19 +111,23 @@ D) Наличие Local Zones
 
 
 
+
+
 Для чего используются Edge Locations?
 
 A) Для хранения баз данных
 
-B) Для запуска EC2 инстансов ближе к пользователям
+B) Для CloudFront CDN, Route 53 DNS и WAF
 
-C) Для backup данных
+C) Для запуска EC2 инстансов ближе к пользователям
 
-D) Для CloudFront CDN, Route 53 DNS и WAF
+D) Для backup данных
 
 ---
 
 ## Question 7: Zone ID vs Zone Name
+
+
 
 
 
@@ -137,19 +151,23 @@ D) Zone Name не поддерживается в API
 
 
 
+
+
 Что происходит при включении Multi-AZ для RDS?
 
 A) Создаётся Standby реплика в другом AZ с автоматическим failover
 
-B) База данных шардируется между AZ
+B) Увеличивается производительность запросов
 
-C) Создаются Read Replicas в других AZ
+C) База данных шардируется между AZ
 
-D) Увеличивается производительность запросов
+D) Создаются Read Replicas в других AZ
 
 ---
 
 ## Question 9: Cross-AZ Traffic
+
+
 
 
 
@@ -173,19 +191,23 @@ D) $0.01/GB в каждую сторону
 
 
 
+
+
 Для чего предназначены AWS Local Zones?
 
-A) Для резервного копирования
+A) Для хранения данных локально на устройствах
 
-B) Для хранения данных локально на устройствах
+B) Для резервного копирования
 
-C) Для создания приватных облаков
+C) Для размещения ресурсов ближе к пользователям в крупных городах
 
-D) Для размещения ресурсов ближе к пользователям в крупных городах
+D) Для создания приватных облаков
 
 ---
 
 ## Question 11: Количество Edge Locations
+
+
 
 
 
@@ -209,6 +231,8 @@ D) 33
 
 
 
+
+
 Что означает RPO (Recovery Point Objective)?
 
 A) Количество точек восстановления
@@ -222,6 +246,8 @@ D) Скорость репликации данных
 ---
 
 ## Question 13: Regional Services
+
+
 
 
 
@@ -245,13 +271,15 @@ D) CloudFront
 
 
 
+
+
 Какой ARN указывает на ГЛОБАЛЬНЫЙ ресурс?
 
-A) `arn:aws:ec2:us-east-1:123456789012:instance/i-123`
+A) `arn:aws:dynamodb:ap-northeast-1:123456789012:table/MyTable`
 
-B) `arn:aws:iam::123456789012:role/MyRole`
+B) `arn:aws:ec2:us-east-1:123456789012:instance/i-123`
 
-C) `arn:aws:dynamodb:ap-northeast-1:123456789012:table/MyTable`
+C) `arn:aws:iam::123456789012:role/MyRole`
 
 D) `arn:aws:lambda:eu-west-1:123456789012:function:myFunc`
 
@@ -263,13 +291,15 @@ D) `arn:aws:lambda:eu-west-1:123456789012:function:myFunc`
 
 
 
+
+
 В каком регионе EC2 обычно ДОРОЖЕ всего?
 
-A) ap-south-1 (Mumbai)
+A) us-east-1 (N. Virginia)
 
-B) us-east-1 (N. Virginia)
+B) sa-east-1 (São Paulo)
 
-C) sa-east-1 (São Paulo)
+C) ap-south-1 (Mumbai)
 
 D) eu-west-1 (Ireland)
 
@@ -281,13 +311,15 @@ D) eu-west-1 (Ireland)
 
 
 
+
+
 Для каких сценариев предназначены AWS Wavelength Zones?
 
-A) Для обычных web-приложений
+A) Для batch processing
 
-B) Для batch processing
+B) Для ultra-low latency приложений в 5G сетях
 
-C) Для ultra-low latency приложений в 5G сетях
+C) Для обычных web-приложений
 
 D) Для хранения больших объёмов данных
 
@@ -299,19 +331,23 @@ D) Для хранения больших объёмов данных
 
 
 
+
+
 Чем AWS Global Accelerator отличается от CloudFront?
 
 A) Ничем, это одно и то же
 
-B) Global Accelerator работает на уровне TCP/UDP, CloudFront — HTTP/HTTPS CDN
+B) CloudFront дороже
 
-C) CloudFront дороже
+C) Global Accelerator только для US регионов
 
-D) Global Accelerator только для US регионов
+D) Global Accelerator работает на уровне TCP/UDP, CloudFront — HTTP/HTTPS CDN
 
 ---
 
 ## Question 18: Multi-Region Architecture
+
+
 
 
 
@@ -335,6 +371,8 @@ D) RDS Single-AZ
 
 
 
+
+
 Какой уровень доступности обеспечивает Multi-AZ архитектура?
 
 A) ~99.5%
@@ -353,13 +391,15 @@ D) ~99%
 
 
 
+
+
 Какая практика рекомендуется для production workloads?
 
-A) Отключать автоматический failover для контроля
+A) Размещать все ресурсы в одном AZ для минимальной латентности
 
-B) Размещать все ресурсы в одном AZ для минимальной латентности
+B) Использовать только один регион
 
-C) Использовать только один регион
+C) Отключать автоматический failover для контроля
 
 D) Распределять ресурсы по минимум 2-3 AZ
 
@@ -374,20 +414,20 @@ D) Распределять ресурсы по минимум 2-3 AZ
 | 1 | D | Большинство регионов AWS имеют минимум 3 Availability Zones. Некоторые старые регионы имеют 2, но это исключение. |
 | 2 | B | AZ — это физически отдельные дата-центры (или группы) с независимым питанием, охлаждением и сетевыми подключениями. |
 | 3 | B | Латентность между AZ в одном регионе обычно составляет 1-2 ms благодаря высокоскоростным приватным соединениям. |
-| 4 | C | IAM — глобальный сервис, не привязанный к региону. EC2, RDS, Lambda — региональные. |
+| 4 | B | IAM — глобальный сервис, не привязанный к региону. EC2, RDS, Lambda — региональные. |
 | 5 | A | GDPR требует хранения персональных данных граждан EU в пределах EU. Compliance — приоритет №1. |
-| 6 | D | Edge Locations используются для CloudFront (CDN), Route 53 (DNS), WAF. EC2 не запускается на edge. |
+| 6 | B | Edge Locations используются для CloudFront (CDN), Route 53 (DNS), WAF. EC2 не запускается на edge. |
 | 7 | B | AWS рандомизирует маппинг Zone Name → физический AZ между аккаунтами. Zone ID (use1-az1) всегда указывает на один физический AZ. |
 | 8 | A | Multi-AZ RDS создаёт синхронную Standby реплику в другом AZ. При отказе Primary происходит автоматический failover. Read Replicas — отдельная функция. |
 | 9 | D | Cross-AZ data transfer стоит ~$0.01/GB в каждую сторону ($0.02 round-trip). Это важно учитывать при проектировании. |
-| 10 | D | Local Zones — расширение регионов, расположенное в крупных городах для снижения латентности (например, us-west-2-lax-1a в Лос-Анджелесе). |
+| 10 | C | Local Zones — расширение регионов, расположенное в крупных городах для снижения латентности (например, us-west-2-lax-1a в Лос-Анджелесе). |
 | 11 | C | AWS имеет 600+ Edge Locations и Regional Edge Caches по всему миру для CloudFront и Route 53. |
 | 12 | C | RPO (Recovery Point Objective) — максимально допустимая потеря данных, выраженная во времени. RTO — время восстановления. |
 | 13 | B | S3 buckets региональные (хотя имена глобально уникальны). Route 53, CloudFront, IAM — глобальные сервисы. |
-| 14 | B | ARN `arn:aws:iam::123456789012:role/MyRole` не содержит региона (пустое поле) — это глобальный IAM ресурс. |
-| 15 | C | sa-east-1 (São Paulo) обычно один из самых дорогих регионов (на 50-70% дороже us-east-1) из-за местных факторов. |
-| 16 | C | Wavelength Zones размещены внутри 5G сетей операторов для ultra-low latency (< 10ms) приложений: gaming, AR/VR, IoT. |
-| 17 | B | Global Accelerator работает на уровне TCP/UDP (Layer 4), подходит для non-HTTP трафика. CloudFront — HTTP/HTTPS CDN (Layer 7). |
+| 14 | C | ARN `arn:aws:iam::123456789012:role/MyRole` не содержит региона (пустое поле) — это глобальный IAM ресурс. |
+| 15 | B | sa-east-1 (São Paulo) обычно один из самых дорогих регионов (на 50-70% дороже us-east-1) из-за местных факторов. |
+| 16 | B | Wavelength Zones размещены внутри 5G сетей операторов для ultra-low latency (< 10ms) приложений: gaming, AR/VR, IoT. |
+| 17 | D | Global Accelerator работает на уровне TCP/UDP (Layer 4), подходит для non-HTTP трафика. CloudFront — HTTP/HTTPS CDN (Layer 7). |
 | 18 | A | Aurora Global Database обеспечивает cross-region репликацию с latency < 1 секунды и быстрым failover. |
 | 19 | C | Multi-AZ обеспечивает ~99.95% доступности. Multi-region может дать 99.99%+. Один AZ — ~99.5%. |
 | 20 | D | Best practice — распределять production workloads по 2-3 AZ для защиты от отказа одного AZ. |

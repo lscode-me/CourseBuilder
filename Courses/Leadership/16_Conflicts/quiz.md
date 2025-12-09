@@ -10,15 +10,17 @@
 
 
 
+
+
 Какой тип конфликта может быть полезен?
 
-A) Passive-aggressive behavior
+A) Task conflict (дебаты о решениях и подходах)
 
-B) Task conflict (дебаты о решениях и подходах)
+B) Passive-aggressive behavior
 
-C) Relationship conflict (личные attacks)
+C) Все конфликты вредны
 
-D) Все конфликты вредны
+D) Relationship conflict (личные attacks)
 
 ---
 
@@ -28,15 +30,17 @@ D) Все конфликты вредны
 
 
 
+
+
 Когда использовать Collaborating стиль?
 
-A) Когда важный issue, есть время, нужен commitment
+A) Когда нужно быстрое решение без обсуждения
 
-B) Когда хотите избежать конфликта
+B) Когда issue trivial
 
-C) Когда нужно быстрое решение без обсуждения
+C) Когда важный issue, есть время, нужен commitment
 
-D) Когда issue trivial
+D) Когда хотите избежать конфликта
 
 ---
 
@@ -46,15 +50,17 @@ D) Когда issue trivial
 
 
 
+
+
 Что такое "Interest" в conflict resolution?
 
-A) Финансовый интерес
+A) Позиция власти
 
-B) Позиция власти
+B) То, что человек говорит, что хочет
 
 C) Underlying need — почему человек хочет это
 
-D) То, что человек говорит, что хочет
+D) Финансовый интерес
 
 ---
 
@@ -64,15 +70,17 @@ D) То, что человек говорит, что хочет
 
 
 
+
+
 Когда лидеру следует вмешаться в конфликт?
 
 A) Когда конфликт влияет на работу и стороны не могут решить сами
 
-B) Никогда
+B) Только если просят
 
-C) Только если просят
+C) При каждом disagreement
 
-D) При каждом disagreement
+D) Никогда
 
 ---
 
@@ -82,15 +90,17 @@ D) При каждом disagreement
 
 
 
+
+
 Что должен делать медиатор?
 
-A) Stay neutral, listen, focus on behavior, find common ground
+A) Обвинить обе стороны
 
-B) Принять сторону
+B) Навязать своё решение
 
-C) Навязать своё решение
+C) Принять сторону
 
-D) Обвинить обе стороны
+D) Stay neutral, listen, focus on behavior, find common ground
 
 ---
 
@@ -100,15 +110,17 @@ D) Обвинить обе стороны
 
 
 
+
+
 Что означает "D" в DESC?
 
-A) Decide
+A) Deny
 
-B) Deny
+B) Decide
 
-C) Demand
+C) Describe — объективно описать ситуацию
 
-D) Describe — объективно описать ситуацию
+D) Demand
 
 ---
 
@@ -118,15 +130,17 @@ D) Describe — объективно описать ситуацию
 
 
 
+
+
 Как реагировать на defensive reaction?
 
 A) Угрожать
 
-B) Атаковать в ответ
+B) "Я не критикую тебя, пытаюсь решить проблему. Помоги понять твой perspective"
 
-C) Закончить разговор
+C) Атаковать в ответ
 
-D) "Я не критикую тебя, пытаюсь решить проблему. Помоги понять твой perspective"
+D) Закончить разговор
 
 ---
 
@@ -136,19 +150,23 @@ D) "Я не критикую тебя, пытаюсь решить пробле�
 
 
 
+
+
 Что такое Relationship Conflict?
 
-A) Обсуждение процессов
+A) Межличностные tensions, "не могу с ним работать"
 
-B) Межличностные tensions, "не могу с ним работать"
+B) Disagreement о технических решениях
 
-C) Disagreement о технических решениях
+C) Обсуждение процессов
 
 D) Здоровые дебаты
 
 ---
 
 ## Question 9: Resolution Process
+
+
 
 
 
@@ -172,6 +190,8 @@ D) Acknowledge — "Я вижу, есть разногласие"
 
 
 
+
+
 Когда использовать Competing (win-lose) стиль?
 
 A) Когда хотите build goodwill
@@ -185,6 +205,8 @@ D) Когда issue не важен
 ---
 
 ## Question 11: Avoiding Style
+
+
 
 
 
@@ -208,19 +230,23 @@ D) Никогда
 
 
 
+
+
 Зачем искать common ground в конфликте?
 
-A) Чтобы найти shared goals и build на них решение
+A) Common ground не важен
 
 B) Чтобы победить
 
-C) Common ground не важен
+C) Чтобы избежать решения
 
-D) Чтобы избежать решения
+D) Чтобы найти shared goals и build на них решение
 
 ---
 
 ## Question 13: Toxic Team Member
+
+
 
 
 
@@ -244,15 +270,17 @@ D) Публично критиковать
 
 
 
+
+
 Когда escalate конфликт к HR/руководителю?
 
-A) При каждом disagreement
+A) Никогда
 
-B) Legal/ethical concerns, harassment, safety, pattern despite intervention
+B) Только по поводу зарплаты
 
-C) Только по поводу зарплаты
+C) Legal/ethical concerns, harassment, safety, pattern despite intervention
 
-D) Никогда
+D) При каждом disagreement
 
 ---
 
@@ -262,19 +290,23 @@ D) Никогда
 
 
 
+
+
 Что делать перед сложным разговором?
 
-A) Calm down, separate facts from interpretation, plan key points
+A) Отменить разговор
 
-B) Накрутить себя
+B) Calm down, separate facts from interpretation, plan key points
 
 C) Ничего
 
-D) Отменить разговор
+D) Накрутить себя
 
 ---
 
 ## Question 16: Conflict Prevention
+
+
 
 
 
@@ -298,6 +330,8 @@ D) Clear expectations, regular feedback, team norms
 
 
 
+
+
 Что означает "Disagree and commit"?
 
 A) Всегда соглашаться
@@ -316,15 +350,17 @@ D) После обсуждения и решения — все поддержи
 
 
 
+
+
 Какие ground rules для mediation?
 
-A) Прерывать друг друга
+A) Respectful, no interrupting, goal: solution not blame
 
-B) Blame обязателен
+B) Прерывать друг друга
 
 C) Без правил
 
-D) Respectful, no interrupting, goal: solution not blame
+D) Blame обязателен
 
 ---
 
@@ -334,19 +370,23 @@ D) Respectful, no interrupting, goal: solution not blame
 
 
 
+
+
 Как реагировать если собеседник расплакался?
 
-A) Закончить и уйти
+A) Игнорировать
 
-B) Игнорировать
+B) Критиковать за эмоции
 
-C) Критиковать за эмоции
+C) Закончить и уйти
 
 D) "Вижу, это upset. Хочешь паузу? Можем продолжить когда готов"
 
 ---
 
 ## Question 20: Follow Up
+
+
 
 
 
@@ -370,24 +410,24 @@ D) Чтобы повторить конфликт
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Task conflict о решениях может быть полезен |
-| 2 | A | Collaborating: важный issue, время, нужен commitment |
+| 1 | A | Task conflict о решениях может быть полезен |
+| 2 | C | Collaborating: важный issue, время, нужен commitment |
 | 3 | C | Interest: underlying need, почему хочет |
 | 4 | A | Вмешиваться когда влияет на работу, стороны не могут решить |
-| 5 | A | Медиатор: neutral, listen, behavior, common ground |
-| 6 | D | D = Describe объективно |
-| 7 | D | "Не критикую, решаем проблему, помоги понять" |
-| 8 | B | Relationship: межличностные tensions |
+| 5 | D | Медиатор: neutral, listen, behavior, common ground |
+| 6 | C | D = Describe объективно |
+| 7 | B | "Не критикую, решаем проблему, помоги понять" |
+| 8 | A | Relationship: межличностные tensions |
 | 9 | D | Acknowledge: "Я вижу разногласие" |
 | 10 | C | Competing: quick decision, unpopular, critical |
 | 11 | A | Avoiding: trivial, cool down, no chance |
-| 12 | A | Common ground: shared goals для решения |
+| 12 | D | Common ground: shared goals для решения |
 | 13 | A | Document → feedback → monitor → warning → termination |
-| 14 | B | Escalate: legal/ethical, harassment, safety, pattern |
-| 15 | A | Calm down, facts, plan points |
+| 14 | C | Escalate: legal/ethical, harassment, safety, pattern |
+| 15 | B | Calm down, facts, plan points |
 | 16 | D | Prevention: expectations, feedback, norms |
 | 17 | D | Disagree and commit: поддержать решение после обсуждения |
-| 18 | D | Ground rules: respect, no interrupting, solution not blame |
+| 18 | A | Ground rules: respect, no interrupting, solution not blame |
 | 19 | D | Предложить паузу, продолжить когда готов |
 | 20 | C | Follow up: check что agreement выполняется |
 

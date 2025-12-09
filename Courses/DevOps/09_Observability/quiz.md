@@ -10,6 +10,8 @@
 
 
 
+
+
 Чем observability отличается от мониторинга?
 
 A) Observability только для микросервисов
@@ -23,6 +25,8 @@ D) Observability дешевле
 ---
 
 ## Question 2: Three Pillars
+
+
 
 
 
@@ -46,6 +50,8 @@ D) HTTP, TCP, UDP
 
 
 
+
+
 Почему structured logging (JSON) лучше plain text?
 
 A) Быстрее записывается
@@ -59,6 +65,8 @@ D) JSON красивее
 ---
 
 ## Question 4: Traces
+
+
 
 
 
@@ -82,6 +90,8 @@ D) Только ошибки
 
 
 
+
+
 Что такое span в контексте tracing?
 
 A) Единица работы в trace (операция в одном сервисе)
@@ -100,15 +110,17 @@ D) Период времени без активности
 
 
 
+
+
 Для чего используется trace_id?
 
-A) Для шифрования
+A) Для аутентификации
 
-B) Для аутентификации
+B) Для шифрования
 
-C) Для версионирования
+C) Для связывания всех spans одного запроса через сервисы
 
-D) Для связывания всех spans одного запроса через сервисы
+D) Для версионирования
 
 ---
 
@@ -118,15 +130,17 @@ D) Для связывания всех spans одного запроса чер
 
 
 
+
+
 Что такое OpenTelemetry?
 
-A) Облачный сервис
+A) База данных
 
 B) Стандарт и SDK для инструментации (logs, metrics, traces)
 
-C) База данных
+C) Протокол мониторинга
 
-D) Протокол мониторинга
+D) Облачный сервис
 
 ---
 
@@ -136,15 +150,17 @@ D) Протокол мониторинга
 
 
 
+
+
 Что такое context propagation в distributed tracing?
 
-A) Копирование логов
+A) Распространение ошибок
 
-B) Передача trace context между сервисами через headers
+B) Копирование логов
 
 C) Синхронизация времени
 
-D) Распространение ошибок
+D) Передача trace context между сервисами через headers
 
 ---
 
@@ -154,15 +170,17 @@ D) Распространение ошибок
 
 
 
+
+
 Какой log level использовать для нормальных событий в production?
 
-A) INFO
+A) ERROR
 
-B) ERROR
+B) DEBUG
 
 C) WARNING
 
-D) DEBUG
+D) INFO
 
 ---
 
@@ -172,19 +190,23 @@ D) DEBUG
 
 
 
+
+
 Как связать логи с traces?
 
-A) Невозможно связать
+A) Использовать одинаковые имена файлов
 
-B) По timestamp
+B) Добавлять trace_id в логи
 
-C) Использовать одинаковые имена файлов
+C) Невозможно связать
 
-D) Добавлять trace_id в логи
+D) По timestamp
 
 ---
 
 ## Question 11: ELK Stack
+
+
 
 
 
@@ -208,19 +230,23 @@ D) Envoy, Linkerd, Kong
 
 
 
+
+
 Для чего используется Jaeger?
 
-A) Для CI/CD
+A) Для логирования
 
-B) Для distributed tracing visualization
+B) Для CI/CD
 
-C) Для логирования
+C) Для distributed tracing visualization
 
 D) Для сбора метрик
 
 ---
 
 ## Question 13: Instrumentation
+
+
 
 
 
@@ -244,19 +270,23 @@ D) Автоматическое добавление tracing без измене
 
 
 
+
+
 Почему high cardinality в логах может быть проблемой?
 
-A) Логи быстрее записываются
+A) Растёт размер индекса и стоимость хранения
 
-B) Логи становятся красивее
+B) High cardinality не проблема
 
-C) High cardinality не проблема
+C) Логи становятся красивее
 
-D) Растёт размер индекса и стоимость хранения
+D) Логи быстрее записываются
 
 ---
 
 ## Question 15: Debugging Workflow
+
+
 
 
 
@@ -279,15 +309,17 @@ D) Перезагрузить сервер
 
 
 
+
+
 Что такое sampling в трейсинге?
 
-A) Запись только части трейсов для снижения overhead
+A) Сжатие метрик
 
 B) Удаление логов
 
-C) Сжатие метрик
+C) Шифрование данных
 
-D) Шифрование данных
+D) Запись только части трейсов для снижения overhead
 
 ---
 
@@ -296,15 +328,17 @@ D) Шифрование данных
 
 
 
+
+
 Что такое baggage в distributed tracing?
 
-A) Дополнительные данные, передаваемые с trace context
+A) Нагрузка на сеть
 
-B) Архив логов
+B) Дополнительные данные, передаваемые с trace context
 
 C) Backup трейсов
 
-D) Нагрузка на сеть
+D) Архив логов
 
 ---
 
@@ -313,19 +347,23 @@ D) Нагрузка на сеть
 
 
 
+
+
 Что измеряет RED method для сервисов?
 
-A) Request, Error, Disk
+A) RAM, Events, Data
 
-B) RAM, Events, Data
+B) Request, Error, Disk
 
-C) Read, Edit, Delete
+C) Rate, Errors, Duration
 
-D) Rate, Errors, Duration
+D) Read, Edit, Delete
 
 ---
 
 ## Question 19: USE method
+
+
 
 
 
@@ -347,15 +385,17 @@ D) Unit, System, Error
 
 
 
+
+
 Какие метрики входят в Golden Signals?
 
 A) Latency, Traffic, Errors, Saturation
 
-B) CPU, Memory, Disk, Network
+B) Read, Write, Execute, Delete
 
-C) Read, Write, Execute, Delete
+C) Input, Process, Output, Store
 
-D) Input, Process, Output, Store
+D) CPU, Memory, Disk, Network
 
 ---
 
@@ -370,19 +410,19 @@ D) Input, Process, Output, Store
 | 3 | B | JSON легко парсить и искать |
 | 4 | B | Trace показывает путь запроса через сервисы |
 | 5 | A | Span — единица работы, операция в сервисе |
-| 6 | D | trace_id связывает все spans одного запроса |
+| 6 | C | trace_id связывает все spans одного запроса |
 | 7 | B | OpenTelemetry — стандарт для instrumentation |
-| 8 | B | Context propagation — передача trace context через headers |
-| 9 | A | INFO для нормальных событий |
-| 10 | D | trace_id в логах для корреляции |
+| 8 | D | Context propagation — передача trace context через headers |
+| 9 | D | INFO для нормальных событий |
+| 10 | B | trace_id в логах для корреляции |
 | 11 | B | Elasticsearch, Logstash, Kibana |
-| 12 | B | Jaeger для distributed tracing visualization |
+| 12 | C | Jaeger для distributed tracing visualization |
 | 13 | D | Auto-instrumentation добавляет tracing автоматически |
-| 14 | D | High cardinality увеличивает размер индекса и стоимость |
+| 14 | A | High cardinality увеличивает размер индекса и стоимость |
 | 15 | A | Metrics → Traces → Logs (от общего к деталям) |
-| 16 | A | Sampling записывает только часть трейсов для снижения overhead |
-| 17 | A | Baggage — дополнительные данные передаваемые с trace context |
-| 18 | D | RED: Rate, Errors, Duration — метрики для сервисов |
+| 16 | D | Sampling записывает только часть трейсов для снижения overhead |
+| 17 | B | Baggage — дополнительные данные передаваемые с trace context |
+| 18 | C | RED: Rate, Errors, Duration — метрики для сервисов |
 | 19 | C | USE: Utilization, Saturation, Errors — метрики для ресурсов |
 | 20 | A | Golden Signals: Latency, Traffic, Errors, Saturation |
 

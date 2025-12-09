@@ -10,19 +10,23 @@
 
 
 
+
+
 Что такое Engineering Strategy?
 
-A) План на неделю
+A) Как engineering достигнет business goals, какие инвестиции сделать, trade-offs
 
-B) Как engineering достигнет business goals, какие инвестиции сделать, trade-offs
+B) План на неделю
 
-C) Только roadmap
+C) Только технические решения
 
-D) Только технические решения
+D) Только roadmap
 
 ---
 
 ## Question 2: Strategy vs Tactics
+
+
 
 
 
@@ -46,19 +50,23 @@ D) Нет разницы
 
 
 
+
+
 Как engineering strategy связана с business?
 
-A) Engineering определяет business goals
+A) Это независимые процессы
 
-B) Никак не связана
+B) Company Strategy → Business Goals → Product Strategy → Eng Strategy
 
-C) Company Strategy → Business Goals → Product Strategy → Eng Strategy
+C) Никак не связана
 
-D) Это независимые процессы
+D) Engineering определяет business goals
 
 ---
 
 ## Question 4: Build vs Buy
+
+
 
 
 
@@ -82,15 +90,17 @@ D) Случайный выбор
 
 
 
+
+
 Когда стоит платить technical debt?
 
-A) Всегда сразу всё
+A) Только в пятницу
 
-B) Когда блокирует development, вызывает reliability issues, замедляет velocity
+B) Никогда
 
-C) Никогда
+C) Когда блокирует development, вызывает reliability issues, замедляет velocity
 
-D) Только в пятницу
+D) Всегда сразу всё
 
 ---
 
@@ -100,19 +110,23 @@ D) Только в пятницу
 
 
 
+
+
 Что включает annual planning?
 
-A) Только bugs
+A) Только meetings schedule
 
-B) Только headcount
+B) Themes, goals, headcount, major investments
 
-C) Themes, goals, headcount, major investments
+C) Только headcount
 
-D) Только meetings schedule
+D) Только bugs
 
 ---
 
 ## Question 7: Portfolio Allocation
+
+
 
 
 
@@ -136,6 +150,8 @@ D) 10%
 
 
 
+
+
 Пример хорошего technical principle?
 
 A) "Использовать все новые технологии"
@@ -154,15 +170,17 @@ D) "Security by default — built in, not added"
 
 
 
+
+
 Что такое DORA metrics?
 
-A) Количество митингов
+A) Lines of code
 
-B) Deployment frequency, lead time, change failure rate, time to restore
+B) Метрики красоты
 
-C) Lines of code
+C) Количество митингов
 
-D) Метрики красоты
+D) Deployment frequency, lead time, change failure rate, time to restore
 
 ---
 
@@ -172,15 +190,17 @@ D) Метрики красоты
 
 
 
+
+
 Пример хорошего engineering Key Result?
 
 A) "Делать лучше"
 
-B) "Писать код"
+B) "Handle 2x current load, 99.9% uptime"
 
-C) "Провести митинги"
+C) "Писать код"
 
-D) "Handle 2x current load, 99.9% uptime"
+D) "Провести митинги"
 
 ---
 
@@ -190,13 +210,15 @@ D) "Handle 2x current load, 99.9% uptime"
 
 
 
+
+
 Первый шаг в change management?
 
-A) Игнорировать сопротивление
+A) Declare victory
 
-B) Declare victory
+B) Create urgency — why now?
 
-C) Create urgency — why now?
+C) Игнорировать сопротивление
 
 D) Сразу менять
 
@@ -208,19 +230,23 @@ D) Сразу менять
 
 
 
+
+
 Что включает engineering narrative?
 
-A) Только технические детали
+A) Только проблемы
 
-B) Только числа
+B) Только технические детали
 
-C) Только проблемы
+C) Только числа
 
 D) Where going, why choices, what enables, how to get there
 
 ---
 
 ## Question 13: Team Topology
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Stream-aligned, Platform, Enabling, Complicated subsystem
 
 
 
+
+
 Что является strategy antipattern?
 
 A) Communicated strategy
@@ -257,6 +285,8 @@ D) Explicit trade-offs
 ---
 
 ## Question 15: Signs of Good Strategy
+
+
 
 
 
@@ -280,15 +310,17 @@ D) Clear choices made, trade-offs explicit, people can explain it
 
 
 
+
+
 Что учитывается в headcount planning?
 
-A) Business growth, scaling needs, new initiatives, attrition
+A) Только желания
 
 B) Только budget
 
-C) Только желания
+C) Только текущая численность
 
-D) Только текущая численность
+D) Business growth, scaling needs, new initiatives, attrition
 
 ---
 
@@ -298,15 +330,17 @@ D) Только текущая численность
 
 
 
+
+
 Какой принцип для technology choices?
 
 A) Никаких principles
 
-B) Random selection
+B) Boring technology for core, new tech for isolated experiments
 
-C) Всегда newest tech
+C) Random selection
 
-D) Boring technology for core, new tech for isolated experiments
+D) Всегда newest tech
 
 ---
 
@@ -316,15 +350,17 @@ D) Boring technology for core, new tech for isolated experiments
 
 
 
+
+
 Признак хорошего roadmap?
 
-A) Wishful thinking
+A) Everything P0
 
 B) Tied to goals, realistic, flexibility, clear dependencies
 
-C) Never updated
+C) Wishful thinking
 
-D) Everything P0
+D) Never updated
 
 ---
 
@@ -334,19 +370,23 @@ D) Everything P0
 
 
 
+
+
 Что коммуницировать executives?
 
 A) Business impact, goal progress, risks, resource needs
 
-B) Только хорошее
+B) Code качество
 
-C) Технические детали
+C) Только хорошее
 
-D) Code качество
+D) Технические детали
 
 ---
 
 ## Question 20: Strategy Process
+
+
 
 
 
@@ -370,23 +410,23 @@ D) Написать roadmap
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | How engineering achieves goals, investments, trade-offs |
+| 1 | A | How engineering achieves goals, investments, trade-offs |
 | 2 | B | Strategy: why/what, quarters/years; Tactics: how, weeks/months |
-| 3 | C | Company → Business → Product → Eng Strategy |
+| 3 | B | Company → Business → Product → Eng Strategy |
 | 4 | B | Build when core competency, strategic, long-term |
-| 5 | B | Pay when blocks development, reliability issues, slows velocity |
-| 6 | C | Annual: themes, goals, headcount, major investments |
+| 5 | C | Pay when blocks development, reliability issues, slows velocity |
+| 6 | B | Annual: themes, goals, headcount, major investments |
 | 7 | C | Product work: 60-70% |
 | 8 | D | "Security by default — built in, not added" |
-| 9 | B | DORA: deployment frequency, lead time, failure rate, restore time |
-| 10 | D | "Handle 2x load, 99.9% uptime" - measurable |
-| 11 | C | First: create urgency — why now? |
+| 9 | D | DORA: deployment frequency, lead time, failure rate, restore time |
+| 10 | B | "Handle 2x load, 99.9% uptime" - measurable |
+| 11 | B | First: create urgency — why now? |
 | 12 | D | Narrative: direction, why, what enables, how |
 | 13 | D | Stream-aligned, Platform, Enabling, Complicated subsystem |
 | 14 | B | Antipattern: too many priorities, not connected to business |
 | 15 | D | Good: clear choices, explicit trade-offs, explainable |
-| 16 | A | Headcount: growth, scaling, initiatives, attrition |
-| 17 | D | Boring for core, new for experiments |
+| 16 | D | Headcount: growth, scaling, initiatives, attrition |
+| 17 | B | Boring for core, new for experiments |
 | 18 | B | Good roadmap: tied to goals, realistic, flexible |
 | 19 | A | To execs: business impact, progress, risks, needs |
 | 20 | C | First: understand business context |

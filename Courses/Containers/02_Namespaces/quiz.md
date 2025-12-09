@@ -10,19 +10,23 @@
 
 
 
+
+
 Сколько типов namespaces поддерживает современное ядро Linux (5.6+)?
 
-A) 8
+A) 6
 
-B) 10
+B) 5
 
-C) 6
+C) 8
 
-D) 5
+D) 10
 
 ---
 
 ## Question 2: Mount Namespace
+
+
 
 
 
@@ -46,6 +50,8 @@ D) CLONE_NEWNS
 
 
 
+
+
 Что произойдёт, если процесс PID 1 внутри PID namespace завершится?
 
 A) Ничего, namespace продолжит работать
@@ -59,6 +65,8 @@ D) Все процессы в namespace получат SIGKILL
 ---
 
 ## Question 4: Network Namespace
+
+
 
 
 
@@ -82,6 +90,8 @@ D) Он содержит все интерфейсы хост-системы
 
 
 
+
+
 Какое главное преимущество user namespace для контейнеров?
 
 A) Изоляция временных файлов
@@ -95,6 +105,8 @@ D) Автоматическое шифрование данных пользов
 ---
 
 ## Question 6: UTS Namespace
+
+
 
 
 
@@ -118,15 +130,17 @@ D) Unix Terminal Settings
 
 
 
+
+
 Какой системный вызов используется для присоединения к существующему namespace?
 
-A) enter()
+A) setns()
 
-B) setns()
+B) join()
 
 C) attach()
 
-D) join()
+D) enter()
 
 ---
 
@@ -136,19 +150,23 @@ D) join()
 
 
 
+
+
 Какие объекты изолирует IPC namespace?
 
-A) System V IPC объекты и POSIX message queues
+A) Файловые дескрипторы
 
-B) Переменные окружения
+B) System V IPC объекты и POSIX message queues
 
 C) Сетевые сокеты и порты
 
-D) Файловые дескрипторы
+D) Переменные окружения
 
 ---
 
 ## Question 9: veth пары
+
+
 
 
 
@@ -172,19 +190,23 @@ D) Для связи между network namespaces
 
 
 
+
+
 Какая команда создаст новый PID namespace с правильно работающим `ps`?
 
-A) `unshare --pid --fork /bin/bash`
+A) `unshare --pid --mount /bin/bash`
 
-B) `unshare --pid --fork --mount-proc /bin/bash`
+B) `unshare --pid /bin/bash`
 
-C) `unshare --pid --mount /bin/bash`
+C) `unshare --pid --fork /bin/bash`
 
-D) `unshare --pid /bin/bash`
+D) `unshare --pid --fork --mount-proc /bin/bash`
 
 ---
 
 ## Question 11: Хронология namespaces
+
+
 
 
 
@@ -208,6 +230,8 @@ D) Network namespace
 
 
 
+
+
 Для чего используется утилита `nsenter`?
 
 A) Создание новых namespaces
@@ -226,19 +250,23 @@ D) Вход в существующие namespaces процесса
 
 
 
+
+
 Где находятся файлы namespaces процесса?
 
-A) /sys/namespaces/[PID]/
+A) /etc/ns/[PID]/
 
-B) /var/run/ns/[PID]/
+B) /sys/namespaces/[PID]/
 
 C) /proc/[PID]/ns/
 
-D) /etc/ns/[PID]/
+D) /var/run/ns/[PID]/
 
 ---
 
 ## Question 14: Cgroup Namespace
+
+
 
 
 
@@ -262,6 +290,8 @@ D) Мониторинг ресурсов
 
 
 
+
+
 Какой тип mount propagation делает изменения локальными только для текущего namespace?
 
 A) MS_PRIVATE
@@ -280,19 +310,23 @@ D) MS_UNBINDABLE
 
 
 
+
+
 Что определяет файл `/proc/[PID]/uid_map`?
 
-A) Соответствие между UID в namespace и на хосте
+A) Максимальный UID в namespace
 
 B) Историю изменений UID
 
-C) Максимальный UID в namespace
+C) Список разрешённых UID для процесса
 
-D) Список разрешённых UID для процесса
+D) Соответствие между UID в namespace и на хосте
 
 ---
 
 ## Question 17: Time Namespace
+
+
 
 
 
@@ -316,6 +350,8 @@ D) 5.6
 
 
 
+
+
 Какой флаг НЕ относится к созданию namespaces?
 
 A) CLONE_NEWNS
@@ -329,6 +365,8 @@ D) CLONE_NEWPID
 ---
 
 ## Question 19: PID в разных namespaces
+
+
 
 
 
@@ -352,15 +390,17 @@ D) Тоже 1
 
 
 
+
+
 Какой namespace критически важен для работы rootless-контейнеров?
 
-A) Mount namespace
+A) User namespace
 
 B) Network namespace
 
-C) User namespace
+C) PID namespace
 
-D) PID namespace
+D) Mount namespace
 
 ---
 
@@ -370,26 +410,26 @@ D) PID namespace
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | 8 типов: Mount, UTS, IPC, PID, Network, User, Cgroup, Time |
+| 1 | C | 8 типов: Mount, UTS, IPC, PID, Network, User, Cgroup, Time |
 | 2 | D | CLONE_NEWNS — исторически первый namespace, поэтому просто "NS" без указания типа |
 | 3 | D | PID 1 в namespace особенный: при его завершении все процессы получают SIGKILL |
 | 4 | C | Новый network namespace содержит только loopback в состоянии DOWN |
 | 5 | C | User namespace позволяет маппить UID, что даёт возможность rootless-контейнеров |
 | 6 | A | UTS namespace изолирует hostname и NIS domain name |
-| 7 | B | `setns()` присоединяет процесс к существующему namespace по файловому дескриптору |
-| 8 | A | IPC namespace изолирует System V IPC (shmem, semaphores, message queues) и POSIX queues |
+| 7 | A | `setns()` присоединяет процесс к существующему namespace по файловому дескриптору |
+| 8 | B | IPC namespace изолирует System V IPC (shmem, semaphores, message queues) и POSIX queues |
 | 9 | D | veth-пары — виртуальные Ethernet-интерфейсы для связи между network namespaces |
-| 10 | B | Нужны --fork (чтобы PID 1 стал shell) и --mount-proc (для корректной работы ps) |
+| 10 | D | Нужны --fork (чтобы PID 1 стал shell) и --mount-proc (для корректной работы ps) |
 | 11 | B | Mount namespace (CLONE_NEWNS) появился в 2002 году в ядре 2.4.19 |
 | 12 | D | nsenter позволяет войти в namespaces существующего процесса |
 | 13 | C | Namespaces доступны как символические ссылки в /proc/[PID]/ns/ |
 | 14 | A | Cgroup namespace виртуализирует видимость cgroup-иерархии (процесс видит / вместо полного пути) |
 | 15 | A | MS_PRIVATE делает изменения монтирования локальными для namespace |
-| 16 | A | uid_map определяет маппинг: какой UID в namespace соответствует какому UID на хосте |
+| 16 | D | uid_map определяет маппинг: какой UID в namespace соответствует какому UID на хосте |
 | 17 | D | Time namespace появился в Linux 5.6 (2020) |
 | 18 | B | CLONE_NEWTHREAD относится к потокам, не к namespaces |
 | 19 | B | Процесс имеет разные PID в разных namespaces; на хосте это обычный PID |
-| 20 | C | User namespace позволяет маппить UID 0 в контейнере на обычного пользователя на хосте |
+| 20 | A | User namespace позволяет маппить UID 0 в контейнере на обычного пользователя на хосте |
 
 ---
 

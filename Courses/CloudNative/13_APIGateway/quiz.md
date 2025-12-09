@@ -9,13 +9,15 @@
 
 
 
+
+
 Какое преимущество HTTP API над REST API?
 
-A) Больше features
+A) Поддержка caching
 
-B) Поддержка WAF
+B) Больше features
 
-C) Поддержка caching
+C) Поддержка WAF
 
 D) Ниже latency и цена
 
@@ -27,19 +29,23 @@ D) Ниже latency и цена
 
 
 
+
+
 Что такое Lambda Proxy Integration?
 
-A) Шифрование между API Gateway и Lambda
+A) Lambda запускается через proxy server
 
-B) Lambda запускается через proxy server
+B) API Gateway передаёт весь request в Lambda без transformation
 
 C) Lambda вызывает другую Lambda
 
-D) API Gateway передаёт весь request в Lambda без transformation
+D) Шифрование между API Gateway и Lambda
 
 ---
 
 ## Question 3: Authorization
+
+
 
 
 
@@ -63,6 +69,8 @@ D) JWT Authorizer
 
 
 
+
+
 Для чего используются API Keys в API Gateway?
 
 A) Для rate limiting и usage tracking
@@ -76,6 +84,8 @@ D) Для безопасной аутентификации пользовате
 ---
 
 ## Question 5: Caching
+
+
 
 
 
@@ -98,6 +108,8 @@ D) REST API
 
 
 
+
+
 Для чего используются Stages в API Gateway?
 
 A) Для security
@@ -115,15 +127,17 @@ D) Для billing
 
 
 
+
+
 Что может валидировать API Gateway?
 
-A) Только headers
+A) Только body
 
 B) Request body, query parameters, headers по JSON Schema
 
-C) Только body
+C) Ничего
 
-D) Ничего
+D) Только headers
 
 ---
 
@@ -132,15 +146,17 @@ D) Ничего
 
 
 
+
+
 Какой default throttling limit для API Gateway?
 
 A) 100 RPS
 
-B) 10,000 RPS (soft limit)
+B) 1,000 RPS
 
-C) Unlimited
+C) 10,000 RPS (soft limit)
 
-D) 1,000 RPS
+D) Unlimited
 
 ---
 
@@ -149,19 +165,23 @@ D) 1,000 RPS
 
 
 
+
+
 Чем PROXY отличается от non-proxy integration?
 
-A) Proxy передаёт всё в Lambda, non-proxy позволяет mapping templates
+A) Proxy быстрее
 
-B) Non-proxy дешевле
+B) Ничем
 
-C) Ничем
+C) Non-proxy дешевле
 
-D) Proxy быстрее
+D) Proxy передаёт всё в Lambda, non-proxy позволяет mapping templates
 
 ---
 
 ## Question 10: Custom Domain
+
+
 
 
 
@@ -183,6 +203,8 @@ D) Только с CloudFront
 
 
 
+
+
 Как включить CORS в API Gateway?
 
 A) Невозможно
@@ -196,6 +218,8 @@ D) Автоматически
 ---
 
 ## Question 12: VPC Link
+
+
 
 
 
@@ -217,15 +241,17 @@ D) Для private integration с resources в VPC
 
 
 
+
+
 Куда можно отправлять access logs?
 
-A) Только S3
+A) Только Kinesis
 
-B) CloudWatch Logs, Kinesis Firehose
+B) Только S3
 
 C) Только CloudWatch
 
-D) Только Kinesis
+D) CloudWatch Logs, Kinesis Firehose
 
 ---
 
@@ -234,15 +260,17 @@ D) Только Kinesis
 
 
 
+
+
 Для чего используется Mock Integration?
 
-A) Для тестирования без backend
+A) Для billing
 
 B) Для security
 
-C) Для caching
+C) Для тестирования без backend
 
-D) Для billing
+D) Для caching
 
 ---
 
@@ -251,15 +279,17 @@ D) Для billing
 
 
 
+
+
 Что позволяют настроить Usage Plans?
 
-A) Только logging
+A) Только security
 
-B) Только security
+B) Только logging
 
-C) Throttling и quota для API keys
+C) Только billing
 
-D) Только billing
+D) Throttling и quota для API keys
 
 ---
 
@@ -268,19 +298,23 @@ D) Только billing
 
 
 
+
+
 Для чего используется WebSocket API?
 
-A) Для REST endpoints
+A) Для file upload
 
-B) Для real-time bidirectional communication
+B) Для REST endpoints
 
 C) Для batch processing
 
-D) Для file upload
+D) Для real-time bidirectional communication
 
 ---
 
 ## Question 17: Resource Policies
+
+
 
 
 
@@ -302,15 +336,17 @@ D) Cross-account и IP-based access к API
 
 
 
+
+
 Как трансформировать request/response?
 
-A) Невозможно
+A) Mapping templates (VTL) в REST API
 
-B) Mapping templates (VTL) в REST API
+B) Только с CloudFront
 
 C) Только в Lambda
 
-D) Только с CloudFront
+D) Невозможно
 
 ---
 
@@ -319,15 +355,17 @@ D) Только с CloudFront
 
 
 
+
+
 Как создать API доступный только из VPC?
 
-A) IP whitelist
+A) Private API с VPC Endpoint
 
-B) Security Groups
+B) Custom domain
 
-C) Custom domain
+C) Security Groups
 
-D) Private API с VPC Endpoint
+D) IP whitelist
 
 ---
 
@@ -336,15 +374,17 @@ D) Private API с VPC Endpoint
 
 
 
+
+
 Как реализовать canary deployment?
 
-A) Только через Lambda
+A) Canary settings на stage для traffic splitting
 
-B) Невозможно
+B) Только вручную
 
-C) Только вручную
+C) Невозможно
 
-D) Canary settings на stage для traffic splitting
+D) Только через Lambda
 
 ---
 
@@ -355,24 +395,24 @@ D) Canary settings на stage для traffic splitting
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | HTTP API: ~10ms latency vs ~100ms, $1/million vs $3.50/million. Но меньше features. |
-| 2 | D | Lambda Proxy передаёт весь request (headers, body, params) в Lambda, Lambda формирует response. |
+| 2 | B | Lambda Proxy передаёт весь request (headers, body, params) в Lambda, Lambda формирует response. |
 | 3 | D | JWT Authorizer в HTTP API — встроенная валидация JWT. Для REST API нужен Lambda Authorizer. |
 | 4 | A | API Keys — для rate limiting и tracking usage, НЕ для security. Легко украсть из client-side кода. |
 | 5 | D | Caching доступен только в REST API. HTTP API не поддерживает кэширование. |
 | 6 | B | Stages для dev/staging/prod environments |
 | 7 | B | Request validation: body, params, headers по JSON Schema |
-| 8 | B | Default 10,000 RPS soft limit |
-| 9 | A | Proxy передаёт всё, non-proxy позволяет mapping |
+| 8 | C | Default 10,000 RPS soft limit |
+| 9 | D | Proxy передаёт всё, non-proxy позволяет mapping |
 | 10 | B | ACM сертификат + Route 53 alias |
 | 11 | C | Настроить в console или OPTIONS method |
 | 12 | D | VPC Link для private integration |
-| 13 | B | CloudWatch Logs, Kinesis Firehose |
-| 14 | A | Mock Integration для тестирования без backend |
-| 15 | C | Usage Plans: throttling и quota для API keys |
-| 16 | B | WebSocket для real-time bidirectional communication |
+| 13 | D | CloudWatch Logs, Kinesis Firehose |
+| 14 | C | Mock Integration для тестирования без backend |
+| 15 | D | Usage Plans: throttling и quota для API keys |
+| 16 | D | WebSocket для real-time bidirectional communication |
 | 17 | D | Resource Policies: cross-account и IP-based access |
-| 18 | B | Mapping templates (VTL) в REST API |
-| 19 | D | Private API с VPC Endpoint |
-| 20 | D | Canary settings для traffic splitting |
+| 18 | A | Mapping templates (VTL) в REST API |
+| 19 | A | Private API с VPC Endpoint |
+| 20 | A | Canary settings для traffic splitting |
 
 ---

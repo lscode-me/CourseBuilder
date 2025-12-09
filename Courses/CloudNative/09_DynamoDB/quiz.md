@@ -9,15 +9,17 @@
 
 
 
+
+
 Какие варианты Primary Key поддерживает DynamoDB?
 
-A) Только Partition Key + Sort Key
+A) Только Partition Key
 
-B) Только Partition Key
+B) Только Partition Key + Sort Key
 
-C) Partition Key only ИЛИ Partition Key + Sort Key
+C) Любые три атрибута
 
-D) Любые три атрибута
+D) Partition Key only ИЛИ Partition Key + Sort Key
 
 ---
 
@@ -27,19 +29,23 @@ D) Любые три атрибута
 
 
 
+
+
 Какое ключевое отличие GSI от LSI?
 
-A) GSI поддерживает strongly consistent reads
+A) GSI быстрее
 
-B) GSI быстрее
+B) GSI может иметь другой Partition Key, LSI — только другой Sort Key
 
-C) GSI может иметь другой Partition Key, LSI — только другой Sort Key
+C) GSI поддерживает strongly consistent reads
 
 D) LSI можно создать в любое время
 
 ---
 
 ## Question 3: Query vs Scan
+
+
 
 
 
@@ -63,6 +69,8 @@ D) Scan не работает в production
 
 
 
+
+
 Что вызывает "hot partition" проблему?
 
 A) Слишком большие items
@@ -81,15 +89,17 @@ D) Слишком много GSI
 
 
 
+
+
 Что такое DAX?
 
-A) Мониторинг DynamoDB
+A) DynamoDB Access Extension
 
 B) Инструмент для миграции данных
 
-C) In-memory cache для DynamoDB с микросекундной latency
+C) Мониторинг DynamoDB
 
-D) DynamoDB Access Extension
+D) In-memory cache для DynamoDB с микросекундной latency
 
 ---
 
@@ -99,15 +109,17 @@ D) DynamoDB Access Extension
 
 
 
+
+
 Какой максимальный размер одного item в DynamoDB?
 
 A) 64 KB
 
-B) 400 KB
+B) 5 MB
 
-C) 1 MB
+C) 400 KB
 
-D) 5 MB
+D) 1 MB
 
 ---
 
@@ -117,13 +129,15 @@ D) 5 MB
 
 
 
+
+
 Когда лучше использовать On-Demand capacity?
 
-A) Никогда, Provisioned всегда лучше
+A) Только для тестирования
 
-B) Для непредсказуемой или переменной нагрузки
+B) Никогда, Provisioned всегда лучше
 
-C) Только для тестирования
+C) Для непредсказуемой или переменной нагрузки
 
 D) Для постоянной высокой нагрузки
 
@@ -135,19 +149,23 @@ D) Для постоянной высокой нагрузки
 
 
 
+
+
 Какая модель репликации у Global Tables?
 
-A) Single-master
+A) No replication
 
-B) No replication
+B) Multi-master
 
 C) Read replica only
 
-D) Multi-master
+D) Single-master
 
 ---
 
 ## Question 9: DynamoDB Streams
+
+
 
 
 
@@ -171,13 +189,15 @@ D) 30 дней
 
 
 
+
+
 1 RCU позволяет прочитать сколько данных strongly consistent?
 
-A) 1 KB per second
+A) Зависит от item size
 
-B) 4 KB per second
+B) 1 KB per second
 
-C) Зависит от item size
+C) 4 KB per second
 
 D) 1 MB per second
 
@@ -188,15 +208,17 @@ D) 1 MB per second
 
 
 
+
+
 1 WCU позволяет записать сколько данных?
 
-A) 10 KB per second
+A) 1 MB per second
 
-B) 1 MB per second
+B) 10 KB per second
 
-C) 4 KB per second
+C) 1 KB per second
 
-D) 1 KB per second
+D) 4 KB per second
 
 ---
 
@@ -205,15 +227,17 @@ D) 1 KB per second
 
 
 
+
+
 Сколько RCU нужно для eventually consistent read?
 
 A) Такое же как strong
 
-B) 0.5 RCU (в 2 раза меньше)
+B) Бесплатно
 
-C) 2 RCU
+C) 0.5 RCU (в 2 раза меньше)
 
-D) Бесплатно
+D) 2 RCU
 
 ---
 
@@ -222,19 +246,23 @@ D) Бесплатно
 
 
 
+
+
 Для чего используется TTL в DynamoDB?
 
 A) Для шифрования
 
-B) Для автоматического удаления устаревших items
+B) Для резервного копирования
 
-C) Для резервного копирования
+C) Для индексации
 
-D) Для индексации
+D) Для автоматического удаления устаревших items
 
 ---
 
 ## Question 14: Backup
+
+
 
 
 
@@ -256,19 +284,23 @@ D) Нет backup
 
 
 
+
+
 Что такое DAX?
 
-A) In-memory caching для DynamoDB
+A) Data Analysis eXtension
 
-B) Backup сервис
+B) Database Access eXecution
 
-C) Database Access eXecution
+C) Backup сервис
 
-D) Data Analysis eXtension
+D) In-memory caching для DynamoDB
 
 ---
 
 ## Question 16: Batch Operations
+
+
 
 
 
@@ -290,6 +322,8 @@ D) 25
 
 
 
+
+
 Чем Query отличается от Scan?
 
 A) Ничем
@@ -303,6 +337,8 @@ D) Query дороже
 ---
 
 ## Question 18: Projection Expression
+
+
 
 
 
@@ -324,6 +360,8 @@ D) Создаёт index
 
 
 
+
+
 Для чего используется Condition Expression?
 
 A) Для шифрования
@@ -337,6 +375,8 @@ D) Для индексации
 ---
 
 ## Question 20: PartiQL
+
+
 
 
 
@@ -359,21 +399,21 @@ D) Monitoring service
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | DynamoDB поддерживает: только Partition Key (simple) ИЛИ Partition Key + Sort Key (composite). |
-| 2 | C | GSI позволяет задать другой Partition Key. LSI использует тот же PK, но другой Sort Key. |
+| 1 | D | DynamoDB поддерживает: только Partition Key (simple) ИЛИ Partition Key + Sort Key (composite). |
+| 2 | B | GSI позволяет задать другой Partition Key. LSI использует тот же PK, но другой Sort Key. |
 | 3 | C | Query использует индексы и читает только matching items. Scan читает всю таблицу — очень дорого. |
 | 4 | C | Hot partition возникает когда большинство запросов попадают на один PK (например, status = "active"). |
-| 5 | C | DAX (DynamoDB Accelerator) — in-memory cache, снижающий latency до микросекунд. |
-| 6 | B | Максимальный размер item — 400 KB включая все атрибуты и их имена. |
-| 7 | B | On-Demand идеален для непредсказуемой нагрузки, новых приложений, переменного трафика. |
-| 8 | D | Global Tables — multi-master: можно писать в любой регион, изменения реплицируются. |
+| 5 | D | DAX (DynamoDB Accelerator) — in-memory cache, снижающий latency до микросекунд. |
+| 6 | C | Максимальный размер item — 400 KB включая все атрибуты и их имена. |
+| 7 | C | On-Demand идеален для непредсказуемой нагрузки, новых приложений, переменного трафика. |
+| 8 | B | Global Tables — multi-master: можно писать в любой регион, изменения реплицируются. |
 | 9 | A | DynamoDB Streams хранит записи 24 часа. После этого они удаляются. |
-| 10 | B | 1 RCU = 1 strongly consistent read до 4 KB/sec (или 2 eventually consistent reads). |
-| 11 | D | 1 WCU = 1 write до 1 KB/sec |
-| 12 | B | Eventually consistent read = 0.5 RCU |
-| 13 | B | TTL автоматически удаляет устаревшие items |
+| 10 | C | 1 RCU = 1 strongly consistent read до 4 KB/sec (или 2 eventually consistent reads). |
+| 11 | C | 1 WCU = 1 write до 1 KB/sec |
+| 12 | C | Eventually consistent read = 0.5 RCU |
+| 13 | D | TTL автоматически удаляет устаревшие items |
 | 14 | B | On-demand и PITR для backups |
-| 15 | A | DAX — in-memory caching для DynamoDB |
+| 15 | D | DAX — in-memory caching для DynamoDB |
 | 16 | D | BatchWriteItem: максимум 25 items |
 | 17 | C | Query использует partition key, Scan читает всё |
 | 18 | C | Projection Expression выбирает нужные атрибуты |

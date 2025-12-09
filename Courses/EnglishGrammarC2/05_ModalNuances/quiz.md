@@ -10,15 +10,17 @@
 
 
 
+
+
 "She must be tired after that long flight." This is:
 
-A) Dynamic (ability)
+A) Epistemic (inference)
 
-B) Epistemic (inference)
+B) Dynamic (ability)
 
-C) Grammatically incorrect
+C) Deontic (obligation)
 
-D) Deontic (obligation)
+D) Grammatically incorrect
 
 ---
 
@@ -28,15 +30,17 @@ D) Deontic (obligation)
 
 
 
+
+
 Which modal expresses the HIGHEST certainty?
 
-A) must
+A) may
 
-B) might
+B) could
 
-C) may
+C) must
 
-D) could
+D) might
 
 ---
 
@@ -46,15 +50,17 @@ D) could
 
 
 
+
+
 Which sentence sounds more tentative/uncertain?
 
 A) "She might arrive late."
 
-B) Neither expresses uncertainty.
+B) Both are equally certain.
 
-C) Both are equally certain.
+C) "She may arrive late."
 
-D) "She may arrive late."
+D) Neither expresses uncertainty.
 
 ---
 
@@ -64,13 +70,15 @@ D) "She may arrive late."
 
 
 
+
+
 Which is the most appropriate hedged version of "X causes Y"?
 
-A) "X might cause Y sometimes."
+A) "It is believed that X causes Y definitely."
 
-B) "It is believed that X causes Y definitely."
+B) "X probably maybe causes Y."
 
-C) "X probably maybe causes Y."
+C) "X might cause Y sometimes."
 
 D) "X appears to contribute to Y."
 
@@ -82,19 +90,23 @@ D) "X appears to contribute to Y."
 
 
 
+
+
 Which is the most diplomatic way to say "Your report has errors"?
 
-A) "There might be a few areas that could benefit from review."
+A) "I found several mistakes in your report."
 
-B) "The report is unacceptable."
+B) "There might be a few areas that could benefit from review."
 
 C) "Your report has errors that need fixing."
 
-D) "I found several mistakes in your report."
+D) "The report is unacceptable."
 
 ---
 
 ## Question 6: Modal + Perfect
+
+
 
 
 
@@ -118,15 +130,17 @@ D) An obligation in the past
 
 
 
+
+
 "You should have told me earlier" expresses:
 
 A) Strong recommendation
 
-B) Permission that was needed
+B) Advice for the future
 
-C) Advice for the future
+C) Criticism/regret about the past
 
-D) Criticism/regret about the past
+D) Permission that was needed
 
 ---
 
@@ -136,15 +150,17 @@ D) Criticism/regret about the past
 
 
 
+
+
 "I could have helped if you had asked" means:
 
-A) I helped you
+A) You didn't ask, so I didn't help (but it was possible)
 
-B) You didn't ask, so I didn't help (but it was possible)
+B) I definitely would have helped
 
 C) You asked me, so I helped
 
-D) I definitely would have helped
+D) I helped you
 
 ---
 
@@ -154,13 +170,15 @@ D) I definitely would have helped
 
 
 
+
+
 Which use of CAN is correct?
 
-A) "He can have arrived already." (past possibility)
+A) "She can be at the office right now." (specific)
 
-B) "She can be at the office right now." (specific)
+B) "She can be difficult sometimes." (generic)
 
-C) "She can be difficult sometimes." (generic)
+C) "He can have arrived already." (past possibility)
 
 D) "It can rain tonight." (specific prediction)
 
@@ -172,15 +190,17 @@ D) "It can rain tonight." (specific prediction)
 
 
 
+
+
 Which sentence reflects typical Russian speaker directness?
 
-A) "There may be some room for improvement."
+A) "This is wrong and needs to be changed."
 
 B) "I wonder if there might be an issue here."
 
-C) "This is wrong and needs to be changed."
+C) "Perhaps we could consider an alternative."
 
-D) "Perhaps we could consider an alternative."
+D) "There may be some room for improvement."
 
 ---
 
@@ -190,15 +210,17 @@ D) "Perhaps we could consider an alternative."
 
 
 
+
+
 Which sentence has appropriately balanced hedging (not too much, not too little)?
 
-A) "This is definitely true."
+A) "It could maybe potentially seem to indicate."
 
-B) "It might perhaps possibly be somewhat true."
+B) "This is definitely true."
 
 C) "The evidence suggests this may be the case."
 
-D) "It could maybe potentially seem to indicate."
+D) "It might perhaps possibly be somewhat true."
 
 ---
 
@@ -208,19 +230,23 @@ D) "It could maybe potentially seem to indicate."
 
 
 
+
+
 When is SHALL most naturally used in modern English?
 
-A) "You shall finish this today." (command)
+A) "She shall arrive tomorrow." (prediction)
 
-B) "I shall go to the store."
+B) "Shall we begin?" (invitation)
 
-C) "She shall arrive tomorrow." (prediction)
+C) "You shall finish this today." (command)
 
-D) "Shall we begin?" (invitation)
+D) "I shall go to the store."
 
 ---
 
 ## Question 13: OUGHT TO vs SHOULD
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Ought to
 
 
 
+
+
 The most diplomatic way to follow up on an unanswered email is:
 
 A) "You didn't reply to my email."
@@ -262,19 +290,23 @@ D) "I was wondering if you had a chance to look at this."
 
 
 
+
+
 Which sentence uses epistemic CAN correctly?
 
 A) "She can be at home now." ❌
 
-B) "The weather can rain tomorrow." ❌
+B) "He can have done it already." ❌
 
-C) "That can't be right." ✓
+C) "The weather can rain tomorrow." ❌
 
-D) "He can have done it already." ❌
+D) "That can't be right." ✓
 
 ---
 
 ## Question 16: Hedging in Academic Writing
+
+
 
 
 
@@ -298,6 +330,8 @@ D) Removed entirely—claims shouldn't be made
 
 
 
+
+
 Rank these from LEAST to MOST polite: (1) "Can you help?" (2) "Could you help?" (3) "I was wondering if you might help?"
 
 A) 3, 2, 1
@@ -316,15 +350,17 @@ D) 2, 1, 3
 
 
 
+
+
 Which sounds more natural in everyday speech?
 
-A) "I might go now—the meeting starts soon."
+A) "I have to go now—the meeting starts soon."
 
-B) "I have to go now—the meeting starts soon."
+B) "I might go now—the meeting starts soon."
 
-C) "I shall go now—the meeting starts soon."
+C) "I must go now—the meeting starts soon."
 
-D) "I must go now—the meeting starts soon."
+D) "I shall go now—the meeting starts soon."
 
 ---
 
@@ -334,19 +370,23 @@ D) "I must go now—the meeting starts soon."
 
 
 
+
+
 "She may have left" vs "She must have left" — the difference is:
 
 A) No difference in meaning
 
-B) "Must" is more certain (logical conclusion) than "may" (possibility)
+B) "May" is past, "must" is present
 
-C) "May" is more certain than "must"
+C) "Must" is more certain (logical conclusion) than "may" (possibility)
 
-D) "May" is past, "must" is present
+D) "May" is more certain than "must"
 
 ---
 
 ## Question 20: Disagreement Formula
+
+
 
 
 
@@ -370,25 +410,25 @@ D) "I see it slightly differently."
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | "Must" here expresses logical inference (epistemic), not obligation. |
-| 2 | A | Must ≈ 95% certainty; it expresses logical conclusion from evidence. |
+| 1 | A | "Must" here expresses logical inference (epistemic), not obligation. |
+| 2 | C | Must ≈ 95% certainty; it expresses logical conclusion from evidence. |
 | 3 | A | "Might" is slightly more tentative/uncertain than "may." |
 | 4 | D | "Appears to contribute" is appropriately hedged without being excessive. |
-| 5 | A | "Might be... could benefit" is diplomatic hedging, not accusatory. |
+| 5 | B | "Might be... could benefit" is diplomatic hedging, not accusatory. |
 | 6 | C | Modal + have + pp for inference about past; "must have" = certain inference. |
-| 7 | D | "Should have + pp" expresses criticism or regret about past actions. |
-| 8 | B | "Could have" = unrealized possibility; you didn't ask, so help wasn't given. |
-| 9 | C | Epistemic "can" works for generic/characteristic statements, not specific. |
-| 10 | C | Direct statements without hedging are typical of Russian speakers. |
+| 7 | C | "Should have + pp" expresses criticism or regret about past actions. |
+| 8 | A | "Could have" = unrealized possibility; you didn't ask, so help wasn't given. |
+| 9 | B | Epistemic "can" works for generic/characteristic statements, not specific. |
+| 10 | A | Direct statements without hedging are typical of Russian speakers. |
 | 11 | C | "Suggests... may be" is balanced hedging—not too weak, not too strong. |
-| 12 | D | "Shall we...?" for invitations/suggestions is the most natural modern use. |
+| 12 | B | "Shall we...?" for invitations/suggestions is the most natural modern use. |
 | 13 | B | "Should" is more common and versatile; "ought to" is more formal/old-fashioned. |
 | 14 | D | "I was wondering if..." is the diplomatic way to follow up. |
-| 15 | C | Epistemic "can" works in negatives ("can't be") and generics, not specifics. |
+| 15 | D | Epistemic "can" works in negatives ("can't be") and generics, not specifics. |
 | 16 | B | Academic English requires hedging; "suggest... may contribute" is appropriate. |
 | 17 | B | Direct "can" < conditional "could" < past progressive "was wondering if might." |
-| 18 | B | "Have to" is more natural in everyday speech; "must" sounds formal/dramatic. |
-| 19 | B | "Must have" = certain inference; "may have" = possibility. Must > may in certainty. |
+| 18 | A | "Have to" is more natural in everyday speech; "must" sounds formal/dramatic. |
+| 19 | C | "Must have" = certain inference; "may have" = possibility. Must > may in certainty. |
 | 20 | D | "I see it slightly differently" is professional diplomacy; others are too direct. |
 
 ---

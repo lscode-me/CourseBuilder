@@ -10,6 +10,8 @@
 
 
 
+
+
 Какая компания изначально разработала механизм cgroups?
 
 A) Google
@@ -23,6 +25,8 @@ D) Red Hat
 ---
 
 ## Question 2: Назначение cgroups
+
+
 
 
 
@@ -46,6 +50,8 @@ D) Шифрование данных
 
 
 
+
+
 В чём главное отличие cgroups v2 от v1?
 
 A) v2 не требует root-прав
@@ -64,15 +70,17 @@ D) v2 работает только с контейнерами
 
 
 
+
+
 Какой формат имеет параметр `cpu.max` в cgroups v2?
 
-A) Количество ядер (например, "2")
+A) QUOTA PERIOD в микросекундах (например, "50000 100000")
 
 B) Процент CPU (например, "50%")
 
-C) QUOTA PERIOD в микросекундах (например, "50000 100000")
+C) Частота в MHz
 
-D) Частота в MHz
+D) Количество ядер (например, "2")
 
 ---
 
@@ -82,13 +90,15 @@ D) Частота в MHz
 
 
 
+
+
 Какой параметр устанавливает мягкий лимит памяти в cgroups v2?
 
-A) memory.high
+A) memory.max
 
-B) memory.max
+B) memory.limit
 
-C) memory.limit
+C) memory.high
 
 D) memory.soft
 
@@ -100,19 +110,23 @@ D) memory.soft
 
 
 
+
+
 Что произойдёт, когда процесс превысит значение `memory.max`?
 
-A) Процесс будет убит OOM killer
+A) Операции выделения памяти будут блокироваться
 
 B) Процесс будет замедлен (throttled)
 
-C) Операции выделения памяти будут блокироваться
+C) Процесс получит сигнал SIGTERM
 
-D) Процесс получит сигнал SIGTERM
+D) Процесс будет убит OOM killer
 
 ---
 
 ## Question 7: I/O Controller
+
+
 
 
 
@@ -136,6 +150,8 @@ D) IOPS без указания устройства
 
 
 
+
+
 Для чего используется PIDs controller?
 
 A) Изоляция PID namespace
@@ -149,6 +165,8 @@ D) Ограничение CPU для каждого процесса
 ---
 
 ## Question 9: systemd интеграция
+
+
 
 
 
@@ -172,15 +190,17 @@ D) CPULimit=50%
 
 
 
+
+
 Что такое "slice" в терминологии systemd cgroups?
 
-A) Ограничение CPU
+A) Временный сервис
 
-B) Группа unit'ов, разделяющих ресурсы
+B) Отдельный процесс
 
-C) Отдельный процесс
+C) Группа unit'ов, разделяющих ресурсы
 
-D) Временный сервис
+D) Ограничение CPU
 
 ---
 
@@ -190,15 +210,17 @@ D) Временный сервис
 
 
 
+
+
 Где находится файловая система cgroups v2?
 
-A) /sys/fs/cgroup
+A) /proc/cgroups
 
-B) /proc/cgroups
+B) /sys/fs/cgroup
 
-C) /var/lib/cgroups
+C) /run/cgroups
 
-D) /run/cgroups
+D) /var/lib/cgroups
 
 ---
 
@@ -208,15 +230,17 @@ D) /run/cgroups
 
 
 
+
+
 В какой файл нужно записать PID, чтобы добавить процесс в cgroup v2?
 
-A) cgroup.procs
+A) tasks
 
-B) tasks
+B) cgroup.tasks
 
 C) cgroup.pids
 
-D) cgroup.tasks
+D) cgroup.procs
 
 ---
 
@@ -226,19 +250,23 @@ D) cgroup.tasks
 
 
 
+
+
 Что означает `cpu.weight = 100` в cgroups v2?
 
-A) 100% CPU
+A) Относительный вес по умолчанию
 
 B) 100 процессов могут использовать CPU
 
-C) 100 микросекунд CPU
+C) 100% CPU
 
-D) Относительный вес по умолчанию
+D) 100 микросекунд CPU
 
 ---
 
 ## Question 14: Memory pressure
+
+
 
 
 
@@ -262,15 +290,17 @@ D) Количество страниц памяти
 
 
 
+
+
 Как включить контроллер memory для дочерних cgroups?
 
-A) `systemctl enable cgroup-memory`
+A) `echo "+memory" > /sys/fs/cgroup/cgroup.subtree_control`
 
-B) `echo "memory" > /sys/fs/cgroup/cgroup.controllers`
+B) `systemctl enable cgroup-memory`
 
 C) `mount -t cgroup memory /sys/fs/cgroup/memory`
 
-D) `echo "+memory" > /sys/fs/cgroup/cgroup.subtree_control`
+D) `echo "memory" > /sys/fs/cgroup/cgroup.controllers`
 
 ---
 
@@ -280,19 +310,23 @@ D) `echo "+memory" > /sys/fs/cgroup/cgroup.subtree_control`
 
 
 
+
+
 Когда начинается memory throttling?
 
-A) При достижении memory.max
+A) При достижении 50% от memory.max
 
-B) Throttling не существует для memory
+B) При достижении memory.max
 
 C) При достижении memory.high
 
-D) При достижении 50% от memory.max
+D) Throttling не существует для memory
 
 ---
 
 ## Question 17: Swap limit
+
+
 
 
 
@@ -316,6 +350,8 @@ D) Swap нельзя отключить для отдельной cgroup
 
 
 
+
+
 Что показывает утилита systemd-cgtop?
 
 A) Топ системных вызовов
@@ -334,15 +370,17 @@ D) Топ процессов по PID
 
 
 
+
+
 Как процессы наследуют cgroup?
 
 A) Только процессы с тем же UID
 
-B) Наследования не существует
+B) Дочерние процессы автоматически наследуют cgroup родителя
 
-C) Дочерние процессы автоматически наследуют cgroup родителя
+C) Вручную, нужно добавлять каждый процесс
 
-D) Вручную, нужно добавлять каждый процесс
+D) Наследования не существует
 
 ---
 
@@ -352,15 +390,17 @@ D) Вручную, нужно добавлять каждый процесс
 
 
 
+
+
 Какой паттерн обеспечивает graceful degradation для памяти?
 
-A) memory.high < memory.max
+A) memory.max = memory.high
 
-B) Использование только memory.max
+B) memory.min > memory.high
 
-C) memory.max = memory.high
+C) memory.high < memory.max
 
-D) memory.min > memory.high
+D) Использование только memory.max
 
 ---
 
@@ -373,23 +413,23 @@ D) memory.min > memory.high
 | 1 | A | Google разработал cgroups (тогда "Process Containers") в 2006 году |
 | 2 | C | Cgroups управляют и ограничивают ресурсы: CPU, память, I/O, PIDs |
 | 3 | B | Cgroups v2 использует единую иерархию для всех контроллеров вместо отдельных |
-| 4 | C | cpu.max имеет формат "QUOTA PERIOD" в микросекундах, например "50000 100000" = 50% |
-| 5 | A | memory.high — мягкий лимит, при достижении которого начинается throttling |
-| 6 | A | При превышении memory.max процесс будет убит OOM killer |
+| 4 | A | cpu.max имеет формат "QUOTA PERIOD" в микросекундах, например "50000 100000" = 50% |
+| 5 | C | memory.high — мягкий лимит, при достижении которого начинается throttling |
+| 6 | D | При превышении memory.max процесс будет убит OOM killer |
 | 7 | C | io.max требует указания устройства в формате MAJ:MIN и параметра |
 | 8 | B | PIDs controller ограничивает количество процессов/потоков в cgroup |
 | 9 | A | CPUQuota=50% в unit-файле systemd ограничивает CPU до 50% |
-| 10 | B | Slice — группа systemd unit'ов, разделяющих ресурсы |
-| 11 | A | Cgroups v2 монтируется в /sys/fs/cgroup |
-| 12 | A | В cgroups v2 процессы добавляются через файл cgroup.procs |
-| 13 | D | cpu.weight=100 — значение по умолчанию, относительный вес для распределения CPU |
+| 10 | C | Slice — группа systemd unit'ов, разделяющих ресурсы |
+| 11 | B | Cgroups v2 монтируется в /sys/fs/cgroup |
+| 12 | D | В cgroups v2 процессы добавляются через файл cgroup.procs |
+| 13 | A | cpu.weight=100 — значение по умолчанию, относительный вес для распределения CPU |
 | 14 | B | memory.pressure содержит PSI (Pressure Stall Information) — метрики нехватки ресурсов |
-| 15 | D | Контроллеры включаются через cgroup.subtree_control с префиксом + |
+| 15 | A | Контроллеры включаются через cgroup.subtree_control с префиксом + |
 | 16 | C | Memory throttling начинается при достижении memory.high |
 | 17 | A | echo "0" > memory.swap.max полностью отключает swap для cgroup |
 | 18 | B | systemd-cgtop показывает использование ресурсов в разрезе cgroups |
-| 19 | C | Дочерние процессы автоматически наследуют cgroup родительского процесса |
-| 20 | A | memory.high < memory.max: throttling начинается раньше OOM kill |
+| 19 | B | Дочерние процессы автоматически наследуют cgroup родительского процесса |
+| 20 | C | memory.high < memory.max: throttling начинается раньше OOM kill |
 
 ---
 

@@ -10,6 +10,8 @@
 
 
 
+
+
 Какой оптимальный размер команды для одного менеджера?
 
 A) 20-30 человек
@@ -23,6 +25,8 @@ D) 1-2 человека
 ---
 
 ## Question 2: Warning Signs
+
+
 
 
 
@@ -46,6 +50,8 @@ D) Всё работает отлично
 
 
 
+
+
 Какой плюс разделения команды по продукту/feature?
 
 A) Clear ownership, end-to-end responsibility
@@ -59,6 +65,8 @@ D) Duplication
 ---
 
 ## Question 4: Split by Layer
+
+
 
 
 
@@ -82,19 +90,23 @@ D) Reusable solutions
 
 
 
+
+
 Что такое Stream-aligned Team в Team Topologies?
 
-A) Команда сложной подсистемы
+A) Platform команда
 
-B) Команда, которая помогает другим
+B) Команда, aligned с business stream, end-to-end delivery
 
-C) Команда, aligned с business stream, end-to-end delivery
+C) Команда, которая помогает другим
 
-D) Platform команда
+D) Команда сложной подсистемы
 
 ---
 
 ## Question 6: Platform Team
+
+
 
 
 
@@ -118,13 +130,15 @@ D) Delivery business features
 
 
 
+
+
 Что происходит, когда cognitive load команды слишком высока?
 
-A) Команда работает лучше
+A) Команда бездельничает
 
-B) Shallow understanding, качество страдает, много context switching
+B) Команда работает лучше
 
-C) Команда бездельничает
+C) Shallow understanding, качество страдает, много context switching
 
 D) Cognitive load не важна
 
@@ -136,15 +150,17 @@ D) Cognitive load не важна
 
 
 
+
+
 Что означает Level 7 делегирования?
 
-A) "Давай решим вместе"
+A) "You handle it" — полное делегирование с доверием
 
-B) "Что ты решил?"
+B) "Делай точно так"
 
-C) "You handle it" — полное делегирование с доверием
+C) "Давай решим вместе"
 
-D) "Делай точно так"
+D) "Что ты решил?"
 
 ---
 
@@ -154,15 +170,17 @@ D) "Делай точно так"
 
 
 
+
+
 Как развивать будущих лидеров?
 
-A) Сразу назначить на позицию без подготовки
+A) Identify potential, give opportunities, coach actively, gradual transition
 
-B) Identify potential, give opportunities, coach actively, gradual transition
+B) Сразу назначить на позицию без подготовки
 
-C) Игнорировать их развитие
+C) Не давать никаких возможностей
 
-D) Не давать никаких возможностей
+D) Игнорировать их развитие
 
 ---
 
@@ -172,15 +190,17 @@ D) Не давать никаких возможностей
 
 
 
+
+
 Почему "80% качества от 3 людей лучше чем 100% от одного"?
 
 A) Математика не сходится
 
-B) Одному лучше делать всё
+B) 80% качества достаточно плохо
 
-C) Масштабирование требует делегирования, совокупный output выше
+C) Одному лучше делать всё
 
-D) 80% качества достаточно плохо
+D) Масштабирование требует делегирования, совокупный output выше
 
 ---
 
@@ -190,19 +210,23 @@ D) 80% качества достаточно плохо
 
 
 
+
+
 Как сохранить культуру при росте?
 
-A) Сменить культуру полностью
+A) Documentation, rituals, hiring for culture, leaders model values
 
-B) Забыть о культуре
+B) Ничего не делать, культура сама сохранится
 
-C) Ничего не делать, культура сама сохранится
+C) Забыть о культуре
 
-D) Documentation, rituals, hiring for culture, leaders model values
+D) Сменить культуру полностью
 
 ---
 
 ## Question 12: Brooks's Law
+
+
 
 
 
@@ -226,6 +250,8 @@ D) Communication paths растут как n(n-1)/2, больше людей = �
 
 
 
+
+
 Как бороться с "Us vs Them" между командами?
 
 A) Изолировать команды полностью
@@ -239,6 +265,8 @@ D) Поощрять конкуренцию
 ---
 
 ## Question 14: Spotify Squads
+
+
 
 
 
@@ -262,6 +290,8 @@ D) Functional team (только frontend)
 
 
 
+
+
 Какой минус функциональной структуры (Frontend/Backend/QA)?
 
 A) Handoffs и silos между функциями
@@ -280,19 +310,23 @@ D) Career paths
 
 
 
+
+
 Какова роль Enabling Team в Team Topologies?
 
-A) Помогает другим командам adopt capabilities, temporary support
+A) Постоянная разработка features
 
-B) Постоянная разработка features
+B) Помогает другим командам adopt capabilities, temporary support
 
-C) Владеет platform
+C) Сложная подсистема
 
-D) Сложная подсистема
+D) Владеет platform
 
 ---
 
 ## Question 17: Communication at Scale
+
+
 
 
 
@@ -316,6 +350,8 @@ D) Только личные разговоры
 
 
 
+
+
 Как бороться с замедлением при росте?
 
 A) Добавить больше процессов
@@ -334,19 +370,23 @@ D) Minimal viable process, empower teams, reduce approval chains
 
 
 
+
+
 Что означает число 15 в контексте команд?
 
-A) 15 лет опыта
+A) 15 минут на standup
 
-B) Extended team, где coordination ещё возможна
+B) 15 митингов в день
 
-C) 15 минут на standup
+C) 15 лет опыта
 
-D) 15 митингов в день
+D) Extended team, где coordination ещё возможна
 
 ---
 
 ## Question 20: Matrix Structure
+
+
 
 
 
@@ -374,21 +414,21 @@ D) Нет структуры
 | 2 | C | 1-on-1 поверхностные, нет времени на development — признак |
 | 3 | A | По продукту: clear ownership, end-to-end responsibility |
 | 4 | A | По слоям: handoffs, slower end-to-end delivery |
-| 5 | C | Stream-aligned: aligned с business, end-to-end delivery |
+| 5 | B | Stream-aligned: aligned с business, end-to-end delivery |
 | 6 | B | Platform: internal product, self-service для других команд |
-| 7 | B | Высокая cognitive load: shallow understanding, quality страдает |
-| 8 | C | Level 7: полное делегирование с доверием |
-| 9 | B | Identify, give opportunities, coach, gradual transition |
-| 10 | C | Масштабирование требует делегирования, совокупный output выше |
-| 11 | D | Documentation, rituals, hiring, leaders model values |
+| 7 | C | Высокая cognitive load: shallow understanding, quality страдает |
+| 8 | A | Level 7: полное делегирование с доверием |
+| 9 | A | Identify, give opportunities, coach, gradual transition |
+| 10 | D | Масштабирование требует делегирования, совокупный output выше |
+| 11 | A | Documentation, rituals, hiring, leaders model values |
 | 12 | D | Communication paths = n(n-1)/2, больше людей = больше overhead |
 | 13 | C | Shared goals, cross-team projects, rotation |
 | 14 | B | Squad: cross-functional team с end-to-end ownership |
 | 15 | A | Functional: handoffs и silos |
-| 16 | A | Enabling: помогает adopt capabilities, temporary support |
+| 16 | B | Enabling: помогает adopt capabilities, temporary support |
 | 17 | A | All-hands, updates, documentation, Slack channels |
 | 18 | D | Minimal process, empower teams, reduce approvals |
-| 19 | B | 15: extended team, coordination возможна |
+| 19 | D | 15: extended team, coordination возможна |
 | 20 | C | Matrix: dual reporting, flexibility, complexity |
 
 ---

@@ -9,19 +9,23 @@
 
 
 
+
+
 Какой главный недостаток multi-cloud стратегии?
 
-A) Хуже производительность
+A) Меньше сервисов доступно
 
 B) Дешевле single cloud
 
-C) Операционная сложность и требуемые навыки
+C) Хуже производительность
 
-D) Меньше сервисов доступно
+D) Операционная сложность и требуемые навыки
 
 ---
 
 ## Question 2: Kubernetes Portability
+
+
 
 
 
@@ -45,13 +49,15 @@ D) Принадлежит Google
 
 
 
+
+
 Какой сервис имеет наивысший уровень vendor lock-in?
 
-A) EC2 (виртуальные машины)
+A) DynamoDB
 
-B) DynamoDB
+B) S3
 
-C) S3
+C) EC2 (виртуальные машины)
 
 D) RDS PostgreSQL
 
@@ -63,19 +69,23 @@ D) RDS PostgreSQL
 
 
 
+
+
 Какая portable альтернатива AWS Lambda?
 
-A) Knative на Kubernetes
+A) EC2
 
-B) Fargate
+B) Step Functions
 
-C) Step Functions
+C) Fargate
 
-D) EC2
+D) Knative на Kubernetes
 
 ---
 
 ## Question 5: Pragmatic Approach
+
+
 
 
 
@@ -98,15 +108,17 @@ D) Использовать proprietary сервисы когда value > lock-i
 
 
 
+
+
 Как Terraform поддерживает multi-cloud?
 
-A) Не поддерживает
+A) Через providers для разных clouds (aws, google, azurerm)
 
-B) Через providers для разных clouds (aws, google, azurerm)
+B) Только для Azure
 
 C) Только для AWS
 
-D) Только для Azure
+D) Не поддерживает
 
 ---
 
@@ -115,15 +127,17 @@ D) Только для Azure
 
 
 
+
+
 Почему containers portable?
 
-A) Одинаковый runtime environment везде
+A) Быстрее
 
-B) Дешевле
+B) Легче
 
-C) Легче
+C) Дешевле
 
-D) Быстрее
+D) Одинаковый runtime environment везде
 
 ---
 
@@ -132,15 +146,17 @@ D) Быстрее
 
 
 
+
+
 Что такое Google Anthos?
 
-A) Database
+A) Network
 
-B) Multi-cloud Kubernetes management platform
+B) Database
 
 C) Storage
 
-D) Network
+D) Multi-cloud Kubernetes management platform
 
 ---
 
@@ -149,19 +165,23 @@ D) Network
 
 
 
+
+
 Что делает Azure Arc?
 
-A) Database
+A) Управление ресурсами в любом cloud или on-premises через Azure
 
-B) Network service
+B) Storage
 
-C) Storage
+C) Network service
 
-D) Управление ресурсами в любом cloud или on-premises через Azure
+D) Database
 
 ---
 
 ## Question 10: Data Portability
+
+
 
 
 
@@ -183,6 +203,8 @@ D) Proprietary formats
 
 
 
+
+
 Как соединить clouds?
 
 A) Только VPN
@@ -200,15 +222,17 @@ D) Только internet
 
 
 
+
+
 Как управлять identity across clouds?
 
-A) Невозможно
+A) Только AWS
 
-B) Только AWS
+B) Невозможно
 
-C) Отдельные accounts везде
+C) Federation через SAML/OIDC, centralized IdP
 
-D) Federation через SAML/OIDC, centralized IdP
+D) Отдельные accounts везде
 
 ---
 
@@ -217,15 +241,17 @@ D) Federation через SAML/OIDC, centralized IdP
 
 
 
+
+
 Какие multi-cloud observability tools?
 
-A) Только CloudWatch
+A) Только Azure Monitor
 
 B) Datadog, Grafana, Prometheus — cloud-agnostic
 
-C) Только Azure Monitor
+C) Только GCP Operations
 
-D) Только GCP Operations
+D) Только CloudWatch
 
 ---
 
@@ -234,19 +260,23 @@ D) Только GCP Operations
 
 
 
+
+
 Почему GitOps хорош для multi-cloud?
 
-A) Не подходит
+A) Только для on-premises
 
-B) Git как единый source of truth для всех clouds
+B) Не подходит
 
 C) Только для AWS
 
-D) Только для on-premises
+D) Git как единый source of truth для всех clouds
 
 ---
 
 ## Question 15: API Gateway Portability
+
+
 
 
 
@@ -268,19 +298,23 @@ D) Kong, Istio Gateway — работают везде
 
 
 
+
+
 Как управлять costs across clouds?
 
-A) Невозможно
+A) Multi-cloud cost tools (CloudHealth, Spot.io, Kubecost)
 
-B) Отдельно для каждого cloud
+B) Только Excel
 
-C) Multi-cloud cost tools (CloudHealth, Spot.io, Kubecost)
+C) Невозможно
 
-D) Только Excel
+D) Отдельно для каждого cloud
 
 ---
 
 ## Question 17: Disaster Recovery
+
+
 
 
 
@@ -302,6 +336,8 @@ D) Не помогает
 
 
 
+
+
 Как снизить vendor lock-in?
 
 A) Невозможно
@@ -315,6 +351,8 @@ D) Open standards, abstraction layers, portable formats
 ---
 
 ## Question 19: Crossplane
+
+
 
 
 
@@ -336,15 +374,17 @@ D) Database
 
 
 
+
+
 Какой challenge для multi-cloud teams?
 
-A) Необходимость экспертизы в нескольких clouds
+A) Только networking
 
-B) Только security
+B) Только cost
 
-C) Только networking
+C) Необходимость экспертизы в нескольких clouds
 
-D) Только cost
+D) Только security
 
 ---
 
@@ -354,25 +394,25 @@ D) Только cost
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | Multi-cloud требует экспертизы в нескольких clouds, сложнее networking, security, operations. |
+| 1 | D | Multi-cloud требует экспертизы в нескольких clouds, сложнее networking, security, operations. |
 | 2 | C | Kubernetes API стандартизирован. Те же YAML манифесты работают на любом managed K8s сервисе. |
-| 3 | B | DynamoDB имеет proprietary data model и API. Миграция требует переписывания приложения. |
-| 4 | A | Knative — CNCF проект для serverless на Kubernetes. Работает на любом K8s кластере. |
+| 3 | A | DynamoDB имеет proprietary data model и API. Миграция требует переписывания приложения. |
+| 4 | D | Knative — CNCF проект для serverless на Kubernetes. Работает на любом K8s кластере. |
 | 5 | D | Прагматичный подход: использовать managed сервисы когда их ценность превышает риск lock-in. |
-| 6 | B | Terraform providers для разных clouds |
-| 7 | A | Containers: одинаковый runtime везде |
-| 8 | B | Anthos: multi-cloud Kubernetes management |
-| 9 | D | Azure Arc: управление anywhere через Azure |
+| 6 | A | Terraform providers для разных clouds |
+| 7 | D | Containers: одинаковый runtime везде |
+| 8 | D | Anthos: multi-cloud Kubernetes management |
+| 9 | A | Azure Arc: управление anywhere через Azure |
 | 10 | A | Open formats: Parquet, Avro, JSON |
 | 11 | B | VPN, dedicated connections, third-party |
-| 12 | D | Federation через SAML/OIDC |
+| 12 | C | Federation через SAML/OIDC |
 | 13 | B | Datadog, Grafana, Prometheus |
-| 14 | B | GitOps: единый source of truth |
+| 14 | D | GitOps: единый source of truth |
 | 15 | D | Kong, Istio Gateway — работают везде |
-| 16 | C | Multi-cloud cost tools |
+| 16 | A | Multi-cloud cost tools |
 | 17 | B | DR в другом cloud provider |
 | 18 | D | Open standards, abstraction, portable formats |
 | 19 | C | Crossplane: K8s-native multi-cloud provisioning |
-| 20 | A | Экспертиза в нескольких clouds |
+| 20 | C | Экспертиза в нескольких clouds |
 
 ---

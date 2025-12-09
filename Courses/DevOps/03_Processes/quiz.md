@@ -10,15 +10,17 @@
 
 
 
+
+
 Какая фаза DevOps lifecycle следует сразу после "Build"?
 
-A) Deploy
+A) Test
 
-B) Test
+B) Release
 
 C) Code
 
-D) Release
+D) Deploy
 
 ---
 
@@ -28,19 +30,23 @@ D) Release
 
 
 
+
+
 Что измеряет Process Cycle Efficiency?
 
-A) Отношение времени работы к общему lead time
+A) Скорость deployment
 
-B) Скорость deployment
+B) Количество deployments в день
 
 C) Количество багов на 1000 строк кода
 
-D) Количество deployments в день
+D) Отношение времени работы к общему lead time
 
 ---
 
 ## Question 3: OKRs
+
+
 
 
 
@@ -64,6 +70,8 @@ D) Objective для команды, Key Result для индивидуумов
 
 
 
+
+
 Что из перечисленного является примером waste типа "handoffs"?
 
 A) Ожидание code review
@@ -77,6 +85,8 @@ D) Исправление багов в production
 ---
 
 ## Question 5: Runbook
+
+
 
 
 
@@ -100,19 +110,23 @@ D) Только команды для выполнения
 
 
 
+
+
 Что такое Architecture Decision Record (ADR)?
 
-A) Документ, фиксирующий важное архитектурное решение и его контекст
+A) Результаты performance тестирования
 
-B) Лог ошибок приложения
+B) Документ, фиксирующий важное архитектурное решение и его контекст
 
-C) Результаты performance тестирования
+C) Лог ошибок приложения
 
 D) Запись о каждом merge request
 
 ---
 
 ## Question 7: Change Types
+
+
 
 
 
@@ -136,13 +150,15 @@ D) Экстренное изменение при инциденте
 
 
 
+
+
 Какая версия должна следовать после 2.4.1, если добавлена новая функция без breaking changes?
 
-A) 3.0.0
+A) 2.4.2
 
-B) 2.5.0
+B) 3.0.0
 
-C) 2.4.2
+C) 2.5.0
 
 D) 2.4.1.1
 
@@ -154,15 +170,17 @@ D) 2.4.1.1
 
 
 
+
+
 Какова основная обязанность primary on-call?
 
-A) Первая линия реагирования на алерты
+A) Планирование спринтов
 
-B) Проведение code review
+B) Написание нового кода
 
-C) Написание нового кода
+C) Проведение code review
 
-D) Планирование спринтов
+D) Первая линия реагирования на алерты
 
 ---
 
@@ -172,15 +190,17 @@ D) Планирование спринтов
 
 
 
+
+
 При расчёте capacity команды из 5 человек на 2-недельный спринт, что следует учесть?
 
-A) Только количество рабочих дней
+A) Только story points предыдущего спринта
 
-B) Рабочие дни, PTO, время на meetings и ops work
+B) Только количество рабочих дней
 
 C) Количество открытых багов
 
-D) Только story points предыдущего спринта
+D) Рабочие дни, PTO, время на meetings и ops work
 
 ---
 
@@ -190,19 +210,23 @@ D) Только story points предыдущего спринта
 
 
 
+
+
 Какой формат ретроспективы фокусируется на "Что начать/прекратить/продолжить делать"?
 
-A) Fishbone Diagram
+A) SWOT Analysis
 
-B) 5 Whys
+B) Start/Stop/Continue
 
-C) SWOT Analysis
+C) Fishbone Diagram
 
-D) Start/Stop/Continue
+D) 5 Whys
 
 ---
 
 ## Question 12: 5 Whys
+
+
 
 
 
@@ -226,6 +250,8 @@ D) Для приоритизации backlog
 
 
 
+
+
 Что из перечисленного является anti-pattern для daily standup?
 
 A) Каждый говорит о блокерах
@@ -239,6 +265,8 @@ D) Детальные технические дискуссии
 ---
 
 ## Question 14: Value Stream Mapping
+
+
 
 
 
@@ -262,6 +290,8 @@ D) Waste и bottlenecks в процессе доставки
 
 
 
+
+
 Чем Incremental Release отличается от Big Bang Release?
 
 A) Это одно и то же
@@ -275,6 +305,8 @@ D) Incremental — много маленьких релизов, Big Bang — о
 ---
 
 ## Question 16: Change Advisory Board
+
+
 
 
 
@@ -298,6 +330,8 @@ D) Для high-risk изменений, затрагивающих много к
 
 
 
+
+
 Что должен содержать документ on-call handoff?
 
 A) Активные issues, недавние инциденты, запланированные работы
@@ -316,15 +350,17 @@ D) Только имена on-call инженеров
 
 
 
+
+
 В Value Stream, если Process Time = 8 часов, Wait Time = 32 часа, чему равна Efficiency?
 
-A) 40%
+A) 80%
 
-B) 25%
+B) 20%
 
-C) 20%
+C) 25%
 
-D) 80%
+D) 40%
 
 ---
 
@@ -334,15 +370,17 @@ D) 80%
 
 
 
+
+
 Что из перечисленного должно быть в Release Notes?
 
-A) Имена всех разработчиков компании
+A) Новые функции, багфиксы, breaking changes, migration guide
 
-B) Полный исходный код
+B) Только список багфиксов
 
-C) Только список багфиксов
+C) Полный исходный код
 
-D) Новые функции, багфиксы, breaking changes, migration guide
+D) Имена всех разработчиков компании
 
 ---
 
@@ -352,15 +390,17 @@ D) Новые функции, багфиксы, breaking changes, migration guid
 
 
 
+
+
 Какая церемония проводится реже всего?
 
-A) Daily Standup
+A) Weekly Planning
 
-B) OKR Planning (Quarterly)
+B) Sprint Retrospective
 
-C) Sprint Retrospective
+C) OKR Planning (Quarterly)
 
-D) Weekly Planning
+D) Daily Standup
 
 ---
 
@@ -370,26 +410,26 @@ D) Weekly Planning
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | DevOps lifecycle: Plan → Code → Build → Test → Release → Deploy → Operate → Monitor |
-| 2 | A | PCE = Value-add time / Total lead time × 100%. Показывает долю полезной работы |
+| 1 | A | DevOps lifecycle: Plan → Code → Build → Test → Release → Deploy → Operate → Monitor |
+| 2 | D | PCE = Value-add time / Total lead time × 100%. Показывает долю полезной работы |
 | 3 | A | Objective — качественная цель (что), Key Result — измеримый результат (как) |
 | 4 | C | Handoffs — передача работы между людьми/командами, создающая задержки |
 | 5 | B | Runbook должен содержать всё необходимое для выполнения задачи любым членом команды |
-| 6 | A | ADR документирует решение, контекст, альтернативы и последствия |
+| 6 | B | ADR документирует решение, контекст, альтернативы и последствия |
 | 7 | B | Standard change — типовое, заранее одобренное изменение с низким риском |
-| 8 | B | Minor version (x.Y.z) увеличивается при добавлении функций без breaking changes |
-| 9 | A | Primary on-call — первая линия реагирования, triage, эскалация |
-| 10 | B | Capacity учитывает реальное доступное время: минус PTO, meetings, ops work |
-| 11 | D | Start/Stop/Continue — простой формат для выявления улучшений |
+| 8 | C | Minor version (x.Y.z) увеличивается при добавлении функций без breaking changes |
+| 9 | D | Primary on-call — первая линия реагирования, triage, эскалация |
+| 10 | D | Capacity учитывает реальное доступное время: минус PTO, meetings, ops work |
+| 11 | B | Start/Stop/Continue — простой формат для выявления улучшений |
 | 12 | B | 5 Whys — техника поиска root cause путём последовательных "почему?" |
 | 13 | D | Детальные технические дискуссии выходят за рамки 15-минутного standup |
 | 14 | D | VSM визуализирует весь поток для выявления waste и узких мест |
 | 15 | D | Incremental — частые маленькие релизы, Big Bang — редкие большие |
 | 16 | D | CAB нужен для изменений с высоким риском или широким влиянием |
 | 17 | A | Handoff обеспечивает continuity знаний между сменами |
-| 18 | C | Efficiency = PT / (PT + WT) = 8 / (8 + 32) = 8/40 = 20% |
-| 19 | D | Release notes информируют о всех изменениях и как мигрировать |
-| 20 | B | OKR Planning — ежеквартально, остальные — ежедневно/еженедельно |
+| 18 | B | Efficiency = PT / (PT + WT) = 8 / (8 + 32) = 8/40 = 20% |
+| 19 | A | Release notes информируют о всех изменениях и как мигрировать |
+| 20 | C | OKR Planning — ежеквартально, остальные — ежедневно/еженедельно |
 
 ---
 

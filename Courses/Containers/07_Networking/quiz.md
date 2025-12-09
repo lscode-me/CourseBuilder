@@ -10,15 +10,17 @@
 
 
 
+
+
 Какой сетевой режим используется Docker по умолчанию?
 
-A) none
+A) host
 
-B) host
+B) bridge
 
 C) overlay
 
-D) bridge
+D) none
 
 ---
 
@@ -28,13 +30,15 @@ D) bridge
 
 
 
+
+
 Что такое veth pair?
 
-A) Виртуальный роутер
+A) DNS сервер
 
-B) DNS сервер
+B) Тип шифрования
 
-C) Тип шифрования
+C) Виртуальный роутер
 
 D) Виртуальный Ethernet кабель между namespaces
 
@@ -46,15 +50,17 @@ D) Виртуальный Ethernet кабель между namespaces
 
 
 
+
+
 Какое преимущество даёт режим host network?
 
-A) Автоматический DNS
+A) Overlay networking
 
-B) Overlay networking
+B) Автоматический DNS
 
-C) Лучшая изоляция
+C) Максимальная производительность без NAT
 
-D) Максимальная производительность без NAT
+D) Лучшая изоляция
 
 ---
 
@@ -64,15 +70,17 @@ D) Максимальная производительность без NAT
 
 
 
+
+
 Какая команда опубликует порт 80 контейнера на порт 8080 хоста?
 
-A) docker run -p 8080:80 nginx
+A) docker run -p 80:8080 nginx
 
 B) docker run -P 8080:80 nginx
 
-C) docker run -p 80:8080 nginx
+C) docker run --port 8080=80 nginx
 
-D) docker run --port 8080=80 nginx
+D) docker run -p 8080:80 nginx
 
 ---
 
@@ -82,15 +90,17 @@ D) docker run --port 8080=80 nginx
 
 
 
+
+
 Какое преимущество user-defined networks перед default bridge?
 
-A) Меньше потребление памяти
+A) Быстрее работает
 
 B) Встроенный DNS для discovery по имени контейнера
 
-C) Быстрее работает
+C) Поддержка IPv6
 
-D) Поддержка IPv6
+D) Меньше потребление памяти
 
 ---
 
@@ -100,19 +110,23 @@ D) Поддержка IPv6
 
 
 
+
+
 Что такое CNI?
 
-A) Container Name Index
+A) Container Node Integration
 
-B) Container Node Integration
+B) Container Network Interface
 
 C) Container Network Isolation
 
-D) Container Network Interface
+D) Container Name Index
 
 ---
 
 ## Question 7: Overlay networks
+
+
 
 
 
@@ -136,19 +150,23 @@ D) Ускорение локальной сети
 
 
 
+
+
 На каком порту работает VXLAN по умолчанию?
 
-A) 2375
+A) 8080
 
-B) 4789
+B) 2375
 
 C) 443
 
-D) 8080
+D) 4789
 
 ---
 
 ## Question 9: Internal network
+
+
 
 
 
@@ -172,6 +190,8 @@ D) Автоматическое масштабирование
 
 
 
+
+
 Что такое docker0?
 
 A) Первый контейнер
@@ -185,6 +205,8 @@ D) Конфигурационный файл
 ---
 
 ## Question 11: Embedded DNS
+
+
 
 
 
@@ -208,6 +230,8 @@ D) 172.17.0.1
 
 
 
+
+
 Для чего используются network aliases?
 
 A) Мониторинг
@@ -221,6 +245,8 @@ D) Шифрование имён
 ---
 
 ## Question 13: Macvlan
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Когда контейнеру нужен IP из физической се�
 
 
 
+
+
 Как Docker использует iptables?
 
 A) Для аутентификации
@@ -262,15 +290,17 @@ D) Для NAT и port forwarding
 
 
 
+
+
 Как запустить контейнер в network namespace другого контейнера?
 
-A) --network container:other
+A) --net-alias other
 
-B) --network=other
+B) --network shared:other
 
-C) --network shared:other
+C) --network=other
 
-D) --net-alias other
+D) --network container:other
 
 ---
 
@@ -280,19 +310,23 @@ D) --net-alias other
 
 
 
+
+
 Какой CNI plugin использует eBPF для высокой производительности?
 
-A) Calico
+A) Flannel
 
-B) Flannel
+B) Cilium
 
-C) Cilium
+C) Calico
 
 D) Weave
 
 ---
 
 ## Question 17: Network isolation
+
+
 
 
 
@@ -316,15 +350,17 @@ D) Только по IP
 
 
 
+
+
 Какой инструмент лучше всего подходит для диагностики сети контейнера?
 
-A) docker stats
+A) docker logs
 
-B) netshoot контейнер
+B) docker info
 
-C) docker info
+C) netshoot контейнер
 
-D) docker logs
+D) docker stats
 
 ---
 
@@ -334,19 +370,23 @@ D) docker logs
 
 
 
+
+
 Какой параметр задаёт подсеть при создании Docker network?
 
-A) --subnet
+A) --cidr
 
-B) --cidr
+B) --network
 
-C) --network
+C) --subnet
 
 D) --ip-range
 
 ---
 
 ## Question 20: Multi-network
+
+
 
 
 
@@ -370,25 +410,25 @@ D) Нет
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Bridge — дефолтный сетевой режим Docker |
+| 1 | B | Bridge — дефолтный сетевой режим Docker |
 | 2 | D | veth pair — виртуальный Ethernet кабель, связывающий namespaces |
-| 3 | D | Host network даёт максимальную производительность без NAT overhead |
-| 4 | A | Формат: -p HOST:CONTAINER, поэтому -p 8080:80 |
+| 3 | C | Host network даёт максимальную производительность без NAT overhead |
+| 4 | D | Формат: -p HOST:CONTAINER, поэтому -p 8080:80 |
 | 5 | B | User-defined networks имеют встроенный DNS для discovery |
-| 6 | D | CNI — Container Network Interface, стандарт для сетевых плагинов |
+| 6 | B | CNI — Container Network Interface, стандарт для сетевых плагинов |
 | 7 | B | Overlay networks позволяют контейнерам на разных хостах общаться |
-| 8 | B | VXLAN использует UDP порт 4789 |
+| 8 | D | VXLAN использует UDP порт 4789 |
 | 9 | C | Internal network не имеет доступа к внешним сетям |
 | 10 | B | docker0 — виртуальный bridge для default bridge network |
 | 11 | B | Встроенный DNS Docker работает на 127.0.0.11 |
 | 12 | B | Network aliases позволяют одному контейнеру иметь несколько DNS имён |
 | 13 | D | Macvlan даёт контейнеру IP из физической сети |
 | 14 | D | Docker использует iptables для NAT и port forwarding |
-| 15 | A | --network container:name делит network namespace |
-| 16 | C | Cilium использует eBPF для networking и security |
+| 15 | D | --network container:name делит network namespace |
+| 16 | B | Cilium использует eBPF для networking и security |
 | 17 | C | Контейнеры в разных сетях изолированы, нужна общая сеть |
-| 18 | B | netshoot содержит все инструменты для сетевой диагностики |
-| 19 | A | --subnet задаёт подсеть при создании сети |
+| 18 | C | netshoot содержит все инструменты для сетевой диагностики |
+| 19 | C | --subnet задаёт подсеть при создании сети |
 | 20 | A | docker network connect подключает к дополнительным сетям |
 
 ---

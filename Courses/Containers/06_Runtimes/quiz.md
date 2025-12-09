@@ -10,15 +10,17 @@
 
 
 
+
+
 Какой уровень занимает containerd в иерархии container runtimes?
 
-A) Kernel module
+A) Container engine
 
-B) High-level runtime
+B) Kernel module
 
 C) Low-level runtime
 
-D) Container engine
+D) High-level runtime
 
 ---
 
@@ -28,19 +30,23 @@ D) Container engine
 
 
 
+
+
 Какие компании используют containerd в своих продуктах?
 
-A) Docker и Kubernetes
+A) Только Kubernetes
 
 B) Только Docker
 
-C) Только Red Hat
+C) Docker и Kubernetes
 
-D) Только Kubernetes
+D) Только Red Hat
 
 ---
 
 ## Question 3: Podman архитектура
+
+
 
 
 
@@ -64,19 +70,23 @@ D) Podman не использует runc
 
 
 
+
+
 Для чего специально разработан CRI-O?
 
-A) Для Kubernetes
+A) Для CI/CD систем
 
 B) Для desktop контейнеров
 
-C) Для IoT устройств
+C) Для Kubernetes
 
-D) Для CI/CD систем
+D) Для IoT устройств
 
 ---
 
 ## Question 5: ctr utility
+
+
 
 
 
@@ -100,6 +110,8 @@ D) CLI для containerd
 
 
 
+
+
 Какое преимущество nerdctl над ctr?
 
 A) Docker-совместимый синтаксис
@@ -118,15 +130,17 @@ D) Быстрее работает
 
 
 
+
+
 Какой инструмент лучше всего подходит для rootless контейнеров из коробки?
 
 A) CRI-O
 
-B) containerd
+B) Docker
 
-C) Docker
+C) Podman
 
-D) Podman
+D) containerd
 
 ---
 
@@ -136,19 +150,23 @@ D) Podman
 
 
 
+
+
 Что такое pod в контексте Podman?
 
-A) Тип сетевого драйвера
+A) Файл конфигурации
 
-B) Файл конфигурации
+B) Группа контейнеров с общим network namespace
 
-C) Группа контейнеров с общим network namespace
+C) Тип сетевого драйвера
 
 D) Формат образов
 
 ---
 
 ## Question 9: Buildah
+
+
 
 
 
@@ -172,15 +190,17 @@ D) Создание OCI-совместимых образов
 
 
 
+
+
 Что такое namespaces в контексте containerd (не Linux namespaces)?
 
-A) Логическое разделение контейнеров и образов
+A) Сетевая изоляция
 
 B) Пользовательская изоляция
 
-C) Изоляция ресурсов контейнера
+C) Логическое разделение контейнеров и образов
 
-D) Сетевая изоляция
+D) Изоляция ресурсов контейнера
 
 ---
 
@@ -190,15 +210,17 @@ D) Сетевая изоляция
 
 
 
+
+
 Какова роль conmon в Podman/CRI-O?
 
-A) Сборка образов
+A) Мониторинг контейнера (держит stdin/stdout)
 
-B) Мониторинг контейнера (держит stdin/stdout)
+B) Управление конфигурацией
 
 C) Мониторинг сети
 
-D) Управление конфигурацией
+D) Сборка образов
 
 ---
 
@@ -208,19 +230,23 @@ D) Управление конфигурацией
 
 
 
+
+
 Зачем нужен containerd-shim?
 
-A) Для шифрования данных
+A) Позволяет containerd перезапускаться без остановки контейнеров
 
 B) Для работы с сетью
 
-C) Для сборки образов
+C) Для шифрования данных
 
-D) Позволяет containerd перезапускаться без остановки контейнеров
+D) Для сборки образов
 
 ---
 
 ## Question 13: CRI интерфейс
+
+
 
 
 
@@ -244,13 +270,15 @@ D) Container Restart Implementation
 
 
 
+
+
 Может ли Docker работать без containerd?
 
-A) Нет, containerd обязателен в современных версиях
+A) Только в rootless режиме
 
-B) Только на Windows
+B) Нет, containerd обязателен в современных версиях
 
-C) Только в rootless режиме
+C) Только на Windows
 
 D) Да, containerd опционален
 
@@ -262,13 +290,15 @@ D) Да, containerd опционален
 
 
 
+
+
 Какие runtime рекомендуются для production Kubernetes?
 
-A) runc и crun
+A) Buildah и skopeo
 
-B) Buildah и skopeo
+B) containerd и CRI-O
 
-C) containerd и CRI-O
+C) runc и crun
 
 D) Docker и Podman
 
@@ -280,19 +310,23 @@ D) Docker и Podman
 
 
 
+
+
 Как сгенерировать systemd unit для Podman контейнера?
 
-A) podman systemd generate
+A) systemctl create podman
 
-B) podman generate systemd
+B) podman-systemd create
 
-C) podman-systemd create
+C) podman generate systemd
 
-D) systemctl create podman
+D) podman systemd generate
 
 ---
 
 ## Question 17: containerd конфигурация
+
+
 
 
 
@@ -316,15 +350,17 @@ D) /etc/cri-o/config.yaml
 
 
 
+
+
 Какое преимущество Buildah над docker build?
 
-A) Лучшее кеширование
+A) Поддержка Windows
 
-B) Возможность скриптовой сборки без Dockerfile
+B) Быстрее сборка
 
-C) Поддержка Windows
+C) Лучшее кеширование
 
-D) Быстрее сборка
+D) Возможность скриптовой сборки без Dockerfile
 
 ---
 
@@ -334,19 +370,23 @@ D) Быстрее сборка
 
 
 
+
+
 Для чего используется crictl?
 
-A) Создание образов
+A) Мониторинг кластера
 
-B) Управление сетью
+B) CLI для CRI-совместимых runtime
 
-C) Мониторинг кластера
+C) Создание образов
 
-D) CLI для CRI-совместимых runtime
+D) Управление сетью
 
 ---
 
 ## Question 20: Миграция Docker → Podman
+
+
 
 
 
@@ -370,25 +410,25 @@ D) alias docker=podman и совместимый CLI
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | containerd — high-level runtime, управляет lifecycle, образами, использует runc |
-| 2 | A | containerd используется и Docker (под капотом), и Kubernetes напрямую |
+| 1 | D | containerd — high-level runtime, управляет lifecycle, образами, использует runc |
+| 2 | C | containerd используется и Docker (под капотом), и Kubernetes напрямую |
 | 3 | B | Podman не требует daemon, работает по модели fork-exec |
-| 4 | A | CRI-O создан специально для Kubernetes, реализует CRI |
+| 4 | C | CRI-O создан специально для Kubernetes, реализует CRI |
 | 5 | D | ctr — низкоуровневый CLI для containerd |
 | 6 | A | nerdctl предоставляет Docker-совместимый синтаксис для containerd |
-| 7 | D | Podman изначально спроектирован для rootless режима |
-| 8 | C | Pod в Podman — группа контейнеров с общим network namespace (как в K8s) |
+| 7 | C | Podman изначально спроектирован для rootless режима |
+| 8 | B | Pod в Podman — группа контейнеров с общим network namespace (как в K8s) |
 | 9 | D | Buildah предназначен для создания OCI-совместимых образов |
-| 10 | A | Namespaces в containerd — логическое разделение (k8s.io, moby, default) |
-| 11 | B | conmon — процесс-монитор, держит stdin/stdout контейнера |
-| 12 | D | shim позволяет перезапускать containerd без влияния на работающие контейнеры |
+| 10 | C | Namespaces в containerd — логическое разделение (k8s.io, moby, default) |
+| 11 | A | conmon — процесс-монитор, держит stdin/stdout контейнера |
+| 12 | A | shim позволяет перезапускать containerd без влияния на работающие контейнеры |
 | 13 | A | CRI — Container Runtime Interface, протокол между kubelet и runtime |
-| 14 | A | Современный Docker использует containerd как обязательный компонент |
-| 15 | C | Для production K8s рекомендуются containerd и CRI-O |
-| 16 | B | podman generate systemd создаёт unit-файл для контейнера |
+| 14 | B | Современный Docker использует containerd как обязательный компонент |
+| 15 | B | Для production K8s рекомендуются containerd и CRI-O |
+| 16 | C | podman generate systemd создаёт unit-файл для контейнера |
 | 17 | C | Конфигурация containerd в /etc/containerd/config.toml |
-| 18 | B | Buildah позволяет программную сборку через shell-скрипты |
-| 19 | D | crictl — CLI для работы с любым CRI-совместимым runtime |
+| 18 | D | Buildah позволяет программную сборку через shell-скрипты |
+| 19 | B | crictl — CLI для работы с любым CRI-совместимым runtime |
 | 20 | D | Podman имеет Docker-совместимый CLI, достаточно alias |
 
 ---

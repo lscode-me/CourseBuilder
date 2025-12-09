@@ -10,6 +10,8 @@
 
 
 
+
+
 Какой тип метрики подходит для подсчёта HTTP запросов?
 
 A) Gauge
@@ -28,13 +30,15 @@ D) Histogram
 
 
 
+
+
 Чем Counter отличается от Gauge?
 
-A) Counter только возрастает, Gauge может расти и уменьшаться
+A) Gauge быстрее
 
-B) Это одно и то же
+B) Counter только возрастает, Gauge может расти и уменьшаться
 
-C) Gauge быстрее
+C) Это одно и то же
 
 D) Counter для текстовых значений
 
@@ -46,15 +50,17 @@ D) Counter для текстовых значений
 
 
 
+
+
 Как Prometheus собирает метрики?
 
-A) Prometheus сам забирает метрики с /metrics endpoint
+A) Через message queue
 
 B) Через базу данных
 
-C) Приложения отправляют метрики в Prometheus
+C) Prometheus сам забирает метрики с /metrics endpoint
 
-D) Через message queue
+D) Приложения отправляют метрики в Prometheus
 
 ---
 
@@ -64,19 +70,23 @@ D) Через message queue
 
 
 
+
+
 Какой PromQL запрос вычисляет rate (скорость изменения counter)?
 
-A) http_requests_total / 60
+A) sum(http_requests_total)
 
-B) sum(http_requests_total)
+B) http_requests_total / 60
 
-C) rate(http_requests_total[5m])
+C) avg(http_requests_total)
 
-D) avg(http_requests_total)
+D) rate(http_requests_total[5m])
 
 ---
 
 ## Question 5: USE Method
+
+
 
 
 
@@ -100,6 +110,8 @@ D) Для трейсинга
 
 
 
+
+
 Какие метрики включает RED метод?
 
 A) Resources, Endpoints, Dependencies
@@ -118,15 +130,17 @@ D) Requests, Events, Data
 
 
 
+
+
 Для чего используется histogram в Prometheus?
 
-A) Для подсчёта событий
+A) Для логирования
 
-B) Для хранения текста
+B) Для подсчёта событий
 
 C) Для измерения распределения значений (latency, size)
 
-D) Для логирования
+D) Для хранения текста
 
 ---
 
@@ -136,15 +150,17 @@ D) Для логирования
 
 
 
+
+
 Как вычислить P99 latency в PromQL?
 
-A) histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))
+A) max(http_request_duration_seconds)
 
 B) avg(http_request_duration_seconds)
 
-C) max(http_request_duration_seconds)
+C) sum(http_request_duration_seconds)
 
-D) sum(http_request_duration_seconds)
+D) histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))
 
 ---
 
@@ -154,19 +170,23 @@ D) sum(http_request_duration_seconds)
 
 
 
+
+
 Какие labels плохо использовать (высокая кардинальность)?
 
-A) status="200"
+A) service="api"
 
-B) method="GET"
+B) status="200"
 
 C) user_id="unique_per_user"
 
-D) service="api"
+D) method="GET"
 
 ---
 
 ## Question 10: Alertmanager
+
+
 
 
 
@@ -190,6 +210,8 @@ D) Маршрутизирует и отправляет уведомления �
 
 
 
+
+
 Какой сигнал НЕ входит в Four Golden Signals от Google SRE?
 
 A) Traffic
@@ -203,6 +225,8 @@ D) Memory
 ---
 
 ## Question 12: Alert Best Practices
+
+
 
 
 
@@ -226,15 +250,17 @@ D) Только на критические ошибки
 
 
 
+
+
 Для чего используется Grafana?
 
-A) Для деплоя
+A) Для визуализации метрик и создания дашбордов
 
-B) Для визуализации метрик и создания дашбордов
+B) Для деплоя
 
-C) Для сбора метрик
+C) Для логирования
 
-D) Для логирования
+D) Для сбора метрик
 
 ---
 
@@ -244,19 +270,23 @@ D) Для логирования
 
 
 
+
+
 Что такое scrape_interval в Prometheus?
 
-A) Время хранения данных
+A) Задержка алертов
 
-B) Задержка алертов
+B) Время хранения данных
 
-C) Время между запусками Prometheus
+C) Интервал между сборами метрик с targets
 
-D) Интервал между сборами метрик с targets
+D) Время между запусками Prometheus
 
 ---
 
 ## Question 15: For Clause
+
+
 
 
 
@@ -280,6 +310,8 @@ D) Для ускорения алертов
 
 
 
+
+
 Что мониторит Node Exporter?
 
 A) Database queries
@@ -298,15 +330,17 @@ D) Kubernetes pods
 
 
 
+
+
 Как измерить CPU utilization в процентах через node_exporter?
 
-A) node_cpu_total
+A) cpu_usage
 
-B) 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+B) node_cpu_percent
 
-C) cpu_usage
+C) node_cpu_total
 
-D) node_cpu_percent
+D) 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
 
 ---
 
@@ -316,19 +350,23 @@ D) node_cpu_percent
 
 
 
+
+
 Что делают inhibit_rules в Alertmanager?
 
-A) Удаляют старые алерты
+A) Ускоряют алерты
 
 B) Подавляют менее важные алерты при срабатывании более важных
 
-C) Группируют алерты
+C) Удаляют старые алерты
 
-D) Ускоряют алерты
+D) Группируют алерты
 
 ---
 
 ## Question 19: Service Discovery
+
+
 
 
 
@@ -352,15 +390,17 @@ D) Ручная настройка static_configs
 
 
 
+
+
 Какое имя метрики соответствует best practices?
 
-A) http-requests-count
+A) requests
 
-B) http_requests_total
+B) HTTPRequests
 
-C) HTTPRequests
+C) http_requests_total
 
-D) requests
+D) http-requests-count
 
 ---
 
@@ -371,25 +411,25 @@ D) requests
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | C | Counter — для подсчёта событий (монотонно возрастает) |
-| 2 | A | Counter только растёт, Gauge может расти и уменьшаться |
-| 3 | A | Prometheus pull model — сам забирает метрики с targets |
-| 4 | C | rate() вычисляет скорость изменения counter за период |
+| 2 | B | Counter только растёт, Gauge может расти и уменьшаться |
+| 3 | C | Prometheus pull model — сам забирает метрики с targets |
+| 4 | D | rate() вычисляет скорость изменения counter за период |
 | 5 | A | USE (Utilization, Saturation, Errors) для ресурсов |
 | 6 | C | RED: Rate, Errors, Duration — для сервисов |
 | 7 | C | Histogram для распределений (latency, размеры) |
-| 8 | A | histogram_quantile(0.99, ...) для P99 |
+| 8 | D | histogram_quantile(0.99, ...) для P99 |
 | 9 | C | user_id — высокая кардинальность, убьёт Prometheus |
 | 10 | D | Alertmanager маршрутизирует и отправляет notifications |
 | 11 | D | Four Golden Signals: Latency, Traffic, Errors, Saturation |
 | 12 | C | Алерты на симптомы, причины ищем при debugging |
-| 13 | B | Grafana для визуализации и дашбордов |
-| 14 | D | scrape_interval — как часто собирать метрики |
+| 13 | A | Grafana для визуализации и дашбордов |
+| 14 | C | scrape_interval — как часто собирать метрики |
 | 15 | C | 'for' требует, чтобы условие было истинно N времени |
 | 16 | C | Node Exporter — host-level метрики |
-| 17 | B | 100 - idle процент = utilization |
+| 17 | D | 100 - idle процент = utilization |
 | 18 | B | inhibit_rules подавляют менее важные алерты |
 | 19 | C | kubernetes_sd_configs для service discovery в K8s |
-| 20 | B | http_requests_total — snake_case с _total для counters |
+| 20 | C | http_requests_total — snake_case с _total для counters |
 
 ---
 

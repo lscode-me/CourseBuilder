@@ -10,19 +10,23 @@
 
 
 
+
+
 Что означает blameless postmortem?
 
-A) Никто не несёт ответственности
+A) Фокус на системных проблемах, не на обвинении людей
 
 B) Не проводить postmortem вообще
 
-C) Не записывать имена участников
+C) Никто не несёт ответственности
 
-D) Фокус на системных проблемах, не на обвинении людей
+D) Не записывать имена участников
 
 ---
 
 ## Question 2: Incident Commander
+
+
 
 
 
@@ -46,15 +50,17 @@ D) Документирование timeline
 
 
 
+
+
 Что характеризует SEV1 инцидент?
 
-A) Non-critical feature broken
+A) Cosmetic issues
 
 B) Сервис недоступен, все пользователи затронуты
 
-C) Минимальное влияние
+C) Non-critical feature broken
 
-D) Cosmetic issues
+D) Минимальное влияние
 
 ---
 
@@ -64,15 +70,17 @@ D) Cosmetic issues
 
 
 
+
+
 Что измеряет MTTR?
 
-A) Время от обнаружения до resolution
+A) Время до acknowledge
 
 B) Время до обнаружения
 
-C) Количество инцидентов
+C) Время от обнаружения до resolution
 
-D) Время до acknowledge
+D) Количество инцидентов
 
 ---
 
@@ -82,19 +90,23 @@ D) Время до acknowledge
 
 
 
+
+
 Для чего используется техника 5 Whys?
 
-A) Для поиска root cause проблемы
+A) Для планирования capacity
 
-B) Для планирования capacity
+B) Для обвинения виновных
 
-C) Для обвинения виновных
+C) Для поиска root cause проблемы
 
 D) Для подсчёта инцидентов
 
 ---
 
 ## Question 6: On-Call Handoff
+
+
 
 
 
@@ -118,15 +130,17 @@ D) Код последнего релиза
 
 
 
+
+
 Какие action items хорошие?
 
-A) "Улучшить систему"
+A) Конкретные, с owner, priority и deadline
 
-B) Без deadline
+B) Без owner
 
-C) Без owner
+C) Без deadline
 
-D) Конкретные, с owner, priority и deadline
+D) "Улучшить систему"
 
 ---
 
@@ -136,15 +150,17 @@ D) Конкретные, с owner, priority и deadline
 
 
 
+
+
 Когда проводить postmortem?
 
 A) Никогда
 
-B) Только для SEV4
+B) В течение нескольких дней после resolution
 
-C) Через месяц после инцидента
+C) Только для SEV4
 
-D) В течение нескольких дней после resolution
+D) Через месяц после инцидента
 
 ---
 
@@ -154,19 +170,23 @@ D) В течение нескольких дней после resolution
 
 
 
+
+
 Чем mitigation отличается от resolution?
 
-A) Mitigation — временное уменьшение impact, resolution — устранение причины
+A) Resolution проще
 
-B) Mitigation дольше
+B) Mitigation — временное уменьшение impact, resolution — устранение причины
 
-C) Resolution проще
+C) Mitigation дольше
 
 D) Это одно и то же
 
 ---
 
 ## Question 10: Good On-Call Alert
+
+
 
 
 
@@ -189,6 +209,8 @@ D) Максимальная чувствительность
 
 
 
+
+
 Как улучшить incident detection?
 
 A) Меньше мониторинга
@@ -206,19 +228,23 @@ D) Ожидать жалоб пользователей
 
 
 
+
+
 Какой канал лучше для incident communication?
 
-A) Email
+A) Бумажные записки
 
 B) Dedicated war room (chat channel) с timeline
 
-C) Личные сообщения
+C) Email
 
-D) Бумажные записки
+D) Личные сообщения
 
 ---
 
 ## Question 13: Escalation
+
+
 
 
 
@@ -240,19 +266,23 @@ D) Только для SEV1
 
 
 
+
+
 Зачем вести timeline инцидента?
 
-A) Для красоты
+A) Для postmortem analysis и будущих улучшений
 
-B) Для postmortem analysis и будущих улучшений
+B) Не нужен
 
 C) Для отчётности HR
 
-D) Не нужен
+D) Для красоты
 
 ---
 
 ## Question 15: Testing Runbooks
+
+
 
 
 
@@ -274,6 +304,8 @@ D) Не важно
 
 
 
+
+
 Какие правила в incident war room?
 
 A) Говорить обо всём
@@ -287,6 +319,8 @@ D) Обсуждать другие проекты
 ---
 
 ## Question 17: Page Storm
+
+
 
 
 
@@ -308,13 +342,15 @@ D) Тип сервера
 
 
 
+
+
 Что такое RCA?
 
-A) Remote Computer Access
+A) Root Cause Analysis — анализ первопричины
 
-B) Root Cause Analysis — анализ первопричины
+B) Rapid Code Adjustment
 
-C) Rapid Code Adjustment
+C) Remote Computer Access
 
 D) Regular Cleanup Activity
 
@@ -325,15 +361,17 @@ D) Regular Cleanup Activity
 
 
 
+
+
 Когда сообщать клиентам об инциденте?
 
-A) Только по запросу
+A) После полного resolution
 
-B) После полного resolution
+B) Только по запросу
 
-C) Никогда
+C) При значительном impact, согласно communication plan
 
-D) При значительном impact, согласно communication plan
+D) Никогда
 
 ---
 
@@ -342,15 +380,17 @@ D) При значительном impact, согласно communication plan
 
 
 
+
+
 Как команда учится на инцидентах?
 
-A) Увольнения
+A) Штрафы
 
-B) Штрафы
+B) Увольнения
 
-C) Не учится
+C) Blameless postmortems, action items, sharing learnings
 
-D) Blameless postmortems, action items, sharing learnings
+D) Не учится
 
 ---
 
@@ -360,26 +400,26 @@ D) Blameless postmortems, action items, sharing learnings
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Blameless = фокус на системах, не людях |
+| 1 | A | Blameless = фокус на системах, не людях |
 | 2 | B | IC координирует response |
 | 3 | B | SEV1 = critical, сервис недоступен |
-| 4 | A | MTTR = Mean Time to Resolve |
-| 5 | A | 5 Whys для поиска root cause |
+| 4 | C | MTTR = Mean Time to Resolve |
+| 5 | C | 5 Whys для поиска root cause |
 | 6 | B | Handoff содержит context для incoming |
-| 7 | D | Action items конкретные, с owner и deadline |
-| 8 | D | Postmortem в течение нескольких дней |
-| 9 | A | Mitigation временно, resolution устраняет причину |
+| 7 | A | Action items конкретные, с owner и deadline |
+| 8 | B | Postmortem в течение нескольких дней |
+| 9 | B | Mitigation временно, resolution устраняет причину |
 | 10 | A | Хороший алерт actionable с документацией |
 | 11 | C | Качественные алерты на SLO breach, anomaly detection |
 | 12 | B | War room (chat channel) с timeline для coordination |
 | 13 | B | Escalation когда не resolve в рамках компетенции/времени |
-| 14 | B | Timeline нужен для postmortem и улучшений |
+| 14 | A | Timeline нужен для postmortem и улучшений |
 | 15 | C | Тестирование runbooks гарантирует их работоспособность |
 | 16 | B | War room: только релевантная информация, координация через IC |
 | 17 | B | Page storm — множество алертов от одной проблемы |
-| 18 | B | RCA — Root Cause Analysis |
-| 19 | D | Сообщать клиентам при значительном impact |
-| 20 | D | Blameless postmortems, action items, sharing learnings |
+| 18 | A | RCA — Root Cause Analysis |
+| 19 | C | Сообщать клиентам при значительном impact |
+| 20 | C | Blameless postmortems, action items, sharing learnings |
 
 ---
 

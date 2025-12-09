@@ -10,19 +10,23 @@
 
 
 
+
+
 Чем Continuous Delivery отличается от Continuous Deployment?
 
-A) CD не требует автоматических тестов
+A) В CD финальный деплой в production ручной, в Continuous Deployment — автоматический
 
-B) В CD финальный деплой в production ручной, в Continuous Deployment — автоматический
+B) CD не требует автоматических тестов
 
-C) Это одно и то же
+C) Continuous Deployment проще в реализации
 
-D) Continuous Deployment проще в реализации
+D) Это одно и то же
 
 ---
 
 ## Question 2: Blue-Green Deployment
+
+
 
 
 
@@ -46,13 +50,15 @@ D) Не требует load balancer
 
 
 
+
+
 Что характеризует Canary deployment?
 
-A) Две идентичные среды
+A) Весь трафик сразу идёт на новую версию
 
-B) Постепенное направление трафика на новую версию (10% → 25% → 50% → 100%)
+B) Две идентичные среды
 
-C) Весь трафик сразу идёт на новую версию
+C) Постепенное направление трафика на новую версию (10% → 25% → 50% → 100%)
 
 D) Полный downtime при деплое
 
@@ -64,19 +70,23 @@ D) Полный downtime при деплое
 
 
 
+
+
 Что происходит при Rolling Update в Kubernetes?
 
-A) Pods постепенно заменяются новыми версиями
+A) Требуется ручной restart каждого pod
 
-B) Требуется ручной restart каждого pod
+B) Pods постепенно заменяются новыми версиями
 
-C) Создаётся копия всего cluster
+C) Все pods останавливаются, затем запускаются новые
 
-D) Все pods останавливаются, затем запускаются новые
+D) Создаётся копия всего cluster
 
 ---
 
 ## Question 5: Feature Flags
+
+
 
 
 
@@ -100,19 +110,23 @@ D) Для включения/выключения функционала без 
 
 
 
+
+
 Какой тип feature flag используется для A/B тестирования?
 
 A) Permission toggle
 
-B) Release toggle
+B) Experiment toggle
 
-C) Ops toggle
+C) Release toggle
 
-D) Experiment toggle
+D) Ops toggle
 
 ---
 
 ## Question 7: Database Migrations
+
+
 
 
 
@@ -136,15 +150,17 @@ D) Удалить таблицу и создать заново
 
 
 
+
+
 Когда следует выполнять rollback?
 
-A) Никогда — всегда делать forward fix
+A) После каждого деплоя
 
 B) Только по запросу менеджмента
 
-C) При error rate > threshold, критических сбоях, data corruption
+C) Никогда — всегда делать forward fix
 
-D) После каждого деплоя
+D) При error rate > threshold, критических сбоях, data corruption
 
 ---
 
@@ -154,15 +170,17 @@ D) После каждого деплоя
 
 
 
+
+
 Что означает принцип Environment Parity?
 
-A) Environments должны быть в разных регионах
+A) Dev, staging и production environments должны быть максимально похожи
 
-B) Dev, staging и production environments должны быть максимально похожи
+B) Environments должны быть в разных регионах
 
-C) Использовать только один environment
+C) Все environments должны иметь одинаковые пароли
 
-D) Все environments должны иметь одинаковые пароли
+D) Использовать только один environment
 
 ---
 
@@ -172,15 +190,17 @@ D) Все environments должны иметь одинаковые пароли
 
 
 
+
+
 Когда выполняются smoke tests?
 
-A) Перед написанием кода
+A) Только в development
 
-B) Только в development
+B) Перед написанием кода
 
-C) Раз в месяц
+C) Сразу после деплоя для проверки базовой работоспособности
 
-D) Сразу после деплоя для проверки базовой работоспособности
+D) Раз в месяц
 
 ---
 
@@ -190,19 +210,23 @@ D) Сразу после деплоя для проверки базовой р�
 
 
 
+
+
 Какую стратегию выбрать, если нужен быстрый rollback и допустимы двойные ресурсы?
 
-A) Canary
+A) Recreate
 
 B) Rolling Update
 
-C) Recreate
+C) Blue-Green
 
-D) Blue-Green
+D) Canary
 
 ---
 
 ## Question 12: Recreate Strategy
+
+
 
 
 
@@ -226,6 +250,8 @@ D) Для production с высоким SLA
 
 
 
+
+
 Что означает принцип "Build Once, Deploy Many"?
 
 A) Один artifact используется для всех environments (dev, staging, prod)
@@ -244,19 +270,23 @@ D) Собирать отдельный artifact для каждого environmen
 
 
 
+
+
 Как правильно управлять конфигурацией для разных environments?
 
-A) Разделять config от кода, использовать environment variables
+A) Хранить в коде в зашифрованном виде
 
-B) Хардкодить в приложении
+B) Разделять config от кода, использовать environment variables
 
 C) Создавать отдельную версию кода для каждого environment
 
-D) Хранить в коде в зашифрованном виде
+D) Хардкодить в приложении
 
 ---
 
 ## Question 15: Readiness Probe
+
+
 
 
 
@@ -280,19 +310,23 @@ D) Для проверки, что pod жив
 
 
 
+
+
 На основе чего Canary deployment принимает решение о продолжении или rollback?
 
 A) Времени суток
 
-B) Метрик (error rate, latency) новой версии
+B) Размера Docker image
 
-C) Размера Docker image
+C) Количества пользователей
 
-D) Количества пользователей
+D) Метрик (error rate, latency) новой версии
 
 ---
 
 ## Question 17: Feature Flag Best Practices
+
+
 
 
 
@@ -316,6 +350,8 @@ D) Удалять после полного rollout и стабилизации
 
 
 
+
+
 Что такое Progressive Delivery?
 
 A) Ручной деплой
@@ -334,15 +370,17 @@ D) Деплой только по выходным
 
 
 
+
+
 В чём разница между livenessProbe и readinessProbe?
 
-A) livenessProbe перезапускает pod при сбое, readinessProbe убирает из балансировки
+A) Оба перезапускают pod
 
 B) Оба только логируют
 
-C) Оба перезапускают pod
+C) Это одно и то же
 
-D) Это одно и то же
+D) livenessProbe перезапускает pod при сбое, readinessProbe убирает из балансировки
 
 ---
 
@@ -352,15 +390,17 @@ D) Это одно и то же
 
 
 
+
+
 Что проверяется сразу после деплоя (0-5 минут)?
 
-A) Количество пользователей за месяц
+A) Финансовые показатели
 
-B) Error rate, response time, health endpoints
+B) Только логи
 
-C) Только логи
+C) Error rate, response time, health endpoints
 
-D) Финансовые показатели
+D) Количество пользователей за месяц
 
 ---
 
@@ -370,26 +410,26 @@ D) Финансовые показатели
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | CD = всегда готовы к релизу (ручной trigger), Continuous Deployment = автоматический релиз |
+| 1 | A | CD = всегда готовы к релизу (ручной trigger), Continuous Deployment = автоматический релиз |
 | 2 | A | Blue-Green позволяет мгновенно переключить трафик обратно на blue при проблемах |
-| 3 | B | Canary постепенно увеличивает трафик на новую версию, проверяя метрики |
-| 4 | A | Rolling update постепенно заменяет pods, обеспечивая zero downtime |
+| 3 | C | Canary постепенно увеличивает трафик на новую версию, проверяя метрики |
+| 4 | B | Rolling update постепенно заменяет pods, обеспечивая zero downtime |
 | 5 | D | Feature flags позволяют включать/выключать функции без нового деплоя |
-| 6 | D | Experiment toggle используется для A/B тестов с разными вариантами |
+| 6 | B | Experiment toggle используется для A/B тестов с разными вариантами |
 | 7 | B | Expand-Contract: добавляем новое → мигрируем → удаляем старое |
-| 8 | C | Rollback при критических проблемах: высокий error rate, сбои, data issues |
-| 9 | B | Environments должны быть похожи для предсказуемого поведения |
-| 10 | D | Smoke tests проверяют базовую работоспособность сразу после деплоя |
-| 11 | D | Blue-Green: instant rollback, но требует 2x ресурсов |
+| 8 | D | Rollback при критических проблемах: высокий error rate, сбои, data issues |
+| 9 | A | Environments должны быть похожи для предсказуемого поведения |
+| 10 | C | Smoke tests проверяют базовую работоспособность сразу после деплоя |
+| 11 | C | Blue-Green: instant rollback, но требует 2x ресурсов |
 | 12 | A | Recreate приемлем для dev/test или при breaking changes |
 | 13 | A | Один artifact проходит через все environments |
-| 14 | A | Config отделён от кода, передаётся через env vars |
+| 14 | B | Config отделён от кода, передаётся через env vars |
 | 15 | C | readinessProbe определяет, готов ли pod к трафику |
-| 16 | B | Canary анализирует метрики для принятия решения о rollout/rollback |
+| 16 | D | Canary анализирует метрики для принятия решения о rollout/rollback |
 | 17 | D | Старые flags нужно удалять, иначе накапливается технический долг |
 | 18 | B | Progressive delivery = постепенный rollout с автоматическими проверками |
-| 19 | A | liveness = жив ли pod (restart), readiness = готов ли к трафику |
-| 20 | B | Сразу после деплоя проверяем error rate, latency, health |
+| 19 | D | liveness = жив ли pod (restart), readiness = готов ли к трафику |
+| 20 | C | Сразу после деплоя проверяем error rate, latency, health |
 
 ---
 

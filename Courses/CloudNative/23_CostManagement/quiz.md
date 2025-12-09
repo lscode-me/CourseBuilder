@@ -9,6 +9,8 @@
 
 
 
+
+
 Какой discount можно получить с Spot instances?
 
 A) До 100%
@@ -27,15 +29,17 @@ D) До 90%
 
 
 
+
+
 Какое преимущество Savings Plans над Reserved Instances?
 
 A) Только для EC2
 
-B) Нет commitment
+B) Гибкость в выборе instance types и regions
 
-C) Гибкость в выборе instance types и regions
+C) Больше discount
 
-D) Больше discount
+D) Нет commitment
 
 ---
 
@@ -45,15 +49,17 @@ D) Больше discount
 
 
 
+
+
 Какой storage class самый дешёвый для архивных данных?
 
-A) Standard-IA
+A) Glacier Deep Archive
 
-B) Standard
+B) Standard-IA
 
 C) Glacier Instant
 
-D) Glacier Deep Archive
+D) Standard
 
 ---
 
@@ -63,15 +69,17 @@ D) Glacier Deep Archive
 
 
 
+
+
 Что такое right-sizing?
 
 A) Использование только small instances
 
-B) Соответствие ресурсов фактическому использованию
+B) Увеличение размера instances
 
-C) Увеличение размера instances
+C) Удаление всех resources
 
-D) Удаление всех resources
+D) Соответствие ресурсов фактическому использованию
 
 ---
 
@@ -81,15 +89,17 @@ D) Удаление всех resources
 
 
 
+
+
 Что необходимо для cost allocation по проектам/командам?
 
-A) Tags на ресурсах
+A) Reserved Instances
 
-B) Budgets
+B) Spot Instances
 
-C) Spot Instances
+C) Budgets
 
-D) Reserved Instances
+D) Tags на ресурсах
 
 ---
 
@@ -98,19 +108,23 @@ D) Reserved Instances
 
 
 
+
+
 Что позволяет Cost Explorer?
 
-A) Только текущие costs
+A) Только budgets
 
-B) Визуализация, анализ и forecasting costs
+B) Только текущие costs
 
 C) Только billing
 
-D) Только budgets
+D) Визуализация, анализ и forecasting costs
 
 ---
 
 ## Question 7: Budgets
+
+
 
 
 
@@ -132,6 +146,8 @@ D) Только для billing
 
 
 
+
+
 Что делает Cost Anomaly Detection?
 
 A) Удаляет ресурсы
@@ -145,6 +161,8 @@ D) Создаёт бюджеты
 ---
 
 ## Question 9: Compute Optimizer
+
+
 
 
 
@@ -166,19 +184,23 @@ D) Только storage
 
 
 
+
+
 Какие проверки включает Trusted Advisor?
 
-A) Только security
+A) Только costs
 
-B) Cost optimization, performance, security, fault tolerance, service limits
+B) Только security
 
-C) Только costs
+C) Cost optimization, performance, security, fault tolerance, service limits
 
 D) Только limits
 
 ---
 
 ## Question 11: S3 Intelligent-Tiering
+
+
 
 
 
@@ -200,6 +222,8 @@ D) Автоматическое перемещение objects между tiers 
 
 
 
+
+
 Что делает AWS Instance Scheduler?
 
 A) Создаёт instances
@@ -213,6 +237,8 @@ D) Автоматический start/stop EC2 и RDS по расписанию
 ---
 
 ## Question 13: Cost Categories
+
+
 
 
 
@@ -234,6 +260,8 @@ D) Только для billing
 
 
 
+
+
 Что показывает RI Coverage report?
 
 A) Какой % usage покрыт Reserved Instances
@@ -251,15 +279,17 @@ D) RI inventory
 
 
 
+
+
 Какая экономия от AWS Graviton processors?
 
-A) До 40% при лучшей производительности
+A) Нет экономии
 
-B) 1%
+B) 5%
 
-C) Нет экономии
+C) До 40% при лучшей производительности
 
-D) 5%
+D) 1%
 
 ---
 
@@ -268,15 +298,17 @@ D) 5%
 
 
 
+
+
 Как минимизировать data transfer costs?
 
-A) VPC Endpoints, same AZ, CloudFront, compression
+A) Bigger instances
 
-B) More regions
+B) Больше трафика
 
-C) Больше трафика
+C) More regions
 
-D) Bigger instances
+D) VPC Endpoints, same AZ, CloudFront, compression
 
 ---
 
@@ -285,15 +317,17 @@ D) Bigger instances
 
 
 
+
+
 Для чего используется AWS Billing Conductor?
 
-A) Только для reports
+A) Custom billing для resellers и showback/chargeback
 
-B) Только для invoices
+B) Только для discounts
 
-C) Custom billing для resellers и showback/chargeback
+C) Только для reports
 
-D) Только для discounts
+D) Только для invoices
 
 ---
 
@@ -302,19 +336,23 @@ D) Только для discounts
 
 
 
+
+
 Какие типы commitment discounts в AWS?
 
-A) Reserved Instances, Savings Plans
+A) Только On-Demand
 
-B) Только free tier
+B) Только Spot
 
-C) Только Spot
+C) Только free tier
 
-D) Только On-Demand
+D) Reserved Instances, Savings Plans
 
 ---
 
 ## Question 19: Unused Resources
+
+
 
 
 
@@ -332,6 +370,8 @@ D) Только через console
 ---
 
 ## Question 20: FinOps
+
+
 
 
 
@@ -355,23 +395,23 @@ D) Только budgeting
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | Spot instances: до 90% discount, но могут быть прерваны с 2-минутным предупреждением. |
-| 2 | C | Savings Plans позволяют менять instance type и region, сохраняя discount. RIs привязаны к конкретному типу. |
-| 3 | D | Glacier Deep Archive: $0.00099/GB — самый дешёвый, но retrieval занимает 12-48 часов. |
-| 4 | B | Right-sizing: выбор размера ресурсов соответственно фактическому использованию (CPU, memory, IOPS). |
-| 5 | A | Tags (Environment, Project, Team) позволяют группировать расходы в Cost Explorer по нужным измерениям. |
-| 6 | B | Cost Explorer: визуализация и forecasting |
+| 2 | B | Savings Plans позволяют менять instance type и region, сохраняя discount. RIs привязаны к конкретному типу. |
+| 3 | A | Glacier Deep Archive: $0.00099/GB — самый дешёвый, но retrieval занимает 12-48 часов. |
+| 4 | D | Right-sizing: выбор размера ресурсов соответственно фактическому использованию (CPU, memory, IOPS). |
+| 5 | D | Tags (Environment, Project, Team) позволяют группировать расходы в Cost Explorer по нужным измерениям. |
+| 6 | D | Cost Explorer: визуализация и forecasting |
 | 7 | B | Budgets: alerting на thresholds |
 | 8 | C | Cost Anomaly Detection: ML для spikes |
 | 9 | B | Compute Optimizer: right-sizing recommendations |
-| 10 | B | Trusted Advisor: cost, performance, security, etc |
+| 10 | C | Trusted Advisor: cost, performance, security, etc |
 | 11 | D | Intelligent-Tiering: auto tier movement |
 | 12 | D | Instance Scheduler: start/stop по расписанию |
 | 13 | B | Cost Categories: custom grouping rules |
 | 14 | A | RI Coverage: % usage covered by RIs |
-| 15 | A | Graviton: до 40% savings |
-| 16 | A | VPC Endpoints, same AZ, CloudFront, compression |
-| 17 | C | Billing Conductor: custom billing |
-| 18 | A | RIs и Savings Plans |
+| 15 | C | Graviton: до 40% savings |
+| 16 | D | VPC Endpoints, same AZ, CloudFront, compression |
+| 17 | A | Billing Conductor: custom billing |
+| 18 | D | RIs и Savings Plans |
 | 19 | B | Trusted Advisor, Cost Explorer, scripts |
 | 20 | A | FinOps: collaboration engineering и finance |
 

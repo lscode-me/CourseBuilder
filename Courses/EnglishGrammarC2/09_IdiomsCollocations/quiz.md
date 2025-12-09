@@ -10,6 +10,8 @@
 
 
 
+
+
 Choose the correct collocation:
 
 A) have a mistake
@@ -28,15 +30,17 @@ D) make a mistake
 
 
 
+
+
 Choose the natural collocation:
 
-A) strong rain
+A) hard rain
 
-B) big rain
+B) heavy rain
 
-C) hard rain
+C) strong rain
 
-D) heavy rain
+D) big rain
 
 ---
 
@@ -46,13 +50,15 @@ D) heavy rain
 
 
 
+
+
 Complete: "Let's ___ a break."
 
-A) have
+A) make
 
-B) do
+B) have
 
-C) make
+C) do
 
 D) take
 
@@ -64,15 +70,17 @@ D) take
 
 
 
+
+
 Choose the natural collocation:
 
-A) strongly unlikely
+A) highly unlikely
 
-B) highly unlikely
+B) strongly unlikely
 
-C) deeply unlikely
+C) very unlikely
 
-D) very unlikely
+D) deeply unlikely
 
 ---
 
@@ -82,15 +90,17 @@ D) very unlikely
 
 
 
+
+
 "Делать фото" in English is:
 
-A) make a photo
+A) do a photo
 
-B) do a photo
+B) make a photo
 
-C) have a photo
+C) take a photo
 
-D) take a photo
+D) have a photo
 
 ---
 
@@ -100,19 +110,23 @@ D) take a photo
 
 
 
+
+
 "Depend ___" — complete with the correct preposition:
 
-A) from
+A) on
 
-B) on
+B) from
 
-C) by
+C) of
 
-D) of
+D) by
 
 ---
 
 ## Question 7: Extreme Adjective
+
+
 
 
 
@@ -136,15 +150,17 @@ D) important
 
 
 
+
+
 "Think outside the box" means:
 
-A) Move outside the office
+A) Think inside a container
 
-B) Think about boxes
+B) Think creatively and unconventionally
 
-C) Think creatively and unconventionally
+C) Think about boxes
 
-D) Think inside a container
+D) Move outside the office
 
 ---
 
@@ -154,15 +170,17 @@ D) Think inside a container
 
 
 
+
+
 Which is NOT a natural collocation with HAVE?
 
-A) have an effect
+A) have difficulty
 
-B) have a decision
+B) have a meeting
 
-C) have difficulty
+C) have an effect
 
-D) have a meeting
+D) have a decision
 
 ---
 
@@ -172,15 +190,17 @@ D) have a meeting
 
 
 
+
+
 Which order is correct?
 
-A) Both are equally common
+A) Neither is used
 
-B) Neither is used
+B) white and black
 
 C) black and white
 
-D) white and black
+D) Both are equally common
 
 ---
 
@@ -190,15 +210,17 @@ D) white and black
 
 
 
+
+
 "___ conclusions" — the most formal option is:
 
-A) draw conclusions
+A) do conclusions
 
 B) take conclusions
 
-C) make conclusions
+C) draw conclusions
 
-D) do conclusions
+D) make conclusions
 
 ---
 
@@ -208,19 +230,23 @@ D) do conclusions
 
 
 
+
+
 "___ disappointed" — choose the natural collocation:
 
 A) bitterly disappointed
 
-B) strongly disappointed
+B) heavily disappointed
 
-C) heavily disappointed
+C) deeply disappointed
 
-D) deeply disappointed
+D) strongly disappointed
 
 ---
 
 ## Question 13: False Friend
+
+
 
 
 
@@ -244,19 +270,23 @@ D) actual
 
 
 
+
+
 Which is natural?
 
-A) give advice
+A) give a crime
 
-B) give a crime
+B) give a mistake
 
 C) give a photo
 
-D) give a mistake
+D) give advice
 
 ---
 
 ## Question 15: Register Awareness
+
+
 
 
 
@@ -280,19 +310,23 @@ D) Informal/slang, inappropriate for formal contexts
 
 
 
+
+
 Choose the natural collocation:
 
 A) widely difficult
 
-B) widely tired
+B) widely happy
 
-C) widely happy
+C) widely known
 
-D) widely known
+D) widely tired
 
 ---
 
 ## Question 17: Commit Collocation
+
+
 
 
 
@@ -316,15 +350,17 @@ D) a crime
 
 
 
+
+
 Which is correct with DO?
 
 A) do a suggestion
 
-B) do a complaint
+B) do research
 
-C) do research
+C) do a decision
 
-D) do a decision
+D) do a complaint
 
 ---
 
@@ -334,15 +370,17 @@ D) do a decision
 
 
 
+
+
 "Deeply ___" is natural with:
 
-A) successful
+A) unlikely
 
 B) available
 
-C) unlikely
+C) concerned
 
-D) concerned
+D) successful
 
 ---
 
@@ -352,15 +390,17 @@ D) concerned
 
 
 
+
+
 Which sentence has a collocation error?
 
-A) He did a big progress in his studies.
+A) There was heavy traffic this morning.
 
-B) They took action immediately.
+B) She made a serious mistake.
 
-C) There was heavy traffic this morning.
+C) He did a big progress in his studies.
 
-D) She made a serious mistake.
+D) They took action immediately.
 
 ---
 
@@ -371,25 +411,25 @@ D) She made a serious mistake.
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | "Make a mistake" — make is used with mistakes, not do. |
-| 2 | D | "Heavy rain" is the natural collocation; "strong" is used with wind. |
+| 2 | B | "Heavy rain" is the natural collocation; "strong" is used with wind. |
 | 3 | D | "Take a break" — take is the correct delexical verb here. |
-| 4 | B | "Highly unlikely" — highly collocates with probability/likelihood. |
-| 5 | D | "Take a photo" — Russian "делать" doesn't translate to "make" here. |
-| 6 | B | "Depend on" — not "from" (Russian interference from "от"). |
+| 4 | A | "Highly unlikely" — highly collocates with probability/likelihood. |
+| 5 | C | "Take a photo" — Russian "делать" doesn't translate to "make" here. |
+| 6 | A | "Depend on" — not "from" (Russian interference from "от"). |
 | 7 | A | "Unique" is an absolute adjective; use "truly unique" not "very unique." |
-| 8 | C | "Think outside the box" = think creatively, unconventionally. |
-| 9 | B | "Have a decision" is wrong; use "make/take a decision." |
+| 8 | B | "Think outside the box" = think creatively, unconventionally. |
+| 9 | D | "Have a decision" is wrong; use "make/take a decision." |
 | 10 | C | "Black and white" is the fixed binomial order. |
-| 11 | A | "Draw conclusions" is the academic collocation. |
+| 11 | C | "Draw conclusions" is the academic collocation. |
 | 12 | A | "Bitterly disappointed" — bitterly collocates with disappointment. |
 | 13 | C | "Актуальный" = current/relevant; "actual" = real/true. |
-| 14 | A | "Give advice" is the natural collocation. |
+| 14 | D | "Give advice" is the natural collocation. |
 | 15 | D | "Kick the bucket" is informal/slang, not for formal use. |
-| 16 | D | "Widely known" — widely collocates with knowledge/availability. |
+| 16 | C | "Widely known" — widely collocates with knowledge/availability. |
 | 17 | D | "Commit a crime" — commit is the verb for crimes. |
-| 18 | C | "Do research" — research takes "do" or "conduct." |
-| 19 | D | "Deeply concerned" — deeply collocates with emotions. |
-| 20 | A | "Did big progress" is wrong; use "made great progress." |
+| 18 | B | "Do research" — research takes "do" or "conduct." |
+| 19 | C | "Deeply concerned" — deeply collocates with emotions. |
+| 20 | C | "Did big progress" is wrong; use "made great progress." |
 
 ---
 

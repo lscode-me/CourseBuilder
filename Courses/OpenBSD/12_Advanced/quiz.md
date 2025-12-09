@@ -10,15 +10,17 @@
 
 
 
+
+
 Как называется гипервизор в OpenBSD?
 
-A) xen
+A) bhyve
 
-B) KVM
+B) vmm
 
-C) bhyve
+C) xen
 
-D) vmm
+D) KVM
 
 ---
 
@@ -28,15 +30,17 @@ D) vmm
 
 
 
+
+
 Какая команда управляет виртуальными машинами?
 
-A) vbox
+A) vmctl
 
 B) vm
 
-C) vmctl
+C) virsh
 
-D) virsh
+D) vbox
 
 ---
 
@@ -46,15 +50,17 @@ D) virsh
 
 
 
+
+
 Какая команда создаёт диск для виртуальной машины?
 
 A) dd if=/dev/zero of=disk.qcow2
 
-B) vmctl create -s 10G disk.qcow2
+B) vmctl disk create
 
-C) vmctl disk create
+C) qemu-img create disk.qcow2
 
-D) qemu-img create disk.qcow2
+D) vmctl create -s 10G disk.qcow2
 
 ---
 
@@ -64,15 +70,17 @@ D) qemu-img create disk.qcow2
 
 
 
+
+
 Для чего используется CARP?
 
-A) Сжатие данных
+A) Отказоустойчивость (failover)
 
-B) Логирование
+B) Шифрование трафика
 
-C) Отказоустойчивость (failover)
+C) Сжатие данных
 
-D) Шифрование трафика
+D) Логирование
 
 ---
 
@@ -82,19 +90,23 @@ D) Шифрование трафика
 
 
 
+
+
 Что определяет параметр advskew в CARP?
 
-A) Скорость интерфейса
+A) Приоритет (меньше = выше приоритет)
 
-B) Приоритет (меньше = выше приоритет)
+B) Интервал проверки
 
 C) Размер пакета
 
-D) Интервал проверки
+D) Скорость интерфейса
 
 ---
 
 ## Question 6: pfsync
+
+
 
 
 
@@ -118,15 +130,17 @@ D) Резервное копирование
 
 
 
+
+
 Где находятся исходники ядра?
 
-A) /opt/kernel
+A) /usr/src/kernel
 
-B) /usr/src/kernel
+B) /opt/kernel
 
-C) /usr/src/sys
+C) /var/src/kern
 
-D) /var/src/kern
+D) /usr/src/sys
 
 ---
 
@@ -136,15 +150,17 @@ D) /var/src/kern
 
 
 
+
+
 Где находятся файлы конфигурации ядра для amd64?
 
 A) /usr/src/conf/amd64
 
-B) /etc/kernel.conf
+B) /usr/src/sys/arch/amd64/conf
 
-C) /usr/src/sys/arch/amd64/conf
+C) /boot/kernel.conf
 
-D) /boot/kernel.conf
+D) /etc/kernel.conf
 
 ---
 
@@ -154,19 +170,23 @@ D) /boot/kernel.conf
 
 
 
+
+
 Какой sysctl включает пересылку IP пакетов?
 
-A) net.core.forwarding
+A) net.ipv4.ip_forward
 
-B) net.ipv4.ip_forward
+B) net.core.forwarding
 
-C) net.inet.ip.forwarding
+C) ip.forward.enable
 
-D) ip.forward.enable
+D) net.inet.ip.forwarding
 
 ---
 
 ## Question 10: WireGuard
+
+
 
 
 
@@ -190,15 +210,17 @@ D) wire0
 
 
 
+
+
 Какой UDP порт использует WireGuard по умолчанию?
 
-A) 51820
+A) 1194
 
-B) 1194
+B) 51820
 
-C) 500
+C) 443
 
-D) 443
+D) 500
 
 ---
 
@@ -208,19 +230,23 @@ D) 443
 
 
 
+
+
 Какая команда подключает к консоли виртуальной машины?
 
-A) vmctl tty vmname
+A) vmctl console vmname
 
-B) vmctl console vmname
+B) vmctl attach vmname
 
 C) vmctl connect vmname
 
-D) vmctl attach vmname
+D) vmctl tty vmname
 
 ---
 
 ## Question 13: Откат ядра
+
+
 
 
 
@@ -244,13 +270,15 @@ D) boot -o
 
 
 
+
+
 Для чего используется ktrace?
 
-A) Трассировка файловой системы
+A) Трассировка системных вызовов
 
-B) Трассировка сетевого трафика
+B) Трассировка файловой системы
 
-C) Трассировка системных вызовов
+C) Трассировка сетевого трафика
 
 D) Трассировка маршрутов
 
@@ -262,19 +290,23 @@ D) Трассировка маршрутов
 
 
 
+
+
 Какой флаг указывает интерфейс для dhcpd?
 
-A) rcctl set dhcpd interface em1
+A) rcctl set dhcpd listen em1
 
-B) rcctl set dhcpd -i em1
+B) rcctl set dhcpd flags em1
 
-C) rcctl set dhcpd flags em1
+C) rcctl set dhcpd -i em1
 
-D) rcctl set dhcpd listen em1
+D) rcctl set dhcpd interface em1
 
 ---
 
 ## Question 16: vmd
+
+
 
 
 
@@ -296,19 +328,23 @@ D) libvirt
 
 
 
+
+
 Что такое vio в контексте vmm?
 
-A) Виртуальный порт
+A) Виртуальная консоль
 
-B) Виртуальный сетевой интерфейс
+B) Виртуальный порт
 
-C) Виртуальная консоль
+C) Виртуальный сетевой интерфейс
 
 D) Виртуальный диск
 
 ---
 
 ## Question 18: rdsetroot
+
+
 
 
 
@@ -330,19 +366,23 @@ D) Для встраивания ramdisk в ядро
 
 
 
+
+
 Что делает make build в /usr/src?
 
-A) Обновляет порты
+A) Собирает пакеты
 
-B) Собирает пакеты
+B) Обновляет порты
 
-C) Создаёт билд-сервер
+C) Компилирует систему из исходников
 
-D) Компилирует систему из исходников
+D) Создаёт билд-сервер
 
 ---
 
 ## Question 20: releng
+
+
 
 
 
@@ -365,25 +405,25 @@ D) Процесс создания официальных релизов сис�
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | vmm (Virtual Machine Monitor) — гипервизор в ядре OpenBSD |
-| 2 | C | vmctl — утилита для управления виртуальными машинами |
-| 3 | B | vmctl create -s SIZE FILE создаёт диск для VM |
-| 4 | C | CARP обеспечивает отказоустойчивость через виртуальный IP |
-| 5 | B | advskew определяет приоритет: 0 = master, 100 = backup |
+| 1 | B | vmm (Virtual Machine Monitor) — гипервизор в ядре OpenBSD |
+| 2 | A | vmctl — утилита для управления виртуальными машинами |
+| 3 | D | vmctl create -s SIZE FILE создаёт диск для VM |
+| 4 | A | CARP обеспечивает отказоустойчивость через виртуальный IP |
+| 5 | A | advskew определяет приоритет: 0 = master, 100 = backup |
 | 6 | B | pfsync синхронизирует таблицы состояний PF между нодами |
-| 7 | C | /usr/src/sys содержит исходники ядра |
-| 8 | C | Конфигурации ядра в /usr/src/sys/arch/ARCH/conf |
-| 9 | C | net.inet.ip.forwarding=1 включает IP forwarding |
+| 7 | D | /usr/src/sys содержит исходники ядра |
+| 8 | B | Конфигурации ядра в /usr/src/sys/arch/ARCH/conf |
+| 9 | D | net.inet.ip.forwarding=1 включает IP forwarding |
 | 10 | C | wg0 — имя WireGuard интерфейса |
-| 11 | A | WireGuard по умолчанию использует UDP порт 51820 |
-| 12 | B | vmctl console vmname подключает к консоли VM |
+| 11 | B | WireGuard по умолчанию использует UDP порт 51820 |
+| 12 | A | vmctl console vmname подключает к консоли VM |
 | 13 | B | boot /obsd загружает предыдущее ядро (original bsd) |
-| 14 | C | ktrace трассирует системные вызовы процесса |
-| 15 | C | rcctl set dhcpd flags em1 указывает интерфейс |
+| 14 | A | ktrace трассирует системные вызовы процесса |
+| 15 | B | rcctl set dhcpd flags em1 указывает интерфейс |
 | 16 | B | vmd — демон, управляющий виртуальными машинами |
-| 17 | B | vio — виртуальный сетевой интерфейс для VM |
+| 17 | C | vio — виртуальный сетевой интерфейс для VM |
 | 18 | D | rdsetroot встраивает ramdisk образ в ядро |
-| 19 | D | make build компилирует систему из исходников |
+| 19 | C | make build компилирует систему из исходников |
 | 20 | D | release engineering — процесс создания официальных релизов |
 
 ---

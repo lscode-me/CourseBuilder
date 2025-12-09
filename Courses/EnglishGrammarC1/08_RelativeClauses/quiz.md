@@ -10,6 +10,8 @@
 
 
 
+
+
 Which sentence is NON-DEFINING (needs commas)?
 
 A) My brother who lives in Paris is a doctor.
@@ -23,6 +25,8 @@ D) My mother who is 65 works as a teacher.
 ---
 
 ## Question 2: Punctuation
+
+
 
 
 
@@ -46,6 +50,8 @@ D) My sister, who lives in London, is visiting.
 
 
 
+
+
 Which sentence is INCORRECT?
 
 A) The film which won the award was excellent.
@@ -64,15 +70,17 @@ D) The book that I read was interesting.
 
 
 
+
+
 In which sentence can the relative pronoun be omitted?
 
-A) The woman whom I met was nice.
+A) My sister, who lives in Paris, is visiting.
 
-B) The car which is parked outside is mine.
+B) The man who called is here.
 
-C) My sister, who lives in Paris, is visiting.
+C) The woman whom I met was nice.
 
-D) The man who called is here.
+D) The car which is parked outside is mine.
 
 ---
 
@@ -82,15 +90,17 @@ D) The man who called is here.
 
 
 
+
+
 Which sentence correctly uses "whose"?
 
-A) The woman whose daughter is a doctor called.
+A) The boy whose is tall plays basketball.
 
-B) The boy whose is tall plays basketball.
+B) The man who's car was stolen reported it.
 
 C) The car whose is red belongs to me.
 
-D) The man who's car was stolen reported it.
+D) The woman whose daughter is a doctor called.
 
 ---
 
@@ -100,19 +110,23 @@ D) The man who's car was stolen reported it.
 
 
 
+
+
 "He didn't reply, ___ annoyed me."
 
 A) who
 
-B) which
+B) that
 
-C) that
+C) what
 
-D) what
+D) which
 
 ---
 
 ## Question 7: Reducing to Participle
+
+
 
 
 
@@ -136,19 +150,23 @@ D) The man to stand there is my boss.
 
 
 
+
+
 "The book which was written by Tolstoy is famous." Reduces to:
 
-A) The book to write by Tolstoy is famous.
+A) The book writing by Tolstoy is famous.
 
-B) The book written by Tolstoy is famous.
+B) The book wrote by Tolstoy is famous.
 
-C) The book writing by Tolstoy is famous.
+C) The book to write by Tolstoy is famous.
 
-D) The book wrote by Tolstoy is famous.
+D) The book written by Tolstoy is famous.
 
 ---
 
 ## Question 9: Subject vs Object
+
+
 
 
 
@@ -172,6 +190,8 @@ D) Adverbial
 
 
 
+
+
 Which sentence uses "whom" correctly?
 
 A) Whom is calling?
@@ -190,13 +210,15 @@ D) The man whom called me was rude.
 
 
 
+
+
 "The city ___ I was born is beautiful."
 
-A) where
+A) Both A and B are correct
 
-B) Both A and B are correct
+B) that
 
-C) that
+C) where
 
 D) which
 
@@ -208,19 +230,23 @@ D) which
 
 
 
+
+
 Which is correct?
 
-A) The day which we met was sunny.
+A) The day that we met was sunny.
 
-B) The day when we met was sunny.
+B) All of the above are correct.
 
-C) The day that we met was sunny.
+C) The day which we met was sunny.
 
-D) All of the above are correct.
+D) The day when we met was sunny.
 
 ---
 
 ## Question 13: Dangling Participle
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Walking down the street, I saw a cat.
 
 
 
+
+
 "Having finished his work, he went home" means:
 
 A) He went home to finish work.
@@ -257,6 +285,8 @@ D) He was finishing work while going home.
 ---
 
 ## Question 15: Non-Defining Position
+
+
 
 
 
@@ -280,6 +310,8 @@ D) Only after the main subject
 
 
 
+
+
 "I don't understand ___ you mean."
 
 A) which
@@ -298,19 +330,23 @@ D) what
 
 
 
+
+
 Which is MOST FORMAL?
 
 A) The person I spoke to was helpful.
 
-B) The person who I spoke to was helpful.
+B) The person to whom I spoke was helpful.
 
-C) The person that I spoke to was helpful.
+C) The person who I spoke to was helpful.
 
-D) The person to whom I spoke was helpful.
+D) The person that I spoke to was helpful.
 
 ---
 
 ## Question 18: Reduction Error
+
+
 
 
 
@@ -334,17 +370,19 @@ D) All reductions are correct.
 
 
 
+
+
 What's the difference?
 - "My brother who lives in Paris is visiting."
 - "My brother, who lives in Paris, is visiting."
 
-A) First is British; second is American
+A) No difference
 
 B) First is formal; second is informal
 
-C) First implies multiple brothers; second implies one brother
+C) First is British; second is American
 
-D) No difference
+D) First implies multiple brothers; second implies one brother
 
 ---
 
@@ -354,15 +392,17 @@ D) No difference
 
 
 
+
+
 "Being tired, she went to bed early" expresses:
 
-A) Time
+A) Condition
 
-B) Result
+B) Reason
 
-C) Reason
+C) Result
 
-D) Condition
+D) Time
 
 ---
 
@@ -375,23 +415,23 @@ D) Condition
 | 1 | D | "My mother" is unique — you have one mother. Extra info requires commas (non-defining). |
 | 2 | D | Non-defining clause with both opening and closing commas. |
 | 3 | C | "That" cannot be used in non-defining clauses. Use "which." |
-| 4 | A | Object pronouns in defining clauses can be omitted. "The woman I met" is correct. |
-| 5 | A | "Whose" = possessive. "Who's" = "who is" (incorrect in A). |
-| 6 | B | "Which" refers to the whole preceding clause. "What" is incorrect here. |
+| 4 | C | Object pronouns in defining clauses can be omitted. "The woman I met" is correct. |
+| 5 | D | "Whose" = possessive. "Who's" = "who is" (incorrect in A). |
+| 6 | D | "Which" refers to the whole preceding clause. "What" is incorrect here. |
 | 7 | B | Active continuous → present participle. "The man standing." |
-| 8 | B | Passive → past participle. "The book written by..." |
+| 8 | D | Passive → past participle. "The book written by..." |
 | 9 | B | "I" is the subject; "who" is the object of "met." |
 | 10 | B | "Whom" for object, especially after prepositions. "The person to whom I spoke." |
-| 11 | A | For places, "where" is standard. "Which" would need a preposition (in which). |
-| 12 | D | All three are grammatically correct for time expressions. |
+| 11 | C | For places, "where" is standard. "Which" would need a preposition (in which). |
+| 12 | B | All three are grammatically correct for time expressions. |
 | 13 | A | The cat isn't walking. The participle "dangles" — doesn't match main subject. |
 | 14 | B | Perfect participle shows action completed before the main clause. |
 | 15 | B | Non-defining clauses can appear mid-sentence or at the end, always with commas. |
 | 16 | D | "What" = "the thing that." "I don't understand what you mean." |
-| 17 | D | Preposition + whom is most formal. "To whom I spoke." |
+| 17 | B | Preposition + whom is most formal. "To whom I spoke." |
 | 18 | A | Simple present "knows" cannot be reduced to participle without changing meaning. It works with continuous/passive. |
-| 19 | C | No commas = defining = "which brother." Commas = non-defining = extra info about one brother. |
-| 20 | C | "Being tired" = "Because she was tired." Expresses reason. |
+| 19 | D | No commas = defining = "which brother." Commas = non-defining = extra info about one brother. |
+| 20 | B | "Being tired" = "Because she was tired." Expresses reason. |
 
 ---
 

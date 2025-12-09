@@ -10,6 +10,8 @@
 
 
 
+
+
 "I am studying." → She said she ___ studying.
 
 A) is
@@ -23,6 +25,8 @@ D) was
 ---
 
 ## Question 2: No Backshift
+
+
 
 
 
@@ -46,6 +50,8 @@ D) When reporting commands
 
 
 
+
+
 Which sentence is correct?
 
 A) She said me that she was tired.
@@ -64,15 +70,17 @@ D) She told me that she was tired.
 
 
 
+
+
 "Where do you live?" → He asked ___.
 
-A) where I live
+A) where do I live
 
-B) where do I live
+B) where I lived
 
 C) where did I live
 
-D) where I lived
+D) where I live
 
 ---
 
@@ -82,19 +90,23 @@ D) where I lived
 
 
 
+
+
 "Are you coming?" → She asked ___.
 
-A) if was I coming
+A) if I was coming
 
-B) whether was I coming
+B) that I was coming
 
-C) if I was coming
+C) if was I coming
 
-D) that I was coming
+D) whether was I coming
 
 ---
 
 ## Question 6: Reporting Commands
+
+
 
 
 
@@ -118,13 +130,15 @@ D) that don't touch that
 
 
 
+
+
 Which sentence is INCORRECT?
 
-A) She suggested me to go to the cinema.
+A) She suggested that we should go to the cinema.
 
-B) She suggested going to the cinema.
+B) She suggested me to go to the cinema.
 
-C) She suggested that we should go to the cinema.
+C) She suggested going to the cinema.
 
 D) She suggested that we go to the cinema.
 
@@ -136,15 +150,17 @@ D) She suggested that we go to the cinema.
 
 
 
+
+
 "I'll help you with that." → He offered ___.
 
-A) me to help
+A) to help me
 
-B) helping me
+B) that he helps me
 
-C) that he helps me
+C) helping me
 
-D) to help me
+D) me to help
 
 ---
 
@@ -154,19 +170,23 @@ D) to help me
 
 
 
+
+
 "I'll see you tomorrow." (said on Monday, reported on Wednesday)
 
-A) She said she would see me on Tuesday.
+A) She said she will see me the next day.
 
-B) She said she would see me tomorrow.
+B) She said she would see me on Tuesday.
 
-C) She said she will see me the next day.
+C) She said she would see me tomorrow.
 
 D) She said she would see me today.
 
 ---
 
 ## Question 10: Modal Backshift
+
+
 
 
 
@@ -190,6 +210,8 @@ D) would can
 
 
 
+
+
 Which verb expresses that the speaker strongly insisted?
 
 A) mentioned
@@ -208,19 +230,23 @@ D) urged
 
 
 
+
+
 In academic writing, "Smith (2020) argues that..." uses present tense because:
 
-A) The argument is still relevant/current
+A) It's grammatically required
 
-B) It was written recently
+B) Academic writing always uses present
 
-C) Academic writing always uses present
+C) It was written recently
 
-D) It's grammatically required
+D) The argument is still relevant/current
 
 ---
 
 ## Question 13: Warn
+
+
 
 
 
@@ -244,15 +270,17 @@ D) said me to be careful
 
 
 
+
+
 "OK, I'll do it." → He ___ to do it.
 
-A) agreed
+A) told
 
-B) said
+B) suggested
 
-C) suggested
+C) said
 
-D) told
+D) agreed
 
 ---
 
@@ -262,19 +290,23 @@ D) told
 
 
 
+
+
 "I have been waiting for an hour." → She said she ___ for an hour.
 
-A) waited
+A) had been waiting
 
-B) has been waiting
+B) waited
 
 C) was waiting
 
-D) had been waiting
+D) has been waiting
 
 ---
 
 ## Question 16: Question Word Order
+
+
 
 
 
@@ -298,15 +330,17 @@ D) He asked what is my name.
 
 
 
+
+
 "I will call you tomorrow." → He told me ___.
 
-A) he would call you tomorrow
+A) I would call you the next day
 
-B) I would call you the next day
+B) he would call you tomorrow
 
-C) I will call me tomorrow
+C) he would call me the next day
 
-D) he would call me the next day
+D) I will call me tomorrow
 
 ---
 
@@ -316,19 +350,23 @@ D) he would call me the next day
 
 
 
+
+
 "I didn't take the money." → She denied ___.
 
-A) that she takes the money
+A) to take the money
 
-B) to take the money
+B) that she takes the money
 
-C) taking the money
+C) take the money
 
-D) take the money
+D) taking the money
 
 ---
 
 ## Question 19: Promise
+
+
 
 
 
@@ -352,13 +390,15 @@ D) He promised me to help.
 
 
 
+
+
 "Water boils at 100°C." → The teacher explained that water ___ at 100°C.
 
-A) boiled
+A) had boiled
 
-B) boils
+B) boiled
 
-C) had boiled
+C) boils
 
 D) was boiling
 
@@ -373,23 +413,23 @@ D) was boiling
 | 1 | D | Present continuous → Past continuous in backshift. "Is studying" → "was studying." |
 | 2 | B | General truths and facts that are still true don't require backshift. |
 | 3 | D | "Tell" requires a person object. "She told me that..." is correct. |
-| 4 | D | Reported questions use statement word order, and tense shifts back. |
-| 5 | C | Yes/No questions use "if/whether" + statement word order. |
+| 4 | B | Reported questions use statement word order, and tense shifts back. |
+| 5 | A | Yes/No questions use "if/whether" + statement word order. |
 | 6 | A | Commands: tell + object + (not) to + infinitive. "Not to" comes together. |
-| 7 | A | "Suggest" never takes object + infinitive. Use gerund or that-clause. |
-| 8 | D | "Offer" takes to-infinitive. "Offered to help me." |
-| 9 | A | "Tomorrow" from Monday = Tuesday. Reporting on Wednesday, specify the actual day. |
+| 7 | B | "Suggest" never takes object + infinitive. Use gerund or that-clause. |
+| 8 | A | "Offer" takes to-infinitive. "Offered to help me." |
+| 9 | B | "Tomorrow" from Monday = Tuesday. Reporting on Wednesday, specify the actual day. |
 | 10 | A | "Can" → "could" in backshift. |
 | 11 | D | "Urged" implies strong insistence. "Mentioned" is neutral, "stated" is formal. |
-| 12 | A | Present tense in academic reporting indicates the argument/point is still current and relevant. |
+| 12 | D | Present tense in academic reporting indicates the argument/point is still current and relevant. |
 | 13 | B | "Warn" + person + to-infinitive + reason clause. |
-| 14 | A | "Agreed to do" — agree + to-infinitive for accepting to do something. |
-| 15 | D | Present Perfect Continuous → Past Perfect Continuous. "Had been waiting." |
+| 14 | D | "Agreed to do" — agree + to-infinitive for accepting to do something. |
+| 15 | A | Present Perfect Continuous → Past Perfect Continuous. "Had been waiting." |
 | 16 | A | Statement word order in reported questions: "what my name was." |
-| 17 | D | Change "I" to "he," "you" to "me," "tomorrow" to "the next day." |
-| 18 | C | "Deny" + gerund. "Denied taking the money." |
+| 17 | C | Change "I" to "he," "you" to "me," "tomorrow" to "the next day." |
+| 18 | D | "Deny" + gerund. "Denied taking the money." |
 | 19 | B | "Promise" can take "that-clause" or "to-infinitive." Both patterns are correct. |
-| 20 | B | Scientific facts remain in present tense — "boils" — as this is still true. |
+| 20 | C | Scientific facts remain in present tense — "boils" — as this is still true. |
 
 ---
 

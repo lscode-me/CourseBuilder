@@ -9,6 +9,8 @@
 
 
 
+
+
 Что означает принцип "One codebase, many deploys"?
 
 A) Каждый deploy имеет свой репозиторий
@@ -27,19 +29,23 @@ D) Один репозиторий деплоится в разные среды
 
 
 
+
+
 Где должна храниться конфигурация по 12-factor?
 
-A) В environment variables
+A) В коде приложения
 
-B) В конфигурационных файлах в репозитории
+B) В базе данных
 
-C) В базе данных
+C) В конфигурационных файлах в репозитории
 
-D) В коде приложения
+D) В environment variables
 
 ---
 
 ## Question 3: Backing Services
+
+
 
 
 
@@ -63,6 +69,8 @@ D) Только локальная база данных
 
 
 
+
+
 Какой тип процессов требует 12-factor?
 
 A) Long-running с persistent connections
@@ -76,6 +84,8 @@ D) Singleton процессы
 ---
 
 ## Question 5: Port Binding
+
+
 
 
 
@@ -99,13 +109,15 @@ D) Нужен отдельный веб-сервер (Apache, nginx)
 
 
 
+
+
 Какой порядок этапов правильный?
 
-A) Build → Release → Run
+A) Release → Build → Run
 
-B) Run → Build → Release
+B) Build → Release → Run
 
-C) Release → Build → Run
+C) Run → Build → Release
 
 D) Build → Run → Release
 
@@ -117,15 +129,17 @@ D) Build → Run → Release
 
 
 
+
+
 Куда должны писаться логи по 12-factor?
 
-A) В базу данных
+A) В файлы на диске
 
-B) В файлы на диске
+B) В базу данных
 
-C) В сетевой сокет
+C) В stdout (стандартный вывод)
 
-D) В stdout (стандартный вывод)
+D) В сетевой сокет
 
 ---
 
@@ -135,19 +149,23 @@ D) В stdout (стандартный вывод)
 
 
 
+
+
 Что НЕ является целью Dev/Prod Parity?
 
-A) Разработчики деплоят свой код
+A) Минимизировать время между разработкой и деплоем
 
-B) Использовать SQLite в dev и PostgreSQL в prod
+B) Использовать одинаковые backing services
 
-C) Использовать одинаковые backing services
+C) Использовать SQLite в dev и PostgreSQL в prod
 
-D) Минимизировать время между разработкой и деплоем
+D) Разработчики деплоят свой код
 
 ---
 
 ## Question 9: Concurrency
+
+
 
 
 
@@ -171,13 +189,15 @@ D) Кэшированием всего в памяти
 
 
 
+
+
 Что означает Disposability?
 
-A) Автоматическое удаление логов
+A) Быстрый запуск и graceful shutdown
 
-B) Одноразовое использование
+B) Автоматическое удаление логов
 
-C) Быстрый запуск и graceful shutdown
+C) Одноразовое использование
 
 D) Приложение можно удалить
 
@@ -189,19 +209,23 @@ D) Приложение можно удалить
 
 
 
+
+
 Как должны управляться зависимости?
 
-A) Загружаются при каждом запросе
+A) Явно объявлены и изолированы (requirements.txt, package.json)
 
-B) Явно объявлены и изолированы (requirements.txt, package.json)
+B) Скопированы вручную
 
 C) Установлены глобально на сервере
 
-D) Скопированы вручную
+D) Загружаются при каждом запросе
 
 ---
 
 ## Question 12: Admin Processes
+
+
 
 
 
@@ -225,6 +249,8 @@ D) Отдельное приложение с другим кодом
 
 
 
+
+
 Какой тест проверяет правильность хранения конфигурации?
 
 A) Используется YAML формат
@@ -238,6 +264,8 @@ D) Codebase можно сделать open-source без раскрытия cred
 ---
 
 ## Question 14: Backing Service Change
+
+
 
 
 
@@ -261,13 +289,15 @@ D) Код приложения
 
 
 
+
+
 Где должно храниться состояние сессии пользователя?
 
-A) Во внешнем хранилище (Redis, Database)
+A) В локальных файлах
 
-B) В cookies на клиенте (все данные)
+B) Во внешнем хранилище (Redis, Database)
 
-C) В локальных файлах
+C) В cookies на клиенте (все данные)
 
 D) В памяти процесса
 
@@ -278,19 +308,23 @@ D) В памяти процесса
 
 
 
+
+
 Что означает принцип Disposability?
 
-A) Быстрый startup и graceful shutdown
+A) Удалять старый код
 
-B) Использовать disposable VMs
+B) Удалять логи
 
-C) Удалять старый код
+C) Быстрый startup и graceful shutdown
 
-D) Удалять логи
+D) Использовать disposable VMs
 
 ---
 
 ## Question 17: Dev/Prod Parity
+
+
 
 
 
@@ -312,6 +346,8 @@ D) Для security
 
 
 
+
+
 Что означает Port Binding?
 
 A) Использовать только порт 80
@@ -329,13 +365,15 @@ D) Только HTTPS
 
 
 
+
+
 Как масштабировать по принципу Concurrency?
 
-A) Вертикально
+A) Через threads только
 
-B) Горизонтально через процессы (web, worker)
+B) Вертикально
 
-C) Через threads только
+C) Горизонтально через процессы (web, worker)
 
 D) Через bigger instances
 
@@ -346,15 +384,17 @@ D) Через bigger instances
 
 
 
+
+
 Какие три стадии в Build, Release, Run?
 
-A) Build (compile), Release (config), Run (execute)
+A) Dev, Stage, Prod
 
-B) Plan, Apply, Destroy
+B) Code, Test, Deploy
 
-C) Code, Test, Deploy
+C) Plan, Apply, Destroy
 
-D) Dev, Stage, Prod
+D) Build (compile), Release (config), Run (execute)
 
 ---
 
@@ -365,25 +405,25 @@ D) Dev, Stage, Prod
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | Один репозиторий — множество деплоев в разные среды. Различия только в конфигурации. |
-| 2 | A | Конфигурация хранится в environment variables, не в коде или файлах репозитория. |
+| 2 | D | Конфигурация хранится в environment variables, не в коде или файлах репозитория. |
 | 3 | B | База данных — attached resource, подключаемый через URL. Смена БД не требует изменения кода. |
 | 4 | B | Процессы должны быть stateless — без shared state в памяти. State хранится во внешних сервисах. |
 | 5 | A | Приложение само экспортирует HTTP (или другой) сервис, слушая порт. Не зависит от внешнего веб-сервера. |
-| 6 | A | Build (компиляция) → Release (build + config) → Run (запуск процессов). |
-| 7 | D | Логи пишутся в stdout. Система (Docker, K8s) собирает и агрегирует их. |
-| 8 | B | SQLite в dev и PostgreSQL в prod — нарушение parity. Нужны одинаковые сервисы везде. |
+| 6 | B | Build (компиляция) → Release (build + config) → Run (запуск процессов). |
+| 7 | C | Логи пишутся в stdout. Система (Docker, K8s) собирает и агрегирует их. |
+| 8 | C | SQLite в dev и PostgreSQL в prod — нарушение parity. Нужны одинаковые сервисы везде. |
 | 9 | C | Горизонтальное масштабирование через добавление процессов/контейнеров. |
-| 10 | C | Disposability = быстрый запуск (секунды) и graceful shutdown (обработка SIGTERM). |
-| 11 | B | Зависимости явно объявлены в manifest (requirements.txt) и изолированы (virtualenv, container). |
+| 10 | A | Disposability = быстрый запуск (секунды) и graceful shutdown (обработка SIGTERM). |
+| 11 | A | Зависимости явно объявлены в manifest (requirements.txt) и изолированы (virtualenv, container). |
 | 12 | A | Admin tasks выполняются как one-off процессы в том же environment, с тем же кодом и конфигом. |
 | 13 | D | Если можно сделать код open-source без раскрытия секретов — конфигурация правильно отделена. |
 | 14 | C | Смена backing service = смена URL в environment variable. Код не меняется. |
-| 15 | A | Состояние сессии хранится во внешнем хранилище (Redis, DB), не в памяти процесса. |
-| 16 | A | Disposability: быстрый startup и graceful shutdown |
+| 15 | B | Состояние сессии хранится во внешнем хранилище (Redis, DB), не в памяти процесса. |
+| 16 | C | Disposability: быстрый startup и graceful shutdown |
 | 17 | B | Dev/Prod Parity минимизирует bugs при deploy |
 | 18 | C | Port Binding: app экспортирует HTTP как service |
-| 19 | B | Concurrency: горизонтально через процессы |
-| 20 | A | Build (compile), Release (config), Run (execute) |
+| 19 | C | Concurrency: горизонтально через процессы |
+| 20 | D | Build (compile), Release (config), Run (execute) |
 
 ---
 

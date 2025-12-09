@@ -10,6 +10,8 @@
 
 
 
+
+
 Кто такой stakeholder?
 
 A) Любой, кто влияет на вашу работу или на кого влияет ваша работа
@@ -28,15 +30,17 @@ D) Только ваш руководитель
 
 
 
+
+
 Кого нужно "Manage Closely" согласно Power/Interest Grid?
 
 A) Low Power + Low Interest
 
-B) High Power + High Interest
+B) Low Power + High Interest
 
-C) High Power + Low Interest
+C) High Power + High Interest
 
-D) Low Power + High Interest
+D) High Power + Low Interest
 
 ---
 
@@ -46,19 +50,23 @@ D) Low Power + High Interest
 
 
 
+
+
 Почему нужно адаптировать message под аудиторию?
 
-A) Чтобы потратить больше времени
+A) Это не нужно, один message для всех
 
-B) Разные аудитории имеют разные needs и уровень понимания
+B) Чтобы потратить больше времени
 
-C) Это не нужно, один message для всех
+C) Разные аудитории имеют разные needs и уровень понимания
 
 D) Только для презентаций
 
 ---
 
 ## Question 4: Executive Communication
+
+
 
 
 
@@ -82,15 +90,17 @@ D) Исходный код
 
 
 
+
+
 Что означает BLUF (Bottom Line Up Front)?
 
-A) Главное сообщение в начале
+A) Много деталей без сути
 
-B) Много деталей без сути
+B) Главное сообщение в начале
 
-C) Скрыть главное в конце
+C) Не иметь структуры
 
-D) Не иметь структуры
+D) Скрыть главное в конце
 
 ---
 
@@ -100,19 +110,23 @@ D) Не иметь структуры
 
 
 
+
+
 Что должен включать Weekly Update?
 
 A) TL;DR, Highlights, In Progress, Risks, Needs, Team Notes
 
-B) 10 страниц деталей
+B) Только жалобы
 
-C) Только хорошие новости
+C) 10 страниц деталей
 
-D) Только жалобы
+D) Только хорошие новости
 
 ---
 
 ## Question 7: No Surprises
+
+
 
 
 
@@ -136,6 +150,8 @@ D) Никогда не сообщать о проблемах
 
 
 
+
+
 Что помогает влиять без формального авторитета?
 
 A) Игнорирование других
@@ -149,6 +165,8 @@ D) Угрозы
 ---
 
 ## Question 9: Building Coalitions
+
+
 
 
 
@@ -172,6 +190,8 @@ D) Никого не слушать
 
 
 
+
+
 Как работает принцип Reciprocity для влияния?
 
 A) Никому не помогать
@@ -185,6 +205,8 @@ D) Только брать
 ---
 
 ## Question 11: Difficult Conversation Prepare
+
+
 
 
 
@@ -208,19 +230,23 @@ D) Только обвинения
 
 
 
+
+
 Что важно делать во время сложного разговора?
 
-A) Обвинять
+A) Уходить от темы
 
-B) Только говорить, не слушать
+B) State intent, share observations (facts), invite their perspective, listen
 
-C) Уходить от темы
+C) Обвинять
 
-D) State intent, share observations (facts), invite their perspective, listen
+D) Только говорить, не слушать
 
 ---
 
 ## Question 13: Email Subject
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Пустой subject
 
 
 
+
+
 Какая практика хороша для Slack/Teams?
 
 A) Ожидать немедленный ответ
@@ -257,6 +285,8 @@ D) @channel для любого сообщения
 ---
 
 ## Question 15: Presentation Structure
+
+
 
 
 
@@ -280,15 +310,17 @@ D) Hook, Problem, Solution, Evidence, Ask
 
 
 
+
+
 Что характерно для executive presentations?
 
-A) Без подготовки
+A) Кратко, recommendation focused, business impact, готов к вопросам
 
-B) Только технические термины
+B) Много деталей, длинные объяснения
 
-C) Кратко, recommendation focused, business impact, готов к вопросам
+C) Без подготовки
 
-D) Много деталей, длинные объяснения
+D) Только технические термины
 
 ---
 
@@ -298,19 +330,23 @@ D) Много деталей, длинные объяснения
 
 
 
+
+
 Как отслеживать dependencies от других команд?
 
-A) Blame другую команду
+A) What needed, when needed, impact if delayed, contact, status
 
-B) What needed, when needed, impact if delayed, contact, status
+B) Не отслеживать
 
-C) Не отслеживать
+C) Blame другую команду
 
 D) Надеяться на лучшее
 
 ---
 
 ## Question 18: Conflict with Other Teams
+
+
 
 
 
@@ -334,15 +370,17 @@ D) Обвинять их
 
 
 
+
+
 Почему "Data over Opinion" работает для влияния?
 
-A) Факты и данные более убедительны, чем мнения
+A) Opinion всегда достаточно
 
-B) Opinions важнее
+B) Data не важна
 
-C) Data не важна
+C) Opinions важнее
 
-D) Opinion всегда достаточно
+D) Факты и данные более убедительны, чем мнения
 
 ---
 
@@ -352,13 +390,15 @@ D) Opinion всегда достаточно
 
 
 
+
+
 Какой принцип хорошей документации?
 
-A) Никогда не обновлять
+A) Писать как можно сложнее
 
-B) Write for the reader, include context (why), keep updated
+B) Никогда не обновлять
 
-C) Писать как можно сложнее
+C) Write for the reader, include context (why), keep updated
 
 D) Write for yourself
 
@@ -371,25 +411,25 @@ D) Write for yourself
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | A | Stakeholder — любой, кто влияет на вашу работу или на кого она влияет |
-| 2 | B | Manage Closely: High Power + High Interest |
-| 3 | B | Разные аудитории имеют разные needs и уровень понимания |
+| 2 | C | Manage Closely: High Power + High Interest |
+| 3 | C | Разные аудитории имеют разные needs и уровень понимания |
 | 4 | A | Executives: business impact, timeline, risks, decisions needed |
-| 5 | A | BLUF = главное сообщение в начале |
+| 5 | B | BLUF = главное сообщение в начале |
 | 6 | A | TL;DR, Highlights, In Progress, Risks, Needs, Team Notes |
 | 7 | B | Сообщать раньше, чтобы stakeholders могли помочь |
 | 8 | B | Credibility + Relationships + Communication |
 | 9 | A | Найти allies, согласовать, прийти вместе к decision-maker |
 | 10 | C | Помочь другим сначала → они более склонны помочь вам |
 | 11 | B | Желаемый outcome, факты, perspective, эмоции |
-| 12 | D | State intent, share facts, invite perspective, listen |
+| 12 | B | State intent, share facts, invite perspective, listen |
 | 13 | C | "[Action Required] Budget Approval by Friday" |
 | 14 | C | Thread conversations, use @mentions sparingly |
 | 15 | D | Hook, Problem, Solution, Evidence, Ask |
-| 16 | C | Кратко, recommendation focused, business impact |
-| 17 | B | What, when, impact, contact, status |
+| 16 | A | Кратко, recommendation focused, business impact |
+| 17 | A | What, when, impact, contact, status |
 | 18 | A | Assume good intent, understand constraints, common goals |
-| 19 | A | Факты и данные более убедительны, чем мнения |
-| 20 | B | Write for reader, include context, keep updated |
+| 19 | D | Факты и данные более убедительны, чем мнения |
+| 20 | C | Write for reader, include context, keep updated |
 
 ---
 

@@ -11,6 +11,8 @@
 
 
 
+
+
 Какая из перечисленных характеристик НЕ является одной из пяти ключевых характеристик облачных вычислений по определению NIST?
 
 A) Measured service
@@ -24,6 +26,8 @@ D) On-demand self-service
 ---
 
 ## Question 2: История AWS
+
+
 
 
 
@@ -47,15 +51,17 @@ D) 2006
 
 
 
+
+
 Какое из утверждений лучше всего описывает переход от CapEx к OpEx при использовании облака?
 
-A) Компании должны покупать оборудование, но могут использовать его в облаке
+A) Компании тратят больше денег, но получают лучший сервис
 
-B) Операционные расходы полностью исчезают
+B) Капитальные затраты на оборудование заменяются операционными расходами по факту использования
 
-C) Компании тратят больше денег, но получают лучший сервис
+C) Компании должны покупать оборудование, но могут использовать его в облаке
 
-D) Капитальные затраты на оборудование заменяются операционными расходами по факту использования
+D) Операционные расходы полностью исчезают
 
 ---
 
@@ -65,19 +71,23 @@ D) Капитальные затраты на оборудование заме�
 
 
 
+
+
 Какой облачный провайдер имеет наибольшую долю рынка облачной инфраструктуры (по состоянию на 2024 год)?
 
-A) Microsoft Azure
+A) Alibaba Cloud
 
-B) Alibaba Cloud
+B) Microsoft Azure
 
-C) Amazon Web Services
+C) Google Cloud Platform
 
-D) Google Cloud Platform
+D) Amazon Web Services
 
 ---
 
 ## Question 5: Vendor Lock-in
+
+
 
 
 
@@ -101,6 +111,8 @@ D) EC2 (виртуальные машины)
 
 
 
+
+
 Компания хочет хранить персональные данные клиентов в собственном дата-центре из-за требований регулятора, но использовать облако для обработки обезличенных данных. Какая модель развёртывания им подходит?
 
 A) Public Cloud
@@ -114,6 +126,8 @@ D) Private Cloud
 ---
 
 ## Question 7: Well-Architected Framework
+
+
 
 
 
@@ -137,19 +151,23 @@ D) 7
 
 
 
+
+
 Какой столп AWS Well-Architected Framework отвечает за принцип "Stop spending money on undifferentiated heavy lifting"?
 
-A) Security
+A) Cost Optimization
 
 B) Performance Efficiency
 
-C) Operational Excellence
+C) Security
 
-D) Cost Optimization
+D) Operational Excellence
 
 ---
 
 ## Question 9: История облаков
+
+
 
 
 
@@ -173,19 +191,23 @@ D) Google
 
 
 
+
+
 Чем эластичность (elasticity) отличается от масштабируемости (scalability)?
 
-A) Масштабируемость только для уменьшения ресурсов
+A) Эластичность — возможность автоматически масштабироваться вверх И вниз в зависимости от нагрузки
 
 B) Эластичность требует ручного вмешательства
 
-C) Это одно и то же
+C) Масштабируемость только для уменьшения ресурсов
 
-D) Эластичность — возможность автоматически масштабироваться вверх И вниз в зависимости от нагрузки
+D) Это одно и то же
 
 ---
 
 ## Question 11: Resource Pooling
+
+
 
 
 
@@ -209,6 +231,8 @@ D) Данные всех клиентов хранятся в одном мес�
 
 
 
+
+
 Для какого сценария Google Cloud Platform будет наиболее подходящим выбором?
 
 A) Компания с focus на Big Data и Machine Learning workloads
@@ -222,6 +246,8 @@ D) Enterprise с existing Microsoft Active Directory
 ---
 
 ## Question 13: TCO Calculation
+
+
 
 
 
@@ -245,15 +271,17 @@ D) Стоимость исходящего трафика (data transfer out)
 
 
 
+
+
 В модели Shared Responsibility, за что отвечает КЛИЕНТ при использовании EC2?
 
-A) Настройка Security Groups и патчинг ОС внутри инстанса
+A) Патчинг гипервизора
 
 B) Безопасность глобальной сети AWS
 
-C) Патчинг гипервизора
+C) Физическая безопасность дата-центров
 
-D) Физическая безопасность дата-центров
+D) Настройка Security Groups и патчинг ОС внутри инстанса
 
 ---
 
@@ -263,15 +291,17 @@ D) Физическая безопасность дата-центров
 
 
 
+
+
 Какая команда AWS CLI показывает информацию о текущих credentials (кто вы)?
 
-A) `aws whoami`
+A) `aws sts get-caller-identity`
 
-B) `aws iam get-user`
+B) `aws whoami`
 
 C) `aws configure list`
 
-D) `aws sts get-caller-identity`
+D) `aws iam get-user`
 
 ---
 
@@ -281,19 +311,23 @@ D) `aws sts get-caller-identity`
 
 
 
+
+
 Что из перечисленного НЕ входит в AWS Free Tier (12 месяцев)?
 
-A) 750 часов EC2 t2.micro в месяц
+A) 5 GB S3 storage
 
-B) 25 GB DynamoDB storage
+B) Unlimited data transfer between regions
 
-C) 5 GB S3 storage
+C) 750 часов EC2 t2.micro в месяц
 
-D) Unlimited data transfer between regions
+D) 25 GB DynamoDB storage
 
 ---
 
 ## Question 17: Multi-Cloud Strategy
+
+
 
 
 
@@ -317,6 +351,8 @@ D) AWS требует использовать другие облака
 
 
 
+
+
 Какой принцип Well-Architected Framework рекомендует "Make frequent, small, reversible changes"?
 
 A) Reliability
@@ -330,6 +366,8 @@ D) Operational Excellence
 ---
 
 ## Question 19: AWS Regions
+
+
 
 
 
@@ -353,15 +391,17 @@ D) Для снижения latency, compliance, и disaster recovery
 
 
 
+
+
 Какое действие рекомендуется выполнить ПЕРВЫМ после создания нового AWS аккаунта?
 
 A) Запустить EC2 инстанс
 
-B) Включить MFA на root аккаунте и создать IAM пользователя для повседневной работы
+B) Создать S3 bucket для хранения данных
 
-C) Создать S3 bucket для хранения данных
+C) Настроить VPC с публичными подсетями
 
-D) Настроить VPC с публичными подсетями
+D) Включить MFA на root аккаунте и создать IAM пользователя для повседневной работы
 
 ---
 
@@ -373,24 +413,24 @@ D) Настроить VPC с публичными подсетями
 |---|--------|-------------|
 | 1 | C | NIST определяет 5 характеристик: on-demand self-service, broad network access, resource pooling, rapid elasticity, measured service. Guaranteed uptime не является характеристикой по определению. |
 | 2 | D | Amazon запустил S3 в марте 2006 и EC2 в августе 2006 года. |
-| 3 | D | CapEx (капитальные затраты на оборудование) заменяются OpEx (операционные расходы) — платите только за использованные ресурсы. |
-| 4 | C | AWS лидирует с долей ~32% рынка, Azure ~23%, GCP ~11%. |
+| 3 | B | CapEx (капитальные затраты на оборудование) заменяются OpEx (операционные расходы) — платите только за использованные ресурсы. |
+| 4 | D | AWS лидирует с долей ~32% рынка, Azure ~23%, GCP ~11%. |
 | 5 | C | DynamoDB — уникальный NoSQL сервис без прямых аналогов. EC2 и S3 имеют совместимые альтернативы, RDS PostgreSQL — стандартная технология. |
 | 6 | B | Hybrid Cloud позволяет комбинировать on-premise (для регулируемых данных) и public cloud (для обработки). |
 | 7 | A | Well-Architected Framework имеет 6 столпов: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability. |
-| 8 | D | Cost Optimization включает принцип не тратить деньги на "undifferentiated heavy lifting" — использовать managed services. |
+| 8 | A | Cost Optimization включает принцип не тратить деньги на "undifferentiated heavy lifting" — использовать managed services. |
 | 9 | C | Salesforce запустила CRM как SaaS в 1999 году, став пионером этой модели. |
-| 10 | D | Elasticity — способность автоматически масштабироваться ВВЕРХ при росте нагрузки и ВНИЗ при её снижении. Scalability — способность расти, но не обязательно автоматически или уменьшаться. |
+| 10 | A | Elasticity — способность автоматически масштабироваться ВВЕРХ при росте нагрузки и ВНИЗ при её снижении. Scalability — способность расти, но не обязательно автоматически или уменьшаться. |
 | 11 | B | Resource pooling означает, что физические ресурсы провайдера разделяются между множеством клиентов (multi-tenancy) с изоляцией на логическом уровне. |
 | 12 | A | GCP силён в Big Data (BigQuery) и ML (Vertex AI, TPU). Azure лучше для Microsoft стека, AWS — для breadth of services. |
 | 13 | D | Data transfer out (исходящий трафик) часто недооценивают. AWS берёт ~$0.09/GB, что может составить значительную сумму при больших объёмах. |
-| 14 | A | В Shared Responsibility клиент отвечает за security "in the cloud" — настройку Security Groups, патчинг ОС, управление доступом. AWS отвечает за security "of the cloud". |
-| 15 | D | `aws sts get-caller-identity` показывает UserId, Account и ARN текущего principal. |
-| 16 | D | Data transfer between regions платный. Free Tier включает: 750 hrs EC2, 5GB S3, 25GB DynamoDB, но не unlimited cross-region transfer. |
+| 14 | D | В Shared Responsibility клиент отвечает за security "in the cloud" — настройку Security Groups, патчинг ОС, управление доступом. AWS отвечает за security "of the cloud". |
+| 15 | A | `aws sts get-caller-identity` показывает UserId, Account и ARN текущего principal. |
+| 16 | B | Data transfer between regions платный. Free Tier включает: 750 hrs EC2, 5GB S3, 25GB DynamoDB, но не unlimited cross-region transfer. |
 | 17 | A | Multi-cloud снижает зависимость от одного провайдера и повышает отказоустойчивость (DR в другом облаке). Это НЕ проще и не всегда дешевле. |
 | 18 | D | "Make frequent, small, reversible changes" — принцип Operational Excellence для снижения риска и быстрого восстановления. |
 | 19 | D | Регионы нужны для: низкой latency (близость к пользователям), compliance (данные в определённой юрисдикции), disaster recovery (географическое распределение). |
-| 20 | B | Security first: включить MFA на root, создать IAM пользователя с нужными permissions. Никогда не использовать root для повседневной работы. |
+| 20 | D | Security first: включить MFA на root, создать IAM пользователя с нужными permissions. Никогда не использовать root для повседневной работы. |
 
 ---
 

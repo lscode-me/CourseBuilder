@@ -10,6 +10,8 @@
 
 
 
+
+
 Какой веб-сервер появился первым?
 
 A) CERN httpd
@@ -23,6 +25,8 @@ D) Nginx
 ---
 
 ## Question 2: Apache MPM
+
+
 
 
 
@@ -46,6 +50,8 @@ D) prefork
 
 
 
+
+
 Как Nginx обрабатывает множество соединений?
 
 A) Использует event-driven модель с epoll/kqueue
@@ -64,15 +70,17 @@ D) Создаёт новый процесс для каждого соедине
 
 
 
+
+
 Какой веб-сервер поддерживает .htaccess файлы?
 
-A) H2O
+A) Nginx
 
-B) Apache
+B) OpenBSD httpd
 
-C) Nginx
+C) H2O
 
-D) OpenBSD httpd
+D) Apache
 
 ---
 
@@ -82,19 +90,23 @@ D) OpenBSD httpd
 
 
 
+
+
 Как называется блок конфигурации виртуального хоста в Nginx?
 
-A) site
+A) server
 
-B) host
+B) site
 
-C) server
+C) host
 
 D) VirtualHost
 
 ---
 
 ## Question 6: Reverse Proxy
+
+
 
 
 
@@ -118,19 +130,23 @@ D) upstream_pass
 
 
 
+
+
 Какой модуль Apache используется для URL rewriting?
 
-A) mod_route
+A) mod_url
 
-B) mod_url
+B) mod_route
 
-C) mod_redirect
+C) mod_rewrite
 
-D) mod_rewrite
+D) mod_redirect
 
 ---
 
 ## Question 8: Nginx worker_processes
+
+
 
 
 
@@ -154,15 +170,17 @@ D) 1
 
 
 
+
+
 Какая главная особенность веб-сервера Caddy?
 
-A) Автоматический HTTPS с Let's Encrypt
+A) Совместимость с Apache
 
-B) Встроенная база данных
+B) Автоматический HTTPS с Let's Encrypt
 
 C) Самый быстрый в мире
 
-D) Совместимость с Apache
+D) Встроенная база данных
 
 ---
 
@@ -172,15 +190,17 @@ D) Совместимость с Apache
 
 
 
+
+
 Что является главным приоритетом OpenBSD httpd?
 
-A) Безопасность и простота
+A) Совместимость с Apache
 
-B) Совместимость с Apache
+B) Максимальная производительность
 
 C) Поддержка всех протоколов
 
-D) Максимальная производительность
+D) Безопасность и простота
 
 ---
 
@@ -190,19 +210,23 @@ D) Максимальная производительность
 
 
 
+
+
 Какой порт по умолчанию используется для HTTPS?
 
-A) 443
+A) 8080
 
-B) 8080
+B) 443
 
-C) 80
+C) 8443
 
-D) 8443
+D) 80
 
 ---
 
 ## Question 12: Nginx upstream
+
+
 
 
 
@@ -226,6 +250,8 @@ D) Для SSL настройки
 
 
 
+
+
 Чем event MPM отличается от worker MPM?
 
 A) Не поддерживает потоки
@@ -244,15 +270,17 @@ D) Использует больше памяти
 
 
 
+
+
 Какая директива Nginx используется для кэширования статических файлов?
 
-A) cache
+A) static_cache
 
-B) file_cache
+B) cache
 
 C) expires
 
-D) static_cache
+D) file_cache
 
 ---
 
@@ -262,19 +290,23 @@ D) static_cache
 
 
 
+
+
 Для каких сценариев лучше всего подходит Lighttpd?
 
-A) Только базы данных
+A) Только Windows серверы
 
 B) Встраиваемые системы и высоконагруженные статические сайты
 
-C) Корпоративные приложения
+C) Только базы данных
 
-D) Только Windows серверы
+D) Корпоративные приложения
 
 ---
 
 ## Question 16: Nginx try_files
+
+
 
 
 
@@ -298,6 +330,8 @@ D) Удаляет файл
 
 
 
+
+
 Какой веб-сервер был специально оптимизирован для HTTP/2?
 
 A) H2O
@@ -316,19 +350,23 @@ D) Apache
 
 
 
+
+
 Для чего в основном используется Traefik?
 
-A) Статические сайты
+A) База данных
 
-B) База данных
+B) Reverse proxy для микросервисов (Docker/Kubernetes)
 
-C) Reverse proxy для микросервисов (Docker/Kubernetes)
+C) Статические сайты
 
 D) Email сервер
 
 ---
 
 ## Question 19: Nginx reload
+
+
 
 
 
@@ -352,15 +390,17 @@ D) `nginx -s stop`
 
 
 
+
+
 Какой сервер лучше использовать для shared hosting с .htaccess?
 
-A) Nginx
+A) H2O
 
 B) OpenBSD httpd
 
-C) H2O
+C) Apache с LiteSpeed
 
-D) Apache с LiteSpeed
+D) Nginx
 
 ---
 
@@ -373,23 +413,23 @@ D) Apache с LiteSpeed
 | 1 | A | CERN httpd был создан Tim Berners-Lee в 1990 году — первый веб-сервер |
 | 2 | D | prefork создаёт отдельный процесс для каждого соединения |
 | 3 | A | Nginx использует event loop с epoll (Linux) или kqueue (BSD) |
-| 4 | B | Только Apache поддерживает .htaccess; Nginx использует централизованную конфигурацию |
-| 5 | C | В Nginx виртуальные хосты настраиваются в блоках `server { }` |
+| 4 | D | Только Apache поддерживает .htaccess; Nginx использует централизованную конфигурацию |
+| 5 | A | В Nginx виртуальные хосты настраиваются в блоках `server { }` |
 | 6 | A | `proxy_pass` указывает URL backend сервера для проксирования |
-| 7 | D | mod_rewrite — модуль для сложных URL преобразований |
+| 7 | C | mod_rewrite — модуль для сложных URL преобразований |
 | 8 | C | Рекомендуется устанавливать worker_processes равным числу CPU или auto |
-| 9 | A | Caddy автоматически получает и обновляет сертификаты Let's Encrypt |
-| 10 | A | OpenBSD httpd создан с приоритетом безопасности (privilege separation, chroot) |
-| 11 | A | HTTPS использует порт 443 по умолчанию |
+| 9 | B | Caddy автоматически получает и обновляет сертификаты Let's Encrypt |
+| 10 | D | OpenBSD httpd создан с приоритетом безопасности (privilege separation, chroot) |
+| 11 | B | HTTPS использует порт 443 по умолчанию |
 | 12 | A | upstream определяет группу серверов для load balancing |
 | 13 | B | event MPM использует асинхронную обработку keep-alive соединений |
 | 14 | C | Директива `expires` устанавливает время кэширования для браузера |
 | 15 | B | Lighttpd отлично подходит для embedded систем и высоконагруженных статических сайтов |
 | 16 | A | try_files последовательно проверяет существование файлов/директорий |
 | 17 | A | H2O был создан специально с оптимизацией под HTTP/2 |
-| 18 | C | Traefik — reverse proxy с автоматическим обнаружением сервисов в Docker/Kubernetes |
+| 18 | B | Traefik — reverse proxy с автоматическим обнаружением сервисов в Docker/Kubernetes |
 | 19 | A | `nginx -s reload` отправляет сигнал для перезагрузки конфигурации |
-| 20 | D | Apache поддерживает .htaccess; LiteSpeed совместим с Apache и используется на хостингах |
+| 20 | C | Apache поддерживает .htaccess; LiteSpeed совместим с Apache и используется на хостингах |
 
 ---
 

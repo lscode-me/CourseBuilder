@@ -9,6 +9,8 @@
 
 
 
+
+
 A) Тип базы данных
 
 B) Язык программирования
@@ -20,6 +22,8 @@ D) Облачный провайдер
 ---
 
 ## Question 2: "Pets vs Cattle"
+
+
 
 
 
@@ -43,13 +47,15 @@ D) Серверы заменяемы и эфемерны
 
 
 
+
+
 A) Prometheus
 
-B) MySQL
+B) Kubernetes
 
-C) Kubernetes
+C) Helm
 
-D) Helm
+D) MySQL
 
 ---
 
@@ -59,13 +65,15 @@ D) Helm
 
 
 
-A) Design for simplicity
+
+
+A) Design for on-premise
 
 B) Design for perfection
 
-C) Design for failure
+C) Design for simplicity
 
-D) Design for on-premise
+D) Design for failure
 
 ---
 
@@ -75,13 +83,15 @@ D) Design for on-premise
 
 
 
-A) Простое CRUD приложение маленькой команды
 
-B) Микросервисная архитектура
 
-C) Глобальное распределённое приложение
+A) Высоконагруженные системы
 
-D) Высоконагруженные системы
+B) Глобальное распределённое приложение
+
+C) Микросервисная архитектура
+
+D) Простое CRUD приложение маленькой команды
 
 ---
 
@@ -90,19 +100,23 @@ D) Высоконагруженные системы
 
 
 
+
+
 Почему контейнеры важны для Cloud Native?
 
-A) Дешевле VMs
+A) Portability и consistency между environments
 
-B) Portability и consistency между environments
+B) Быстрее запускаются
 
-C) Быстрее запускаются
+C) Дешевле VMs
 
 D) Не требуют ОС
 
 ---
 
 ## Question 7: Service Mesh
+
+
 
 
 
@@ -124,6 +138,8 @@ D) Только для compute
 
 
 
+
+
 Что такое Prometheus?
 
 A) Database
@@ -137,6 +153,8 @@ D) Container runtime
 ---
 
 ## Question 9: Immutable Infrastructure
+
+
 
 
 
@@ -158,15 +176,17 @@ D) Не изменять running infrastructure, а заменять
 
 
 
+
+
 Что такое GitOps?
 
-A) Git security
+A) Git backup
 
-B) Git backup
+B) Git security
 
-C) Git hosting
+C) Git как source of truth для infrastructure и deployments
 
-D) Git как source of truth для infrastructure и deployments
+D) Git hosting
 
 ---
 
@@ -175,15 +195,17 @@ D) Git как source of truth для infrastructure и deployments
 
 
 
+
+
 Что означает Declarative подход?
 
-A) Только YAML файлы
+A) Только JSON файлы
 
-B) Только JSON файлы
+B) Только YAML файлы
 
-C) Описывать желаемое состояние, система сама достигает
+C) Описывать шаги выполнения
 
-D) Описывать шаги выполнения
+D) Описывать желаемое состояние, система сама достигает
 
 ---
 
@@ -192,13 +214,15 @@ D) Описывать шаги выполнения
 
 
 
+
+
 Что включает Observability?
 
-A) Только logs
+A) Logs, metrics, traces для понимания системы
 
-B) Logs, metrics, traces для понимания системы
+B) Только monitoring
 
-C) Только monitoring
+C) Только logs
 
 D) Только alerting
 
@@ -209,19 +233,23 @@ D) Только alerting
 
 
 
+
+
 Почему Loose Coupling важен?
 
 A) Дешевле
 
-B) Независимое развитие и deployment компонентов
+B) Быстрее
 
-C) Быстрее
+C) Проще
 
-D) Проще
+D) Независимое развитие и deployment компонентов
 
 ---
 
 ## Question 14: Resilience
+
+
 
 
 
@@ -243,6 +271,8 @@ D) Низкая стоимость
 
 
 
+
+
 Что такое Horizontal Scaling?
 
 A) Увеличение bandwidth
@@ -260,19 +290,23 @@ D) Увеличение размера сервера
 
 
 
+
+
 Почему Automation критичен?
 
-A) Для security только
+A) Для compliance
 
-B) Для compliance
+B) Для security только
 
-C) Для экономии времени
+C) Consistency, speed, reduced human error
 
-D) Consistency, speed, reduced human error
+D) Для экономии времени
 
 ---
 
 ## Question 17: Self-Healing
+
+
 
 
 
@@ -294,15 +328,17 @@ D) Backups
 
 
 
+
+
 Что означает API-First подход?
 
-A) Дизайн API/контрактов до implementation
+A) GraphQL только
 
-B) gRPC только
+B) REST только
 
-C) REST только
+C) gRPC только
 
-D) GraphQL только
+D) Дизайн API/контрактов до implementation
 
 ---
 
@@ -311,15 +347,17 @@ D) GraphQL только
 
 
 
+
+
 Что означает Security by Design?
 
 A) Security audit после deployment
 
-B) Интеграция security с начала разработки
+B) Encryption только
 
-C) Firewall только
+C) Интеграция security с начала разработки
 
-D) Encryption только
+D) Firewall только
 
 ---
 
@@ -328,13 +366,15 @@ D) Encryption только
 
 
 
+
+
 Как Cloud Native помогает с Cost Optimization?
 
-A) Фиксированная стоимость
+A) Бесплатно
 
-B) Pay per use, auto-scaling, right-sizing
+B) Фиксированная стоимость
 
-C) Бесплатно
+C) Pay per use, auto-scaling, right-sizing
 
 D) Только для enterprise
 
@@ -348,23 +388,23 @@ D) Только для enterprise
 |---|--------|-------------|
 | 1 | C | CNCF (Cloud Native Computing Foundation) — организация, управляющая cloud native проектами. |
 | 2 | D | "Cattle" — серверы заменяемы и эфемерны. Сломался — уничтожь и создай новый. |
-| 3 | B | MySQL — не CNCF проект. Kubernetes, Prometheus, Helm — graduated CNCF проекты. |
-| 4 | C | "Design for failure" — предполагайте, что всё может сломаться, и проектируйте устойчиво. |
-| 5 | A | Для простого CRUD с маленькой командой монолит проще и эффективнее. |
-| 6 | B | Containers: portability и consistency |
+| 3 | D | MySQL — не CNCF проект. Kubernetes, Prometheus, Helm — graduated CNCF проекты. |
+| 4 | D | "Design for failure" — предполагайте, что всё может сломаться, и проектируйте устойчиво. |
+| 5 | D | Для простого CRUD с маленькой командой монолит проще и эффективнее. |
+| 6 | A | Containers: portability и consistency |
 | 7 | A | Service Mesh: observability, security, traffic |
 | 8 | B | Prometheus — CNCF monitoring toolkit |
 | 9 | D | Immutable: не изменять, а заменять |
-| 10 | D | GitOps: Git как source of truth |
-| 11 | C | Declarative: описывать желаемое состояние |
-| 12 | B | Observability: logs, metrics, traces |
-| 13 | B | Loose Coupling: независимое развитие |
+| 10 | C | GitOps: Git как source of truth |
+| 11 | D | Declarative: описывать желаемое состояние |
+| 12 | A | Observability: logs, metrics, traces |
+| 13 | D | Loose Coupling: независимое развитие |
 | 14 | C | Resilience: работа при failures |
 | 15 | B | Horizontal: добавление instances |
-| 16 | D | Automation: consistency, speed, fewer errors |
+| 16 | C | Automation: consistency, speed, fewer errors |
 | 17 | C | Self-Healing: автоматическое восстановление |
-| 18 | A | API-First: дизайн API до implementation |
-| 19 | B | Security by Design: с начала разработки |
-| 20 | B | Cost: pay per use, auto-scaling |
+| 18 | D | API-First: дизайн API до implementation |
+| 19 | C | Security by Design: с начала разработки |
+| 20 | C | Cost: pay per use, auto-scaling |
 
 ---

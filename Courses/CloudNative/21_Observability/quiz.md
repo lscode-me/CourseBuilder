@@ -9,19 +9,23 @@
 
 
 
+
+
 Какие три столпа observability?
 
 A) Logs, Alerts, Dashboards
 
-B) Logs, Metrics, Traces
+B) CPU, Memory, Network
 
-C) Monitoring, Alerting, Logging
+C) Logs, Metrics, Traces
 
-D) CPU, Memory, Network
+D) Monitoring, Alerting, Logging
 
 ---
 
 ## Question 2: Structured Logging
+
+
 
 
 
@@ -45,6 +49,8 @@ D) Легче парсить и искать, можно добавлять meta
 
 
 
+
+
 Что уникального предоставляют distributed traces?
 
 A) Агрегированные метрики
@@ -63,15 +69,17 @@ D) Больше деталей об ошибках
 
 
 
+
+
 Что означает RED в контексте метрик сервисов?
 
-A) Real-time, Exact, Distributed
+A) Request, Error, Data
 
-B) Request, Error, Data
+B) Read, Edit, Delete
 
 C) Rate, Errors, Duration
 
-D) Read, Edit, Delete
+D) Real-time, Exact, Distributed
 
 ---
 
@@ -81,15 +89,17 @@ D) Read, Edit, Delete
 
 
 
+
+
 В чём разница между X-Ray Annotation и Metadata?
 
-A) Metadata только для errors
+A) Annotations дороже
 
-B) Annotations индексируются и searchable, Metadata — нет
+B) Разницы нет
 
-C) Разницы нет
+C) Annotations индексируются и searchable, Metadata — нет
 
-D) Annotations дороже
+D) Metadata только для errors
 
 ---
 
@@ -98,19 +108,23 @@ D) Annotations дороже
 
 
 
+
+
 Для каких ресурсов применяется USE Method?
 
-A) Только для APIs
+A) Для hardware/infrastructure resources (CPU, memory, disk)
 
-B) Для hardware/infrastructure resources (CPU, memory, disk)
+B) Только для databases
 
-C) Только для databases
+C) Только для APIs
 
 D) Только для networks
 
 ---
 
 ## Question 7: CloudWatch Logs Insights
+
+
 
 
 
@@ -132,15 +146,17 @@ D) Только для metrics
 
 
 
+
+
 Что предоставляет Container Insights?
 
-A) Только billing
+A) Только traces
 
-B) Только traces
+B) Только billing
 
-C) Только logs
+C) Metrics и logs для ECS и EKS clusters
 
-D) Metrics и logs для ECS и EKS clusters
+D) Только logs
 
 ---
 
@@ -149,15 +165,17 @@ D) Metrics и logs для ECS и EKS clusters
 
 
 
+
+
 Для чего используются CloudWatch Dashboards?
 
-A) Только для alerting
+A) Для визуализации metrics и logs
 
-B) Только для хранения метрик
+B) Только для automation
 
-C) Только для automation
+C) Только для хранения метрик
 
-D) Для визуализации metrics и logs
+D) Только для alerting
 
 ---
 
@@ -166,19 +184,23 @@ D) Для визуализации metrics и logs
 
 
 
+
+
 Что такое Embedded Metric Format?
 
-A) Формат для traces
+A) Логи со structured metrics для автоматического извлечения
 
-B) Формат для logs
+B) Формат для dashboards
 
-C) Формат для dashboards
+C) Формат для logs
 
-D) Логи со structured metrics для автоматического извлечения
+D) Формат для traces
 
 ---
 
 ## Question 11: X-Ray Sampling
+
+
 
 
 
@@ -200,6 +222,8 @@ D) Для security
 
 
 
+
+
 Что такое CloudWatch ServiceLens?
 
 A) Только logging
@@ -213,6 +237,8 @@ D) Unified view: metrics, traces, logs для service health
 ---
 
 ## Question 13: Anomaly Detection
+
+
 
 
 
@@ -234,6 +260,8 @@ D) Только для security
 
 
 
+
+
 Для чего используется CloudWatch Contributor Insights?
 
 A) Только для security
@@ -251,15 +279,17 @@ D) Для анализа top contributors (top IPs, users, etc.)
 
 
 
+
+
 Что делает CloudWatch Synthetics?
 
-A) Synthetic logs
+A) Synthetic metrics
 
-B) Synthetic metrics
+B) Synthetic logs
 
-C) Создаёт synthetic data
+C) Canary scripts для proactive monitoring endpoints
 
-D) Canary scripts для proactive monitoring endpoints
+D) Создаёт synthetic data
 
 ---
 
@@ -268,15 +298,17 @@ D) Canary scripts для proactive monitoring endpoints
 
 
 
+
+
 Что делает CloudWatch Application Insights?
 
-A) Только metrics
+A) Автоматический setup monitoring для .NET/SQL Server apps
 
-B) Только logging
+B) Только tracing
 
-C) Автоматический setup monitoring для .NET/SQL Server apps
+C) Только metrics
 
-D) Только tracing
+D) Только logging
 
 ---
 
@@ -285,15 +317,17 @@ D) Только tracing
 
 
 
+
+
 Как настроить log retention?
 
 A) Автоматически
 
-B) Retention policy per log group
+B) Невозможно
 
-C) Невозможно
+C) Только через S3
 
-D) Только через S3
+D) Retention policy per log group
 
 ---
 
@@ -302,13 +336,15 @@ D) Только через S3
 
 
 
+
+
 Для чего используется Metric Math?
 
-A) Калькулятор
+A) Для создания derived metrics из других метрик
 
-B) Для создания derived metrics из других метрик
+B) Только для billing
 
-C) Только для billing
+C) Калькулятор
 
 D) Только для алертов
 
@@ -319,19 +355,23 @@ D) Только для алертов
 
 
 
+
+
 Какие actions поддерживают CloudWatch Alarms?
 
 A) Только SNS
 
-B) SNS, Lambda, EC2 actions, Auto Scaling, Systems Manager
+B) Только SMS
 
-C) Только email
+C) SNS, Lambda, EC2 actions, Auto Scaling, Systems Manager
 
-D) Только SMS
+D) Только email
 
 ---
 
 ## Question 20: Cross-Account Observability
+
+
 
 
 
@@ -354,25 +394,25 @@ D) Невозможно
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Три столпа observability: Logs (события), Metrics (числа), Traces (путь запроса). |
+| 1 | C | Три столпа observability: Logs (события), Metrics (числа), Traces (путь запроса). |
 | 2 | D | Structured logging позволяет легко парсить, искать по полям, добавлять context (request_id, user_id). |
 | 3 | B | Traces показывают как запрос проходит через сервисы с timing каждого компонента. |
 | 4 | C | RED = Rate (requests/sec), Errors (failed/sec), Duration (latency distribution). |
-| 5 | B | Annotations индексируются — можно искать traces по ним. Metadata не индексируется, для дополнительной информации. |
-| 6 | B | USE для hardware resources (CPU, memory, disk) |
+| 5 | C | Annotations индексируются — можно искать traces по ним. Metadata не индексируется, для дополнительной информации. |
+| 6 | A | USE для hardware resources (CPU, memory, disk) |
 | 7 | C | Logs Insights: SQL-like query для logs |
-| 8 | D | Container Insights: metrics и logs для ECS/EKS |
-| 9 | D | Dashboards для визуализации |
-| 10 | D | EMF: logs со structured metrics |
+| 8 | C | Container Insights: metrics и logs для ECS/EKS |
+| 9 | A | Dashboards для визуализации |
+| 10 | A | EMF: logs со structured metrics |
 | 11 | B | Sampling снижает overhead и cost |
 | 12 | D | ServiceLens: unified view health |
 | 13 | A | Anomaly Detection: ML для аномалий |
 | 14 | D | Contributor Insights: top contributors |
-| 15 | D | Synthetics: canary scripts для proactive monitoring |
-| 16 | C | Application Insights: auto-setup для .NET/SQL |
-| 17 | B | Retention policy per log group |
-| 18 | B | Metric Math для derived metrics |
-| 19 | B | Alarms: SNS, Lambda, EC2, ASG, SSM actions |
+| 15 | C | Synthetics: canary scripts для proactive monitoring |
+| 16 | A | Application Insights: auto-setup для .NET/SQL |
+| 17 | D | Retention policy per log group |
+| 18 | A | Metric Math для derived metrics |
+| 19 | C | Alarms: SNS, Lambda, EC2, ASG, SSM actions |
 | 20 | B | Cross-account observability или centralized account |
 
 ---

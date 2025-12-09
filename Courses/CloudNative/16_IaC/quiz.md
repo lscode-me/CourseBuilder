@@ -9,19 +9,23 @@
 
 
 
+
+
 Какое главное преимущество IaC?
 
-A) Быстрее чем консоль
+A) Не требует знания AWS
 
-B) Воспроизводимость и version control
+B) Быстрее чем консоль
 
 C) Дешевле
 
-D) Не требует знания AWS
+D) Воспроизводимость и version control
 
 ---
 
 ## Question 2: Terraform State
+
+
 
 
 
@@ -45,19 +49,23 @@ D) В Terraform Cloud только
 
 
 
+
+
 Какая функция CloudFormation позволяет предварительно просмотреть изменения?
 
-A) Stack Policy
+A) Change Set
 
 B) Drift Detection
 
-C) Change Set
+C) Rollback
 
-D) Rollback
+D) Stack Policy
 
 ---
 
 ## Question 4: Terraform vs CloudFormation
+
+
 
 
 
@@ -81,15 +89,17 @@ D) Managed state
 
 
 
+
+
 Как хранить secrets в IaC коде?
 
-A) В git (зашифрованные)
+A) Не хранить, использовать SSM/Secrets Manager references
 
-B) В переменных
+B) В outputs
 
-C) Не хранить, использовать SSM/Secrets Manager references
+C) В git (зашифрованные)
 
-D) В outputs
+D) В переменных
 
 ---
 
@@ -98,19 +108,23 @@ D) В outputs
 
 
 
+
+
 Что такое AWS CDK?
 
-A) Cloud Database Kit
+A) Определение инфраструктуры на языках программирования
 
-B) Определение инфраструктуры на языках программирования
+B) Monitoring tool
 
 C) CI/CD tool
 
-D) Monitoring tool
+D) Cloud Database Kit
 
 ---
 
 ## Question 7: SAM
+
+
 
 
 
@@ -132,6 +146,8 @@ D) Для любой инфраструктуры
 
 
 
+
+
 Что такое Drift Detection в CloudFormation?
 
 A) Performance monitoring
@@ -149,19 +165,23 @@ D) Security scan
 
 
 
+
+
 Для чего используются Terraform Modules?
 
-A) Только для variables
+A) Для reusable infrastructure components
 
-B) Для reusable infrastructure components
+B) Только для outputs
 
-C) Только для outputs
+C) Только для variables
 
 D) Для state
 
 ---
 
 ## Question 10: Stack Sets
+
+
 
 
 
@@ -183,6 +203,8 @@ D) Только backup
 
 
 
+
+
 Чем Pulumi отличается от Terraform?
 
 A) Не поддерживает state
@@ -200,19 +222,23 @@ D) Ничем
 
 
 
+
+
 Что делает terraform plan?
 
-A) Удаляет ресурсы
+A) Показывает какие изменения будут сделаны (dry-run)
 
-B) Применяет изменения
+B) Инициализирует project
 
-C) Инициализирует project
+C) Применяет изменения
 
-D) Показывает какие изменения будут сделаны (dry-run)
+D) Удаляет ресурсы
 
 ---
 
 ## Question 13: CloudFormation Parameters
+
+
 
 
 
@@ -234,19 +260,23 @@ D) Для secrets
 
 
 
+
+
 Что делает terraform import?
 
-A) Создаёт ресурсы
+A) Экспортирует state
 
 B) Импортирует существующие ресурсы в state
 
-C) Удаляет ресурсы
+C) Создаёт ресурсы
 
-D) Экспортирует state
+D) Удаляет ресурсы
 
 ---
 
 ## Question 15: Nested Stacks
+
+
 
 
 
@@ -268,19 +298,23 @@ D) Для организации больших templates в reusable components
 
 
 
+
+
 Для чего используются Terraform Workspaces?
 
-A) Для управления multiple environments с одним кодом
+A) Для monitoring
 
-B) Для security
+B) Для IDE
 
-C) Для monitoring
+C) Для управления multiple environments с одним кодом
 
-D) Для IDE
+D) Для security
 
 ---
 
 ## Question 17: cfn-lint
+
+
 
 
 
@@ -302,6 +336,8 @@ D) Шифрует templates
 
 
 
+
+
 Для чего используется terraform.tfvars?
 
 A) Для providers
@@ -315,6 +351,8 @@ D) Для значений переменных
 ---
 
 ## Question 19: Outputs
+
+
 
 
 
@@ -336,15 +374,17 @@ D) Для экспорта значений для других stacks или п
 
 
 
+
+
 Что делает terraform destroy?
 
-A) Показывает план
+A) Обновляет state
 
-B) Обновляет state
+B) Показывает план
 
-C) Создаёт ресурсы
+C) Удаляет все управляемые ресурсы
 
-D) Удаляет все управляемые ресурсы
+D) Создаёт ресурсы
 
 ---
 
@@ -354,25 +394,25 @@ D) Удаляет все управляемые ресурсы
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | IaC обеспечивает воспроизводимость (одинаковая инфраструктура везде) и version control (история изменений). |
+| 1 | D | IaC обеспечивает воспроизводимость (одинаковая инфраструктура везде) и version control (история изменений). |
 | 2 | A | S3 для хранения + DynamoDB для locking предотвращает concurrent modifications. |
-| 3 | C | Change Set показывает какие ресурсы будут созданы/изменены/удалены перед применением. |
+| 3 | A | Change Set показывает какие ресурсы будут созданы/изменены/удалены перед применением. |
 | 4 | B | Terraform поддерживает AWS, GCP, Azure и 1000+ других провайдеров. CloudFormation — только AWS. |
-| 5 | C | Secrets никогда не хранятся в коде. Используются references на SSM Parameter Store или Secrets Manager. |
-| 6 | B | CDK — инфраструктура на языках программирования |
+| 5 | A | Secrets никогда не хранятся в коде. Используются references на SSM Parameter Store или Secrets Manager. |
+| 6 | A | CDK — инфраструктура на языках программирования |
 | 7 | C | SAM для serverless (Lambda, API Gateway, DynamoDB) |
 | 8 | C | Drift Detection находит manual changes |
-| 9 | B | Modules для reusable components |
+| 9 | A | Modules для reusable components |
 | 10 | C | StackSets: deploy across accounts/regions |
 | 11 | C | Pulumi использует настоящие языки |
-| 12 | D | terraform plan показывает изменения (dry-run) |
+| 12 | A | terraform plan показывает изменения (dry-run) |
 | 13 | A | Parameters для input values |
 | 14 | B | terraform import импортирует существующие ресурсы |
 | 15 | D | Nested Stacks для организации templates |
-| 16 | A | Workspaces для multiple environments |
+| 16 | C | Workspaces для multiple environments |
 | 17 | C | cfn-lint валидирует templates |
 | 18 | D | terraform.tfvars для значений переменных |
 | 19 | D | Outputs для экспорта значений |
-| 20 | D | terraform destroy удаляет все ресурсы |
+| 20 | C | terraform destroy удаляет все ресурсы |
 
 ---

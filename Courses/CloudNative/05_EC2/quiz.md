@@ -11,6 +11,8 @@
 
 
 
+
+
 Что означает "m" в названии инстанса m5.xlarge?
 
 A) Memory optimized
@@ -29,19 +31,23 @@ D) General purpose (balanced)
 
 
 
+
+
 Какое главное преимущество Graviton (ARM) инстансов?
 
-A) Только для ML workloads
+A) Бесплатны в Free Tier
 
-B) Только для Windows
+B) Только для ML workloads
 
 C) Лучшее соотношение цена/производительность
 
-D) Бесплатны в Free Tier
+D) Только для Windows
 
 ---
 
 ## Question 3: Spot Instances
+
+
 
 
 
@@ -65,19 +71,23 @@ D) До 30%
 
 
 
+
+
 Какой тип EBS volume рекомендуется для большинства workloads?
 
-A) io2
+A) gp3
 
-B) st1
+B) io2
 
 C) gp2
 
-D) gp3
+D) st1
 
 ---
 
 ## Question 5: Auto Scaling
+
+
 
 
 
@@ -101,19 +111,23 @@ D) Количество инстансов в группе
 
 
 
+
+
 Какой тип Placement Group обеспечивает минимальную латентность?
 
-A) Partition
+A) Spread
 
 B) Default
 
-C) Spread
+C) Cluster
 
-D) Cluster
+D) Partition
 
 ---
 
 ## Question 7: Reserved Instances
+
+
 
 
 
@@ -137,6 +151,8 @@ D) 1 год или 3 года
 
 
 
+
+
 По какому адресу доступен Instance Metadata Service?
 
 A) http://localhost/metadata
@@ -150,6 +166,8 @@ D) http://169.254.169.254/latest/meta-data/
 ---
 
 ## Question 9: User Data
+
+
 
 
 
@@ -173,6 +191,8 @@ D) Только при первом запуске инстанса
 
 
 
+
+
 Что НЕ включено в AMI?
 
 A) Конфигурация EBS
@@ -186,6 +206,8 @@ D) Установленное ПО
 ---
 
 ## Question 11: T-series Burstable
+
+
 
 
 
@@ -209,19 +231,23 @@ D) Накапливаются CPU credits, которые тратятся пр�
 
 
 
+
+
 Куда сохраняются EBS snapshots?
 
-A) В Glacier
+A) На тот же EBS volume
 
-B) В S3 (managed AWS)
+B) На другой EC2 инстанс
 
-C) На тот же EBS volume
+C) В Glacier
 
-D) На другой EC2 инстанс
+D) В S3 (managed AWS)
 
 ---
 
 ## Question 13: Security Groups
+
+
 
 
 
@@ -245,15 +271,17 @@ D) На уровне региона
 
 
 
+
+
 Чем Compute Savings Plan отличается от EC2 Instance Savings Plan?
 
 A) Ничем
 
-B) EC2 Instance SP дешевле
+B) Compute SP применяется к любым instance types и регионам
 
-C) Compute SP только для Lambda
+C) EC2 Instance SP дешевле
 
-D) Compute SP применяется к любым instance types и регионам
+D) Compute SP только для Lambda
 
 ---
 
@@ -263,15 +291,17 @@ D) Compute SP применяется к любым instance types и регио�
 
 
 
+
+
 Какой тип health check рекомендуется при использовании ALB?
 
-A) EC2
+A) Custom
 
 B) None
 
-C) Custom
+C) ELB
 
-D) ELB
+D) EC2
 
 ---
 
@@ -280,15 +310,17 @@ D) ELB
 
 
 
+
+
 Какой placement group обеспечивает минимальную latency?
 
-A) Cluster
+A) Partition
 
 B) Spread
 
-C) Partition
+C) Default
 
-D) Default
+D) Cluster
 
 ---
 
@@ -297,15 +329,17 @@ D) Default
 
 
 
+
+
 Что происходит с данными instance store при остановке EC2?
 
 A) Сохраняются
 
-B) Теряются
+B) Архивируются
 
-C) Переносятся в S3
+C) Теряются
 
-D) Архивируются
+D) Переносятся в S3
 
 ---
 
@@ -314,15 +348,17 @@ D) Архивируются
 
 
 
+
+
 Сколько Elastic IP бесплатно на аккаунт?
 
 A) 5 (если attached к running instance)
 
-B) Неограниченно
+B) 1
 
-C) 1
+C) 10
 
-D) 10
+D) Неограниченно
 
 ---
 
@@ -331,15 +367,17 @@ D) 10
 
 
 
+
+
 Чем Launch Template лучше Launch Configuration?
 
-A) Ничем
+A) Дешевле
 
-B) Поддерживает версионирование и mixing instance types
+B) Ничем
 
 C) Работает быстрее
 
-D) Дешевле
+D) Поддерживает версионирование и mixing instance types
 
 ---
 
@@ -348,15 +386,17 @@ D) Дешевле
 
 
 
+
+
 Что сохраняется при hibernate?
 
-A) Только диск
+A) Только network state
 
 B) RAM (в EBS), быстрый resume
 
-C) Ничего
+C) Только диск
 
-D) Только network state
+D) Ничего
 
 ---
 
@@ -369,22 +409,22 @@ D) Только network state
 | 1 | D | "M" означает General Purpose — сбалансированные ресурсы CPU и памяти. C = Compute, R = Memory, T = Burstable. |
 | 2 | C | Graviton (ARM) инстансы обеспечивают до 40% лучшее price/performance по сравнению с x86 аналогами. |
 | 3 | B | Spot Instances могут быть до 90% дешевле On-Demand, но могут быть прерваны. |
-| 4 | D | gp3 рекомендуется вместо gp2 — позволяет настраивать IOPS и throughput независимо и стоит дешевле. |
+| 4 | A | gp3 рекомендуется вместо gp2 — позволяет настраивать IOPS и throughput независимо и стоит дешевле. |
 | 5 | C | Launch Template определяет конфигурацию инстансов: AMI, instance type, security groups, user data и т.д. |
-| 6 | D | Cluster Placement Group размещает все инстансы в одном rack, обеспечивая минимальную латентность (< 1ms). |
+| 6 | C | Cluster Placement Group размещает все инстансы в одном rack, обеспечивая минимальную латентность (< 1ms). |
 | 7 | D | Reserved Instances доступны на 1 год или 3 года. 3-летний срок даёт большую скидку. |
 | 8 | D | IMDS доступен по адресу http://169.254.169.254/latest/meta-data/ изнутри инстанса. |
 | 9 | D | User Data выполняется только при первом запуске инстанса (first boot). Для повторного выполнения нужны дополнительные настройки. |
 | 10 | C | Instance type не включён в AMI. AMI содержит ОС, ПО, конфигурацию EBS, но размер выбирается при запуске. |
 | 11 | D | T-инстансы накапливают CPU credits когда не используют полный CPU, и тратят их при burst нагрузке. |
-| 12 | B | EBS snapshots хранятся в S3, управляемом AWS. Вы не видите их в своих S3 buckets. |
+| 12 | D | EBS snapshots хранятся в S3, управляемом AWS. Вы не видите их в своих S3 buckets. |
 | 13 | A | Security Groups работают на уровне ENI (Elastic Network Interface), прикреплённого к инстансу. |
-| 14 | D | Compute Savings Plan даёт гибкость: любой instance type, family, размер, регион, OS. EC2 Instance SP привязан к family в регионе. |
-| 15 | D | При использовании ALB рекомендуется ELB health check — он проверяет реальную доступность приложения через target group. |
-| 16 | A | Cluster placement group минимизирует latency между instances |
-| 17 | B | Instance store данные теряются при stop/terminate |
+| 14 | B | Compute Savings Plan даёт гибкость: любой instance type, family, размер, регион, OS. EC2 Instance SP привязан к family в регионе. |
+| 15 | C | При использовании ALB рекомендуется ELB health check — он проверяет реальную доступность приложения через target group. |
+| 16 | D | Cluster placement group минимизирует latency между instances |
+| 17 | C | Instance store данные теряются при stop/terminate |
 | 18 | A | 5 Elastic IP бесплатно если attached к running instance |
-| 19 | B | Launch Template поддерживает версии и mixing instance types |
+| 19 | D | Launch Template поддерживает версии и mixing instance types |
 | 20 | B | Hibernate сохраняет RAM в EBS для быстрого resume |
 
 ---

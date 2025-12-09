@@ -10,6 +10,8 @@
 
 
 
+
+
 Что такое WSGI?
 
 A) HTTP протокол для Python
@@ -28,15 +30,17 @@ D) Web Server Gateway Interface — стандартный интерфейс м
 
 
 
+
+
 Какая сигнатура у WSGI приложения?
 
 A) `async def app(scope, receive, send)`
 
-B) `def app(environ, start_response) -> Iterable[bytes]`
+B) `def app(method, path, headers) -> body`
 
-C) `def app(method, path, headers) -> body`
+C) `def app(request) -> response`
 
-D) `def app(request) -> response`
+D) `def app(environ, start_response) -> Iterable[bytes]`
 
 ---
 
@@ -46,15 +50,17 @@ D) `def app(request) -> response`
 
 
 
+
+
 Что содержит аргумент `environ` в WSGI приложении?
 
-A) Только URL и метод
+A) Только HTTP заголовки
 
-B) Только HTTP заголовки
+B) Только URL и метод
 
-C) Только переменные окружения системы
+C) CGI-подобные переменные + WSGI-специфичные переменные
 
-D) CGI-подобные переменные + WSGI-специфичные переменные
+D) Только переменные окружения системы
 
 ---
 
@@ -64,19 +70,23 @@ D) CGI-подобные переменные + WSGI-специфичные пе�
 
 
 
+
+
 Что делает функция `start_response`?
 
-A) Запускает веб-сервер
+A) Устанавливает HTTP статус и заголовки ответа
 
-B) Устанавливает HTTP статус и заголовки ответа
+B) Логирует запрос
 
-C) Логирует запрос
+C) Запускает веб-сервер
 
 D) Парсит входящий запрос
 
 ---
 
 ## Question 5: Возвращаемое значение
+
+
 
 
 
@@ -100,15 +110,17 @@ D) Словарь с данными
 
 
 
+
+
 Для чего используется `environ['wsgi.input']`?
 
-A) Для записи ответа
+A) Для чтения тела запроса (stdin)
 
-B) Для записи логов
+B) Для чтения заголовков
 
-C) Для чтения заголовков
+C) Для записи логов
 
-D) Для чтения тела запроса (stdin)
+D) Для записи ответа
 
 ---
 
@@ -118,15 +130,17 @@ D) Для чтения тела запроса (stdin)
 
 
 
+
+
 Что такое WSGI middleware?
 
-A) Обёртка над приложением, добавляющая функциональность
+A) HTTP клиент
 
-B) База данных
+B) Обёртка над приложением, добавляющая функциональность
 
 C) Веб-сервер
 
-D) HTTP клиент
+D) База данных
 
 ---
 
@@ -136,13 +150,15 @@ D) HTTP клиент
 
 
 
+
+
 В каком PEP определён WSGI?
 
-A) PEP 8
+A) PEP 484
 
-B) PEP 484
+B) PEP 3333
 
-C) PEP 3333
+C) PEP 8
 
 D) PEP 20
 
@@ -154,19 +170,23 @@ D) PEP 20
 
 
 
+
+
 Что такое Gunicorn?
 
 A) Python веб-фреймворк
 
-B) WSGI HTTP сервер для production
+B) Библиотека для тестирования
 
-C) ORM для баз данных
+C) WSGI HTTP сервер для production
 
-D) Библиотека для тестирования
+D) ORM для баз данных
 
 ---
 
 ## Question 10: Количество воркеров
+
+
 
 
 
@@ -190,15 +210,17 @@ D) 100 воркеров
 
 
 
+
+
 Как Flask приложение связано с WSGI?
 
-A) Flask работает только с uWSGI
+A) Flask app — это WSGI application (callable)
 
-B) Flask app — это WSGI application (callable)
+B) Flask работает только с uWSGI
 
-C) Flask заменяет WSGI
+C) Flask не использует WSGI
 
-D) Flask не использует WSGI
+D) Flask заменяет WSGI
 
 ---
 
@@ -208,19 +230,23 @@ D) Flask не использует WSGI
 
 
 
+
+
 Как HTTP заголовки представлены в environ?
 
-A) В отдельном словаре headers
+A) С префиксом HTTP_ (например, HTTP_USER_AGENT)
 
-B) С префиксом HTTP_ (например, HTTP_USER_AGENT)
+B) В виде списка кортежей
 
 C) Через wsgi.headers
 
-D) В виде списка кортежей
+D) В отдельном словаре headers
 
 ---
 
 ## Question 13: wsgiref
+
+
 
 
 
@@ -244,19 +270,23 @@ D) Парсер HTTP
 
 
 
+
+
 Чем uWSGI отличается от Gunicorn?
 
-A) uWSGI более функциональный, но сложнее в настройке
+A) uWSGI только для Python 2
 
-B) uWSGI работает только на Windows
+B) uWSGI не поддерживает WSGI
 
-C) uWSGI только для Python 2
+C) uWSGI более функциональный, но сложнее в настройке
 
-D) uWSGI не поддерживает WSGI
+D) uWSGI работает только на Windows
 
 ---
 
 ## Question 15: Nginx + Gunicorn
+
+
 
 
 
@@ -279,15 +309,17 @@ D) Только для красоты
 
 
 
+
+
 Как получить HTTP метод в WSGI приложении?
 
-A) start_response.method
+A) environ['HTTP_METHOD']
 
-B) environ['METHOD']
+B) environ['REQUEST_METHOD']
 
-C) environ['HTTP_METHOD']
+C) start_response.method
 
-D) environ['REQUEST_METHOD']
+D) environ['METHOD']
 
 ---
 
@@ -296,15 +328,17 @@ D) environ['REQUEST_METHOD']
 
 
 
+
+
 Что содержит environ['PATH_INFO']?
 
-A) Путь запроса (часть URL до query string)
+A) Query string
 
-B) Путь к скрипту
+B) Путь запроса (часть URL до query string)
 
 C) Полный URL запроса
 
-D) Query string
+D) Путь к скрипту
 
 ---
 
@@ -313,15 +347,17 @@ D) Query string
 
 
 
+
+
 Для чего используется environ['wsgi.errors']?
 
-A) Для валидации данных
+A) Для записи ошибок сервера (stderr)
 
-B) Для отправки ошибок клиенту
+B) Для чтения ошибок запроса
 
-C) Для чтения ошибок запроса
+C) Для отправки ошибок клиенту
 
-D) Для записи ошибок сервера (stderr)
+D) Для валидации данных
 
 ---
 
@@ -330,15 +366,17 @@ D) Для записи ошибок сервера (stderr)
 
 
 
+
+
 Для чего нужен третий аргумент start_response(status, headers, exc_info)?
 
-A) Для логирования
+A) Для передачи информации об исключении
 
 B) Для закрытия соединения
 
-C) Для передачи информации об исключении
+C) Для кэширования
 
-D) Для кэширования
+D) Для логирования
 
 ---
 
@@ -347,15 +385,17 @@ D) Для кэширования
 
 
 
+
+
 Что содержит environ['wsgi.url_scheme']?
 
-A) Схему URL (http или https)
+A) Порт сервера
 
-B) Версию HTTP
+B) Схему URL (http или https)
 
 C) Кодировку URL
 
-D) Порт сервера
+D) Версию HTTP
 
 ---
 
@@ -366,25 +406,25 @@ D) Порт сервера
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | WSGI = Web Server Gateway Interface, стандартизирует связь между Python веб-приложениями и серверами |
-| 2 | B | WSGI app принимает environ (dict) и start_response (callable), возвращает iterable с bytes |
-| 3 | D | environ содержит CGI переменные (REQUEST_METHOD, PATH_INFO) + WSGI (wsgi.input, wsgi.errors) |
-| 4 | B | start_response устанавливает статус ('200 OK') и заголовки (list of tuples) |
+| 2 | D | WSGI app принимает environ (dict) и start_response (callable), возвращает iterable с bytes |
+| 3 | C | environ содержит CGI переменные (REQUEST_METHOD, PATH_INFO) + WSGI (wsgi.input, wsgi.errors) |
+| 4 | A | start_response устанавливает статус ('200 OK') и заголовки (list of tuples) |
 | 5 | B | WSGI приложение возвращает iterable с bytes (например, [b'Hello']) |
-| 6 | D | wsgi.input — файлоподобный объект для чтения тела запроса (POST данные) |
-| 7 | A | Middleware оборачивает приложение, добавляя логирование, аутентификацию, CORS и т.д. |
-| 8 | C | PEP 3333 определяет WSGI для Python 3 (PEP 333 — оригинал для Python 2) |
-| 9 | B | Gunicorn (Green Unicorn) — популярный production WSGI HTTP сервер |
+| 6 | A | wsgi.input — файлоподобный объект для чтения тела запроса (POST данные) |
+| 7 | B | Middleware оборачивает приложение, добавляя логирование, аутентификацию, CORS и т.д. |
+| 8 | B | PEP 3333 определяет WSGI для Python 3 (PEP 333 — оригинал для Python 2) |
+| 9 | C | Gunicorn (Green Unicorn) — популярный production WSGI HTTP сервер |
 | 10 | B | Стандартная рекомендация: (2 × CPU cores) + 1 для I/O-bound приложений |
-| 11 | B | Flask app — это WSGI callable, его можно запустить любым WSGI сервером |
-| 12 | B | HTTP заголовки преобразуются: Host → HTTP_HOST, User-Agent → HTTP_USER_AGENT |
+| 11 | A | Flask app — это WSGI callable, его можно запустить любым WSGI сервером |
+| 12 | A | HTTP заголовки преобразуются: Host → HTTP_HOST, User-Agent → HTTP_USER_AGENT |
 | 13 | A | wsgiref.simple_server — встроенный простой WSGI сервер для разработки и тестирования |
-| 14 | A | uWSGI имеет больше возможностей (emperor mode, spooler) но сложнее в настройке |
+| 14 | C | uWSGI имеет больше возможностей (emperor mode, spooler) но сложнее в настройке |
 | 15 | C | Nginx эффективно отдаёт статику, терминирует SSL, балансирует нагрузку между воркерами |
-| 16 | D | REQUEST_METHOD содержит HTTP метод (GET, POST и т.д.) |
-| 17 | A | PATH_INFO содержит путь запроса без query string |
-| 18 | D | wsgi.errors — файлоподобный объект для записи ошибок (обычно stderr) |
-| 19 | C | exc_info передаёт информацию об исключении для обработки ошибок |
-| 20 | A | wsgi.url_scheme содержит 'http' или 'https' |
+| 16 | B | REQUEST_METHOD содержит HTTP метод (GET, POST и т.д.) |
+| 17 | B | PATH_INFO содержит путь запроса без query string |
+| 18 | A | wsgi.errors — файлоподобный объект для записи ошибок (обычно stderr) |
+| 19 | A | exc_info передаёт информацию об исключении для обработки ошибок |
+| 20 | B | wsgi.url_scheme содержит 'http' или 'https' |
 
 ---
 

@@ -10,6 +10,8 @@
 
 
 
+
+
 "I enjoy ___."
 
 A) swim
@@ -28,19 +30,23 @@ D) swimming
 
 
 
+
+
 "She decided ___."
 
-A) leave
+A) left
 
-B) to leave
+B) leave
 
-C) left
+C) to leave
 
 D) leaving
 
 ---
 
 ## Question 3: Stop (Gerund)
+
+
 
 
 
@@ -64,6 +70,8 @@ D) I considered smoking
 
 
 
+
+
 "I stopped to smoke" means:
 
 A) I quit smoking
@@ -77,6 +85,8 @@ D) I finished my cigarette
 ---
 
 ## Question 5: Remember
+
+
 
 
 
@@ -100,19 +110,23 @@ D) meet
 
 
 
+
+
 "Remember ___ the door." (Don't forget to do this)
 
-A) locking
+A) lock
 
 B) to lock
 
-C) locked
+C) locking
 
-D) lock
+D) locked
 
 ---
 
 ## Question 7: Preposition + Gerund
+
+
 
 
 
@@ -136,19 +150,23 @@ D) learn
 
 
 
+
+
 "I look forward to ___ you."
 
-A) to see
+A) saw
 
-B) saw
+B) to see
 
-C) see
+C) seeing
 
-D) seeing
+D) see
 
 ---
 
 ## Question 9: Be Used To
+
+
 
 
 
@@ -172,15 +190,17 @@ D) wake up
 
 
 
+
+
 "This book is worth ___."
 
-A) to read
+A) reading
 
-B) read
+B) being read
 
-C) being read
+C) read
 
-D) reading
+D) to read
 
 ---
 
@@ -190,15 +210,17 @@ D) reading
 
 
 
+
+
 "I suggest ___ a break."
 
-A) to take
+A) take
 
 B) taking
 
-C) take
+C) Both B and C with "that we"
 
-D) Both B and C with "that we"
+D) to take
 
 ---
 
@@ -208,15 +230,17 @@ D) Both B and C with "that we"
 
 
 
+
+
 "Try ___ more salt." (experiment)
 
-A) added
+A) to add
 
-B) adding
+B) added
 
 C) add
 
-D) to add
+D) adding
 
 ---
 
@@ -226,13 +250,15 @@ D) to add
 
 
 
+
+
 "I tried ___ the door, but it was locked." (attempt)
 
-A) to open
+A) opening
 
-B) opening
+B) opened
 
-C) opened
+C) to open
 
 D) open
 
@@ -244,19 +270,23 @@ D) open
 
 
 
+
+
 "She asked me ___."
 
-A) helped
+A) to help
 
-B) help
+B) helped
 
-C) to help
+C) help
 
 D) helping
 
 ---
 
 ## Question 15: Allow (No Object)
+
+
 
 
 
@@ -280,19 +310,23 @@ D) smoking
 
 
 
+
+
 "They don't allow us ___."
 
-A) smoked
+A) smoking
 
-B) smoking
+B) to smoke
 
 C) smoke
 
-D) to smoke
+D) smoked
 
 ---
 
 ## Question 17: Mean (Involve)
+
+
 
 
 
@@ -316,6 +350,8 @@ D) meaning
 
 
 
+
+
 "I didn't mean ___ you."
 
 A) hurt
@@ -329,6 +365,8 @@ D) hurting
 ---
 
 ## Question 19: Perfect Infinitive
+
+
 
 
 
@@ -352,15 +390,17 @@ D) having forgotten
 
 
 
+
+
 "I hate ___."
 
 A) being ignored
 
-B) ignored
+B) to ignore
 
-C) to ignore
+C) ignoring
 
-D) ignoring
+D) ignored
 
 ---
 
@@ -371,21 +411,21 @@ D) ignoring
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | "Enjoy" takes gerund. "I enjoy swimming." |
-| 2 | B | "Decide" takes infinitive. "She decided to leave." |
+| 2 | C | "Decide" takes infinitive. "She decided to leave." |
 | 3 | B | "Stop + gerund" = quit the activity. "Stopped smoking" = quit. |
 | 4 | B | "Stop + infinitive" = stop in order to do. "Stopped to smoke" = paused to smoke. |
 | 5 | C | "Remember + gerund" = memory of past. "I remember meeting him." |
 | 6 | B | "Remember + infinitive" = don't forget to do. "Remember to lock." |
 | 7 | B | After preposition → gerund. "Interested in learning." |
-| 8 | D | "To" in "look forward to" is preposition → gerund. "Looking forward to seeing." |
+| 8 | C | "To" in "look forward to" is preposition → gerund. "Looking forward to seeing." |
 | 9 | A | "Be used to" → gerund. "Used to waking up early." |
-| 10 | D | "Worth" → gerund. "Worth reading." |
-| 11 | D | "Suggest" takes gerund or "that + subjunctive." Both "taking" and "that we take" work. |
-| 12 | B | "Try + gerund" = experiment. "Try adding salt." |
-| 13 | A | "Try + infinitive" = attempt. "I tried to open." |
-| 14 | C | Verb + object + infinitive pattern. "Asked me to help." |
+| 10 | A | "Worth" → gerund. "Worth reading." |
+| 11 | C | "Suggest" takes gerund or "that + subjunctive." Both "taking" and "that we take" work. |
+| 12 | D | "Try + gerund" = experiment. "Try adding salt." |
+| 13 | C | "Try + infinitive" = attempt. "I tried to open." |
+| 14 | A | Verb + object + infinitive pattern. "Asked me to help." |
 | 15 | D | No object → gerund. "They don't allow smoking." |
-| 16 | D | With object → infinitive. "They don't allow us to smoke." |
+| 16 | B | With object → infinitive. "They don't allow us to smoke." |
 | 17 | B | "Mean + gerund" = involve. "This means working." |
 | 18 | C | "Mean + infinitive" = intend. "I didn't mean to hurt." |
 | 19 | C | Perfect infinitive: to have + past participle. "Seems to have forgotten." |

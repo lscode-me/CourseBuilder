@@ -9,6 +9,8 @@
 
 
 
+
+
 Какой сервис лучше для хранения shopping cart?
 
 A) Aurora
@@ -27,15 +29,17 @@ D) DynamoDB
 
 
 
+
+
 Какой сервис использовать для ingestion streaming данных?
 
-A) S3
+A) Athena
 
-B) Redshift
+B) S3
 
 C) Kinesis Data Streams
 
-D) Athena
+D) Redshift
 
 ---
 
@@ -45,15 +49,17 @@ D) Athena
 
 
 
+
+
 Какое главное преимущество serverless архитектуры?
 
 A) Scale to zero и pay per use
 
-B) Проще debugging
+B) Всегда дешевле
 
-C) Быстрее контейнеров
+C) Проще debugging
 
-D) Всегда дешевле
+D) Быстрее контейнеров
 
 ---
 
@@ -63,19 +69,23 @@ D) Всегда дешевле
 
 
 
+
+
 Какой сервис AWS обеспечивает service mesh с mTLS?
 
-A) App Mesh (или Istio на EKS)
+A) ALB
 
-B) ALB
+B) Route 53
 
-C) Route 53
+C) App Mesh (или Istio на EKS)
 
 D) API Gateway
 
 ---
 
 ## Question 5: Architecture Choice
+
+
 
 
 
@@ -98,6 +108,8 @@ D) EC2 с monolith
 
 
 
+
+
 Какие сервисы для high-traffic e-commerce?
 
 A) Только EC2
@@ -115,19 +127,23 @@ D) Только Lambda
 
 
 
+
+
 Какая архитектура для data lake?
 
-A) S3 + Glue + Athena + Lake Formation
+A) Только Redshift
 
-B) Только DynamoDB
+B) Только RDS
 
-C) Только Redshift
+C) S3 + Glue + Athena + Lake Formation
 
-D) Только RDS
+D) Только DynamoDB
 
 ---
 
 ## Question 8: Machine Learning Pipeline
+
+
 
 
 
@@ -149,19 +165,23 @@ D) Только Lambda
 
 
 
+
+
 Как реализовать multi-region DR?
 
-A) Backup только
+A) Только cold standby
 
 B) Route 53 health checks, Aurora Global, S3 CRR, IaC для быстрого deploy
 
-C) Только cold standby
+C) Нет DR
 
-D) Нет DR
+D) Backup только
 
 ---
 
 ## Question 10: IoT Platform
+
+
 
 
 
@@ -183,19 +203,23 @@ D) Только EC2
 
 
 
+
+
 Какая архитектура для video streaming?
 
-A) Только EC2
+A) Только Lambda
 
-B) Только Lambda
+B) Только EC2
 
-C) S3, CloudFront, MediaConvert, MediaLive
+C) Только S3
 
-D) Только S3
+D) S3, CloudFront, MediaConvert, MediaLive
 
 ---
 
 ## Question 12: SaaS Multi-Tenant
+
+
 
 
 
@@ -217,19 +241,23 @@ D) Отдельный account для каждого tenant
 
 
 
+
+
 Какие сервисы для batch processing?
 
-A) Только Lambda
+A) Только EC2
 
-B) AWS Batch, Step Functions, S3, Glue
+B) Только Lambda
 
-C) Только EC2
+C) AWS Batch, Step Functions, S3, Glue
 
 D) Только ECS
 
 ---
 
 ## Question 14: API Platform
+
+
 
 
 
@@ -251,6 +279,8 @@ D) Только monolith
 
 
 
+
+
 Какие сервисы для CI/CD pipeline?
 
 A) Только manual
@@ -264,6 +294,8 @@ D) CodePipeline, CodeBuild, CodeDeploy, ECR
 ---
 
 ## Question 16: Compliance Architecture
+
+
 
 
 
@@ -285,19 +317,23 @@ D) Только firewall
 
 
 
+
+
 Как оптимизировать costs для variable workloads?
 
-A) Reserved Instances только
+A) Только On-Demand
 
-B) Spot + On-Demand mix, auto-scaling, right-sizing
+B) Reserved Instances только
 
-C) Только On-Demand
+C) Spot + On-Demand mix, auto-scaling, right-sizing
 
 D) Larger instances
 
 ---
 
 ## Question 18: Event-Driven Architecture
+
+
 
 
 
@@ -319,6 +355,8 @@ D) Только Kinesis
 
 
 
+
+
 Как мигрировать legacy application?
 
 A) Оставить on-premises
@@ -336,15 +374,17 @@ D) Lift-and-shift → re-platform → refactor (постепенно)
 
 
 
+
+
 Как обеспечить 99.99% availability?
 
-A) Single AZ
+A) Только monitoring
 
 B) Multi-AZ, auto-scaling, health checks, redundancy на всех уровнях
 
-C) Только backup
+C) Single AZ
 
-D) Только monitoring
+D) Только backup
 
 ---
 
@@ -357,20 +397,20 @@ D) Только monitoring
 | 1 | D | DynamoDB: низкая latency, auto-scaling, TTL для expiration сессий. Aurora — для транзакционных данных. |
 | 2 | C | Kinesis Data Streams: real-time ingestion с sub-second latency. S3/Athena — для batch. |
 | 3 | A | Serverless: автоматическое масштабирование до нуля, оплата только за использование. |
-| 4 | A | App Mesh (AWS) или Istio (на EKS) обеспечивают service mesh с mTLS, traffic management. |
+| 4 | C | App Mesh (AWS) или Istio (на EKS) обеспечивают service mesh с mTLS, traffic management. |
 | 5 | B | Serverless: быстрый старт, минимум ops, дёшево при низком трафике, масштабируется при росте. |
 | 6 | B | CloudFront, ALB, ASG, RDS Multi-AZ, ElastiCache |
-| 7 | A | S3 + Glue + Athena + Lake Formation |
+| 7 | C | S3 + Glue + Athena + Lake Formation |
 | 8 | A | SageMaker, S3, Step Functions, Lambda |
 | 9 | B | Route 53, Aurora Global, S3 CRR, IaC |
 | 10 | C | IoT Core, Kinesis, Lambda, DynamoDB, Timestream |
-| 11 | C | S3, CloudFront, MediaConvert, MediaLive |
+| 11 | D | S3, CloudFront, MediaConvert, MediaLive |
 | 12 | C | Shared infra с tenant isolation |
-| 13 | B | AWS Batch, Step Functions, S3, Glue |
+| 13 | C | AWS Batch, Step Functions, S3, Glue |
 | 14 | B | API Gateway, Lambda/ECS, DynamoDB, CloudFront |
 | 15 | D | CodePipeline, CodeBuild, CodeDeploy, ECR |
 | 16 | C | Encryption, logging, access, Config, audit |
-| 17 | B | Spot + On-Demand, auto-scaling, right-sizing |
+| 17 | C | Spot + On-Demand, auto-scaling, right-sizing |
 | 18 | B | EventBridge, SNS, SQS, Lambda, Step Functions |
 | 19 | D | Lift-and-shift → re-platform → refactor |
 | 20 | B | Multi-AZ, ASG, health checks, redundancy |

@@ -10,6 +10,8 @@
 
 
 
+
+
 Choose the correct sentence:
 
 A) The climate changes are affecting the world.
@@ -28,13 +30,15 @@ D) A climate change is affecting the world.
 
 
 
+
+
 Choose the correct sentence:
 
-A) Musics of the Baroque period are complex.
+A) Music of the Baroque period is complex.
 
-B) Music of the Baroque period is complex.
+B) The music of the Baroque period is complex.
 
-C) The music of the Baroque period is complex.
+C) Musics of the Baroque period are complex.
 
 D) A music of the Baroque period is complex.
 
@@ -46,19 +50,23 @@ D) A music of the Baroque period is complex.
 
 
 
+
+
 Complete: "I bought a new laptop. ___ screen is excellent."
 
-A) A screen
+A) The screen
 
-B) Screen
+B) Screens
 
-C) Screens
+C) Screen
 
-D) The screen
+D) A screen
 
 ---
 
 ## Question 4: Generic THE in Academic Writing
+
+
 
 
 
@@ -82,15 +90,17 @@ D) A computer has revolutionized society.
 
 
 
+
+
 Choose the correct sentence:
 
-A) Poor need more support from government.
+A) The poors need more support from government.
 
-B) The poors need more support from government.
+B) Poor need more support from government.
 
-C) A poor needs more support from the government.
+C) The poor need more support from the government.
 
-D) The poor need more support from the government.
+D) A poor needs more support from the government.
 
 ---
 
@@ -100,15 +110,17 @@ D) The poor need more support from the government.
 
 
 
+
+
 Choose the correct sentence:
 
-A) The knowledge she gained was valuable.
+A) Knowledge she gained was valuable.
 
-B) A knowledge she gained was valuable.
+B) Knowledges she gained were valuable.
 
-C) Knowledges she gained were valuable.
+C) A knowledge she gained was valuable.
 
-D) Knowledge she gained was valuable.
+D) The knowledge she gained was valuable.
 
 ---
 
@@ -118,19 +130,23 @@ D) Knowledge she gained was valuable.
 
 
 
+
+
 Choose the GENERIC statement:
 
 A) The smartphones have become essential tools.
 
-B) Smartphones have become essential tools.
+B) A smartphone has become an essential tool.
 
-C) The smartphone on the table is ringing.
+C) Smartphones have become essential tools.
 
-D) A smartphone has become an essential tool.
+D) The smartphone on the table is ringing.
 
 ---
 
 ## Question 8: Zero Article with Subject
+
+
 
 
 
@@ -154,13 +170,15 @@ D) The happiness is important for health.
 
 
 
+
+
 In academic writing, which is most appropriate?
 
-A) Research suggests that students learn better with feedback.
+A) Research suggests that the students learn better with feedback.
 
-B) The research suggests that students learn better with feedback.
+B) Research suggests that students learn better with feedback.
 
-C) Research suggests that the students learn better with feedback.
+C) The research suggests that students learn better with feedback.
 
 D) A research suggests that students learn better with feedback.
 
@@ -172,13 +190,15 @@ D) A research suggests that students learn better with feedback.
 
 
 
+
+
 "Did you bring ___ water we discussed?" — The speaker means:
 
-A) a type of water
+A) any water
 
-B) water in general
+B) a type of water
 
-C) any water
+C) water in general
 
 D) the specific water they talked about
 
@@ -190,15 +210,17 @@ D) the specific water they talked about
 
 
 
+
+
 Which sentence has the WRONG article?
 
-A) The science behind this technology is fascinating.
+A) Science has advanced rapidly.
 
-B) A new science is emerging.
+B) The science has advanced rapidly.
 
-C) Science has advanced rapidly.
+C) The science behind this technology is fascinating.
 
-D) The science has advanced rapidly.
+D) A new science is emerging.
 
 ---
 
@@ -208,15 +230,17 @@ D) The science has advanced rapidly.
 
 
 
+
+
 "I'll meet you at ___ station." — This uses THE because:
 
-A) The speaker assumes shared knowledge of which station
+A) "Station" is an uncountable noun
 
-B) "Station" is an uncountable noun
+B) Stations are always unique
 
 C) All locations require THE
 
-D) Stations are always unique
+D) The speaker assumes shared knowledge of which station
 
 ---
 
@@ -226,15 +250,17 @@ D) Stations are always unique
 
 
 
+
+
 Choose the correct sentence:
 
-A) The French are known for their cuisine.
+A) French are known for their cuisine.
 
-B) French are known for their cuisine.
+B) The French are known for their cuisine.
 
-C) Frenchs are known for their cuisine.
+C) A French is known for cuisine.
 
-D) A French is known for cuisine.
+D) Frenchs are known for their cuisine.
 
 ---
 
@@ -244,19 +270,23 @@ D) A French is known for cuisine.
 
 
 
+
+
 "___ unconditional love of a parent is remarkable."
 
-A) An
+A) (zero article)
 
 B) A
 
-C) (zero article)
+C) The
 
-D) The
+D) An
 
 ---
 
 ## Question 15: Error Identification
+
+
 
 
 
@@ -280,15 +310,17 @@ D) The life is full of surprises.
 
 
 
+
+
 Choose the most natural British English:
 
-A) He's in an hospital. (as a patient)
+A) He's in a hospital. (as a patient)
 
 B) He's in hospital. (as a patient)
 
-C) He's in the hospital. (as a patient)
+C) He's in an hospital. (as a patient)
 
-D) He's in a hospital. (as a patient)
+D) He's in the hospital. (as a patient)
 
 ---
 
@@ -298,13 +330,15 @@ D) He's in a hospital. (as a patient)
 
 
 
+
+
 "___ technology in the 21st century has transformed communication."
 
-A) The technology
+A) A technology
 
-B) A technology
+B) Technology
 
-C) Technology
+C) The technology
 
 D) Technologies
 
@@ -316,19 +350,23 @@ D) Technologies
 
 
 
+
+
 "This is a good wine" means:
 
-A) This is a good type/example of wine
+A) This is the only good wine
 
-B) The wine here is good
+B) Wine is generally good
 
-C) Wine is generally good
+C) The wine here is good
 
-D) This is the only good wine
+D) This is a good type/example of wine
 
 ---
 
 ## Question 19: Information Structure
+
+
 
 
 
@@ -347,6 +385,8 @@ D) This is new information to the listener
 ---
 
 ## Question 20: Complex Academic Sentence
+
+
 
 
 
@@ -371,23 +411,23 @@ D) Analysis of data revealed relationship between variables.
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | C | "Climate change" is a generic concept, requiring zero article. |
-| 2 | C | "The music" is specified by "of the Baroque period" — post-modification requires THE. |
-| 3 | D | "The screen" — associative reference to the screen of the laptop mentioned. |
+| 2 | B | "The music" is specified by "of the Baroque period" — post-modification requires THE. |
+| 3 | A | "The screen" — associative reference to the screen of the laptop mentioned. |
 | 4 | B | In formal academic writing, "The + singular" is acceptable for generic statements. |
-| 5 | D | "The poor" = poor people (THE + adjective pattern). "Government" = "the government" (unique in context). |
-| 6 | A | "The knowledge" — specified by the relative clause "she gained". |
-| 7 | B | "Smartphones" (plural, zero article) is the standard generic form. |
+| 5 | C | "The poor" = poor people (THE + adjective pattern). "Government" = "the government" (unique in context). |
+| 6 | D | "The knowledge" — specified by the relative clause "she gained". |
+| 7 | C | "Smartphones" (plural, zero article) is the standard generic form. |
 | 8 | B | "Happiness" is abstract/generic — zero article for generic concepts. |
-| 9 | A | "Research" (zero article for generic) and "students" (zero article for generic category). |
+| 9 | B | "Research" (zero article for generic) and "students" (zero article for generic category). |
 | 10 | D | "The water" refers to specific water previously discussed — shared knowledge. |
-| 11 | D | "The science has advanced" is wrong — generic science needs zero article. |
-| 12 | A | THE signals shared knowledge — both speaker and listener know which station. |
-| 13 | A | "The French" — THE + nationality adjective = the people of that nationality. |
-| 14 | D | "The unconditional love" — pre-modification with "unconditional" + "of a parent" = specific. |
+| 11 | B | "The science has advanced" is wrong — generic science needs zero article. |
+| 12 | D | THE signals shared knowledge — both speaker and listener know which station. |
+| 13 | B | "The French" — THE + nationality adjective = the people of that nationality. |
+| 14 | C | "The unconditional love" — pre-modification with "unconditional" + "of a parent" = specific. |
 | 15 | D | "The life" is a typical Russian error — generic "life" needs zero article. |
 | 16 | B | British English: "in hospital" (function/institution). American English: "in the hospital". |
-| 17 | A | "The technology" — specified by "in the 21st century". |
-| 18 | A | "A good wine" = a good type/example of wine. A + uncountable = type. |
+| 17 | C | "The technology" — specified by "in the 21st century". |
+| 18 | D | "A good wine" = a good type/example of wine. A + uncountable = type. |
 | 19 | D | "A man" introduces new information — the listener doesn't know which man. |
 | 20 | B | All nouns are properly specified: "The analysis" (specific), "the data" (specific), "the relationship" (specific), "the variables" (specific). |
 

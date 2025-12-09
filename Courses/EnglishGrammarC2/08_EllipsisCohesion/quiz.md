@@ -10,15 +10,17 @@
 
 
 
+
+
 Ellipsis is:
 
-A) Adding extra words for emphasis
+A) Changing sentence structure
 
-B) Changing sentence structure
+B) Adding extra words for emphasis
 
-C) Omitting words that are understood from context
+C) Replacing words with synonyms
 
-D) Replacing words with synonyms
+D) Omitting words that are understood from context
 
 ---
 
@@ -28,19 +30,23 @@ D) Replacing words with synonyms
 
 
 
+
+
 Complete: "Can you swim?" — "Yes, I ___."
 
-A) can
+A) do
 
-B) am
+B) can swim
 
-C) do
+C) can
 
-D) can swim
+D) am
 
 ---
 
 ## Question 3: Substitution with ONE
+
+
 
 
 
@@ -64,15 +70,17 @@ D) that
 
 
 
+
+
 "Will it rain?" — "I hope ___."
 
 A) not so
 
-B) that
+B) it
 
-C) it
+C) so
 
-D) so
+D) that
 
 ---
 
@@ -82,19 +90,23 @@ D) so
 
 
 
+
+
 "She's tall." — "___ is her brother."
 
-A) So
+A) As well
 
-B) Also
+B) Too
 
-C) As well
+C) So
 
-D) Too
+D) Also
 
 ---
 
 ## Question 6: NEITHER Pattern
+
+
 
 
 
@@ -118,15 +130,17 @@ D) Either
 
 
 
+
+
 Information structure typically places:
 
-A) All important information at the beginning
+A) New information before given information
 
-B) New information before given information
+B) Given (known) information before new information
 
 C) All technical terms at the end
 
-D) Given (known) information before new information
+D) All important information at the beginning
 
 ---
 
@@ -136,19 +150,23 @@ D) Given (known) information before new information
 
 
 
+
+
 "He made several suggestions. ___ were all rejected."
 
 A) That
 
-B) This
+B) It
 
-C) It
+C) These
 
-D) These
+D) This
 
 ---
 
 ## Question 9: Discourse Marker
+
+
 
 
 
@@ -172,6 +190,8 @@ D) However
 
 
 
+
+
 Which shows typical Russian speaker over-repetition?
 
 A) "I bought a book, which is interesting."
@@ -185,6 +205,8 @@ D) "I bought an interesting book to read."
 ---
 
 ## Question 11: End Weight
+
+
 
 
 
@@ -208,6 +230,8 @@ D) Neither follows end weight.
 
 
 
+
+
 "She works harder than I ___" — what's omitted?
 
 A) work
@@ -221,6 +245,8 @@ D) do
 ---
 
 ## Question 13: Lexical Reference
+
+
 
 
 
@@ -244,15 +270,17 @@ D) research
 
 
 
+
+
 Which maintains better topic consistency?
 
-A) "The economy grew. It expanded by 3%, driven by exports."
+A) Neither maintains the topic.
 
-B) Both are equally good.
+B) "The economy grew. Exports drove growth. 3% was the expansion rate."
 
-C) Neither maintains the topic.
+C) "The economy grew. It expanded by 3%, driven by exports."
 
-D) "The economy grew. Exports drove growth. 3% was the expansion rate."
+D) Both are equally good.
 
 ---
 
@@ -262,19 +290,23 @@ D) "The economy grew. Exports drove growth. 3% was the expansion rate."
 
 
 
+
+
 "She plays tennis and he ___ golf."
 
-A) (nothing—verb omitted)
+A) does
 
 B) plays
 
-C) does
+C) is playing
 
-D) is playing
+D) (nothing—verb omitted)
 
 ---
 
 ## Question 16: Pronoun Clarity
+
+
 
 
 
@@ -298,6 +330,8 @@ D) Clear (obviously refers to John)
 
 
 
+
+
 "He plays guitar, and so ___ his brother."
 
 A) has
@@ -316,15 +350,17 @@ D) is
 
 
 
+
+
 "The results were significant. They support the hypothesis." Adding what would improve flow?
 
 A) "Moreover" at the start of second sentence
 
-B) "The" before "results"
+B) Nothing—it's already perfect
 
-C) Nothing—it's already perfect
+C) "Therefore" at the end
 
-D) "Therefore" at the end
+D) "The" before "results"
 
 ---
 
@@ -334,13 +370,15 @@ D) "Therefore" at the end
 
 
 
+
+
 "He showed great courage. ___ bravery should be recognized."
 
-A) This
+A) That
 
-B) That
+B) Such
 
-C) Such
+C) This
 
 D) The
 
@@ -352,15 +390,17 @@ D) The
 
 
 
+
+
 "She bought bread and ___ butter."
 
-A) she bought
+A) she did buy
 
-B) she did buy
+B) she bought
 
-C) did buy
+C) (nothing—subject and verb omitted)
 
-D) (nothing—subject and verb omitted)
+D) did buy
 
 ---
 
@@ -370,26 +410,26 @@ D) (nothing—subject and verb omitted)
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | Ellipsis = omitting words understood from context. |
-| 2 | A | Verbal ellipsis after modal: "I can" (swim is omitted). |
+| 1 | D | Ellipsis = omitting words understood from context. |
+| 2 | C | Verbal ellipsis after modal: "I can" (swim is omitted). |
 | 3 | B | "One" substitutes for singular countable noun "shirt." |
-| 4 | D | "So" substitutes for clause after "hope": "I hope so." |
-| 5 | A | "So + auxiliary + subject" for "also": "So is her brother." |
+| 4 | C | "So" substitutes for clause after "hope": "I hope so." |
+| 5 | C | "So + auxiliary + subject" for "also": "So is her brother." |
 | 6 | C | "Neither can I" for negative agreement. |
-| 7 | D | Given-new: known information typically precedes new. |
-| 8 | D | "These" (plural) refers back to "several suggestions." |
+| 7 | B | Given-new: known information typically precedes new. |
+| 8 | C | "These" (plural) refers back to "several suggestions." |
 | 9 | D | "However" signals contrast (inconclusive, but patterns emerge). |
 | 10 | B | Repeating "the book" three times is over-repetition. |
 | 11 | C | Heavy clauses go at the end (end weight principle). |
 | 12 | A | "Work" is omitted: "harder than I work." |
 | 13 | D | "Research" is a synonym that varies lexis while maintaining reference. |
-| 14 | A | Keeping "economy/it" as topic maintains consistency. |
-| 15 | A | Gapping: verb is omitted in second coordinated clause. |
+| 14 | C | Keeping "economy/it" as topic maintains consistency. |
+| 15 | D | Gapping: verb is omitted in second coordinated clause. |
 | 16 | C | Ambiguous—"he" could refer to either John or Peter. |
 | 17 | C | "Does" substitutes for verb phrase "plays guitar." |
 | 18 | A | "Moreover" would show additive relationship, improving flow. |
-| 19 | C | "Such" refers back to the description "great courage." |
-| 20 | D | Subject and verb omitted: "She bought bread and [she bought] butter." |
+| 19 | B | "Such" refers back to the description "great courage." |
+| 20 | C | Subject and verb omitted: "She bought bread and [she bought] butter." |
 
 ---
 

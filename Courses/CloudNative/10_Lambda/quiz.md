@@ -9,6 +9,8 @@
 
 
 
+
+
 A) 15 минут
 
 B) 30 минут
@@ -25,17 +27,21 @@ D) 60 минут
 
 
 
-A) Задержка при первом вызове из-за инициализации runtime
 
-B) Запуск Lambda в холодном регионе
+
+A) Запуск Lambda в холодном регионе
+
+B) Тестовый режим
 
 C) Ошибка запуска функции
 
-D) Тестовый режим
+D) Задержка при первом вызове из-за инициализации runtime
 
 ---
 
 ## Question 3: Где инициализировать boto3 client?
+
+
 
 
 
@@ -57,6 +63,8 @@ D) В отдельном Lambda layer
 
 
 
+
+
 A) S3 (object created)
 
 B) API Gateway
@@ -73,11 +81,13 @@ D) SNS
 
 
 
-A) Автоматически масштабирует
 
-B) Увеличивает memory
 
-C) Держит warm instances готовыми для устранения cold start
+A) Увеличивает memory
+
+B) Держит warm instances готовыми для устранения cold start
+
+C) Автоматически масштабирует
 
 D) Ограничивает concurrent executions
 
@@ -88,13 +98,15 @@ D) Ограничивает concurrent executions
 
 
 
+
+
 Для чего используются Lambda Layers?
 
-A) Для security
+A) Для logging
 
-B) Для sharing libraries/dependencies между functions
+B) Для security
 
-C) Для logging
+C) Для sharing libraries/dependencies между functions
 
 D) Для networking
 
@@ -105,19 +117,23 @@ D) Для networking
 
 
 
+
+
 Как memory влияет на CPU в Lambda?
 
-A) Не влияет
+A) Меньше memory = больше CPU
 
 B) Больше memory = пропорционально больше CPU
 
-C) Меньше memory = больше CPU
+C) CPU настраивается отдельно
 
-D) CPU настраивается отдельно
+D) Не влияет
 
 ---
 
 ## Question 8: Concurrency Limit
+
+
 
 
 
@@ -139,19 +155,23 @@ D) 100
 
 
 
+
+
 Что делает Reserved Concurrency?
 
-A) Ускоряет выполнение
+A) Включает VPC
 
-B) Резервирует capacity для function, ограничивает max
+B) Ускоряет выполнение
 
 C) Увеличивает memory
 
-D) Включает VPC
+D) Резервирует capacity для function, ограничивает max
 
 ---
 
 ## Question 10: Destinations
+
+
 
 
 
@@ -173,6 +193,8 @@ D) Для шифрования
 
 
 
+
+
 Какие компоненты нужны для Lambda в VPC?
 
 A) Internet Gateway
@@ -186,6 +208,8 @@ D) Только subnet
 ---
 
 ## Question 12: Environment Variables
+
+
 
 
 
@@ -207,6 +231,8 @@ D) В S3
 
 
 
+
+
 Для чего используется DLQ в Lambda?
 
 A) Для шифрования
@@ -220,6 +246,8 @@ D) Для хранения результатов
 ---
 
 ## Question 14: SnapStart
+
+
 
 
 
@@ -241,19 +269,23 @@ D) Увеличивает memory
 
 
 
+
+
 Что такое Function URL?
 
-A) IAM endpoint
+A) VPC endpoint
 
-B) Dedicated HTTP endpoint для Lambda без API Gateway
+B) IAM endpoint
 
 C) S3 URL
 
-D) VPC endpoint
+D) Dedicated HTTP endpoint для Lambda без API Gateway
 
 ---
 
 ## Question 16: Ephemeral Storage
+
+
 
 
 
@@ -275,15 +307,17 @@ D) 512 MB до 10 GB (configurable)
 
 
 
+
+
 Для чего Lambda использует X-Ray?
 
-A) Для шифрования
+A) Для distributed tracing
 
-B) Для distributed tracing
+B) Для networking
 
 C) Для backup
 
-D) Для networking
+D) Для шифрования
 
 ---
 
@@ -292,19 +326,23 @@ D) Для networking
 
 
 
+
+
 Для чего используются Lambda Aliases?
 
-A) Для security
+A) Для логирования
 
-B) Для traffic shifting и environment management (dev/prod)
+B) Для security
 
-C) Для логирования
+C) Для traffic shifting и environment management (dev/prod)
 
 D) Для шифрования
 
 ---
 
 ## Question 19: Extensions
+
+
 
 
 
@@ -326,15 +364,17 @@ D) Новые языки
 
 
 
+
+
 Какое преимущество AWS Graviton2 (ARM) для Lambda?
 
-A) Быстрее
+A) Длиннее timeout
 
 B) Дешевле (~34%) с хорошей производительностью
 
-C) Больше memory
+C) Быстрее
 
-D) Длиннее timeout
+D) Больше memory
 
 ---
 
@@ -345,23 +385,23 @@ D) Длиннее timeout
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | A | Максимальный timeout Lambda — 15 минут (900 секунд). |
-| 2 | A | Cold Start — задержка при создании нового execution environment: download code, start runtime, init. |
+| 2 | D | Cold Start — задержка при создании нового execution environment: download code, start runtime, init. |
 | 3 | B | SDK clients инициализируются вне handler для переиспользования между вызовами (warm invocations). |
 | 4 | B | API Gateway — синхронный, ждёт ответа. S3, SNS, EventBridge — асинхронные. |
-| 5 | C | Provisioned Concurrency держит указанное количество warm instances, устраняя cold start. |
-| 6 | B | Layers для sharing libraries между functions |
+| 5 | B | Provisioned Concurrency держит указанное количество warm instances, устраняя cold start. |
+| 6 | C | Layers для sharing libraries между functions |
 | 7 | B | Больше memory = пропорционально больше CPU |
 | 8 | B | Default limit 1000 concurrent executions |
-| 9 | B | Reserved Concurrency резервирует и ограничивает capacity |
+| 9 | D | Reserved Concurrency резервирует и ограничивает capacity |
 | 10 | A | Destinations для routing async results |
 | 11 | C | VPC Lambda: subnet + SG + NAT для интернета |
 | 12 | B | Secrets в env vars + KMS или Secrets Manager |
 | 13 | C | DLQ для failed async invocations |
 | 14 | B | SnapStart — snapshot VM для быстрого cold start |
-| 15 | B | Function URL — HTTP endpoint без API Gateway |
+| 15 | D | Function URL — HTTP endpoint без API Gateway |
 | 16 | D | /tmp: 512 MB до 10 GB configurable |
-| 17 | B | X-Ray для distributed tracing |
-| 18 | B | Aliases для traffic shifting и environments |
+| 17 | A | X-Ray для distributed tracing |
+| 18 | C | Aliases для traffic shifting и environments |
 | 19 | B | Extensions — дополнительные процессы |
 | 20 | B | Graviton2 ARM дешевле ~34% |
 

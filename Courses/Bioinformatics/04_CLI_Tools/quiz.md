@@ -9,15 +9,17 @@
 
 
 
+
+
 Команда `samtools view -F 4` выводит:
 
-A) Первые 4 рида
+A) Риды с качеством > 4
 
-B) Риды с качеством > 4
+B) Первые 4 рида
 
-C) Mapped reads
+C) Unmapped reads
 
-D) Unmapped reads
+D) Mapped reads
 
 ---
 
@@ -26,19 +28,23 @@ D) Unmapped reads
 
 
 
+
+
 Какой инструмент используется для работы с VCF файлами?
 
-A) bedtools
+A) bcftools
 
-B) samtools
+B) seqtk
 
-C) seqtk
+C) samtools
 
-D) bcftools
+D) bedtools
 
 ---
 
 ## Question 3: bedtools intersect
+
+
 
 
 
@@ -60,15 +66,17 @@ D) Объединение A и B
 
 
 
+
+
 Какая команда создаёт индекс для BAM файла?
 
-A) samtools index
+A) samtools faidx
 
-B) samtools sort
+B) samtools index
 
 C) samtools view
 
-D) samtools faidx
+D) samtools sort
 
 ---
 
@@ -77,15 +85,17 @@ D) samtools faidx
 
 
 
+
+
 Как оставить только PASS варианты с bcftools?
 
-A) bcftools view -p PASS
+A) bcftools select PASS
 
-B) bcftools select PASS
+B) bcftools view -p PASS
 
-C) bcftools filter PASS
+C) bcftools view -f PASS
 
-D) bcftools view -f PASS
+D) bcftools filter PASS
 
 ---
 
@@ -94,15 +104,17 @@ D) bcftools view -f PASS
 
 
 
+
+
 Какой инструмент подсчитывает покрытие BAM по BED регионам?
 
-A) bedtools coverage
+A) bcftools coverage
 
-B) Все вышеперечисленные
+B) samtools coverage
 
-C) samtools coverage
+C) Все вышеперечисленные
 
-D) bcftools coverage
+D) bedtools coverage
 
 ---
 
@@ -111,19 +123,23 @@ D) bcftools coverage
 
 
 
+
+
 seqtk используется для:
 
-A) Выравнивания ридов
+A) Обработки FASTA/FASTQ файлов
 
-B) Обработки FASTA/FASTQ файлов
+B) Аннотации
 
 C) Вызова вариантов
 
-D) Аннотации
+D) Выравнивания ридов
 
 ---
 
 ## Question 8: Pipe
+
+
 
 
 
@@ -145,15 +161,17 @@ D) Сохраняет вывод в файл
 
 
 
+
+
 Почему важно сортировать BAM файл?
 
-A) Для уменьшения размера
+A) Для улучшения качества
 
 B) Для индексации и быстрого доступа к регионам
 
-C) Для улучшения качества
+C) Для удаления дубликатов
 
-D) Для удаления дубликатов
+D) Для уменьшения размера
 
 ---
 
@@ -162,19 +180,23 @@ D) Для удаления дубликатов
 
 
 
+
+
 В чём отличие bgzip от обычного gzip?
 
 A) bgzip быстрее
 
-B) bgzip позволяет индексацию (block-compressed)
+B) Нет различий
 
-C) bgzip лучше сжимает
+C) bgzip позволяет индексацию (block-compressed)
 
-D) Нет различий
+D) bgzip лучше сжимает
 
 ---
 
 ## Question 11: samtools flagstat
+
+
 
 
 
@@ -196,13 +218,15 @@ D) Статистику по mapped/unmapped/paired reads
 
 
 
+
+
 Что делает команда `bcftools stats`?
 
-A) Фильтрует варианты
+A) Показывает статистику VCF файла (SNPs, indels, transitions/transversions)
 
-B) Показывает статистику VCF файла (SNPs, indels, transitions/transversions)
+B) Сортирует варианты
 
-C) Сортирует варианты
+C) Фильтрует варианты
 
 D) Индексирует VCF
 
@@ -213,15 +237,17 @@ D) Индексирует VCF
 
 
 
+
+
 Что делает `bedtools getfasta`?
 
-A) Конвертирует FASTQ в FASTA
+A) Сортирует FASTA
 
-B) Сортирует FASTA
+B) Конвертирует FASTQ в FASTA
 
-C) Создаёт FASTA из BAM
+C) Извлекает последовательности из FASTA по BED координатам
 
-D) Извлекает последовательности из FASTA по BED координатам
+D) Создаёт FASTA из BAM
 
 ---
 
@@ -230,15 +256,17 @@ D) Извлекает последовательности из FASTA по BED �
 
 
 
+
+
 Что делает `seqtk sample input.fastq 10000`?
 
-A) Обрезает первые 10000 оснований
+A) Разбивает файл на части
 
-B) Извлекает случайные 10000 ридов (subsampling)
+B) Обрезает первые 10000 оснований
 
 C) Фильтрует по качеству 10000
 
-D) Разбивает файл на части
+D) Извлекает случайные 10000 ридов (subsampling)
 
 ---
 
@@ -247,15 +275,17 @@ D) Разбивает файл на части
 
 
 
+
+
 Что означает флаг `-c` в `samtools view -c aligned.bam`?
 
-A) Конвертировать в CRAM
+A) Проверить целостность
 
 B) Подсчитать количество ридов (count)
 
-C) Проверить целостность
+C) Сортировать по chromsome
 
-D) Сортировать по chromsome
+D) Конвертировать в CRAM
 
 ---
 
@@ -264,15 +294,17 @@ D) Сортировать по chromsome
 
 
 
+
+
 Для чего используется `bcftools norm`?
 
-A) Нормализация и left-align indels
+A) Подсчёт статистики
 
 B) Фильтрация по качеству
 
-C) Аннотация вариантов
+C) Нормализация и left-align indels
 
-D) Подсчёт статистики
+D) Аннотация вариантов
 
 ---
 
@@ -281,19 +313,23 @@ D) Подсчёт статистики
 
 
 
+
+
 Что делает `bedtools merge`?
 
-A) Объединяет несколько BED файлов
+A) Находит пересечения
 
 B) Объединяет перекрывающиеся интервалы в один
 
-C) Находит пересечения
+C) Сортирует интервалы
 
-D) Сортирует интервалы
+D) Объединяет несколько BED файлов
 
 ---
 
 ## Question 18: samtools view -f 2
+
+
 
 
 
@@ -315,6 +351,8 @@ D) Выводит риды с качеством > 2
 
 
 
+
+
 Что добавляет флаг `-mean` в `bedtools coverage`?
 
 A) Среднее покрытие для каждого региона
@@ -332,15 +370,17 @@ D) Максимальное покрытие
 
 
 
+
+
 Для чего используется `bcftools query`?
 
-A) Извлечение полей из VCF в произвольном формате
+A) Статистика VCF
 
-B) Индексация VCF
+B) Поиск вариантов по ID
 
-C) Поиск вариантов по ID
+C) Индексация VCF
 
-D) Статистика VCF
+D) Извлечение полей из VCF в произвольном формате
 
 ---
 
@@ -350,26 +390,26 @@ D) Статистика VCF
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | `-F 4` исключает unmapped (FLAG 4), т.е. выводит mapped reads. |
-| 2 | D | bcftools — специализированный инструмент для VCF/BCF файлов. |
+| 1 | D | `-F 4` исключает unmapped (FLAG 4), т.е. выводит mapped reads. |
+| 2 | A | bcftools — специализированный инструмент для VCF/BCF файлов. |
 | 3 | A | `-v` выводит регионы из A, которые НЕ пересекаются с B. |
-| 4 | A | `samtools index` создаёт .bai индекс для BAM файла. |
-| 5 | D | `bcftools view -f PASS` фильтрует варианты по PASS статусу. |
-| 6 | A | bedtools coverage подсчитывает покрытие по регионам. |
-| 7 | B | seqtk — быстрый инструмент для обработки FASTA/FASTQ. |
+| 4 | B | `samtools index` создаёт .bai индекс для BAM файла. |
+| 5 | C | `bcftools view -f PASS` фильтрует варианты по PASS статусу. |
+| 6 | D | bedtools coverage подсчитывает покрытие по регионам. |
+| 7 | A | seqtk — быстрый инструмент для обработки FASTA/FASTQ. |
 | 8 | C | Pipe (`\|`) передаёт stdout одной команды на stdin другой. |
 | 9 | B | Сортировка нужна для индексации и random access к регионам. |
-| 10 | B | bgzip — block-compressed gzip, позволяет индексацию с tabix. |
+| 10 | C | bgzip — block-compressed gzip, позволяет индексацию с tabix. |
 | 11 | D | flagstat показывает статистику: total, mapped, properly paired, duplicates. |
-| 12 | B | bcftools stats выводит SNPs, indels, Ti/Tv ratio и другую статистику. |
-| 13 | D | getfasta извлекает последовательности из FASTA по BED координатам. |
-| 14 | B | seqtk sample делает случайную выборку (subsampling) ридов. |
+| 12 | A | bcftools stats выводит SNPs, indels, Ti/Tv ratio и другую статистику. |
+| 13 | C | getfasta извлекает последовательности из FASTA по BED координатам. |
+| 14 | D | seqtk sample делает случайную выборку (subsampling) ридов. |
 | 15 | B | `-c` = count, подсчитывает количество ридов вместо вывода. |
-| 16 | A | bcftools norm нормализует и выравнивает indels влево. |
+| 16 | C | bcftools norm нормализует и выравнивает indels влево. |
 | 17 | B | merge объединяет перекрывающиеся интервалы в один. |
 | 18 | A | `-f 2` включает только риды с FLAG 2 (properly paired). |
 | 19 | A | `-mean` добавляет колонку со средним покрытием региона. |
-| 20 | A | bcftools query извлекает поля из VCF в произвольном формате. |
+| 20 | D | bcftools query извлекает поля из VCF в произвольном формате. |
 
 ---
 

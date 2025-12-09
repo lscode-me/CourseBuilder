@@ -10,15 +10,17 @@
 
 
 
+
+
 Что такое культура в контексте команды?
 
-A) Количество митингов
+A) "Как мы делаем вещи здесь" — неписаные правила поведения
 
-B) "Как мы делаем вещи здесь" — неписаные правила поведения
+B) Количество митингов
 
-C) Только mission statement на стене
+C) Только dress code
 
-D) Только dress code
+D) Только mission statement на стене
 
 ---
 
@@ -28,15 +30,17 @@ D) Только dress code
 
 
 
+
+
 Что Google's Project Aristotle определил как главный фактор эффективности команды?
 
-A) Размер команды
+A) Бюджет проекта
 
-B) Опыт участников
+B) Psychological Safety (психологическая безопасность)
 
-C) Psychological Safety (психологическая безопасность)
+C) Опыт участников
 
-D) Бюджет проекта
+D) Размер команды
 
 ---
 
@@ -46,19 +50,23 @@ D) Бюджет проекта
 
 
 
+
+
 Что означает психологическая безопасность?
 
-A) Страхование здоровья
+A) Физическая охрана офиса
 
-B) Физическая охрана офиса
+B) Страхование здоровья
 
-C) Убеждённость, что команда безопасна для межличностных рисков
+C) Запрет на критику
 
-D) Запрет на критику
+D) Убеждённость, что команда безопасна для межличностных рисков
 
 ---
 
 ## Question 4: Создание безопасности
+
+
 
 
 
@@ -82,15 +90,17 @@ D) Признавать свои ошибки публично, благодар
 
 
 
+
+
 Какой уровень культуры по модели Schein самый глубокий?
 
-A) Espoused Values (декларируемое)
+A) Underlying Assumptions (глубинные убеждения)
 
 B) Artifacts (видимое)
 
-C) Mission statement
+C) Espoused Values (декларируемое)
 
-D) Underlying Assumptions (глубинные убеждения)
+D) Mission statement
 
 ---
 
@@ -100,13 +110,15 @@ D) Underlying Assumptions (глубинные убеждения)
 
 
 
+
+
 Что такое подход "Culture Add"?
 
-A) Нанимать только друзей
+A) Нанимать разделяющих ценности И добавляющих diversity
 
-B) Нанимать людей, похожих на команду
+B) Нанимать только друзей
 
-C) Нанимать разделяющих ценности И добавляющих diversity
+C) Нанимать людей, похожих на команду
 
 D) Игнорировать культуру при найме
 
@@ -118,19 +130,23 @@ D) Игнорировать культуру при найме
 
 
 
+
+
 Почему изменение культуры сложно?
 
-A) Habits глубоко укоренены, требуется consistent behavior от лидеров
+A) Культуру можно изменить за день
 
-B) Культура не важна
+B) Достаточно написать новые правила
 
-C) Культуру можно изменить за день
+C) Habits глубоко укоренены, требуется consistent behavior от лидеров
 
-D) Достаточно написать новые правила
+D) Культура не важна
 
 ---
 
 ## Question 8: Kotter's Steps
+
+
 
 
 
@@ -154,15 +170,17 @@ D) Build Coalition
 
 
 
+
+
 Какой тип культуры по Westrum коррелирует с высокой производительностью?
 
-A) Toxic
+A) Pathological
 
 B) Bureaucratic
 
-C) Generative
+C) Toxic
 
-D) Pathological
+D) Generative
 
 ---
 
@@ -172,15 +190,17 @@ D) Pathological
 
 
 
+
+
 Как в Generative культуре относятся к failures?
 
-A) Hidden (скрываются)
+A) Inquiry (исследование)
 
-B) Ignored (игнорируются)
+B) Punished (наказание)
 
-C) Inquiry (исследование)
+C) Hidden (скрываются)
 
-D) Punished (наказание)
+D) Ignored (игнорируются)
 
 ---
 
@@ -190,19 +210,23 @@ D) Punished (наказание)
 
 
 
+
+
 Какой принцип характеризует Netflix культуру?
 
-A) Freedom and Responsibility
+A) Strict hierarchy
 
-B) Strict hierarchy
+B) No feedback
 
 C) Micromanagement
 
-D) No feedback
+D) Freedom and Responsibility
 
 ---
 
 ## Question 12: Признаки плохой культуры
+
+
 
 
 
@@ -226,19 +250,23 @@ D) Открытая коммуникация
 
 
 
+
+
 Почему важно лидеру демонстрировать ценности первым?
 
-A) Inconsistency kills change, лидер моделирует культуру
+A) Для галочки
 
-B) Можно говорить одно, делать другое
+B) Это не важно
 
-C) Для галочки
+C) Inconsistency kills change, лидер моделирует культуру
 
-D) Это не важно
+D) Можно говорить одно, делать другое
 
 ---
 
 ## Question 14: Командные ценности
+
+
 
 
 
@@ -262,15 +290,17 @@ D) Написать и забыть
 
 
 
+
+
 Какой challenge для культуры в remote командах?
 
-A) Культура распространяется быстрее
+A) Нет challenges
 
-B) Меньше casual interactions, культура распространяется медленнее
+B) Remote команды не имеют культуры
 
-C) Remote команды не имеют культуры
+C) Меньше casual interactions, культура распространяется медленнее
 
-D) Нет challenges
+D) Культура распространяется быстрее
 
 ---
 
@@ -280,15 +310,17 @@ D) Нет challenges
 
 
 
+
+
 Какой вопрос помогает оценить alignment с ценностями?
 
-A) "Какой твой любимый цвет?"
+A) "Расскажи о ситуации, когда ты дал неприятный feedback"
 
-B) "Какая у тебя зарплата?"
+B) "Сколько лет ты работаешь?"
 
-C) "Расскажи о ситуации, когда ты дал неприятный feedback"
+C) "Какой твой любимый цвет?"
 
-D) "Сколько лет ты работаешь?"
+D) "Какая у тебя зарплата?"
 
 ---
 
@@ -298,15 +330,17 @@ D) "Сколько лет ты работаешь?"
 
 
 
+
+
 Что делать лидеру в toxic culture?
 
-A) Распространять toxicity
+A) Create safe space в своей команде, escalate serious issues
 
-B) Create safe space в своей команде, escalate serious issues
+B) Участвовать в toxic behaviors
 
 C) Игнорировать
 
-D) Участвовать в toxic behaviors
+D) Распространять toxicity
 
 ---
 
@@ -316,15 +350,17 @@ D) Участвовать в toxic behaviors
 
 
 
+
+
 Что включает формула культуры?
 
-A) Только зарплата
+A) Только митинги
 
-B) Values × Behaviors × Habits × Stories
+B) Только офис
 
-C) Только офис
+C) Values × Behaviors × Habits × Stories
 
-D) Только митинги
+D) Только зарплата
 
 ---
 
@@ -334,19 +370,23 @@ D) Только митинги
 
 
 
+
+
 Как измерить психологическую безопасность?
 
-A) Revenue
+A) Невозможно измерить
 
 B) Survey с вопросами Edmondson о безопасности рисков
 
-C) Количество кода
+C) Revenue
 
-D) Невозможно измерить
+D) Количество кода
 
 ---
 
 ## Question 20: Start small
+
+
 
 
 
@@ -370,24 +410,24 @@ D) Не начинать
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Культура = "как мы делаем вещи здесь", неписаные правила |
-| 2 | C | Psychological Safety — главный фактор по Project Aristotle |
-| 3 | C | Убеждённость, что команда безопасна для межличностных рисков |
+| 1 | A | Культура = "как мы делаем вещи здесь", неписаные правила |
+| 2 | B | Psychological Safety — главный фактор по Project Aristotle |
+| 3 | D | Убеждённость, что команда безопасна для межличностных рисков |
 | 4 | D | Признавать ошибки публично, благодарить за несогласие |
-| 5 | D | Underlying Assumptions — самый глубокий уровень |
-| 6 | C | Culture Add: разделяют ценности И добавляют diversity |
-| 7 | A | Habits укоренены, нужен consistent behavior от лидеров |
+| 5 | A | Underlying Assumptions — самый глубокий уровень |
+| 6 | A | Culture Add: разделяют ценности И добавляют diversity |
+| 7 | C | Habits укоренены, нужен consistent behavior от лидеров |
 | 8 | B | Create Urgency — первый шаг по Kotter |
-| 9 | C | Generative культура коррелирует с высокой производительностью |
-| 10 | C | В Generative культуре failures → Inquiry (исследование) |
-| 11 | A | Netflix: Freedom and Responsibility |
+| 9 | D | Generative культура коррелирует с высокой производительностью |
+| 10 | A | В Generative культуре failures → Inquiry (исследование) |
+| 11 | D | Netflix: Freedom and Responsibility |
 | 12 | A | Blame culture, скрытие информации — признаки плохой культуры |
-| 13 | A | Лидер моделирует культуру, inconsistency kills change |
+| 13 | C | Лидер моделирует культуру, inconsistency kills change |
 | 14 | A | Hiring, recognition, reviews, stories, onboarding |
-| 15 | B | Remote: меньше casual interactions, культура распространяется медленнее |
-| 16 | C | "Расскажи о неприятном feedback" — проверка values |
-| 17 | B | Create safe space, escalate серьёзные issues |
-| 18 | B | Values × Behaviors × Habits × Stories |
+| 15 | C | Remote: меньше casual interactions, культура распространяется медленнее |
+| 16 | A | "Расскажи о неприятном feedback" — проверка values |
+| 17 | A | Create safe space, escalate серьёзные issues |
+| 18 | C | Values × Behaviors × Habits × Stories |
 | 19 | B | Survey с вопросами Edmondson |
 | 20 | C | Одна практика за раз, pilot в своей команде |
 

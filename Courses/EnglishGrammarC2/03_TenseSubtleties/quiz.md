@@ -10,6 +10,8 @@
 
 
 
+
+
 Which sentence uses Historic Present appropriately?
 
 A) "I am walking to work every day." (describing routine)
@@ -28,15 +30,17 @@ D) "So I'm at the store, and this guy comes up to me..." (telling a story)
 
 
 
+
+
 The Historic Present creates what effect in storytelling?
 
 A) Academic credibility
 
-B) Uncertainty about time
+B) Immediacy and engagement
 
-C) Formality and distance
+C) Uncertainty about time
 
-D) Immediacy and engagement
+D) Formality and distance
 
 ---
 
@@ -46,19 +50,23 @@ D) Immediacy and engagement
 
 
 
+
+
 "Smith (2010) argues that climate change is accelerating." The present tense suggests:
 
-A) The speaker endorses or accepts this claim as valid
+A) The argument is being made right now
 
-B) The argument is being made right now
+B) The speaker endorses or accepts this claim as valid
 
-C) Climate change started in 2010
+C) Smith made this argument recently
 
-D) Smith made this argument recently
+D) Climate change started in 2010
 
 ---
 
 ## Question 4: Academic Distancing
+
+
 
 
 
@@ -82,15 +90,17 @@ D) "Jones proved that the theory was correct."
 
 
 
+
+
 "You're always leaving your things everywhere!" The progressive here expresses:
 
-A) Praise for consistency
+A) A fact about ongoing behavior
 
-B) A fact about ongoing behavior
+B) Uncertainty about the habit
 
 C) Irritation or annoyance
 
-D) Uncertainty about the habit
+D) Praise for consistency
 
 ---
 
@@ -100,15 +110,17 @@ D) Uncertainty about the habit
 
 
 
+
+
 Which request is MOST polite?
 
-A) "I want to ask you something."
+A) "I wondered if I could ask you something."
 
-B) "I'm wanting to ask you something."
+B) "I was wondering if I could ask you something."
 
-C) "I was wondering if I could ask you something."
+C) "I'm wanting to ask you something."
 
-D) "I wondered if I could ask you something."
+D) "I want to ask you something."
 
 ---
 
@@ -118,15 +130,17 @@ D) "I wondered if I could ask you something."
 
 
 
+
+
 "When I arrived, she had already left." The Past Perfect here:
 
-A) Shows the action is incomplete
+A) Is incorrect and should be Simple Past
 
 B) Indicates an event earlier than "arrived"
 
-C) Expresses a hypothetical situation
+C) Shows the action is incomplete
 
-D) Is incorrect and should be Simple Past
+D) Expresses a hypothetical situation
 
 ---
 
@@ -136,19 +150,23 @@ D) Is incorrect and should be Simple Past
 
 
 
+
+
 When is Past Perfect OPTIONAL?
 
-A) After "when" with unclear sequence
+A) When time sequence is clear from context or markers
 
-B) When time sequence is clear from context or markers
+B) Whenever referring to the past
 
 C) In all reported speech
 
-D) Whenever referring to the past
+D) After "when" with unclear sequence
 
 ---
 
 ## Question 9: Will Be -ing
+
+
 
 
 
@@ -172,15 +190,17 @@ D) More grammatically correct
 
 
 
+
+
 Choose the correct sentence:
 
-A) "I call you when I will arrive."
+A) "I'll call you when I will arrive."
 
 B) "I called you when I arrive."
 
-C) "I'll call you when I will arrive."
+C) "I'll call you when I arrive."
 
-D) "I'll call you when I arrive."
+D) "I call you when I will arrive."
 
 ---
 
@@ -190,19 +210,23 @@ D) "I'll call you when I arrive."
 
 
 
+
+
 "Water boils at 100 degrees," the teacher said. The best reported form is:
 
 A) The teacher said water boiled at 100 degrees. (only)
 
-B) The teacher said water boils at 100 degrees. (only)
+B) Neither is correct.
 
-C) Either is acceptable since it's a universal truth.
+C) The teacher said water boils at 100 degrees. (only)
 
-D) Neither is correct.
+D) Either is acceptable since it's a universal truth.
 
 ---
 
 ## Question 12: Foreground vs Background
+
+
 
 
 
@@ -226,6 +250,8 @@ D) Both are foreground
 
 
 
+
+
 Which creates more emotional DISTANCE from the event?
 
 A) "He realized he lost his wallet."
@@ -244,19 +270,23 @@ D) "He realized he had lost his wallet."
 
 
 
+
+
 "I'm meeting John at 6" implies:
 
-A) A personal arrangement already made
+A) A spontaneous decision
 
-B) An uncertain possibility
+B) A personal arrangement already made
 
-C) A spontaneous decision
+C) An uncertain possibility
 
 D) An external timetable
 
 ---
 
 ## Question 15: Present Simple for Future
+
+
 
 
 
@@ -280,15 +310,17 @@ D) The speaker is uncertain
 
 
 
+
+
 In conversational storytelling, mixing Historic Present with past tenses is:
 
-A) A sign of non-native speaker
+A) Always grammatically incorrect
 
-B) Only acceptable in written fiction
+B) Natural and common among native speakers
 
-C) Natural and common among native speakers
+C) Only acceptable in written fiction
 
-D) Always grammatically incorrect
+D) A sign of non-native speaker
 
 ---
 
@@ -298,15 +330,17 @@ D) Always grammatically incorrect
 
 
 
+
+
 "Jones (2022) claimed that..." vs "Jones (2022) argues that..." The difference is:
 
-A) No meaningful difference
+A) Past = neutral report; Present = endorsement
 
-B) Past vs Present = formal vs informal
+B) No meaningful difference
 
 C) Past = British; Present = American
 
-D) Past = neutral report; Present = endorsement
+D) Past vs Present = formal vs informal
 
 ---
 
@@ -316,15 +350,17 @@ D) Past = neutral report; Present = endorsement
 
 
 
+
+
 "Rain was falling" vs "Rain fell" — the Progressive version:
 
-A) Is more formal
+A) Is incorrect
 
-B) Is incorrect
+B) Is more formal
 
-C) Indicates the rain stopped
+C) Presents the scene as experienced/perceived
 
-D) Presents the scene as experienced/perceived
+D) Indicates the rain stopped
 
 ---
 
@@ -334,15 +370,17 @@ D) Presents the scene as experienced/perceived
 
 
 
+
+
 To make a story more engaging in casual speech, you should:
 
 A) Use Past Perfect for all events
 
-B) Use only Past Simple throughout
+B) Avoid all continuous forms
 
-C) Avoid all continuous forms
+C) Use Historic Present for key moments
 
-D) Use Historic Present for key moments
+D) Use only Past Simple throughout
 
 ---
 
@@ -352,15 +390,17 @@ D) Use Historic Present for key moments
 
 
 
+
+
 Which error is typical of Russian speakers with tenses?
 
-A) Overusing Historic Present
+A) Using too much Progressive aspect
 
 B) Using Past Perfect too often
 
-C) Using "will" after "when" and "if"
+C) Overusing Historic Present
 
-D) Using too much Progressive aspect
+D) Using "will" after "when" and "if"
 
 ---
 
@@ -371,25 +411,25 @@ D) Using too much Progressive aspect
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | Historic Present is appropriate for conversational storytelling, not academic essays or routine descriptions. |
-| 2 | D | Historic Present creates immediacy and engagement, making listeners feel present in the story. |
-| 3 | A | Present tense for cited research suggests the speaker accepts or endorses the validity of the claim. |
+| 2 | B | Historic Present creates immediacy and engagement, making listeners feel present in the story. |
+| 3 | B | Present tense for cited research suggests the speaker accepts or endorses the validity of the claim. |
 | 4 | A | "Found that... may be" is neutral—past tense + hedging modal doesn't endorse or reject. |
 | 5 | C | Progressive with "always" expresses speaker's emotional attitude, typically annoyance. |
-| 6 | C | Past progressive "was wondering" + conditional creates maximum politeness/tentativeness. |
+| 6 | B | Past progressive "was wondering" + conditional creates maximum politeness/tentativeness. |
 | 7 | B | Past Perfect shows "leaving" happened before "arriving" — establishes sequence. |
-| 8 | B | When sequence is clear from time markers or context, Past Perfect is optional. |
+| 8 | A | When sequence is clear from time markers or context, Past Perfect is optional. |
 | 9 | A | "Will be -ing" is softer, more neutral—doesn't imply ulterior motive for asking. |
-| 10 | D | Present Simple after "when" for future time clauses—no "will" in the time clause. |
-| 11 | C | For universal truths, either tense is acceptable in reported speech. |
+| 10 | C | Present Simple after "when" for future time clauses—no "will" in the time clause. |
+| 11 | D | For universal truths, either tense is acceptable in reported speech. |
 | 12 | B | "Reached" (Simple) is the foreground/main event; "was setting" (Continuous) is background. |
 | 13 | D | Past Perfect creates more narrative distance than Simple Past. |
-| 14 | A | Present Continuous for future indicates a personal arrangement already made. |
+| 14 | B | Present Continuous for future indicates a personal arrangement already made. |
 | 15 | C | Present Simple for future refers to fixed schedules/timetables outside speaker's control. |
-| 16 | C | Mixing Historic Present with past tenses is natural in native speaker storytelling. |
-| 17 | D | Present = suggesting ongoing validity/endorsement; Past = neutral historical report. |
-| 18 | D | Progressive presents the scene subjectively, as it was being experienced. |
-| 19 | D | Historic Present at key moments increases engagement in casual storytelling. |
-| 20 | C | Russian speakers often transfer the pattern of using future tense after "когда" (when). |
+| 16 | B | Mixing Historic Present with past tenses is natural in native speaker storytelling. |
+| 17 | A | Present = suggesting ongoing validity/endorsement; Past = neutral historical report. |
+| 18 | C | Progressive presents the scene subjectively, as it was being experienced. |
+| 19 | C | Historic Present at key moments increases engagement in casual storytelling. |
+| 20 | D | Russian speakers often transfer the pattern of using future tense after "когда" (when). |
 
 ---
 

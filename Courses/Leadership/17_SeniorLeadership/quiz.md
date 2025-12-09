@@ -10,19 +10,23 @@
 
 
 
+
+
 Что главное меняется при переходе от EM к Director?
 
-A) Только больше зарплата
+A) Impact через менеджеров, фокус на strategy и systems
 
 B) Меньше работы
 
-C) Больше coding
+C) Только больше зарплата
 
-D) Impact через менеджеров, фокус на strategy и systems
+D) Больше coding
 
 ---
 
 ## Question 2: 1-on-1 с менеджерами
+
+
 
 
 
@@ -46,6 +50,8 @@ D) Team health, их развитие как лидеров, strategy alignment
 
 
 
+
+
 Когда использовать coaching вместо directing?
 
 A) Никогда coaching
@@ -64,19 +70,23 @@ D) В кризис
 
 
 
+
+
 Зачем нужны skip-level 1-on-1?
 
-A) Чтобы undermining менеджера
+A) Performance review
 
-B) Performance review
+B) Чтобы undermining менеджера
 
-C) Unfiltered view, culture check, build trust, career conversations
+C) Чтобы micromanage
 
-D) Чтобы micromanage
+D) Unfiltered view, culture check, build trust, career conversations
 
 ---
 
 ## Question 5: Handling Manager Complaints
+
+
 
 
 
@@ -100,6 +110,8 @@ D) Рассказать менеджеру кто жаловался
 
 
 
+
+
 Какая common mistake нового Director?
 
 A) Micromanaging менеджеров, solving проблемы за них
@@ -118,19 +130,23 @@ D) Coaching
 
 
 
+
+
 Что нужно executives в коммуникации?
 
-A) Длинные документы
+A) Технические детали
 
 B) Только хорошие новости
 
-C) Business impact, clear asks, risks, no surprises
+C) Длинные документы
 
-D) Технические детали
+D) Business impact, clear asks, risks, no surprises
 
 ---
 
 ## Question 8: Executive Presence
+
+
 
 
 
@@ -154,15 +170,17 @@ D) Избегание вопросов
 
 
 
+
+
 Какой time horizon для Director?
 
-A) 10+ лет
+A) Quarters to year
 
-B) Часы
+B) Дни
 
-C) Quarters to year
+C) 10+ лет
 
-D) Дни
+D) Часы
 
 ---
 
@@ -172,19 +190,23 @@ D) Дни
 
 
 
+
+
 Что утверждает Conway's Law?
 
-A) Организации создают системы, отражающие их communication structure
+A) Код всегда плохой
 
-B) Management не важен
+B) Организации создают системы, отражающие их communication structure
 
 C) Teams должны быть большими
 
-D) Код всегда плохой
+D) Management не важен
 
 ---
 
 ## Question 11: Team Design
+
+
 
 
 
@@ -208,15 +230,17 @@ D) Teams own products/services, minimize dependencies
 
 
 
+
+
 Когда делать reorg?
 
-A) Каждый месяц
+A) Каждую неделю
 
-B) Каждую неделю
+B) Каждый месяц
 
-C) Никогда
+C) Когда strategy changed, structure блокирует goals
 
-D) Когда strategy changed, structure блокирует goals
+D) Никогда
 
 ---
 
@@ -226,15 +250,17 @@ D) Когда strategy changed, structure блокирует goals
 
 
 
+
+
 Какое типичное allocation для tech debt?
 
-A) ~20%
+A) 100%
 
-B) 90%
+B) 0%
 
-C) 100%
+C) ~20%
 
-D) 0%
+D) 90%
 
 ---
 
@@ -244,19 +270,23 @@ D) 0%
 
 
 
+
+
 Какой первый шаг в coaching менеджера?
 
-A) Ask about the situation
+A) Criticize
 
-B) Сразу дать solution
+B) Ignore
 
-C) Criticize
+C) Ask about the situation
 
-D) Ignore
+D) Сразу дать solution
 
 ---
 
 ## Question 15: Org Health Indicators
+
+
 
 
 
@@ -280,15 +310,17 @@ D) Только revenue
 
 
 
+
+
 Какой стратегический вопрос для Director?
 
 A) "Какой обед заказать?"
 
-B) "Какой код написать?"
+B) "Где мы должны быть через год? Какие capabilities нужны?"
 
-C) "Где мы должны быть через год? Какие capabilities нужны?"
+C) "Какой task сделать сегодня?"
 
-D) "Какой task сделать сегодня?"
+D) "Какой код написать?"
 
 ---
 
@@ -298,15 +330,17 @@ D) "Какой task сделать сегодня?"
 
 
 
+
+
 Как развивать leadership pipeline?
 
-A) Нанимать только извне
+A) Не развивать
 
-B) Identify high-potentials, stretch opportunities, coaching, succession planning
+B) Ждать пока сами вырастут
 
-C) Ждать пока сами вырастут
+C) Identify high-potentials, stretch opportunities, coaching, succession planning
 
-D) Не развивать
+D) Нанимать только извне
 
 ---
 
@@ -316,19 +350,23 @@ D) Не развивать
 
 
 
+
+
 Если команда struggling, какой первый вопрос?
 
-A) Игнорировать
+A) "Manager issue или team issue? Какой support нужен?"
 
-B) Добавить больше людей без анализа
+B) Сразу уволить всех
 
-C) "Manager issue или team issue? Какой support нужен?"
+C) Игнорировать
 
-D) Сразу уволить всех
+D) Добавить больше людей без анализа
 
 ---
 
 ## Question 19: Self-Care
+
+
 
 
 
@@ -352,15 +390,17 @@ D) More responsibility less control, political complexity, loneliness
 
 
 
+
+
 Что важно для leadership team?
 
 A) Shared goals, healthy debate, support publicly, disagree and commit
 
-B) Competition между leaders
+B) Секреты друг от друга
 
-C) Blame culture
+C) Competition между leaders
 
-D) Секреты друг от друга
+D) Blame culture
 
 ---
 
@@ -370,24 +410,24 @@ D) Секреты друг от друга
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Impact через менеджеров, фокус на strategy и systems |
+| 1 | A | Impact через менеджеров, фокус на strategy и systems |
 | 2 | D | Team health, их развитие, strategy alignment |
 | 3 | C | Coaching когда development opportunity, могут figure it out |
-| 4 | C | Skip-level: unfiltered view, culture, trust, career |
+| 4 | D | Skip-level: unfiltered view, culture, trust, career |
 | 5 | C | Listen, clarify, don't commit, verify, address if pattern |
 | 6 | A | Micromanaging менеджеров, solving за них |
-| 7 | C | Business impact, clear asks, risks, no surprises |
+| 7 | D | Business impact, clear asks, risks, no surprises |
 | 8 | B | Clarity, confidence, composure |
-| 9 | C | Director: quarters to year |
-| 10 | A | Org structure mirrors communication structure |
+| 9 | A | Director: quarters to year |
+| 10 | B | Org structure mirrors communication structure |
 | 11 | D | Teams own products, minimize dependencies |
-| 12 | D | Reorg когда strategy changed, structure blocks goals |
-| 13 | A | Tech debt ~20% |
-| 14 | A | Coaching: first ask about situation |
+| 12 | C | Reorg когда strategy changed, structure blocks goals |
+| 13 | C | Tech debt ~20% |
+| 14 | C | Coaching: first ask about situation |
 | 15 | B | Team health: engagement, turnover, promotion rate |
-| 16 | C | Strategic: где через год, какие capabilities |
-| 17 | B | Pipeline: high-potentials, stretch, coaching, succession |
-| 18 | C | Manager vs team issue, какой support |
+| 16 | B | Strategic: где через год, какие capabilities |
+| 17 | C | Pipeline: high-potentials, stretch, coaching, succession |
+| 18 | A | Manager vs team issue, какой support |
 | 19 | D | More responsibility, complexity, loneliness |
 | 20 | A | Shared goals, healthy debate, support, disagree and commit |
 

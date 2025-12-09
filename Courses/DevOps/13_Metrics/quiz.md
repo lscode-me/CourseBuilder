@@ -10,6 +10,8 @@
 
 
 
+
+
 Что такое DORA?
 
 A) Инструмент мониторинга
@@ -28,15 +30,17 @@ D) Методология разработки
 
 
 
+
+
 Какие четыре ключевые метрики DORA?
 
-A) CPU, Memory, Disk, Network
+A) Availability, Latency, Throughput, Errors
 
-B) Availability, Latency, Throughput, Errors
+B) CPU, Memory, Disk, Network
 
-C) Deployment Frequency, Lead Time, Change Failure Rate, MTTR
+C) Code Coverage, Bugs, Technical Debt, Velocity
 
-D) Code Coverage, Bugs, Technical Debt, Velocity
+D) Deployment Frequency, Lead Time, Change Failure Rate, MTTR
 
 ---
 
@@ -46,19 +50,23 @@ D) Code Coverage, Bugs, Technical Debt, Velocity
 
 
 
+
+
 Как часто Elite performers деплоят?
 
-A) Раз в месяц
+A) Раз в неделю
 
-B) Раз в неделю
+B) On-demand (несколько раз в день)
 
 C) Раз в квартал
 
-D) On-demand (несколько раз в день)
+D) Раз в месяц
 
 ---
 
 ## Question 4: Lead Time
+
+
 
 
 
@@ -82,6 +90,8 @@ D) Время тестирования
 
 
 
+
+
 Что показывает Change Failure Rate?
 
 A) Количество багов
@@ -100,19 +110,23 @@ D) Количество строк кода
 
 
 
+
+
 Какой MTTR у Elite performers?
 
-A) < 1 week
+A) < 1 day
 
-B) < 1 hour
+B) < 1 month
 
-C) < 1 month
+C) < 1 hour
 
-D) < 1 day
+D) < 1 week
 
 ---
 
 ## Question 7: Throughput vs Stability
+
+
 
 
 
@@ -136,6 +150,8 @@ D) Не связаны
 
 
 
+
+
 Откуда брать данные для Deployment Frequency?
 
 A) Опросы разработчиков
@@ -149,6 +165,8 @@ D) CI/CD pipeline, Git tags, Kubernetes events
 ---
 
 ## Question 9: Improvement
+
+
 
 
 
@@ -172,15 +190,17 @@ D) Оптимизировать CI, уменьшить batch size, trunk-based d
 
 
 
+
+
 Как часто нужно измерять DORA метрики?
 
 A) Только при проблемах
 
-B) Раз в квартал вручную
+B) Раз в год
 
-C) Непрерывно (автоматически)
+C) Раз в квартал вручную
 
-D) Раз в год
+D) Непрерывно (автоматически)
 
 ---
 
@@ -189,15 +209,17 @@ D) Раз в год
 
 
 
+
+
 Что измеряет MTBF?
 
-A) Среднее время восстановления
+A) Частоту деплоя
 
-B) Размер изменений
+B) Среднее время между сбоями
 
-C) Среднее время между сбоями
+C) Размер изменений
 
-D) Частоту деплоя
+D) Среднее время восстановления
 
 ---
 
@@ -206,19 +228,23 @@ D) Частоту деплоя
 
 
 
+
+
 Как размер deployment влияет на DORA metrics?
 
-A) Размер не измеряется
+A) Меньшие deployments → лучшие metrics (быстрее, меньше failures)
 
-B) Не влияет
+B) Большие deployments лучше
 
-C) Меньшие deployments → лучшие metrics (быстрее, меньше failures)
+C) Размер не измеряется
 
-D) Большие deployments лучше
+D) Не влияет
 
 ---
 
 ## Question 13: Team Size
+
+
 
 
 
@@ -240,15 +266,17 @@ D) Меньшие команды часто показывают лучшие р
 
 
 
+
+
 Как культура влияет на DORA metrics?
 
-A) Только процессы важны
+A) Только технологии важны
 
-B) Только технологии важны
+B) Только процессы важны
 
-C) Не влияет
+C) Generative culture (high trust) коррелирует с лучшими metrics
 
-D) Generative culture (high trust) коррелирует с лучшими metrics
+D) Не влияет
 
 ---
 
@@ -257,15 +285,17 @@ D) Generative culture (high trust) коррелирует с лучшими metr
 
 
 
+
+
 Какие capabilities улучшают DORA metrics?
 
-A) CI/CD, trunk-based dev, monitoring, loose coupling
+A) Только код-ревью
 
-B) Только документация
+B) Только автоматизация
 
-C) Только автоматизация
+C) Только документация
 
-D) Только код-ревью
+D) CI/CD, trunk-based dev, monitoring, loose coupling
 
 ---
 
@@ -274,15 +304,17 @@ D) Только код-ревью
 
 
 
+
+
 Как правильно использовать DORA benchmarks?
 
-A) Копировать metrics других компаний
+A) Сравнивать свой прогресс во времени, использовать benchmarks как ориентир
 
-B) Сравнивать только с другими компаниями
+B) Игнорировать benchmarks
 
-C) Игнорировать benchmarks
+C) Сравнивать только с другими компаниями
 
-D) Сравнивать свой прогресс во времени, использовать benchmarks как ориентир
+D) Копировать metrics других компаний
 
 ---
 
@@ -291,19 +323,23 @@ D) Сравнивать свой прогресс во времени, испо�
 
 
 
+
+
 Как automation влияет на DORA metrics?
 
-A) Снижает все metrics
+A) Улучшает deployment frequency и lead time
 
-B) Улучшает deployment frequency и lead time
+B) Только ухудшает change failure rate
 
 C) Не влияет
 
-D) Только ухудшает change failure rate
+D) Снижает все metrics
 
 ---
 
 ## Question 18: Testing Impact
+
+
 
 
 
@@ -325,6 +361,8 @@ D) Больше тестов = выше failure rate
 
 
 
+
+
 Как psychological safety влияет на DORA metrics?
 
 A) Только HR метрика
@@ -338,6 +376,8 @@ D) Не связано
 ---
 
 ## Question 20: Continuous Improvement
+
+
 
 
 
@@ -361,22 +401,22 @@ D) Просто измерять
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | C | DORA — DevOps Research and Assessment |
-| 2 | C | DF, Lead Time, CFR, MTTR — четыре ключевые метрики |
-| 3 | D | Elite performers деплоят on-demand |
+| 2 | D | DF, Lead Time, CFR, MTTR — четыре ключевые метрики |
+| 3 | B | Elite performers деплоят on-demand |
 | 4 | B | Lead Time = время от commit до production |
 | 5 | B | CFR = % деплоев, вызывающих сбои |
-| 6 | B | Elite MTTR < 1 hour |
+| 6 | C | Elite MTTR < 1 hour |
 | 7 | C | Elite: высокая скорость И высокая стабильность |
 | 8 | D | CI/CD, Git, K8s — автоматические источники |
 | 9 | D | Оптимизация CI, меньше batch, trunk-based |
-| 10 | C | Непрерывное автоматическое измерение |
-| 11 | C | MTBF — Mean Time Between Failures |
-| 12 | C | Меньшие deployments дают лучшие DORA metrics |
+| 10 | D | Непрерывное автоматическое измерение |
+| 11 | B | MTBF — Mean Time Between Failures |
+| 12 | A | Меньшие deployments дают лучшие DORA metrics |
 | 13 | D | Меньшие команды часто показывают лучшие результаты |
-| 14 | D | Generative culture коррелирует с лучшими metrics |
-| 15 | A | CI/CD, trunk-based dev, monitoring, loose coupling |
-| 16 | D | Сравнивать свой прогресс, использовать benchmarks как ориентир |
-| 17 | B | Автоматизация улучшает deployment frequency и lead time |
+| 14 | C | Generative culture коррелирует с лучшими metrics |
+| 15 | D | CI/CD, trunk-based dev, monitoring, loose coupling |
+| 16 | A | Сравнивать свой прогресс, использовать benchmarks как ориентир |
+| 17 | A | Автоматизация улучшает deployment frequency и lead time |
 | 18 | B | Quality тесты снижают change failure rate |
 | 19 | C | High psychological safety улучшает reporting и metrics |
 | 20 | C | Identify bottlenecks, experiment, measure, iterate |

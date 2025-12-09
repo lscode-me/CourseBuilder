@@ -9,15 +9,17 @@
 
 
 
+
+
 Какой тип SQS queue гарантирует FIFO ordering и exactly-once delivery?
 
-A) FIFO Queue
+A) Express Queue
 
-B) Standard Queue
+B) FIFO Queue
 
 C) Priority Queue
 
-D) Express Queue
+D) Standard Queue
 
 ---
 
@@ -27,19 +29,23 @@ D) Express Queue
 
 
 
+
+
 Какое ключевое отличие SNS от SQS?
 
-A) SNS — pull-based, SQS — push-based
+A) SNS дешевле
 
-B) SNS — pub/sub (fan-out), SQS — point-to-point queue
+B) SQS не поддерживает filtering
 
-C) SNS дешевле
+C) SNS — pull-based, SQS — push-based
 
-D) SQS не поддерживает filtering
+D) SNS — pub/sub (fan-out), SQS — point-to-point queue
 
 ---
 
 ## Question 3: Visibility Timeout
+
+
 
 
 
@@ -63,6 +69,8 @@ D) Время, в течение которого сообщение невид�
 
 
 
+
+
 Зачем использовать Long Polling в SQS?
 
 A) Для увеличения размера сообщений
@@ -81,19 +89,23 @@ D) Для увеличения скорости доставки
 
 
 
+
+
 Когда предпочтительнее EventBridge вместо SNS?
 
-A) Для отправки email notifications
+A) Для маршрутизации событий на основе их содержимого (content-based routing)
 
-B) Для SMS уведомлений
+B) Для отправки email notifications
 
-C) Для маршрутизации событий на основе их содержимого (content-based routing)
+C) Для SMS уведомлений
 
 D) Для простого fan-out
 
 ---
 
 ## Question 6: SQS Message Size
+
+
 
 
 
@@ -115,19 +127,23 @@ D) 256 KB
 
 
 
+
+
 Для чего используется Dead Letter Queue?
 
-A) Для архивации
+A) Для логирования
 
 B) Для сообщений, которые не удалось обработать
 
-C) Для логирования
+C) Для шифрования
 
-D) Для шифрования
+D) Для архивации
 
 ---
 
 ## Question 8: SNS Filter Policy
+
+
 
 
 
@@ -149,19 +165,23 @@ D) Ограничивает rate
 
 
 
+
+
 Какой throughput у SQS FIFO queue?
 
-A) 1000 TPS
+A) 10 TPS
 
-B) 10 TPS
+B) 1000 TPS
 
-C) Unlimited
+C) 300 TPS (3000 с batching, High Throughput до 70K)
 
-D) 300 TPS (3000 с batching, High Throughput до 70K)
+D) Unlimited
 
 ---
 
 ## Question 10: Message Groups
+
+
 
 
 
@@ -183,15 +203,17 @@ D) Для ordering внутри группы в FIFO queue
 
 
 
+
+
 Какие типы rules в EventBridge?
 
-A) Только scheduled
+A) Только event patterns
 
 B) Event patterns и scheduled
 
-C) Только event patterns
+C) Только manual
 
-D) Только manual
+D) Только scheduled
 
 ---
 
@@ -200,19 +222,23 @@ D) Только manual
 
 
 
+
+
 Для чего используется Archive в EventBridge?
 
-A) Для logging
+A) Для шифрования
 
-B) Для шифрования
+B) Для logging
 
-C) Для backup
+C) Для replay events для testing/recovery
 
-D) Для replay events для testing/recovery
+D) Для backup
 
 ---
 
 ## Question 13: Step Functions
+
+
 
 
 
@@ -234,6 +260,8 @@ D) Только для messaging
 
 
 
+
+
 Какой максимум messages в batch для SQS?
 
 A) 5
@@ -251,19 +279,23 @@ D) 100
 
 
 
+
+
 Что такое SNS FIFO Topic?
 
-A) Нет такого
+A) Только для SMS
 
-B) Topic с ordering и deduplication (для SQS FIFO)
+B) Нет такого
 
 C) Только для email
 
-D) Только для SMS
+D) Topic с ordering и deduplication (для SQS FIFO)
 
 ---
 
 ## Question 16: Kinesis vs SQS
+
+
 
 
 
@@ -285,19 +317,23 @@ D) Всегда
 
 
 
+
+
 Когда использовать Amazon MQ?
 
-A) Для новых приложений
+A) Для migration от on-premises message brokers (ActiveMQ/RabbitMQ)
 
-B) Для migration от on-premises message brokers (ActiveMQ/RabbitMQ)
+B) Никогда
 
 C) Для analytics
 
-D) Никогда
+D) Для новых приложений
 
 ---
 
 ## Question 18: EventBridge Pipes
+
+
 
 
 
@@ -319,13 +355,15 @@ D) Security
 
 
 
+
+
 Что делает Delay Queue?
 
-A) Ускоряет доставку
+A) Шифрует сообщения
 
-B) Задерживает доставку сообщений на указанное время
+B) Ускоряет доставку
 
-C) Шифрует сообщения
+C) Задерживает доставку сообщений на указанное время
 
 D) Фильтрует сообщения
 
@@ -336,15 +374,17 @@ D) Фильтрует сообщения
 
 
 
+
+
 Куда может отправлять SNS push notifications?
 
-A) Только email
+A) Только HTTP
 
 B) iOS (APNS), Android (FCM), и другие платформы
 
-C) Только SMS
+C) Только email
 
-D) Только HTTP
+D) Только SMS
 
 ---
 
@@ -354,25 +394,25 @@ D) Только HTTP
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | FIFO Queue гарантирует порядок сообщений и exactly-once processing. Standard — at-least-once, best-effort ordering. |
-| 2 | B | SNS — pub/sub для fan-out к многим подписчикам. SQS — point-to-point queue между producer и consumer. |
+| 1 | B | FIFO Queue гарантирует порядок сообщений и exactly-once processing. Standard — at-least-once, best-effort ordering. |
+| 2 | D | SNS — pub/sub для fan-out к многим подписчикам. SQS — point-to-point queue между producer и consumer. |
 | 3 | D | Visibility Timeout — период, когда сообщение "заблокировано" для обработки одним consumer. |
 | 4 | C | Long Polling ждёт до появления сообщений, снижая количество пустых ответов и API calls. |
-| 5 | C | EventBridge имеет мощные rules для content-based routing. SNS лучше для простого fan-out и notifications. |
+| 5 | A | EventBridge имеет мощные rules для content-based routing. SNS лучше для простого fan-out и notifications. |
 | 6 | D | SQS message max 256 KB |
 | 7 | B | DLQ для failed messages |
 | 8 | C | Filter Policy для matching subscribers |
-| 9 | D | FIFO: 300 TPS (3000 batch, 70K high throughput) |
+| 9 | C | FIFO: 300 TPS (3000 batch, 70K high throughput) |
 | 10 | D | Message Group ID для ordering в FIFO |
 | 11 | B | Event patterns и scheduled rules |
-| 12 | D | Archive для replay events |
+| 12 | C | Archive для replay events |
 | 13 | C | Step Functions для workflow orchestration |
 | 14 | B | SQS batch max 10 messages |
-| 15 | B | SNS FIFO для ordering и deduplication |
+| 15 | D | SNS FIFO для ordering и deduplication |
 | 16 | B | Kinesis для real-time streaming и analytics |
-| 17 | B | Amazon MQ для migration от ActiveMQ/RabbitMQ |
+| 17 | A | Amazon MQ для migration от ActiveMQ/RabbitMQ |
 | 18 | B | EventBridge Pipes — point-to-point integrations |
-| 19 | B | Delay Queue задерживает доставку |
+| 19 | C | Delay Queue задерживает доставку |
 | 20 | B | SNS push: iOS, Android, и другие платформы |
 
 ---

@@ -8,6 +8,8 @@
 
 
 
+
+
 В чём основное отличие EHR от EMR?
 
 A) EHR дороже
@@ -21,6 +23,8 @@ D) Нет различий
 ---
 
 ## Question 2: CPOE
+
+
 
 
 
@@ -40,15 +44,17 @@ D) Clinical Patient Order Entry
 
 
 
+
+
 Что делает CDSS?
 
-A) Хранит медицинские документы
+A) Предоставляет decision support (alerts, guidelines)
 
-B) Предоставляет decision support (alerts, guidelines)
+B) Хранит медицинские документы
 
-C) Шифрует данные
+C) Выполняет billing
 
-D) Выполняет billing
+D) Шифрует данные
 
 ---
 
@@ -56,15 +62,17 @@ D) Выполняет billing
 
 
 
+
+
 Health Information Exchange позволяет:
 
-A) Обмениваться данными между организациями
+A) Хранить изображения
 
-B) Обрабатывать платежи
+B) Назначать лекарства
 
-C) Назначать лекарства
+C) Обрабатывать платежи
 
-D) Хранить изображения
+D) Обмениваться данными между организациями
 
 ---
 
@@ -72,15 +80,17 @@ D) Хранить изображения
 
 
 
+
+
 SMART on FHIR это:
 
-A) База данных
+A) Платформа для интеграции приложений с EHR
 
 B) Протокол шифрования
 
-C) Платформа для интеграции приложений с EHR
+C) Медицинское оборудование
 
-D) Медицинское оборудование
+D) База данных
 
 ---
 
@@ -88,19 +98,23 @@ D) Медицинское оборудование
 
 
 
+
+
 MPI (Master Patient Index) используется для:
 
-A) Хранения лабораторных результатов
+A) Уникальной идентификации пациентов в системе
 
-B) Уникальной идентификации пациентов в системе
+B) Хранения лабораторных результатов
 
-C) Шифрования данных
+C) Scheduling appointments
 
-D) Scheduling appointments
+D) Шифрования данных
 
 ---
 
 ## Question 7: HL7 MLLP
+
+
 
 
 
@@ -120,19 +134,23 @@ D) Язык программирования
 
 
 
+
+
 Какая модель HIE хранит все данные в центральном репозитории?
 
-A) Distributed
+A) Federated
 
-B) Hybrid
+B) Centralized
 
-C) Centralized
+C) Hybrid
 
-D) Federated
+D) Distributed
 
 ---
 
 ## Question 9: DICOM интеграция
+
+
 
 
 
@@ -152,15 +170,17 @@ D) HTTP REST API
 
 
 
+
+
 Какой компонент EHR отвечает за progress notes и discharge summaries?
 
-A) CDSS
+A) Clinical Documentation
 
-B) CPOE
+B) Results Management
 
-C) Results Management
+C) CPOE
 
-D) Clinical Documentation
+D) CDSS
 
 ---
 
@@ -168,19 +188,23 @@ D) Clinical Documentation
 
 
 
+
+
 Какой компонент EHR проверяет drug-drug interactions?
 
-A) CPOE
+A) Patient Management
 
-B) CDSS
+B) Billing
 
-C) Patient Management
+C) CPOE
 
-D) Billing
+D) CDSS
 
 ---
 
 ## Question 12: EHR архитектура
+
+
 
 
 
@@ -200,15 +224,17 @@ D) Integration Layer
 
 
 
+
+
 Для авторизации SMART on FHIR приложения используется:
 
-A) Basic Authentication
+A) API Key
 
-B) OAuth 2.0
+B) Certificate
 
-C) API Key
+C) Basic Authentication
 
-D) Certificate
+D) OAuth 2.0
 
 ---
 
@@ -216,19 +242,23 @@ D) Certificate
 
 
 
+
+
 Какой тип HIE запроса используется для поиска пациента в сети?
 
 A) Patient Discovery
 
-B) Document Retrieve
+B) Data Exchange
 
-C) Data Exchange
+C) Document Query
 
-D) Document Query
+D) Document Retrieve
 
 ---
 
 ## Question 15: EHR Performance
+
+
 
 
 
@@ -248,6 +278,8 @@ D) 5 секунд
 
 
 
+
+
 В федеративной модели HIE данные:
 
 A) Дублируются во всех организациях
@@ -261,6 +293,8 @@ D) Остаются в источниках, запросы маршрутизи
 ---
 
 ## Question 17: Results Management
+
+
 
 
 
@@ -280,6 +314,8 @@ D) Billing информацию
 
 
 
+
+
 Какие символы используются для framing в HL7 MLLP?
 
 A) [ и ]
@@ -296,6 +332,8 @@ D) { и }
 
 
 
+
+
 Какие метаданные можно получить из DICOM файла?
 
 A) SQL запросы
@@ -309,6 +347,8 @@ D) Только имя файла
 ---
 
 ## Question 20: EHR Data Layer
+
+
 
 
 
@@ -332,17 +372,17 @@ D) Relational DB, Document Store, BLOB Storage
 |---|--------|-------------|
 | 1 | B | EHR для обмена между организациями |
 | 2 | A | Computerized Physician Order Entry |
-| 3 | B | Decision support (alerts, guidelines) |
-| 4 | A | Обмен данными между организациями |
-| 5 | C | Платформа для интеграции медицинских приложений с EHR |
-| 6 | B | Уникальная идентификация пациентов в системе |
+| 3 | A | Decision support (alerts, guidelines) |
+| 4 | D | Обмен данными между организациями |
+| 5 | A | Платформа для интеграции медицинских приложений с EHR |
+| 6 | A | Уникальная идентификация пациентов в системе |
 | 7 | C | Протокол передачи HL7 сообщений по TCP (MLLP) |
-| 8 | C | Centralized модель хранит данные в центральном репозитории |
+| 8 | B | Centralized модель хранит данные в центральном репозитории |
 | 9 | B | DICOM C-FIND для поиска и C-MOVE для получения |
-| 10 | D | Clinical Documentation отвечает за notes и summaries |
-| 11 | B | CDSS (Clinical Decision Support System) |
+| 10 | A | Clinical Documentation отвечает за notes и summaries |
+| 11 | D | CDSS (Clinical Decision Support System) |
 | 12 | D | Integration Layer с HL7 Interface Engine и FHIR API Gateway |
-| 13 | B | OAuth 2.0 для авторизации SMART приложений |
+| 13 | D | OAuth 2.0 для авторизации SMART приложений |
 | 14 | A | Patient Discovery для поиска пациента |
 | 15 | A | 2 секунды для критических операций |
 | 16 | D | Federated модель не хранит данные централизованно |

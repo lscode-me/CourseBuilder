@@ -9,19 +9,23 @@
 
 
 
+
+
 Что означает аббревиатура YAML?
 
-A) YAML Ain't Markup Language
+A) Yet Another Markup Language
 
-B) Yet Another Markup Language
+B) YAML Advanced Modeling Language
 
 C) Your Application Markup Language
 
-D) YAML Advanced Modeling Language
+D) YAML Ain't Markup Language
 
 ---
 
 ## Question 2: Комментарии
+
+
 
 
 
@@ -43,6 +47,8 @@ D) `// comment`
 
 
 
+
+
 Какие символы можно использовать для отступов в YAML?
 
 A) Только табы
@@ -56,6 +62,8 @@ D) Только пробелы
 ---
 
 ## Question 4: Boolean значения
+
+
 
 
 
@@ -77,19 +85,23 @@ D) `yes`
 
 
 
+
+
 Что произойдёт с `country: NO` в YAML 1.1?
 
-A) Строка "NO"
+A) Null
 
-B) Null
+B) Ошибка синтаксиса
 
-C) Ошибка синтаксиса
+C) Строка "NO"
 
 D) Boolean false
 
 ---
 
 ## Question 6: Многострочные строки
+
+
 
 
 
@@ -111,15 +123,17 @@ D) `"""`
 
 
 
+
+
 Как записать список `[1, 2, 3]` в YAML flow style?
 
-A) items: [1, 2, 3]
+A) `items: (1, 2, 3)`
 
-B) `items: <1, 2, 3>`
+B) `items: {1, 2, 3}`
 
-C) `items: (1, 2, 3)`
+C) items: [1, 2, 3]
 
-D) `items: {1, 2, 3}`
+D) `items: <1, 2, 3>`
 
 ---
 
@@ -128,19 +142,23 @@ D) `items: {1, 2, 3}`
 
 
 
+
+
 Для чего используется синтаксис `&name` и `*name` в YAML?
 
 A) Для регулярных выражений
 
-B) Для якорей (определение) и алиасов (использование)
+B) Для комментариев
 
-C) Для комментариев
+C) Для переменных окружения
 
-D) Для переменных окружения
+D) Для якорей (определение) и алиасов (использование)
 
 ---
 
 ## Question 9: Множественные документы
+
+
 
 
 
@@ -162,19 +180,23 @@ D) `~~~`
 
 
 
+
+
 Какое утверждение верно?
 
-A) Они несовместимы
+A) YAML — надмножество JSON (с версии 1.2)
 
-B) YAML — бинарный формат
+B) Они несовместимы
 
-C) YAML — надмножество JSON (с версии 1.2)
+C) YAML — бинарный формат
 
 D) JSON — надмножество YAML
 
 ---
 
 ## Question 11: Python safe_load
+
+
 
 
 
@@ -196,13 +218,15 @@ D) `safe_load` поддерживает больше типов
 
 
 
+
+
 Как YAML интерпретирует значение `1.0` без кавычек?
 
-A) Boolean true
+A) Целое число 1
 
-B) Целое число 1
+B) Число с плавающей точкой 1.0
 
-C) Число с плавающей точкой 1.0
+C) Boolean true
 
 D) Строка "1.0"
 
@@ -213,15 +237,17 @@ D) Строка "1.0"
 
 
 
+
+
 Какой из вариантов НЕ является null в YAML?
 
-A) `value: null`
+A) `value: ~`
 
-B) value: ""
+B) `value:`
 
-C) `value: ~`
+C) `value: null`
 
-D) `value:`
+D) value: ""
 
 ---
 
@@ -230,19 +256,23 @@ D) `value:`
 
 
 
+
+
 Как правильно записать строку "Error: file not found"?
 
-A) `message: Error file not found`
+A) message: "Error: file not found"
 
-B) message: "Error: file not found"
+B) `message: Error file not found`
 
-C) `message: Error\: file not found`
+C) `message: Error: file not found`
 
-D) `message: Error: file not found`
+D) `message: Error\: file not found`
 
 ---
 
 ## Question 15: yq команда
+
+
 
 
 
@@ -264,6 +294,8 @@ D) `yq eval 'server.port' file.yaml`
 
 
 
+
+
 В каком инструменте чаще всего используется YAML?
 
 A) Kubernetes
@@ -277,6 +309,8 @@ D) Apache HTTP Server
 ---
 
 ## Question 17: Версия YAML
+
+
 
 
 
@@ -298,15 +332,17 @@ D) YAML 1.0
 
 
 
+
+
 Какой инструмент используется для проверки стиля YAML файлов?
 
-A) yamllint
+A) jsonlint
 
-B) jsonlint
+B) yamlcheck
 
 C) yamlvalidate
 
-D) yamlcheck
+D) yamllint
 
 ---
 
@@ -315,15 +351,17 @@ D) yamlcheck
 
 
 
+
+
 Какой стиль рекомендуется для конфигурационных файлов?
 
 A) JSON-совместимый
 
-B) Block style (отступы)
+B) Смешанный
 
-C) Flow style (`{}`, `[]`)
+C) Block style (отступы)
 
-D) Смешанный
+D) Flow style (`{}`, `[]`)
 
 ---
 
@@ -332,15 +370,17 @@ D) Смешанный
 
 
 
+
+
 Как называется файл Docker Compose по умолчанию?
 
-A) `docker.yaml`
+A) `compose.yaml` или `docker-compose.yml`
 
-B) `compose.yaml` или `docker-compose.yml`
+B) `docker.yaml`
 
-C) `container.yml`
+C) `Dockerfile`
 
-D) `Dockerfile`
+D) `container.yml`
 
 ---
 
@@ -350,25 +390,25 @@ D) `Dockerfile`
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | YAML Ain't Markup Language — рекурсивный акроним. |
+| 1 | D | YAML Ain't Markup Language — рекурсивный акроним. |
 | 2 | A | Комментарии в YAML начинаются с `#`. |
 | 3 | D | В YAML можно использовать ТОЛЬКО пробелы для отступов, табы запрещены. |
 | 4 | A | `maybe` — строка. `yes`, `no`, `on`, `off` — boolean в YAML 1.1. |
 | 5 | D | `NO` интерпретируется как false в YAML 1.1 (Norway Problem). |
 | 6 | C | `|` (literal block) сохраняет переносы, `>` (folded) преобразует их в пробелы. |
-| 7 | A | Flow style использует `[]` для списков и `{}` для объектов, как в JSON. |
-| 8 | B | `&name` создаёт якорь, `*name` ссылается на него (алиас). |
-| 10 | C | Валидный JSON — валидный YAML (начиная с YAML 1.2). |
+| 7 | C | Flow style использует `[]` для списков и `{}` для объектов, как в JSON. |
+| 8 | D | `&name` создаёт якорь, `*name` ссылается на него (алиас). |
+| 10 | A | Валидный JSON — валидный YAML (начиная с YAML 1.2). |
 | 11 | A | `yaml.load()` может выполнить произвольный Python код через теги. |
-| 12 | C | `1.0` без кавычек — число с плавающей точкой. Для строки: `"1.0"`. |
-| 13 | B | Пустая строка `""` — это строка, не null. Остальные — null. |
-| 14 | B | Кавычки нужны для строк с `: ` (двоеточие + пробел). |
+| 12 | B | `1.0` без кавычек — число с плавающей точкой. Для строки: `"1.0"`. |
+| 13 | D | Пустая строка `""` — это строка, не null. Остальные — null. |
+| 14 | A | Кавычки нужны для строк с `: ` (двоеточие + пробел). |
 | 15 | C | `.server.port` — синтаксис yq (точка в начале обязательна). |
 | 16 | A | Kubernetes широко использует YAML для манифестов. |
 | 17 | A | YAML 1.2 не интерпретирует `yes/no/on/off` как boolean. |
-| 18 | A | yamllint — линтер для проверки YAML файлов. |
-| 19 | B | Block style (с отступами) читабельнее для конфигураций. |
-| 20 | B | `docker-compose.yml` или `compose.yaml` (новое имя). |
+| 18 | D | yamllint — линтер для проверки YAML файлов. |
+| 19 | C | Block style (с отступами) читабельнее для конфигураций. |
+| 20 | A | `docker-compose.yml` или `compose.yaml` (новое имя). |
 
 ---
 

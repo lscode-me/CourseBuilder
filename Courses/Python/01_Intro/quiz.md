@@ -10,13 +10,15 @@
 
 
 
+
+
 Кто является создателем языка Python?
 
-A) Бьёрн Страуструп (Bjarne Stroustrup)
+A) Гвидо ван Россум (Guido van Rossum)
 
-B) Гвидо ван Россум (Guido van Rossum)
+B) Деннис Ритчи (Dennis Ritchie)
 
-C) Деннис Ритчи (Dennis Ritchie)
+C) Бьёрн Страуструп (Bjarne Stroustrup)
 
 D) Джеймс Гослинг (James Gosling)
 
@@ -28,15 +30,17 @@ D) Джеймс Гослинг (James Gosling)
 
 
 
+
+
 Python является:
 
-A) Интерпретируемым языком со статической типизацией
+A) Компилируемым языком со статической типизацией
 
-B) Интерпретируемым языком с динамической типизацией
+B) Компилируемым языком с динамической типизацией
 
-C) Компилируемым языком с динамической типизацией
+C) Интерпретируемым языком с динамической типизацией
 
-D) Компилируемым языком со статической типизацией
+D) Интерпретируемым языком со статической типизацией
 
 ---
 
@@ -46,19 +50,23 @@ D) Компилируемым языком со статической типи�
 
 
 
+
+
 Какая версия Python официально прекратила поддержку 1 января 2020 года?
 
-A) Python 1.x
+A) Python 2.x
 
-B) Python 2.x
+B) Python 1.x
 
-C) Python 3.5
+C) Python 3.0
 
-D) Python 3.0
+D) Python 3.5
 
 ---
 
 ## Question 4: Деление в Python 3
+
+
 
 
 
@@ -82,6 +90,8 @@ D) 2.0
 
 
 
+
+
 Какой оператор используется для целочисленного деления в Python?
 
 A) `%`
@@ -95,6 +105,8 @@ D) `//`
 ---
 
 ## Question 6: Функция print()
+
+
 
 
 
@@ -118,6 +130,8 @@ D) `print("Hello, World!")`
 
 
 
+
+
 Какая команда создаёт виртуальное окружение в Python 3?
 
 A) `python3 -m venv myenv`
@@ -136,13 +150,15 @@ D) `pip create venv myenv`
 
 
 
+
+
 Как активировать виртуальное окружение на Linux/macOS?
 
-A) `activate venv`
+A) `venv\Scripts\activate`
 
-B) `venv\Scripts\activate`
+B) `venv/bin/activate`
 
-C) `venv/bin/activate`
+C) `activate venv`
 
 D) `source venv/bin/activate`
 
@@ -154,19 +170,23 @@ D) `source venv/bin/activate`
 
 
 
+
+
 Что делает команда `pip freeze > requirements.txt`?
 
-A) Замораживает установку пакетов
+A) Удаляет все пакеты
 
-B) Сохраняет список установленных пакетов в файл
+B) Устанавливает пакеты из файла
 
-C) Удаляет все пакеты
+C) Замораживает установку пакетов
 
-D) Устанавливает пакеты из файла
+D) Сохраняет список установленных пакетов в файл
 
 ---
 
 ## Question 10: Отступы
+
+
 
 
 
@@ -195,19 +215,23 @@ D) Не хватает скобок у True
 
 
 
+
+
 Как посмотреть "The Zen of Python"?
 
-A) `import zen`
+A) `import this`
 
-B) `print(zen)`
+B) `import zen`
 
 C) `python --zen`
 
-D) `import this`
+D) `print(zen)`
 
 ---
 
 ## Question 12: Shebang
+
+
 
 
 
@@ -231,19 +255,23 @@ D) Импортирует модуль env
 
 
 
+
+
 Какая команда покажет версию установленного Python?
 
-A) `python --version`
+A) `python --v`
 
-B) `python /version`
+B) `python -version`
 
-C) `python --v`
+C) `python --version`
 
-D) `python -version`
+D) `python /version`
 
 ---
 
 ## Question 14: PEP 8
+
+
 
 
 
@@ -267,6 +295,8 @@ D) 8
 
 
 
+
+
 Какое имя переменной соответствует конвенции PEP 8 для обычных переменных?
 
 A) `USERNAME`
@@ -285,6 +315,8 @@ D) `user_name`
 
 
 
+
+
 Что выведет следующий код?
 
 ```python
@@ -293,17 +325,19 @@ x = "hello"
 print(type(x).__name__)
 ```
 
-A) int
+A) str
 
-B) NoneType
+B) int
 
 C) TypeError
 
-D) str
+D) NoneType
 
 ---
 
 ## Question 17: pyenv
+
+
 
 
 
@@ -327,15 +361,17 @@ D) Для создания виртуальных окружений
 
 
 
+
+
 Что означает аббревиатура REPL?
 
 A) Run-Evaluate-Print-Log
 
-B) Read-Execute-Parse-Loop
+B) Run-Execute-Print-Loop
 
-C) Run-Execute-Print-Loop
+C) Read-Eval-Print-Loop
 
-D) Read-Eval-Print-Loop
+D) Read-Execute-Parse-Loop
 
 ---
 
@@ -345,19 +381,23 @@ D) Read-Eval-Print-Loop
 
 
 
+
+
 Какой синтаксис правильный для f-string в Python 3.6+?
 
-A) `format("Hello, {}!", name)`
+A) `"Hello, {name}!"`
 
-B) `f"Hello, {name}!"`
+B) `format("Hello, {}!", name)`
 
-C) `"Hello, {name}!"`
+C) `f"Hello, {name}!"`
 
 D) `"Hello, " + name + "!"`
 
 ---
 
 ## Question 20: Выход из интерактивного режима
+
+
 
 
 
@@ -381,25 +421,25 @@ D) `exit()` или `Ctrl+D`
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Гвидо ван Россум создал Python в 1991 году. Название от "Monty Python". |
-| 2 | B | Python — интерпретируемый язык с динамической типизацией, типы определяются во время выполнения. |
-| 3 | B | Python 2.x прекратил поддержку 1 января 2020 года. Всегда используйте Python 3. |
+| 1 | A | Гвидо ван Россум создал Python в 1991 году. Название от "Monty Python". |
+| 2 | C | Python — интерпретируемый язык с динамической типизацией, типы определяются во время выполнения. |
+| 3 | A | Python 2.x прекратил поддержку 1 января 2020 года. Всегда используйте Python 3. |
 | 4 | A | В Python 3 оператор `/` всегда возвращает float: `5 / 2 = 2.5`. |
 | 5 | D | Оператор `//` выполняет целочисленное деление: `5 // 2 = 2`. |
 | 6 | D | В Python 3 `print` — это функция, требующая скобки: `print("Hello")`. |
 | 7 | A | Команда `python3 -m venv myenv` создаёт виртуальное окружение. |
 | 8 | D | На Linux/macOS активация: `source venv/bin/activate`. На Windows: `venv\Scripts\activate`. |
-| 9 | B | `pip freeze` выводит список пакетов, `> requirements.txt` перенаправляет в файл. |
+| 9 | D | `pip freeze` выводит список пакетов, `> requirements.txt` перенаправляет в файл. |
 | 10 | A | Python использует отступы для обозначения блоков кода. Без отступа — IndentationError. |
-| 11 | D | `import this` выводит "The Zen of Python" — философию языка (PEP 20). |
+| 11 | A | `import this` выводит "The Zen of Python" — философию языка (PEP 20). |
 | 12 | B | Shebang указывает ОС, какой интерпретатор использовать при запуске скрипта. |
-| 13 | A | `python --version` или `python -V` показывает версию Python. |
+| 13 | C | `python --version` или `python -V` показывает версию Python. |
 | 14 | C | PEP 8 рекомендует 4 пробела для отступа. Не смешивайте пробелы и табы. |
 | 15 | D | `snake_case` для переменных и функций, `PascalCase` для классов, `UPPER_CASE` для констант. |
-| 16 | D | Переменная `x` динамически меняет тип. После присвоения строки тип становится `str`. |
+| 16 | A | Переменная `x` динамически меняет тип. После присвоения строки тип становится `str`. |
 | 17 | B | pyenv позволяет устанавливать и переключаться между разными версиями Python. |
-| 18 | D | REPL = Read-Eval-Print-Loop — интерактивный режим Python. |
-| 19 | B | f-strings (Python 3.6+): `f"Hello, {name}!"` — современный способ форматирования. |
+| 18 | C | REPL = Read-Eval-Print-Loop — интерактивный режим Python. |
+| 19 | C | f-strings (Python 3.6+): `f"Hello, {name}!"` — современный способ форматирования. |
 | 20 | D | `exit()`, `quit()` или `Ctrl+D` (Linux/macOS) / `Ctrl+Z` (Windows) для выхода. |
 
 ---

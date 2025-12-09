@@ -10,19 +10,23 @@
 
 
 
+
+
 Что такое системное программирование?
 
-A) Разработка мобильных приложений
+A) Программирование бизнес-логики
 
-B) Создание программ, взаимодействующих с ОС для управления ресурсами
+B) Разработка мобильных приложений
 
-C) Программирование бизнес-логики
+C) Создание программ, взаимодействующих с ОС для управления ресурсами
 
 D) Веб-разработка
 
 ---
 
 ## Question 2: Системные вызовы
+
+
 
 
 
@@ -46,19 +50,23 @@ D) Вызов метода класса
 
 
 
+
+
 Какая функция возвращает PID текущего процесса?
 
-A) os.current_pid()
+A) os.getpid()
 
-B) os.process_id()
+B) os.pid()
 
-C) os.getpid()
+C) os.current_pid()
 
-D) os.pid()
+D) os.process_id()
 
 ---
 
 ## Question 4: Переменные окружения
+
+
 
 
 
@@ -82,15 +90,17 @@ D) os.getenv["HOME"]
 
 
 
+
+
 Какой стиль обработки ошибок рекомендуется в Python?
 
-A) EAFP (Easier to Ask Forgiveness than Permission)
+A) LBYL (Look Before You Leap)
 
-B) Никакой, ошибки игнорируются
+B) EAFP (Easier to Ask Forgiveness than Permission)
 
 C) Оба одинаково хороши
 
-D) LBYL (Look Before You Leap)
+D) Никакой, ошибки игнорируются
 
 ---
 
@@ -100,19 +110,23 @@ D) LBYL (Look Before You Leap)
 
 
 
+
+
 Что означает код ошибки ENOENT?
 
-A) Invalid argument
+A) No such file or directory
 
 B) File exists
 
-C) No such file or directory
+C) Permission denied
 
-D) Permission denied
+D) Invalid argument
 
 ---
 
 ## Question 7: ctypes
+
+
 
 
 
@@ -136,19 +150,23 @@ D) Для шифрования
 
 
 
+
+
 Какая функция возвращает информацию об операционной системе?
 
-A) os.uname()
+A) os.info()
 
 B) os.system()
 
-C) os.info()
+C) os.platform()
 
-D) os.platform()
+D) os.uname()
 
 ---
 
 ## Question 9: Текущий каталог
+
+
 
 
 
@@ -172,6 +190,8 @@ D) os.pwd()
 
 
 
+
+
 Какая утилита используется для трассировки syscalls на OpenBSD?
 
 A) dtrace
@@ -185,6 +205,8 @@ D) strace
 ---
 
 ## Question 11: pathlib
+
+
 
 
 
@@ -208,15 +230,17 @@ D) path
 
 
 
+
+
 Что возвращает функция os.getppid()?
 
-A) PID первого процесса
+A) PID текущего процесса
 
-B) PID последнего процесса
+B) PID родительского процесса
 
-C) PID текущего процесса
+C) PID первого процесса
 
-D) PID родительского процесса
+D) PID последнего процесса
 
 ---
 
@@ -226,15 +250,17 @@ D) PID родительского процесса
 
 
 
+
+
 Какое значение возвращает os.name на Unix системах?
 
-A) "posix"
+A) "linux"
 
-B) "linux"
+B) "posix"
 
-C) "bsd"
+C) "unix"
 
-D) "unix"
+D) "bsd"
 
 ---
 
@@ -244,13 +270,15 @@ D) "unix"
 
 
 
+
+
 Какой атрибут OSError содержит числовой код ошибки?
 
-A) code
+A) number
 
-B) errno
+B) code
 
-C) number
+C) errno
 
 D) error_code
 
@@ -262,15 +290,17 @@ D) error_code
 
 
 
+
+
 Что такое libc?
 
-A) Отладчик
+A) Редактор кода
 
 B) Компилятор C
 
-C) Стандартная библиотека C
+C) Отладчик
 
-D) Редактор кода
+D) Стандартная библиотека C
 
 ---
 
@@ -279,13 +309,15 @@ D) Редактор кода
 
 
 
+
+
 Что происходит при системном вызове?
 
-A) Ничего особенного
+A) Переключение из user space в kernel space
 
-B) Переключение из user space в kernel space
+B) Перезагрузка системы
 
-C) Перезагрузка системы
+C) Ничего особенного
 
 D) Запуск нового процесса
 
@@ -296,15 +328,17 @@ D) Запуск нового процесса
 
 
 
+
+
 Что возвращает os.getcwd()?
 
-A) Корневую директорию
+A) Домашнюю директорию
 
-B) Текущую рабочую директорию
+B) Временную директорию
 
-C) Временную директорию
+C) Текущую рабочую директорию
 
-D) Домашнюю директорию
+D) Корневую директорию
 
 ---
 
@@ -313,15 +347,17 @@ D) Домашнюю директорию
 
 
 
+
+
 Что означает код ошибки EPERM?
 
-A) File not found
+A) Operation not permitted
 
 B) Invalid argument
 
-C) File exists
+C) File not found
 
-D) Operation not permitted
+D) File exists
 
 ---
 
@@ -330,19 +366,23 @@ D) Operation not permitted
 
 
 
+
+
 Что делает os.chdir(path)?
 
-A) Проверяет существование директории
+A) Создаёт директорию
 
 B) Удаляет директорию
 
-C) Создаёт директорию
+C) Меняет текущую рабочую директорию
 
-D) Меняет текущую рабочую директорию
+D) Проверяет существование директории
 
 ---
 
 ## Question 20: POSIX
+
+
 
 
 
@@ -365,25 +405,25 @@ D) Стандарт совместимости Unix-подобных систе�
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Системное программирование — взаимодействие с ОС для управления ресурсами |
+| 1 | C | Системное программирование — взаимодействие с ОС для управления ресурсами |
 | 2 | A | Syscall — запрос к ядру для привилегированных операций |
-| 3 | C | os.getpid() возвращает Process ID текущего процесса |
+| 3 | A | os.getpid() возвращает Process ID текущего процесса |
 | 4 | C | os.environ.get("HOME") безопасно получает переменную окружения |
-| 5 | A | EAFP рекомендуется в Python — сначала пробуем, потом обрабатываем ошибку |
-| 6 | C | ENOENT (Error NO ENTry) означает "No such file or directory" |
+| 5 | B | EAFP рекомендуется в Python — сначала пробуем, потом обрабатываем ошибку |
+| 6 | A | ENOENT (Error NO ENTry) означает "No such file or directory" |
 | 7 | A | ctypes позволяет вызывать функции из C библиотек |
-| 8 | A | os.uname() возвращает информацию о системе (sysname, nodename, etc.) |
+| 8 | D | os.uname() возвращает информацию о системе (sysname, nodename, etc.) |
 | 9 | B | os.getcwd() возвращает current working directory |
 | 10 | C | ktrace используется на BSD, strace — на Linux |
 | 11 | B | pathlib — современный ООП модуль для работы с путями |
-| 12 | D | os.getppid() возвращает Parent Process ID |
-| 13 | A | os.name возвращает "posix" на Unix-like системах |
-| 14 | B | OSError.errno содержит числовой код ошибки |
-| 15 | C | libc — стандартная библиотека C с обёртками над syscalls |
-| 16 | B | Syscall требует переключения контекста из user в kernel mode |
-| 17 | B | getcwd() возвращает current working directory |
-| 18 | D | EPERM = Operation not permitted (нет прав) |
-| 19 | D | chdir() изменяет текущую рабочую директорию процесса |
+| 12 | B | os.getppid() возвращает Parent Process ID |
+| 13 | B | os.name возвращает "posix" на Unix-like системах |
+| 14 | C | OSError.errno содержит числовой код ошибки |
+| 15 | D | libc — стандартная библиотека C с обёртками над syscalls |
+| 16 | A | Syscall требует переключения контекста из user в kernel mode |
+| 17 | C | getcwd() возвращает current working directory |
+| 18 | A | EPERM = Operation not permitted (нет прав) |
+| 19 | C | chdir() изменяет текущую рабочую директорию процесса |
 | 20 | D | POSIX — стандарт для Unix-совместимости |
 
 ---

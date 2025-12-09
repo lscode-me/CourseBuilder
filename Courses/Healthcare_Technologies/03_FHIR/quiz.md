@@ -6,13 +6,15 @@
 
 ## Question 1: FHIR расшифровка
 
+
+
 Что означает FHIR?
 
-A) Fast Health Information Records
+A) Fast Healthcare Interoperability Resources
 
-B) Fast Healthcare Interoperability Resources
+B) Federal Health Integration Requirements
 
-C) Federal Health Integration Requirements
+C) Fast Health Information Records
 
 D) Foundation for Healthcare IT Resources
 
@@ -20,19 +22,23 @@ D) Foundation for Healthcare IT Resources
 
 ## Question 2: Формат данных
 
+
+
 Какие форматы данных поддерживает FHIR?
 
 A) Только JSON
 
-B) Только XML
+B) CSV и JSON
 
-C) JSON и XML
+C) Только XML
 
-D) CSV и JSON
+D) JSON и XML
 
 ---
 
 ## Question 3: HTTP метод создания
+
+
 
 Какой HTTP метод используется для создания нового ресурса?
 
@@ -48,47 +54,55 @@ D) PATCH
 
 ## Question 4: Reference формат
 
+
+
 Как правильно указать ссылку на пациента в FHIR?
 
-A) "patient-123"
+A) {"reference": "Patient/patient-123"}
 
 B) {"id": "patient-123"}
 
-C) {"reference": "Patient/patient-123"}
+C) {"Patient": "123"}
 
-D) {"Patient": "123"}
+D) "patient-123"
 
 ---
 
 ## Question 5: Рекомендуемая версия
 
+
+
 Какая версия FHIR рекомендуется для production?
 
-A) DSTU2
+A) STU3
 
-B) STU3
+B) R5
 
 C) R4
 
-D) R5
+D) DSTU2
 
 ---
 
 ## Question 6: Observation status
 
+
+
 Какое значение status обязательно для финального результата?
 
-A) completed
+A) done
 
-B) final
+B) finished
 
-C) done
+C) completed
 
-D) finished
+D) final
 
 ---
 
 ## Question 7: Patient Resource
+
+
 
 Какое поле Patient содержит идентификаторы (MRN, СНИЛС)?
 
@@ -104,61 +118,71 @@ D) meta
 
 ## Question 8: Поиск пациентов
 
+
+
 Какой URL для поиска пациентов по фамилии "Иванов"?
 
-A) GET /Patient/Иванов
+A) GET /Patient/search?name=Иванов
 
 B) GET /Patient?family=Иванов
 
-C) GET /Patient/search?name=Иванов
+C) POST /Patient/find
 
-D) POST /Patient/find
+D) GET /Patient/Иванов
 
 ---
 
 ## Question 9: Bundle type
 
+
+
 Какой тип Bundle используется для атомарных операций?
 
-A) collection
+A) document
 
 B) batch
 
-C) transaction
+C) collection
 
-D) document
+D) transaction
 
 ---
 
 ## Question 10: Vital Signs category
 
+
+
 Какой код категории используется для vital signs?
 
 A) laboratory
 
-B) vital-signs
+B) measurements
 
-C) measurements
+C) clinical
 
-D) clinical
+D) vital-signs
 
 ---
 
 ## Question 11: LOINC system
 
+
+
 Какой URI системы используется для LOINC кодов?
 
-A) http://loinc.org
+A) http://hl7.org/fhir/loinc
 
-B) http://snomed.info/sct
+B) http://terminology.loinc.org
 
-C) http://hl7.org/fhir/loinc
+C) http://loinc.org
 
-D) http://terminology.loinc.org
+D) http://snomed.info/sct
 
 ---
 
 ## Question 12: Content-Type
+
+
 
 Какой Content-Type используется для FHIR JSON?
 
@@ -174,19 +198,23 @@ D) application/hl7-fhir
 
 ## Question 13: _include параметр
 
+
+
 Для чего используется параметр _include?
 
-A) Для фильтрации результатов
+A) Для включения связанных ресурсов в ответ
 
-B) Для включения связанных ресурсов в ответ
+B) Для фильтрации результатов
 
-C) Для сортировки
+C) Для пагинации
 
-D) Для пагинации
+D) Для сортировки
 
 ---
 
 ## Question 14: Обновление ресурса
+
+
 
 Какой HTTP метод для полного обновления ресурса?
 
@@ -202,6 +230,8 @@ D) UPDATE
 
 ## Question 15: meta.versionId
 
+
+
 Что содержит поле meta.versionId?
 
 A) Версию FHIR
@@ -215,6 +245,8 @@ D) Тип ресурса
 ---
 
 ## Question 16: Поиск по дате
+
+
 
 Как найти пациентов, рождённых после 1980 года?
 
@@ -230,27 +262,31 @@ D) GET /Patient?birth_date>=1980
 
 ## Question 17: CapabilityStatement
 
+
+
 Как получить информацию о возможностях FHIR сервера?
 
 A) GET /
 
-B) GET /metadata
+B) GET /info
 
-C) GET /capabilities
+C) GET /metadata
 
-D) GET /info
+D) GET /capabilities
 
 ---
 
 ## Question 18: Observation valueQuantity
 
+
+
 Какое поле содержит числовое значение в Observation?
 
-A) value
+A) valueQuantity
 
-B) result
+B) value
 
-C) valueQuantity
+C) result
 
 D) measurement
 
@@ -258,19 +294,23 @@ D) measurement
 
 ## Question 19: resourceType
 
+
+
 Какое поле определяет тип ресурса в JSON?
 
-A) type
+A) kind
 
 B) resourceType
 
-C) kind
+C) class
 
-D) class
+D) type
 
 ---
 
 ## Question 20: Пагинация
+
+
 
 Какой параметр ограничивает количество результатов?
 
@@ -290,24 +330,24 @@ D) _size
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Fast Healthcare Interoperability Resources |
-| 2 | C | FHIR поддерживает JSON и XML форматы |
+| 1 | A | Fast Healthcare Interoperability Resources |
+| 2 | D | FHIR поддерживает JSON и XML форматы |
 | 3 | B | POST для создания (сервер назначает ID) |
-| 4 | C | Правильный формат: {"reference": "Type/id"} |
+| 4 | A | Правильный формат: {"reference": "Type/id"} |
 | 5 | C | R4 — стабильная версия для production |
-| 6 | B | status: "final" для завершённых результатов |
+| 6 | D | status: "final" для завершённых результатов |
 | 7 | B | identifier — массив идентификаторов |
 | 8 | B | Параметр family для поиска по фамилии |
-| 9 | C | transaction — атомарная операция (всё или ничего) |
-| 10 | B | vital-signs — стандартная категория |
-| 11 | A | http://loinc.org — официальный URI для LOINC |
+| 9 | D | transaction — атомарная операция (всё или ничего) |
+| 10 | D | vital-signs — стандартная категория |
+| 11 | C | http://loinc.org — официальный URI для LOINC |
 | 12 | B | application/fhir+json — FHIR-специфичный тип |
-| 13 | B | _include включает referenced ресурсы |
+| 13 | A | _include включает referenced ресурсы |
 | 14 | B | PUT для полного обновления |
 | 15 | B | versionId для версионирования ресурса |
 | 16 | C | ge = greater or equal |
-| 17 | B | /metadata возвращает CapabilityStatement |
-| 18 | C | valueQuantity для числовых значений с единицами |
+| 17 | C | /metadata возвращает CapabilityStatement |
+| 18 | A | valueQuantity для числовых значений с единицами |
 | 19 | B | resourceType определяет тип ресурса |
 | 20 | B | _count ограничивает количество результатов |
 

@@ -10,6 +10,8 @@
 
 
 
+
+
 What is the main difference between B2 and C1 grammar knowledge?
 
 A) C1 speakers know more grammar rules than B2 speakers
@@ -23,6 +25,8 @@ D) C1 speakers make appropriate choices; B2 speakers follow rules
 ---
 
 ## Question 2: Russian Interference
+
+
 
 
 
@@ -46,15 +50,17 @@ D) "Do you want tea?" instead of "Want you tea?"
 
 
 
+
+
 Why do many learners get stuck at B2 level?
 
 A) English becomes more irregular after B2
 
-B) B2 grammar is the most difficult to master
+B) B2 is sufficient for communication, so errors don't get corrected
 
-C) Teachers don't know how to teach beyond B2
+C) B2 grammar is the most difficult to master
 
-D) B2 is sufficient for communication, so errors don't get corrected
+D) Teachers don't know how to teach beyond B2
 
 ---
 
@@ -64,19 +70,23 @@ D) B2 is sufficient for communication, so errors don't get corrected
 
 
 
+
+
 Which sentence is grammatically correct but inappropriate in most contexts?
 
-A) Could you help?
+A) Help me please.
 
 B) Can you help me?
 
-C) Help me please.
+C) Would you be so kind as to assist me in this matter?
 
-D) Would you be so kind as to assist me in this matter?
+D) Could you help?
 
 ---
 
 ## Question 5: Article Errors
+
+
 
 
 
@@ -100,19 +110,23 @@ D) Russian speakers are careless
 
 
 
+
+
 What type of error is this: "It depends from the weather"?
 
-A) Grammatical error (wrong verb form)
+A) Vocabulary error (wrong word)
 
-B) Vocabulary error (wrong word)
+B) L1 transfer error (calque from Russian)
 
-C) L1 transfer error (calque from Russian)
+C) Grammatical error (wrong verb form)
 
 D) Spelling error
 
 ---
 
 ## Question 7: Fossilization
+
+
 
 
 
@@ -136,19 +150,23 @@ D) Using academic/formal language
 
 
 
+
+
 Why are language corpora useful for advanced learners?
 
-A) They translate between languages
+A) They contain all grammar rules
 
-B) They contain all grammar rules
+B) They show what native speakers actually say, not just what's "correct"
 
 C) They correct your errors automatically
 
-D) They show what native speakers actually say, not just what's "correct"
+D) They translate between languages
 
 ---
 
 ## Question 9: Noticing
+
+
 
 
 
@@ -172,6 +190,8 @@ D) Making native speakers notice your errors
 
 
 
+
+
 What does "register" mean in linguistics?
 
 A) A list of grammar rules
@@ -185,6 +205,8 @@ D) A type of formal test
 ---
 
 ## Question 11: Marked vs Unmarked
+
+
 
 
 
@@ -208,6 +230,8 @@ D) It creates emphasis on "tired"
 
 
 
+
+
 Which collocation is incorrect?
 
 A) give advice
@@ -226,19 +250,23 @@ D) do an effort
 
 
 
+
+
 The error "She very beautiful" typically occurs because:
 
-A) The learner is speaking too fast
+A) Russian doesn't require "to be" in present tense predicate adjectives
 
-B) Russian doesn't require "to be" in present tense predicate adjectives
+B) English used to work the same way
 
-C) English used to work the same way
+C) The learner is speaking too fast
 
 D) The learner forgot the verb
 
 ---
 
 ## Question 14: CEFR C1 Descriptors
+
+
 
 
 
@@ -262,6 +290,8 @@ D) Using only simple sentences correctly
 
 
 
+
+
 For Russian speakers at B2 level, which area typically needs the MOST attention?
 
 A) Articles (a/the/zero article)
@@ -280,15 +310,17 @@ D) Question formation
 
 
 
+
+
 What is the recommended approach to improving from B2 to C1?
 
-A) Do more general reading
+A) Watch more movies in English
 
-B) Watch more movies in English
+B) Do more general reading
 
-C) Learn more vocabulary
+C) Focus on one problem at a time with deliberate practice
 
-D) Focus on one problem at a time with deliberate practice
+D) Learn more vocabulary
 
 ---
 
@@ -298,19 +330,23 @@ D) Focus on one problem at a time with deliberate practice
 
 
 
+
+
 Why is keeping an error log recommended?
 
-A) To show to your teacher
+A) To compare errors with other learners
 
-B) To compare errors with other learners
+B) To show to your teacher
 
-C) To identify patterns in your personal errors
+C) To have proof of your mistakes
 
-D) To have proof of your mistakes
+D) To identify patterns in your personal errors
 
 ---
 
 ## Question 18: Input vs Output
+
+
 
 
 
@@ -334,15 +370,17 @@ D) Consuming English content without paying attention to forms
 
 
 
+
+
 A C1 speaker can:
 
-A) Avoid grammar rules when speaking casually
+A) Use any grammar in any situation
 
-B) Use any grammar in any situation
+B) Only use formal grammar correctly
 
 C) Switch between formal and informal register appropriately
 
-D) Only use formal grammar correctly
+D) Avoid grammar rules when speaking casually
 
 ---
 
@@ -352,15 +390,17 @@ D) Only use formal grammar correctly
 
 
 
+
+
 How does this course treat grammar differently from B2 level courses?
 
-A) Only written grammar, not spoken
+A) Emphasis on choices, nuances, and Russian interference patterns
 
-B) More rules and exceptions
+B) Memorization of complex structures
 
-C) Emphasis on choices, nuances, and Russian interference patterns
+C) Only written grammar, not spoken
 
-D) Memorization of complex structures
+D) More rules and exceptions
 
 ---
 
@@ -372,24 +412,24 @@ D) Memorization of complex structures
 |---|--------|-------------|
 | 1 | D | C1 is about making appropriate choices based on context, not just knowing more rules. The same structure may be right or wrong depending on situation. |
 | 2 | A | "I am agree" comes from Russian "Я согласен" where agreement is expressed with a predicate adjective requiring copula. In English, "agree" is a verb and doesn't need "be". |
-| 3 | D | At B2, communication is successful despite errors. Without corrective feedback, errors persist. This is the intermediate plateau. |
-| 4 | D | While grammatically correct, "Would you be so kind as to assist me in this matter?" is overly formal for most everyday situations. It sounds sarcastic or Victorian. |
+| 3 | B | At B2, communication is successful despite errors. Without corrective feedback, errors persist. This is the intermediate plateau. |
+| 4 | C | While grammatically correct, "Would you be so kind as to assist me in this matter?" is overly formal for most everyday situations. It sounds sarcastic or Victorian. |
 | 5 | A | Russian has no article system at all. Russian speakers must learn to use articles from scratch, making them the most difficult feature. |
-| 6 | C | "Depends from" is a calque from Russian "зависит от" (от = from). In English, "depend" takes the preposition "on". |
+| 6 | B | "Depends from" is a calque from Russian "зависит от" (от = from). In English, "depend" takes the preposition "on". |
 | 7 | A | Fossilization means errors become habits that are resistant to correction. They're repeated so often they feel natural to the learner. |
-| 8 | D | Corpora show actual usage patterns, collocations, and frequency. They reveal what native speakers say, not just what textbooks prescribe. |
+| 8 | B | Corpora show actual usage patterns, collocations, and frequency. They reveal what native speakers say, not just what textbooks prescribe. |
 | 9 | C | "Noticing" (Schmidt) means consciously paying attention to language forms in input. It's necessary for acquisition of grammar. |
 | 10 | B | Register is language variety appropriate to context. Formal register for academic writing, informal for friends, etc. |
 | 11 | D | This inverted/fronted structure is "marked" — it draws attention to "tired" for emphasis. Unmarked would be "She was tired after the long journey." |
 | 12 | D | We say "make an effort" not "do an effort". This is a fixed collocation. "Do" and "make" are not interchangeable. |
-| 13 | B | In Russian present tense, the copula (быть) is omitted: "Она красивая" = "She (is) beautiful". This transfers to English as missing "is". |
+| 13 | A | In Russian present tense, the copula (быть) is omitted: "Она красивая" = "She (is) beautiful". This transfers to English as missing "is". |
 | 14 | B | CEFR C1 describes "consistent grammatical control of complex language" where "errors are rare and difficult to spot." Not perfect, but highly controlled. |
 | 15 | A | Articles are the number one problem area for Russian speakers because Russian has no article system. This affects nearly every sentence. |
-| 16 | D | Deliberate practice focused on specific problems is more effective than general exposure at advanced levels. One problem at a time. |
-| 17 | C | An error log helps identify YOUR specific patterns. Different learners have different error profiles; you need to know yours. |
+| 16 | C | Deliberate practice focused on specific problems is more effective than general exposure at advanced levels. One problem at a time. |
+| 17 | D | An error log helps identify YOUR specific patterns. Different learners have different error profiles; you need to know yours. |
 | 18 | D | You can read/listen extensively but not notice specific forms. To acquire grammar, you need to pay attention to how things are said. |
 | 19 | C | C1 speakers can flexibly switch between registers — using formal language when needed and informal when appropriate. |
-| 20 | C | This course focuses on nuanced choices, context-dependent usage, and specifically addresses Russian L1 interference patterns. |
+| 20 | A | This course focuses on nuanced choices, context-dependent usage, and specifically addresses Russian L1 interference patterns. |
 
 ---
 

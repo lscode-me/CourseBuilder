@@ -10,15 +10,17 @@
 
 
 
+
+
 Какой подход к performance management современный?
 
-A) Никаких reviews
+A) Continuous: ongoing feedback, regular 1-on-1, no surprises
 
-B) Annual review раз в год с surprises
+B) Никаких reviews
 
 C) Только рейтинги без feedback
 
-D) Continuous: ongoing feedback, regular 1-on-1, no surprises
+D) Annual review раз в год с surprises
 
 ---
 
@@ -28,19 +30,23 @@ D) Continuous: ongoing feedback, regular 1-on-1, no surprises
 
 
 
+
+
 Что такое Key Result в OKR?
 
-A) Имя сотрудника
+A) Qualitative objective
 
-B) Quantitative metric для измерения прогресса к objective
+B) Название проекта
 
-C) Qualitative objective
+C) Имя сотрудника
 
-D) Название проекта
+D) Quantitative metric для измерения прогресса к objective
 
 ---
 
 ## Question 3: SMART Goals
+
+
 
 
 
@@ -64,6 +70,8 @@ D) Measurable
 
 
 
+
+
 Что включает self-assessment?
 
 A) Только жалобы
@@ -82,19 +90,23 @@ D) Только rating
 
 
 
+
+
 Какой принцип важен для performance review meeting?
 
-A) No surprises — continuous feedback до review
+A) Surprises хороши для motivation
 
-B) Только похвала
+B) No surprises — continuous feedback до review
 
 C) Только критика
 
-D) Surprises хороши для motivation
+D) Только похвала
 
 ---
 
 ## Question 6: Career Conversations
+
+
 
 
 
@@ -118,15 +130,17 @@ D) Каждый день
 
 
 
+
+
 Какой критерий правильный для promotion?
 
-A) Только tenure (сколько лет работает)
+A) "Уже работает на следующем уровне consistently"
 
-B) Только желание
+B) "Готов к следующему уровню"
 
-C) "Готов к следующему уровню"
+C) Только желание
 
-D) "Уже работает на следующем уровне consistently"
+D) Только tenure (сколько лет работает)
 
 ---
 
@@ -136,13 +150,15 @@ D) "Уже работает на следующем уровне consistently"
 
 
 
+
+
 Зачем нужна calibration для promotions?
 
-A) Чтобы все получили promotion
+A) Calibration не нужна
 
-B) Consistency across managers, fair application of standards
+B) Чтобы все получили promotion
 
-C) Calibration не нужна
+C) Consistency across managers, fair application of standards
 
 D) Чтобы отменить все promotions
 
@@ -154,15 +170,17 @@ D) Чтобы отменить все promotions
 
 
 
+
+
 Что делать перед action по underperformance?
 
-A) Сразу уволить
+A) Публично критиковать
 
-B) Публично критиковать
+B) Сразу уволить
 
-C) Understand WHY — skill gap, clarity, fit, personal, motivation
+C) Игнорировать
 
-D) Игнорировать
+D) Understand WHY — skill gap, clarity, fit, personal, motivation
 
 ---
 
@@ -172,19 +190,23 @@ D) Игнорировать
 
 
 
+
+
 Что такое PIP?
 
 A) Performance Improvement Plan
 
-B) Personal Information Protocol
+B) Primary Investment Portfolio
 
-C) Project Implementation Phase
+C) Personal Information Protocol
 
-D) Primary Investment Portfolio
+D) Project Implementation Phase
 
 ---
 
 ## Question 11: PIP Period
+
+
 
 
 
@@ -208,6 +230,8 @@ D) 30-90 дней
 
 
 
+
+
 Какая best practice для PIP?
 
 A) Set impossible goals
@@ -221,6 +245,8 @@ D) Ignore during PIP
 ---
 
 ## Question 13: Warning Signs
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Отличная работа
 
 
 
+
+
 Что включает development plan?
 
 A) Только desired role
@@ -257,6 +285,8 @@ D) Только current state
 ---
 
 ## Question 15: Career Ladders
+
+
 
 
 
@@ -280,6 +310,8 @@ D) Transparent expectations для каждого уровня
 
 
 
+
+
 Как performance связан с compensation?
 
 A) High performer → higher raises, below expectations → no raise/PIP
@@ -298,19 +330,23 @@ D) Низкий performance → выше зарплата
 
 
 
+
+
 Какое примерное соотношение individual vs team goals?
 
-A) 0% / 0%
+A) 100% team
 
-B) 100% individual
+B) ~60% individual, ~40% team
 
-C) 100% team
+C) 0% / 0%
 
-D) ~60% individual, ~40% team
+D) 100% individual
 
 ---
 
 ## Question 18: Review Feedback
+
+
 
 
 
@@ -334,6 +370,8 @@ D) General и vague
 
 
 
+
+
 Какой процент achievement считается success для stretch OKRs?
 
 A) 10%
@@ -352,15 +390,17 @@ D) 100%
 
 
 
+
+
 Когда принимать exit decision после PIP?
 
-A) Случайно
+A) После documented failure to meet criteria с HR review
 
-B) После documented failure to meet criteria с HR review
+B) Случайно
 
-C) Никогда
+C) До начала PIP
 
-D) До начала PIP
+D) Никогда
 
 ---
 
@@ -370,15 +410,15 @@ D) До начала PIP
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Continuous: ongoing feedback, regular 1-on-1, no surprises |
-| 2 | B | Key Result: quantitative metric для измерения прогресса |
+| 1 | A | Continuous: ongoing feedback, regular 1-on-1, no surprises |
+| 2 | D | Key Result: quantitative metric для измерения прогресса |
 | 3 | D | M = Measurable |
 | 4 | B | Self-assessment: achievements, highlights, challenges, growth |
-| 5 | A | No surprises: continuous feedback до review |
+| 5 | B | No surprises: continuous feedback до review |
 | 6 | A | Career conversations quarterly, отдельно от review |
-| 7 | D | Уже работает на следующем уровне consistently |
-| 8 | B | Calibration: consistency, fair standards |
-| 9 | C | Understand WHY перед action |
+| 7 | A | Уже работает на следующем уровне consistently |
+| 8 | C | Calibration: consistency, fair standards |
+| 9 | D | Understand WHY перед action |
 | 10 | A | PIP = Performance Improvement Plan |
 | 11 | D | PIP период: 30-90 дней |
 | 12 | C | PIP: specific, support, check-ins, document |
@@ -386,10 +426,10 @@ D) До начала PIP
 | 14 | C | Development plan: current, target, gaps, actions, timeline |
 | 15 | D | Career ladders: transparent expectations |
 | 16 | A | High performer → higher raises; below → no raise/PIP |
-| 17 | D | ~60% individual, ~40% team |
+| 17 | B | ~60% individual, ~40% team |
 | 18 | C | Specific с examples, balanced |
 | 19 | B | ~70% achievement для stretch OKRs |
-| 20 | B | После documented failure с HR review |
+| 20 | A | После documented failure с HR review |
 
 ---
 

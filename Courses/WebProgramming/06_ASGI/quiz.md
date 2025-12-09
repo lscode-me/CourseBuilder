@@ -10,19 +10,23 @@
 
 
 
+
+
 Что такое ASGI?
 
-A) Новая версия WSGI 2.0
+A) Асинхронный интерфейс между Python веб-приложениями и серверами
 
-B) Асинхронный интерфейс между Python веб-приложениями и серверами
+B) Альтернатива HTTP протоколу
 
 C) Библиотека для работы с базами данных
 
-D) Альтернатива HTTP протоколу
+D) Новая версия WSGI 2.0
 
 ---
 
 ## Question 2: Сигнатура приложения
+
+
 
 
 
@@ -46,19 +50,23 @@ D) `def app(environ, start_response)`
 
 
 
+
+
 Что содержит аргумент `scope` в ASGI?
 
-A) Тело запроса
+A) Информацию о соединении (тип, путь, заголовки)
 
-B) Логи сервера
+B) Функции для отправки ответа
 
-C) Информацию о соединении (тип, путь, заголовки)
+C) Тело запроса
 
-D) Функции для отправки ответа
+D) Логи сервера
 
 ---
 
 ## Question 4: Типы соединений
+
+
 
 
 
@@ -82,6 +90,8 @@ D) Только HTTP
 
 
 
+
+
 Для чего используется `receive` в ASGI?
 
 A) Для отправки ответа клиенту
@@ -100,15 +110,17 @@ D) Для получения событий от клиента (тело зап
 
 
 
+
+
 Что делает функция `send` в ASGI?
 
-A) Валидирует данные
+A) Закрывает соединение
 
-B) Отправляет события клиенту (статус, заголовки, тело)
+B) Получает данные от клиента
 
-C) Получает данные от клиента
+C) Отправляет события клиенту (статус, заголовки, тело)
 
-D) Закрывает соединение
+D) Валидирует данные
 
 ---
 
@@ -118,15 +130,17 @@ D) Закрывает соединение
 
 
 
+
+
 Сколько событий нужно отправить для HTTP ответа?
 
-A) Одно событие с полным ответом
+A) Три: headers, status, body
 
 B) Минимум два: http.response.start и http.response.body
 
-C) Три: headers, status, body
+C) Зависит от размера ответа
 
-D) Зависит от размера ответа
+D) Одно событие с полным ответом
 
 ---
 
@@ -136,19 +150,23 @@ D) Зависит от размера ответа
 
 
 
+
+
 Что такое Uvicorn?
 
-A) WSGI сервер
+A) База данных
 
-B) Быстрый ASGI сервер на базе uvloop
+B) Python фреймворк
 
-C) Python фреймворк
+C) Быстрый ASGI сервер на базе uvloop
 
-D) База данных
+D) WSGI сервер
 
 ---
 
 ## Question 9: FastAPI
+
+
 
 
 
@@ -172,6 +190,8 @@ D) На Tornado
 
 
 
+
+
 Как реализовать streaming response в ASGI?
 
 A) Использовать WebSocket
@@ -185,6 +205,8 @@ D) Использовать специальный streaming протокол
 ---
 
 ## Question 11: lifespan
+
+
 
 
 
@@ -208,15 +230,17 @@ D) Для кэширования
 
 
 
+
+
 Когда лучше использовать ASGI вместо WSGI?
 
-A) Для простых синхронных приложений
+A) Для CPU-bound задач
 
 B) Для legacy приложений
 
-C) Для CPU-bound задач
+C) Когда нужны WebSocket, streaming, высокая конкурентность
 
-D) Когда нужны WebSocket, streaming, высокая конкурентность
+D) Для простых синхронных приложений
 
 ---
 
@@ -226,15 +250,17 @@ D) Когда нужны WebSocket, streaming, высокая конкурент
 
 
 
+
+
 Что должно содержать событие http.response.start?
 
-A) Только HTTP статус
+A) Только тело ответа
 
-B) URL редиректа
+B) Статус и заголовки
 
-C) Статус и заголовки
+C) URL редиректа
 
-D) Только тело ответа
+D) Только HTTP статус
 
 ---
 
@@ -244,19 +270,23 @@ D) Только тело ответа
 
 
 
+
+
 Что такое Starlette?
 
-A) ASGI сервер
+A) Средство тестирования
 
-B) Средство тестирования
+B) Библиотека для работы с БД
 
-C) Библиотека для работы с БД
+C) ASGI сервер
 
 D) Легковесный ASGI веб-фреймворк
 
 ---
 
 ## Question 15: Middleware в ASGI
+
+
 
 
 
@@ -279,19 +309,23 @@ D) Через наследование классов
 
 
 
+
+
 Какой тип события содержит тело HTTP запроса?
 
-A) request.body
+A) http.request.body
 
-B) http.request
+B) http.body
 
-C) http.body
+C) http.request
 
-D) http.request.body
+D) request.body
 
 ---
 
 ## Question 17: scope['type']
+
+
 
 
 
@@ -313,6 +347,8 @@ D) http, websocket, lifespan
 
 
 
+
+
 Что означает more_body=False в http.response.body?
 
 A) Ошибка в теле
@@ -330,15 +366,17 @@ D) Тело пустое
 
 
 
+
+
 Что такое Hypercorn?
 
-A) Фреймворк для тестирования
+A) Форк Gunicorn для Python 2
 
-B) Форк Gunicorn для Python 2
+B) Фреймворк для тестирования
 
-C) ASGI сервер с поддержкой HTTP/2
+C) База данных
 
-D) База данных
+D) ASGI сервер с поддержкой HTTP/2
 
 ---
 
@@ -347,15 +385,17 @@ D) База данных
 
 
 
+
+
 Какое событие получает ASGI приложение при входящем WebSocket сообщении?
 
-A) socket.message
+A) websocket.receive
 
-B) ws.message
+B) http.websocket.data
 
-C) http.websocket.data
+C) ws.message
 
-D) websocket.receive
+D) socket.message
 
 ---
 
@@ -365,26 +405,26 @@ D) websocket.receive
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | ASGI = Asynchronous Server Gateway Interface, async наследник WSGI |
+| 1 | A | ASGI = Asynchronous Server Gateway Interface, async наследник WSGI |
 | 2 | B | ASGI app: async callable с аргументами scope, receive, send |
-| 3 | C | scope содержит type, path, method, headers и др. информацию о соединении |
+| 3 | A | scope содержит type, path, method, headers и др. информацию о соединении |
 | 4 | A | ASGI поддерживает HTTP, WebSocket и lifespan (startup/shutdown события) |
 | 5 | D | receive — async callable для получения событий (тело запроса, WS сообщения) |
-| 6 | B | send — async callable для отправки событий клиенту |
+| 6 | C | send — async callable для отправки событий клиенту |
 | 7 | B | HTTP ответ: сначала http.response.start (статус, заголовки), затем http.response.body |
-| 8 | B | Uvicorn — быстрый ASGI сервер, использует uvloop и httptools |
+| 8 | C | Uvicorn — быстрый ASGI сервер, использует uvloop и httptools |
 | 9 | C | FastAPI построен на Starlette (ASGI) для HTTP и Pydantic для валидации |
 | 10 | B | Streaming: отправляем http.response.body с more_body=True, последний с False |
 | 11 | B | lifespan scope для startup (инициализация) и shutdown (очистка) событий |
-| 12 | D | ASGI нужен для WebSocket, async I/O, streaming, высокой конкурентности |
-| 13 | C | http.response.start содержит status (int) и headers (list of tuples) |
+| 12 | C | ASGI нужен для WebSocket, async I/O, streaming, высокой конкурентности |
+| 13 | B | http.response.start содержит status (int) и headers (list of tuples) |
 | 14 | D | Starlette — легковесный ASGI фреймворк, основа для FastAPI |
 | 15 | C | ASGI middleware оборачивает приложение и может модифицировать scope/events |
-| 16 | B | http.request содержит body (тело запроса) и more_body флаг |
+| 16 | C | http.request содержит body (тело запроса) и more_body флаг |
 | 17 | D | scope['type'] может быть 'http', 'websocket' или 'lifespan' |
 | 18 | B | more_body=False означает, что это последняя часть тела ответа |
-| 19 | C | Hypercorn — ASGI сервер с поддержкой HTTP/2 и HTTP/3 |
-| 20 | D | websocket.receive — событие с входящим WebSocket сообщением |
+| 19 | D | Hypercorn — ASGI сервер с поддержкой HTTP/2 и HTTP/3 |
+| 20 | A | websocket.receive — событие с входящим WebSocket сообщением |
 
 ---
 

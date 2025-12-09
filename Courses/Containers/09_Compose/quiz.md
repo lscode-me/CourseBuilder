@@ -10,6 +10,8 @@
 
 
 
+
+
 Какой флаг запускает сервисы в фоновом режиме?
 
 A) -d
@@ -28,15 +30,17 @@ D) --background
 
 
 
+
+
 Как дождаться готовности базы данных перед запуском приложения?
 
-A) depends_on: [db]
+A) requires: db
 
-B) requires: db
+B) depends_on: db: condition: service_healthy
 
 C) wait_for: db
 
-D) depends_on: db: condition: service_healthy
+D) depends_on: [db]
 
 ---
 
@@ -46,15 +50,17 @@ D) depends_on: db: condition: service_healthy
 
 
 
+
+
 Как определить named volume в docker-compose.yml?
 
-A) Только в секции volumes сервиса
+A) Volumes не поддерживаются в Compose
 
-B) В секции volumes сервиса и на верхнем уровне файла
+B) Только на верхнем уровне файла
 
-C) Volumes не поддерживаются в Compose
+C) Только в секции volumes сервиса
 
-D) Только на верхнем уровне файла
+D) В секции volumes сервиса и на верхнем уровне файла
 
 ---
 
@@ -64,15 +70,17 @@ D) Только на верхнем уровне файла
 
 
 
+
+
 Какой тип сети используется для изоляции от интернета?
 
-A) driver: bridge
+A) internal: true
 
-B) internal: true
+B) driver: bridge
 
-C) isolated: true
+C) external: false
 
-D) external: false
+D) isolated: true
 
 ---
 
@@ -82,15 +90,17 @@ D) external: false
 
 
 
+
+
 Как запустить сервисы с профилем debug?
 
-A) docker compose up --debug
+A) docker compose up debug
 
-B) docker compose up debug
+B) docker compose up --debug
 
-C) docker compose -p debug up
+C) docker compose --profile debug up
 
-D) docker compose --profile debug up
+D) docker compose -p debug up
 
 ---
 
@@ -100,15 +110,17 @@ D) docker compose --profile debug up
 
 
 
+
+
 Как использовать переменную окружения из .env файла?
 
-A) ${VAR_NAME}
+A) {{VAR_NAME}}
 
 B) $VAR_NAME
 
-C) %VAR_NAME%
+C) ${VAR_NAME}
 
-D) {{VAR_NAME}}
+D) %VAR_NAME%
 
 ---
 
@@ -118,15 +130,17 @@ D) {{VAR_NAME}}
 
 
 
+
+
 Какая команда инициализирует Swarm кластер?
 
-A) docker cluster init
+A) docker swarm create
 
 B) docker swarm init
 
-C) docker swarm create
+C) docker init swarm
 
-D) docker init swarm
+D) docker cluster init
 
 ---
 
@@ -136,13 +150,15 @@ D) docker init swarm
 
 
 
+
+
 Как масштабировать сервис до 5 реплик?
 
-A) docker service update --replicas=5 web
+A) docker service scale web=5
 
-B) docker service replicas web 5
+B) docker service update --replicas=5 web
 
-C) docker service scale web=5
+C) docker service replicas web 5
 
 D) Оба B и C правильны
 
@@ -154,19 +170,23 @@ D) Оба B и C правильны
 
 
 
+
+
 Для чего нужен overlay network в Swarm?
 
-A) Для шифрования данных
+A) Для изоляции от интернета
 
-B) Для связи контейнеров на разных нодах
+B) Для шифрования данных
 
-C) Для изоляции от интернета
+C) Для связи контейнеров на разных нодах
 
 D) Для ускорения сети
 
 ---
 
 ## Question 10: Swarm secrets
+
+
 
 
 
@@ -190,6 +210,8 @@ D) docker config create secret name ./file
 
 
 
+
+
 Какая команда деплоит stack из docker-compose.yml в Swarm?
 
 A) docker compose deploy
@@ -208,15 +230,17 @@ D) docker service deploy -f docker-compose.yml
 
 
 
+
+
 Какое значение availability выводит ноду из обслуживания?
 
-A) disabled
+A) pause
 
-B) pause
+B) disabled
 
-C) drain
+C) inactive
 
-D) inactive
+D) drain
 
 ---
 
@@ -226,15 +250,17 @@ D) inactive
 
 
 
+
+
 Какой параметр определяет количество одновременно обновляемых реплик?
 
-A) simultaneous
+A) batch_size
 
-B) batch_size
+B) simultaneous
 
-C) concurrency
+C) parallelism
 
-D) parallelism
+D) concurrency
 
 ---
 
@@ -244,19 +270,23 @@ D) parallelism
 
 
 
+
+
 Как определить переиспользуемый блок конфигурации в Compose?
 
 A) @name
 
-B) template-name
+B) &name
 
-C) &name
+C) x-name
 
-D) x-name
+D) template-name
 
 ---
 
 ## Question 15: Healthcheck в Compose
+
+
 
 
 
@@ -280,13 +310,15 @@ D) startup_delay
 
 
 
+
+
 Какой флаг удаляет volumes при остановке?
 
-A) --remove-volumes
+A) --clean
 
-B) --clean
+B) -r
 
-C) -r
+C) --remove-volumes
 
 D) -v
 
@@ -298,15 +330,17 @@ D) -v
 
 
 
+
+
 Какое рекомендуемое количество manager нод?
 
-A) Нечётное число (3, 5, 7)
+A) Чётное число
 
-B) Минимум 5
+B) 2
 
-C) 2
+C) Минимум 5
 
-D) Чётное число
+D) Нечётное число (3, 5, 7)
 
 ---
 
@@ -316,19 +350,23 @@ D) Чётное число
 
 
 
+
+
 Какой order запускает новый контейнер перед остановкой старого?
 
-A) new-first
+A) blue-green
 
 B) rolling
 
-C) start-first
+C) new-first
 
-D) blue-green
+D) start-first
 
 ---
 
 ## Question 19: Compose override
+
+
 
 
 
@@ -352,15 +390,17 @@ D) docker-compose.extra.yml
 
 
 
+
+
 Как ограничить сервис только worker нодами?
 
-A) placement: worker
+A) only_workers: true
 
-B) node.type == worker
+B) placement: worker
 
 C) node.role == worker
 
-D) only_workers: true
+D) node.type == worker
 
 ---
 
@@ -371,23 +411,23 @@ D) only_workers: true
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | A | -d (detached) запускает сервисы в фоновом режиме |
-| 2 | D | condition: service_healthy ждёт прохождения healthcheck |
-| 3 | B | Named volumes определяются и в сервисе, и на верхнем уровне |
-| 4 | B | internal: true создаёт сеть без доступа к внешним сетям |
-| 5 | D | --profile указывает профиль для запуска |
-| 6 | A | ${VAR_NAME} — синтаксис для переменных в Compose |
+| 2 | B | condition: service_healthy ждёт прохождения healthcheck |
+| 3 | D | Named volumes определяются и в сервисе, и на верхнем уровне |
+| 4 | A | internal: true создаёт сеть без доступа к внешним сетям |
+| 5 | C | --profile указывает профиль для запуска |
+| 6 | C | ${VAR_NAME} — синтаксис для переменных в Compose |
 | 7 | B | docker swarm init инициализирует Swarm кластер |
 | 8 | D | Оба docker service scale и update --replicas работают |
-| 9 | B | Overlay network позволяет контейнерам на разных хостах общаться |
+| 9 | C | Overlay network позволяет контейнерам на разных хостах общаться |
 | 10 | A | docker secret create name создаёт secret |
 | 11 | B | docker stack deploy -c file name деплоит stack |
-| 12 | C | drain перемещает все tasks с ноды |
-| 13 | D | parallelism определяет количество одновременно обновляемых реплик |
-| 14 | D | x- префикс для extension fields в Compose |
+| 12 | D | drain перемещает все tasks с ноды |
+| 13 | C | parallelism определяет количество одновременно обновляемых реплик |
+| 14 | C | x- префикс для extension fields в Compose |
 | 15 | C | start_period — время до первой проверки здоровья |
 | 16 | D | -v удаляет named volumes |
-| 17 | A | Нечётное число для Raft consensus (3, 5, 7) |
-| 18 | C | start-first запускает новый контейнер перед остановкой старого |
+| 17 | D | Нечётное число для Raft consensus (3, 5, 7) |
+| 18 | D | start-first запускает новый контейнер перед остановкой старого |
 | 19 | B | docker-compose.override.yml автоматически применяется |
 | 20 | C | node.role == worker ограничивает placement |
 

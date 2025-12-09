@@ -10,6 +10,8 @@
 
 
 
+
+
 When is passive voice MOST appropriate?
 
 A) Always in academic writing
@@ -28,19 +30,23 @@ D) When you want to write longer sentences
 
 
 
+
+
 "The report ___ by tomorrow." (future passive)
 
-A) will finish
+A) will have finishing
 
-B) will be finished
+B) will finish
 
-C) will have finishing
+C) will be finished
 
 D) will be finishing
 
 ---
 
 ## Question 3: Modal Passive
+
+
 
 
 
@@ -64,15 +70,17 @@ D) The work must done immediately.
 
 
 
+
+
 "They gave her a prize." Which passive is MORE natural?
 
-A) A prize was given her.
+A) Her was given a prize.
 
-B) Her was given a prize.
+B) A prize was given her.
 
-C) A prize was given by her.
+C) She was given a prize.
 
-D) She was given a prize.
+D) A prize was given by her.
 
 ---
 
@@ -82,19 +90,23 @@ D) She was given a prize.
 
 
 
+
+
 "It is believed that he is guilty" can be rewritten as:
 
-A) He is believed to be guilty.
+A) He is believed that he's guilty.
 
-B) He is believed being guilty.
+B) He is believed to be guilty.
 
 C) He believes to be guilty.
 
-D) He is believed that he's guilty.
+D) He is believed being guilty.
 
 ---
 
 ## Question 6: Get-Passive
+
+
 
 
 
@@ -118,19 +130,23 @@ D) Formal passive voice
 
 
 
+
+
 Which sentence is correct?
 
-A) I have born in Moscow.
+A) I am born in Moscow.
 
-B) I was born in Moscow.
+B) I born in Moscow.
 
-C) I born in Moscow.
+C) I was born in Moscow.
 
-D) I am born in Moscow.
+D) I have born in Moscow.
 
 ---
 
 ## Question 8: Causative
+
+
 
 
 
@@ -154,15 +170,17 @@ D) Someone repaired my car (I arranged it)
 
 
 
+
+
 Which sentence is MORE FORMAL?
 
-A) I had my suit cleaned.
+A) I made my suit cleaned.
 
-B) I made my suit cleaned.
+B) I had my suit cleaned.
 
-C) I got my suit cleaned.
+C) They are equally formal.
 
-D) They are equally formal.
+D) I got my suit cleaned.
 
 ---
 
@@ -172,15 +190,17 @@ D) They are equally formal.
 
 
 
+
+
 "I had my wallet stolen" describes:
 
 A) A service I arranged
 
-B) A future plan
+B) Something I did myself
 
-C) Something I did myself
+C) An experience that happened to me
 
-D) An experience that happened to me
+D) A future plan
 
 ---
 
@@ -190,15 +210,17 @@ D) An experience that happened to me
 
 
 
+
+
 "I had him ___ the report."
 
-A) checked
+A) checking
 
-B) check
+B) to check
 
-C) checking
+C) checked
 
-D) to check
+D) check
 
 ---
 
@@ -208,19 +230,23 @@ D) to check
 
 
 
+
+
 "I got her ___ the proposal."
 
 A) to approve
 
-B) approving
+B) approved
 
-C) approved
+C) approve
 
-D) approve
+D) approving
 
 ---
 
 ## Question 13: Ergative Verbs
+
+
 
 
 
@@ -244,15 +270,17 @@ D) Active voice with hidden object
 
 
 
+
+
 What's the difference between "The vase broke" and "The vase was broken"?
 
-A) "Broke" is past; "Was broken" is present
+A) "Broke" is British; "Was broken" is American
 
-B) "Broke" = no agent implied; "Was broken" = someone broke it
+B) No difference
 
-C) "Broke" is British; "Was broken" is American
+C) "Broke" is past; "Was broken" is present
 
-D) No difference
+D) "Broke" = no agent implied; "Was broken" = someone broke it
 
 ---
 
@@ -262,19 +290,23 @@ D) No difference
 
 
 
+
+
 In traditional academic writing, passive is often used to:
 
-A) Avoid using verbs
+A) Make sentences longer
 
-B) Make sentences longer
+B) Avoid using verbs
 
-C) Sound informal
+C) Create objectivity and remove personal agent
 
-D) Create objectivity and remove personal agent
+D) Sound informal
 
 ---
 
 ## Question 16: Unnecessary Passive
+
+
 
 
 
@@ -298,6 +330,8 @@ D) A decision was made by the committee.
 
 
 
+
+
 Which sentence has an error?
 
 A) The house was built in 2010.
@@ -316,15 +350,17 @@ D) The window was broken.
 
 
 
+
+
 "The work ___ by the time you arrive."
 
-A) will being finished
+A) will have finished
 
-B) will have been finished
+B) will being finished
 
 C) will be finished
 
-D) will have finished
+D) will have been finished
 
 ---
 
@@ -334,15 +370,17 @@ D) will have finished
 
 
 
+
+
 "I don't like ___."
 
-A) be interrupted
+A) interrupted
 
-B) to being interrupted
+B) be interrupted
 
 C) being interrupted
 
-D) interrupted
+D) to being interrupted
 
 ---
 
@@ -352,15 +390,17 @@ D) interrupted
 
 
 
+
+
 "Shakespeare wrote Hamlet." Should this be passive?
 
-A) Yes, because it's a famous play.
+A) No, because Shakespeare (the agent) is the important information.
 
-B) No, because passive is always wrong.
+B) Yes, because it's a famous play.
 
 C) Yes, for formality: "Hamlet was written by Shakespeare."
 
-D) No, because Shakespeare (the agent) is the important information.
+D) No, because passive is always wrong.
 
 ---
 
@@ -371,25 +411,25 @@ D) No, because Shakespeare (the agent) is the important information.
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | Passive is most appropriate when the agent is unknown, unimportant, or when focus should be on the action/object. |
-| 2 | B | Future passive: will + be + past participle. "Will be finished." |
+| 2 | C | Future passive: will + be + past participle. "Will be finished." |
 | 3 | A | Modal + be + past participle. "Must be done." |
-| 4 | D | With two-object verbs, making the person the subject is more natural. "She was given a prize." |
-| 5 | A | "He is believed to be guilty" — subject + passive reporting verb + infinitive. |
+| 4 | C | With two-object verbs, making the person the subject is more natural. "She was given a prize." |
+| 5 | B | "He is believed to be guilty" — subject + passive reporting verb + infinitive. |
 | 6 | C | Get-passive is an informal alternative to be-passive. |
-| 7 | B | "Born" always requires "was" (or "were"). "I was born in Moscow." |
+| 7 | C | "Born" always requires "was" (or "were"). "I was born in Moscow." |
 | 8 | D | Causative "have something done" = arrange for someone else to do it. |
-| 9 | A | "Had" is more formal than "got" in causative constructions. |
-| 10 | D | Same structure but context shows it's an (unfortunate) experience, not arranged service. |
-| 11 | B | Have + person + infinitive (without "to"). "I had him check." |
+| 9 | B | "Had" is more formal than "got" in causative constructions. |
+| 10 | C | Same structure but context shows it's an (unfortunate) experience, not arranged service. |
+| 11 | D | Have + person + infinitive (without "to"). "I had him check." |
 | 12 | A | Get + person + to-infinitive. "I got her to approve." |
 | 13 | A | Ergative verb — the door opened by itself, no agent needed or implied. |
-| 14 | B | Ergative focuses on the event itself. Passive implies an agent (someone broke it). |
-| 15 | D | Traditional academic style uses passive for objectivity, removing the researcher as agent. |
+| 14 | D | Ergative focuses on the event itself. Passive implies an agent (someone broke it). |
+| 15 | C | Traditional academic style uses passive for objectivity, removing the researcher as agent. |
 | 16 | D | Agent "the committee" is important information. Active is better: "The committee made a decision." |
 | 17 | B | Missing "was" — should be "The report was completed yesterday." |
-| 18 | B | Future perfect passive: will + have + been + past participle. "Will have been finished." |
+| 18 | D | Future perfect passive: will + have + been + past participle. "Will have been finished." |
 | 19 | C | Gerund passive: being + past participle. "Being interrupted." |
-| 20 | D | When the agent is important/famous, use active voice. We want to emphasize Shakespeare wrote it. |
+| 20 | A | When the agent is important/famous, use active voice. We want to emphasize Shakespeare wrote it. |
 
 ---
 

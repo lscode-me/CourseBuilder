@@ -10,6 +10,8 @@
 
 
 
+
+
 "Sounds good" is:
 
 A) Rude and informal
@@ -28,15 +30,17 @@ D) Grammatically incorrect
 
 
 
+
+
 In spoken English, "There were like thirty people or something" is:
 
 A) Natural and appropriate for casual speech
 
-B) Incorrect and should be avoided
+B) Formal register
 
-C) Only used by uneducated speakers
+C) Incorrect and should be avoided
 
-D) Formal register
+D) Only used by uneducated speakers
 
 ---
 
@@ -46,19 +50,23 @@ D) Formal register
 
 
 
+
+
 "So basically what happened was..." is:
 
 A) A natural way to organize spoken narrative
 
-B) Only for academic writing
+B) Rude
 
-C) Rude
+C) Poor grammar to avoid
 
-D) Poor grammar to avoid
+D) Only for academic writing
 
 ---
 
 ## Question 4: Contractions
+
+
 
 
 
@@ -82,19 +90,23 @@ D) Contractions are rude
 
 
 
+
+
 "Your sister, is she coming?" is:
 
-A) Only used in writing
+A) Too formal for conversation
 
-B) Grammatically wrong
+B) Left dislocation (head) — common in speech
 
-C) Left dislocation (head) — common in speech
+C) Grammatically wrong
 
-D) Too formal for conversation
+D) Only used in writing
 
 ---
 
 ## Question 6: "Gonna"
+
+
 
 
 
@@ -118,6 +130,8 @@ D) Only for uneducated speakers
 
 
 
+
+
 Which is a natural backchannel in English conversation?
 
 A) "I hear your words"
@@ -131,6 +145,8 @@ D) "I acknowledge your statement"
 ---
 
 ## Question 8: Russian Interference
+
+
 
 
 
@@ -154,13 +170,15 @@ D) Too casual
 
 
 
+
+
 "It's nice, isn't it?" is:
 
-A) Common in spoken English
+A) Incorrect grammar
 
-B) Only for written English
+B) Common in spoken English
 
-C) Incorrect grammar
+C) Only for written English
 
 D) Too informal
 
@@ -172,15 +190,17 @@ D) Too informal
 
 
 
+
+
 Which is more appropriate for casual spoken English?
 
 A) "I wish to acquire coffee."
 
-B) "Might I procure a caffeinated beverage?"
+B) "I would like to purchase a coffee."
 
-C) "Can I get a coffee?"
+C) "Might I procure a caffeinated beverage?"
 
-D) "I would like to purchase a coffee."
+D) "Can I get a coffee?"
 
 ---
 
@@ -190,15 +210,17 @@ D) "I would like to purchase a coffee."
 
 
 
+
+
 "And she's like, 'No way!'" is:
 
-A) Formal language
+A) Very common in informal spoken English
 
-B) Very common in informal spoken English
+B) Only for teenagers
 
 C) Completely incorrect
 
-D) Only for teenagers
+D) Formal language
 
 ---
 
@@ -208,15 +230,17 @@ D) Only for teenagers
 
 
 
+
+
 Spoken English typically uses:
 
-A) Long complex sentences with multiple subordinate clauses
+A) No sentences at all
 
-B) Short units chained together
+B) Only passive constructions
 
-C) Only passive constructions
+C) Short units chained together
 
-D) No sentences at all
+D) Long complex sentences with multiple subordinate clauses
 
 ---
 
@@ -226,15 +250,17 @@ D) No sentences at all
 
 
 
+
+
 "...and stuff like that" is:
 
 A) A common spoken category marker
 
-B) Rude
+B) Bad grammar
 
-C) Academic language
+C) Rude
 
-D) Bad grammar
+D) Academic language
 
 ---
 
@@ -244,15 +270,17 @@ D) Bad grammar
 
 
 
+
+
 "Got a minute?" (meaning "Have you got a minute?") is:
 
-A) Slang to avoid
+A) Normal spoken ellipsis
 
-B) British only
+B) Incorrect
 
-C) Normal spoken ellipsis
+C) Slang to avoid
 
-D) Incorrect
+D) British only
 
 ---
 
@@ -262,15 +290,17 @@ D) Incorrect
 
 
 
+
+
 "She's always complaining!" in spoken English:
 
-A) Is only for written English
+A) Expresses emotion/irritation naturally
 
-B) Is incorrect (should be "She always complains")
+B) Is only for written English
 
 C) Is too formal
 
-D) Expresses emotion/irritation naturally
+D) Is incorrect (should be "She always complains")
 
 ---
 
@@ -280,15 +310,17 @@ D) Expresses emotion/irritation naturally
 
 
 
+
+
 Speaking very formally in casual contexts:
 
 A) Shows respect
 
-B) Sounds unnatural and creates distance
+B) Is always preferred
 
-C) Is always preferred
+C) Is more native-like
 
-D) Is more native-like
+D) Sounds unnatural and creates distance
 
 ---
 
@@ -298,15 +330,17 @@ D) Is more native-like
 
 
 
+
+
 "You did WHAT?" is:
 
-A) Too informal
+A) Grammatically incorrect
 
-B) A natural spoken form expressing surprise
+B) Only American English
 
-C) Only American English
+C) A natural spoken form expressing surprise
 
-D) Grammatically incorrect
+D) Too informal
 
 ---
 
@@ -316,15 +350,17 @@ D) Grammatically incorrect
 
 
 
+
+
 "Um" and "uh" in speech are:
 
-A) Signs of poor English
+A) Normal hesitation markers
 
-B) Normal hesitation markers
+B) Signs of poor English
 
-C) Only for non-native speakers
+C) To be completely avoided
 
-D) To be completely avoided
+D) Only for non-native speakers
 
 ---
 
@@ -334,13 +370,15 @@ D) To be completely avoided
 
 
 
+
+
 "You're coming, yeah?" is:
 
-A) Incorrect (should be "aren't you?")
+A) Too formal
 
-B) Too formal
+B) Common informal invariant tag
 
-C) Common informal invariant tag
+C) Incorrect (should be "aren't you?")
 
 D) Only for British English
 
@@ -352,15 +390,17 @@ D) Only for British English
 
 
 
+
+
 When should you use full formal grammar?
 
-A) Never
+A) In all situations
 
-B) In academic papers and formal documents
+B) In casual conversation
 
-C) In casual conversation
+C) In academic papers and formal documents
 
-D) In all situations
+D) Never
 
 ---
 
@@ -374,22 +414,22 @@ D) In all situations
 | 2 | A | Vague language ("like", "or something") is natural in casual speech. |
 | 3 | A | Discourse markers organize spoken narrative naturally. |
 | 4 | B | Contractions are always used in natural spoken English. |
-| 5 | C | Left dislocation (heads) is common in spoken English. |
+| 5 | B | Left dislocation (heads) is common in spoken English. |
 | 6 | C | "Gonna" is natural and very common in spoken English. |
 | 7 | C | "Mm-hmm", "Uh-huh" are natural backchannels showing listening. |
 | 8 | C | Russian speakers often transfer formal style to spoken English. |
-| 9 | A | Tag questions are very common in spoken English. |
-| 10 | C | "Can I get..." is natural casual spoken English. |
-| 11 | B | "Be like" for reported speech is very common informally. |
-| 12 | B | Spoken English uses short units chained together. |
+| 9 | B | Tag questions are very common in spoken English. |
+| 10 | D | "Can I get..." is natural casual spoken English. |
+| 11 | A | "Be like" for reported speech is very common informally. |
+| 12 | C | Spoken English uses short units chained together. |
 | 13 | A | "And stuff like that" is a common vague category marker. |
-| 14 | C | Subject ellipsis is normal in spoken questions. |
-| 15 | D | Progressive with "always" expresses emotion naturally in speech. |
-| 16 | B | Hyper-formality sounds unnatural and creates awkward distance. |
-| 17 | B | Echo questions express surprise naturally in spoken English. |
-| 18 | B | Fillers are normal hesitation markers in speech. |
-| 19 | C | Invariant tags ("yeah?", "right?") are common in informal speech. |
-| 20 | B | Formal grammar for formal contexts; spoken grammar for conversation. |
+| 14 | A | Subject ellipsis is normal in spoken questions. |
+| 15 | A | Progressive with "always" expresses emotion naturally in speech. |
+| 16 | D | Hyper-formality sounds unnatural and creates awkward distance. |
+| 17 | C | Echo questions express surprise naturally in spoken English. |
+| 18 | A | Fillers are normal hesitation markers in speech. |
+| 19 | B | Invariant tags ("yeah?", "right?") are common in informal speech. |
+| 20 | C | Formal grammar for formal contexts; spoken grammar for conversation. |
 
 ---
 

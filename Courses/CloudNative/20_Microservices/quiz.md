@@ -9,13 +9,15 @@
 
 
 
+
+
 Что определяет границы микросервиса в DDD подходе?
 
-A) Bounded Context
+A) База данных
 
-B) База данных
+B) Команда разработки
 
-C) Команда разработки
+C) Bounded Context
 
 D) Количество строк кода
 
@@ -27,15 +29,17 @@ D) Количество строк кода
 
 
 
+
+
 Какая стратегия работы с данными рекомендуется для микросервисов?
 
-A) Shared database для всех сервисов
+A) Только in-memory storage
 
-B) Только in-memory storage
+B) Shared database для всех сервисов
 
-C) Database per service
+C) Одна большая NoSQL база
 
-D) Одна большая NoSQL база
+D) Database per service
 
 ---
 
@@ -45,15 +49,17 @@ D) Одна большая NoSQL база
 
 
 
+
+
 Что делает паттерн Circuit Breaker?
 
 A) Останавливает запросы к failing сервису, предотвращая cascade failures
 
-B) Кэширует ответы
+B) Шифрует трафик между сервисами
 
-C) Балансирует нагрузку
+C) Кэширует ответы
 
-D) Шифрует трафик между сервисами
+D) Балансирует нагрузку
 
 ---
 
@@ -63,15 +69,17 @@ D) Шифрует трафик между сервисами
 
 
 
+
+
 Какое преимущество асинхронной коммуникации?
 
-A) Не требует message broker
+A) Мгновенный ответ
 
-B) Loose coupling и resilience
+B) Проще debugging
 
-C) Проще debugging
+C) Loose coupling и resilience
 
-D) Мгновенный ответ
+D) Не требует message broker
 
 ---
 
@@ -81,15 +89,17 @@ D) Мгновенный ответ
 
 
 
+
+
 Для чего используется Saga Pattern?
 
 A) Для управления распределёнными транзакциями
 
-B) Для логирования
+B) Для авторизации
 
-C) Для кэширования
+C) Для логирования
 
-D) Для авторизации
+D) Для кэширования
 
 ---
 
@@ -98,19 +108,23 @@ D) Для авторизации
 
 
 
+
+
 Для чего используется API Gateway в микросервисах?
 
-A) Только для logging
+A) Только для security
 
-B) Только для security
+B) Только для logging
 
-C) Только для routing
+C) Single entry point, auth, rate limiting, aggregation
 
-D) Single entry point, auth, rate limiting, aggregation
+D) Только для routing
 
 ---
 
 ## Question 7: Service Discovery
+
+
 
 
 
@@ -132,15 +146,17 @@ D) Manual configuration
 
 
 
+
+
 Что такое Sidecar Pattern?
 
-A) Helper container рядом с main для cross-cutting concerns
+A) Backup container
 
-B) Test container
+B) Дополнительный сервис
 
-C) Дополнительный сервис
+C) Test container
 
-D) Backup container
+D) Helper container рядом с main для cross-cutting concerns
 
 ---
 
@@ -149,15 +165,17 @@ D) Backup container
 
 
 
+
+
 Что такое Event Sourcing?
 
-A) Event notifications
+A) Хранение изменений как events, восстановление state
 
-B) Logging events
+B) Event scheduling
 
-C) Event scheduling
+C) Logging events
 
-D) Хранение изменений как events, восстановление state
+D) Event notifications
 
 ---
 
@@ -166,15 +184,17 @@ D) Хранение изменений как events, восстановлени
 
 
 
+
+
 Что такое CQRS?
 
-A) Command Query Response System
+A) Caching Query Results System
 
 B) Command Query Responsibility Segregation — разделение read/write
 
-C) Caching Query Results System
+C) Central Query Routing Service
 
-D) Central Query Routing Service
+D) Command Query Response System
 
 ---
 
@@ -183,15 +203,17 @@ D) Central Query Routing Service
 
 
 
+
+
 Для чего используется Strangler Pattern?
 
-A) Для testing
+A) Для logging
 
-B) Для logging
+B) Для testing
 
-C) Для постепенной migration от monolith к microservices
+C) Для security
 
-D) Для security
+D) Для постепенной migration от monolith к microservices
 
 ---
 
@@ -200,15 +222,17 @@ D) Для security
 
 
 
+
+
 Что делает Bulkhead Pattern?
 
-A) Изолирует failures для предотвращения cascade
+A) Caching
 
-B) Load balancing
+B) Security isolation
 
-C) Caching
+C) Изолирует failures для предотвращения cascade
 
-D) Security isolation
+D) Load balancing
 
 ---
 
@@ -217,13 +241,15 @@ D) Security isolation
 
 
 
+
+
 Как правильно реализовать retries?
 
-A) Immediate retry
+A) Exponential backoff с jitter
 
-B) Exponential backoff с jitter
+B) Fixed delay
 
-C) Fixed delay
+C) Immediate retry
 
 D) No retries
 
@@ -234,19 +260,23 @@ D) No retries
 
 
 
+
+
 Почему важны timeouts?
 
-A) Для экономии
+A) Для security
 
 B) Предотвращение hung requests и resource exhaustion
 
-C) Для logging
+C) Для экономии
 
-D) Для security
+D) Для logging
 
 ---
 
 ## Question 15: Health Checks
+
+
 
 
 
@@ -268,15 +298,17 @@ D) Liveness (alive?) и readiness (ready for traffic?)
 
 
 
+
+
 Для чего используется distributed tracing?
 
-A) Для billing
+A) Для security
 
-B) Для security
+B) Для billing
 
-C) Для logging
+C) Для отслеживания requests через сервисы
 
-D) Для отслеживания requests через сервисы
+D) Для logging
 
 ---
 
@@ -285,15 +317,17 @@ D) Для отслеживания requests через сервисы
 
 
 
+
+
 Чем Choreography отличается от Orchestration?
 
-A) Choreography быстрее
+A) Choreography: events, децентрализовано. Orchestration: центральный coordinator
 
-B) Ничем
+B) Orchestration проще
 
-C) Orchestration проще
+C) Ничем
 
-D) Choreography: events, децентрализовано. Orchestration: центральный coordinator
+D) Choreography быстрее
 
 ---
 
@@ -302,15 +336,17 @@ D) Choreography: events, децентрализовано. Orchestration: цен
 
 
 
+
+
 Что тестирует Contract Testing?
 
 A) Код
 
-B) API contracts между сервисами
+B) Performance
 
-C) UI
+C) API contracts между сервисами
 
-D) Performance
+D) UI
 
 ---
 
@@ -319,15 +355,17 @@ D) Performance
 
 
 
+
+
 Что такое Domain Events?
 
-A) Log events
+A) UI events
 
 B) Значимые бизнес-события для коммуникации между bounded contexts
 
-C) System events
+C) Log events
 
-D) UI events
+D) System events
 
 ---
 
@@ -336,15 +374,17 @@ D) UI events
 
 
 
+
+
 Для чего используется Anti-Corruption Layer?
 
-A) Для security
+A) Для logging
 
-B) Для изоляции от legacy или external systems
+B) Для security
 
 C) Для caching
 
-D) Для logging
+D) Для изоляции от legacy или external systems
 
 ---
 
@@ -354,25 +394,25 @@ D) Для logging
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | Bounded Context из DDD определяет natural boundary для микросервиса — область с единым ubiquitous language. |
-| 2 | C | Database per service обеспечивает loose coupling. Shared database создаёт tight coupling между сервисами. |
+| 1 | C | Bounded Context из DDD определяет natural boundary для микросервиса — область с единым ubiquitous language. |
+| 2 | D | Database per service обеспечивает loose coupling. Shared database создаёт tight coupling между сервисами. |
 | 3 | A | Circuit Breaker переходит в OPEN state при failures, отклоняя запросы и предотвращая cascade failures. |
-| 4 | B | Async communication через events обеспечивает loose coupling — сервисы не зависят от доступности друг друга. |
+| 4 | C | Async communication через events обеспечивает loose coupling — сервисы не зависят от доступности друг друга. |
 | 5 | A | Saga управляет distributed transactions через последовательность локальных транзакций с compensation при failure. |
-| 6 | D | API Gateway: single entry, auth, rate limiting |
+| 6 | C | API Gateway: single entry, auth, rate limiting |
 | 7 | B | Service Discovery: registry (DNS, Consul) |
-| 8 | A | Sidecar: helper container для cross-cutting concerns |
-| 9 | D | Event Sourcing: хранение изменений как events |
+| 8 | D | Sidecar: helper container для cross-cutting concerns |
+| 9 | A | Event Sourcing: хранение изменений как events |
 | 10 | B | CQRS: разделение read/write responsibilities |
-| 11 | C | Strangler: постепенная migration от monolith |
-| 12 | A | Bulkhead: изоляция failures |
-| 13 | B | Exponential backoff с jitter для retries |
+| 11 | D | Strangler: постепенная migration от monolith |
+| 12 | C | Bulkhead: изоляция failures |
+| 13 | A | Exponential backoff с jitter для retries |
 | 14 | B | Timeouts предотвращают hung requests |
 | 15 | D | Liveness и readiness health checks |
-| 16 | D | Distributed tracing: отслеживание requests |
-| 17 | D | Choreography: events. Orchestration: coordinator |
-| 18 | B | Contract Testing: API contracts между сервисами |
+| 16 | C | Distributed tracing: отслеживание requests |
+| 17 | A | Choreography: events. Orchestration: coordinator |
+| 18 | C | Contract Testing: API contracts между сервисами |
 | 19 | B | Domain Events: значимые бизнес-события |
-| 20 | B | Anti-Corruption Layer: изоляция от legacy |
+| 20 | D | Anti-Corruption Layer: изоляция от legacy |
 
 ---

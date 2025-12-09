@@ -9,6 +9,8 @@
 
 
 
+
+
 Какова durability S3 Standard?
 
 A) 99.9%
@@ -22,6 +24,8 @@ D) 100%
 ---
 
 ## Question 2: Storage Classes
+
+
 
 
 
@@ -45,13 +49,15 @@ D) S3 Standard
 
 
 
+
+
 Какой максимальный размер одного объекта в S3?
 
-A) 100 GB
+A) 5 TB
 
-B) Unlimited
+B) 100 GB
 
-C) 5 TB
+C) Unlimited
 
 D) 5 GB
 
@@ -63,15 +69,17 @@ D) 5 GB
 
 
 
+
+
 Какое утверждение о bucket names ВЕРНО?
 
-A) Могут быть изменены после создания
+A) Могут начинаться с цифры
 
 B) Глобально уникальны во всём AWS
 
-C) Могут начинаться с цифры
+C) Могут содержать заглавные буквы
 
-D) Могут содержать заглавные буквы
+D) Могут быть изменены после создания
 
 ---
 
@@ -81,19 +89,23 @@ D) Могут содержать заглавные буквы
 
 
 
+
+
 Что происходит при "удалении" объекта в bucket с включённым versioning?
 
 A) Удаляются все версии объекта
 
-B) Создаётся delete marker, старые версии сохраняются
+B) Объект полностью удаляется
 
-C) Versioning автоматически отключается
+C) Создаётся delete marker, старые версии сохраняются
 
-D) Объект полностью удаляется
+D) Versioning автоматически отключается
 
 ---
 
 ## Question 6: Encryption
+
+
 
 
 
@@ -117,6 +129,8 @@ D) SSE-KMS
 
 
 
+
+
 Какое минимальное время retrieval для S3 Glacier Deep Archive (Standard retrieval)?
 
 A) 1-5 минут
@@ -130,6 +144,8 @@ D) 1-12 часов
 ---
 
 ## Question 8: Lifecycle
+
+
 
 
 
@@ -153,15 +169,17 @@ D) Только репликацию
 
 
 
+
+
 На каком уровне можно настроить Block Public Access?
 
 A) На уровне bucket и аккаунта
 
-B) Только на уровне bucket
+B) На уровне объекта
 
-C) На уровне объекта
+C) Только на уровне аккаунта
 
-D) Только на уровне аккаунта
+D) Только на уровне bucket
 
 ---
 
@@ -171,15 +189,17 @@ D) Только на уровне аккаунта
 
 
 
+
+
 Для чего используются Presigned URLs?
 
-A) Для шифрования данных
+A) Для постоянного публичного доступа
 
-B) Для постоянного публичного доступа
+B) Для шифрования данных
 
-C) Для версионирования
+C) Для временного доступа без IAM credentials
 
-D) Для временного доступа без IAM credentials
+D) Для версионирования
 
 ---
 
@@ -189,19 +209,23 @@ D) Для временного доступа без IAM credentials
 
 
 
+
+
 Что требуется для настройки S3 Cross-Region Replication?
 
-A) Только destination bucket
+A) Versioning включён на source bucket
 
-B) Premium support plan
+B) Оба bucket в одном регионе
 
-C) Оба bucket в одном регионе
+C) Premium support plan
 
-D) Versioning включён на source bucket
+D) Только destination bucket
 
 ---
 
 ## Question 12: Multipart Upload
+
+
 
 
 
@@ -225,6 +249,8 @@ D) > 50 MB
 
 
 
+
+
 За что НЕ нужно платить в S3?
 
 A) PUT requests
@@ -243,15 +269,17 @@ D) Data transfer IN
 
 
 
+
+
 Что позволяет S3 Select?
 
-A) Выбирать тип шифрования
+A) Выбирать storage class
 
 B) Выполнять SQL запросы к данным без скачивания объекта
 
-C) Выбирать регион bucket
+C) Выбирать тип шифрования
 
-D) Выбирать storage class
+D) Выбирать регион bucket
 
 ---
 
@@ -261,15 +289,17 @@ D) Выбирать storage class
 
 
 
+
+
 Куда S3 может отправлять event notifications?
 
-A) Только в SNS
+A) Только в Lambda
 
-B) Только в CloudWatch
+B) Lambda, SQS, SNS, EventBridge
 
-C) Lambda, SQS, SNS, EventBridge
+C) Только в CloudWatch
 
-D) Только в Lambda
+D) Только в SNS
 
 ---
 
@@ -278,15 +308,17 @@ D) Только в Lambda
 
 
 
+
+
 Что обеспечивает S3 Object Lock?
 
-A) Версионирование
+A) WORM защиту (write once read many)
 
-B) Шифрование объектов
+B) Быстрый доступ
 
-C) Быстрый доступ
+C) Шифрование объектов
 
-D) WORM защиту (write once read many)
+D) Версионирование
 
 ---
 
@@ -295,19 +327,23 @@ D) WORM защиту (write once read many)
 
 
 
+
+
 Что требуется для S3 Cross-Region Replication?
 
-A) Только шифрование
+A) Versioning на обоих buckets
 
-B) Только IAM роль
+B) Enterprise support
 
-C) Enterprise support
+C) Только IAM роль
 
-D) Versioning на обоих buckets
+D) Только шифрование
 
 ---
 
 ## Question 18: Inventory
+
+
 
 
 
@@ -329,13 +365,15 @@ D) Для шифрования
 
 
 
+
+
 Какое преимущество S3 Access Points?
 
-A) Быстрее загрузка
+A) Дешевле хранение
 
-B) Упрощённое управление доступом для разных приложений
+B) Быстрее загрузка
 
-C) Дешевле хранение
+C) Упрощённое управление доступом для разных приложений
 
 D) Автоматическое шифрование
 
@@ -346,15 +384,17 @@ D) Автоматическое шифрование
 
 
 
+
+
 Как работает S3 Transfer Acceleration?
 
 A) Сжимает данные
 
-B) Использует CloudFront edge locations для ускорения upload
+B) Кэширует данные
 
-C) Кэширует данные
+C) Меняет storage class
 
-D) Меняет storage class
+D) Использует CloudFront edge locations для ускорения upload
 
 ---
 
@@ -366,24 +406,24 @@ D) Меняет storage class
 |---|--------|-------------|
 | 1 | B | S3 Standard обеспечивает 99.999999999% (11 nines) durability — данные практически невозможно потерять. |
 | 2 | C | S3 Intelligent-Tiering автоматически перемещает данные между классами на основе паттернов доступа. |
-| 3 | C | Максимальный размер объекта — 5 TB. Для загрузки используйте Multipart Upload. |
+| 3 | A | Максимальный размер объекта — 5 TB. Для загрузки используйте Multipart Upload. |
 | 4 | B | Bucket names глобально уникальны во всём AWS. Должны быть lowercase, 3-63 символа. |
-| 5 | B | При versioning "удаление" создаёт delete marker. Старые версии сохраняются и могут быть восстановлены. |
+| 5 | C | При versioning "удаление" создаёт delete marker. Старые версии сохраняются и могут быть восстановлены. |
 | 6 | B | С января 2023 все новые объекты автоматически шифруются SSE-S3 (AES-256). |
 | 7 | C | S3 Glacier Deep Archive Standard retrieval: 12-48 часов. Bulk: до 48 часов. Expedited недоступен. |
 | 8 | A | Lifecycle Policy настраивает transitions между storage classes и expiration (автоудаление). |
 | 9 | A | Block Public Access можно настроить на уровне bucket и на уровне всего аккаунта. |
-| 10 | D | Presigned URLs предоставляют временный доступ к объекту без необходимости IAM credentials у получателя. |
-| 11 | D | Для CRR требуется versioning на source bucket. Destination bucket может быть в другом регионе и аккаунте. |
+| 10 | C | Presigned URLs предоставляют временный доступ к объекту без необходимости IAM credentials у получателя. |
+| 11 | A | Для CRR требуется versioning на source bucket. Destination bucket может быть в другом регионе и аккаунте. |
 | 12 | B | AWS рекомендует Multipart Upload для файлов > 100 MB. Обязательно для файлов > 5 GB. |
 | 13 | D | Data transfer IN (загрузка в S3) бесплатна. Платите за storage, requests, и data transfer OUT. |
 | 14 | B | S3 Select позволяет выполнять SQL запросы (SELECT) к CSV, JSON, Parquet файлам без полного скачивания. |
-| 15 | C | S3 Event Notifications можно отправлять в Lambda, SQS, SNS, и Amazon EventBridge. |
-| 16 | D | Object Lock обеспечивает WORM (write once read many) защиту |
-| 17 | D | CRR требует versioning на обоих buckets |
+| 15 | B | S3 Event Notifications можно отправлять в Lambda, SQS, SNS, и Amazon EventBridge. |
+| 16 | A | Object Lock обеспечивает WORM (write once read many) защиту |
+| 17 | A | CRR требует versioning на обоих buckets |
 | 18 | A | S3 Inventory генерирует регулярные отчёты о содержимом |
-| 19 | B | Access Points упрощают управление доступом |
-| 20 | B | Transfer Acceleration использует CloudFront edge locations |
+| 19 | C | Access Points упрощают управление доступом |
+| 20 | D | Transfer Acceleration использует CloudFront edge locations |
 
 ---
 

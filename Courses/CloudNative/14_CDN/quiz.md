@@ -9,15 +9,17 @@
 
 
 
+
+
 Какая основная цель CDN?
 
-A) Хранение данных
+A) Балансировка нагрузки
 
-B) Доставка контента с низкой latency через edge locations
+B) Шифрование данных
 
-C) Балансировка нагрузки
+C) Хранение данных
 
-D) Шифрование данных
+D) Доставка контента с низкой latency через edge locations
 
 ---
 
@@ -27,15 +29,17 @@ D) Шифрование данных
 
 
 
+
+
 Что входит в cache key по умолчанию?
 
-A) Только URL path
+A) URL path + все headers
 
 B) URL path + query strings + headers
 
-C) URL path + все headers
+C) Весь HTTP request
 
-D) Весь HTTP request
+D) Только URL path
 
 ---
 
@@ -45,15 +49,17 @@ D) Весь HTTP request
 
 
 
+
+
 Для чего используется Origin Access Control?
 
-A) Для rate limiting
+A) Для кэширования
 
 B) Для шифрования трафика
 
-C) Для ограничения доступа к S3 только через CloudFront
+C) Для rate limiting
 
-D) Для кэширования
+D) Для ограничения доступа к S3 только через CloudFront
 
 ---
 
@@ -63,15 +69,17 @@ D) Для кэширования
 
 
 
+
+
 Какое преимущество CloudFront Functions?
 
-A) Больше памяти
+A) Поддержка Python
 
 B) Быстрее и дешевле (< 1ms, $0.10/million)
 
-C) Network доступ
+C) Больше памяти
 
-D) Поддержка Python
+D) Network доступ
 
 ---
 
@@ -81,19 +89,23 @@ D) Поддержка Python
 
 
 
+
+
 Какой лучший способ обновить кэшированный контент?
 
-A) Перезапустить distribution
+A) Invalidation API
 
-B) Использовать versioned URLs (app.v2.js)
+B) Перезапустить distribution
 
 C) Ждать TTL expiry
 
-D) Invalidation API
+D) Использовать versioned URLs (app.v2.js)
 
 ---
 
 ## Question 6: Price Classes
+
+
 
 
 
@@ -115,19 +127,23 @@ D) Cache tiers
 
 
 
+
+
 Для чего используются Signed URLs?
 
-A) Для compression
+A) Для кэширования
 
-B) Для кэширования
+B) Для compression
 
-C) Для SEO
+C) Для временного доступа к private content
 
-D) Для временного доступа к private content
+D) Для SEO
 
 ---
 
 ## Question 8: Field-Level Encryption
+
+
 
 
 
@@ -149,6 +165,8 @@ D) Шифрует весь трафик
 
 
 
+
+
 Как ограничить доступ по географии?
 
 A) Geo Restriction (whitelist/blacklist countries)
@@ -162,6 +180,8 @@ D) Через WAF только
 ---
 
 ## Question 10: WAF Integration
+
+
 
 
 
@@ -183,6 +203,8 @@ D) Security Groups
 
 
 
+
+
 Как настроить multiple origins?
 
 A) Origin Groups с failover или path-based routing
@@ -196,6 +218,8 @@ D) Через Lambda only
 ---
 
 ## Question 12: Compression
+
+
 
 
 
@@ -217,15 +241,17 @@ D) Невозможно
 
 
 
+
+
 Куда можно отправлять real-time logs?
 
-A) Только S3
+A) Только файлы
 
 B) Kinesis Data Streams для real-time analysis
 
-C) Только CloudWatch
+C) Только S3
 
-D) Только файлы
+D) Только CloudWatch
 
 ---
 
@@ -234,19 +260,23 @@ D) Только файлы
 
 
 
+
+
 Что такое CNAMEs в CloudFront?
 
-A) Cache rules
+A) Origin servers
 
-B) Origin servers
+B) Cache rules
 
-C) Custom domain names для distribution
+C) DNS серверы
 
-D) DNS серверы
+D) Custom domain names для distribution
 
 ---
 
 ## Question 15: S3 vs Custom Origin
+
+
 
 
 
@@ -268,6 +298,8 @@ D) Для static content
 
 
 
+
+
 Что настраивают Cache Behaviors?
 
 A) Только caching
@@ -281,6 +313,8 @@ D) Только logging
 ---
 
 ## Question 17: HTTP/3
+
+
 
 
 
@@ -302,15 +336,17 @@ D) Только enterprise
 
 
 
+
+
 Что настраивает Viewer Protocol Policy?
 
-A) Origin protocol
+A) Compression
 
-B) HTTP/HTTPS/redirect между viewer и CloudFront
+B) Origin protocol
 
 C) Caching
 
-D) Compression
+D) HTTP/HTTPS/redirect между viewer и CloudFront
 
 ---
 
@@ -319,15 +355,17 @@ D) Compression
 
 
 
+
+
 Что делает Origin Shield?
 
 A) Security feature
 
-B) Дополнительный caching layer между edge и origin
+B) SSL termination
 
-C) DDoS protection
+C) Дополнительный caching layer между edge и origin
 
-D) SSL termination
+D) DDoS protection
 
 ---
 
@@ -336,15 +374,17 @@ D) SSL termination
 
 
 
+
+
 Как тестировать изменения в CloudFront?
 
 A) Только production
 
-B) Staging distribution или continuous deployment policies
+B) Невозможно
 
-C) Только локально
+C) Staging distribution или continuous deployment policies
 
-D) Невозможно
+D) Только локально
 
 ---
 
@@ -354,25 +394,25 @@ D) Невозможно
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | CDN кэширует контент на edge locations ближе к пользователям, снижая latency. |
-| 2 | A | По умолчанию cache key = только URL path. Query strings и headers нужно добавлять явно. |
-| 3 | C | OAC позволяет S3 bucket быть private, но доступным через CloudFront. |
+| 1 | D | CDN кэширует контент на edge locations ближе к пользователям, снижая latency. |
+| 2 | D | По умолчанию cache key = только URL path. Query strings и headers нужно добавлять явно. |
+| 3 | D | OAC позволяет S3 bucket быть private, но доступным через CloudFront. |
 | 4 | B | CloudFront Functions: < 1ms execution, $0.10/million. Lambda@Edge: больше возможностей, но дороже. |
-| 5 | B | Versioned URLs (app.v2.js) — лучшая практика. Invalidation платный и не мгновенный. |
+| 5 | D | Versioned URLs (app.v2.js) — лучшая практика. Invalidation платный и не мгновенный. |
 | 6 | C | Price Classes ограничивают edge locations |
-| 7 | D | Signed URLs для временного private доступа |
+| 7 | C | Signed URLs для временного private доступа |
 | 8 | B | Field-Level Encryption шифрует поля на edge |
 | 9 | A | Geo Restriction whitelist/blacklist countries |
 | 10 | C | AWS WAF integration для защиты |
 | 11 | A | Origin Groups с failover или path routing |
 | 12 | B | Compress objects automatically setting |
 | 13 | B | Kinesis Data Streams для real-time logs |
-| 14 | C | CNAMEs — custom domain names |
+| 14 | D | CNAMEs — custom domain names |
 | 15 | B | Custom Origin для dynamic content, ALB, EC2 |
 | 16 | B | Cache Behaviors: path → origin, caching, etc |
 | 17 | B | HTTP/3 QUIC protocol поддерживается |
-| 18 | B | Viewer Protocol Policy: HTTP/HTTPS/redirect |
-| 19 | B | Origin Shield — дополнительный caching layer |
-| 20 | B | Staging distribution или continuous deployment |
+| 18 | D | Viewer Protocol Policy: HTTP/HTTPS/redirect |
+| 19 | C | Origin Shield — дополнительный caching layer |
+| 20 | C | Staging distribution или continuous deployment |
 
 ---

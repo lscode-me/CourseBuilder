@@ -10,6 +10,8 @@
 
 
 
+
+
 In "She must be tired," what does "must" express?
 
 A) Obligation — she is required to be tired
@@ -23,6 +25,8 @@ D) Ability — she has the capacity to be tired
 ---
 
 ## Question 2: Certainty Scale
+
+
 
 
 
@@ -46,19 +50,23 @@ D) She might be at home.
 
 
 
+
+
 Which sentence expresses EXTERNAL obligation (a rule)?
 
-A) I must stop eating so much chocolate.
+A) I have to wear a uniform at work.
 
 B) You must try this cake!
 
-C) I must call my mother.
+C) I must stop eating so much chocolate.
 
-D) I have to wear a uniform at work.
+D) I must call my mother.
 
 ---
 
 ## Question 4: Don't Have to vs Mustn't
+
+
 
 
 
@@ -82,6 +90,8 @@ D) "Don't have to" is formal; "Mustn't" is informal
 
 
 
+
+
 Which request is MOST polite?
 
 A) Can you open the window?
@@ -95,6 +105,8 @@ D) Open the window.
 ---
 
 ## Question 6: Hedging
+
+
 
 
 
@@ -118,6 +130,8 @@ D) This causes cancer.
 
 
 
+
+
 "You should have called me." What does this express?
 
 A) Criticism — you didn't call but should have
@@ -136,15 +150,17 @@ D) Ability to call in the past
 
 
 
+
+
 "He isn't here. He must have ___."
 
-A) leave
+A) left
 
-B) leaving
+B) leave
 
 C) to leave
 
-D) left
+D) leaving
 
 ---
 
@@ -154,19 +170,23 @@ D) left
 
 
 
+
+
 Which sentence is correct for describing a specific achievement in the past?
 
-A) Yesterday I must fix the computer.
+A) Yesterday I can fix the computer.
 
-B) Yesterday I was able to fix the computer.
+B) Yesterday I must fix the computer.
 
-C) Yesterday I can fix the computer.
+C) Yesterday I was able to fix the computer.
 
 D) Yesterday I could fix the computer.
 
 ---
 
 ## Question 10: Russian Interference
+
+
 
 
 
@@ -190,19 +210,23 @@ D) I must to call him.
 
 
 
+
+
 Which sentence is grammatically INCORRECT?
 
-A) She can swim.
+A) He musts leave now.
 
-B) They might come.
+B) She can swim.
 
-C) He musts leave now.
+C) They might come.
 
 D) You should try it.
 
 ---
 
 ## Question 12: Could Have
+
+
 
 
 
@@ -226,6 +250,8 @@ D) Past ability without action (complaint/reproach)
 
 
 
+
+
 "You needn't have brought a gift" means:
 
 A) You didn't bring a gift (it wasn't necessary)
@@ -244,19 +270,23 @@ D) You forgot to bring a gift
 
 
 
+
+
 Which sentence uses "would" for a POLITE REQUEST?
 
-A) Would you sign here, please?
+A) That would be great.
 
-B) She would often visit us.
+B) I would go if I had time.
 
-C) I would go if I had time.
+C) She would often visit us.
 
-D) That would be great.
+D) Would you sign here, please?
 
 ---
 
 ## Question 15: Shall
+
+
 
 
 
@@ -280,19 +310,23 @@ D) A prediction
 
 
 
+
+
 Which is more FORMAL and suggests higher probability?
 
-A) They are identical.
+A) It may rain.
 
-B) It might rain.
+B) It could rain.
 
-C) It could rain.
+C) It might rain.
 
-D) It may rain.
+D) They are identical.
 
 ---
 
 ## Question 17: Would for Tentative
+
+
 
 
 
@@ -316,15 +350,17 @@ D) It's incorrect; should be "I think"
 
 
 
+
+
 "She can't have said that!" expresses:
 
-A) She was prohibited from saying it
+A) She wasn't able to say it
 
-B) She wasn't able to say it
+B) She was prohibited from saying it
 
-C) I believe it's impossible that she said it
+C) She might not have said it
 
-D) She might not have said it
+D) I believe it's impossible that she said it
 
 ---
 
@@ -334,19 +370,23 @@ D) She might not have said it
 
 
 
+
+
 Which sentence is incorrect in standard English?
 
-A) I will be able to come.
+A) I might be able to help.
 
-B) You should be able to finish.
+B) I will be able to come.
 
-C) I might be able to help.
+C) You should be able to finish.
 
 D) I will can come tomorrow.
 
 ---
 
 ## Question 20: Softening
+
+
 
 
 
@@ -372,22 +412,22 @@ D) You may be wrong.
 |---|--------|-------------|
 | 1 | B | This is epistemic "must" — expressing logical deduction/certainty, not obligation. |
 | 2 | C | "Must" expresses near-certainty (logical deduction). Might/could/may express lower probability. |
-| 3 | D | "Have to" is typically used for external rules/obligations. "Must" often expresses personal/internal obligation. |
+| 3 | A | "Have to" is typically used for external rules/obligations. "Must" often expresses personal/internal obligation. |
 | 4 | C | "Don't have to" = no obligation (you can choose). "Mustn't" = prohibition (forbidden). Very different! |
 | 5 | C | "Would you mind + -ing" is more polite than direct requests or "can/could you." |
 | 6 | C | "May contribute to" is hedged — cautious, appropriate for academic writing. The others are too certain. |
 | 7 | A | Should have + past participle expresses criticism about past action that didn't happen. |
-| 8 | D | Modal + have + past participle. "Must have left" — deduction about past. |
-| 9 | B | For specific past achievements, use "was able to" or "managed to," not "could." |
+| 8 | A | Modal + have + past participle. "Must have left" — deduction about past. |
+| 9 | C | For specific past achievements, use "was able to" or "managed to," not "could." |
 | 10 | D | "Must to call" — Russian speakers often add "to" after modals. Correct: "must call." |
-| 11 | C | Modals don't take -s for third person. "He must" not "He musts." |
+| 11 | A | Modals don't take -s for third person. "He must" not "He musts." |
 | 12 | D | "Could have" expresses unrealized past possibility, often as reproach — you had the ability but didn't act. |
 | 13 | B | "Needn't have" = you did something that turned out to be unnecessary. You brought the gift! |
-| 14 | A | "Would you + infinitive" is a polite request form. The others are conditional, past habit, hypothetical. |
+| 14 | D | "Would you + infinitive" is a polite request form. The others are conditional, past habit, hypothetical. |
 | 15 | C | "Shall I...?" is an offer or suggestion to do something. Common in British English. |
-| 16 | D | "May" is more formal than "might" and often suggests slightly higher probability. |
+| 16 | A | "May" is more formal than "might" and often suggests slightly higher probability. |
 | 17 | B | "Would" here softens/hedges the opinion, making it less direct and more tentative. |
-| 18 | C | "Can't have + past participle" expresses disbelief — the speaker considers it impossible. |
+| 18 | D | "Can't have + past participle" expresses disbelief — the speaker considers it impossible. |
 | 19 | D | Two modal verbs together ("will can") is not allowed. Use "will be able to." |
 | 20 | C | The most hedged/softened version. Uses indirect expression instead of direct "wrong." |
 

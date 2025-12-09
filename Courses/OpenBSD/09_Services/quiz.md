@@ -10,19 +10,23 @@
 
 
 
+
+
 Какая команда используется для управления службами в OpenBSD?
 
-A) service
+A) initctl
 
-B) rcctl
+B) systemctl
 
-C) systemctl
+C) rcctl
 
-D) initctl
+D) service
 
 ---
 
 ## Question 2: Включение службы
+
+
 
 
 
@@ -46,6 +50,8 @@ D) rcctl autostart sshd
 
 
 
+
+
 В каком файле хранятся локальные настройки служб?
 
 A) /etc/services.conf
@@ -64,15 +70,17 @@ D) /etc/rc.conf
 
 
 
+
+
 Где находятся скрипты управления службами?
 
-A) /etc/services.d/
+A) /usr/lib/systemd/
 
-B) /usr/lib/systemd/
+B) /etc/rc.d/
 
 C) /etc/init.d/
 
-D) /etc/rc.d/
+D) /etc/services.d/
 
 ---
 
@@ -82,19 +90,23 @@ D) /etc/rc.d/
 
 
 
+
+
 Какая команда проверяет, запущена ли служба?
 
 A) rcctl check sshd
 
-B) rcctl status sshd
+B) rcctl running sshd
 
-C) rcctl running sshd
+C) rcctl is-active sshd
 
-D) rcctl is-active sshd
+D) rcctl status sshd
 
 ---
 
 ## Question 6: Список служб
+
+
 
 
 
@@ -118,6 +130,8 @@ D) rcctl list running
 
 
 
+
+
 Как установить флаги запуска для службы?
 
 A) rcctl -f httpd "-f /etc/httpd.conf"
@@ -136,15 +150,17 @@ D) rcctl config httpd flags="-f /etc/httpd.conf"
 
 
 
+
+
 Какая переменная определяет порядок запуска пакетных служб?
 
 A) rc_packages
 
-B) daemon_order
+B) services_order
 
-C) pkg_scripts
+C) daemon_order
 
-D) services_order
+D) pkg_scripts
 
 ---
 
@@ -154,15 +170,17 @@ D) services_order
 
 
 
+
+
 Какая команда перезапускает службу?
 
-A) rcctl reset sshd
+A) rcctl restart sshd
 
 B) rcctl reload sshd
 
-C) rcctl reboot sshd
+C) rcctl reset sshd
 
-D) rcctl restart sshd
+D) rcctl reboot sshd
 
 ---
 
@@ -172,13 +190,15 @@ D) rcctl restart sshd
 
 
 
+
+
 Какая переменная указывает путь к исполняемому файлу в rc.d скрипте?
 
-A) program
+A) daemon
 
-B) binary
+B) program
 
-C) daemon
+C) binary
 
 D) executable
 
@@ -190,19 +210,23 @@ D) executable
 
 
 
+
+
 Какая переменная определяет пользователя для запуска службы?
 
-A) user
+A) run_as
 
-B) run_as
+B) user
 
-C) daemon_user
+C) service_user
 
-D) service_user
+D) daemon_user
 
 ---
 
 ## Question 12: Отключение службы
+
+
 
 
 
@@ -226,6 +250,8 @@ D) rcctl stop sshd
 
 
 
+
+
 Какая команда перечитывает конфигурацию без перезапуска?
 
 A) rcctl reload nginx
@@ -239,6 +265,8 @@ D) rcctl refresh nginx
 ---
 
 ## Question 14: Встроенный веб-сервер
+
+
 
 
 
@@ -262,6 +290,8 @@ D) httpd
 
 
 
+
+
 В каком файле искать общие логи демонов?
 
 A) /var/log/services
@@ -279,13 +309,15 @@ D) /var/log/daemon
 
 
 
+
+
 Для чего используется inetd?
 
-A) Для инициализации сети
+A) Для DNS
 
-B) Для запуска сетевых служб по требованию
+B) Для инициализации сети
 
-C) Для DNS
+C) Для запуска сетевых служб по требованию
 
 D) Для мониторинга интернета
 
@@ -296,15 +328,17 @@ D) Для мониторинга интернета
 
 
 
+
+
 Что такое unbound в OpenBSD?
 
 A) SSH сервер
 
-B) Кэширующий DNS резолвер
+B) Почтовый сервер
 
-C) Веб-сервер
+C) Кэширующий DNS резолвер
 
-D) Почтовый сервер
+D) Веб-сервер
 
 ---
 
@@ -313,15 +347,17 @@ D) Почтовый сервер
 
 
 
+
+
 Какой почтовый сервер встроен в OpenBSD?
 
-A) OpenSMTPD
+A) exim
 
-B) exim
+B) postfix
 
 C) sendmail
 
-D) postfix
+D) OpenSMTPD
 
 ---
 
@@ -330,15 +366,17 @@ D) postfix
 
 
 
+
+
 Что делает rcctl restart sshd?
 
 A) Обновляет конфигурацию
 
-B) Перезапускает службу sshd
+B) Удаляет службу
 
-C) Перезагружает систему
+C) Перезапускает службу sshd
 
-D) Удаляет службу
+D) Перезагружает систему
 
 ---
 
@@ -347,15 +385,17 @@ D) Удаляет службу
 
 
 
+
+
 Для чего используется /etc/rc.conf.local?
 
-A) Для локальных пользователей
+A) Для настройки локальной сети
 
-B) Для локализации системы
+B) Для локальных пользователей
 
 C) Для локальных настроек служб (переопределение rc.conf)
 
-D) Для настройки локальной сети
+D) Для локализации системы
 
 ---
 
@@ -365,25 +405,25 @@ D) Для настройки локальной сети
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | rcctl — стандартная утилита управления службами в OpenBSD |
+| 1 | C | rcctl — стандартная утилита управления службами в OpenBSD |
 | 2 | B | rcctl enable добавляет службу в автозапуск |
 | 3 | C | /etc/rc.conf.local — файл для локальных настроек (не редактируйте rc.conf!) |
-| 4 | D | /etc/rc.d/ содержит скрипты управления службами |
+| 4 | B | /etc/rc.d/ содержит скрипты управления службами |
 | 5 | A | rcctl check проверяет, запущена ли служба |
 | 6 | C | rcctl ls started показывает все запущенные службы |
 | 7 | B | rcctl set service flags "..." устанавливает флаги |
-| 8 | C | pkg_scripts определяет порядок запуска пакетных служб |
-| 9 | D | rcctl restart перезапускает службу (stop + start) |
-| 10 | C | daemon — путь к исполняемому файлу в rc.d скрипте |
-| 11 | C | daemon_user — пользователь для запуска службы |
+| 8 | D | pkg_scripts определяет порядок запуска пакетных служб |
+| 9 | A | rcctl restart перезапускает службу (stop + start) |
+| 10 | A | daemon — путь к исполняемому файлу в rc.d скрипте |
+| 11 | D | daemon_user — пользователь для запуска службы |
 | 12 | C | rcctl disable убирает службу из автозапуска |
 | 13 | A | rcctl reload отправляет SIGHUP для перечитывания конфигурации |
 | 14 | D | httpd — простой встроенный веб-сервер OpenBSD |
 | 15 | D | /var/log/daemon содержит логи демонов |
-| 16 | B | inetd запускает сетевые службы по запросу (on-demand) |
-| 17 | B | unbound — встроенный кэширующий DNS резолвер |
-| 18 | A | OpenSMTPD — почтовый сервер, разработанный проектом OpenBSD |
-| 19 | B | rcctl restart останавливает и запускает службу заново |
+| 16 | C | inetd запускает сетевые службы по запросу (on-demand) |
+| 17 | C | unbound — встроенный кэширующий DNS резолвер |
+| 18 | D | OpenSMTPD — почтовый сервер, разработанный проектом OpenBSD |
+| 19 | C | rcctl restart останавливает и запускает службу заново |
 | 20 | C | rc.conf.local содержит локальные настройки, переопределяющие rc.conf |
 
 ---

@@ -10,15 +10,17 @@
 
 
 
+
+
 Which word is UNCOUNTABLE in English?
 
-A) advice
+A) opinion
 
-B) suggestion
+B) idea
 
-C) opinion
+C) advice
 
-D) idea
+D) suggestion
 
 ---
 
@@ -28,19 +30,23 @@ D) idea
 
 
 
+
+
 "I don't have ___ time."
 
 A) much
 
-B) few
+B) many
 
-C) a lot
+C) few
 
-D) many
+D) a lot
 
 ---
 
 ## Question 3: Much/Many
+
+
 
 
 
@@ -64,6 +70,8 @@ D) a little
 
 
 
+
+
 "She has ___ friends, so she's very lonely."
 
 A) little
@@ -77,6 +85,8 @@ D) few
 ---
 
 ## Question 5: Little vs A Little
+
+
 
 
 
@@ -100,6 +110,8 @@ D) few
 
 
 
+
+
 "Would you like ___ coffee?"
 
 A) any
@@ -113,6 +125,8 @@ D) some
 ---
 
 ## Question 7: Some/Any
+
+
 
 
 
@@ -136,6 +150,8 @@ D) some
 
 
 
+
+
 "The news ___ good today."
 
 A) were
@@ -154,13 +170,15 @@ D) is
 
 
 
+
+
 Which sentence is INCORRECT?
 
-A) I have a lot of work.
+A) I need some information.
 
-B) She gave me an advice.
+B) I have a lot of work.
 
-C) I need some information.
+C) She gave me an advice.
 
 D) The furniture is new.
 
@@ -172,15 +190,17 @@ D) The furniture is new.
 
 
 
+
+
 "___ student received a certificate."
 
-A) Both A and B are correct
+A) All
 
-B) All
+B) Both A and B are correct
 
-C) Every
+C) Each
 
-D) Each
+D) Every
 
 ---
 
@@ -190,15 +210,17 @@ D) Each
 
 
 
+
+
 "Can I have ___ cup of coffee?"
 
-A) other
+A) the other
 
-B) others
+B) other
 
 C) another
 
-D) the other
+D) others
 
 ---
 
@@ -208,19 +230,23 @@ D) the other
 
 
 
+
+
 "___ option is acceptable to me."
 
-A) Neither
+A) None
 
-B) Either
+B) Both
 
-C) Both
+C) Either
 
-D) None
+D) Neither
 
 ---
 
 ## Question 13: All/Both
+
+
 
 
 
@@ -244,6 +270,8 @@ D) All
 
 
 
+
+
 Which is the correct order?
 
 A) A beautiful old wooden table
@@ -262,15 +290,17 @@ D) A wooden old beautiful table
 
 
 
+
+
 "How ___ money do you need?"
 
-A) a lot
+A) much
 
-B) much
+B) few
 
 C) many
 
-D) few
+D) a lot
 
 ---
 
@@ -280,19 +310,23 @@ D) few
 
 
 
+
+
 Which is correct?
 
-A) The mathematics are interesting.
+A) Mathematics are difficult.
 
-B) Mathematics is difficult.
+B) A mathematics is required.
 
-C) Mathematics are difficult.
+C) The mathematics are interesting.
 
-D) A mathematics is required.
+D) Mathematics is difficult.
 
 ---
 
 ## Question 17: The Other
+
+
 
 
 
@@ -316,6 +350,8 @@ D) other
 
 
 
+
+
 "___ of them came to the party."
 
 A) Any
@@ -329,6 +365,8 @@ D) Nothing
 ---
 
 ## Question 19: A Lot Of
+
+
 
 
 
@@ -352,6 +390,8 @@ D) In negative sentences
 
 
 
+
+
 How do you make "advice" countable?
 
 A) some advices
@@ -370,7 +410,7 @@ D) an advice
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | "Advice" is uncountable in English. You can't say "an advice" or "advices." |
+| 1 | C | "Advice" is uncountable in English. You can't say "an advice" or "advices." |
 | 2 | A | "Time" is uncountable → "much." |
 | 3 | C | "People" is countable (plural) → "many." |
 | 4 | D | "Few" (without "a") = negative meaning, almost none, hence lonely. |
@@ -378,14 +418,14 @@ D) an advice
 | 6 | D | Offers use "some." "Would you like some coffee?" |
 | 7 | C | Negative sentences use "any." "I don't have any questions." |
 | 8 | D | "News" is uncountable singular. "The news is..." |
-| 9 | B | "Advice" is uncountable. Cannot say "an advice." |
-| 10 | A | Both "each" and "every" work with singular nouns. |
+| 9 | C | "Advice" is uncountable. Cannot say "an advice." |
+| 10 | B | Both "each" and "every" work with singular nouns. |
 | 11 | C | "Another" = one more. "Another cup of coffee." |
-| 12 | B | "Either" = one or the other, both acceptable. |
+| 12 | C | "Either" = one or the other, both acceptable. |
 | 13 | B | "Both" for two things. "Both of my parents." |
 | 14 | A | Opinion → Age → Material. "A beautiful old wooden table." |
-| 15 | B | "Money" is uncountable → "How much money?" |
-| 16 | B | "-ics" subjects are singular. "Mathematics is difficult." |
+| 15 | A | "Money" is uncountable → "How much money?" |
+| 16 | D | "-ics" subjects are singular. "Mathematics is difficult." |
 | 17 | B | "The other" = the specific remaining one of two. |
 | 18 | B | "None" as pronoun. "None of them came." |
 | 19 | A | "A lot of" is most natural in affirmative sentences. |

@@ -9,6 +9,8 @@
 
 
 
+
+
 Какое ключевое отличие EKS от ECS?
 
 A) ECS не поддерживает Fargate
@@ -27,19 +29,23 @@ D) EKS дешевле
 
 
 
+
+
 Что такое AWS Fargate?
 
-A) Serverless compute для контейнеров
+A) Container registry
 
-B) Kubernetes distribution
+B) CI/CD сервис
 
-C) Container registry
+C) Serverless compute для контейнеров
 
-D) CI/CD сервис
+D) Kubernetes distribution
 
 ---
 
 ## Question 3: ECS Control Plane Cost
+
+
 
 
 
@@ -63,19 +69,23 @@ D) $73/month
 
 
 
+
+
 Что определяет Task Definition в ECS?
 
-A) Конфигурацию контейнеров (image, CPU, memory, ports, etc.)
+A) Billing information
 
-B) Billing information
+B) Конфигурацию контейнеров (image, CPU, memory, ports, etc.)
 
-C) VPC configuration
+C) Количество запущенных контейнеров
 
-D) Количество запущенных контейнеров
+D) VPC configuration
 
 ---
 
 ## Question 5: awsvpc Network Mode
+
+
 
 
 
@@ -98,15 +108,17 @@ D) Tasks общаются только через public IP
 
 
 
+
+
 Что делает ECS Service?
 
-A) Поддерживает desired count tasks, интегрирует с LB
+A) Мониторинг
 
-B) Billing
+B) Создаёт clusters
 
-C) Создаёт clusters
+C) Billing
 
-D) Мониторинг
+D) Поддерживает desired count tasks, интегрирует с LB
 
 ---
 
@@ -115,15 +127,17 @@ D) Мониторинг
 
 
 
+
+
 Какие IAM роли используются в ECS?
 
 A) Только instance role
 
-B) Task Execution Role (pull images) + Task Role (app permissions)
+B) Не использует IAM
 
-C) Только task role
+C) Task Execution Role (pull images) + Task Role (app permissions)
 
-D) Не использует IAM
+D) Только task role
 
 ---
 
@@ -132,13 +146,15 @@ D) Не использует IAM
 
 
 
+
+
 Какие типы auto scaling для ECS Service?
 
-A) Только target tracking
+A) Target tracking, step scaling, scheduled scaling
 
-B) Target tracking, step scaling, scheduled scaling
+B) Только manual
 
-C) Только manual
+C) Только target tracking
 
 D) Нет auto scaling
 
@@ -149,19 +165,23 @@ D) Нет auto scaling
 
 
 
+
+
 Что такое Amazon ECR?
 
-A) EC2 Container Runtime
+A) Managed Docker registry для container images
 
-B) Managed Docker registry для container images
+B) Elastic Compute Resource
 
-C) Elastic Compute Resource
+C) EC2 Container Runtime
 
 D) Container orchestrator
 
 ---
 
 ## Question 10: EKS Node Groups
+
+
 
 
 
@@ -183,6 +203,8 @@ D) Только EC2
 
 
 
+
+
 Для чего используется AWS App Runner?
 
 A) Только для Lambda
@@ -200,15 +222,17 @@ D) Только для EKS
 
 
 
+
+
 Можно ли использовать Spot Instances с ECS?
 
 A) Нет
 
-B) Да, для cost savings (до 90%)
+B) Только с Fargate
 
-C) Только с Fargate
+C) Только для dev
 
-D) Только для dev
+D) Да, для cost savings (до 90%)
 
 ---
 
@@ -217,15 +241,17 @@ D) Только для dev
 
 
 
+
+
 Как работает service discovery в ECS?
 
 A) Только через LB
 
-B) Cloud Map интеграция (DNS/API)
+B) Не поддерживается
 
-C) Только manual
+C) Cloud Map интеграция (DNS/API)
 
-D) Не поддерживается
+D) Только manual
 
 ---
 
@@ -234,19 +260,23 @@ D) Не поддерживается
 
 
 
+
+
 Что делают Capacity Providers?
 
-A) Только billing
+A) Только logging
 
 B) Управляют capacity для tasks (Fargate/EC2/Spot)
 
-C) Только monitoring
+C) Только billing
 
-D) Только logging
+D) Только monitoring
 
 ---
 
 ## Question 15: Blue/Green
+
+
 
 
 
@@ -268,15 +298,17 @@ D) Только manual
 
 
 
+
+
 Как передать secrets в ECS tasks?
 
-A) В environment variables plaintext
+A) В task definition plaintext
 
 B) Secrets Manager или Parameter Store references
 
-C) В task definition plaintext
+C) В S3
 
-D) В S3
+D) В environment variables plaintext
 
 ---
 
@@ -285,15 +317,17 @@ D) В S3
 
 
 
+
+
 Как настроить logging для ECS?
 
-A) Только в файлы
+A) awslogs driver → CloudWatch Logs
 
-B) Невозможно
+B) Только в S3
 
-C) Только в S3
+C) Невозможно
 
-D) awslogs driver → CloudWatch Logs
+D) Только в файлы
 
 ---
 
@@ -302,13 +336,15 @@ D) awslogs driver → CloudWatch Logs
 
 
 
+
+
 Какие health checks в ECS?
 
-A) Только container health check
+A) Container health check + LB target health check
 
-B) Container health check + LB target health check
+B) Только LB
 
-C) Только LB
+C) Только container health check
 
 D) Нет health checks
 
@@ -319,19 +355,23 @@ D) Нет health checks
 
 
 
+
+
 Что такое AWS Proton?
 
-A) Monitoring service
+A) Platform for infrastructure templates and CI/CD
 
-B) Container runtime
+B) Database service
 
-C) Database service
+C) Container runtime
 
-D) Platform for infrastructure templates and CI/CD
+D) Monitoring service
 
 ---
 
 ## Question 20: Copilot
+
+
 
 
 
@@ -355,24 +395,24 @@ D) Monitoring tool
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | C | EKS — managed Kubernetes (CNCF стандарт). ECS — собственный AWS orchestrator с simpler API. |
-| 2 | A | Fargate — serverless compute для ECS и EKS. AWS управляет EC2 instances за вас. |
+| 2 | C | Fargate — serverless compute для ECS и EKS. AWS управляет EC2 instances за вас. |
 | 3 | B | ECS control plane бесплатен. EKS control plane стоит $0.10/hour (~$73/month). |
-| 4 | A | Task Definition — blueprint для контейнеров: image, CPU, memory, ports, env vars, IAM role, logs. |
+| 4 | B | Task Definition — blueprint для контейнеров: image, CPU, memory, ports, env vars, IAM role, logs. |
 | 5 | A | awsvpc даёт каждой task отдельный ENI с private IP в VPC subnet и собственные Security Groups. |
-| 6 | A | Service поддерживает desired count, интегрирует с LB |
-| 7 | B | Task Execution Role + Task Role |
-| 8 | B | Target tracking, step, scheduled scaling |
-| 9 | B | ECR — managed Docker registry |
+| 6 | D | Service поддерживает desired count, интегрирует с LB |
+| 7 | C | Task Execution Role + Task Role |
+| 8 | A | Target tracking, step, scheduled scaling |
+| 9 | A | ECR — managed Docker registry |
 | 10 | C | Managed, Self-managed, Fargate node groups |
 | 11 | B | App Runner — fully managed containerized apps |
-| 12 | B | Spot Instances с ECS для cost savings |
-| 13 | B | Cloud Map для service discovery |
+| 12 | D | Spot Instances с ECS для cost savings |
+| 13 | C | Cloud Map для service discovery |
 | 14 | B | Capacity Providers управляют capacity |
 | 15 | B | CodeDeploy + ALB для Blue/Green |
 | 16 | B | Secrets Manager или Parameter Store |
-| 17 | D | awslogs driver → CloudWatch Logs |
-| 18 | B | Container + LB health checks |
-| 19 | D | Proton — infrastructure templates platform |
+| 17 | A | awslogs driver → CloudWatch Logs |
+| 18 | A | Container + LB health checks |
+| 19 | A | Proton — infrastructure templates platform |
 | 20 | A | Copilot — упрощает deployment на ECS |
 
 ---

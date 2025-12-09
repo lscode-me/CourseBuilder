@@ -6,6 +6,8 @@
 
 ## Question 1: Connection Pool
 
+
+
 Зачем нужен connection pool при работе с базой данных в веб-приложении?
 
 A) Для шифрования соединений с базой данных
@@ -20,6 +22,8 @@ D) Для кэширования SQL запросов
 
 ## Question 2: Context Manager
 
+
+
 Какой результат выполнения кода?
 
 ```python
@@ -28,17 +32,19 @@ with get_db_cursor(commit=True) as cursor:
 # После выхода из with блока
 ```
 
-A) Данные НЕ будут сохранены, так как нет явного commit
+A) Данные будут сохранены, так как commit=True вызовет commit автоматически
 
-B) Данные будут сохранены, так как commit=True вызовет commit автоматически
+B) Данные будут сохранены в отдельной транзакции
 
 C) Возникнет ошибка, так как cursor нельзя использовать в context manager
 
-D) Данные будут сохранены в отдельной транзакции
+D) Данные НЕ будут сохранены, так как нет явного commit
 
 ---
 
 ## Question 3: SQLAlchemy Engine
+
+
 
 Что делает параметр `pool_recycle=1800` при создании SQLAlchemy engine?
 
@@ -54,6 +60,8 @@ D) Устанавливает timeout для SQL запросов в 1800 мс
 
 ## Question 4: ORM vs Core
 
+
+
 Какое утверждение о SQLAlchemy верно?
 
 A) SQLAlchemy Core быстрее, но менее удобен для CRUD операций
@@ -67,6 +75,8 @@ D) ORM и Core нельзя использовать вместе в одном 
 ---
 
 ## Question 5: Session Management
+
+
 
 Что произойдёт, если забыть вызвать `db.commit()` после INSERT в SQLAlchemy ORM?
 
@@ -82,33 +92,39 @@ D) Данные сохранятся в temporary table
 
 ## Question 6: Refresh After Commit
 
+
+
 Зачем вызывать `db.refresh(user)` после `db.commit()`?
 
-A) Для проверки, что данные действительно сохранены
+A) Для получения сгенерированных значений (id, created_at) из базы данных
 
-B) Для получения сгенерированных значений (id, created_at) из базы данных
+B) Для синхронизации с другими сессиями
 
 C) Для очистки кэша сессии
 
-D) Для синхронизации с другими сессиями
+D) Для проверки, что данные действительно сохранены
 
 ---
 
 ## Question 7: with_for_update
 
+
+
 Что делает `query.with_for_update()` в SQLAlchemy?
 
-A) Автоматически выполняет UPDATE после SELECT
+A) Включает оптимистическую блокировку
 
-B) Блокирует выбранные строки для предотвращения concurrent modifications
+B) Создаёт триггер на UPDATE
 
-C) Создаёт триггер на UPDATE
+C) Блокирует выбранные строки для предотвращения concurrent modifications
 
-D) Включает оптимистическую блокировку
+D) Автоматически выполняет UPDATE после SELECT
 
 ---
 
 ## Question 8: Savepoints
+
+
 
 Что произойдёт с пользователем при откате savepoint?
 
@@ -135,19 +151,23 @@ D) И пользователь, и заказ будут сохранены
 
 ## Question 9: Isolation Levels
 
+
+
 Какой уровень изоляции по умолчанию в PostgreSQL?
 
-A) READ UNCOMMITTED
+A) REPEATABLE READ
 
-B) READ COMMITTED
+B) READ UNCOMMITTED
 
-C) REPEATABLE READ
+C) READ COMMITTED
 
 D) SERIALIZABLE
 
 ---
 
 ## Question 10: asyncpg Placeholders
+
+
 
 Какой синтаксис placeholders использует asyncpg?
 
@@ -163,19 +183,23 @@ D) `:name` — именованные
 
 ## Question 11: Async Session
 
+
+
 Какой класс используется для async сессий в SQLAlchemy 2.0?
 
 A) AsyncSession
 
-B) Session с параметром async=True
+B) AsyncDbSession
 
-C) AioSession
+C) Session с параметром async=True
 
-D) AsyncDbSession
+D) AioSession
 
 ---
 
 ## Question 12: FastAPI Dependency
+
+
 
 Что делает `yield` в FastAPI dependency для базы данных?
 
@@ -200,47 +224,55 @@ D) Вызывает ошибку, так как yield нельзя исполь�
 
 ## Question 13: N+1 Problem
 
+
+
 Что такое N+1 problem?
 
-A) Ограничение на количество соединений в пуле
+A) Проблема, когда для N записей выполняется N+1 запрос к базе
 
-B) Проблема, когда для N записей выполняется N+1 запрос к базе
+B) Ограничение на количество соединений в пуле
 
-C) Ошибка при использовании более 1 базы данных
+C) Проблема с индексами при большом количестве записей
 
-D) Проблема с индексами при большом количестве записей
+D) Ошибка при использовании более 1 базы данных
 
 ---
 
 ## Question 14: Eager Loading
 
+
+
 Какой метод загрузки предпочтительнее для большого количества связанных записей?
 
-A) joinedload — всегда лучше
+A) lazyload — для любых объёмов данных
 
-B) selectinload — для больших наборов данных
+B) joinedload — всегда лучше
 
 C) subqueryload — устаревший метод
 
-D) lazyload — для любых объёмов данных
+D) selectinload — для больших наборов данных
 
 ---
 
 ## Question 15: Bulk Operations
 
+
+
 Какой способ вставки 10,000 записей наиболее эффективен?
 
-A) Цикл с `db.add()` для каждой записи
+A) Использование stored procedure
 
-B) `db.bulk_save_objects()` или `insert().values()`
+B) Цикл с `db.add()` для каждой записи
 
 C) Отдельная транзакция для каждой записи
 
-D) Использование stored procedure
+D) `db.bulk_save_objects()` или `insert().values()`
 
 ---
 
 ## Question 16: Flask-SQLAlchemy
+
+
 
 Как Flask-SQLAlchemy управляет сессиями?
 
@@ -256,13 +288,15 @@ D) Использует глобальную сессию для всех зап
 
 ## Question 17: Alembic
 
+
+
 Что делает команда `alembic upgrade head`?
 
-A) Создаёт новую миграцию
+A) Применяет все непримененные миграции до последней версии
 
-B) Применяет все непримененные миграции до последней версии
+B) Откатывает последнюю миграцию
 
-C) Откатывает последнюю миграцию
+C) Создаёт новую миграцию
 
 D) Показывает текущую версию базы данных
 
@@ -270,19 +304,23 @@ D) Показывает текущую версию базы данных
 
 ## Question 18: Alembic Autogenerate
 
+
+
 Что НЕ может автоматически обнаружить `alembic revision --autogenerate`?
 
-A) Добавление новой таблицы
+A) Добавление нового столбца
 
-B) Изменение типа столбца
+B) Добавление новой таблицы
 
 C) Переименование столбца
 
-D) Добавление нового столбца
+D) Изменение типа столбца
 
 ---
 
 ## Question 19: Index
+
+
 
 Какой индекс создаётся в этом коде?
 
@@ -307,47 +345,55 @@ D) Индексы не создаются, только constraints
 
 ## Question 20: Pydantic Integration
 
+
+
 Что делает `from_attributes = True` в Pydantic модели для SQLAlchemy?
 
-A) Позволяет создавать SQLAlchemy объекты из Pydantic
+A) Включает автоматическую сериализацию в JSON
 
 B) Позволяет Pydantic читать атрибуты из ORM объектов (не только dict)
 
-C) Добавляет валидацию атрибутов SQLAlchemy модели
+C) Позволяет создавать SQLAlchemy объекты из Pydantic
 
-D) Включает автоматическую сериализацию в JSON
+D) Добавляет валидацию атрибутов SQLAlchemy модели
 
 ---
 
 ## Question 21: Async Engine
 
+
+
 Какой URL драйвер используется для async PostgreSQL в SQLAlchemy?
 
-A) `postgresql://`
+A) `postgresql+psycopg2://`
 
-B) `postgresql+psycopg2://`
+B) `postgresql://`
 
-C) `postgresql+asyncpg://`
+C) `async+postgresql://`
 
-D) `async+postgresql://`
+D) `postgresql+asyncpg://`
 
 ---
 
 ## Question 22: expire_on_commit
 
+
+
 Что делает `expire_on_commit=False` в async_sessionmaker?
 
-A) Отключает автоматический commit
+A) Позволяет использовать сессию после commit
 
 B) Предотвращает истечение атрибутов объекта после commit
 
-C) Отключает проверку на дубликаты
+C) Отключает автоматический commit
 
-D) Позволяет использовать сессию после commit
+D) Отключает проверку на дубликаты
 
 ---
 
 ## Question 23: Result Proxy
+
+
 
 Как получить список объектов из async SQLAlchemy запроса?
 
@@ -368,6 +414,8 @@ D) `await result.all()`
 
 ## Question 24: Transaction Rollback
 
+
+
 Когда автоматически вызывается rollback в SQLAlchemy?
 
 A) При закрытии сессии без commit
@@ -381,6 +429,8 @@ D) Оба варианта A и B верны
 ---
 
 ## Question 25: Connection Pool Parameters
+
+
 
 Что означают параметры `pool_size=5, max_overflow=10`?
 
@@ -401,26 +451,26 @@ D) 5 соединений на чтение, 10 на запись
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | Connection pool переиспользует соединения, избегая накладных расходов на TCP handshake и аутентификацию |
-| 2 | B | При commit=True context manager автоматически вызывает conn.commit() перед закрытием |
+| 2 | A | При commit=True context manager автоматически вызывает conn.commit() перед закрытием |
 | 3 | B | pool_recycle закрывает соединения старше указанного времени для избежания stale connections |
 | 4 | A | SQLAlchemy Core работает с SQL напрямую и быстрее, ORM добавляет абстракцию и удобство |
 | 5 | B | Без commit() изменения остаются только в памяти сессии и теряются при её закрытии |
-| 6 | B | refresh() синхронизирует объект с базой, получая auto-generated значения (id, default values) |
-| 7 | B | with_for_update() добавляет FOR UPDATE к SELECT, блокируя строки для других транзакций |
+| 6 | A | refresh() синхронизирует объект с базой, получая auto-generated значения (id, default values) |
+| 7 | C | with_for_update() добавляет FOR UPDATE к SELECT, блокируя строки для других транзакций |
 | 8 | B | Savepoint позволяет откатить только часть транзакции; пользователь уже в основной транзакции |
-| 9 | B | PostgreSQL по умолчанию использует READ COMMITTED |
+| 9 | C | PostgreSQL по умолчанию использует READ COMMITTED |
 | 10 | C | asyncpg использует нумерованные placeholders: $1, $2, $3... |
 | 11 | A | AsyncSession — специальный класс для async операций в SQLAlchemy 2.0 |
 | 12 | B | yield возвращает db, затем после завершения request-а выполняется finally блок с close() |
-| 13 | B | N+1: 1 запрос для списка, затем N запросов для связанных данных каждой записи |
-| 14 | B | selectinload делает 2 запроса (основной + IN query) и эффективнее для больших наборов |
-| 15 | B | Bulk операции значительно быстрее, так как минимизируют roundtrips к базе |
+| 13 | A | N+1: 1 запрос для списка, затем N запросов для связанных данных каждой записи |
+| 14 | D | selectinload делает 2 запроса (основной + IN query) и эффективнее для больших наборов |
+| 15 | D | Bulk операции значительно быстрее, так как минимизируют roundtrips к базе |
 | 16 | B | Flask-SQLAlchemy создаёт scoped session, автоматически привязанную к request lifecycle |
-| 17 | B | upgrade head применяет все миграции до последней (head) версии |
+| 17 | A | upgrade head применяет все миграции до последней (head) версии |
 | 18 | C | Autogenerate не может обнаружить переименование — видит как drop + create нового столбца |
 | 19 | B | index=True создаёт простой индекс, Index() создаёт составной; unique создаёт constraint |
 | 20 | B | from_attributes позволяет Pydantic читать данные из ORM объектов через getattr |
-| 21 | C | postgresql+asyncpg:// указывает использовать asyncpg драйвер для async операций |
+| 21 | D | postgresql+asyncpg:// указывает использовать asyncpg драйвер для async операций |
 | 22 | B | expire_on_commit=False предотвращает "detached instance" ошибки после commit в async коде |
 | 23 | B | scalars() возвращает только первый элемент каждой строки (сам объект), all() собирает в список |
 | 24 | D | Rollback вызывается и при исключении в транзакции, и при закрытии сессии без commit |

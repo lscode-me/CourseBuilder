@@ -10,6 +10,8 @@
 
 
 
+
+
 What is "register"?
 
 A) Written language
@@ -28,15 +30,17 @@ D) A list of grammar rules
 
 
 
+
+
 Which is MORE FORMAL?
 
-A) obtain
+A) get
 
-B) find
+B) obtain
 
 C) grab
 
-D) get
+D) find
 
 ---
 
@@ -46,19 +50,23 @@ D) get
 
 
 
+
+
 In academic writing, contractions are:
 
-A) Generally avoided
+A) Optional
 
-B) Used for emphasis
+B) Generally avoided
 
 C) Required
 
-D) Optional
+D) Used for emphasis
 
 ---
 
 ## Question 4: Academic Hedging
+
+
 
 
 
@@ -82,6 +90,8 @@ D) This definitely causes cancer.
 
 
 
+
+
 Which is most appropriate for academic writing?
 
 A) This is wrong, I believe.
@@ -95,6 +105,8 @@ D) I think this is wrong.
 ---
 
 ## Question 6: Nominalization
+
+
 
 
 
@@ -118,13 +130,15 @@ D) Researchers found a new species.
 
 
 
+
+
 What's wrong with: "The implementation was kinda problematic"?
 
-A) Passive voice error
+A) Wrong tense
 
-B) Wrong tense
+B) Mixed register (formal word + slang)
 
-C) Mixed register (formal word + slang)
+C) Passive voice error
 
 D) Nothing wrong
 
@@ -136,19 +150,23 @@ D) Nothing wrong
 
 
 
+
+
 Which is MOST formal?
 
-A) But
+A) And
 
-B) So
+B) But
 
-C) And
+C) So
 
 D) Furthermore
 
 ---
 
 ## Question 9: Business Email
+
+
 
 
 
@@ -172,6 +190,8 @@ D) Best regards,
 
 
 
+
+
 Replace "a lot of" with a formal alternative:
 
 A) loads of
@@ -185,6 +205,8 @@ D) tons of
 ---
 
 ## Question 11: IELTS Writing
+
+
 
 
 
@@ -208,15 +230,17 @@ D) Spoken style
 
 
 
+
+
 In English business culture, which is too direct?
 
-A) Could you please send me the report?
+A) Send me the report.
 
-B) I would appreciate your feedback.
+B) Could you please send me the report?
 
 C) Would it be possible to receive the report?
 
-D) Send me the report.
+D) I would appreciate your feedback.
 
 ---
 
@@ -226,19 +250,23 @@ D) Send me the report.
 
 
 
+
+
 For formal writing, "find out" should be replaced with:
 
-A) look up
+A) discover / ascertain
 
-B) check out
+B) figure out
 
-C) discover / ascertain
+C) look up
 
-D) figure out
+D) check out
 
 ---
 
 ## Question 14: Formal Request
+
+
 
 
 
@@ -262,15 +290,17 @@ D) Can you help me?
 
 
 
+
+
 In academic writing, "we" is used for:
 
-A) Always informal
+A) Informal style
 
 B) Never acceptable
 
-C) Informal style
+C) Inclusive author + reader / research team
 
-D) Inclusive author + reader / research team
+D) Always informal
 
 ---
 
@@ -280,15 +310,17 @@ D) Inclusive author + reader / research team
 
 
 
+
+
 Which is acceptable in spoken but NOT written formal English?
 
-A) In conclusion
+A) Basically, like, you know
 
-B) Nevertheless
+B) Furthermore
 
-C) Furthermore
+C) Nevertheless
 
-D) Basically, like, you know
+D) In conclusion
 
 ---
 
@@ -298,15 +330,17 @@ D) Basically, like, you know
 
 
 
+
+
 Why is passive voice common in academic writing?
 
-A) It creates objectivity, removes personal agent
+A) It's required by grammar
 
-B) It's required by grammar
+B) It creates objectivity, removes personal agent
 
-C) It sounds fancy
+C) Active is grammatically wrong
 
-D) Active is grammatically wrong
+D) It sounds fancy
 
 ---
 
@@ -316,15 +350,17 @@ D) Active is grammatically wrong
 
 
 
+
+
 Emailing a close colleague about lunch, which is appropriate?
 
-A) Dear Colleague, I would like to request...
+A) To Whom It May Concern...
 
-B) I am writing to inquire about the possibility of lunch.
+B) Hey, lunch today?
 
-C) Hey, lunch today?
+C) I am writing to inquire about the possibility of lunch.
 
-D) To Whom It May Concern...
+D) Dear Colleague, I would like to request...
 
 ---
 
@@ -334,19 +370,23 @@ D) To Whom It May Concern...
 
 
 
+
+
 "I would be most grateful if you could pass the salt" is:
 
-A) Too informal
+A) Too formal for a family dinner
 
-B) Too formal for a family dinner
+B) Perfect for any situation
 
 C) Grammatically incorrect
 
-D) Perfect for any situation
+D) Too informal
 
 ---
 
 ## Question 20: Russian Speakers
+
+
 
 
 
@@ -371,24 +411,24 @@ D) Being too direct (sounds impolite)
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | Register = language variety appropriate to context/situation. |
-| 2 | A | "Obtain" is formal. "Get" is neutral, "grab" is informal. |
-| 3 | A | Academic writing avoids contractions. "Cannot" not "can't." |
+| 2 | B | "Obtain" is formal. "Get" is neutral, "grab" is informal. |
+| 3 | B | Academic writing avoids contractions. "Cannot" not "can't." |
 | 4 | A | "May contribute" is hedged — appropriate caution in academic writing. |
 | 5 | B | "It can be argued" is impersonal, appropriate for academic style. |
 | 6 | B | Nominalization: "The discovery of..." is more academic than verb form. |
-| 7 | C | "Implementation" (formal) + "kinda" (slang) = mixed register. |
+| 7 | B | "Implementation" (formal) + "kinda" (slang) = mixed register. |
 | 8 | D | "Furthermore" is most formal. "But/so/and" are neutral-informal. |
 | 9 | D | "Best regards" is appropriate for formal business. Others are too casual. |
 | 10 | B | "Many" or "numerous" are formal alternatives to "a lot of." |
 | 11 | B | IELTS Task 2 expects semi-formal to formal writing. |
-| 12 | D | "Send me the report" with no politeness marker is too direct in English. |
-| 13 | C | "Discover" or "ascertain" are formal. Phrasal verbs are informal. |
+| 12 | A | "Send me the report" with no politeness marker is too direct in English. |
+| 13 | A | "Discover" or "ascertain" are formal. Phrasal verbs are informal. |
 | 14 | A | "I would be grateful if you could assist me" is most formal. |
-| 15 | D | Academic "we" is acceptable for author+reader or research team. |
-| 16 | D | "Basically, like, you know" are spoken fillers, not for formal writing. |
-| 17 | A | Passive creates objectivity, removing personal "I/we did this." |
-| 18 | C | Casual, brief — appropriate for a colleague you know well. |
-| 19 | B | Very formal language for simple request = inappropriately formal. |
+| 15 | C | Academic "we" is acceptable for author+reader or research team. |
+| 16 | A | "Basically, like, you know" are spoken fillers, not for formal writing. |
+| 17 | B | Passive creates objectivity, removing personal "I/we did this." |
+| 18 | B | Casual, brief — appropriate for a colleague you know well. |
+| 19 | A | Very formal language for simple request = inappropriately formal. |
 | 20 | D | Russian communication style is more direct; English expects hedging. |
 
 ---

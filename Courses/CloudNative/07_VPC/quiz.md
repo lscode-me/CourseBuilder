@@ -9,17 +9,21 @@
 
 
 
-A) Не имеет Security Groups
 
-B) Имеет route к Internet Gateway в route table
 
-C) Находится в первой AZ
+A) Имеет route к Internet Gateway в route table
+
+B) Находится в первой AZ
+
+C) Не имеет Security Groups
 
 D) Использует публичные IP адреса
 
 ---
 
 ## Question 2: Security Groups vs NACLs
+
+
 
 
 
@@ -43,15 +47,17 @@ D) Security Groups stateless, NACLs stateful
 
 
 
+
+
 Для чего нужен NAT Gateway?
 
-A) Для исходящего интернет-трафика из private subnet
+A) Для DNS resolution
 
 B) Для входящего трафика в private subnet
 
-C) Для связи между VPC
+C) Для исходящего интернет-трафика из private subnet
 
-D) Для DNS resolution
+D) Для связи между VPC
 
 ---
 
@@ -61,19 +67,23 @@ D) Для DNS resolution
 
 
 
+
+
 Какой тип VPC Endpoint для S3 бесплатный?
 
-A) Gateway Endpoint
+A) Все платные
 
-B) PrivateLink
+B) Gateway Endpoint
 
-C) Все платные
+C) PrivateLink
 
 D) Interface Endpoint
 
 ---
 
 ## Question 5: CIDR
+
+
 
 
 
@@ -96,19 +106,23 @@ D) 10
 
 
 
+
+
 Чем NACL отличается от Security Group?
 
-A) Ничем
+A) NACL stateless, на уровне subnet, с Deny rules
 
-B) NACL stateful
+B) Security Group на уровне VPC
 
-C) NACL stateless, на уровне subnet, с Deny rules
+C) Ничем
 
-D) Security Group на уровне VPC
+D) NACL stateful
 
 ---
 
 ## Question 7: VPC Peering
+
+
 
 
 
@@ -130,6 +144,8 @@ D) Автоматический routing
 
 
 
+
+
 Когда использовать Transit Gateway вместо VPC Peering?
 
 A) Для 2 VPCs
@@ -143,6 +159,8 @@ D) Transit Gateway устарел
 ---
 
 ## Question 9: Flow Logs
+
+
 
 
 
@@ -164,6 +182,8 @@ D) Только errors
 
 
 
+
+
 Для чего используется Bastion Host?
 
 A) Для безопасного SSH доступа в private subnet
@@ -181,19 +201,23 @@ D) Для хранения данных
 
 
 
+
+
 Какие компоненты нужны для Site-to-Site VPN?
 
-A) Только Transit Gateway
+A) Virtual Private Gateway + Customer Gateway
 
-B) Только Internet Gateway
+B) Только NAT Gateway
 
-C) Virtual Private Gateway + Customer Gateway
+C) Только Transit Gateway
 
-D) Только NAT Gateway
+D) Только Internet Gateway
 
 ---
 
 ## Question 12: Direct Connect
+
+
 
 
 
@@ -215,15 +239,17 @@ D) Интернет соединение
 
 
 
+
+
 Что обеспечивает AWS PrivateLink?
 
-A) Шифрование трафика
+A) Быстрее интернет
 
-B) Быстрее интернет
+B) Шифрование трафика
 
-C) Private доступ к AWS сервисам без интернета
+C) Публичный доступ к сервисам
 
-D) Публичный доступ к сервисам
+D) Private доступ к AWS сервисам без интернета
 
 ---
 
@@ -232,19 +258,23 @@ D) Публичный доступ к сервисам
 
 
 
+
+
 Что такое ENI?
 
-A) Load balancer
+A) Виртуальная сетевая карта (с MAC, private IP, SG)
 
-B) Тип storage
+B) DNS сервис
 
-C) Виртуальная сетевая карта (с MAC, private IP, SG)
+C) Load balancer
 
-D) DNS сервис
+D) Тип storage
 
 ---
 
 ## Question 15: Secondary CIDR
+
+
 
 
 
@@ -266,19 +296,23 @@ D) Для DNS
 
 
 
+
+
 Как работает routing в VPC?
 
-A) Через DNS
+A) Через route tables, associated с subnets
 
-B) Автоматически
+B) Через firewall
 
-C) Через firewall
+C) Автоматически
 
-D) Через route tables, associated с subnets
+D) Через DNS
 
 ---
 
 ## Question 17: IPv6
+
+
 
 
 
@@ -300,19 +334,23 @@ D) Только в US regions
 
 
 
+
+
 Для чего используется Egress-Only IGW?
 
-A) Для IPv4
+A) Для VPN
 
-B) Для исходящего IPv6 трафика без входящего
+B) Для IPv4
 
-C) Для VPN
+C) Для исходящего IPv6 трафика без входящего
 
 D) Для S3
 
 ---
 
 ## Question 19: Network ACL Order
+
+
 
 
 
@@ -334,13 +372,15 @@ D) Все правила вместе
 
 
 
+
+
 Какой лимит VPC на регион по умолчанию?
 
-A) 5
+A) 100
 
-B) 10
+B) 5
 
-C) 100
+C) 10
 
 D) Неограниченно
 
@@ -352,26 +392,26 @@ D) Неограниченно
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Public subnet — это subnet с route 0.0.0.0/0 → Internet Gateway. |
+| 1 | A | Public subnet — это subnet с route 0.0.0.0/0 → Internet Gateway. |
 | 2 | B | Security Groups stateful (ответы автоматически разрешены) и поддерживают только Allow rules. |
-| 3 | A | NAT Gateway позволяет ресурсам в private subnet делать исходящие запросы в интернет. |
-| 4 | A | Gateway Endpoints (S3, DynamoDB) бесплатны. Interface Endpoints платные. |
+| 3 | C | NAT Gateway позволяет ресурсам в private subnet делать исходящие запросы в интернет. |
+| 4 | B | Gateway Endpoints (S3, DynamoDB) бесплатны. Interface Endpoints платные. |
 | 5 | C | AWS резервирует 5 IP: .0 (network), .1 (router), .2 (DNS), .3 (reserved), .255 (broadcast). |
-| 6 | C | NACL stateless, на уровне subnet, поддерживает Deny rules |
+| 6 | A | NACL stateless, на уровне subnet, поддерживает Deny rules |
 | 7 | A | VPC Peering — private connectivity между VPCs |
 | 8 | C | Transit Gateway для hub-and-spoke многих VPCs |
 | 9 | B | Flow Logs записывают метаданные IP трафика |
 | 10 | A | Bastion Host для безопасного SSH в private subnet |
-| 11 | C | Site-to-Site VPN: VPG + Customer Gateway |
+| 11 | A | Site-to-Site VPN: VPG + Customer Gateway |
 | 12 | A | Direct Connect — выделенное физическое соединение |
-| 13 | C | PrivateLink — private доступ к сервисам |
-| 14 | C | ENI — виртуальная сетевая карта |
+| 13 | D | PrivateLink — private доступ к сервисам |
+| 14 | A | ENI — виртуальная сетевая карта |
 | 15 | C | Secondary CIDR когда закончились IP |
-| 16 | D | Routing через route tables associated с subnets |
+| 16 | A | Routing через route tables associated с subnets |
 | 17 | B | IPv6 — добавить IPv6 CIDR block к VPC |
-| 18 | B | Egress-Only IGW для исходящего IPv6 без входящего |
+| 18 | C | Egress-Only IGW для исходящего IPv6 без входящего |
 | 19 | A | NACL правила по номеру, первое совпадение |
-| 20 | A | Default лимит 5 VPC на регион |
+| 20 | B | Default лимит 5 VPC на регион |
 
 ---
 

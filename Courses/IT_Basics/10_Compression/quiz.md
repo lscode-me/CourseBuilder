@@ -9,15 +9,17 @@
 
 
 
+
+
 Какой тип сжатия используется для текстовых файлов?
 
-A) Partial
+A) Hybrid
 
-B) Lossy
+B) Lossless
 
-C) Hybrid
+C) Partial
 
-D) Lossless
+D) Lossy
 
 ---
 
@@ -26,13 +28,15 @@ D) Lossless
 
 
 
+
+
 Какая команда сжимает файл с gzip?
 
-A) gzip file.txt
+A) `pack file.txt`
 
-B) `compress file.txt`
+B) gzip file.txt
 
-C) `pack file.txt`
+C) `compress file.txt`
 
 D) `zip file.txt`
 
@@ -43,13 +47,15 @@ D) `zip file.txt`
 
 
 
+
+
 Какая команда распаковывает .gz файл?
 
-A) `unzip file.txt.gz`
+A) `ungzip file.txt.gz`
 
-B) `ungzip file.txt.gz`
+B) `extract file.txt.gz`
 
-C) `extract file.txt.gz`
+C) `unzip file.txt.gz`
 
 D) gunzip file.txt.gz
 
@@ -60,15 +66,17 @@ D) gunzip file.txt.gz
 
 
 
+
+
 Что делает tar?
 
-A) Шифрует файлы
+A) Сжимает файлы
 
-B) Объединяет файлы в один архив
+B) Удаляет дубликаты
 
-C) Сжимает файлы
+C) Шифрует файлы
 
-D) Удаляет дубликаты
+D) Объединяет файлы в один архив
 
 ---
 
@@ -77,15 +85,17 @@ D) Удаляет дубликаты
 
 
 
+
+
 Какой флаг tar использует gzip сжатие?
 
-A) `-c`
+A) -z
 
-B) `-g`
+B) `-Z`
 
-C) -z
+C) `-c`
 
-D) `-Z`
+D) `-g`
 
 ---
 
@@ -94,15 +104,17 @@ D) `-Z`
 
 
 
+
+
 Какая команда создаёт tar.gz архив?
 
-A) tar -czvf archive.tar.gz dir/
+A) `tar -azvf archive.tar.gz dir/`
 
-B) `tar -xzvf archive.tar.gz dir/`
+B) tar -czvf archive.tar.gz dir/
 
 C) `tar -tzvf archive.tar.gz dir/`
 
-D) `tar -azvf archive.tar.gz dir/`
+D) `tar -xzvf archive.tar.gz dir/`
 
 ---
 
@@ -111,15 +123,17 @@ D) `tar -azvf archive.tar.gz dir/`
 
 
 
+
+
 Какой флаг tar извлекает файлы?
 
-A) `-t`
+A) `-r`
 
-B) -x
+B) `-t`
 
 C) `-c`
 
-D) `-r`
+D) -x
 
 ---
 
@@ -128,19 +142,23 @@ D) `-r`
 
 
 
+
+
 Какое расширение у файлов сжатых bzip2?
 
-A) `.bz`
+A) `.b2`
 
-B) `.bzip`
+B) `.bz`
 
 C) .bz2
 
-D) `.b2`
+D) `.bzip`
 
 ---
 
 ## Question 9: xz сжатие
+
+
 
 
 
@@ -162,15 +180,17 @@ D) gzip
 
 
 
+
+
 Какой флаг tar использует bzip2?
 
-A) -j
+A) `-B`
 
-B) `-2`
+B) -j
 
 C) `-b`
 
-D) `-B`
+D) `-2`
 
 ---
 
@@ -179,19 +199,23 @@ D) `-B`
 
 
 
+
+
 Что делает команда zcat?
 
 A) Показывает содержимое .gz файла без распаковки
 
-B) Проверяет целостность архива
+B) Создаёт zip архив
 
-C) Создаёт zip архив
+C) Конкатенирует zip файлы
 
-D) Конкатенирует zip файлы
+D) Проверяет целостность архива
 
 ---
 
 ## Question 12: gzip -k
+
+
 
 
 
@@ -213,15 +237,17 @@ D) Рекурсивно сжимает директорию
 
 
 
+
+
 Как открыть gzip файл для чтения текста в Python?
 
 A) `gzip.open('file.gz', 'r')`
 
-B) `gzip.read('file.gz')`
+B) `open('file.gz', 'gz')`
 
-C) `open('file.gz', 'gz')`
+C) gzip.open('file.gz', 'rt')
 
-D) gzip.open('file.gz', 'rt')
+D) `gzip.read('file.gz')`
 
 ---
 
@@ -230,15 +256,17 @@ D) gzip.open('file.gz', 'rt')
 
 
 
+
+
 Что верно о ZIP по сравнению с tar.gz?
 
-A) ZIP позволяет извлекать отдельные файлы без полной распаковки
+A) ZIP не поддерживает сжатие
 
-B) ZIP только для Windows
+B) ZIP не поддерживает директории
 
-C) ZIP не поддерживает директории
+C) ZIP только для Windows
 
-D) ZIP не поддерживает сжатие
+D) ZIP позволяет извлекать отдельные файлы без полной распаковки
 
 ---
 
@@ -247,15 +275,17 @@ D) ZIP не поддерживает сжатие
 
 
 
+
+
 Какой флаг tar использует xz сжатие?
 
-A) `-x`
+A) `-Z`
 
 B) `-X`
 
-C) `-Z`
+C) -J
 
-D) -J
+D) `-x`
 
 ---
 
@@ -264,13 +294,15 @@ D) -J
 
 
 
+
+
 Что характерно для формата zstd?
 
-A) Отличное соотношение сжатие/скорость (современный стандарт)
+A) Самое медленное сжатие
 
-B) Самое медленное сжатие
+B) Только для Windows
 
-C) Только для Windows
+C) Отличное соотношение сжатие/скорость (современный стандарт)
 
 D) Не поддерживает потоковое сжатие
 
@@ -281,19 +313,23 @@ D) Не поддерживает потоковое сжатие
 
 
 
+
+
 Как создать tar.gz архив в Python?
 
-A) `tarfile.create('archive.tar.gz')`
+A) tarfile.open('archive.tar.gz', 'w:gz')
 
-B) `tar.gz('archive.tar.gz')`
+B) `tarfile.write('archive.tar.gz')`
 
-C) tarfile.open('archive.tar.gz', 'w:gz')
+C) `tarfile.create('archive.tar.gz')`
 
-D) `tarfile.write('archive.tar.gz')`
+D) `tar.gz('archive.tar.gz')`
 
 ---
 
 ## Question 18: unzip просмотр
+
+
 
 
 
@@ -315,6 +351,8 @@ D) `unzip -v archive.zip`
 
 
 
+
+
 Какой диапазон уровней сжатия поддерживает gzip?
 
 A) 1-9
@@ -328,6 +366,8 @@ D) 0-5
 ---
 
 ## Question 20: tar -C
+
+
 
 
 
@@ -350,23 +390,23 @@ D) Сжимает с gzip
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Lossless (без потерь) используется для текста, кода, данных. Lossy — для медиа. |
-| 2 | A | `gzip file.txt` сжимает файл, создаёт file.txt.gz. |
+| 1 | B | Lossless (без потерь) используется для текста, кода, данных. Lossy — для медиа. |
+| 2 | B | `gzip file.txt` сжимает файл, создаёт file.txt.gz. |
 | 3 | D | `gunzip` или `gzip -d` распаковывает .gz файлы. |
-| 4 | B | tar (tape archive) объединяет файлы без сжатия. |
-| 5 | C | `-z` активирует gzip сжатие в tar. |
-| 6 | A | `-c` создаёт, `-z` gzip, `-v` verbose, `-f` файл. |
-| 7 | B | `-x` (extract) извлекает файлы из архива. |
+| 4 | D | tar (tape archive) объединяет файлы без сжатия. |
+| 5 | A | `-z` активирует gzip сжатие в tar. |
+| 6 | B | `-c` создаёт, `-z` gzip, `-v` verbose, `-f` файл. |
+| 7 | D | `-x` (extract) извлекает файлы из архива. |
 | 8 | C | bzip2 создаёт файлы с расширением .bz2. |
 | 9 | A | xz (LZMA2) обеспечивает лучшее сжатие, но медленнее. |
-| 10 | A | `-j` активирует bzip2 в tar. |
+| 10 | B | `-j` активирует bzip2 в tar. |
 | 11 | A | `zcat` выводит содержимое .gz без распаковки на диск. |
 | 12 | B | `-k` (keep) сохраняет оригинальный файл после сжатия. |
-| 13 | D | `'rt'` = read text, для текстовых файлов с кодировкой. |
-| 14 | A | ZIP поддерживает random access — можно извлечь один файл. |
-| 15 | D | `-J` (заглавная) активирует xz сжатие в tar. |
-| 16 | A | zstd (Zstandard) — современный алгоритм с отличным балансом. |
-| 17 | C | `tarfile.open('file.tar.gz', 'w:gz')` — создание tar.gz. |
+| 13 | C | `'rt'` = read text, для текстовых файлов с кодировкой. |
+| 14 | D | ZIP поддерживает random access — можно извлечь один файл. |
+| 15 | C | `-J` (заглавная) активирует xz сжатие в tar. |
+| 16 | C | zstd (Zstandard) — современный алгоритм с отличным балансом. |
+| 17 | A | `tarfile.open('file.tar.gz', 'w:gz')` — создание tar.gz. |
 | 18 | A | `unzip -l` показывает список файлов в архиве. |
 | 19 | A | gzip поддерживает уровни 1-9 (1=быстро, 9=максимум). |
 | 20 | A | `-C directory` указывает целевую директорию для распаковки. |

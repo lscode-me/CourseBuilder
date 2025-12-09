@@ -9,6 +9,8 @@
 
 
 
+
+
 Что означает CI (Continuous Integration)?
 
 A) Контейнеризация приложений
@@ -22,6 +24,8 @@ D) Автоматический deploy в production
 ---
 
 ## Question 2: Blue/Green Deployment
+
+
 
 
 
@@ -45,6 +49,8 @@ D) Меньше ресурсов
 
 
 
+
+
 Что такое Canary deployment?
 
 A) Постепенный shift трафика с мониторингом
@@ -63,15 +69,17 @@ D) Deployment в разные regions
 
 
 
+
+
 Где определяются build steps в CodeBuild?
 
-A) В CloudFormation
+A) В консоли AWS
 
 B) В CodePipeline
 
-C) В консоли AWS
+C) В buildspec.yml файле в репозитории
 
-D) В buildspec.yml файле в репозитории
+D) В CloudFormation
 
 ---
 
@@ -81,19 +89,23 @@ D) В buildspec.yml файле в репозитории
 
 
 
+
+
 Какой правильный порядок stages в типичном pipeline?
 
-A) Build → Source → Deploy → Test
+A) Test → Build → Deploy → Source
 
-B) Test → Build → Deploy → Source
+B) Build → Source → Deploy → Test
 
-C) Source → Build → Test → Deploy
+C) Deploy → Build → Test → Source
 
-D) Deploy → Build → Test → Source
+D) Source → Build → Test → Deploy
 
 ---
 
 ## Question 6: Artifacts
+
+
 
 
 
@@ -115,15 +127,17 @@ D) EFS
 
 
 
+
+
 Какие compute platforms поддерживает CodeDeploy?
 
-A) Только ECS
+A) Только Lambda
 
-B) Только Lambda
+B) Только ECS
 
-C) Только EC2
+C) EC2, Lambda, ECS
 
-D) EC2, Lambda, ECS
+D) Только EC2
 
 ---
 
@@ -132,19 +146,23 @@ D) EC2, Lambda, ECS
 
 
 
+
+
 Для чего используется appspec.yml?
 
 A) Для build
 
-B) Для определения deployment actions и lifecycle hooks
+B) Для monitoring
 
-C) Для testing
+C) Для определения deployment actions и lifecycle hooks
 
-D) Для monitoring
+D) Для testing
 
 ---
 
 ## Question 9: GitHub Actions vs CodePipeline
+
+
 
 
 
@@ -166,15 +184,17 @@ D) Только AWS
 
 
 
+
+
 Как работает automatic rollback в CodeDeploy?
 
-A) Всегда manual
+A) Только для Lambda
 
 B) На основе CloudWatch alarms или deployment failures
 
-C) Только для Lambda
+C) Невозможен
 
-D) Невозможен
+D) Всегда manual
 
 ---
 
@@ -183,15 +203,17 @@ D) Невозможен
 
 
 
+
+
 Как deploy в multiple accounts?
 
-A) Только вручную
+A) Только через консоль
 
-B) Только через консоль
+B) Только вручную
 
-C) Cross-account roles, CodePipeline с multiple actions
+C) Невозможно
 
-D) Невозможно
+D) Cross-account roles, CodePipeline с multiple actions
 
 ---
 
@@ -200,15 +222,17 @@ D) Невозможно
 
 
 
+
+
 Как хранить secrets в CI/CD?
 
 A) В buildspec.yml
 
-B) Secrets Manager или Parameter Store references
+B) В git
 
-C) В environment variables plaintext
+C) Secrets Manager или Parameter Store references
 
-D) В git
+D) В environment variables plaintext
 
 ---
 
@@ -217,15 +241,17 @@ D) В git
 
 
 
+
+
 Какие типы тестов включать в pipeline?
 
-A) Только manual
+A) Никаких
 
-B) Никаких
+B) Только manual
 
-C) Unit, integration, security, performance (по времени/важности)
+C) Только unit
 
-D) Только unit
+D) Unit, integration, security, performance (по времени/важности)
 
 ---
 
@@ -234,15 +260,17 @@ D) Только unit
 
 
 
+
+
 Для чего используются feature flags?
 
-A) Для включения/выключения features без redeploy
+A) Для logging
 
-B) Для billing
+B) Для security
 
-C) Для security
+C) Для billing
 
-D) Для logging
+D) Для включения/выключения features без redeploy
 
 ---
 
@@ -251,15 +279,17 @@ D) Для logging
 
 
 
+
+
 Что такое trunk-based development?
 
-A) Много долгоживущих веток
+A) Все работают с main/trunk, короткие feature branches
 
-B) Все работают с main/trunk, короткие feature branches
+B) Git flow
 
 C) Только release branches
 
-D) Git flow
+D) Много долгоживущих веток
 
 ---
 
@@ -268,19 +298,23 @@ D) Git flow
 
 
 
+
+
 Что такое GitOps?
 
-A) Git hosting
+A) Git security
 
 B) Инфраструктура и deployments управляются через Git (source of truth)
 
-C) Git backup
+C) Git hosting
 
-D) Git security
+D) Git backup
 
 ---
 
 ## Question 17: ArgoCD
+
+
 
 
 
@@ -302,6 +336,8 @@ D) Для monitoring
 
 
 
+
+
 Как продвигать артефакты между environments?
 
 A) Rebuild для каждого env
@@ -319,19 +355,23 @@ D) Manual copy
 
 
 
+
+
 Почему Pipeline as Code важен?
 
-A) Версионирование, review, воспроизводимость
+A) Быстрее
 
-B) Дешевле
+B) Для красоты
 
-C) Для красоты
+C) Дешевле
 
-D) Быстрее
+D) Версионирование, review, воспроизводимость
 
 ---
 
 ## Question 20: Zero Downtime
+
+
 
 
 
@@ -357,22 +397,22 @@ D) Только для статики
 | 1 | B | CI = автоматический build и test при каждом commit. CD = автоматический deploy. |
 | 2 | A | Blue/Green позволяет мгновенно переключить трафик обратно на старую версию при проблемах. |
 | 3 | A | Canary: постепенно увеличивающийся % трафика на новую версию с мониторингом между шагами. |
-| 4 | D | buildspec.yml в корне репозитория определяет phases, commands, artifacts. |
-| 5 | C | Стандартный порядок: Source (код) → Build (компиляция) → Test (проверка) → Deploy (развёртывание). |
+| 4 | C | buildspec.yml в корне репозитория определяет phases, commands, artifacts. |
+| 5 | D | Стандартный порядок: Source (код) → Build (компиляция) → Test (проверка) → Deploy (развёртывание). |
 | 6 | B | CodeBuild сохраняет artifacts в S3 |
-| 7 | D | CodeDeploy: EC2, Lambda, ECS |
-| 8 | B | appspec.yml для deployment actions |
+| 7 | C | CodeDeploy: EC2, Lambda, ECS |
+| 8 | C | appspec.yml для deployment actions |
 | 9 | C | GitHub Actions: marketplace, matrix builds |
 | 10 | B | Rollback на основе alarms или failures |
-| 11 | C | Cross-account roles, multiple actions |
-| 12 | B | Secrets Manager или Parameter Store |
-| 13 | C | Unit, integration, security, performance |
-| 14 | A | Feature flags включают/выключают features |
-| 15 | B | Trunk-based: main branch, короткие feature branches |
+| 11 | D | Cross-account roles, multiple actions |
+| 12 | C | Secrets Manager или Parameter Store |
+| 13 | D | Unit, integration, security, performance |
+| 14 | D | Feature flags включают/выключают features |
+| 15 | A | Trunk-based: main branch, короткие feature branches |
 | 16 | B | GitOps: Git как source of truth |
 | 17 | B | ArgoCD: GitOps для Kubernetes |
 | 18 | B | Один artifact, разные configs |
-| 19 | A | Pipeline as Code: версионирование, review |
+| 19 | D | Pipeline as Code: версионирование, review |
 | 20 | C | Blue/Green, Rolling, Canary |
 
 ---

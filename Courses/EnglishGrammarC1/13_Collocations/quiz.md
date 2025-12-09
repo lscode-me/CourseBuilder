@@ -10,15 +10,17 @@
 
 
 
+
+
 "She ___ a mistake."
 
-A) made
+A) had
 
 B) did
 
-C) took
+C) made
 
-D) had
+D) took
 
 ---
 
@@ -28,19 +30,23 @@ D) had
 
 
 
+
+
 "I need to ___ my homework."
 
-A) make
+A) have
 
-B) take
+B) make
 
-C) have
+C) take
 
 D) do
 
 ---
 
 ## Question 3: Make vs Do
+
+
 
 
 
@@ -64,6 +70,8 @@ D) make
 
 
 
+
+
 "Let's ___ a break."
 
 A) do
@@ -77,6 +85,8 @@ D) make
 ---
 
 ## Question 5: Heavy/Strong
+
+
 
 
 
@@ -100,6 +110,8 @@ D) strong
 
 
 
+
+
 "He is a very ___ man."
 
 A) long
@@ -118,19 +130,23 @@ D) tall
 
 
 
+
+
 "It depends ___ the weather."
 
-A) about
+A) from
 
-B) from
+B) of
 
-C) of
+C) about
 
 D) on
 
 ---
 
 ## Question 8: Dependent Preposition
+
+
 
 
 
@@ -154,6 +170,8 @@ D) in
 
 
 
+
+
 "She's afraid ___ spiders."
 
 A) from
@@ -172,15 +190,17 @@ D) about
 
 
 
+
+
 Which preposition error is typical for Russian speakers?
 
-A) worried of (should be "about")
+A) angry about (should be "with")
 
-B) interested of (should be "in")
+B) All of the above
 
-C) angry about (should be "with")
+C) worried of (should be "about")
 
-D) All of the above
+D) interested of (should be "in")
 
 ---
 
@@ -190,15 +210,17 @@ D) All of the above
 
 
 
+
+
 Which verb takes NO preposition before its object?
 
-A) wait ___
+A) discuss ___
 
-B) depend ___
+B) listen ___
 
-C) discuss ___
+C) wait ___
 
-D) listen ___
+D) depend ___
 
 ---
 
@@ -208,19 +230,23 @@ D) listen ___
 
 
 
+
+
 "___ a phone call"
 
-A) Have
+A) Make
 
-B) Do
+B) Have
 
-C) Make
+C) Do
 
 D) Take
 
 ---
 
 ## Question 13: Collocation
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Do
 
 
 
+
+
 "___ advice"
 
 A) give
@@ -262,15 +290,17 @@ D) do
 
 
 
+
+
 Which is the natural collocation?
 
-A) hard rain
+A) strong rain
 
-B) heavy rain
+B) big rain
 
-C) big rain
+C) heavy rain
 
-D) strong rain
+D) hard rain
 
 ---
 
@@ -280,19 +310,23 @@ D) strong rain
 
 
 
+
+
 "___ a photo"
 
-A) Do
+A) Take
 
-B) Have
+B) Make
 
-C) Take
+C) Do
 
-D) Make
+D) Have
 
 ---
 
 ## Question 17: Get Collocation
+
+
 
 
 
@@ -316,19 +350,23 @@ D) Have
 
 
 
+
+
 Which is correct?
 
 A) Can you explain me this?
 
-B) Can you explain this to me?
+B) Can you explain about this to me?
 
-C) Can you explain me about this?
+C) Can you explain this to me?
 
-D) Can you explain about this to me?
+D) Can you explain me about this?
 
 ---
 
 ## Question 19: Marry
+
+
 
 
 
@@ -352,13 +390,15 @@ D) She married to John.
 
 
 
+
+
 Which is correct?
 
-A) He entered into the room.
+A) He entered the room.
 
-B) He entered the room.
+B) He entered in the room.
 
-C) He entered in the room.
+C) He entered into the room.
 
 D) He entered to the room.
 
@@ -370,7 +410,7 @@ D) He entered to the room.
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | "Make a mistake" — standard collocation. |
+| 1 | C | "Make a mistake" — standard collocation. |
 | 2 | D | "Do homework" — tasks/work = do. |
 | 3 | B | "Do business" — activity/work = do. |
 | 4 | C | Both "have a break" (BrE) and "take a break" (AmE) are correct. |
@@ -379,17 +419,17 @@ D) He entered to the room.
 | 7 | D | "Depend ON" — NOT "depend from" (Russian interference). |
 | 8 | D | "Interested IN" — standard preposition. |
 | 9 | B | "Afraid OF" — standard preposition. |
-| 10 | D | Russian speakers often use wrong prepositions due to L1 transfer. |
-| 11 | C | "Discuss something" — no preposition. (NOT "discuss about"). |
-| 12 | C | "Make a phone call" — standard collocation. |
+| 10 | B | Russian speakers often use wrong prepositions due to L1 transfer. |
+| 11 | A | "Discuss something" — no preposition. (NOT "discuss about"). |
+| 12 | A | "Make a phone call" — standard collocation. |
 | 13 | A | "Pay attention" — standard collocation. |
 | 14 | A | "Give advice" — standard collocation. |
-| 15 | B | "Heavy rain" is the natural collocation. |
-| 16 | C | "Take a photo/picture" — standard collocation. |
+| 15 | C | "Heavy rain" is the natural collocation. |
+| 16 | A | "Take a photo/picture" — standard collocation. |
 | 17 | A | "Get married" — standard collocation. |
-| 18 | B | "Explain something TO someone" — not "explain someone." |
+| 18 | C | "Explain something TO someone" — not "explain someone." |
 | 19 | A | "Marry someone" — no preposition! (or "get married to"). |
-| 20 | B | "Enter the room" — no preposition needed. |
+| 20 | A | "Enter the room" — no preposition needed. |
 
 ---
 

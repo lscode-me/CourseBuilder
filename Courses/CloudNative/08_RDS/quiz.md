@@ -9,15 +9,17 @@
 
 
 
+
+
 Какой тип репликации используется в Multi-AZ deployment?
 
-A) Semi-synchronous
+A) Asynchronous
 
-B) No replication
+B) Synchronous
 
-C) Synchronous
+C) No replication
 
-D) Asynchronous
+D) Semi-synchronous
 
 ---
 
@@ -27,19 +29,23 @@ D) Asynchronous
 
 
 
+
+
 Можно ли читать данные из Standby instance в Multi-AZ deployment?
 
-A) Нет, Standby только для failover
+A) Да, всегда
 
-B) Да, но с задержкой 5 минут
+B) Да, но только через отдельный endpoint
 
-C) Да, всегда
+C) Нет, Standby только для failover
 
-D) Да, но только через отдельный endpoint
+D) Да, но с задержкой 5 минут
 
 ---
 
 ## Question 3: Aurora Storage
+
+
 
 
 
@@ -63,6 +69,8 @@ D) 2 копии в 1 AZ
 
 
 
+
+
 Что происходит при promote Read Replica?
 
 A) Replica становится standalone primary DB
@@ -76,6 +84,8 @@ D) Replica удаляется
 ---
 
 ## Question 5: Encryption
+
+
 
 
 
@@ -99,6 +109,8 @@ D) В любое время
 
 
 
+
+
 Какой максимальный retention period для automated backups?
 
 A) 35 дней
@@ -117,19 +129,23 @@ D) 365 дней
 
 
 
+
+
 Что такое ACU в Aurora Serverless?
 
-A) Aurora Compute Unit (единица вычислительной мощности)
+A) Aurora Connection Unit
 
-B) Aurora Capacity Unit
+B) Aurora Compute Unit (единица вычислительной мощности)
 
-C) Aurora Connection Unit
+C) Aurora Capacity Unit
 
 D) Aurora Cache Unit
 
 ---
 
 ## Question 8: Failover Time
+
+
 
 
 
@@ -153,15 +169,17 @@ D) 30+ минут
 
 
 
+
+
 Какая функция RDS позволяет репликацию в другой регион?
 
-A) Multi-AZ
+A) Parameter Group
 
-B) Read Replica
+B) Automated Backup
 
-C) Automated Backup
+C) Read Replica
 
-D) Parameter Group
+D) Multi-AZ
 
 ---
 
@@ -171,19 +189,23 @@ D) Parameter Group
 
 
 
+
+
 Какой сервис используется для IAM Database Authentication?
 
-A) Secrets Manager
+A) STS для генерации token
 
-B) STS для генерации token
+B) Cognito
 
 C) IAM напрямую
 
-D) Cognito
+D) Secrets Manager
 
 ---
 
 ## Question 11: Performance Insights
+
+
 
 
 
@@ -205,15 +227,17 @@ D) Только storage
 
 
 
+
+
 Чем Enhanced Monitoring отличается от стандартного?
 
 A) Ничем
 
-B) Метрики OS уровня (processes, memory details) с 1-sec granularity
+B) Бесплатно
 
-C) Только для Aurora
+C) Метрики OS уровня (processes, memory details) с 1-sec granularity
 
-D) Бесплатно
+D) Только для Aurora
 
 ---
 
@@ -222,19 +246,23 @@ D) Бесплатно
 
 
 
+
+
 Для чего используются Parameter Groups?
 
-A) Для security
+A) Для networking
 
 B) Для настройки параметров database engine
 
-C) Для networking
+C) Для backup
 
-D) Для backup
+D) Для security
 
 ---
 
 ## Question 14: Option Groups
+
+
 
 
 
@@ -256,19 +284,23 @@ D) Networking options
 
 
 
+
+
 Какой тип snapshot можно копировать между регионами?
 
 A) Никакой
 
-B) Manual snapshots
+B) Только automated
 
-C) Только automated
+C) Только encrypted
 
-D) Только encrypted
+D) Manual snapshots
 
 ---
 
 ## Question 16: Encryption
+
+
 
 
 
@@ -290,19 +322,23 @@ D) Только для Enterprise
 
 
 
+
+
 Какое преимущество Aurora Serverless v2?
 
 A) Только дешевле
 
-B) Автоматическое масштабирование capacity
+B) Больше storage
 
-C) Быстрее
+C) Автоматическое масштабирование capacity
 
-D) Больше storage
+D) Быстрее
 
 ---
 
 ## Question 18: Proxy
+
+
 
 
 
@@ -324,15 +360,17 @@ D) Для encryption
 
 
 
+
+
 Что обеспечивает RDS Blue/Green deployment?
 
-A) Monitoring
+A) Шифрование
 
-B) Шифрование
+B) Monitoring
 
-C) Backup
+C) Безопасное тестирование изменений с быстрым switchover
 
-D) Безопасное тестирование изменений с быстрым switchover
+D) Backup
 
 ---
 
@@ -341,15 +379,17 @@ D) Безопасное тестирование изменений с быст�
 
 
 
+
+
 Какая экономия от RDS Reserved Instances?
 
 A) 10%
 
-B) До 72% (1-3 года commitment)
+B) 5%
 
-C) 5%
+C) Нет экономии
 
-D) Нет экономии
+D) До 72% (1-3 года commitment)
 
 ---
 
@@ -359,26 +399,26 @@ D) Нет экономии
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | Multi-AZ использует synchronous replication для гарантии durability. Read Replicas — async. |
-| 2 | A | Standby в Multi-AZ не доступен для чтения — только для failover. Для чтения нужны Read Replicas. |
+| 1 | B | Multi-AZ использует synchronous replication для гарантии durability. Read Replicas — async. |
+| 2 | C | Standby в Multi-AZ не доступен для чтения — только для failover. Для чтения нужны Read Replicas. |
 | 3 | C | Aurora хранит 6 копий данных в 3 AZ (по 2 копии на AZ) для высокой durability. |
 | 4 | A | При promote Read Replica становится независимым primary DB, разрывая связь с источником. |
 | 5 | C | Encryption at rest можно включить только при создании. Для existing DB: snapshot → copy encrypted → restore. |
 | 6 | A | Максимальный retention period для automated backups — 35 дней. Manual snapshots хранятся до удаления. |
-| 7 | B | ACU = Aurora Capacity Unit. 1 ACU ≈ 2 GB RAM. Aurora Serverless масштабируется в ACU. |
+| 7 | C | ACU = Aurora Capacity Unit. 1 ACU ≈ 2 GB RAM. Aurora Serverless масштабируется в ACU. |
 | 8 | A | Multi-AZ failover занимает 60-120 секунд. Aurora — быстрее (<30 секунд). |
-| 9 | B | Cross-Region Read Replica позволяет реплицировать данные в другой регион для DR или локализации. |
-| 10 | B | IAM Database Auth использует STS (Security Token Service) для генерации временного token вместо пароля. |
+| 9 | C | Cross-Region Read Replica позволяет реплицировать данные в другой регион для DR или локализации. |
+| 10 | A | IAM Database Auth использует STS (Security Token Service) для генерации временного token вместо пароля. |
 | 11 | A | Performance Insights показывает database load, top SQLs |
-| 12 | B | Enhanced Monitoring — OS метрики с 1-sec granularity |
+| 12 | C | Enhanced Monitoring — OS метрики с 1-sec granularity |
 | 13 | B | Parameter Groups для настройки параметров engine |
 | 14 | B | Option Groups — engine-specific features |
-| 15 | B | Manual snapshots можно копировать между регионами |
+| 15 | D | Manual snapshots можно копировать между регионами |
 | 16 | A | Шифрование только при создании или через snapshot |
-| 17 | B | Aurora Serverless v2 — автоматическое масштабирование |
+| 17 | C | Aurora Serverless v2 — автоматическое масштабирование |
 | 18 | C | RDS Proxy для connection pooling и failover |
-| 19 | D | Blue/Green для безопасного тестирования изменений |
-| 20 | B | Reserved Instances экономят до 72% |
+| 19 | C | Blue/Green для безопасного тестирования изменений |
+| 20 | D | Reserved Instances экономят до 72% |
 
 ---
 

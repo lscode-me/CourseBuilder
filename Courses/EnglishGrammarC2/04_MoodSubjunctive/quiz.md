@@ -10,19 +10,23 @@
 
 
 
+
+
 Choose the FORMAL/STANDARD form:
 
 A) If I were you, I would apologize.
 
-B) If I was you, I would apologize.
+B) If I would be you, I would apologize.
 
-C) If I would be you, I would apologize.
+C) If I am you, I would apologize.
 
-D) If I am you, I would apologize.
+D) If I was you, I would apologize.
 
 ---
 
 ## Question 2: Mandative Subjunctive
+
+
 
 
 
@@ -46,6 +50,8 @@ D) The committee recommended that the report be submitted.
 
 
 
+
+
 Choose the correct sentence:
 
 A) Both B and C are acceptable.
@@ -59,6 +65,8 @@ D) I wish I am taller.
 ---
 
 ## Question 4: Wish - Past Regret
+
+
 
 
 
@@ -82,6 +90,8 @@ D) I wish I would have studied harder last year.
 
 
 
+
+
 "I wish you would stop making noise" expresses:
 
 A) An impossible wish
@@ -95,6 +105,8 @@ D) A formal request
 ---
 
 ## Question 6: Would Rather + Others
+
+
 
 
 
@@ -118,15 +130,17 @@ D) I would rather you came tomorrow.
 
 
 
+
+
 Which verb does NOT typically trigger mandative subjunctive?
 
-A) suggest
+A) insist
 
-B) insist
+B) think
 
 C) recommend
 
-D) think
+D) suggest
 
 ---
 
@@ -136,15 +150,17 @@ D) think
 
 
 
+
+
 Choose the correct sentence:
 
-A) I suggest that he not leave early.
+A) I suggest that he does not leave early.
 
-B) I suggest that he won't leave early.
+B) I suggest that he doesn't leave early.
 
-C) I suggest that he doesn't leave early.
+C) I suggest that he won't leave early.
 
-D) I suggest that he does not leave early.
+D) I suggest that he not leave early.
 
 ---
 
@@ -154,19 +170,23 @@ D) I suggest that he does not leave early.
 
 
 
+
+
 In British English, which is an acceptable alternative to "I suggest he be present"?
 
-A) Neither is acceptable.
+A) I suggest he is present.
 
 B) I suggest he should be present.
 
-C) Both A and B are acceptable in British English.
+C) Neither is acceptable.
 
-D) I suggest he is present.
+D) Both A and B are acceptable in British English.
 
 ---
 
 ## Question 10: Russian Interference
+
+
 
 
 
@@ -190,15 +210,17 @@ D) "Were I you, I would help."
 
 
 
+
+
 "If he were to arrive late" is:
 
-A) Only used in American English
+A) More emphatic/formal than "If he arrived late"
 
-B) Incorrect grammar
+B) Identical in meaning to "If he arrives late"
 
-C) Identical in meaning to "If he arrives late"
+C) Incorrect grammar
 
-D) More emphatic/formal than "If he arrived late"
+D) Only used in American English
 
 ---
 
@@ -208,15 +230,17 @@ D) More emphatic/formal than "If he arrived late"
 
 
 
+
+
 "Be that as it may" is:
 
-A) A fixed formulaic expression
+A) An example of mandative subjunctive
 
 B) A grammatical error
 
-C) Only used in legal contexts
+C) A fixed formulaic expression
 
-D) An example of mandative subjunctive
+D) Only used in legal contexts
 
 ---
 
@@ -226,13 +250,15 @@ D) An example of mandative subjunctive
 
 
 
+
+
 Choose the correct sentence:
 
-A) It's essential that he attends the meeting.
+A) It's essential that he attend the meeting.
 
-B) It's essential that he will attend the meeting.
+B) It's essential that he attends the meeting.
 
-C) It's essential that he attend the meeting.
+C) It's essential that he will attend the meeting.
 
 D) It's essential that he attending the meeting.
 
@@ -244,15 +270,17 @@ D) It's essential that he attending the meeting.
 
 
 
+
+
 "If only I had known!" expresses:
 
-A) A past regret (stronger than "I wish")
+A) A polite request
 
 B) A future hope
 
-C) A polite request
+C) A present wish
 
-D) A present wish
+D) A past regret (stronger than "I wish")
 
 ---
 
@@ -262,19 +290,23 @@ D) A present wish
 
 
 
+
+
 "If I weren't so lazy, I would have finished yesterday." This sentence:
 
-A) Is grammatically incorrect
+A) Has a past condition and present result
 
-B) Is a standard third conditional
+B) Is grammatically incorrect
 
 C) Has a present condition and past result (mixed)
 
-D) Has a past condition and present result
+D) Is a standard third conditional
 
 ---
 
 ## Question 16: Would Rather - Self
+
+
 
 
 
@@ -298,15 +330,17 @@ D) A past tense form
 
 
 
+
+
 "He acts as if he were the boss" uses subjunctive because:
 
-A) We don't know if he's the boss
+A) He is the boss
 
 B) He is not the boss (unreal comparison)
 
-C) It's a polite expression
+C) We don't know if he's the boss
 
-D) He is the boss
+D) It's a polite expression
 
 ---
 
@@ -316,13 +350,15 @@ D) He is the boss
 
 
 
+
+
 Which is the correct formal inversion of "If I had known earlier"?
 
-A) "Known I had earlier"
+A) "If known earlier I had"
 
-B) "Had I known earlier"
+B) "Known I had earlier"
 
-C) "If known earlier I had"
+C) "Had I known earlier"
 
 D) "Did I know earlier"
 
@@ -334,15 +370,17 @@ D) "Did I know earlier"
 
 
 
+
+
 Which is INCORRECT?
 
-A) I wish I could speak French.
+A) I wish I would be smarter.
 
-B) I wish I had more time.
+B) I wish I were more confident.
 
-C) I wish I were more confident.
+C) I wish I had more time.
 
-D) I wish I would be smarter.
+D) I wish I could speak French.
 
 ---
 
@@ -352,15 +390,17 @@ D) I wish I would be smarter.
 
 
 
+
+
 In formal academic writing, which subjunctive form should you use?
 
-A) "I suggest that he be informed." (standard)
+A) "I suggest that he should be informed." (always)
 
-B) "I suggest that he should be informed." (always)
+B) "I suggest that he is informed." (preferred)
 
 C) Any form is equally acceptable.
 
-D) "I suggest that he is informed." (preferred)
+D) "I suggest that he be informed." (standard)
 
 ---
 
@@ -376,20 +416,20 @@ D) "I suggest that he is informed." (preferred)
 | 4 | C | Past regret with "wish" requires Past Perfect: "I wish I had studied." |
 | 5 | B | "Wish + would" expresses desire for someone else to change their behavior. |
 | 6 | D | "Would rather [someone] + past tense" for preferences about others' actions. |
-| 7 | D | "Think" doesn't trigger mandative subjunctive—it's not a verb of demand/suggestion. |
-| 8 | A | Negative mandative: "that [subject] NOT [base form]"—no auxiliary "do". |
-| 9 | C | British English accepts both "should + infinitive" and indicative as alternatives. |
+| 7 | B | "Think" doesn't trigger mandative subjunctive—it's not a verb of demand/suggestion. |
+| 8 | D | Negative mandative: "that [subject] NOT [base form]"—no auxiliary "do". |
+| 9 | D | British English accepts both "should + infinitive" and indicative as alternatives. |
 | 10 | C | Russian speakers often use "would" in the if-clause due to L1 transfer. |
-| 11 | D | "Were to" adds emphasis or formality to hypothetical conditions. |
-| 12 | A | "Be that as it may" is a fixed formulaic subjunctive expression. |
-| 13 | C | After "it's essential," use mandative subjunctive: "that he attend." |
-| 14 | A | "If only + Past Perfect" expresses strong regret about the past. |
+| 11 | A | "Were to" adds emphasis or formality to hypothetical conditions. |
+| 12 | C | "Be that as it may" is a fixed formulaic subjunctive expression. |
+| 13 | A | After "it's essential," use mandative subjunctive: "that he attend." |
+| 14 | D | "If only + Past Perfect" expresses strong regret about the past. |
 | 15 | C | Present condition ("weren't lazy" now) + past result ("would have finished") = mixed. |
 | 16 | A | With "would rather" for your own actions, use bare infinitive: "rather stay." |
 | 17 | B | Subjunctive "were" because it's an unreal comparison—he's not actually the boss. |
-| 18 | B | Inversion: Auxiliary + subject: "Had I known" = "If I had known." |
-| 19 | D | "I wish I would be" is illogical—you can't wish for yourself to change like this. |
-| 20 | A | Mandative subjunctive "that he be" is standard in formal academic writing. |
+| 18 | C | Inversion: Auxiliary + subject: "Had I known" = "If I had known." |
+| 19 | A | "I wish I would be" is illogical—you can't wish for yourself to change like this. |
+| 20 | D | Mandative subjunctive "that he be" is standard in formal academic writing. |
 
 ---
 

@@ -10,19 +10,23 @@
 
 
 
+
+
 Какой принцип описывает "hiring bar"?
 
 A) Нанимать самого дешёвого
 
-B) Нанимать кого угодно
+B) Нанимать только друзей
 
-C) Нанимать только друзей
+C) Нанимать людей, которые поднимают средний уровень команды
 
-D) Нанимать людей, которые поднимают средний уровень команды
+D) Нанимать кого угодно
 
 ---
 
 ## Question 2: Cost of Bad Hire
+
+
 
 
 
@@ -46,13 +50,15 @@ D) Bad hire дёшево исправить
 
 
 
+
+
 Чего следует избегать в Job Description?
 
-A) Описание benefits
+A) Честное описание роли
 
-B) Realistic requirements
+B) Описание benefits
 
-C) Честное описание роли
+C) Realistic requirements
 
 D) "10 лет опыта в технологии, которой 5 лет"
 
@@ -64,19 +70,23 @@ D) "10 лет опыта в технологии, которой 5 лет"
 
 
 
+
+
 Почему referrals считаются лучшим источником кандидатов?
 
 A) Они единственный источник
 
-B) Referrals не работают
+B) Они самые дешёвые
 
-C) Они самые дешёвые
+C) Quality + cultural fit, быстрее и дешевле
 
-D) Quality + cultural fit, быстрее и дешевле
+D) Referrals не работают
 
 ---
 
 ## Question 5: Diversity Sourcing
+
+
 
 
 
@@ -100,19 +110,23 @@ D) Diverse sourcing channels, blind review, diverse interview panels
 
 
 
+
+
 Зачем нужны structured interviews?
 
-A) Чтобы задавать случайные вопросы
+A) Structured interviews хуже
 
-B) Consistent across candidates, reduces bias, better predictions
+B) Для усложнения процесса
 
-C) Structured interviews хуже
+C) Чтобы задавать случайные вопросы
 
-D) Для усложнения процесса
+D) Consistent across candidates, reduces bias, better predictions
 
 ---
 
 ## Question 7: Scorecard
+
+
 
 
 
@@ -136,19 +150,23 @@ D) Только зарплатные ожидания
 
 
 
+
+
 Какая best practice для coding interview?
 
 A) Максимальный time pressure
 
-B) Только whiteboard без компьютера
+B) Real-world problems, allow docs, focus on process
 
-C) Gotcha questions и obscure algorithms
+C) Только whiteboard без компьютера
 
-D) Real-world problems, allow docs, focus on process
+D) Gotcha questions и obscure algorithms
 
 ---
 
 ## Question 9: STAR Method
+
+
 
 
 
@@ -172,19 +190,23 @@ D) Stars rating
 
 
 
+
+
 Что такое "Affinity bias"?
 
-A) Отвержение всех кандидатов
+A) Предпочтение кандидатов похожих на себя
 
-B) Предпочтение кандидатов похожих на себя
+B) Отсутствие bias
 
 C) Объективная оценка
 
-D) Отсутствие bias
+D) Отвержение всех кандидатов
 
 ---
 
 ## Question 11: Debrief Process
+
+
 
 
 
@@ -208,19 +230,23 @@ D) Только устно
 
 
 
+
+
 Что является strong "No Hire" signal?
 
-A) Unconventional background
+A) Blame without ownership, disrespectful behavior
 
 B) Nervousness
 
-C) Blame without ownership, disrespectful behavior
+C) Asking questions
 
-D) Asking questions
+D) Unconventional background
 
 ---
 
 ## Question 13: When in Doubt
+
+
 
 
 
@@ -244,6 +270,8 @@ D) Подбросить монетку
 
 
 
+
+
 Какой goal для end of Week 1 onboarding?
 
 A) Уволился
@@ -262,15 +290,17 @@ D) Promoted
 
 
 
+
+
 Какой goal для end of Month 3?
 
 A) Ещё onboarding
 
-B) Ещё не начал работать
+B) Только получил access
 
-C) Только получил access
+C) Fully productive, contributing independently, integrated
 
-D) Fully productive, contributing independently, integrated
+D) Ещё не начал работать
 
 ---
 
@@ -280,19 +310,23 @@ D) Fully productive, contributing independently, integrated
 
 
 
+
+
 Какая роль buddy в onboarding?
 
 A) Performance evaluation
 
-B) Manager substitute
+B) Answer questions, navigate culture, social connection, NOT evaluation
 
-C) Technical mentor only
+C) Manager substitute
 
-D) Answer questions, navigate culture, social connection, NOT evaluation
+D) Technical mentor only
 
 ---
 
 ## Question 17: Take-Home vs Live
+
+
 
 
 
@@ -316,19 +350,23 @@ D) Faster process
 
 
 
+
+
 Что оценивается в system design interview?
 
-A) Только скорость
+A) Только код
 
-B) Только код
+B) Только скорость
 
-C) Clarifying questions, trade-offs, communication, depth
+C) Только naming
 
-D) Только naming
+D) Clarifying questions, trade-offs, communication, depth
 
 ---
 
 ## Question 19: First 90 Days
+
+
 
 
 
@@ -352,6 +390,8 @@ D) 20% turnover в первые 45 дней, experience shapes engagement
 
 
 
+
+
 Почему важно быть честным о challenges во время hiring?
 
 A) Candidates не слушают
@@ -370,24 +410,24 @@ D) Чтобы отпугнуть кандидатов
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Нанимать людей, которые поднимают средний уровень команды |
+| 1 | C | Нанимать людей, которые поднимают средний уровень команды |
 | 2 | B | Costs могут превысить годовую зарплату + потерянное время |
 | 3 | D | Unrealistic requirements как "10 лет в 5-летней технологии" |
-| 4 | D | Referrals: quality + cultural fit, быстрее и дешевле |
+| 4 | C | Referrals: quality + cultural fit, быстрее и дешевле |
 | 5 | D | Diverse channels, blind review, diverse panels |
-| 6 | B | Structured: consistent, reduces bias, better predictions |
+| 6 | D | Structured: consistent, reduces bias, better predictions |
 | 7 | A | Scorecard: competencies, questions, scores, notes |
-| 8 | D | Real-world problems, allow docs, focus on process |
+| 8 | B | Real-world problems, allow docs, focus on process |
 | 9 | A | STAR: Situation, Task, Action, Result |
-| 10 | B | Affinity bias: предпочтение похожих на себя |
+| 10 | A | Affinity bias: предпочтение похожих на себя |
 | 11 | B | Feedback BEFORE debrief meeting, независимо |
-| 12 | C | Red flags: blame without ownership, disrespectful |
+| 12 | A | Red flags: blame without ownership, disrespectful |
 | 13 | B | При culture concerns lean towards "no" |
 | 14 | B | Week 1: access, met team, understands first tasks |
-| 15 | D | Month 3: fully productive, independent, integrated |
-| 16 | D | Buddy: questions, culture, social, NOT evaluation |
+| 15 | C | Month 3: fully productive, independent, integrated |
+| 16 | B | Buddy: questions, culture, social, NOT evaluation |
 | 17 | B | Take-home: less stress, realistic, best work |
-| 18 | C | System design: clarifying questions, trade-offs, communication |
+| 18 | D | System design: clarifying questions, trade-offs, communication |
 | 19 | D | 20% turnover в первые 45 дней, experience shapes engagement |
 | 20 | B | Честность: right expectations, self-selection, trust |
 
