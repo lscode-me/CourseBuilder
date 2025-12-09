@@ -426,3 +426,14 @@ config_rules = [
 - [AWS Security Hub](https://docs.aws.amazon.com/securityhub/)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [23_CostManagement](../23_CostManagement/) — Оптимизация затрат
+- [24_MultiCloud](../24_MultiCloud/) — Multi-cloud security
+
+**Практика:**
+1. Включите GuardDuty и проанализируйте findings
+2. Настройте Security Hub для compliance checks
+3. Реализуйте secrets rotation через Secrets Manager

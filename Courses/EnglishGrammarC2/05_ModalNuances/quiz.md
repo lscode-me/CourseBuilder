@@ -7,34 +7,43 @@
 ## Question 1: Epistemic vs Deontic
 
 
+
+
+
 "She must be tired after that long flight." This is:
 
-A) Grammatically incorrect
+A) Dynamic (ability)
 
-B) Deontic (obligation)
+B) Epistemic (inference)
 
-C) Epistemic (inference)
+C) Grammatically incorrect
 
-D) Dynamic (ability)
+D) Deontic (obligation)
 
 ---
 
 ## Question 2: Probability Scale
 
 
+
+
+
 Which modal expresses the HIGHEST certainty?
 
-A) might
+A) must
 
-B) may
+B) might
 
-C) could
+C) may
 
-D) must
+D) could
 
 ---
 
 ## Question 3: MAY vs MIGHT
+
+
+
 
 
 Which sentence sounds more tentative/uncertain?
@@ -52,6 +61,9 @@ D) "She may arrive late."
 ## Question 4: Academic Hedging
 
 
+
+
+
 Which is the most appropriate hedged version of "X causes Y"?
 
 A) "X might cause Y sometimes."
@@ -65,6 +77,9 @@ D) "X appears to contribute to Y."
 ---
 
 ## Question 5: Diplomatic Language
+
+
+
 
 
 Which is the most diplomatic way to say "Your report has errors"?
@@ -82,19 +97,25 @@ D) "I found several mistakes in your report."
 ## Question 6: Modal + Perfect
 
 
+
+
+
 "She must have left already" expresses:
 
-A) An obligation in the past
+A) An unrealized possibility
 
 B) Permission that was granted
 
 C) A certain inference about the past
 
-D) An unrealized possibility
+D) An obligation in the past
 
 ---
 
 ## Question 7: Should Have + PP
+
+
+
 
 
 "You should have told me earlier" expresses:
@@ -112,6 +133,9 @@ D) Criticism/regret about the past
 ## Question 8: Could Have + PP
 
 
+
+
+
 "I could have helped if you had asked" means:
 
 A) I helped you
@@ -125,6 +149,9 @@ D) I definitely would have helped
 ---
 
 ## Question 9: CAN for Possibility
+
+
+
 
 
 Which use of CAN is correct?
@@ -142,6 +169,9 @@ D) "It can rain tonight." (specific prediction)
 ## Question 10: Russian Interference
 
 
+
+
+
 Which sentence reflects typical Russian speaker directness?
 
 A) "There may be some room for improvement."
@@ -155,6 +185,9 @@ D) "Perhaps we could consider an alternative."
 ---
 
 ## Question 11: Hedging Combination
+
+
+
 
 
 Which sentence has appropriately balanced hedging (not too much, not too little)?
@@ -172,19 +205,25 @@ D) "It could maybe potentially seem to indicate."
 ## Question 12: SHALL Usage
 
 
+
+
+
 When is SHALL most naturally used in modern English?
 
-A) "Shall we begin?" (invitation)
+A) "You shall finish this today." (command)
 
-B) "You shall finish this today." (command)
+B) "I shall go to the store."
 
-C) "I shall go to the store."
+C) "She shall arrive tomorrow." (prediction)
 
-D) "She shall arrive tomorrow." (prediction)
+D) "Shall we begin?" (invitation)
 
 ---
 
 ## Question 13: OUGHT TO vs SHOULD
+
+
+
 
 
 Which is more common and versatile?
@@ -193,28 +232,34 @@ A) Neither is commonly used
 
 B) Should
 
-C) Ought to
+C) Both are equally common
 
-D) Both are equally common
+D) Ought to
 
 ---
 
 ## Question 14: Diplomatic Email
 
 
+
+
+
 The most diplomatic way to follow up on an unanswered email is:
 
 A) "You didn't reply to my email."
 
-B) "I'm still waiting for your response."
+B) "Please respond immediately."
 
-C) "Please respond immediately."
+C) "I'm still waiting for your response."
 
 D) "I was wondering if you had a chance to look at this."
 
 ---
 
 ## Question 15: Epistemic CAN
+
+
+
 
 
 Which sentence uses epistemic CAN correctly?
@@ -232,11 +277,14 @@ D) "He can have done it already." ❌
 ## Question 16: Hedging in Academic Writing
 
 
+
+
+
 In academic English, "The results prove that X causes Y" should be:
 
-A) Changed to "The results suggest that X may contribute to Y"
+A) Left as is—it's clear and direct
 
-B) Left as is—it's clear and direct
+B) Changed to "The results suggest that X may contribute to Y"
 
 C) Changed to "The results definitely show X causes Y"
 
@@ -247,13 +295,16 @@ D) Removed entirely—claims shouldn't be made
 ## Question 17: Politeness Scale
 
 
+
+
+
 Rank these from LEAST to MOST polite: (1) "Can you help?" (2) "Could you help?" (3) "I was wondering if you might help?"
 
-A) All are equally polite
+A) 3, 2, 1
 
 B) 1, 2, 3 (least to most polite)
 
-C) 3, 2, 1
+C) All are equally polite
 
 D) 2, 1, 3
 
@@ -262,19 +313,25 @@ D) 2, 1, 3
 ## Question 18: MUST vs HAVE TO
 
 
+
+
+
 Which sounds more natural in everyday speech?
 
-A) "I shall go now—the meeting starts soon."
+A) "I might go now—the meeting starts soon."
 
-B) "I must go now—the meeting starts soon."
+B) "I have to go now—the meeting starts soon."
 
-C) "I have to go now—the meeting starts soon."
+C) "I shall go now—the meeting starts soon."
 
-D) "I might go now—the meeting starts soon."
+D) "I must go now—the meeting starts soon."
 
 ---
 
 ## Question 19: Past Inference Comparison
+
+
+
 
 
 "She may have left" vs "She must have left" — the difference is:
@@ -292,15 +349,18 @@ D) "May" is past, "must" is present
 ## Question 20: Disagreement Formula
 
 
+
+
+
 The most diplomatically appropriate way to disagree in a professional context is:
 
-A) "I disagree completely."
+A) "That's wrong."
 
-B) "That's wrong."
+B) "I disagree completely."
 
-C) "I see it slightly differently."
+C) "No, you're mistaken."
 
-D) "No, you're mistaken."
+D) "I see it slightly differently."
 
 ---
 
@@ -310,8 +370,8 @@ D) "No, you're mistaken."
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | "Must" here expresses logical inference (epistemic), not obligation. |
-| 2 | D | Must ≈ 95% certainty; it expresses logical conclusion from evidence. |
+| 1 | B | "Must" here expresses logical inference (epistemic), not obligation. |
+| 2 | A | Must ≈ 95% certainty; it expresses logical conclusion from evidence. |
 | 3 | A | "Might" is slightly more tentative/uncertain than "may." |
 | 4 | D | "Appears to contribute" is appropriately hedged without being excessive. |
 | 5 | A | "Might be... could benefit" is diplomatic hedging, not accusatory. |
@@ -321,15 +381,15 @@ D) "No, you're mistaken."
 | 9 | C | Epistemic "can" works for generic/characteristic statements, not specific. |
 | 10 | C | Direct statements without hedging are typical of Russian speakers. |
 | 11 | C | "Suggests... may be" is balanced hedging—not too weak, not too strong. |
-| 12 | A | "Shall we...?" for invitations/suggestions is the most natural modern use. |
+| 12 | D | "Shall we...?" for invitations/suggestions is the most natural modern use. |
 | 13 | B | "Should" is more common and versatile; "ought to" is more formal/old-fashioned. |
 | 14 | D | "I was wondering if..." is the diplomatic way to follow up. |
 | 15 | C | Epistemic "can" works in negatives ("can't be") and generics, not specifics. |
-| 16 | A | Academic English requires hedging; "suggest... may contribute" is appropriate. |
+| 16 | B | Academic English requires hedging; "suggest... may contribute" is appropriate. |
 | 17 | B | Direct "can" < conditional "could" < past progressive "was wondering if might." |
-| 18 | C | "Have to" is more natural in everyday speech; "must" sounds formal/dramatic. |
+| 18 | B | "Have to" is more natural in everyday speech; "must" sounds formal/dramatic. |
 | 19 | B | "Must have" = certain inference; "may have" = possibility. Must > may in certainty. |
-| 20 | C | "I see it slightly differently" is professional diplomacy; others are too direct. |
+| 20 | D | "I see it slightly differently" is professional diplomacy; others are too direct. |
 
 ---
 

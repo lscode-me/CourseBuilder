@@ -7,146 +7,176 @@
 ## Question 1: Определение
 
 
+
+
+
 Что такое системное программирование?
 
 A) Разработка мобильных приложений
 
-B) Веб-разработка
+B) Создание программ, взаимодействующих с ОС для управления ресурсами
 
-C) Создание программ, взаимодействующих с ОС для управления ресурсами
+C) Программирование бизнес-логики
 
-D) Программирование бизнес-логики
+D) Веб-разработка
 
 ---
 
 ## Question 2: Системные вызовы
 
 
+
+
+
 Что такое syscall (системный вызов)?
 
 A) Запрос к ядру для выполнения привилегированной операции
 
-B) Вызов метода класса
+B) HTTP запрос к серверу
 
 C) Вызов функции в Python
 
-D) HTTP запрос к серверу
+D) Вызов метода класса
 
 ---
 
 ## Question 3: Модуль os
 
 
+
+
+
 Какая функция возвращает PID текущего процесса?
 
-A) os.pid()
+A) os.current_pid()
 
-B) os.getpid()
+B) os.process_id()
 
-C) os.current_pid()
+C) os.getpid()
 
-D) os.process_id()
+D) os.pid()
 
 ---
 
 ## Question 4: Переменные окружения
 
 
+
+
+
 Как получить значение переменной окружения HOME?
 
-A) os.environment("HOME")
+A) os.env.HOME
 
-B) os.getenv["HOME"]
+B) os.environment("HOME")
 
-C) os.env.HOME
+C) os.environ.get("HOME")
 
-D) os.environ.get("HOME")
+D) os.getenv["HOME"]
 
 ---
 
 ## Question 5: Обработка ошибок
 
 
+
+
+
 Какой стиль обработки ошибок рекомендуется в Python?
 
-A) Никакой, ошибки игнорируются
+A) EAFP (Easier to Ask Forgiveness than Permission)
 
-B) LBYL (Look Before You Leap)
+B) Никакой, ошибки игнорируются
 
-C) EAFP (Easier to Ask Forgiveness than Permission)
+C) Оба одинаково хороши
 
-D) Оба одинаково хороши
+D) LBYL (Look Before You Leap)
 
 ---
 
 ## Question 6: errno
 
 
+
+
+
 Что означает код ошибки ENOENT?
 
-A) File exists
+A) Invalid argument
 
-B) Invalid argument
+B) File exists
 
-C) Permission denied
+C) No such file or directory
 
-D) No such file or directory
+D) Permission denied
 
 ---
 
 ## Question 7: ctypes
 
 
+
+
+
 Для чего используется модуль ctypes?
 
 A) Для прямого вызова C-функций
 
-B) Для шифрования
+B) Для работы с типами данных
 
 C) Для работы с базами данных
 
-D) Для работы с типами данных
+D) Для шифрования
 
 ---
 
 ## Question 8: Информация о системе
 
 
+
+
+
 Какая функция возвращает информацию об операционной системе?
 
-A) os.system()
+A) os.uname()
 
-B) os.platform()
+B) os.system()
 
-C) os.uname()
+C) os.info()
 
-D) os.info()
+D) os.platform()
 
 ---
 
 ## Question 9: Текущий каталог
 
 
+
+
+
 Как получить путь к текущему рабочему каталогу?
 
-A) os.getcwd()
+A) os.current_dir()
 
-B) os.pwd()
+B) os.getcwd()
 
 C) os.cwd()
 
-D) os.current_dir()
+D) os.pwd()
 
 ---
 
 ## Question 10: Отладка
 
 
+
+
+
 Какая утилита используется для трассировки syscalls на OpenBSD?
 
-A) ltrace
+A) dtrace
 
-B) dtrace
+B) ltrace
 
 C) ktrace
 
@@ -157,28 +187,34 @@ D) strace
 ## Question 11: pathlib
 
 
+
+
+
 Какой модуль предоставляет объектно-ориентированный API для работы с путями?
 
-A) os.path
+A) filepath
 
 B) pathlib
 
-C) path
+C) os.path
 
-D) filepath
+D) path
 
 ---
 
 ## Question 12: PPID
 
 
+
+
+
 Что возвращает функция os.getppid()?
 
-A) PID текущего процесса
+A) PID первого процесса
 
 B) PID последнего процесса
 
-C) PID первого процесса
+C) PID текущего процесса
 
 D) PID родительского процесса
 
@@ -187,13 +223,16 @@ D) PID родительского процесса
 ## Question 13: os.name
 
 
+
+
+
 Какое значение возвращает os.name на Unix системах?
 
-A) "bsd"
+A) "posix"
 
-B) "posix"
+B) "linux"
 
-C) "linux"
+C) "bsd"
 
 D) "unix"
 
@@ -202,30 +241,121 @@ D) "unix"
 ## Question 14: OSError
 
 
+
+
+
 Какой атрибут OSError содержит числовой код ошибки?
 
 A) code
 
 B) errno
 
-C) error_code
+C) number
 
-D) number
+D) error_code
 
 ---
 
 ## Question 15: libc
 
 
+
+
+
 Что такое libc?
 
-A) Редактор кода
+A) Отладчик
 
-B) Отладчик
+B) Компилятор C
 
-C) Компилятор C
+C) Стандартная библиотека C
 
-D) Стандартная библиотека C
+D) Редактор кода
+
+---
+
+## Question 16: User vs Kernel space
+
+
+
+
+Что происходит при системном вызове?
+
+A) Ничего особенного
+
+B) Переключение из user space в kernel space
+
+C) Перезагрузка системы
+
+D) Запуск нового процесса
+
+---
+
+## Question 17: os.getcwd()
+
+
+
+
+Что возвращает os.getcwd()?
+
+A) Корневую директорию
+
+B) Текущую рабочую директорию
+
+C) Временную директорию
+
+D) Домашнюю директорию
+
+---
+
+## Question 18: EPERM
+
+
+
+
+Что означает код ошибки EPERM?
+
+A) File not found
+
+B) Invalid argument
+
+C) File exists
+
+D) Operation not permitted
+
+---
+
+## Question 19: os.chdir()
+
+
+
+
+Что делает os.chdir(path)?
+
+A) Проверяет существование директории
+
+B) Удаляет директорию
+
+C) Создаёт директорию
+
+D) Меняет текущую рабочую директорию
+
+---
+
+## Question 20: POSIX
+
+
+
+
+Что такое POSIX?
+
+A) Язык программирования
+
+B) Редактор кода
+
+C) Операционная система
+
+D) Стандарт совместимости Unix-подобных систем
 
 ---
 
@@ -235,21 +365,26 @@ D) Стандартная библиотека C
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | Системное программирование — взаимодействие с ОС для управления ресурсами |
+| 1 | B | Системное программирование — взаимодействие с ОС для управления ресурсами |
 | 2 | A | Syscall — запрос к ядру для привилегированных операций |
-| 3 | B | os.getpid() возвращает Process ID текущего процесса |
-| 4 | D | os.environ.get("HOME") безопасно получает переменную окружения |
-| 5 | C | EAFP рекомендуется в Python — сначала пробуем, потом обрабатываем ошибку |
-| 6 | D | ENOENT (Error NO ENTry) означает "No such file or directory" |
+| 3 | C | os.getpid() возвращает Process ID текущего процесса |
+| 4 | C | os.environ.get("HOME") безопасно получает переменную окружения |
+| 5 | A | EAFP рекомендуется в Python — сначала пробуем, потом обрабатываем ошибку |
+| 6 | C | ENOENT (Error NO ENTry) означает "No such file or directory" |
 | 7 | A | ctypes позволяет вызывать функции из C библиотек |
-| 8 | C | os.uname() возвращает информацию о системе (sysname, nodename, etc.) |
-| 9 | A | os.getcwd() возвращает current working directory |
+| 8 | A | os.uname() возвращает информацию о системе (sysname, nodename, etc.) |
+| 9 | B | os.getcwd() возвращает current working directory |
 | 10 | C | ktrace используется на BSD, strace — на Linux |
 | 11 | B | pathlib — современный ООП модуль для работы с путями |
 | 12 | D | os.getppid() возвращает Parent Process ID |
-| 13 | B | os.name возвращает "posix" на Unix-like системах |
+| 13 | A | os.name возвращает "posix" на Unix-like системах |
 | 14 | B | OSError.errno содержит числовой код ошибки |
-| 15 | D | libc — стандартная библиотека C с обёртками над syscalls |
+| 15 | C | libc — стандартная библиотека C с обёртками над syscalls |
+| 16 | B | Syscall требует переключения контекста из user в kernel mode |
+| 17 | B | getcwd() возвращает current working directory |
+| 18 | D | EPERM = Operation not permitted (нет прав) |
+| 19 | D | chdir() изменяет текущую рабочую директорию процесса |
+| 20 | D | POSIX — стандарт для Unix-совместимости |
 
 ---
 

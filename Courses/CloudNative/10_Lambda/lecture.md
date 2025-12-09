@@ -329,3 +329,14 @@ best_practices = [
 - [Lambda Power Tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [11_Containers](../11_Containers/) — ECS и EKS контейнеры
+- [13_APIGateway](../13_APIGateway/) — API Gateway для Lambda
+
+**Практика:**
+1. Создайте Lambda функцию на Python/Node.js
+2. Настройте триггер от S3 или API Gateway
+3. Оптимизируйте cold start время

@@ -6,55 +6,67 @@
 
 ## Question 1: Типы данных JSON
 
+
+
+
 Сколько типов данных поддерживает JSON?
 
-A) 6
+A) 4
 
-B) 4
+B) 10
 
-C) 8
+C) 6
 
-D) 10
+D) 8
 
 ---
 
 ## Question 2: Строки в JSON
 
+
+
+
 Какие кавычки используются для строк в JSON?
 
-A) Одинарные `'`
+A) Двойные `"`
 
-B) Двойные `"`
+B) Обратные `` ` ``
 
-C) Обратные `` ` ``
+C) Любые
 
-D) Любые
+D) Одинарные `'`
 
 ---
 
 ## Question 3: Комментарии
 
+
+
+
 Поддерживает ли стандартный JSON комментарии?
 
-A) Да, с //
+A) Да, с #
 
-B) Да, с /* */
+B) Нет, комментарии не поддерживаются
 
-C) Нет, комментарии не поддерживаются
+C) Да, с //
 
-D) Да, с #
+D) Да, с /* */
 
 ---
 
 ## Question 4: Trailing comma
 
+
+
+
 Какой JSON валидный?
 
 A) `{"name": "Alice", "age": 30,}`
 
-B) `{name: "Alice", age: 30}`
+B) `{'name': 'Alice', 'age': 30}`
 
-C) `{'name': 'Alice', 'age': 30}`
+C) `{name: "Alice", age: 30}`
 
 D) `{"name": "Alice", "age": 30}`
 
@@ -62,41 +74,50 @@ D) `{"name": "Alice", "age": 30}`
 
 ## Question 5: Числа в JSON
 
+
+
+
 Какое число НЕ валидно в JSON?
 
-A) 0xFF
+A) 1e10
 
 B) 42
 
-C) 3.14
+C) 0xFF
 
-D) 1e10
+D) 3.14
 
 ---
 
 ## Question 6: Null в JSON
 
+
+
+
 Как записывается null в JSON?
 
-A) NULL
+A) Null
 
-B) null
+B) None
 
-C) Null
+C) null
 
-D) None
+D) NULL
 
 ---
 
 ## Question 7: Ключи объекта
 
+
+
+
 Какой ключ объекта валиден в JSON?
 
-A) name
+A) "name"
 
-B) 'name'
+B) name
 
-C) "name"
+C) 'name'
 
 D) @name
 
@@ -104,13 +125,16 @@ D) @name
 
 ## Question 8: jq форматирование
 
+
+
+
 Какая команда jq форматирует JSON?
 
 A) `jq -f file.json`
 
-B) `jq --pretty file.json`
+B) `jq -p file.json`
 
-C) `jq -p file.json`
+C) `jq --pretty file.json`
 
 D) `jq . file.json`
 
@@ -118,90 +142,110 @@ D) `jq . file.json`
 
 ## Question 9: jq извлечение
 
+
+
+
 Как извлечь поле `name` из JSON с помощью jq?
 
 A) jq .name file.json
 
 B) jq name file.json
 
-C) jq [name] file.json
+C) jq get name file.json
 
-D) jq get name file.json
+D) jq [name] file.json
 
 ---
 
 ## Question 10: jq без кавычек
 
+
+
+
 Какой флаг jq выводит строки без кавычек?
 
-A) `-s`
+A) `-c`
 
-B) -r
+B) `-s`
 
-C) `-c`
+C) `-n`
 
-D) `-n`
+D) -r
 
 ---
 
 ## Question 11: Python JSON
 
+
+
+
 Какой метод преобразует Python dict в JSON строку?
 
-A) `json.load()`
+A) `json.dump()`
 
-B) `json.loads()`
+B) `json.load()`
 
-C) json.dumps()
+C) `json.loads()`
 
-D) `json.dump()`
+D) json.dumps()
 
 ---
 
 ## Question 12: Python чтение файла
 
+
+
+
 Какой метод читает JSON из файла?
 
-A) json.load(file)
+A) `json.read(file)`
 
-B) `json.loads(file)`
+B) `json.parse(file)`
 
-C) `json.read(file)`
+C) json.load(file)
 
-D) `json.parse(file)`
+D) `json.loads(file)`
 
 ---
 
 ## Question 13: Escape символы
 
+
+
+
 Как записать перенос строки в JSON строке?
 
-A) "line1\nline2"
+A) "line1\\nline2"
 
-B) "line1/nline2"
+B) "line1
 
-C) "line1\\nline2"
+C) "line1/nline2"
 
-D) "line1
-line2"
+D) "line1\nline2"
 
 ---
 
 ## Question 14: Boolean
 
+
+
+
 Как записываются логические значения в JSON?
 
 A) `True` / `False`
 
-B) true / false
+B) `1` / `0`
 
-C) `TRUE` / `FALSE`
+C) true / false
 
-D) `1` / `0`
+D) `TRUE` / `FALSE`
 
 ---
 
 ## Question 15: Массивы
+
+
+
 
 Какой массив валиден в JSON?
 
@@ -209,27 +253,33 @@ A) `[1, 2, 3,]`
 
 B) `(1, 2, 3)`
 
-C) [1, 2, 3]
+C) `{1, 2, 3}`
 
-D) `{1, 2, 3}`
+D) [1, 2, 3]
 
 ---
 
 ## Question 16: JSON Schema
 
+
+
+
 Для чего используется JSON Schema?
 
-A) Для сжатия JSON
+A) Для конвертации JSON в XML
 
-B) Для шифрования JSON
+B) Для валидации структуры JSON документа
 
-C) Для конвертации JSON в XML
+C) Для сжатия JSON
 
-D) Для валидации структуры JSON документа
+D) Для шифрования JSON
 
 ---
 
 ## Question 17: ISO 8601
+
+
+
 
 В каком формате рекомендуется хранить даты в JSON?
 
@@ -237,51 +287,60 @@ A) "2024-01-15T10:30:00Z"
 
 B) "01/15/2024"
 
-C) "January 15, 2024"
+C) 1705312200
 
-D) 1705312200
+D) "January 15, 2024"
 
 ---
 
 ## Question 18: Кодировка JSON
 
+
+
+
 Какая кодировка стандартна для JSON?
 
 A) ASCII
 
-B) UTF-8
+B) Latin-1
 
 C) UTF-16
 
-D) Latin-1
+D) UTF-8
 
 ---
 
 ## Question 19: jq select
 
+
+
+
 Как отфильтровать элементы массива с условием в jq?
 
-A) `jq '.[] | filter(.active)'`
+A) `jq '.[] | if .active'`
 
 B) `jq '.[] | where(.active)'`
 
 C) jq '.[] | select(.active == true)'
 
-D) `jq '.[] | if .active'`
+D) `jq '.[] | filter(.active)'`
 
 ---
 
 ## Question 20: JSON Lines
 
+
+
+
 Что такое JSON Lines (JSONL)?
 
-A) JSON с комментариями
+A) Формат, где каждая строка — отдельный JSON объект
 
-B) JSON разбитый на части
+B) Сжатый JSON
 
-C) Сжатый JSON
+C) JSON с комментариями
 
-D) Формат, где каждая строка — отдельный JSON объект
+D) JSON разбитый на части
 
 ---
 
@@ -291,26 +350,26 @@ D) Формат, где каждая строка — отдельный JSON о
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | JSON поддерживает 6 типов: string, number, boolean, null, array, object. |
-| 2 | B | JSON использует только двойные кавычки для строк. |
-| 3 | C | Стандартный JSON не поддерживает комментарии. JSONC и JSON5 поддерживают. |
+| 1 | C | JSON поддерживает 6 типов: string, number, boolean, null, array, object. |
+| 2 | A | JSON использует только двойные кавычки для строк. |
+| 3 | B | Стандартный JSON не поддерживает комментарии. JSONC и JSON5 поддерживают. |
 | 4 | D | Trailing comma и unquoted keys невалидны в JSON. |
-| 5 | A | Hex числа (`0xFF`) не поддерживаются в JSON. |
-| 6 | B | Null пишется строчными буквами: `null` (не NULL, не None). |
-| 7 | C | Ключи объекта ВСЕГДА в двойных кавычках: `"name"`. |
+| 5 | C | Hex числа (`0xFF`) не поддерживаются в JSON. |
+| 6 | C | Null пишется строчными буквами: `null` (не NULL, не None). |
+| 7 | A | Ключи объекта ВСЕГДА в двойных кавычках: `"name"`. |
 | 8 | D | `jq .` форматирует и валидирует JSON. |
 | 9 | A | `.name` — синтаксис jq для доступа к полю. |
-| 10 | B | `-r` (raw output) выводит строки без кавычек. |
-| 11 | C | `json.dumps()` — dump string, преобразует в строку. |
-| 12 | A | `json.load(file)` читает из файлового объекта. `loads()` — из строки. |
-| 13 | A | `\n` — escape-последовательность для новой строки. |
-| 14 | B | JSON использует строчные `true` и `false` (не Python True/False). |
-| 15 | C | Trailing comma в массивах невалидна в JSON. |
-| 16 | D | JSON Schema описывает структуру для валидации JSON документов. |
+| 10 | D | `-r` (raw output) выводит строки без кавычек. |
+| 11 | D | `json.dumps()` — dump string, преобразует в строку. |
+| 12 | C | `json.load(file)` читает из файлового объекта. `loads()` — из строки. |
+| 13 | D | `\n` — escape-последовательность для новой строки. |
+| 14 | C | JSON использует строчные `true` и `false` (не Python True/False). |
+| 15 | D | Trailing comma в массивах невалидна в JSON. |
+| 16 | B | JSON Schema описывает структуру для валидации JSON документов. |
 | 17 | A | ISO 8601 (`2024-01-15T10:30:00Z`) — стандартный формат дат. |
-| 18 | B | По RFC 8259, JSON должен быть в UTF-8 (без BOM). |
+| 18 | D | По RFC 8259, JSON должен быть в UTF-8 (без BOM). |
 | 19 | C | `select(.condition)` фильтрует элементы в jq. |
-| 20 | D | JSON Lines — формат где каждая строка файла — отдельный JSON объект. |
+| 20 | A | JSON Lines — формат где каждая строка файла — отдельный JSON объект. |
 
 ---
 

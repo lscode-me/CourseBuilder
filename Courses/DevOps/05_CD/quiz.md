@@ -7,34 +7,43 @@
 ## Question 1: CD vs Continuous Deployment
 
 
+
+
+
 Чем Continuous Delivery отличается от Continuous Deployment?
 
-A) Это одно и то же
+A) CD не требует автоматических тестов
 
-B) Continuous Deployment проще в реализации
+B) В CD финальный деплой в production ручной, в Continuous Deployment — автоматический
 
-C) В CD финальный деплой в production ручной, в Continuous Deployment — автоматический
+C) Это одно и то же
 
-D) CD не требует автоматических тестов
+D) Continuous Deployment проще в реализации
 
 ---
 
 ## Question 2: Blue-Green Deployment
 
 
+
+
+
 Какое главное преимущество Blue-Green deployment?
 
-A) Автоматическое тестирование
+A) Мгновенный rollback
 
-B) Не требует load balancer
+B) Требует меньше ресурсов
 
-C) Мгновенный rollback
+C) Автоматическое тестирование
 
-D) Требует меньше ресурсов
+D) Не требует load balancer
 
 ---
 
 ## Question 3: Canary Deployment
+
+
+
 
 
 Что характеризует Canary deployment?
@@ -52,19 +61,25 @@ D) Полный downtime при деплое
 ## Question 4: Rolling Update
 
 
+
+
+
 Что происходит при Rolling Update в Kubernetes?
 
-A) Все pods останавливаются, затем запускаются новые
+A) Pods постепенно заменяются новыми версиями
 
-B) Создаётся копия всего cluster
+B) Требуется ручной restart каждого pod
 
-C) Pods постепенно заменяются новыми версиями
+C) Создаётся копия всего cluster
 
-D) Требуется ручной restart каждого pod
+D) Все pods останавливаются, затем запускаются новые
 
 ---
 
 ## Question 5: Feature Flags
+
+
+
 
 
 Для чего используются feature flags?
@@ -73,13 +88,16 @@ A) Для шифрования кода
 
 B) Для логирования
 
-C) Для включения/выключения функционала без деплоя
+C) Для мониторинга
 
-D) Для мониторинга
+D) Для включения/выключения функционала без деплоя
 
 ---
 
 ## Question 6: Feature Flag Types
+
+
+
 
 
 Какой тип feature flag используется для A/B тестирования?
@@ -97,19 +115,25 @@ D) Experiment toggle
 ## Question 7: Database Migrations
 
 
+
+
+
 Какой подход обеспечивает zero-downtime database migration?
 
 A) Остановить приложение на время миграции
 
 B) Expand-Contract pattern (добавить новое, мигрировать, удалить старое)
 
-C) Удалить таблицу и создать заново
+C) Использовать только NoSQL базы
 
-D) Использовать только NoSQL базы
+D) Удалить таблицу и создать заново
 
 ---
 
 ## Question 8: Rollback
+
+
+
 
 
 Когда следует выполнять rollback?
@@ -127,34 +151,43 @@ D) После каждого деплоя
 ## Question 9: Environment Parity
 
 
+
+
+
 Что означает принцип Environment Parity?
 
-A) Использовать только один environment
+A) Environments должны быть в разных регионах
 
-B) Все environments должны иметь одинаковые пароли
+B) Dev, staging и production environments должны быть максимально похожи
 
-C) Dev, staging и production environments должны быть максимально похожи
+C) Использовать только один environment
 
-D) Environments должны быть в разных регионах
+D) Все environments должны иметь одинаковые пароли
 
 ---
 
 ## Question 10: Smoke Tests
 
 
+
+
+
 Когда выполняются smoke tests?
 
-A) Сразу после деплоя для проверки базовой работоспособности
+A) Перед написанием кода
 
-B) Раз в месяц
+B) Только в development
 
-C) Перед написанием кода
+C) Раз в месяц
 
-D) Только в development
+D) Сразу после деплоя для проверки базовой работоспособности
 
 ---
 
 ## Question 11: Deployment Strategy Selection
+
+
+
 
 
 Какую стратегию выбрать, если нужен быстрый rollback и допустимы двойные ресурсы?
@@ -172,13 +205,16 @@ D) Blue-Green
 ## Question 12: Recreate Strategy
 
 
+
+
+
 Когда уместно использовать Recreate deployment strategy?
 
-A) Всегда
+A) Для dev/test environments или при несовместимых изменениях
 
 B) Когда downtime недопустим
 
-C) Для dev/test environments или при несовместимых изменениях
+C) Всегда
 
 D) Для production с высоким SLA
 
@@ -187,19 +223,25 @@ D) Для production с высоким SLA
 ## Question 13: Build Once Deploy Many
 
 
+
+
+
 Что означает принцип "Build Once, Deploy Many"?
 
 A) Один artifact используется для всех environments (dev, staging, prod)
 
-B) Использовать один сервер для всех сред
+B) Деплоить только один раз
 
-C) Деплоить только один раз
+C) Использовать один сервер для всех сред
 
 D) Собирать отдельный artifact для каждого environment
 
 ---
 
 ## Question 14: Configuration Management
+
+
+
 
 
 Как правильно управлять конфигурацией для разных environments?
@@ -217,6 +259,9 @@ D) Хранить в коде в зашифрованном виде
 ## Question 15: Readiness Probe
 
 
+
+
+
 Для чего используется readinessProbe в Kubernetes?
 
 A) Для масштабирования
@@ -230,6 +275,9 @@ D) Для проверки, что pod жив
 ---
 
 ## Question 16: Canary Analysis
+
+
+
 
 
 На основе чего Canary deployment принимает решение о продолжении или rollback?
@@ -247,34 +295,43 @@ D) Количества пользователей
 ## Question 17: Feature Flag Best Practices
 
 
+
+
+
 Что следует делать со старыми feature flags?
 
-A) Дублировать
+A) Переименовывать
 
-B) Переименовывать
+B) Дублировать
 
-C) Удалять после полного rollout и стабилизации
+C) Оставлять навсегда
 
-D) Оставлять навсегда
+D) Удалять после полного rollout и стабилизации
 
 ---
 
 ## Question 18: Progressive Delivery
 
 
+
+
+
 Что такое Progressive Delivery?
 
-A) Деплой только по выходным
+A) Ручной деплой
 
 B) Постепенный rollout с автоматической проверкой метрик
 
 C) Деплой без тестов
 
-D) Ручной деплой
+D) Деплой только по выходным
 
 ---
 
 ## Question 19: Liveness vs Readiness Probe
+
+
+
 
 
 В чём разница между livenessProbe и readinessProbe?
@@ -292,15 +349,18 @@ D) Это одно и то же
 ## Question 20: Post-Deployment Verification
 
 
+
+
+
 Что проверяется сразу после деплоя (0-5 минут)?
 
-A) Только логи
+A) Количество пользователей за месяц
 
-B) Количество пользователей за месяц
+B) Error rate, response time, health endpoints
 
-C) Финансовые показатели
+C) Только логи
 
-D) Error rate, response time, health endpoints
+D) Финансовые показатели
 
 ---
 
@@ -310,26 +370,26 @@ D) Error rate, response time, health endpoints
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | CD = всегда готовы к релизу (ручной trigger), Continuous Deployment = автоматический релиз |
-| 2 | C | Blue-Green позволяет мгновенно переключить трафик обратно на blue при проблемах |
+| 1 | B | CD = всегда готовы к релизу (ручной trigger), Continuous Deployment = автоматический релиз |
+| 2 | A | Blue-Green позволяет мгновенно переключить трафик обратно на blue при проблемах |
 | 3 | B | Canary постепенно увеличивает трафик на новую версию, проверяя метрики |
-| 4 | C | Rolling update постепенно заменяет pods, обеспечивая zero downtime |
-| 5 | C | Feature flags позволяют включать/выключать функции без нового деплоя |
+| 4 | A | Rolling update постепенно заменяет pods, обеспечивая zero downtime |
+| 5 | D | Feature flags позволяют включать/выключать функции без нового деплоя |
 | 6 | D | Experiment toggle используется для A/B тестов с разными вариантами |
 | 7 | B | Expand-Contract: добавляем новое → мигрируем → удаляем старое |
 | 8 | C | Rollback при критических проблемах: высокий error rate, сбои, data issues |
-| 9 | C | Environments должны быть похожи для предсказуемого поведения |
-| 10 | A | Smoke tests проверяют базовую работоспособность сразу после деплоя |
+| 9 | B | Environments должны быть похожи для предсказуемого поведения |
+| 10 | D | Smoke tests проверяют базовую работоспособность сразу после деплоя |
 | 11 | D | Blue-Green: instant rollback, но требует 2x ресурсов |
-| 12 | C | Recreate приемлем для dev/test или при breaking changes |
+| 12 | A | Recreate приемлем для dev/test или при breaking changes |
 | 13 | A | Один artifact проходит через все environments |
 | 14 | A | Config отделён от кода, передаётся через env vars |
 | 15 | C | readinessProbe определяет, готов ли pod к трафику |
 | 16 | B | Canary анализирует метрики для принятия решения о rollout/rollback |
-| 17 | C | Старые flags нужно удалять, иначе накапливается технический долг |
+| 17 | D | Старые flags нужно удалять, иначе накапливается технический долг |
 | 18 | B | Progressive delivery = постепенный rollout с автоматическими проверками |
 | 19 | A | liveness = жив ли pod (restart), readiness = готов ли к трафику |
-| 20 | D | Сразу после деплоя проверяем error rate, latency, health |
+| 20 | B | Сразу после деплоя проверяем error rate, latency, health |
 
 ---
 

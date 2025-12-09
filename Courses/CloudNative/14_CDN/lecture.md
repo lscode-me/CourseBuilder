@@ -401,3 +401,14 @@ aws cloudfront create-invalidation \
 - [CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [15_DataServices](../15_DataServices/) — Аналитические сервисы
+- [23_CostManagement](../23_CostManagement/) — Оптимизация затрат
+
+**Практика:**
+1. Настройте CloudFront distribution для S3 bucket
+2. Реализуйте кеширование с разными TTL
+3. Добавьте CloudFront Function для redirect

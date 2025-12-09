@@ -399,3 +399,14 @@ aws apigateway update-stage \
 - [HTTP API vs REST API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [14_CDN](../14_CDN/) — CloudFront и кеширование
+- [22_Security](../22_Security/) — Безопасность API
+
+**Практика:**
+1. Создайте REST API с Lambda интеграцией
+2. Настройте авторизацию через Cognito или Lambda Authorizer
+3. Реализуйте rate limiting с Usage Plans

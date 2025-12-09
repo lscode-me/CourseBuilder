@@ -7,6 +7,9 @@
 ## Question 1: Make vs Do
 
 
+
+
+
 "She ___ a mistake."
 
 A) made
@@ -20,6 +23,9 @@ D) had
 ---
 
 ## Question 2: Make vs Do
+
+
+
 
 
 "I need to ___ my homework."
@@ -37,28 +43,34 @@ D) do
 ## Question 3: Make vs Do
 
 
+
+
+
 "They ___ business together."
 
-A) make
+A) get
 
 B) do
 
 C) have
 
-D) get
+D) make
 
 ---
 
 ## Question 4: Have vs Take
 
 
+
+
+
 "Let's ___ a break."
 
-A) have/take
+A) do
 
 B) get
 
-C) do
+C) have/take
 
 D) make
 
@@ -67,34 +79,43 @@ D) make
 ## Question 5: Heavy/Strong
 
 
+
+
+
 "There was ___ rain yesterday."
 
 A) big
 
 B) hard
 
-C) strong
+C) heavy
 
-D) heavy
+D) strong
 
 ---
 
 ## Question 6: High/Tall
 
 
+
+
+
 "He is a very ___ man."
 
-A) tall
+A) long
 
 B) big
 
 C) high
 
-D) long
+D) tall
 
 ---
 
 ## Question 7: Dependent Preposition
+
+
+
 
 
 "It depends ___ the weather."
@@ -112,64 +133,79 @@ D) on
 ## Question 8: Dependent Preposition
 
 
+
+
+
 "I'm interested ___ learning more."
 
-A) of
+A) about
 
-B) about
+B) of
 
-C) in
+C) for
 
-D) for
+D) in
 
 ---
 
 ## Question 9: Dependent Preposition
 
 
+
+
+
 "She's afraid ___ spiders."
 
-A) of
+A) from
 
-B) from
+B) of
 
-C) about
+C) with
 
-D) with
+D) about
 
 ---
 
 ## Question 10: Russian Interference
 
 
+
+
+
 Which preposition error is typical for Russian speakers?
 
-A) interested of (should be "in")
+A) worried of (should be "about")
 
-B) angry about (should be "with")
+B) interested of (should be "in")
 
-C) All of the above
+C) angry about (should be "with")
 
-D) worried of (should be "about")
+D) All of the above
 
 ---
 
 ## Question 11: No Preposition
 
 
+
+
+
 Which verb takes NO preposition before its object?
 
-A) depend ___
+A) wait ___
 
-B) discuss ___
+B) depend ___
 
-C) listen ___
+C) discuss ___
 
-D) wait ___
+D) listen ___
 
 ---
 
 ## Question 12: Collocation
+
+
+
 
 
 "___ a phone call"
@@ -187,11 +223,14 @@ D) Take
 ## Question 13: Collocation
 
 
+
+
+
 "___ attention"
 
-A) Make
+A) Pay
 
-B) Pay
+B) Make
 
 C) Give
 
@@ -202,64 +241,79 @@ D) Do
 ## Question 14: Collocation
 
 
+
+
+
 "___ advice"
 
-A) have
+A) give
 
-B) do
+B) make
 
-C) give
+C) have
 
-D) make
+D) do
 
 ---
 
 ## Question 15: Natural Collocation
 
 
+
+
+
 Which is the natural collocation?
 
-A) heavy rain
+A) hard rain
 
-B) strong rain
+B) heavy rain
 
-C) hard rain
+C) big rain
 
-D) big rain
+D) strong rain
 
 ---
 
 ## Question 16: Take Collocation
 
 
+
+
+
 "___ a photo"
 
-A) Have
+A) Do
 
-B) Take
+B) Have
 
-C) Make
+C) Take
 
-D) Do
+D) Make
 
 ---
 
 ## Question 17: Get Collocation
 
 
+
+
+
 "___ married"
 
-A) Make
+A) Get
 
-B) Get
+B) Make
 
-C) Have
+C) Do
 
-D) Do
+D) Have
 
 ---
 
 ## Question 18: Explain
+
+
+
 
 
 Which is correct?
@@ -277,19 +331,25 @@ D) Can you explain about this to me?
 ## Question 19: Marry
 
 
+
+
+
 Which is correct?
 
 A) She married John.
 
-B) She got married with John.
+B) She married with John.
 
-C) She married with John.
+C) She got married with John.
 
 D) She married to John.
 
 ---
 
 ## Question 20: Enter
+
+
+
 
 
 Which is correct?
@@ -313,20 +373,20 @@ D) He entered to the room.
 | 1 | A | "Make a mistake" — standard collocation. |
 | 2 | D | "Do homework" — tasks/work = do. |
 | 3 | B | "Do business" — activity/work = do. |
-| 4 | A | Both "have a break" (BrE) and "take a break" (AmE) are correct. |
-| 5 | D | "Heavy rain" — not "strong rain." |
-| 6 | A | "Tall" for people's height. "High" for objects/buildings. |
+| 4 | C | Both "have a break" (BrE) and "take a break" (AmE) are correct. |
+| 5 | C | "Heavy rain" — not "strong rain." |
+| 6 | D | "Tall" for people's height. "High" for objects/buildings. |
 | 7 | D | "Depend ON" — NOT "depend from" (Russian interference). |
-| 8 | C | "Interested IN" — standard preposition. |
-| 9 | A | "Afraid OF" — standard preposition. |
-| 10 | C | Russian speakers often use wrong prepositions due to L1 transfer. |
-| 11 | B | "Discuss something" — no preposition. (NOT "discuss about"). |
+| 8 | D | "Interested IN" — standard preposition. |
+| 9 | B | "Afraid OF" — standard preposition. |
+| 10 | D | Russian speakers often use wrong prepositions due to L1 transfer. |
+| 11 | C | "Discuss something" — no preposition. (NOT "discuss about"). |
 | 12 | C | "Make a phone call" — standard collocation. |
-| 13 | B | "Pay attention" — standard collocation. |
-| 14 | C | "Give advice" — standard collocation. |
-| 15 | A | "Heavy rain" is the natural collocation. |
-| 16 | B | "Take a photo/picture" — standard collocation. |
-| 17 | B | "Get married" — standard collocation. |
+| 13 | A | "Pay attention" — standard collocation. |
+| 14 | A | "Give advice" — standard collocation. |
+| 15 | B | "Heavy rain" is the natural collocation. |
+| 16 | C | "Take a photo/picture" — standard collocation. |
+| 17 | A | "Get married" — standard collocation. |
 | 18 | B | "Explain something TO someone" — not "explain someone." |
 | 19 | A | "Marry someone" — no preposition! (or "get married to"). |
 | 20 | B | "Enter the room" — no preposition needed. |

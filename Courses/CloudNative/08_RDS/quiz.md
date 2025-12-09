@@ -6,34 +6,43 @@
 ## Question 1: Multi-AZ Replication
 
 
+
+
+
 Какой тип репликации используется в Multi-AZ deployment?
 
-A) Synchronous
+A) Semi-synchronous
 
-B) Semi-synchronous
+B) No replication
 
-C) Asynchronous
+C) Synchronous
 
-D) No replication
+D) Asynchronous
 
 ---
 
 ## Question 2: Read Replicas
 
 
+
+
+
 Можно ли читать данные из Standby instance в Multi-AZ deployment?
 
-A) Да, но с задержкой 5 минут
+A) Нет, Standby только для failover
 
-B) Да, всегда
+B) Да, но с задержкой 5 минут
 
-C) Да, но только через отдельный endpoint
+C) Да, всегда
 
-D) Нет, Standby только для failover
+D) Да, но только через отдельный endpoint
 
 ---
 
 ## Question 3: Aurora Storage
+
+
+
 
 
 Сколько копий данных хранит Aurora по умолчанию?
@@ -42,22 +51,25 @@ A) 3 копии в 2 AZ
 
 B) 9 копий в 3 AZ
 
-C) 2 копии в 1 AZ
+C) 6 копий в 3 AZ
 
-D) 6 копий в 3 AZ
+D) 2 копии в 1 AZ
 
 ---
 
 ## Question 4: Read Replica Promotion
 
 
+
+
+
 Что происходит при promote Read Replica?
 
-A) Создаётся новый standby
+A) Replica становится standalone primary DB
 
 B) Ничего не меняется
 
-C) Replica становится standalone primary DB
+C) Создаётся новый standby
 
 D) Replica удаляется
 
@@ -66,19 +78,25 @@ D) Replica удаляется
 ## Question 5: Encryption
 
 
+
+
+
 Когда можно включить encryption at rest для RDS?
 
 A) Только для Aurora
 
 B) Только после первого backup
 
-C) В любое время
+C) Только при создании instance
 
-D) Только при создании instance
+D) В любое время
 
 ---
 
 ## Question 6: Backup Retention
+
+
+
 
 
 Какой максимальный retention period для automated backups?
@@ -87,13 +105,16 @@ A) 35 дней
 
 B) 7 дней
 
-C) 365 дней
+C) 14 дней
 
-D) 14 дней
+D) 365 дней
 
 ---
 
 ## Question 7: Aurora Serverless
+
+
+
 
 
 Что такое ACU в Aurora Serverless?
@@ -111,6 +132,9 @@ D) Aurora Cache Unit
 ## Question 8: Failover Time
 
 
+
+
+
 Какое примерное время failover для Multi-AZ?
 
 A) 60-120 секунд
@@ -126,19 +150,25 @@ D) 30+ минут
 ## Question 9: Cross-Region
 
 
+
+
+
 Какая функция RDS позволяет репликацию в другой регион?
 
-A) Read Replica
+A) Multi-AZ
 
-B) Parameter Group
+B) Read Replica
 
-C) Multi-AZ
+C) Automated Backup
 
-D) Automated Backup
+D) Parameter Group
 
 ---
 
 ## Question 10: IAM Authentication
+
+
+
 
 
 Какой сервис используется для IAM Database Authentication?
@@ -153,22 +183,202 @@ D) Cognito
 
 ---
 
+## Question 11: Performance Insights
+
+
+
+
+Что показывает RDS Performance Insights?
+
+A) Database load, top SQLs, wait events
+
+B) Только CPU
+
+C) Только network
+
+D) Только storage
+
+---
+
+## Question 12: Enhanced Monitoring
+
+
+
+
+Чем Enhanced Monitoring отличается от стандартного?
+
+A) Ничем
+
+B) Метрики OS уровня (processes, memory details) с 1-sec granularity
+
+C) Только для Aurora
+
+D) Бесплатно
+
+---
+
+## Question 13: Parameter Groups
+
+
+
+
+Для чего используются Parameter Groups?
+
+A) Для security
+
+B) Для настройки параметров database engine
+
+C) Для networking
+
+D) Для backup
+
+---
+
+## Question 14: Option Groups
+
+
+
+
+Что такое Option Groups в RDS?
+
+A) Security options
+
+B) Engine-specific features (Oracle TDE, SQL Server Audit)
+
+C) Billing options
+
+D) Networking options
+
+---
+
+## Question 15: Snapshot
+
+
+
+
+Какой тип snapshot можно копировать между регионами?
+
+A) Никакой
+
+B) Manual snapshots
+
+C) Только automated
+
+D) Только encrypted
+
+---
+
+## Question 16: Encryption
+
+
+
+
+Когда можно включить шифрование для RDS?
+
+A) Только при создании (или через snapshot копию)
+
+B) В любое время
+
+C) Нельзя
+
+D) Только для Enterprise
+
+---
+
+## Question 17: Aurora Serverless
+
+
+
+
+Какое преимущество Aurora Serverless v2?
+
+A) Только дешевле
+
+B) Автоматическое масштабирование capacity
+
+C) Быстрее
+
+D) Больше storage
+
+---
+
+## Question 18: Proxy
+
+
+
+
+Для чего используется RDS Proxy?
+
+A) Для backup
+
+B) Для monitoring
+
+C) Для connection pooling и failover
+
+D) Для encryption
+
+---
+
+## Question 19: Blue/Green Deployment
+
+
+
+
+Что обеспечивает RDS Blue/Green deployment?
+
+A) Monitoring
+
+B) Шифрование
+
+C) Backup
+
+D) Безопасное тестирование изменений с быстрым switchover
+
+---
+
+## Question 20: Reserved Instances
+
+
+
+
+Какая экономия от RDS Reserved Instances?
+
+A) 10%
+
+B) До 72% (1-3 года commitment)
+
+C) 5%
+
+D) Нет экономии
+
+---
+
 ---
 
 ## Answer Key
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | Multi-AZ использует synchronous replication для гарантии durability. Read Replicas — async. |
-| 2 | D | Standby в Multi-AZ не доступен для чтения — только для failover. Для чтения нужны Read Replicas. |
-| 3 | D | Aurora хранит 6 копий данных в 3 AZ (по 2 копии на AZ) для высокой durability. |
-| 4 | C | При promote Read Replica становится независимым primary DB, разрывая связь с источником. |
-| 5 | D | Encryption at rest можно включить только при создании. Для existing DB: snapshot → copy encrypted → restore. |
+| 1 | C | Multi-AZ использует synchronous replication для гарантии durability. Read Replicas — async. |
+| 2 | A | Standby в Multi-AZ не доступен для чтения — только для failover. Для чтения нужны Read Replicas. |
+| 3 | C | Aurora хранит 6 копий данных в 3 AZ (по 2 копии на AZ) для высокой durability. |
+| 4 | A | При promote Read Replica становится независимым primary DB, разрывая связь с источником. |
+| 5 | C | Encryption at rest можно включить только при создании. Для existing DB: snapshot → copy encrypted → restore. |
 | 6 | A | Максимальный retention period для automated backups — 35 дней. Manual snapshots хранятся до удаления. |
 | 7 | B | ACU = Aurora Capacity Unit. 1 ACU ≈ 2 GB RAM. Aurora Serverless масштабируется в ACU. |
 | 8 | A | Multi-AZ failover занимает 60-120 секунд. Aurora — быстрее (<30 секунд). |
-| 9 | A | Cross-Region Read Replica позволяет реплицировать данные в другой регион для DR или локализации. |
+| 9 | B | Cross-Region Read Replica позволяет реплицировать данные в другой регион для DR или локализации. |
 | 10 | B | IAM Database Auth использует STS (Security Token Service) для генерации временного token вместо пароля. |
+| 11 | A | Performance Insights показывает database load, top SQLs |
+| 12 | B | Enhanced Monitoring — OS метрики с 1-sec granularity |
+| 13 | B | Parameter Groups для настройки параметров engine |
+| 14 | B | Option Groups — engine-specific features |
+| 15 | B | Manual snapshots можно копировать между регионами |
+| 16 | A | Шифрование только при создании или через snapshot |
+| 17 | B | Aurora Serverless v2 — автоматическое масштабирование |
+| 18 | C | RDS Proxy для connection pooling и failover |
+| 19 | D | Blue/Green для безопасного тестирования изменений |
+| 20 | B | Reserved Instances экономят до 72% |
 
 ---
 

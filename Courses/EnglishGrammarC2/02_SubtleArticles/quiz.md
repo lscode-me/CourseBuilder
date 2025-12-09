@@ -7,19 +7,25 @@
 ## Question 1: Generic Reference
 
 
+
+
+
 Choose the correct sentence:
 
 A) The climate changes are affecting the world.
 
-B) Climate change is affecting the world.
+B) The climate change is affecting the world.
 
-C) The climate change is affecting the world.
+C) Climate change is affecting the world.
 
 D) A climate change is affecting the world.
 
 ---
 
 ## Question 2: Specified Abstract
+
+
+
 
 
 Choose the correct sentence:
@@ -37,64 +43,79 @@ D) A music of the Baroque period is complex.
 ## Question 3: Associative Reference
 
 
+
+
+
 Complete: "I bought a new laptop. ___ screen is excellent."
 
-A) Screens
+A) A screen
 
-B) A screen
+B) Screen
 
-C) The screen
+C) Screens
 
-D) Screen
+D) The screen
 
 ---
 
 ## Question 4: Generic THE in Academic Writing
 
 
+
+
+
 In formal academic writing, which is acceptable for a generic statement?
 
-A) Computers has revolutionized society.
+A) Computer has revolutionized society.
 
-B) A computer has revolutionized society.
+B) The computer has revolutionized society.
 
-C) Computer has revolutionized society.
+C) Computers has revolutionized society.
 
-D) The computer has revolutionized society.
+D) A computer has revolutionized society.
 
 ---
 
 ## Question 5: THE + Adjective
 
 
+
+
+
 Choose the correct sentence:
 
-A) The poor need more support from the government.
+A) Poor need more support from government.
 
-B) A poor needs more support from the government.
+B) The poors need more support from government.
 
-C) Poor need more support from government.
+C) A poor needs more support from the government.
 
-D) The poors need more support from government.
+D) The poor need more support from the government.
 
 ---
 
 ## Question 6: Abstract with Post-Modification
 
 
+
+
+
 Choose the correct sentence:
 
-A) Knowledges she gained were valuable.
+A) The knowledge she gained was valuable.
 
-B) The knowledge she gained was valuable.
+B) A knowledge she gained was valuable.
 
-C) Knowledge she gained was valuable.
+C) Knowledges she gained were valuable.
 
-D) A knowledge she gained was valuable.
+D) Knowledge she gained was valuable.
 
 ---
 
 ## Question 7: Category vs Instance
+
+
+
 
 
 Choose the GENERIC statement:
@@ -112,19 +133,25 @@ D) A smartphone has become an essential tool.
 ## Question 8: Zero Article with Subject
 
 
+
+
+
 Which is grammatically correct for a generic statement?
 
-A) The happiness is important for health.
+A) A happiness is important for health.
 
-B) Happinesses are important for health.
+B) Happiness is important for health.
 
-C) Happiness is important for health.
+C) Happinesses are important for health.
 
-D) A happiness is important for health.
+D) The happiness is important for health.
 
 ---
 
 ## Question 9: Academic Writing Convention
+
+
+
 
 
 In academic writing, which is most appropriate?
@@ -142,6 +169,9 @@ D) A research suggests that students learn better with feedback.
 ## Question 10: Limited Quantity
 
 
+
+
+
 "Did you bring ___ water we discussed?" — The speaker means:
 
 A) a type of water
@@ -157,19 +187,25 @@ D) the specific water they talked about
 ## Question 11: Multiple Correct Forms
 
 
+
+
+
 Which sentence has the WRONG article?
 
-A) A new science is emerging.
+A) The science behind this technology is fascinating.
 
-B) Science has advanced rapidly.
+B) A new science is emerging.
 
-C) The science has advanced rapidly.
+C) Science has advanced rapidly.
 
-D) The science behind this technology is fascinating.
+D) The science has advanced rapidly.
 
 ---
 
 ## Question 12: Context Determines Article
+
+
+
 
 
 "I'll meet you at ___ station." — This uses THE because:
@@ -187,19 +223,25 @@ D) Stations are always unique
 ## Question 13: Nationality Pattern
 
 
+
+
+
 Choose the correct sentence:
 
-A) A French is known for cuisine.
+A) The French are known for their cuisine.
 
-B) Frenchs are known for their cuisine.
+B) French are known for their cuisine.
 
-C) The French are known for their cuisine.
+C) Frenchs are known for their cuisine.
 
-D) French are known for their cuisine.
+D) A French is known for cuisine.
 
 ---
 
 ## Question 14: Article with Modified Noun
+
+
+
 
 
 "___ unconditional love of a parent is remarkable."
@@ -217,19 +259,25 @@ D) The
 ## Question 15: Error Identification
 
 
+
+
+
 Which sentence contains a typical Russian speaker's article error?
 
-A) The life is full of surprises.
+A) Education is important for success.
 
 B) The education she received was excellent.
 
 C) A good education opens doors.
 
-D) Education is important for success.
+D) The life is full of surprises.
 
 ---
 
 ## Question 16: Institutional Reference
+
+
+
 
 
 Choose the most natural British English:
@@ -247,6 +295,9 @@ D) He's in a hospital. (as a patient)
 ## Question 17: Generic with Specification
 
 
+
+
+
 "___ technology in the 21st century has transformed communication."
 
 A) The technology
@@ -262,45 +313,54 @@ D) Technologies
 ## Question 18: Type vs Instance
 
 
+
+
+
 "This is a good wine" means:
 
-A) Wine is generally good
+A) This is a good type/example of wine
 
-B) This is a good type/example of wine
+B) The wine here is good
 
-C) This is the only good wine
+C) Wine is generally good
 
-D) The wine here is good
+D) This is the only good wine
 
 ---
 
 ## Question 19: Information Structure
 
 
+
+
+
 "___ man walked into a bar." — We use A/AN because:
 
 A) "Man" is always indefinite
 
-B) This is new information to the listener
+B) Men are a generic category
 
 C) This is a joke format
 
-D) Men are a generic category
+D) This is new information to the listener
 
 ---
 
 ## Question 20: Complex Academic Sentence
 
 
+
+
+
 Choose the sentence with correct article usage:
 
 A) A analysis of the data revealed the relationship between variables.
 
-B) Analysis of data revealed relationship between variables.
+B) The analysis of the data revealed the relationship between the variables.
 
 C) The analysis of data revealed relationship between the variables.
 
-D) The analysis of the data revealed the relationship between the variables.
+D) Analysis of data revealed relationship between variables.
 
 ---
 
@@ -310,26 +370,26 @@ D) The analysis of the data revealed the relationship between the variables.
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | "Climate change" is a generic concept, requiring zero article. |
+| 1 | C | "Climate change" is a generic concept, requiring zero article. |
 | 2 | C | "The music" is specified by "of the Baroque period" — post-modification requires THE. |
-| 3 | C | "The screen" — associative reference to the screen of the laptop mentioned. |
-| 4 | D | In formal academic writing, "The + singular" is acceptable for generic statements. |
-| 5 | A | "The poor" = poor people (THE + adjective pattern). "Government" = "the government" (unique in context). |
-| 6 | B | "The knowledge" — specified by the relative clause "she gained". |
+| 3 | D | "The screen" — associative reference to the screen of the laptop mentioned. |
+| 4 | B | In formal academic writing, "The + singular" is acceptable for generic statements. |
+| 5 | D | "The poor" = poor people (THE + adjective pattern). "Government" = "the government" (unique in context). |
+| 6 | A | "The knowledge" — specified by the relative clause "she gained". |
 | 7 | B | "Smartphones" (plural, zero article) is the standard generic form. |
-| 8 | C | "Happiness" is abstract/generic — zero article for generic concepts. |
+| 8 | B | "Happiness" is abstract/generic — zero article for generic concepts. |
 | 9 | A | "Research" (zero article for generic) and "students" (zero article for generic category). |
 | 10 | D | "The water" refers to specific water previously discussed — shared knowledge. |
-| 11 | C | "The science has advanced" is wrong — generic science needs zero article. |
+| 11 | D | "The science has advanced" is wrong — generic science needs zero article. |
 | 12 | A | THE signals shared knowledge — both speaker and listener know which station. |
-| 13 | C | "The French" — THE + nationality adjective = the people of that nationality. |
+| 13 | A | "The French" — THE + nationality adjective = the people of that nationality. |
 | 14 | D | "The unconditional love" — pre-modification with "unconditional" + "of a parent" = specific. |
-| 15 | A | "The life" is a typical Russian error — generic "life" needs zero article. |
+| 15 | D | "The life" is a typical Russian error — generic "life" needs zero article. |
 | 16 | B | British English: "in hospital" (function/institution). American English: "in the hospital". |
 | 17 | A | "The technology" — specified by "in the 21st century". |
-| 18 | B | "A good wine" = a good type/example of wine. A + uncountable = type. |
-| 19 | B | "A man" introduces new information — the listener doesn't know which man. |
-| 20 | D | All nouns are properly specified: "The analysis" (specific), "the data" (specific), "the relationship" (specific), "the variables" (specific). |
+| 18 | A | "A good wine" = a good type/example of wine. A + uncountable = type. |
+| 19 | D | "A man" introduces new information — the listener doesn't know which man. |
+| 20 | B | All nouns are properly specified: "The analysis" (specific), "the data" (specific), "the relationship" (specific), "the variables" (specific). |
 
 ---
 

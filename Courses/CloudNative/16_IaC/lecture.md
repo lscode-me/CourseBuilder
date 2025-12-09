@@ -440,3 +440,14 @@ for i, practice in enumerate(iac_best_practices, 1):
 - [Terraform AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [17_CICD](../17_CICD/) — CI/CD пайплайны
+- [24_MultiCloud](../24_MultiCloud/) — Multi-cloud стратегии
+
+**Практика:**
+1. Разверните VPC + EC2 через CloudFormation
+2. Перепишите тот же стек на Terraform
+3. Настройте remote state в S3 для Terraform

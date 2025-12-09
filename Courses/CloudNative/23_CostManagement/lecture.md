@@ -339,3 +339,14 @@ for pillar, practices in finops_practices.items():
 - [Well-Architected Cost Optimization](https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [24_MultiCloud](../24_MultiCloud/) — Multi-cloud costs
+- [25_CaseStudies](../25_CaseStudies/) — Реальные кейсы оптимизации
+
+**Практика:**
+1. Настройте AWS Budgets с алертами
+2. Проанализируйте Cost Explorer для anomalies
+3. Создайте Savings Plan или Reserved Instances план

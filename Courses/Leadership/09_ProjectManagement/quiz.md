@@ -7,26 +7,32 @@
 ## Question 1: Фокус Product Manager
 
 
+
+
+
 На чём фокусируется Product Manager (PdM)?
 
-A) WHAT и WHY (что строить и почему)
+A) WHO (кто делает)
 
-B) WHEN и HOW (процесс)
+B) Только технические решения
 
-C) WHO (кто делает)
+C) WHAT и WHY (что строить и почему)
 
-D) Только технические решения
+D) WHEN и HOW (процесс)
 
 ---
 
 ## Question 2: Фокус Project Manager
 
 
+
+
+
 На чём фокусируется Project Manager?
 
-A) WHEN и HOW (процесс), timeline, risk management
+A) Только код
 
-B) Только код
+B) WHEN и HOW (процесс), timeline, risk management
 
 C) WHAT и WHY
 
@@ -37,131 +43,158 @@ D) Только people management
 ## Question 3: Когда нужен PM
 
 
+
+
+
 Когда Project Manager необходим?
 
 A) Сложные проекты: много зависимостей, большой scope, строгие deadlines
 
-B) Всегда, в любой команде
+B) Только в стартапах
 
 C) Никогда, PM — устаревшая роль
 
-D) Только в стартапах
+D) Всегда, в любой команде
 
 ---
 
 ## Question 4: TL как PM
 
 
+
+
+
 Когда Team Lead может совмещать роль PM?
 
-A) Никогда
+A) Всегда
 
 B) Только в enterprise компаниях
 
-C) Всегда
+C) Маленькая команда, относительно простые проекты, TL имеет PM навыки
 
-D) Маленькая команда, относительно простые проекты, TL имеет PM навыки
+D) Никогда
 
 ---
 
 ## Question 5: Delivery responsibilities TL
 
 
+
+
+
 За что отвечает Team Lead в delivery даже без PM?
 
-A) Ничего, это работа PM
+A) Planning, execution (убирание блокеров), tracking, risk communication
 
-B) Только люди
+B) Ничего, это работа PM
 
 C) Только код
 
-D) Planning, execution (убирание блокеров), tracking, risk communication
+D) Только люди
 
 ---
 
 ## Question 6: Estimation
 
 
+
+
+
 Как TL должен участвовать в estimation?
 
-A) Оценивать только в часах
+A) Не участвовать вообще
 
-B) Не участвовать вообще
+B) Участвовать, не навязывая; учитывать неопределённость; декомпозировать
 
 C) Навязывать свои оценки команде
 
-D) Участвовать, не навязывая; учитывать неопределённость; декомпозировать
+D) Оценивать только в часах
 
 ---
 
 ## Question 7: Конфликт с PM
 
 
+
+
+
 PM давит на нереалистичные сроки. Что делать?
 
-A) Отказаться работать
+A) Объяснить constraints, предложить варианты, escalate если нет согласия
 
-B) Объяснить constraints, предложить варианты, escalate если нет согласия
+B) Отказаться работать
 
-C) Молча согласиться
+C) Пожаловаться команде
 
-D) Пожаловаться команде
+D) Молча согласиться
 
 ---
 
 ## Question 8: Разделение responsibilities
 
 
+
+
+
 Кто leads технические estimates в партнёрстве TL-PM?
 
 A) CEO
 
-B) PM
+B) TL
 
-C) HR
+C) PM
 
-D) TL
+D) HR
 
 ---
 
 ## Question 9: Self-managing teams
 
 
+
+
+
 Что характеризует self-managing team?
 
-A) Микроменеджмент от PM
+A) Нет никакого планирования
 
-B) Нет никакого планирования
+B) Полный хаос
 
-C) Команда сама планирует, ownership за delivery, TL фасилитирует
+C) Микроменеджмент от PM
 
-D) Полный хаос
+D) Команда сама планирует, ownership за delivery, TL фасилитирует
 
 ---
 
 ## Question 10: Lead Time vs Cycle Time
 
 
+
+
+
 Чем Lead Time отличается от Cycle Time?
 
-A) Cycle Time включает weekends
+A) Это одно и то же
 
-B) Lead Time короче
+B) Lead Time включает wait time, Cycle Time — только активная работа
 
-C) Lead Time включает wait time, Cycle Time — только активная работа
+C) Cycle Time включает weekends
 
-D) Это одно и то же
+D) Lead Time короче
 
 ---
 
 ## Question 11: Использование metrics
 
 
+
+
+
 Как НЕ следует использовать метрики delivery?
 
-A) Для понимания predictability
+A) Для улучшения estimation
 
-B) Для улучшения estimation
+B) Для понимания predictability
 
 C) Для сравнения разработчиков между собой
 
@@ -172,124 +205,151 @@ D) Для выявления проблем в процессе
 ## Question 12: Scope Creep
 
 
+
+
+
 Как управлять scope creep?
 
-A) Делать всё, что просят stakeholders
+A) Принимать все изменения без обсуждения
 
-B) Document original scope, evaluate impact, trade-offs, formal change requests
+B) Игнорировать requests
 
-C) Игнорировать requests
+C) Document original scope, evaluate impact, trade-offs, formal change requests
 
-D) Принимать все изменения без обсуждения
+D) Делать всё, что просят stakeholders
 
 ---
 
 ## Question 13: Saying "No"
 
 
+
+
+
 Как правильно отказать stakeholder в новой feature?
 
 A) Игнорировать request
 
-B) Обещать и не делать
+B) Просто сказать "Нет"
 
 C) "Да, можем за X недель, если уберём Y" — предложить trade-offs
 
-D) Просто сказать "Нет"
+D) Обещать и не делать
 
 ---
 
 ## Question 14: MoSCoW
 
 
+
+
+
 Что означает MoSCoW в приоритизации?
 
-A) Метод estimation
+A) Город
 
-B) Город
+B) Must have, Should have, Could have, Won't have
 
-C) Monday, Sunday, Caturday, Wednesday
+C) Метод estimation
 
-D) Must have, Should have, Could have, Won't have
+D) Monday, Sunday, Caturday, Wednesday
 
 ---
 
 ## Question 15: Risk Categories
 
 
+
+
+
 Какая категория риска включает "ключевой человек уходит"?
 
-A) Resource
+A) Technical
 
-B) External
+B) Resource
 
-C) Scope
+C) External
 
-D) Technical
+D) Scope
 
 ---
 
 ## Question 16: Risk Mitigation
 
 
+
+
+
 Какая стратегия mitigation означает "изменить план, чтобы исключить риск"?
 
-A) Accept
+A) Transfer
 
-B) Transfer
+B) Mitigate
 
-C) Mitigate
+C) Avoid
 
-D) Avoid
+D) Accept
 
 ---
 
 ## Question 17: MVP Mindset
 
 
+
+
+
 Что означает MVP Mindset в delivery?
 
-A) Сделать идеально с первого раза
+A) Не делать ничего
 
-B) Не делать ничего
+B) Максимальный scope
 
-C) Минимум, который работает, и улучшить по feedback
+C) Сделать идеально с первого раза
 
-D) Максимальный scope
+D) Минимум, который работает, и улучшить по feedback
 
 ---
 
 ## Question 18: Burndown Chart
 
 
+
+
+
 Что показывает Burndown Chart?
 
 A) Рост scope
 
-B) Оставшуюся работу vs время (должна идти вниз к нулю)
+B) Количество bugs
 
-C) Количество bugs
+C) Зарплату команды
 
-D) Зарплату команды
+D) Оставшуюся работу vs время (должна идти вниз к нулю)
 
 ---
 
 ## Question 19: PM-TL Sync
 
 
+
+
+
 Как часто рекомендуется sync между PM и TL?
 
-A) Каждый час
+A) Никогда
 
-B) 2-3 раза в неделю
+B) Раз в год
 
-C) Никогда
+C) 2-3 раза в неделю
 
-D) Раз в год
+D) Каждый час
 
 ---
 
 ## Question 20: Technical Risks
+
+
+
 
 
 Что является примером technical risk?
@@ -298,9 +358,9 @@ A) HR policies
 
 B) Незнакомая технология, performance concerns, security requirements
 
-C) Marketing campaign
+C) Office location
 
-D) Office location
+D) Marketing campaign
 
 ---
 
@@ -310,25 +370,25 @@ D) Office location
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | Product Manager фокусируется на WHAT и WHY |
-| 2 | A | Project Manager фокусируется на WHEN и HOW, timeline, risk management |
+| 1 | C | Product Manager фокусируется на WHAT и WHY |
+| 2 | B | Project Manager фокусируется на WHEN и HOW, timeline, risk management |
 | 3 | A | PM нужен для сложных проектов с зависимостями и строгими deadlines |
-| 4 | D | TL может быть PM в маленькой команде с простыми проектами |
-| 5 | D | TL отвечает за planning, execution, tracking, risk communication |
-| 6 | D | Участвовать, не навязывая; учитывать неопределённость |
-| 7 | B | Объяснить constraints, предложить варианты, escalate |
-| 8 | D | TL leads технические estimates |
-| 9 | C | Self-managing: команда планирует сама, TL фасилитирует |
-| 10 | C | Lead Time включает wait time, Cycle Time — активная работа |
+| 4 | C | TL может быть PM в маленькой команде с простыми проектами |
+| 5 | A | TL отвечает за planning, execution, tracking, risk communication |
+| 6 | B | Участвовать, не навязывая; учитывать неопределённость |
+| 7 | A | Объяснить constraints, предложить варианты, escalate |
+| 8 | B | TL leads технические estimates |
+| 9 | D | Self-managing: команда планирует сама, TL фасилитирует |
+| 10 | B | Lead Time включает wait time, Cycle Time — активная работа |
 | 11 | C | Метрики НЕ для сравнения разработчиков |
-| 12 | B | Document scope, evaluate impact, trade-offs, change requests |
+| 12 | C | Document scope, evaluate impact, trade-offs, change requests |
 | 13 | C | Предложить trade-offs вместо прямого "нет" |
-| 14 | D | MoSCoW = Must, Should, Could, Won't have |
-| 15 | A | "Ключевой человек уходит" — Resource risk |
-| 16 | D | Avoid = изменить план, чтобы исключить риск |
-| 17 | C | MVP = минимум, который работает, улучшить по feedback |
-| 18 | B | Burndown показывает оставшуюся работу vs время |
-| 19 | B | PM-TL sync 2-3 раза в неделю рекомендуется |
+| 14 | B | MoSCoW = Must, Should, Could, Won't have |
+| 15 | B | "Ключевой человек уходит" — Resource risk |
+| 16 | C | Avoid = изменить план, чтобы исключить риск |
+| 17 | D | MVP = минимум, который работает, улучшить по feedback |
+| 18 | D | Burndown показывает оставшуюся работу vs время |
+| 19 | C | PM-TL sync 2-3 раза в неделю рекомендуется |
 | 20 | B | Technical risks: незнакомая технология, performance, security |
 
 ---

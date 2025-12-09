@@ -269,3 +269,14 @@ vpc_best_practices = [
 
 ---
 
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [08_RDS](../08_RDS/) — Реляционные базы данных в облаке
+- [09_DynamoDB](../09_DynamoDB/) — NoSQL база данных DynamoDB
+
+**Практика:**
+1. Создайте VPC с public и private subnets через консоль
+2. Настройте NAT Gateway для private subnet
+3. Проверьте connectivity между subnets
+

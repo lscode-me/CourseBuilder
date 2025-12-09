@@ -7,58 +7,70 @@
 ## Question 1: История Python
 
 
+
+
+
 Кто является создателем языка Python?
 
-A) Деннис Ритчи (Dennis Ritchie)
+A) Бьёрн Страуструп (Bjarne Stroustrup)
 
-B) Джеймс Гослинг (James Gosling)
+B) Гвидо ван Россум (Guido van Rossum)
 
-C) Бьёрн Страуструп (Bjarne Stroustrup)
+C) Деннис Ритчи (Dennis Ritchie)
 
-D) Гвидо ван Россум (Guido van Rossum)
+D) Джеймс Гослинг (James Gosling)
 
 ---
 
 ## Question 2: Тип языка
 
 
+
+
+
 Python является:
 
-A) Компилируемым языком со статической типизацией
+A) Интерпретируемым языком со статической типизацией
 
 B) Интерпретируемым языком с динамической типизацией
 
-C) Интерпретируемым языком со статической типизацией
+C) Компилируемым языком с динамической типизацией
 
-D) Компилируемым языком с динамической типизацией
+D) Компилируемым языком со статической типизацией
 
 ---
 
 ## Question 3: Версии Python
 
 
+
+
+
 Какая версия Python официально прекратила поддержку 1 января 2020 года?
 
 A) Python 1.x
 
-B) Python 3.0
+B) Python 2.x
 
-C) Python 2.x
+C) Python 3.5
 
-D) Python 3.5
+D) Python 3.0
 
 ---
 
 ## Question 4: Деление в Python 3
 
 
+
+
+
 Каков результат выражения `5 / 2` в Python 3?
 
-A) 2
+A) 2.5
 
-B) 2.5
+B) 2.50
 
-C) 2.50
+C) 2
 
 D) 2.0
 
@@ -67,34 +79,43 @@ D) 2.0
 ## Question 5: Целочисленное деление
 
 
+
+
+
 Какой оператор используется для целочисленного деления в Python?
 
 A) `%`
 
 B) `/`
 
-C) `//`
+C) `**`
 
-D) `**`
+D) `//`
 
 ---
 
 ## Question 6: Функция print()
 
 
+
+
+
 Какой синтаксис правильный для Python 3?
 
 A) `echo("Hello, World!")`
 
-B) `print("Hello, World!")`
+B) `print "Hello, World!"`
 
-C) `print "Hello, World!"`
+C) `console.log("Hello, World!")`
 
-D) `console.log("Hello, World!")`
+D) `print("Hello, World!")`
 
 ---
 
 ## Question 7: Виртуальные окружения
+
+
+
 
 
 Какая команда создаёт виртуальное окружение в Python 3?
@@ -112,13 +133,16 @@ D) `pip create venv myenv`
 ## Question 8: Активация окружения
 
 
+
+
+
 Как активировать виртуальное окружение на Linux/macOS?
 
-A) `venv/bin/activate`
+A) `activate venv`
 
-B) `activate venv`
+B) `venv\Scripts\activate`
 
-C) `venv\Scripts\activate`
+C) `venv/bin/activate`
 
 D) `source venv/bin/activate`
 
@@ -127,19 +151,25 @@ D) `source venv/bin/activate`
 ## Question 9: pip
 
 
+
+
+
 Что делает команда `pip freeze > requirements.txt`?
 
-A) Сохраняет список установленных пакетов в файл
+A) Замораживает установку пакетов
 
-B) Замораживает установку пакетов
+B) Сохраняет список установленных пакетов в файл
 
-C) Устанавливает пакеты из файла
+C) Удаляет все пакеты
 
-D) Удаляет все пакеты
+D) Устанавливает пакеты из файла
 
 ---
 
 ## Question 10: Отступы
+
+
+
 
 
 Почему следующий код вызовет ошибку?
@@ -149,11 +179,11 @@ if True:
 print("Hello")
 ```
 
-A) print должен быть на той же строке
+A) Отсутствует отступ перед print
 
-B) Отсутствует отступ перед print
+B) Неправильный синтаксис условия
 
-C) Неправильный синтаксис условия
+C) print должен быть на той же строке
 
 D) Не хватает скобок у True
 
@@ -162,79 +192,97 @@ D) Не хватает скобок у True
 ## Question 11: Zen of Python
 
 
+
+
+
 Как посмотреть "The Zen of Python"?
 
-A) `python --zen`
+A) `import zen`
 
-B) `import this`
+B) `print(zen)`
 
-C) `import zen`
+C) `python --zen`
 
-D) `print(zen)`
+D) `import this`
 
 ---
 
 ## Question 12: Shebang
 
 
+
+
+
 Для чего нужна строка `#!/usr/bin/env python3` в начале скрипта?
 
-A) Указывает системе, какой интерпретатор использовать
+A) Устанавливает переменные окружения
 
-B) Устанавливает переменные окружения
+B) Указывает системе, какой интерпретатор использовать
 
-C) Импортирует модуль env
+C) Это комментарий с информацией об авторе
 
-D) Это комментарий с информацией об авторе
+D) Импортирует модуль env
 
 ---
 
 ## Question 13: Проверка версии
 
 
+
+
+
 Какая команда покажет версию установленного Python?
 
-A) `python --v`
+A) `python --version`
 
-B) `python --version`
+B) `python /version`
 
-C) `python -version`
+C) `python --v`
 
-D) `python /version`
+D) `python -version`
 
 ---
 
 ## Question 14: PEP 8
 
 
+
+
+
 Сколько пробелов рекомендуется использовать для отступа согласно PEP 8?
 
-A) 2
+A) 3
 
-B) 8
+B) 2
 
 C) 4
 
-D) 3
+D) 8
 
 ---
 
 ## Question 15: Именование переменных
 
 
+
+
+
 Какое имя переменной соответствует конвенции PEP 8 для обычных переменных?
 
-A) `userName`
+A) `USERNAME`
 
 B) `UserName`
 
-C) `USERNAME`
+C) `userName`
 
 D) `user_name`
 
 ---
 
 ## Question 16: Тип переменной
+
+
+
 
 
 Что выведет следующий код?
@@ -245,71 +293,83 @@ x = "hello"
 print(type(x).__name__)
 ```
 
-A) str
+A) int
 
-B) int
+B) NoneType
 
 C) TypeError
 
-D) NoneType
+D) str
 
 ---
 
 ## Question 17: pyenv
 
 
+
+
+
 Для чего используется инструмент pyenv?
 
-A) Для форматирования кода
+A) Для установки pip пакетов
 
-B) Для создания виртуальных окружений
+B) Для управления несколькими версиями Python
 
-C) Для установки pip пакетов
+C) Для форматирования кода
 
-D) Для управления несколькими версиями Python
+D) Для создания виртуальных окружений
 
 ---
 
 ## Question 18: REPL
 
 
+
+
+
 Что означает аббревиатура REPL?
 
-A) Read-Eval-Print-Loop
+A) Run-Evaluate-Print-Log
 
-B) Run-Evaluate-Print-Log
+B) Read-Execute-Parse-Loop
 
 C) Run-Execute-Print-Loop
 
-D) Read-Execute-Parse-Loop
+D) Read-Eval-Print-Loop
 
 ---
 
 ## Question 19: f-strings
 
 
+
+
+
 Какой синтаксис правильный для f-string в Python 3.6+?
 
-A) `"Hello, " + name + "!"`
+A) `format("Hello, {}!", name)`
 
-B) `format("Hello, {}!", name)`
+B) `f"Hello, {name}!"`
 
 C) `"Hello, {name}!"`
 
-D) `f"Hello, {name}!"`
+D) `"Hello, " + name + "!"`
 
 ---
 
 ## Question 20: Выход из интерактивного режима
 
 
+
+
+
 Как выйти из интерактивного режима Python?
 
 A) `Ctrl+C`
 
-B) `close()`
+B) `quit`
 
-C) `quit`
+C) `close()`
 
 D) `exit()` или `Ctrl+D`
 
@@ -321,25 +381,25 @@ D) `exit()` или `Ctrl+D`
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Гвидо ван Россум создал Python в 1991 году. Название от "Monty Python". |
+| 1 | B | Гвидо ван Россум создал Python в 1991 году. Название от "Monty Python". |
 | 2 | B | Python — интерпретируемый язык с динамической типизацией, типы определяются во время выполнения. |
-| 3 | C | Python 2.x прекратил поддержку 1 января 2020 года. Всегда используйте Python 3. |
-| 4 | B | В Python 3 оператор `/` всегда возвращает float: `5 / 2 = 2.5`. |
-| 5 | C | Оператор `//` выполняет целочисленное деление: `5 // 2 = 2`. |
-| 6 | B | В Python 3 `print` — это функция, требующая скобки: `print("Hello")`. |
+| 3 | B | Python 2.x прекратил поддержку 1 января 2020 года. Всегда используйте Python 3. |
+| 4 | A | В Python 3 оператор `/` всегда возвращает float: `5 / 2 = 2.5`. |
+| 5 | D | Оператор `//` выполняет целочисленное деление: `5 // 2 = 2`. |
+| 6 | D | В Python 3 `print` — это функция, требующая скобки: `print("Hello")`. |
 | 7 | A | Команда `python3 -m venv myenv` создаёт виртуальное окружение. |
 | 8 | D | На Linux/macOS активация: `source venv/bin/activate`. На Windows: `venv\Scripts\activate`. |
-| 9 | A | `pip freeze` выводит список пакетов, `> requirements.txt` перенаправляет в файл. |
-| 10 | B | Python использует отступы для обозначения блоков кода. Без отступа — IndentationError. |
-| 11 | B | `import this` выводит "The Zen of Python" — философию языка (PEP 20). |
-| 12 | A | Shebang указывает ОС, какой интерпретатор использовать при запуске скрипта. |
-| 13 | B | `python --version` или `python -V` показывает версию Python. |
+| 9 | B | `pip freeze` выводит список пакетов, `> requirements.txt` перенаправляет в файл. |
+| 10 | A | Python использует отступы для обозначения блоков кода. Без отступа — IndentationError. |
+| 11 | D | `import this` выводит "The Zen of Python" — философию языка (PEP 20). |
+| 12 | B | Shebang указывает ОС, какой интерпретатор использовать при запуске скрипта. |
+| 13 | A | `python --version` или `python -V` показывает версию Python. |
 | 14 | C | PEP 8 рекомендует 4 пробела для отступа. Не смешивайте пробелы и табы. |
 | 15 | D | `snake_case` для переменных и функций, `PascalCase` для классов, `UPPER_CASE` для констант. |
-| 16 | A | Переменная `x` динамически меняет тип. После присвоения строки тип становится `str`. |
-| 17 | D | pyenv позволяет устанавливать и переключаться между разными версиями Python. |
-| 18 | A | REPL = Read-Eval-Print-Loop — интерактивный режим Python. |
-| 19 | D | f-strings (Python 3.6+): `f"Hello, {name}!"` — современный способ форматирования. |
+| 16 | D | Переменная `x` динамически меняет тип. После присвоения строки тип становится `str`. |
+| 17 | B | pyenv позволяет устанавливать и переключаться между разными версиями Python. |
+| 18 | D | REPL = Read-Eval-Print-Loop — интерактивный режим Python. |
+| 19 | B | f-strings (Python 3.6+): `f"Hello, {name}!"` — современный способ форматирования. |
 | 20 | D | `exit()`, `quit()` или `Ctrl+D` (Linux/macOS) / `Ctrl+Z` (Windows) для выхода. |
 
 ---

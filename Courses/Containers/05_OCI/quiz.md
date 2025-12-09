@@ -7,34 +7,43 @@
 ## Question 1: История OCI
 
 
+
+
+
 В каком году была основана Open Container Initiative?
 
 A) 2017
 
 B) 2013
 
-C) 2019
+C) 2015
 
-D) 2015
+D) 2019
 
 ---
 
 ## Question 2: OCI спецификации
 
 
+
+
+
 Сколько основных спецификаций определяет OCI?
 
-A) 2 (Runtime и Image)
+A) 3 (Runtime, Image и Distribution)
 
-B) 4 (Runtime, Image, Distribution и Security)
+B) 1 (только Runtime)
 
-C) 3 (Runtime, Image и Distribution)
+C) 4 (Runtime, Image, Distribution и Security)
 
-D) 1 (только Runtime)
+D) 2 (Runtime и Image)
 
 ---
 
 ## Question 3: OCI Bundle
+
+
+
 
 
 Что входит в состав OCI Bundle?
@@ -52,6 +61,9 @@ D) Docker image и Dockerfile
 ## Question 4: runC
 
 
+
+
+
 Что такое runC?
 
 A) Графический интерфейс для Docker
@@ -67,49 +79,61 @@ D) Референсная реализация OCI runtime
 ## Question 5: config.json
 
 
+
+
+
 Какой раздел config.json определяет ограничения ресурсов?
 
-A) mounts
+A) root
 
 B) linux.resources
 
 C) process
 
-D) root
+D) mounts
 
 ---
 
 ## Question 6: Жизненный цикл контейнера
 
 
+
+
+
 Какие состояния проходит контейнер по OCI спецификации?
 
-A) building → running → exited
+A) pending → running → completed
 
-B) pending → running → completed
+B) building → running → exited
 
-C) created → running → stopped
+C) init → active → terminated
 
-D) init → active → terminated
+D) created → running → stopped
 
 ---
 
 ## Question 7: unshare
 
 
+
+
+
 Для чего используется утилита unshare?
 
-A) Для создания новых namespaces
+A) Для удаления namespaces
 
-B) Для sharing файлов между контейнерами
+B) Для мониторинга namespaces
 
-C) Для удаления namespaces
+C) Для создания новых namespaces
 
-D) Для мониторинга namespaces
+D) Для sharing файлов между контейнерами
 
 ---
 
 ## Question 8: nsenter
+
+
+
 
 
 Какую функцию выполняет nsenter?
@@ -127,6 +151,9 @@ D) Создание нового namespace
 ## Question 9: OCI Image Manifest
 
 
+
+
+
 Что содержит manifest образа OCI?
 
 A) Конфигурацию сети
@@ -142,19 +169,25 @@ D) Ссылки на config и layers с их digest'ами
 ## Question 10: skopeo
 
 
+
+
+
 Для чего используется утилита skopeo?
 
-A) Мониторинг контейнеров
+A) Создание Dockerfile
 
-B) Запуск контейнеров
+B) Копирование и анализ образов без Docker daemon
 
-C) Создание Dockerfile
+C) Запуск контейнеров
 
-D) Копирование и анализ образов без Docker daemon
+D) Мониторинг контейнеров
 
 ---
 
 ## Question 11: crun
+
+
+
 
 
 В чём преимущество crun над runC?
@@ -172,6 +205,9 @@ D) Более высокая производительность (написа�
 ## Question 12: Kata Containers
 
 
+
+
+
 Какой тип изоляции использует Kata Containers?
 
 A) Шифрование
@@ -185,6 +221,9 @@ D) Только namespaces
 ---
 
 ## Question 13: gVisor
+
+
+
 
 
 Как gVisor обеспечивает изоляцию?
@@ -202,19 +241,25 @@ D) Перехват syscalls в userspace
 ## Question 14: OCI Distribution API
 
 
+
+
+
 Какой endpoint используется для получения manifest образа?
 
-A) /v2/<name>/blobs/<digest>
+A) /v2/<name>/config/<ref>
 
-B) /v2/<name>/layers/<ref>
+B) /v2/<name>/manifests/<ref>
 
-C) /v2/<name>/config/<ref>
+C) /v2/<name>/blobs/<digest>
 
-D) /v2/<name>/manifests/<ref>
+D) /v2/<name>/layers/<ref>
 
 ---
 
 ## Question 15: Операции runC
+
+
+
 
 
 Какая команда создаёт контейнер без запуска процесса?
@@ -232,13 +277,16 @@ D) runc start
 ## Question 16: Capabilities в config.json
 
 
+
+
+
 Для чего используется раздел capabilities в config.json?
 
-A) Список поддерживаемых команд
+A) Описание возможностей runtime
 
 B) Определение capabilities Linux для процесса контейнера
 
-C) Описание возможностей runtime
+C) Список поддерживаемых команд
 
 D) Возможности сети
 
@@ -247,19 +295,25 @@ D) Возможности сети
 ## Question 17: maskedPaths
 
 
+
+
+
 Что делает параметр maskedPaths в config.json?
 
-A) Шифрует файлы по указанным путям
+A) Скрывает пути в логах
 
-B) Добавляет пути в PATH
+B) Делает указанные пути в /proc недоступными
 
-C) Делает указанные пути в /proc недоступными
+C) Шифрует файлы по указанным путям
 
-D) Скрывает пути в логах
+D) Добавляет пути в PATH
 
 ---
 
 ## Question 18: containerd и runC
+
+
+
 
 
 Какова роль containerd-shim между containerd и runC?
@@ -277,6 +331,9 @@ D) Шифрование трафика
 ## Question 19: OCI версия
 
 
+
+
+
 Какое поле в config.json указывает версию OCI спецификации?
 
 A) apiVersion
@@ -292,15 +349,18 @@ D) specVersion
 ## Question 20: Альтернативные runtime в Docker
 
 
+
+
+
 Как запустить контейнер с альтернативным runtime в Docker?
 
-A) docker run --use-runtime kata
+A) docker run --engine=kata
 
-B) docker run --runtime=kata
+B) docker --runtime kata run
 
-C) docker --runtime kata run
+C) docker run --runtime=kata
 
-D) docker run --engine=kata
+D) docker run --use-runtime kata
 
 ---
 
@@ -310,26 +370,26 @@ D) docker run --engine=kata
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | OCI была основана в 2015 году Docker и CoreOS |
-| 2 | C | OCI определяет 3 спецификации: Runtime, Image и Distribution |
+| 1 | C | OCI была основана в 2015 году Docker и CoreOS |
+| 2 | A | OCI определяет 3 спецификации: Runtime, Image и Distribution |
 | 3 | C | OCI Bundle состоит из директории rootfs и файла config.json |
 | 4 | D | runC — референсная реализация OCI runtime specification |
 | 5 | B | Ресурсы определяются в секции linux.resources (memory, cpu, pids) |
-| 6 | C | Контейнер проходит состояния: created → running → stopped |
-| 7 | A | unshare создаёт новые namespaces для запускаемого процесса |
+| 6 | D | Контейнер проходит состояния: created → running → stopped |
+| 7 | C | unshare создаёт новые namespaces для запускаемого процесса |
 | 8 | A | nsenter позволяет войти в namespaces существующего процесса по PID |
 | 9 | D | Manifest содержит ссылки на config и layers с их digest'ами и размерами |
-| 10 | D | skopeo позволяет копировать, инспектировать образы без Docker daemon |
+| 10 | B | skopeo позволяет копировать, инспектировать образы без Docker daemon |
 | 11 | D | crun написан на C (не Go), поэтому быстрее и использует меньше памяти |
 | 12 | C | Kata запускает каждый контейнер в легковесной VM для сильной изоляции |
 | 13 | D | gVisor перехватывает syscalls и обрабатывает их в userspace (Sentry) |
-| 14 | D | Manifest получается через GET /v2/<name>/manifests/<ref> |
+| 14 | B | Manifest получается через GET /v2/<name>/manifests/<ref> |
 | 15 | C | runc create создаёт контейнер, runc start запускает его процесс |
 | 16 | B | Capabilities определяют Linux capabilities (bounding, effective, permitted) |
-| 17 | C | maskedPaths делает указанные пути (обычно в /proc) недоступными для контейнера |
+| 17 | B | maskedPaths делает указанные пути (обычно в /proc) недоступными для контейнера |
 | 18 | A | shim позволяет containerd перезапускаться без влияния на работающие контейнеры |
 | 19 | B | Поле ociVersion указывает версию OCI спецификации |
-| 20 | B | docker run --runtime=<name> запускает контейнер с указанным runtime |
+| 20 | C | docker run --runtime=<name> запускает контейнер с указанным runtime |
 
 ---
 

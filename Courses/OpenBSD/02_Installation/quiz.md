@@ -7,13 +7,16 @@
 ## Question 1: Типы образов
 
 
+
+
+
 Какой образ следует использовать для установки OpenBSD на USB-накопитель?
 
-A) miniroot74.img
+A) install74.img
 
-B) cd74.iso
+B) miniroot74.img
 
-C) install74.img
+C) cd74.iso
 
 D) install74.iso
 
@@ -22,11 +25,14 @@ D) install74.iso
 ## Question 2: Проверка образа
 
 
+
+
+
 Какой файл содержит контрольные суммы для проверки целостности образов?
 
-A) MD5SUMS
+A) CHECKSUMS
 
-B) CHECKSUMS
+B) MD5SUMS
 
 C) SHA256
 
@@ -37,195 +43,319 @@ D) VERIFY
 ## Question 3: Выбор при загрузке
 
 
+
+
+
 Какую опцию нужно выбрать для новой установки OpenBSD?
 
 A) (A)utoinstall
 
-B) (S)hell
+B) (I)nstall
 
 C) (U)pgrade
 
-D) (I)nstall
+D) (S)hell
 
 ---
 
 ## Question 4: Разметка диска
 
 
+
+
+
 Какой тип разметки рекомендуется для UEFI систем и дисков более 2TB?
 
-A) Raw
+A) OpenBSD area
 
-B) OpenBSD area
+B) MBR
 
 C) GPT
 
-D) MBR
+D) Raw
 
 ---
 
 ## Question 5: Наборы файлов
 
 
+
+
+
 Какой набор файлов содержит базовую систему OpenBSD?
 
-A) core74.tgz
+A) base74.tgz
 
-B) system74.tgz
+B) bsd.tgz
 
-C) bsd.tgz
+C) system74.tgz
 
-D) base74.tgz
+D) core74.tgz
 
 ---
 
 ## Question 6: X Window System
 
 
+
+
+
 Какие наборы нужно установить для графического интерфейса?
 
 A) xbase74.tgz, xfont74.tgz, xserv74.tgz, xshare74.tgz
 
-B) Только xbase74.tgz
+B) desktop74.tgz
 
-C) desktop74.tgz
+C) Только xserv74.tgz
 
-D) Только xserv74.tgz
+D) Только xbase74.tgz
 
 ---
 
 ## Question 7: Безопасность SSH
 
 
+
+
+
 Какое значение PermitRootLogin рекомендуется для безопасности?
 
-A) yes
+A) no
 
 B) forced-commands-only
 
-C) no
+C) without-password
 
-D) without-password
+D) yes
 
 ---
 
 ## Question 8: doas
 
 
+
+
+
 Какой файл нужно создать для настройки doas?
 
-A) /usr/local/etc/doas.conf
+A) /etc/sudoers
 
-B) /etc/doas.conf
+B) /usr/local/etc/doas.conf
 
-C) /etc/doas/doas.conf
+C) /etc/doas.conf
 
-D) /etc/sudoers
+D) /etc/doas/doas.conf
 
 ---
 
 ## Question 9: Патчи безопасности
 
 
+
+
+
 Какая команда устанавливает патчи безопасности в OpenBSD?
 
 A) openbsd-update
 
-B) syspatch
+B) pkg_update
 
-C) pkg_update
+C) apt update
 
-D) apt update
+D) syspatch
 
 ---
 
 ## Question 10: Зеркало пакетов
 
 
+
+
+
 В каком файле указывается URL зеркала для pkg_add?
 
-A) /etc/pkg.conf
+A) /etc/installurl
 
-B) /etc/apt/sources.list
+B) /etc/pkg.conf
 
-C) /etc/mirrors.conf
+C) /etc/apt/sources.list
 
-D) /etc/installurl
+D) /etc/mirrors.conf
 
 ---
 
 ## Question 11: Точки монтирования
 
 
+
+
+
 Какой раздел содержит логи системы в стандартной схеме разметки?
 
-A) /var
+A) /tmp
 
-B) /tmp
+B) /home
 
-C) /home
+C) /usr
 
-D) /usr
+D) /var
 
 ---
 
 ## Question 12: После установки
 
 
+
+
+
 Какой man-page рекомендуется прочитать сразу после установки?
 
 A) man intro
 
-B) man firstboot
+B) man afterboot
 
-C) man install
+C) man firstboot
 
-D) man afterboot
+D) man install
 
 ---
 
 ## Question 13: Восстановление пароля root
 
 
+
+
+
 Что нужно сделать, если забыт пароль root?
 
-A) Переустановить систему
+A) Загрузиться с установочного носителя и использовать shell
 
-B) Восстановить невозможно
+B) Переустановить систему
 
-C) Загрузиться с установочного носителя и использовать shell
+C) Отправить email разработчикам
 
-D) Отправить email разработчикам
+D) Восстановить невозможно
 
 ---
 
 ## Question 14: Многопроцессорное ядро
 
 
+
+
+
 Какой файл ядра используется для многопроцессорных систем?
 
-A) bsd
+A) bsd.smp
 
-B) bsd.multi
+B) bsd.mp
 
-C) bsd.smp
+C) bsd
 
-D) bsd.mp
+D) bsd.multi
 
 ---
 
 ## Question 15: Группа wheel
 
 
+
+
+
 Зачем добавлять пользователя в группу wheel?
 
 A) Для доступа к сети
 
-B) Для возможности использовать doas/sudo
+B) Для монтирования USB устройств
 
-C) Для монтирования USB устройств
+C) Для доступа к графическому интерфейсу
 
-D) Для доступа к графическому интерфейсу
+D) Для возможности использовать doas/sudo
+
+---
+
+## Question 16: sysmerge
+
+
+
+
+Для чего используется sysmerge?
+
+A) Для синхронизации пользователей
+
+B) Для объединения разделов диска
+
+C) Для слияния обновлений конфигурационных файлов
+
+D) Для объединения логов
+
+---
+
+## Question 17: comp74.tgz
+
+
+
+
+Что содержит набор comp74.tgz?
+
+A) Документацию
+
+B) Шрифты
+
+C) Игры и развлечения
+
+D) Компиляторы и средства разработки
+
+---
+
+## Question 18: signify
+
+
+
+
+Для чего используется signify в OpenBSD?
+
+A) Для создания SSH-ключей
+
+B) Для генерации сертификатов SSL
+
+C) Для создания сигналов процессам
+
+D) Для подписи файлов и проверки подписей
+
+---
+
+## Question 19: autoinstall
+
+
+
+
+Что такое autoinstall в OpenBSD?
+
+A) Механизм автоматической установки системы
+
+B) Система мониторинга
+
+C) Планировщик задач
+
+D) Автоматическое обновление пакетов
+
+---
+
+## Question 20: /altroot
+
+
+
+
+Для чего используется раздел /altroot?
+
+A) Для автоматического бэкапа корневой системы
+
+B) Для хранения логов
+
+C) Для альтернативного загрузчика
+
+D) Для chroot окружения
 
 ---
 
@@ -235,21 +365,26 @@ D) Для доступа к графическому интерфейсу
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | install74.img — образ для записи на USB, install74.iso — для CD/виртуализации |
+| 1 | A | install74.img — образ для записи на USB, install74.iso — для CD/виртуализации |
 | 2 | C | SHA256 — файл с контрольными суммами SHA-256 для всех файлов |
-| 3 | D | (I)nstall используется для новой установки системы |
+| 3 | B | (I)nstall используется для новой установки системы |
 | 4 | C | GPT (GUID Partition Table) рекомендуется для UEFI и больших дисков |
-| 5 | D | base74.tgz содержит базовую систему OpenBSD |
+| 5 | A | base74.tgz содержит базовую систему OpenBSD |
 | 6 | A | Для полноценного X Window нужны все четыре набора: xbase, xfont, xserv, xshare |
-| 7 | C | PermitRootLogin no — запрещает прямой вход root, повышая безопасность |
-| 8 | B | /etc/doas.conf — конфигурационный файл doas |
-| 9 | B | syspatch — утилита для установки бинарных патчей безопасности |
-| 10 | D | /etc/installurl содержит URL зеркала для pkg_add |
-| 11 | A | /var содержит изменяемые данные: логи, почту, базы данных |
-| 12 | D | man afterboot описывает все действия после установки |
-| 13 | C | Загрузиться с установочного носителя, выбрать Shell, chroot и изменить пароль |
-| 14 | D | bsd.mp — многопроцессорное ядро (multiprocessor) |
-| 15 | B | Группа wheel позволяет использовать doas для выполнения команд от root |
+| 7 | A | PermitRootLogin no — запрещает прямой вход root, повышая безопасность |
+| 8 | C | /etc/doas.conf — конфигурационный файл doas |
+| 9 | D | syspatch — утилита для установки бинарных патчей безопасности |
+| 10 | A | /etc/installurl содержит URL зеркала для pkg_add |
+| 11 | D | /var содержит изменяемые данные: логи, почту, базы данных |
+| 12 | B | man afterboot описывает все действия после установки |
+| 13 | A | Загрузиться с установочного носителя, выбрать Shell, chroot и изменить пароль |
+| 14 | B | bsd.mp — многопроцессорное ядро (multiprocessor) |
+| 15 | D | Группа wheel позволяет использовать doas для выполнения команд от root |
+| 16 | C | sysmerge объединяет изменения в конфигурационных файлах при обновлении |
+| 17 | D | comp74.tgz содержит компиляторы (gcc, clang) и средства разработки |
+| 18 | D | signify создаёт и проверяет криптографические подписи файлов |
+| 19 | A | autoinstall — механизм для автоматической установки OpenBSD |
+| 20 | A | /altroot используется для ежедневного бэкапа корневой системы |
 
 ---
 

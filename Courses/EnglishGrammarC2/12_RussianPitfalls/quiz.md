@@ -7,6 +7,9 @@
 ## Question 1: Article with Modified Noun
 
 
+
+
+
 "___ modern technology has changed our lives" — choose correctly:
 
 A) A modern technology
@@ -22,64 +25,79 @@ D) The modern technology
 ## Question 2: Associative THE
 
 
+
+
+
 "I bought a car. ___ engine is powerful."
 
-A) One engine
+A) Engine
 
 B) The engine
 
 C) An engine
 
-D) Engine
+D) One engine
 
 ---
 
 ## Question 3: Preposition Calque
 
 
+
+
+
 "It depends ___ the weather."
 
-A) by
+A) from
 
-B) from
+B) of
 
-C) on
+C) by
 
-D) of
+D) on
 
 ---
 
 ## Question 4: Duration with Present Perfect
 
 
+
+
+
 "I ___ him since 2010."
 
-A) have known
+A) am knowing
 
-B) know
+B) knew
 
-C) am knowing
+C) have known
 
-D) knew
+D) know
 
 ---
 
 ## Question 5: Future in Time Clause
 
 
+
+
+
 "When I ___, I will call you."
 
-A) will arrive
+A) arrive
 
 B) am arriving
 
 C) would arrive
 
-D) arrive
+D) will arrive
 
 ---
 
 ## Question 6: Diplomatic Language
+
+
+
 
 
 The most diplomatically appropriate is:
@@ -97,6 +115,9 @@ D) "Your analysis is wrong."
 ## Question 7: Collocation
 
 
+
+
+
 "She ___ a serious mistake."
 
 A) made
@@ -112,19 +133,25 @@ D) did
 ## Question 8: Weather Collocation
 
 
+
+
+
 "There was ___ rain yesterday."
 
-A) big
+A) strong
 
-B) strong
+B) hard
 
-C) heavy
+C) big
 
-D) hard
+D) heavy
 
 ---
 
 ## Question 9: Word Order
+
+
+
 
 
 Which is correct?
@@ -133,20 +160,23 @@ A) "I very much like this idea."
 
 B) "I like very much this idea."
 
-C) "I like this idea very much."
+C) "Very much I like this idea."
 
-D) "Very much I like this idea."
+D) "I like this idea very much."
 
 ---
 
 ## Question 10: False Friend
 
 
+
+
+
 Russian "актуальный" in English is:
 
-A) current / relevant
+A) actual
 
-B) actual
+B) current / relevant
 
 C) real
 
@@ -157,34 +187,43 @@ D) active
 ## Question 11: Academic Style
 
 
+
+
+
 "In the given article, we consider the question of..." should be:
 
-A) "This article examines..."
+A) "We will consider the question..."
 
 B) "The given article considers..."
 
 C) Left as is — it's formal
 
-D) "We will consider the question..."
+D) "This article examines..."
 
 ---
 
 ## Question 12: Explain Transitivity
 
 
+
+
+
 "Can you explain ___ this rule?"
 
-A) for me
+A) to me
 
-B) to me
+B) for me
 
-C) at me
+C) me
 
-D) me
+D) at me
 
 ---
 
 ## Question 13: Stative Verb
+
+
+
 
 
 Which is correct?
@@ -202,6 +241,9 @@ D) "I understand now."
 ## Question 14: Hedging
 
 
+
+
+
 "The results ___ that X causes Y."
 
 A) prove
@@ -215,6 +257,9 @@ D) certainly demonstrate
 ---
 
 ## Question 15: MAKE vs DO
+
+
+
 
 
 Which is correct?
@@ -232,6 +277,9 @@ D) "have a photo"
 ## Question 16: Over-Formality
 
 
+
+
+
 In spoken English, which is too formal?
 
 A) "Can I get a coffee?"
@@ -247,19 +295,25 @@ D) "Thanks!"
 ## Question 17: Small Talk
 
 
+
+
+
 In English professional emails:
 
-A) Use formal Russian-style openings
+A) Include a brief greeting/small talk element
 
-B) Include a brief greeting/small talk element
+B) Use formal Russian-style openings
 
-C) Skip greetings and go straight to business
+C) Write only bullet points
 
-D) Write only bullet points
+D) Skip greetings and go straight to business
 
 ---
 
 ## Question 18: Listen Transitivity
+
+
+
 
 
 "Please ___ me."
@@ -277,13 +331,16 @@ D) listen
 ## Question 19: Married Preposition
 
 
+
+
+
 "She is married ___ John."
 
 A) with
 
-B) at
+B) by
 
-C) by
+C) at
 
 D) to
 
@@ -292,15 +349,18 @@ D) to
 ## Question 20: Final Self-Assessment
 
 
+
+
+
 The most important takeaway for C2 Russian speakers is:
 
-A) Continue self-monitoring and active noticing
+A) Memorize more grammar rules
 
-B) Memorize more grammar rules
+B) Stop using English until errors are eliminated
 
-C) Stop using English until errors are eliminated
+C) Only focus on vocabulary
 
-D) Only focus on vocabulary
+D) Continue self-monitoring and active noticing
 
 ---
 
@@ -312,24 +372,24 @@ D) Only focus on vocabulary
 |---|--------|-------------|
 | 1 | B | "Modern technology" is still generic; no THE needed. |
 | 2 | B | Associative reference: THE engine of the car mentioned. |
-| 3 | C | "Depend on" — not "from" (Russian calque from "от"). |
-| 4 | A | "Have known" — Present Perfect for duration up to now. |
-| 5 | D | Present Simple after "when" in time clauses; no "will." |
+| 3 | D | "Depend on" — not "from" (Russian calque from "от"). |
+| 4 | C | "Have known" — Present Perfect for duration up to now. |
+| 5 | A | Present Simple after "when" in time clauses; no "will." |
 | 6 | B | Diplomatic hedging is expected in English professional contexts. |
 | 7 | A | "Made a mistake" — MAKE, not DO, for mistakes. |
-| 8 | C | "Heavy rain" — not "strong" (collocation). |
-| 9 | C | "Very much" goes at the end: "like this idea very much." |
-| 10 | A | "Актуальный" = current/relevant; "actual" = real/true. |
-| 11 | A | Russian academic style transfers awkwardly; use English conventions. |
-| 12 | B | "Explain to me" — explain is not transitive with person. |
+| 8 | D | "Heavy rain" — not "strong" (collocation). |
+| 9 | D | "Very much" goes at the end: "like this idea very much." |
+| 10 | B | "Актуальный" = current/relevant; "actual" = real/true. |
+| 11 | D | Russian academic style transfers awkwardly; use English conventions. |
+| 12 | A | "Explain to me" — explain is not transitive with person. |
 | 13 | D | "Understand" is stative; no progressive form. |
 | 14 | B | Academic hedging: "suggest" not "prove." |
 | 15 | B | "Take a photo" — English collocation. |
 | 16 | C | "Express my gratitude" is overly formal for casual speech. |
-| 17 | B | English expects brief small talk/greeting in emails. |
+| 17 | A | English expects brief small talk/greeting in emails. |
 | 18 | A | "Listen to me" — "listen" requires preposition with object. |
 | 19 | D | "Married to" — not "with" (Russian calque from "с"). |
-| 20 | A | At C2, self-monitoring and noticing are key to continued improvement. |
+| 20 | D | At C2, self-monitoring and noticing are key to continued improvement. |
 
 ---
 

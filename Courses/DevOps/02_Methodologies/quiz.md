@@ -7,6 +7,9 @@
 ## Question 1: Agile Manifesto
 
 
+
+
+
 Что Agile Manifesto ценит больше, чем "следование плану"?
 
 A) Готовность к изменениям
@@ -20,6 +23,9 @@ D) Процессы и инструменты
 ---
 
 ## Question 2: Scrum Roles
+
+
+
 
 
 Кто отвечает за приоритизацию Product Backlog в Scrum?
@@ -37,19 +43,25 @@ D) Product Owner
 ## Question 3: Sprint
 
 
+
+
+
 Что из перечисленного НЕ является характеристикой Sprint в Scrum?
 
-A) Scope может меняться в любое время
+A) Содержит все Scrum events
 
-B) Результат — потенциально готовый к релизу инкремент
+B) Фиксированная продолжительность
 
-C) Фиксированная продолжительность
+C) Scope может меняться в любое время
 
-D) Содержит все Scrum events
+D) Результат — потенциально готовый к релизу инкремент
 
 ---
 
 ## Question 4: Daily Standup
+
+
+
 
 
 Какова основная цель Daily Standup?
@@ -67,6 +79,9 @@ D) Оценка задач в story points
 ## Question 5: Kanban WIP Limits
 
 
+
+
+
 Согласно закону Литтла, что произойдёт с Lead Time, если уменьшить WIP при постоянном Throughput?
 
 A) Lead Time не изменится
@@ -82,13 +97,16 @@ D) Throughput упадёт
 ## Question 6: Kanban Metrics
 
 
+
+
+
 Чем Cycle Time отличается от Lead Time?
 
 A) Cycle Time измеряется в часах, Lead Time — в днях
 
-B) Это одно и то же
+B) Lead Time включает время ожидания, Cycle Time — нет
 
-C) Lead Time включает время ожидания, Cycle Time — нет
+C) Это одно и то же
 
 D) Cycle Time включает время ожидания, Lead Time — нет
 
@@ -97,43 +115,52 @@ D) Cycle Time включает время ожидания, Lead Time — нет
 ## Question 7: Kanban Principles
 
 
+
+
+
 Какой из принципов НЕ относится к базовым принципам Kanban?
 
-A) Соглашайся на эволюционные изменения
+A) Начни с того, что есть
 
-B) Фиксированные итерации каждые 2 недели
+B) Соглашайся на эволюционные изменения
 
-C) Уважай текущие роли и ответственности
+C) Фиксированные итерации каждые 2 недели
 
-D) Начни с того, что есть
+D) Уважай текущие роли и ответственности
 
 ---
 
 ## Question 8: Scrum Events
 
 
+
+
+
 В каком порядке проходят Scrum events в течение спринта?
 
-A) Planning → Standup → Review → Retrospective
+A) Planning → Standup → Retrospective → Review
 
-B) Review → Planning → Standup → Retrospective
+B) Planning → Standup → Review → Retrospective
 
-C) Planning → Standup → Retrospective → Review
+C) Retrospective → Planning → Standup → Review
 
-D) Retrospective → Planning → Standup → Review
+D) Review → Planning → Standup → Retrospective
 
 ---
 
 ## Question 9: ITIL 4 Principles
 
 
+
+
+
 Какой принцип ITIL 4 соответствует DevOps подходу к автоматизации?
 
 A) Optimize and automate
 
-B) Start where you are
+B) Focus on value
 
-C) Focus on value
+C) Start where you are
 
 D) Progress iteratively with feedback
 
@@ -142,11 +169,14 @@ D) Progress iteratively with feedback
 ## Question 10: Change Management
 
 
+
+
+
 Что такое "Standard Change" в ITIL?
 
-A) Преапproved, низкорисковое изменение
+A) Экстренное изменение при инциденте
 
-B) Экстренное изменение при инциденте
+B) Преапproved, низкорисковое изменение
 
 C) Изменение, инициированное руководством
 
@@ -155,6 +185,9 @@ D) Изменение, требующее одобрения CAB
 ---
 
 ## Question 11: Scrum vs Kanban
+
+
+
 
 
 Что характеризует Scrum, но НЕ характеризует Kanban?
@@ -172,34 +205,43 @@ D) Continuous flow
 ## Question 12: Definition of Done
 
 
+
+
+
 Почему Definition of Done важен для DevOps?
 
-A) Он определяет зарплату разработчиков
+A) Он заменяет тестирование
 
-B) Он нужен только для Scrum Master
+B) Он гарантирует, что работа готова к deployment
 
-C) Он гарантирует, что работа готова к deployment
+C) Он нужен только для Scrum Master
 
-D) Он заменяет тестирование
+D) Он определяет зарплату разработчиков
 
 ---
 
 ## Question 13: SAFe
 
 
+
+
+
 Что такое Agile Release Train (ART) в SAFe?
 
-A) Команда из 5-9 человек
+A) Инструмент для CI/CD
 
-B) Группа команд (50-125 человек), работающих над общим продуктом
+B) Команда из 5-9 человек
 
-C) Метод оценки задач
+C) Группа команд (50-125 человек), работающих над общим продуктом
 
-D) Инструмент для CI/CD
+D) Метод оценки задач
 
 ---
 
 ## Question 14: ITIL Incident Management
+
+
+
 
 
 Какова главная цель Incident Management в ITIL?
@@ -217,13 +259,16 @@ D) Документировать изменения
 ## Question 15: Agile и DevOps
 
 
+
+
+
 Как DevOps расширяет Agile?
 
-A) DevOps применяет Agile принципы ко всему lifecycle, включая operations
+A) DevOps и Agile не связаны
 
 B) DevOps — это только инструменты для Agile команд
 
-C) DevOps и Agile не связаны
+C) DevOps применяет Agile принципы ко всему lifecycle, включая operations
 
 D) DevOps заменяет Agile полностью
 
@@ -232,19 +277,25 @@ D) DevOps заменяет Agile полностью
 ## Question 16: Retrospective
 
 
+
+
+
 Какой формат вопросов типичен для Sprint Retrospective?
 
-A) Что было хорошо? Что улучшить? Какие action items?
+A) Кто виноват в провале спринта?
 
-B) Кто виноват в провале спринта?
+B) Какая зарплата у каждого члена команды?
 
-C) Какая зарплата у каждого члена команды?
+C) Сколько story points мы закрыли?
 
-D) Сколько story points мы закрыли?
+D) Что было хорошо? Что улучшить? Какие action items?
 
 ---
 
 ## Question 17: Kanban Board
+
+
+
 
 
 Что показывает Cumulative Flow Diagram (CFD)?
@@ -262,6 +313,9 @@ D) Количество работы в каждом состоянии во в�
 ## Question 18: LeSS
 
 
+
+
+
 Чем LeSS отличается от SAFe?
 
 A) LeSS минималистичный с меньшим количеством ролей
@@ -275,6 +329,9 @@ D) LeSS более сложный и структурированный
 ---
 
 ## Question 19: Problem vs Incident
+
+
+
 
 
 В чём разница между Incident и Problem в ITIL?
@@ -292,15 +349,18 @@ D) Incident управляется CAB, Problem — нет
 ## Question 20: Velocity
 
 
+
+
+
 Что измеряет Velocity в Scrum?
 
-A) Количество story points, завершённых командой за спринт
+A) Время от commit до production
 
-B) Количество деплоев в день
+B) Скорость работы каждого разработчика
 
-C) Скорость работы каждого разработчика
+C) Количество story points, завершённых командой за спринт
 
-D) Время от commit до production
+D) Количество деплоев в день
 
 ---
 
@@ -312,24 +372,24 @@ D) Время от commit до production
 |---|--------|-------------|
 | 1 | A | Agile Manifesto: "Готовность к изменениям важнее следования плану" |
 | 2 | D | Product Owner — единственный владелец Product Backlog и его приоритизации |
-| 3 | A | Scope спринта защищён после Planning; изменения только между спринтами |
+| 3 | C | Scope спринта защищён после Planning; изменения только между спринтами |
 | 4 | C | Daily Standup — синхронизация команды, не отчёт менеджеру |
 | 5 | C | По закону Литтла: Lead Time = WIP / Throughput. Меньше WIP = меньше Lead Time |
-| 6 | C | Lead Time включает всё время (и ожидание), Cycle Time — только время работы |
-| 7 | B | Фиксированные итерации — это Scrum. Kanban — непрерывный поток |
-| 8 | A | Planning → Daily Standups → Review → Retrospective |
+| 6 | B | Lead Time включает всё время (и ожидание), Cycle Time — только время работы |
+| 7 | C | Фиксированные итерации — это Scrum. Kanban — непрерывный поток |
+| 8 | B | Planning → Daily Standups → Review → Retrospective |
 | 9 | A | "Optimize and automate" напрямую соответствует DevOps автоматизации |
-| 10 | A | Standard Change — преапproved, автоматизированное, низкорисковое изменение |
+| 10 | B | Standard Change — преапproved, автоматизированное, низкорисковое изменение |
 | 11 | A | Scrum использует спринты с фиксированной длительностью, Kanban — нет |
-| 12 | C | DoD включает критерии готовности к deployment (тесты, review, staging) |
-| 13 | B | ART — 50-125 человек, работающих синхронно в Program Increments |
+| 12 | B | DoD включает критерии готовности к deployment (тесты, review, staging) |
+| 13 | C | ART — 50-125 человек, работающих синхронно в Program Increments |
 | 14 | A | Incident Management: восстановить сервис. Problem Management: найти root cause |
-| 15 | A | DevOps расширяет Agile на operations, обеспечивая continuous delivery |
-| 16 | A | Ретроспектива фокусируется на улучшении процесса без blame |
+| 15 | C | DevOps расширяет Agile на operations, обеспечивая continuous delivery |
+| 16 | D | Ретроспектива фокусируется на улучшении процесса без blame |
 | 17 | D | CFD показывает количество работы в каждом состоянии во времени |
 | 18 | A | LeSS минималистичен: один backlog, минимум ролей, простая структура |
 | 19 | C | Incident — нарушение сервиса; Problem — underlying cause инцидентов |
-| 20 | A | Velocity = story points за спринт. Используется для планирования |
+| 20 | C | Velocity = story points за спринт. Используется для планирования |
 
 ---
 

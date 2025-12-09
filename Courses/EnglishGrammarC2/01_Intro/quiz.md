@@ -7,26 +7,32 @@
 ## Question 1: C2 Definition
 
 
+
+
+
 According to CEFR, what distinguishes C2 from C1?
 
-A) C2 speakers know more vocabulary than C1 speakers
+A) C2 speakers can understand native speakers better
 
 B) C2 speakers can differentiate finer shades of meaning
 
 C) C2 speakers make no grammatical errors at all
 
-D) C2 speakers can understand native speakers better
+D) C2 speakers know more vocabulary than C1 speakers
 
 ---
 
 ## Question 2: Natural vs Correct
 
 
+
+
+
 Which sentence sounds MOST natural in everyday professional English?
 
-A) "I'm responsible for this project."
+A) "I am the one who is responsible for this project."
 
-B) "I am the one who is responsible for this project."
+B) "I'm responsible for this project."
 
 C) "It is I who am responsible for this project."
 
@@ -37,19 +43,25 @@ D) "The responsibility for this project lies with myself."
 ## Question 3: Article Subtlety
 
 
+
+
+
 Choose the correct option: "___ science has made great progress in recent decades."
 
-A) Science
+A) Sciences
 
-B) Sciences
+B) The science
 
-C) The science
+C) A science
 
-D) A science
+D) Science
 
 ---
 
 ## Question 4: Article with Specification
+
+
+
 
 
 Choose the correct option: "___ English spoken in Singapore has unique features."
@@ -67,19 +79,25 @@ D) The English
 ## Question 5: Hedging
 
 
+
+
+
 Which response is MOST appropriate for a British professional context when giving negative feedback?
 
-A) "Well, it's not terrible, I suppose, but maybe you could possibly consider..."
+A) "The report is unacceptable and must be rewritten."
 
-B) "Your report has several errors that need fixing."
+B) "There might be a few areas that could benefit from another look."
 
-C) "There might be a few areas that could benefit from another look."
+C) "Your report has several errors that need fixing."
 
-D) "The report is unacceptable and must be rewritten."
+D) "Well, it's not terrible, I suppose, but maybe you could possibly consider..."
 
 ---
 
 ## Question 6: Pragmatic Meaning
+
+
+
 
 
 A colleague says: "That's certainly one way of looking at it." What do they most likely mean?
@@ -97,6 +115,9 @@ D) They need more time to consider your view
 ## Question 7: Register Identification
 
 
+
+
+
 Which sentence is appropriate for academic writing?
 
 A) "The cure does what it's supposed to do."
@@ -110,6 +131,9 @@ D) "The efficacy of the intervention has been empirically validated."
 ---
 
 ## Question 8: Marked Structures
+
+
+
 
 
 "Never have I encountered such incompetence." This structure is:
@@ -127,34 +151,43 @@ D) Only appropriate in legal contexts
 ## Question 9: Fossilization
 
 
+
+
+
 What is a "fossilized error"?
 
 A) An error related to outdated grammar rules
 
-B) An error that native speakers also make
+B) An error that has become automatic and resistant to correction
 
 C) An error that only older learners make
 
-D) An error that has become automatic and resistant to correction
+D) An error that native speakers also make
 
 ---
 
 ## Question 10: Russian Interference
 
 
+
+
+
 Which error is MOST typical of Russian speakers at C1 level?
 
-A) Confusing present simple and present continuous
+A) Using double negatives
 
-B) Using "the" before abstract nouns in generic contexts
+B) Confusing present simple and present continuous
 
-C) Using double negatives
+C) Forgetting to use "do" in questions
 
-D) Forgetting to use "do" in questions
+D) Using "the" before abstract nouns in generic contexts
 
 ---
 
 ## Question 11: Pragmatic Competence
+
+
+
 
 
 "I'll bear that in mind" typically means:
@@ -172,19 +205,25 @@ D) I will definitely follow your suggestion
 ## Question 12: Corpus Evidence
 
 
+
+
+
 According to corpus data, why might "very crucial" sound unnatural?
 
-A) "Crucial" is too informal to use with "very"
+A) "Crucial" already implies intensity, making "very" redundant
 
-B) "Crucial" already implies intensity, making "very" redundant
+B) "Very" cannot modify adjectives
 
-C) "Very" cannot modify adjectives
+C) "Very" should only modify adverbs
 
-D) "Very" should only modify adverbs
+D) "Crucial" is too informal to use with "very"
 
 ---
 
 ## Question 13: Register Continuum
+
+
+
 
 
 Which register would you use for a formal business proposal?
@@ -202,6 +241,9 @@ D) Consultative
 ## Question 14: Descriptive vs Prescriptive
 
 
+
+
+
 "Who did you see?" (instead of "Whom did you see?") is:
 
 A) A recent change that hasn't been accepted yet
@@ -215,6 +257,9 @@ D) Descriptively accurate (what people say) though prescriptively "wrong"
 ---
 
 ## Question 15: C2 Writing Characteristics
+
+
+
 
 
 Which is a characteristic of C2-level writing?
@@ -232,6 +277,9 @@ D) Using as many complex words as possible
 ## Question 16: Natural Collocation
 
 
+
+
+
 Which collocation is MOST natural?
 
 A) "She was highly disappointed."
@@ -247,19 +295,25 @@ D) "She was utterly disappointed."
 ## Question 17: Politeness Strategy
 
 
+
+
+
 In English professional culture, why might direct requests sound rude?
 
-A) English has no grammar for direct requests
+A) Native speakers never make direct requests
 
-B) Native speakers never make direct requests
+B) English has no grammar for direct requests
 
-C) Indirectness signals respect for the listener's autonomy
+C) Direct requests are only used by managers
 
-D) Direct requests are only used by managers
+D) Indirectness signals respect for the listener's autonomy
 
 ---
 
 ## Question 18: Receptive-Productive Gap
+
+
+
 
 
 What is the "receptive-productive gap"?
@@ -277,30 +331,36 @@ D) The gap between British and American English
 ## Question 19: Course Methodology
 
 
+
+
+
 What is the recommended order for learning new structures in this course?
 
-A) Produce → Notice → Analyse → Discriminate
+A) Notice → Discriminate → Analyse → Produce
 
-B) Notice → Discriminate → Analyse → Produce
+B) Produce → Notice → Analyse → Discriminate
 
-C) Discriminate → Notice → Produce → Analyse
+C) Analyse → Produce → Notice → Discriminate
 
-D) Analyse → Produce → Notice → Discriminate
+D) Discriminate → Notice → Produce → Analyse
 
 ---
 
 ## Question 20: Self-Assessment
 
 
+
+
+
 Which is a sign that you're ready for C2-level study?
 
-A) You can't understand native speakers in movies
+A) You sometimes feel your English sounds "flat" compared to natives
 
-B) You sometimes feel your English sounds "flat" compared to natives
+B) You never make any grammatical errors
 
-C) You never make any grammatical errors
+C) You still regularly confuse tenses
 
-D) You still regularly confuse tenses
+D) You can't understand native speakers in movies
 
 ---
 
@@ -311,25 +371,25 @@ D) You still regularly confuse tenses
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | CEFR defines C2 by ability to differentiate finer shades of meaning, not by zero errors or vocabulary size. |
-| 2 | A | "I'm responsible for this project" is natural and professional. Option A is grammatically correct but stilted. |
-| 3 | A | "Science" (zero article) for generic reference to the concept. "The science" would need specification. |
+| 2 | B | "I'm responsible for this project" is natural and professional. Option A is grammatically correct but stilted. |
+| 3 | D | "Science" (zero article) for generic reference to the concept. "The science" would need specification. |
 | 4 | D | "The English" because it's specified ("spoken in Singapore"). Generic "English" wouldn't have "the". |
-| 5 | C | Appropriate hedging ("might be", "could benefit") without being excessively indirect (C) or too direct (A, D). |
+| 5 | B | Appropriate hedging ("might be", "could benefit") without being excessively indirect (C) or too direct (A, D). |
 | 6 | A | "One way of looking at it" typically implies disagreement or skepticism phrased politely. |
 | 7 | D | Academic register requires formal vocabulary and nominalization ("efficacy", "empirically validated"). |
 | 8 | C | Negative inversion is marked for emphasis. It's grammatical but draws attention—use when emphasis is intended. |
-| 9 | D | Fossilized errors are mistakes that have become automatic through repetition and resist correction. |
-| 10 | B | Russian speakers often add "the" before abstracts ("the life is hard") due to L1 transfer. |
+| 9 | B | Fossilized errors are mistakes that have become automatic through repetition and resist correction. |
+| 10 | D | Russian speakers often add "the" before abstracts ("the life is hard") due to L1 transfer. |
 | 11 | B | "I'll bear that in mind" is often a polite dismissal, not a commitment to action. |
-| 12 | B | "Crucial" is already an extreme adjective (like "unique", "essential"). "Very" is redundant with extreme adjectives. |
+| 12 | A | "Crucial" is already an extreme adjective (like "unique", "essential"). "Very" is redundant with extreme adjectives. |
 | 13 | A | Formal register is appropriate for business proposals. Frozen is for legal/ceremonial texts. |
 | 14 | D | Descriptively, "who" in object position is standard spoken English, though prescriptive grammar prefers "whom". |
 | 15 | B | C2 writing varies structure and uses appropriate hedging. Simplicity alone is not C2; nor is complexity without purpose. |
 | 16 | C | "Deeply disappointed" is a natural collocation. "Very disappointed" is acceptable but less sophisticated. |
-| 17 | C | Indirectness in requests respects the listener's autonomy (their right to refuse). It's a politeness strategy. |
+| 17 | D | Indirectness in requests respects the listener's autonomy (their right to refuse). It's a politeness strategy. |
 | 18 | C | The receptive-productive gap means you understand structures in input that you don't naturally produce yourself. |
-| 19 | B | Notice → Discriminate → Analyse → Produce. Noticing comes first; production comes last after analysis. |
-| 20 | B | Feeling your English sounds "flat" shows awareness of native nuance—a good sign of readiness for C2 study. |
+| 19 | A | Notice → Discriminate → Analyse → Produce. Noticing comes first; production comes last after analysis. |
+| 20 | A | Feeling your English sounds "flat" shows awareness of native nuance—a good sign of readiness for C2 study. |
 
 ---
 

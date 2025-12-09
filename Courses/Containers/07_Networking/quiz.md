@@ -7,6 +7,9 @@
 ## Question 1: Дефолтный режим
 
 
+
+
+
 Какой сетевой режим используется Docker по умолчанию?
 
 A) none
@@ -20,6 +23,9 @@ D) bridge
 ---
 
 ## Question 2: veth pairs
+
+
+
 
 
 Что такое veth pair?
@@ -37,19 +43,25 @@ D) Виртуальный Ethernet кабель между namespaces
 ## Question 3: Host network
 
 
+
+
+
 Какое преимущество даёт режим host network?
 
-A) Максимальная производительность без NAT
+A) Автоматический DNS
 
-B) Лучшая изоляция
+B) Overlay networking
 
-C) Автоматический DNS
+C) Лучшая изоляция
 
-D) Overlay networking
+D) Максимальная производительность без NAT
 
 ---
 
 ## Question 4: Port mapping
+
+
+
 
 
 Какая команда опубликует порт 80 контейнера на порт 8080 хоста?
@@ -67,6 +79,9 @@ D) docker run --port 8080=80 nginx
 ## Question 5: User-defined networks
 
 
+
+
+
 Какое преимущество user-defined networks перед default bridge?
 
 A) Меньше потребление памяти
@@ -80,6 +95,9 @@ D) Поддержка IPv6
 ---
 
 ## Question 6: CNI
+
+
+
 
 
 Что такое CNI?
@@ -97,19 +115,25 @@ D) Container Network Interface
 ## Question 7: Overlay networks
 
 
+
+
+
 Для чего нужны overlay networks?
 
 A) Изоляция от интернета
 
-B) Шифрование трафика
+B) Связь контейнеров на разных хостах
 
-C) Связь контейнеров на разных хостах
+C) Шифрование трафика
 
 D) Ускорение локальной сети
 
 ---
 
 ## Question 8: VXLAN
+
+
+
 
 
 На каком порту работает VXLAN по умолчанию?
@@ -127,6 +151,9 @@ D) 8080
 ## Question 9: Internal network
 
 
+
+
+
 Что особенного в internal network Docker?
 
 A) Более высокая скорость
@@ -142,19 +169,25 @@ D) Автоматическое масштабирование
 ## Question 10: docker0
 
 
+
+
+
 Что такое docker0?
 
-A) Конфигурационный файл
+A) Первый контейнер
 
-B) DNS сервер Docker
+B) Виртуальный bridge для default network
 
-C) Виртуальный bridge для default network
+C) DNS сервер Docker
 
-D) Первый контейнер
+D) Конфигурационный файл
 
 ---
 
 ## Question 11: Embedded DNS
+
+
+
 
 
 На каком IP работает встроенный DNS Docker?
@@ -163,22 +196,25 @@ A) 127.0.0.1
 
 B) 127.0.0.11
 
-C) 172.17.0.1
+C) 8.8.8.8
 
-D) 8.8.8.8
+D) 172.17.0.1
 
 ---
 
 ## Question 12: Network aliases
 
 
+
+
+
 Для чего используются network aliases?
 
-A) Изоляция сетей
+A) Мониторинг
 
 B) Несколько DNS имён для одного контейнера
 
-C) Мониторинг
+C) Изоляция сетей
 
 D) Шифрование имён
 
@@ -187,13 +223,16 @@ D) Шифрование имён
 ## Question 13: Macvlan
 
 
+
+
+
 Когда следует использовать macvlan driver?
 
-A) Для overlay сетей
+A) Для изоляции контейнеров
 
 B) Для DNS
 
-C) Для изоляции контейнеров
+C) Для overlay сетей
 
 D) Когда контейнеру нужен IP из физической сети
 
@@ -202,34 +241,43 @@ D) Когда контейнеру нужен IP из физической се�
 ## Question 14: iptables
 
 
+
+
+
 Как Docker использует iptables?
 
-A) Для хранения данных
+A) Для аутентификации
 
-B) Для NAT и port forwarding
+B) Для DNS резолвинга
 
-C) Для аутентификации
+C) Для хранения данных
 
-D) Для DNS резолвинга
+D) Для NAT и port forwarding
 
 ---
 
 ## Question 15: Container network mode
 
 
+
+
+
 Как запустить контейнер в network namespace другого контейнера?
 
-A) --network shared:other
+A) --network container:other
 
-B) --network container:other
+B) --network=other
 
-C) --net-alias other
+C) --network shared:other
 
-D) --network=other
+D) --net-alias other
 
 ---
 
 ## Question 16: Kubernetes CNI
+
+
+
 
 
 Какой CNI plugin использует eBPF для высокой производительности?
@@ -247,13 +295,16 @@ D) Weave
 ## Question 17: Network isolation
 
 
+
+
+
 Контейнеры в разных user-defined networks могут общаться?
 
-A) Нет, если не подключены к общей сети
+A) Только через DNS
 
 B) Да, всегда
 
-C) Только через DNS
+C) Нет, если не подключены к общей сети
 
 D) Только по IP
 
@@ -262,19 +313,25 @@ D) Только по IP
 ## Question 18: Диагностика
 
 
+
+
+
 Какой инструмент лучше всего подходит для диагностики сети контейнера?
 
-A) docker info
+A) docker stats
 
-B) docker stats
+B) netshoot контейнер
 
-C) docker logs
+C) docker info
 
-D) netshoot контейнер
+D) docker logs
 
 ---
 
 ## Question 19: Subnet
+
+
+
 
 
 Какой параметр задаёт подсеть при создании Docker network?
@@ -292,15 +349,18 @@ D) --ip-range
 ## Question 20: Multi-network
 
 
+
+
+
 Можно ли подключить контейнер к нескольким сетям?
 
-A) Только в Swarm mode
+A) Да, через docker network connect
 
-B) Нет
+B) Только при создании
 
-C) Да, через docker network connect
+C) Только в Swarm mode
 
-D) Только при создании
+D) Нет
 
 ---
 
@@ -312,24 +372,24 @@ D) Только при создании
 |---|--------|-------------|
 | 1 | D | Bridge — дефолтный сетевой режим Docker |
 | 2 | D | veth pair — виртуальный Ethernet кабель, связывающий namespaces |
-| 3 | A | Host network даёт максимальную производительность без NAT overhead |
+| 3 | D | Host network даёт максимальную производительность без NAT overhead |
 | 4 | A | Формат: -p HOST:CONTAINER, поэтому -p 8080:80 |
 | 5 | B | User-defined networks имеют встроенный DNS для discovery |
 | 6 | D | CNI — Container Network Interface, стандарт для сетевых плагинов |
-| 7 | C | Overlay networks позволяют контейнерам на разных хостах общаться |
+| 7 | B | Overlay networks позволяют контейнерам на разных хостах общаться |
 | 8 | B | VXLAN использует UDP порт 4789 |
 | 9 | C | Internal network не имеет доступа к внешним сетям |
-| 10 | C | docker0 — виртуальный bridge для default bridge network |
+| 10 | B | docker0 — виртуальный bridge для default bridge network |
 | 11 | B | Встроенный DNS Docker работает на 127.0.0.11 |
 | 12 | B | Network aliases позволяют одному контейнеру иметь несколько DNS имён |
 | 13 | D | Macvlan даёт контейнеру IP из физической сети |
-| 14 | B | Docker использует iptables для NAT и port forwarding |
-| 15 | B | --network container:name делит network namespace |
+| 14 | D | Docker использует iptables для NAT и port forwarding |
+| 15 | A | --network container:name делит network namespace |
 | 16 | C | Cilium использует eBPF для networking и security |
-| 17 | A | Контейнеры в разных сетях изолированы, нужна общая сеть |
-| 18 | D | netshoot содержит все инструменты для сетевой диагностики |
+| 17 | C | Контейнеры в разных сетях изолированы, нужна общая сеть |
+| 18 | B | netshoot содержит все инструменты для сетевой диагностики |
 | 19 | A | --subnet задаёт подсеть при создании сети |
-| 20 | C | docker network connect подключает к дополнительным сетям |
+| 20 | A | docker network connect подключает к дополнительным сетям |
 
 ---
 

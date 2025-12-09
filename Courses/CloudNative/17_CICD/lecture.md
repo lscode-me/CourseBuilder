@@ -390,3 +390,14 @@ for i, practice in enumerate(cicd_best_practices, 1):
 - [GitHub Actions for AWS](https://github.com/aws-actions)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [18_CloudNativeIntro](../18_CloudNativeIntro/) — Cloud Native принципы
+- [21_Observability](../21_Observability/) — Мониторинг CI/CD
+
+**Практика:**
+1. Настройте CodePipeline для Lambda деплоя
+2. Создайте GitHub Actions workflow для ECS
+3. Реализуйте blue/green deployment через CodeDeploy

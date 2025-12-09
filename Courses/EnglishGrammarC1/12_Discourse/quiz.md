@@ -7,6 +7,9 @@
 ## Question 1: Adding Information
 
 
+
+
+
 Which connector adds information formally?
 
 A) Also
@@ -22,34 +25,43 @@ D) Plus
 ## Question 2: Contrasting
 
 
+
+
+
 "The plan seemed good. ___, it failed."
 
 A) Furthermore
 
-B) However
+B) Therefore
 
 C) As a result
 
-D) Therefore
+D) However
 
 ---
 
 ## Question 3: Result
 
 
+
+
+
 "Sales increased. ___, profits rose."
 
 A) However
 
-B) Although
+B) Consequently
 
 C) Despite
 
-D) Consequently
+D) Although
 
 ---
 
 ## Question 4: Reference
+
+
+
 
 
 "John bought a car. ___ is blue."
@@ -67,58 +79,70 @@ D) One
 ## Question 5: Substitution
 
 
+
+
+
 "I can swim but she can't ___."
 
-A) swimming
+A) (nothing needed)
 
-B) (nothing needed)
+B) to swim
 
-C) to swim
+C) swim
 
-D) swim
+D) swimming
 
 ---
 
 ## Question 6: Substitution with "One"
 
 
+
+
+
 "I need a pen. Do you have ___?"
 
-A) it
+A) this
 
-B) one
+B) it
 
-C) them
+C) one
 
-D) this
+D) them
 
 ---
 
 ## Question 7: "So" Substitution
 
 
+
+
+
 "Will it rain?" — "I think ___."
 
-A) it
+A) yes
 
-B) so
+B) that
 
-C) that
+C) it
 
-D) yes
+D) so
 
 ---
 
 ## Question 8: Formal Contrast
 
 
+
+
+
 Which is MOST formal?
 
 A) But there's a problem.
 
-B) Though, there's a problem.
+B) However, there is a problem.
 
-C) However, there is a problem.
+C) Though, there's a problem.
 
 D) Still, there's a problem.
 
@@ -127,64 +151,79 @@ D) Still, there's a problem.
 ## Question 9: Purpose
 
 
+
+
+
 "She studied hard ___ pass the exam."
 
-A) so that
+A) because
 
-B) in order to
+B) for
 
-C) because
+C) so that
 
-D) for
+D) in order to
 
 ---
 
 ## Question 10: Example
 
 
+
+
+
 Which introduces an example?
 
-A) For instance
+A) However
 
-B) Therefore
+B) Consequently
 
-C) Consequently
+C) Therefore
 
-D) However
+D) For instance
 
 ---
 
 ## Question 11: Comma Splice
 
 
+
+
+
 Which sentence has a comma splice error?
 
-A) It was raining, I stayed home.
+A) It was raining, so I stayed home.
 
-B) Although it was raining, I went out.
+B) It was raining; I stayed home.
 
-C) It was raining, so I stayed home.
+C) Although it was raining, I went out.
 
-D) It was raining; I stayed home.
+D) It was raining, I stayed home.
 
 ---
 
 ## Question 12: Despite/Although
 
 
+
+
+
 Which is correct?
 
-A) Despite being tired, he worked.
+A) Although being tired, he worked.
 
-B) Although being tired, he worked.
+B) Despite being tired, he worked.
 
-C) Despite he was tired, he worked.
+C) Although of his tiredness, he worked.
 
-D) Although of his tiredness, he worked.
+D) Despite he was tired, he worked.
 
 ---
 
 ## Question 13: Such
+
+
+
 
 
 "There were delays and errors. ___ problems are unacceptable."
@@ -202,34 +241,43 @@ D) This
 ## Question 14: Conclusion
 
 
+
+
+
 Which signals a conclusion?
 
-A) For example
+A) Furthermore
 
 B) However
 
 C) In summary
 
-D) Furthermore
+D) For example
 
 ---
 
 ## Question 15: Sequence
 
 
+
+
+
 Which shows sequence?
 
-A) However
+A) Therefore
 
-B) Subsequently
+B) Because
 
-C) Therefore
+C) Subsequently
 
-D) Because
+D) However
 
 ---
 
 ## Question 16: Given-New
+
+
+
 
 
 Which follows the given-new principle better?
@@ -247,34 +295,43 @@ D) John bought a car. The car is blue.
 ## Question 17: Parallel Structure
 
 
+
+
+
 Which has correct parallel structure?
 
-A) He likes reading, writing, and swimming.
+A) He likes to read, writing, and swim.
 
-B) He likes read, write, and swim.
+B) He likes reading, to write, and swimming.
 
-C) He likes reading, to write, and swimming.
+C) He likes reading, writing, and swimming.
 
-D) He likes to read, writing, and swim.
+D) He likes read, write, and swim.
 
 ---
 
 ## Question 18: Academic Hedging
 
 
+
+
+
 Which is appropriately hedged for academic writing?
 
 A) This probably causes cancer.
 
-B) This causes cancer.
+B) This may contribute to cancer development.
 
 C) This definitely causes cancer.
 
-D) This may contribute to cancer development.
+D) This causes cancer.
 
 ---
 
 ## Question 19: Demonstrative Reference
+
+
+
 
 
 "I'll tell you ___: it won't be easy."
@@ -292,15 +349,18 @@ D) it
 ## Question 20: Ellipsis
 
 
+
+
+
 "She can speak French and he can ___ too."
 
 A) do
 
-B) too
+B) speak French
 
 C) (nothing — ellipsis)
 
-D) speak French
+D) too
 
 ---
 
@@ -311,23 +371,23 @@ D) speak French
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | C | "Furthermore" is formal. "And," "plus," "also" are neutral/informal. |
-| 2 | B | "However" shows contrast. "Therefore/consequently" show result. |
-| 3 | D | "Consequently" shows result/effect. |
+| 2 | D | "However" shows contrast. "Therefore/consequently" show result. |
+| 3 | B | "Consequently" shows result/effect. |
 | 4 | A | "It" refers back to "a car" (the specific one mentioned). |
-| 5 | B | Ellipsis — "swim" is understood and omitted after "can't." |
-| 6 | B | "One" substitutes for "a pen" (indefinite). |
-| 7 | B | "Think so" = "think it will rain" — substitution with "so." |
-| 8 | C | "However, there is..." is most formal. Avoid starting with "But" in formal writing. |
-| 9 | B | "In order to + infinitive" expresses purpose. |
-| 10 | A | "For instance" introduces an example. |
-| 11 | A | Comma splice: two independent clauses joined only by comma. |
-| 12 | A | "Despite + gerund" is correct. "Although + clause" is correct. |
+| 5 | A | Ellipsis — "swim" is understood and omitted after "can't." |
+| 6 | C | "One" substitutes for "a pen" (indefinite). |
+| 7 | D | "Think so" = "think it will rain" — substitution with "so." |
+| 8 | B | "However, there is..." is most formal. Avoid starting with "But" in formal writing. |
+| 9 | D | "In order to + infinitive" expresses purpose. |
+| 10 | D | "For instance" introduces an example. |
+| 11 | D | Comma splice: two independent clauses joined only by comma. |
+| 12 | B | "Despite + gerund" is correct. "Although + clause" is correct. |
 | 13 | A | "Such" refers back to "problems like those mentioned." |
 | 14 | C | "In summary" signals conclusion/summary. |
-| 15 | B | "Subsequently" shows sequence (what comes after). |
+| 15 | C | "Subsequently" shows sequence (what comes after). |
 | 16 | D | Given info (car) first in new sentence, new info (blue) at end. |
-| 17 | A | All three items in same form (gerund). |
-| 18 | D | "May contribute" is hedged. Others are too certain for academic style. |
+| 17 | C | All three items in same form (gerund). |
+| 18 | B | "May contribute" is hedged. Others are too certain for academic style. |
 | 19 | A | "This" for what follows (forward reference). |
 | 20 | C | Ellipsis: "speak French" is omitted after second "can." |
 

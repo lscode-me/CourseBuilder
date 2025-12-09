@@ -454,3 +454,14 @@ dynamodb_best_practices = [
 - [DynamoDB Design Patterns](https://www.youtube.com/watch?v=HaEPXoXVf2k) (AWS re:Invent)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [10_Lambda](../10_Lambda/) — Serverless вычисления
+- [12_Messaging](../12_Messaging/) — Очереди сообщений SQS/SNS
+
+**Практика:**
+1. Создайте DynamoDB таблицу с partition и sort key
+2. Реализуйте CRUD операции через boto3
+3. Настройте GSI для альтернативного доступа к данным

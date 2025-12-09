@@ -7,19 +7,25 @@
 ## Question 1: Типы метрик
 
 
+
+
+
 Какой тип метрики подходит для подсчёта HTTP запросов?
 
-A) Summary
+A) Gauge
 
-B) Gauge
+B) Summary
 
-C) Histogram
+C) Counter
 
-D) Counter
+D) Histogram
 
 ---
 
 ## Question 2: Counter vs Gauge
+
+
+
 
 
 Чем Counter отличается от Gauge?
@@ -37,6 +43,9 @@ D) Counter для текстовых значений
 ## Question 3: Prometheus Pull Model
 
 
+
+
+
 Как Prometheus собирает метрики?
 
 A) Prometheus сам забирает метрики с /metrics endpoint
@@ -52,19 +61,25 @@ D) Через message queue
 ## Question 4: PromQL
 
 
+
+
+
 Какой PromQL запрос вычисляет rate (скорость изменения counter)?
 
-A) avg(http_requests_total)
+A) http_requests_total / 60
 
-B) rate(http_requests_total[5m])
+B) sum(http_requests_total)
 
-C) http_requests_total / 60
+C) rate(http_requests_total[5m])
 
-D) sum(http_requests_total)
+D) avg(http_requests_total)
 
 ---
 
 ## Question 5: USE Method
+
+
+
 
 
 Для чего предназначен USE метод?
@@ -82,19 +97,25 @@ D) Для трейсинга
 ## Question 6: RED Method
 
 
+
+
+
 Какие метрики включает RED метод?
 
 A) Resources, Endpoints, Dependencies
 
-B) Rate, Errors, Duration
+B) Read, Edit, Delete
 
-C) Read, Edit, Delete
+C) Rate, Errors, Duration
 
 D) Requests, Events, Data
 
 ---
 
 ## Question 7: Histogram
+
+
+
 
 
 Для чего используется histogram в Prometheus?
@@ -112,6 +133,9 @@ D) Для логирования
 ## Question 8: Percentiles
 
 
+
+
+
 Как вычислить P99 latency в PromQL?
 
 A) histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))
@@ -125,6 +149,9 @@ D) sum(http_request_duration_seconds)
 ---
 
 ## Question 9: Labels
+
+
+
 
 
 Какие labels плохо использовать (высокая кардинальность)?
@@ -142,26 +169,32 @@ D) service="api"
 ## Question 10: Alertmanager
 
 
+
+
+
 Что делает Alertmanager?
 
 A) Собирает метрики
 
-B) Маршрутизирует и отправляет уведомления об алертах
+B) Хранит данные
 
 C) Визуализирует дашборды
 
-D) Хранит данные
+D) Маршрутизирует и отправляет уведомления об алертах
 
 ---
 
 ## Question 11: Four Golden Signals
 
 
+
+
+
 Какой сигнал НЕ входит в Four Golden Signals от Google SRE?
 
-A) Errors
+A) Traffic
 
-B) Traffic
+B) Errors
 
 C) Latency
 
@@ -172,56 +205,68 @@ D) Memory
 ## Question 12: Alert Best Practices
 
 
+
+
+
 На что лучше настраивать алерты?
 
 A) На причины проблем
 
 B) На все возможные метрики
 
-C) Только на критические ошибки
+C) На симптомы проблем
 
-D) На симптомы проблем
+D) Только на критические ошибки
 
 ---
 
 ## Question 13: Grafana
 
 
+
+
+
 Для чего используется Grafana?
 
-A) Для логирования
+A) Для деплоя
 
-B) Для сбора метрик
+B) Для визуализации метрик и создания дашбордов
 
-C) Для деплоя
+C) Для сбора метрик
 
-D) Для визуализации метрик и создания дашбордов
+D) Для логирования
 
 ---
 
 ## Question 14: Scrape Interval
 
 
+
+
+
 Что такое scrape_interval в Prometheus?
 
-A) Время между запусками Prometheus
+A) Время хранения данных
 
-B) Интервал между сборами метрик с targets
+B) Задержка алертов
 
-C) Задержка алертов
+C) Время между запусками Prometheus
 
-D) Время хранения данных
+D) Интервал между сборами метрик с targets
 
 ---
 
 ## Question 15: For Clause
 
 
+
+
+
 Для чего нужен 'for' clause в правилах алертов Prometheus?
 
-A) Для группировки
+A) Для форматирования
 
-B) Для форматирования
+B) Для группировки
 
 C) Чтобы алерт сработал только если условие истинно определённое время
 
@@ -232,34 +277,43 @@ D) Для ускорения алертов
 ## Question 16: Node Exporter
 
 
+
+
+
 Что мониторит Node Exporter?
 
-A) Application метрики
+A) Database queries
 
-B) Database queries
+B) Application метрики
 
-C) Kubernetes pods
+C) Host-level метрики (CPU, memory, disk, network)
 
-D) Host-level метрики (CPU, memory, disk, network)
+D) Kubernetes pods
 
 ---
 
 ## Question 17: CPU Utilization
 
 
+
+
+
 Как измерить CPU utilization в процентах через node_exporter?
 
-A) 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+A) node_cpu_total
 
-B) cpu_usage
+B) 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
 
-C) node_cpu_percent
+C) cpu_usage
 
-D) node_cpu_total
+D) node_cpu_percent
 
 ---
 
 ## Question 18: Inhibit Rules
+
+
+
 
 
 Что делают inhibit_rules в Alertmanager?
@@ -277,30 +331,36 @@ D) Ускоряют алерты
 ## Question 19: Service Discovery
 
 
+
+
+
 Как Prometheus может автоматически находить targets в Kubernetes?
 
 A) Prometheus не поддерживает Kubernetes
 
 B) DNS lookup
 
-C) Ручная настройка static_configs
+C) kubernetes_sd_configs
 
-D) kubernetes_sd_configs
+D) Ручная настройка static_configs
 
 ---
 
 ## Question 20: Metric Naming
 
 
+
+
+
 Какое имя метрики соответствует best practices?
 
-A) HTTPRequests
+A) http-requests-count
 
-B) http-requests-count
+B) http_requests_total
 
-C) requests
+C) HTTPRequests
 
-D) http_requests_total
+D) requests
 
 ---
 
@@ -310,26 +370,26 @@ D) http_requests_total
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Counter — для подсчёта событий (монотонно возрастает) |
+| 1 | C | Counter — для подсчёта событий (монотонно возрастает) |
 | 2 | A | Counter только растёт, Gauge может расти и уменьшаться |
 | 3 | A | Prometheus pull model — сам забирает метрики с targets |
-| 4 | B | rate() вычисляет скорость изменения counter за период |
+| 4 | C | rate() вычисляет скорость изменения counter за период |
 | 5 | A | USE (Utilization, Saturation, Errors) для ресурсов |
-| 6 | B | RED: Rate, Errors, Duration — для сервисов |
+| 6 | C | RED: Rate, Errors, Duration — для сервисов |
 | 7 | C | Histogram для распределений (latency, размеры) |
 | 8 | A | histogram_quantile(0.99, ...) для P99 |
 | 9 | C | user_id — высокая кардинальность, убьёт Prometheus |
-| 10 | B | Alertmanager маршрутизирует и отправляет notifications |
+| 10 | D | Alertmanager маршрутизирует и отправляет notifications |
 | 11 | D | Four Golden Signals: Latency, Traffic, Errors, Saturation |
-| 12 | D | Алерты на симптомы, причины ищем при debugging |
-| 13 | D | Grafana для визуализации и дашбордов |
-| 14 | B | scrape_interval — как часто собирать метрики |
+| 12 | C | Алерты на симптомы, причины ищем при debugging |
+| 13 | B | Grafana для визуализации и дашбордов |
+| 14 | D | scrape_interval — как часто собирать метрики |
 | 15 | C | 'for' требует, чтобы условие было истинно N времени |
-| 16 | D | Node Exporter — host-level метрики |
-| 17 | A | 100 - idle процент = utilization |
+| 16 | C | Node Exporter — host-level метрики |
+| 17 | B | 100 - idle процент = utilization |
 | 18 | B | inhibit_rules подавляют менее важные алерты |
-| 19 | D | kubernetes_sd_configs для service discovery в K8s |
-| 20 | D | http_requests_total — snake_case с _total для counters |
+| 19 | C | kubernetes_sd_configs для service discovery в K8s |
+| 20 | B | http_requests_total — snake_case с _total для counters |
 
 ---
 

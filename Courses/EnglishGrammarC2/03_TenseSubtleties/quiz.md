@@ -7,11 +7,14 @@
 ## Question 1: Historic Present
 
 
+
+
+
 Which sentence uses Historic Present appropriately?
 
-A) "The meeting is starting yesterday." (reporting)
+A) "I am walking to work every day." (describing routine)
 
-B) "I am walking to work every day." (describing routine)
+B) "The meeting is starting yesterday." (reporting)
 
 C) "The French Revolution begins in 1789." (in an academic essay)
 
@@ -20,6 +23,9 @@ D) "So I'm at the store, and this guy comes up to me..." (telling a story)
 ---
 
 ## Question 2: Effect of Historic Present
+
+
+
 
 
 The Historic Present creates what effect in storytelling?
@@ -37,34 +43,43 @@ D) Immediacy and engagement
 ## Question 3: Academic Tense Choice
 
 
+
+
+
 "Smith (2010) argues that climate change is accelerating." The present tense suggests:
 
-A) Smith made this argument recently
+A) The speaker endorses or accepts this claim as valid
 
-B) Climate change started in 2010
+B) The argument is being made right now
 
-C) The speaker endorses or accepts this claim as valid
+C) Climate change started in 2010
 
-D) The argument is being made right now
+D) Smith made this argument recently
 
 ---
 
 ## Question 4: Academic Distancing
 
 
+
+
+
 Which sentence creates the most NEUTRAL stance toward the cited research?
 
 A) "Jones found that the theory may be correct."
 
-B) "Jones proved that the theory was correct."
+B) "Jones knows that the theory is correct."
 
 C) "Jones demonstrates that the theory is correct."
 
-D) "Jones knows that the theory is correct."
+D) "Jones proved that the theory was correct."
 
 ---
 
 ## Question 5: Progressive as Attitude
+
+
+
 
 
 "You're always leaving your things everywhere!" The progressive here expresses:
@@ -82,19 +97,25 @@ D) Uncertainty about the habit
 ## Question 6: Progressive for Politeness
 
 
+
+
+
 Which request is MOST polite?
 
-A) "I was wondering if I could ask you something."
+A) "I want to ask you something."
 
-B) "I want to ask you something."
+B) "I'm wanting to ask you something."
 
-C) "I wondered if I could ask you something."
+C) "I was wondering if I could ask you something."
 
-D) "I'm wanting to ask you something."
+D) "I wondered if I could ask you something."
 
 ---
 
 ## Question 7: Past Perfect Function
+
+
+
 
 
 "When I arrived, she had already left." The Past Perfect here:
@@ -112,6 +133,9 @@ D) Is incorrect and should be Simple Past
 ## Question 8: Optional Past Perfect
 
 
+
+
+
 When is Past Perfect OPTIONAL?
 
 A) After "when" with unclear sequence
@@ -125,6 +149,9 @@ D) Whenever referring to the past
 ---
 
 ## Question 9: Will Be -ing
+
+
+
 
 
 "Will you be using the car tonight?" compared to "Will you use the car tonight?" is:
@@ -142,6 +169,9 @@ D) More grammatically correct
 ## Question 10: Future in Time Clauses
 
 
+
+
+
 Choose the correct sentence:
 
 A) "I call you when I will arrive."
@@ -155,6 +185,9 @@ D) "I'll call you when I arrive."
 ---
 
 ## Question 11: Reported Speech Backshift
+
+
+
 
 
 "Water boils at 100 degrees," the teacher said. The best reported form is:
@@ -172,34 +205,43 @@ D) Neither is correct.
 ## Question 12: Foreground vs Background
 
 
+
+
+
 In "The sun was setting when he reached the top," which is foreground?
 
-A) "He reached the top" (foreground)
+A) Both are background
 
-B) Both are background
+B) "He reached the top" (foreground)
 
-C) Both are foreground
+C) "The sun was setting" (background)
 
-D) "The sun was setting" (background)
+D) Both are foreground
 
 ---
 
 ## Question 13: Tense for Distance
 
 
+
+
+
 Which creates more emotional DISTANCE from the event?
 
-A) "He realizes he lost his wallet."
+A) "He realized he lost his wallet."
 
 B) "He is realizing he has lost his wallet."
 
-C) "He realized he lost his wallet."
+C) "He realizes he lost his wallet."
 
 D) "He realized he had lost his wallet."
 
 ---
 
 ## Question 14: Present Continuous for Future
+
+
+
 
 
 "I'm meeting John at 6" implies:
@@ -217,34 +259,43 @@ D) An external timetable
 ## Question 15: Present Simple for Future
 
 
+
+
+
 "The train leaves at 8 pm" uses Present Simple because:
 
 A) Trains always leave at 8 pm
 
 B) The speaker is at the station now
 
-C) The speaker is uncertain
+C) It refers to a fixed schedule/timetable
 
-D) It refers to a fixed schedule/timetable
+D) The speaker is uncertain
 
 ---
 
 ## Question 16: Narrative Tense Mixing
 
 
+
+
+
 In conversational storytelling, mixing Historic Present with past tenses is:
 
-A) Only acceptable in written fiction
+A) A sign of non-native speaker
 
-B) Always grammatically incorrect
+B) Only acceptable in written fiction
 
-C) A sign of non-native speaker
+C) Natural and common among native speakers
 
-D) Natural and common among native speakers
+D) Always grammatically incorrect
 
 ---
 
 ## Question 17: Stylistic Choice
+
+
+
 
 
 "Jones (2022) claimed that..." vs "Jones (2022) argues that..." The difference is:
@@ -262,19 +313,25 @@ D) Past = neutral report; Present = endorsement
 ## Question 18: Progressive Subjectivity
 
 
+
+
+
 "Rain was falling" vs "Rain fell" — the Progressive version:
 
-A) Indicates the rain stopped
+A) Is more formal
 
-B) Presents the scene as experienced/perceived
+B) Is incorrect
 
-C) Is incorrect
+C) Indicates the rain stopped
 
-D) Is more formal
+D) Presents the scene as experienced/perceived
 
 ---
 
 ## Question 19: Creating Engagement
+
+
+
 
 
 To make a story more engaging in casual speech, you should:
@@ -290,6 +347,9 @@ D) Use Historic Present for key moments
 ---
 
 ## Question 20: Russian Interference
+
+
+
 
 
 Which error is typical of Russian speakers with tenses?
@@ -312,22 +372,22 @@ D) Using too much Progressive aspect
 |---|--------|-------------|
 | 1 | D | Historic Present is appropriate for conversational storytelling, not academic essays or routine descriptions. |
 | 2 | D | Historic Present creates immediacy and engagement, making listeners feel present in the story. |
-| 3 | C | Present tense for cited research suggests the speaker accepts or endorses the validity of the claim. |
+| 3 | A | Present tense for cited research suggests the speaker accepts or endorses the validity of the claim. |
 | 4 | A | "Found that... may be" is neutral—past tense + hedging modal doesn't endorse or reject. |
 | 5 | C | Progressive with "always" expresses speaker's emotional attitude, typically annoyance. |
-| 6 | A | Past progressive "was wondering" + conditional creates maximum politeness/tentativeness. |
+| 6 | C | Past progressive "was wondering" + conditional creates maximum politeness/tentativeness. |
 | 7 | B | Past Perfect shows "leaving" happened before "arriving" — establishes sequence. |
 | 8 | B | When sequence is clear from time markers or context, Past Perfect is optional. |
 | 9 | A | "Will be -ing" is softer, more neutral—doesn't imply ulterior motive for asking. |
 | 10 | D | Present Simple after "when" for future time clauses—no "will" in the time clause. |
 | 11 | C | For universal truths, either tense is acceptable in reported speech. |
-| 12 | A | "Reached" (Simple) is the foreground/main event; "was setting" (Continuous) is background. |
+| 12 | B | "Reached" (Simple) is the foreground/main event; "was setting" (Continuous) is background. |
 | 13 | D | Past Perfect creates more narrative distance than Simple Past. |
 | 14 | A | Present Continuous for future indicates a personal arrangement already made. |
-| 15 | D | Present Simple for future refers to fixed schedules/timetables outside speaker's control. |
-| 16 | D | Mixing Historic Present with past tenses is natural in native speaker storytelling. |
+| 15 | C | Present Simple for future refers to fixed schedules/timetables outside speaker's control. |
+| 16 | C | Mixing Historic Present with past tenses is natural in native speaker storytelling. |
 | 17 | D | Present = suggesting ongoing validity/endorsement; Past = neutral historical report. |
-| 18 | B | Progressive presents the scene subjectively, as it was being experienced. |
+| 18 | D | Progressive presents the scene subjectively, as it was being experienced. |
 | 19 | D | Historic Present at key moments increases engagement in casual storytelling. |
 | 20 | C | Russian speakers often transfer the pattern of using future tense after "когда" (when). |
 

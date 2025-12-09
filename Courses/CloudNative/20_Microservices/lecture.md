@@ -434,3 +434,14 @@ for service, purpose in aws_microservices_stack.items():
 - [AWS Microservices](https://aws.amazon.com/microservices/)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [21_Observability](../21_Observability/) — Мониторинг микросервисов
+- [22_Security](../22_Security/) — Безопасность микросервисов
+
+**Практика:**
+1. Разбейте монолит на 2-3 микросервиса
+2. Реализуйте коммуникацию через SQS/SNS
+3. Настройте service mesh с App Mesh

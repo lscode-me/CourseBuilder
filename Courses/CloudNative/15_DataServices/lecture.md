@@ -356,3 +356,14 @@ for service, details in comparison.items():
 - [Kinesis Developer Guide](https://docs.aws.amazon.com/kinesis/)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [16_IaC](../16_IaC/) — Infrastructure as Code
+- [21_Observability](../21_Observability/) — Мониторинг и логирование
+
+**Практика:**
+1. Выполните SQL запросы к S3 данным через Athena
+2. Настройте Kinesis Data Stream для real-time данных
+3. Создайте простой ETL pipeline с Glue

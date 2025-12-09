@@ -7,19 +7,25 @@
 ## Question 1: Определение GitOps
 
 
+
+
+
 Что является ключевым принципом GitOps?
 
-A) Git — единственный источник истины для инфраструктуры и приложений
+A) Deployment через SSH
 
-B) Ручное управление кластером
+B) Git используется только для кода приложений
 
-C) Git используется только для кода приложений
+C) Ручное управление кластером
 
-D) Deployment через SSH
+D) Git — единственный источник истины для инфраструктуры и приложений
 
 ---
 
 ## Question 2: Push vs Pull
+
+
+
 
 
 Чем Pull модель GitOps отличается от традиционной Push модели?
@@ -37,6 +43,9 @@ D) Это одно и то же
 ## Question 3: ArgoCD
 
 
+
+
+
 Что такое ArgoCD?
 
 A) Декларативный GitOps continuous delivery tool для Kubernetes
@@ -50,6 +59,9 @@ D) База данных
 ---
 
 ## Question 4: Reconciliation
+
+
+
 
 
 Что означает "continuous reconciliation" в GitOps?
@@ -67,6 +79,9 @@ D) Непрерывное тестирование
 ## Question 5: Self-Healing
 
 
+
+
+
 Что обеспечивает selfHeal в ArgoCD?
 
 A) Автоматическое восстановление ресурсов при drift (изменениях вне Git)
@@ -80,6 +95,9 @@ D) Автоматическое исправление ошибок в коде
 ---
 
 ## Question 6: Application CRD
+
+
+
 
 
 Что описывает Application CRD в ArgoCD?
@@ -97,6 +115,9 @@ D) Сетевые политики
 ## Question 7: Kustomize
 
 
+
+
+
 Для чего используется Kustomize в GitOps?
 
 A) Для управления environment-specific конфигурациями (base + overlays)
@@ -112,34 +133,43 @@ D) Для мониторинга
 ## Question 8: Secrets в GitOps
 
 
+
+
+
 Как правильно хранить секреты в GitOps репозитории?
 
-A) В README файле
+A) В base64 encoding
 
-B) Использовать Sealed Secrets или External Secrets (зашифрованные)
+B) В plain-text в Secret manifest
 
-C) В base64 encoding
+C) Использовать Sealed Secrets или External Secrets (зашифрованные)
 
-D) В plain-text в Secret manifest
+D) В README файле
 
 ---
 
 ## Question 9: App of Apps
 
 
+
+
+
 Что такое "App of Apps" паттерн в ArgoCD?
 
-A) Родительское Application, которое управляет другими Applications
+A) Приложение с несколькими репликами
 
-B) Multi-container pod
+B) Микросервисная архитектура
 
-C) Приложение с несколькими репликами
+C) Родительское Application, которое управляет другими Applications
 
-D) Микросервисная архитектура
+D) Multi-container pod
 
 ---
 
 ## Question 10: Monorepo vs Polyrepo
+
+
+
 
 
 Когда лучше использовать Monorepo для GitOps?
@@ -157,19 +187,25 @@ D) Когда команда небольшая и нужна простота �
 ## Question 11: Prune
 
 
+
+
+
 Что делает опция `prune: true` в ArgoCD syncPolicy?
 
-A) Удаляет старые images
+A) Удаляет историю Git
 
-B) Удаляет ресурсы из кластера, которых нет в Git
+B) Очищает логи
 
-C) Удаляет историю Git
+C) Удаляет старые images
 
-D) Очищает логи
+D) Удаляет ресурсы из кластера, которых нет в Git
 
 ---
 
 ## Question 12: Image Updater
+
+
+
 
 
 Для чего используется ArgoCD Image Updater?
@@ -187,19 +223,25 @@ D) Для сканирования уязвимостей
 ## Question 13: ApplicationSet
 
 
+
+
+
 Что позволяет делать ApplicationSet?
 
-A) Управлять DNS
+A) Создавать Docker images
 
 B) Настраивать firewall
 
 C) Генерировать множество Applications из шаблона
 
-D) Создавать Docker images
+D) Управлять DNS
 
 ---
 
 ## Question 14: External Secrets
+
+
+
 
 
 Что делает External Secrets Operator?
@@ -217,6 +259,9 @@ D) Синхронизирует секреты из внешних хранил�
 ## Question 15: Git Best Practices
 
 
+
+
+
 Какой Git best practice важен для GitOps?
 
 A) Использовать только main branch
@@ -230,6 +275,9 @@ D) Никогда не делать merge
 ---
 
 ## Question 16: Drift
+
+
+
 
 
 Что такое "drift" в контексте GitOps?
@@ -247,6 +295,9 @@ D) Сетевая задержка
 ## Question 17: Sync Status
 
 
+
+
+
 Что означает статус "OutOfSync" в ArgoCD?
 
 A) Приложение работает нормально
@@ -260,6 +311,9 @@ D) Кластер выключен
 ---
 
 ## Question 18: Overlay
+
+
+
 
 
 Что такое "overlay" в Kustomize?
@@ -277,19 +331,25 @@ D) Сетевой протокол
 ## Question 19: Health Check
 
 
+
+
+
 Как ArgoCD определяет health приложения?
 
-A) Анализирует статус Kubernetes ресурсов (Ready, Progressing, etc.)
+A) Читает логи
 
-B) Читает логи
+B) Пингует серверы
 
-C) Пингует серверы
+C) Проверяет Git commits
 
-D) Проверяет Git commits
+D) Анализирует статус Kubernetes ресурсов (Ready, Progressing, etc.)
 
 ---
 
 ## Question 20: Rollback
+
+
+
 
 
 Как выполнить rollback в GitOps?
@@ -310,17 +370,17 @@ D) Rollback невозможен
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | GitOps = Git as single source of truth для всей системы |
+| 1 | D | GitOps = Git as single source of truth для всей системы |
 | 2 | C | Pull: агент в кластере сам забирает изменения (не CI push) |
 | 3 | A | ArgoCD — GitOps CD tool для Kubernetes |
 | 4 | A | Continuous reconciliation — постоянное сравнение и синхронизация |
 | 5 | A | selfHeal автоматически восстанавливает при изменениях вне Git |
 | 6 | C | Application связывает source (Git) с destination (K8s) |
 | 7 | A | Kustomize: base + overlays для разных environments |
-| 8 | B | Sealed Secrets или External Secrets для безопасного хранения |
-| 9 | A | App of Apps — паттерн для управления множеством Applications |
+| 8 | C | Sealed Secrets или External Secrets для безопасного хранения |
+| 9 | C | App of Apps — паттерн для управления множеством Applications |
 | 10 | D | Monorepo хорош для небольших команд, проще управлять |
-| 11 | B | prune удаляет orphaned ресурсы (которых нет в Git) |
+| 11 | D | prune удаляет orphaned ресурсы (которых нет в Git) |
 | 12 | C | Image Updater автоматически обновляет tags в Git |
 | 13 | C | ApplicationSet генерирует Applications из шаблонов |
 | 14 | D | External Secrets синхронизирует секреты из внешних хранилищ |
@@ -328,7 +388,7 @@ D) Rollback невозможен
 | 16 | C | Drift = расхождение Git vs cluster |
 | 17 | C | OutOfSync = actual ≠ desired |
 | 18 | B | Overlay — env-specific настройки поверх base |
-| 19 | A | ArgoCD анализирует статусы K8s ресурсов |
+| 19 | D | ArgoCD анализирует статусы K8s ресурсов |
 | 20 | B | Rollback через git revert или указание revision |
 
 ---

@@ -7,11 +7,14 @@
 ## Question 1: Strategy Definition
 
 
+
+
+
 Что такое Engineering Strategy?
 
-A) Как engineering достигнет business goals, какие инвестиции сделать, trade-offs
+A) План на неделю
 
-B) План на неделю
+B) Как engineering достигнет business goals, какие инвестиции сделать, trade-offs
 
 C) Только roadmap
 
@@ -22,28 +25,34 @@ D) Только технические решения
 ## Question 2: Strategy vs Tactics
 
 
+
+
+
 В чём разница между strategy и tactics?
 
 A) Strategy короче
 
-B) Нет разницы
+B) Strategy: why/what, quarters/years; Tactics: how, weeks/months
 
-C) Strategy: why/what, quarters/years; Tactics: how, weeks/months
+C) Tactics важнее
 
-D) Tactics важнее
+D) Нет разницы
 
 ---
 
 ## Question 3: Business Connection
 
 
+
+
+
 Как engineering strategy связана с business?
 
-A) Company Strategy → Business Goals → Product Strategy → Eng Strategy
+A) Engineering определяет business goals
 
-B) Engineering определяет business goals
+B) Никак не связана
 
-C) Никак не связана
+C) Company Strategy → Business Goals → Product Strategy → Eng Strategy
 
 D) Это независимые процессы
 
@@ -52,13 +61,16 @@ D) Это независимые процессы
 ## Question 4: Build vs Buy
 
 
+
+
+
 Когда лучше build вместо buy?
 
-A) Всегда buy
+A) Всегда build
 
 B) Когда core competency, strategic importance, long-term investment
 
-C) Всегда build
+C) Всегда buy
 
 D) Случайный выбор
 
@@ -67,133 +79,160 @@ D) Случайный выбор
 ## Question 5: Technical Debt
 
 
+
+
+
 Когда стоит платить technical debt?
 
-A) Только в пятницу
+A) Всегда сразу всё
 
-B) Никогда
+B) Когда блокирует development, вызывает reliability issues, замедляет velocity
 
-C) Всегда сразу всё
+C) Никогда
 
-D) Когда блокирует development, вызывает reliability issues, замедляет velocity
+D) Только в пятницу
 
 ---
 
 ## Question 6: Annual Planning
 
 
+
+
+
 Что включает annual planning?
 
 A) Только bugs
 
-B) Только meetings schedule
+B) Только headcount
 
-C) Только headcount
+C) Themes, goals, headcount, major investments
 
-D) Themes, goals, headcount, major investments
+D) Только meetings schedule
 
 ---
 
 ## Question 7: Portfolio Allocation
 
 
+
+
+
 Типичное allocation для product work?
 
-A) 10%
+A) 100%
 
-B) 60-70%
+B) 0%
 
-C) 0%
+C) 60-70%
 
-D) 100%
+D) 10%
 
 ---
 
 ## Question 8: Technical Principles
 
 
+
+
+
 Пример хорошего technical principle?
 
-A) "Security by default — built in, not added"
+A) "Использовать все новые технологии"
 
-B) "Делать что хотим"
+B) "Нет принципов"
 
-C) "Нет принципов"
+C) "Делать что хотим"
 
-D) "Использовать все новые технологии"
+D) "Security by default — built in, not added"
 
 ---
 
 ## Question 9: DORA Metrics
 
 
+
+
+
 Что такое DORA metrics?
 
-A) Метрики красоты
+A) Количество митингов
 
-B) Lines of code
+B) Deployment frequency, lead time, change failure rate, time to restore
 
-C) Deployment frequency, lead time, change failure rate, time to restore
+C) Lines of code
 
-D) Количество митингов
+D) Метрики красоты
 
 ---
 
 ## Question 10: Good OKR
 
 
+
+
+
 Пример хорошего engineering Key Result?
 
-A) "Писать код"
+A) "Делать лучше"
 
-B) "Делать лучше"
+B) "Писать код"
 
-C) "Handle 2x current load, 99.9% uptime"
+C) "Провести митинги"
 
-D) "Провести митинги"
+D) "Handle 2x current load, 99.9% uptime"
 
 ---
 
 ## Question 11: Change Management
 
 
+
+
+
 Первый шаг в change management?
 
-A) Сразу менять
+A) Игнорировать сопротивление
 
-B) Игнорировать сопротивление
+B) Declare victory
 
-C) Declare victory
+C) Create urgency — why now?
 
-D) Create urgency — why now?
+D) Сразу менять
 
 ---
 
 ## Question 12: Strategic Communication
 
 
+
+
+
 Что включает engineering narrative?
 
-A) Where going, why choices, what enables, how to get there
+A) Только технические детали
 
-B) Только технические детали
+B) Только числа
 
-C) Только числа
+C) Только проблемы
 
-D) Только проблемы
+D) Where going, why choices, what enables, how to get there
 
 ---
 
 ## Question 13: Team Topology
 
 
+
+
+
 Какие типы команд в Team Topologies?
 
-A) Только infrastructure
+A) Только feature teams
 
-B) Только managers
+B) Только infrastructure
 
-C) Только feature teams
+C) Только managers
 
 D) Stream-aligned, Platform, Enabling, Complicated subsystem
 
@@ -202,19 +241,25 @@ D) Stream-aligned, Platform, Enabling, Complicated subsystem
 ## Question 14: Strategy Antipattern
 
 
+
+
+
 Что является strategy antipattern?
 
-A) Too many priorities, strategy not connected to business
+A) Communicated strategy
 
-B) Clear choices
+B) Too many priorities, strategy not connected to business
 
-C) Communicated strategy
+C) Clear choices
 
 D) Explicit trade-offs
 
 ---
 
 ## Question 15: Signs of Good Strategy
+
+
+
 
 
 Признак хорошей strategy?
@@ -232,13 +277,16 @@ D) Clear choices made, trade-offs explicit, people can explain it
 ## Question 16: Headcount Planning
 
 
+
+
+
 Что учитывается в headcount planning?
 
-A) Только желания
+A) Business growth, scaling needs, new initiatives, attrition
 
 B) Только budget
 
-C) Business growth, scaling needs, new initiatives, attrition
+C) Только желания
 
 D) Только текущая численность
 
@@ -247,58 +295,70 @@ D) Только текущая численность
 ## Question 17: Technology Choices
 
 
+
+
+
 Какой принцип для technology choices?
 
-A) Всегда newest tech
+A) Никаких principles
 
-B) Boring technology for core, new tech for isolated experiments
+B) Random selection
 
-C) Никаких principles
+C) Всегда newest tech
 
-D) Random selection
+D) Boring technology for core, new tech for isolated experiments
 
 ---
 
 ## Question 18: Roadmap Quality
 
 
+
+
+
 Признак хорошего roadmap?
 
-A) Tied to goals, realistic, flexibility, clear dependencies
+A) Wishful thinking
 
-B) Everything P0
+B) Tied to goals, realistic, flexibility, clear dependencies
 
 C) Never updated
 
-D) Wishful thinking
+D) Everything P0
 
 ---
 
 ## Question 19: Communicating to Executives
 
 
+
+
+
 Что коммуницировать executives?
 
-A) Только хорошее
+A) Business impact, goal progress, risks, resource needs
 
-B) Code качество
+B) Только хорошее
 
-C) Business impact, goal progress, risks, resource needs
+C) Технические детали
 
-D) Технические детали
+D) Code качество
 
 ---
 
 ## Question 20: Strategy Process
 
 
+
+
+
 Какой первый шаг в creating strategy?
 
-A) Understand business context
+A) Create slides
 
-B) Create slides
+B) Hire people
 
-C) Hire people
+C) Understand business context
 
 D) Написать roadmap
 
@@ -310,26 +370,26 @@ D) Написать roadmap
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | How engineering achieves goals, investments, trade-offs |
-| 2 | C | Strategy: why/what, quarters/years; Tactics: how, weeks/months |
-| 3 | A | Company → Business → Product → Eng Strategy |
+| 1 | B | How engineering achieves goals, investments, trade-offs |
+| 2 | B | Strategy: why/what, quarters/years; Tactics: how, weeks/months |
+| 3 | C | Company → Business → Product → Eng Strategy |
 | 4 | B | Build when core competency, strategic, long-term |
-| 5 | D | Pay when blocks development, reliability issues, slows velocity |
-| 6 | D | Annual: themes, goals, headcount, major investments |
-| 7 | B | Product work: 60-70% |
-| 8 | A | "Security by default — built in, not added" |
-| 9 | C | DORA: deployment frequency, lead time, failure rate, restore time |
-| 10 | C | "Handle 2x load, 99.9% uptime" - measurable |
-| 11 | D | First: create urgency — why now? |
-| 12 | A | Narrative: direction, why, what enables, how |
+| 5 | B | Pay when blocks development, reliability issues, slows velocity |
+| 6 | C | Annual: themes, goals, headcount, major investments |
+| 7 | C | Product work: 60-70% |
+| 8 | D | "Security by default — built in, not added" |
+| 9 | B | DORA: deployment frequency, lead time, failure rate, restore time |
+| 10 | D | "Handle 2x load, 99.9% uptime" - measurable |
+| 11 | C | First: create urgency — why now? |
+| 12 | D | Narrative: direction, why, what enables, how |
 | 13 | D | Stream-aligned, Platform, Enabling, Complicated subsystem |
-| 14 | A | Antipattern: too many priorities, not connected to business |
+| 14 | B | Antipattern: too many priorities, not connected to business |
 | 15 | D | Good: clear choices, explicit trade-offs, explainable |
-| 16 | C | Headcount: growth, scaling, initiatives, attrition |
-| 17 | B | Boring for core, new for experiments |
-| 18 | A | Good roadmap: tied to goals, realistic, flexible |
-| 19 | C | To execs: business impact, progress, risks, needs |
-| 20 | A | First: understand business context |
+| 16 | A | Headcount: growth, scaling, initiatives, attrition |
+| 17 | D | Boring for core, new for experiments |
+| 18 | B | Good roadmap: tied to goals, realistic, flexible |
+| 19 | A | To execs: business impact, progress, risks, needs |
+| 20 | C | First: understand business context |
 
 ---
 

@@ -398,3 +398,14 @@ for service, use_cases in decision_guide.items():
 - [EventBridge User Guide](https://docs.aws.amazon.com/eventbridge/latest/userguide/)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [13_APIGateway](../13_APIGateway/) — API Gateway и интеграции
+- [20_Microservices](../20_Microservices/) — Паттерны микросервисов
+
+**Практика:**
+1. Создайте SQS очередь и обработайте сообщения Lambda
+2. Настройте SNS topic с email подпиской
+3. Реализуйте event-driven архитектуру с EventBridge

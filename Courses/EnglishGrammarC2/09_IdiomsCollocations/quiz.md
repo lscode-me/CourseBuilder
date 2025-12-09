@@ -7,34 +7,43 @@
 ## Question 1: MAKE vs DO
 
 
+
+
+
 Choose the correct collocation:
 
 A) have a mistake
 
-B) make a mistake
+B) do a mistake
 
 C) take a mistake
 
-D) do a mistake
+D) make a mistake
 
 ---
 
 ## Question 2: Heavy vs Strong
 
 
+
+
+
 Choose the natural collocation:
 
-A) big rain
+A) strong rain
 
-B) hard rain
+B) big rain
 
-C) heavy rain
+C) hard rain
 
-D) strong rain
+D) heavy rain
 
 ---
 
 ## Question 3: Delexical TAKE
+
+
+
 
 
 Complete: "Let's ___ a break."
@@ -52,94 +61,115 @@ D) take
 ## Question 4: Adverb-Adjective
 
 
+
+
+
 Choose the natural collocation:
 
-A) deeply unlikely
+A) strongly unlikely
 
-B) very unlikely
+B) highly unlikely
 
-C) highly unlikely
+C) deeply unlikely
 
-D) strongly unlikely
+D) very unlikely
 
 ---
 
 ## Question 5: Russian Calque
 
 
+
+
+
 "Делать фото" in English is:
 
-A) have a photo
+A) make a photo
 
-B) take a photo
+B) do a photo
 
-C) do a photo
+C) have a photo
 
-D) make a photo
+D) take a photo
 
 ---
 
 ## Question 6: Preposition Collocation
 
 
+
+
+
 "Depend ___" — complete with the correct preposition:
 
-A) by
+A) from
 
-B) of
+B) on
 
-C) on
+C) by
 
-D) from
+D) of
 
 ---
 
 ## Question 7: Extreme Adjective
 
 
+
+
+
 "Very ___" is unnatural with which word?
 
-A) important
+A) unique
 
 B) interesting
 
 C) difficult
 
-D) unique
+D) important
 
 ---
 
 ## Question 8: Business Idiom
 
 
+
+
+
 "Think outside the box" means:
 
-A) Think about boxes
+A) Move outside the office
 
-B) Think inside a container
+B) Think about boxes
 
-C) Move outside the office
+C) Think creatively and unconventionally
 
-D) Think creatively and unconventionally
+D) Think inside a container
 
 ---
 
 ## Question 9: HAVE Collocation
 
 
+
+
+
 Which is NOT a natural collocation with HAVE?
 
-A) have a meeting
+A) have an effect
 
-B) have an effect
+B) have a decision
 
-C) have a decision
+C) have difficulty
 
-D) have difficulty
+D) have a meeting
 
 ---
 
 ## Question 10: Binomial
+
+
+
 
 
 Which order is correct?
@@ -157,6 +187,9 @@ D) white and black
 ## Question 11: Academic Collocation
 
 
+
+
+
 "___ conclusions" — the most formal option is:
 
 A) draw conclusions
@@ -170,6 +203,9 @@ D) do conclusions
 ---
 
 ## Question 12: Intensifying Adverb
+
+
+
 
 
 "___ disappointed" — choose the natural collocation:
@@ -187,19 +223,25 @@ D) deeply disappointed
 ## Question 13: False Friend
 
 
+
+
+
 Russian "актуальный" (meaning current/relevant) translates as:
 
 A) real
 
 B) active
 
-C) actual
+C) current / relevant
 
-D) current / relevant
+D) actual
 
 ---
 
 ## Question 14: GIVE Collocation
+
+
+
 
 
 Which is natural?
@@ -217,6 +259,9 @@ D) give a mistake
 ## Question 15: Register Awareness
 
 
+
+
+
 "Kick the bucket" (meaning to die) is:
 
 A) Appropriate for a formal obituary
@@ -230,6 +275,9 @@ D) Informal/slang, inappropriate for formal contexts
 ---
 
 ## Question 16: Widely + Adjective
+
+
+
 
 
 Choose the natural collocation:
@@ -247,19 +295,25 @@ D) widely known
 ## Question 17: Commit Collocation
 
 
+
+
+
 "Commit ___" is natural with:
 
-A) a photo
+A) a decision
 
-B) a crime
+B) a mistake
 
-C) a decision
+C) a photo
 
-D) a mistake
+D) a crime
 
 ---
 
 ## Question 18: DO Collocation
+
+
+
 
 
 Which is correct with DO?
@@ -277,6 +331,9 @@ D) do a decision
 ## Question 19: Deeply + Adjective
 
 
+
+
+
 "Deeply ___" is natural with:
 
 A) successful
@@ -292,15 +349,18 @@ D) concerned
 ## Question 20: Collocation Error
 
 
+
+
+
 Which sentence has a collocation error?
 
-A) They took action immediately.
+A) He did a big progress in his studies.
 
-B) There was heavy traffic this morning.
+B) They took action immediately.
 
-C) She made a serious mistake.
+C) There was heavy traffic this morning.
 
-D) He did a big progress in his studies.
+D) She made a serious mistake.
 
 ---
 
@@ -310,26 +370,26 @@ D) He did a big progress in his studies.
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | "Make a mistake" — make is used with mistakes, not do. |
-| 2 | C | "Heavy rain" is the natural collocation; "strong" is used with wind. |
+| 1 | D | "Make a mistake" — make is used with mistakes, not do. |
+| 2 | D | "Heavy rain" is the natural collocation; "strong" is used with wind. |
 | 3 | D | "Take a break" — take is the correct delexical verb here. |
-| 4 | C | "Highly unlikely" — highly collocates with probability/likelihood. |
-| 5 | B | "Take a photo" — Russian "делать" doesn't translate to "make" here. |
-| 6 | C | "Depend on" — not "from" (Russian interference from "от"). |
-| 7 | D | "Unique" is an absolute adjective; use "truly unique" not "very unique." |
-| 8 | D | "Think outside the box" = think creatively, unconventionally. |
-| 9 | C | "Have a decision" is wrong; use "make/take a decision." |
+| 4 | B | "Highly unlikely" — highly collocates with probability/likelihood. |
+| 5 | D | "Take a photo" — Russian "делать" doesn't translate to "make" here. |
+| 6 | B | "Depend on" — not "from" (Russian interference from "от"). |
+| 7 | A | "Unique" is an absolute adjective; use "truly unique" not "very unique." |
+| 8 | C | "Think outside the box" = think creatively, unconventionally. |
+| 9 | B | "Have a decision" is wrong; use "make/take a decision." |
 | 10 | C | "Black and white" is the fixed binomial order. |
 | 11 | A | "Draw conclusions" is the academic collocation. |
 | 12 | A | "Bitterly disappointed" — bitterly collocates with disappointment. |
-| 13 | D | "Актуальный" = current/relevant; "actual" = real/true. |
+| 13 | C | "Актуальный" = current/relevant; "actual" = real/true. |
 | 14 | A | "Give advice" is the natural collocation. |
 | 15 | D | "Kick the bucket" is informal/slang, not for formal use. |
 | 16 | D | "Widely known" — widely collocates with knowledge/availability. |
-| 17 | B | "Commit a crime" — commit is the verb for crimes. |
+| 17 | D | "Commit a crime" — commit is the verb for crimes. |
 | 18 | C | "Do research" — research takes "do" or "conduct." |
 | 19 | D | "Deeply concerned" — deeply collocates with emotions. |
-| 20 | D | "Did big progress" is wrong; use "made great progress." |
+| 20 | A | "Did big progress" is wrong; use "made great progress." |
 
 ---
 

@@ -7,19 +7,25 @@
 ## Question 1: Defining vs Non-Defining
 
 
+
+
+
 Which sentence is NON-DEFINING (needs commas)?
 
-A) The car which I bought last year is reliable.
+A) My brother who lives in Paris is a doctor.
 
-B) My mother who is 65 works as a teacher.
+B) The students who studied hard passed the exam.
 
-C) My brother who lives in Paris is a doctor.
+C) The car which I bought last year is reliable.
 
-D) The students who studied hard passed the exam.
+D) My mother who is 65 works as a teacher.
 
 ---
 
 ## Question 2: Punctuation
+
+
+
 
 
 Which punctuation is correct?
@@ -28,20 +34,23 @@ A) My, sister who lives in London, is visiting.
 
 B) My sister who lives in London is visiting.
 
-C) My sister, who lives in London, is visiting.
+C) My sister, who lives in London is visiting.
 
-D) My sister, who lives in London is visiting.
+D) My sister, who lives in London, is visiting.
 
 ---
 
 ## Question 3: That vs Which
 
 
+
+
+
 Which sentence is INCORRECT?
 
-A) My car, which is very old, needs repair.
+A) The film which won the award was excellent.
 
-B) The film which won the award was excellent.
+B) My car, which is very old, needs repair.
 
 C) My car, that is very old, needs repair.
 
@@ -52,19 +61,25 @@ D) The book that I read was interesting.
 ## Question 4: Omitting Pronouns
 
 
+
+
+
 In which sentence can the relative pronoun be omitted?
 
-A) The car which is parked outside is mine.
+A) The woman whom I met was nice.
 
-B) My sister, who lives in Paris, is visiting.
+B) The car which is parked outside is mine.
 
-C) The man who called is here.
+C) My sister, who lives in Paris, is visiting.
 
-D) The woman whom I met was nice.
+D) The man who called is here.
 
 ---
 
 ## Question 5: Whose
+
+
+
 
 
 Which sentence correctly uses "whose"?
@@ -82,6 +97,9 @@ D) The man who's car was stolen reported it.
 ## Question 6: Sentence Relative
 
 
+
+
+
 "He didn't reply, ___ annoyed me."
 
 A) who
@@ -97,64 +115,79 @@ D) what
 ## Question 7: Reducing to Participle
 
 
+
+
+
 "The man who is standing there is my boss." Can be reduced to:
 
-A) The man standing there is my boss.
+A) The man is standing there is my boss.
 
-B) The man is standing there is my boss.
+B) The man standing there is my boss.
 
-C) The man to stand there is my boss.
+C) The man stood there is my boss.
 
-D) The man stood there is my boss.
+D) The man to stand there is my boss.
 
 ---
 
 ## Question 8: Past Participle Reduction
 
 
+
+
+
 "The book which was written by Tolstoy is famous." Reduces to:
 
-A) The book wrote by Tolstoy is famous.
+A) The book to write by Tolstoy is famous.
 
-B) The book to write by Tolstoy is famous.
+B) The book written by Tolstoy is famous.
 
-C) The book written by Tolstoy is famous.
+C) The book writing by Tolstoy is famous.
 
-D) The book writing by Tolstoy is famous.
+D) The book wrote by Tolstoy is famous.
 
 ---
 
 ## Question 9: Subject vs Object
 
 
+
+
+
 In "The woman who I met...", "who" is:
 
-A) Adverbial
+A) Possessive
 
-B) Subject of the relative clause
+B) Object of the relative clause
 
-C) Object of the relative clause
+C) Subject of the relative clause
 
-D) Possessive
+D) Adverbial
 
 ---
 
 ## Question 10: Whom
 
 
+
+
+
 Which sentence uses "whom" correctly?
 
 A) Whom is calling?
 
-B) Whom lives here?
+B) The person whom I spoke to was helpful.
 
-C) The person whom I spoke to was helpful.
+C) Whom lives here?
 
 D) The man whom called me was rude.
 
 ---
 
 ## Question 11: Where
+
+
+
 
 
 "The city ___ I was born is beautiful."
@@ -172,34 +205,43 @@ D) which
 ## Question 12: When
 
 
+
+
+
 Which is correct?
 
-A) The day when we met was sunny.
+A) The day which we met was sunny.
 
-B) The day that we met was sunny.
+B) The day when we met was sunny.
 
-C) All of the above are correct.
+C) The day that we met was sunny.
 
-D) The day which we met was sunny.
+D) All of the above are correct.
 
 ---
 
 ## Question 13: Dangling Participle
 
 
+
+
+
 Which sentence has a DANGLING PARTICIPLE error?
 
-A) Having finished dinner, we watched TV.
+A) Walking down the street, a cat crossed my path.
 
-B) Walking down the street, I saw a cat.
+B) Written in 1900, the book is still relevant.
 
-C) Walking down the street, a cat crossed my path.
+C) Having finished dinner, we watched TV.
 
-D) Written in 1900, the book is still relevant.
+D) Walking down the street, I saw a cat.
 
 ---
 
 ## Question 14: Perfect Participle
+
+
+
 
 
 "Having finished his work, he went home" means:
@@ -217,34 +259,43 @@ D) He was finishing work while going home.
 ## Question 15: Non-Defining Position
 
 
+
+
+
 Where can non-defining clauses appear?
 
 A) Only at the end of sentences
 
-B) Only after the main subject
+B) In the middle or at the end (set off by commas)
 
 C) Only at the beginning
 
-D) In the middle or at the end (set off by commas)
+D) Only after the main subject
 
 ---
 
 ## Question 16: What vs Which
 
 
+
+
+
 "I don't understand ___ you mean."
 
-A) whom
+A) which
 
-B) which
+B) whom
 
-C) what
+C) that
 
-D) that
+D) what
 
 ---
 
 ## Question 17: Formal Style
+
+
+
 
 
 Which is MOST FORMAL?
@@ -262,19 +313,25 @@ D) The person to whom I spoke was helpful.
 ## Question 18: Reduction Error
 
 
+
+
+
 Which reduction is INCORRECT?
 
-A) All reductions are correct.
+A) "The woman who knows" → "The woman knowing"
 
-B) "The book which was written" → "The book written"
+B) "The man who is working" → "The man working"
 
-C) "The man who is working" → "The man working"
+C) "The book which was written" → "The book written"
 
-D) "The woman who knows" → "The woman knowing"
+D) All reductions are correct.
 
 ---
 
 ## Question 19: Meaning Difference
+
+
+
 
 
 What's the difference?
@@ -294,15 +351,18 @@ D) No difference
 ## Question 20: Participle for Reason
 
 
+
+
+
 "Being tired, she went to bed early" expresses:
 
-A) Result
+A) Time
 
-B) Condition
+B) Result
 
-C) Time
+C) Reason
 
-D) Reason
+D) Condition
 
 ---
 
@@ -312,26 +372,26 @@ D) Reason
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | "My mother" is unique — you have one mother. Extra info requires commas (non-defining). |
-| 2 | C | Non-defining clause with both opening and closing commas. |
+| 1 | D | "My mother" is unique — you have one mother. Extra info requires commas (non-defining). |
+| 2 | D | Non-defining clause with both opening and closing commas. |
 | 3 | C | "That" cannot be used in non-defining clauses. Use "which." |
-| 4 | D | Object pronouns in defining clauses can be omitted. "The woman I met" is correct. |
+| 4 | A | Object pronouns in defining clauses can be omitted. "The woman I met" is correct. |
 | 5 | A | "Whose" = possessive. "Who's" = "who is" (incorrect in A). |
 | 6 | B | "Which" refers to the whole preceding clause. "What" is incorrect here. |
-| 7 | A | Active continuous → present participle. "The man standing." |
-| 8 | C | Passive → past participle. "The book written by..." |
-| 9 | C | "I" is the subject; "who" is the object of "met." |
-| 10 | C | "Whom" for object, especially after prepositions. "The person to whom I spoke." |
+| 7 | B | Active continuous → present participle. "The man standing." |
+| 8 | B | Passive → past participle. "The book written by..." |
+| 9 | B | "I" is the subject; "who" is the object of "met." |
+| 10 | B | "Whom" for object, especially after prepositions. "The person to whom I spoke." |
 | 11 | A | For places, "where" is standard. "Which" would need a preposition (in which). |
-| 12 | C | All three are grammatically correct for time expressions. |
-| 13 | C | The cat isn't walking. The participle "dangles" — doesn't match main subject. |
+| 12 | D | All three are grammatically correct for time expressions. |
+| 13 | A | The cat isn't walking. The participle "dangles" — doesn't match main subject. |
 | 14 | B | Perfect participle shows action completed before the main clause. |
-| 15 | D | Non-defining clauses can appear mid-sentence or at the end, always with commas. |
-| 16 | C | "What" = "the thing that." "I don't understand what you mean." |
+| 15 | B | Non-defining clauses can appear mid-sentence or at the end, always with commas. |
+| 16 | D | "What" = "the thing that." "I don't understand what you mean." |
 | 17 | D | Preposition + whom is most formal. "To whom I spoke." |
-| 18 | D | Simple present "knows" cannot be reduced to participle without changing meaning. It works with continuous/passive. |
+| 18 | A | Simple present "knows" cannot be reduced to participle without changing meaning. It works with continuous/passive. |
 | 19 | C | No commas = defining = "which brother." Commas = non-defining = extra info about one brother. |
-| 20 | D | "Being tired" = "Because she was tired." Expresses reason. |
+| 20 | C | "Being tired" = "Because she was tired." Expresses reason. |
 
 ---
 

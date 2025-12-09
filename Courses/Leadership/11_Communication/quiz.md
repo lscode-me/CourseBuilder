@@ -7,28 +7,34 @@
 ## Question 1: Stakeholder Definition
 
 
+
+
+
 Кто такой stakeholder?
 
-A) Только клиенты
+A) Любой, кто влияет на вашу работу или на кого влияет ваша работа
 
-B) Любой, кто влияет на вашу работу или на кого влияет ваша работа
+B) Только клиенты
 
-C) Только ваш руководитель
+C) Только команда
 
-D) Только команда
+D) Только ваш руководитель
 
 ---
 
 ## Question 2: Power/Interest Grid
 
 
+
+
+
 Кого нужно "Manage Closely" согласно Power/Interest Grid?
 
-A) High Power + Low Interest
+A) Low Power + Low Interest
 
-B) Low Power + Low Interest
+B) High Power + High Interest
 
-C) High Power + High Interest
+C) High Power + Low Interest
 
 D) Low Power + High Interest
 
@@ -37,28 +43,34 @@ D) Low Power + High Interest
 ## Question 3: Адаптация message
 
 
+
+
+
 Почему нужно адаптировать message под аудиторию?
 
-A) Разные аудитории имеют разные needs и уровень понимания
+A) Чтобы потратить больше времени
 
-B) Это не нужно, один message для всех
+B) Разные аудитории имеют разные needs и уровень понимания
 
-C) Только для презентаций
+C) Это не нужно, один message для всех
 
-D) Чтобы потратить больше времени
+D) Только для презентаций
 
 ---
 
 ## Question 4: Executive Communication
 
 
+
+
+
 Какой уровень детализации нужен для executives?
 
-A) Каждый баг
+A) Impact на бизнес, high-level timeline, key risks, decisions needed
 
-B) Impact на бизнес, high-level timeline, key risks, decisions needed
+B) Все технические детали
 
-C) Все технические детали
+C) Каждый баг
 
 D) Исходный код
 
@@ -67,58 +79,70 @@ D) Исходный код
 ## Question 5: BLUF
 
 
+
+
+
 Что означает BLUF (Bottom Line Up Front)?
 
 A) Главное сообщение в начале
 
-B) Не иметь структуры
+B) Много деталей без сути
 
-C) Много деталей без сути
+C) Скрыть главное в конце
 
-D) Скрыть главное в конце
+D) Не иметь структуры
 
 ---
 
 ## Question 6: Weekly Update
 
 
+
+
+
 Что должен включать Weekly Update?
 
-A) Только жалобы
+A) TL;DR, Highlights, In Progress, Risks, Needs, Team Notes
 
-B) Только хорошие новости
+B) 10 страниц деталей
 
-C) 10 страниц деталей
+C) Только хорошие новости
 
-D) TL;DR, Highlights, In Progress, Risks, Needs, Team Notes
+D) Только жалобы
 
 ---
 
 ## Question 7: No Surprises
 
 
+
+
+
 Почему важен принцип "No Surprises" в reporting?
 
 A) Скрывать проблемы дольше
 
-B) Никогда не сообщать о проблемах
+B) Сообщать о рисках раньше, чтобы stakeholders могли помочь
 
 C) Surprises хороши для engagement
 
-D) Сообщать о рисках раньше, чтобы stakeholders могли помочь
+D) Никогда не сообщать о проблемах
 
 ---
 
 ## Question 8: Influence без Authority
 
 
+
+
+
 Что помогает влиять без формального авторитета?
 
-A) Credibility + Relationships + Communication
+A) Игнорирование других
 
-B) Только должность
+B) Credibility + Relationships + Communication
 
-C) Игнорирование других
+C) Только должность
 
 D) Угрозы
 
@@ -127,34 +151,43 @@ D) Угрозы
 ## Question 9: Building Coalitions
 
 
+
+
+
 Что такое "Building Coalition" как техника влияния?
 
 A) Найти allies, согласовать с ними, прийти к decision-maker вместе
 
-B) Никого не слушать
+B) Работать в одиночку
 
-C) Работать в одиночку
+C) Быть aggressive
 
-D) Быть aggressive
+D) Никого не слушать
 
 ---
 
 ## Question 10: Reciprocity
 
 
+
+
+
 Как работает принцип Reciprocity для влияния?
 
 A) Никому не помогать
 
-B) Помочь другим сначала, они более склонны помочь вам
+B) Требовать помощь первым
 
-C) Только брать
+C) Помочь другим сначала, они более склонны помочь вам
 
-D) Требовать помощь первым
+D) Только брать
 
 ---
 
 ## Question 11: Difficult Conversation Prepare
+
+
+
 
 
 Что включает подготовка к сложному разговору?
@@ -172,135 +205,162 @@ D) Только обвинения
 ## Question 12: During Difficult Conversation
 
 
+
+
+
 Что важно делать во время сложного разговора?
 
-A) Только говорить, не слушать
+A) Обвинять
 
-B) Обвинять
+B) Только говорить, не слушать
 
-C) State intent, share observations (facts), invite their perspective, listen
+C) Уходить от темы
 
-D) Уходить от темы
+D) State intent, share observations (facts), invite their perspective, listen
 
 ---
 
 ## Question 13: Email Subject
 
 
+
+
+
 Какой хороший subject для email, требующего действия?
 
-A) Пустой subject
+A) "Важно!!!!!!"
 
 B) "Hi"
 
 C) "[Action Required] Budget Approval by Friday"
 
-D) "Важно!!!!!!"
+D) Пустой subject
 
 ---
 
 ## Question 14: Slack Etiquette
 
 
+
+
+
 Какая практика хороша для Slack/Teams?
 
-A) @channel для любого сообщения
+A) Ожидать немедленный ответ
 
 B) Отправлять 10 отдельных messages
 
 C) Thread conversations, use @mentions sparingly
 
-D) Ожидать немедленный ответ
+D) @channel для любого сообщения
 
 ---
 
 ## Question 15: Presentation Structure
 
 
+
+
+
 Какая структура презентации для business audience?
 
 A) Без структуры
 
-B) Hook, Problem, Solution, Evidence, Ask
+B) Только слайды с текстом
 
-C) Только слайды с текстом
+C) Только технические детали
 
-D) Только технические детали
+D) Hook, Problem, Solution, Evidence, Ask
 
 ---
 
 ## Question 16: Executive Presentations
 
 
+
+
+
 Что характерно для executive presentations?
 
 A) Без подготовки
 
-B) Много деталей, длинные объяснения
+B) Только технические термины
 
 C) Кратко, recommendation focused, business impact, готов к вопросам
 
-D) Только технические термины
+D) Много деталей, длинные объяснения
 
 ---
 
 ## Question 17: Cross-team Dependencies
 
 
+
+
+
 Как отслеживать dependencies от других команд?
 
-A) Надеяться на лучшее
+A) Blame другую команду
 
 B) What needed, when needed, impact if delayed, contact, status
 
 C) Не отслеживать
 
-D) Blame другую команду
+D) Надеяться на лучшее
 
 ---
 
 ## Question 18: Conflict with Other Teams
 
 
+
+
+
 Как подходить к конфликту с другой командой?
 
-A) Обвинять их
+A) Assume good intent, understand constraints, find common goals
 
-B) Assume good intent, understand constraints, find common goals
+B) Escalate сразу
 
 C) Игнорировать
 
-D) Escalate сразу
+D) Обвинять их
 
 ---
 
 ## Question 19: Data over Opinion
 
 
+
+
+
 Почему "Data over Opinion" работает для влияния?
 
-A) Opinions важнее
+A) Факты и данные более убедительны, чем мнения
 
-B) Opinion всегда достаточно
+B) Opinions важнее
 
-C) Факты и данные более убедительны, чем мнения
+C) Data не важна
 
-D) Data не важна
+D) Opinion всегда достаточно
 
 ---
 
 ## Question 20: Documentation Principles
 
 
+
+
+
 Какой принцип хорошей документации?
 
-A) Писать как можно сложнее
+A) Никогда не обновлять
 
-B) Никогда не обновлять
+B) Write for the reader, include context (why), keep updated
 
-C) Write for yourself
+C) Писать как можно сложнее
 
-D) Write for the reader, include context (why), keep updated
+D) Write for yourself
 
 ---
 
@@ -310,26 +370,26 @@ D) Write for the reader, include context (why), keep updated
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Stakeholder — любой, кто влияет на вашу работу или на кого она влияет |
-| 2 | C | Manage Closely: High Power + High Interest |
-| 3 | A | Разные аудитории имеют разные needs и уровень понимания |
-| 4 | B | Executives: business impact, timeline, risks, decisions needed |
+| 1 | A | Stakeholder — любой, кто влияет на вашу работу или на кого она влияет |
+| 2 | B | Manage Closely: High Power + High Interest |
+| 3 | B | Разные аудитории имеют разные needs и уровень понимания |
+| 4 | A | Executives: business impact, timeline, risks, decisions needed |
 | 5 | A | BLUF = главное сообщение в начале |
-| 6 | D | TL;DR, Highlights, In Progress, Risks, Needs, Team Notes |
-| 7 | D | Сообщать раньше, чтобы stakeholders могли помочь |
-| 8 | A | Credibility + Relationships + Communication |
+| 6 | A | TL;DR, Highlights, In Progress, Risks, Needs, Team Notes |
+| 7 | B | Сообщать раньше, чтобы stakeholders могли помочь |
+| 8 | B | Credibility + Relationships + Communication |
 | 9 | A | Найти allies, согласовать, прийти вместе к decision-maker |
-| 10 | B | Помочь другим сначала → они более склонны помочь вам |
+| 10 | C | Помочь другим сначала → они более склонны помочь вам |
 | 11 | B | Желаемый outcome, факты, perspective, эмоции |
-| 12 | C | State intent, share facts, invite perspective, listen |
+| 12 | D | State intent, share facts, invite perspective, listen |
 | 13 | C | "[Action Required] Budget Approval by Friday" |
 | 14 | C | Thread conversations, use @mentions sparingly |
-| 15 | B | Hook, Problem, Solution, Evidence, Ask |
+| 15 | D | Hook, Problem, Solution, Evidence, Ask |
 | 16 | C | Кратко, recommendation focused, business impact |
 | 17 | B | What, when, impact, contact, status |
-| 18 | B | Assume good intent, understand constraints, common goals |
-| 19 | C | Факты и данные более убедительны, чем мнения |
-| 20 | D | Write for reader, include context, keep updated |
+| 18 | A | Assume good intent, understand constraints, common goals |
+| 19 | A | Факты и данные более убедительны, чем мнения |
+| 20 | B | Write for reader, include context, keep updated |
 
 ---
 

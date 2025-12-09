@@ -7,11 +7,14 @@
 ## Question 1: Запуск контейнера
 
 
+
+
+
 Какой флаг запускает контейнер в detached mode?
 
-A) -i
+A) -t
 
-B) -t
+B) -i
 
 C) -r
 
@@ -22,28 +25,34 @@ D) -d
 ## Question 2: Port mapping
 
 
+
+
+
 Как опубликовать порт 80 контейнера на порт 8080 только для localhost?
 
-A) -p 80:8080
+A) -p 8080:80
 
-B) -p 127.0.0.1:8080:80
+B) -p 80:8080
 
-C) -p localhost:8080:80
+C) -p 127.0.0.1:8080:80
 
-D) -p 8080:80
+D) -p localhost:8080:80
 
 ---
 
 ## Question 3: ENTRYPOINT vs CMD
 
 
+
+
+
 Что произойдёт при docker run myimage arg1, если Dockerfile содержит ENTRYPOINT ["echo"] CMD ["hello"]?
 
-A) echo hello
+A) hello arg1
 
 B) echo arg1
 
-C) hello arg1
+C) echo hello
 
 D) arg1
 
@@ -52,19 +61,25 @@ D) arg1
 ## Question 4: Multi-stage builds
 
 
+
+
+
 Какова главная цель multi-stage builds?
 
-A) Ускорение сборки
+A) Уменьшение размера финального образа
 
-B) Параллельная сборка
+B) Ускорение сборки
 
-C) Уменьшение размера финального образа
+C) Улучшение безопасности
 
-D) Улучшение безопасности
+D) Параллельная сборка
 
 ---
 
 ## Question 5: Кеширование слоёв
+
+
+
 
 
 Какой порядок инструкций оптимален для кеширования при сборке Python-приложения?
@@ -82,6 +97,9 @@ D) RUN pip install → COPY . .
 ## Question 6: Volumes vs Bind mounts
 
 
+
+
+
 Какое преимущество volumes перед bind mounts?
 
 A) Управляются Docker, работают на любой платформе
@@ -97,19 +115,25 @@ D) Поддерживают больше файловых систем
 ## Question 7: docker exec
 
 
+
+
+
 Как выполнить интерактивную команду sh в запущенном контейнере?
 
-A) docker start -it container sh
+A) docker exec -it container sh
 
 B) docker run -it container sh
 
-C) docker exec -it container sh
+C) docker start -it container sh
 
 D) docker attach container sh
 
 ---
 
 ## Question 8: Логи контейнера
+
+
+
 
 
 Какая команда показывает логи в реальном времени?
@@ -127,6 +151,9 @@ D) docker logs --live container
 ## Question 9: Resource limits
 
 
+
+
+
 Как ограничить контейнер использованием 1.5 CPU?
 
 A) --cpu=1.5
@@ -142,34 +169,43 @@ D) --max-cpu=1.5
 ## Question 10: Health check
 
 
+
+
+
 Какой параметр HEALTHCHECK определяет интервал проверки?
 
 A) --timeout
 
 B) --period
 
-C) --interval
+C) --frequency
 
-D) --frequency
+D) --interval
 
 ---
 
 ## Question 11: USER instruction
 
 
+
+
+
 Для чего используется инструкция USER в Dockerfile?
 
-A) Аутентификация при pull
+A) Ограничение доступа к volume
 
 B) Настройка SSH
 
-C) Ограничение доступа к volume
+C) Аутентификация при pull
 
 D) Запуск процессов от указанного пользователя
 
 ---
 
 ## Question 12: .dockerignore
+
+
+
 
 
 Что делает файл .dockerignore?
@@ -187,19 +223,25 @@ D) Исключает файлы из build context
 ## Question 13: docker inspect
 
 
+
+
+
 Как получить только IP-адрес контейнера?
 
-A) docker inspect --ip container
+A) docker inspect -f '{{.NetworkSettings.IPAddress}}' container
 
-B) docker inspect -f '{{.NetworkSettings.IPAddress}}' container
+B) docker network ip container
 
-C) docker network ip container
+C) docker ip container
 
-D) docker ip container
+D) docker inspect --ip container
 
 ---
 
 ## Question 14: Restart policy
+
+
+
 
 
 Какая restart policy перезапускает контейнер, кроме случая ручной остановки?
@@ -217,34 +259,43 @@ D) always
 ## Question 15: docker tag
 
 
+
+
+
 Какая команда создаёт тег для push в registry?
 
-A) docker label myapp:1.0 registry/myapp:1.0
+A) docker rename myapp:1.0 registry/myapp:1.0
 
-B) docker copy myapp:1.0 registry/myapp:1.0
+B) docker tag myapp:1.0 registry/myapp:1.0
 
-C) docker tag myapp:1.0 registry/myapp:1.0
+C) docker copy myapp:1.0 registry/myapp:1.0
 
-D) docker rename myapp:1.0 registry/myapp:1.0
+D) docker label myapp:1.0 registry/myapp:1.0
 
 ---
 
 ## Question 16: Read-only filesystem
 
 
+
+
+
 Как запустить контейнер с read-only root filesystem?
 
-A) --read-only
+A) --immutable
 
-B) --readonly
+B) --read-only
 
-C) --immutable
+C) --ro
 
-D) --ro
+D) --readonly
 
 ---
 
 ## Question 17: Capabilities
+
+
+
 
 
 Как удалить все capabilities из контейнера?
@@ -262,6 +313,9 @@ D) --drop-all-caps
 ## Question 18: Storage driver
 
 
+
+
+
 Какой storage driver рекомендуется для Docker?
 
 A) devicemapper
@@ -275,6 +329,9 @@ D) vfs
 ---
 
 ## Question 19: docker system prune
+
+
+
 
 
 Что удаляет docker system prune -a?
@@ -292,13 +349,16 @@ D) Только volumes
 ## Question 20: Build context
 
 
+
+
+
 Что означает точка в команде docker build -t myapp .?
 
-A) Скрытые файлы
+A) Текущая версия
 
 B) Все файлы рекурсивно
 
-C) Текущая версия
+C) Скрытые файлы
 
 D) Build context — текущая директория
 
@@ -311,21 +371,21 @@ D) Build context — текущая директория
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | D | -d (detached) запускает контейнер в фоновом режиме |
-| 2 | B | -p 127.0.0.1:8080:80 публикует только на localhost |
+| 2 | C | -p 127.0.0.1:8080:80 публикует только на localhost |
 | 3 | B | ENTRYPOINT фиксирован (echo), arg1 заменяет CMD |
-| 4 | C | Multi-stage позволяет исключить build tools из финального образа |
+| 4 | A | Multi-stage позволяет исключить build tools из финального образа |
 | 5 | A | Сначала requirements.txt для кеширования pip install |
 | 6 | A | Volumes управляются Docker и независимы от хоста |
-| 7 | C | docker exec -it выполняет команду в запущенном контейнере |
+| 7 | A | docker exec -it выполняет команду в запущенном контейнере |
 | 8 | C | -f (follow) показывает логи в реальном времени |
 | 9 | B | --cpus="1.5" ограничивает использование CPU |
-| 10 | C | --interval определяет интервал между проверками |
+| 10 | D | --interval определяет интервал между проверками |
 | 11 | D | USER задаёт пользователя для запуска процессов |
 | 12 | D | .dockerignore исключает файлы из build context |
-| 13 | B | -f с Go template извлекает конкретное поле |
+| 13 | A | -f с Go template извлекает конкретное поле |
 | 14 | A | unless-stopped перезапускает, кроме ручной остановки |
-| 15 | C | docker tag создаёт новый тег для образа |
-| 16 | A | --read-only делает root filesystem read-only |
+| 15 | B | docker tag создаёт новый тег для образа |
+| 16 | B | --read-only делает root filesystem read-only |
 | 17 | A | --cap-drop=ALL удаляет все Linux capabilities |
 | 18 | C | overlay2 — рекомендуемый storage driver |
 | 19 | C | prune -a удаляет все неиспользуемые ресурсы |

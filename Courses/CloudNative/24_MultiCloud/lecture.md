@@ -377,3 +377,15 @@ for category, items in recommendations.items():
 - [Cloud Native Patterns](https://www.cloudnativepatterns.io/)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [25_CaseStudies](../25_CaseStudies/) — Реальные примеры multi-cloud
+
+**Практика:**
+1. Разверните одно приложение в AWS и GCP
+2. Настройте Terraform для multi-cloud
+3. Реализуйте Kubernetes deployment в EKS и GKE
+
+**Это предпоследний модуль курса Cloud Native.**

@@ -470,3 +470,14 @@ for section, metrics in dashboard_structure.items():
 - "Observability Engineering" by Charity Majors
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [22_Security](../22_Security/) — Security monitoring
+- [23_CostManagement](../23_CostManagement/) — Cost observability
+
+**Практика:**
+1. Настройте CloudWatch dashboard для приложения
+2. Добавьте X-Ray tracing в Lambda функции
+3. Создайте алерты на метрики и логи

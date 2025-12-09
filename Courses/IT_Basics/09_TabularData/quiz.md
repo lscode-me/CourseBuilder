@@ -6,6 +6,9 @@
 
 ## Question 1: CSV расшифровка
 
+
+
+
 Что означает CSV?
 
 A) Comma-Separated Values
@@ -20,41 +23,50 @@ D) Column Sorted Values
 
 ## Question 2: Разделитель CSV
 
+
+
+
 Какой разделитель используется по умолчанию в CSV?
 
 A) Точка с запятой
 
 B) Табуляция
 
-C) Запятая
+C) Пробел
 
-D) Пробел
+D) Запятая
 
 ---
 
 ## Question 3: TSV разделитель
 
+
+
+
 Какой разделитель используется в TSV?
 
 A) Запятая
 
-B) Табуляция
+B) Вертикальная черта
 
 C) Точка с запятой
 
-D) Вертикальная черта
+D) Табуляция
 
 ---
 
 ## Question 4: Кавычки в CSV
 
+
+
+
 Как записать значение "Hello, World" в CSV?
 
-A) `Hello, World`
+A) `Hello\, World`
 
-B) `'Hello, World'`
+B) `Hello, World`
 
-C) `Hello\, World`
+C) `'Hello, World'`
 
 D) "Hello, World"
 
@@ -62,75 +74,93 @@ D) "Hello, World"
 
 ## Question 5: Кавычки внутри значения
 
+
+
+
 Как записать значение со словом "test" (в кавычках) в CSV?
 
 A) "He said ""test"""
 
-B) `"He said "test""`
+B) `He said \"test\"`
 
 C) `"He said 'test'"`
 
-D) `He said \"test\"`
+D) `"He said "test""`
 
 ---
 
 ## Question 6: Python csv модуль
 
+
+
+
 Какой класс читает CSV как словари?
 
-A) `csv.reader`
+A) csv.DictReader
 
-B) csv.DictReader
+B) `csv.MapReader`
 
-C) `csv.DictParser`
+C) `csv.reader`
 
-D) `csv.MapReader`
+D) `csv.DictParser`
 
 ---
 
 ## Question 7: newline параметр
 
+
+
+
 Почему важен `newline=''` при открытии CSV в Python?
 
-A) Для ускорения чтения
+A) Для корректной обработки переносов строк
 
-B) Для сжатия файла
+B) Для поддержки Unicode
 
-C) Для корректной обработки переносов строк
+C) Для сжатия файла
 
-D) Для поддержки Unicode
+D) Для ускорения чтения
 
 ---
 
 ## Question 8: csvkit инструмент
 
+
+
+
 Какой инструмент csvkit красиво выводит CSV в терминал?
 
-A) csvlook
+A) `csvdisplay`
 
-B) `csvprint`
+B) csvlook
 
-C) `csvshow`
+C) `csvprint`
 
-D) `csvdisplay`
+D) `csvshow`
 
 ---
 
 ## Question 9: Европейский CSV
 
+
+
+
 Какой разделитель часто используется в европейских CSV файлах?
 
-A) Запятая
+A) Двоеточие
 
 B) Точка с запятой
 
-C) Двоеточие
+C) Запятая
 
 D) Слеш
 
 ---
 
 ## Question 10: pandas чтение
+
+
+
 
 Какая функция pandas читает CSV?
 
@@ -146,71 +176,171 @@ D) `pd.csv_read()`
 
 ## Question 11: Кодировка CSV
 
+
+
+
 Какую кодировку рекомендуется использовать для CSV?
 
-A) ASCII
+A) Latin-1
 
-B) Latin-1
+B) ASCII
 
-C) UTF-8
+C) UTF-16
 
-D) UTF-16
+D) UTF-8
 
 ---
 
 ## Question 12: csvgrep
 
+
+
+
 Что делает команда `csvgrep -c name -m Alice data.csv`?
 
-A) Удаляет строки с Alice
+A) Фильтрует строки где колонка name содержит Alice
 
-B) Заменяет Alice на другое значение
+B) Удаляет строки с Alice
 
-C) Сортирует по колонке name
+C) Заменяет Alice на другое значение
 
-D) Фильтрует строки где колонка name содержит Alice
+D) Сортирует по колонке name
 
 ---
 
 ## Question 13: csv.writer
 
+
+
+
 Какой метод записывает несколько строк в CSV?
 
 A) writer.writerows(rows)
 
-B) `writer.write(rows)`
+B) `writer.dump(rows)`
 
-C) `writer.writeall(rows)`
+C) `writer.write(rows)`
 
-D) `writer.dump(rows)`
+D) `writer.writeall(rows)`
 
 ---
 
 ## Question 14: Заголовок CSV
 
+
+
+
 Как получить заголовок CSV при чтении в Python?
 
-A) `reader.header()`
+A) next(reader)
 
-B) next(reader)
+B) `reader.header()`
 
-C) `reader.columns`
+C) `reader[0]`
 
-D) `reader[0]`
+D) `reader.columns`
 
 ---
 
 ## Question 15: csvsql
 
+
+
+
 Что позволяет делать csvsql?
 
-A) Конвертировать CSV в SQL файл
+A) Выполнять SQL запросы к CSV файлу
 
-B) Выполнять SQL запросы к CSV файлу
+B) Все вышеперечисленное
 
-C) Импортировать CSV в базу данных
+C) Конвертировать CSV в SQL файл
 
-D) Все вышеперечисленное
+D) Импортировать CSV в базу данных
+
+---
+
+## Question 16: csvstat
+
+
+
+
+Что делает команда csvstat?
+
+A) Сортирует CSV
+
+B) Конвертирует в JSON
+
+C) Выводит CSV как таблицу
+
+D) Выводит статистику по колонкам (мин, макс, среднее)
+
+---
+
+## Question 17: awk сумма
+
+
+
+
+Что делает `awk -F, 'NR>1 {sum+=$2} END {print sum}' data.csv`?
+
+A) Подсчитывает строки
+
+B) Сортирует по второй колонке
+
+C) Суммирует значения второй колонки (без заголовка)
+
+D) Выводит вторую колонку
+
+---
+
+## Question 18: BOM
+
+
+
+
+Что такое BOM в контексте CSV файлов?
+
+A) Разделитель колонок
+
+B) Byte Order Mark — маркер порядка байтов в начале файла
+
+C) Формат даты
+
+D) Тип сжатия
+
+---
+
+## Question 19: csv.DictWriter
+
+
+
+
+Какой метод csv.DictWriter записывает заголовок?
+
+A) writer.columns()
+
+B) writer.writeheader()
+
+C) writer.header()
+
+D) writer.writerow()
+
+---
+
+## Question 20: csvjson
+
+
+
+
+Что делает команда csvjson?
+
+A) Конвертирует CSV в JSON
+
+B) Конвертирует JSON в CSV
+
+C) Выполняет SQL запросы
+
+D) Валидирует CSV
 
 ---
 
@@ -221,20 +351,25 @@ D) Все вышеперечисленное
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | A | Comma-Separated Values — значения, разделённые запятыми. |
-| 2 | C | По умолчанию CSV использует запятую как разделитель. |
-| 3 | B | TSV (Tab-Separated Values) использует табуляцию. |
+| 2 | D | По умолчанию CSV использует запятую как разделитель. |
+| 3 | D | TSV (Tab-Separated Values) использует табуляцию. |
 | 4 | D | Значения с запятой заключаются в двойные кавычки. |
 | 5 | A | Кавычки внутри значения удваиваются: `""`. |
-| 6 | B | `csv.DictReader` возвращает строки как словари с ключами из заголовка. |
-| 7 | C | `newline=''` предотвращает проблемы с переносами строк на разных ОС. |
-| 8 | A | `csvlook` форматирует CSV как таблицу в терминале. |
+| 6 | A | `csv.DictReader` возвращает строки как словари с ключами из заголовка. |
+| 7 | A | `newline=''` предотвращает проблемы с переносами строк на разных ОС. |
+| 8 | B | `csvlook` форматирует CSV как таблицу в терминале. |
 | 9 | B | В европейских странах запятая — десятичный разделитель, поэтому CSV использует `;`. |
 | 10 | B | `pd.read_csv()` — основная функция pandas для чтения CSV. |
-| 11 | C | UTF-8 — рекомендуемая кодировка для совместимости. |
-| 12 | D | `csvgrep -c column -m match` фильтрует строки по значению в колонке. |
+| 11 | D | UTF-8 — рекомендуемая кодировка для совместимости. |
+| 12 | A | `csvgrep -c column -m match` фильтрует строки по значению в колонке. |
 | 13 | A | `writerows()` записывает список списков (несколько строк). |
-| 14 | B | `next(reader)` возвращает первую строку (обычно заголовок). |
-| 15 | D | csvsql может выполнять SQL запросы, конвертировать и импортировать в БД. |
+| 14 | A | `next(reader)` возвращает первую строку (обычно заголовок). |
+| 15 | B | csvsql может выполнять SQL запросы, конвертировать и импортировать в БД. |
+| 16 | D | csvstat выводит статистику: min, max, mean, std и т.д. |
+| 17 | C | NR>1 пропускает заголовок, sum+=$2 суммирует вторую колонку. |
+| 18 | B | BOM (Byte Order Mark) — специальные байты в начале UTF-8/UTF-16 файлов. |
+| 19 | B | writeheader() записывает строку с именами колонок из fieldnames. |
+| 20 | A | csvjson конвертирует CSV файл в JSON формат. |
 
 ---
 

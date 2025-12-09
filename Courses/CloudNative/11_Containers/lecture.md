@@ -409,3 +409,14 @@ for option, details in decision_guide.items():
 - [EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/)
 
 ---
+
+## 🚀 Next Steps
+
+**Следующие модули:**
+- [12_Messaging](../12_Messaging/) — SQS, SNS, EventBridge
+- [17_CICD](../17_CICD/) — CI/CD пайплайны для контейнеров
+
+**Практика:**
+1. Разверните приложение в ECS Fargate
+2. Настройте EKS кластер с eksctl
+3. Реализуйте blue/green deployment
