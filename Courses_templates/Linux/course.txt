@@ -1,0 +1,17 @@
+Linux
+Курс по операционной системе Linux для разработчиков. Практические навыки работы в терминале и администрирования.
+01_Intro история Linux, дистрибутивы, ядро, userspace, философия Unix.
+02_Shell bash, командная строка, навигация, переменные окружения.
+03_FileSystem иерархия каталогов, FHS, монтирование, типы файловых систем.
+04_Files работа с файлами, права доступа, chmod, chown, umask.
+05_TextProcessing cat, grep, sed, awk, sort, uniq, cut — обработка текста.
+06_Pipes пайпы, перенаправления, stdin/stdout/stderr, xargs.
+07_Processes процессы, ps, top, htop, kill, сигналы, фоновые задачи.
+08_Users пользователи, группы, sudo, su, PAM.
+09_PackageManagement apt, dnf, pacman — установка и управление пакетами.
+10_SystemdServices systemd, юниты, управление сервисами, journalctl.
+11_Networking настройка сети, ip, ss, netstat, firewalld.
+12_Scripting написание bash-скриптов, автоматизация задач.
+
+Требования: Linux (VM или bare metal), терминал.
+

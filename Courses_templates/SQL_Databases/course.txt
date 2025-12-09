@@ -1,0 +1,17 @@
+SQL_Databases
+Курс по реляционным базам данных и языку SQL. Для разработчиков, которые хотят научиться проектировать БД и писать эффективные запросы.
+01_Intro что такое базы данных, реляционная модель, СУБД (PostgreSQL, MySQL, SQLite).
+02_BasicQueries SELECT, FROM, WHERE, ORDER BY, LIMIT — чтение данных.
+03_Filtering операторы сравнения, LIKE, IN, BETWEEN, NULL, логические операторы.
+04_Joins INNER JOIN, LEFT/RIGHT JOIN, FULL JOIN, CROSS JOIN, self-join.
+05_Aggregation GROUP BY, HAVING, COUNT, SUM, AVG, MIN, MAX.
+06_Subqueries вложенные запросы, коррелированные подзапросы, EXISTS.
+07_DataModification INSERT, UPDATE, DELETE, UPSERT, транзакции.
+08_SchemaDesign CREATE TABLE, типы данных, PRIMARY KEY, FOREIGN KEY, constraints.
+09_Normalization 1NF, 2NF, 3NF, BCNF, денормализация, когда нарушать правила.
+10_Indexes индексы, B-tree, hash, как ускорить запросы, EXPLAIN.
+11_Transactions ACID, уровни изоляции, блокировки, deadlocks.
+12_Advanced оконные функции, CTE, представления, хранимые процедуры.
+
+Требования: PostgreSQL или SQLite, терминал или GUI-клиент.
+

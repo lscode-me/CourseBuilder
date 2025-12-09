@@ -1,0 +1,17 @@
+SystemDesign
+Курс по проектированию масштабируемых систем. Для middle+ разработчиков, готовящихся к system design интервью или архитектурным решениям.
+01_Intro что такое system design, trade-offs, требования, оценка нагрузки.
+02_Scalability вертикальное и горизонтальное масштабирование, stateless.
+03_LoadBalancing балансировка нагрузки, алгоритмы, L4 vs L7, health checks.
+04_Caching кэширование, стратегии, Redis, Memcached, CDN.
+05_Databases SQL vs NoSQL, шардирование, репликация, CAP теорема.
+06_MessageQueues асинхронная обработка, Kafka, RabbitMQ, pub/sub.
+07_API REST, GraphQL, gRPC, версионирование, rate limiting.
+08_Microservices микросервисы vs монолит, boundaries, communication.
+09_Storage файловое хранилище, object storage, S3, блочное хранилище.
+10_Reliability отказоустойчивость, репликация, failover, disaster recovery.
+11_Monitoring метрики, логи, трейсинг, алерты, SLO/SLI.
+12_CaseStudies разбор реальных систем: URL shortener, Twitter, WhatsApp.
+
+Требования: опыт разработки, понимание веб-технологий и БД.
+

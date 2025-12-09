@@ -1,0 +1,17 @@
+Go
+Курс по языку программирования Go (Golang). Для разработчиков, которые хотят освоить язык для backend, CLI и cloud-native разработки.
+01_Intro история Go, философия, где используется, установка, go toolchain.
+02_Basics переменные, типы, константы, операторы, форматирование.
+03_FlowControl if, for, switch, defer — управление потоком выполнения.
+04_Functions функции, множественные возвращаемые значения, variadic.
+05_DataStructures массивы, слайсы, мапы, структуры.
+06_Pointers указатели, значения vs ссылки, new vs make.
+07_Methods методы, интерфейсы, полиморфизм, embedding.
+08_Errors обработка ошибок, error interface, sentinel errors, wrapping.
+09_Concurrency горутины, каналы, select, sync примитивы.
+10_Packages организация кода, модули, go.mod, импорты.
+11_Testing тестирование в Go, table-driven tests, бенчмарки.
+12_Stdlib net/http, encoding/json, io, os — стандартная библиотека.
+
+Требования: терминал, Go toolchain, редактор с поддержкой Go.
+

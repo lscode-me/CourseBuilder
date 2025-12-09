@@ -1,0 +1,26 @@
+# Ignore everything by default
+*
+
+# Готовые курсы
+!Courses/
+!Courses/**
+
+# Шаблоны курсов (неготовые)
+!Courses_templates/
+!Courses_templates/**
+
+# Метаданные для написания курсов
+!course_write_meta/
+!course_write_meta/**
+
+# Скрипты сборки HTML
+!build_html/
+!build_html/**
+build_html/venv/
+build_html/__pycache__/
+
+# HTML вывод (генерируется автоматически)
+html/
+
+# Gitignore
+!.gitignore

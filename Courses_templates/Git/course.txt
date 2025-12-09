@@ -1,0 +1,17 @@
+Git
+Курс по системе контроля версий Git. Для разработчиков любого уровня, которые хотят освоить Git от базовых команд до продвинутых workflows и командной работы.
+01_Intro что такое Git, история, зачем нужен контроль версий, установка и настройка.
+02_Basics init, add, commit, status, log — базовый цикл работы.
+03_Branching ветки, создание, переключение, удаление, HEAD и detached state.
+04_Merging слияние веток, fast-forward, три-way merge, конфликты и их разрешение.
+05_RemoteRepos remote, fetch, pull, push, origin, работа с GitHub/GitLab.
+06_Rebase rebase vs merge, interactive rebase, переписывание истории.
+07_Stash временное сохранение изменений, stash pop, apply, drop.
+08_Reset reset, revert, checkout — откат изменений, soft/mixed/hard.
+09_Workflows GitFlow, trunk-based development, feature branches, release branches.
+10_CodeReview pull requests, merge requests, код-ревью, best practices.
+11_Hooks pre-commit, pre-push, автоматизация проверок.
+12_Advanced cherry-pick, bisect, reflog, submodules, worktrees.
+
+Требования: терминал, любая ОС.
+
