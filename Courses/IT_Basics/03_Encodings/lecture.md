@@ -163,6 +163,7 @@ ASCII поддерживает только:
 - Базовые знаки препинания
 
 **Не поддерживает:**
+
 - Кириллицу (русский)
 - Диакритические знаки (é, ñ, ü)
 - Иероглифы (китайский, японский)
@@ -182,10 +183,12 @@ ASCII использует 7 бит (0-127). В байте 8 бит!
 ### 3.2 Кодовые страницы (Code Pages)
 
 **Западноевропейские:**
+
 - ISO-8859-1 (Latin-1) — западноевропейские языки
 - Windows-1252 — расширение Latin-1 для Windows
 
 **Кириллические:**
+
 - КОИ-8 (KOI8-R) — советский стандарт
 - Windows-1251 (CP1251) — Windows для русского
 - ISO-8859-5 — ISO стандарт для кириллицы
@@ -335,6 +338,7 @@ U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
 **UTF-8** (8-bit Unicode Transformation Format) — самая популярная кодировка в мире.
 
 **Преимущества:**
+
 - Совместима с ASCII (первые 128 символов идентичны)
 - Переменная длина (экономия места)
 - Самосинхронизация (легко найти начало символа)
@@ -350,6 +354,7 @@ U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
 | U+10000-U+10FFFF | 11110xxx | 10xxxxxx | 10xxxxxx | 10xxxxxx |
 
 **Правила:**
+
 - ASCII (0-127): 1 байт, начинается с `0`
 - 2 байта: первый начинается с `110`, второй с `10`
 - 3 байта: первый с `1110`, остальные с `10`
@@ -457,6 +462,7 @@ UTF-16: 0xD83D 0xDE00
 ```
 
 **Проблема UTF-16:**
+
 - Не совместима с ASCII
 - Зависит от endianness (UTF-16 BE vs UTF-16 LE)
 - Всё равно переменная длина (2 или 4 байта)
@@ -488,10 +494,12 @@ xxd -l 4 file_with_bom.txt
 **UTF-32** — фиксированные 4 байта на символ.
 
 **Преимущества:**
+
 - Простая индексация (символ N = байты N*4 до N*4+3)
 - Нет surrogate pairs
 
 **Недостатки:**
+
 - Расточительный (4x размер для ASCII)
 - Редко используется
 
@@ -1292,16 +1300,19 @@ UTF-32 BE BOM:       00 00 FE FF
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [File Formats](../04_FileFormats/) — как кодировки применяются в форматах файлов
 - [JSON](../05_JSON/) — JSON и Unicode
 
 **Practice Ideas:**
+
 1. Создайте файл в UTF-8, откройте его с разными кодировками, посмотрите результат
 2. Напишите скрипт для автоматического определения и конвертации кодировки файлов
 3. Найдите файл с mojibake и исправьте его
 4. Проверьте, какая кодировка используется в вашей системе по умолчанию
 
 **Going Deeper:**
+
 - Изучите Unicode Collation Algorithm (сортировка строк)
 - Разберитесь с Punycode (Unicode в доменных именах)
 - Посмотрите как работает ICU (International Components for Unicode)
@@ -1311,14 +1322,17 @@ UTF-32 BE BOM:       00 00 FE FF
 ## 📚 Additional Resources
 
 **Must Read:**
+
 - [The Absolute Minimum Every Developer Must Know About Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) — Joel Spolsky
 - [Пара слов про строковые типы в Python](https://github.com/newtover/python_strings/wiki) — отличная шпаргалка по str/bytes, UnicodeDecodeError и отличиям Python 2/3
 
 **Documentation:**
+
 - [Unicode Standard](https://www.unicode.org/standard/standard.html)
 - [Python Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)
 
 **Tools:**
+
 - [Unicode Table](https://unicode-table.com/) — поиск символов
 - [UTF-8 Encoder/Decoder](https://mothereff.in/utf-8)
 - [chardet](https://github.com/chardet/chardet) — определение кодировки
