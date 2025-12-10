@@ -19,6 +19,7 @@
 
 - Объяснить историю и эволюцию кодировок символов
 - Различать ASCII, Unicode, UTF-8, UTF-16 и другие кодировки
+- Использовать модуль `unicodedata` для работы с метаданными Unicode
 - Диагностировать и исправлять проблемы с кодировками ("кракозябры")
 - Правильно работать с кодировками в командной строке и коде
 - Выбирать правильную кодировку для разных сценариев
@@ -270,7 +271,38 @@ U+10000 — U+10FFFF: Дополнительные плоскости (эмод�
 | SIP (2) | U+20000-U+2FFFF | Редкие CJK иероглифы |
 | ... | ... | ... |
 
-### 4.4 Unicode — это не кодировка!
+### 4.4 Категории символов в Unicode
+
+Каждый символ Unicode имеет свою категорию:
+
+| Категория | Код | Примеры |
+|-----------|-----|---------|
+| Letter, Uppercase | Lu | A, Б, Ω |
+| Letter, Lowercase | Ll | a, б, ω |
+| Letter, Other | Lo | 中, あ, ก |
+| Number, Decimal Digit | Nd | 0-9, ٠-٩ |
+| Punctuation | P* | . , ! ? |
+| Symbol, Math | Sm | + − × ÷ ∑ |
+| Symbol, Currency | Sc | $ € ¥ ₽ |
+| Symbol, Other | So | ☀ ★ ♠ |
+| Mark, Combining | M* | ́ ̈ ̃ (диакритика) |
+
+### 4.5 Блоки Unicode
+
+Символы в Unicode сгруппированы в блоки по языкам и назначению:
+
+```
+U+0000-U+007F    Basic Latin (ASCII)
+U+0080-U+00FF    Latin-1 Supplement
+U+0100-U+017F    Latin Extended-A
+U+0400-U+04FF    Cyrillic (Кириллица)
+U+0500-U+052F    Cyrillic Supplement
+U+4E00-U+9FFF    CJK Unified Ideographs (Китайский/Японский/Корейский)
+U+1F600-U+1F64F  Emoticons
+U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
+```
+
+### 4.6 Unicode — это не кодировка!
 
 **Важно:** Unicode определяет КАКИЕ символы существуют и их номера.
 
@@ -617,6 +649,225 @@ s2_nfc = unicodedata.normalize('NFC', s2)
 print(s1_nfc == s2_nfc)  # True
 ```
 
+### 8.5 Модуль unicodedata — работа с метаданными Unicode
+
+Модуль `unicodedata` предоставляет доступ к базе данных Unicode:
+
+```python
+import unicodedata
+
+# Получить название символа
+print(unicodedata.name('А'))       # CYRILLIC CAPITAL LETTER A
+print(unicodedata.name('€'))       # EURO SIGN
+print(unicodedata.name('😀'))      # GRINNING FACE
+print(unicodedata.name('∞'))       # INFINITY
+```
+
+**Output:**
+```
+CYRILLIC CAPITAL LETTER A
+EURO SIGN
+GRINNING FACE
+INFINITY
+```
+
+```python
+# Получить символ по имени
+print(unicodedata.lookup('CYRILLIC SMALL LETTER ZHE'))  # ж
+print(unicodedata.lookup('SNOWMAN'))                    # ☃
+print(unicodedata.lookup('ROCKET'))                     # 🚀
+print(unicodedata.lookup('PILE OF POO'))                # 💩
+```
+
+**Output:**
+```
+ж
+☃
+🚀
+💩
+```
+
+```python
+# Категория символа
+print(unicodedata.category('A'))   # Lu (Letter, uppercase)
+print(unicodedata.category('a'))   # Ll (Letter, lowercase)
+print(unicodedata.category('5'))   # Nd (Number, decimal digit)
+print(unicodedata.category('€'))   # Sc (Symbol, currency)
+print(unicodedata.category(' '))   # Zs (Separator, space)
+print(unicodedata.category('\n'))  # Cc (Other, control)
+```
+
+**Output:**
+```
+Lu
+Ll
+Nd
+Sc
+Zs
+Cc
+```
+
+```python
+# Числовое значение символа (для цифр и дробей)
+print(unicodedata.numeric('5'))    # 5.0
+print(unicodedata.numeric('½'))    # 0.5
+print(unicodedata.numeric('¾'))    # 0.75
+print(unicodedata.numeric('Ⅳ'))    # 4.0 (римская цифра)
+print(unicodedata.numeric('๕'))    # 5.0 (тайская цифра)
+```
+
+**Output:**
+```
+5.0
+0.5
+0.75
+4.0
+5.0
+```
+
+```python
+# Проверка типа символа
+char = 'Ж'
+print(f"Символ: {char}")
+print(f"  Имя: {unicodedata.name(char)}")
+print(f"  Категория: {unicodedata.category(char)}")
+print(f"  Двунаправленность: {unicodedata.bidirectional(char)}")
+print(f"  Ширина (East Asian): {unicodedata.east_asian_width(char)}")
+```
+
+**Output:**
+```
+Символ: Ж
+  Имя: CYRILLIC CAPITAL LETTER ZHE
+  Категория: Lu
+  Двунаправленность: L
+  Ширина (East Asian): A
+```
+
+### 8.6 Практические примеры с unicodedata
+
+**Пример 1: Удаление диакритических знаков**
+
+```python
+import unicodedata
+
+def remove_accents(text):
+    """Удаляет диакритические знаки (accents) из текста."""
+    # NFD разбивает символы на базовый + комбинирующий знак
+    normalized = unicodedata.normalize('NFD', text)
+    # Фильтруем только не-комбинирующие символы
+    return ''.join(c for c in normalized if unicodedata.category(c) != 'Mn')
+
+print(remove_accents("café résumé naïve"))
+# cafe resume naive
+
+print(remove_accents("Cześć świat"))
+# Czesc swiat
+```
+
+**Output:**
+```
+cafe resume naive
+Czesc swiat
+```
+
+**Пример 2: Определение языка текста**
+
+```python
+import unicodedata
+from collections import Counter
+
+def detect_script(text):
+    """Определяет основной скрипт (алфавит) текста."""
+    scripts = Counter()
+    for char in text:
+        if char.isalpha():
+            name = unicodedata.name(char, '')
+            if 'CYRILLIC' in name:
+                scripts['Cyrillic'] += 1
+            elif 'LATIN' in name:
+                scripts['Latin'] += 1
+            elif 'CJK' in name or 'HIRAGANA' in name or 'KATAKANA' in name:
+                scripts['CJK'] += 1
+            elif 'ARABIC' in name:
+                scripts['Arabic'] += 1
+            elif 'GREEK' in name:
+                scripts['Greek'] += 1
+            elif 'HEBREW' in name:
+                scripts['Hebrew'] += 1
+    return scripts.most_common()
+
+print(detect_script("Привет мир"))
+# [('Cyrillic', 9)]
+
+print(detect_script("Hello world"))
+# [('Latin', 10)]
+
+print(detect_script("混合 text テスト"))
+# [('CJK', 5), ('Latin', 4)]
+```
+
+**Output:**
+```
+[('Cyrillic', 9)]
+[('Latin', 10)]
+[('CJK', 5), ('Latin', 4)]
+```
+
+**Пример 3: Поиск похожих символов (homoglyphs)**
+
+```python
+import unicodedata
+
+def find_homoglyphs(char):
+    """Находит символы с похожими названиями."""
+    target_name = unicodedata.name(char, '')
+    if not target_name:
+        return []
+    
+    # Получаем ключевое слово (например, "A" из "LATIN CAPITAL LETTER A")
+    words = target_name.split()
+    if 'LETTER' in words:
+        letter = words[-1]  # Последнее слово — обычно буква
+        
+        results = []
+        # Ищем в разных диапазонах
+        for code in range(0x10000):  # Только BMP для скорости
+            try:
+                c = chr(code)
+                name = unicodedata.name(c, '')
+                if name.endswith(f'LETTER {letter}') and c != char:
+                    results.append((c, name))
+            except ValueError:
+                pass
+        return results[:10]  # Первые 10
+    return []
+
+# Поиск "A" в разных алфавитах
+for char, name in find_homoglyphs('A')[:5]:
+    print(f"  {char} - {name}")
+```
+
+**Output:**
+```
+  Α - GREEK CAPITAL LETTER ALPHA
+  А - CYRILLIC CAPITAL LETTER A
+```
+
+**Пример 4: Информация о версии Unicode**
+
+```python
+import unicodedata
+
+# Версия базы данных Unicode в Python
+print(f"Unicode version: {unicodedata.unidata_version}")
+```
+
+**Output:**
+```
+Unicode version: 15.0.0
+```
+
 ---
 
 ## 9. Диагностика и исправление проблем
@@ -871,15 +1122,168 @@ file -i russian.txt
 
 ---
 
+## 13. Сводная таблица кодировок
+
+### 13.1 Основные кодировки: краткий обзор
+
+| Кодировка | Год | Размер символа | Символов | Статус |
+|-----------|-----|----------------|----------|--------|
+| ASCII | 1963 | 1 байт (7 бит) | 128 | Основа всего, ASCII-часть в UTF-8 |
+| ISO-8859-1 (Latin-1) | 1987 | 1 байт | 256 | Устарела, заменена UTF-8 |
+| Windows-1252 | 1985 | 1 байт | 256 | Устарела, legacy в Windows |
+| KOI8-R | 1993 | 1 байт | 256 | Устарела, legacy в Unix/Linux |
+| Windows-1251 (CP1251) | 1990 | 1 байт | 256 | Устарела, legacy в Windows |
+| CP866 (DOS) | 1986 | 1 байт | 256 | Устарела, legacy в DOS |
+| ISO-8859-5 | 1988 | 1 байт | 256 | Устарела, редко использовалась |
+| UTF-8 | 1993 | 1-4 байта | 1,112,064 | **Современный стандарт** |
+| UTF-16 | 1996 | 2-4 байта | 1,112,064 | Java, Windows API, JavaScript |
+| UTF-32 | 1996 | 4 байта | 1,112,064 | Редко используется |
+| GB2312 / GBK / GB18030 | 1980+ | 1-4 байта | варьируется | Китай (GB18030 обязателен) |
+| Shift_JIS | 1982 | 1-2 байта | ~7000 | Япония (legacy) |
+| EUC-JP | 1991 | 1-3 байта | ~7000+ | Япония (legacy в Unix) |
+| EUC-KR | 1991 | 1-2 байта | ~2350 | Корея (legacy) |
+
+### 13.2 Детальное сравнение кодировок
+
+#### ASCII и его потомки
+
+| Свойство | ASCII | ISO-8859-1 | Windows-1252 |
+|----------|-------|------------|--------------|
+| **Диапазон** | 0x00-0x7F | 0x00-0xFF | 0x00-0xFF |
+| **Байт на символ** | 1 | 1 | 1 |
+| **Языки** | Английский | Западноевропейские | Западноевропейские + € |
+| **Кириллица** | ❌ | ❌ | ❌ |
+| **Совместимость с UTF-8** | ✅ (0-127) | ⚠️ (0-127 only) | ⚠️ (0-127 only) |
+| **Современный статус** | Подмножество UTF-8 | Устарела | Legacy |
+
+#### Кириллические кодировки
+
+| Свойство | KOI8-R | Windows-1251 | ISO-8859-5 | CP866 |
+|----------|--------|--------------|------------|-------|
+| **Происхождение** | СССР/Unix | Microsoft | ISO | IBM/DOS |
+| **Байт на символ** | 1 | 1 | 1 | 1 |
+| **Диапазон** | 0x00-0xFF | 0x00-0xFF | 0x00-0xFF | 0x00-0xFF |
+| **Русские буквы** | 0x80-0xFF | 0xC0-0xFF | 0xA1-0xFF | 0x80-0xAF, 0xE0-0xF1 |
+| **Украинский** | KOI8-U | ✅ | ❌ | ❌ |
+| **Особенность** | "Транслитерируется" | Алфавитный порядок | Редко использовалась | Псевдографика |
+| **Где использовалась** | Email, Unix | Windows | Редко | DOS, консоль |
+| **Современный статус** | Legacy | Legacy | Практически мертва | Legacy (cmd.exe) |
+
+#### Unicode кодировки
+
+| Свойство | UTF-8 | UTF-16 | UTF-32 |
+|----------|-------|--------|--------|
+| **Байт на символ** | 1-4 | 2-4 | 4 |
+| **ASCII (U+0000-007F)** | 1 байт | 2 байта | 4 байта |
+| **Кириллица (U+0400-04FF)** | 2 байта | 2 байта | 4 байта |
+| **Китайский (BMP)** | 3 байта | 2 байта | 4 байта |
+| **Эмодзи (U+1F600+)** | 4 байта | 4 байта (surrogate) | 4 байта |
+| **BOM нужен** | Нет (опционально) | Да (BE/LE) | Да (BE/LE) |
+| **Совместим с ASCII** | ✅ | ❌ | ❌ |
+| **Endianness** | Не зависит | Зависит | Зависит |
+| **Индексация O(1)** | ❌ | ❌ | ✅ |
+| **Эффективность (ASCII)** | ⭐⭐⭐ | ⭐⭐ | ⭐ |
+| **Эффективность (CJK)** | ⭐⭐ | ⭐⭐⭐ | ⭐⭐ |
+
+### 13.3 Где какая кодировка используется
+
+| Область применения | Рекомендуемая кодировка | Примечания |
+|-------------------|------------------------|------------|
+| **Веб (HTML, CSS, JS)** | UTF-8 | ~98% веб-сайтов |
+| **JSON** | UTF-8 | Стандарт RFC 8259 |
+| **XML** | UTF-8 | Дефолт в XML 1.0 |
+| **Python 3 исходники** | UTF-8 | PEP 3120 |
+| **Java исходники** | UTF-8 | Unicode escapes для не-UTF-8 |
+| **JavaScript/Node.js** | UTF-8 | UTF-16 внутри движка |
+| **Windows API** | UTF-16 | Исторически сложилось |
+| **Unix/Linux файлы** | UTF-8 | Современный стандарт |
+| **macOS** | UTF-8 (NFD) | Нормализация NFD в файловой системе |
+| **MySQL** | utf8mb4 | НЕ utf8 (3 байта)! |
+| **PostgreSQL** | UTF-8 | Дефолт |
+| **SQLite** | UTF-8 | Дефолт |
+| **Redis** | UTF-8 | Binary-safe, но UTF-8 рекомендуется |
+| **Git** | UTF-8 | Для имён файлов и коммитов |
+| **Email (современный)** | UTF-8 | RFC 6532 |
+| **Старые Windows файлы** | Windows-1251 | Legacy |
+| **Старый DOS** | CP866 | Legacy |
+| **Китай (обязательно)** | GB18030 | Гос. стандарт |
+
+### 13.4 Признаки кодировок в hex-дампе
+
+Как определить кодировку по байтам:
+
+```
+UTF-8 BOM:           EF BB BF
+UTF-16 LE BOM:       FF FE
+UTF-16 BE BOM:       FE FF
+UTF-32 LE BOM:       FF FE 00 00
+UTF-32 BE BOM:       00 00 FE FF
+
+Русский текст "Привет":
+  UTF-8:             D0 9F D1 80 D0 B8 D0 B2 D0 B5 D1 82
+  Windows-1251:      CF F0 E8 E2 E5 F2
+  KOI8-R:            F0 D2 C9 D7 C5 D4
+  CP866:             8F E0 A8 A2 A5 E2
+
+Признаки UTF-8 кириллицы:
+  - Каждая буква = 2 байта
+  - Первый байт: D0 или D1
+  - Второй байт: 80-BF
+
+Признаки Windows-1251:
+  - Каждая буква = 1 байт
+  - Заглавные: C0-DF
+  - Строчные: E0-FF
+```
+
+### 13.5 Как выбрать кодировку
+
+```
+                    ┌─────────────────────────────────┐
+                    │    Какую кодировку выбрать?     │
+                    └───────────────┬─────────────────┘
+                                    │
+                    ┌───────────────▼───────────────┐
+                    │  Это новый проект?            │
+                    └───────────────┬───────────────┘
+                           │                │
+                          Да              Нет
+                           │                │
+                           ▼                ▼
+                    ┌──────────┐    ┌───────────────────┐
+                    │  UTF-8   │    │ Нужна совместимость│
+                    └──────────┘    │ со старыми данными?│
+                                    └─────────┬─────────┘
+                                         │         │
+                                        Да       Нет
+                                         │         │
+                                         ▼         ▼
+                              ┌───────────────┐  ┌──────┐
+                              │ Используйте    │  │ UTF-8│
+                              │ исходную       │  └──────┘
+                              │ кодировку или  │
+                              │ конвертируйте  │
+                              │ в UTF-8        │
+                              └───────────────┘
+```
+
+**Правило:** Если сомневаетесь — выбирайте **UTF-8**.
+
+---
+
 ## 💡 Key Takeaways
 
 - **ASCII — только латиница**: 7 бит, 128 символов. Остальные языки не поддерживает.
 
-- **Unicode — единая таблица**: Номер для каждого символа всех языков. UTF-8/16/32 — способы хранения.
+- **Unicode — единая таблица**: Номер для каждого символа всех языков. Каждый символ имеет имя, категорию, числовое значение. UTF-8/16/32 — способы хранения.
 
 - **UTF-8 — современный стандарт**: Совместим с ASCII, переменная длина (1-4 байта), используйте везде.
 
+- **unicodedata — ваш друг**: Модуль Python для работы с метаданными Unicode. `name()`, `category()`, `normalize()` — must-know функции.
+
 - **"Кракозябры" — несовпадение кодировок**: Файл сохранён в одной кодировке, открыт в другой. Диагностируйте с `xxd` и `chardet`.
+
+- **Legacy кодировки всё ещё живы**: Windows-1251, KOI8-R, CP866 — встречаются в старых системах. Знайте, как их определить и конвертировать.
 
 - **Всегда явно указывайте кодировку**: Не полагайтесь на дефолты — они отличаются между системами.
 
@@ -908,6 +1312,7 @@ file -i russian.txt
 
 **Must Read:**
 - [The Absolute Minimum Every Developer Must Know About Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) — Joel Spolsky
+- [Пара слов про строковые типы в Python](https://github.com/newtover/python_strings/wiki) — отличная шпаргалка по str/bytes, UnicodeDecodeError и отличиям Python 2/3
 
 **Documentation:**
 - [Unicode Standard](https://www.unicode.org/standard/standard.html)
