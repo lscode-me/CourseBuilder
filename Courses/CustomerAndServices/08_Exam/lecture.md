@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти все предыдущие модули курса (01-07)
 - Понимать ключевые концепции Customer & Services
 - Быть готовым применить знания на практике
@@ -15,6 +16,7 @@
 ## 🎯 Exam Objectives
 
 Этот экзамен проверяет вашу способность:
+
 - Применять знания из всех модулей курса в реальных сценариях
 - Принимать решения в условиях неопределённости
 - Коммуницировать эффективно с клиентом
@@ -68,6 +70,7 @@
 Ваша компания подписала контракт с новым клиентом — FinTech стартапом "PayFlow". Вы назначены Delivery Manager на этот проект.
 
 **Исходные данные:**
+
 - Клиент: PayFlow (FinTech стартап, Series A, 50 сотрудников)
 - Контракт: Time & Materials, 6 месяцев
 - Команда: 5 человек (1 TL, 2 Middle, 1 Junior, 1 QA)
@@ -76,6 +79,7 @@
 - Проект: Разработка мобильного приложения для P2P платежей
 
 **Ключевые stakeholders клиента:**
+
 - Sarah Chen — VP of Engineering (ваш основной контакт)
 - Mike Johnson — CTO (executive sponsor)
 - Anna Lee — Product Manager (будет работать с командой daily)
@@ -85,6 +89,7 @@
 **Задание 1.1: Kickoff Meeting Agenda (10 баллов)**
 
 Подготовьте agenda для kickoff meeting с клиентом. Укажите:
+
 - Темы для обсуждения
 - Временные рамки каждой темы
 - Ожидаемые outcomes
@@ -93,6 +98,7 @@
 **Задание 1.2: Onboarding Plan (10 баллов)**
 
 Создайте план onboarding на первые 4 недели. Включите:
+
 - Ключевые milestones по неделям
 - Метрики успеха для каждой недели
 - Риски и митигации
@@ -101,6 +107,7 @@
 **Задание 1.3: Communication Plan (5 баллов)**
 
 Определите ритмы коммуникации:
+
 - Регулярные встречи (формат, частота, участники)
 - Формат отчётности
 - Каналы коммуникации
@@ -118,6 +125,7 @@
 **Сообщение от клиента (Slack):**
 
 ```
+
 @John (DM)
 
 URGENT! Production is down!
@@ -132,9 +140,11 @@ revenue loss and reputation damage.
 What's happening? When will this be fixed?
 
 - Sarah
+
 ```
 
 **Дополнительная информация:**
+
 - Последний deployment был сегодня в 13:00
 - Ваша команда уже в курсе и расследует
 - TL сообщает: "Похоже на проблему с новым payment gateway integration"
@@ -145,6 +155,7 @@ What's happening? When will this be fixed?
 **Задание 2.1: Немедленный ответ клиенту (8 баллов)**
 
 Напишите ответ Sarah в Slack (immediate response):
+
 - Acknowledgment ситуации
 - Что уже делается
 - Когда будет следующий update
@@ -153,6 +164,7 @@ What's happening? When will this be fixed?
 **Задание 2.2: Incident Management (10 баллов)**
 
 Опишите ваши действия по управлению инцидентом:
+
 - Приоритизация и классификация
 - Команда реагирования
 - Timeline действий
@@ -161,6 +173,7 @@ What's happening? When will this be fixed?
 **Задание 2.3: Escalation Email (7 баллов)**
 
 Инцидент продолжается 2 часа. Напишите escalation email вашему руководителю (Head of Delivery), включая:
+
 - SITUATION
 - IMPACT
 - CURRENT STATUS
@@ -176,6 +189,7 @@ What's happening? When will this be fixed?
 Проект PayFlow идёт 5-й месяц. Клиент доволен прогрессом, но возникла внутренняя проблема.
 
 **Данные:**
+
 - Alex (Senior Developer) — в команде с начала проекта, ключевой contributor
 - Последние 2 спринта его velocity упала с 25 SP до 12 SP
 - Увеличилось количество багов в его коде
@@ -183,6 +197,7 @@ What's happening? When will this be fixed?
 - Клиент заметил и спросил: "Is Alex okay? His output seems different lately"
 
 **Дополнительный контекст:**
+
 - Alex работает в компании 3 года, всегда был top performer
 - Недавно не получил promotion, который ожидал
 - Работал без отпуска 6 месяцев
@@ -192,6 +207,7 @@ What's happening? When will this be fixed?
 **Задание 3.1: Анализ ситуации (8 баллов)**
 
 Проведите анализ:
+
 - Возможные причины (3-5 гипотез)
 - Какую информацию нужно собрать
 - С кем поговорить
@@ -200,6 +216,7 @@ What's happening? When will this be fixed?
 **Задание 3.2: 1-on-1 с Alex (10 баллов)**
 
 Подготовьте структуру разговора:
+
 - Как начать разговор
 - Ключевые вопросы (open-ended)
 - Что сказать / чего избежать
@@ -208,6 +225,7 @@ What's happening? When will this be fixed?
 **Задание 3.3: Ответ клиенту (7 баллов)**
 
 Напишите ответ Sarah на её вопрос об Alex:
+
 - Что сказать
 - Чего не говорить
 - Какие обязательства взять
@@ -222,18 +240,21 @@ What's happening? When will this be fixed?
 Проект PayFlow подходит к концу первых 6 месяцев. Вы получили информацию о возможности расширения.
 
 **Данные:**
+
 - Текущая команда: 5 человек, $45K/месяц
 - NPS от клиента: +65 (Promoter)
 - Delivery: все milestones выполнены вовремя
 - Качество: escaped defects ниже target
 
 **Сигналы от клиента:**
+
 - Sarah: "We're really happy with how things are going"
 - Mike (CTO): "We just closed our Series B. We have aggressive growth plans"
 - Клиент планирует запустить web-версию приложения
 - Также обсуждается expansion в Европу (новые регуляции, локализация)
 
 **Ваши наблюдения:**
+
 - Команда клиента перегружена — они не успевают за roadmap
 - Нет dedicated DevOps — релизы требуют много manual work
 - QA процессы клиента слабые — они часто пропускают баги
@@ -243,6 +264,7 @@ What's happening? When will this be fixed?
 **Задание 4.1: Opportunity Analysis (8 баллов)**
 
 Проведите анализ возможностей:
+
 - Upsell opportunities (3-5)
 - Cross-sell opportunities (2-3)
 - Prioritization (что предложить первым)
@@ -251,6 +273,7 @@ What's happening? When will this be fixed?
 **Задание 4.2: Service Improvement Plan (10 баллов)**
 
 Создайте Service Improvement Plan для обсуждения с клиентом:
+
 - Current State Assessment
 - Improvement Opportunities (с ROI)
 - Recommended Roadmap
@@ -259,6 +282,7 @@ What's happening? When will this be fixed?
 **Задание 4.3: Expansion Proposal (7 баллов)**
 
 Подготовьте proposal на добавление DevOps engineer:
+
 - Business Case
 - Expected Outcomes
 - Investment vs Return
@@ -359,6 +383,7 @@ What's happening? When will this be fixed?
 ### 8.1 Разбор результатов
 
 После экзамена проводится разбор:
+
 - Сильные стороны
 - Области для улучшения
 - Конкретные рекомендации
@@ -368,6 +393,7 @@ What's happening? When will this be fixed?
 На основе результатов формируется Individual Development Plan (IDP):
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │              INDIVIDUAL DEVELOPMENT PLAN                                │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -399,6 +425,7 @@ What's happening? When will this be fixed?
 │ • 90-day final: [Date]                                                  │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -406,10 +433,15 @@ What's happening? When will this be fixed?
 ## 💡 Key Takeaways
 
 - **Экзамен проверяет применение знаний** — не только теорию, но практику
+
 - **4 сценария = 4 ключевые ситуации** из реальной работы C&S Manager
+
 - **Используйте frameworks** — SPADE, SBI, Risk Matrix помогают структурировать
+
 - **Качество коммуникации критично** — как вы говорите так же важно, как что
+
 - **Баланс интересов** — клиент, команда, компания в каждом решении
+
 - **После экзамена — развитие** — IDP помогает расти дальше
 
 ---
@@ -417,6 +449,7 @@ What's happening? When will this be fixed?
 ## 🚀 После курса
 
 **Вы готовы к:**
+
 - Работе как Delivery Manager
 - Развитию в Account Manager
 - Роли Customer Success Manager
@@ -424,6 +457,7 @@ What's happening? When will this be fixed?
 - Операционному управлению командами
 
 **Следующие шаги:**
+
 - Применяйте знания на реальных проектах
 - Просите feedback от коллег и клиентов
 - Читайте рекомендованные книги
@@ -437,6 +471,7 @@ What's happening? When will this be fixed?
 ## 📚 Дополнительные материалы для подготовки
 
 **Шаблоны для практики:**
+
 - [Kickoff Agenda Template](../templates/kickoff_agenda.md)
 - [Onboarding Plan Template](../templates/onboarding_plan.md)
 - [Incident Response Template](../templates/incident_response.md)
@@ -445,11 +480,16 @@ What's happening? When will this be fixed?
 - [Expansion Proposal Template](../templates/expansion_proposal.md)
 
 **Рекомендуемое чтение:**
+
 - Все предыдущие модули курса
 - "The Manager's Path" by Camille Fournier
 - "Radical Candor" by Kim Scott
 - "Customer Success" by Nick Mehta
 
 ---
+
+
+
+
 
 

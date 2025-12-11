@@ -155,10 +155,12 @@ D) `strptime()`
 Что выведет следующий код?
 
 ```python
+
 from datetime import datetime, timedelta
 now = datetime(2024, 1, 15)
 future = now + timedelta(days=30)
 print(future.month)
+
 ```
 
 A) 1
@@ -362,9 +364,11 @@ D) Для генерации случайных чисел
 Что выведет следующий код?
 
 ```python
+
 from collections import Counter
 c = Counter("abracadabra")
 print(c.most_common(1))
+
 ```
 
 A) [('a', 5)]
@@ -561,4 +565,6 @@ D) `checksum`
 | **Менее 13 правильных (<50%)** | 📚 Нужно повторить | Практикуйтесь с документацией стандартной библиотеки. |
 
 ---
+
+
 

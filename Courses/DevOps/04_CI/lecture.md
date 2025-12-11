@@ -32,6 +32,7 @@
 **Continuous Integration (CI)** — практика частой интеграции изменений кода в общий репозиторий с автоматической проверкой каждого изменения.
 
 ```
+
 Developer A ──┐
               │
 Developer B ──┼──▶ Main Branch ──▶ Automated Build ──▶ Automated Tests
@@ -39,36 +40,43 @@ Developer B ──┼──▶ Main Branch ──▶ Automated Build ──▶ A
 Developer C ──┘          │
                          │
               Fast feedback ◀────────────────────────────┘
+
 ```
 
 ### 1.2 Ключевые принципы CI
 
 **1. Единый source repository:**
+
 - Весь код в одном месте
 - Version control для всего (код, конфиги, скрипты)
 - Main branch всегда готов к релизу
 
 **2. Автоматизация сборки:**
+
 - Один клик/команда для сборки
 - Воспроизводимость на любой машине
 - Никаких ручных шагов
 
 **3. Автоматические тесты:**
+
 - Каждый commit запускает тесты
 - Быстрая обратная связь
 - Тесты — часть pipeline, не опция
 
 **4. Все коммитят в main ежедневно:**
+
 - Маленькие частые изменения
 - Интеграция как минимум раз в день
 - Избегать долгоживущих веток
 
 **5. Каждый commit собирается:**
+
 - CI сервер мониторит репозиторий
 - Автоматический build при каждом push
 - Быстрое обнаружение проблем
 
 **6. Исправление сломанного build — приоритет #1:**
+
 - Сломанный build блокирует всю команду
 - Максимум 10 минут на фикс или revert
 - "Stop the line" культура
@@ -99,6 +107,7 @@ comparison = {
         "with_ci": "Минуты"
     }
 }
+
 ```
 
 ---
@@ -110,6 +119,7 @@ comparison = {
 **Рекомендуемый подход для CI/CD:**
 
 ```
+
 main ─────●─────●─────●─────●─────●─────●─────●─────▶
           │     │     │     │     │     │     │
           │     ├──○──┘     │     ├──○──┘     │
@@ -119,9 +129,11 @@ main ─────●─────●─────●─────●─
     (direct commits        (direct commits   (direct commits
      to main OR             to main OR        to main)
      short branches)        short branches)
+
 ```
 
 **Правила trunk-based:**
+
 - Branches живут максимум 1-2 дня
 - Merge в main минимум раз в день
 - Feature flags для незавершённых фич
@@ -132,6 +144,7 @@ main ─────●─────●─────●─────●─
 **Упрощённый workflow:**
 
 ```
+
 main ─────●─────●─────────────●─────────────●─────▶
           │                   │             │
           └──○──○──○──────────┘             │
@@ -140,9 +153,11 @@ main ─────●─────●─────────────
                                            │
                         └──○──○────────────┘
                             hotfix branch
+
 ```
 
 **Шаги:**
+
 1. Create branch from main
 2. Make changes, commit
 3. Open Pull Request
@@ -155,6 +170,7 @@ main ─────●─────●─────────────
 **Сложный workflow, менее подходит для CI/CD:**
 
 ```
+
 main     ─────●───────────────────●───────────────▶
               │                   │
 develop  ─────●─────●─────●───────●─────●─────▶
@@ -164,9 +180,11 @@ feature  ─────○─────┘     │       │     │
 release  ─────────────────○───────┘     │
                                         │
 hotfix   ───────────────────────────────○──▶
+
 ```
 
 **Недостатки GitFlow:**
+
 - Долгоживущие ветки (develop, release)
 - Сложность merge
 - Медленный feedback loop
@@ -175,6 +193,7 @@ hotfix   ───────────────────────�
 ### 2.4 Выбор стратегии
 
 ```python
+
 def choose_branching_strategy(context: dict) -> str:
     """Recommend branching strategy based on context."""
     
@@ -190,6 +209,7 @@ def choose_branching_strategy(context: dict) -> str:
         return "trunk-based"
     
     return "github-flow"  # Safe default
+
 ```
 
 ---
@@ -199,6 +219,7 @@ def choose_branching_strategy(context: dict) -> str:
 ### 3.1 Структура Pipeline
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         CI Pipeline                                  │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -215,6 +236,7 @@ def choose_branching_strategy(context: dict) -> str:
 │  Total pipeline time target: < 15 minutes                           │
 │                                                                      │
 └─────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 GitHub Actions Example
@@ -326,6 +348,7 @@ jobs:
           image-ref: myapp:${{ github.sha }}
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
+
 ```
 
 ### 3.3 GitLab CI Example
@@ -402,6 +425,7 @@ security_scan:
     - trivy image --exit-code 1 --severity HIGH,CRITICAL $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
+
 ```
 
 ---
@@ -411,6 +435,7 @@ security_scan:
 ### 4.1 Test Pyramid
 
 ```
+
                     ┌─────────────┐
                    │    E2E      │  Slow, expensive
                    │   Tests     │  Few tests
@@ -421,9 +446,11 @@ security_scan:
               │    Unit Tests     │  Fast, cheap
              │                    │  Many tests
             └──────────────────────┘
+
 ```
 
 **Рекомендуемое соотношение:**
+
 - Unit tests: 70%
 - Integration tests: 20%
 - E2E tests: 10%
@@ -463,6 +490,7 @@ def test_large_data_processing():
     # Этот тест занимает много времени
     result = process_million_records()
     assert result.success
+
 ```
 
 ### 4.3 CI Test Strategy
@@ -501,6 +529,7 @@ jobs:
       - name: Run E2E tests
         run: pytest -m "e2e" --timeout=120
     timeout-minutes: 30
+
 ```
 
 ### 4.4 Flaky Tests
@@ -524,6 +553,7 @@ def test_api_returns_valid_data():
     # Проверяем функциональность, не performance
     assert response.status_code == 200
     assert "data" in response.json()
+
 ```
 
 **Стратегия работы с flaky tests:**
@@ -543,6 +573,7 @@ jobs:
     steps:
       - name: Run flaky tests (quarantine)
         run: pytest -m "flaky" --reruns 3
+
 ```
 
 ---
@@ -572,6 +603,7 @@ jobs:
   integration-tests:
     needs: [lint, unit-tests]  # Зависимость
     runs-on: ubuntu-latest
+
 ```
 
 **Параллельные тесты (test sharding):**
@@ -587,6 +619,7 @@ test:
     - name: Run test shard
       run: |
         pytest --shard-id=${{ matrix.shard }} --num-shards=4
+
 ```
 
 ### 5.2 Caching
@@ -618,6 +651,7 @@ steps:
       key: ${{ runner.os }}-buildx-${{ github.sha }}
       restore-keys: |
         ${{ runner.os }}-buildx-
+
 ```
 
 ### 5.3 Incremental Builds
@@ -657,6 +691,7 @@ jobs:
     steps:
       - name: Test frontend
         run: npm test
+
 ```
 
 ### 5.4 Target Pipeline Times
@@ -687,6 +722,7 @@ def diagnose_slow_pipeline(actual_times: dict) -> list[str]:
         if target and actual > parse_time(target):
             issues.append(f"{stage}: {actual} (target: {target})")
     return issues
+
 ```
 
 ---
@@ -728,6 +764,7 @@ jobs:
       # Dependency check
       - name: Check dependencies
         run: pip-audit
+
 ```
 
 ### 6.2 Branch Protection Rules
@@ -753,6 +790,7 @@ branch_protection:
     restrictions:
       users: []
       teams: ["maintainers"]
+
 ```
 
 ### 6.3 CODEOWNERS
@@ -775,6 +813,7 @@ branch_protection:
 # Security-sensitive
 /auth/ @security-team @backend-team
 **/secrets* @security-team
+
 ```
 
 ---
@@ -816,6 +855,7 @@ deploy-production:
       run: |
         # Тот же image, другой environment
         helm upgrade app ./chart --set image.tag=${{ needs.build.outputs.image-tag }}
+
 ```
 
 ### 7.2 Environment Variables
@@ -872,6 +912,7 @@ notify:
           }
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
 ```
 
 ### 7.4 Self-Hosted Runners
@@ -891,6 +932,7 @@ jobs:
     steps:
       - name: Build on internal server
         run: make build
+
 ```
 
 ---
@@ -928,6 +970,7 @@ ci_metrics = {
         "measurement": "time from failure to green"
     }
 }
+
 ```
 
 ### 8.2 CI Dashboard
@@ -948,6 +991,7 @@ metrics:
   - name: ci_test_count
     type: gauge
     labels: [repository, test_type, status]
+
 ```
 
 ---
@@ -969,17 +1013,20 @@ metrics:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [05_CD](../05_CD/) — Continuous Delivery и Deployment
 - [06_IaC](../06_IaC/) — Infrastructure as Code
 - [14_DevSecOps](../14_DevSecOps/) — Безопасность в CI/CD
 
 **Practice Ideas:**
+
 1. Настройте CI pipeline для своего проекта
 2. Добавьте параллельное выполнение тестов
 3. Настройте branch protection rules
 4. Измерьте и оптимизируйте время pipeline
 
 **Going Deeper:**
+
 - "Continuous Integration" by Paul Duvall
 - GitHub Actions documentation
 - Martin Fowler's CI article
@@ -989,17 +1036,23 @@ metrics:
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [GitHub Actions](https://docs.github.com/en/actions)
 - [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
 - [Jenkins Pipeline](https://www.jenkins.io/doc/book/pipeline/)
 
 **Books:**
+
 - "Continuous Integration" by Paul Duvall
 - "Continuous Delivery" by Jez Humble
 
 **Articles:**
+
 - [Martin Fowler: Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)
 - [Trunk Based Development](https://trunkbaseddevelopment.com/)
 
 ---
+
+
+
 

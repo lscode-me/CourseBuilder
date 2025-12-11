@@ -45,6 +45,7 @@ State Table                          Total             Rate
   current entries                       42
   searches                         1234567           2.8/s
   inserts                           12345           0.0/s
+
 ```
 
 ### 1.2 Включение PF
@@ -80,9 +81,11 @@ State Table                          Total             Rate
 ### 2.1 Базовая структура
 
 ```
+
 action [direction] [log] [quick] [on interface] [af] [proto protocol]
     [from src_addr [port src_port]] [to dst_addr [port dst_port]]
     [flags tcp_flags] [state]
+
 ```
 
 ### 2.2 Основные действия
@@ -115,6 +118,7 @@ pass in proto tcp to port 22
 
 # Разрешить HTTP/HTTPS на конкретном интерфейсе
 pass in on em0 proto tcp to port { 80, 443 }
+
 ```
 
 ---
@@ -142,6 +146,7 @@ pass out all keep state
 
 # Разрешить SSH
 pass in on $ext_if proto tcp to port 22
+
 ```
 
 ### 3.2 Применение и проверка
@@ -158,6 +163,7 @@ pass in on $ext_if proto tcp to port 22
 block drop in all
 pass out all flags S/SA keep state
 pass in on em0 proto tcp from any to any port = 22 flags S/SA keep state
+
 ```
 
 ---
@@ -177,6 +183,7 @@ allowed_hosts = "{ 192.168.1.0/24, 10.0.0.0/8 }"
 # Использование
 pass in on $ext_if proto tcp to port $ssh_port
 pass in on $int_if from $allowed_hosts
+
 ```
 
 ### 4.2 Таблицы
@@ -192,6 +199,7 @@ table <blocked> file "/etc/pf.blocked"
 # Использование
 block in quick from <bruteforce>
 pass in from <trusted>
+
 ```
 
 ### 4.3 Управление таблицами
@@ -230,6 +238,7 @@ match out on $ext_if from $int_net nat-to ($ext_if)
 
 # Или с явным указанием
 match out on $ext_if from $int_net to any nat-to ($ext_if:0)
+
 ```
 
 ### 5.2 Port Forwarding
@@ -244,6 +253,7 @@ pass in on $ext_if proto tcp to ($ext_if) port 80 rdr-to $webserver port 80
 
 # Перенаправление нескольких портов
 pass in on $ext_if proto tcp to port { 80, 443 } rdr-to $webserver
+
 ```
 
 ### 5.3 1:1 NAT (Binat)
@@ -251,6 +261,7 @@ pass in on $ext_if proto tcp to port { 80, 443 } rdr-to $webserver
 ```sh
 # Двунаправленный NAT
 pass on $ext_if from 192.168.1.10 binat-to 203.0.113.10
+
 ```
 
 ---
@@ -270,6 +281,7 @@ pass out proto tcp all modulate state
 
 # synproxy state — защита от SYN flood
 pass in on $ext_if proto tcp to port 80 synproxy state
+
 ```
 
 ### 6.2 Просмотр состояний
@@ -287,6 +299,7 @@ State Table
   searches                         1234567
   inserts                           12345
   removals                          12303
+
 ```
 
 ### 6.3 Опции состояний
@@ -298,6 +311,7 @@ pass in proto tcp to port 22 keep state (max 100, source-track rule, max-src-con
 # Глобальные лимиты
 set limit states 100000
 set limit src-nodes 50000
+
 ```
 
 ---
@@ -307,6 +321,7 @@ set limit src-nodes 50000
 ### 7.1 Защита от брутфорса SSH
 
 ```sh
+
 table <bruteforce> persist
 
 # Блокировать адреса из таблицы
@@ -316,6 +331,7 @@ block in quick from <bruteforce>
 pass in on $ext_if proto tcp to port 22 \
     keep state (max-src-conn 5, max-src-conn-rate 3/30, \
     overload <bruteforce> flush global)
+
 ```
 
 ### 7.2 SYN Flood защита
@@ -323,6 +339,7 @@ pass in on $ext_if proto tcp to port 22 \
 ```sh
 # synproxy — прокси TCP handshake
 pass in on $ext_if proto tcp to port 80 synproxy state
+
 ```
 
 ### 7.3 Scrubbing (нормализация)
@@ -351,6 +368,7 @@ pass in log on $ext_if proto tcp to port 22
 
 # Логировать всё (для отладки)
 pass in log (all) on $ext_if
+
 ```
 
 ### 8.2 Просмотр логов
@@ -390,6 +408,7 @@ anchor "ssh_rules"
 load anchor "ssh_rules" from "/etc/pf.d/ssh.conf"
 
 anchor "dynamic_rules"  # пустой якорь для динамических правил
+
 ```
 
 ### 9.2 Управление якорями
@@ -447,6 +466,7 @@ pass in on $ext_if proto tcp to port { 80, 443 } \
 
 # ICMP ping
 pass in on $ext_if proto icmp icmp-type echoreq
+
 ```
 
 ### 10.2 Роутер с NAT
@@ -486,6 +506,7 @@ pass in on $int_if proto tcp to port 22
 
 # ICMP
 pass in proto icmp icmp-type echoreq
+
 ```
 
 ### 10.3 VPN сервер (WireGuard)
@@ -510,6 +531,7 @@ pass in on $ext_if proto udp to port 51820
 
 # Разрешить трафик VPN клиентов
 pass in on $wg_if from $wg_net
+
 ```
 
 ---
@@ -542,6 +564,7 @@ pfctl -si
 
 # Статистика по правилам
 pfctl -vsr
+
 ```
 
 ### 11.2 Тестирование правил
@@ -552,6 +575,7 @@ pfctl -nf /etc/pf.conf
 
 # Проверить, какое правило сработает
 pfctl -s rules -vvv
+
 ```
 
 ---
@@ -559,9 +583,13 @@ pfctl -s rules -vvv
 ## 💡 Key Takeaways
 
 - **Порядок важен**: PF обрабатывает правила сверху вниз, последнее совпадение побеждает (без `quick`)
+
 - **quick**: Немедленно применяет действие без дальнейшей обработки
+
 - **stateful по умолчанию**: `keep state` включён автоматически для `pass`
+
 - **Таблицы**: Эффективны для больших списков IP-адресов
+
 - **scrub**: Всегда нормализуйте входящий трафик
 
 ---
@@ -569,16 +597,19 @@ pfctl -s rules -vvv
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Services](../09_Services/) — настройка служб
 - [Security](../10_Security/) — дополнительная безопасность
 
 **Practice Ideas:**
+
 1. Настройте базовый файрвол для сервера
 2. Добавьте защиту SSH от брутфорса
 3. Настройте NAT для домашней сети
 4. Создайте правила для веб-сервера с rate-limiting
 
 **Going Deeper:**
+
 - Балансировка нагрузки с PF
 - QoS и приоритизация трафика (ALTQ)
 - relayd для application-level балансировки
@@ -588,10 +619,14 @@ pfctl -s rules -vvv
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man pf.conf](https://man.openbsd.org/pf.conf) — синтаксис конфигурации
 - [man pfctl](https://man.openbsd.org/pfctl) — управление PF
 - [PF User's Guide](https://www.openbsd.org/faq/pf/) — официальное руководство
 - "The Book of PF" by Peter N. M. Hansteen — отличная книга
 
 ---
+
+
+
 

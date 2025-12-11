@@ -12,6 +12,7 @@
 - Уметь организовывать код в модули
 
 **Recommended prior modules:**
+
 - [04_Functions](../04_Functions/) — функции
 - [10_Packages](../10_Packages/) — пакеты
 
@@ -34,6 +35,7 @@
 ### 1.1 Первый тест
 
 ```go
+
 // math.go
 package math
 
@@ -44,9 +46,11 @@ func Add(a, b int) int {
 func Multiply(a, b int) int {
     return a * b
 }
+
 ```
 
 ```go
+
 // math_test.go
 package math
 
@@ -69,16 +73,21 @@ func TestMultiply(t *testing.T) {
         t.Errorf("Multiply(3, 4) = %d; want %d", result, expected)
     }
 }
+
 ```
 
 ```bash
+
 go test
+
 ```
 
 **Output:**
 ```
+
 PASS
 ok      mypackage/math    0.001s
+
 ```
 
 ### 1.2 Запуск тестов
@@ -101,11 +110,13 @@ go test -run "Test.*Multiply"
 
 # С race detector
 go test -race
+
 ```
 
 ### 1.3 Методы testing.T
 
 ```go
+
 func TestExample(t *testing.T) {
     // Продолжить после ошибки
     t.Error("something wrong")
@@ -129,6 +140,7 @@ func TestExample(t *testing.T) {
     t.Fail()      // Пометить failed
     t.FailNow()   // Пометить и остановить
 }
+
 ```
 
 ---
@@ -138,6 +150,7 @@ func TestExample(t *testing.T) {
 ### 2.1 Базовый паттерн
 
 ```go
+
 package math
 
 import "testing"
@@ -165,10 +178,12 @@ func TestAdd(t *testing.T) {
         })
     }
 }
+
 ```
 
 **Output:**
 ```
+
 === RUN   TestAdd
 === RUN   TestAdd/positive_numbers
 === RUN   TestAdd/negative_numbers
@@ -182,11 +197,13 @@ func TestAdd(t *testing.T) {
     --- PASS: TestAdd/zeros (0.00s)
     --- PASS: TestAdd/with_zero (0.00s)
 PASS
+
 ```
 
 ### 2.2 Table tests с ошибками
 
 ```go
+
 func Divide(a, b float64) (float64, error) {
     if b == 0 {
         return 0, errors.New("division by zero")
@@ -221,6 +238,7 @@ func TestDivide(t *testing.T) {
         })
     }
 }
+
 ```
 
 ---
@@ -230,6 +248,7 @@ func TestDivide(t *testing.T) {
 ### 3.1 t.Run
 
 ```go
+
 func TestUserService(t *testing.T) {
     t.Run("Create", func(t *testing.T) {
         // Test create
@@ -247,11 +266,13 @@ func TestUserService(t *testing.T) {
         // Test delete
     })
 }
+
 ```
 
 ### 3.2 Параллельные тесты
 
 ```go
+
 func TestParallel(t *testing.T) {
     tests := []struct {
         name  string
@@ -274,6 +295,7 @@ func TestParallel(t *testing.T) {
         })
     }
 }
+
 ```
 
 ---
@@ -283,6 +305,7 @@ func TestParallel(t *testing.T) {
 ### 4.1 Setup и Teardown
 
 ```go
+
 func TestWithSetup(t *testing.T) {
     // Setup
     db, err := setupDatabase()
@@ -304,11 +327,13 @@ func TestWithSetup(t *testing.T) {
         // использует db
     })
 }
+
 ```
 
 ### 4.2 TestMain
 
 ```go
+
 var testDB *sql.DB
 
 func TestMain(m *testing.M) {
@@ -331,11 +356,13 @@ func TestMain(m *testing.M) {
 func TestSomething(t *testing.T) {
     // testDB доступен
 }
+
 ```
 
 ### 4.3 Helper функции
 
 ```go
+
 func assertEqual(t *testing.T, got, want interface{}) {
     t.Helper() // Показывает caller в ошибках
     
@@ -357,6 +384,7 @@ func TestWithHelpers(t *testing.T) {
     assertNoError(t, err)
     assertEqual(t, result, 42)
 }
+
 ```
 
 ---
@@ -366,25 +394,32 @@ func TestWithHelpers(t *testing.T) {
 ### 5.1 Базовый бенчмарк
 
 ```go
+
 func BenchmarkAdd(b *testing.B) {
     for i := 0; i < b.N; i++ {
         Add(1, 2)
     }
 }
+
 ```
 
 ```bash
+
 go test -bench=.
+
 ```
 
 **Output:**
 ```
+
 BenchmarkAdd-8    1000000000    0.290 ns/op
+
 ```
 
 ### 5.2 Бенчмарк с подготовкой
 
 ```go
+
 func BenchmarkComplexOperation(b *testing.B) {
     // Подготовка (не измеряется)
     data := prepareData()
@@ -395,11 +430,13 @@ func BenchmarkComplexOperation(b *testing.B) {
         processData(data)
     }
 }
+
 ```
 
 ### 5.3 Бенчмарк памяти
 
 ```go
+
 func BenchmarkWithAllocs(b *testing.B) {
     b.ReportAllocs() // Показать аллокации
     
@@ -407,16 +444,20 @@ func BenchmarkWithAllocs(b *testing.B) {
         _ = make([]byte, 1024)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 BenchmarkWithAllocs-8    1234567    890 ns/op    1024 B/op    1 allocs/op
+
 ```
 
 ### 5.4 Сравнительные бенчмарки
 
 ```go
+
 func BenchmarkConcat(b *testing.B) {
     b.Run("plus", func(b *testing.B) {
         for i := 0; i < b.N; i++ {
@@ -440,6 +481,7 @@ func BenchmarkConcat(b *testing.B) {
         }
     })
 }
+
 ```
 
 ---
@@ -460,11 +502,14 @@ go tool cover -html=coverage.out
 
 # Показать по функциям
 go tool cover -func=coverage.out
+
 ```
 
 **Output:**
 ```
+
 ok      mypackage    0.005s    coverage: 80.0% of statements
+
 ```
 
 ### 6.2 Coverage mode
@@ -478,6 +523,7 @@ go test -covermode=count -coverprofile=coverage.out
 
 # atomic — like count, safe for concurrent
 go test -covermode=atomic -coverprofile=coverage.out
+
 ```
 
 ---
@@ -487,6 +533,7 @@ go test -covermode=atomic -coverprofile=coverage.out
 ### 7.1 Интерфейсы для mocking
 
 ```go
+
 // Интерфейс для зависимости
 type UserRepository interface {
     GetByID(id int) (*User, error)
@@ -514,11 +561,13 @@ func (m *MockUserRepo) GetByID(id int) (*User, error) {
     }
     return m.users[id], nil
 }
+
 ```
 
 ### 7.2 Использование mock
 
 ```go
+
 func TestUserService(t *testing.T) {
     mock := &MockUserRepo{
         users: map[int]*User{
@@ -550,6 +599,7 @@ func TestUserServiceError(t *testing.T) {
         t.Error("expected error, got nil")
     }
 }
+
 ```
 
 ---
@@ -559,6 +609,7 @@ func TestUserServiceError(t *testing.T) {
 ### 8.1 Testable Examples
 
 ```go
+
 func ExampleAdd() {
     result := Add(2, 3)
     fmt.Println(result)
@@ -570,11 +621,13 @@ func ExampleAdd_negative() {
     fmt.Println(result)
     // Output: -3
 }
+
 ```
 
 ### 8.2 Unordered output
 
 ```go
+
 func ExamplePrintMap() {
     m := map[string]int{"a": 1, "b": 2}
     for k, v := range m {
@@ -584,6 +637,7 @@ func ExamplePrintMap() {
     // a: 1
     // b: 2
 }
+
 ```
 
 ---
@@ -593,6 +647,7 @@ func ExamplePrintMap() {
 ### 9.1 Naming
 
 ```go
+
 // Тестовые файлы: *_test.go
 // math.go -> math_test.go
 
@@ -604,11 +659,13 @@ func BenchmarkFunctionName(b *testing.B)
 
 // Examples: Example*
 func ExampleFunctionName()
+
 ```
 
 ### 9.2 Test isolation
 
 ```go
+
 func TestIsolated(t *testing.T) {
     // Каждый тест должен быть независимым
     // Не полагаться на порядок выполнения
@@ -619,6 +676,7 @@ func TestIsolated(t *testing.T) {
         // cleanup
     })
 }
+
 ```
 
 ---
@@ -640,12 +698,17 @@ func TestIsolated(t *testing.T) {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [12_Stdlib](../12_Stdlib/) — тестирование HTTP
 
 **Practice Ideas:**
+
 1. Напишите тесты для своего проекта
 2. Достигните 80% coverage
 3. Создайте бенчмарки для критичного кода
 
 ---
+
+
+
 

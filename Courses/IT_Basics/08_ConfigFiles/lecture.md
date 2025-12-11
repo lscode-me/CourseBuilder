@@ -30,6 +30,7 @@
 ### 1.1 Эволюция форматов
 
 ```
+
 Универсальные форматы:
 1980s     1990s      2000s      2010s      2020s
 INI  →  XML  →  JSON  →  YAML  →  TOML
@@ -39,6 +40,7 @@ INI  →  XML  →  JSON  →  YAML  →  TOML
 Linux/UNIX форматы (с 1970-х, актуальны до сих пор):
 passwd, group → sshd_config, sudoers → systemd units → nginx/apache
     (DSV)         (keyword-value)        (INI)         (блочный)
+
 ```
 
 ### 1.2 Сравнение форматов
@@ -72,6 +74,7 @@ passwd, group → sshd_config, sudoers → systemd units → nginx/apache
 **INI** (Initialization) — один из старейших форматов конфигурации, появившийся в MS-DOS и ранних версиях Windows. Несмотря на возраст, формат остаётся популярным благодаря своей простоте и читаемости. INI файлы используются в Git (`.gitconfig`), PHP (`php.ini`), MySQL (`my.cnf`), и многих других приложениях.
 
 ```ini
+
 ; Это комментарий
 # Это тоже комментарий
 
@@ -88,6 +91,7 @@ username = admin
 [server]
 debug = true
 max_connections = 100
+
 ```
 
 ### 2.2 Правила INI
@@ -95,14 +99,19 @@ max_connections = 100
 Формат INI не имеет строгой спецификации, поэтому разные парсеры могут интерпретировать его по-разному. Однако основные правила одинаковы везде:
 
 - **Секции** в квадратных скобках `[section]`
+
 - **Пары ключ-значение**: `key = value`
+
 - **Комментарии**: `;` или `#`
+
 - **Значения** — всегда строки (парсер может конвертировать в типы)
+
 - **Нет вложенности** (только секции, но некоторые реализации поддерживают `[parent.child]`)
 
 ### 2.3 INI в Python
 
 ```python
+
 import configparser
 
 # Чтение
@@ -124,11 +133,13 @@ config['new_section'] = {
 
 with open('config.ini', 'w') as f:
     config.write(f)
+
 ```
 
 ### 2.4 Примеры INI
 
 ```ini
+
 ; .gitconfig
 [user]
     name = John Doe
@@ -142,9 +153,11 @@ with open('config.ini', 'w') as f:
     st = status
     co = checkout
     br = branch
+
 ```
 
 ```ini
+
 ; php.ini
 [PHP]
 engine = On
@@ -153,6 +166,7 @@ max_execution_time = 30
 
 [Date]
 date.timezone = Europe/Moscow
+
 ```
 
 ### 2.5 INI в systemd
@@ -181,6 +195,7 @@ EnvironmentFile=-/etc/myapp/env
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 **Особенности systemd INI:**
@@ -202,6 +217,7 @@ RandomizedDelaySec=1h
 
 [Install]
 WantedBy=timers.target
+
 ```
 
 ---
@@ -265,6 +281,7 @@ role = "admin"
 [[users]]
 name = "Bob"
 role = "user"
+
 ```
 
 ### 3.3 TOML в Python
@@ -284,11 +301,13 @@ import tomli_w
 
 with open('output.toml', 'wb') as f:
     tomli_w.dump(config, f)
+
 ```
 
 ### 3.4 pyproject.toml
 
 ```toml
+
 [project]
 name = "myproject"
 version = "1.0.0"
@@ -322,11 +341,13 @@ line-length = 100
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
 ```
 
 ### 3.5 Cargo.toml (Rust)
 
 ```toml
+
 [package]
 name = "myapp"
 version = "0.1.0"
@@ -343,6 +364,7 @@ criterion = "0.5"
 [[bin]]
 name = "myapp"
 path = "src/main.rs"
+
 ```
 
 ---
@@ -366,14 +388,19 @@ API_KEY="key-with-spaces and special=chars"
 PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----
 MIIEpAIBAAKCAQEA...
 -----END RSA PRIVATE KEY-----"
+
 ```
 
 ### 4.2 Правила .env
 
 - **Формат**: `KEY=value`
+
 - **Комментарии**: `#`
+
 - **Кавычки**: опциональны (нужны для пробелов)
+
 - **Нет секций** — плоская структура
+
 - **НЕ коммитить в Git** — добавить в .gitignore
 
 ### 4.3 .env в Python
@@ -394,6 +421,7 @@ debug = os.getenv('DEBUG', 'false').lower() == 'true'
 port = int(os.getenv('PORT', '8080'))
 
 print(f"Connecting to {database_url}")
+
 ```
 
 ### 4.4 .env и Docker
@@ -407,22 +435,26 @@ services:
       - .env
     environment:
       - EXTRA_VAR=value  # Дополнительные переменные
+
 ```
 
 ```dockerfile
 # Dockerfile
 # НЕ копируйте .env в образ!
 ENV NODE_ENV=production
+
 ```
 
 ### 4.5 Пример структуры
 
 ```
+
 project/
 ├── .env              # Локальные секреты (в .gitignore)
 ├── .env.example      # Шаблон (в Git)
 ├── .env.production   # Production настройки
 └── .env.test         # Тестовые настройки
+
 ```
 
 ```bash
@@ -430,6 +462,7 @@ project/
 DATABASE_URL=postgresql://localhost/mydb
 SECRET_KEY=change-me-in-production
 DEBUG=true
+
 ```
 
 ---
@@ -455,11 +488,13 @@ unicode=\u0041\u0042\u0043
 # Многострочные
 long.text=This is a very long \
     line that continues here
+
 ```
 
 ### 5.2 Properties в Python
 
 ```python
+
 import jproperties
 
 p = jproperties.Properties()
@@ -470,6 +505,7 @@ with open('app.properties', 'rb') as f:
 # Доступ к значениям
 name = p['app.name'].data
 port = int(p['database.port'].data)
+
 ```
 
 ---
@@ -488,9 +524,11 @@ Linux исторически использует множество собст�
 root:x:0:0:root:/root:/bin/bash
 nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
 john:x:1000:1000:John Doe:/home/john:/bin/bash
+
 ```
 
 **Поля `/etc/passwd`:**
+
 1. Имя пользователя
 2. Пароль (`x` = в /etc/shadow)
 3. UID — числовой идентификатор
@@ -505,6 +543,7 @@ john:x:1000:1000:John Doe:/home/john:/bin/bash
 root:x:0:
 wheel:x:10:john,admin
 docker:x:998:john,deploy
+
 ```
 
 ```bash
@@ -542,6 +581,7 @@ print(f"{user.pw_name}: UID={user.pw_uid}, home={user.pw_dir}")
 
 group = grp.getgrnam('docker')
 print(f"{group.gr_name}: members={group.gr_mem}")
+
 ```
 
 ### 6.2 Keyword-argument формат
@@ -582,6 +622,7 @@ Match User deploy
 Match Group developers
     AllowTcpForwarding yes
     PermitTunnel yes
+
 ```
 
 **Особенности формата:**
@@ -609,6 +650,7 @@ Defaults    env_reset
 Defaults    mail_badpass
 Defaults    secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin"
 Defaults    timestamp_timeout=15
+
 ```
 
 > ⚠️ **Важно**: Редактируйте `/etc/sudoers` только через `visudo` — он проверяет синтаксис перед сохранением!
@@ -630,9 +672,11 @@ UUID=i9j0k1l2-...                         none      swap    sw               0  
 
 # tmpfs в памяти
 tmpfs                                     /tmp      tmpfs   defaults,noatime,mode=1777 0 0
+
 ```
 
 **Колонки fstab:**
+
 1. Устройство (UUID, LABEL, путь или сетевой адрес)
 2. Точка монтирования
 3. Тип файловой системы
@@ -654,6 +698,7 @@ tmpfs                                     /tmp      tmpfs   defaults,noatime,mod
 # Блокировка рекламы/трекеров
 0.0.0.0         ads.example.com
 0.0.0.0         tracker.example.com
+
 ```
 
 ```bash
@@ -661,6 +706,7 @@ tmpfs                                     /tmp      tmpfs   defaults,noatime,mod
 # <name>    <device>                        <keyfile>       <options>
 crypthome   UUID=xxxx-yyyy                  /etc/keys/home  luks
 cryptdata   /dev/disk/by-id/ata-Samsung...  none            luks,discard
+
 ```
 
 ### 6.4 Apache/Nginx-style (блочный формат)
@@ -698,6 +744,7 @@ cryptdata   /dev/disk/by-id/ata-Samsung...  none            luks,discard
     SSLCertificateFile /etc/ssl/certs/example.pem
     SSLCertificateKeyFile /etc/ssl/private/example.key
 </VirtualHost>
+
 ```
 
 ```nginx
@@ -743,6 +790,7 @@ server {
         include fastcgi_params;
     }
 }
+
 ```
 
 ### 6.5 Shell-style переменные
@@ -754,6 +802,7 @@ server {
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 LANG="en_US.UTF-8"
 EDITOR="vim"
+
 ```
 
 ```bash
@@ -764,12 +813,14 @@ GRUB_DISTRIBUTOR="Ubuntu"
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 GRUB_CMDLINE_LINUX=""
 GRUB_DISABLE_OS_PROBER=false
+
 ```
 
 ```bash
 # /etc/default/docker или /etc/sysconfig/docker
 DOCKER_OPTS="--storage-driver=overlay2"
 DOCKER_NETWORK_OPTIONS="--ip-forward=true"
+
 ```
 
 ```bash
@@ -787,6 +838,7 @@ alias grep='grep --color=auto'
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
+
 ```
 
 **Загрузка в скриптах:**
@@ -800,6 +852,7 @@ fi
 
 # Использование переменных
 echo "Starting with port: ${MYAPP_PORT:-8080}"
+
 ```
 
 ### 6.6 Crontab формат
@@ -837,9 +890,11 @@ echo "Starting with port: ${MYAPP_PORT:-8080}"
 SHELL=/bin/bash
 PATH=/usr/local/bin:/usr/bin:/bin
 MAILTO=admin@example.com
+
 ```
 
 **Специальные символы:**
+
 - `*` — любое значение
 - `*/n` — каждые n единиц
 - `n,m` — конкретные значения
@@ -875,6 +930,7 @@ config.read('config.ini')
 
 data = {s: dict(config[s]) for s in config.sections()}
 print(json.dumps(data, indent=2))
+
 ```
 
 ---
@@ -889,6 +945,7 @@ print(json.dumps(data, indent=2))
 *.pem
 *_secret*
 config/local.toml
+
 ```
 
 ### 8.2 Структура конфигурации
@@ -908,11 +965,13 @@ class Config:
     # Обязательные
     DATABASE_URL = os.environ['DATABASE_URL']  # Падает если нет
     SECRET_KEY = os.environ['SECRET_KEY']
+
 ```
 
 ### 8.3 Валидация конфигурации
 
 ```python
+
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
@@ -925,6 +984,7 @@ class Settings(BaseSettings):
         env_file = '.env'
 
 settings = Settings()  # Автоматическая валидация
+
 ```
 
 ---
@@ -948,6 +1008,7 @@ settings = Settings()  # Автоматическая валидация
 ## 🚀 Next Steps
 
 **Practice Ideas:**
+
 1. Создайте pyproject.toml для своего Python проекта
 2. Настройте .env для Docker Compose приложения
 3. Напишите скрипт конвертации INI → TOML
@@ -960,11 +1021,13 @@ settings = Settings()  # Автоматическая валидация
 ## 📚 Additional Resources
 
 **Форматы:**
+
 - [TOML Specification](https://toml.io/)
 - [python-dotenv](https://github.com/theskumar/python-dotenv)
 - [Pydantic Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
 
 **Linux man-страницы (секция 5 — форматы файлов):**
+
 - `man 5 passwd` — формат /etc/passwd
 - `man 5 shadow` — формат /etc/shadow
 - `man 5 fstab` — таблица файловых систем
@@ -975,5 +1038,8 @@ settings = Settings()  # Автоматическая валидация
 - `man systemd.unit` — формат unit-файлов systemd
 
 ---
+
+
+
 
 

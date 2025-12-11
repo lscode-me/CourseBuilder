@@ -24,6 +24,7 @@
 ### 1.1 Обзор
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                AWS Container Services                               │
 ├────────────────────────────────────────────────────────────────────┤
@@ -54,11 +55,13 @@
 │  └──────────────────┘                                             │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 ECS vs EKS
 
 ```python
+
 comparison = {
     "Learning Curve": {
         "ECS": "Low (AWS-native, simpler API)",
@@ -87,6 +90,7 @@ for aspect, values in comparison.items():
     print(f"{aspect}:")
     print(f"  ECS: {values['ECS']}")
     print(f"  EKS: {values['EKS']}\n")
+
 ```
 
 ---
@@ -96,6 +100,7 @@ for aspect, values in comparison.items():
 ### 2.1 Core Concepts
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    ECS Core Concepts                                │
 ├────────────────────────────────────────────────────────────────────┤
@@ -121,11 +126,13 @@ for aspect, values in comparison.items():
 │  └── Rolling updates                                              │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Task Definition
 
 ```json
+
 {
     "family": "my-web-app",
     "networkMode": "awsvpc",
@@ -171,11 +178,13 @@ for aspect, values in comparison.items():
         }
     ]
 }
+
 ```
 
 ### 2.3 Создание Service
 
 ```bash
+
 aws ecs create-service \
     --cluster my-cluster \
     --service-name my-service \
@@ -185,6 +194,7 @@ aws ecs create-service \
     --network-configuration "awsvpcConfiguration={subnets=[subnet-1,subnet-2],securityGroups=[sg-123],assignPublicIp=DISABLED}" \
     --load-balancers "targetGroupArn=arn:aws:elasticloadbalancing:...,containerName=web,containerPort=8080" \
     --deployment-configuration "maximumPercent=200,minimumHealthyPercent=100"
+
 ```
 
 ---
@@ -194,6 +204,7 @@ aws ecs create-service \
 ### 3.1 Serverless Containers
 
 ```python
+
 fargate_benefits = {
     "No servers": "AWS manages EC2 instances",
     "Right-sizing": "Pay for exact CPU/memory used",
@@ -216,6 +227,7 @@ for benefit, description in fargate_benefits.items():
 print("\nFargate Limitations:")
 for limitation, description in fargate_limitations.items():
     print(f"  ⚠️ {limitation}: {description}")
+
 ```
 
 ### 3.2 Fargate Pricing
@@ -233,6 +245,7 @@ def calculate_fargate_cost(vcpu: float, memory_gb: float, hours: int) -> float:
 # Example: 0.5 vCPU, 1 GB memory, running 24/7 for a month
 monthly_cost = calculate_fargate_cost(0.5, 1, 730)
 print(f"Fargate monthly cost (0.5 vCPU, 1GB): ${monthly_cost}")  # ~$18
+
 ```
 
 ---
@@ -257,11 +270,13 @@ eksctl create cluster \
 eksctl create cluster \
     --name my-cluster \
     --fargate
+
 ```
 
 ### 4.2 EKS Components
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    EKS Architecture                                 │
 ├────────────────────────────────────────────────────────────────────┤
@@ -291,6 +306,7 @@ eksctl create cluster \
 │  └────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -313,6 +329,7 @@ aws ecr get-login-password --region us-east-1 | \
 docker build -t my-app:v1.0 .
 docker tag my-app:v1.0 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-app:v1.0
 docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-app:v1.0
+
 ```
 
 ---
@@ -322,6 +339,7 @@ docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-app:v1.0
 ### 6.1 awsvpc Network Mode
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                awsvpc Network Mode (Fargate default)                │
 ├────────────────────────────────────────────────────────────────────┤
@@ -347,6 +365,7 @@ docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-app:v1.0
 │  └──────────────────────────────────────────────────────────────┘ │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -354,6 +373,7 @@ docker push 123456789012.dkr.ecr.us-east-1.amazonaws.com/my-app:v1.0
 ## 7. Когда что выбрать
 
 ```python
+
 decision_guide = {
     "ECS + Fargate": {
         "when": [
@@ -388,6 +408,7 @@ for option, details in decision_guide.items():
     print(f"\n{option}:")
     for condition in details['when']:
         print(f"  • {condition}")
+
 ```
 
 ---
@@ -395,10 +416,15 @@ for option, details in decision_guide.items():
 ## 💡 Key Takeaways
 
 - **ECS** — AWS-native, simpler, free control plane
+
 - **EKS** — Kubernetes standard, portable, $73/month control plane
+
 - **Fargate** — serverless containers, no EC2 management
+
 - **EC2** — more control, potentially cheaper at scale
+
 - **ECR** — private Docker registry with scanning
+
 - **awsvpc** — each task gets its own ENI and IP
 
 ---
@@ -413,10 +439,15 @@ for option, details in decision_guide.items():
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [12_Messaging](../12_Messaging/) — SQS, SNS, EventBridge
 - [17_CICD](../17_CICD/) — CI/CD пайплайны для контейнеров
 
 **Практика:**
+
 1. Разверните приложение в ECS Fargate
 2. Настройте EKS кластер с eksctl
 3. Реализуйте blue/green deployment
+
+
+

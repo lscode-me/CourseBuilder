@@ -37,24 +37,31 @@
 $ mount | grep ffs
 /dev/sd0a on / type ffs (local)
 /dev/sd0d on /home type ffs (local, nodev, nosuid)
+
 ```
 
 **Output:**
 ```
+
 /dev/sd0a on / type ffs (local)
 /dev/sd0d on /home type ffs (local, nodev, nosuid)
+
 ```
 
 Характеристики FFS:
 
 - **Soft Updates** — целостность данных без журнала
+
 - **Высокая надёжность** — проверенная временем
+
 - **Простота** — легко восстановить при проблемах
+
 - **Нет фрагментации** — благодаря cylinder groups
 
 ### 1.2 Структура FFS
 
 ```
+
 ┌─────────────────────────────────────────────────────┐
 │ Boot Block │ Superblock │ Cylinder Groups...        │
 └─────────────────────────────────────────────────────┘
@@ -65,6 +72,7 @@ Cylinder Group:
 │ Superblock │ Group      │ Bitmap &    │ Blocks      │
 │            │ Summary    │ Inodes      │             │
 └────────────┴────────────┴─────────────┴─────────────┘
+
 ```
 
 ### 1.3 Inodes
@@ -85,14 +93,17 @@ Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/   wheel)
 Access: 2023-12-01 10:00:00.000000000 +0300
 Modify: 2023-11-15 14:30:00.000000000 +0300
 Change: 2023-11-15 14:30:00.000000000 +0300
+
 ```
 
 **Output:**
 ```
+
   File: /etc/passwd
   Size: 1843       Blocks: 8          IO Block: 16384  regular file
 Device: 0,0        Inode: 98304       Links: 1
 Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/   wheel)
+
 ```
 
 ---
@@ -102,6 +113,7 @@ Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/   wheel)
 ### 2.1 Структура каталогов OpenBSD
 
 ```sh
+
 $ man hier
 
 /           корневой каталог
@@ -132,6 +144,7 @@ $ man hier
 │   ├── obj/        объектные файлы компиляции
 │   └── X11R6/      X Window System
 └── altroot/ альтернативный корень (для восстановления)
+
 ```
 
 ### 2.2 Особенности каталогов
@@ -160,6 +173,7 @@ sd0a    # раздел a (обычно /)
 sd0b    # раздел b (обычно swap)
 sd0c    # весь диск (для разметки)
 sd0d    # раздел d (обычно /home)
+
 ```
 
 **Стандартное назначение разделов:**
@@ -209,6 +223,7 @@ boundend: 976773104
   g:          4194304         46137408  4.2BSD   2048 16384 12960
   h:         16777216         50331712  4.2BSD   2048 16384 12960
   k:        909663376         67108928  4.2BSD   4096 32768 26062
+
 ```
 
 ### 3.3 Редактирование разделов
@@ -256,6 +271,7 @@ $ mount
 Конфигурация автоматического монтирования:
 
 ```sh
+
 $ cat /etc/fstab
 # Device         Mountpoint   FStype  Options          Dump  Pass
 abcd1234.a       /            ffs     rw               1     1
@@ -265,6 +281,7 @@ abcd1234.e       /var         ffs     rw,nodev,nosuid  1     2
 abcd1234.f       /usr         ffs     rw,nodev         1     2
 abcd1234.g       /usr/X11R6   ffs     rw,nodev         1     2
 abcd1234.h       /usr/local   ffs     rw,wxallowed,nodev  1  2
+
 ```
 
 **Поля fstab:**
@@ -302,6 +319,7 @@ hw.disknames=sd0:abcd1234567890ef,sd1:1234567890abcdef
 # В fstab используется формат:
 # DUID.partition
 abcd1234567890ef.a    /    ffs    rw    1    1
+
 ```
 
 > **💡 Pro Tip:**  
@@ -314,6 +332,7 @@ abcd1234567890ef.a    /    ffs    rw    1    1
 ### 5.1 Стандартные права
 
 ```
+
 -rwxr-xr-x  1 root  wheel  12345  Dec  1 10:00  file
  │││ │││ │││
  │││ │││ └── права для others (остальные)
@@ -323,6 +342,7 @@ abcd1234567890ef.a    /    ffs    rw    1    1
 r = read  (4)
 w = write (2)
 x = execute (1)
+
 ```
 
 ### 5.2 Специальные биты
@@ -330,6 +350,7 @@ x = execute (1)
 **setuid (4000)** — выполняется от имени владельца:
 
 ```sh
+
 $ ls -l /usr/bin/passwd
 -r-sr-xr-x  1 root  bin  40960 Oct  9 13:57 /usr/bin/passwd
 #    ^
@@ -343,6 +364,7 @@ $ ls -l /usr/bin/passwd
 **setgid (2000)** — выполняется от имени группы:
 
 ```sh
+
 $ ls -l /usr/bin/mail
 -r-xr-sr-x  1 root  mail  123456 Oct  9 13:57 /usr/bin/mail
 #       ^
@@ -356,6 +378,7 @@ $ ls -l /usr/bin/mail
 **sticky bit (1000)** — только владелец может удалять:
 
 ```sh
+
 $ ls -ld /tmp
 drwxrwxrwt  8 root  wheel  512 Dec  1 10:00 /tmp
 #        ^
@@ -388,7 +411,9 @@ $ umask 077
 Для постоянной umask добавьте в `~/.profile`:
 
 ```sh
+
 umask 077
+
 ```
 
 ### 5.4 Флаги файлов (chflags)
@@ -432,6 +457,7 @@ $ ls -lo /etc/passwd
 # Модули softraid
 $ dmesg | grep softraid
 softraid0 at root
+
 ```
 
 ### 6.2 Шифрование диска
@@ -529,6 +555,7 @@ $ du -sh /var/*
 
 # Найти большие файлы
 $ du -a /var | sort -rn | head -10
+
 ```
 
 ---
@@ -572,6 +599,7 @@ $ disklabel sd1
 
 # Для автомонтирования в fstab:
 server:/export    /mnt    nfs    rw    0    0
+
 ```
 
 ### 8.4 tmpfs
@@ -584,6 +612,7 @@ server:/export    /mnt    nfs    rw    0    0
 
 # В fstab:
 swap    /mnt/ramdisk    tmpfs    rw,nodev,nosuid,size=128M    0    0
+
 ```
 
 ---
@@ -654,9 +683,13 @@ mount point: [none] /data
 ## 💡 Key Takeaways
 
 - **FFS надёжен**: Проверенная временем файловая система с Soft Updates
+
 - **DUID лучше /dev**: Используйте DUID в fstab для стабильности
+
 - **nodev, nosuid**: Всегда используйте на /home, /tmp, /var
+
 - **Softraid**: Встроенное шифрование и RAID без сторонних инструментов
+
 - **fsck**: Регулярно проверяйте при проблемах, но на размонтированных FS
 
 ---
@@ -664,16 +697,19 @@ mount point: [none] /data
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [User Management](../05_UserManagement/) — управление пользователями
 - [Security](../10_Security/) — безопасность и шифрование
 
 **Practice Ideas:**
+
 1. Добавьте второй диск и настройте автомонтирование
 2. Создайте зашифрованный раздел с softraid
 3. Настройте tmpfs для /tmp
 4. Изучите вывод `df -h` и найдите, что занимает место
 
 **Going Deeper:**
+
 - Изучите dump/restore для резервного копирования
 - Настройте NFS-сервер
 - Разберитесь с softraid RAID5 для отказоустойчивости
@@ -683,6 +719,7 @@ mount point: [none] /data
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man ffs](https://man.openbsd.org/ffs) — файловая система FFS
 - [man mount](https://man.openbsd.org/mount) — монтирование
 - [man disklabel](https://man.openbsd.org/disklabel) — разметка дисков
@@ -690,4 +727,7 @@ mount point: [none] /data
 - [OpenBSD FAQ 14](https://www.openbsd.org/faq/faq14.html) — работа с дисками
 
 ---
+
+
+
 

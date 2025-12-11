@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [02_File_Formats](../02_File_Formats/) — форматы файлов
 - Понимать структуру SAM/BAM, VCF, BED файлов
 - Иметь опыт работы с командной строкой Linux/macOS
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Использовать SAMtools для работы с BAM файлами
 - Применять BCFtools для фильтрации и анализа VCF
 - Выполнять операции с геномными интервалами через BEDtools
@@ -62,6 +64,7 @@ samtools view aligned.bam chr1:1000-2000
 # Покрытие
 samtools depth aligned.bam
 samtools coverage aligned.bam
+
 ```
 
 ### 1.2 Фильтрация
@@ -78,6 +81,7 @@ samtools view -b aligned.bam chr1 > chr1.bam
 
 # Комбинирование
 samtools view -f 2 -q 30 -b aligned.bam chr1 > filtered.bam
+
 ```
 
 ### 1.3 Merge и Split
@@ -88,6 +92,7 @@ samtools merge merged.bam sample1.bam sample2.bam sample3.bam
 
 # Разделить по read group
 samtools split -f 'rg_%!.bam' merged.bam
+
 ```
 
 ---
@@ -111,6 +116,7 @@ bcftools stats variants.vcf.gz
 
 # Подсчёт вариантов
 bcftools view -H variants.vcf.gz | wc -l
+
 ```
 
 ### 2.2 Фильтрация
@@ -130,6 +136,7 @@ bcftools view -r chr1:1000-2000 variants.vcf.gz
 
 # Множественные условия
 bcftools filter -i 'QUAL>30 && INFO/DP>20' variants.vcf.gz
+
 ```
 
 ### 2.3 Аннотация и Модификация
@@ -146,6 +153,7 @@ bcftools norm -d all variants.vcf.gz
 
 # Left-align indels
 bcftools norm -f reference.fasta variants.vcf.gz
+
 ```
 
 ### 2.4 Сравнение VCF файлов
@@ -156,6 +164,7 @@ bcftools isec -p output_dir sample1.vcf.gz sample2.vcf.gz
 
 # Объединить VCF
 bcftools merge sample1.vcf.gz sample2.vcf.gz -o merged.vcf
+
 ```
 
 ---
@@ -173,6 +182,7 @@ bedtools intersect -a regions_a.bed -b regions_b.bed -f 0.5
 
 # Вывести только уникальные для A
 bedtools intersect -a regions_a.bed -b regions_b.bed -v
+
 ```
 
 ### 3.2 Merge и Sort
@@ -183,6 +193,7 @@ bedtools merge -i regions.bed
 
 # Сортировка
 bedtools sort -i unsorted.bed > sorted.bed
+
 ```
 
 ### 3.3 Coverage
@@ -196,6 +207,7 @@ bedtools coverage -a exons.bed -b aligned.bam -hist
 
 # Среднее покрытие
 bedtools coverage -a exons.bed -b aligned.bam -mean
+
 ```
 
 ### 3.4 Genomecov
@@ -206,6 +218,7 @@ bedtools genomecov -ibam aligned.bam -bg > coverage.bedgraph
 
 # По базам
 bedtools genomecov -ibam aligned.bam -d > coverage.txt
+
 ```
 
 ### 3.5 GetFasta
@@ -213,6 +226,7 @@ bedtools genomecov -ibam aligned.bam -d > coverage.txt
 ```bash
 # Извлечь последовательности из FASTA по BED координатам
 bedtools getfasta -fi reference.fasta -bed regions.bed -fo output.fasta
+
 ```
 
 ---
@@ -233,6 +247,7 @@ seqtk sample input.fastq 10000 > sample.fastq
 
 # Обрезать качество
 seqtk trimfq input.fastq > trimmed.fastq
+
 ```
 
 ### 4.2 Фильтрация
@@ -243,6 +258,7 @@ seqtk seq -L 100 input.fastq > filtered.fastq
 
 # Первые N последовательностей
 seqtk seq -n 1000 input.fastq > first_1000.fastq
+
 ```
 
 ---
@@ -261,6 +277,7 @@ fastqc *.fastq.gz
 
 # Quiet mode
 fastqc -q sample.fastq.gz
+
 ```
 
 ---
@@ -286,6 +303,7 @@ bcftools view -f PASS variants.vcf.gz | bcftools view -v snps | wc -l
 # Покрытие конкретных регионов
 bedtools intersect -a exons.bed -b aligned.bam | \
     bedtools coverage -a - -b aligned.bam
+
 ```
 
 ### 6.2 Практический пример: QC + Alignment + Stats
@@ -310,6 +328,7 @@ samtools index ${SAMPLE}.bam
 # Stats
 samtools flagstat ${SAMPLE}.bam > ${SAMPLE}.flagstat.txt
 samtools stats ${SAMPLE}.bam > ${SAMPLE}.stats.txt
+
 ```
 
 ---
@@ -342,6 +361,7 @@ awk '{print $1":"$2"-"$3}' regions.bed
 
 # Извлечь генотипы из VCF
 bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
+
 ```
 
 ---
@@ -359,10 +379,12 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
 ## 🚀 Следующие Шаги
 
 **Связанные модули:**
+
 - [Variant Calling](../03_Variant_Calling/) — полный пайплайн с использованием CLI инструментов
 - [Эпигенетика](../05_Epigenetics_Markers/) — продвинутые анализы и клиническая интерпретация
 
 **Практические задачи для закрепления:**
+
 1. Получите статистику BAM файла: total/mapped/properly paired reads
 2. Отфильтруйте BAM: MAPQ ≥ 30, properly paired, не дубликаты
 3. Извлеките риды из конкретных регионов (BED файл)
@@ -374,6 +396,7 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
 > **💡 Совет:** Напишите bash-скрипт, комбинирующий несколько инструментов в один pipeline.
 
 **Для углублённого изучения:**
+
 - AWK и sed для продвинутой обработки текста
 - Snakemake/Nextflow для воспроизводимых пайплайнов
 - Параллельная обработка с GNU parallel
@@ -383,12 +406,14 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
 ## 📚 Дополнительные Ресурсы
 
 ### Документация
+
 - [SAMtools](http://www.htslib.org/doc/samtools.html) — Полная документация samtools
 - [BCFtools](http://www.htslib.org/doc/bcftools.html) — Документация bcftools
 - [BEDTools](https://bedtools.readthedocs.io/) — Руководство по bedtools
 - [seqtk](https://github.com/lh3/seqtk) — GitHub репозиторий seqtk
 
 ### Туториалы
+
 - [SAMtools Tutorial](https://davetang.org/wiki/tiki-index.php?page=SAMtools) — Практические примеры
 - [BEDTools Tutorial](https://bedtools.readthedocs.io/en/latest/content/bedtools-suite.html) — Подробные примеры использования
 
@@ -397,9 +422,13 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
 ## 💡 Key Takeaways
 
 - **SAMtools** — универсальный инструмент для BAM: view, sort, index, flagstat, depth
+
 - **BCFtools** — манипуляции с VCF: filter, query, stats, merge
+
 - **BEDtools** — операции над интервалами: intersect, subtract, coverage
+
 - **Пайпы критичны** — `|` позволяет строить эффективные цепочки команд
+
 - **Индексация обязательна** — без .bai/.tbi файлов быстрый доступ к регионам невозможен
 
 ---
@@ -407,10 +436,16 @@ bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%GT]\n' variants.vcf.gz
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [05_Epigenetics_Markers](../05_Epigenetics_Markers/) — Эпигенетика и генетические маркеры
 
 **Практика:**
+
 1. Отфильтруйте BAM: MAPQ ≥ 30, properly paired, не дубликаты
 2. Извлеките варианты из VCF в определённых регионах (BED файл)
 3. Подсчитайте среднее покрытие по генам из GTF/BED файла
+
+
+
+
 

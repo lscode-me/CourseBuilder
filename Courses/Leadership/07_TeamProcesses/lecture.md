@@ -12,6 +12,7 @@
 - Работать в команде разработки
 
 **Recommended prior modules:**
+
 - [01_Transition](../01_Transition/) — переход в лидерство
 
 ---
@@ -36,6 +37,7 @@
 > Хорошие процессы — как инфраструктура: невидимы, когда работают, и заметны, когда ломаются.
 
 **Без процессов:**
+
 - Каждый делает по-своему
 - Нет предсказуемости
 - Знания в головах людей
@@ -43,6 +45,7 @@
 - Много ручной координации
 
 **С правильными процессами:**
+
 - Предсказуемость результатов
 - Знания документированы
 - Новые люди быстрее онбордятся
@@ -52,6 +55,7 @@
 ### 1.2 Опасность чрезмерных процессов
 
 ```
+
           Хаос ←───────────────────────────────► Бюрократия
             │                                       │
      Нет процессов                           Слишком много
@@ -66,6 +70,7 @@
                         │ Минимально  │
                         │ достаточно  │
                         └─────────────┘
+
 ```
 
 > **⚠️ Warning:**  
@@ -86,6 +91,7 @@
 ### 2.1 Development Processes
 
 **Работа с кодом:**
+
 - Code review workflow
 - Branching strategy
 - CI/CD pipeline
@@ -113,11 +119,13 @@
 - Squash and merge
 - Author merges after approval
 - Delete branch after merge
+
 ```
 
 ### 2.2 Planning Processes
 
 **Работа с задачами:**
+
 - Sprint planning
 - Backlog grooming
 - Estimation
@@ -127,6 +135,7 @@
 ### 2.3 Communication Processes
 
 **Командная коммуникация:**
+
 - Standup format
 - Status updates
 - Escalation paths
@@ -136,6 +145,7 @@
 ### 2.4 Operational Processes
 
 **Поддержка production:**
+
 - On-call rotation
 - Incident response
 - Post-mortem process
@@ -149,17 +159,20 @@
 ### 3.1 Framework для внедрения
 
 ```
+
 1. IDENTIFY  — Найти проблему
 2. DESIGN    — Спроектировать решение  
 3. PILOT     — Попробовать на части команды
 4. ITERATE   — Улучшить по feedback
 5. ROLL OUT  — Внедрить полностью
 6. MAINTAIN  — Поддерживать и эволюционировать
+
 ```
 
 ### 3.2 Identify: Найти проблему
 
 **Как находить проблемы:**
+
 - Retro: "Что мешает работать?"
 - 1-on-1: "Какие процессы фрустрируют?"
 - Наблюдение: Где происходят ошибки?
@@ -167,6 +180,7 @@
 
 **Не внедряйте процесс без проблемы:**
 ```
+
 ❌ "В Google так делают"
 ❌ "Я прочитал в книге"
 ❌ "Может пригодиться"
@@ -174,6 +188,7 @@
 ✅ "Мы 3 раза за месяц сломали prod из-за X"
 ✅ "Команда жалуется на Y"
 ✅ "Мы тратим Z часов на ручную работу"
+
 ```
 
 ### 3.3 Design: Спроектировать решение
@@ -197,27 +212,32 @@
 ### 3.4 Pilot: Попробовать
 
 **Зачем pilot:**
+
 - Найти проблемы до полного rollout
 - Собрать feedback
 - Скорректировать процесс
 
 **Как делать pilot:**
 ```
+
 1. Выберите 1-2 человека / один проект
 2. Договоритесь о периоде (2-4 недели)
 3. Собирайте feedback регулярно
 4. Документируйте issues и изменения
+
 ```
 
 ### 3.5 Iterate и Roll Out
 
 **После pilot:**
+
 1. Соберите feedback от участников
 2. Внесите изменения
 3. Если серьёзные проблемы — ещё один pilot
 4. Если minor — rollout на всю команду
 
 **При rollout:**
+
 - Объясните зачем (контекст проблемы)
 - Покажите, как это решает проблему
 - Обеспечьте training/documentation
@@ -227,11 +247,13 @@
 ### 3.6 Maintain: Поддерживать
 
 **Процессы умирают, если:**
+
 - Никто не следит за соблюдением
 - Не обновляются при изменении контекста
 - Нет owner'а
 
 **Maintenance practices:**
+
 - Регулярный review (quarterly)
 - Update при изменениях
 - Удаление устаревших процессов
@@ -243,6 +265,7 @@
 ### 4.1 Code Review Process
 
 **Цели:**
+
 - Качество кода
 - Knowledge sharing
 - Найти баги до production
@@ -274,6 +297,7 @@
 
 - 1 approval for features
 - 2 approvals for critical paths
+
 ```
 
 ### 4.2 Release Process
@@ -305,6 +329,7 @@
 - Error rate > 1%
 - P1 bug discovered
 - Performance degradation > 20%
+
 ```
 
 ### 4.3 Incident Response
@@ -336,6 +361,7 @@
 4. Mitigate → Stop bleeding
 5. Fix → Root cause resolution
 6. Post-mortem → Learn and prevent
+
 ```
 
 ### 4.4 On-call Rotation
@@ -366,6 +392,7 @@
 - Recent deployments
 - Upcoming changes
 - Known fragile areas
+
 ```
 
 ### 4.5 Documentation Process
@@ -400,6 +427,7 @@
 - Answer: Why, What, How
 - Include examples
 - Keep up to date (or delete)
+
 ```
 
 ---
@@ -410,44 +438,54 @@
 
 **Sprint Planning:**
 ```
+
 Частота: Начало каждого спринта
 Длительность: 2-4 часа (для 2-недельного спринта)
 Участники: Team + PO
 Output: Sprint backlog
+
 ```
 
 **Daily Standup:**
 ```
+
 Частота: Ежедневно
 Длительность: 15 минут max
 Формат: What did / What will / Blockers
 Output: Awareness, unblock
+
 ```
 
 **Sprint Review (Demo):**
 ```
+
 Частота: Конец спринта
 Длительность: 1-2 часа
 Участники: Team + Stakeholders
 Output: Feedback, acceptance
+
 ```
 
 **Sprint Retrospective:**
 ```
+
 Частота: Конец спринта
 Длительность: 1-1.5 часа
 Участники: Team only
 Output: Action items for improvement
+
 ```
 
 ### 5.2 Kanban альтернатива
 
 **Когда Kanban лучше:**
+
 - Support / maintenance команды
 - Непредсказуемый поток работы
 - Команды, не готовые к timeboxed sprints
 
 **Ключевые практики:**
+
 - Visualize workflow
 - Limit Work in Progress (WIP)
 - Measure flow (lead time, throughput)
@@ -455,6 +493,7 @@ Output: Action items for improvement
 ### 5.3 Hybrid подходы
 
 **Scrumban:**
+
 - Sprints для planning
 - Kanban для execution
 - WIP limits
@@ -467,6 +506,7 @@ Output: Action items for improvement
 ### 6.1 Почему люди сопротивляются
 
 **Причины:**
+
 - "Раньше работало без этого"
 - "Это замедлит нашу работу"
 - "Не понимаю зачем"
@@ -477,26 +517,34 @@ Output: Action items for improvement
 
 **Involve early:**
 ```
+
 ❌ "Мы решили, теперь делаем так"
 ✅ "У нас проблема X. Какие идеи есть у команды?"
+
 ```
 
 **Show the problem:**
 ```
+
 ❌ "Нужен процесс code review"
 ✅ "Мы 3 раза сломали prod. Давайте разберём, как избежать"
+
 ```
 
 **Start small:**
 ```
+
 ❌ "Вот 20 новых правил с сегодняшнего дня"
 ✅ "Попробуем одно изменение на 2 недели"
+
 ```
 
 **Measure and share:**
 ```
+
 ❌ "Верьте, это работает"
 ✅ "После внедрения количество багов снизилось на 30%"
+
 ```
 
 ### 6.3 Что делать с chronic resisters
@@ -520,18 +568,21 @@ Output: Action items for improvement
 ### 7.2 Примеры метрик
 
 **Code Review:**
+
 - Time to first review
 - Time to merge
 - Number of review rounds
 - Review comments per PR
 
 **Delivery:**
+
 - Lead time (idea → production)
 - Deployment frequency
 - Change failure rate
 - Time to restore
 
 **Quality:**
+
 - Bug escape rate
 - Production incidents
 - Test coverage
@@ -583,12 +634,14 @@ Output: Action items for improvement
 ### 8.2 Удаление процессов
 
 **Когда удалять:**
+
 - Проблема, которую решал, больше не существует
 - Никто не следует
 - Overhead превышает benefit
 - Есть лучший способ
 
 **Как удалять:**
+
 1. Announce deprecation
 2. Set sunset date
 3. Remove and update docs
@@ -596,6 +649,7 @@ Output: Action items for improvement
 ### 8.3 Scaling процессов
 
 **По мере роста команды:**
+
 - Процессы становятся формальнее
 - Больше документации
 - Больше automation
@@ -606,9 +660,13 @@ Output: Action items for improvement
 ## 💡 Key Takeaways
 
 - **Solve real problems:** Не внедряйте процесс без проблемы
+
 - **Minimal viable process:** Меньше правил = больше compliance
+
 - **Involve the team:** Ownership через участие в создании
+
 - **Iterate:** Процессы должны эволюционировать
+
 - **Measure:** Без метрик не понять, работает ли процесс
 
 ---
@@ -616,15 +674,18 @@ Output: Action items for improvement
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [08_Meetings](../08_Meetings/) — эффективные митинги как процесс
 - [09_ProjectManagement](../09_ProjectManagement/) — delivery процессы
 
 **Practice Ideas:**
+
 1. Проведите audit процессов в команде: какие есть, какие нужны?
 2. Выберите одну проблему и спроектируйте процесс по framework
 3. Запланируйте quarterly process review
 
 **Going Deeper:**
+
 - DORA metrics и DevOps practices
 - Lean и Theory of Constraints
 - Process automation tools
@@ -634,18 +695,24 @@ Output: Action items for improvement
 ## 📚 Additional Resources
 
 **Books:**
+
 - "Accelerate" by Nicole Forsgren — DORA metrics
 - "The Phoenix Project" by Gene Kim — DevOps как процесс
 - "Team Topologies" by Matthew Skelton — команды и процессы
 
 **Articles:**
+
 - [DORA Research](https://dora.dev/research/)
 - [Atlassian: Team Playbook](https://www.atlassian.com/team-playbook)
 
 **Tools:**
+
 - Jira, Linear, Asana — project management
 - GitHub/GitLab — code review workflows
 - PagerDuty, Opsgenie — incident management
 
 ---
+
+
+
 

@@ -6,11 +6,13 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать базовую медицинскую терминологию (Patient, Encounter, Diagnosis)
 - Понимать основы работы с текстовыми протоколами
 - Иметь опыт работы с Python
 
 **Recommended prior modules:**
+
 - [01_Terminology](../01_Terminology/) — базовая медицинская терминология
 
 ---
@@ -18,6 +20,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать структуру HL7 v2 сообщений (сегменты, поля, компоненты)
 - Парсить HL7 v2 сообщения в Python
 - Работать с основными типами сообщений (ADT, ORM, ORU)
@@ -36,6 +39,7 @@
 - HL7 определяет формат данных на уровне приложений
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         OSI Model & HL7                                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -49,11 +53,13 @@
 │  1. Physical                                                                 │
 │                                                                              │
 └─────────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Версии HL7
 
 ```python
+
 hl7_versions = {
     "v2.x": {
         "years": "1988 - настоящее время",
@@ -78,11 +84,13 @@ hl7_versions = {
         "cons": "Ещё не везде поддерживается"
     }
 }
+
 ```
 
 ### 1.3 Где используется HL7 v2
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    Типичная интеграция с HL7 v2                              │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -102,6 +110,7 @@ hl7_versions = {
 │    Протокол передачи: MLLP (TCP) или HTTP                                   │
 │                                                                              │
 └─────────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -111,6 +120,7 @@ hl7_versions = {
 ### 2.1 Иерархия элементов
 
 ```
+
 MESSAGE
 ├── SEGMENT (строка, 3-буквенный код)
 │   ├── FIELD (разделитель |)
@@ -119,15 +129,18 @@ MESSAGE
 │   │   └── REPETITION (разделитель ~)
 │   └── ...
 └── ...
+
 ```
 
 ### 2.2 Пример сообщения
 
 ```
+
 MSH|^~\&|SENDING_APP|SENDING_FAC|RECEIVING_APP|RECEIVING_FAC|20240315120000||ADT^A01|MSG001|P|2.5
 EVN|A01|20240315120000|||USER001
 PID|1||MRN-123456^^^HOSPITAL^MR||Иванов^Иван^Петрович^^||19800515|M|||ул. Примерная 10^^Москва^^123456^RU||+7-999-123-4567
 PV1|1|I|ICU^201^A|||DOC001^Смирнова^Анна^^^Др.||||MED||||ADM|A0||||||||||||||||||||||||||20240315120000
+
 ```
 
 ### 2.3 Разбор структуры
@@ -160,6 +173,7 @@ encoding_chars = {
     "\\": "Escape character",          # Escape символ
     "&": "Subcomponent separator"      # Разделитель подкомпонентов
 }
+
 ```
 
 #### PID (Patient Identification)
@@ -199,6 +213,7 @@ identifier_components = {
     "assigning_authority": "HOSPITAL", # Источник
     "identifier_type": "MR"            # Тип (MR = Medical Record)
 }
+
 ```
 
 #### PV1 (Patient Visit)
@@ -221,6 +236,7 @@ patient_classes = {
     "R": "Recurring patient",
     "B": "Obstetrics"
 }
+
 ```
 
 ---
@@ -230,6 +246,7 @@ patient_classes = {
 ### 3.1 ADT — Admission, Discharge, Transfer
 
 ```python
+
 adt_message_types = {
     "ADT^A01": {
         "name": "Admit/Visit Notification",
@@ -267,11 +284,13 @@ adt_message_types = {
         "use_case": "Изменение имени, адреса"
     }
 }
+
 ```
 
 ### 3.2 ORM — Orders
 
 ```python
+
 orm_message_types = {
     "ORM^O01": {
         "name": "Order Message",
@@ -289,11 +308,13 @@ PV1|1|O|CLINIC^^^HOSPITAL
 ORC|NW|ORD-2024-001||||||20240315100000|||DOC001^Смирнова^Анна
 OBR|1|ORD-2024-001||CBC^Complete Blood Count|||20240315100000
 """
+
 ```
 
 ### 3.3 ORU — Observation Results
 
 ```python
+
 oru_message_types = {
     "ORU^R01": {
         "name": "Observation Result",
@@ -312,6 +333,7 @@ OBX|1|NM|718-7^Hemoglobin^LN||145|g/L|130-175|N|||F
 OBX|2|NM|787-2^WBC^LN||8.5|10*9/L|4.0-11.0|N|||F
 OBX|3|NM|777-3^Platelets^LN||250|10*9/L|150-400|N|||F
 """
+
 ```
 
 ### 3.4 OBX — Observation Segment
@@ -348,6 +370,7 @@ abnormal_flags = {
     "HH": "Above upper panic limits",
     "A": "Abnormal"
 }
+
 ```
 
 ---
@@ -357,12 +380,15 @@ abnormal_flags = {
 ### 4.1 Библиотека python-hl7
 
 ```bash
+
 pip install hl7
+
 ```
 
 ### 4.2 Базовый парсинг
 
 ```python
+
 import hl7
 
 # HL7 сообщение
@@ -383,18 +409,22 @@ pv1 = message.segment('PV1')
 print(f"Message Type: {msh[9]}")       # ADT^A01
 print(f"Message ID: {msh[10]}")        # MSG001
 print(f"HL7 Version: {msh[12]}")       # 2.5
+
 ```
 
 **Output:**
 ```
+
 Message Type: ADT^A01
 Message ID: MSG001
 HL7 Version: 2.5
+
 ```
 
 ### 4.3 Извлечение данных пациента
 
 ```python
+
 import hl7
 from datetime import datetime
 
@@ -448,11 +478,13 @@ patient = parse_patient_from_hl7(hl7_message)
 print(f"Patient: {patient['name']['given']} {patient['name']['family']}")
 print(f"DOB: {patient['birth_date']}")
 print(f"Gender: {patient['gender']}")
+
 ```
 
 ### 4.4 Парсинг результатов анализов
 
 ```python
+
 def parse_lab_results(hl7_message: str) -> list:
     """Извлекает результаты лабораторных анализов из ORU сообщения."""
     
@@ -518,20 +550,24 @@ for r in results:
     status = "⚠️" if r["flag"] != "N" else "✓"
     print(f"{status} {r['display']}: {r['value']} {r['units']} "
           f"(ref: {r['reference_range']}) - {r['interpretation']}")
+
 ```
 
 **Output:**
 ```
+
 Лабораторные результаты:
 ------------------------------------------------------------
 ✓ Hemoglobin: 145.0 g/L (ref: 130-175) - Normal
 ⚠️ WBC: 12.5 10*9/L (ref: 4.0-11.0) - High
 ✓ Platelets: 250.0 10*9/L (ref: 150-400) - Normal
+
 ```
 
 ### 4.5 Создание HL7 сообщения
 
 ```python
+
 from datetime import datetime
 
 def create_adt_a04(patient_id: str, family_name: str, given_name: str, 
@@ -563,6 +599,7 @@ adt_message = create_adt_a04(
 print("Созданное ADT^A04 сообщение:")
 print("-" * 60)
 print(adt_message.replace("\r", "\n"))
+
 ```
 
 ---
@@ -570,6 +607,7 @@ print(adt_message.replace("\r", "\n"))
 ## 5. Валидация HL7 сообщений
 
 ```python
+
 def validate_hl7_message(hl7_string: str) -> tuple[bool, list]:
     """Базовая валидация HL7 сообщения."""
     
@@ -622,6 +660,7 @@ else:
     print("✗ Validation errors:")
     for error in validation_errors:
         print(f"  - {error}")
+
 ```
 
 ---
@@ -652,11 +691,13 @@ escaped_text = "Blood Pressure \\T\\ Systolic\\S\\Diastolic"
 unescaped = unescape_hl7(escaped_text)
 print(f"Original: {escaped_text}")
 print(f"Unescaped: {unescaped}")
+
 ```
 
 ### 6.2 Обработка пустых полей
 
 ```python
+
 def safe_get_field(segment, index: int, default: str = "") -> str:
     """Безопасное получение поля с учётом пустых значений."""
     try:
@@ -675,11 +716,13 @@ def safe_get_component(field, index: int, default: str = "") -> str:
         return default
     except (IndexError, TypeError):
         return default
+
 ```
 
 ### 6.3 Работа с датами
 
 ```python
+
 from datetime import datetime
 
 def parse_hl7_datetime(dt_string: str) -> datetime | None:
@@ -708,6 +751,7 @@ dates = ["20240315143000", "202403151430", "20240315", "202403"]
 for d in dates:
     parsed = parse_hl7_datetime(d)
     print(f"{d} → {parsed}")
+
 ```
 
 ---
@@ -736,6 +780,7 @@ def unwrap_mllp(data: bytes) -> str:
     if data.endswith(MLLP_END):
         data = data[:-1]
     return data.decode('utf-8')
+
 ```
 
 ---
@@ -743,10 +788,15 @@ def unwrap_mllp(data: bytes) -> str:
 ## 💡 Key Takeaways
 
 - **HL7 v2** — текстовый pipe-delimited формат, широко используется в legacy системах
+
 - **MSH** — обязательный заголовок каждого сообщения
+
 - **PID** — информация о пациенте, PV1 — о визите
+
 - **ADT** — события регистрации/выписки, ORM — назначения, ORU — результаты
+
 - **OBX** — содержит результаты наблюдений с кодами LOINC
+
 - **MLLP** — протокол передачи HL7 по TCP
 
 ---
@@ -754,10 +804,12 @@ def unwrap_mllp(data: bytes) -> str:
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [03_FHIR](../03_FHIR/) — Современный FHIR стандарт
 - [04_Standards](../04_Standards/) — ICD-10, SNOMED CT, LOINC
 
 **Практика:**
+
 1. Напишите парсер HL7 для извлечения данных пациента
 2. Создайте ADT^A01 сообщение
 3. Реализуйте валидатор HL7 сообщений
@@ -772,4 +824,8 @@ def unwrap_mllp(data: bytes) -> str:
 - [python-hl7 Documentation](https://python-hl7.readthedocs.io/)
 
 ---
+
+
+
+
 

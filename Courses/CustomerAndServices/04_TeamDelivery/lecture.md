@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать роль Delivery Manager ([01_Intro](../01_Intro/))
 - Знать основы ITSM ([02_ITSM](../02_ITSM/))
 - Иметь опыт работы в IT-команде
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Формировать эффективные команды под задачи клиента
 - Проводить capacity planning для проектов
 - Давать структурированную обратную связь (performance review)
@@ -41,6 +43,7 @@
 
 **Dedicated Team (выделенная команда):**
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    DEDICATED TEAM MODEL                                 │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -63,10 +66,12 @@
 
 Плюсы: Фокус, погружение, стабильность
 Минусы: Риски при уходе людей, сложнее масштабировать
+
 ```
 
 **Shared Resource Model (разделяемые ресурсы):**
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    SHARED RESOURCE MODEL                                │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -82,11 +87,13 @@
 
 Плюсы: Эффективность, экспертиза
 Минусы: Конфликт приоритетов, context switching
+
 ```
 
 ### 1.3 Staffing Process
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    STAFFING PROCESS                                     │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -112,12 +119,14 @@
                     │• Domain training│
                     │• Buddy system   │
                     └─────────────────┘
+
 ```
 
 ### 1.4 Team Composition Best Practices
 
 **Правило T-shaped:**
 ```
+
     ┌───────────────────────────────────────────┐
     │         Широкие базовые знания            │  ←─ Горизонтальная черта T
     └───────────────────────────────────────────┘
@@ -126,9 +135,11 @@
                         │  ←─ Глубокая экспертиза
                         │      (вертикальная черта)
                         ▼
+
 ```
 
 **Healthy Team Indicators:**
+
 - [ ] Есть хотя бы один Senior на каждое техническое направление
 - [ ] Соотношение Dev:QA не хуже 5:1
 - [ ] Нет single points of failure (всё критичное знают 2+ человека)
@@ -151,6 +162,7 @@
 ### 2.2 Модель взаимодействия
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    DM ↔ TL INTERACTION MODEL                            │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -174,6 +186,7 @@
      │• Financials │                      │• Mentoring   │
      │• Reporting  │                      │• Tool choice │
      └─────────────┘                      └──────────────┘
+
 ```
 
 ### 2.3 Синхронизация DM-TL
@@ -189,11 +202,13 @@
 
 **Вопросы для weekly sync:**
 ```
+
 1. Как идёт спринт? Есть ли риски не успеть?
 2. Какие технические blockers?
 3. Как команда? Есть ли issues с людьми?
 4. Нужно ли что-то от меня / клиента?
 5. Что планируем на следующую неделю?
+
 ```
 
 ---
@@ -207,17 +222,20 @@
 **Utilization** — процент времени, потраченного на billable работу.
 
 ```
+
 Utilization = (Billable hours / Available hours) × 100%
 
 Пример:
 - Рабочих часов в месяце: 168
 - Billable hours: 144
 - Utilization = 144 / 168 = 85.7%
+
 ```
 
 ### 3.2 Факторы, влияющие на capacity
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    CAPACITY FACTORS                                     │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -246,11 +264,13 @@ Utilization = (Billable hours / Available hours) × 100%
                 │
                 ▼
   EFFECTIVE CAPACITY: ~120h/month (70-75%)
+
 ```
 
 ### 3.3 Capacity Planning Template
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │              CAPACITY PLANNING - JANUARY 2025                           │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -276,11 +296,13 @@ Utilization = (Billable hours / Available hours) × 100%
 │ Mitigation: Shift QA tasks to early in month                           │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.4 Capacity vs Demand
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    CAPACITY vs DEMAND ANALYSIS                          │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -306,6 +328,7 @@ Utilization = (Billable hours / Available hours) × 100%
             2. Add resources (hire, contractor)
             3. Increase capacity (overtime - last resort)
             4. Negotiate timeline (extend deadline)
+
 ```
 
 ---
@@ -323,6 +346,7 @@ Utilization = (Billable hours / Available hours) × 100%
 ### 4.2 Структура Performance Review
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    PERFORMANCE REVIEW STRUCTURE                         │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -357,6 +381,7 @@ Utilization = (Billable hours / Available hours) × 100%
 │    • Check-in points                                                    │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.3 Техника обратной связи: SBI
@@ -364,6 +389,7 @@ Utilization = (Billable hours / Available hours) × 100%
 **SBI = Situation → Behavior → Impact**
 
 ```
+
 ❌ Плохо:
 "Ты плохо работаешь с командой"
 
@@ -371,6 +397,7 @@ Utilization = (Billable hours / Available hours) × 100%
 "[Situation] На прошлой неделе во время code review
 [Behavior] ты отклонил PR без объяснения причин
 [Impact] Это расстроило Джона и замедлило его работу на полдня"
+
 ```
 
 **Примеры SBI:**
@@ -383,6 +410,7 @@ Utilization = (Billable hours / Available hours) × 100%
 ### 4.4 Performance Issues
 
 **Ранние признаки проблем:**
+
 - Снижение velocity
 - Увеличение количества багов
 - Опоздания на митинги
@@ -393,6 +421,7 @@ Utilization = (Billable hours / Available hours) × 100%
 **Подход к решению:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    PERFORMANCE IMPROVEMENT PROCESS                      │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -408,10 +437,12 @@ Utilization = (Billable hours / Available hours) × 100%
                         │                  │
                         │                  │
                 Понять причину     Дать ресурсы и время
+
 ```
 
 **PIP (Performance Improvement Plan):**
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │              PERFORMANCE IMPROVEMENT PLAN                               │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -447,6 +478,7 @@ Utilization = (Billable hours / Available hours) × 100%
 │ Signatures:                                                             │
 │ Employee: ____________  Manager: ____________  Date: ____________      │
 └─────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -456,6 +488,7 @@ Utilization = (Billable hours / Available hours) × 100%
 ### 5.1 Факторы мотивации (по Herzberg)
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    HERZBERG'S TWO-FACTOR THEORY                         │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -477,11 +510,13 @@ Utilization = (Billable hours / Available hours) × 100%
   │  но их отсутствие                 │  и удовлетворение
   │  создаёт недовольство             │
   │                                    │
+
 ```
 
 ### 5.2 Что мотивирует разработчиков
 
 **Исследование Stack Overflow (топ-5):**
+
 1. Интересные технологии и задачи
 2. Возможность учиться и расти
 3. Work-life balance
@@ -501,6 +536,7 @@ Utilization = (Billable hours / Available hours) × 100%
 ### 5.3 Что демотивирует
 
 **Red flags:**
+
 - Микроменеджмент
 - Отсутствие feedback
 - Непонятные цели
@@ -517,6 +553,7 @@ Utilization = (Billable hours / Available hours) × 100%
 ### 6.1 Признаки выгорания
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    BURNOUT WARNING SIGNS                                │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -531,6 +568,7 @@ Utilization = (Billable hours / Available hours) × 100%
   • Головные боли         • Чувство               • Прокрастинация
   • Изменение               бессмысленности       • Изоляция
     аппетита              • Anxiety               • Конфликты
+
 ```
 
 ### 6.2 Причины выгорания в IT
@@ -548,6 +586,7 @@ Utilization = (Billable hours / Available hours) × 100%
 
 **Для менеджера:**
 ```
+
 ✅ DO:
 • Следить за workload и overtime
 • Регулярные 1-on-1 для check-in
@@ -562,13 +601,16 @@ Utilization = (Billable hours / Available hours) × 100%
 • Ставить нереалистичные дедлайны
 • Наказывать за ошибки
 • Отменять отпуска
+
 ```
 
 **Workload Management:**
 ```
+
 Sustainable Pace = 40 hours/week
 Acceptable Short-term = 45-50 hours (2-3 weeks max)
 Danger Zone = 50+ hours sustained
+
 ```
 
 ---
@@ -587,6 +629,7 @@ Danger Zone = 50+ hours sustained
 ### 7.2 Framework для принятия решений
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    DECISION FRAMEWORK                                   │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -623,11 +666,13 @@ Danger Zone = 50+ hours sustained
   • Компенсация overtime
   • Recovery time после
   • Не делать привычкой
+
 ```
 
 ### 7.3 Защита команды
 
 **Когда нужно сказать "нет" клиенту:**
+
 - Нереалистичные сроки угрожают качеству
 - Постоянные overtime без компенсации
 - Токсичное поведение от клиента
@@ -635,6 +680,7 @@ Danger Zone = 50+ hours sustained
 
 **Как защищать:**
 ```
+
 ❌ "Команда не хочет"
 ✅ "Для обеспечения качества нам нужно..."
 
@@ -643,6 +689,7 @@ Danger Zone = 50+ hours sustained
 
 ❌ Молча соглашаться и переносить давление на команду
 ✅ Эскалировать, если клиент неадекватен
+
 ```
 
 ---
@@ -662,6 +709,7 @@ Danger Zone = 50+ hours sustained
 ### 8.2 Стабилизация velocity
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    VELOCITY STABILIZATION                               │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -683,11 +731,13 @@ Danger Zone = 50+ hours sustained
   • Interruptions                • Focus time
   • Team changes                 • Knowledge sharing
   • Tech debt                    • 20% maintenance
+
 ```
 
 ### 8.3 Delivery Best Practices
 
 **Sprint Hygiene:**
+
 - [ ] Backlog refinement до planning
 - [ ] Чёткие acceptance criteria
 - [ ] No scope changes mid-sprint
@@ -695,6 +745,7 @@ Danger Zone = 50+ hours sustained
 - [ ] Demo готово к концу спринта
 
 **Continuous Improvement:**
+
 - [ ] Retrospectives каждый спринт
 - [ ] Action items tracked
 - [ ] Metrics reviewed monthly
@@ -711,6 +762,7 @@ Danger Zone = 50+ hours sustained
 ### 9.2 Анализ
 
 ```
+
 FACTS:
 • John - Middle developer, 2 года в компании
 • Последние 2 спринта: 15 SP vs обычных 25 SP
@@ -724,11 +776,13 @@ POSSIBLE CAUSES:
 □ Motivation (boring tasks)
 □ Team issues (conflict with colleague)
 □ External factors (relocation, visa)
+
 ```
 
 ### 9.3 Action Plan
 
 ```
+
 STEP 1: 1-on-1 с John (сегодня)
 ─────────────────────────────────
 • Спросить как дела (open-ended)
@@ -761,6 +815,7 @@ STEP 4: Monitor
 • Track metrics
 • Update client as appropriate
 • Adjust plan if needed
+
 ```
 
 ---
@@ -768,11 +823,17 @@ STEP 4: Monitor
 ## 💡 Key Takeaways
 
 - **Формирование команды** — баланс уровней (senior/middle/junior), T-shaped skills, bus factor > 1
+
 - **DM-TL партнёрство** — чёткое разделение зон, регулярная синхронизация, shared decisions
+
 - **Capacity planning** — учитывать все факторы (PTO, meetings, training), planning vs demand
+
 - **Performance feedback** — использовать SBI (Situation-Behavior-Impact), регулярные 1-on-1
+
 - **Мотивация** — интересные задачи, рост, признание, автономия важнее денег
+
 - **Burnout prevention** — мониторить workload, защищать от overtime, поощрять отпуска
+
 - **Баланс интересов** — защищать команду, но объяснять trade-offs клиенту
 
 ---
@@ -780,15 +841,18 @@ STEP 4: Monitor
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [05_Finance](../05_Finance/) — Финансовая грамотность менеджера
 - [03_Communication](../03_Communication/) — Коммуникации с клиентом
 
 **Practice Ideas:**
+
 1. Проведите capacity planning для своей команды на следующий месяц
 2. Подготовьте и проведите 1-on-1 с использованием SBI feedback
 3. Оцените свою команду по checklist "Healthy Team Indicators"
 
 **Going Deeper:**
+
 - "The Manager's Path" by Camille Fournier
 - "Radical Candor" by Kim Scott
 - "Drive" by Daniel Pink
@@ -798,20 +862,27 @@ STEP 4: Monitor
 ## 📚 Additional Resources
 
 **Книги:**
+
 - "The Manager's Path" — путь инженерного менеджера
 - "Radical Candor" — искусство честной обратной связи
 - "An Elegant Puzzle" by Will Larson — системы для engineering management
 - "First, Break All the Rules" by Gallup — что делают лучшие менеджеры
 
 **Tools:**
+
 - 15Five, Lattice — для 1-on-1 и performance reviews
 - Jira, Monday — capacity planning
 - Culture Amp, Officevibe — team health surveys
 
 **Articles:**
+
 - [re:Work by Google](https://rework.withgoogle.com/) — research-based management practices
 - [Lara Hogan's blog](https://larahogan.me/) — engineering leadership
 
 ---
+
+
+
+
 
 

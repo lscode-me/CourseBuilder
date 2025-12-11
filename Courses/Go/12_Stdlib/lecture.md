@@ -12,6 +12,7 @@
 - Уметь работать со структурами
 
 **Recommended prior modules:**
+
 - [07_Methods](../07_Methods/) — интерфейсы
 - [08_Errors](../08_Errors/) — обработка ошибок
 
@@ -34,6 +35,7 @@
 ### 1.1 HTTP сервер
 
 ```go
+
 package main
 
 import (
@@ -51,11 +53,13 @@ func main() {
     fmt.Println("Server starting on :8080")
     http.ListenAndServe(":8080", nil)
 }
+
 ```
 
 ### 1.2 ServeMux
 
 ```go
+
 package main
 
 import (
@@ -83,11 +87,13 @@ func main() {
     
     http.ListenAndServe(":8080", mux)
 }
+
 ```
 
 ### 1.3 HTTP клиент
 
 ```go
+
 package main
 
 import (
@@ -110,11 +116,13 @@ func main() {
     fmt.Println("Status:", resp.Status)
     fmt.Println("Body:", string(body[:100])+"...")
 }
+
 ```
 
 ### 1.4 Кастомный клиент
 
 ```go
+
 package main
 
 import (
@@ -148,11 +156,13 @@ func main() {
     }
     defer resp.Body.Close()
 }
+
 ```
 
 ### 1.5 Middleware
 
 ```go
+
 package main
 
 import (
@@ -181,6 +191,7 @@ func main() {
     handler := loggingMiddleware(mux)
     http.ListenAndServe(":8080", handler)
 }
+
 ```
 
 ---
@@ -190,6 +201,7 @@ func main() {
 ### 2.1 Маршалинг
 
 ```go
+
 package main
 
 import (
@@ -220,21 +232,25 @@ func main() {
     prettyData, _ := json.MarshalIndent(user, "", "  ")
     fmt.Println(string(prettyData))
 }
+
 ```
 
 **Output:**
 ```json
+
 {"id":1,"name":"Alice","created_at":""}
 {
   "id": 1,
   "name": "Alice",
   "created_at": ""
 }
+
 ```
 
 ### 2.2 Анмаршалинг
 
 ```go
+
 package main
 
 import (
@@ -260,16 +276,20 @@ func main() {
     
     fmt.Printf("%+v\n", user)
 }
+
 ```
 
 **Output:**
 ```
+
 {ID:1 Name:Alice Email:alice@example.com}
+
 ```
 
 ### 2.3 Работа с динамическим JSON
 
 ```go
+
 package main
 
 import (
@@ -297,20 +317,24 @@ func main() {
         fmt.Println("Feature:", f.(string))
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Name: Go
 Year: 2009
 Feature: fast
 Feature: simple
 Feature: concurrent
+
 ```
 
 ### 2.4 Streaming JSON
 
 ```go
+
 package main
 
 import (
@@ -337,6 +361,7 @@ func main() {
     
     encoder.Encode(entry)
 }
+
 ```
 
 ---
@@ -346,6 +371,7 @@ func main() {
 ### 3.1 io.Reader и io.Writer
 
 ```go
+
 // Основные интерфейсы
 type Reader interface {
     Read(p []byte) (n int, err error)
@@ -354,9 +380,11 @@ type Reader interface {
 type Writer interface {
     Write(p []byte) (n int, err error)
 }
+
 ```
 
 ```go
+
 package main
 
 import (
@@ -378,18 +406,22 @@ func main() {
         fmt.Printf("Read %d bytes: %s\n", n, buf[:n])
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Read 5 bytes: Hello
 Read 5 bytes: , Wor
 Read 3 bytes: ld!
+
 ```
 
 ### 3.2 io.Copy
 
 ```go
+
 package main
 
 import (
@@ -410,17 +442,21 @@ func main() {
     println() // Новая строка
     println("Copied", n, "bytes")
 }
+
 ```
 
 **Output:**
 ```
+
 Hello, io.Copy!
 Copied 15 bytes
+
 ```
 
 ### 3.3 io.ReadAll
 
 ```go
+
 package main
 
 import (
@@ -439,11 +475,13 @@ func main() {
     
     fmt.Println(string(data))
 }
+
 ```
 
 ### 3.4 io.MultiReader и io.MultiWriter
 
 ```go
+
 package main
 
 import (
@@ -468,13 +506,16 @@ func main() {
     println()
     println("Buffer:", buf.String())
 }
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
 Written to both
 Buffer: Written to both
+
 ```
 
 ---
@@ -484,6 +525,7 @@ Buffer: Written to both
 ### 4.1 Работа с файлами
 
 ```go
+
 package main
 
 import (
@@ -514,17 +556,21 @@ func main() {
     // Удаление
     os.Remove("test.txt")
 }
+
 ```
 
 **Output:**
 ```
+
 Content: Hello, File!
 Name: test.txt, Size: 12, Mode: -rw-r--r--
+
 ```
 
 ### 4.2 Директории
 
 ```go
+
 package main
 
 import (
@@ -553,11 +599,13 @@ func main() {
     // Очистка
     os.RemoveAll("mydir")
 }
+
 ```
 
 ### 4.3 Переменные окружения
 
 ```go
+
 package main
 
 import (
@@ -585,11 +633,13 @@ func main() {
     value, exists := os.LookupEnv("UNDEFINED")
     fmt.Printf("UNDEFINED: value=%q, exists=%t\n", value, exists)
 }
+
 ```
 
 ### 4.4 Аргументы командной строки
 
 ```go
+
 package main
 
 import (
@@ -606,6 +656,7 @@ func main() {
         fmt.Println("Arguments:", os.Args[1:])
     }
 }
+
 ```
 
 ---
@@ -615,6 +666,7 @@ func main() {
 ### 5.1 strings
 
 ```go
+
 package main
 
 import (
@@ -641,11 +693,13 @@ func main() {
     sb.WriteString("World!")
     fmt.Println(sb.String())
 }
+
 ```
 
 ### 5.2 time
 
 ```go
+
 package main
 
 import (
@@ -675,11 +729,13 @@ func main() {
     elapsed := time.Since(start)
     fmt.Println("Elapsed:", elapsed)
 }
+
 ```
 
 ### 5.3 fmt
 
 ```go
+
 package main
 
 import (
@@ -708,11 +764,13 @@ func main() {
     // fmt.Scanf("%s", &input)
     _ = input
 }
+
 ```
 
 ### 5.4 log
 
 ```go
+
 package main
 
 import (
@@ -737,13 +795,16 @@ func main() {
     // Panic — логирует и вызывает panic
     // log.Panic("Panic!")
 }
+
 ```
 
 **Output:**
 ```
+
 2024/01/15 10:30:45 Info message
 2024/01/15 10:30:45 Value: 42
 [APP] 2024/01/15 10:30:45 main.go:16: Custom logger
+
 ```
 
 ---
@@ -753,6 +814,7 @@ func main() {
 ### 6.1 REST API сервер
 
 ```go
+
 package main
 
 import (
@@ -778,11 +840,13 @@ func main() {
     
     http.ListenAndServe(":8080", nil)
 }
+
 ```
 
 ### 6.2 Чтение конфигурации
 
 ```go
+
 package main
 
 import (
@@ -820,6 +884,7 @@ func main() {
     
     fmt.Printf("%+v\n", config)
 }
+
 ```
 
 ---
@@ -841,14 +906,19 @@ func main() {
 ## 🚀 Next Steps
 
 **Practice Ideas:**
+
 1. Создайте REST API с CRUD операциями
 2. Напишите CLI утилиту с обработкой аргументов
 3. Реализуйте загрузчик файлов с progress bar
 
 **Going Deeper:**
+
 - Изучите context для timeout и cancellation
 - Посмотрите net/http/httptest для тестирования
 - Изучите database/sql для работы с БД
 
 ---
+
+
+
 

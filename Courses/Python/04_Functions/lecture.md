@@ -13,6 +13,7 @@
 - Понимать концепцию области видимости (scope)
 
 **Recommended prior modules:**
+
 - [Flow Control](../03_FlowControl/) — условия и циклы
 
 ---
@@ -53,10 +54,12 @@ def print_header(title):
 
 print_header("Отчёт за январь")
 print_header("Отчёт за февраль")
+
 ```
 
 **Output:**
 ```
+
 ========================================
 Отчёт за январь
 ========================================
@@ -69,11 +72,13 @@ print_header("Отчёт за февраль")
 ========================================
 Отчёт за февраль
 ========================================
+
 ```
 
 ### 1.2 Определение функции
 
 ```python
+
 def greet(name):
     """
     Приветствует пользователя по имени.
@@ -92,10 +97,12 @@ print(message)
 
 # Доступ к документации
 print(greet.__doc__)
+
 ```
 
 **Output:**
 ```
+
 Привет, Alice!
 
     Приветствует пользователя по имени.
@@ -121,18 +128,22 @@ print(greet.__doc__)
 Если функция не содержит return, она возвращает `None`:
 
 ```python
+
 def print_info(message):
     print(f"[INFO] {message}")
     # Нет return — вернёт None
 
 result = print_info("Программа запущена")
 print(f"result = {result}")
+
 ```
 
 **Output:**
 ```
+
 [INFO] Программа запущена
 result = None
+
 ```
 
 ### 1.4 Множественные return
@@ -140,6 +151,7 @@ result = None
 Функция может иметь несколько точек выхода:
 
 ```python
+
 def get_grade(score):
     if score >= 90:
         return "A"
@@ -154,12 +166,15 @@ def get_grade(score):
 
 print(get_grade(85))  # B
 print(get_grade(72))  # C
+
 ```
 
 **Output:**
 ```
+
 B
 C
+
 ```
 
 ---
@@ -169,6 +184,7 @@ C
 ### 2.1 Позиционные параметры
 
 ```python
+
 def describe_pet(animal_type, pet_name):
     """Описывает питомца."""
     print(f"У меня есть {animal_type} по имени {pet_name}")
@@ -176,17 +192,21 @@ def describe_pet(animal_type, pet_name):
 # Позиционные аргументы — порядок важен
 describe_pet("кот", "Барсик")
 describe_pet("собака", "Шарик")
+
 ```
 
 **Output:**
 ```
+
 У меня есть кот по имени Барсик
 У меня есть собака по имени Шарик
+
 ```
 
 ### 2.2 Именованные аргументы
 
 ```python
+
 def describe_pet(animal_type, pet_name):
     print(f"У меня есть {animal_type} по имени {pet_name}")
 
@@ -195,30 +215,37 @@ describe_pet(pet_name="Мурка", animal_type="кошка")
 
 # Смешивание (позиционные должны идти первыми)
 describe_pet("хомяк", pet_name="Пушок")
+
 ```
 
 **Output:**
 ```
+
 У меня есть кошка по имени Мурка
 У меня есть хомяк по имени Пушок
+
 ```
 
 ### 2.3 Параметры по умолчанию
 
 ```python
+
 def greet(name, greeting="Привет"):
     return f"{greeting}, {name}!"
 
 print(greet("Alice"))                    # Использует значение по умолчанию
 print(greet("Bob", "Здравствуй"))        # Переопределяет значение
 print(greet("Charlie", greeting="Hi"))   # Именованный аргумент
+
 ```
 
 **Output:**
 ```
+
 Привет, Alice!
 Здравствуй, Bob!
 Hi, Charlie!
+
 ```
 
 > **⚠️ Warning:**  
@@ -242,14 +269,17 @@ def add_item_good(item, items=None):
 
 print(add_item_good("a"))  # ['a']
 print(add_item_good("b"))  # ['b'] — правильно!
+
 ```
 
 **Output:**
 ```
+
 ['a']
 ['a', 'b']
 ['a']
 ['b']
+
 ```
 
 ### 2.4 Только позиционные и только именованные параметры
@@ -273,8 +303,10 @@ function(1, standard=2, kw_only=3)
 
 **Output:**
 ```
+
 pos_only=1, standard=2, kw_only=3
 pos_only=1, standard=2, kw_only=3
+
 ```
 
 ---
@@ -284,6 +316,7 @@ pos_only=1, standard=2, kw_only=3
 ### 3.1 *args — произвольное число позиционных аргументов
 
 ```python
+
 def sum_all(*numbers):
     """Суммирует все переданные числа."""
     total = 0
@@ -294,68 +327,84 @@ def sum_all(*numbers):
 print(sum_all(1, 2, 3))
 print(sum_all(1, 2, 3, 4, 5))
 print(sum_all())
+
 ```
 
 **Output:**
 ```
+
 6
 15
 0
+
 ```
 
 ```python
+
 def print_args(first, *rest):
     """Первый аргумент отдельно, остальные в кортеже."""
     print(f"First: {first}")
     print(f"Rest: {rest}")
 
 print_args("a", "b", "c", "d")
+
 ```
 
 **Output:**
 ```
+
 First: a
 Rest: ('b', 'c', 'd')
+
 ```
 
 ### 3.2 **kwargs — произвольное число именованных аргументов
 
 ```python
+
 def print_info(**kwargs):
     """Печатает все переданные именованные аргументы."""
     for key, value in kwargs.items():
         print(f"{key}: {value}")
 
 print_info(name="Alice", age=30, city="Moscow")
+
 ```
 
 **Output:**
 ```
+
 name: Alice
 age: 30
 city: Moscow
+
 ```
 
 ### 3.3 Комбинирование *args и **kwargs
 
 ```python
+
 def universal_function(*args, **kwargs):
     """Принимает любые аргументы."""
     print(f"args: {args}")
     print(f"kwargs: {kwargs}")
 
 universal_function(1, 2, 3, name="Alice", age=30)
+
 ```
 
 **Output:**
 ```
+
 args: (1, 2, 3)
 kwargs: {'name': 'Alice', 'age': 30}
+
 ```
 
 **Порядок параметров:**
 
 ```python
+
 def example(pos1, pos2, *args, kw1=None, kw2=None, **kwargs):
     print(f"pos1={pos1}, pos2={pos2}")
     print(f"args={args}")
@@ -363,19 +412,23 @@ def example(pos1, pos2, *args, kw1=None, kw2=None, **kwargs):
     print(f"kwargs={kwargs}")
 
 example(1, 2, 3, 4, kw1="a", kw2="b", extra1="x", extra2="y")
+
 ```
 
 **Output:**
 ```
+
 pos1=1, pos2=2
 args=(3, 4)
 kw1=a, kw2=b
 kwargs={'extra1': 'x', 'extra2': 'y'}
+
 ```
 
 ### 3.4 Распаковка при вызове
 
 ```python
+
 def greet(name, greeting, punctuation):
     return f"{greeting}, {name}{punctuation}"
 
@@ -389,13 +442,16 @@ print(greet(**kwargs))
 
 # Комбинирование
 print(greet("Charlie", **{"greeting": "Hey", "punctuation": "..."}))
+
 ```
 
 **Output:**
 ```
+
 Hello, Alice!
 Hi, Bob?
 Hey, Charlie...
+
 ```
 
 ---
@@ -405,6 +461,7 @@ Hey, Charlie...
 ### 4.1 Возврат нескольких значений
 
 ```python
+
 def get_min_max(numbers):
     """Возвращает минимум и максимум списка."""
     return min(numbers), max(numbers)
@@ -417,18 +474,22 @@ print(f"type: {type(result)}")
 # Распаковка
 minimum, maximum = get_min_max([5, 2, 8, 1, 9])
 print(f"min: {minimum}, max: {maximum}")
+
 ```
 
 **Output:**
 ```
+
 result: (1, 9)
 type: <class 'tuple'>
 min: 1, max: 9
+
 ```
 
 ### 4.2 Возврат словаря
 
 ```python
+
 def analyze_text(text):
     """Анализирует текст и возвращает статистику."""
     words = text.split()
@@ -441,12 +502,15 @@ def analyze_text(text):
 stats = analyze_text("Python is a great programming language")
 print(stats)
 print(f"Слов: {stats['word_count']}")
+
 ```
 
 **Output:**
 ```
+
 {'char_count': 38, 'word_count': 6, 'avg_word_length': 5.333333333333333}
 Слов: 6
+
 ```
 
 ### 4.3 Возврат функции
@@ -454,6 +518,7 @@ print(f"Слов: {stats['word_count']}")
 Функции могут возвращать другие функции:
 
 ```python
+
 def create_multiplier(factor):
     """Создаёт функцию-множитель."""
     def multiplier(number):
@@ -465,12 +530,15 @@ triple = create_multiplier(3)
 
 print(f"double(5) = {double(5)}")
 print(f"triple(5) = {triple(5)}")
+
 ```
 
 **Output:**
 ```
+
 double(5) = 10
 triple(5) = 15
+
 ```
 
 ---
@@ -482,11 +550,15 @@ triple(5) = 15
 Python ищет переменные в порядке LEGB:
 
 - **L**ocal — локальные переменные функции
+
 - **E**nclosing — переменные внешних функций (замыкания)
+
 - **G**lobal — глобальные переменные модуля
+
 - **B**uilt-in — встроенные имена Python
 
 ```python
+
 x = "global"
 
 def outer():
@@ -501,18 +573,22 @@ def outer():
 
 outer()
 print(f"global: {x}")
+
 ```
 
 **Output:**
 ```
+
 inner: local
 outer: enclosing
 global: global
+
 ```
 
 ### 5.2 global и nonlocal
 
 ```python
+
 counter = 0
 
 def increment():
@@ -523,16 +599,20 @@ def increment():
 print(increment())  # 1
 print(increment())  # 2
 print(f"counter = {counter}")
+
 ```
 
 **Output:**
 ```
+
 1
 2
 counter = 2
+
 ```
 
 ```python
+
 def outer():
     count = 0
     
@@ -547,13 +627,16 @@ counter = outer()
 print(counter())  # 1
 print(counter())  # 2
 print(counter())  # 3
+
 ```
 
 **Output:**
 ```
+
 1
 2
 3
+
 ```
 
 > **💡 Pro Tip:**  
@@ -577,17 +660,21 @@ square_lambda = lambda x: x ** 2
 
 print(square(5))
 print(square_lambda(5))
+
 ```
 
 **Output:**
 ```
+
 25
 25
+
 ```
 
 ### 6.2 Использование с функциями высшего порядка
 
 ```python
+
 numbers = [1, 2, 3, 4, 5]
 
 # map — применить функцию к каждому элементу
@@ -602,13 +689,16 @@ print(f"even: {even}")
 words = ["banana", "Apple", "cherry"]
 sorted_words = sorted(words, key=lambda s: s.lower())
 print(f"sorted: {sorted_words}")
+
 ```
 
 **Output:**
 ```
+
 squared: [1, 4, 9, 16, 25]
 even: [2, 4]
 sorted: ['Apple', 'banana', 'cherry']
+
 ```
 
 ### 6.3 Практические примеры
@@ -628,12 +718,15 @@ print("По возрасту:", [u["name"] for u in by_age])
 # По имени (обратный порядок)
 by_name_desc = sorted(users, key=lambda u: u["name"], reverse=True)
 print("По имени (desc):", [u["name"] for u in by_name_desc])
+
 ```
 
 **Output:**
 ```
+
 По возрасту: ['Bob', 'Alice', 'Charlie']
 По имени (desc): ['Charlie', 'Bob', 'Alice']
+
 ```
 
 > **⚠️ Warning:**  
@@ -652,11 +745,14 @@ def sort_key(x):
 
 items = ["Alice 30", "Bob 25", "Alice 20"]
 print(sorted(items, key=sort_key))
+
 ```
 
 **Output:**
 ```
+
 ['Alice 30', 'Alice 20', 'Bob 25']
+
 ```
 
 ---
@@ -668,6 +764,7 @@ print(sorted(items, key=sort_key))
 Декоратор — функция, которая модифицирует поведение другой функции:
 
 ```python
+
 def my_decorator(func):
     def wrapper():
         print("До вызова функции")
@@ -680,27 +777,33 @@ def say_hello():
     print("Hello!")
 
 say_hello()
+
 ```
 
 **Output:**
 ```
+
 До вызова функции
 Hello!
 После вызова функции
+
 ```
 
 Это эквивалентно:
 
 ```python
+
 def say_hello():
     print("Hello!")
 
 say_hello = my_decorator(say_hello)
+
 ```
 
 ### 7.2 Декораторы с аргументами функции
 
 ```python
+
 import functools
 
 def log_call(func):
@@ -720,14 +823,17 @@ def add(a, b):
 result = add(3, 5)
 print(f"add.__name__: {add.__name__}")
 print(f"add.__doc__: {add.__doc__}")
+
 ```
 
 **Output:**
 ```
+
 Вызов add((3, 5), {})
 Результат: 8
 add.__name__: add
 add.__doc__: Складывает два числа.
+
 ```
 
 ### 7.3 Практические декораторы
@@ -735,6 +841,7 @@ add.__doc__: Складывает два числа.
 **Измерение времени:**
 
 ```python
+
 import functools
 import time
 
@@ -754,16 +861,20 @@ def slow_function():
     return "done"
 
 result = slow_function()
+
 ```
 
 **Output:**
 ```
+
 slow_function выполнилась за 0.1003с
+
 ```
 
 **Кэширование:**
 
 ```python
+
 import functools
 
 def cache(func):
@@ -786,18 +897,22 @@ def fibonacci(n):
 # Без кэша было бы очень медленно
 print(f"fib(30) = {fibonacci(30)}")
 print(f"fib(35) = {fibonacci(35)}")
+
 ```
 
 **Output:**
 ```
+
 fib(30) = 832040
 fib(35) = 9227465
+
 ```
 
 > **💡 Pro Tip:**  
 > Python предоставляет встроенный `@functools.lru_cache` для кэширования.
 
 ```python
+
 from functools import lru_cache
 
 @lru_cache(maxsize=128)
@@ -807,16 +922,20 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 print(f"fib(100) = {fibonacci(100)}")
+
 ```
 
 **Output:**
 ```
+
 fib(100) = 354224848179261915075
+
 ```
 
 ### 7.4 Декораторы с параметрами
 
 ```python
+
 import functools
 
 def repeat(times):
@@ -835,13 +954,16 @@ def greet(name):
     print(f"Hello, {name}!")
 
 greet("World")
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
 Hello, World!
 Hello, World!
+
 ```
 
 ---
@@ -853,6 +975,7 @@ Hello, World!
 Генераторы создают значения "лениво" — по мере необходимости:
 
 ```python
+
 def count_up_to(max_value):
     """Генератор чисел от 1 до max_value."""
     count = 1
@@ -868,17 +991,21 @@ print()
 # Создание списка из генератора
 numbers = list(count_up_to(5))
 print(numbers)
+
 ```
 
 **Output:**
 ```
+
 1 2 3 4 5 
 [1, 2, 3, 4, 5]
+
 ```
 
 ### 8.2 Преимущества генераторов
 
 ```python
+
 import sys
 
 # Список — занимает много памяти
@@ -888,17 +1015,21 @@ print(f"Размер списка: {sys.getsizeof(big_list):,} bytes")
 # Генератор — почти не занимает памяти
 big_gen = (x ** 2 for x in range(1000000))
 print(f"Размер генератора: {sys.getsizeof(big_gen):,} bytes")
+
 ```
 
 **Output:**
 ```
+
 Размер списка: 8,448,728 bytes
 Размер генератора: 200 bytes
+
 ```
 
 ### 8.3 Практический пример
 
 ```python
+
 def read_large_file(file_path):
     """Читает большой файл построчно."""
     with open(file_path) as f:
@@ -926,17 +1057,21 @@ sample_logs = [
 
 for error in process_log_lines(sample_logs):
     print(f"Found: {error}")
+
 ```
 
 **Output:**
 ```
+
 Found: ERROR: Connection failed
 Found: ERROR: Timeout
+
 ```
 
 ### 8.4 yield from
 
 ```python
+
 def flatten(nested):
     """Разворачивает вложенные списки."""
     for item in nested:
@@ -947,11 +1082,14 @@ def flatten(nested):
 
 nested = [1, [2, 3, [4, 5]], 6, [7, [8, 9]]]
 print(list(flatten(nested)))
+
 ```
 
 **Output:**
 ```
+
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 ```
 
 ---
@@ -961,6 +1099,7 @@ print(list(flatten(nested)))
 ### 9.1 Базовые аннотации
 
 ```python
+
 def greet(name: str) -> str:
     return f"Hello, {name}!"
 
@@ -973,17 +1112,21 @@ def process_items(items: list[str]) -> dict[str, int]:
 # Аннотации не проверяются во время выполнения!
 print(greet(123))  # Работает, но IDE предупредит
 print(add("a", "b"))  # Работает, но это плохо
+
 ```
 
 **Output:**
 ```
+
 Hello, 123!
 ab
+
 ```
 
 ### 9.2 Optional и Union
 
 ```python
+
 from typing import Optional, Union
 
 def find_user(user_id: int) -> Optional[dict]:
@@ -1004,19 +1147,23 @@ print(find_user(1))
 print(find_user(99))
 print(process_value(42))
 print(process_value("hello"))
+
 ```
 
 **Output:**
 ```
+
 {'name': 'Alice'}
 None
 42
 hello
+
 ```
 
 ### 9.3 Callable и другие типы
 
 ```python
+
 from typing import Callable, Iterable
 
 def apply_to_all(
@@ -1028,11 +1175,14 @@ def apply_to_all(
 
 result = apply_to_all([1, 2, 3], lambda x: x ** 2)
 print(result)
+
 ```
 
 **Output:**
 ```
+
 [1, 4, 9]
+
 ```
 
 ---
@@ -1043,16 +1193,19 @@ print(result)
 
 ❌ **Ошибка:**
 ```python
+
 def append_to(item, lst=[]):
     lst.append(item)
     return lst
 
 print(append_to(1))  # [1]
 print(append_to(2))  # [1, 2] — неожиданно!
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 def append_to(item, lst=None):
     if lst is None:
         lst = []
@@ -1061,14 +1214,17 @@ def append_to(item, lst=None):
 
 print(append_to(1))  # [1]
 print(append_to(2))  # [2]
+
 ```
 
 **Output:**
 ```
+
 [1]
 [1, 2]
 [1]
 [2]
+
 ```
 
 ### 10.2 Поздняя привязка в замыканиях
@@ -1081,6 +1237,7 @@ for i in range(5):
     funcs.append(lambda: i)
 
 print([f() for f in funcs])  # [4, 4, 4, 4, 4]
+
 ```
 
 ✅ **Правильно:**
@@ -1091,43 +1248,53 @@ for i in range(5):
     funcs.append(lambda i=i: i)  # i=i — захват текущего значения
 
 print([f() for f in funcs])  # [0, 1, 2, 3, 4]
+
 ```
 
 **Output:**
 ```
+
 [4, 4, 4, 4, 4]
 [0, 1, 2, 3, 4]
+
 ```
 
 ### 10.3 Забытый return
 
 ❌ **Ошибка:**
 ```python
+
 def double(x):
     result = x * 2
     # Забыли return!
 
 print(double(5))  # None
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 def double(x):
     return x * 2
 
 print(double(5))  # 10
+
 ```
 
 ### 10.4 Слишком много параметров
 
 ❌ **Плохо:**
 ```python
+
 def create_user(name, email, age, city, country, zip_code, phone, company):
     ...
+
 ```
 
 ✅ **Лучше:**
 ```python
+
 from dataclasses import dataclass
 
 @dataclass
@@ -1147,6 +1314,7 @@ class UserData:
 
 def create_user(data: UserData):
     ...
+
 ```
 
 ---
@@ -1168,16 +1336,19 @@ def create_user(data: UserData):
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Classes](../05_Classes/) — создание классов и ООП
 - [Modules](../06_Modules/) — организация кода в модули
 
 **Practice Ideas:**
+
 1. Напишите декоратор для валидации аргументов функции
 2. Создайте генератор для чисел Фибоначчи
 3. Реализуйте функцию retry с параметрами (количество попыток, задержка)
 4. Напишите функцию-мемоизатор с ограничением размера кэша
 
 **Going Deeper:**
+
 - Изучите модуль `functools` (partial, reduce, wraps)
 - Познакомьтесь с `itertools` для работы с итераторами
 - Изучите асинхронные функции (async/await)
@@ -1187,13 +1358,18 @@ def create_user(data: UserData):
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
 - [functools](https://docs.python.org/3/library/functools.html)
 - [typing](https://docs.python.org/3/library/typing.html)
 
 **PEPs:**
+
 - [PEP 484](https://peps.python.org/pep-0484/) — Type Hints
 - [PEP 318](https://peps.python.org/pep-0318/) — Decorators
 
 ---
+
+
+
 

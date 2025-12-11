@@ -27,6 +27,7 @@
 ## 1. Incident Lifecycle
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Incident Lifecycle                            │
 ├─────────────────────────────────────────────────────────────────┤
@@ -41,6 +42,7 @@
 │  Minutes    Minutes    Minutes-Hours  Hours-Days   Days-Week    │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -50,6 +52,7 @@
 ### 2.1 On-Call Structure
 
 ```python
+
 on_call_structure = {
     "primary": {
         "role": "Первая линия реагирования",
@@ -62,11 +65,13 @@ on_call_structure = {
         "escalation": "Team lead или management"
     }
 }
+
 ```
 
 ### 2.2 On-Call Best Practices
 
 ```python
+
 on_call_best_practices = {
     "rotation": {
         "length": "1 неделя обычно",
@@ -85,6 +90,7 @@ on_call_best_practices = {
         "escalation": "Чёткий путь эскалации"
     }
 }
+
 ```
 
 ### 2.3 On-Call Handoff
@@ -114,6 +120,7 @@ on_call_best_practices = {
 ### Handoff Confirmation
 - [ ] Outgoing confirmed
 - [ ] Incoming confirmed
+
 ```
 
 ---
@@ -123,6 +130,7 @@ on_call_best_practices = {
 ### 3.1 Severity Levels
 
 ```python
+
 severity_levels = {
     "SEV1": {
         "description": "Critical — сервис недоступен",
@@ -149,11 +157,13 @@ severity_levels = {
         "example": "Cosmetic issue, workaround exists"
     }
 }
+
 ```
 
 ### 3.2 Incident Roles
 
 ```python
+
 incident_roles = {
     "incident_commander": {
         "responsibility": "Координация response",
@@ -189,6 +199,7 @@ incident_roles = {
         ]
     }
 }
+
 ```
 
 ---
@@ -231,6 +242,7 @@ incident_roles = {
 - [ ] Schedule postmortem (for SEV1/SEV2)
 - [ ] Create follow-up tickets
 - [ ] Update runbooks if needed
+
 ```
 
 ### 4.2 Communication Templates
@@ -258,6 +270,7 @@ incident_roles = {
 
 ### Contact
 Incident Commander: @name
+
 ```
 
 ---
@@ -267,6 +280,7 @@ Incident Commander: @name
 ### 5.1 Blameless Culture
 
 ```python
+
 blameless_principles = [
     "Люди действуют с лучшими намерениями",
     "Ошибки — результат системных проблем, не людей",
@@ -288,6 +302,7 @@ blameless_language = [
     "Какие проверки могли бы предотвратить это?",
     "Как можно улучшить процесс?"
 ]
+
 ```
 
 ### 5.2 Postmortem Template
@@ -311,8 +326,11 @@ blameless_language = [
 
 ## Impact
 - **Duration**: X hours Y minutes
+
 - **Users affected**: [number or percentage]
+
 - **Revenue impact**: [if applicable]
+
 - **Data loss**: [yes/no, details]
 
 ---
@@ -397,11 +415,13 @@ the connection pool was exhausted.
 - [Link to incident channel]
 - [Link to relevant dashboards]
 - [Link to deploy that caused issue]
+
 ```
 
 ### 5.3 5 Whys Analysis
 
 ```python
+
 def five_whys_example():
     """Example of 5 Whys analysis for root cause."""
     
@@ -431,6 +451,7 @@ def five_whys_example():
         "analysis": whys,
         "root_cause": root_cause
     }
+
 ```
 
 ---
@@ -440,6 +461,7 @@ def five_whys_example():
 ### 6.1 Metrics to Track
 
 ```python
+
 incident_metrics = {
     "mttd": {
         "name": "Mean Time to Detect",
@@ -462,11 +484,13 @@ incident_metrics = {
         "target": "Trending down"
     }
 }
+
 ```
 
 ### 6.2 Continuous Improvement
 
 ```python
+
 improvement_practices = [
     "Регулярный review метрик инцидентов",
     "Quarterly review of top incident causes",
@@ -474,6 +498,7 @@ improvement_practices = [
     "Regular runbook reviews and updates",
     "Post-postmortem: проверка выполнения action items"
 ]
+
 ```
 
 ---
@@ -495,10 +520,12 @@ improvement_practices = [
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [13_Metrics](../13_Metrics/) — DORA Metrics
 - [08_Monitoring](../08_Monitoring/) — Alerting
 
 **Practice Ideas:**
+
 1. Создайте incident response runbook
 2. Проведите mock incident drill
 3. Напишите postmortem по прошлому инциденту
@@ -508,13 +535,18 @@ improvement_practices = [
 ## 📚 Additional Resources
 
 **Books:**
+
 - "Site Reliability Engineering" by Google — Incident Management chapter
 - "The DevOps Handbook" — Learning from failures
 
 **Tools:**
+
 - PagerDuty
 - OpsGenie
 - Incident.io
 
 ---
+
+
+
 

@@ -24,6 +24,7 @@
 ### 1.1 Концепция
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Content Delivery Network                               │
 ├────────────────────────────────────────────────────────────────────┤
@@ -58,11 +59,13 @@
 │  • SSL termination at edge                                        │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 CloudFront Infrastructure
 
 ```python
+
 cloudfront_infrastructure = {
     "Edge Locations": {
         "count": "400+ locations globally",
@@ -83,6 +86,7 @@ for component, details in cloudfront_infrastructure.items():
     print(f"\n{component}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 ---
@@ -104,11 +108,13 @@ aws cloudfront create-origin-access-control \
         SigningProtocol=sigv4,\
         SigningBehavior=always,\
         OriginAccessControlOriginType=s3
+
 ```
 
 ### 2.2 ALB/Custom Origin
 
 ```python
+
 distribution_config = {
     "Origins": [{
         "DomainName": "api.example.com",
@@ -128,6 +134,7 @@ distribution_config = {
         "CachedMethods": ["GET", "HEAD"]
     }
 }
+
 ```
 
 ---
@@ -137,6 +144,7 @@ distribution_config = {
 ### 3.1 Cache Key
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Cache Key Components                                   │
 ├────────────────────────────────────────────────────────────────────┤
@@ -157,11 +165,13 @@ distribution_config = {
 │  Best practice: Minimize cache key for better hit ratio            │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Cache Policies
 
 ```python
+
 cache_policies = {
     "CachingOptimized": {
         "description": "Maximum caching for static content",
@@ -194,6 +204,7 @@ custom_policy = {
         }
     }
 }
+
 ```
 
 ### 3.3 TTL и Cache-Control
@@ -221,6 +232,7 @@ cache_control_examples = {
 ### 4.1 Path-based Routing
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Cache Behaviors                                        │
 ├────────────────────────────────────────────────────────────────────┤
@@ -235,6 +247,7 @@ cache_control_examples = {
 │  Order matters! More specific patterns first.                      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -244,6 +257,7 @@ cache_control_examples = {
 ### 5.1 HTTPS
 
 ```python
+
 ssl_config = {
     "Viewer Protocol Policy": {
         "redirect-to-https": "Redirect HTTP to HTTPS",
@@ -260,6 +274,7 @@ ssl_config = {
         "custom": "ACM certificate for custom domain"
     }
 }
+
 ```
 
 ### 5.2 OAC (Origin Access Control)
@@ -286,11 +301,13 @@ s3_policy = {
         }
     }]
 }
+
 ```
 
 ### 5.3 Signed URLs и Cookies
 
 ```python
+
 import boto3
 from botocore.signers import CloudFrontSigner
 from cryptography.hazmat.primitives import serialization
@@ -311,6 +328,7 @@ cloudfront_signer = CloudFrontSigner(key_pair_id, rsa_signer)
 signed_url = cloudfront_signer.generate_presigned_url(
     url, date_less_than=expire_date
 )
+
 ```
 
 ---
@@ -318,6 +336,7 @@ signed_url = cloudfront_signer.generate_presigned_url(
 ## 6. CloudFront Functions и Lambda@Edge
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Edge Computing                                         │
 ├────────────────────────────────────────────────────────────────────┤
@@ -339,11 +358,13 @@ signed_url = cloudfront_signer.generate_presigned_url(
 │               authentication, geo-based routing                    │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 6.1 CloudFront Function Example
 
 ```javascript
+
 // URL rewrite: /products/123 → /products.html?id=123
 function handler(event) {
     var request = event.request;
@@ -361,6 +382,7 @@ function handler(event) {
     
     return request;
 }
+
 ```
 
 ---
@@ -387,10 +409,15 @@ aws cloudfront create-invalidation \
 ## 💡 Key Takeaways
 
 - **CDN** — caches content at edge locations globally
+
 - **Cache Key** — minimize for better hit ratio
+
 - **OAC** — secure access to private S3 buckets
+
 - **Behaviors** — different caching for different paths
+
 - **CloudFront Functions** — lightweight, < 1ms
+
 - **Invalidation** — use versioned URLs instead when possible
 
 ---
@@ -405,10 +432,15 @@ aws cloudfront create-invalidation \
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [15_DataServices](../15_DataServices/) — Аналитические сервисы
 - [23_CostManagement](../23_CostManagement/) — Оптимизация затрат
 
 **Практика:**
+
 1. Настройте CloudFront distribution для S3 bucket
 2. Реализуйте кеширование с разными TTL
 3. Добавьте CloudFront Function для redirect
+
+
+

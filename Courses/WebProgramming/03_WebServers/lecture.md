@@ -12,6 +12,7 @@
 - Иметь опыт работы с Linux/Unix системами
 
 **Recommended prior modules:**
+
 - [HTTP Protocol](../01_HTTP/) — структура HTTP
 - [Socket Activation](../02_SocketActivation/) — обработка соединений
 
@@ -34,6 +35,7 @@
 ### 1.1 Timeline развития
 
 ```
+
 1990 ─── CERN httpd (первый веб-сервер, Tim Berners-Lee)
    │
 1991 ─── NCSA HTTPd
@@ -55,11 +57,13 @@
 2016 ─── H2O (HTTP/2 оптимизированный)
    │
 2019 ─── Caddy 2.0
+
 ```
 
 ### 1.2 Доля рынка (исторически)
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │               Web Server Market Share                       │
 ├────────────────────────────────────────────────────────────┤
@@ -79,6 +83,7 @@
 │          [Other  ██████████████ 25%]                       │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -99,6 +104,7 @@
 ### 2.2 MPM (Multi-Processing Modules)
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                   Apache MPM Types                          │
 ├────────────────────────────────────────────────────────────┤
@@ -148,6 +154,7 @@
 │  └─────────┘       └─────────┘       └─────────┘           │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 | MPM | Описание | Когда использовать |
@@ -200,6 +207,7 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined
 
 # Включить конфигурации сайтов
 IncludeOptional sites-enabled/*.conf
+
 ```
 
 ### 2.4 Виртуальные хосты
@@ -248,6 +256,7 @@ IncludeOptional sites-enabled/*.conf
     # HSTS
     Header always set Strict-Transport-Security "max-age=63072000"
 </VirtualHost>
+
 ```
 
 ### 2.5 .htaccess
@@ -289,6 +298,7 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css application/javascript
 </IfModule>
+
 ```
 
 ### 2.6 Управление Apache
@@ -313,6 +323,7 @@ sudo systemctl reload httpd
 # Проверка
 apachectl -M  # список модулей
 apachectl -S  # список виртуальных хостов
+
 ```
 
 ---
@@ -334,6 +345,7 @@ apachectl -S  # список виртуальных хостов
 ### 3.2 Архитектура Nginx
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                    Nginx Architecture                       │
 ├────────────────────────────────────────────────────────────┤
@@ -365,6 +377,7 @@ apachectl -S  # список виртуальных хостов
 │  Каждый worker: один поток, тысячи соединений (epoll/kqueue)│
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.3 Конфигурация Nginx
@@ -414,6 +427,7 @@ http {
     include /etc/nginx/conf.d/*.conf;
     include /etc/nginx/sites-enabled/*;
 }
+
 ```
 
 ### 3.4 Виртуальный хост (server block)
@@ -486,6 +500,7 @@ server {
         deny all;
     }
 }
+
 ```
 
 ### 3.5 Nginx как Reverse Proxy
@@ -536,6 +551,7 @@ server {
         proxy_set_header Connection "upgrade";
     }
 }
+
 ```
 
 ### 3.6 Управление Nginx
@@ -560,6 +576,7 @@ sudo nginx -s reload
 sudo nginx -s reopen  # переоткрыть логи
 sudo nginx -s quit    # graceful shutdown
 sudo nginx -s stop    # немедленная остановка
+
 ```
 
 ---
@@ -583,12 +600,14 @@ sudo nginx -s stop    # немедленная остановка
 ### 4.2 Когда что использовать
 
 **Apache лучше когда:**
+
 - Нужен .htaccess (shared hosting)
 - Используется mod_php
 - Сложные rewrite правила
 - Требуется совместимость со старыми конфигурациями
 
 **Nginx лучше когда:**
+
 - Высокая нагрузка, много соединений
 - В основном статический контент
 - Reverse proxy / load balancer
@@ -598,6 +617,7 @@ sudo nginx -s stop    # немедленная остановка
 ### 4.3 Гибридная архитектура
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │               Nginx + Apache Architecture                   │
 ├────────────────────────────────────────────────────────────┤
@@ -623,6 +643,7 @@ sudo nginx -s stop    # немедленная остановка
 │  └─────────────────────────────────┘                       │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -697,6 +718,7 @@ server "example.com" {
         pass
     }
 }
+
 ```
 
 ### 5.3 Управление
@@ -711,6 +733,7 @@ rcctl enable httpd
 
 # Перезагрузка
 rcctl reload httpd
+
 ```
 
 ---
@@ -741,9 +764,11 @@ example.com {
         output file /var/log/caddy/example.com.log
     }
 }
+
 ```
 
 **Преимущества Caddy:**
+
 - Автоматический HTTPS (Let's Encrypt)
 - Простой синтаксис конфигурации
 - Автоматические редиректы HTTP→HTTPS
@@ -772,9 +797,11 @@ fastcgi.server = (
         "socket" => "/var/run/php-fpm.sock"
     ))
 )
+
 ```
 
 **Когда использовать:**
+
 - Встраиваемые системы
 - Высокая нагрузка на статику
 - Ограниченные ресурсы
@@ -796,9 +823,11 @@ hosts:
     paths:
       "/":
         file.dir: /var/www/html
+
 ```
 
 **Особенности:**
+
 - Оптимизирован для HTTP/2
 - Server push
 - Очень низкие задержки
@@ -808,6 +837,7 @@ hosts:
 **LiteSpeed** — коммерческий веб-сервер, совместимый с Apache .htaccess.
 
 **Особенности:**
+
 - Drop-in замена Apache
 - Поддержка .htaccess
 - Встроенный PHP (LSAPI)
@@ -838,9 +868,11 @@ certificatesResolvers:
       storage: /letsencrypt/acme.json
       httpChallenge:
         entryPoint: web
+
 ```
 
 **Особенности:**
+
 - Автоматическое обнаружение сервисов (Docker, Kubernetes)
 - Автоматический HTTPS
 - Dashboard
@@ -866,6 +898,7 @@ certificatesResolvers:
 ### 7.1 Статический сайт с Nginx
 
 ```nginx
+
 server {
     listen 80;
     server_name static.example.com;
@@ -894,11 +927,13 @@ server {
         try_files $uri $uri/ /index.html;
     }
 }
+
 ```
 
 ### 7.2 Load Balancer
 
 ```nginx
+
 upstream app_servers {
     least_conn;
     
@@ -929,6 +964,7 @@ server {
         return 200 "OK\n";
     }
 }
+
 ```
 
 ### 7.3 SSL/TLS конфигурация (современная)
@@ -955,6 +991,7 @@ add_header Strict-Transport-Security "max-age=63072000" always;
 add_header X-Frame-Options "DENY" always;
 add_header X-Content-Type-Options "nosniff" always;
 add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
 ```
 
 ---
@@ -962,8 +999,11 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 ## 💡 Key Takeaways
 
 - **Apache** — модульный, гибкий, с .htaccess, но потребляет больше ресурсов
+
 - **Nginx** — event-driven, эффективный для статики и reverse proxy
+
 - **OpenBSD httpd** — минималистичный, безопасный, идеален для OpenBSD
+
 - **Caddy** — автоматический HTTPS, простая конфигурация
 - Комбинируйте: Nginx для статики + Apache/backend для динамики
 - Выбор сервера зависит от задачи, нагрузки и экосистемы
@@ -973,16 +1013,19 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [CGI](../04_CGI/) — Gateway интерфейсы
 - [WSGI](../05_WSGI/) — Python Web Server Gateway Interface
 
 **Practice Ideas:**
+
 1. Настройте Nginx как reverse proxy для Python приложения
 2. Сконфигурируйте SSL с Let's Encrypt
 3. Настройте load balancing между несколькими backend серверами
 4. Сравните производительность Apache и Nginx с помощью `ab` или `wrk`
 
 **Going Deeper:**
+
 - nginx.org documentation
 - Apache mod_rewrite guide
 - SSL Labs best practices
@@ -992,16 +1035,21 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [nginx.org](https://nginx.org/en/docs/)
 - [Apache HTTP Server](https://httpd.apache.org/docs/)
 - [OpenBSD httpd.conf(5)](https://man.openbsd.org/httpd.conf.5)
 - [Caddy Documentation](https://caddyserver.com/docs/)
 
 **Tools:**
+
 - [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/)
 - [SSL Labs Server Test](https://www.ssllabs.com/ssltest/)
 - [ab](https://httpd.apache.org/docs/current/programs/ab.html) — Apache Benchmark
 - [wrk](https://github.com/wg/wrk) — HTTP benchmarking tool
 
 ---
+
+
+
 

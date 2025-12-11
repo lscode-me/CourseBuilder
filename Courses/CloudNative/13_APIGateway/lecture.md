@@ -24,6 +24,7 @@
 ### 1.1 Обзор
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              API Gateway                                            │
 ├────────────────────────────────────────────────────────────────────┤
@@ -53,11 +54,13 @@
 │    └────────┘     └────────┘     └────────┘                      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Типы API Gateway в AWS
 
 ```python
+
 api_types = {
     "REST API": {
         "features": "Full feature set (caching, WAF, API keys, usage plans)",
@@ -83,6 +86,7 @@ for api_type, details in api_types.items():
     for key, value in details.items():
         print(f"  {key}: {value}")
     print()
+
 ```
 
 ---
@@ -115,6 +119,7 @@ aws apigateway put-method \
     --resource-id $RESOURCE_ID \
     --http-method POST \
     --authorization-type NONE
+
 ```
 
 ### 2.2 Lambda Integration
@@ -144,6 +149,7 @@ def lambda_handler(event, context):
             'status': 'created'
         })
     }
+
 ```
 
 ### 2.3 Request/Response Mapping
@@ -168,6 +174,7 @@ def lambda_handler(event, context):
     "status": "$inputRoot.status",
     "createdAt": "$inputRoot.created_at"
 }
+
 ```
 
 ---
@@ -207,6 +214,7 @@ def lambda_handler(event, context):
     route_key = event.get('routeKey')  # e.g., "GET /orders/{orderId}"
     path_params = event.get('pathParameters', {})
     order_id = path_params.get('orderId')
+
 ```
 
 ---
@@ -216,6 +224,7 @@ def lambda_handler(event, context):
 ### 4.1 Типы авторизации
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Authorization Options                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -241,11 +250,13 @@ def lambda_handler(event, context):
 │  └── Usage plans and quotas                                       │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 Lambda Authorizer
 
 ```python
+
 def lambda_authorizer(event, context):
     token = event.get('authorizationToken', '').replace('Bearer ', '')
     method_arn = event['methodArn']
@@ -271,6 +282,7 @@ def lambda_authorizer(event, context):
         }
     except Exception:
         raise Exception('Unauthorized')
+
 ```
 
 ### 4.3 JWT Authorizer (HTTP API)
@@ -285,6 +297,7 @@ aws apigatewayv2 create-authorizer \
     --jwt-configuration \
         Issuer="https://cognito-idp.us-east-1.amazonaws.com/us-east-1_xxx",\
         Audience="client-id-here"
+
 ```
 
 ---
@@ -294,6 +307,7 @@ aws apigatewayv2 create-authorizer \
 ### 5.1 Rate Limiting
 
 ```python
+
 throttling_config = {
     "Account Level": {
         "default": "10,000 requests/second",
@@ -326,6 +340,7 @@ throttling_config = {
 ## 6. Caching (REST API only)
 
 ```python
+
 caching_config = {
     "TTL": "300 seconds (default), 0-3600",
     "Capacity": "0.5GB - 237GB",
@@ -385,10 +400,15 @@ aws apigateway update-stage \
 ## 💡 Key Takeaways
 
 - **REST API** — full features, higher latency, $3.50/million
+
 - **HTTP API** — simpler, lower latency, $1.00/million
+
 - **Lambda proxy** — simplest integration, Lambda handles routing
+
 - **JWT Authorizer** — built-in for HTTP API
+
 - **Caching** — REST API only, reduces backend load
+
 - **Usage Plans** — rate limiting per client with API keys
 
 ---
@@ -403,10 +423,15 @@ aws apigateway update-stage \
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [14_CDN](../14_CDN/) — CloudFront и кеширование
 - [22_Security](../22_Security/) — Безопасность API
 
 **Практика:**
+
 1. Создайте REST API с Lambda интеграцией
 2. Настройте авторизацию через Cognito или Lambda Authorizer
 3. Реализуйте rate limiting с Usage Plans
+
+
+

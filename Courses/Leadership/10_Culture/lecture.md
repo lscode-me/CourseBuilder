@@ -12,6 +12,7 @@
 - Интересоваться soft skills и team dynamics
 
 **Recommended prior modules:**
+
 - [05_Feedback](../05_Feedback/) — культура обратной связи
 - [06_Motivation](../06_Motivation/) — мотивация людей
 
@@ -38,26 +39,35 @@
 
 **Формула культуры:**
 ```
+
 Culture = Values × Behaviors × Habits × Stories
+
 ```
 
 - **Values** — что мы считаем важным
+
 - **Behaviors** — как мы действуем
+
 - **Habits** — повторяющиеся паттерны
+
 - **Stories** — что мы рассказываем новичкам
 
 ### 1.2 Культура vs декларации
 
 **На стене написано:**
 ```
+
 "Мы ценим инновации и risk-taking"
+
 ```
 
 **В реальности:**
 ```
+
 - Любая ошибка публично критикуется
 - Новые идеи отвергаются
 - Promotions получают "безопасные" люди
+
 ```
 
 > **⚠️ Warning:**  
@@ -68,6 +78,7 @@ Culture = Values × Behaviors × Habits × Stories
 **Edgar Schein's Model:**
 
 ```
+
 ┌─────────────────────────────────────────┐
 │           ARTIFACTS                     │  Видимое:
 │   Офис, dress code, ceremonies          │  легко наблюдать
@@ -78,6 +89,7 @@ Culture = Values × Behaviors × Habits × Stories
 │    UNDERLYING ASSUMPTIONS               │  Глубинное:
 │   Неосознанные убеждения                │  настоящие драйверы
 └─────────────────────────────────────────┘
+
 ```
 
 ---
@@ -89,6 +101,7 @@ Culture = Values × Behaviors × Habits × Stories
 **Google's Project Aristotle** (исследование эффективных команд):
 
 ```
+
 Что НЕ влияет на эффективность:
 
 - Состав команды (интроверты vs экстраверты)
@@ -102,6 +115,7 @@ Culture = Values × Behaviors × Habits × Stories
 3. Structure & Clarity
 4. Meaning
 5. Impact
+
 ```
 
 ### 2.2 Психологическая безопасность
@@ -110,6 +124,7 @@ Culture = Values × Behaviors × Habits × Stories
 Убеждённость, что команда безопасна для межличностных рисков.
 
 **Что это значит:**
+
 - Можно задать "глупый" вопрос
 - Можно признать ошибку
 - Можно не согласиться с начальником
@@ -118,6 +133,7 @@ Culture = Values × Behaviors × Habits × Stories
 ### 2.3 Симптомы плохой культуры
 
 ```
+
 Red flags:
 
 - Высокая текучесть
@@ -126,6 +142,7 @@ Red flags:
 - Люди боятся говорить правду
 - Решения принимаются политически
 - Нет diversity of thought
+
 ```
 
 ---
@@ -156,6 +173,7 @@ Red flags:
 **Как лидер:**
 
 ```markdown
+
 ✅ DO:
 
 - Признавайте свои ошибки публично
@@ -171,12 +189,14 @@ Red flags:
 - Быть "всегда правым"
 - Критиковать перед другими
 - Создавать фаворитов
+
 ```
 
 ### 3.3 Измерение психологической безопасности
 
 **Survey questions (по Edmondson):**
 ```
+
 1. Если я ошибусь, это будет held against me?
 2. Члены команды могут поднять проблемы?
 3. Люди иногда отвергают других за их различия?
@@ -184,6 +204,7 @@ Red flags:
 5. Сложно ли просить помощь у коллег?
 6. Кто-то намеренно подрывает мои усилия?
 7. Мои уникальные навыки ценятся?
+
 ```
 
 ---
@@ -195,6 +216,7 @@ Red flags:
 **Workshop для команды (2-3 часа):**
 
 ```
+
 1. Individual Reflection (15 min)
    "Когда команда работала лучше всего, что было важно?"
 
@@ -212,6 +234,7 @@ Red flags:
 
 6. Anti-patterns (20 min)
    Какие behaviors противоречат ценностям?
+
 ```
 
 ### 4.2 Пример ценностей команды
@@ -246,13 +269,16 @@ Red flags:
 - Post-mortems без blame
 
 **Anti-patterns:**
+
 - "Мы всегда так делали"
 - Скрывать ошибки
+
 ```
 
 ### 4.3 Поддержание ценностей
 
 **Reinforcement:**
+
 - Hiring: спрашивать о ценностях
 - Recognition: награждать за behaviors
 - Performance: включать в review
@@ -267,15 +293,18 @@ Red flags:
 
 **Традиционный подход:**
 ```
+
 "Нам нужен человек, который впишется в культуру"
 → Часто = "похож на нас"
 → Risk: homogeneous team, bias
+
 ```
 
 ### 5.2 Culture Add
 
 **Лучший подход:**
 ```
+
 "Нам нужен человек, который разделяет ценности И добавляет diversity"
 
 Вопросы:
@@ -283,12 +312,14 @@ Red flags:
 - Разделяет ли core values?
 - Какую perspective/experience добавит?
 - Как расширит наше thinking?
+
 ```
 
 ### 5.3 Interview для культуры
 
 **Вопросы:**
 ```
+
 Values alignment:
 
 - "Расскажи о ситуации, когда ты не согласился с решением команды"
@@ -299,6 +330,7 @@ Diversity of thought:
 
 - "Какой опыт у тебя отличается от большинства?"
 - "Когда ты менял своё мнение?"
+
 ```
 
 ---
@@ -308,12 +340,14 @@ Diversity of thought:
 ### 6.1 Почему это сложно
 
 ```
+
 Culture change is SLOW because:
 
 - Habits глубоко укоренены
 - Incentives часто противоречат
 - Resistance от тех, кому выгоден status quo
 - Требует consistent behavior от лидеров
+
 ```
 
 ### 6.2 Framework для изменений
@@ -321,6 +355,7 @@ Culture change is SLOW because:
 **Kotter's 8 Steps (adapted):**
 
 ```
+
 1. Create Urgency
    Почему нужно меняться сейчас?
    
@@ -344,21 +379,25 @@ Culture change is SLOW because:
    
 8. Anchor in Culture
    Сделать новое нормой
+
 ```
 
 ### 6.3 Практические советы
 
 **Start small:**
+
 - Одна практика/behavior за раз
 - Pilot в вашей команде
 - Expand при успехе
 
 **Lead by example:**
+
 - Вы должны демонстрировать первым
 - Inconsistency kills change
 - "Делай как я делаю, не как говорю" не работает
 
 **Make it easy:**
+
 - Новое поведение должно быть проще старого
 - Remove friction
 - Add nudges
@@ -379,6 +418,7 @@ Culture change is SLOW because:
 | Novelty | Crushed | Problems | Implemented |
 
 **Generative culture коррелирует с:**
+
 - Higher software delivery performance
 - Lower burnout
 - Better security outcomes
@@ -386,6 +426,7 @@ Culture change is SLOW because:
 ### 7.2 Netflix Culture
 
 **Ключевые элементы:**
+
 - Freedom and Responsibility
 - Context, not Control
 - High Performance = High Talent Density
@@ -395,6 +436,7 @@ Culture change is SLOW because:
 ### 7.3 Spotify Model
 
 **Squads, Tribes, Chapters, Guilds:**
+
 - Autonomy команд
 - Alignment через tribes
 - Cross-cutting expertise через chapters
@@ -407,6 +449,7 @@ Culture change is SLOW because:
 ### 8.1 Challenges
 
 ```
+
 Remote/distributed teams:
 
 - Меньше casual interactions
@@ -414,25 +457,30 @@ Remote/distributed teams:
 - Сложнее читать signals
 - Onboarding harder
 - Subcultures в locations
+
 ```
 
 ### 8.2 Решения
 
 **Intentional culture building:**
 ```
+
 - Document values explicitly
 - Regular video calls (cameras on!)
 - Virtual social events
 - Team offsites (если возможно)
 - Consistent async communication norms
+
 ```
 
 **Over-communication:**
 ```
+
 - Больше context в messages
 - Explicit expectations
 - Written documentation
 - Regular sync meetings
+
 ```
 
 ---
@@ -442,6 +490,7 @@ Remote/distributed teams:
 ### 9.1 Признаки
 
 ```
+
 🚨 Warning signs:
 
 - Blame culture
@@ -451,17 +500,20 @@ Remote/distributed teams:
 - Unrealistic expectations
 - Burnout normalized
 - High turnover
+
 ```
 
 ### 9.2 Как лидер
 
 **Что можете сделать:**
+
 - Create safe space в вашей команде
 - Не participate в toxic behaviors
 - Escalate serious issues
 - Document и report
 
 **Когда уходить:**
+
 - Если не можете защитить команду
 - Если values конфликтуют фундаментально
 - Если burnout неизбежен
@@ -471,9 +523,13 @@ Remote/distributed teams:
 ## 💡 Key Takeaways
 
 - **Культура = behaviors:** Не слова на стене, а повседневные действия
+
 - **Psychological Safety #1:** Главный фактор эффективности команды
+
 - **Lead by example:** Лидер моделирует культуру каждый день
+
 - **Culture Add > Fit:** Diversity strengthens, homogeneity weakens
+
 - **Change is slow:** Consistent effort over time
 
 ---
@@ -481,15 +537,18 @@ Remote/distributed teams:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [11_Communication](../11_Communication/) — коммуникация как часть культуры
 - [05_Feedback](../05_Feedback/) — feedback culture
 
 **Practice Ideas:**
+
 1. Проведите survey психологической безопасности в команде
 2. Организуйте workshop по командным ценностям
 3. Определите одно culture change и начните с себя
 
 **Going Deeper:**
+
 - Psychological Safety measurement
 - Diversity and Inclusion practices
 - Remote culture building
@@ -499,17 +558,23 @@ Remote/distributed teams:
 ## 📚 Additional Resources
 
 **Books:**
+
 - "The Fearless Organization" by Amy Edmondson — psychological safety
 - "No Rules Rules" by Reed Hastings — Netflix culture
 - "Radical Candor" by Kim Scott — feedback culture
 - "The Culture Code" by Daniel Coyle
 
 **Videos:**
+
 - [Amy Edmondson: Building a psychologically safe workplace (TEDx)](https://www.youtube.com/watch?v=LhoLuui9gX8)
 
 **Articles:**
+
 - [Google re:Work - Guide: Understand team effectiveness](https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/introduction/)
 - [Netflix Culture Deck](https://jobs.netflix.com/culture)
 
 ---
+
+
+
 

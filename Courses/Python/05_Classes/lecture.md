@@ -13,6 +13,7 @@
 - Иметь базовое представление о структурах данных
 
 **Recommended prior modules:**
+
 - [Functions](../04_Functions/) — функции, параметры, декораторы
 
 ---
@@ -58,20 +59,25 @@ class User:
 
 user1 = User("Alice", 30, "alice@example.com")
 print(user1.greet())
+
 ```
 
 **Output:**
 ```
+
 Hello, Alice!
 Hello, Alice!
+
 ```
 
 ### 1.2 Класс и объект
 
 - **Класс** — шаблон (чертёж) для создания объектов
+
 - **Объект (экземпляр)** — конкретная реализация класса
 
 ```python
+
 class Dog:
     """Класс, представляющий собаку."""
     species = "Canis familiaris"  # Атрибут класса
@@ -91,14 +97,17 @@ print(f"{buddy.name} — {buddy.species}")
 print(f"{max_dog.name} — {max_dog.species}")
 print(buddy.bark())
 print(max_dog.bark())
+
 ```
 
 **Output:**
 ```
+
 Buddy — Canis familiaris
 Max — Canis familiaris
 Buddy говорит: Гав!
 Max говорит: Гав!
+
 ```
 
 ---
@@ -110,6 +119,7 @@ Max говорит: Гав!
 `__init__` — конструктор, вызывается при создании объекта:
 
 ```python
+
 class Rectangle:
     def __init__(self, width, height):
         """Инициализирует прямоугольник."""
@@ -126,18 +136,22 @@ class Rectangle:
 rect = Rectangle(10, 5)
 print(f"Площадь: {rect.area()}")
 print(f"Периметр: {rect.perimeter()}")
+
 ```
 
 **Output:**
 ```
+
 Создан прямоугольник 10x5
 Площадь: 50
 Периметр: 30
+
 ```
 
 ### 2.2 Атрибуты класса vs атрибуты экземпляра
 
 ```python
+
 class Counter:
     count = 0  # Атрибут класса — общий для всех экземпляров
     
@@ -157,18 +171,22 @@ print(f"c1.count: {c1.count}")  # Доступ через экземпляр т�
 
 del c3
 print(f"После удаления: {Counter.count}")
+
 ```
 
 **Output:**
 ```
+
 Всего счётчиков: 3
 c1.count: 3
 После удаления: 2
+
 ```
 
 ### 2.3 Методы экземпляра
 
 ```python
+
 class BankAccount:
     def __init__(self, owner, balance=0):
         self.owner = owner
@@ -196,14 +214,17 @@ print(account.get_balance())
 print(account.deposit(500))
 print(account.withdraw(200))
 print(account.withdraw(2000))
+
 ```
 
 **Output:**
 ```
+
 Баланс Alice: 1000
 Внесено 500. Баланс: 1500
 Снято 200. Баланс: 1300
 Недостаточно средств
+
 ```
 
 ---
@@ -215,6 +236,7 @@ print(account.withdraw(2000))
 Python использует соглашения об именовании для обозначения приватности:
 
 ```python
+
 class Employee:
     def __init__(self, name, salary):
         self.name = name           # Публичный атрибут
@@ -238,14 +260,17 @@ print(f"Зарплата: {emp.get_salary()}")
 # emp.__salary  # AttributeError!
 # Но можно обойти через name mangling (не делайте так!)
 print(f"Через mangling: {emp._Employee__salary}")
+
 ```
 
 **Output:**
 ```
+
 Имя: Alice
 Отдел: Unknown
 Зарплата: 50000
 Через mangling: 50000
+
 ```
 
 ### 3.2 Property декоратор
@@ -253,6 +278,7 @@ print(f"Через mangling: {emp._Employee__salary}")
 `@property` позволяет создавать управляемые атрибуты:
 
 ```python
+
 class Circle:
     def __init__(self, radius):
         self._radius = radius
@@ -293,11 +319,13 @@ print(f"Новая площадь: {circle.area:.2f}")
 
 **Output:**
 ```
+
 Радиус: 5
 Диаметр: 10
 Площадь: 78.54
 Новый радиус: 10
 Новая площадь: 314.16
+
 ```
 
 ---
@@ -307,6 +335,7 @@ print(f"Новая площадь: {circle.area:.2f}")
 ### 4.1 Базовое наследование
 
 ```python
+
 class Animal:
     def __init__(self, name):
         self.name = name
@@ -334,19 +363,23 @@ print(dog.speak())     # Переопределено в Dog
 
 print(cat.describe())
 print(cat.speak())
+
 ```
 
 **Output:**
 ```
+
 Это Шарик
 Шарик говорит: Гав!
 Это Мурка
 Мурка говорит: Мяу!
+
 ```
 
 ### 4.2 Расширение родительского класса
 
 ```python
+
 class Vehicle:
     def __init__(self, brand, model):
         self.brand = brand
@@ -376,18 +409,22 @@ tesla = ElectricCar("Tesla", "Model 3", 4, 75)
 print(tesla.info())
 print(f"isinstance(tesla, Car): {isinstance(tesla, Car)}")
 print(f"isinstance(tesla, Vehicle): {isinstance(tesla, Vehicle)}")
+
 ```
 
 **Output:**
 ```
+
 Tesla Model 3 (4 двери), батарея 75 кВт·ч
 isinstance(tesla, Car): True
 isinstance(tesla, Vehicle): True
+
 ```
 
 ### 4.3 Множественное наследование
 
 ```python
+
 class Flyable:
     def fly(self):
         return "Летит!"
@@ -408,16 +445,19 @@ print(duck.swim())      # От Swimmable
 
 # Method Resolution Order (MRO)
 print(f"\nMRO: {Duck.__mro__}")
+
 ```
 
 **Output:**
 ```
+
 Это Дональд
 Дональд говорит: Кря!
 Летит!
 Плывёт!
 
 MRO: (<class '__main__.Duck'>, <class '__main__.Animal'>, <class '__main__.Flyable'>, <class '__main__.Swimmable'>, <class 'object'>)
+
 ```
 
 ---
@@ -427,6 +467,7 @@ MRO: (<class '__main__.Duck'>, <class '__main__.Animal'>, <class '__main__.Flyab
 ### 5.1 Строковое представление
 
 ```python
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -445,19 +486,23 @@ print(str(p))   # Вызывает __str__
 print(repr(p))  # Вызывает __repr__
 print(p)        # print использует __str__
 print([p])      # В коллекциях используется __repr__
+
 ```
 
 **Output:**
 ```
+
 Точка(3, 4)
 Point(x=3, y=4)
 Точка(3, 4)
 [Point(x=3, y=4)]
+
 ```
 
 ### 5.2 Операторы сравнения
 
 ```python
+
 class Money:
     def __init__(self, amount, currency="RUB"):
         self.amount = amount
@@ -486,18 +531,22 @@ m3 = Money(200)
 print(f"m1 == m2: {m1 == m2}")
 print(f"m1 < m3: {m1 < m3}")
 print(f"m3 <= m1: {m3 <= m1}")
+
 ```
 
 **Output:**
 ```
+
 m1 == m2: True
 m1 < m3: True
 m3 <= m1: False
+
 ```
 
 ### 5.3 Арифметические операторы
 
 ```python
+
 class Vector:
     def __init__(self, x, y):
         self.x = x
@@ -529,20 +578,24 @@ print(f"v1 - v2 = {v1 - v2}")
 print(f"v1 * 2 = {v1 * 2}")
 print(f"3 * v2 = {3 * v2}")
 print(f"|v1| = {abs(v1)}")
+
 ```
 
 **Output:**
 ```
+
 v1 + v2 = Vector(4, 6)
 v1 - v2 = Vector(2, 2)
 v1 * 2 = Vector(6, 8)
 3 * v2 = Vector(3, 6)
 |v1| = 5.0
+
 ```
 
 ### 5.4 Контейнерные методы
 
 ```python
+
 class Playlist:
     def __init__(self, name):
         self.name = name
@@ -581,10 +634,12 @@ print(f"'Song B' in playlist: {'Song B' in playlist}")
 print("\nВсе песни:")
 for song in playlist:
     print(f"  - {song}")
+
 ```
 
 **Output:**
 ```
+
 Длина: 3
 Первая песня: Song A
 'Song B' in playlist: True
@@ -593,11 +648,13 @@ for song in playlist:
   - Song A
   - Song B
   - Song C
+
 ```
 
 ### 5.5 Context Manager
 
 ```python
+
 class Timer:
     def __init__(self, name="Timer"):
         self.name = name
@@ -618,13 +675,16 @@ class Timer:
 with Timer("Вычисление"):
     total = sum(range(1000000))
     print(f"Сумма: {total}")
+
 ```
 
 **Output:**
 ```
+
 Вычисление запущен
 Сумма: 499999500000
 Вычисление завершён за 0.0312с
+
 ```
 
 ---
@@ -634,6 +694,7 @@ with Timer("Вычисление"):
 ### 6.1 @classmethod
 
 ```python
+
 class Date:
     def __init__(self, year, month, day):
         self.year = year
@@ -664,18 +725,22 @@ d3 = Date.today()
 print(f"d1: {d1}")
 print(f"d2: {d2}")
 print(f"d3: {d3}")
+
 ```
 
 **Output:**
 ```
+
 d1: Date(2024, 12, 25)
 d2: Date(2024, 12, 31)
 d3: Date(2024, 12, 2)
+
 ```
 
 ### 6.2 @staticmethod
 
 ```python
+
 class MathUtils:
     @staticmethod
     def is_prime(n):
@@ -701,18 +766,22 @@ class MathUtils:
 print(f"is_prime(17): {MathUtils.is_prime(17)}")
 print(f"is_prime(20): {MathUtils.is_prime(20)}")
 print(f"factorial(5): {MathUtils.factorial(5)}")
+
 ```
 
 **Output:**
 ```
+
 is_prime(17): True
 is_prime(20): False
 factorial(5): 120
+
 ```
 
 ### 6.3 Сравнение методов
 
 ```python
+
 class Demo:
     class_attr = "class attribute"
     
@@ -737,13 +806,16 @@ obj = Demo("instance")
 print(obj.instance_method())
 print(Demo.class_method())
 print(Demo.static_method())
+
 ```
 
 **Output:**
 ```
+
 instance: instance, class: class attribute
 class: class attribute
 static method
+
 ```
 
 ---
@@ -753,6 +825,7 @@ static method
 ### 7.1 Базовое использование
 
 ```python
+
 from dataclasses import dataclass
 
 @dataclass
@@ -775,18 +848,22 @@ print(f"p1 == p2: {p1 == p2}")
 
 person = Person("Alice", 30)
 print(person)
+
 ```
 
 **Output:**
 ```
+
 Point(x=3, y=4)
 p1 == p2: True
 Person(name='Alice', age=30, email='')
+
 ```
 
 ### 7.2 Расширенные возможности
 
 ```python
+
 from dataclasses import dataclass, field
 from typing import List
 
@@ -806,17 +883,21 @@ student = Student("Alice")
 student.grades.extend([85, 90, 78])
 print(student)
 print(f"Средний балл: {student.average:.2f}")
+
 ```
 
 **Output:**
 ```
+
 Student(name='Alice', grades=[85, 90, 78])
 Средний балл: 84.33
+
 ```
 
 ### 7.3 Frozen dataclasses
 
 ```python
+
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -832,12 +913,15 @@ print(point)
 # Можно использовать как ключ словаря
 points = {point: "origin"}
 print(f"В словаре: {points}")
+
 ```
 
 **Output:**
 ```
+
 ImmutablePoint(x=3, y=4)
 В словаре: {ImmutablePoint(x=3, y=4): 'origin'}
+
 ```
 
 ---
@@ -847,6 +931,7 @@ ImmutablePoint(x=3, y=4)
 ### 8.1 ABC — Abstract Base Classes
 
 ```python
+
 from abc import ABC, abstractmethod
 
 class Shape(ABC):
@@ -893,12 +978,15 @@ circle = Circle(7)
 
 print(f"Прямоугольник: {rect.describe()}")
 print(f"Круг: {circle.describe()}")
+
 ```
 
 **Output:**
 ```
+
 Прямоугольник: Площадь: 50.00, Периметр: 30.00
 Круг: Площадь: 153.94, Периметр: 43.98
+
 ```
 
 ---
@@ -908,6 +996,7 @@ print(f"Круг: {circle.describe()}")
 ### 9.1 Singleton
 
 ```python
+
 class Singleton:
     _instance = None
     
@@ -919,16 +1008,20 @@ class Singleton:
 s1 = Singleton()
 s2 = Singleton()
 print(f"s1 is s2: {s1 is s2}")  # True — один и тот же объект
+
 ```
 
 **Output:**
 ```
+
 s1 is s2: True
+
 ```
 
 ### 9.2 Factory
 
 ```python
+
 class Animal:
     def speak(self):
         raise NotImplementedError
@@ -958,17 +1051,21 @@ dog = AnimalFactory.create("dog")
 cat = AnimalFactory.create("cat")
 print(dog.speak())
 print(cat.speak())
+
 ```
 
 **Output:**
 ```
+
 Гав!
 Мяу!
+
 ```
 
 ### 9.3 Composition over Inheritance
 
 ```python
+
 class Engine:
     def __init__(self, horsepower):
         self.horsepower = horsepower
@@ -994,11 +1091,14 @@ class Car:
 
 car = Car("Toyota", 150, 4)
 print(car.drive())
+
 ```
 
 **Output:**
 ```
+
 Toyota: Двигатель 150 л.с. запущен, 4 колеса крутятся
+
 ```
 
 ---
@@ -1009,16 +1109,19 @@ Toyota: Двигатель 150 л.с. запущен, 4 колеса крутя�
 
 ❌ **Ошибка:**
 ```python
+
 class Counter:
     def __init__(self):
         count = 0  # Это локальная переменная!
     
     def increment(self):
         count += 1  # NameError
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 class Counter:
     def __init__(self):
         self.count = 0
@@ -1030,18 +1133,22 @@ class Counter:
 c = Counter()
 print(c.increment())  # 1
 print(c.increment())  # 2
+
 ```
 
 **Output:**
 ```
+
 1
 2
+
 ```
 
 ### 10.2 Изменяемый атрибут класса
 
 ❌ **Ошибка:**
 ```python
+
 class Student:
     grades = []  # Общий для всех экземпляров!
     
@@ -1052,10 +1159,12 @@ s1 = Student()
 s2 = Student()
 s1.add_grade(90)
 print(f"s2.grades: {s2.grades}")  # [90] — неожиданно!
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 class Student:
     def __init__(self):
         self.grades = []  # Свой для каждого экземпляра
@@ -1068,30 +1177,37 @@ s2 = Student()
 s1.add_grade(90)
 print(f"s1.grades: {s1.grades}")  # [90]
 print(f"s2.grades: {s2.grades}")  # []
+
 ```
 
 **Output:**
 ```
+
 s2.grades: [90]
 s1.grades: [90]
 s2.grades: []
+
 ```
 
 ### 10.3 Неправильный вызов super()
 
 ❌ **Ошибка:**
 ```python
+
 class Child(Parent):
     def __init__(self, name, age):
         Parent.__init__(name)  # Забыли self!
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 class Child(Parent):
     def __init__(self, name, age):
         super().__init__(name)  # Python 3 способ
         self.age = age
+
 ```
 
 ---
@@ -1113,16 +1229,19 @@ class Child(Parent):
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Modules](../06_Modules/) — организация классов в модули
 - [Exceptions](../07_Exceptions/) — создание собственных исключений
 
 **Practice Ideas:**
+
 1. Создайте класс `BankAccount` с депозитами, снятиями и историей транзакций
 2. Реализуйте иерархию геометрических фигур с абстрактным классом
 3. Создайте класс `Deck` (колода карт) с методами shuffle и draw
 4. Напишите dataclass для представления товара в интернет-магазине
 
 **Going Deeper:**
+
 - Изучите метаклассы
 - Познакомьтесь с дескрипторами
 - Изучите `__slots__` для оптимизации памяти
@@ -1132,13 +1251,18 @@ class Child(Parent):
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Classes](https://docs.python.org/3/tutorial/classes.html)
 - [dataclasses](https://docs.python.org/3/library/dataclasses.html)
 - [abc](https://docs.python.org/3/library/abc.html)
 
 **Articles:**
+
 - [Python OOP Tutorial](https://realpython.com/python3-object-oriented-programming/)
 - [Dunder Methods Guide](https://rszalski.github.io/magicmethods/)
 
 ---
+
+
+
 

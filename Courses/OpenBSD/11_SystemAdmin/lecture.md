@@ -42,6 +42,7 @@ $ uptime
 # Версия системы
 $ sysctl kern.version
 kern.version=OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
+
 ```
 
 ### 1.2 Память и процессы
@@ -67,6 +68,7 @@ CPU:  0.2% user,  0.0% nice,  0.4% sys,  0.0% spin,  0.0% intr, 99.4% idle
 $ ps auxww
 USER     PID %CPU %MEM   VSZ   RSS TT  STAT   STARTED       TIME COMMAND
 root       1  0.0  0.0   524   488 ??  Is   Sun10AM     0:00.02 /sbin/init
+
 ```
 
 ### 1.3 Диски
@@ -104,6 +106,7 @@ em0     1500  <Link>      00:11:22:33:44:55  1234567     0   987654     0     0
 
 # Трафик в реальном времени
 $ systat netstat
+
 ```
 
 ### 1.5 systat — интерактивный мониторинг
@@ -116,6 +119,7 @@ $ systat netstat   # сеть
 $ systat pigs      # процессы по CPU
 $ systat mbufs     # сетевые буферы
 $ systat sensors   # датчики температуры
+
 ```
 
 ---
@@ -147,6 +151,7 @@ $ grep -i "failed\|invalid" /var/log/authlog
 
 # Логи по времени
 $ grep "Dec  1 10:" /var/log/messages
+
 ```
 
 ### 2.3 newsyslog — ротация логов
@@ -172,6 +177,7 @@ kern.debug;syslog,user.info                               /var/log/messages
 auth.info                                                 /var/log/authlog
 authpriv.debug                                            /var/log/secure
 daemon.info                                               /var/log/daemon
+
 ```
 
 ---
@@ -208,6 +214,7 @@ $ tar -xvzf /backup/home.tar.gz -C /
 
 # Просмотр содержимого
 $ tar -tvzf /backup/home.tar.gz
+
 ```
 
 ### 3.3 rsync
@@ -227,6 +234,7 @@ $ rsync -avz --delete /home/ /backup/home/
 
 # Сухой запуск
 $ rsync -avzn /home/ /backup/home/
+
 ```
 
 ### 3.4 Скрипт бэкапа
@@ -256,6 +264,7 @@ find $BACKUP_DIR -type d -mtime +7 -exec rm -rf {} \;
 
 # Отчёт
 echo "Backup completed: $DATE" | mail -s "Backup $HOST" admin@example.com
+
 ```
 
 ---
@@ -273,6 +282,7 @@ echo "Backup completed: $DATE" | mail -s "Backup $HOST" admin@example.com
 */15 * * * * /usr/local/bin/check.sh   # Каждые 15 минут
 0 0 * * 0 /root/weekly.sh              # Каждое воскресенье
 0 9-18 * * 1-5 /root/workhours.sh      # 9-18 по будням
+
 ```
 
 ### 4.2 Управление crontab
@@ -305,11 +315,13 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 30      1       *       *       *       root    /bin/sh /etc/daily
 30      3       *       *       6       root    /bin/sh /etc/weekly
 30      5       1       *       *       root    /bin/sh /etc/monthly
+
 ```
 
 ### 4.4 Периодические скрипты
 
 ```sh
+
 /etc/daily       # Ежедневные задачи
 /etc/weekly      # Еженедельные
 /etc/monthly     # Ежемесячные
@@ -317,6 +329,7 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 /etc/daily.local    # Локальные дополнения
 /etc/weekly.local
 /etc/monthly.local
+
 ```
 
 ```sh
@@ -328,6 +341,7 @@ df -h | mail -s "Disk usage" admin@example.com
 
 # Проверка обновлений
 syspatch -c
+
 ```
 
 ---
@@ -353,6 +367,7 @@ Relinking to create unique kernel... done.
 # doas syspatch -l
 001_wifi
 002_libcrypto
+
 ```
 
 ### 5.2 Обновление между релизами
@@ -393,6 +408,7 @@ $ cat /var/run/dmesg.boot
 
 # Последние сообщения ядра
 $ dmesg | tail -50
+
 ```
 
 ### 6.2 Проблемы с железом
@@ -407,6 +423,7 @@ $ pcidump
 
 # USB устройства
 $ usbdevs -v
+
 ```
 
 ### 6.3 Сетевые проблемы
@@ -441,6 +458,7 @@ $ traceroute google.com
 # Проверить логи на ошибки
 $ dmesg | grep -i error
 $ grep -i "error\|fail" /var/log/messages
+
 ```
 
 ---
@@ -469,6 +487,7 @@ LOAD=$(uptime | awk -F'load averages:' '{print $2}' | awk '{print $1}')
 if [ $(echo "$LOAD > $LOAD_THRESHOLD" | bc) -eq 1 ]; then
     echo "Load average: $LOAD" | mail -s "Load Alert" $MAIL
 fi
+
 ```
 
 ### 7.2 Автоматические обновления
@@ -478,6 +497,7 @@ fi
 
 # Установить патчи и отправить отчёт
 syspatch 2>&1 | mail -s "Syspatch report $(hostname)" admin@example.com
+
 ```
 
 ---
@@ -520,6 +540,7 @@ echo
 
 echo "=== PF Rules ==="
 pfctl -sr
+
 ```
 
 ---
@@ -527,9 +548,13 @@ pfctl -sr
 ## 💡 Key Takeaways
 
 - **systat**: Интерактивный мониторинг в реальном времени
+
 - **syspatch**: Регулярно устанавливайте патчи безопасности
+
 - **dump/tar/rsync**: Несколько способов бэкапа — выберите подходящий
+
 - **cron**: Автоматизируйте рутинные задачи
+
 - **Логи**: Первое место для диагностики проблем
 
 ---
@@ -537,15 +562,18 @@ pfctl -sr
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Advanced](../12_Advanced/) — виртуализация и продвинутые темы
 
 **Practice Ideas:**
+
 1. Настройте автоматический бэкап на удалённый сервер
 2. Создайте скрипт мониторинга с оповещениями
 3. Настройте ротацию логов для своих приложений
 4. Обновите систему через sysupgrade
 
 **Going Deeper:**
+
 - Мониторинг с Prometheus/Grafana
 - Централизованные логи с syslog
 - Автоматизация с Ansible
@@ -555,10 +583,14 @@ pfctl -sr
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man systat](https://man.openbsd.org/systat) — мониторинг
 - [man syspatch](https://man.openbsd.org/syspatch) — патчи
 - [man dump](https://man.openbsd.org/dump) — резервное копирование
 - [man cron](https://man.openbsd.org/cron) — планировщик
 
 ---
+
+
+
 

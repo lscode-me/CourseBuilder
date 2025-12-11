@@ -24,6 +24,7 @@
 ### 1.1 Модель разделения ответственности
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Shared Responsibility Model                            │
 ├────────────────────────────────────────────────────────────────────┤
@@ -56,6 +57,7 @@
 │  Lambda: AWS manages everything except code                       │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -92,11 +94,13 @@ good_policy = {
         }
     }]
 }
+
 ```
 
 ### 2.2 IAM Best Practices
 
 ```python
+
 iam_best_practices = [
     "Never use root account for daily operations",
     "Enable MFA for all users, especially privileged",
@@ -113,6 +117,7 @@ iam_best_practices = [
 print("IAM Best Practices:")
 for i, practice in enumerate(iam_best_practices, 1):
     print(f"  {i}. {practice}")
+
 ```
 
 ### 2.3 IAM Roles для сервисов
@@ -140,6 +145,7 @@ LambdaRole:
               Action:
                 - s3:GetObject
               Resource: !Sub 'arn:aws:s3:::${Bucket}/*'
+
 ```
 
 ---
@@ -149,6 +155,7 @@ LambdaRole:
 ### 3.1 Defense in Depth
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Network Security Layers                                │
 ├────────────────────────────────────────────────────────────────────┤
@@ -181,6 +188,7 @@ LambdaRole:
 │  └─────────────────────────────────────────────────────────────┘  │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Security Groups
@@ -208,6 +216,7 @@ sg_db = {
         {"Port": 5432, "Source": "sg-app", "Description": "Only from app tier"}
     ]
 }
+
 ```
 
 ---
@@ -217,6 +226,7 @@ sg_db = {
 ### 4.1 Encryption at Rest
 
 ```python
+
 encryption_at_rest = {
     "S3": {
         "SSE-S3": "AWS managed keys",
@@ -261,6 +271,7 @@ s3_ssl_policy = {
         }
     }]
 }
+
 ```
 
 ---
@@ -270,6 +281,7 @@ s3_ssl_policy = {
 ### 5.1 AWS Secrets Manager
 
 ```python
+
 import boto3
 
 secrets_client = boto3.client('secretsmanager')
@@ -293,11 +305,13 @@ secrets_client.rotate_secret(
     RotationLambdaARN='arn:aws:lambda:...:function:rotation',
     RotationRules={'AutomaticallyAfterDays': 30}
 )
+
 ```
 
 ### 5.2 Parameter Store vs Secrets Manager
 
 ```python
+
 comparison = {
     "Secrets Manager": {
         "purpose": "Sensitive credentials with rotation",
@@ -312,6 +326,7 @@ comparison = {
         "best_for": "Config values, non-rotating secrets"
     }
 }
+
 ```
 
 ---
@@ -321,6 +336,7 @@ comparison = {
 ### 6.1 AWS Security Services
 
 ```python
+
 security_services = {
     "GuardDuty": {
         "function": "Threat detection",
@@ -357,6 +373,7 @@ for service, details in security_services.items():
     print(f"\n{service}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 ### 6.2 WAF Rules
@@ -382,6 +399,7 @@ custom_rule = {
         }
     }
 }
+
 ```
 
 ---
@@ -389,6 +407,7 @@ custom_rule = {
 ## 7. Compliance
 
 ```python
+
 compliance_frameworks = {
     "SOC 2": "Security, availability, processing integrity",
     "HIPAA": "Healthcare data protection",
@@ -405,6 +424,7 @@ config_rules = [
     "multi-region-cloudtrail-enabled",
     "rds-instance-public-access-check"
 ]
+
 ```
 
 ---
@@ -412,10 +432,15 @@ config_rules = [
 ## 💡 Key Takeaways
 
 - **Shared Responsibility** — AWS secures cloud, you secure IN cloud
+
 - **Least Privilege** — minimum permissions needed
+
 - **Defense in Depth** — multiple security layers
+
 - **Encrypt Everything** — at rest and in transit
+
 - **Secrets Manager** — for credentials with rotation
+
 - **GuardDuty + Security Hub** — threat detection and posture
 
 ---
@@ -430,10 +455,15 @@ config_rules = [
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [23_CostManagement](../23_CostManagement/) — Оптимизация затрат
 - [24_MultiCloud](../24_MultiCloud/) — Multi-cloud security
 
 **Практика:**
+
 1. Включите GuardDuty и проанализируйте findings
 2. Настройте Security Hub для compliance checks
 3. Реализуйте secrets rotation через Secrets Manager
+
+
+

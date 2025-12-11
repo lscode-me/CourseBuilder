@@ -32,6 +32,7 @@
 **Unix Domain Socket** (UDS) — механизм IPC через интерфейс сокетов, но без сетевого стека.
 
 ```
+
 ┌─────────────────┐          ┌─────────────────┐
 │    Process A    │          │    Process B    │
 │                 │          │                 │
@@ -41,6 +42,7 @@
 │   /tmp/socket   │◄────────►│   /tmp/socket   │
 │                 │          │                 │
 └─────────────────┘          └─────────────────┘
+
 ```
 
 ### 1.2 Преимущества перед TCP
@@ -66,6 +68,7 @@
 ### 2.1 Stream socket (аналог TCP)
 
 ```python
+
 import socket
 import os
 
@@ -101,11 +104,13 @@ def create_client():
     client.connect(SOCKET_PATH)
     
     return client
+
 ```
 
 ### 2.2 Datagram socket (аналог UDP)
 
 ```python
+
 import socket
 import os
 
@@ -146,6 +151,7 @@ def dgram_client():
     
     sock.close()
     os.unlink(CLIENT_PATH)
+
 ```
 
 ---
@@ -200,6 +206,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ### 3.2 Клиент
@@ -230,6 +237,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ---
@@ -241,6 +249,7 @@ if __name__ == "__main__":
 Unix sockets позволяют передавать файловые дескрипторы между процессами!
 
 ```python
+
 import socket
 import os
 import array
@@ -261,6 +270,7 @@ def recv_fd(sock):
             return array.array("i", cmsg_data)[0]
     
     return None
+
 ```
 
 ### 4.2 Пример: передача открытого файла
@@ -343,6 +353,7 @@ def receiver():
 ### 5.1 SO_PEERCRED
 
 ```python
+
 import socket
 import struct
 
@@ -399,6 +410,7 @@ def authenticated_server():
     
     client.close()
     server.close()
+
 ```
 
 ---
@@ -410,6 +422,7 @@ def authenticated_server():
 На Linux можно создать сокет без файла в ФС, используя null байт в начале пути.
 
 ```python
+
 import socket
 
 # Abstract socket (Linux only)
@@ -439,6 +452,7 @@ def abstract_client():
     sock.connect(ABSTRACT_PATH)
     sock.sendall(b"Hello abstract!")
     sock.close()
+
 ```
 
 ### 6.2 Преимущества abstract sockets
@@ -455,6 +469,7 @@ def abstract_client():
 ### 7.1 Создание связанной пары
 
 ```python
+
 import socket
 import os
 
@@ -490,6 +505,7 @@ def socketpair_example():
 
 if __name__ == "__main__":
     socketpair_example()
+
 ```
 
 ---
@@ -584,6 +600,7 @@ class Daemon:
 if __name__ == "__main__":
     daemon = Daemon()
     daemon.run()
+
 ```
 
 ### 8.2 Клиент для управления демоном
@@ -622,6 +639,7 @@ if __name__ == "__main__":
         sys.exit(1)
     
     send_command(sys.argv[1])
+
 ```
 
 ---
@@ -629,9 +647,13 @@ if __name__ == "__main__":
 ## 💡 Key Takeaways
 
 - **Unix sockets** — быстрее TCP для локального IPC
+
 - **SCM_RIGHTS** — передача файловых дескрипторов
+
 - **SO_PEERCRED** — аутентификация по UID/GID
+
 - **Abstract sockets** — без файла в ФС (только Linux)
+
 - **socketpair()** — простой способ создать IPC канал
 
 ---
@@ -639,16 +661,19 @@ if __name__ == "__main__":
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Async I/O](../09_AsyncIO/) — асинхронная работа с сокетами
 - [Daemons](../12_Daemons/) — создание демонов
 
 **Practice Ideas:**
+
 1. Создайте систему плагинов с передачей fd
 2. Реализуйте простой сервис-менеджер
 3. Напишите proxy между Unix и TCP socket
 4. Создайте мультиплексор файловых дескрипторов
 
 **Going Deeper:**
+
 - SOCK_SEQPACKET — сохраняет границы сообщений
 - SO_PASSCRED — автоматическая передача credentials
 - ancillary data для других целей
@@ -658,9 +683,13 @@ if __name__ == "__main__":
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man unix(7)](https://man.openbsd.org/unix.4)
 - [man sendmsg(2)](https://man.openbsd.org/sendmsg.2)
 - [Python socket](https://docs.python.org/3/library/socket.html)
 
 ---
+
+
+
 

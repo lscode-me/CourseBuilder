@@ -286,12 +286,25 @@ def get_answer_distribution(directory: Path) -> dict:
 
 
 def main():
+    import sys
     random.seed(42)
     
     workspace = Path('/Users/rasul/workspace/ls/CourseBuilder')
     
+    # Allow specifying a target directory as argument
+    if len(sys.argv) > 1:
+        target_dir = Path(sys.argv[1])
+        if not target_dir.is_absolute():
+            target_dir = workspace / sys.argv[1]
+        if not target_dir.exists():
+            print(f"❌ Directory not found: {target_dir}")
+            sys.exit(1)
+        print(f"🎯 Target: {target_dir}")
+    else:
+        target_dir = workspace
+    
     print("📊 Before shuffle:")
-    before = get_answer_distribution(workspace)
+    before = get_answer_distribution(target_dir)
     total_before = sum(before.values())
     for letter, count in sorted(before.items()):
         pct = count / total_before * 100 if total_before > 0 else 0
@@ -299,11 +312,11 @@ def main():
     
     print("\n🔀 Shuffling quizzes...")
     
-    quiz_files = list(workspace.rglob('quiz.md'))
+    quiz_files = list(target_dir.rglob('quiz.md'))
     processed = 0
     
     for quiz_file in sorted(quiz_files):
-        relative_path = quiz_file.relative_to(workspace)
+        relative_path = quiz_file.relative_to(workspace) if str(quiz_file).startswith(str(workspace)) else quiz_file
         print(f"   Processing {relative_path}...", end='')
         if process_quiz_file(quiz_file):
             processed += 1
@@ -314,7 +327,7 @@ def main():
     print(f"\n✅ Processed {processed}/{len(quiz_files)} quiz files")
     
     print("\n📊 After shuffle:")
-    after = get_answer_distribution(workspace)
+    after = get_answer_distribution(target_dir)
     total_after = sum(after.values())
     for letter, count in sorted(after.items()):
         pct = count / total_after * 100 if total_after > 0 else 0

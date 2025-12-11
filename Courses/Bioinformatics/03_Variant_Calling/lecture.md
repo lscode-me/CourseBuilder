@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [02_File_Formats](../02_File_Formats/) — форматы файлов
 - Понимать структуру FASTQ, BAM, VCF файлов
 - Иметь опыт работы с командной строкой Linux/macOS
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Описывать полный пайплайн variant calling от FASTQ до VCF
 - Выполнять выравнивание ридов с BWA
 - Применять GATK Best Practices для поиска вариантов
@@ -34,6 +36,7 @@ Variant calling — это процесс идентификации генет�
 ## 1. Обзор Полного Пайплайна
 
 ```
+
 Сырые данные (FASTQ)
     ↓
 Quality Control (FastQC)
@@ -55,6 +58,7 @@ Variant Filtering (GATK VariantFiltration)
 Annotation (SnpEff, VEP)
     ↓
 Final Variants (VCF)
+
 ```
 
 ---
@@ -72,9 +76,11 @@ Final Variants (VCF)
 fastqc sample_R1.fastq.gz sample_R2.fastq.gz
 
 # Вывод: HTML отчёт с метриками
+
 ```
 
 **Что проверяем:**
+
 - Per base quality scores (должны быть >30)
 - Per sequence GC content
 - Adapter contamination
@@ -86,7 +92,9 @@ fastqc sample_R1.fastq.gz sample_R2.fastq.gz
 Агрегирует отчёты от многих инструментов:
 
 ```bash
+
 multiqc .
+
 ```
 
 ---
@@ -110,6 +118,7 @@ samtools faidx reference.fasta
 
 # Создать .dict словарь
 samtools dict reference.fasta > reference.dict
+
 ```
 
 ### 3.2 BWA Alignment
@@ -126,11 +135,15 @@ bwa mem -t 8 -R '@RG\tID:sample\tSM:sample\tPL:ILLUMINA' \
 
 # -t 8: использовать 8 потоков
 # -R: read group (важно для GATK!)
+
 ```
 
 **Read Group (@RG):**
+
 - **ID**: уникальный идентификатор
+
 - **SM**: имя сэмпла
+
 - **PL**: платформа (ILLUMINA, PACBIO, etc)
 
 ---
@@ -148,6 +161,7 @@ samtools index sample.sorted.bam
 
 # Удалить SAM (он огромный)
 rm sample.sam
+
 ```
 
 ### 4.2 Mark Duplicates
@@ -163,6 +177,7 @@ java -jar picard.jar MarkDuplicates \
 
 # Индексировать
 samtools index sample.dedup.bam
+
 ```
 
 **Зачем:** Дубликаты искажают частоты аллелей.
@@ -186,6 +201,7 @@ gatk ApplyBQSR \
     -I sample.dedup.bam \
     --bqsr-recal-file recal_data.table \
     -O sample.recal.bam
+
 ```
 
 ---
@@ -197,13 +213,16 @@ gatk ApplyBQSR \
 Best practice для germline variants.
 
 ```bash
+
 gatk HaplotypeCaller \
     -R reference.fasta \
     -I sample.recal.bam \
     -O sample.raw.vcf
+
 ```
 
 **Что делает:**
+
 1. Определяет активные регионы (где есть вариации)
 2. Пересобирает гаплотипы в этих регионах
 3. Вызывает варианты
@@ -230,6 +249,7 @@ gatk GenotypeGVCFs \
     -R reference.fasta \
     -V cohort.g.vcf \
     -O cohort.vcf
+
 ```
 
 ---
@@ -249,12 +269,17 @@ gatk VariantFiltration \
     --filter-name "QD_filter" --filter-expression "QD < 2.0" \
     --filter-name "FS_filter" --filter-expression "FS > 60.0" \
     --filter-name "MQ_filter" --filter-expression "MQ < 40.0"
+
 ```
 
 **Критерии (для SNPs):**
+
 - **QD** (Quality by Depth) > 2.0
+
 - **FS** (Fisher Strand Bias) < 60.0
+
 - **MQ** (Mapping Quality) > 40.0
+
 - **SOR** (Strand Odds Ratio) < 3.0
 
 ### 6.2 VQSR (Variant Quality Score Recalibration)
@@ -281,6 +306,7 @@ gatk ApplyVQSR \
     --tranches-file cohort.tranches \
     -mode SNP \
     -O cohort.vqsr.vcf
+
 ```
 
 ---
@@ -297,9 +323,11 @@ java -jar snpEff.jar download GRCh38.99
 
 # Аннотировать
 java -jar snpEff.jar GRCh38.99 sample.filtered.vcf > sample.annotated.vcf
+
 ```
 
 **Аннотации:**
+
 - Gene name
 - Transcript
 - Effect (missense, nonsense, splice site, etc)
@@ -310,14 +338,17 @@ java -jar snpEff.jar GRCh38.99 sample.filtered.vcf > sample.annotated.vcf
 Более детальная аннотация:
 
 ```bash
+
 vep -i sample.filtered.vcf \
     -o sample.vep.vcf \
     --cache \
     --everything \
     --vcf
+
 ```
 
 **Добавляет:**
+
 - Consequence predictions
 - Pathogenicity scores (SIFT, PolyPhen)
 - Population frequencies (gnomAD, 1000G)
@@ -330,18 +361,25 @@ vep -i sample.filtered.vcf \
 ### 8.1 Ключевые метрики в VCF
 
 ```vcf
+
 chr1  12345  .  A  G  999  PASS  DP=100;AF=0.5;QD=25  GT:DP:GQ  0/1:50:99
+
 ```
 
 - **DP** (Depth): покрытие (чем выше, тем лучше, обычно 20-100x)
+
 - **AF** (Allele Frequency): частота альтернативного аллеля
+
 - **QD** (Quality by Depth): нормализованное качество
+
 - **GQ** (Genotype Quality): уверенность в генотипе
+
 - **GT** (Genotype): 0/0, 0/1, 1/1
 
 ### 8.2 Фильтрация для клинического анализа
 
 ```python
+
 import pysam
 
 vcf = pysam.VariantFile("sample.annotated.vcf")
@@ -368,6 +406,7 @@ for variant in vcf:
     impact = variant.info.get('ANN', [''])[0].split('|')[2]
     if impact in ['HIGH', 'MODERATE']:
         print(f"Pathogenic variant: {variant.chrom}:{variant.pos} {variant.ref}>{variant.alts[0]}")
+
 ```
 
 ---
@@ -377,13 +416,17 @@ for variant in vcf:
 ### 9.1 GATK Best Practices
 
 ```
+
 1. QC → 2. Align → 3. MarkDuplicates → 4. BQSR → 5. Call Variants → 6. Filter → 7. Annotate
+
 ```
 
 ### 9.2 Минимальные требования к данным
 
 - **Coverage**: минимум 20x, рекомендуется 30x
+
 - **Quality**: средний Phred > 30
+
 - **Duplication rate**: < 20%
 
 ---
@@ -401,10 +444,12 @@ for variant in vcf:
 ## 🚀 Следующие Шаги
 
 **Связанные модули:**
+
 - [CLI Tools](../04_CLI_Tools/) — детальная работа с samtools, bcftools, bedtools
 - [Эпигенетика](../05_Epigenetics_Markers/) — GWAS, фармакогенетика, клиническая интерпретация
 
 **Практические задачи для закрепления:**
+
 1. Запустите FastQC на FASTQ файле и проанализируйте метрики
 2. Выполните полный alignment с BWA и получите отсортированный BAM
 3. Пометьте дубликаты с Picard и посчитайте процент дубликатов
@@ -415,6 +460,7 @@ for variant in vcf:
 > **💡 Совет:** Напишите bash-скрипт, автоматизирующий весь пайплайн с логированием каждого шага.
 
 **Для углублённого изучения:**
+
 - Somatic variant calling (для онкологии)
 - Joint calling для когорт пациентов
 - Structural variant calling (большие перестройки)
@@ -424,11 +470,13 @@ for variant in vcf:
 ## 📚 Дополнительные Ресурсы
 
 ### GATK Best Practices
+
 - [GATK Best Practices Workflows](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651) — Официальные best practices от Broad Institute
 - [GATK Tutorials](https://gatk.broadinstitute.org/hc/en-us/sections/360007226531) — Пошаговые туториалы
 - [GATK Workshop Materials](https://gatk.broadinstitute.org/hc/en-us/sections/360007226831) — Материалы воркшопов
 
 ### Инструменты
+
 - [BWA](http://bio-bwa.sourceforge.net/) — Burrows-Wheeler Aligner
 - [GATK](https://gatk.broadinstitute.org/) — Genome Analysis Toolkit
 - [Picard Tools](https://broadinstitute.github.io/picard/) — Манипуляции с SAM/BAM
@@ -436,6 +484,7 @@ for variant in vcf:
 - [VEP](https://www.ensembl.org/vep) — Variant Effect Predictor от Ensembl
 
 ### Справочные Данные
+
 - [GATK Resource Bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360035890811) — Референсы и known sites
 - [gnomAD](https://gnomad.broadinstitute.org/) — Популяционные частоты вариантов
 - [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) — Клиническая значимость вариантов
@@ -445,9 +494,13 @@ for variant in vcf:
 ## 💡 Key Takeaways
 
 - **Пайплайн стандартизирован**: FASTQ → BWA → BAM → GATK → VCF → Annotation
+
 - **Quality Control на каждом этапе**: FastQC, flagstat, VariantEval
+
 - **GATK Best Practices** — индустриальный стандарт для germline variant calling
+
 - **Фильтрация критична**: QUAL, DP, AF — основные метрики качества вариантов
+
 - **Аннотация добавляет смысл**: SnpEff/VEP показывают функциональный эффект вариантов
 
 ---
@@ -455,11 +508,17 @@ for variant in vcf:
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [04_CLI_Tools](../04_CLI_Tools/) — Инструменты командной строки (samtools, bcftools)
 - [05_Epigenetics_Markers](../05_Epigenetics_Markers/) — Эпигенетика и маркеры
 
 **Практика:**
+
 1. Установите GATK и запустите HaplotypeCaller на тестовых данных
 2. Отфильтруйте VCF по QUAL ≥ 30 и DP ≥ 10
 3. Аннотируйте варианты с SnpEff и найдите HIGH impact мутации
+
+
+
+
 

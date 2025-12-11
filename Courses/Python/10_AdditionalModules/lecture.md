@@ -13,6 +13,7 @@
 - Иметь опыт работы со стандартной библиотекой
 
 **Recommended prior modules:**
+
 - [Modules](../06_Modules/) — организация кода, pip, виртуальные окружения
 - [Standard Modules](../09_StandardModules/) — стандартная библиотека Python
 
@@ -35,10 +36,13 @@
 ### 1.1 Установка и базовое использование
 
 ```bash
+
 pip install requests
+
 ```
 
 ```python
+
 import requests
 
 # GET-запрос
@@ -51,20 +55,24 @@ data = response.json()
 print(f"Login: {data['login']}")
 print(f"Name: {data.get('name')}")
 print(f"Public repos: {data['public_repos']}")
+
 ```
 
 **Output:**
 ```
+
 Status: 200
 Headers: {'Server': 'GitHub.com', 'Content-Type': 'application/json; charset=utf-8', 'X-GitHub-Media-Type': 'github.v3'}
 Login: python
 Name: Python
 Public repos: 55
+
 ```
 
 ### 1.2 Параметры и заголовки
 
 ```python
+
 import requests
 
 # GET с параметрами
@@ -89,11 +97,13 @@ response = requests.get(
     "https://api.example.com/data",
     headers=headers
 )
+
 ```
 
 ### 1.3 POST и другие методы
 
 ```python
+
 import requests
 
 # POST с JSON
@@ -123,13 +133,16 @@ response = requests.post(
 
 **Output:**
 ```
+
 Status: 201
 Created: {'title': 'New Post', 'body': 'Content here', 'userId': 1, 'id': 101}
+
 ```
 
 ### 1.4 Обработка ошибок и таймауты
 
 ```python
+
 import requests
 from requests.exceptions import RequestException, Timeout, HTTPError
 
@@ -150,11 +163,13 @@ def safe_request(url, timeout=5):
 data = safe_request("https://api.github.com/users/python")
 if data:
     print(f"Получено: {data['login']}")
+
 ```
 
 ### 1.5 Сессии для повторных запросов
 
 ```python
+
 import requests
 
 # Сессия сохраняет настройки между запросами
@@ -167,6 +182,7 @@ with requests.Session() as session:
     
     print(f"Python repos: {r1.json()['public_repos']}")
     print(f"Django repos: {r2.json()['public_repos']}")
+
 ```
 
 ---
@@ -176,7 +192,9 @@ with requests.Session() as session:
 ### 2.1 Установка и базовое использование
 
 ```bash
+
 pip install python-dotenv
+
 ```
 
 Создайте файл `.env`:
@@ -186,9 +204,11 @@ DATABASE_URL=postgresql://user:pass@localhost/db
 API_KEY=your-secret-api-key
 DEBUG=true
 MAX_CONNECTIONS=10
+
 ```
 
 ```python
+
 import os
 from dotenv import load_dotenv
 
@@ -204,18 +224,22 @@ max_conn = int(os.getenv("MAX_CONNECTIONS", "5"))
 print(f"Database: {database_url}")
 print(f"Debug mode: {debug}")
 print(f"Max connections: {max_conn}")
+
 ```
 
 **Output:**
 ```
+
 Database: postgresql://user:pass@localhost/db
 Debug mode: True
 Max connections: 10
+
 ```
 
 ### 2.2 Различные файлы окружения
 
 ```python
+
 from dotenv import load_dotenv
 import os
 
@@ -228,6 +252,7 @@ load_dotenv(f".env.{env}")
 
 # Не перезаписывать существующие переменные
 load_dotenv(override=False)
+
 ```
 
 ### 2.3 Паттерн конфигурации
@@ -261,7 +286,9 @@ config = Config()
 ### 3.1 Установка и простой пример
 
 ```bash
+
 pip install click
+
 ```
 
 ```python
@@ -278,9 +305,11 @@ def hello(name, count):
 
 if __name__ == "__main__":
     hello()
+
 ```
 
 ```bash
+
 $ python cli.py --name Alice --count 3
 Hello, Alice!
 Hello, Alice!
@@ -295,11 +324,13 @@ Options:
   -n, --name TEXT    Имя для приветствия
   -c, --count INTEGER  Количество повторений
   --help             Show this message and exit.
+
 ```
 
 ### 3.2 Аргументы и опции
 
 ```python
+
 import click
 
 @click.command()
@@ -321,11 +352,13 @@ def process(filename, output, verbose, format):
 
 if __name__ == "__main__":
     process()
+
 ```
 
 ### 3.3 Группы команд
 
 ```python
+
 import click
 
 @click.group()
@@ -358,9 +391,11 @@ def list():
 
 if __name__ == "__main__":
     cli()
+
 ```
 
 ```bash
+
 $ python cli.py --help
 Usage: cli.py [OPTIONS] COMMAND [ARGS]...
 
@@ -381,6 +416,7 @@ $ python cli.py list
   - alice
   - bob
   - charlie
+
 ```
 
 ---
@@ -390,10 +426,13 @@ $ python cli.py list
 ### 4.1 Установка и базовые операции
 
 ```bash
+
 pip install pandas
+
 ```
 
 ```python
+
 import pandas as pd
 
 # Создание DataFrame
@@ -412,10 +451,12 @@ print()
 print(f"Shape: {df.shape}")
 print(f"Columns: {df.columns.tolist()}")
 print(f"Types:\n{df.dtypes}")
+
 ```
 
 **Output:**
 ```
+
 DataFrame:
       name  age    city  salary
 0    Alice   25  Moscow   50000
@@ -431,11 +472,13 @@ age        int64
 city      object
 salary     int64
 dtype: object
+
 ```
 
 ### 4.2 Выбор данных
 
 ```python
+
 import pandas as pd
 
 df = pd.DataFrame({
@@ -466,10 +509,12 @@ print()
 
 print("iloc (по индексам):")
 print(df.iloc[0:2, 0:2])
+
 ```
 
 **Output:**
 ```
+
 Столбец 'name':
 0      Alice
 1        Bob
@@ -499,11 +544,13 @@ iloc (по индексам):
     name  age
 0  Alice   25
 1    Bob   30
+
 ```
 
 ### 4.3 Операции с данными
 
 ```python
+
 import pandas as pd
 
 df = pd.DataFrame({
@@ -527,10 +574,12 @@ print()
 # Сортировка
 print("Сортировка по зарплате:")
 print(df.sort_values("salary", ascending=False))
+
 ```
 
 **Output:**
 ```
+
 С бонусом:
       name department  salary   bonus
 0    Alice         IT   50000  5000.0
@@ -550,11 +599,13 @@ Sales        57500.0  115000      2
 1      Bob      Sales   60000  6000.0
 3    Diana      Sales   55000  5500.0
 0    Alice         IT   50000  5000.0
+
 ```
 
 ### 4.4 Чтение и запись файлов
 
 ```python
+
 import pandas as pd
 
 # Создание тестовых данных
@@ -585,6 +636,7 @@ print()
 
 **Output:**
 ```
+
 Из CSV:
       name  age  salary
 0    Alice   25   50000
@@ -596,6 +648,7 @@ print()
 0    Alice   25   50000
 1      Bob   30   60000
 2  Charlie   35   70000
+
 ```
 
 ---
@@ -605,7 +658,9 @@ print()
 ### 5.1 Установка и базовые тесты
 
 ```bash
+
 pip install pytest
+
 ```
 
 ```python
@@ -632,15 +687,18 @@ def test_divide_by_zero():
     import pytest
     with pytest.raises(ValueError):
         divide(10, 0)
+
 ```
 
 ```bash
+
 $ pytest test_math.py -v
 ============================= test session starts ==============================
 test_math.py::test_add PASSED
 test_math.py::test_divide PASSED
 test_math.py::test_divide_by_zero PASSED
 ============================== 3 passed in 0.01s ===============================
+
 ```
 
 ### 5.2 Фикстуры
@@ -667,11 +725,13 @@ def test_with_data(sample_data):
 def test_with_file(temp_file):
     content = temp_file.read_text()
     assert content == "test content"
+
 ```
 
 ### 5.3 Параметризация
 
 ```python
+
 import pytest
 
 def is_palindrome(s):
@@ -687,15 +747,18 @@ def is_palindrome(s):
 ])
 def test_is_palindrome(input, expected):
     assert is_palindrome(input) == expected
+
 ```
 
 ```bash
+
 $ pytest test_palindrome.py -v
 test_palindrome.py::test_is_palindrome[radar-True] PASSED
 test_palindrome.py::test_is_palindrome[hello-False] PASSED
 test_palindrome.py::test_is_palindrome[A man a plan a canal Panama-True] PASSED
 test_palindrome.py::test_is_palindrome[-True] PASSED
 test_palindrome.py::test_is_palindrome[a-True] PASSED
+
 ```
 
 ---
@@ -705,10 +768,13 @@ test_palindrome.py::test_is_palindrome[a-True] PASSED
 ### 6.1 Установка и базовые модели
 
 ```bash
+
 pip install pydantic
+
 ```
 
 ```python
+
 from pydantic import BaseModel, EmailStr, Field, validator
 from typing import Optional, List
 from datetime import datetime
@@ -738,18 +804,22 @@ user = User(
 print(f"User: {user}")
 print(f"Dict: {user.dict()}")
 print(f"JSON: {user.json()}")
+
 ```
 
 **Output:**
 ```
+
 User: id=1 name='Alice' email='alice@example.com' age=30 tags=['admin', 'active'] created_at=datetime.datetime(2024, 12, 2, 15, 30, 0, 0)
 Dict: {'id': 1, 'name': 'Alice', 'email': 'alice@example.com', 'age': 30, 'tags': ['admin', 'active'], 'created_at': datetime.datetime(2024, 12, 2, 15, 30, 0, 0)}
 JSON: {"id": 1, "name": "Alice", "email": "alice@example.com", "age": 30, "tags": ["admin", "active"], "created_at": "2024-12-02T15:30:00"}
+
 ```
 
 ### 6.2 Обработка ошибок валидации
 
 ```python
+
 from pydantic import BaseModel, ValidationError
 
 class Item(BaseModel):
@@ -764,13 +834,16 @@ except ValidationError as e:
     print("Ошибки валидации:")
     for error in e.errors():
         print(f"  {error['loc']}: {error['msg']}")
+
 ```
 
 **Output:**
 ```
+
 Ошибки валидации:
   ('price',): value is not a valid float
   ('quantity',): ensure this value is greater than or equal to 0
+
 ```
 
 ---
@@ -780,10 +853,13 @@ except ValidationError as e:
 ### 7.1 Установка и базовое использование
 
 ```bash
+
 pip install tqdm
+
 ```
 
 ```python
+
 from tqdm import tqdm
 import time
 
@@ -801,18 +877,22 @@ with tqdm(total=100, desc="Downloading") as pbar:
 for i in tqdm(range(3), desc="Outer"):
     for j in tqdm(range(100), desc="Inner", leave=False):
         time.sleep(0.001)
+
 ```
 
 **Output:**
 ```
+
 Processing: 100%|██████████████████████████████| 100/100 [00:01<00:00, 99.01it/s]
 Downloading: 100%|████████████████████████████| 100/100 [00:01<00:00, 99.98it/s]
 Outer:  33%|███████████                      | 1/3 [00:00<00:00,  9.99it/s]
+
 ```
 
 ### 7.2 С pandas
 
 ```python
+
 from tqdm import tqdm
 import pandas as pd
 
@@ -823,6 +903,7 @@ df = pd.DataFrame({"values": range(1000)})
 
 # Прогресс для apply
 df["squared"] = df["values"].progress_apply(lambda x: x ** 2)
+
 ```
 
 ---
@@ -867,6 +948,7 @@ console.print(table)
 # Прогресс с стилем
 for i in track(range(10), description="Processing..."):
     time.sleep(0.1)
+
 ```
 
 ### 8.3 loguru — улучшенное логирование
@@ -888,6 +970,7 @@ logger.add("app.log", rotation="500 MB", retention="10 days")
 @logger.catch
 def risky_function():
     return 1 / 0
+
 ```
 
 ### 8.4 Schedule — планирование задач
@@ -935,9 +1018,13 @@ schedule.every().day.at("10:30").do(job)
 При выборе библиотеки обратите внимание на:
 
 - **Популярность**: Звёзды на GitHub, скачивания на PyPI
+
 - **Активность**: Дата последнего релиза, открытые issues
+
 - **Документация**: Качество документации и примеров
+
 - **Зависимости**: Количество и качество зависимостей
+
 - **Совместимость**: Поддержка нужной версии Python
 
 ```bash
@@ -960,6 +1047,7 @@ pip freeze > requirements.txt
 
 # Установка из файла
 pip install -r requirements.txt
+
 ```
 
 ### 10.2 Пример requirements.txt
@@ -978,6 +1066,7 @@ tqdm>=4.65.0
 black>=23.0.0
 flake8>=6.0.0
 mypy>=1.0.0
+
 ```
 
 ### 10.3 Современный подход с pyproject.toml
@@ -1004,6 +1093,7 @@ testpaths = ["tests"]
 
 [tool.black]
 line-length = 88
+
 ```
 
 ---
@@ -1025,12 +1115,14 @@ line-length = 88
 ## 🚀 Next Steps
 
 **Practice Ideas:**
+
 1. Создайте CLI-утилиту для работы с API (requests + click)
 2. Напишите скрипт анализа данных с pandas и визуализацией
 3. Создайте веб-API с FastAPI и pydantic
 4. Покройте свой код тестами с pytest
 
 **Going Deeper:**
+
 - Изучите FastAPI для создания современных API
 - Познакомьтесь с SQLAlchemy для работы с БД
 - Изучите Celery для фоновых задач
@@ -1041,6 +1133,7 @@ line-length = 88
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [requests](https://requests.readthedocs.io/)
 - [pandas](https://pandas.pydata.org/docs/)
 - [click](https://click.palletsprojects.com/)
@@ -1048,8 +1141,12 @@ line-length = 88
 - [pydantic](https://docs.pydantic.dev/)
 
 **PyPI:**
+
 - [PyPI — Python Package Index](https://pypi.org/)
 - [Awesome Python](https://awesome-python.com/) — каталог библиотек
 
 ---
+
+
+
 

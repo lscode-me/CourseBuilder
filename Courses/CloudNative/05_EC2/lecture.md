@@ -11,6 +11,7 @@
 - Иметь базовые знания Linux
 
 **Recommended prior modules:**
+
 - [IAM](../04_IAM/) — управление доступом
 - [Модели сервисов](../02_ServiceModels/) — понимание IaaS
 
@@ -35,6 +36,7 @@
 **Amazon Elastic Compute Cloud (EC2)** — это сервис виртуальных серверов в облаке. EC2 позволяет запускать виртуальные машины (instances) с различными конфигурациями CPU, памяти, storage и сети.
 
 ```python
+
 ec2_key_concepts = {
     "Instance": "Виртуальный сервер",
     "AMI": "Amazon Machine Image — образ ОС",
@@ -47,10 +49,12 @@ ec2_key_concepts = {
 
 for concept, description in ec2_key_concepts.items():
     print(f"  {concept}: {description}")
+
 ```
 
 **Output:**
 ```
+
   Instance: Виртуальный сервер
   AMI: Amazon Machine Image — образ ОС
   Instance Type: Конфигурация hardware (CPU, RAM)
@@ -58,11 +62,13 @@ for concept, description in ec2_key_concepts.items():
   Security Group: Виртуальный firewall
   Key Pair: SSH ключи для доступа
   Elastic IP: Статический публичный IP
+
 ```
 
 ### 1.2 История EC2
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                      EC2 Evolution                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -80,6 +86,7 @@ for concept, description in ec2_key_concepts.items():
 │  2023 ─── Graviton4, Inf2 (ML inference)                         │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -89,6 +96,7 @@ for concept, description in ec2_key_concepts.items():
 ### 2.1 Naming Convention
 
 ```
+
 Instance Type: m5.2xlarge
 
   m   = Instance Family (General Purpose)
@@ -114,6 +122,7 @@ Suffixes:
   a = AMD
   d = NVMe SSD storage
   n = Enhanced networking
+
 ```
 
 ### 2.2 Размеры инстансов
@@ -135,10 +144,12 @@ print(f"{'Size':<10} {'vCPU':<6} {'Memory':<10} {'$/hour':<10}")
 print("-" * 40)
 for size, specs in t3_sizes.items():
     print(f"{size:<10} {specs['vcpu']:<6} {specs['memory_gb']} GB{'':<5} ${specs['price_hr']:.4f}")
+
 ```
 
 **Output:**
 ```
+
 T3 Instance Sizes (us-east-1):
 
 Size       vCPU   Memory     $/hour    
@@ -150,11 +161,13 @@ medium     2      4 GB       $0.0416
 large      2      8 GB       $0.0832
 xlarge     4      16 GB      $0.1664
 2xlarge    8      32 GB      $0.3328
+
 ```
 
 ### 2.3 Выбор типа инстанса
 
 ```python
+
 use_case_recommendations = {
     "Web application": {
         "recommendation": "t3.medium или t3.large",
@@ -183,6 +196,7 @@ for use_case, rec in use_case_recommendations.items():
     print(f"📌 {use_case}")
     print(f"   → {rec['recommendation']}")
     print(f"   Why: {rec['why']}\n")
+
 ```
 
 ---
@@ -192,6 +206,7 @@ for use_case, rec in use_case_recommendations.items():
 ### 3.1 Сравнение моделей
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    EC2 Pricing Models                               │
 ├────────────────────────────────────────────────────────────────────┤
@@ -221,11 +236,13 @@ for use_case, rec in use_case_recommendations.items():
 │  └── Скидка: до 90% от On-Demand                                  │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Пример расчёта экономии
 
 ```python
+
 def calculate_monthly_cost(
     instance_type: str,
     hourly_rate: float,
@@ -256,15 +273,18 @@ print(f"  On-Demand:     ${costs['on_demand']}")
 print(f"  RI 1yr:        ${costs['ri_1yr']} (save ${costs['on_demand'] - costs['ri_1yr']:.2f})")
 print(f"  RI 3yr:        ${costs['ri_3yr']} (save ${costs['on_demand'] - costs['ri_3yr']:.2f})")
 print(f"  Spot:          ${costs['spot']} (save ${costs['on_demand'] - costs['spot']:.2f})")
+
 ```
 
 **Output:**
 ```
+
 Monthly cost for m5.xlarge:
   On-Demand:     $140.16
   RI 1yr:        $84.1 (save $56.06)
   RI 3yr:        $49.06 (save $91.10)
   Spot:          $42.05 (save $98.11)
+
 ```
 
 ---
@@ -284,6 +304,7 @@ aws ec2 run-instances \
     --iam-instance-profile Name=EC2-S3-Access \
     --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=my-server},{Key=Environment,Value=dev}]' \
     --user-data file://bootstrap.sh
+
 ```
 
 ### 4.2 User Data (bootstrap script)
@@ -307,6 +328,7 @@ aws s3 cp s3://my-bucket/app-config.json /etc/app/config.json
 
 # Логирование
 echo "Bootstrap completed at $(date)" >> /var/log/bootstrap.log
+
 ```
 
 ### 4.3 Instance Metadata Service (IMDS)
@@ -332,6 +354,7 @@ curl -H "X-aws-ec2-metadata-token: $TOKEN" \
 # Получение IAM credentials (для роли)
 curl -H "X-aws-ec2-metadata-token: $TOKEN" \
     http://169.254.169.254/latest/meta-data/iam/security-credentials/MyRole
+
 ```
 
 ---
@@ -341,6 +364,7 @@ curl -H "X-aws-ec2-metadata-token: $TOKEN" \
 ### 5.1 Типы AMI
 
 ```python
+
 ami_types = {
     "AWS Managed": {
         "examples": ["Amazon Linux 2023", "Ubuntu", "Windows Server"],
@@ -369,6 +393,7 @@ for ami_type, details in ami_types.items():
     print(f"  {ami_type}:")
     print(f"    Examples: {', '.join(details['examples'][:2])}")
     print(f"    Maintained by: {details['maintained_by']}\n")
+
 ```
 
 ### 5.2 Создание Custom AMI
@@ -389,6 +414,7 @@ aws ec2 copy-image \
     --source-image-id ami-12345678 \
     --name "my-app-golden-image-v1.0" \
     --region eu-west-1
+
 ```
 
 ---
@@ -398,6 +424,7 @@ aws ec2 copy-image \
 ### 6.1 Типы EBS volumes
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                      EBS Volume Types                               │
 ├────────────────────────────────────────────────────────────────────┤
@@ -429,6 +456,7 @@ aws ec2 copy-image \
 │  └── Use case: Архивы, редко используемые данные                  │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 6.2 EBS Snapshots
@@ -450,6 +478,7 @@ aws ec2 copy-snapshot \
     --source-region us-east-1 \
     --source-snapshot-id snap-12345678 \
     --destination-region eu-west-1
+
 ```
 
 ---
@@ -459,6 +488,7 @@ aws ec2 copy-snapshot \
 ### 7.1 Компоненты Auto Scaling
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Auto Scaling Components                          │
 ├────────────────────────────────────────────────────────────────────┤
@@ -490,6 +520,7 @@ aws ec2 copy-snapshot \
 │  └─────────────────────┘                                          │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 7.2 Пример Launch Template
@@ -513,11 +544,13 @@ aws ec2 create-launch-template \
             "Tags": [{"Key": "Name", "Value": "my-app-server"}]
         }]
     }'
+
 ```
 
 ### 7.3 Создание Auto Scaling Group
 
 ```bash
+
 aws autoscaling create-auto-scaling-group \
     --auto-scaling-group-name my-app-asg \
     --launch-template LaunchTemplateName=my-app-template,Version='$Latest' \
@@ -540,6 +573,7 @@ aws autoscaling put-scaling-policy \
             "PredefinedMetricType": "ASGAverageCPUUtilization"
         }
     }'
+
 ```
 
 ---
@@ -547,6 +581,7 @@ aws autoscaling put-scaling-policy \
 ## 8. Placement Groups
 
 ```python
+
 placement_group_types = {
     "cluster": {
         "description": "Все инстансы в одном rack",
@@ -573,6 +608,7 @@ for pg_type, details in placement_group_types.items():
     print(f"  {pg_type.upper()}:")
     print(f"    {details['description']}")
     print(f"    Use case: {details['use_case']}\n")
+
 ```
 
 ---
@@ -585,6 +621,7 @@ for pg_type, details in placement_group_types.items():
 ```python
 # "Возьмём самый большой для надёжности"
 instance = "m5.24xlarge"  # $4.60/hr = $3,300+/month!
+
 ```
 
 ✅ **Решение:**
@@ -607,6 +644,7 @@ instance = "m5.24xlarge"  # $4.60/hr = $3,300+/month!
 
 ✅ **Решение:**
 ```json
+
 // В Launch Template
 {
     "BlockDeviceMappings": [{
@@ -617,6 +655,7 @@ instance = "m5.24xlarge"  # $4.60/hr = $3,300+/month!
         }
     }]
 }
+
 ```
 
 ---
@@ -624,10 +663,15 @@ instance = "m5.24xlarge"  # $4.60/hr = $3,300+/month!
 ## 💡 Key Takeaways
 
 - **Instance Types** — выбирайте по workload (M-general, C-compute, R-memory, T-burstable)
+
 - **Graviton (ARM)** — лучший price/performance для большинства workloads
+
 - **Pricing** — комбинируйте On-Demand, Reserved, Spot для оптимизации
+
 - **Auto Scaling** — используйте для эластичности и HA
+
 - **EBS gp3** — рекомендуется вместо gp2, настраиваемые IOPS отдельно
+
 - **AMIs** — создавайте golden images для быстрого и консистентного деплоя
 
 ---
@@ -635,10 +679,12 @@ instance = "m5.24xlarge"  # $4.60/hr = $3,300+/month!
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [S3](../06_S3/) — объектное хранилище
 - [VPC](../07_VPC/) — сетевая инфраструктура
 
 **Практические задания:**
+
 1. Запустите t3.micro в Free Tier
 2. Создайте custom AMI
 3. Настройте Auto Scaling Group с Target Tracking
@@ -649,12 +695,17 @@ instance = "m5.24xlarge"  # $4.60/hr = $3,300+/month!
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [EC2 User Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/)
 - [Instance Types](https://aws.amazon.com/ec2/instance-types/)
 
 **Tools:**
+
 - [EC2 Instance Comparison](https://instances.vantage.sh/)
 - [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer/)
 
 ---
+
+
+
 

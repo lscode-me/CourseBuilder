@@ -31,6 +31,7 @@
 
 **Waterfall (каскадная модель):**
 ```
+
 ┌─────────────┐
 │ Requirements│
 └──────┬──────┘
@@ -61,10 +62,12 @@
 - Поздняя обратная связь
 - Сложно реагировать на изменения
 - "Big bang" релизы
+
 ```
 
 **Agile:**
 ```
+
     Sprint 1         Sprint 2         Sprint 3
 ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
 │ Plan→Build→ │  │ Plan→Build→ │  │ Plan→Build→ │
@@ -80,6 +83,7 @@
 - Частая обратная связь
 - Гибкость к изменениям
 - Инкрементальная доставка
+
 ```
 
 ### 1.2 Agile Manifesto (2001)
@@ -111,6 +115,7 @@
 ### 1.3 Связь Agile и DevOps
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                          DevOps                                │
 │  ┌──────────────────────────────────────────────────────────┐ │
@@ -126,14 +131,17 @@
 
 Agile оптимизировал Development.
 DevOps расширил эту оптимизацию на весь цикл доставки.
+
 ```
 
 **Agile останавливался на границе с Operations:**
+
 - Sprint закончился → код "готов"
 - Но... когда он попадёт к пользователям?
 - Release management — отдельный (и медленный) процесс
 
 **DevOps закрывает этот gap:**
+
 - Continuous Integration
 - Continuous Delivery/Deployment
 - Общая ответственность за весь lifecycle
@@ -147,6 +155,7 @@ DevOps расширил эту оптимизацию на весь цикл д�
 Scrum — это фреймворк для разработки, доставки и поддержки сложных продуктов. Создан Кеном Швабером и Джеффом Сазерлендом в 1990-х.
 
 **Ключевые характеристики:**
+
 - Итеративный и инкрементальный
 - Эмпирический подход (inspect & adapt)
 - Фиксированные по времени спринты (1-4 недели)
@@ -155,23 +164,27 @@ Scrum — это фреймворк для разработки, доставк�
 ### 2.2 Scrum Roles
 
 **Product Owner (PO):**
+
 - Отвечает за Product Backlog
 - Приоритизирует работу
 - Представляет интересы stakeholders
 - Принимает/отклоняет результаты
 
 **Scrum Master (SM):**
+
 - Фасилитатор процесса
 - Устраняет impediments
 - Защищает команду от внешнего давления
 - Коучит команду по Scrum
 
 **Development Team:**
+
 - Кросс-функциональная команда (3-9 человек)
 - Самоорганизующаяся
 - Отвечает за доставку инкремента
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │                    Scrum Team                           │
 │                                                         │
@@ -184,16 +197,19 @@ Scrum — это фреймворк для разработки, доставк�
 │  │ • Vision    │  │ • Impediments│ │ • Delivery      │ │
 │  └─────────────┘  └─────────────┘  └─────────────────┘ │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.3 Scrum Events
 
 **Sprint:**
+
 - Фиксированный период (обычно 2 недели)
 - Содержит все остальные события
 - Результат — потенциально готовый к релизу инкремент
 
 **Sprint Planning:**
+
 - В начале спринта
 - Команда выбирает работу из Backlog
 - Определяет Sprint Goal
@@ -223,9 +239,11 @@ sprint_3 = SprintPlanningOutput(
     team_capacity=40,
     committed_points=35
 )
+
 ```
 
 **Daily Standup (Daily Scrum):**
+
 - 15 минут, каждый день
 - Синхронизация команды
 - Три вопроса:
@@ -252,21 +270,25 @@ Developer: Вчера закончил интеграцию с Google OAuth API.
            синхронизироваться после стендапа?
 Аня: Да, у меня есть 30 минут после обеда.
 """
+
 ```
 
 **Sprint Review:**
+
 - В конце спринта
 - Демонстрация инкремента stakeholders
 - Получение feedback
 - Обновление Product Backlog
 
 **Sprint Retrospective:**
+
 - После Review, до следующего Planning
 - Команда рефлексирует о процессе
 - Что было хорошо? Что улучшить?
 - Action items для следующего спринта
 
 ```
+
 ┌───────────────────────────────────────────────────────┐
 │                    Sprint Cycle                        │
 │                                                        │
@@ -283,21 +305,25 @@ Developer: Вчера закончил интеграцию с Google OAuth API.
 │                        ▼                               │
 │                 Next Sprint Planning                   │
 └───────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.4 Scrum Artifacts
 
 **Product Backlog:**
+
 - Упорядоченный список всей работы
 - Принадлежит Product Owner
 - Постоянно уточняется (grooming/refinement)
 
 **Sprint Backlog:**
+
 - Работа, выбранная на спринт
 - Принадлежит Development Team
 - Включает план достижения Sprint Goal
 
 **Increment:**
+
 - Сумма всех завершённых Product Backlog Items
 - Должен быть "Done" (соответствовать Definition of Done)
 - Потенциально готов к релизу
@@ -320,6 +346,7 @@ def is_done(task: dict) -> bool:
         task.get(criterion, False) 
         for criterion in definition_of_done
     )
+
 ```
 
 ### 2.5 Scrum и DevOps
@@ -336,6 +363,7 @@ def is_done(task: dict) -> bool:
 **Definition of Done с DevOps:**
 
 ```python
+
 devops_definition_of_done = [
     # Development
     "Код написан и прошёл code review",
@@ -359,6 +387,7 @@ devops_definition_of_done = [
     "API documentation обновлена",
     "Architecture Decision Record (если нужно)",
 ]
+
 ```
 
 ---
@@ -394,6 +423,7 @@ Kanban (看板, "вывеска") — система, разработанная
 **Базовая структура:**
 
 ```
+
 ┌──────────────────────────────────────────────────────────────────┐
 │                         KANBAN BOARD                              │
 ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┤
@@ -413,6 +443,7 @@ Kanban (看板, "вывеска") — система, разработанная
 │ │-203  │ │          │ │-197  │ │          │          │ │-187  │ │
 │ └──────┘ │          │ └──────┘ │          │          │ └──────┘ │
 └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+
 ```
 
 ### 3.4 Work in Progress (WIP) Limits
@@ -433,15 +464,19 @@ lead_time_low = wip_low / throughput    # 1 неделя
 
 print(f"High WIP Lead Time: {lead_time_high} weeks")
 print(f"Low WIP Lead Time: {lead_time_low} weeks")
+
 ```
 
 **Output:**
 ```
+
 High WIP Lead Time: 4.0 weeks
 Low WIP Lead Time: 1.0 weeks
+
 ```
 
 **Эффект WIP лимитов:**
+
 - Задачи завершаются быстрее
 - Меньше переключений контекста
 - Проблемы выявляются раньше
@@ -450,14 +485,17 @@ Low WIP Lead Time: 1.0 weeks
 ### 3.5 Kanban Metrics
 
 **Lead Time:**
+
 - Время от появления задачи в системе до её завершения
 - Включает время ожидания
 
 **Cycle Time:**
+
 - Время от начала работы над задачей до завершения
 - Не включает время в очереди
 
 ```python
+
 from datetime import datetime, timedelta
 
 def calculate_metrics(task: dict) -> dict:
@@ -489,19 +527,23 @@ print(f"Lead Time: {metrics['lead_time_days']} days")
 print(f"Cycle Time: {metrics['cycle_time_days']} days")
 print(f"Wait Time: {metrics['wait_time_days']} days")
 print(f"Efficiency: {metrics['efficiency']:.1f}%")
+
 ```
 
 **Output:**
 ```
+
 Lead Time: 11 days
 Cycle Time: 4 days
 Wait Time: 7 days
 Efficiency: 36.4%
+
 ```
 
 **Cumulative Flow Diagram (CFD):**
 
 ```
+
 Items │
   100 ├─────────────────────────────────────────┐ Done
       │                              ┌──────────┤
@@ -519,6 +561,7 @@ Items │
 Стабильная ширина полос = стабильный WIP
 Сужение = bottleneck
 Расширение = накопление работы
+
 ```
 
 ### 3.6 Kanban и DevOps
@@ -526,6 +569,7 @@ Items │
 **DevOps Kanban Board:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────┐
 │                     DevOps Kanban Board                              │
 ├────────┬────────┬────────┬────────┬────────┬────────┬────────┬─────┤
@@ -546,6 +590,7 @@ Items │
          ▼                          ▼
     Pull from left            Automated
     when capacity            transitions
+
 ```
 
 ---
@@ -566,18 +611,21 @@ Items │
 ### 4.2 Когда использовать
 
 **Scrum подходит когда:**
+
 - Команда новая или незрелая
 - Нужна структура и ритм
 - Работа хорошо разбивается на итерации
 - Есть чёткий Product Owner
 
 **Kanban подходит когда:**
+
 - Непредсказуемый поток работы (поддержка, ops)
 - Нужна гибкость в приоритетах
 - Команда зрелая и самоорганизованная
 - Работа плохо укладывается в спринты
 
 **ScrumBan (гибрид):**
+
 - Спринты Scrum + WIP лимиты Kanban
 - Планирование по необходимости (не по расписанию)
 - Визуализация на Kanban board
@@ -598,6 +646,7 @@ def choose_methodology(context: dict) -> str:
         return "ScrumBan"  # Гибрид
     
     return "Scrum"  # По умолчанию
+
 ```
 
 ---
@@ -609,6 +658,7 @@ def choose_methodology(context: dict) -> str:
 ITIL — набор лучших практик для управления IT-сервисами (ITSM). Разработан в UK в 1980-х, сейчас в версии ITIL 4.
 
 **Цель ITIL:**
+
 - Стандартизация IT-процессов
 - Согласование IT с бизнес-целями
 - Улучшение качества сервисов
@@ -633,11 +683,13 @@ ITIL 4 (2019) значительно изменился, чтобы соотве
 ### 5.3 Ключевые практики ITIL
 
 **Service Desk:**
+
 - Единая точка контакта для пользователей
 - Первая линия поддержки
 - Маршрутизация запросов
 
 **Incident Management:**
+
 - Восстановление сервиса как можно быстрее
 - Минимизация влияния на бизнес
 - Классификация по severity
@@ -658,19 +710,23 @@ severity_matrix = {
 
 def calculate_priority(impact: str, urgency: str) -> str:
     return severity_matrix.get((impact, urgency), "P4")
+
 ```
 
 **Problem Management:**
+
 - Поиск root cause
 - Предотвращение повторных инцидентов
 - Known Error Database
 
 **Change Management:**
+
 - Контроль изменений в инфраструктуре
 - Оценка рисков
 - Change Advisory Board (CAB)
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    Change Management Flow                    │
 ├─────────────────────────────────────────────────────────────┤
@@ -685,6 +741,7 @@ def calculate_priority(impact: str, urgency: str) -> str:
 │  Created   Analysis   Approval    Change    (Post Impl      │
 │                                              Review)         │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 5.4 ITIL и DevOps: интеграция
@@ -692,15 +749,18 @@ def calculate_priority(impact: str, urgency: str) -> str:
 **Традиционное противостояние:**
 
 ```
+
 ITIL:     "Нужен approval от CAB"
 DevOps:   "Мы деплоим 50 раз в день!"
 ITIL:     "Каждый деплой должен пройти Change Management"
 DevOps:   "Это замедлит нас на недели!"
+
 ```
 
 **Современный подход — интеграция:**
 
 **Standard Changes:**
+
 - Преапproved changes
 - Автоматизированные, низкорисковые
 - Не требуют CAB approval каждый раз
@@ -725,6 +785,7 @@ def classify_change(change: dict) -> str:
     
     # Major: CAB review
     return "major"  # Full CAB approval
+
 ```
 
 **DevOps-friendly ITIL:**
@@ -756,6 +817,7 @@ Agile отлично работает для одной команды (5-9 че
 **Уровни SAFe:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Portfolio Level                           │
 │  Strategic themes, Portfolio Kanban, Lean budgeting              │
@@ -766,9 +828,11 @@ Agile отлично работает для одной команды (5-9 че
 │                         Team Level                               │
 │  Scrum / Kanban teams, iterations                                │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 **Agile Release Train (ART):**
+
 - 50-125 человек
 - Работают над общим продуктом
 - Синхронизированные Program Increments (PI)
@@ -779,12 +843,14 @@ Agile отлично работает для одной команды (5-9 че
 Более "легкий" подход к масштабированию.
 
 **Принципы LeSS:**
+
 - Один Product Backlog для всех команд
 - Один Product Owner (или небольшая группа)
 - Общий Sprint Review
 - Координация между командами минимальная
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                            LeSS                                 │
 │                                                                 │
@@ -807,6 +873,7 @@ Agile отлично работает для одной команды (5-9 че
 │                    │ (общий)          │                        │
 │                    └──────────────────┘                        │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 6.4 SAFe vs LeSS
@@ -826,6 +893,7 @@ Agile отлично работает для одной команды (5-9 че
 ### 7.1 Decision Framework
 
 ```python
+
 def recommend_methodology(
     team_size: int,
     work_predictability: str,  # "high", "medium", "low"
@@ -870,41 +938,49 @@ def recommend_methodology(
         })
     
     return recommendations
+
 ```
 
 ### 7.2 Гибридные подходы
 
 **DevOps + Scrum:**
 ```
+
 Sprint:
 ├── Feature development (Scrum backlog items)
 ├── Infrastructure improvements (20% capacity)
 ├── Tech debt reduction (10% capacity)
 └── On-call and incident response (buffer)
+
 ```
 
 **DevOps + Kanban:**
 ```
+
 Swimlanes:
 ├── Features (WIP: 3)
 ├── Bugs/Incidents (WIP: 2)
 ├── Infrastructure (WIP: 2)
 └── Expedite (WIP: 1)
+
 ```
 
 ### 7.3 Anti-patterns
 
 **"Agile Theatre":**
+
 - Церемонии есть, но нет реальных изменений
 - Daily standup = status report
 - Retrospective без action items
 
 **"Fragile Scrum":**
+
 - Частые изменения scope в спринте
 - Sprint commitment не выполняется
 - Нет Definition of Done
 
 **"Kanban without limits":**
+
 - Визуализация есть, WIP limits нет
 - Задачи застревают на недели
 - Нет фокуса на flow
@@ -916,13 +992,16 @@ Swimlanes:
 ### 8.1 Начало внедрения
 
 **Шаг 1: Оцените текущее состояние**
+
 ```python
+
 current_state = {
     "delivery_frequency": "monthly",
     "lead_time": "4-6 weeks",
     "team_collaboration": "silos",
     "automation_level": "low"
 }
+
 ```
 
 **Шаг 2: Выберите методологию**
@@ -955,6 +1034,7 @@ methodology_metrics = {
         "team_satisfaction": "> 4/5"
     }
 }
+
 ```
 
 ---
@@ -976,16 +1056,19 @@ methodology_metrics = {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [03_Processes](../03_Processes/) — Процессы DevOps и жизненный цикл
 - [04_CI](../04_CI/) — Continuous Integration
 - [13_Metrics](../13_Metrics/) — Метрики DevOps
 
 **Practice Ideas:**
+
 1. Создайте Kanban board для вашей команды с WIP limits
 2. Проведите ретроспективу и определите 3 улучшения
 3. Измерьте текущий lead time и cycle time
 
 **Going Deeper:**
+
 - Scrum Guide (официальный гайд, бесплатно)
 - "Kanban" by David J. Anderson
 - ITIL 4 Foundation
@@ -995,19 +1078,26 @@ methodology_metrics = {
 ## 📚 Additional Resources
 
 **Books:**
+
 - "The Scrum Guide" by Ken Schwaber & Jeff Sutherland — официальный гайд
 - "Kanban" by David J. Anderson — определяющая книга по Kanban
 - "Accelerate" by Nicole Forsgren — научный подход к метрикам
 
 **Certifications:**
+
 - Professional Scrum Master (PSM I, II, III)
 - Kanban Management Professional (KMP)
 - ITIL 4 Foundation
 
 **Tools:**
+
 - Jira — project management
 - Trello — простой Kanban
 - Azure DevOps — интегрированная платформа
 
 ---
+
+
+
+
 

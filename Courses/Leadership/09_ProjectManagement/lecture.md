@@ -12,6 +12,7 @@
 - Понимать основы Agile/Scrum
 
 **Recommended prior modules:**
+
 - [01_Transition](../01_Transition/) — переход в лидерство
 - [07_TeamProcesses](../07_TeamProcesses/) — процессы в команде
 
@@ -36,12 +37,14 @@
 В IT командах часто встречается путаница с ролями:
 
 ```
+
 Product Manager (PdM)    — что делать (product vision, roadmap)
 Project Manager (PM)     — как и когда (delivery, timeline)
 Team Lead (TL)           — техническое лидерство
 Engineering Manager (EM) — people management
 Scrum Master (SM)        — процесс и ceremonies
 Tech Lead                — техническая экспертиза
+
 ```
 
 > **💡 Key Insight:**  
@@ -51,37 +54,44 @@ Tech Lead                — техническая экспертиза
 
 **Product Manager (PdM):**
 ```
+
 Фокус: WHAT и WHY
 - Что строить?
 - Для кого?
 - Почему это важно?
 - Приоритизация features
 - Roadmap
+
 ```
 
 **Project Manager (PM):**
 ```
+
 Фокус: WHEN и HOW (процесс)
 - Когда будет готово?
 - Как организовать работу?
 - Risk management
 - Stakeholder communication
 - Budget и resources
+
 ```
 
 **Team Lead / Engineering Manager:**
 ```
+
 Фокус: WHO и HOW (люди + техника)
 - Кто делает?
 - Как технически?
 - Развитие людей
 - Качество кода
 - Technical decisions
+
 ```
 
 ### 1.3 Пересечения
 
 ```
+
                PdM
               /   \
              /     \
@@ -93,6 +103,7 @@ Tech Lead                — техническая экспертиза
       PM ──── TL/EM ────
        │       │       │
       WHEN   WHO/HOW  PEOPLE
+
 ```
 
 В реальности роли пересекаются. Важно чётко договориться о responsibilities.
@@ -104,12 +115,14 @@ Tech Lead                — техническая экспертиза
 ### 2.1 Когда PM необходим
 
 **Сложные проекты:**
+
 - Много зависимостей между командами
 - Большой scope (6+ месяцев)
 - Много stakeholders
 - Строгие deadlines (регуляторные, контрактные)
 
 **Примеры:**
+
 - Enterprise интеграции
 - Product launches с marketing
 - Compliance проекты
@@ -118,6 +131,7 @@ Tech Lead                — техническая экспертиза
 ### 2.2 Когда PM не нужен
 
 **Простые ситуации:**
+
 - Маленькая команда (3-5 человек)
 - Стабильный backlog
 - Минимум внешних зависимостей
@@ -128,16 +142,19 @@ Tech Lead                — техническая экспертиза
 В стартапах и небольших командах TL часто совмещает роли:
 
 **Плюсы:**
+
 - Меньше overhead на coordination
 - Техническое понимание рисков
 - Быстрее принимаются решения
 
 **Минусы:**
+
 - Перегрузка TL
 - Меньше времени на people/technical leadership
 - Risk: ни одна роль не выполняется хорошо
 
 **Когда работает:**
+
 - Маленькая команда
 - Относительно простые проекты
 - TL имеет PM навыки
@@ -151,6 +168,7 @@ Tech Lead                — техническая экспертиза
 Даже без PM, Team Lead отвечает за:
 
 ```
+
 Planning:
 
 - Участие в estimation
@@ -168,17 +186,20 @@ Tracking:
 - Progress monitoring
 - Risk communication
 - Scope discussions
+
 ```
 
 ### 3.2 Planning как TL
 
 **Estimation:**
+
 - Участвуйте в estimation, не навязывайте оценки
 - Учитывайте неопределённость (добавляйте buffer)
 - Декомпозируйте большие задачи
 
 **Risk identification:**
 ```
+
 Технические риски:
 
 - Незнакомые технологии
@@ -191,19 +212,23 @@ Organizational риски:
 - Зависимости от других команд
 - Key people отпуска/уход
 - Changing requirements
+
 ```
 
 ### 3.3 Execution
 
 **Убирание блокеров:**
 ```
+
 1. Daily standup: выявить блокеры
 2. После standup: immediately action
 3. Escalate если не можете решить
 4. Follow up до разрешения
+
 ```
 
 **Technical decisions:**
+
 - Быстро принимайте routine decisions
 - Вовлекайте команду в значимые
 - Документируйте важные (ADR)
@@ -228,6 +253,7 @@ Organizational риски:
 
 ### Needs Decision
 - Approach for caching: Option A vs B (need input by Friday)
+
 ```
 
 ---
@@ -253,6 +279,7 @@ Organizational риски:
 
 **"PM давит на сроки":**
 ```
+
 PM: "Нужно сделать к пятнице"
 TL: "Это невозможно качественно"
 
@@ -261,29 +288,35 @@ TL: "Это невозможно качественно"
 - Объясните технические constraints
 - Предложите варианты (scope cut, phased delivery)
 - Escalate если нет согласия
+
 ```
 
 **"PM не понимает technical complexity":**
 ```
+
 Решение:
 
 - Объясняйте в бизнес-терминах
 - Используйте аналогии
 - Показывайте риски для пользователей
+
 ```
 
 **"PM микроменеджит команду":**
 ```
+
 Решение:
 
 - Обсудите роли и границы
 - Предложите альтернативы (status updates)
 - Escalate к общему руководителю если нужно
+
 ```
 
 ### 4.3 Эффективное партнёрство
 
 **Что работает:**
+
 - Регулярные sync (2-3 раза в неделю)
 - Aligned на goals
 - Честность о рисках и проблемах
@@ -291,12 +324,14 @@ TL: "Это невозможно качественно"
 
 **Формат sync:**
 ```
+
 Weekly PM-TL Sync (30 min)
 
 1. Progress review (10 min)
 2. Risks and blockers (10 min)
 3. Upcoming decisions (5 min)
 4. Stakeholder communications (5 min)
+
 ```
 
 ---
@@ -306,6 +341,7 @@ Weekly PM-TL Sync (30 min)
 ### 5.1 Self-managing Teams
 
 **Характеристики:**
+
 - Команда сама планирует спринты
 - Ownership за delivery
 - Прямая коммуникация со stakeholders
@@ -315,23 +351,28 @@ Weekly PM-TL Sync (30 min)
 
 **Sprint-based delivery:**
 ```
+
 Week 1, Monday: Sprint Planning
 Week 1-2: Execution
 Week 2, Thursday: Demo
 Week 2, Friday: Retro + Next planning prep
+
 ```
 
 **Kanban-based delivery:**
 ```
+
 - WIP limits enforced
 - Weekly stakeholder sync
 - Regular deployment
 - Metrics: lead time, throughput
+
 ```
 
 ### 5.3 Stakeholder Management для TL
 
 **Без PM вы должны:**
+
 - Регулярно информировать stakeholders
 - Управлять expectations
 - Говорить "нет" или "позже" когда нужно
@@ -339,9 +380,11 @@ Week 2, Friday: Retro + Next planning prep
 
 **Формат communication:**
 ```
+
 For executives: High-level, impact focused
 For PdM: Feature progress, scope discussions
 For other teams: Dependencies, interfaces
+
 ```
 
 ---
@@ -351,44 +394,54 @@ For other teams: Dependencies, interfaces
 ### 6.1 Метрики delivery
 
 **Velocity:**
+
 - Story points за спринт
 - Trend over time
 - Не для сравнения команд!
 
 **Lead Time:**
+
 - Время от idea до production
 - Включает wait time
 
 **Cycle Time:**
+
 - Время активной работы
 - Без wait time
 
 **Throughput:**
+
 - Количество items за период
 
 ### 6.2 Burndown и Burnup
 
 **Burndown Chart:**
 ```
+
 Оставшаяся работа vs время
 Good: линия идёт вниз к нулю
 Bad: плоская или растёт
+
 ```
 
 **Burnup Chart:**
 ```
+
 Сделанная работа vs total scope
 Показывает: scope creep visible
+
 ```
 
 ### 6.3 Как использовать метрики
 
 **DO:**
+
 - Для понимания predictability
 - Для выявления проблем в процессе
 - Для улучшения estimation
 
 **DON'T:**
+
 - Для сравнения разработчиков
 - Для pressure на команду
 - Как единственный критерий успеха
@@ -400,12 +453,14 @@ Bad: плоская или растёт
 ### 7.1 Scope Creep
 
 **Признаки:**
+
 - "Ещё одна маленькая штука"
 - Requirements меняются в процессе
 - Deadline не двигается, scope растёт
 
 **Как управлять:**
 ```
+
 1. Document original scope
 2. Evaluate каждое изменение:
    - Impact на timeline?
@@ -414,35 +469,43 @@ Bad: плоская или растёт
    - Добавляем это → убираем то
    - Добавляем это → двигаем deadline
 4. Formal change request для больших изменений
+
 ```
 
 ### 7.2 Saying "No" (или "Yes, but...")
 
 **Вместо "No":**
 ```
+
 "Да, мы можем это сделать. 
 Это займёт X недель и потребует убрать Y из scope.
 Или мы можем сделать упрощённую версию за Z дней."
+
 ```
 
 **Framework для приоритизации:**
 ```
+
 Must have  — без этого не запускаемся
 Should have — важно, но можно после launch
 Could have  — nice to have
 Won't have  — не в этом релизе
+
 ```
 
 ### 7.3 MVP Mindset
 
 **Minimum Viable Product:**
+
 - Что минимально нужно для value?
 - Iterate после feedback
 - Avoid overengineering
 
 ```
+
 ❌ "Давайте сделаем идеально"
 ✅ "Давайте сделаем минимум, который работает, и улучшим по feedback"
+
 ```
 
 ---
@@ -465,12 +528,14 @@ Won't have  — не в этом релизе
 
 **Для каждого риска:**
 ```
+
 Risk: [описание]
 Probability: High / Medium / Low
 Impact: High / Medium / Low
 Mitigation: [что делаем для снижения]
 Contingency: [что делаем если случится]
 Owner: [кто следит]
+
 ```
 
 ### 8.3 Risk Mitigation Strategies
@@ -488,9 +553,13 @@ Owner: [кто следит]
 ## 💡 Key Takeaways
 
 - **Роли не titles:** Важнее agreements о responsibilities, чем названия
+
 - **TL часто = delivery:** Особенно в маленьких командах
+
 - **Partnership с PM:** Честность, регулярные sync, mutual respect
+
 - **Scope management:** Каждое изменение имеет cost
+
 - **Risks — ваша работа:** Выявлять, коммуницировать, mitigation
 
 ---
@@ -498,15 +567,18 @@ Owner: [кто следит]
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [07_TeamProcesses](../07_TeamProcesses/) — процессы для delivery
 - [08_Meetings](../08_Meetings/) — planning и coordination meetings
 
 **Practice Ideas:**
+
 1. Составьте RACI матрицу для вашей команды
 2. Создайте risk register для текущего проекта
 3. Попробуйте weekly status update формат
 
 **Going Deeper:**
+
 - Agile project management
 - Risk management frameworks
 - Stakeholder management techniques
@@ -516,18 +588,24 @@ Owner: [кто следит]
 ## 📚 Additional Resources
 
 **Books:**
+
 - "The Mythical Man-Month" by Fred Brooks — классика о software projects
 - "Making Things Happen" by Scott Berkun — PM perspective
 - "User Story Mapping" by Jeff Patton — scope management
 
 **Articles:**
+
 - [Atlassian: RACI Matrix](https://www.atlassian.com/team-playbook/plays/raci)
 - [Product vs Project Management](https://www.productplan.com/glossary/product-manager-vs-project-manager/)
 
 **Frameworks:**
+
 - RACI (Responsible, Accountable, Consulted, Informed)
 - MoSCoW (Must, Should, Could, Won't)
 - RICE scoring (Reach, Impact, Confidence, Effort)
 
 ---
+
+
+
 

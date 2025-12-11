@@ -32,6 +32,7 @@
 **SLI** — количественная метрика, описывающая аспект надёжности сервиса.
 
 ```python
+
 sli_examples = {
     "availability": {
         "formula": "successful_requests / total_requests",
@@ -54,6 +55,7 @@ sli_examples = {
         "example": "95% данных обновлены за последние 5 минут"
     }
 }
+
 ```
 
 ### 1.2 SLO (Service Level Objective)
@@ -74,6 +76,7 @@ slo_examples = {
         "period": "Rolling 7 days"
     }
 }
+
 ```
 
 ### 1.3 SLA (Service Level Agreement)
@@ -81,6 +84,7 @@ slo_examples = {
 **SLA** — юридический контракт с последствиями при невыполнении.
 
 ```python
+
 sla_example = {
     "commitment": "99.9% availability",
     "measurement_period": "Monthly",
@@ -95,11 +99,13 @@ sla_example = {
         "Force majeure"
     ]
 }
+
 ```
 
 ### 1.4 Взаимосвязь
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    SLI → SLO → SLA                               │
 ├─────────────────────────────────────────────────────────────────┤
@@ -120,6 +126,7 @@ sla_example = {
 │  SLO > SLA (всегда оставляем buffer)                            │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -129,6 +136,7 @@ sla_example = {
 ### 2.1 Категории SLI
 
 ```python
+
 sli_categories = {
     "request_driven": {
         "services": ["API", "Web servers", "Microservices"],
@@ -155,11 +163,13 @@ sli_categories = {
         ]
     }
 }
+
 ```
 
 ### 2.2 Good SLI Characteristics
 
 ```python
+
 good_sli_characteristics = [
     "User-centric — отражает опыт пользователя",
     "Measurable — можно измерить автоматически",
@@ -181,6 +191,7 @@ bad_slis = [
     "Number of tickets",  # Не измеримо автоматически
     "Developer happiness"  # Субъективно
 ]
+
 ```
 
 ### 2.3 Формулы SLI
@@ -231,6 +242,7 @@ sli_promql = {
         * 100
     """
 }
+
 ```
 
 ---
@@ -240,6 +252,7 @@ sli_promql = {
 ### 3.1 Расчёт Error Budget
 
 ```python
+
 def calculate_error_budget(
     slo_target: float,  # например 99.9
     period_minutes: int  # например 43200 (30 дней)
@@ -269,13 +282,16 @@ budgets = {
 
 for target, budget in budgets.items():
     print(f"{target}: {budget['allowed_downtime_hours']} hours/month")
+
 ```
 
 **Output:**
 ```
+
 99%: 7.2 hours/month
 99.9%: 0.72 hours/month (43 minutes)
 99.99%: 0.07 hours/month (4.3 minutes)
+
 ```
 
 ### 3.2 Error Budget Tracking
@@ -303,6 +319,7 @@ error_budget_consumption = """
 ### 3.3 Error Budget Policies
 
 ```python
+
 error_budget_policy = {
     "budget_healthy": {
         "condition": "consumption < 50%",
@@ -330,6 +347,7 @@ error_budget_policy = {
         ]
     }
 }
+
 ```
 
 ---
@@ -339,6 +357,7 @@ error_budget_policy = {
 ### 4.1 Установка SLO
 
 ```python
+
 slo_setting_guidelines = {
     "start_conservative": {
         "advice": "Начните с менее строгого SLO",
@@ -361,6 +380,7 @@ slo_setting_guidelines = {
         "reason": "Запас для неожиданностей"
     }
 }
+
 ```
 
 ### 4.2 SLO Document Template
@@ -379,11 +399,14 @@ slo_setting_guidelines = {
 
 ### Availability
 - **Definition**: Percentage of HTTP requests with 2xx status
+
 - **Measurement**: Prometheus query on nginx ingress
+
 - **Exclusions**: Health checks, admin endpoints
 
 ### Latency
 - **Definition**: Response time measured at ingress
+
 - **Measurement**: histogram_quantile on http_request_duration_seconds
 
 ## Error Budget Policy
@@ -395,6 +418,7 @@ slo_setting_guidelines = {
 ## Stakeholders
 - SLO Owner: @sre-team
 - Service Owner: @order-team
+
 ```
 
 ### 4.3 SLO-based Alerting
@@ -443,6 +467,7 @@ groups:
           severity: warning
         annotations:
           summary: "Elevated error budget consumption"
+
 ```
 
 ---
@@ -478,6 +503,7 @@ burn_rate_windows = {
         "response": "Track and plan"
     }
 }
+
 ```
 
 ---
@@ -487,6 +513,7 @@ burn_rate_windows = {
 ### 6.1 E-commerce API
 
 ```python
+
 ecommerce_slos = {
     "checkout_api": {
         "availability": {
@@ -515,11 +542,13 @@ ecommerce_slos = {
         }
     }
 }
+
 ```
 
 ### 6.2 Internal Tool
 
 ```python
+
 internal_tool_slos = {
     "admin_dashboard": {
         "availability": {
@@ -532,6 +561,7 @@ internal_tool_slos = {
         }
     }
 }
+
 ```
 
 ---
@@ -553,10 +583,12 @@ internal_tool_slos = {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [12_Incidents](../12_Incidents/) — Incident Management
 - [13_Metrics](../13_Metrics/) — DORA Metrics
 
 **Practice Ideas:**
+
 1. Определите SLI для вашего сервиса
 2. Рассчитайте текущий error budget
 3. Настройте SLO-based alerts
@@ -566,8 +598,12 @@ internal_tool_slos = {
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - Google SRE Book — Chapter on SLOs
 - "Implementing Service Level Objectives" by Alex Hidalgo
 
 ---
+
+
+
 

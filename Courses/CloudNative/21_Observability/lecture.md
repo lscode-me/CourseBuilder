@@ -24,6 +24,7 @@
 ### 1.1 Обзор
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Three Pillars of Observability                         │
 ├────────────────────────────────────────────────────────────────────┤
@@ -47,11 +48,13 @@
 │                    Metrics                                         │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Observability vs Monitoring
 
 ```python
+
 comparison = {
     "Monitoring": {
         "approach": "Known unknowns",
@@ -72,6 +75,7 @@ for approach, details in comparison.items():
     print(f"{approach}:")
     print(f"  Questions: {details['questions']}")
     print(f"  Method: {details['method']}\n")
+
 ```
 
 ---
@@ -81,6 +85,7 @@ for approach, details in comparison.items():
 ### 2.1 Structured Logging
 
 ```python
+
 import json
 import logging
 import sys
@@ -116,11 +121,14 @@ logger.setLevel(logging.INFO)
 
 # Usage
 logger.info("Order created", extra={"request_id": "abc-123", "user_id": "user-456"})
+
 ```
 
 **Output:**
 ```json
+
 {"timestamp": "2024-01-15T10:30:00.000Z", "level": "INFO", "logger": "__main__", "message": "Order created", "service": "order-service", "version": "1.2.3", "request_id": "abc-123", "user_id": "user-456"}
+
 ```
 
 ### 2.2 CloudWatch Logs
@@ -143,11 +151,13 @@ aws logs start-query \
         | filter level = "ERROR"
         | sort @timestamp desc
         | limit 20'
+
 ```
 
 ### 2.3 Log Insights Query Examples
 
 ```sql
+
 -- Errors by service
 fields @timestamp, @message, service
 | filter level = "ERROR"
@@ -167,6 +177,7 @@ fields @timestamp, @message, latency_ms, request_id
 | filter latency_ms > 1000
 | sort latency_ms desc
 | limit 10
+
 ```
 
 ---
@@ -176,6 +187,7 @@ fields @timestamp, @message, latency_ms, request_id
 ### 3.1 Типы метрик
 
 ```python
+
 metric_types = {
     "Counter": {
         "description": "Монотонно растущее значение",
@@ -204,11 +216,13 @@ for metric_type, details in metric_types.items():
     print(f"\n{metric_type}:")
     print(f"  {details['description']}")
     print(f"  Examples: {', '.join(details['examples'][:2])}")
+
 ```
 
 ### 3.2 CloudWatch Metrics
 
 ```python
+
 import boto3
 
 cloudwatch = boto3.client('cloudwatch')
@@ -248,6 +262,7 @@ emf_log = {
 }
 
 print(json.dumps(emf_log))  # CloudWatch автоматически создаст метрику
+
 ```
 
 ### 3.3 RED Method
@@ -274,6 +289,7 @@ for metric, desc in red_metrics.items():
 print("\nUSE Method (Resources):")
 for metric, desc in use_metrics.items():
     print(f"  {metric}: {desc}")
+
 ```
 
 ---
@@ -283,6 +299,7 @@ for metric, desc in use_metrics.items():
 ### 4.1 AWS X-Ray
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              X-Ray Trace                                            │
 ├────────────────────────────────────────────────────────────────────┤
@@ -311,11 +328,13 @@ for metric, desc in use_metrics.items():
 │       │──│ 10ms                                                    │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 X-Ray SDK
 
 ```python
+
 from aws_xray_sdk.core import xray_recorder
 from aws_xray_sdk.core import patch_all
 
@@ -346,6 +365,7 @@ def process_order(order_id: str):
 def lambda_handler(event, context):
     # X-Ray automatically captures Lambda invocation
     return process_order(event['order_id'])
+
 ```
 
 ### 4.3 Trace Context Propagation
@@ -365,6 +385,7 @@ def call_downstream_service(data: dict):
         headers={'X-Amzn-Trace-Id': header.to_header_str()}
     )
     return response.json()
+
 ```
 
 ---
@@ -374,6 +395,7 @@ def call_downstream_service(data: dict):
 ### 5.1 CloudWatch Alarms
 
 ```python
+
 cloudwatch = boto3.client('cloudwatch')
 
 # Create alarm
@@ -394,11 +416,13 @@ cloudwatch.put_metric_alarm(
     ],
     TreatMissingData='notBreaching'
 )
+
 ```
 
 ### 5.2 Алертинг Best Practices
 
 ```python
+
 alerting_practices = [
     "Alert on symptoms, not causes (high latency, not CPU)",
     "Use SLI/SLO for alerting thresholds",
@@ -411,6 +435,7 @@ alerting_practices = [
 print("Alerting Best Practices:")
 for practice in alerting_practices:
     print(f"  • {practice}")
+
 ```
 
 ---
@@ -420,6 +445,7 @@ for practice in alerting_practices:
 ### 6.1 Структура Dashboard
 
 ```python
+
 dashboard_structure = {
     "Top Level KPIs": [
         "Request rate", "Error rate", "Latency p99", "Availability"
@@ -448,6 +474,7 @@ for section, metrics in dashboard_structure.items():
     print(f"\n{section}:")
     for metric in metrics[:3]:
         print(f"  • {metric}")
+
 ```
 
 ---
@@ -455,10 +482,15 @@ for section, metrics in dashboard_structure.items():
 ## 💡 Key Takeaways
 
 - **Logs** — events, debugging, high cardinality
+
 - **Metrics** — aggregated numbers, trends, alerting
+
 - **Traces** — request flow across services
+
 - **Structured Logging** — JSON format, correlation IDs
+
 - **RED Method** — Rate, Errors, Duration for services
+
 - **X-Ray** — distributed tracing for AWS
 
 ---
@@ -474,10 +506,15 @@ for section, metrics in dashboard_structure.items():
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [22_Security](../22_Security/) — Security monitoring
 - [23_CostManagement](../23_CostManagement/) — Cost observability
 
 **Практика:**
+
 1. Настройте CloudWatch dashboard для приложения
 2. Добавьте X-Ray tracing в Lambda функции
 3. Создайте алерты на метрики и логи
+
+
+

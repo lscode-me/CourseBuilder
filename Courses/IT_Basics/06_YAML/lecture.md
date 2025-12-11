@@ -71,6 +71,7 @@ features:
   - authentication
   - logging
   - caching
+
 ```
 
 ---
@@ -106,6 +107,7 @@ bool6: off       # ⚠️ Тоже boolean!
 null1: null
 null2: ~
 null3:           # Пустое значение = null
+
 ```
 
 ### 2.2 Строки — детали
@@ -139,6 +141,7 @@ summary: >
 indented: |2
     This text starts with 4 spaces
     because of |2 modifier.
+
 ```
 
 ### 2.3 Списки (Arrays)
@@ -165,6 +168,7 @@ users:
     age: 30
   - name: Bob
     age: 25
+
 ```
 
 ### 2.4 Объекты (Maps)
@@ -193,6 +197,7 @@ config:
   multi-line
   key
 : value for complex key
+
 ```
 
 ### 2.5 Смешанные структуры
@@ -219,6 +224,7 @@ deployments:
           - containerPort: 8080
       - name: sidecar
         image: sidecar:latest
+
 ```
 
 ---
@@ -276,6 +282,7 @@ explicit_float: !!float 42
 
 # Кастомные теги
 date: !custom 2024-01-15
+
 ```
 
 ---
@@ -292,6 +299,7 @@ answer: YES      # Интерпретируется как true!
 # ✅ Решение — кавычки:
 country: "NO"
 answer: "YES"
+
 ```
 
 ### 4.2 Числа как строки
@@ -304,6 +312,7 @@ phone: 12345     # integer, не строка
 # ✅ Решение:
 version: "1.0"
 phone: "12345"
+
 ```
 
 ### 4.3 Двоеточие в значениях
@@ -317,6 +326,7 @@ message: "Error: file not found"
 
 # Или (если нет пробела после двоеточия — OK):
 url: http://example.com
+
 ```
 
 ### 4.4 Специальные значения
@@ -342,6 +352,7 @@ off: off         # false (YAML 1.1)
 server:
   host: localhost    # 2 пробела — OK
 	port: 8080        # ТАБ — ОШИБКА!
+
 ```
 
 ---
@@ -352,6 +363,7 @@ server:
 
 **JSON:**
 ```json
+
 {
   "server": {
     "host": "localhost",
@@ -359,16 +371,19 @@ server:
     "features": ["auth", "logging"]
   }
 }
+
 ```
 
 **YAML:**
 ```yaml
+
 server:
   host: localhost
   port: 8080
   features:
     - auth
     - logging
+
 ```
 
 ### 5.2 Когда использовать
@@ -386,6 +401,7 @@ server:
 ### 5.3 Рекомендации
 
 - **JSON**: API, обмен данными, машинная генерация
+
 - **YAML**: Конфигурации, DevOps, файлы редактируемые человеком
 
 ---
@@ -415,6 +431,7 @@ yq eval '.features += ["new-feature"]' config.yaml
 
 # Удаление поля
 yq eval 'del(.server.debug)' config.yaml
+
 ```
 
 ### 6.2 Конвертация YAML ↔ JSON
@@ -428,6 +445,7 @@ yq eval -P config.json
 
 # С Python
 python3 -c "import yaml, json, sys; print(json.dumps(yaml.safe_load(open('config.yaml')), indent=2))"
+
 ```
 
 ### 6.3 Валидация YAML
@@ -457,6 +475,7 @@ rules:
     check-keys: true
   comments:
     require-starting-space: true
+
 ```
 
 ---
@@ -466,6 +485,7 @@ rules:
 ### 7.1 Базовые операции
 
 ```python
+
 import yaml
 
 # YAML string → Python dict
@@ -485,11 +505,13 @@ print(data)
 # Python dict → YAML string
 yaml_output = yaml.dump(data, default_flow_style=False)
 print(yaml_output)
+
 ```
 
 ### 7.2 Работа с файлами
 
 ```python
+
 import yaml
 
 # Чтение
@@ -499,11 +521,13 @@ with open('config.yaml', 'r', encoding='utf-8') as f:
 # Запись
 with open('output.yaml', 'w', encoding='utf-8') as f:
     yaml.dump(config, f, default_flow_style=False, allow_unicode=True)
+
 ```
 
 ### 7.3 safe_load vs load
 
 ```python
+
 import yaml
 
 # ✅ ВСЕГДА используйте safe_load
@@ -514,11 +538,13 @@ data = yaml.safe_load(yaml_string)
 
 # Если нужен полный load (редко):
 data = yaml.load(yaml_string, Loader=yaml.SafeLoader)
+
 ```
 
 ### 7.4 Множественные документы
 
 ```python
+
 import yaml
 
 yaml_multi = """
@@ -536,6 +562,7 @@ print(len(docs))  # 3
 
 # Запись множественных документов
 yaml.dump_all(docs, stream, default_flow_style=False)
+
 ```
 
 ---
@@ -613,6 +640,7 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: url
+
 ```
 
 ### 8.3 GitHub Actions
@@ -646,6 +674,7 @@ jobs:
       
       - name: Run tests
         run: pytest --cov=app tests/
+
 ```
 
 ### 8.4 Ansible
@@ -685,6 +714,7 @@ jobs:
       service:
         name: nginx
         state: restarted
+
 ```
 
 ---
@@ -704,6 +734,7 @@ server:
   host: localhost
   port: 8080
 database: {host: db, port: 5432}  # Flow style внезапно
+
 ```
 
 ### 9.2 Кавычки
@@ -714,6 +745,7 @@ version: "1.0"           # Версий (иначе float)
 country: "NO"            # Строк похожих на boolean
 port: "8080"             # Если нужна строка, не число
 message: "Hello: World"  # Строк с двоеточием
+
 ```
 
 ### 9.3 Комментарии
@@ -733,6 +765,7 @@ server:
 server:
   host: localhost  # The host
   port: 8080       # The port
+
 ```
 
 ### 9.4 Организация файлов
@@ -758,6 +791,7 @@ database:
 features:
   auth: true
   logging: true
+
 ```
 
 ---
@@ -769,8 +803,10 @@ features:
 ❌ **Ошибка:**
 
 ```yaml
+
 server:
 →host: localhost    # TAB — ошибка!
+
 ```
 
 ✅ **Решение:** Настройте редактор на spaces-only.
@@ -780,13 +816,17 @@ server:
 ❌ **Ошибка:**
 
 ```python
+
 yaml.load(user_input)  # ОПАСНО!
+
 ```
 
 ✅ **Решение:**
 
 ```python
+
 yaml.safe_load(user_input)  # Безопасно
+
 ```
 
 ### 10.3 Неожиданные типы
@@ -794,17 +834,21 @@ yaml.safe_load(user_input)  # Безопасно
 ❌ **Проблема:**
 
 ```yaml
+
 version: 1.0    # Это float 1.0, не "1.0"
 enabled: yes    # Это boolean true
 country: NO     # Это boolean false
+
 ```
 
 ✅ **Решение:**
 
 ```yaml
+
 version: "1.0"
 enabled: true    # Явный boolean
 country: "NO"
+
 ```
 
 ### 10.4 Пустые значения
@@ -818,6 +862,7 @@ empty4: null
 
 # Если нужна пустая строка:
 empty_string: ""
+
 ```
 
 ---
@@ -839,16 +884,19 @@ empty_string: ""
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Markup](../07_Markup/) — HTML, XML, Markdown
 - [Config Files](../08_ConfigFiles/) — INI, TOML и другие форматы
 
 **Practice Ideas:**
+
 1. Напишите docker-compose.yml для своего проекта
 2. Создайте GitHub Actions workflow для CI/CD
 3. Конвертируйте JSON конфиг в YAML и обратно
 4. Напишите yamllint конфигурацию для проекта
 
 **Going Deeper:**
+
 - YAML 1.1 vs 1.2 (различия в boolean)
 - Kustomize для Kubernetes
 - Ansible templating с Jinja2
@@ -858,19 +906,25 @@ empty_string: ""
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [YAML Specification](https://yaml.org/spec/)
 - [yq Documentation](https://mikefarah.gitbook.io/yq/)
 - [PyYAML Documentation](https://pyyaml.org/wiki/PyYAMLDocumentation)
 
 **Tools:**
+
 - [YAML Lint](https://www.yamllint.com/)
 - [YAML Multiline](https://yaml-multiline.info/)
 - [yq releases](https://github.com/mikefarah/yq/releases)
 
 **Learning:**
+
 - [Learn YAML in Y minutes](https://learnxinyminutes.com/docs/yaml/)
 - [YAML Gotchas](https://www.arp242.net/yaml-config.html)
 
 ---
+
+
+
 
 

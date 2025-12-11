@@ -34,6 +34,7 @@
 **Observability** — способность понять внутреннее состояние системы по её внешним выходам (outputs).
 
 ```python
+
 comparison = {
     "monitoring": {
         "approach": "Знаем заранее, что искать",
@@ -46,11 +47,13 @@ comparison = {
         "analogy": "Детективное расследование"
     }
 }
+
 ```
 
 ### 1.2 Три столпа Observability
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Three Pillars of Observability                │
 ├─────────────────────────────────────────────────────────────────┤
@@ -69,6 +72,7 @@ comparison = {
 │                 Correlation via trace_id, request_id            │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -105,6 +109,7 @@ logger.info(
 ### 2.2 Конфигурация structlog
 
 ```python
+
 import structlog
 import logging
 
@@ -145,11 +150,13 @@ def process_request(request):
     log.info("request_started", path=request.path)
     # ... process ...
     log.info("request_completed", status=200, duration_ms=45)
+
 ```
 
 ### 2.3 Log Levels
 
 ```python
+
 log_levels = {
     "DEBUG": {
         "purpose": "Детальная отладочная информация",
@@ -177,6 +184,7 @@ log_levels = {
         "examples": ["Database connection lost", "Out of memory"]
     }
 }
+
 ```
 
 ### 2.4 ELK Stack (Elasticsearch, Logstash, Kibana)
@@ -197,6 +205,7 @@ filebeat.inputs:
 output.elasticsearch:
   hosts: ["elasticsearch:9200"]
   index: "logs-%{+yyyy.MM.dd}"
+
 ```
 
 ---
@@ -251,6 +260,7 @@ def handle_request(request):
     )
     
     return response
+
 ```
 
 ---
@@ -260,6 +270,7 @@ def handle_request(request):
 ### 4.1 Distributed Tracing Concepts
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Distributed Trace                             │
 ├─────────────────────────────────────────────────────────────────┤
@@ -291,6 +302,7 @@ def handle_request(request):
 │  0ms                                                    250ms   │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 OpenTelemetry
@@ -339,6 +351,7 @@ def process_order(order_id: int):
     
     with tracer.start_as_current_span("send_notification"):
         notify_user(order_id)
+
 ```
 
 ### 4.3 Автоматическая инструментация
@@ -382,6 +395,7 @@ def handle_request(request):
     with tracer.start_as_current_span("handle_request", context=context):
         # Process with parent context
         pass
+
 ```
 
 ---
@@ -391,6 +405,7 @@ def handle_request(request):
 ### 5.1 Связывание logs, metrics, traces
 
 ```python
+
 import structlog
 from opentelemetry import trace
 
@@ -436,6 +451,7 @@ datasources:
   - name: Tempo
     type: tempo
     url: http://tempo:3200
+
 ```
 
 ---
@@ -445,6 +461,7 @@ datasources:
 ### 6.1 Debugging Slow Request
 
 ```
+
 Шаг 1: Алерт "P99 latency > 2s"
         ↓
 Шаг 2: Смотрим Grafana → какой endpoint медленный?
@@ -456,11 +473,13 @@ datasources:
 Шаг 5: Смотрим логи этого span по trace_id
         ↓
 Шаг 6: Находим причину (slow query, external API timeout, etc.)
+
 ```
 
 ### 6.2 Debugging Error Spike
 
 ```
+
 Шаг 1: Алерт "Error rate > 5%"
         ↓
 Шаг 2: Смотрим метрики → какой сервис, какой статус код?
@@ -472,6 +491,7 @@ datasources:
 Шаг 5: Берём trace_id из лога → смотрим полный trace
         ↓
 Шаг 6: Понимаем контекст ошибки (какой запрос, какие данные)
+
 ```
 
 ---
@@ -493,10 +513,12 @@ datasources:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [10_SRE](../10_SRE/) — Site Reliability Engineering
 - [12_Incidents](../12_Incidents/) — Incident Management
 
 **Practice Ideas:**
+
 1. Добавьте structured logging в приложение
 2. Настройте OpenTelemetry tracing
 3. Создайте correlation в Grafana
@@ -506,12 +528,17 @@ datasources:
 ## 📚 Additional Resources
 
 **Books:**
+
 - "Observability Engineering" by Charity Majors
 
 **Tools:**
+
 - [OpenTelemetry](https://opentelemetry.io/)
 - [Jaeger](https://www.jaegertracing.io/)
 - [Grafana Tempo](https://grafana.com/oss/tempo/)
 
 ---
+
+
+
 

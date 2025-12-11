@@ -78,6 +78,7 @@ vm "openbsd-vm" {
     owner admin
     disable
 }
+
 ```
 
 ### 1.4 Управление VM
@@ -102,6 +103,7 @@ vm "openbsd-vm" {
 $ vmctl status
    ID   PID VCPUS  MAXMEM  CURMEM     TTY        OWNER    NAME
     1  1234     1    1.0G    256M   ttyp0        admin    openbsd-vm
+
 ```
 
 ### 1.5 Сеть для VM
@@ -121,6 +123,7 @@ $ vmctl status
 # NAT в pf.conf
 match out on egress from 10.0.0.0/24 nat-to (egress)
 pass out on egress from 10.0.0.0/24
+
 ```
 
 ### 1.6 Linux гости
@@ -137,6 +140,7 @@ vm "debian" {
     interface { switch "local" }
     boot cdrom
 }
+
 ```
 
 ---
@@ -148,6 +152,7 @@ vm "debian" {
 **CARP** (Common Address Redundancy Protocol) — протокол для создания отказоустойчивых конфигураций.
 
 ```
+
 ┌──────────────┐     ┌──────────────┐
 │   Master     │     │   Backup     │
 │  (Active)    │     │  (Standby)   │
@@ -160,6 +165,7 @@ vm "debian" {
          │ Virtual IP  │
          │192.168.1.1  │
          └─────────────┘
+
 ```
 
 ### 2.2 Настройка CARP
@@ -169,6 +175,7 @@ vm "debian" {
 ```sh
 # /etc/hostname.carp0
 inet 192.168.1.1 255.255.255.0 192.168.1.255 vhid 1 pass secretkey advskew 0
+
 ```
 
 **Backup (резервный сервер):**
@@ -176,6 +183,7 @@ inet 192.168.1.1 255.255.255.0 192.168.1.255 vhid 1 pass secretkey advskew 0
 ```sh
 # /etc/hostname.carp0
 inet 192.168.1.1 255.255.255.0 192.168.1.255 vhid 1 pass secretkey advskew 100
+
 ```
 
 ### 2.3 Проверка CARP
@@ -200,6 +208,7 @@ syncdev em1
 # В pf.conf
 set syncookies adaptive (start 25%, end 12%)
 set state-defaults pflow
+
 ```
 
 ---
@@ -258,6 +267,7 @@ boot> boot /obsd
 
 # Или если совсем не грузится — boot с bsd.rd
 boot> boot /bsd.rd
+
 ```
 
 ---
@@ -277,6 +287,7 @@ dhcp
 # Внутренний интерфейс
 # /etc/hostname.em1
 inet 192.168.1.1/24
+
 ```
 
 ### 4.2 NAT и файрвол для роутера
@@ -302,6 +313,7 @@ pass in on $int_if from $int_net
 
 # SSH к роутеру только из внутренней сети
 pass in on $int_if proto tcp to port 22
+
 ```
 
 ### 4.3 DHCP сервер
@@ -367,6 +379,7 @@ wgport 51820
 wgpeer <client_public_key> wgaip 10.0.0.2/32
 inet 10.0.0.1/24
 up
+
 ```
 
 ### 5.2 Настройка клиента
@@ -381,6 +394,7 @@ up
 
 # Маршрут через VPN
 !/sbin/route -T1 add default 10.0.0.1
+
 ```
 
 ### 5.3 PF правила для WireGuard
@@ -394,6 +408,7 @@ match out on egress from 10.0.0.0/24 nat-to (egress)
 
 # Трафик от VPN клиентов
 pass in on wg0
+
 ```
 
 ---
@@ -454,6 +469,7 @@ $ kdump
 # Фильтр по типу
 $ ktrace -tc syscall ls
 $ kdump | grep open
+
 ```
 
 ### 7.2 DTrace (экспериментальный)
@@ -474,6 +490,7 @@ $ ulimit -c unlimited
 
 # Анализ с gdb
 $ gdb /path/to/program /path/to/core
+
 ```
 
 ---
@@ -483,9 +500,11 @@ $ gdb /path/to/program /path/to/core
 ### 8.1 Домашний роутер/файрвол
 
 ```
+
 ISP ─── em0 [OpenBSD Router] em1 ─── LAN
                    │
                    └─ wg0 ─── VPN Clients
+
 ```
 
 Компоненты:
@@ -499,17 +518,21 @@ ISP ─── em0 [OpenBSD Router] em1 ─── LAN
 ### 8.2 VPN сервер
 
 ```
+
 Internet ─── [OpenBSD VPN] ─── Secure Access
                    │
               wg0/tun0
+
 ```
 
 ### 8.3 Web-хостинг
 
 ```
+
 Internet ─── PF ─── httpd/nginx ─── Applications
                          │
                     PostgreSQL
+
 ```
 
 ---
@@ -517,9 +540,13 @@ Internet ─── PF ─── httpd/nginx ─── Applications
 ## 💡 Key Takeaways
 
 - **vmm/vmd**: Нативная виртуализация для OpenBSD и Linux гостей
+
 - **CARP**: Простая отказоустойчивость без сложной конфигурации
+
 - **WireGuard**: Современный VPN прямо в базовой системе
+
 - **Роутер**: OpenBSD — отличная платформа для файрволов и роутеров
+
 - **Ядро**: Можно собрать кастомное, но GENERIC обычно достаточно
 
 ---
@@ -527,12 +554,14 @@ Internet ─── PF ─── httpd/nginx ─── Applications
 ## 🚀 Next Steps
 
 **После курса:**
+
 - Постройте домашний роутер на OpenBSD
 - Настройте VPN для удалённого доступа
 - Изучите исходный код OpenBSD
 - Присоединитесь к рассылке misc@openbsd.org
 
 **Going Deeper:**
+
 - Изучите relayd для балансировки
 - Настройте OpenBGPD для BGP
 - Создайте кластер с CARP и pfsync
@@ -542,16 +571,19 @@ Internet ─── PF ─── httpd/nginx ─── Applications
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man vmctl](https://man.openbsd.org/vmctl) — управление VM
 - [man vm.conf](https://man.openbsd.org/vm.conf) — конфигурация VM
 - [man carp](https://man.openbsd.org/carp) — отказоустойчивость
 - [OpenBSD FAQ](https://www.openbsd.org/faq/) — полное руководство
 
 **Books:**
+
 - "Absolute OpenBSD" by Michael W. Lucas
 - "The Book of PF" by Peter N. M. Hansteen
 
 **Community:**
+
 - misc@openbsd.org — общие вопросы
 - tech@openbsd.org — технические обсуждения
 - https://undeadly.org — новости OpenBSD
@@ -572,4 +604,7 @@ Internet ─── PF ─── httpd/nginx ─── Applications
 **Продолжайте изучать и экспериментировать!**
 
 ---
+
+
+
 

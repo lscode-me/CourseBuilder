@@ -9,6 +9,7 @@
 - Знакомство с контейнеризацией
 
 **Recommended prior modules:**
+
 - [Cloud Native Intro](../18_CloudNativeIntro/)
 - [Containers](../11_Containers/)
 
@@ -32,6 +33,7 @@
 **The Twelve-Factor App** — методология разработки SaaS-приложений, созданная инженерами Heroku в 2011 году. Эти принципы стали фундаментом Cloud Native разработки.
 
 ```python
+
 twelve_factors = {
     1: "Codebase",
     2: "Dependencies", 
@@ -50,10 +52,12 @@ twelve_factors = {
 print("The Twelve Factors:\n")
 for num, factor in twelve_factors.items():
     print(f"  {num:2}. {factor}")
+
 ```
 
 **Output:**
 ```
+
 The Twelve Factors:
 
    1. Codebase
@@ -68,6 +72,7 @@ The Twelve Factors:
   10. Dev/Prod Parity
   11. Logs
   12. Admin Processes
+
 ```
 
 ---
@@ -77,6 +82,7 @@ The Twelve Factors:
 ### One codebase tracked in revision control, many deploys
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                    Factor I: Codebase                           │
 ├────────────────────────────────────────────────────────────────┤
@@ -100,6 +106,7 @@ The Twelve Factors:
 │  • Один репо для нескольких приложений (монорепо может быть ОК)│
 │                                                                 │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ```python
@@ -118,6 +125,7 @@ my-api/
 ├── .env.example      # Шаблон конфига (не secrets!)
 └── README.md
 """
+
 ```
 
 ---
@@ -149,6 +157,7 @@ dependencies = [
     "gunicorn>=21.0.0",
 ]
 """
+
 ```
 
 ```dockerfile
@@ -164,6 +173,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+
 ```
 
 ---
@@ -190,6 +200,7 @@ DATABASE_URL = os.environ["DATABASE_URL"]
 API_KEY = os.environ["API_KEY"]
 DEBUG = os.environ.get("DEBUG", "false").lower() == "true"
 LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
+
 ```
 
 ```yaml
@@ -210,6 +221,7 @@ type: Opaque
 stringData:
   DATABASE_URL: "postgresql://..."
   API_KEY: "sk-..."
+
 ```
 
 ```python
@@ -225,6 +237,7 @@ stringData:
 ### Treat backing services as attached resources
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │               Factor IV: Backing Services                       │
 ├────────────────────────────────────────────────────────────────┤
@@ -246,6 +259,7 @@ stringData:
 │           Не требует изменения кода                            │
 │                                                                 │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ```python
@@ -260,6 +274,7 @@ DATABASE_URL = "postgresql://mydb.xxx.us-east-1.rds.amazonaws.com:5432/mydb"
 # Код одинаковый:
 from sqlalchemy import create_engine
 engine = create_engine(os.environ["DATABASE_URL"])
+
 ```
 
 ---
@@ -269,6 +284,7 @@ engine = create_engine(os.environ["DATABASE_URL"])
 ### Strictly separate build and run stages
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │            Factor V: Build, Release, Run                        │
 ├────────────────────────────────────────────────────────────────┤
@@ -297,6 +313,7 @@ engine = create_engine(os.environ["DATABASE_URL"])
 │  └──────────────────────────────────────────────────────┘     │
 │                                                                 │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ```yaml
@@ -322,6 +339,7 @@ deploy:
   stage: deploy
   script:
     - kubectl set image deployment/my-app app=my-app:v1.2.3
+
 ```
 
 ---
@@ -349,9 +367,11 @@ class GoodApp:
     def login(self, user_id):
         # Session хранится в Redis
         self.redis.set(f"session:{user_id}", json.dumps({"logged_in": True}))
+
 ```
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                  Stateless vs Stateful                          │
 ├────────────────────────────────────────────────────────────────┤
@@ -370,6 +390,7 @@ class GoodApp:
 │  • S3                                                          │
 │                                                                 │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -398,6 +419,7 @@ if __name__ == '__main__':
 ```
 
 ```dockerfile
+
 FROM python:3.12-slim
 
 WORKDIR /app
@@ -407,6 +429,7 @@ RUN pip install -r requirements.txt
 # Приложение слушает PORT
 EXPOSE 8000
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+
 ```
 
 ---
@@ -416,6 +439,7 @@ CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
 ### Scale out via the process model
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │              Factor VIII: Concurrency                           │
 ├────────────────────────────────────────────────────────────────┤
@@ -442,6 +466,7 @@ CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
 │  Heroku: web=10 worker=6                                       │
 │                                                                 │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ```yaml
@@ -478,6 +503,7 @@ spec:
       - name: worker
         image: myapp:v1.0
         command: ["python", "worker.py"]
+
 ```
 
 ---
@@ -487,6 +513,7 @@ spec:
 ### Maximize robustness with fast startup and graceful shutdown
 
 ```python
+
 import signal
 import sys
 from flask import Flask
@@ -534,6 +561,7 @@ spec:
         port: 8000
       initialDelaySeconds: 5
       periodSeconds: 10
+
 ```
 
 ---
@@ -580,9 +608,11 @@ services:
   redis:
     image: redis:7
 """
+
 ```
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                Three Gaps to Minimize                           │
 ├────────────────────────────────────────────────────────────────┤
@@ -600,6 +630,7 @@ services:
 │  ✅ Same tools everywhere (Docker Compose)                     │
 │                                                                 │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -609,6 +640,7 @@ services:
 ### Treat logs as event streams
 
 ```python
+
 import logging
 import sys
 
@@ -634,6 +666,7 @@ def get_user(user_id):
 ```
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                   Log Aggregation                               │
 ├────────────────────────────────────────────────────────────────┤
@@ -651,6 +684,7 @@ def get_user(user_id):
 │  • Агрегации логов                                             │
 │                                                                 │
 └────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -697,6 +731,7 @@ spec:
             name: app-secrets
       restartPolicy: Never
   backoffLimit: 1
+
 ```
 
 ---
@@ -706,6 +741,7 @@ spec:
 ### 14.1 Дополнительные факторы (2020+)
 
 ```python
+
 additional_factors = {
     13: {
         "name": "API First",
@@ -720,6 +756,7 @@ additional_factors = {
         "description": "Security as first-class concern"
     }
 }
+
 ```
 
 ---
@@ -754,4 +791,7 @@ additional_factors = {
 - "Beyond the Twelve-Factor App" — книга Kevin Hoffman
 
 ---
+
+
+
 

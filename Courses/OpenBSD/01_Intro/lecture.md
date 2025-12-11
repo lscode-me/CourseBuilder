@@ -32,7 +32,9 @@ OpenBSD — это свободная Unix-подобная операционн
 OpenBSD известна тремя главными качествами:
 
 - **Безопасность** — проактивный подход к безопасности
+
 - **Качество кода** — регулярные аудиты и чистый код  
+
 - **Документация** — лучшие man-страницы в мире Unix
 
 ### 1.1 Краткая история
@@ -59,11 +61,14 @@ OpenBSD известна тремя главными качествами:
 # Узнать версию OpenBSD
 $ uname -a
 OpenBSD puffy.my.domain 7.4 GENERIC.MP#0 amd64
+
 ```
 
 **Output:**
 ```
+
 OpenBSD puffy.my.domain 7.4 GENERIC.MP#0 amd64
+
 ```
 
 ### 1.2 Талисман — Puffy
@@ -97,8 +102,11 @@ OpenBSD puffy.my.domain 7.4 GENERIC.MP#0 amd64
 OpenBSD предпочитает:
 
 - **Качество** над количеством функций
+
 - **Простоту** над сложностью  
+
 - **Безопасность** над производительностью
+
 - **Корректность** над совместимостью
 
 > **💡 Pro Tip:**  
@@ -137,6 +145,7 @@ pax
 ps
 pwd
 rm
+
 ```
 
 ---
@@ -153,11 +162,14 @@ OpenBSD создала множество технологий, которые �
 # OpenSSH используется на ~90% серверов в интернете
 $ ssh -V
 OpenSSH_9.5, LibreSSL 3.8.2
+
 ```
 
 **Output:**
 ```
+
 OpenSSH_9.5, LibreSSL 3.8.2
+
 ```
 
 Возможности OpenSSH:
@@ -183,6 +195,7 @@ block in all
 
 # Разрешить SSH
 pass in on egress proto tcp to port 22
+
 ```
 
 Особенности PF:
@@ -201,11 +214,14 @@ pass in on egress proto tcp to port 22
 # LibreSSL — версия по умолчанию в OpenBSD
 $ openssl version
 LibreSSL 3.8.2
+
 ```
 
 **Output:**
 ```
+
 LibreSSL 3.8.2
+
 ```
 
 Улучшения в LibreSSL:
@@ -222,6 +238,7 @@ LibreSSL 3.8.2
 **pledge()** — ограничивает системные вызовы процесса:
 
 ```c
+
 // Программа обещает использовать только stdio и rpath
 #include <unistd.h>
 
@@ -233,6 +250,7 @@ int main() {
     // Безопасная работа с файлами
     // ...
 }
+
 ```
 
 **unveil()** — ограничивает видимость файловой системы:
@@ -248,6 +266,7 @@ int main() {
     
     // Теперь доступ к /home вызовет ошибку
 }
+
 ```
 
 > **🔒 Security:**  
@@ -294,6 +313,7 @@ OpenBSD пионер в технологиях защиты памяти:
 ### 4.3 Когда выбрать OpenBSD
 
 ✅ **Выбирайте OpenBSD когда:**
+
 - Нужен надёжный файрвол/роутер
 - Безопасность критически важна
 - Хотите простую, понятную систему
@@ -302,6 +322,7 @@ OpenBSD пионер в технологиях защиты памяти:
 - Нужна стабильная почтовая система
 
 ❌ **OpenBSD не лучший выбор когда:**
+
 - Нужна максимальная производительность
 - Требуется специфическое железо
 - Нужен Desktop с играми
@@ -337,6 +358,7 @@ OpenBSD пионер в технологиях защиты памяти:
 │   ├── mail/    # Почта
 │   └── run/     # PID файлы
 └── altroot/ # Альтернативный root (для восстановления)
+
 ```
 
 ### 5.2 Особенности файловой системы
@@ -351,21 +373,26 @@ $ mount
 /dev/sd0e on /tmp type ffs (local, nodev, nosuid)
 /dev/sd0f on /usr type ffs (local, nodev)
 /dev/sd0g on /var type ffs (local, nodev, nosuid)
+
 ```
 
 **Output:**
 ```
+
 /dev/sd0a on / type ffs (local)
 /dev/sd0d on /home type ffs (local, nodev, nosuid)
 /dev/sd0e on /tmp type ffs (local, nodev, nosuid)
 /dev/sd0f on /usr type ffs (local, nodev)
 /dev/sd0g on /var type ffs (local, nodev, nosuid)
+
 ```
 
 Особенности:
 
 - **Soft Updates** — целостность без журнала
+
 - **nodev, nosuid** — защита разделов
+
 - **Шифрование** — встроенная поддержка через softraid
 
 ### 5.3 Загрузка системы
@@ -391,6 +418,7 @@ scsibus0 at mpath0: 256 targets
 mainbus0 at root
 bios0 at mainbus0: SMBIOS rev. 2.8 @ 0xbfbb5000 (87 entries)
 ...
+
 ```
 
 ---
@@ -402,6 +430,7 @@ bios0 at mainbus0: SMBIOS rev. 2.8 @ 0xbfbb5000 (87 entries)
 OpenBSD выпускает новые версии **дважды в год**:
 
 - **1 мая** — весенний релиз
+
 - **1 ноября** — осенний релиз
 
 ```sh
@@ -411,6 +440,7 @@ $ uname -r
 
 $ cat /etc/motd
 OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
+
 ```
 
 ### 6.2 Поддержка версий
@@ -435,6 +465,7 @@ OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
 # Проверить, какую ветку используете
 $ sysctl kern.version
 kern.version=OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
+
 ```
 
 ---
@@ -451,6 +482,7 @@ $ man afterboot    # Что делать после установки
 $ man intro        # Введение в систему
 $ man hier         # Структура файловой системы
 $ man ports        # Система портов
+
 ```
 
 **Ключевые man-страницы для начала:**
@@ -475,11 +507,13 @@ $ man ports        # Система портов
 ### 7.3 Сообщество
 
 **Почтовые рассылки:**
+
 - `misc@openbsd.org` — общие вопросы
 - `tech@openbsd.org` — технические обсуждения
 - `bugs@openbsd.org` — баг-репорты
 
 **Правила общения:**
+
 - Прочитайте man-страницы перед вопросом
 - Предоставьте `dmesg` и версию системы
 - Будьте кратки и по делу
@@ -495,10 +529,12 @@ $ man ports        # Система портов
 
 **Файрвол/Роутер:**
 ```
+
 ┌─────────┐     ┌──────────────┐     ┌─────────┐
 │ Internet│────▶│   OpenBSD    │────▶│   LAN   │
 └─────────┘     │   (PF/NAT)   │     └─────────┘
                 └──────────────┘
+
 ```
 
 **VPN-сервер:**
@@ -509,6 +545,7 @@ $ cat /etc/hostname.wg0
 wgkey <private_key>
 wgpeer <public_key> wgendpoint 1.2.3.4 51820 wgaip 10.0.0.2/32
 inet 10.0.0.1/24
+
 ```
 
 **Почтовый сервер:**
@@ -518,6 +555,7 @@ $ cat /etc/mail/smtpd.conf
 listen on egress
 action "local" mbox
 match from any for local action "local"
+
 ```
 
 **Web-сервер:**
@@ -528,13 +566,17 @@ server "example.com" {
     listen on * port 80
     root "/htdocs/example.com"
 }
+
 ```
 
 ### 8.2 Известные пользователи
 
 - **CERN** — использует OpenBSD для файрволов
+
 - **Adobe** — инфраструктурные серверы
+
 - **De Telegraaf** — голландская газета
+
 - **Множество банков** — критические системы безопасности
 
 ---
@@ -542,9 +584,13 @@ server "example.com" {
 ## 💡 Key Takeaways
 
 - **Безопасность прежде всего**: OpenBSD — единственная ОС, где безопасность важнее функций
+
 - **Качественная документация**: Man-страницы OpenBSD — эталон документации
+
 - **Интегрированная система**: Ядро и userland разрабатываются вместе
+
 - **Инновации для всех**: OpenSSH, PF, LibreSSL родились в OpenBSD
+
 - **Простота**: Меньше компонентов = меньше уязвимостей = легче понять
 
 ---
@@ -552,15 +598,18 @@ server "example.com" {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Installation](../02_Installation/) — установка OpenBSD
 - [Basic Commands](../03_BasicCommands/) — основные команды
 
 **Practice Ideas:**
+
 1. Скачайте ISO-образ OpenBSD с официального сайта
 2. Прочитайте `man afterboot` онлайн: https://man.openbsd.org/afterboot
 3. Посмотрите FAQ по установке: https://www.openbsd.org/faq/faq4.html
 
 **Going Deeper:**
+
 - История BSD: https://www.oreilly.com/openbook/opensources/book/kirkmck.html
 - Интервью с Theo de Raadt
 - Песни релизов OpenBSD (да, у каждого релиза своя песня!)
@@ -570,16 +619,23 @@ server "example.com" {
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [OpenBSD FAQ](https://www.openbsd.org/faq/) — официальное руководство
 - [Man Pages Online](https://man.openbsd.org/) — все man-страницы
 
 **Books:**
+
 - "Absolute OpenBSD" by Michael W. Lucas — лучшая книга для начинающих
 - "The Book of PF" by Peter N. M. Hansteen — всё о файрволе
 
 **Videos:**
+
 - [OpenBSD talks at BSDCan](https://www.youtube.com/results?search_query=openbsd+bsdcan) — конференции
 - [Theo de Raadt presentations](https://www.youtube.com/results?search_query=theo+de+raadt) — выступления основателя
 
 ---
+
+
+
+
 

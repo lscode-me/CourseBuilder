@@ -12,6 +12,7 @@
 - Иметь опыт работы с Docker
 
 **Recommended prior modules:**
+
 - [OCI Standards](../05_OCI/) — основы OCI
 - [Namespaces](../02_Namespaces/) и [Cgroups](../03_Cgroups/)
 
@@ -33,6 +34,7 @@
 ### 1.1 Уровни абстракции
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    Container Engines                         │
 │              (Docker, Podman, nerdctl)                       │
@@ -58,6 +60,7 @@
 │                      Linux Kernel                            │
 │              (namespaces, cgroups, seccomp)                  │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Сравнение компонентов
@@ -78,6 +81,7 @@ containerd — промышленный container runtime, используем�
 ### 2.1 Архитектура containerd
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                       containerd                            │
 ├────────────────────────────────────────────────────────────┤
@@ -96,6 +100,7 @@ containerd — промышленный container runtime, используем�
 │  │              containerd-shim-runc-v2                 │  │
 │  └─────────────────────────────────────────────────────┘  │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Установка containerd
@@ -114,6 +119,7 @@ curl -LO https://raw.githubusercontent.com/containerd/containerd/main/containerd
 mv containerd.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable --now containerd
+
 ```
 
 ### 2.3 Конфигурация containerd
@@ -124,6 +130,7 @@ containerd config default > /etc/containerd/config.toml
 
 # Основные параметры
 cat /etc/containerd/config.toml
+
 ```
 
 ```toml
@@ -146,6 +153,7 @@ version = 2
 
   [plugins."io.containerd.snapshotter.v1.overlayfs"]
     root_path = "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs"
+
 ```
 
 ### 2.4 Работа с ctr
@@ -158,12 +166,15 @@ ctr images pull docker.io/library/alpine:latest
 
 # Список образов
 ctr images list
+
 ```
 
 **Output:**
 ```
+
 REF                            TYPE                                                 DIGEST      SIZE
 docker.io/library/alpine:latest application/vnd.docker.distribution.manifest.v2+json sha256:... 3.2 MiB
+
 ```
 
 ```bash
@@ -189,6 +200,7 @@ ctr tasks list
 ctr task kill mycontainer
 ctr task delete mycontainer
 ctr container delete mycontainer
+
 ```
 
 ### 2.5 Namespaces в containerd
@@ -198,20 +210,24 @@ containerd использует собственные namespaces (не Linux na
 ```bash
 # Список namespaces
 ctr namespaces list
+
 ```
 
 **Output:**
 ```
+
 NAME    LABELS
 default
 k8s.io
 moby
+
 ```
 
 ```bash
 # Работа в конкретном namespace
 ctr -n k8s.io containers list
 ctr -n moby containers list  # Docker контейнеры
+
 ```
 
 ---
@@ -230,6 +246,7 @@ tar -xzf nerdctl-full-${VERSION}-linux-amd64.tar.gz -C /usr/local
 
 # Проверка
 nerdctl version
+
 ```
 
 ### 3.2 Использование nerdctl
@@ -252,6 +269,7 @@ nerdctl ps -a
 
 # Логи
 nerdctl logs mycontainer
+
 ```
 
 ### 3.3 Отличия от Docker
@@ -267,6 +285,7 @@ nerdctl logs mycontainer
 # Rootless mode
 containerd-rootless-setuptool.sh install
 nerdctl run --rm alpine cat /etc/os-release
+
 ```
 
 ---
@@ -278,6 +297,7 @@ CRI-O — container runtime специально для Kubernetes.
 ### 4.1 Архитектура CRI-O
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │                      Kubernetes                          │
 │                        kubelet                           │
@@ -302,13 +322,17 @@ CRI-O — container runtime специально для Kubernetes.
 ┌─────────────────────────────────────────────────────────┐
 │                  OCI Runtime (runc)                      │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 Особенности CRI-O
 
 - **Минимализм** — только то, что нужно для Kubernetes
+
 - **Стабильность** — версионирование синхронизировано с K8s
+
 - **Безопасность** — меньше attack surface
+
 - **Производительность** — оптимизирован для K8s workloads
 
 ### 4.3 Конфигурация CRI-O
@@ -332,6 +356,7 @@ pause_image = "registry.k8s.io/pause:3.9"
 [crio.network]
 network_dir = "/etc/cni/net.d/"
 plugin_dirs = ["/opt/cni/bin/"]
+
 ```
 
 ### 4.4 Инструменты CRI-O
@@ -345,6 +370,7 @@ crictl exec -it <container-id> /bin/sh
 
 # Проверка конфигурации
 crio config --default
+
 ```
 
 ---
@@ -356,6 +382,7 @@ Podman — daemonless container engine, совместимый с Docker.
 ### 5.1 Архитектура Podman
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │                     podman CLI                           │
 │                                                          │
@@ -379,6 +406,7 @@ Podman — daemonless container engine, совместимый с Docker.
     ┌──────────────────────────────────────┐
     │          OCI Runtime (runc/crun)      │
     └──────────────────────────────────────┘
+
 ```
 
 ### 5.2 Ключевые отличия от Docker
@@ -403,16 +431,19 @@ dnf install podman
 
 # Проверка
 podman version
+
 ```
 
 **Output:**
 ```
+
 Client:       Podman Engine
 Version:      4.6.1
 API Version:  4.6.1
 Go Version:   go1.20.6
 Built:        Thu Aug 10 15:00:00 2023
 OS/Arch:      linux/amd64
+
 ```
 
 ### 5.4 Использование Podman
@@ -427,6 +458,7 @@ podman ps -a
 # Совместимость через alias
 alias docker=podman
 docker run --rm alpine echo "Hello"
+
 ```
 
 ### 5.5 Rootless Podman
@@ -441,6 +473,7 @@ ls ~/.local/share/containers/storage/
 
 # Конфигурация
 cat ~/.config/containers/registries.conf
+
 ```
 
 ### 5.6 Pods в Podman
@@ -457,12 +490,15 @@ podman run -d --pod mypod --name app python:alpine sleep 3600
 
 # Список pods
 podman pod list
+
 ```
 
 **Output:**
 ```
+
 POD ID        NAME    STATUS   CREATED        INFRA ID      # OF CONTAINERS
 abc123def456  mypod   Running  5 seconds ago  def456abc789  3
+
 ```
 
 ```bash
@@ -471,6 +507,7 @@ podman exec app curl localhost:80
 
 # Генерация Kubernetes YAML из pod
 podman generate kube mypod > mypod.yaml
+
 ```
 
 ### 5.7 Интеграция с systemd
@@ -498,6 +535,7 @@ EOF
 
 systemctl --user daemon-reload
 systemctl --user start myapp
+
 ```
 
 ---
@@ -537,6 +575,7 @@ buildah commit $container myapp:latest
 
 # Push
 buildah push myapp:latest docker://registry.example.com/myapp:latest
+
 ```
 
 ### 6.3 Buildah с Dockerfile
@@ -547,6 +586,7 @@ buildah bud -t myimage:latest .
 
 # С альтернативным файлом
 buildah bud -f Dockerfile.prod -t myimage:prod .
+
 ```
 
 ### 6.4 Scripted builds
@@ -578,6 +618,7 @@ buildah commit $final myserver:latest
 
 # Очистка
 buildah rm $container $final
+
 ```
 
 ---
@@ -587,6 +628,7 @@ buildah rm $container $final
 ### 7.1 Docker архитектура
 
 ```
+
 ┌──────────┐     ┌──────────┐     ┌────────────┐     ┌──────────┐
 │ docker   │────►│ dockerd  │────►│ containerd │────►│   runc   │
 │   CLI    │     │ (daemon) │     │            │     │          │
@@ -594,14 +636,17 @@ buildah rm $container $final
                       │
                       ▼
                /var/run/docker.sock
+
 ```
 
 **Преимущества:**
+
 - Единый интерфейс
 - Обширная экосистема
 - Стабильность
 
 **Недостатки:**
+
 - Daemon с root-правами
 - Single point of failure
 - Больше overhead
@@ -609,6 +654,7 @@ buildah rm $container $final
 ### 7.2 Podman архитектура
 
 ```
+
 ┌──────────┐     ┌──────────┐     ┌──────────┐
 │ podman   │────►│  libpod  │────►│   runc   │
 │   CLI    │     │          │     │          │
@@ -617,33 +663,40 @@ buildah rm $container $final
                       ▼
                    conmon
             (per-container monitor)
+
 ```
 
 **Преимущества:**
+
 - Нет daemon
 - Rootless из коробки
 - Fork-exec модель
 
 **Недостатки:**
+
 - Меньше экосистема
 - Некоторые отличия от Docker
 
 ### 7.3 Kubernetes с containerd
 
 ```
+
 ┌──────────┐     ┌────────────┐     ┌──────────────┐     ┌──────┐
 │ kubelet  │────►│ containerd │────►│containerd-shim│────►│ runc │
 │          │ CRI │            │     │              │     │      │
 └──────────┘     └────────────┘     └──────────────┘     └──────┘
+
 ```
 
 ### 7.4 Kubernetes с CRI-O
 
 ```
+
 ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────┐
 │ kubelet  │────►│  CRI-O   │────►│  conmon  │────►│ runc │
 │          │ CRI │          │     │          │     │      │
 └──────────┘     └──────────┘     └──────────┘     └──────┘
+
 ```
 
 ---
@@ -685,6 +738,7 @@ EOF
 # 5. Проверка
 podman info
 podman run --rm alpine echo "Migration successful"
+
 ```
 
 ### 8.3 Переключение Kubernetes на containerd
@@ -709,6 +763,7 @@ EOF
 
 # 5. Перезапуск kubelet
 systemctl restart kubelet
+
 ```
 
 ---
@@ -730,6 +785,7 @@ nerdctl run -d --name app -p 8080:80 nginx:alpine
 # containerd (через ctr) - более низкоуровневый
 ctr images pull docker.io/library/nginx:alpine
 ctr run -d --net-host docker.io/library/nginx:alpine app
+
 ```
 
 ### 9.2 Проверка процессов
@@ -740,6 +796,7 @@ ps aux | grep -E "(docker|containerd|nginx)"
 
 # Podman: контейнер — независимый процесс с conmon
 ps aux | grep -E "(conmon|nginx)"
+
 ```
 
 ---
@@ -747,9 +804,13 @@ ps aux | grep -E "(conmon|nginx)"
 ## 💡 Key Takeaways
 
 - **containerd** — промышленный runtime, используется Docker и Kubernetes
+
 - **Podman** — daemonless альтернатива Docker с rootless из коробки
+
 - **CRI-O** — минималистичный runtime специально для Kubernetes
+
 - **Выбор runtime** зависит от сценария: разработка, production, безопасность
+
 - **Миграция** между runtime обычно проста благодаря OCI стандартам
 
 ---
@@ -757,16 +818,19 @@ ps aux | grep -E "(conmon|nginx)"
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Networking](../07_Networking/) — сетевая подсистема контейнеров
 - [Docker](../08_Docker/) — практическая работа с Docker
 
 **Practice Ideas:**
+
 1. Установите containerd и запустите контейнер через ctr и nerdctl
 2. Настройте rootless Podman и создайте pod
 3. Используйте Buildah для сборки образа без Dockerfile
 4. Сравните время старта контейнера в Docker, Podman и containerd
 
 **Going Deeper:**
+
 - Kata Containers и VM-based isolation
 - gVisor для userspace kernel
 - Firecracker microVMs
@@ -776,19 +840,25 @@ ps aux | grep -E "(conmon|nginx)"
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [containerd documentation](https://containerd.io/docs/)
 - [Podman documentation](https://docs.podman.io/)
 - [CRI-O documentation](https://cri-o.io/)
 - [Buildah documentation](https://buildah.io/)
 
 **Articles:**
+
 - [Container runtimes comparison](https://www.inovex.de/de/blog/containers-docker-containerd-nabla-kata-firecracker/)
 - [Migrating from Docker to Podman](https://www.redhat.com/sysadmin/podman-docker-compose)
 
 **Tools:**
+
 - [nerdctl](https://github.com/containerd/nerdctl)
 - [crictl](https://github.com/kubernetes-sigs/cri-tools)
 - [skopeo](https://github.com/containers/skopeo)
 
 ---
+
+
+
 

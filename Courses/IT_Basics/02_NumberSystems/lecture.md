@@ -55,6 +55,7 @@ aa:bb:cc:dd:ee:ff
 
 # UUID (hex)
 550e8400-e29b-41d4-a716-446655440000
+
 ```
 
 ---
@@ -75,9 +76,11 @@ aa:bb:cc:dd:ee:ff
 - Отражает/не отражает свет на CD
 
 ```
+
 Один бит: 0 или 1
 Два бита: 00, 01, 10, 11 (4 комбинации)
 Три бита: 000, 001, 010, 011, 100, 101, 110, 111 (8 комбинаций)
+
 ```
 
 **Формула:** n бит = 2^n комбинаций
@@ -87,14 +90,17 @@ aa:bb:cc:dd:ee:ff
 **Байт** — группа из 8 бит. Стандартная единица для работы с данными.
 
 ```
+
 1 байт = 8 бит
 1 байт = 256 возможных значений (2^8)
 1 байт = числа от 0 до 255
+
 ```
 
 **Пример:**
 
 ```
+
 Байт:        01001000
              ||||||||
 Позиции:     76543210
@@ -105,6 +111,7 @@ aa:bb:cc:dd:ee:ff
           = 72
 
 72 в ASCII = буква 'H'
+
 ```
 
 ### 2.3 Единицы измерения данных
@@ -129,6 +136,7 @@ aa:bb:cc:dd:ee:ff
 **Nibble** — 4 бита, половина байта. Удобно для hex-представления.
 
 ```
+
 1 nibble = 4 бита = 16 комбинаций (0-15)
 1 байт = 2 nibble
 
@@ -138,6 +146,7 @@ Nibbles:  0100 1000
            4    8
 
 Hex:      0x48
+
 ```
 
 ---
@@ -149,6 +158,7 @@ Hex:      0x48
 **Двоичная система** — система счисления с основанием 2. Использует только цифры 0 и 1.
 
 ```
+
 Десятичная    Двоичная
     0            0
     1            1
@@ -161,6 +171,7 @@ Hex:      0x48
     8         1000
     9         1001
    10         1010
+
 ```
 
 ### 3.2 Конвертация: Decimal → Binary
@@ -170,6 +181,7 @@ Hex:      0x48
 Конвертируем 42 в двоичную систему:
 
 ```
+
 42 ÷ 2 = 21, остаток 0  ↑
 21 ÷ 2 = 10, остаток 1  |
 10 ÷ 2 = 5,  остаток 0  | читаем снизу вверх
@@ -178,6 +190,7 @@ Hex:      0x48
 1  ÷ 2 = 0,  остаток 1  ↓
 
 Результат: 101010
+
 ```
 
 **Проверка в Python:**
@@ -186,11 +199,14 @@ Hex:      0x48
 # Decimal → Binary
 decimal = 42
 print(bin(decimal))
+
 ```
 
 **Output:**
 ```
+
 0b101010
+
 ```
 
 ### 3.3 Конвертация: Binary → Decimal
@@ -198,12 +214,14 @@ print(bin(decimal))
 **Метод позиционных весов:**
 
 ```
+
 Binary:  1 0 1 0 1 0
          | | | | | |
 Позиция: 5 4 3 2 1 0
 Вес:    32 16 8 4 2 1
 
 1×32 + 0×16 + 1×8 + 0×4 + 1×2 + 0×1 = 32 + 8 + 2 = 42
+
 ```
 
 **В Python:**
@@ -212,11 +230,14 @@ Binary:  1 0 1 0 1 0
 # Binary → Decimal
 binary_str = "101010"
 print(int(binary_str, 2))
+
 ```
 
 **Output:**
 ```
+
 42
+
 ```
 
 ### 3.4 Двоичная арифметика
@@ -224,11 +245,13 @@ print(int(binary_str, 2))
 **Сложение:**
 
 ```
+
     1 1   (переносы)
   0 1 0 1  (5)
 + 0 0 1 1  (3)
 ─────────
   1 0 0 0  (8)
+
 ```
 
 Правила:
@@ -247,6 +270,7 @@ print(int(binary_str, 2))
 **Hex** — система с основанием 16. Использует цифры 0-9 и буквы A-F.
 
 ```
+
 Decimal   Hex   Binary
    0       0     0000
    1       1     0001
@@ -264,6 +288,7 @@ Decimal   Hex   Binary
   13       D     1101
   14       E     1110
   15       F     1111
+
 ```
 
 ### 4.2 Почему hex так удобен
@@ -271,6 +296,7 @@ Decimal   Hex   Binary
 Один hex-символ = 4 бита (nibble). Два hex-символа = 1 байт.
 
 ```
+
 Байт в binary: 0100 1000
 Байт в hex:      4    8   = 0x48
 
@@ -278,6 +304,7 @@ Decimal   Hex   Binary
 Binary:  01001000 01100101 01101100 01101100 01101111
 Hex:     48       65       6C       6C       6F
 ASCII:   H        e        l        l        o
+
 ```
 
 Hex гораздо компактнее и удобнее для чтения человеком!
@@ -299,9 +326,11 @@ $48        # Префикс $ (некоторые платформы)
 **Hex → Decimal:**
 
 ```
+
 0x2A = 2×16¹ + 10×16⁰ = 32 + 10 = 42
 0xFF = 15×16 + 15 = 240 + 15 = 255
 0x100 = 1×256 + 0×16 + 0×1 = 256
+
 ```
 
 **Python:**
@@ -315,15 +344,18 @@ print(0xFF)            # 255
 # Decimal → Hex
 print(hex(42))         # 0x2a
 print(hex(255))        # 0xff
+
 ```
 
 **Output:**
 ```
+
 42
 255
 255
 0x2a
 0xff
+
 ```
 
 ### 4.5 Практические примеры hex
@@ -340,27 +372,34 @@ G = 57 = 87  (немного зелёного)
 B = 33 = 51  (мало синего)
 
 Результат: оранжево-красный цвет
+
 ```
 
 **MAC-адрес:**
 
 ```
+
 aa:bb:cc:dd:ee:ff
 
 Каждая пара — байт (0-255)
 Всего 6 байт = 48 бит
+
 ```
 
 **Байты в файле:**
 
 ```bash
+
 echo -n "Hi" | xxd
+
 ```
 
 ```
+
 00000000: 4869                                     Hi
           ||
           4869 = 'H' (0x48=72) + 'i' (0x69=105)
+
 ```
 
 ---
@@ -372,6 +411,7 @@ echo -n "Hi" | xxd
 **Octal** — система с основанием 8. Использует цифры 0-7.
 
 ```
+
 Decimal   Octal   Binary
    0        0      000
    1        1      001
@@ -382,35 +422,43 @@ Decimal   Octal   Binary
    6        6      110
    7        7      111
    8       10     1000
+
 ```
 
 ### 5.2 Использование: права доступа Unix
 
 ```bash
+
 chmod 755 script.sh
 
 7 = 111 (rwx) — владелец: читать, писать, выполнять
 5 = 101 (r-x) — группа: читать, выполнять
 5 = 101 (r-x) — остальные: читать, выполнять
+
 ```
 
 **Разбор прав:**
 
 ```
+
 rwxr-xr-x в binary: 111 101 101
                      7   5   5   в octal
+
 ```
 
 ```python
 # Octal в Python
 print(0o755)        # 493 в decimal
 print(oct(493))     # '0o755'
+
 ```
 
 **Output:**
 ```
+
 493
 0o755
+
 ```
 
 ---
@@ -428,21 +476,25 @@ print(oct(493))     # '0o755'
 **Big-Endian (BE):** старший байт первым ("естественный" порядок)
 
 ```
+
 Число: 0x12345678
 Адрес: 0x00  0x01  0x02  0x03
 Байт:  0x12  0x34  0x56  0x78
        ↑
        Старший байт (Big end) первым
+
 ```
 
 **Little-Endian (LE):** младший байт первым
 
 ```
+
 Число: 0x12345678  
 Адрес: 0x00  0x01  0x02  0x03
 Байт:  0x78  0x56  0x34  0x12
        ↑
        Младший байт (Little end) первым
+
 ```
 
 ### 6.3 Где это важно
@@ -459,6 +511,7 @@ print(oct(493))     # '0o755'
 ### 6.4 Практический пример
 
 ```python
+
 import struct
 
 # Число 0x12345678
@@ -471,12 +524,15 @@ print("Big-Endian:", be.hex())
 # Упаковка в Little-Endian  
 le = struct.pack('<I', number)  # < = little-endian
 print("Little-Endian:", le.hex())
+
 ```
 
 **Output:**
 ```
+
 Big-Endian: 12345678
 Little-Endian: 78563412
+
 ```
 
 ### 6.5 Network Byte Order
@@ -484,6 +540,7 @@ Little-Endian: 78563412
 Сетевые протоколы используют Big-Endian (Network Byte Order).
 
 ```python
+
 import socket
 
 # Конвертация между host и network byte order
@@ -493,12 +550,15 @@ host_int = 0x12345678
 network_int = socket.htonl(host_int)
 print(f"Host:    {host_int:#010x}")
 print(f"Network: {network_int:#010x}")
+
 ```
 
 **Output (на Little-Endian системе):**
 ```
+
 Host:    0x12345678
 Network: 0x78563412
+
 ```
 
 ---
@@ -513,20 +573,25 @@ echo -n "Hello" > test.txt
 
 # Hex dump
 xxd test.txt
+
 ```
 
 ```
+
 00000000: 4865 6c6c 6f                             Hello
+
 ```
 
 **Разбор вывода:**
 
 ```
+
 00000000: 4865 6c6c 6f                             Hello
     |      |                                        |
     |      |                                        ASCII
     |      Hex bytes (группами по 2)
     Смещение (offset) в hex
+
 ```
 
 **Опции xxd:**
@@ -544,17 +609,22 @@ echo "48656c6c6f" | xxd -r -p
 
 # Показывать по 1 байту в строке
 xxd -c 1 test.txt
+
 ```
 
 ### 7.2 hexdump
 
 ```bash
+
 hexdump -C test.txt
+
 ```
 
 ```
+
 00000000  48 65 6c 6c 6f                                    |Hello|
 00000005
+
 ```
 
 ### 7.3 od — octal dump
@@ -564,6 +634,7 @@ hexdump -C test.txt
 od -c test.txt      # Символы
 od -x test.txt      # Hex
 od -d test.txt      # Decimal
+
 ```
 
 ### 7.4 Python для конвертаций
@@ -591,10 +662,12 @@ hex_str = "48656c6c6f"
 decoded = bytes.fromhex(hex_str).decode('utf-8')
 print(f"\nHex: {hex_str}")
 print(f"Decoded: {decoded}")
+
 ```
 
 **Output:**
 ```
+
 Decimal: 42
 Binary:  0b101010
 Octal:   0o52
@@ -606,6 +679,7 @@ Hex: 48656c6c6f
 
 Hex: 48656c6c6f
 Decoded: Hello
+
 ```
 
 ### 7.5 Bash конвертации
@@ -652,6 +726,7 @@ echo $((2#101010))
 **Для 8-битного числа:**
 
 ```
+
 +5 =  00000101
 
 Получить -5:
@@ -660,6 +735,7 @@ echo $((2#101010))
 2. Добавить 1:        + 00000001
                       ──────────
 -5 =                   11111011
+
 ```
 
 **Диапазоны signed чисел:**
@@ -673,6 +749,7 @@ echo $((2#101010))
 ### 8.3 Проверка в Python
 
 ```python
+
 import struct
 
 # Unsigned byte
@@ -682,12 +759,15 @@ print(f"Unsigned: {unsigned}")  # 251
 # Signed byte
 signed = struct.unpack('b', b'\xfb')[0]
 print(f"Signed: {signed}")      # -5
+
 ```
 
 **Output:**
 ```
+
 Unsigned: 251
 Signed: -5
+
 ```
 
 ---
@@ -699,8 +779,10 @@ Signed: -5
 Компьютеры представляют дробные числа по стандарту IEEE 754:
 
 ```
+
 32-bit float: [1 бит знак][8 бит экспонента][23 бита мантисса]
 64-bit double: [1 бит знак][11 бит экспонента][52 бита мантисса]
+
 ```
 
 ### 9.2 Почему это важно
@@ -708,11 +790,14 @@ Signed: -5
 ```python
 # Классическая проблема floating point
 print(0.1 + 0.2)
+
 ```
 
 **Output:**
 ```
+
 0.30000000000000004
+
 ```
 
 Это не баг — это ограничение двоичного представления!
@@ -724,11 +809,14 @@ print(0.1 + 0.2)
 # Для точных вычислений используйте Decimal
 from decimal import Decimal
 print(Decimal('0.1') + Decimal('0.2'))
+
 ```
 
 **Output:**
 ```
+
 0.3
+
 ```
 
 ---
@@ -743,6 +831,7 @@ print(Decimal('0.1') + Decimal('0.2'))
 # 10 — это десять, 0x10 — это шестнадцать!
 print(10)     # 10
 print(0x10)   # 16
+
 ```
 
 ### 10.2 Забывать про endianness
@@ -760,6 +849,7 @@ print(f"Wrong: {wrong:#x}")  # 0x78563412
 # Правильно: использовать Little-Endian
 correct = int.from_bytes(bytes_data, 'little')
 print(f"Correct: {correct:#x}")  # 0x12345678
+
 ```
 
 ### 10.3 Переполнение
@@ -788,6 +878,7 @@ print(struct.unpack('B', byte)[0])  # 255
 
 # Как signed: -1
 print(struct.unpack('b', byte)[0])  # -1
+
 ```
 
 ---
@@ -809,16 +900,19 @@ print(struct.unpack('b', byte)[0])  # -1
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Encodings](../03_Encodings/) — как числа становятся символами (ASCII, UTF-8)
 - [File Formats](../04_FileFormats/) — применение hex для анализа файлов
 
 **Practice Ideas:**
+
 1. Напишите конвертер decimal ↔ binary ↔ hex на Python
 2. Проанализируйте PNG файл с помощью `xxd` и найдите magic numbers
 3. Создайте файл с числом 0x12345678 и посмотрите его в Little-Endian и Big-Endian
 4. Рассчитайте права доступа Unix для разных комбинаций rwx
 
 **Going Deeper:**
+
 - Изучите IEEE 754 подробнее (специальные значения: NaN, Infinity)
 - Посмотрите как работает арифметика с фиксированной точкой (fixed-point)
 - Разберитесь с битовыми операциями (AND, OR, XOR, shifts)
@@ -828,18 +922,24 @@ print(struct.unpack('b', byte)[0])  # -1
 ## 📚 Additional Resources
 
 **Tools:**
+
 - [xxd manual](https://linux.die.net/man/1/xxd)
 - [RapidTables Converter](https://www.rapidtables.com/convert/number/) — онлайн конвертер
 
 **Articles:**
+
 - [Two's Complement](https://en.wikipedia.org/wiki/Two%27s_complement)
 - [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)
 - [Endianness](https://en.wikipedia.org/wiki/Endianness)
 
 **Interactive:**
+
 - [Float Exposed](https://float.exposed/) — визуализация IEEE 754
 - [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
 
 ---
+
+
+
 
 

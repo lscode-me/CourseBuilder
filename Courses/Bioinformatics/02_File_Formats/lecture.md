@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [01_Basics](../01_Basics/) — основы биоинформатики
 - Понимать структуру ДНК и концепцию секвенирования
 - Иметь опыт работы с текстовыми файлами и командной строкой
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Читать и интерпретировать файлы FASTA и FASTQ
 - Работать с форматами выравнивания SAM/BAM
 - Парсить VCF файлы с вариантами
@@ -28,6 +30,7 @@
 В биоинформатике существует несколько стандартных форматов файлов для хранения различных типов данных. Если вы знакомы с JSON, CSV, XML — концепция та же: структурированное хранение данных. В этом модуле мы разберём основные форматы, с которыми вы будете работать.
 
 **После этого модуля вы поймете:**
+
 - Структуру основных биоинформатических форматов
 - Когда какой формат использовать
 - Как читать и обрабатывать эти файлы
@@ -42,14 +45,17 @@
 FASTA — это текстовый формат для хранения последовательностей ДНК, РНК или белков.
 
 ```
+
 >sequence_id optional description here
 ATCGATCGATCGATCG
 ATCGATCGATCGATCG
 >another_sequence some info here
 GCTAGCTAGCTAGCTA
+
 ```
 
 **Правила:**
+
 - Строка с `>` — заголовок (header)
 - Первое "слово" после `>` — это **ID** (до первого пробела)
 - Всё после первого пробела — **описание** (опционально, может отсутствовать)
@@ -59,6 +65,7 @@ GCTAGCTAGCTAGCTA
 ### 1.2 Пример реального файла
 
 ```fasta
+
 >chr1:100000-100100
 ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
 ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
@@ -66,6 +73,7 @@ ATCGATCGATCGATCG
 >NM_001256799.3 Homo sapiens BRCA1 DNA repair gene
 GCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTA
 GCTAGCTAGCTAGCTA
+
 ```
 
 В первом случае ID = `chr1:100000-100100`, описание отсутствует.  
@@ -98,9 +106,11 @@ with open("sequences.fasta") as f:
         sequences[current_id] = ''.join(current_seq)
 
 print(sequences)
+
 ```
 
 **Проблемы этого подхода:**
+
 - Легко забыть сохранить последнюю последовательность
 - Нужно вручную обрабатывать многострочные последовательности
 - Нет валидации формата (некорректный файл не вызовет ошибку)
@@ -111,6 +121,7 @@ print(sequences)
 #### Правильный подход: BioPython
 
 ```python
+
 from Bio import SeqIO
 
 # SeqIO.parse(файл, формат) — возвращает итератор записей
@@ -120,13 +131,17 @@ for record in SeqIO.parse("sequences.fasta", "fasta"):
     print(f"Sequence: {record.seq}")         # объект Seq с последовательностью
     print(f"Length: {len(record)}")          # длина последовательности
     print("---")
+
 ```
 
 **Аргументы `SeqIO.parse()`:**
+
 - **Первый аргумент** — путь к файлу (или file-like объект)
+
 - **Второй аргумент** — формат файла: `"fasta"`, `"fastq"`, `"genbank"` и др.
 
 **Преимущества BioPython:**
+
 - Корректная обработка всех edge cases
 - `record.seq` — специальный объект с методами для работы с последовательностью
 - Поддержка множества форматов одним API
@@ -143,13 +158,16 @@ for record in SeqIO.parse("sequences.fasta", "fasta"):
 FASTQ содержит риды с информацией о качестве прочтения каждого нуклеотида.
 
 ```
+
 @read_id
 ATCGATCGATCG
 +
 IIIIIIIIIIII
+
 ```
 
 **4 строки на один рид:**
+
 1. `@read_id` — идентификатор рида
 2. `ATCGATCGATCG` — сама последовательность
 3. `+` — разделитель (иногда повторяет ID)
@@ -160,26 +178,33 @@ IIIIIIIIIIII
 Quality scores кодируются ASCII символами и показывают вероятность ошибки.
 
 ```
+
 Symbol  ASCII  Phred  Error Probability
   !      33      0     1 in 1       (100%)
   I      73      40    1 in 10,000  (0.01%)
+
 ```
 
 **Формула:**
 ```
+
 Q = -10 * log10(P)
 где P — вероятность ошибки
+
 ```
 
 **Пример:**
 ```
+
 Q30 → ошибка 1 на 1000 (точность 99.9%)
 Q40 → ошибка 1 на 10000 (точность 99.99%)
+
 ```
 
 ### 2.3 Пример реального FASTQ
 
 ```fastq
+
 @SRR123456.1 HWI-ST1234:123:C1234ACXX:1:1101:1234:2345 length=101
 NATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG
 +
@@ -189,6 +214,7 @@ NATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATCGATC
 ### 2.4 Чтение FASTQ в Python
 
 ```python
+
 from Bio import SeqIO
 
 for record in SeqIO.parse("reads.fastq", "fastq"):
@@ -204,6 +230,7 @@ def filter_by_quality(fastq_in, fastq_out, min_quality=30):
             avg_qual = sum(record.letter_annotations['phred_quality']) / len(record)
             if avg_qual >= min_quality:
                 SeqIO.write(record, out, "fastq")
+
 ```
 
 **Аналогия:** FASTQ — это логи с метрикой качества каждой записи.
@@ -222,14 +249,17 @@ def filter_by_quality(fastq_in, fastq_out, min_quality=30):
 ### 3.2 Структура SAM
 
 ```
+
 @HD VN:1.6  SO:coordinate
 @SQ SN:chr1 LN:248956422
 @PG ID:bwa  PN:bwa  VN:0.7.17
 read1   99   chr1   10000   60   100M   =   10200   300   ATCGATCG...   IIIIIIII...   NM:i:0
 read2   147  chr1   10200   60   100M   =   10000   -300  GCTAGCTA...   JJJJJJJJ...   NM:i:1
+
 ```
 
 **Секции:**
+
 1. **Header lines** (начинаются с `@`) — метаданные
 2. **Alignment lines** — каждый выровненный рид
 
@@ -254,17 +284,24 @@ read2   147  chr1   10200   60   100M   =   10000   -300  GCTAGCTA...   JJJJJJJJ
 Описывает, как рид выравнивается на референс:
 
 ```
+
 100M      → 100 match (полное совпадение)
 90M10S    → 90 match, 10 soft clip (не выровнено на конце)
 80M2D18M  → 80 match, 2 deletion, 18 match
 50M1I49M  → 50 match, 1 insertion, 49 match
+
 ```
 
 **Операции:**
+
 - **M** = Match (может быть mismatch, но выровнено)
+
 - **I** = Insertion (есть в риде, нет в референсе)
+
 - **D** = Deletion (есть в референсе, нет в риде)
+
 - **S** = Soft clip (не выровнено, но сохранено)
+
 - **H** = Hard clip (обрезано и удалено)
 
 ### 3.5 FLAG биты
@@ -272,6 +309,7 @@ read2   147  chr1   10200   60   100M   =   10000   -300  GCTAGCTA...   JJJJJJJJ
 FLAG — это битовое поле:
 
 ```
+
 Flag  Bit  Значение
 1     0x1  Paired read
 2     0x2  Правильно выровнен в паре
@@ -280,6 +318,7 @@ Flag  Bit  Значение
 16    0x10 Обратная цепь
 64    0x40 Первый рид в паре
 128   0x80 Второй рид в паре
+
 ```
 
 **Пример:** FLAG=99 = 64+32+2+1 = первый рид, в паре, правильно выровнен
@@ -287,6 +326,7 @@ Flag  Bit  Значение
 ### 3.6 Работа с SAM/BAM
 
 ```python
+
 import pysam
 
 # Чтение BAM файла
@@ -310,6 +350,7 @@ def calculate_coverage(bamfile, chrom, start, end):
     # coverage это 4 массива (A, C, G, T)
     total_coverage = [sum(x) for x in zip(*coverage)]
     return total_coverage
+
 ```
 
 **Аналогия:** SAM — это таблица в БД, где каждая строка — выровненный рид.
@@ -332,9 +373,11 @@ VCF хранит информацию о генетических вариант
 #CHROM  POS     ID      REF ALT QUAL    FILTER  INFO    FORMAT  Sample1
 chr1    12345   rs123   A   G   999     PASS    DP=100  GT:DP   0/1:50
 chr1    67890   .       T   C   500     PASS    DP=80   GT:DP   1/1:80
+
 ```
 
 **Секции:**
+
 1. **Meta-information lines** (`##`) — описание формата и полей
 2. **Header line** (`#CHROM...`) — названия колонок
 3. **Data lines** — варианты
@@ -357,17 +400,21 @@ chr1    67890   .       T   C   500     PASS    DP=80   GT:DP   1/1:80
 ### 4.4 Генотипы (GT)
 
 ```
+
 0/0  → Гомозигота по референсу (REF/REF)
 0/1  → Гетерозигота (REF/ALT)
 1/1  → Гомозигота по альтернативе (ALT/ALT)
 1/2  → Два разных альтернативных аллеля
 ./.  → Генотип не определён
+
 ```
 
 **Фазирование:**
 ```
+
 0/1  → не фазировано (неизвестно, какая хромосома какой аллель)
 0|1  → фазировано (известно, что REF от одного родителя, ALT от другого)
+
 ```
 
 ### 4.5 Типы вариантов
@@ -384,11 +431,13 @@ chr1  3000  .  ATCG  A  ...
 
 # MNP (замена нескольких нуклеотидов)
 chr1  4000  .  AT  GC  ...
+
 ```
 
 ### 4.6 Работа с VCF
 
 ```python
+
 import pysam
 
 vcf = pysam.VariantFile("variants.vcf")
@@ -409,6 +458,7 @@ for variant in vcf:
         print(f"Sample {sample}: {gt}")
 
 vcf.close()
+
 ```
 
 **Аналогия:** VCF — это diff файл, показывающий отличия от master branch (референса).
@@ -426,12 +476,15 @@ BED — простой формат для описания геномных и�
 Минимум 3 колонки (tab-separated):
 
 ```
+
 chr1    1000    2000
 chr1    5000    6000    gene1    100    +
 chr2    3000    4000    gene2    200    -    3000    4000    255,0,0
+
 ```
 
 **Колонки (первые 3 обязательные):**
+
 1. **chrom** — хромосома
 2. **chromStart** — начало (0-based, включительно)
 3. **chromEnd** — конец (0-based, не включительно)
@@ -443,17 +496,20 @@ chr2    3000    4000    gene2    200    -    3000    4000    255,0,0
 ### 5.3 Важно: 0-based координаты
 
 ```
+
 Последовательность:  A T C G A T C G
 Позиции (1-based):   1 2 3 4 5 6 7 8
 Позиции (0-based):   0 1 2 3 4 5 6 7
 
 BED использует 0-based:
 chr1  1  4  → захватывает позиции 1,2,3 (символы T,C,G)
+
 ```
 
 ### 5.4 Работа с BED
 
 ```python
+
 import pandas as pd
 
 # Чтение BED файла
@@ -474,6 +530,7 @@ b = pybedtools.BedTool('regions_b.bed')
 # Найти пересечения
 intersection = a.intersect(b)
 intersection.saveas('intersection.bed')
+
 ```
 
 **Аналогия:** BED — это список интервалов, как time ranges в логах.
@@ -494,9 +551,11 @@ intersection.saveas('intersection.bed')
 ### Типичные размеры для целого генома (30x coverage):
 
 ```
+
 FASTQ (сырые данные):     ~100-200 GB
 BAM (выравнивания):       ~30-60 GB
 VCF (варианты):           ~1-5 GB
+
 ```
 
 ---
@@ -510,6 +569,7 @@ VCF (варианты):           ~1-5 GB
 ```python
 # БЕЗ индекса: читать весь файл
 # С индексом: прыгнуть к нужному месту
+
 ```
 
 ### 7.2 Типы индексов
@@ -526,11 +586,13 @@ samtools index aligned.bam
 # VCF index (bgzip + tabix)
 bgzip variants.vcf  # → variants.vcf.gz
 tabix -p vcf variants.vcf.gz  # → variants.vcf.gz.tbi
+
 ```
 
 ### 7.3 Использование индексированных файлов
 
 ```python
+
 import pysam
 
 # Быстрое чтение региона из BAM
@@ -542,6 +604,7 @@ for read in bam.fetch("chr1", 10000, 20000):
 vcf = pysam.VariantFile("variants.vcf.gz")
 for variant in vcf.fetch("chr1", 10000, 20000):
     print(variant.pos, variant.ref, variant.alts)
+
 ```
 
 **Без индекса это работать не будет!**
@@ -558,6 +621,7 @@ samtools view -b input.sam > output.bam
 
 # BAM → SAM
 samtools view -h input.bam > output.sam
+
 ```
 
 ### 8.2 Сжатие FASTQ/VCF
@@ -569,12 +633,15 @@ gzip file.fastq  # → file.fastq.gz
 # bgzip (block gzip, позволяет индексацию)
 bgzip file.vcf  # → file.vcf.gz
 tabix -p vcf file.vcf.gz  # индексировать
+
 ```
 
 ### 8.3 FASTA → 2bit (компактный формат)
 
 ```bash
+
 faToTwoBit genome.fasta genome.2bit
+
 ```
 
 ---
@@ -603,10 +670,12 @@ faToTwoBit genome.fasta genome.2bit
 ### Следующие Шаги
 
 **Связанные модули:**
+
 - [Variant Calling](../03_Variant_Calling/) — как из FASTQ файлов получить VCF с вариантами
 - [CLI Tools](../04_CLI_Tools/) — работа с файлами через командную строку
 
 **Практические задачи для закрепления:**
+
 1. Напишите парсер FASTA файла с подсчётом статистик (длина, GC-содержание)
 2. Реализуйте фильтрацию FASTQ по качеству (avg_quality >= 30)
 3. Напишите функцию декодирования SAM FLAG в читаемый формат
@@ -616,6 +685,7 @@ faToTwoBit genome.fasta genome.2bit
 > **💡 Совет:** Используйте BioPython и pysam для проверки — сравните вывод вашего кода с библиотечным.
 
 **Для углублённого изучения:**
+
 - CRAM формат — более компактная альтернатива BAM
 - GFF/GTF форматы для аннотации генов
 - BigWig/BigBed для визуализации в браузерах генома
@@ -625,12 +695,14 @@ faToTwoBit genome.fasta genome.2bit
 ## 📚 Дополнительные Ресурсы
 
 ### Официальные Спецификации
+
 - [SAM/BAM/CRAM Format Specification](https://samtools.github.io/hts-specs/) — Все спецификации в одном месте
 - [VCF Format v4.3](https://samtools.github.io/hts-specs/VCFv4.3.pdf) — Детальное описание VCF
 - [BED Format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1) — Описание от UCSC
 - [FASTQ Format](https://en.wikipedia.org/wiki/FASTQ_format) — Подробное описание
 
 ### Инструменты Командной Строки
+
 - [SAMtools](http://www.htslib.org/) — Работа с SAM/BAM/CRAM файлами
 - [BCFtools](http://www.htslib.org/) — Работа с VCF/BCF файлами
 - [BEDTools](https://bedtools.readthedocs.io/) — Операции с геномными интервалами
@@ -638,17 +710,20 @@ faToTwoBit genome.fasta genome.2bit
 - [Tabix](http://www.htslib.org/doc/tabix.html) — Индексация tab-delimited файлов
 
 ### Python Библиотеки
+
 - [BioPython SeqIO](https://biopython.org/wiki/SeqIO) — Работа с FASTA/FASTQ
 - [pysam](https://pysam.readthedocs.io/) — Python интерфейс для SAM/BAM/VCF
 - [PyVCF](https://pyvcf.readthedocs.io/) — Парсер VCF файлов
 - [pybedtools](https://daler.github.io/pybedtools/) — Python обёртка для BEDTools
 
 ### Визуализация
+
 - [IGV](https://software.broadinstitute.org/software/igv/) — Integrative Genomics Viewer
 - [UCSC Genome Browser](https://genome.ucsc.edu/) — Веб-браузер геномных данных
 - [JBrowse](https://jbrowse.org/) — Современный геномный браузер
 
 ### Примеры Данных
+
 - [SAMtools Examples](https://github.com/samtools/samtools/tree/develop/examples) — Примеры файлов
 - [1000 Genomes Data](https://www.internationalgenome.org/data) — Реальные геномные данные
 - [GIAB Reference Materials](https://www.nist.gov/programs-projects/genome-bottle) — Эталонные данные
@@ -658,10 +733,15 @@ faToTwoBit genome.fasta genome.2bit
 ## 💡 Key Takeaways
 
 - **FASTA** — простой текстовый формат для последовательностей (референсы, гены)
+
 - **FASTQ** — сырые риды с качеством, основной входной формат для анализа
+
 - **SAM/BAM** — выравнивания ридов на референс, BAM = сжатый бинарный SAM
+
 - **VCF** — варианты (мутации), стандарт для хранения SNP/Indel/SV
+
 - **BED** — геномные интервалы (регионы, гены, экзоны), используется для фильтрации
+
 - **Индексация критична** — .bai, .tbi файлы позволяют быстрый доступ к регионам
 
 ---
@@ -669,11 +749,17 @@ faToTwoBit genome.fasta genome.2bit
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [03_Variant_Calling](../03_Variant_Calling/) — Пайплайны от FASTQ до VCF
 - [04_CLI_Tools](../04_CLI_Tools/) — Инструменты командной строки для работы с файлами
 
 **Практика:**
+
 1. Скачайте пример FASTQ файла и проанализируйте качество с FastQC
 2. Изучите структуру BAM файла с помощью `samtools view`
 3. Напишите скрипт для парсинга VCF файла на Python с использованием pysam
+
+
+
+
 

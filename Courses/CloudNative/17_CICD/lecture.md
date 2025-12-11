@@ -24,6 +24,7 @@
 ### 1.1 Pipeline
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              CI/CD Pipeline                                         │
 ├────────────────────────────────────────────────────────────────────┤
@@ -53,11 +54,13 @@
 │  CD (Continuous Deployment): Deploy to prod (automated, optional) │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 AWS CI/CD Services
 
 ```python
+
 aws_cicd_services = {
     "CodeCommit": "Git repositories (being deprecated)",
     "CodeBuild": "Build and test code",
@@ -76,6 +79,7 @@ third_party = {
 print("AWS CI/CD Services:")
 for service, description in aws_cicd_services.items():
     print(f"  • {service}: {description}")
+
 ```
 
 ---
@@ -85,6 +89,7 @@ for service, description in aws_cicd_services.items():
 ### 2.1 buildspec.yml
 
 ```yaml
+
 version: 0.2
 
 env:
@@ -129,17 +134,20 @@ artifacts:
 cache:
   paths:
     - '/root/.cache/pip/**/*'
+
 ```
 
 ### 2.2 CodeBuild Project
 
 ```bash
+
 aws codebuild create-project \
     --name my-build-project \
     --source type=GITHUB,location=https://github.com/user/repo \
     --environment type=LINUX_CONTAINER,computeType=BUILD_GENERAL1_SMALL,image=aws/codebuild/amazonlinux2-x86_64-standard:5.0,privilegedMode=true \
     --service-role arn:aws:iam::123456789012:role/codebuild-role \
     --artifacts type=S3,location=my-artifacts-bucket
+
 ```
 
 ---
@@ -227,6 +235,7 @@ Resources:
                 ServiceName: my-service
               InputArtifacts:
                 - Name: BuildOutput
+
 ```
 
 ---
@@ -236,6 +245,7 @@ Resources:
 ### 4.1 Стратегии
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Deployment Strategies                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -268,6 +278,7 @@ Resources:
 │  • Downtime during deploy                                         │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 ECS Blue/Green with CodeDeploy
@@ -291,6 +302,7 @@ Hooks:
   - AfterAllowTestTraffic: "LambdaFunctionToValidateAfterTestTrafficStarts"
   - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeAllowingProductionTraffic"
   - AfterAllowTraffic: "LambdaFunctionToValidateAfterAllowingProductionTraffic"
+
 ```
 
 ---
@@ -345,6 +357,7 @@ jobs:
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
+
 ```
 
 ---
@@ -352,6 +365,7 @@ jobs:
 ## 6. Best Practices
 
 ```python
+
 cicd_best_practices = [
     "Fast feedback: keep builds under 10 minutes",
     "Run tests in parallel",
@@ -368,6 +382,7 @@ cicd_best_practices = [
 print("CI/CD Best Practices:")
 for i, practice in enumerate(cicd_best_practices, 1):
     print(f"  {i}. {practice}")
+
 ```
 
 ---
@@ -375,10 +390,15 @@ for i, practice in enumerate(cicd_best_practices, 1):
 ## 💡 Key Takeaways
 
 - **CI** — автоматический build и test при каждом commit
+
 - **CD** — автоматический deploy до staging/prod
+
 - **CodeBuild** — managed build service
+
 - **CodePipeline** — orchestration of CI/CD stages
+
 - **Blue/Green** — instant rollback, higher cost
+
 - **Canary** — gradual rollout with monitoring
 
 ---
@@ -394,10 +414,15 @@ for i, practice in enumerate(cicd_best_practices, 1):
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [18_CloudNativeIntro](../18_CloudNativeIntro/) — Cloud Native принципы
 - [21_Observability](../21_Observability/) — Мониторинг CI/CD
 
 **Практика:**
+
 1. Настройте CodePipeline для Lambda деплоя
 2. Создайте GitHub Actions workflow для ECS
 3. Реализуйте blue/green deployment через CodeDeploy
+
+
+

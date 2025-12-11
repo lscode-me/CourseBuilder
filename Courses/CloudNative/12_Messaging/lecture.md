@@ -24,6 +24,7 @@
 ### 1.1 Три основных сервиса
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              AWS Messaging Services                                 │
 ├────────────────────────────────────────────────────────────────────┤
@@ -44,6 +45,7 @@
 │  └── Schema registry                                               │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -53,6 +55,7 @@
 ### 2.1 Queue Types
 
 ```python
+
 sqs_queue_types = {
     "Standard Queue": {
         "throughput": "Nearly unlimited",
@@ -72,11 +75,13 @@ for queue_type, details in sqs_queue_types.items():
     print(f"\n{queue_type}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 ### 2.2 SQS Operations
 
 ```python
+
 import boto3
 import json
 
@@ -110,11 +115,13 @@ for message in response.get('Messages', []):
         QueueUrl=queue_url,
         ReceiptHandle=message['ReceiptHandle']
     )
+
 ```
 
 ### 2.3 Key Concepts
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    SQS Key Concepts                                 │
 ├────────────────────────────────────────────────────────────────────┤
@@ -136,6 +143,7 @@ for message in response.get('Messages', []):
 │  └── Default: 4 days, Max: 14 days                                │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -145,6 +153,7 @@ for message in response.get('Messages', []):
 ### 3.1 Pub/Sub Pattern
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    SNS Pub/Sub                                      │
 ├────────────────────────────────────────────────────────────────────┤
@@ -168,6 +177,7 @@ for message in response.get('Messages', []):
 │  • SQS, Lambda, HTTP/S, Email, SMS, Mobile Push, Firehose         │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 SNS + SQS Fan-out
@@ -203,11 +213,13 @@ response = sns.publish(
 ### 3.3 Message Filtering
 
 ```json
+
 {
     "event_type": ["OrderConfirmed", "OrderShipped"],
     "amount": [{"numeric": [">=", 100]}],
     "customer_type": ["premium"]
 }
+
 ```
 
 ---
@@ -217,6 +229,7 @@ response = sns.publish(
 ### 4.1 Event Bus
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    EventBridge                                      │
 ├────────────────────────────────────────────────────────────────────┤
@@ -239,11 +252,13 @@ response = sns.publish(
 │           Kinesis, CodePipeline, EventBridge (cross-account)      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 Event Pattern Rules
 
 ```python
+
 import boto3
 
 events = boto3.client('events')
@@ -286,6 +301,7 @@ events.put_events(
         }
     ]
 )
+
 ```
 
 ### 4.3 Scheduler
@@ -304,6 +320,7 @@ scheduler.create_schedule(
     },
     FlexibleTimeWindow={'Mode': 'OFF'}
 )
+
 ```
 
 ---
@@ -311,6 +328,7 @@ scheduler.create_schedule(
 ## 5. Выбор сервиса
 
 ```python
+
 decision_guide = {
     "SQS": [
         "Decoupling between services",
@@ -339,6 +357,7 @@ for service, use_cases in decision_guide.items():
     for case in use_cases:
         print(f"  • {case}")
     print()
+
 ```
 
 ---
@@ -348,6 +367,7 @@ for service, use_cases in decision_guide.items():
 ### 6.1 SNS + SQS для надёжности
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              SNS + SQS Pattern                                      │
 ├────────────────────────────────────────────────────────────────────┤
@@ -376,6 +396,7 @@ for service, use_cases in decision_guide.items():
 │  • Retry logic per consumer                                        │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -383,10 +404,15 @@ for service, use_cases in decision_guide.items():
 ## 💡 Key Takeaways
 
 - **SQS** — message queue, decoupling, async processing
+
 - **SNS** — pub/sub, fan-out, notifications
+
 - **EventBridge** — event bus, content-based routing, scheduler
+
 - **SNS + SQS** — надёжный fan-out pattern
+
 - **FIFO Queue** — когда порядок и exactly-once важны
+
 - **Long Polling** — эффективнее и дешевле short polling
 
 ---
@@ -402,10 +428,15 @@ for service, use_cases in decision_guide.items():
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [13_APIGateway](../13_APIGateway/) — API Gateway и интеграции
 - [20_Microservices](../20_Microservices/) — Паттерны микросервисов
 
 **Практика:**
+
 1. Создайте SQS очередь и обработайте сообщения Lambda
 2. Настройте SNS topic с email подпиской
 3. Реализуйте event-driven архитектуру с EventBridge
+
+
+

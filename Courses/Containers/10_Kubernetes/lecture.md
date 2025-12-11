@@ -12,6 +12,7 @@
 - Знать основы сетевого взаимодействия контейнеров
 
 **Recommended prior modules:**
+
 - [Docker](../08_Docker/)
 - [Docker Compose & Swarm](../09_Compose/)
 
@@ -35,6 +36,7 @@
 Kubernetes (K8s) — платформа для автоматизации развёртывания, масштабирования и управления контейнеризованными приложениями.
 
 **Ключевые возможности:**
+
 - Оркестрация контейнеров на кластере машин
 - Автоматическое восстановление (self-healing)
 - Горизонтальное масштабирование
@@ -71,6 +73,7 @@ Kubernetes (K8s) — платформа для автоматизации раз
 ### 2.1 Компоненты кластера
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Kubernetes Cluster                        │
 │                                                                   │
@@ -109,6 +112,7 @@ Kubernetes (K8s) — платформа для автоматизации раз
 │  │  └──────────────────────┘  └──────────────────────┘        │ │
 │  └─────────────────────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Control Plane компоненты
@@ -175,6 +179,7 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "500m"
+
 ```
 
 ```bash
@@ -195,11 +200,13 @@ kubectl exec -it nginx-pod -- sh
 
 # Удаление
 kubectl delete pod nginx-pod
+
 ```
 
 ### 3.2 Multi-container Pod
 
 ```yaml
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -223,6 +230,7 @@ spec:
   volumes:
     - name: shared-data
       emptyDir: {}
+
 ```
 
 ### 3.3 Deployment
@@ -276,6 +284,7 @@ spec:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
+
 ```
 
 ```bash
@@ -296,6 +305,7 @@ kubectl rollout undo deployment/nginx-deployment
 
 # Статус rollout
 kubectl rollout status deployment/nginx-deployment
+
 ```
 
 ### 3.4 Service
@@ -316,6 +326,7 @@ spec:
       port: 80
       targetPort: 80
   type: ClusterIP
+
 ```
 
 **Типы Service:**
@@ -355,6 +366,7 @@ spec:
   ports:
     - port: 80
       targetPort: 80
+
 ```
 
 ### 3.5 ConfigMap и Secret
@@ -386,11 +398,13 @@ data:
   # base64 encoded
   DATABASE_PASSWORD: cGFzc3dvcmQxMjM=
   API_KEY: c2VjcmV0a2V5
+
 ```
 
 **Использование в Pod:**
 
 ```yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -426,6 +440,7 @@ spec:
         - name: config-volume
           configMap:
             name: app-config
+
 ```
 
 ---
@@ -435,6 +450,7 @@ spec:
 ### 4.1 Volumes
 
 ```yaml
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -458,6 +474,7 @@ spec:
     - name: config-volume
       configMap:
         name: app-config
+
 ```
 
 ### 4.2 PersistentVolume и PersistentVolumeClaim
@@ -509,6 +526,7 @@ spec:
     - name: data
       persistentVolumeClaim:
         claimName: my-pvc
+
 ```
 
 ---
@@ -518,6 +536,7 @@ spec:
 ### 5.1 Сетевая модель
 
 **Kubernetes Network Model:**
+
 - Каждый Pod получает уникальный IP
 - Pods могут общаться напрямую без NAT
 - Nodes могут общаться с Pods без NAT
@@ -535,6 +554,7 @@ database.production.svc.cluster.local
 
 # Внутри одного namespace можно использовать короткое имя
 nginx-service
+
 ```
 
 ### 5.3 Ingress
@@ -571,11 +591,13 @@ spec:
     - hosts:
         - myapp.example.com
       secretName: tls-secret
+
 ```
 
 ### 5.4 Network Policies
 
 ```yaml
+
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -604,6 +626,7 @@ spec:
       ports:
         - protocol: TCP
           port: 5432
+
 ```
 
 ---
@@ -634,6 +657,7 @@ kubectl get svc
 
 # Все ресурсы
 kubectl get all
+
 ```
 
 ### 6.2 Создание и изменение
@@ -652,6 +676,7 @@ kubectl edit deployment nginx-deployment
 
 # Patch
 kubectl patch deployment nginx -p '{"spec":{"replicas":5}}'
+
 ```
 
 ### 6.3 Отладка
@@ -673,6 +698,7 @@ kubectl port-forward svc/nginx-service 8080:80
 
 # Debug
 kubectl debug pod/nginx -it --image=busybox
+
 ```
 
 ### 6.4 Namespace management
@@ -687,6 +713,7 @@ kubectl config set-context --current --namespace=production
 # Ресурсы в namespace
 kubectl get pods -n production
 kubectl apply -f manifest.yaml -n production
+
 ```
 
 ---
@@ -711,6 +738,7 @@ minikube service nginx-service
 
 # Остановка
 minikube stop
+
 ```
 
 ### 7.2 kind (Kubernetes in Docker)
@@ -736,6 +764,7 @@ EOF
 
 # Удаление
 kind delete cluster --name my-cluster
+
 ```
 
 ### 7.3 k3s (lightweight)
@@ -749,6 +778,7 @@ sudo k3s kubectl get nodes
 
 # Kubeconfig
 sudo cat /etc/rancher/k3s/k3s.yaml
+
 ```
 
 ---
@@ -756,9 +786,13 @@ sudo cat /etc/rancher/k3s/k3s.yaml
 ## 💡 Key Takeaways
 
 - **Kubernetes** — стандарт оркестрации контейнеров в production
+
 - **Pod** — минимальная единица, может содержать несколько контейнеров
+
 - **Deployment** управляет ReplicaSet и обеспечивает rolling updates
+
 - **Service** предоставляет стабильный endpoint для доступа к Pods
+
 - **kubectl** — основной инструмент для работы с кластером
 
 ---
@@ -766,12 +800,14 @@ sudo cat /etc/rancher/k3s/k3s.yaml
 ## 🚀 Next Steps
 
 **Practice Ideas:**
+
 1. Разверните приложение в Minikube или kind
 2. Настройте Ingress с TLS
 3. Реализуйте canary deployment
 4. Настройте HPA (Horizontal Pod Autoscaler)
 
 **Going Deeper:**
+
 - Helm — пакетный менеджер для Kubernetes
 - Operators — автоматизация сложных приложений
 - Service Mesh (Istio, Linkerd)
@@ -782,19 +818,25 @@ sudo cat /etc/rancher/k3s/k3s.yaml
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 - [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - [Kubernetes API Reference](https://kubernetes.io/docs/reference/kubernetes-api/)
 
 **Learning:**
+
 - [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 - [CKAD/CKA Certification](https://www.cncf.io/certification/)
 
 **Tools:**
+
 - [Lens](https://k8slens.dev/) — Kubernetes IDE
 - [k9s](https://k9scli.io/) — Terminal UI
 - [Helm](https://helm.sh/) — Package manager
 
 ---
+
+
+
 
 

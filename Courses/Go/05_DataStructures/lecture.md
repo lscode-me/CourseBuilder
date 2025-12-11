@@ -12,6 +12,7 @@
 - Уметь работать с for range
 
 **Recommended prior modules:**
+
 - [02_Basics](../02_Basics/) — переменные и типы
 - [04_Functions](../04_Functions/) — функции
 
@@ -36,6 +37,7 @@
 Массив в Go — последовательность элементов **фиксированной длины**:
 
 ```go
+
 package main
 
 import "fmt"
@@ -58,20 +60,24 @@ func main() {
     sparse := [5]int{0: 10, 2: 30, 4: 50}
     fmt.Println("Sparse:", sparse)
 }
+
 ```
 
 **Output:**
 ```
+
 Zero values: [0 0 0 0 0]
 Primes: [2 3 5 7 11]
 Vowels: [a e i o u]
 Length: 5
 Sparse: [10 0 30 0 50]
+
 ```
 
 ### 1.2 Доступ к элементам
 
 ```go
+
 package main
 
 import "fmt"
@@ -93,10 +99,12 @@ func main() {
         fmt.Printf("arr[%d] = %d\n", i, v)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 First: 10
 Last: 50
 Length: 5
@@ -106,6 +114,7 @@ arr[1] = 20
 arr[2] = 300
 arr[3] = 40
 arr[4] = 50
+
 ```
 
 ### 1.3 Массивы — это значения
@@ -113,6 +122,7 @@ arr[4] = 50
 Массивы в Go копируются при присваивании:
 
 ```go
+
 package main
 
 import "fmt"
@@ -126,12 +136,15 @@ func main() {
     fmt.Println("a:", a)  // [1 2 3] — не изменился!
     fmt.Println("b:", b)  // [100 2 3]
 }
+
 ```
 
 **Output:**
 ```
+
 a: [1 2 3]
 b: [100 2 3]
+
 ```
 
 > **⚠️ Warning:**  
@@ -146,6 +159,7 @@ b: [100 2 3]
 Слайс — динамическая "обёртка" над массивом:
 
 ```go
+
 package main
 
 import "fmt"
@@ -170,20 +184,24 @@ func main() {
     d := []int{}
     fmt.Println("empty slice:", d, "is nil:", d == nil)
 }
+
 ```
 
 **Output:**
 ```
+
 nums: [1 2 3 4 5]
 make([]int, 5): [0 0 0 0 0] len: 5 cap: 5
 make([]int, 3, 10): [0 0 0] len: 3 cap: 10
 nil slice: [] len: 0 cap: 0 is nil: true
 empty slice: [] is nil: false
+
 ```
 
 ### 2.2 Слайсинг
 
 ```go
+
 package main
 
 import "fmt"
@@ -206,10 +224,12 @@ func main() {
     fmt.Println("  s:", s)
     fmt.Println("  arr:", arr)  // arr тоже изменился!
 }
+
 ```
 
 **Output:**
 ```
+
 arr[1:4]: [1 2 3]
 arr[:3]: [0 1 2]
 arr[3:]: [3 4 5]
@@ -217,11 +237,13 @@ arr[:]: [0 1 2 3 4 5]
 After s[0] = 100:
   s: [100 2 3]
   arr: [0 100 2 3 4 5]
+
 ```
 
 ### 2.3 append
 
 ```go
+
 package main
 
 import "fmt"
@@ -240,13 +262,16 @@ func main() {
     s = append(s, more...)
     fmt.Printf("Final: %v, len=%d, cap=%d\n", s, len(s), cap(s))
 }
+
 ```
 
 **Output:**
 ```
+
 Before: [1 2 3], len=3, cap=3
 After: [1 2 3 4 5 6 7], len=7, cap=12
 Final: [1 2 3 4 5 6 7 8 9 10], len=10, cap=12
+
 ```
 
 > **💡 Pro Tip:**  
@@ -255,6 +280,7 @@ Final: [1 2 3 4 5 6 7 8 9 10], len=10, cap=12
 ### 2.4 copy
 
 ```go
+
 package main
 
 import "fmt"
@@ -276,18 +302,22 @@ func main() {
     fmt.Println("src:", src)
     fmt.Println("fullCopy:", fullCopy)
 }
+
 ```
 
 **Output:**
 ```
+
 Copied 3 elements: [1 2 3]
 src: [1 2 3 4 5]
 fullCopy: [100 2 3 4 5]
+
 ```
 
 ### 2.5 Удаление элементов
 
 ```go
+
 package main
 
 import "fmt"
@@ -307,12 +337,15 @@ func main() {
     s = s[:len(s)-1]    // Укорачиваем
     fmt.Println("Fast delete index 2:", s)
 }
+
 ```
 
 **Output:**
 ```
+
 After removing index 2: [0 1 3 4 5]
 Fast delete index 2: [0 1 5 3 4]
+
 ```
 
 ---
@@ -322,6 +355,7 @@ Fast delete index 2: [0 1 5 3 4]
 ### 3.1 Создание мап
 
 ```go
+
 package main
 
 import "fmt"
@@ -346,18 +380,22 @@ func main() {
     fmt.Println("nil map:", nilMap, "is nil:", nilMap == nil)
     // nilMap["key"] = 1  // panic!
 }
+
 ```
 
 **Output:**
 ```
+
 ages: map[Alice:30 Bob:25 Carol:35]
 scores: map[math:95 physics:87]
 nil map: map[] is nil: true
+
 ```
 
 ### 3.2 Операции с мапами
 
 ```go
+
 package main
 
 import "fmt"
@@ -393,21 +431,25 @@ func main() {
     // Длина
     fmt.Println("Length:", len(m))
 }
+
 ```
 
 **Output:**
 ```
+
 m["one"]: 1
 m["four"]: value=0, exists=false
 Found two: 2
 After update: map[four:4 one:100 three:3 two:2]
 After delete: map[four:4 one:100 three:3]
 Length: 3
+
 ```
 
 ### 3.3 Итерация по мапе
 
 ```go
+
 package main
 
 import "fmt"
@@ -431,10 +473,12 @@ func main() {
         fmt.Println(" ", country)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Russia -> Moscow
 Japan -> Tokyo
 Germany -> Berlin
@@ -445,11 +489,13 @@ Countries:
   Japan
   Germany
   France
+
 ```
 
 ### 3.4 Мапа как множество (Set)
 
 ```go
+
 package main
 
 import "fmt"
@@ -477,13 +523,16 @@ func main() {
     
     fmt.Println("Set:", set)
 }
+
 ```
 
 **Output:**
 ```
+
 apple is in set
 grape is NOT in set
 Set: map[apple:{} cherry:{}]
+
 ```
 
 ---
@@ -493,6 +542,7 @@ Set: map[apple:{} cherry:{}]
 ### 4.1 Определение структуры
 
 ```go
+
 package main
 
 import "fmt"
@@ -527,19 +577,23 @@ func main() {
     var p4 Person
     fmt.Printf("p4: %+v\n", p4)
 }
+
 ```
 
 **Output:**
 ```
+
 p1: {Name:Alice Age:30 Email:alice@example.com Active:true}
 p2: {Name:Bob Age:25 Email:bob@example.com Active:false}
 p3: {Name:Carol Age:0 Email: Active:false}
 p4: {Name: Age:0 Email: Active:false}
+
 ```
 
 ### 4.2 Доступ к полям
 
 ```go
+
 package main
 
 import "fmt"
@@ -565,19 +619,23 @@ func main() {
     ptr.X = 1000  // Автоматическое разыменование
     fmt.Println("Via pointer:", p)
 }
+
 ```
 
 **Output:**
 ```
+
 X: 10
 Y: 20
 Modified: {100 200}
 Via pointer: {1000 200}
+
 ```
 
 ### 4.3 Вложенные структуры
 
 ```go
+
 package main
 
 import "fmt"
@@ -608,17 +666,21 @@ func main() {
     fmt.Printf("%+v\n", emp)
     fmt.Println("City:", emp.Address.City)
 }
+
 ```
 
 **Output:**
 ```
+
 {Name:John Age:35 Address:{City:Moscow Street:Tverskaya ZipCode:123456}}
 City: Moscow
+
 ```
 
 ### 4.4 Embedding (Встраивание)
 
 ```go
+
 package main
 
 import "fmt"
@@ -652,19 +714,23 @@ func main() {
     // Также доступен через имя типа
     fmt.Println("Address.City:", p.Address.City)
 }
+
 ```
 
 **Output:**
 ```
+
 Name: Alice
 City: Tokyo
 Street: Shibuya
 Address.City: Tokyo
+
 ```
 
 ### 4.5 Теги структур
 
 ```go
+
 package main
 
 import (
@@ -690,15 +756,18 @@ func main() {
     data, _ := json.MarshalIndent(user, "", "  ")
     fmt.Println(string(data))
 }
+
 ```
 
 **Output:**
 ```json
+
 {
   "id": 1,
   "username": "gopher",
   "created_at": ""
 }
+
 ```
 
 ---
@@ -714,6 +783,7 @@ func main() {
 | Передача в функцию | Копируется | Ссылка | Ссылка |
 
 ```go
+
 package main
 
 import "fmt"
@@ -735,13 +805,16 @@ func main() {
     p2 := Point{1, 2}
     fmt.Println("Structs equal:", p1 == p2)
 }
+
 ```
 
 **Output:**
 ```
+
 Arrays equal: true
 Slice is nil: false
 Structs equal: true
+
 ```
 
 ---
@@ -751,6 +824,7 @@ Structs equal: true
 ### 6.1 Модификация слайса в функции
 
 ```go
+
 package main
 
 import "fmt"
@@ -773,18 +847,22 @@ func main() {
     nums = addElementCorrect(nums)
     fmt.Println("After addElementCorrect:", nums)
 }
+
 ```
 
 **Output:**
 ```
+
 Inside: [1 2 3 100]
 After addElement: [1 2 3]
 After addElementCorrect: [1 2 3 100]
+
 ```
 
 ### 6.2 nil map
 
 ```go
+
 package main
 
 func main() {
@@ -795,11 +873,13 @@ func main() {
     m = make(map[string]int)
     m["key"] = 1
 }
+
 ```
 
 ### 6.3 Итерация и модификация мапы
 
 ```go
+
 package main
 
 import "fmt"
@@ -821,11 +901,14 @@ func main() {
     //     m["new_" + k] = 0
     // }
 }
+
 ```
 
 **Output:**
 ```
+
 After delete: map[a:1 c:3]
+
 ```
 
 ---
@@ -847,14 +930,19 @@ After delete: map[a:1 c:3]
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [06_Pointers](../06_Pointers/) — указатели и ссылки
 - [07_Methods](../07_Methods/) — методы на структурах
 
 **Practice Ideas:**
+
 1. Реализуйте стек на слайсах
 2. Создайте телефонную книгу на мапах
 3. Напишите функции для работы со слайсами (filter, map, reduce)
 4. Создайте вложенные структуры для представления JSON
 
 ---
+
+
+
 

@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [01_Terminology](../01_Terminology/) — медицинская терминология
 - Понимать основы информационной безопасности
 - Иметь представление о криптографии (шифрование, хеширование)
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснять требования HIPAA Security Rule и Privacy Rule
 - Идентифицировать PHI и применять методы де-идентификации
 - Реализовывать шифрование данных at-rest и in-transit
@@ -35,8 +37,11 @@
 Американский закон, регулирующий защиту медицинских данных.
 
 **Основные компоненты:**
+
 - **Privacy Rule** — конфиденциальность PHI
+
 - **Security Rule** — технические меры защиты
+
 - **Breach Notification Rule** — уведомление о нарушениях
 
 ### 1.2 Protected Health Information (PHI)
@@ -44,6 +49,7 @@
 PHI — любая информация, которая может идентифицировать пациента:
 
 **18 идентификаторов:**
+
 1. Имя
 2. Адрес (улица, город, zip-code)
 3. Даты (рождения, визитов, смерти)
@@ -67,10 +73,12 @@ PHI — любая информация, которая может иденти�
 Удаление PHI для использования данных в исследованиях.
 
 **Методы:**
+
 1. **Safe Harbor** — удалить все 18 идентификаторов
 2. **Expert Determination** — эксперт подтверждает, что риск минимален
 
 ```python
+
 def deidentify_patient_data(patient):
     """Простая де-идентификация"""
     return {
@@ -80,6 +88,7 @@ def deidentify_patient_data(patient):
         'zip_3': patient['zip'][:3],  # Только первые 3 цифры
         # Все имена, даты, номера удалены
     }
+
 ```
 
 ---
@@ -91,14 +100,19 @@ def deidentify_patient_data(patient):
 **GDPR** (General Data Protection Regulation) — европейский закон о защите данных.
 
 **Ключевые права:**
+
 - **Right to Access** — пациент может запросить свои данные
+
 - **Right to Erasure** ("Right to be Forgotten")
+
 - **Right to Portability** — перенос данных
+
 - **Right to Rectification** — исправление ошибок
 
 ### 2.2 Consent Management
 
 ```python
+
 class ConsentManager:
     def __init__(self):
         self.consents = {}
@@ -116,6 +130,7 @@ class ConsentManager:
         """Проверить разрешение на обработку"""
         consent = self.consents.get(patient_id)
         return consent and consent['granted'] and consent['purpose'] == purpose
+
 ```
 
 ---
@@ -126,6 +141,7 @@ class ConsentManager:
 
 **At Rest:**
 ```python
+
 from cryptography.fernet import Fernet
 
 # Генерация ключа
@@ -137,19 +153,23 @@ encrypted_ssn = cipher.encrypt(b"123-45-6789")
 
 # Дешифрование
 decrypted_ssn = cipher.decrypt(encrypted_ssn)
+
 ```
 
 **In Transit:**
 ```
+
 - TLS 1.2+ для всех соединений
 - VPN для remote access
 - Encrypted email (S/MIME, PGP)
+
 ```
 
 ### 3.2 Access Control
 
 **RBAC (Role-Based Access Control):**
 ```python
+
 class AccessControl:
     roles = {
         'doctor': ['read_patient', 'write_patient', 'prescribe'],
@@ -160,15 +180,18 @@ class AccessControl:
     
     def has_permission(self, user_role, permission):
         return permission in self.roles.get(user_role, [])
+
 ```
 
 **Принцип наименьших привилегий:**
+
 - Давать только минимальные необходимые права
 - Регулярный review доступов
 
 ### 3.3 Audit Logging
 
 ```python
+
 class AuditLog:
     def log_access(self, user_id, patient_id, action, timestamp):
         """Логировать доступ к медицинским данным"""
@@ -188,9 +211,11 @@ class AuditLog:
         # Доступ в необычное время
         # Доступ к собственной записи медработником
         pass
+
 ```
 
 **Что логировать:**
+
 - Кто (user_id)
 - Что (action)
 - Когда (timestamp)
@@ -205,6 +230,7 @@ class AuditLog:
 ### 4.1 Authentication
 
 ```python
+
 from flask import Flask, request
 from werkzeug.security import check_password_hash
 import jwt
@@ -227,9 +253,11 @@ def authenticate_user(username, password):
     }, SECRET_KEY)
     
     return token
+
 ```
 
 **Требования:**
+
 - Strong passwords (минимум 12 символов)
 - Multi-factor authentication (MFA)
 - Session timeout (15 минут inactivity)
@@ -261,6 +289,7 @@ from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
+
 ```
 
 ---
@@ -270,6 +299,7 @@ csrf = CSRFProtect(app)
 ### 5.1 Breach Response Plan
 
 **Шаги при утечке данных:**
+
 1. **Identify** — обнаружить и оценить масштаб
 2. **Contain** — остановить утечку
 3. **Assess** — оценить затронутые данные и пациентов
@@ -283,9 +313,11 @@ csrf = CSRFProtect(app)
 ### 5.2 Breach Notification Timeline
 
 ```
+
 Обнаружение → 60 дней → Уведомление пациентов
               ↓
           Немедленно → Уведомление HHS (если >500)
+
 ```
 
 ---
@@ -329,11 +361,13 @@ csrf = CSRFProtect(app)
 ## 🚀 Следующие Шаги
 
 **Связанные модули:**
+
 - [Medical Terminology](../01_Terminology/) — базовая терминология и стандарты
 - [EHR Systems](../02_EHR_Systems/) — архитектура EHR систем
 - [Medical Imaging](../04_Medical_Imaging/) — DICOM и защита изображений
 
 **Идеи для практики:**
+
 1. **De-identification Service** — удаление 18 HIPAA идентификаторов, сохранение агрегированных данных
 2. **Audit Logger** — логирование доступа к PHI, поиск по логам, alerts для аномалий
 3. **RBAC System** — роли (Doctor, Nurse, Admin, Billing) и permissions
@@ -345,13 +379,16 @@ csrf = CSRFProtect(app)
 ## 📚 Дополнительные Ресурсы
 
 **HIPAA:**
+
 - [HHS HIPAA](https://www.hhs.gov/hipaa/index.html) — официальный сайт HIPAA
 - [HIPAA Security Rule](https://www.hhs.gov/hipaa/for-professionals/security/index.html) — технические требования
 
 **GDPR:**
+
 - [GDPR Official](https://gdpr.eu/) — полный текст GDPR
 
 **Security:**
+
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/) — основные уязвимости веб-приложений
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) — framework для кибербезопасности
 
@@ -360,9 +397,13 @@ csrf = CSRFProtect(app)
 ## 💡 Key Takeaways
 
 - **HIPAA** — американский закон о защите медицинских данных, штрафы до $1.5M за нарушение
+
 - **PHI** — 18 идентификаторов пациента, которые нужно защищать
+
 - **De-identification** — Safe Harbor (удаление всех 18 идентификаторов) или Expert Determination
+
 - **Encryption** — AES-256 для данных at-rest, TLS 1.2+ для данных in-transit
+
 - **Audit logging** — обязательно логировать кто, когда, к чему обращался
 
 ---
@@ -370,10 +411,16 @@ csrf = CSRFProtect(app)
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [04_Medical_Imaging](../04_Medical_Imaging/) — Медицинские изображения и DICOM
 
 **Практика:**
+
 1. Реализуйте систему аудита доступа к PHI
 2. Напишите скрипт де-идентификации FHIR ресурсов
 3. Изучите требования HIPAA для вашего конкретного use case
+
+
+
+
 

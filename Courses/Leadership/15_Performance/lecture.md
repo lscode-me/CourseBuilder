@@ -12,6 +12,7 @@
 - Быть готовым к сложным разговорам
 
 **Recommended prior modules:**
+
 - [05_Feedback](../05_Feedback/) — культура feedback
 - [06_Motivation](../06_Motivation/) — мотивация и развитие
 
@@ -35,27 +36,32 @@
 
 **Старый подход:**
 ```
+
 Annual review:
 
 - Раз в год
 - Surprise feedback
 - Ranking и rating
 - Disconnect от реальности
+
 ```
 
 **Современный подход:**
 ```
+
 Continuous:
 
 - Ongoing feedback
 - Regular 1-on-1
 - No surprises at review
 - Real-time course correction
+
 ```
 
 ### 1.2 Cycle
 
 ```
+
          ┌─────────────────────────────────────────┐
          │           Performance Cycle             │
          └─────────────────────────────────────────┘
@@ -71,6 +77,7 @@ Continuous:
        │                                      │
        └──────────────────────────────────────┘
                     (repeat)
+
 ```
 
 ---
@@ -82,6 +89,7 @@ Continuous:
 **Objectives and Key Results:**
 
 ```markdown
+
 Objective: What you want to achieve (qualitative)
 Key Results: How you measure progress (quantitative)
 
@@ -90,9 +98,11 @@ O: Improve customer onboarding experience
 KR1: Reduce onboarding time from 7 days to 3 days
 KR2: Increase onboarding completion rate from 60% to 85%
 KR3: Achieve NPS of 50+ for onboarding flow
+
 ```
 
 **OKR Best Practices:**
+
 - 3-5 objectives per quarter
 - 2-4 key results per objective
 - 70% achievement is success (stretch goals)
@@ -101,26 +111,31 @@ KR3: Achieve NPS of 50+ for onboarding flow
 ### 2.2 SMART Goals
 
 ```
+
 S - Specific: Clear and well-defined
 M - Measurable: Quantifiable progress
 A - Achievable: Realistic but challenging
 R - Relevant: Aligned with priorities
 T - Time-bound: Clear deadline
+
 ```
 
 **Example:**
 ```
+
 ❌ "Improve code quality"
 
 ✅ "Reduce bug escape rate from 5% to 2% 
     by implementing code review checklist 
     by end of Q2"
+
 ```
 
 ### 2.3 Individual vs Team Goals
 
 **Balance:**
 ```
+
 Individual goals:
 
 - Personal development
@@ -132,6 +147,7 @@ Team goals:
 - Shared outcomes
 - Collaboration incentives
 - Collective success
+
 ```
 
 **Ratio:** ~60% individual, ~40% team (varies by role)
@@ -143,6 +159,7 @@ Team goals:
 ### 3.1 Review Structure
 
 **Typical cycle:**
+
 - Mid-year review (informal)
 - Annual review (formal)
 - Quarterly check-ins (optional)
@@ -173,17 +190,20 @@ Team goals:
 ### Goals for Next Period
 - [Goal 1]
 - [Goal 2]
+
 ```
 
 ### 3.3 Manager Assessment
 
 **Preparing:**
 ```
+
 1. Review goals и OKRs
 2. Gather feedback (peers, stakeholders)
 3. Review 1-on-1 notes
 4. Identify specific examples
 5. Draft assessment
+
 ```
 
 **Writing assessment:**
@@ -205,12 +225,14 @@ Team goals:
 
 ### Recommendations
 [Promotion / Development / Compensation]
+
 ```
 
 ### 3.4 Review Meeting
 
 **Структура:**
 ```
+
 1. Set context (5 min)
    - Purpose of meeting
    - Their self-assessment first
@@ -229,9 +251,11 @@ Team goals:
    - Action items
    - Goals for next period
    - Follow-up plan
+
 ```
 
 **Key principles:**
+
 - No surprises (continuous feedback!)
 - Balanced (strengths + areas for growth)
 - Specific examples, not generalities
@@ -248,11 +272,13 @@ Team goals:
 
 **Questions:**
 ```
+
 1. Where do you see yourself in 2-3 years?
 2. What skills do you want to develop?
 3. What type of work energizes you?
 4. What's blocking your growth?
 5. How can I support your development?
+
 ```
 
 ### 4.2 Development Plan
@@ -282,6 +308,7 @@ Team goals:
 ### Check-ins
 - Monthly 1-on-1 review
 - Quarterly formal review
+
 ```
 
 ### 4.3 Career Ladders
@@ -315,6 +342,7 @@ Team goals:
 - Communication: Executive
 
 [Continue for each level...]
+
 ```
 
 ---
@@ -325,6 +353,7 @@ Team goals:
 
 **Typical criteria:**
 ```
+
 1. Already performing at next level
    (не "готов к promotion", а "уже делает")
 
@@ -336,6 +365,7 @@ Team goals:
 
 4. Demonstrates competencies
    (по ladder)
+
 ```
 
 ### 5.2 Promotion Packet
@@ -370,20 +400,24 @@ Team goals:
 
 ### Recommendation
 [Strong support for promotion]
+
 ```
 
 ### 5.3 Calibration
 
 **Process:**
 ```
+
 1. Managers submit nominations
 2. Calibration meeting with peer managers
 3. Compare candidates against ladder
 4. Discuss edge cases
 5. Final decisions
+
 ```
 
 **Purpose:**
+
 - Consistency across managers
 - Fair application of standards
 - Reduce bias
@@ -395,6 +429,7 @@ Team goals:
 ### 6.1 Early Signals
 
 ```
+
 🚨 Warning signs:
 
 - Missed deadlines consistently
@@ -403,6 +438,7 @@ Team goals:
 - Disengagement
 - Attitude changes
 - Avoiding responsibility
+
 ```
 
 ### 6.2 Root Cause Analysis
@@ -421,6 +457,7 @@ Team goals:
 ### 6.3 Performance Improvement Plan (PIP)
 
 **When to use:**
+
 - After informal feedback didn't work
 - Clear underperformance vs expectations
 - Documented issues
@@ -464,11 +501,13 @@ Signatures:
 Employee: _________ Date: _____
 Manager: _________ Date: _____
 HR: _________ Date: _____
+
 ```
 
 ### 6.4 PIP Best Practices
 
 ```
+
 ✅ DO:
 
 - Be specific and measurable
@@ -485,18 +524,21 @@ HR: _________ Date: _____
 - Ignore during PIP period
 - Skip documentation
 - Make it punitive vs developmental
+
 ```
 
 ### 6.5 Exit Decisions
 
 **When PIP fails:**
 ```
+
 1. Documented failure to meet criteria
 2. HR review
 3. Legal review (если нужно)
 4. Respectful exit conversation
 5. Severance (per policy)
 6. Transition plan
+
 ```
 
 ---
@@ -507,41 +549,49 @@ HR: _________ Date: _____
 
 **Components:**
 ```
+
 Total Compensation:
 
 - Base salary
 - Bonus / Variable
 - Equity / Stock
 - Benefits
+
 ```
 
 ### 7.2 Performance и Compensation
 
 **Link:**
 ```
+
 High performer → Higher raises, bonus
 Meets expectations → Standard raise
 Below expectations → No raise / PIP
+
 ```
 
 ### 7.3 Conversations about Compensation
 
 **When asked:**
 ```
+
 1. Listen to their perspective
 2. Explain factors (performance, market, budget)
 3. Be honest about what you can/can't control
 4. If unfair — advocate for them
 5. Discuss non-monetary growth
+
 ```
 
 **What you can say:**
 ```
+
 "Based on your performance and our budget, 
 your raise is X%. Here's how it compares to..."
 
 "I've advocated for a higher increase. 
 Let me share what's possible and timeline."
+
 ```
 
 ---
@@ -552,25 +602,31 @@ Let me share what's possible and timeline."
 
 **Numeric (1-5):**
 ```
+
 5 - Exceptional
 4 - Exceeds
 3 - Meets
 2 - Below
 1 - Unsatisfactory
+
 ```
 
 **Forced distribution:**
 ```
+
 Top 20% - High performers
 Middle 70% - Meets expectations
 Bottom 10% - Underperformers
+
 ```
 
 **No ratings:**
 ```
+
 Qualitative feedback only
 Focus on development
 No rankings
+
 ```
 
 ### 8.2 Pros and Cons
@@ -586,9 +642,13 @@ No rankings
 ## 💡 Key Takeaways
 
 - **No surprises:** Continuous feedback, not annual surprise
+
 - **Specific:** Examples and metrics, not generalities
+
 - **Development focus:** Performance → Growth, not just rating
+
 - **Early intervention:** Address issues before they escalate
+
 - **Document:** Especially for underperformance
 
 ---
@@ -596,15 +656,18 @@ No rankings
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [05_Feedback](../05_Feedback/) — ongoing feedback
 - [06_Motivation](../06_Motivation/) — connecting performance to motivation
 
 **Practice Ideas:**
+
 1. Review your team's goals — are they SMART?
 2. Draft career development plan for one person
 3. Identify anyone showing underperformance signals
 
 **Going Deeper:**
+
 - Calibration facilitation
 - Compensation philosophy
 - Career ladder design
@@ -614,13 +677,18 @@ No rankings
 ## 📚 Additional Resources
 
 **Books:**
+
 - "Radical Candor" by Kim Scott — feedback and performance
 - "High Output Management" by Andy Grove — OKRs origin
 - "Nine Lies About Work" by Buckingham — rethinking performance
 
 **Articles:**
+
 - [Google: OKRs](https://rework.withgoogle.com/guides/set-goals-with-okrs)
 - [Netflix: Performance Philosophy](https://jobs.netflix.com/culture)
 
 ---
+
+
+
 

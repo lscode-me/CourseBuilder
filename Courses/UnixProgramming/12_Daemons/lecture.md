@@ -33,6 +33,7 @@
 **Демон (daemon)** — фоновый процесс без управляющего терминала, работающий непрерывно.
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │                    User Space                            │
 ├─────────────────────────────────────────────────────────┤
@@ -46,6 +47,7 @@
 │               No controlling terminal                   │
 │               Parent: init/systemd (PID 1)              │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Характеристики демона
@@ -136,6 +138,7 @@ if __name__ == "__main__":
     import time
     while True:
         time.sleep(60)
+
 ```
 
 ### 2.2 Современный подход с python-daemon
@@ -187,6 +190,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ---
@@ -196,6 +200,7 @@ if __name__ == "__main__":
 ### 3.1 Работа с PID файлами
 
 ```python
+
 import os
 import fcntl
 import sys
@@ -267,6 +272,7 @@ class PIDFile:
 with PIDFile("/var/run/mydaemon.pid"):
     # Код демона
     pass
+
 ```
 
 ---
@@ -276,6 +282,7 @@ with PIDFile("/var/run/mydaemon.pid"):
 ### 4.1 syslog модуль
 
 ```python
+
 import syslog
 
 # Открыть соединение с syslog
@@ -292,11 +299,13 @@ syslog.syslog(syslog.LOG_ERR, "Error occurred")
 
 # Закрыть соединение
 syslog.closelog()
+
 ```
 
 ### 4.2 logging с SysLogHandler
 
 ```python
+
 import logging
 import logging.handlers
 
@@ -324,6 +333,7 @@ def setup_logging(name, level=logging.INFO):
 logger = setup_logging('mydaemon')
 logger.info("Daemon started")
 logger.error("Something went wrong", exc_info=True)
+
 ```
 
 ### 4.3 Уровни syslog
@@ -346,6 +356,7 @@ logger.error("Something went wrong", exc_info=True)
 ### 5.1 Graceful shutdown
 
 ```python
+
 import signal
 import sys
 import threading
@@ -385,11 +396,13 @@ while not shutdown.should_shutdown():
 
 # Cleanup
 print("Cleaning up...")
+
 ```
 
 ### 5.2 Reload конфигурации по SIGHUP
 
 ```python
+
 import signal
 import json
 import threading
@@ -432,6 +445,7 @@ class ConfigurableDaemon:
             
             # Работа
             time.sleep(interval)
+
 ```
 
 ---
@@ -457,6 +471,7 @@ rc_pre() {
 }
 
 rc_cmd $1
+
 ```
 
 ```python
@@ -501,6 +516,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ### 6.2 systemd unit для Linux
@@ -528,6 +544,7 @@ PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 ```python
@@ -569,6 +586,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ---
@@ -717,6 +735,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ---
@@ -724,10 +743,15 @@ if __name__ == "__main__":
 ## 💡 Key Takeaways
 
 - **Двойной fork** — классический способ создания демона
+
 - **PID файл** — предотвращает множественный запуск
+
 - **syslog** — стандартное логирование для демонов
+
 - **SIGHUP** — для перезагрузки конфигурации
+
 - **SIGTERM** — для graceful shutdown
+
 - **systemd** — не требует daemonize(), запускайте foreground
 
 ---
@@ -737,6 +761,7 @@ if __name__ == "__main__":
 Поздравляем! Вы прошли курс по системному программированию в Unix/OpenBSD с Python.
 
 **Что вы изучили:**
+
 - Низкоуровневая работа с файлами и I/O
 - Управление процессами (fork, exec, wait)
 - Сигналы и IPC
@@ -746,6 +771,7 @@ if __name__ == "__main__":
 - Создание демонов
 
 **Следующие шаги:**
+
 1. Практика — создайте свой демон
 2. Изучите исходники OpenBSD утилит
 3. Прочитайте "Advanced Programming in the UNIX Environment"
@@ -756,11 +782,13 @@ if __name__ == "__main__":
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man daemon(3)](https://man.openbsd.org/daemon.3)
 - [man rc.d(8)](https://man.openbsd.org/rc.d.8)
 - [systemd.service](https://www.freedesktop.org/software/systemd/man/systemd.service.html)
 
 **Books:**
+
 - "Advanced Programming in the UNIX Environment" — Stevens, Rago
 - "The Linux Programming Interface" — Michael Kerrisk
 
@@ -771,12 +799,17 @@ if __name__ == "__main__":
 **Это последний модуль курса Unix Programming.**
 
 **Практика:**
+
 1. Напишите демон, который логирует системные события в файл
 2. Создайте systemd unit файл для вашего демона
 3. Реализуйте graceful shutdown с обработкой SIGTERM
 
 **Рекомендуемые курсы для продолжения:**
+
 - [Containers](../../Containers/) — Контейнеризация и Docker
 - [DevOps](../../DevOps/) — DevOps практики и инструменты
 - [Networking](../../Networking/) — Сетевое программирование
+
+
+
 

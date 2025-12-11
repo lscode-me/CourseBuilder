@@ -12,6 +12,7 @@
 - Уметь работать с командной строкой Linux
 
 **Recommended prior modules:**
+
 - [Sockets](../../UnixProgramming/07_Sockets/) — сетевые сокеты
 
 ---
@@ -35,6 +36,7 @@
 **HTTP (HyperText Transfer Protocol)** — протокол прикладного уровня для передачи гипертекстовых документов. Изначально создан для передачи HTML, но сейчас используется для любых данных.
 
 ```
+
 ┌──────────────────────────────────────────────────────────────┐
 │                    Web Architecture                          │
 ├──────────────────────────────────────────────────────────────┤
@@ -49,6 +51,7 @@
 │         TCP Connection (порт 80/443)                         │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
+
 ```
 
 HTTP работает по модели **запрос-ответ**:
@@ -71,6 +74,7 @@ HTTP работает по модели **запрос-ответ**:
 ### 1.3 Порты по умолчанию
 
 - **80** — HTTP (незашифрованный)
+
 - **443** — HTTPS (TLS/SSL)
 
 ```bash
@@ -80,6 +84,7 @@ sudo netstat -tlnp | grep :80
 
 # Или через lsof
 sudo lsof -i :80
+
 ```
 
 ---
@@ -89,6 +94,7 @@ sudo lsof -i :80
 ### 2.1 Анатомия запроса
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │ METHOD /path/to/resource?query=value HTTP/1.1              │ ← Request Line
 ├────────────────────────────────────────────────────────────┤
@@ -101,12 +107,15 @@ sudo lsof -i :80
 ├────────────────────────────────────────────────────────────┤
 │ {"key": "value", "another": "data"}                        │ ← Body (optional)
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 **Request Line** состоит из:
 
 - **Method** — GET, POST, PUT, DELETE и др.
+
 - **URI** — путь к ресурсу (с query string)
+
 - **Version** — HTTP/1.0, HTTP/1.1, HTTP/2
 
 ### 2.2 HTTP методы
@@ -146,10 +155,12 @@ telnet example.com 80
 ```bash
 # HTTP/1.0 не требует Host заголовка
 printf "GET / HTTP/1.0\r\n\r\n" | nc example.com 80
+
 ```
 
 **Output:**
 ```
+
 HTTP/1.0 200 OK
 Content-Type: text/html; charset=UTF-8
 Content-Length: 1256
@@ -160,6 +171,7 @@ Connection: close
 <html>
 ...
 </html>
+
 ```
 
 ---
@@ -169,6 +181,7 @@ Connection: close
 ### 3.1 Анатомия ответа
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │ HTTP/1.1 200 OK                                            │ ← Status Line
 ├────────────────────────────────────────────────────────────┤
@@ -184,6 +197,7 @@ Connection: close
 │ ...                                                        │
 │ </html>                                                    │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Статус-коды
@@ -201,6 +215,7 @@ Connection: close
 **Популярные статус-коды:**
 
 ```
+
 200 OK                    — успех
 201 Created               — ресурс создан (POST)
 204 No Content            — успех без тела ответа
@@ -216,6 +231,7 @@ Connection: close
 502 Bad Gateway           — ошибка upstream сервера
 503 Service Unavailable   — сервис недоступен
 504 Gateway Timeout       — таймаут от upstream
+
 ```
 
 ---
@@ -235,6 +251,7 @@ Date: Tue, 15 Nov 2023 08:12:31 GMT
 # Кодирование
 Transfer-Encoding: chunked
 Content-Encoding: gzip
+
 ```
 
 ### 4.2 Заголовки запроса
@@ -262,6 +279,7 @@ Cookie: session_id=abc123
 # Тело запроса
 Content-Type: application/json
 Content-Length: 42
+
 ```
 
 ### 4.3 Заголовки ответа
@@ -297,6 +315,7 @@ Content-Security-Policy: default-src 'self'
 # CORS
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: GET, POST, OPTIONS
+
 ```
 
 ### 4.4 Content-Type и MIME типы
@@ -323,6 +342,7 @@ Content-Type: image/png
 Content-Type: image/jpeg
 Content-Type: image/gif
 Content-Type: image/svg+xml
+
 ```
 
 ---
@@ -345,6 +365,7 @@ Content-Type: image/svg+xml
 **HTTP/1.0:** Новое TCP соединение для каждого запроса.
 
 ```
+
 Client          Server
   │                │
   ├── TCP SYN ────►│
@@ -357,11 +378,13 @@ Client          Server
   │◄── TCP ACK ────┤
   ├── GET /2 ─────►│
   ...
+
 ```
 
 **HTTP/1.1:** Повторное использование соединения.
 
 ```
+
 Client          Server
   │                │
   ├── TCP SYN ────►│
@@ -373,6 +396,7 @@ Client          Server
   ├── GET /3 ─────►│
   │◄── Response ───┤
   ...
+
 ```
 
 ### 5.3 Chunked Transfer Encoding
@@ -380,6 +404,7 @@ Client          Server
 Когда сервер не знает размер ответа заранее:
 
 ```http
+
 HTTP/1.1 200 OK
 Transfer-Encoding: chunked
 
@@ -391,6 +416,7 @@ Developer\r\n
 Network\r\n
 0\r\n
 \r\n
+
 ```
 
 Формат: `размер_в_hex\r\nданные\r\n`, заканчивается `0\r\n\r\n`.
@@ -400,13 +426,17 @@ Network\r\n
 HTTP/1.1 требует заголовок `Host`, что позволяет размещать несколько сайтов на одном IP:
 
 ```http
+
 GET /index.html HTTP/1.1
 Host: site1.example.com
+
 ```
 
 ```http
+
 GET /index.html HTTP/1.1
 Host: site2.example.com
+
 ```
 
 Оба запроса идут на один IP, но сервер отдаёт разный контент.
@@ -420,9 +450,11 @@ Host: site2.example.com
 В HTTP/1.1 запросы обрабатываются последовательно в рамках одного соединения:
 
 ```
+
 Connection 1: GET /style.css ... (waiting) ... 200 OK
               GET /script.js ... (waiting) ... (blocked!)
               GET /image.png ... (blocked!)
+
 ```
 
 Браузеры открывают 6-8 параллельных соединений как workaround.
@@ -430,6 +462,7 @@ Connection 1: GET /style.css ... (waiting) ... 200 OK
 ### 6.2 Ключевые улучшения HTTP/2
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                      HTTP/2 Connection                      │
 ├────────────────────────────────────────────────────────────┤
@@ -441,6 +474,7 @@ Connection 1: GET /style.css ... (waiting) ... 200 OK
 │  (все потоки в одном TCP соединении, мультиплексированы)   │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 **Особенности:**
@@ -458,6 +492,7 @@ Connection 1: GET /style.css ... (waiting) ... 200 OK
 HTTP/2 использует фреймы:
 
 ```
+
 ┌─────────────────────────────────────┐
 │ Length (24 bits)                    │
 ├─────────────────────────────────────┤
@@ -467,6 +502,7 @@ HTTP/2 использует фреймы:
 ├─────────────────────────────────────┤
 │ Frame Payload (variable)            │
 └─────────────────────────────────────┘
+
 ```
 
 Типы фреймов: DATA, HEADERS, PRIORITY, RST_STREAM, SETTINGS, PUSH_PROMISE, PING, GOAWAY, WINDOW_UPDATE, CONTINUATION.
@@ -483,6 +519,7 @@ curl -v --http2 https://www.google.com 2>&1 | grep -i "http/"
 
 # Nghttp2 — специальный клиент
 nghttp -nv https://www.google.com
+
 ```
 
 ---
@@ -494,23 +531,27 @@ nghttp -nv https://www.google.com
 Хотя HTTP/2 решил HoL blocking на уровне HTTP, TCP всё ещё блокирует:
 
 ```
+
 TCP пакеты: [1] [2] [X] [4] [5]
                    ↑
               потерян пакет 3
               
 Все данные после пакета 3 ждут ретрансмита!
 (даже если они для других HTTP потоков)
+
 ```
 
 ### 7.2 QUIC — замена TCP
 
 **QUIC (Quick UDP Internet Connections):**
+
 - Работает поверх UDP
 - Встроенное шифрование (TLS 1.3)
 - Мультиплексирование без HoL blocking
 - Быстрое установление соединения (0-RTT)
 
 ```
+
 ┌──────────────────────────────────────────────────────────┐
 │                    Protocol Stack                         │
 ├──────────────────────────────────────────────────────────┤
@@ -530,6 +571,7 @@ TCP пакеты: [1] [2] [X] [4] [5]
 │                                 [IP]                     │
 │                                                          │
 └──────────────────────────────────────────────────────────┘
+
 ```
 
 ### 7.3 Преимущества HTTP/3
@@ -615,10 +657,12 @@ if __name__ == "__main__":
     print(f"Headers: {headers}")
     print(f"Body length: {len(body)}")
     print(f"Body preview: {body[:200]}...")
+
 ```
 
 **Output:**
 ```
+
 Status: 200
 Headers: {'content-type': 'text/html; charset=UTF-8', 'content-length': '1256', ...}
 Body length: 1256
@@ -626,6 +670,7 @@ Body preview: <!doctype html>
 <html>
 <head>
     <title>Example Domain</title>...
+
 ```
 
 ### 8.2 HTTP сервер на Python (без фреймворков)
@@ -722,6 +767,7 @@ def run_server(host: str = "0.0.0.0", port: int = 8080):
 
 if __name__ == "__main__":
     run_server()
+
 ```
 
 ### 8.3 Тестирование с curl
@@ -754,6 +800,7 @@ curl -b "session=abc123" http://example.com/
 
 # Показать время запроса
 curl -w "Time: %{time_total}s\n" -o /dev/null -s http://example.com/
+
 ```
 
 ### 8.4 Анализ HTTP с помощью инструментов
@@ -771,6 +818,7 @@ sudo ngrep -q -W byline port 80
 # httpie — удобный HTTP клиент
 http GET example.com/api
 http POST example.com/api name=John
+
 ```
 
 ---
@@ -780,6 +828,7 @@ http POST example.com/api name=John
 ### 9.1 Механизмы кэширования
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                  HTTP Caching Flow                         │
 ├────────────────────────────────────────────────────────────┤
@@ -804,6 +853,7 @@ http POST example.com/api name=John
 │    │◄── 200 OK ──────────┤  (from cache)      │            │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 9.2 Cache-Control
@@ -816,12 +866,14 @@ Cache-Control: no-store              # не кэшировать
 Cache-Control: private               # только браузер, не прокси
 Cache-Control: public                # можно кэшировать везде
 Cache-Control: must-revalidate       # проверить после истечения
+
 ```
 
 ### 9.3 ETag и условные запросы
 
 **Первый запрос:**
 ```http
+
 GET /style.css HTTP/1.1
 Host: example.com
 
@@ -830,16 +882,19 @@ ETag: "abc123"
 Content-Length: 1234
 
 .body { ... }
+
 ```
 
 **Повторный запрос (валидация):**
 ```http
+
 GET /style.css HTTP/1.1
 Host: example.com
 If-None-Match: "abc123"
 
 HTTP/1.1 304 Not Modified
 ETag: "abc123"
+
 ```
 
 ---
@@ -849,6 +904,7 @@ ETag: "abc123"
 ### 10.1 HTTPS и TLS
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                    TLS Handshake                           │
 ├────────────────────────────────────────────────────────────┤
@@ -870,6 +926,7 @@ ETag: "abc123"
 │    │                                          │            │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 10.2 Security Headers
@@ -890,6 +947,7 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'
 
 # Referrer Policy
 Referrer-Policy: strict-origin-when-cross-origin
+
 ```
 
 ### 10.3 Проверка безопасности
@@ -906,6 +964,7 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 
 # testssl.sh — комплексная проверка
 ./testssl.sh https://example.com
+
 ```
 
 ---
@@ -913,10 +972,15 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 ## 💡 Key Takeaways
 
 - **HTTP** — текстовый протокол запрос-ответ поверх TCP
+
 - **HTTP/1.1** — Keep-Alive, Host заголовок обязателен, chunked encoding
+
 - **HTTP/2** — бинарный, мультиплексирование, сжатие заголовков
+
 - **HTTP/3** — QUIC поверх UDP, 0-RTT, нет TCP HoL blocking
+
 - **Статус-коды**: 2xx — успех, 3xx — редирект, 4xx — ошибка клиента, 5xx — ошибка сервера
+
 - **Кэширование** — Cache-Control, ETag, условные запросы
 
 ---
@@ -924,16 +988,19 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Socket Activation](../02_SocketActivation/) — обработка соединений через systemd
 - [Web Servers](../03_WebServers/) — Apache, Nginx и другие
 
 **Practice Ideas:**
+
 1. Напишите HTTP клиент с поддержкой редиректов
 2. Реализуйте сервер с базовым кэшированием
 3. Добавьте поддержку chunked encoding
 4. Проанализируйте HTTP/2 трафик в Wireshark
 
 **Going Deeper:**
+
 - HTTP/2 спецификация (RFC 7540)
 - QUIC и HTTP/3 (RFC 9000, 9114)
 - TLS 1.3 (RFC 8446)
@@ -943,19 +1010,25 @@ nmap --script ssl-enum-ciphers -p 443 example.com
 ## 📚 Additional Resources
 
 **RFCs:**
+
 - [RFC 7230-7235](https://tools.ietf.org/html/rfc7230) — HTTP/1.1
 - [RFC 7540](https://tools.ietf.org/html/rfc7540) — HTTP/2
 - [RFC 9000](https://tools.ietf.org/html/rfc9000) — QUIC
 - [RFC 9114](https://tools.ietf.org/html/rfc9114) — HTTP/3
 
 **Books:**
+
 - "HTTP: The Definitive Guide" — O'Reilly
 - "High Performance Browser Networking" — Ilya Grigorik (бесплатно онлайн)
 
 **Tools:**
+
 - [curl](https://curl.se/) — универсальный HTTP клиент
 - [httpie](https://httpie.io/) — удобный HTTP клиент
 - [Wireshark](https://www.wireshark.org/) — анализ трафика
 
 ---
+
+
+
 

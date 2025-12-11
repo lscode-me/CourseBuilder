@@ -12,6 +12,7 @@
 - Иметь опыт работы с командной строкой Linux
 
 **Recommended prior modules:**
+
 - [Namespaces](../02_Namespaces/) — изоляция процессов
 - [Cgroups](../03_Cgroups/) — управление ресурсами
 - [Runtimes](../06_Runtimes/) — обзор container runtimes
@@ -37,6 +38,7 @@
 systemd-nspawn — это инструмент для запуска команд или целых операционных систем в лёгких контейнерах. Он входит в состав systemd и предназначен для создания "системных контейнеров" (machine containers).
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    Application Containers                    │
 │                    (Docker, Podman, OCI)                     │
@@ -52,6 +54,7 @@ systemd-nspawn — это инструмент для запуска коман�
 │    • Традиционная файловая система                          │
 │    • Похоже на лёгкую виртуальную машину                    │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Сравнение подходов
@@ -68,6 +71,7 @@ systemd-nspawn — это инструмент для запуска коман�
 ### 1.3 Когда использовать systemd-nspawn
 
 **Идеальные сценарии:**
+
 - Тестирование других дистрибутивов
 - Сборочные среды (build environments)
 - CI/CD для системного ПО
@@ -78,12 +82,15 @@ systemd-nspawn — это инструмент для запуска коман�
 ```bash
 # Проверка доступности
 systemd-nspawn --version
+
 ```
 
 **Output:**
 ```
+
 systemd 252 (252.22-1~deb12u1)
 +PAM +AUDIT +SELINUX +APPARMOR +IMA +SMACK +SECCOMP +GCRYPT +GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +IPTC +KMOD +LIBCRYPTSETUP +LIBFDISK +PCRE2 -PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +XKBCOMMON +UTMP -SYSVINIT default-hierarchy=unified
+
 ```
 
 ---
@@ -108,10 +115,12 @@ done
 
 # Запускаем контейнер
 systemd-nspawn -D /var/lib/machines/minimal /bin/sh
+
 ```
 
 **Output:**
 ```
+
 Spawning container minimal on /var/lib/machines/minimal.
 Press ^] three times within 1s to kill container.
 / # ls
@@ -120,6 +129,7 @@ bin  sbin  usr
 Hello from container
 / # exit
 Container minimal exited successfully.
+
 ```
 
 ### 2.2 Установка полноценной системы
@@ -133,6 +143,7 @@ debootstrap --include=systemd,dbus bookworm /var/lib/machines/debian http://deb.
 
 # Запуск с полным boot
 systemd-nspawn -b -D /var/lib/machines/debian
+
 ```
 
 ```bash
@@ -143,6 +154,7 @@ dnf -y --releasever=39 --installroot=/var/lib/machines/fedora \
 
 # Запуск
 systemd-nspawn -b -D /var/lib/machines/fedora
+
 ```
 
 ```bash
@@ -151,6 +163,7 @@ pacstrap -c /var/lib/machines/arch base
 
 # Запуск
 systemd-nspawn -b -D /var/lib/machines/arch
+
 ```
 
 ### 2.3 Первоначальная настройка
@@ -161,10 +174,12 @@ systemd-nspawn -D /var/lib/machines/debian passwd root
 
 # Или интерактивно
 systemd-nspawn -D /var/lib/machines/debian
+
 ```
 
 **Output:**
 ```
+
 Spawning container debian on /var/lib/machines/debian.
 Press ^] three times within 1s to kill container.
 root@debian:~# passwd
@@ -172,6 +187,7 @@ New password:
 Retype new password: 
 passwd: password updated successfully
 root@debian:~# exit
+
 ```
 
 ---
@@ -192,6 +208,7 @@ systemd-nspawn -D /var/lib/machines/debian cat /etc/os-release
 
 # Интерактивный boot с автоматическим логином
 systemd-nspawn -b -D /var/lib/machines/debian --console=autopipe
+
 ```
 
 ### 3.2 Namespaces и изоляция
@@ -200,16 +217,19 @@ systemd-nspawn -b -D /var/lib/machines/debian --console=autopipe
 # Показать какие namespaces изолированы
 systemd-nspawn -D /var/lib/machines/debian \
     ls -la /proc/self/ns/
+
 ```
 
 **Output:**
 ```
+
 lrwxrwxrwx 1 root root 0 Dec  1 10:00 cgroup -> 'cgroup:[4026532509]'
 lrwxrwxrwx 1 root root 0 Dec  1 10:00 ipc -> 'ipc:[4026532507]'
 lrwxrwxrwx 1 root root 0 Dec  1 10:00 mnt -> 'mnt:[4026532505]'
 lrwxrwxrwx 1 root root 0 Dec  1 10:00 net -> 'net:[4026532510]'
 lrwxrwxrwx 1 root root 0 Dec  1 10:00 pid -> 'pid:[4026532508]'
 lrwxrwxrwx 1 root root 0 Dec  1 10:00 uts -> 'uts:[4026532506]'
+
 ```
 
 ```bash
@@ -218,6 +238,7 @@ systemd-nspawn --network-namespace-path=/proc/1/ns/net -D /var/lib/machines/debi
 
 # Приватная сеть (изолированная)
 systemd-nspawn --private-network -D /var/lib/machines/debian
+
 ```
 
 ### 3.3 Управление capabilities
@@ -237,6 +258,7 @@ systemd-nspawn --capability=all -D /var/lib/machines/debian
 # Убрать capability
 systemd-nspawn --drop-capability=CAP_NET_RAW \
     -D /var/lib/machines/debian
+
 ```
 
 ### 3.4 Bind mounts
@@ -255,6 +277,7 @@ systemd-nspawn \
     --bind=/var/log/containers:/var/log \
     --bind-ro=/etc/ssl/certs:/etc/ssl/certs \
     -D /var/lib/machines/debian
+
 ```
 
 ### 3.5 Переменные окружения
@@ -265,15 +288,18 @@ systemd-nspawn \
     --setenv=MY_VAR=value \
     --setenv=LANG=en_US.UTF-8 \
     -D /var/lib/machines/debian env
+
 ```
 
 **Output:**
 ```
+
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 TERM=xterm-256color
 container=systemd-nspawn
 MY_VAR=value
 LANG=en_US.UTF-8
+
 ```
 
 ---
@@ -283,6 +309,7 @@ LANG=en_US.UTF-8
 ### 4.1 Режимы сети
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    Network Modes                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -293,6 +320,7 @@ LANG=en_US.UTF-8
 │  --network-ipvlan=eth0   IPVLAN интерфейс                   │
 │  (default)             Host network (без изоляции)          │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 Virtual Ethernet (veth)
@@ -300,6 +328,7 @@ LANG=en_US.UTF-8
 ```bash
 # Запуск с veth интерфейсом
 systemd-nspawn -b --network-veth -D /var/lib/machines/debian
+
 ```
 
 На хосте появится интерфейс `ve-<machine>`:
@@ -307,11 +336,14 @@ systemd-nspawn -b --network-veth -D /var/lib/machines/debian
 ```bash
 # На хосте
 ip link show | grep ve-
+
 ```
 
 **Output:**
 ```
+
 5: ve-debian@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT
+
 ```
 
 ```bash
@@ -322,6 +354,7 @@ ip link set ve-debian up
 # Включение IP forwarding и NAT
 sysctl -w net.ipv4.ip_forward=1
 iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -j MASQUERADE
+
 ```
 
 Внутри контейнера:
@@ -331,6 +364,7 @@ ip addr add 10.0.0.2/24 dev host0
 ip link set host0 up
 ip route add default via 10.0.0.1
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
 ```
 
 ### 4.3 Bridge networking
@@ -343,6 +377,7 @@ ip link set br0 up
 
 # Запуск контейнера с подключением к bridge
 systemd-nspawn -b --network-bridge=br0 -D /var/lib/machines/debian
+
 ```
 
 ### 4.4 Автоматическая настройка сети через systemd-networkd
@@ -369,6 +404,7 @@ Address=10.0.0.2/24
 Gateway=10.0.0.1
 DNS=8.8.8.8
 EOF
+
 ```
 
 ### 4.5 Port forwarding
@@ -379,6 +415,7 @@ systemd-nspawn не имеет встроенного port forwarding. Испо�
 # Forward порта 8080 хоста на порт 80 контейнера
 iptables -t nat -A PREROUTING -p tcp --dport 8080 -j DNAT --to-destination 10.0.0.2:80
 iptables -A FORWARD -p tcp -d 10.0.0.2 --dport 80 -j ACCEPT
+
 ```
 
 ---
@@ -392,23 +429,28 @@ machinectl — CLI для systemd-machined, управляет "машинами
 ```bash
 # Список машин
 machinectl list
+
 ```
 
 **Output:**
 ```
+
 MACHINE   CLASS     SERVICE        OS     VERSION ADDRESSES
 debian    container systemd-nspawn debian 12      10.0.0.2...
 
 1 machines listed.
+
 ```
 
 ```bash
 # Детальная информация
 machinectl status debian
+
 ```
 
 **Output:**
 ```
+
 debian(1234567890abcdef)
            Since: Wed 2024-12-01 10:00:00 UTC; 1h 30min ago
           Leader: 12345 (systemd)
@@ -419,6 +461,7 @@ debian(1234567890abcdef)
            Tasks: 15
           Memory: 128.5M
              CPU: 2.345s
+
 ```
 
 ### 5.2 Управление жизненным циклом
@@ -438,6 +481,7 @@ machinectl terminate debian
 
 # Выключение (graceful)
 machinectl poweroff debian
+
 ```
 
 ### 5.3 Интерактивный доступ
@@ -454,6 +498,7 @@ machinectl shell debian /bin/cat /etc/os-release
 
 # Shell от конкретного пользователя
 machinectl shell --uid=www-data debian
+
 ```
 
 ### 5.4 Копирование файлов
@@ -464,6 +509,7 @@ machinectl copy-to debian /local/path/file.txt /container/path/file.txt
 
 # Копирование из машины
 machinectl copy-from debian /container/path/file.txt /local/path/file.txt
+
 ```
 
 ### 5.5 Управление образами
@@ -471,13 +517,16 @@ machinectl copy-from debian /container/path/file.txt /local/path/file.txt
 ```bash
 # Список образов (директорий в /var/lib/machines)
 machinectl list-images
+
 ```
 
 **Output:**
 ```
+
 NAME   TYPE      RO  USAGE  CREATED                     MODIFIED
 debian directory no  1.2G   Wed 2024-12-01 10:00:00 UTC Wed 2024-12-01 11:30:00 UTC
 fedora directory no  800.0M Wed 2024-12-01 09:00:00 UTC Wed 2024-12-01 09:30:00 UTC
+
 ```
 
 ```bash
@@ -495,6 +544,7 @@ machinectl export-tar debian debian-backup.tar.gz
 
 # Импорт
 machinectl import-tar debian-backup.tar.gz debian-restored
+
 ```
 
 ### 5.6 Raw образы
@@ -516,6 +566,7 @@ machinectl start myimage
 
 # Или с указанием образа
 systemd-nspawn -b -i /var/lib/machines/myimage.raw
+
 ```
 
 ---
@@ -541,11 +592,13 @@ TemporaryFileSystem=/tmp
 [Network]
 VirtualEthernet=yes
 Bridge=br0
+
 ```
 
 ### 6.2 Секция [Exec]
 
 ```ini
+
 [Exec]
 # Запускать init систему
 Boot=yes
@@ -571,11 +624,13 @@ Hostname=mycontainer
 
 # Рабочая директория
 WorkingDirectory=/app
+
 ```
 
 ### 6.3 Секция [Files]
 
 ```ini
+
 [Files]
 # Bind mounts
 Bind=/host/path:/container/path
@@ -592,11 +647,13 @@ Volatile=state  # Только /var изменяем
 
 # Приватные директории
 PrivateUsersChown=yes
+
 ```
 
 ### 6.4 Секция [Network]
 
 ```ini
+
 [Network]
 # Приватная сеть (только loopback)
 Private=yes
@@ -618,6 +675,7 @@ Zone=trusted
 # Port forwarding через nspawn (systemd 254+)
 Port=tcp:8080:80
 Port=udp:5353:53
+
 ```
 
 ### 6.5 Полный пример
@@ -639,6 +697,7 @@ TemporaryFileSystem=/tmp:mode=1777
 VirtualEthernet=yes
 Port=tcp:80:80
 Port=tcp:443:443
+
 ```
 
 ---
@@ -658,10 +717,12 @@ systemctl start systemd-nspawn@debian.service
 
 # Статус
 systemctl status systemd-nspawn@debian.service
+
 ```
 
 **Output:**
 ```
+
 ● systemd-nspawn@debian.service - Container debian
      Loaded: loaded (/lib/systemd/system/systemd-nspawn@.service; enabled; preset: enabled)
      Active: active (running) since Wed 2024-12-01 10:00:00 UTC; 2h ago
@@ -680,6 +741,7 @@ systemctl status systemd-nspawn@debian.service
                  ├─systemd-journald.service
                  │ └─12347 /lib/systemd/systemd-journald
                  └─...
+
 ```
 
 ### 7.2 Собственный unit файл
@@ -712,6 +774,7 @@ TasksMax=500
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 ### 7.3 Resource limits через cgroups
@@ -735,6 +798,7 @@ EOF
 
 systemctl daemon-reload
 systemctl restart systemd-nspawn@debian.service
+
 ```
 
 ### 7.4 Journald интеграция
@@ -751,6 +815,7 @@ journalctl -M debian -u nginx.service
 
 # Логи с хоста для unit-а контейнера
 journalctl -u systemd-nspawn@debian.service
+
 ```
 
 ### 7.5 Проброс журналов
@@ -771,6 +836,7 @@ systemd-nspawn --link-journal=host -b -D /var/lib/machines/debian
 ### 8.1 Модель безопасности
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │               systemd-nspawn Security Layers                 │
 ├─────────────────────────────────────────────────────────────┤
@@ -781,6 +847,7 @@ systemd-nspawn --link-journal=host -b -D /var/lib/machines/debian
 │  5. Read-only paths       → Защита системных путей          │
 │  6. Private /dev          → Изоляция устройств              │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 8.2 Capabilities по умолчанию
@@ -790,12 +857,15 @@ systemd-nspawn по умолчанию даёт ограниченный наб�
 ```bash
 # Capabilities в контейнере
 systemd-nspawn -D /var/lib/machines/debian capsh --print
+
 ```
 
 **Output:**
 ```
+
 Current: cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_ipc_lock,cap_ipc_owner,cap_kill,cap_lease,cap_linux_immutable,cap_mknod,cap_net_bind_service,cap_net_broadcast,cap_net_raw,cap_setfcap,cap_setgid,cap_setpcap,cap_setuid,cap_sys_admin,cap_sys_chroot,cap_sys_nice,cap_sys_ptrace,cap_sys_resource=ep
 Bounding set =cap_chown,cap_dac_override,...
+
 ```
 
 ### 8.3 Усиление безопасности
@@ -817,6 +887,7 @@ systemd-nspawn --no-new-privileges=yes \
 # Read-only root
 systemd-nspawn --read-only \
     -D /var/lib/machines/debian
+
 ```
 
 ### 8.4 User namespaces
@@ -831,6 +902,7 @@ systemd-nspawn --private-users=100000:65536 -b -D /var/lib/machines/debian
 # Настройка /etc/subuid и /etc/subgid
 echo "root:100000:65536" >> /etc/subuid
 echo "root:100000:65536" >> /etc/subgid
+
 ```
 
 ### 8.5 Seccomp и system call filtering
@@ -840,17 +912,21 @@ systemd-nspawn применяет seccomp фильтр по умолчанию:
 ```bash
 # Проверка seccomp статуса в контейнере
 cat /proc/self/status | grep Seccomp
+
 ```
 
 **Output:**
 ```
+
 Seccomp:    2
 Seccomp_filters:    1
+
 ```
 
 ```bash
 # Отключение seccomp (небезопасно!)
 systemd-nspawn --system-call-filter='' -D /var/lib/machines/debian
+
 ```
 
 ### 8.6 SELinux и AppArmor
@@ -865,6 +941,7 @@ systemd-nspawn --selinux-context=system_u:system_r:container_t:s0 \
 
 # AppArmor профиль
 systemd-nspawn --settings=trusted -D /var/lib/machines/debian
+
 ```
 
 ---
@@ -892,6 +969,7 @@ systemd-nspawn \
     --volatile=yes \
     -D "$BUILD_ROOT" \
     /bin/bash -c "cd /src && make clean && make"
+
 ```
 
 ### 9.2 Тестирование на разных дистрибутивах
@@ -913,6 +991,7 @@ for distro in "${DISTROS[@]}"; do
     
     machinectl stop "$distro"
 done
+
 ```
 
 ### 9.3 Ephemeral контейнер
@@ -931,6 +1010,7 @@ systemd-nspawn \
     --template=/var/lib/machines/debian \
     --ephemeral \
     -b -M test-instance
+
 ```
 
 ### 9.4 Веб-сервер в контейнере
@@ -980,6 +1060,7 @@ EOF
 systemctl restart systemd-networkd
 systemctl enable --now nginx
 '
+
 ```
 
 ### 9.5 Development environment
@@ -994,6 +1075,7 @@ systemd-nspawn \
     -u developer \
     -D /var/lib/machines/dev-env \
     /bin/zsh
+
 ```
 
 ---
@@ -1030,6 +1112,7 @@ systemd-nspawn \
 ### 10.3 Когда выбрать systemd-nspawn
 
 **Выбирайте systemd-nspawn если:**
+
 - Нужен полноценный systemd в контейнере
 - Тестирование системного ПО
 - Уже используете systemd экосистему
@@ -1038,6 +1121,7 @@ systemd-nspawn \
 - Минимум зависимостей
 
 **Не выбирайте systemd-nspawn если:**
+
 - Нужна оркестрация (используйте K8s, Docker Swarm)
 - Нужен image registry (используйте Docker, Podman)
 - Микросервисная архитектура (используйте Docker)
@@ -1048,10 +1132,15 @@ systemd-nspawn \
 ## 💡 Key Takeaways
 
 - **systemd-nspawn** — это инструмент для системных контейнеров, часть systemd
+
 - **machinectl** — CLI для управления машинами и образами
+
 - **Конфигурация** через .nspawn файлы для декларативной настройки
+
 - **Интеграция с systemd** — unit файлы, journald, cgroups
+
 - **Безопасность** — namespaces, capabilities, seccomp, user namespaces
+
 - **Use cases** — тестирование, сборка, системные сервисы с init
 
 ---
@@ -1059,11 +1148,13 @@ systemd-nspawn \
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Runtimes](../06_Runtimes/) — другие container runtimes
 - [Namespaces](../02_Namespaces/) — глубже в изоляцию
 - [Cgroups](../03_Cgroups/) — ограничение ресурсов
 
 **Practice Ideas:**
+
 1. Создайте контейнер с Debian и настройте в нём nginx с systemd
 2. Настройте bridge networking для нескольких контейнеров
 3. Напишите .nspawn файл для production-ready конфигурации
@@ -1071,6 +1162,7 @@ systemd-nspawn \
 5. Настройте CI pipeline с ephemeral контейнерами
 
 **Going Deeper:**
+
 - Portable Services (systemd-portable)
 - Integration с systemd-homed
 - mkosi — tool для создания образов
@@ -1080,18 +1172,24 @@ systemd-nspawn \
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [systemd-nspawn man page](https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html)
 - [machinectl man page](https://www.freedesktop.org/software/systemd/man/machinectl.html)
 - [systemd.nspawn man page](https://www.freedesktop.org/software/systemd/man/systemd.nspawn.html)
 
 **Articles:**
+
 - [Arch Wiki: systemd-nspawn](https://wiki.archlinux.org/title/systemd-nspawn)
 - [Fedora: systemd-nspawn](https://fedoramagazine.org/systemd-nspawn-containers/)
 - [Running systemd in containers](https://systemd.io/CONTAINER_INTERFACE/)
 
 **Tools:**
+
 - [mkosi](https://github.com/systemd/mkosi) — создание образов для systemd-nspawn
 - [casync](https://github.com/systemd/casync) — content-addressable sync
 
 ---
+
+
+
 

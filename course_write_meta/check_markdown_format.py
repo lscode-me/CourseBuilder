@@ -237,6 +237,45 @@ def check_bold_heading_before_list(lines: list[str], code_ranges: list[tuple[int
     return issues
 
 
+def check_text_colon_before_list(lines: list[str], code_ranges: list[tuple[int, int]]) -> list[FormatIssue]:
+    """Проверка пустой строки между обычным текстом с двоеточием и последующим списком."""
+    issues = []
+    
+    for i, line in enumerate(lines):
+        # Пропускаем строки внутри блоков кода
+        if is_in_code_block(i, code_ranges):
+            continue
+        
+        stripped = line.strip()
+        
+        # Пропускаем пустые строки, заголовки, списки, блоки кода, разделители
+        if (not stripped or 
+            stripped.startswith('#') or 
+            stripped.startswith('-') or 
+            stripped.startswith('*') or 
+            stripped.startswith('`') or 
+            stripped == "---" or
+            re.match(r'^\d+\.', stripped) or
+            stripped.startswith('**') and stripped.endswith('**')):
+            continue
+        
+        # Проверяем, заканчивается ли строка двоеточием
+        if ends_with_colon(stripped):
+            # Проверяем следующую строку
+            if i + 1 < len(lines):
+                next_line = lines[i + 1].strip()
+                # Если следующая строка — пункт списка, нужна пустая строка
+                if next_line.startswith('-') or next_line.startswith('*') or re.match(r'^\d+\.', next_line):
+                    issues.append(FormatIssue(
+                        line_num=i + 1,
+                        issue_type="text_colon_no_blank_before_list",
+                        description="Нет пустой строки между текстом с двоеточием и списком (список не отрендерится)",
+                        context=f"→ {i+1}: {line.strip()}\n  {i+2}: {next_line[:50]}..."
+                    ))
+    
+    return issues
+
+
 def check_section_separators(lines: list[str], code_ranges: list[tuple[int, int]]) -> list[FormatIssue]:
     """Проверка пустых строк вокруг --- разделителей."""
     issues = []

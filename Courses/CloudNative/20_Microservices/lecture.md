@@ -24,6 +24,7 @@
 ### 1.1 Сравнение
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Monolith vs Microservices                              │
 ├────────────────────────────────────────────────────────────────────┤
@@ -55,11 +56,13 @@
 │  • Technology lock-in          • Operational overhead              │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Когда выбирать микросервисы
 
 ```python
+
 microservices_indicators = {
     "good_fit": [
         "Большая команда (можно разделить на squad'ы)",
@@ -84,6 +87,7 @@ for case in microservices_indicators['good_fit']:
 print("\nMicroservices Bad Fit:")
 for case in microservices_indicators['bad_fit']:
     print(f"  ❌ {case}")
+
 ```
 
 ---
@@ -93,6 +97,7 @@ for case in microservices_indicators['bad_fit']:
 ### 2.1 Domain-Driven Design
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Bounded Contexts → Microservices                       │
 ├────────────────────────────────────────────────────────────────────┤
@@ -121,11 +126,13 @@ for case in microservices_indicators['bad_fit']:
 │  Each Bounded Context = potential Microservice                     │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Размер сервиса
 
 ```python
+
 service_sizing_guidelines = {
     "too_small": {
         "signs": ["1-2 API endpoints", "Очень частая коммуникация с другими сервисами"],
@@ -142,6 +149,7 @@ service_sizing_guidelines = {
         "problem": "Distributed monolith, теряются преимущества"
     }
 }
+
 ```
 
 ---
@@ -151,6 +159,7 @@ service_sizing_guidelines = {
 ### 3.1 Синхронная vs Асинхронная
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Communication Patterns                                 │
 ├────────────────────────────────────────────────────────────────────┤
@@ -178,6 +187,7 @@ service_sizing_guidelines = {
 │  AWS: SQS, SNS, EventBridge, Kinesis                              │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 API Design
@@ -214,6 +224,7 @@ api_design = {
 ### 4.1 Circuit Breaker
 
 ```python
+
 from enum import Enum
 import time
 
@@ -254,11 +265,13 @@ class CircuitBreaker:
         self.last_failure_time = time.time()
         if self.failure_count >= self.failure_threshold:
             self.state = CircuitState.OPEN
+
 ```
 
 ### 4.2 Другие паттерны
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Resilience Patterns                                    │
 ├────────────────────────────────────────────────────────────────────┤
@@ -284,6 +297,7 @@ class CircuitBreaker:
 │  └── Token bucket, sliding window                                 │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -318,11 +332,13 @@ data_patterns = {
         "challenge": "Eventual consistency, complexity"
     }
 }
+
 ```
 
 ### 5.2 Saga Pattern Example
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Saga: Order Processing                                 │
 ├────────────────────────────────────────────────────────────────────┤
@@ -349,6 +365,7 @@ data_patterns = {
 │  If ItemsUnavailable → refund payment, cancel order                │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -358,6 +375,7 @@ data_patterns = {
 ### 6.1 AWS App Mesh
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Service Mesh                                           │
 ├────────────────────────────────────────────────────────────────────┤
@@ -388,6 +406,7 @@ data_patterns = {
 │  • Circuit breaking, retries                                      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -395,6 +414,7 @@ data_patterns = {
 ## 7. AWS Services для Microservices
 
 ```python
+
 aws_microservices_stack = {
     "API Gateway": "External API management",
     "ALB": "Internal load balancing",
@@ -412,6 +432,7 @@ aws_microservices_stack = {
 print("AWS Services for Microservices:")
 for service, purpose in aws_microservices_stack.items():
     print(f"  • {service}: {purpose}")
+
 ```
 
 ---
@@ -419,10 +440,15 @@ for service, purpose in aws_microservices_stack.items():
 ## 💡 Key Takeaways
 
 - **Start with Monolith** — decompose when needed
+
 - **Bounded Context** — natural service boundary
+
 - **Database per Service** — essential for loose coupling
+
 - **Async > Sync** — prefer event-driven communication
+
 - **Resilience Patterns** — circuit breaker, retry, timeout
+
 - **Service Mesh** — cross-cutting concerns (mTLS, observability)
 
 ---
@@ -438,10 +464,15 @@ for service, purpose in aws_microservices_stack.items():
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [21_Observability](../21_Observability/) — Мониторинг микросервисов
 - [22_Security](../22_Security/) — Безопасность микросервисов
 
 **Практика:**
+
 1. Разбейте монолит на 2-3 микросервиса
 2. Реализуйте коммуникацию через SQS/SNS
 3. Настройте service mesh с App Mesh
+
+
+

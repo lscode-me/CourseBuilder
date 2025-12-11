@@ -30,6 +30,7 @@
 ### 1.1 Зачем нужен мониторинг?
 
 ```python
+
 monitoring_purposes = {
     "alerting": "Узнать о проблеме раньше пользователей",
     "debugging": "Понять, что пошло не так",
@@ -37,11 +38,13 @@ monitoring_purposes = {
     "visibility": "Понимать состояние системы в реальном времени",
     "business_insights": "Связать технические метрики с бизнес-результатами"
 }
+
 ```
 
 ### 1.2 Виды мониторинга
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                     Monitoring Stack                             │
 ├─────────────────────────────────────────────────────────────────┤
@@ -68,11 +71,13 @@ monitoring_purposes = {
 │  └── Actual user experience metrics                              │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.3 Метрики: типы данных
 
 ```python
+
 metric_types = {
     "counter": {
         "description": "Монотонно возрастающее значение",
@@ -95,6 +100,7 @@ metric_types = {
         "use_case": "Percentiles (P50, P99)"
     }
 }
+
 ```
 
 ---
@@ -104,6 +110,7 @@ metric_types = {
 ### 2.1 Архитектура Prometheus
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Prometheus Architecture                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -137,6 +144,7 @@ metric_types = {
 │  └─────────────┘    └─────────────┘    └─────────────┘         │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Установка Prometheus
@@ -180,6 +188,7 @@ spec:
         - name: storage
           persistentVolumeClaim:
             claimName: prometheus-pvc
+
 ```
 
 ### 2.3 Конфигурация Prometheus
@@ -227,6 +236,7 @@ scrape_configs:
         regex: (.+);(.+)
         replacement: $1:$2
         target_label: __address__
+
 ```
 
 ### 2.4 PromQL — язык запросов
@@ -260,6 +270,7 @@ rate(http_requests_total{status="500"}[5m]) / rate(http_requests_total[5m]) > 0.
 
 # Disk usage
 100 - ((node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100)
+
 ```
 
 ---
@@ -269,6 +280,7 @@ rate(http_requests_total{status="500"}[5m]) / rate(http_requests_total[5m]) > 0.
 ### 3.1 Создание дашбордов
 
 ```json
+
 {
   "dashboard": {
     "title": "Application Overview",
@@ -309,6 +321,7 @@ rate(http_requests_total{status="500"}[5m]) / rate(http_requests_total[5m]) > 0.
     ]
   }
 }
+
 ```
 
 ### 3.2 Dashboard as Code
@@ -328,6 +341,7 @@ data:
       "uid": "app-overview",
       "panels": [...]
     }
+
 ```
 
 ---
@@ -381,6 +395,7 @@ inhibit_rules:
     target_match:
       severity: 'warning'
     equal: ['alertname', 'service']
+
 ```
 
 ### 4.2 Alert Rules
@@ -443,6 +458,7 @@ groups:
           severity: warning
         annotations:
           summary: "Low disk space on {{ $labels.instance }}"
+
 ```
 
 ---
@@ -454,6 +470,7 @@ groups:
 **U**tilization, **S**aturation, **E**rrors — для каждого ресурса.
 
 ```python
+
 use_method = {
     "CPU": {
         "utilization": "Процент использования CPU",
@@ -476,6 +493,7 @@ use_method = {
         "errors": "Interface errors, CRC errors"
     }
 }
+
 ```
 
 ```promql
@@ -501,6 +519,7 @@ rate(node_cpu_seconds_total{mode="iowait"}[5m]) * 100
 
 # Network Utilization
 rate(node_network_receive_bytes_total[5m]) + rate(node_network_transmit_bytes_total[5m])
+
 ```
 
 ### 5.2 RED Method (для сервисов)
@@ -508,11 +527,13 @@ rate(node_network_receive_bytes_total[5m]) + rate(node_network_transmit_bytes_to
 **R**ate, **E**rrors, **D**uration — для каждого сервиса.
 
 ```python
+
 red_method = {
     "rate": "Количество запросов в секунду",
     "errors": "Количество ошибочных запросов",
     "duration": "Время обработки запросов (latency)"
 }
+
 ```
 
 ```promql
@@ -535,17 +556,20 @@ histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by 
 
 # Duration (P50)
 histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, service))
+
 ```
 
 ### 5.3 Four Golden Signals (Google SRE)
 
 ```python
+
 golden_signals = {
     "latency": "Время обработки запроса",
     "traffic": "Количество запросов",
     "errors": "Процент неудачных запросов",
     "saturation": "Насколько загружен сервис"
 }
+
 ```
 
 ---
@@ -555,6 +579,7 @@ golden_signals = {
 ### 6.1 Python с prometheus_client
 
 ```python
+
 from prometheus_client import Counter, Histogram, Gauge, start_http_server
 import time
 import random
@@ -614,11 +639,13 @@ if __name__ == "__main__":
     while True:
         get_users()
         time.sleep(0.1)
+
 ```
 
 ### 6.2 Kubernetes Pod Annotations
 
 ```yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -636,6 +663,7 @@ spec:
           ports:
             - containerPort: 8080  # App port
             - containerPort: 8000  # Metrics port
+
 ```
 
 ---
@@ -660,6 +688,7 @@ bad_metric_names = [
     "MyAppMetric",     # CamelCase
     "cpu-usage",       # Дефисы вместо underscore
 ]
+
 ```
 
 ### 7.2 Labels Best Practices
@@ -678,11 +707,13 @@ bad_labels = {
     "request_id": "unique per request",  # НЕТ!
     "timestamp": "infinite values",      # НЕТ!
 }
+
 ```
 
 ### 7.3 Alert Best Practices
 
 ```python
+
 alert_best_practices = [
     "Алерт на симптомы, не причины",
     "Включать runbook URL в аннотации",
@@ -691,6 +722,7 @@ alert_best_practices = [
     "Page только на actionable алерты",
     "Избегать alert fatigue — меньше, но важнее",
 ]
+
 ```
 
 ---
@@ -712,10 +744,12 @@ alert_best_practices = [
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [09_Observability](../09_Observability/) — Три столпа observability
 - [11_ServiceLevels](../11_ServiceLevels/) — SLI/SLO/SLA
 
 **Practice Ideas:**
+
 1. Установите Prometheus + Grafana локально
 2. Добавьте метрики в Python приложение
 3. Создайте дашборд с RED метриками
@@ -725,11 +759,16 @@ alert_best_practices = [
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Prometheus](https://prometheus.io/docs/)
 - [Grafana](https://grafana.com/docs/)
 
 **Books:**
+
 - "Prometheus: Up & Running" by Brian Brazil
 
 ---
+
+
+
 

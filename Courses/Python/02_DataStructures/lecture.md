@@ -13,6 +13,7 @@
 - Знать, как использовать функцию `print()`
 
 **Recommended prior modules:**
+
 - [Intro](../01_Intro/) — введение в Python, установка, первые шаги
 
 ---
@@ -53,13 +54,16 @@ octal = 0o377        # Восьмеричная (0o)
 hexadecimal = 0xFF   # Шестнадцатеричная (0x)
 
 print(f"Все равны 255: {decimal}, {binary}, {octal}, {hexadecimal}")
+
 ```
 
 **Output:**
 ```
+
 x = 42, тип: <class 'int'>
 big_number = 999999999999999999999999999999
 Все равны 255: 255, 255, 255, 255
+
 ```
 
 **Разделитель разрядов:**
@@ -71,12 +75,15 @@ bytes_in_gb = 1_073_741_824
 
 print(f"Население Земли: {population:,}")
 print(f"Байт в ГБ: {bytes_in_gb:,}")
+
 ```
 
 **Output:**
 ```
+
 Население Земли: 7,900,000,000
 Байт в ГБ: 1,073,741,824
+
 ```
 
 ### 1.2 Числа с плавающей точкой (float)
@@ -94,14 +101,17 @@ print(f"Число Авогадро: {scientific}")
 import math
 print(f"Бесконечность: {math.inf}")
 print(f"Не число: {math.nan}")
+
 ```
 
 **Output:**
 ```
+
 pi = 3.14159, тип: <class 'float'>
 Число Авогадро: 6.022e+23
 Бесконечность: inf
 Не число: nan
+
 ```
 
 > **⚠️ Warning:**  
@@ -116,14 +126,17 @@ print(0.1 + 0.2 == 0.3)  # False!
 from decimal import Decimal
 print(Decimal('0.1') + Decimal('0.2'))
 print(Decimal('0.1') + Decimal('0.2') == Decimal('0.3'))
+
 ```
 
 **Output:**
 ```
+
 0.30000000000000004
 False
 0.3
 True
+
 ```
 
 ### 1.3 Комплексные числа (complex)
@@ -138,20 +151,24 @@ print(f"Действительная часть: {z1.real}")
 print(f"Мнимая часть: {z1.imag}")
 print(f"Сопряжённое: {z1.conjugate()}")
 print(f"Модуль: {abs(z1)}")
+
 ```
 
 **Output:**
 ```
+
 z1 = (3+4j)
 Действительная часть: 3.0
 Мнимая часть: 4.0
 Сопряжённое: (3-4j)
 Модуль: 5.0
+
 ```
 
 ### 1.4 Арифметические операции
 
 ```python
+
 a, b = 17, 5
 
 print(f"a + b = {a + b}")   # Сложение
@@ -162,10 +179,12 @@ print(f"a // b = {a // b}") # Целочисленное деление
 print(f"a % b = {a % b}")   # Остаток от деления
 print(f"a ** b = {a ** b}") # Возведение в степень
 print(f"-a = {-a}")         # Унарный минус
+
 ```
 
 **Output:**
 ```
+
 a + b = 22
 a - b = 12
 a * b = 85
@@ -174,11 +193,13 @@ a // b = 3
 a % b = 2
 a ** b = 1419857
 -a = -17
+
 ```
 
 **Составные операторы присваивания:**
 
 ```python
+
 x = 10
 x += 5   # x = x + 5
 print(f"После x += 5: {x}")
@@ -188,18 +209,22 @@ print(f"После x *= 2: {x}")
 
 x //= 3  # x = x // 3
 print(f"После x //= 3: {x}")
+
 ```
 
 **Output:**
 ```
+
 После x += 5: 15
 После x *= 2: 30
 После x //= 3: 10
+
 ```
 
 ### 1.5 Математические функции
 
 ```python
+
 import math
 
 # Базовые функции
@@ -217,10 +242,12 @@ print(f"math.log10(1000) = {math.log10(1000)}")
 # Константы
 print(f"math.pi = {math.pi}")
 print(f"math.e = {math.e}")
+
 ```
 
 **Output:**
 ```
+
 abs(-5) = 5
 round(3.7) = 4
 round(3.14159, 2) = 3.14
@@ -231,6 +258,7 @@ math.floor(3.9) = 3
 math.log10(1000) = 3.0
 math.pi = 3.141592653589793
 math.e = 2.718281828459045
+
 ```
 
 ---
@@ -251,20 +279,24 @@ print(f"True + True = {True + True}")
 print(f"True * 10 = {True * 10}")
 print(f"int(True) = {int(True)}")
 print(f"int(False) = {int(False)}")
+
 ```
 
 **Output:**
 ```
+
 is_active = True, тип: <class 'bool'>
 True + True = 2
 True * 10 = 10
 int(True) = 1
 int(False) = 0
+
 ```
 
 ### 2.2 Операции сравнения
 
 ```python
+
 x, y = 10, 20
 
 print(f"x == y: {x == y}")  # Равно
@@ -277,10 +309,12 @@ print(f"x >= y: {x >= y}")  # Больше или равно
 # Цепочки сравнений
 age = 25
 print(f"18 <= age <= 65: {18 <= age <= 65}")
+
 ```
 
 **Output:**
 ```
+
 x == y: False
 x != y: True
 x < y: True
@@ -288,11 +322,13 @@ x > y: False
 x <= y: True
 x >= y: False
 18 <= age <= 65: True
+
 ```
 
 ### 2.3 Логические операторы
 
 ```python
+
 a = True
 b = False
 
@@ -303,15 +339,18 @@ print(f"not a: {not a}")      # Логическое НЕ
 # Короткое замыкание
 print(f"False and print('не выполнится'): {False and 'hi'}")
 print(f"True or print('не выполнится'): {True or 'hi'}")
+
 ```
 
 **Output:**
 ```
+
 a and b: False
 a or b: True
 not a: False
 False and print('не выполнится'): False
 True or print('не выполнится'): True
+
 ```
 
 ### 2.4 Truthiness
@@ -332,10 +371,12 @@ truthy_values = [1, -1, "hello", [1, 2], {"a": 1}]
 
 for val in truthy_values:
     print(f"bool({val!r}) = {bool(val)}")
+
 ```
 
 **Output:**
 ```
+
 bool(None) = False
 bool(0) = False
 bool(0.0) = False
@@ -349,6 +390,7 @@ bool(-1) = True
 bool('hello') = True
 bool([1, 2]) = True
 bool({'a': 1}) = True
+
 ```
 
 ---
@@ -380,10 +422,12 @@ print(escaped)
 # Raw-строки (игнорируют escape-последовательности)
 raw = r"C:\Users\name\documents"
 print(raw)
+
 ```
 
 **Output:**
 ```
+
 Одинарные кавычки
 Двойные кавычки
 Многострочная
@@ -392,11 +436,13 @@ print(raw)
 Табуляция:	новая строка:
 обратный слэш:\
 C:\Users\name\documents
+
 ```
 
 ### 3.2 Индексация и срезы
 
 ```python
+
 s = "Python"
 
 # Индексация (начинается с 0)
@@ -410,10 +456,12 @@ print(f"s[2:] = '{s[2:]}'")     # С 2 до конца
 print(f"s[:4] = '{s[:4]}'")     # С начала до 3
 print(f"s[::2] = '{s[::2]}'")   # Каждый второй символ
 print(f"s[::-1] = '{s[::-1]}'") # Разворот строки
+
 ```
 
 **Output:**
 ```
+
 s[0] = 'P'
 s[-1] = 'n'
 s[2] = 't'
@@ -422,6 +470,7 @@ s[2:] = 'thon'
 s[:4] = 'Pyth'
 s[::2] = 'Pto'
 s[::-1] = 'nohtyP'
+
 ```
 
 ### 3.3 Основные операции
@@ -449,16 +498,19 @@ print(f"'x' in 'Python': {'x' in 'Python'}")
 
 **Output:**
 ```
+
 Hello World
 --------------------
 Длина 'Python': 6
 'th' in 'Python': True
 'x' in 'Python': False
+
 ```
 
 ### 3.4 Методы строк
 
 ```python
+
 text = "  Hello, Python World!  "
 
 # Регистр
@@ -472,10 +524,12 @@ print(f"swapcase(): '{text.swapcase()}'")
 print(f"strip(): '{text.strip()}'")
 print(f"lstrip(): '{text.lstrip()}'")
 print(f"rstrip(): '{text.rstrip()}'")
+
 ```
 
 **Output:**
 ```
+
 upper(): '  HELLO, PYTHON WORLD!  '
 lower(): '  hello, python world!  '
 title(): '  Hello, Python World!  '
@@ -484,11 +538,13 @@ swapcase(): '  hELLO, pYTHON wORLD!  '
 strip(): 'Hello, Python World!'
 lstrip(): 'Hello, Python World!  '
 rstrip(): '  Hello, Python World!'
+
 ```
 
 **Поиск и замена:**
 
 ```python
+
 text = "Python is awesome and Python is fun"
 
 # Поиск
@@ -503,10 +559,12 @@ print(f"replace(): '{text.replace('Python', 'Java')}'")
 # Проверки
 print(f"startswith('Python'): {text.startswith('Python')}")
 print(f"endswith('fun'): {text.endswith('fun')}")
+
 ```
 
 **Output:**
 ```
+
 find('Python'): 0
 find('Python', 10): 23
 find('Java'): -1
@@ -514,6 +572,7 @@ count('Python'): 2
 replace(): 'Java is awesome and Java is fun'
 startswith('Python'): True
 endswith('fun'): True
+
 ```
 
 **Разделение и объединение:**
@@ -535,19 +594,23 @@ print(f"join(): '{sentence}'")
 
 path = "/".join(["home", "user", "documents"])
 print(f"join path: '{path}'")
+
 ```
 
 **Output:**
 ```
+
 split(): ['Python', 'is', 'easy', 'to', 'learn']
 split(','): ['apple', 'banana', 'cherry']
 join(): 'Python is awesome'
 join path: 'home/user/documents'
+
 ```
 
 ### 3.5 Форматирование строк
 
 ```python
+
 name = "Alice"
 age = 30
 balance = 1234.5678
@@ -566,10 +629,12 @@ print(f"Number: {number:_}")      # С подчёркиваниями
 print(f"Percent: {0.75:.1%}")     # Проценты
 print(f"Binary: {255:b}")         # Двоичное
 print(f"Hex: {255:x}")            # Шестнадцатеричное
+
 ```
 
 **Output:**
 ```
+
 Name: Alice, Age: 30
 Balance: $1234.57
 Name:      Alice
@@ -580,6 +645,7 @@ Number: 1_234_567
 Percent: 75.0%
 Binary: 11111111
 Hex: ff
+
 ```
 
 **Метод format() (альтернатива):**
@@ -593,13 +659,16 @@ print("{name} is {age} years old".format(name="Bob", age=25))
 
 # Индексы
 print("{0} {1} {0}".format("Python", "is"))
+
 ```
 
 **Output:**
 ```
+
 a b c
 Bob is 25 years old
 Python is Python
+
 ```
 
 ---
@@ -630,15 +699,18 @@ from_range = list(range(5))
 
 print(f"from_string: {from_string}")
 print(f"from_range: {from_range}")
+
 ```
 
 **Output:**
 ```
+
 numbers: [1, 2, 3, 4, 5]
 mixed: [1, 'hello', 3.14, True, None]
 nested: [[1, 2], [3, 4], [5, 6]]
 from_string: ['P', 'y', 't', 'h', 'o', 'n']
 from_range: [0, 1, 2, 3, 4]
+
 ```
 
 ### 4.2 Индексация и срезы
@@ -646,6 +718,7 @@ from_range: [0, 1, 2, 3, 4]
 Работают так же, как со строками:
 
 ```python
+
 numbers = [10, 20, 30, 40, 50]
 
 print(f"numbers[0]: {numbers[0]}")
@@ -660,10 +733,12 @@ print(f"После numbers[0] = 100: {numbers}")
 
 numbers[1:3] = [200, 300]
 print(f"После numbers[1:3] = [200, 300]: {numbers}")
+
 ```
 
 **Output:**
 ```
+
 numbers[0]: 10
 numbers[-1]: 50
 numbers[1:4]: [20, 30, 40]
@@ -671,11 +746,13 @@ numbers[::2]: [10, 30, 50]
 numbers[::-1]: [50, 40, 30, 20, 10]
 После numbers[0] = 100: [100, 20, 30, 40, 50]
 После numbers[1:3] = [200, 300]: [100, 200, 300, 40, 50]
+
 ```
 
 ### 4.3 Основные методы списков
 
 ```python
+
 fruits = ["apple", "banana"]
 
 # Добавление элементов
@@ -700,10 +777,12 @@ print(f"После remove: {fruits}")
 print(f"index('banana'): {fruits.index('banana')}")
 print(f"count('apple'): {fruits.count('apple')}")
 print(f"'apple' in fruits: {'apple' in fruits}")
+
 ```
 
 **Output:**
 ```
+
 После append: ['apple', 'banana', 'cherry']
 После insert: ['apple', 'blueberry', 'banana', 'cherry']
 После extend: ['apple', 'blueberry', 'banana', 'cherry', 'date', 'elderberry']
@@ -713,11 +792,13 @@ pop() вернул: elderberry
 index('banana'): 1
 count('apple'): 1
 'apple' in fruits: True
+
 ```
 
 ### 4.4 Сортировка
 
 ```python
+
 numbers = [3, 1, 4, 1, 5, 9, 2, 6]
 
 # sort() — изменяет список на месте
@@ -737,16 +818,19 @@ print(f"sorted(): {sorted_list}")
 words = ["banana", "Apple", "cherry"]
 print(f"sorted(key=str.lower): {sorted(words, key=str.lower)}")
 print(f"sorted(key=len): {sorted(words, key=len)}")
+
 ```
 
 **Output:**
 ```
+
 После sort(): [1, 1, 2, 3, 4, 5, 6, 9]
 После sort(reverse=True): [9, 6, 5, 4, 3, 2, 1, 1]
 original: [3, 1, 4, 1, 5, 9]
 sorted(): [1, 1, 3, 4, 5, 9]
 sorted(key=str.lower): ['Apple', 'banana', 'cherry']
 sorted(key=len): ['Apple', 'banana', 'cherry']
+
 ```
 
 ### 4.5 List Comprehensions
@@ -776,15 +860,18 @@ print(f"Flattened: {flattened}")
 numbers = [1, -2, 3, -4, 5]
 abs_values = [x if x >= 0 else -x for x in numbers]
 print(f"Absolute: {abs_values}")
+
 ```
 
 **Output:**
 ```
+
 Квадраты: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 Чётные квадраты: [0, 4, 16, 36, 64]
 Upper: ['HELLO', 'WORLD', 'PYTHON']
 Flattened: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 Absolute: [1, 2, 3, 4, 5]
+
 ```
 
 ---
@@ -817,20 +904,24 @@ print(f"x={x}, y={y}, z={z}")
 a, b = 1, 2
 a, b = b, a
 print(f"После обмена: a={a}, b={b}")
+
 ```
 
 **Output:**
 ```
+
 point: (3, 4), тип: <class 'tuple'>
 single: (42,), тип: <class 'tuple'>
 coords: (10, 20, 30), тип: <class 'tuple'>
 x=10, y=20, z=30
 После обмена: a=2, b=1
+
 ```
 
 ### 5.2 Операции с кортежами
 
 ```python
+
 t = (1, 2, 3, 2, 4, 2)
 
 # Индексация и срезы (как в списках)
@@ -848,16 +939,19 @@ print(f"index(3): {t.index(3)}")
 # Но можно создать новый кортеж
 new_t = t + (5, 6)
 print(f"После конкатенации: {new_t}")
+
 ```
 
 **Output:**
 ```
+
 t[0]: 1
 t[-1]: 2
 t[1:4]: (2, 3, 2)
 count(2): 3
 index(3): 2
 После конкатенации: (1, 2, 3, 2, 4, 2, 5, 6)
+
 ```
 
 ### 5.3 Named Tuples
@@ -865,6 +959,7 @@ index(3): 2
 Именованные кортежи — удобный способ создания простых классов данных:
 
 ```python
+
 from collections import namedtuple
 
 # Создание типа
@@ -884,16 +979,19 @@ print(f"Name: {alice.name}")
 # Распаковка работает
 name, age, city = alice
 print(f"Распаковка: {name}, {age}, {city}")
+
 ```
 
 **Output:**
 ```
+
 Point: Point(x=3, y=4)
 x: 3, y: 4
 Как кортеж: 3, 4
 Person: Person(name='Alice', age=30, city='Moscow')
 Name: Alice
 Распаковка: Alice, 30, Moscow
+
 ```
 
 ---
@@ -916,18 +1014,22 @@ print(f"from_list (дубликаты удалены): {from_list}")
 # Множество из строки
 chars = set("hello")
 print(f"chars: {chars}")  # Порядок не гарантирован
+
 ```
 
 **Output:**
 ```
+
 numbers: {1, 2, 3, 4, 5}
 from_list (дубликаты удалены): {1, 2, 3}
 chars: {'h', 'e', 'l', 'o'}
+
 ```
 
 ### 6.2 Операции с множествами
 
 ```python
+
 s = {1, 2, 3}
 
 # Добавление и удаление
@@ -943,20 +1045,24 @@ print(f"После remove(3): {s}")
 # Проверка членства — очень быстрая O(1)
 print(f"1 in s: {1 in s}")
 print(f"5 in s: {5 in s}")
+
 ```
 
 **Output:**
 ```
+
 После add(4): {1, 2, 3, 4}
 После discard(2): {1, 3, 4}
 После remove(3): {1, 4}
 1 in s: True
 5 in s: False
+
 ```
 
 ### 6.3 Операции над множествами
 
 ```python
+
 a = {1, 2, 3, 4}
 b = {3, 4, 5, 6}
 
@@ -979,10 +1085,12 @@ print(f"a.symmetric_difference(b): {a.symmetric_difference(b)}")
 # Проверки
 print(f"{{1, 2}} <= {{1, 2, 3}}: {{1, 2} <= {1, 2, 3}}")  # Подмножество
 print(f"a.isdisjoint({{10, 20}}): {a.isdisjoint({10, 20})}")  # Нет общих
+
 ```
 
 **Output:**
 ```
+
 a | b (объединение): {1, 2, 3, 4, 5, 6}
 a.union(b): {1, 2, 3, 4, 5, 6}
 a & b (пересечение): {3, 4}
@@ -993,6 +1101,7 @@ a ^ b (симм. разность): {1, 2, 5, 6}
 a.symmetric_difference(b): {1, 2, 5, 6}
 {1, 2} <= {1, 2, 3}: True
 a.isdisjoint({10, 20}): True
+
 ```
 
 ### 6.4 Frozenset
@@ -1013,13 +1122,16 @@ print(f"Словарь с frozenset ключом: {d}")
 # Можно добавить в множество
 s = {frozenset([1, 2]), frozenset([3, 4])}
 print(f"Множество frozenset'ов: {s}")
+
 ```
 
 **Output:**
 ```
+
 frozenset: frozenset({1, 2, 3})
 Словарь с frozenset ключом: {frozenset({1, 2, 3}): 'value'}
 Множество frozenset'ов: {frozenset({1, 2}), frozenset({3, 4})}
+
 ```
 
 ---
@@ -1044,19 +1156,23 @@ print(f"from_kwargs: {from_kwargs}")
 # Dict comprehension
 squares = {x: x**2 for x in range(5)}
 print(f"squares: {squares}")
+
 ```
 
 **Output:**
 ```
+
 person: {'name': 'Alice', 'age': 30, 'city': 'Moscow'}
 from_pairs: {'a': 1, 'b': 2}
 from_kwargs: {'x': 10, 'y': 20}
 squares: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
 ```
 
 ### 7.2 Доступ к элементам
 
 ```python
+
 person = {"name": "Alice", "age": 30, "city": "Moscow"}
 
 # Доступ по ключу
@@ -1070,21 +1186,25 @@ print(f"salary: {person.get('salary', 0)}")  # Значение по умолч�
 # Проверка наличия ключа
 print(f"'name' in person: {'name' in person}")
 print(f"'salary' in person: {'salary' in person}")
+
 ```
 
 **Output:**
 ```
+
 name: Alice
 age: 30
 salary: None
 salary: 0
 'name' in person: True
 'salary' in person: False
+
 ```
 
 ### 7.3 Изменение словарей
 
 ```python
+
 person = {"name": "Alice", "age": 30}
 
 # Добавление/изменение
@@ -1108,21 +1228,25 @@ print(f"После del: {person}")
 removed = person.pop("city")
 print(f"pop('city') вернул: {removed}")
 print(f"После pop: {person}")
+
 ```
 
 **Output:**
 ```
+
 После изменений: {'name': 'Alice', 'age': 31, 'city': 'Moscow'}
 После update: {'name': 'Alice', 'age': 32, 'city': 'Moscow', 'country': 'Russia'}
 Merged: {'name': 'Alice', 'age': 32, 'city': 'Moscow', 'country': 'Russia', 'job': 'Developer'}
 После del: {'name': 'Alice', 'age': 32, 'city': 'Moscow'}
 pop('city') вернул: Moscow
 После pop: {'name': 'Alice', 'age': 32}
+
 ```
 
 ### 7.4 Итерация по словарям
 
 ```python
+
 person = {"name": "Alice", "age": 30, "city": "Moscow"}
 
 # Итерация по ключам (по умолчанию)
@@ -1144,10 +1268,12 @@ for value in person.values():
 print("\nitems():")
 for key, value in person.items():
     print(f"  {key}: {value}")
+
 ```
 
 **Output:**
 ```
+
 Ключи:
   name
   age
@@ -1167,6 +1293,7 @@ items():
   name: Alice
   age: 30
   city: Moscow
+
 ```
 
 ### 7.5 Полезные методы
@@ -1193,14 +1320,17 @@ text = "hello world"
 char_count = Counter(text)
 print(f"char_count: {char_count}")
 print(f"most_common(3): {char_count.most_common(3)}")
+
 ```
 
 **Output:**
 ```
+
 stats: {'count': 1}
 word_count: {'apple': 3, 'banana': 2, 'cherry': 1}
 char_count: Counter({'l': 3, 'o': 2, 'h': 1, 'e': 1, ' ': 1, 'w': 1, 'r': 1, 'd': 1})
 most_common(3): [('l', 3), ('o', 2), ('h', 1)]
+
 ```
 
 ---
@@ -1232,16 +1362,19 @@ print(f"list -> set: {st}")
 r = range(5)
 print(f"list(range(5)): {list(r)}")
 print(f"tuple(range(5)): {tuple(r)}")
+
 ```
 
 **Output:**
 ```
+
 int('42') = 42, float('42') = 42.0
 str(42) = '42'
 list -> tuple: (1, 2, 3)
 list -> set: {1, 2, 3}
 list(range(5)): [0, 1, 2, 3, 4]
 tuple(range(5)): (0, 1, 2, 3, 4)
+
 ```
 
 ### 8.2 Полезные функции
@@ -1260,10 +1393,12 @@ print(f"hex(255) = {hex(n)}")
 # int() с основанием
 print(f"int('ff', 16) = {int('ff', 16)}")
 print(f"int('11111111', 2) = {int('11111111', 2)}")
+
 ```
 
 **Output:**
 ```
+
 ord('A') = 65
 chr(65) = 'A'
 bin(255) = 0b11111111
@@ -1271,6 +1406,7 @@ oct(255) = 0o377
 hex(255) = 0xff
 int('ff', 16) = 255
 int('11111111', 2) = 255
+
 ```
 
 ---
@@ -1316,6 +1452,7 @@ if 101 in unique_ids:  # O(1)
 
 # dict — для связи ключей со значениями
 user = {"name": "Alice", "age": 30}
+
 ```
 
 ---
@@ -1326,16 +1463,19 @@ user = {"name": "Alice", "age": 30}
 
 ❌ **Ошибка:**
 ```python
+
 def add_item(item, items=[]):
     items.append(item)
     return items
 
 print(add_item(1))  # [1]
 print(add_item(2))  # [1, 2] — не [2]!
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 def add_item(item, items=None):
     if items is None:
         items = []
@@ -1344,11 +1484,13 @@ def add_item(item, items=None):
 
 print(add_item(1))  # [1]
 print(add_item(2))  # [2]
+
 ```
 
 ### 10.2 Копирование вложенных структур
 
 ```python
+
 import copy
 
 # Поверхностная копия
@@ -1366,26 +1508,32 @@ deep[0][0] = 999
 
 print(f"original: {original}")  # Не изменился
 print(f"deep: {deep}")
+
 ```
 
 **Output:**
 ```
+
 original: [[999, 2], [3, 4]]
 shallow: [[999, 2], [3, 4]]
 original: [[1, 2], [3, 4]]
 deep: [[999, 2], [3, 4]]
+
 ```
 
 ### 10.3 Сравнение float
 
 ❌ **Ошибка:**
 ```python
+
 if 0.1 + 0.2 == 0.3:
     print("Equal")  # Не выполнится!
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 import math
 
 if math.isclose(0.1 + 0.2, 0.3):
@@ -1395,6 +1543,7 @@ if math.isclose(0.1 + 0.2, 0.3):
 from decimal import Decimal
 if Decimal('0.1') + Decimal('0.2') == Decimal('0.3'):
     print("Equal")  # Выполнится
+
 ```
 
 ---
@@ -1416,16 +1565,19 @@ if Decimal('0.1') + Decimal('0.2') == Decimal('0.3'):
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Flow Control](../03_FlowControl/) — циклы и условия для работы с коллекциями
 - [Functions](../04_Functions/) — создание функций для обработки данных
 
 **Practice Ideas:**
+
 1. Создайте телефонную книгу на словарях с поиском по имени
 2. Напишите программу для подсчёта слов в тексте (используйте Counter)
 3. Реализуйте удаление дубликатов из списка с сохранением порядка
 4. Создайте программу для работы с матрицами (вложенные списки)
 
 **Going Deeper:**
+
 - Изучите модуль `collections` (deque, OrderedDict, ChainMap)
 - Познакомьтесь с dataclasses (Python 3.7+)
 - Изучите array для эффективной работы с числами
@@ -1435,13 +1587,18 @@ if Decimal('0.1') + Decimal('0.2') == Decimal('0.3'):
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Built-in Types](https://docs.python.org/3/library/stdtypes.html)
 - [Collections module](https://docs.python.org/3/library/collections.html)
 - [Decimal module](https://docs.python.org/3/library/decimal.html)
 
 **Articles:**
+
 - [Python Data Structures Tutorial](https://docs.python.org/3/tutorial/datastructures.html)
 - [Time Complexity (Big O)](https://wiki.python.org/moin/TimeComplexity)
 
 ---
+
+
+
 

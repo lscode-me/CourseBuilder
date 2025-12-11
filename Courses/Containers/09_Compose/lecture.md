@@ -12,6 +12,7 @@
 - Знать основы YAML
 
 **Recommended prior modules:**
+
 - [Docker](../08_Docker/)
 - [Container Networking](../07_Networking/)
 
@@ -88,6 +89,7 @@ docker compose ps
 # Выполнение команды в сервисе
 docker compose exec web sh
 docker compose run --rm api python manage.py migrate
+
 ```
 
 ### 1.3 Версии Compose file
@@ -103,6 +105,7 @@ version: "3.8"
 services:
   web:
     image: nginx
+
 ```
 
 ---
@@ -112,6 +115,7 @@ services:
 ### 2.1 Сервисы
 
 ```yaml
+
 services:
   webapp:
     # Образ или сборка
@@ -175,11 +179,13 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
 ```
 
 ### 2.2 Сети
 
 ```yaml
+
 services:
   web:
     networks:
@@ -205,11 +211,13 @@ networks:
   existing:
     external: true  # Использовать существующую сеть
     name: my-existing-network
+
 ```
 
 ### 2.3 Volumes
 
 ```yaml
+
 services:
   db:
     volumes:
@@ -230,6 +238,7 @@ volumes:
       type: nfs
       o: addr=192.168.1.100,rw
       device: ":/export/data"
+
 ```
 
 ---
@@ -239,6 +248,7 @@ volumes:
 ### 3.1 Profiles
 
 ```yaml
+
 services:
   web:
     image: nginx
@@ -255,6 +265,7 @@ services:
     profiles:
       - test
       - ci
+
 ```
 
 ```bash
@@ -263,11 +274,13 @@ docker compose --profile debug up
 
 # Несколько профилей
 docker compose --profile debug --profile test up
+
 ```
 
 ### 3.2 Secrets
 
 ```yaml
+
 services:
   web:
     image: nginx
@@ -283,11 +296,13 @@ secrets:
   
   api_key:
     environment: "API_KEY"  # Из переменной окружения
+
 ```
 
 ### 3.3 Configs
 
 ```yaml
+
 services:
   web:
     image: nginx
@@ -298,6 +313,7 @@ services:
 configs:
   nginx_config:
     file: ./nginx.conf
+
 ```
 
 ### 3.4 Extensions и YAML anchors
@@ -324,11 +340,13 @@ services:
     image: myapi
     environment:
       - DEBUG=false
+
 ```
 
 ### 3.5 Условные зависимости
 
 ```yaml
+
 services:
   web:
     depends_on:
@@ -353,6 +371,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
+
 ```
 
 ---
@@ -362,6 +381,7 @@ services:
 ### 4.1 Веб-приложение с базой данных
 
 ```yaml
+
 services:
   web:
     build: .
@@ -422,6 +442,7 @@ volumes:
 ### 4.2 Development environment
 
 ```yaml
+
 services:
   app:
     build:
@@ -450,11 +471,13 @@ services:
     image: adminer
     ports:
       - "8080:8080"
+
 ```
 
 ### 4.3 Microservices
 
 ```yaml
+
 services:
   gateway:
     build: ./gateway
@@ -525,6 +548,7 @@ volumes:
 Docker Swarm — встроенная оркестрация для кластера Docker хостов.
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │                    Docker Swarm Cluster                  │
 │                                                          │
@@ -543,6 +567,7 @@ Docker Swarm — встроенная оркестрация для класте
 │  └─────────────┘  └─────────────┘  └─────────────┘     │
 │                                                          │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 5.2 Инициализация Swarm
@@ -565,15 +590,18 @@ docker swarm join --token SWMTKN-1-yyy 192.168.1.10:2377
 
 # Список нод
 docker node ls
+
 ```
 
 **Output:**
 ```
+
 ID                            HOSTNAME   STATUS    AVAILABILITY   MANAGER STATUS
 abc123 *                      manager1   Ready     Active         Leader
 def456                        manager2   Ready     Active         Reachable
 ghi789                        worker1    Ready     Active
 jkl012                        worker2    Ready     Active
+
 ```
 
 ### 5.3 Services в Swarm
@@ -607,6 +635,7 @@ docker service update \
 
 # Удаление
 docker service rm web
+
 ```
 
 ### 5.4 Deploy в Swarm через Compose
@@ -647,6 +676,7 @@ services:
 networks:
   webnet:
     driver: overlay
+
 ```
 
 ```bash
@@ -661,6 +691,7 @@ docker stack services myapp
 
 # Удаление stack
 docker stack rm myapp
+
 ```
 
 ### 5.5 Overlay Networks в Swarm
@@ -671,6 +702,7 @@ docker network create --driver overlay --attachable myoverlay
 
 # Шифрование трафика
 docker network create --driver overlay --opt encrypted myoverlay-encrypted
+
 ```
 
 ### 5.6 Secrets в Swarm
@@ -688,6 +720,7 @@ docker service create \
     --secret db_password \
     --secret source=ssl_cert,target=/etc/ssl/server.crt \
     myapp
+
 ```
 
 ### 5.7 Configs в Swarm
@@ -701,6 +734,7 @@ docker service create \
     --name web \
     --config source=nginx_conf,target=/etc/nginx/nginx.conf \
     nginx
+
 ```
 
 ---
@@ -718,6 +752,7 @@ docker node promote worker1
 
 # Demotion manager to worker
 docker node demote manager2
+
 ```
 
 ### 6.2 Node labels
@@ -732,6 +767,7 @@ docker service create \
     --name ml-service \
     --constraint 'node.labels.type == gpu' \
     ml-image
+
 ```
 
 ### 6.3 Drain и Availability
@@ -745,6 +781,7 @@ docker node update --availability active worker1
 
 # Pause (не принимает новые tasks)
 docker node update --availability pause worker1
+
 ```
 
 ---
@@ -754,6 +791,7 @@ docker node update --availability pause worker1
 ### 7.1 Логирование в Compose
 
 ```yaml
+
 services:
   app:
     logging:
@@ -766,6 +804,7 @@ services:
       driver: syslog
       options:
         syslog-address: "udp://logs.example.com:514"
+
 ```
 
 ### 7.2 Просмотр логов
@@ -779,11 +818,13 @@ docker service logs -f web
 
 # Все сервисы stack
 docker stack services myapp -q | xargs -I {} docker service logs -f {}
+
 ```
 
 ### 7.3 Healthchecks
 
 ```yaml
+
 services:
   web:
     healthcheck:
@@ -792,6 +833,7 @@ services:
       timeout: 10s
       retries: 3
       start_period: 60s
+
 ```
 
 ---
@@ -810,6 +852,7 @@ services:
 # Production override
 # docker-compose.prod.yml
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up
+
 ```
 
 ```yaml
@@ -834,22 +877,26 @@ services:
       replicas: 3
     environment:
       - DEBUG=false
+
 ```
 
 ### 8.2 Wait for dependencies
 
 ```yaml
+
 services:
   web:
     depends_on:
       db:
         condition: service_healthy
     command: ["./wait-for-it.sh", "db:5432", "--", "python", "app.py"]
+
 ```
 
 ### 8.3 Zero-downtime deployment
 
 ```yaml
+
 services:
   web:
     deploy:
@@ -867,6 +914,7 @@ services:
       timeout: 5s
       retries: 3
       start_period: 30s
+
 ```
 
 ---
@@ -874,9 +922,13 @@ services:
 ## 💡 Key Takeaways
 
 - **Docker Compose** упрощает запуск многоконтейнерных приложений
+
 - **depends_on с condition** обеспечивает правильный порядок запуска
+
 - **Docker Swarm** предоставляет встроенную оркестрацию
+
 - **Overlay networks** нужны для коммуникации между нодами
+
 - **Secrets и configs** безопасно хранят чувствительные данные
 
 ---
@@ -884,15 +936,18 @@ services:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Kubernetes](../10_Kubernetes/) — продвинутая оркестрация
 
 **Practice Ideas:**
+
 1. Создайте многоконтейнерное приложение с Compose
 2. Настройте 3-node Swarm cluster
 3. Реализуйте zero-downtime deployment
 4. Используйте profiles для разных окружений
 
 **Going Deeper:**
+
 - Traefik как ingress для Swarm
 - Portainer для UI управления
 - Kubernetes vs Swarm сравнение
@@ -902,17 +957,23 @@ services:
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Docker Swarm](https://docs.docker.com/engine/swarm/)
 - [Compose file reference](https://docs.docker.com/compose/compose-file/)
 
 **Tools:**
+
 - [Portainer](https://www.portainer.io/) — UI для Docker/Swarm
 - [Traefik](https://traefik.io/) — reverse proxy для контейнеров
 
 **Articles:**
+
 - [Docker Compose Best Practices](https://docs.docker.com/develop/dev-best-practices/)
 - [Swarm mode overview](https://docs.docker.com/engine/swarm/)
 
 ---
+
+
+
 

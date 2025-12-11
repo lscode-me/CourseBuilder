@@ -13,6 +13,7 @@
 - Уметь работать с AWS Console или CLI
 
 **Recommended prior modules:**
+
 - [03_Architecture](../03_Architecture/) — архитектура AWS
 - [05_EC2](../05_EC2/) — работа с EC2 инстансами
 
@@ -37,14 +38,19 @@
 **Amazon Virtual Private Cloud (VPC)** — это логически изолированная виртуальная сеть в облаке AWS, которая даёт вам полный контроль над сетевым окружением:
 
 - **Диапазон IP-адресов** — вы определяете CIDR блок
+
 - **Подсети** — разделение на public/private
+
 - **Маршрутизация** — Route Tables для управления трафиком
+
 - **Безопасность** — Security Groups и Network ACLs
+
 - **Шлюзы** — Internet Gateway, NAT Gateway, VPN Gateway
 
 **Ключевые концепции:**
 
 ```
+
 VPC = Ваш собственный виртуальный дата-центр в AWS
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -82,6 +88,7 @@ VPC = Ваш собственный виртуальный дата-центр �
 │  └───────────────────────────────────────────────────────────────────────┘  │
 │                                                                              │
 └─────────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Default VPC vs Custom VPC
@@ -148,10 +155,12 @@ for cidr, info in cidr_examples.items():
     print(f"  Usable IPs: {info['usable_hosts']:,}")
     print(f"  Use case:   {info['use_case']}")
     print(f"  Example:    {info['example']}")
+
 ```
 
 **Output:**
 ```
+
 CIDR Planning Guide:
 ============================================================
 
@@ -166,11 +175,13 @@ CIDR Planning Guide:
   Usable IPs: 251
   Use case:   Standard subnet
   Example:    10.0.1.0/24
+
 ```
 
 **Пример планирования для production:**
 
 ```
+
 VPC: 10.0.0.0/16 (65,536 IPs)
 │
 ├── Public Subnets (для ресурсов с public IP)
@@ -190,6 +201,7 @@ VPC: 10.0.0.0/16 (65,536 IPs)
 │
 └── Reserved (для будущего роста)
     └── 10.0.100.0/24 - 10.0.255.0/24
+
 ```
 
 > **⚠️ Важно:** Планируйте CIDR заранее! Изменить CIDR существующего VPC невозможно. Убедитесь, что ваши диапазоны не пересекаются с on-premise сетями.
@@ -203,6 +215,7 @@ VPC: 10.0.0.0/16 (65,536 IPs)
 **Internet Gateway** — шлюз, обеспечивающий связь между VPC и интернетом. Без него ресурсы в VPC не могут выходить в интернет.
 
 ```
+
 ┌─────────────────────────────────────────────────┐
 │                   INTERNET                       │
 └─────────────────────────────────────────────────┘
@@ -223,6 +236,7 @@ VPC: 10.0.0.0/16 (65,536 IPs)
 │  │  • NAT Gateway                           │    │
 │  └─────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────┘
+
 ```
 
 **Создание и настройка:**
@@ -244,9 +258,11 @@ aws ec2 create-route \
     --route-table-id rtb-0123456789abcdef0 \
     --destination-cidr-block 0.0.0.0/0 \
     --gateway-id igw-0123456789abcdef0
+
 ```
 
 **Характеристики IGW:**
+
 - Horizontally scaled, redundant, highly available
 - Не создаёт bandwidth bottleneck
 - Один IGW на VPC
@@ -257,6 +273,7 @@ aws ec2 create-route \
 **NAT Gateway** позволяет ресурсам в private subnet выходить в интернет, но блокирует входящие соединения из интернета.
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                          INTERNET                                │
 └─────────────────────────────────────────────────────────────────┘
@@ -294,6 +311,7 @@ aws ec2 create-route \
 │  └────────────────────────────────────────────────────────┘      │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 **Создание NAT Gateway:**
@@ -314,6 +332,7 @@ aws ec2 create-route \
     --route-table-id rtb-private \
     --destination-cidr-block 0.0.0.0/0 \
     --nat-gateway-id nat-0123456789abcdef0
+
 ```
 
 **NAT Gateway vs NAT Instance:**
@@ -385,6 +404,7 @@ data_route_table = {
     ],
     "associated_subnets": ["data-1a", "data-1b", "data-1c"]
 }
+
 ```
 
 **Создание Route Table через CLI:**
@@ -405,6 +425,7 @@ aws ec2 create-route \
 aws ec2 associate-route-table \
     --route-table-id rtb-xxxxx \
     --subnet-id subnet-xxxxx
+
 ```
 
 ---
@@ -416,6 +437,7 @@ aws ec2 associate-route-table \
 **Security Group** — виртуальный firewall на уровне instance (ENI). Работает по принципу whitelist — только разрешённый трафик пропускается.
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────────┐
 │                    Security Groups — Key Concepts                       │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -432,6 +454,7 @@ aws ec2 associate-route-table \
 │  • REFERENCE SG: можно ссылаться на другие SG вместо IP-адресов       │
 │                                                                         │
 └────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 **Пример конфигурации Security Groups для трёхуровневой архитектуры:**
@@ -480,11 +503,13 @@ aws ec2 authorize-security-group-ingress \
     --protocol tcp \
     --port 5432 \
     --source-group sg-web
+
 ```
 
 **Визуализация Security Groups chain:**
 
 ```
+
                  Internet
                      │
                      ▼
@@ -519,6 +544,7 @@ aws ec2 authorize-security-group-ingress \
 │  Outbound:                                 │
 │    • None (или минимально необходимый)    │
 └────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Network ACLs (NACLs)
@@ -526,6 +552,7 @@ aws ec2 authorize-security-group-ingress \
 **Network ACL** — firewall на уровне subnet. Работает как дополнительный слой защиты.
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────────┐
 │           Security Groups vs Network ACLs                               │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -542,6 +569,7 @@ aws ec2 authorize-security-group-ingress \
 │  Личная охрана у двери квартиры     Охрана на входе в здание          │
 │                                                                         │
 └────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 **Пример Network ACL для public subnet:**
@@ -602,6 +630,7 @@ aws ec2 create-network-acl-entry \
     --cidr-block 0.0.0.0/0 \
     --rule-action allow \
     --egress
+
 ```
 
 > **⚠️ Важно:** NACL stateless — нужно явно разрешать и входящий, и исходящий трафик, включая ephemeral ports (1024-65535) для return traffic.
@@ -646,6 +675,7 @@ aws ec2 create-vpc-endpoint \
 **Сравнение типов endpoints:**
 
 ```python
+
 vpc_endpoint_types = {
     "Gateway Endpoint": {
         "services": ["S3", "DynamoDB"],
@@ -681,6 +711,7 @@ vpc_endpoint_types = {
 **VPC Peering** — соединение между двумя VPC для маршрутизации трафика через приватные IP.
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────────┐
 │                          VPC Peering                                    │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -703,6 +734,7 @@ vpc_endpoint_types = {
 │    A ↔ B и B ↔ C не означает A ↔ C                                    │
 │                                                                         │
 └────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ```bash
@@ -726,6 +758,7 @@ aws ec2 create-route \
     --route-table-id rtb-dev \
     --destination-cidr-block 10.0.0.0/16 \
     --vpc-peering-connection-id pcx-xxxxx
+
 ```
 
 ### 5.2 Transit Gateway
@@ -733,6 +766,7 @@ aws ec2 create-route \
 **Transit Gateway** — региональный hub для соединения множества VPC и on-premise сетей.
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────────┐
 │                        Transit Gateway                                  │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -763,6 +797,7 @@ aws ec2 create-route \
 │   Advantages: hub-and-spoke, transitive routing, centralized          │
 │                                                                         │
 └────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 **Когда использовать что:**
@@ -836,6 +871,7 @@ queries = {
         | limit 10
     """
 }
+
 ```
 
 ---
@@ -885,6 +921,7 @@ aws route53 change-resource-record-sets \
             }
         }]
     }'
+
 ```
 
 ---
@@ -892,6 +929,7 @@ aws route53 change-resource-record-sets \
 ## 8. Best Practices
 
 ```python
+
 vpc_best_practices = {
     "planning": [
         "Планируйте CIDR заранее — изменить нельзя",
@@ -918,6 +956,7 @@ vpc_best_practices = {
         "VPN как backup для Direct Connect"
     ]
 }
+
 ```
 
 ---
@@ -925,11 +964,17 @@ vpc_best_practices = {
 ## 💡 Key Takeaways
 
 - **VPC** — изолированная виртуальная сеть, ваш дата-центр в AWS
+
 - **Public subnet** — имеет route к Internet Gateway, ресурсы получают public IP
+
 - **Private subnet** — выход в интернет только через NAT Gateway
+
 - **Security Groups** — stateful firewall на уровне instance, только allow rules
+
 - **Network ACLs** — stateless firewall на уровне subnet, allow/deny rules
+
 - **VPC Endpoints** — приватный доступ к AWS сервисам без интернета
+
 - **Transit Gateway** — hub для соединения множества VPC и on-premise
 
 ---
@@ -937,11 +982,13 @@ vpc_best_practices = {
 ## 📚 Additional Resources
 
 **AWS Documentation:**
+
 - [VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)
 - [Security Group Rules Reference](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html)
 - [VPC Endpoints Documentation](https://docs.aws.amazon.com/vpc/latest/privatelink/)
 
 **Tools:**
+
 - [VPC CIDR Calculator](https://www.ipaddressguide.com/cidr)
 - [AWS VPC Designer](https://console.aws.amazon.com/vpc/home#vpcs)
 
@@ -950,10 +997,12 @@ vpc_best_practices = {
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [08_RDS](../08_RDS/) — Реляционные базы данных в облаке
 - [09_DynamoDB](../09_DynamoDB/) — NoSQL база данных DynamoDB
 
 **Практика:**
+
 1. Создайте VPC с 3-tier architecture через Console
 2. Настройте Security Groups chain: ALB → Web → DB
 3. Создайте Gateway Endpoint для S3 в private subnet
@@ -961,3 +1010,6 @@ vpc_best_practices = {
 5. Настройте VPC Peering между двумя VPC
 
 ---
+
+
+

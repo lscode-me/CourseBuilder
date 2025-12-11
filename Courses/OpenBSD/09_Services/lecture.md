@@ -33,9 +33,11 @@
 OpenBSD использует простую систему инициализации на основе shell-скриптов:
 
 ```
+
 Загрузка → /etc/rc → /etc/rc.d/* → /etc/rc.local
                          ↓
               /etc/rc.conf.local (настройки)
+
 ```
 
 ### 1.2 Основные файлы
@@ -62,6 +64,7 @@ dhcpd       inetd       ppp         sshd        ...
 # Службы базовой системы
 $ ls /etc/rc.d/ | wc -l
 42
+
 ```
 
 ---
@@ -101,6 +104,7 @@ sshd_logger=
 sshd_rtable=0
 sshd_timeout=30
 sshd_user=root
+
 ```
 
 ### 2.2 Просмотр состояния
@@ -137,6 +141,7 @@ $ rcctl ls off
 httpd
 nginx
 smtpd
+
 ```
 
 ### 2.3 Настройка параметров службы
@@ -154,6 +159,7 @@ smtpd
 # Просмотреть флаги
 $ rcctl get httpd flags
 httpd_flags=-f /etc/httpd.custom.conf
+
 ```
 
 ---
@@ -175,6 +181,7 @@ smtpd_flags=NO
 
 # Пакетные службы
 pkg_scripts="nginx php82_fpm redis"
+
 ```
 
 ### 3.2 Порядок запуска
@@ -184,6 +191,7 @@ pkg_scripts="nginx php82_fpm redis"
 ```sh
 # Указать порядок
 pkg_scripts="mysqld php82_fpm nginx"
+
 ```
 
 ---
@@ -202,6 +210,7 @@ daemon_flags=""
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
+
 ```
 
 ### 4.2 Расширенный шаблон
@@ -233,6 +242,7 @@ rc_post() {
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
+
 ```
 
 ### 4.3 Переменные rc.subr
@@ -358,6 +368,7 @@ server:
 # Проверить
 $ doas rcctl check nginx
 nginx(ok)
+
 ```
 
 ### 6.2 PHP-FPM
@@ -425,6 +436,7 @@ nginx(ok)
 
 $ doas rcctl check httpd
 httpd(failed)
+
 ```
 
 ### 7.2 Логирование
@@ -437,6 +449,7 @@ $ tail -f /var/log/daemon
 # Логи служб
 $ tail -f /var/log/nginx/error.log
 $ tail -f /var/www/logs/error.log
+
 ```
 
 ### 7.3 Автоматический перезапуск
@@ -446,6 +459,7 @@ $ tail -f /var/www/logs/error.log
 ```sh
 # /etc/cron.d/check_services
 */5 * * * * root rcctl check nginx || rcctl restart nginx
+
 ```
 
 ---
@@ -472,6 +486,7 @@ daemon_flags="-c /etc/myapp.conf"
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
+
 ```
 
 ```sh
@@ -506,6 +521,7 @@ rc_start() {
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
+
 ```
 
 ---
@@ -578,6 +594,7 @@ match from local for any action "outbound"
 # Проверить логи
 $ tail -50 /var/log/messages
 $ tail -50 /var/log/daemon
+
 ```
 
 ### 10.2 Служба падает после запуска
@@ -592,6 +609,7 @@ $ ulimit -a
 
 # Проверить процесс
 $ ps aux | grep nginx
+
 ```
 
 ### 10.3 Служба не отвечает
@@ -605,6 +623,7 @@ $ netstat -an | grep LISTEN | grep 80
 
 # Проверить соединение локально
 $ nc -vz localhost 80
+
 ```
 
 ---
@@ -612,9 +631,13 @@ $ nc -vz localhost 80
 ## 💡 Key Takeaways
 
 - **rcctl**: Единая команда для управления всеми службами
+
 - **rc.conf.local**: Все локальные настройки в одном файле
+
 - **pkg_scripts**: Порядок запуска пакетных служб
+
 - **Простота**: rc.d скрипты — обычные shell-скрипты
+
 - **Логи**: Всегда проверяйте /var/log/messages и daemon
 
 ---
@@ -622,16 +645,19 @@ $ nc -vz localhost 80
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Security](../10_Security/) — безопасность служб
 - [System Admin](../11_SystemAdmin/) — мониторинг и логи
 
 **Practice Ideas:**
+
 1. Настройте LEMP стек для веб-приложения
 2. Создайте rc.d скрипт для своего приложения
 3. Настройте мониторинг служб через cron
 4. Настройте почтовый сервер smtpd
 
 **Going Deeper:**
+
 - Кластеризация служб с CARP
 - Мониторинг с Prometheus/Grafana
 - Автоматизация с Ansible
@@ -641,6 +667,7 @@ $ nc -vz localhost 80
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man rcctl](https://man.openbsd.org/rcctl) — управление службами
 - [man rc.d](https://man.openbsd.org/rc.d) — формат скриптов
 - [man rc.conf](https://man.openbsd.org/rc.conf) — конфигурация rc
@@ -648,4 +675,7 @@ $ nc -vz localhost 80
 - [man smtpd.conf](https://man.openbsd.org/smtpd.conf) — почтовый сервер
 
 ---
+
+
+
 

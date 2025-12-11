@@ -13,6 +13,7 @@
 - Иметь опыт отладки Python-программ
 
 **Recommended prior modules:**
+
 - [Classes](../05_Classes/) — классы и наследование
 - [Modules](../06_Modules/) — организация кода в модули
 
@@ -40,19 +41,23 @@
 # Без обработки исключений — программа завершается
 numbers = [1, 2, 3]
 print(numbers[10])  # IndexError: list index out of range
+
 ```
 
 **Output:**
 ```
+
 Traceback (most recent call last):
   File "example.py", line 2, in <module>
     print(numbers[10])
 IndexError: list index out of range
+
 ```
 
 ### 1.2 Базовая обработка исключений
 
 ```python
+
 numbers = [1, 2, 3]
 
 try:
@@ -61,30 +66,37 @@ except IndexError:
     print("Индекс выходит за пределы списка")
 
 print("Программа продолжает работу")
+
 ```
 
 **Output:**
 ```
+
 Индекс выходит за пределы списка
 Программа продолжает работу
+
 ```
 
 ### 1.3 Получение информации об исключении
 
 ```python
+
 try:
     result = 10 / 0
 except ZeroDivisionError as e:
     print(f"Тип ошибки: {type(e).__name__}")
     print(f"Сообщение: {e}")
     print(f"Аргументы: {e.args}")
+
 ```
 
 **Output:**
 ```
+
 Тип ошибки: ZeroDivisionError
 Сообщение: division by zero
 Аргументы: ('division by zero',)
+
 ```
 
 ---
@@ -94,6 +106,7 @@ except ZeroDivisionError as e:
 ### 2.1 Полный синтаксис
 
 ```python
+
 def divide(a, b):
     try:
         # Код, который может вызвать исключение
@@ -119,10 +132,12 @@ print()
 print(f"divide(10, 0) = {divide(10, 0)}")
 print()
 print(f"divide('10', 2) = {divide('10', 2)}")
+
 ```
 
 **Output:**
 ```
+
 Деление выполнено успешно
 Блок finally выполнен
 divide(10, 2) = 5.0
@@ -134,11 +149,13 @@ divide(10, 0) = None
 Ошибка типа: unsupported operand type(s) for /: 'str' and 'int'
 Блок finally выполнен
 divide('10', 2) = None
+
 ```
 
 ### 2.2 Обработка нескольких типов исключений
 
 ```python
+
 def process_data(data, index):
     try:
         value = data[index]
@@ -156,17 +173,21 @@ def process_data(data, index):
 process_data([1, 2, 0], 0)   # 100.0
 process_data([1, 2, 0], 10)  # Ошибка доступа
 process_data([1, 2, 0], 2)   # Значение равно нулю
+
 ```
 
 **Output:**
 ```
+
 Ошибка доступа: list index out of range
 Значение равно нулю
+
 ```
 
 ### 2.3 Блок finally для очистки ресурсов
 
 ```python
+
 def read_file(filename):
     f = None
     try:
@@ -182,11 +203,14 @@ def read_file(filename):
             print("Файл закрыт")
 
 content = read_file("nonexistent.txt")
+
 ```
 
 **Output:**
 ```
+
 Файл nonexistent.txt не найден
+
 ```
 
 > **💡 Pro Tip:**  
@@ -199,6 +223,7 @@ content = read_file("nonexistent.txt")
 ### 3.1 Встроенная иерархия
 
 ```
+
 BaseException
 ├── SystemExit
 ├── KeyboardInterrupt
@@ -232,6 +257,7 @@ BaseException
     ├── ValueError
     │   └── UnicodeError
     └── Warning
+
 ```
 
 ### 3.2 Наиболее частые исключения
@@ -267,15 +293,18 @@ try:
     open("nonexistent.txt")
 except FileNotFoundError as e:
     print(f"FileNotFoundError: {e}")
+
 ```
 
 **Output:**
 ```
+
 ValueError: invalid literal for int() with base 10: 'abc'
 TypeError: can only concatenate str (not "int") to str
 KeyError: 'b'
 AttributeError: 'str' object has no attribute 'nonexistent'
 FileNotFoundError: [Errno 2] No such file or directory: 'nonexistent.txt'
+
 ```
 
 ### 3.3 Порядок обработки важен
@@ -298,12 +327,15 @@ except KeyError:
     print("Ключ не найден")
 except Exception:
     print("Другая ошибка")
+
 ```
 
 **Output:**
 ```
+
 Общая ошибка
 Ключ не найден
+
 ```
 
 ---
@@ -313,6 +345,7 @@ except Exception:
 ### 4.1 Оператор raise
 
 ```python
+
 def validate_age(age):
     if not isinstance(age, int):
         raise TypeError(f"Возраст должен быть целым числом, получено: {type(age).__name__}")
@@ -334,18 +367,22 @@ except ValueError as e:
     print(f"ValueError: {e}")
 
 print(f"validate_age(25) = {validate_age(25)}")
+
 ```
 
 **Output:**
 ```
+
 TypeError: Возраст должен быть целым числом, получено: str
 ValueError: Возраст не может быть отрицательным: -5
 validate_age(25) = True
+
 ```
 
 ### 4.2 Повторное возбуждение исключения
 
 ```python
+
 def process_data(data):
     try:
         # Какая-то обработка
@@ -358,17 +395,21 @@ try:
     process_data("abc")
 except ValueError as e:
     print(f"Поймано в main: {e}")
+
 ```
 
 **Output:**
 ```
+
 Логирование: не удалось преобразовать 'abc'
 Поймано в main: invalid literal for int() with base 10: 'abc'
+
 ```
 
 ### 4.3 Цепочки исключений (Exception Chaining)
 
 ```python
+
 def load_config(filename):
     try:
         with open(filename) as f:
@@ -382,12 +423,15 @@ try:
 except RuntimeError as e:
     print(f"RuntimeError: {e}")
     print(f"Причина: {e.__cause__}")
+
 ```
 
 **Output:**
 ```
+
 RuntimeError: Не удалось загрузить конфигурацию
 Причина: [Errno 2] No such file or directory: 'config.txt'
+
 ```
 
 ---
@@ -397,6 +441,7 @@ RuntimeError: Не удалось загрузить конфигурацию
 ### 5.1 Базовое пользовательское исключение
 
 ```python
+
 class ApplicationError(Exception):
     """Базовое исключение приложения."""
     pass
@@ -420,16 +465,20 @@ except ValidationError as e:
     print(f"Ошибка валидации: {e}")
 except ApplicationError as e:
     print(f"Ошибка приложения: {e}")
+
 ```
 
 **Output:**
 ```
+
 Ошибка валидации: Неверный формат email: invalid-email
+
 ```
 
 ### 5.2 Исключения с дополнительными данными
 
 ```python
+
 class HTTPError(Exception):
     """Исключение HTTP-запроса."""
     
@@ -455,14 +504,17 @@ except HTTPError as e:
     print(f"Сообщение: {e.message}")
     print(f"URL: {e.url}")
     print(f"repr: {repr(e)}")
+
 ```
 
 **Output:**
 ```
+
 Код статуса: 404
 Сообщение: Not Found
 URL: http://example.com/error
 repr: HTTPError(404, 'Not Found', url='http://example.com/error')
+
 ```
 
 ### 5.3 Иерархия пользовательских исключений
@@ -519,11 +571,13 @@ with open("file.txt", "w") as f:
 with open("input.txt") as fin, open("output.txt", "w") as fout:
     data = fin.read()
     fout.write(data.upper())
+
 ```
 
 ### 6.2 Создание контекстного менеджера (класс)
 
 ```python
+
 class DatabaseConnection:
     def __init__(self, host):
         self.host = host
@@ -553,20 +607,24 @@ with DatabaseConnection("localhost") as db:
     print(db.query("SELECT * FROM orders"))
 
 print("Вне контекста")
+
 ```
 
 **Output:**
 ```
+
 Подключение к localhost
 Результат запроса: SELECT * FROM users
 Результат запроса: SELECT * FROM orders
 Закрытие соединения с localhost
 Вне контекста
+
 ```
 
 ### 6.3 Создание контекстного менеджера (декоратор)
 
 ```python
+
 from contextlib import contextmanager
 import time
 
@@ -585,18 +643,22 @@ def timer(name):
 with timer("Вычисление"):
     total = sum(range(1000000))
     print(f"Сумма: {total}")
+
 ```
 
 **Output:**
 ```
+
 Вычисление начат
 Сумма: 499999500000
 Вычисление завершён за 0.0312с
+
 ```
 
 ### 6.4 suppress — подавление исключений
 
 ```python
+
 from contextlib import suppress
 
 # Вместо:
@@ -612,11 +674,14 @@ with suppress(FileNotFoundError):
     os.remove("nonexistent.txt")
 
 print("Программа продолжается")
+
 ```
 
 **Output:**
 ```
+
 Программа продолжается
+
 ```
 
 ---
@@ -627,45 +692,55 @@ print("Программа продолжается")
 
 ❌ **Плохо:**
 ```python
+
 try:
     do_something()
 except:  # Ловит ВСЁ, включая KeyboardInterrupt и SystemExit
     pass
+
 ```
 
 ❌ **Тоже плохо:**
 ```python
+
 try:
     do_something()
 except Exception:  # Слишком общее
     pass
+
 ```
 
 ✅ **Хорошо:**
 ```python
+
 try:
     do_something()
 except (ValueError, TypeError) as e:
     handle_error(e)
+
 ```
 
 ### 7.2 Не используйте исключения для управления потоком
 
 ❌ **Плохо:**
 ```python
+
 def get_item(lst, index):
     try:
         return lst[index]
     except IndexError:
         return None
+
 ```
 
 ✅ **Лучше:**
 ```python
+
 def get_item(lst, index):
     if 0 <= index < len(lst):
         return lst[index]
     return None
+
 ```
 
 ### 7.3 EAFP vs LBYL
@@ -689,11 +764,13 @@ except KeyError:
 
 # Ещё лучше — встроенный метод
 value = dictionary.get(key, default)
+
 ```
 
 ### 7.4 Документируйте исключения
 
 ```python
+
 def divide(a: float, b: float) -> float:
     """
     Делит a на b.
@@ -714,11 +791,13 @@ def divide(a: float, b: float) -> float:
     if b == 0:
         raise ZeroDivisionError("Делитель не может быть нулём")
     return a / b
+
 ```
 
 ### 7.5 Логирование исключений
 
 ```python
+
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -732,6 +811,7 @@ def process_data(data):
         logger.exception(f"Не удалось обработать данные: {data}")
         # .exception() автоматически добавляет traceback
         raise
+
 ```
 
 ---
@@ -741,6 +821,7 @@ def process_data(data):
 ### 8.1 Retry с экспоненциальной задержкой
 
 ```python
+
 import time
 import random
 
@@ -768,11 +849,13 @@ try:
     print(f"Результат: {result}")
 except ConnectionError:
     print("Все попытки исчерпаны")
+
 ```
 
 ### 8.2 Null Object Pattern
 
 ```python
+
 class NullUser:
     """Null Object — безопасная заглушка вместо None."""
     name = "Guest"
@@ -805,17 +888,21 @@ def get_user(user_id):
 user = get_user(999)
 print(f"Имя: {user.name}")
 print(f"Есть доступ: {user.has_permission('admin')}")
+
 ```
 
 **Output:**
 ```
+
 Имя: Guest
 Есть доступ: False
+
 ```
 
 ### 8.3 Graceful Degradation
 
 ```python
+
 def get_data_with_fallback(primary_source, fallback_source, default=None):
     """Получает данные с fallback на альтернативный источник."""
     try:
@@ -837,12 +924,15 @@ def fetch_from_cache():
 
 result = get_data_with_fallback(fetch_from_api, fetch_from_cache, {"data": "default"})
 print(f"Результат: {result}")
+
 ```
 
 **Output:**
 ```
+
 Основной источник недоступен: API недоступен
 Результат: {'data': 'cached'}
+
 ```
 
 ---
@@ -853,26 +943,31 @@ print(f"Результат: {result}")
 
 ❌ **Плохо:**
 ```python
+
 try:
     do_something()
 except:
     pass  # Молча проглатываем ВСЕ ошибки, включая Ctrl+C!
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 try:
     do_something()
 except Exception as e:
     logger.error(f"Ошибка: {e}")
     # Или хотя бы:
     raise
+
 ```
 
 ### 9.2 Слишком широкий try
 
 ❌ **Плохо:**
 ```python
+
 try:
     user = get_user(user_id)
     posts = get_posts(user)
@@ -880,10 +975,12 @@ try:
     send_email(user, posts, comments)
 except Exception as e:
     print(f"Что-то пошло не так: {e}")  # Где именно?
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 try:
     user = get_user(user_id)
 except UserNotFoundError:
@@ -903,24 +1000,29 @@ except DatabaseError:
 
 ❌ **Плохо:**
 ```python
+
 try:
     do_something()
 except SomeError:
     raise AnotherError("Ошибка")  # Потеряли оригинальную ошибку
+
 ```
 
 ✅ **Правильно:**
 ```python
+
 try:
     do_something()
 except SomeError as e:
     raise AnotherError("Ошибка") from e  # Сохраняем цепочку
+
 ```
 
 ### 9.4 Использование assert в production
 
 ❌ **Плохо:**
 ```python
+
 def transfer_money(amount):
     assert amount > 0, "Сумма должна быть положительной"  # Отключается с -O !
     # ...
@@ -928,6 +1030,7 @@ def transfer_money(amount):
 
 ✅ **Правильно:**
 ```python
+
 def transfer_money(amount):
     if amount <= 0:
         raise ValueError("Сумма должна быть положительной")
@@ -941,6 +1044,7 @@ def transfer_money(amount):
 ### 10.1 Получение traceback
 
 ```python
+
 import traceback
 import sys
 
@@ -958,10 +1062,12 @@ except ZeroDivisionError:
     # Или в поток
     print("\nОтправляем в stderr:")
     traceback.print_exc(file=sys.stderr)
+
 ```
 
 **Output:**
 ```
+
 Traceback:
 Traceback (most recent call last):
   File "example.py", line 7, in <module>
@@ -969,11 +1075,13 @@ Traceback (most recent call last):
   File "example.py", line 5, in problematic_function
     return 1 / 0
 ZeroDivisionError: division by zero
+
 ```
 
 ### 10.2 Анализ исключения
 
 ```python
+
 import sys
 
 try:
@@ -984,14 +1092,17 @@ except ValueError:
     print(f"Значение: {exc_value}")
     print(f"Файл: {exc_tb.tb_frame.f_code.co_filename}")
     print(f"Строка: {exc_tb.tb_lineno}")
+
 ```
 
 **Output:**
 ```
+
 Тип: <class 'ValueError'>
 Значение: Тестовая ошибка
 Файл: example.py
 Строка: 4
+
 ```
 
 ---
@@ -1013,16 +1124,19 @@ except ValueError:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Files](../08_Files/) — обработка ошибок при работе с файлами
 - [Standard Modules](../09_StandardModules/) — модуль logging для исключений
 
 **Practice Ideas:**
+
 1. Создайте иерархию исключений для библиотеки интернет-магазина
 2. Напишите декоратор @retry для автоматического повтора при ошибках
 3. Реализуйте контекстный менеджер для подключения к базе данных
 4. Создайте функцию валидации с детальными сообщениями об ошибках
 
 **Going Deeper:**
+
 - Изучите модуль `warnings` для предупреждений
 - Познакомьтесь с `traceback` для анализа стека вызовов
 - Изучите обработку исключений в асинхронном коде
@@ -1032,12 +1146,17 @@ except ValueError:
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)
 - [Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)
 - [contextlib](https://docs.python.org/3/library/contextlib.html)
 
 **Articles:**
+
 - [Python Exception Handling Best Practices](https://realpython.com/python-exceptions/)
 
 ---
+
+
+
 

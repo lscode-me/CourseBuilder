@@ -12,6 +12,7 @@
 - Знать концепции CGI/FastCGI
 
 **Recommended prior modules:**
+
 - [CGI](../04_CGI/) — Gateway интерфейсы
 - [Python](../../Python/) — основы Python
 
@@ -36,6 +37,7 @@
 **WSGI (Web Server Gateway Interface)** — стандартный интерфейс между Python веб-приложениями и веб-серверами, определённый в PEP 3333.
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                    WSGI Ecosystem                          │
 ├────────────────────────────────────────────────────────────┤
@@ -59,16 +61,19 @@
 │                    └───────────────────┘                   │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Зачем нужен WSGI
 
 **До WSGI:**
+
 - Каждый сервер имел свой API
 - Приложение привязано к конкретному серверу
 - Нет стандарта для middleware
 
 **После WSGI:**
+
 - Единый стандартный интерфейс
 - Приложение работает с любым WSGI-сервером
 - Экосистема middleware
@@ -77,10 +82,12 @@
 ### 1.3 История
 
 ```
+
 2003 — PEP 333: Web Server Gateway Interface v1.0
 2010 — PEP 3333: WSGI для Python 3 (обновлённый)
 2010s — WSGI становится стандартом для Python веб
 2015+ — ASGI для асинхронных приложений
+
 ```
 
 ---
@@ -90,6 +97,7 @@
 ### 2.1 Минимальное WSGI приложение
 
 ```python
+
 def application(environ, start_response):
     """
     Минимальное WSGI приложение.
@@ -109,11 +117,13 @@ def application(environ, start_response):
     start_response(status, headers)
     
     return [b'Hello, WSGI World!']
+
 ```
 
 ### 2.2 Сигнатура WSGI приложения
 
 ```python
+
 def app(environ: dict, start_response: callable) -> Iterable[bytes]:
     """
     WSGI application interface.
@@ -142,11 +152,13 @@ def app(environ: dict, start_response: callable) -> Iterable[bytes]:
         Итерируемый объект с байтами тела ответа
     """
     pass
+
 ```
 
 ### 2.3 environ — переменные окружения
 
 ```python
+
 def debug_app(environ, start_response):
     """Показывает все переменные окружения WSGI."""
     
@@ -184,11 +196,13 @@ def debug_app(environ, start_response):
         lines.append(f"{var}: {environ.get(var, '')}\n")
     
     return [line.encode('utf-8') for line in lines]
+
 ```
 
 ### 2.4 start_response
 
 ```python
+
 def app(environ, start_response):
     """Демонстрация start_response."""
     
@@ -208,11 +222,13 @@ def app(environ, start_response):
     
     # Рекомендуемый способ — возврат iterable
     return [b'<html><body>Hello</body></html>']
+
 ```
 
 ### 2.5 Обработка ошибок
 
 ```python
+
 def app_with_error_handling(environ, start_response):
     """WSGI приложение с обработкой исключений."""
     
@@ -242,6 +258,7 @@ def app_with_error_handling(environ, start_response):
                       exc_info)
         
         return [b'Internal Server Error']
+
 ```
 
 ---
@@ -489,6 +506,7 @@ if __name__ == '__main__':
         server.serve_forever()
     except KeyboardInterrupt:
         print("\nShutting down...")
+
 ```
 
 ---
@@ -498,6 +516,7 @@ if __name__ == '__main__':
 ### 4.1 Концепция middleware
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                   Middleware Chain                          │
 ├────────────────────────────────────────────────────────────┤
@@ -528,11 +547,13 @@ if __name__ == '__main__':
 │  Response                                                  │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 Простой middleware
 
 ```python
+
 class LoggingMiddleware:
     """Middleware для логирования запросов."""
     
@@ -572,11 +593,13 @@ class LoggingMiddleware:
 
 # Использование
 app = LoggingMiddleware(app)
+
 ```
 
 ### 4.3 Полезные middleware
 
 ```python
+
 class CORSMiddleware:
     """Middleware для CORS заголовков."""
     
@@ -705,6 +728,7 @@ app = ErrorHandlerMiddleware(app, debug=True)
 app = GzipMiddleware(app)
 app = CORSMiddleware(app, allowed_origins=['http://localhost:3000'])
 app = LoggingMiddleware(app)
+
 ```
 
 ---
@@ -742,6 +766,7 @@ gunicorn \
     --access-logfile - \
     --error-logfile - \
     wsgi_app:app
+
 ```
 
 ```python
@@ -791,6 +816,7 @@ def post_fork(server, worker):
 
 def worker_exit(server, worker):
     print(f"Worker {worker.pid} exiting")
+
 ```
 
 ```bash
@@ -802,6 +828,7 @@ kill -HUP $(cat /tmp/gunicorn.pid)
 
 # Graceful shutdown
 kill -TERM $(cat /tmp/gunicorn.pid)
+
 ```
 
 ### 5.3 uWSGI
@@ -825,9 +852,11 @@ uwsgi \
     --vacuum \
     --die-on-term \
     --harakiri 30
+
 ```
 
 ```ini
+
 ; uwsgi.ini — конфигурационный файл
 
 [uwsgi]
@@ -860,6 +889,7 @@ log-format = %(addr) - %(user) [%(ltime)] "%(method) %(uri) %(proto)" %(status) 
 
 ; Статистика
 stats = /tmp/uwsgi-stats.sock
+
 ```
 
 ### 5.4 Nginx + Gunicorn
@@ -911,6 +941,7 @@ server {
         proxy_buffers 8 4k;
     }
 }
+
 ```
 
 ### 5.5 systemd service
@@ -940,6 +971,7 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 ```bash
@@ -951,6 +983,7 @@ sudo systemctl status gunicorn
 
 # Graceful reload
 sudo systemctl reload gunicorn
+
 ```
 
 ---
@@ -960,6 +993,7 @@ sudo systemctl reload gunicorn
 ### 6.1 Flask
 
 ```python
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -978,6 +1012,7 @@ gunicorn 'myapp:app'
 
 # Для фабрики приложений
 gunicorn 'myapp:create_app()'
+
 ```
 
 ### 6.2 Django
@@ -991,6 +1026,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 application = get_wsgi_application()
+
 ```
 
 ```bash
@@ -999,11 +1035,13 @@ gunicorn myproject.wsgi:application
 
 # uWSGI + Django
 uwsgi --module myproject.wsgi:application
+
 ```
 
 ### 6.3 Bottle
 
 ```python
+
 from bottle import Bottle, run
 
 app = Bottle()
@@ -1039,11 +1077,13 @@ workers = multiprocessing.cpu_count() * 2 + 1
 # С потоками
 workers = multiprocessing.cpu_count()
 threads = 4  # итого: workers * threads обработчиков
+
 ```
 
 ### 7.2 Профилирование
 
 ```python
+
 class ProfilingMiddleware:
     """Middleware для профилирования."""
     
@@ -1069,6 +1109,7 @@ class ProfilingMiddleware:
             stats.print_stats(20)
             
             print(stream.getvalue())
+
 ```
 
 ### 7.3 Мониторинг
@@ -1104,6 +1145,7 @@ class MetricsMiddleware:
             duration = time.time() - start_time
             REQUEST_COUNT.labels(method, path, captured_status[0]).inc()
             REQUEST_LATENCY.observe(duration)
+
 ```
 
 ---
@@ -1111,8 +1153,11 @@ class MetricsMiddleware:
 ## 💡 Key Takeaways
 
 - **WSGI** — стандартный интерфейс между Python веб-приложениями и серверами
+
 - **Application** — callable с сигнатурой `(environ, start_response) -> Iterable[bytes]`
+
 - **Middleware** — обёртки для добавления функциональности (logging, auth, CORS)
+
 - **Gunicorn** — рекомендуемый WSGI сервер для production
 - Flask, Django, Bottle — все используют WSGI под капотом
 - Формула воркеров: `2 * CPU + 1` для I/O-bound задач
@@ -1122,16 +1167,19 @@ class MetricsMiddleware:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [ASGI](../06_ASGI/) — Асинхронный интерфейс
 - [Web Architecture](../08_Architecture/) — Архитектура приложений
 
 **Practice Ideas:**
+
 1. Напишите WSGI приложение с нуля
 2. Создайте middleware для аутентификации
 3. Настройте Nginx + Gunicorn + Flask
 4. Профилируйте и оптимизируйте WSGI приложение
 
 **Going Deeper:**
+
 - PEP 3333 — полная спецификация WSGI
 - Werkzeug — WSGI toolkit (используется Flask)
 - WebOb — объекты request/response для WSGI
@@ -1141,17 +1189,23 @@ class MetricsMiddleware:
 ## 📚 Additional Resources
 
 **Specifications:**
+
 - [PEP 3333](https://peps.python.org/pep-3333/) — WSGI specification
 - [PEP 333](https://peps.python.org/pep-0333/) — оригинальный WSGI
 
 **Documentation:**
+
 - [Gunicorn](https://docs.gunicorn.org/)
 - [uWSGI](https://uwsgi-docs.readthedocs.io/)
 - [Werkzeug](https://werkzeug.palletsprojects.com/)
 
 **Libraries:**
+
 - [WebOb](https://webob.org/) — request/response объекты
 - [Paste](https://pythonpaste.readthedocs.io/) — WSGI utilities
 
 ---
+
+
+
 

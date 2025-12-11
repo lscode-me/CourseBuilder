@@ -12,6 +12,7 @@
 - Иметь представление о сетевой подсистеме контейнеров
 
 **Recommended prior modules:**
+
 - [Container Runtimes](../06_Runtimes/)
 - [Container Networking](../07_Networking/)
 
@@ -33,12 +34,14 @@
 ### 1.1 Структура команд
 
 ```bash
+
 docker [OPTIONS] COMMAND [ARG...]
 
 # Примеры
 docker run nginx                    # Запуск контейнера
 docker container run nginx          # Явный синтаксис
 docker image pull nginx             # Скачивание образа
+
 ```
 
 ### 1.2 Работа с образами
@@ -50,13 +53,16 @@ docker pull nginx:1.25-alpine
 # Список локальных образов
 docker images
 docker image ls
+
 ```
 
 **Output:**
 ```
+
 REPOSITORY   TAG           IMAGE ID       CREATED       SIZE
 nginx        1.25-alpine   a2d5e8c4f8b2   2 weeks ago   43.3MB
 alpine       latest        05455a08881e   4 weeks ago   7.34MB
+
 ```
 
 ```bash
@@ -69,6 +75,7 @@ docker history nginx:1.25-alpine
 # Удаление образов
 docker rmi nginx:1.25-alpine
 docker image prune -a  # Удалить все неиспользуемые
+
 ```
 
 ### 1.3 Запуск контейнеров
@@ -88,6 +95,7 @@ docker run -d \                      # Detached mode
 
 # Интерактивный режим
 docker run -it --rm alpine sh        # -it = interactive + tty, --rm = удалить после выхода
+
 ```
 
 ### 1.4 Управление контейнерами
@@ -109,6 +117,7 @@ docker unpause webserver
 docker rm webserver
 docker rm -f webserver              # Принудительно (stop + rm)
 docker container prune              # Удалить остановленные
+
 ```
 
 ### 1.5 Выполнение команд в контейнере
@@ -127,6 +136,7 @@ docker logs --since 1h webserver   # За последний час
 # Копирование файлов
 docker cp ./config.conf webserver:/etc/nginx/
 docker cp webserver:/var/log/nginx/access.log ./
+
 ```
 
 ### 1.6 Информация о контейнере
@@ -144,6 +154,7 @@ docker inspect -f '{{json .Config.Env}}' webserver | jq
 docker stats
 docker stats --no-stream webserver
 docker top webserver               # Процессы внутри
+
 ```
 
 ---
@@ -188,6 +199,7 @@ HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
 
 # Команда запуска
 CMD ["python", "app.py"]
+
 ```
 
 ### 2.2 Инструкции Dockerfile
@@ -249,6 +261,7 @@ docker build --no-cache -t myapp:1.0 .
 
 # С выводом build logs
 docker build --progress=plain -t myapp:1.0 .
+
 ```
 
 ---
@@ -275,6 +288,7 @@ WORKDIR /root/
 COPY --from=builder /app/server .
 EXPOSE 8080
 CMD ["./server"]
+
 ```
 
 ### 3.2 Преимущества
@@ -285,6 +299,7 @@ golang:1.21   # ~800MB
 
 # Размер с multi-stage
 alpine + binary   # ~15MB
+
 ```
 
 ### 3.3 Несколько build stages
@@ -315,12 +330,14 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 USER node
 CMD ["node", "dist/index.js"]
+
 ```
 
 ```bash
 # Сборка до определённого stage
 docker build --target test -t myapp:test .
 docker build --target production -t myapp:prod .
+
 ```
 
 ---
@@ -341,6 +358,7 @@ RUN apt-get clean
 # Хорошо
 FROM python:3.11-slim
 RUN pip install --no-cache-dir flask
+
 ```
 
 ### 4.2 Оптимизация кеширования
@@ -354,6 +372,7 @@ RUN pip install -r requirements.txt
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 COPY . /app
+
 ```
 
 ### 4.3 Уменьшение количества слоёв
@@ -372,6 +391,7 @@ RUN apt-get update && \
         git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
 ```
 
 ### 4.4 .dockerignore
@@ -393,6 +413,7 @@ dist
 build
 *.log
 .DS_Store
+
 ```
 
 ### 4.5 Выбор базового образа
@@ -412,6 +433,7 @@ build
 ### 5.1 Типы хранения
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │                     Container                            │
 │  ┌────────────────────────────────────────────────────┐ │
@@ -425,6 +447,7 @@ build
 │    │volumes  │    │           │    │           │       │
 │    └─────────┘    └───────────┘    └───────────┘       │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 5.2 Docker Volumes
@@ -451,6 +474,7 @@ docker volume inspect mydata
 # Удаление
 docker volume rm mydata
 docker volume prune  # Удалить неиспользуемые
+
 ```
 
 ### 5.3 Bind Mounts
@@ -473,6 +497,7 @@ docker run -d \
     --mount type=bind,source=$(pwd)/src,target=/app/src \
     --mount type=bind,source=$(pwd)/config.yaml,target=/app/config.yaml,readonly \
     myapp:dev
+
 ```
 
 ### 5.4 tmpfs Mounts
@@ -483,6 +508,7 @@ docker run -d \
     --tmpfs /tmp:rw,size=100m,mode=1777 \
     --tmpfs /run:rw \
     myapp
+
 ```
 
 ### 5.5 Volume drivers
@@ -495,6 +521,7 @@ docker volume create \
     --opt o=addr=192.168.1.100,rw \
     --opt device=:/export/data \
     nfs-data
+
 ```
 
 ---
@@ -513,6 +540,7 @@ docker push username/myapp:1.0
 
 # Pull
 docker pull username/myapp:1.0
+
 ```
 
 ### 6.2 Private Registry
@@ -531,6 +559,7 @@ docker push localhost:5000/myapp:1.0
 
 # Pull
 docker pull localhost:5000/myapp:1.0
+
 ```
 
 ### 6.3 Registry с аутентификацией
@@ -551,6 +580,7 @@ docker run -d \
     -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
     -e "REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd" \
     registry:2
+
 ```
 
 ---
@@ -560,6 +590,7 @@ docker run -d \
 ### 7.1 daemon.json
 
 ```json
+
 // /etc/docker/daemon.json
 {
     "data-root": "/var/lib/docker",
@@ -587,6 +618,7 @@ docker run -d \
         "buildkit": true
     }
 }
+
 ```
 
 ### 7.2 Применение конфигурации
@@ -600,6 +632,7 @@ sudo systemctl restart docker
 
 # Или reload (если поддерживается)
 sudo systemctl reload docker
+
 ```
 
 ### 7.3 Logging drivers
@@ -619,6 +652,7 @@ docker run -d \
     --log-opt max-size=10m \
     --log-opt max-file=3 \
     nginx
+
 ```
 
 ---
@@ -634,6 +668,7 @@ docker run -d \
     --cpu-shares=512 \               # Относительный вес
     --cpuset-cpus="0,1" \            # Конкретные ядра
     myapp
+
 ```
 
 ### 8.2 Memory Limits
@@ -646,6 +681,7 @@ docker run -d \
     --memory-swap="1g" \             # Memory + swap
     --oom-kill-disable \             # Отключить OOM killer
     myapp
+
 ```
 
 ### 8.3 I/O Limits
@@ -658,6 +694,7 @@ docker run -d \
     --device-read-iops=/dev/sda:1000 \
     --device-write-iops=/dev/sda:500 \
     myapp
+
 ```
 
 ### 8.4 PIDs Limit
@@ -665,6 +702,7 @@ docker run -d \
 ```bash
 # Ограничение количества процессов
 docker run -d --pids-limit=100 myapp
+
 ```
 
 ---
@@ -674,6 +712,7 @@ docker run -d --pids-limit=100 myapp
 ### 9.1 Запуск от non-root
 
 ```dockerfile
+
 FROM node:20-alpine
 
 # Создаём пользователя
@@ -686,16 +725,19 @@ COPY --chown=appuser:appgroup . .
 USER appuser
 
 CMD ["node", "index.js"]
+
 ```
 
 ### 9.2 Read-only root filesystem
 
 ```bash
+
 docker run -d \
     --read-only \
     --tmpfs /tmp \
     --tmpfs /run \
     nginx
+
 ```
 
 ### 9.3 Capabilities
@@ -706,6 +748,7 @@ docker run --cap-drop=ALL nginx
 
 # Добавление только нужных
 docker run --cap-drop=ALL --cap-add=NET_BIND_SERVICE nginx
+
 ```
 
 ### 9.4 Seccomp profiles
@@ -716,6 +759,7 @@ docker run --security-opt seccomp=default.json nginx
 
 # Без seccomp (не рекомендуется)
 docker run --security-opt seccomp=unconfined nginx
+
 ```
 
 ### 9.5 AppArmor
@@ -726,6 +770,7 @@ docker run --security-opt apparmor=docker-nginx nginx
 
 # Без AppArmor
 docker run --security-opt apparmor=unconfined nginx
+
 ```
 
 ---
@@ -735,6 +780,7 @@ docker run --security-opt apparmor=unconfined nginx
 ### 10.1 Healthcheck pattern
 
 ```dockerfile
+
 FROM nginx:alpine
 
 # Установка curl для healthcheck
@@ -742,11 +788,13 @@ RUN apk add --no-cache curl
 
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
     CMD curl -f http://localhost/ || exit 1
+
 ```
 
 ```bash
 # Проверка health status
 docker inspect --format='{{.State.Health.Status}}' mycontainer
+
 ```
 
 ### 10.2 Init process
@@ -760,11 +808,13 @@ FROM alpine
 RUN apk add --no-cache tini
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["myapp"]
+
 ```
 
 ### 10.3 Graceful shutdown
 
 ```dockerfile
+
 FROM python:3.11-slim
 
 COPY app.py .
@@ -772,11 +822,13 @@ COPY app.py .
 # SIGTERM по умолчанию, 10 секунд на завершение
 STOPSIGNAL SIGTERM
 CMD ["python", "app.py"]
+
 ```
 
 ```bash
 # Увеличение времени на остановку
 docker stop --time=30 mycontainer
+
 ```
 
 ### 10.4 Development vs Production
@@ -803,6 +855,7 @@ RUN pip install --no-cache /wheels/*
 COPY . .
 USER nobody
 CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
+
 ```
 
 ---
@@ -810,9 +863,13 @@ CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
 ## 💡 Key Takeaways
 
 - **Docker CLI** имеет новый синтаксис (docker container, docker image) и старый (docker run, docker pull)
+
 - **Multi-stage builds** значительно уменьшают размер production образов
+
 - **Порядок инструкций** в Dockerfile критичен для кеширования
+
 - **Volumes** предпочтительнее bind mounts для production данных
+
 - **Security** требует non-root user, capabilities drop, read-only fs
 
 ---
@@ -820,16 +877,19 @@ CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Docker Compose](../09_Compose/) — multi-container applications
 - [Kubernetes](../10_Kubernetes/) — оркестрация
 
 **Practice Ideas:**
+
 1. Создайте multi-stage Dockerfile для вашего приложения
 2. Настройте healthcheck и graceful shutdown
 3. Оптимизируйте размер образа с помощью .dockerignore
 4. Настройте private registry с аутентификацией
 
 **Going Deeper:**
+
 - BuildKit advanced features
 - Docker Content Trust для подписи образов
 - Docker contexts для remote Docker hosts
@@ -839,18 +899,24 @@ CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Docker Documentation](https://docs.docker.com/)
 - [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
 - [Docker Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 **Tools:**
+
 - [dive](https://github.com/wagoodman/dive) — анализ слоёв
 - [hadolint](https://github.com/hadolint/hadolint) — линтер Dockerfile
 - [docker-slim](https://github.com/slimtoolkit/slim) — оптимизация образов
 
 **Articles:**
+
 - [Docker Security Best Practices](https://snyk.io/blog/10-docker-image-security-best-practices/)
 - [Optimizing Docker Images](https://www.docker.com/blog/intro-guide-to-dockerfile-best-practices/)
 
 ---
+
+
+
 

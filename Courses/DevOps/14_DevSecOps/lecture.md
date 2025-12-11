@@ -32,6 +32,7 @@
 **DevSecOps** = Development + Security + Operations
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Shift Left Security                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -49,11 +50,13 @@
 │    └──────┴──────┴───────┴───────┴────────┴── Security везде    │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Принципы DevSecOps
 
 ```python
+
 devsecops_principles = [
     "Security as Code — безопасность описана в коде",
     "Shift Left — проверки максимально рано",
@@ -61,6 +64,7 @@ devsecops_principles = [
     "Everyone is responsible — безопасность — ответственность всех",
     "Continuous — непрерывные проверки, не разовые"
 ]
+
 ```
 
 ---
@@ -149,6 +153,7 @@ jobs:
         with:
           directory: terraform/
           framework: terraform
+
 ```
 
 ---
@@ -168,9 +173,11 @@ def run_command(user_input):
 # ✅ Безопасная версия
 def run_command_safe(user_input):
     subprocess.call(["echo", user_input])
+
 ```
 
 **Инструменты SAST:**
+
 - Bandit (Python)
 - Semgrep (multi-language)
 - SonarQube
@@ -191,6 +198,7 @@ def run_command_safe(user_input):
   with:
     target: 'http://localhost:8080'
     rules_file_name: '.zap/rules.tsv'
+
 ```
 
 ### 3.3 SCA (Software Composition Analysis)
@@ -204,6 +212,7 @@ npm audit
 
 # Использование Snyk
 snyk test
+
 ```
 
 ### 3.4 Container Security
@@ -226,6 +235,7 @@ COPY --chown=appuser:appuser . .
 
 # ✅ Read-only filesystem где возможно
 CMD ["python", "app.py"]
+
 ```
 
 ---
@@ -235,6 +245,7 @@ CMD ["python", "app.py"]
 ### 4.1 Принципы
 
 ```python
+
 secrets_best_practices = [
     "Никогда не хардкодить секреты в коде",
     "Никогда не коммитить секреты в Git",
@@ -243,6 +254,7 @@ secrets_best_practices = [
     "Минимальные права доступа (least privilege)",
     "Audit logging для доступа к секретам"
 ]
+
 ```
 
 ### 4.2 Инструменты
@@ -265,6 +277,7 @@ import boto3
 
 client = boto3.client('secretsmanager')
 secret = client.get_secret_value(SecretId='myapp/database')
+
 ```
 
 ### 4.3 GitLeaks Configuration
@@ -288,6 +301,7 @@ paths = [
     '''test/.*''',
     '''.*_test\.go'''
 ]
+
 ```
 
 ---
@@ -322,6 +336,7 @@ deny[msg] {
     endswith(container.image, ":latest")
     msg := sprintf("Container %v uses latest tag", [container.name])
 }
+
 ```
 
 ### 5.2 Checkov для IaC
@@ -347,6 +362,7 @@ resource "aws_s3_bucket" "example" {
     }
   }
 }
+
 ```
 
 ---
@@ -382,6 +398,7 @@ spec:
         limits:
           cpu: "500m"
           memory: "256Mi"
+
 ```
 
 ### 6.2 Network Policies
@@ -413,6 +430,7 @@ spec:
               app: database
       ports:
         - port: 5432
+
 ```
 
 ---
@@ -420,6 +438,7 @@ spec:
 ## 7. Security Metrics
 
 ```python
+
 security_metrics = {
     "vulnerabilities": {
         "critical": "Count of critical vulns (target: 0)",
@@ -435,6 +454,7 @@ security_metrics = {
         "mttr_security": "Mean time to remediate security issues"
     }
 }
+
 ```
 
 ---
@@ -446,6 +466,7 @@ security_metrics = {
 **Compliance as Code** — практика описания, тестирования и применения compliance-требований в виде исполняемого кода.
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Compliance as Code                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -463,11 +484,13 @@ security_metrics = {
 │                   Continuous & Automated                        │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 8.2 Compliance Frameworks
 
 ```python
+
 compliance_frameworks = {
     "SOC 2": {
         "description": "Security, Availability, Processing Integrity",
@@ -495,6 +518,7 @@ compliance_frameworks = {
         "controls": ["Risk Assessment", "Security Policies", "Asset Management"]
     }
 }
+
 ```
 
 ### 8.3 AWS Config Rules
@@ -525,6 +549,7 @@ def evaluate_compliance(configuration_item):
             return 'NON_COMPLIANT'
     return 'COMPLIANT'
 """
+
 ```
 
 ```yaml
@@ -557,6 +582,7 @@ resource "aws_config_config_rule" "rds_encryption" {
     source_identifier = "RDS_STORAGE_ENCRYPTED"
   }
 }
+
 ```
 
 ### 8.4 Cloud Custodian
@@ -596,6 +622,7 @@ policies:
       - type: notify
         to: ["security-team@company.com"]
         subject: "Public S3 bucket remediated"
+
 ```
 
 ```bash
@@ -610,6 +637,7 @@ custodian run -s output policies/s3-compliance.yml
 
 # Генерация compliance report
 custodian report -s output policies/s3-compliance.yml
+
 ```
 
 ### 8.5 Automated Compliance Reporting
@@ -673,6 +701,7 @@ scan_results = [
         "timestamp": "2024-12-08T10:00:00Z"
     }
 ]
+
 ```
 
 ### 8.6 Continuous Compliance Pipeline
@@ -740,11 +769,13 @@ jobs:
               "text": "⚠️ Compliance check failed! Review required.",
               "channel": "security-alerts"
             }
+
 ```
 
 ### 8.7 Compliance as Code Best Practices
 
 ```python
+
 compliance_best_practices = [
     {
         "practice": "Version Control",
@@ -786,6 +817,7 @@ resource "aws_s3_bucket" "legacy_logs" {
   bucket = "legacy-logs-bucket"
 }
 """
+
 ```
 
 ---
@@ -809,10 +841,12 @@ resource "aws_s3_bucket" "legacy_logs" {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [04_CI](../04_CI/) — CI Pipeline security gates
 - [15_Career](../15_Career/) — Security specialization
 
 **Practice Ideas:**
+
 1. Добавьте Trivy в ваш CI pipeline
 2. Настройте GitLeaks pre-commit hook
 3. Проведите audit зависимостей
@@ -822,20 +856,26 @@ resource "aws_s3_bucket" "legacy_logs" {
 ## 📚 Additional Resources
 
 **Security Tools:**
+
 - [Trivy](https://trivy.dev/) — Container/IaC scanner
 - [Snyk](https://snyk.io/) — SCA
 - [OWASP ZAP](https://www.zaproxy.org/) — DAST
 
 **Compliance as Code Tools:**
+
 - [AWS Config](https://aws.amazon.com/config/) — AWS resource compliance
 - [Cloud Custodian](https://cloudcustodian.io/) — Multi-cloud policy engine
 - [Terraform Sentinel](https://www.hashicorp.com/sentinel) — Policy as Code for Terraform
 - [Prowler](https://prowler.pro/) — AWS/Azure/GCP security & compliance
 
 **Certifications:**
+
 - Certified Kubernetes Security Specialist (CKS)
 - AWS Security Specialty
 - CompTIA Security+
 
 ---
+
+
+
 

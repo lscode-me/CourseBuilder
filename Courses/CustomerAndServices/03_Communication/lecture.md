@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Понимать роль Customer & Services в IT-компании ([01_Intro](../01_Intro/))
 - Знать основы ITSM и процесс эскалаций ([02_ITSM](../02_ITSM/))
 - Иметь опыт взаимодействия с клиентами (любой уровень)
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Применять принципы зрелой клиентской коммуникации
 - Структурировать и проводить эффективные статус-коллы
 - Составлять профессиональные статус-отчёты и месячные отчёты
@@ -30,63 +32,82 @@
 ### 1.1 Почему коммуникация критична
 
 **Статистика:**
+
 - 68% клиентов уходят из-за perceived indifference (ощущение безразличия)
 - Клиенты в 4 раза чаще помнят негативный опыт коммуникации, чем позитивный
 - 95% клиентов готовы простить ошибку, если о ней сообщили проактивно
 
 **Формула восприятия:**
 ```
+
 Perception = Reality + Communication
 
 Отличная работа + плохая коммуникация = недовольный клиент
 Средняя работа + отличная коммуникация = довольный клиент
+
 ```
 
 ### 1.2 Пять принципов зрелой коммуникации
 
 **1. Proactivity (Проактивность)**
+
 ```
+
 ❌ Реактивно: Ждать, пока клиент спросит о статусе
 ✅ Проактивно: Сообщать о прогрессе до того, как спросят
 
 Правило: Если клиент спрашивает "как дела?" — вы уже опоздали
+
 ```
 
 **2. Transparency (Прозрачность)**
+
 ```
+
 ❌ Скрывать проблемы в надежде решить "тихо"
 ✅ Сообщать о проблемах сразу с планом решения
 
 Правило: Bad news don't get better with time
+
 ```
 
 **3. Consistency (Последовательность)**
+
 ```
+
 ❌ Коммуникация от случая к случаю
 ✅ Установленные ритмы: weekly calls, monthly reports
 
 Правило: Предсказуемость снижает тревожность клиента
+
 ```
 
 **4. Clarity (Ясность)**
+
 ```
+
 ❌ Технический жаргон и размытые формулировки
 ✅ Простой язык, конкретные факты, чёткие действия
 
 Правило: Если не понятно маме — переформулируй
+
 ```
 
 **5. Ownership (Владение)**
+
 ```
+
 ❌ "Это не моя зона ответственности"
 ✅ "Я разберусь и вернусь с ответом"
 
 Правило: Для клиента ты — лицо всей компании
+
 ```
 
 ### 1.3 Модель коммуникации
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    COMMUNICATION MODEL                                  │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -111,6 +132,7 @@ Perception = Reality + Communication
                         │ (результат  │
                         │ коммуникации)│
                         └─────────────┘
+
 ```
 
 ---
@@ -139,9 +161,11 @@ Perception = Reality + Communication
 
 **Правило выбора канала:**
 ```
+
 Complexity of topic    →  Video > Phone > Chat > Email
 Urgency               →  Phone > Chat > Video > Email
 Need for documentation →  Email > Video (with notes) > Chat > Phone
+
 ```
 
 ---
@@ -153,6 +177,7 @@ Need for documentation →  Email > Video (with notes) > Chat > Phone
 **Структура:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    WEEKLY STATUS REPORT                                 │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -200,6 +225,7 @@ Need for documentation →  Email > Video (with notes) > Chat > Phone
 │ | # | Action | Owner | Due Date | Status |                            │
 │ | 1 | [...]  | [...] | [...]    | [...]  |                            │
 └─────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Traffic Light Status
@@ -212,15 +238,18 @@ Need for documentation →  Email > Video (with notes) > Chat > Phone
 
 **Правило перехода:**
 ```
+
 GREEN → YELLOW: При появлении риска, который может повлиять на deliverables
 YELLOW → RED: При реализации риска или невозможности его митигировать
 YELLOW → GREEN: При полном устранении рисков
 RED → YELLOW: При стабилизации ситуации с планом recovery
+
 ```
 
 ### 3.3 Пример заполненного отчёта
 
 ```
+
 WEEKLY STATUS REPORT
 
 Project: Phoenix Mobile App
@@ -279,6 +308,7 @@ ACTION ITEMS
 | 1 | Resolve vendor API issue        | TL Alex   | Dec 10| In Progress|
 | 2 | Provide QA backup plan          | DM John   | Dec 10| Done       |
 | 3 | Review security requirements    | PM Client | Dec 12| Pending    |
+
 ```
 
 ---
@@ -288,6 +318,7 @@ ACTION ITEMS
 ### 4.1 Структура Monthly Report
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    MONTHLY REPORT                                       │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -328,12 +359,14 @@ ACTION ITEMS
 │    - Scope changes                                                      │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 Визуализация метрик
 
 **Velocity Trend Chart:**
 ```
+
 Story Points
     50 |                          ___
     45 |              ___    ___ |   |
@@ -343,10 +376,12 @@ Story Points
          Sep  Oct  Nov  Dec
          
 Legend: ▓ Committed  ░ Delivered
+
 ```
 
 **Quality Metrics:**
 ```
+
 Bugs by Severity (December)
 ┌──────────────────────────────────────┐
 │ Critical  ██ 2                       │
@@ -354,6 +389,7 @@ Bugs by Severity (December)
 │ Medium    ████████ 8                 │
 │ Low       ██████████████ 14          │
 └──────────────────────────────────────┘
+
 ```
 
 ---
@@ -367,6 +403,7 @@ Bugs by Severity (December)
 **Agenda:**
 
 ```
+
 TIME    TOPIC                           WHO
 ─────────────────────────────────────────────────
 0:00    Welcome, agenda review          DM
@@ -379,11 +416,13 @@ TIME    TOPIC                           WHO
 0:35    Q&A, open discussion            All
 0:40    Action items recap              DM
 0:45    Close                           DM
+
 ```
 
 ### 5.2 Best Practices для status calls
 
 **Подготовка:**
+
 - [ ] Agenda отправлена заранее (минимум 2 часа до)
 - [ ] Статус-отчёт готов и разослан
 - [ ] Демо протестировано
@@ -391,6 +430,7 @@ TIME    TOPIC                           WHO
 - [ ] Резервный план если demo упадёт
 
 **Во время звонка:**
+
 - Начинать вовремя, не ждать опоздавших
 - Записывать звонок (с согласия)
 - Вести заметки для follow-up
@@ -398,6 +438,7 @@ TIME    TOPIC                           WHO
 - Фиксировать action items
 
 **После звонка:**
+
 - Meeting notes в течение 2 часов
 - Action items с owner'ами и due dates
 - Follow-up на открытые вопросы
@@ -405,6 +446,7 @@ TIME    TOPIC                           WHO
 ### 5.3 Пример meeting notes
 
 ```
+
 MEETING NOTES
 
 Date: December 9, 2024
@@ -427,6 +469,7 @@ ACTION ITEMS:
 | Provide push notification requirements | Mike | Dec 12 |
 
 NEXT MEETING: December 16, 2024, 10:00 AM CET
+
 ```
 
 ---
@@ -436,6 +479,7 @@ NEXT MEETING: December 16, 2024, 10:00 AM CET
 ### 6.1 Expectation Management Framework
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    EXPECTATION MANAGEMENT                               │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -454,20 +498,26 @@ NEXT MEETING: December 16, 2024, 10:00 AM CET
   │ • Какие     │       │ • Constraints│      │ • Новый план│
   │   constraints│      └─────────────┘       └─────────────┘
   └─────────────┘
+
 ```
 
 ### 6.2 Techniques
 
 **Technique 1: Under-promise, Over-deliver**
+
 ```
+
 ❌ "Сделаем за 3 дня" (и сделать за 4)
 ✅ "Планируем за 5 дней" (и сделать за 4)
 
 Результат: Клиент приятно удивлён, доверие растёт
+
 ```
 
 **Technique 2: Transparent Trade-offs**
+
 ```
+
 Клиент: "Можно добавить эту фичу к релизу?"
 
 ❌ "Да, конечно" (и потом сорвать сроки)
@@ -479,10 +529,13 @@ NEXT MEETING: December 16, 2024, 10:00 AM CET
    c) Добавляем разработчика (доп. бюджет)
    
    Какой вариант предпочтительнее?"
+
 ```
 
 **Technique 3: Progress Visibility**
+
 ```
+
 Вместо: "Работаем над фичей X"
 Показать: "Фича X: 60% готово, осталось:
           - API endpoint (done)
@@ -490,6 +543,7 @@ NEXT MEETING: December 16, 2024, 10:00 AM CET
           - Validation (pending)
           - Tests (pending)
           ETA: Dec 12"
+
 ```
 
 ### 6.3 Типичные ошибки
@@ -510,16 +564,19 @@ NEXT MEETING: December 16, 2024, 10:00 AM CET
 **Формула SPADE:**
 
 ```
+
 S - Situation: Опишите ситуацию объективно
 P - Problem: Сформулируйте проблему
 A - Action: Что уже сделано/делается
 D - Decision/Help needed: Что нужно от клиента
 E - Expected outcome: Какой ожидаемый результат
+
 ```
 
 **Пример:**
 
 ```
+
 ❌ Плохо:
 "У нас проблема с релизом, наверное придётся сдвинуть..."
 
@@ -541,6 +598,7 @@ E - Expected outcome: Какой ожидаемый результат
 При выборе варианта 2 — релиз 12 декабря, платежи — 16 декабря.
 
 Какой вариант предпочтительнее для бизнеса?"
+
 ```
 
 ### 7.2 Ключевые фразы для сложных разговоров
@@ -571,16 +629,19 @@ E - Expected outcome: Какой ожидаемый результат
 **Алгоритм HEARD:**
 
 ```
+
 H - Hear: Выслушать не перебивая
 E - Empathize: Признать эмоции ("Я понимаю ваше разочарование...")
 A - Apologize: Извиниться за ситуацию (не за себя лично)
 R - Resolve: Предложить решение
 D - Diagnose: Понять корневую причину для prevention
+
 ```
 
 **Пример:**
 
 ```
+
 Клиент: "Это неприемлемо! Третий раз за месяц сервис падает! 
          Вы вообще понимаете, сколько денег мы теряем?!"
 
@@ -603,6 +664,7 @@ D - Diagnose: Понять корневую причину для prevention
 [D] После стабилизации мы проведём глубокий анализ и представим 
 план предотвращения повторения. Предлагаю созвониться завтра в 10:00
 для обсуждения долгосрочных мер. Вам подходит это время?"
+
 ```
 
 ---
@@ -622,12 +684,14 @@ D - Diagnose: Понять корневую причину для prevention
 **Формула: Acknowledge → Explain → Alternative**
 
 ```
+
 ❌ "Нет, это невозможно"
 ❌ "Это не наша ответственность"
 
 ✅ "Да, я понимаю важность этого для вас. 
     К сожалению, в текущих сроках это создаёт риск для качества.
     Вот что мы можем предложить: [альтернатива]"
+
 ```
 
 **Примеры:**
@@ -642,18 +706,22 @@ D - Diagnose: Понять корневую причину для prevention
 
 **Что можно и нужно:**
 ```
+
 ✅ Вежливо, но твёрдо обозначить границы
 ✅ Объяснить последствия выполнения нереалистичного запроса
 ✅ Предложить альтернативы
 ✅ Эскалировать, если клиент настаивает
+
 ```
 
 **Чего избегать:**
 ```
+
 ❌ Соглашаться на всё, чтобы не конфликтовать
 ❌ Говорить "нет" без объяснения
 ❌ Быть агрессивным или defensive
 ❌ Игнорировать запрос
+
 ```
 
 ---
@@ -664,46 +732,57 @@ D - Diagnose: Понять корневую причину для prevention
 
 **Opening:**
 ```
+
 "Good morning/afternoon, everyone. Let's get started."
 "Thank you for joining today's call."
 "Let me share today's agenda with you."
+
 ```
 
 **Progress updates:**
 ```
+
 "We've made good progress on..."
 "The team completed..."
 "We're currently working on..."
 "This is on track / slightly behind / ahead of schedule."
+
 ```
 
 **Discussing issues:**
 ```
+
 "I'd like to highlight a concern..."
 "We've encountered a challenge with..."
 "There's a blocker that we need to address..."
 "We need your input on..."
+
 ```
 
 **Closing:**
 ```
+
 "Let me summarize the action items..."
 "Does anyone have any questions before we wrap up?"
 "Thank you for your time. Talk to you next week."
+
 ```
 
 ### 9.2 Фразы для email
 
 **Formal openings:**
 ```
+
 "I hope this email finds you well."
 "Thank you for your email regarding..."
 "I'm writing to update you on..."
 "Following up on our conversation..."
+
 ```
 
 **Delivering news:**
 ```
+
 Good news:
 "I'm pleased to inform you that..."
 "I'm happy to report that..."
@@ -716,42 +795,51 @@ Bad news:
 "I regret to inform you that..."
 "Unfortunately, we've encountered..."
 "I need to bring to your attention..."
+
 ```
 
 **Requests:**
 ```
+
 "Could you please..."
 "Would it be possible to..."
 "We would appreciate if you could..."
 "At your earliest convenience, please..."
+
 ```
 
 **Closings:**
 ```
+
 "Please let me know if you have any questions."
 "I look forward to your feedback."
 "Don't hesitate to reach out if you need anything."
 "Thank you for your understanding."
+
 ```
 
 ### 9.3 Полезные конструкции
 
 **Softening language (смягчение):**
 ```
+
 Instead of:           Use:
 "You must..."         "Could you please..."
 "That's wrong"        "I see it slightly differently..."
 "No"                  "That might be challenging..."
 "I don't know"        "Let me check and get back to you..."
+
 ```
 
 **Hedging (осторожные формулировки):**
 ```
+
 "It seems that..."
 "It appears that..."
 "Based on our analysis..."
 "From our perspective..."
 "If I understand correctly..."
+
 ```
 
 ---
@@ -770,6 +858,7 @@ Instead of:           Use:
 <summary>Показать пример ответа</summary>
 
 ```
+
 Subject: Important Update: Release Timeline Adjustment Needed
 
 Dear Sarah,
@@ -816,6 +905,7 @@ Best regards,
 John Smith
 Delivery Manager
 Mobile: +1-555-0123
+
 ```
 
 </details>
@@ -825,11 +915,17 @@ Mobile: +1-555-0123
 ## 💡 Key Takeaways
 
 - **Proactive communication** — сообщать раньше, чем спросят; bad news don't get better with time
+
 - **Consistency** — установленные ритмы (weekly calls, reports) снижают тревожность клиента
+
 - **Status reports** — traffic light status, executive summary наверху, action items с owners
+
 - **Expectation management** — under-promise/over-deliver, transparent trade-offs, progress visibility
+
 - **Сложные разговоры** — использовать SPADE для bad news, HEARD для angry clients
+
 - **"Нет" правильно** — acknowledge + explain + alternative; никогда не просто "нет"
+
 - **Ownership** — для клиента вы — лицо всей компании; "это не моя зона" не работает
 
 ---
@@ -837,15 +933,18 @@ Mobile: +1-555-0123
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [04_TeamDelivery](../04_TeamDelivery/) — Управление командой и Delivery
 - [07_RiskManagement](../07_RiskManagement/) — Управление рисками и эскалациями
 
 **Practice Ideas:**
+
 1. Напишите status report для текущего проекта используя предложенный шаблон
 2. Проведите ролевую игру: сообщите коллеге плохую новость используя SPADE
 3. Подготовьте agenda для следующего status call
 
 **Going Deeper:**
+
 - "Crucial Conversations" by Patterson et al. — искусство сложных разговоров
 - "Never Split the Difference" by Chris Voss — техники переговоров
 - "The Pyramid Principle" by Barbara Minto — структурирование коммуникаций
@@ -855,19 +954,27 @@ Mobile: +1-555-0123
 ## 📚 Additional Resources
 
 **Книги:**
+
 - "Crucial Conversations" — классика о сложных разговорах
 - "Thanks for the Feedback" by Stone & Heen — получение и дача feedback
 - "Nonviolent Communication" by Marshall Rosenberg — эмпатичная коммуникация
 
 **Шаблоны:**
+
 - [Status Report Template](../templates/status_report.md)
 - [Meeting Notes Template](../templates/meeting_notes.md)
 - [Escalation Email Template](../templates/escalation_email.md)
 
 **Курсы:**
+
 - LinkedIn Learning: "Communicating with Clients"
 - Coursera: "Professional Email Writing"
 
 ---
+
+
+
+
+
 
 

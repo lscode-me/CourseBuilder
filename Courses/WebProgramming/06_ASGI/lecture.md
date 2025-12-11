@@ -12,6 +12,7 @@
 - Понимать концепции async/await
 
 **Recommended prior modules:**
+
 - [WSGI](../05_WSGI/) — синхронный интерфейс
 - [Python](../../Python/) — основы Python
 
@@ -34,6 +35,7 @@
 ### 1.1 Ограничения WSGI
 
 **WSGI не поддерживает:**
+
 - Асинхронные операции (async/await)
 - WebSocket соединения
 - HTTP/2 server push
@@ -49,6 +51,7 @@ def wsgi_app(environ, start_response):
     
     start_response('200 OK', [('Content-Type', 'text/plain')])
     return [data.encode()]
+
 ```
 
 ### 1.2 Что такое ASGI
@@ -56,6 +59,7 @@ def wsgi_app(environ, start_response):
 **ASGI (Asynchronous Server Gateway Interface)** — духовный наследник WSGI для асинхронных Python приложений.
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                   ASGI vs WSGI                              │
 ├────────────────────────────────────────────────────────────┤
@@ -80,6 +84,7 @@ def wsgi_app(environ, start_response):
 │  └────────────┘               └────────────────────────┘   │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.3 ASGI протокол
@@ -109,6 +114,7 @@ async def app(scope: dict, receive: callable, send: callable) -> None:
         await send(event)
     """
     pass
+
 ```
 
 ---
@@ -118,6 +124,7 @@ async def app(scope: dict, receive: callable, send: callable) -> None:
 ### 2.1 Минимальное ASGI приложение
 
 ```python
+
 async def app(scope, receive, send):
     """Минимальное ASGI приложение."""
     
@@ -135,11 +142,13 @@ async def app(scope, receive, send):
             'type': 'http.response.body',
             'body': b'Hello, ASGI!',
         })
+
 ```
 
 ### 2.2 Структура scope
 
 ```python
+
 async def debug_app(scope, receive, send):
     """Показывает структуру scope."""
     
@@ -174,11 +183,13 @@ async def debug_app(scope, receive, send):
         'type': 'http.response.body',
         'body': body.encode(),
     })
+
 ```
 
 ### 2.3 HTTP события
 
 ```python
+
 async def http_app(scope, receive, send):
     """Обработка HTTP запроса с телом."""
     
@@ -219,6 +230,7 @@ async def http_app(scope, receive, send):
         'type': 'http.response.body',
         'body': response_body.encode(),
     })
+
 ```
 
 ### 2.4 Типы HTTP событий
@@ -249,6 +261,7 @@ http_response_body = {
     'body': b'response body',
     'more_body': False,  # True для streaming
 }
+
 ```
 
 ---
@@ -518,6 +531,7 @@ async def streaming(scope, receive, send):
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=8000)
+
 ```
 
 ---
@@ -543,6 +557,7 @@ uvicorn asgi_app:app \
     --loop uvloop \
     --http httptools \
     --reload  # для разработки
+
 ```
 
 ```python
@@ -558,6 +573,7 @@ if __name__ == '__main__':
         log_level="info",
         reload=True,  # только для разработки
     )
+
 ```
 
 ### 4.2 Daphne
@@ -573,6 +589,7 @@ daphne -b 0.0.0.0 -p 8000 asgi_app:app
 
 # С несколькими воркерами (через supervisor/systemd)
 daphne -u /tmp/daphne.sock asgi_app:app
+
 ```
 
 ### 4.3 Hypercorn
@@ -589,6 +606,7 @@ hypercorn asgi_app:app --bind 0.0.0.0:8000
 # С HTTP/2
 hypercorn asgi_app:app --bind 0.0.0.0:443 \
     --certfile cert.pem --keyfile key.pem
+
 ```
 
 ### 4.4 Сравнение серверов
@@ -640,11 +658,13 @@ server {
         alias /var/www/app/static/;
     }
 }
+
 ```
 
 ```bash
 # Запуск Uvicorn с Unix socket
 uvicorn asgi_app:app --uds /tmp/uvicorn.sock --workers 4
+
 ```
 
 ---
@@ -654,6 +674,7 @@ uvicorn asgi_app:app --uds /tmp/uvicorn.sock --workers 4
 ### 5.1 Структура middleware
 
 ```python
+
 class ASGIMiddleware:
     """Базовый ASGI middleware."""
     
@@ -673,6 +694,7 @@ class ASGIMiddleware:
 ### 5.2 Logging Middleware
 
 ```python
+
 import time
 import logging
 
@@ -712,11 +734,13 @@ class LoggingMiddleware:
 
 # Применение
 app = LoggingMiddleware(app)
+
 ```
 
 ### 5.3 CORS Middleware
 
 ```python
+
 class CORSMiddleware:
     """CORS middleware для ASGI."""
     
@@ -772,11 +796,13 @@ class CORSMiddleware:
         if origin in self.allow_origins:
             return origin
         return ''
+
 ```
 
 ### 5.4 Authentication Middleware
 
 ```python
+
 class AuthMiddleware:
     """Simple JWT authentication middleware."""
     
@@ -836,6 +862,7 @@ class AuthMiddleware:
             ],
         })
         await send({'type': 'http.response.body', 'body': body})
+
 ```
 
 ---
@@ -847,6 +874,7 @@ class AuthMiddleware:
 **Starlette** — легковесный ASGI фреймворк.
 
 ```python
+
 from starlette.applications import Starlette
 from starlette.responses import JSONResponse, HTMLResponse
 from starlette.routing import Route
@@ -882,6 +910,7 @@ middleware = [
 ]
 
 app = Starlette(routes=routes, middleware=middleware)
+
 ```
 
 ### 6.2 FastAPI
@@ -889,6 +918,7 @@ app = Starlette(routes=routes, middleware=middleware)
 **FastAPI** — современный фреймворк на базе Starlette и Pydantic.
 
 ```python
+
 from fastapi import FastAPI, Query, Path, Body, HTTPException
 from pydantic import BaseModel
 from typing import Optional
@@ -971,6 +1001,7 @@ async def delete_item(item_id: int):
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=8000)
+
 ```
 
 ### 6.3 Django + ASGI
@@ -984,6 +1015,7 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 application = get_asgi_application()
+
 ```
 
 ```python
@@ -1001,6 +1033,7 @@ application = ProtocolTypeRouter({
         )
     ),
 })
+
 ```
 
 ---
@@ -1026,6 +1059,7 @@ application = ProtocolTypeRouter({
 ### 7.3 Сравнение производительности
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │              I/O Bound Request Handling                     │
 ├────────────────────────────────────────────────────────────┤
@@ -1046,6 +1080,7 @@ application = ProtocolTypeRouter({
 │  (все запросы обрабатываются параллельно!)                 │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -1053,9 +1088,13 @@ application = ProtocolTypeRouter({
 ## 💡 Key Takeaways
 
 - **ASGI** — асинхронный наследник WSGI для async/await приложений
+
 - **Сигнатура**: `async def app(scope, receive, send)`
+
 - **Поддерживает**: HTTP, WebSocket, HTTP/2, streaming
+
 - **Uvicorn** — рекомендуемый ASGI сервер для production
+
 - **FastAPI** — самый популярный фреймворк на ASGI
 - ASGI позволяет обрабатывать тысячи соединений в одном event loop
 
@@ -1064,16 +1103,19 @@ application = ProtocolTypeRouter({
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [WebSockets](../07_WebSockets/) — WebSocket протокол
 - [Architecture](../08_Architecture/) — Архитектура приложений
 
 **Practice Ideas:**
+
 1. Напишите ASGI приложение с нуля
 2. Реализуйте streaming endpoint
 3. Создайте middleware для rate limiting
 4. Сравните производительность WSGI и ASGI с wrk
 
 **Going Deeper:**
+
 - ASGI Specification
 - FastAPI documentation
 - Starlette internals
@@ -1083,16 +1125,22 @@ application = ProtocolTypeRouter({
 ## 📚 Additional Resources
 
 **Specifications:**
+
 - [ASGI Spec](https://asgi.readthedocs.io/)
 
 **Documentation:**
+
 - [Uvicorn](https://www.uvicorn.org/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Starlette](https://www.starlette.io/)
 - [Django Channels](https://channels.readthedocs.io/)
 
 **Articles:**
+
 - [Intro to ASGI](https://florimond.dev/en/posts/2019/08/introduction-to-asgi-async-python-web/)
 
 ---
+
+
+
 

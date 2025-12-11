@@ -39,11 +39,14 @@ Python отличается простым и читаемым синтакси�
 ```python
 # Код выполняется построчно интерпретатором
 print("Hello, Python!")
+
 ```
 
 **Output:**
 ```
+
 Hello, Python!
+
 ```
 
 В отличие от компилируемых языков (C, C++, Go), код Python не требует предварительной компиляции в машинный код. Интерпретатор читает и выполняет код построчно.
@@ -60,13 +63,16 @@ print(type(x))
 
 x = [1, 2, 3] # теперь x — список
 print(type(x))
+
 ```
 
 **Output:**
 ```
+
 <class 'int'>
 <class 'str'>
 <class 'list'>
+
 ```
 
 Тип переменной определяется автоматически во время выполнения программы, а не при компиляции.
@@ -76,11 +82,14 @@ print(type(x))
 Python следует особой философии, записанной в документе "The Zen of Python" (PEP 20). Посмотреть её можно, выполнив:
 
 ```python
+
 import this
+
 ```
 
 **Output:**
 ```
+
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -102,12 +111,15 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
+
 ```
 
 Главные принципы:
 
 - **Читаемость важна** — код читают чаще, чем пишут
+
 - **Явное лучше неявного** — код должен быть понятным
+
 - **Простое лучше сложного** — не усложняйте без необходимости
 
 ---
@@ -126,11 +138,14 @@ Namespaces are one honking great idea -- let's do more of those!
 numbers = [1, 2, 3, 4, 5]
 doubled = [n * 2 for n in numbers]
 print(doubled)
+
 ```
 
 **Output:**
 ```
+
 [2, 4, 6, 8, 10]
+
 ```
 
 **Богатая стандартная библиотека:**
@@ -146,18 +161,22 @@ print(f"Сейчас: {now.strftime('%Y-%m-%d %H:%M:%S')}")
 import json
 data = {"name": "Python", "year": 1991}
 print(json.dumps(data, indent=2))
+
 ```
 
 **Output:**
 ```
+
 Сейчас: 2024-12-02 15:30:00
 {
   "name": "Python",
   "year": 1991
 }
+
 ```
 
 **Огромная экосистема:**
+
 - Веб-разработка: Django, Flask, FastAPI
 - Data Science: NumPy, Pandas, Matplotlib
 - Machine Learning: TensorFlow, PyTorch, scikit-learn
@@ -180,10 +199,15 @@ print(json.dumps(data, indent=2))
 Python используют крупнейшие компании мира:
 
 - **Google** — один из основных языков разработки
+
 - **Netflix** — анализ данных и машинное обучение
+
 - **Instagram** — бэкенд на Django
+
 - **Spotify** — анализ данных и рекомендации
+
 - **NASA** — научные вычисления
+
 - **Dropbox** — большая часть кода написана на Python
 
 ---
@@ -201,13 +225,16 @@ print("Hello, World!")  # print — функция
 # Деление в Python 3
 print(5 / 2)   # Истинное деление
 print(5 // 2)  # Целочисленное деление
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
 2.5
 2
+
 ```
 
 **Основные различия:**
@@ -224,17 +251,22 @@ Hello, World!
 На момент написания курса актуальны версии:
 
 - **Python 3.11** — стабильная, рекомендуемая
+
 - **Python 3.12** — новейшая, с улучшениями производительности
 
 Проверить версию Python:
 
 ```bash
+
 python3 --version
+
 ```
 
 **Output:**
 ```
+
 Python 3.11.5
+
 ```
 
 > **💡 Pro Tip:**  
@@ -254,12 +286,15 @@ python3 --version
 
 # Проверка пути к интерпретатору
 which python3
+
 ```
 
 **Output:**
 ```
+
 Python 3.11.5
 /usr/bin/python3
+
 ```
 
 ### 4.2 Установка на macOS
@@ -275,6 +310,7 @@ brew install python3
 
 # Проверка
 python3 --version
+
 ```
 
 ### 4.3 Установка на Linux
@@ -291,6 +327,7 @@ sudo apt install python3 python3-pip python3-venv
 # Проверка
 python3 --version
 pip3 --version
+
 ```
 
 **Fedora/RHEL:**
@@ -301,6 +338,7 @@ sudo dnf install python3 python3-pip
 
 # Проверка
 python3 --version
+
 ```
 
 ### 4.4 Использование pyenv (рекомендуется)
@@ -327,11 +365,14 @@ pyenv global 3.11.5
 
 # Проверка
 python --version
+
 ```
 
 **Output:**
 ```
+
 Python 3.11.5
+
 ```
 
 > **⚠️ Warning:**  
@@ -346,16 +387,20 @@ Python 3.11.5
 REPL (Read-Eval-Print Loop) — отличный способ экспериментировать с Python:
 
 ```bash
+
 python3
+
 ```
 
 ```python
+
 >>> 2 + 2
 4
 >>> name = "Python"
 >>> print(f"Hello, {name}!")
 Hello, Python!
 >>> exit()
+
 ```
 
 Для выхода из интерактивного режима используйте `exit()` или `Ctrl+D`.
@@ -368,18 +413,23 @@ Hello, Python!
 # hello.py
 name = input("Как тебя зовут? ")
 print(f"Привет, {name}! Добро пожаловать в Python!")
+
 ```
 
 Запуск:
 
 ```bash
+
 python3 hello.py
+
 ```
 
 **Output:**
 ```
+
 Как тебя зовут? Мир
 Привет, Мир! Добро пожаловать в Python!
+
 ```
 
 ### 5.3 Исполняемые скрипты
@@ -395,6 +445,7 @@ python3 hello.py
 """
 
 print("Я исполняемый Python-скрипт!")
+
 ```
 
 ```bash
@@ -403,11 +454,14 @@ chmod +x executable_script.py
 
 # Запускаем напрямую
 ./executable_script.py
+
 ```
 
 **Output:**
 ```
+
 Я исполняемый Python-скрипт!
+
 ```
 
 Строка `#!/usr/bin/env python3` называется **shebang** и указывает системе, какой интерпретатор использовать.
@@ -422,9 +476,11 @@ pip3 install ipython
 
 # Запуск
 ipython
+
 ```
 
 ```python
+
 In [1]: import math
 
 In [2]: math.sqrt(16)
@@ -432,6 +488,7 @@ Out[2]: 4.0
 
 In [3]: %timeit sum(range(1000))
 12.8 µs ± 156 ns per loop
+
 ```
 
 **Jupyter Notebook** — интерактивная среда для экспериментов:
@@ -442,6 +499,7 @@ pip3 install jupyter
 
 # Запуск
 jupyter notebook
+
 ```
 
 ---
@@ -473,6 +531,7 @@ pip3 freeze > requirements.txt
 
 # Установка из файла зависимостей
 pip3 install -r requirements.txt
+
 ```
 
 ### 6.2 Виртуальные окружения
@@ -495,6 +554,7 @@ pip install requests pandas
 
 # Деактивация окружения
 deactivate
+
 ```
 
 **Пример workflow:**
@@ -520,6 +580,7 @@ pip freeze > requirements.txt
 
 # 7. По завершении работы деактивируем
 deactivate
+
 ```
 
 > **💡 Pro Tip:**  
@@ -553,11 +614,14 @@ deactivate
 ```python
 # hello_world.py
 print("Hello, World!")
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
+
 ```
 
 ### 7.2 Чуть сложнее
@@ -582,15 +646,18 @@ print(f"Python существует с 1991 года")
 current_year = 2024
 age = current_year - 1991
 print(f"Возраст языка: {age} лет")
+
 ```
 
 **Output:**
 ```
+
 Добро пожаловать в Python!
 Версия: 3.11
 Создатель: Guido van Rossum
 Python существует с 1991 года
 Возраст языка: 33 лет
+
 ```
 
 ### 7.3 Интерактивная программа
@@ -618,10 +685,12 @@ print(f"{num1} + {num2} = {num1 + num2}")
 print(f"{num1} - {num2} = {num1 - num2}")
 print(f"{num1} * {num2} = {num1 * num2}")
 print(f"{num1} / {num2} = {num1 / num2}")
+
 ```
 
 **Output:**
 ```
+
 Простой калькулятор
 --------------------
 Введите первое число: 10
@@ -632,6 +701,7 @@ print(f"{num1} / {num2} = {num1 / num2}")
 10.0 - 3.0 = 7.0
 10.0 * 3.0 = 30.0
 10.0 / 3.0 = 3.3333333333333335
+
 ```
 
 ---
@@ -648,13 +718,16 @@ if True:
     print("Этот код внутри блока if")
     print("И этот тоже")
 print("А этот уже снаружи")
+
 ```
 
 **Output:**
 ```
+
 Этот код внутри блока if
 И этот тоже
 А этот уже снаружи
+
 ```
 
 ❌ **Неправильно:**
@@ -662,6 +735,7 @@ print("А этот уже снаружи")
 # Это вызовет ошибку IndentationError
 if True:
 print("Нет отступа!")
+
 ```
 
 > **⚠️ Warning:**  
@@ -696,6 +770,7 @@ def greet(name):
 
 # Посмотреть документацию функции
 print(greet.__doc__)
+
 ```
 
 **Output:**
@@ -729,18 +804,22 @@ print(f"После обмена: a={a}, b={b}")
 # Присваивание одного значения нескольким переменным
 x = y = z = 0
 print(f"x={x}, y={y}, z={z}")
+
 ```
 
 **Output:**
 ```
+
 a=1, b=2, c=3
 После обмена: a=2, b=1
 x=0, y=0, z=0
+
 ```
 
 ### 8.4 Именование переменных
 
 **Правила:**
+
 - Имя начинается с буквы или `_`
 - Содержит буквы, цифры, `_`
 - Регистр важен: `name` и `Name` — разные переменные
@@ -765,6 +844,7 @@ class UserAccount:
 
 # _prefix для "приватных" имён
 _internal_value = 42
+
 ```
 
 ---
@@ -781,6 +861,7 @@ _internal_value = 42
 
 # Python 3 (правильно)
 print("Hello")
+
 ```
 
 ### 9.2 Неправильные отступы
@@ -792,6 +873,7 @@ print("Hello")
 if True:
     print("4 пробела")
     print("Тоже 4 пробела")  # Правильно
+
 ```
 
 ### 9.3 Путаница с версией интерпретатора
@@ -803,13 +885,16 @@ python --version       # Может быть Python 2!
 
 # Используйте python3 явно
 python3 my_script.py
+
 ```
 
 ### 9.4 Установка пакетов без виртуального окружения
 
 ❌ **Плохо:**
 ```bash
+
 pip install some_package  # В системный Python!
+
 ```
 
 ✅ **Хорошо:**
@@ -818,6 +903,7 @@ pip install some_package  # В системный Python!
 python3 -m venv venv
 source venv/bin/activate
 pip install some_package  # Теперь в изолированное окружение
+
 ```
 
 ---
@@ -839,16 +925,19 @@ pip install some_package  # Теперь в изолированное окру�
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Data Structures](../02_DataStructures/) — изучите числа, строки, списки и словари
 - [Flow Control](../03_FlowControl/) — условия и циклы
 
 **Practice Ideas:**
+
 1. Установите Python с помощью pyenv и создайте первое виртуальное окружение
 2. Напишите программу, которая спрашивает имя и выводит приветствие
 3. Создайте калькулятор с операциями сложения, вычитания, умножения и деления
 4. Поэкспериментируйте в REPL с различными типами данных
 
 **Going Deeper:**
+
 - Изучите PEP 8 — руководство по стилю Python
 - Прочитайте "The Zen of Python" и подумайте над каждым принципом
 - Настройте любимый редактор для работы с Python
@@ -858,16 +947,22 @@ pip install some_package  # Теперь в изолированное окру�
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Python Official Documentation](https://docs.python.org/3/) — официальная документация
 - [Python Tutorial](https://docs.python.org/3/tutorial/) — официальный учебник
 
 **Style Guides:**
+
 - [PEP 8](https://peps.python.org/pep-0008/) — руководство по стилю кода
 - [PEP 20](https://peps.python.org/pep-0020/) — The Zen of Python
 
 **Tools:**
+
 - [pyenv](https://github.com/pyenv/pyenv) — управление версиями Python
 - [VS Code Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) — расширение для VS Code
 
 ---
+
+
+
 

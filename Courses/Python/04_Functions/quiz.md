@@ -55,10 +55,12 @@ D) Error
 Что выведет следующий код?
 
 ```python
+
 def greet(name, greeting):
     return f"{greeting}, {name}!"
 
 print(greet("Hello", "World"))
+
 ```
 
 A) Error
@@ -82,10 +84,12 @@ D) Hello, World!
 Что выведет следующий код?
 
 ```python
+
 def greet(name, greeting="Hi"):
     return f"{greeting}, {name}!"
 
 print(greet(greeting="Hello", name="Alice"))
+
 ```
 
 A) Error
@@ -109,9 +113,11 @@ D) Hi, Alice!
 Почему этот код работает неправильно?
 
 ```python
+
 def add_item(item, items=[]):
     items.append(item)
     return items
+
 ```
 
 A) append() не работает
@@ -135,10 +141,12 @@ D) Код работает правильно
 Что выведет следующий код?
 
 ```python
+
 def sum_all(*args):
     return sum(args)
 
 print(sum_all(1, 2, 3, 4))
+
 ```
 
 A) 10
@@ -202,11 +210,13 @@ D) `def f(pos, **kwargs, *args):`
 Что выведет следующий код?
 
 ```python
+
 def add(a, b, c):
     return a + b + c
 
 args = [1, 2, 3]
 print(add(*args))
+
 ```
 
 A) Error
@@ -290,9 +300,11 @@ D) `def lambda(x): return x * 2`
 Что выведет следующий код?
 
 ```python
+
 nums = [1, 2, 3, 4, 5]
 result = list(filter(lambda x: x > 2, nums))
 print(result)
+
 ```
 
 A) [1, 2]
@@ -316,9 +328,11 @@ D) 3
 Что выведет следующий код?
 
 ```python
+
 nums = [1, 2, 3]
 result = list(map(lambda x: x ** 2, nums))
 print(result)
+
 ```
 
 A) [1, 2, 3]
@@ -482,6 +496,7 @@ D) `def add<int>(a, b):`
 Что выведет следующий код?
 
 ```python
+
 def outer(x):
     def inner(y):
         return x + y
@@ -489,6 +504,7 @@ def outer(x):
 
 add5 = outer(5)
 print(add5(3))
+
 ```
 
 A) 5
@@ -512,11 +528,13 @@ D) 8
 Что выведет следующий код?
 
 ```python
+
 def minmax(numbers):
     return min(numbers), max(numbers)
 
 result = minmax([3, 1, 4, 1, 5])
 print(type(result).__name__)
+
 ```
 
 A) list
@@ -613,4 +631,6 @@ D) Создаёт новую функцию с заранее заданными
 | **Менее 13 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется перечитать лекцию и попрактиковаться. |
 
 ---
+
+
 

@@ -449,11 +449,13 @@ D) Stop using English until errors are eliminated
 **Your score:** ___/20
 
 **Main areas for improvement:**
+
 1. _____________
 2. _____________
 3. _____________
 
 **Action plan:**
+
 - _____________
 - _____________
 - _____________
@@ -469,4 +471,5 @@ Continue practicing, noticing, and refining your English.
 **Good luck!** 🎓
 
 ---
+
 

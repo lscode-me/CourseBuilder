@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [01_Terminology](../01_Terminology/) — медицинская терминология
 - Понимать основы HL7 и FHIR
 - Иметь опыт работы с REST API
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснять разницу между EHR и EMR системами
 - Описывать архитектуру современной EHR системы
 - Интегрировать приложения через HL7 интерфейсы
@@ -45,6 +47,7 @@ Electronic Health Record (EHR) системы — это цифровая вер
 ## 2. Архитектура EHR Системы
 
 ```
+
 ┌─────────────────────────────────────────────────┐
 │            User Interface Layer                  │
 │  (Web, Mobile, Desktop Client)                  │
@@ -72,6 +75,7 @@ Electronic Health Record (EHR) системы — это цифровая вер
 │  • Document Store (Clinical Notes)              │
 │  • BLOB Storage (Images)                        │
 └─────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -119,28 +123,39 @@ Electronic Health Record (EHR) системы — это цифровая вер
 ### 4.1 Модели HIE
 
 **Centralized (Консолидированная)**
+
 ```
+
 Hospital A ──┐
 Hospital B ──┼──→ Central Repository ←── Query
 Hospital C ──┘
+
 ```
 
 **Federated (Федеративная)**
+
 ```
+
 Hospital A ←──┐
 Hospital B ←──┼── Query Router
 Hospital C ←──┘
+
 ```
 
 **Hybrid**
+
 ```
+
 Комбинация централизованной и федеративной моделей
+
 ```
 
 ### 4.2 Query Types
 
 - **Patient Discovery** — найти пациента в сети
+
 - **Document Query** — получить документы пациента
+
 - **Document Retrieve** — скачать конкретный документ
 
 ---
@@ -150,6 +165,7 @@ Hospital C ←──┘
 ### 5.1 HL7 MLLP (Minimal Lower Layer Protocol)
 
 ```python
+
 import socket
 
 def send_hl7_message(host, port, message):
@@ -171,11 +187,13 @@ def send_hl7_message(host, port, message):
     sock.close()
     
     return response
+
 ```
 
 ### 5.2 DICOM Integration
 
 ```python
+
 import pydicom
 
 # Чтение DICOM файла
@@ -188,6 +206,7 @@ modality = ds.Modality  # CT, MRI, X-ray, etc
 
 # Пиксельные данные
 image = ds.pixel_array
+
 ```
 
 ---
@@ -199,6 +218,7 @@ image = ds.pixel_array
 Платформа для интеграции медицинских приложений с EHR.
 
 ```javascript
+
 // SMART on FHIR app launch
 FHIR.oauth2.authorize({
   "client_id": "my_app",
@@ -209,6 +229,7 @@ FHIR.oauth2.authorize({
     console.log(patient);
   });
 });
+
 ```
 
 ---
@@ -218,19 +239,25 @@ FHIR.oauth2.authorize({
 ### 7.1 Производительность
 
 - **Caching** — кэшировать часто используемые данные
+
 - **Pagination** — не загружать все записи сразу
+
 - **Async processing** — фоновая обработка отчётов
 
 ### 7.2 Надёжность
 
 - **High Availability** — нет downtime
+
 - **Disaster Recovery** — бэкапы и failover
+
 - **Data Integrity** — ACID транзакции
 
 ### 7.3 Usability
 
 - **Intuitive UI** — врачи не IT-специалисты
+
 - **Mobile access** — доступ с планшетов
+
 - **Fast response** — <2 секунд для критических операций
 
 ---
@@ -249,11 +276,13 @@ FHIR.oauth2.authorize({
 ## 🚀 Следующие Шаги
 
 **Связанные модули:**
+
 - [Medical Terminology](../01_Terminology/) — HL7, FHIR, ICD-10 стандарты
 - [Security & Privacy](../03_Security_Privacy/) — HIPAA, GDPR и безопасность
 - [Medical Imaging](../04_Medical_Imaging/) — DICOM и PACS системы
 
 **Идеи для практики:**
+
 1. **Database Schema** — проектирование схемы БД: Patients, Encounters, Medications, Observations
 2. **FHIR API Mock Server** — простой FHIR сервер на Flask с endpoints GET/POST /Patient
 3. **HL7 MLLP Receiver** — TCP сервер для приёма HL7 сообщений и отправки ACK
@@ -265,14 +294,17 @@ FHIR.oauth2.authorize({
 ## 📚 Дополнительные Ресурсы
 
 **Open Source EHR системы:**
+
 - [OpenEMR](https://www.open-emr.org/) — open source EHR система
 - [OpenMRS](https://openmrs.org/) — open source medical record system
 
 **SMART on FHIR:**
+
 - [SMART Health IT](https://smarthealthit.org/) — документация и примеры
 - [SMART App Gallery](https://gallery.smarthealthit.org/) — примеры SMART приложений
 
 **HIE:**
+
 - [Health Information Exchange](https://www.healthit.gov/topic/health-it-and-health-information-exchange-basics) — обзор от HealthIT.gov
 
 ---
@@ -280,9 +312,13 @@ FHIR.oauth2.authorize({
 ## 💡 Key Takeaways
 
 - **EHR ≠ EMR**: EHR охватывает данные из множества организаций, EMR — только одну
+
 - **SMART on FHIR** — стандарт для безопасного запуска приложений внутри EHR
+
 - **CDSS** — системы поддержки принятия решений, встроенные в EHR
+
 - **HIE** — обмен данными между организациями (pull vs push модели)
+
 - **Interoperability** — главная проблема Healthcare IT, FHIR её решает
 
 ---
@@ -290,11 +326,18 @@ FHIR.oauth2.authorize({
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [03_Security_Privacy](../03_Security_Privacy/) — Безопасность и HIPAA
 - [04_Medical_Imaging](../04_Medical_Imaging/) — Медицинские изображения и DICOM
 
 **Практика:**
+
 1. Изучите API документацию публичного EHR sandbox (Epic, Cerner)
 2. Создайте простое SMART on FHIR приложение
 3. Реализуйте HL7 MLLP receiver на Python
+
+
+
+
+
 

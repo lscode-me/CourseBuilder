@@ -33,13 +33,17 @@
 OpenBSD использует **ksh** (Korn Shell) как оболочку по умолчанию. Это не bash!
 
 ```sh
+
 $ echo $SHELL
 /bin/ksh
+
 ```
 
 **Output:**
 ```
+
 /bin/ksh
+
 ```
 
 Основные отличия от bash:
@@ -81,6 +85,7 @@ $ !!
 
 # Выполнить последнюю команду, начинающуюся с 'ls'
 $ !ls
+
 ```
 
 ### 1.4 Автодополнение
@@ -88,11 +93,13 @@ $ !ls
 В ksh нажмите `Tab` или `Esc Esc` для автодополнения:
 
 ```sh
+
 $ cd /u<Tab>
 $ cd /usr/
 
 $ cd /usr/lo<Tab>
 $ cd /usr/local/
+
 ```
 
 ---
@@ -104,13 +111,17 @@ $ cd /usr/local/
 Показывает текущий рабочий каталог:
 
 ```sh
+
 $ pwd
 /home/admin
+
 ```
 
 **Output:**
 ```
+
 /home/admin
+
 ```
 
 ### 2.2 Команда cd
@@ -133,6 +144,7 @@ $ cd ..
 
 # Подняться на два уровня
 $ cd ../..
+
 ```
 
 ### 2.3 Команда ls
@@ -165,19 +177,23 @@ $ ls -lt
 
 # Рекурсивный просмотр
 $ ls -R
+
 ```
 
 **Output для ls -l:**
 ```
+
 total 12
 drwxr-xr-x  2 admin  admin  512 Dec  1 10:00 Desktop
 drwxr-xr-x  2 admin  admin  512 Dec  1 10:00 Documents
 drwxr-xr-x  2 admin  admin  512 Dec  1 10:00 Downloads
+
 ```
 
 **Расшифровка вывода ls -l:**
 
 ```
+
 drwxr-xr-x  2 admin  admin  512 Dec  1 10:00 Desktop
 │├─┤├─┤├─┤  │  │      │     │     │          │
 ││  │  │    │  │      │     │     │          └── Имя файла
@@ -190,6 +206,7 @@ drwxr-xr-x  2 admin  admin  512 Dec  1 10:00 Desktop
 ││  └── Права для группы (r-x)
 │└── Права для владельца (rwx)
 └── Тип (d=каталог, -=файл, l=ссылка)
+
 ```
 
 ---
@@ -207,6 +224,7 @@ $ echo "Hello, OpenBSD!" > hello.txt
 
 # Добавить в файл
 $ echo "New line" >> hello.txt
+
 ```
 
 ### 3.2 Команда cat
@@ -226,6 +244,7 @@ $ cat -n /etc/passwd
      1  root:*:0:0:Charlie &:/root:/bin/ksh
      2  daemon:*:1:1:The devil himself:/root:/sbin/nologin
      3  ...
+
 ```
 
 ### 3.3 Просмотр файлов: less, more, head, tail
@@ -246,6 +265,7 @@ $ tail -20 /var/log/messages
 
 # Следить за файлом в реальном времени
 $ tail -f /var/log/messages
+
 ```
 
 ### 3.4 Копирование: cp
@@ -265,6 +285,7 @@ $ cp -p original.txt copy.txt
 
 # Интерактивный режим (спрашивать перед перезаписью)
 $ cp -i file.txt /tmp/
+
 ```
 
 ### 3.5 Перемещение и переименование: mv
@@ -281,6 +302,7 @@ $ mv file1.txt file2.txt /backup/
 
 # Интерактивный режим
 $ mv -i file.txt /tmp/
+
 ```
 
 ### 3.6 Удаление: rm, rmdir
@@ -300,6 +322,7 @@ $ rm -rf mydir/
 
 # Удалить пустой каталог
 $ rmdir emptydir/
+
 ```
 
 > **⚠️ Warning:**  
@@ -316,6 +339,7 @@ $ mkdir -p path/to/newdir
 
 # Установить права при создании
 $ mkdir -m 700 private
+
 ```
 
 ---
@@ -341,6 +365,7 @@ $ man -k network
 hostname.if(5) - interface-specific configuration file
 ifconfig(8) - configure network interface parameters
 ...
+
 ```
 
 **Секции man:**
@@ -361,22 +386,27 @@ ifconfig(8) - configure network interface parameters
 # Указать секцию явно
 $ man 5 passwd    # Формат файла /etc/passwd
 $ man 1 passwd    # Команда passwd
+
 ```
 
 ### 4.2 apropos — поиск по описаниям
 
 ```sh
+
 $ apropos firewall
 pf(4) - packet filter
 pfctl(8) - control the packet filter (PF) device
 pf.conf(5) - packet filter configuration file
+
 ```
 
 ### 4.3 whatis — краткое описание
 
 ```sh
+
 $ whatis ls
 ls(1) - list directory contents
+
 ```
 
 ### 4.4 info и --help
@@ -387,6 +417,7 @@ $ grep --help
 
 # info в OpenBSD доступен для некоторых пакетов
 $ info coreutils
+
 ```
 
 > **💡 Pro Tip:**  
@@ -420,6 +451,7 @@ $ grep -E "error|warning" /var/log/messages
 
 # Только имена файлов
 $ grep -l "pattern" *.txt
+
 ```
 
 ### 5.2 sed — потоковый редактор
@@ -440,6 +472,7 @@ $ sed '/^#/d' config.txt
 
 # Показать только определённые строки
 $ sed -n '5,10p' file.txt
+
 ```
 
 ### 5.3 awk — обработка текста
@@ -460,6 +493,7 @@ root
 daemon
 nobody
 ...
+
 ```
 
 ### 5.4 cut — извлечение полей
@@ -479,6 +513,7 @@ Hel
 $ cut -d: -f1,3 /etc/passwd
 root:0
 daemon:1
+
 ```
 
 ### 5.5 sort и uniq
@@ -501,6 +536,7 @@ $ sort file.txt | uniq -c
 
 # Только дубликаты
 $ sort file.txt | uniq -d
+
 ```
 
 ### 5.6 wc — подсчёт
@@ -517,6 +553,7 @@ $ wc -l /etc/passwd
 # Только слова
 $ wc -w /etc/passwd
 65
+
 ```
 
 ---
@@ -543,6 +580,7 @@ $ command &> output.txt
 
 # Подавить вывод
 $ command > /dev/null 2>&1
+
 ```
 
 ### 6.2 Перенаправление ввода
@@ -556,6 +594,7 @@ $ cat << EOF
 Line 1
 Line 2
 EOF
+
 ```
 
 ### 6.3 Конвейеры (pipes)
@@ -572,6 +611,7 @@ $ du -a /var | sort -rn | head -10
 
 # Найти процессы по имени
 $ ps aux | grep sshd
+
 ```
 
 ### 6.4 Команда tee
@@ -584,6 +624,7 @@ $ ls -l | tee listing.txt
 
 # Добавить в файл
 $ ls -l | tee -a listing.txt
+
 ```
 
 ---
@@ -609,11 +650,13 @@ $ ps auxww
 
 # Процессы конкретного пользователя
 $ ps -U admin
+
 ```
 
 ### 7.2 top — мониторинг в реальном времени
 
 ```sh
+
 $ top
 
 load averages:  0.08,  0.03,  0.01    puffy.my.domain 14:32:15
@@ -624,9 +667,11 @@ Memory: Real: 72M/993M act/tot  Free: 7098M  Cache: 404M  Swap: 0/2048M
   PID USERNAME PRI NICE  SIZE   RES STATE     WAIT      TIME    CPU COMMAND
     1 root      10    0  524K  488K idle      wait      0:00  0.00% init
 14532 admin     18    0  1.2M  1.6M idle      kqread    0:00  0.00% ksh
+
 ```
 
 **Горячие клавиши в top:**
+
 - `q` — выход
 - `k` — убить процесс
 - `u` — фильтр по пользователю
@@ -647,6 +692,7 @@ $ pkill firefox
 # Список сигналов
 $ kill -l
 HUP INT QUIT ILL TRAP ABRT EMT FPE KILL BUS SEGV SYS PIPE ALRM TERM ...
+
 ```
 
 ### 7.4 Фоновые процессы
@@ -667,6 +713,7 @@ $ fg %1
 
 # Продолжить в фоне
 $ bg %1
+
 ```
 
 ### 7.5 nohup — независимый от терминала процесс
@@ -698,6 +745,7 @@ $ chmod 600 secret.txt   # rw-------
 
 # Рекурсивно
 $ chmod -R 755 mydir/
+
 ```
 
 **Числовые значения:**
@@ -734,6 +782,7 @@ $ chgrp staff file.txt
 
 # Рекурсивно
 $ chgrp -R staff mydir/
+
 ```
 
 ---
@@ -760,6 +809,7 @@ $ find . -name "*.bak" -exec rm {} \;
 
 # Найти и удалить интерактивно
 $ find . -name "*.tmp" -ok rm {} \;
+
 ```
 
 ### 9.2 locate — быстрый поиск по базе
@@ -772,6 +822,7 @@ $ find . -name "*.tmp" -ok rm {} \;
 $ locate pf.conf
 /etc/pf.conf
 /usr/share/man/man5/pf.conf.5
+
 ```
 
 ### 9.3 which и whereis
@@ -784,6 +835,7 @@ $ which ls
 # Расположение программы и man-страниц
 $ whereis ls
 ls: /bin/ls /usr/share/man/man1/ls.1
+
 ```
 
 ---
@@ -806,6 +858,7 @@ $ echo $HOME
 
 $ echo $PATH
 /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
 ```
 
 ### 10.2 Установка переменных
@@ -817,6 +870,7 @@ $ export PATH="$PATH:/usr/local/bin"
 
 # Только для одной команды
 $ LANG=C sort file.txt
+
 ```
 
 ### 10.3 Постоянные настройки
@@ -834,14 +888,17 @@ export PATH="$HOME/bin:$PATH"
 alias ll='ls -la'
 alias la='ls -a'
 alias ..='cd ..'
+
 ```
 
 Применить изменения:
 
 ```sh
+
 $ . ~/.profile
 # или
 $ source ~/.profile
+
 ```
 
 ---
@@ -849,9 +906,13 @@ $ source ~/.profile
 ## 💡 Key Takeaways
 
 - **ksh — не bash**: OpenBSD использует Korn Shell, помните о различиях
+
 - **man — главный друг**: Документация OpenBSD — эталон качества
+
 - **Перенаправление и pipes**: Основа работы в Unix — комбинируйте простые команды
+
 - **Права доступа**: 755 для скриптов, 644 для файлов, 600 для секретных
+
 - **find — мощный инструмент**: Но требует практики
 
 ---
@@ -859,16 +920,19 @@ $ source ~/.profile
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [File System](../04_FileSystem/) — глубже о файловой системе
 - [User Management](../05_UserManagement/) — управление пользователями
 
 **Practice Ideas:**
+
 1. Создайте структуру каталогов для проекта с помощью mkdir -p
 2. Напишите конвейер для поиска 10 самых больших файлов в /var
 3. Настройте ~/.kshrc с полезными алиасами
 4. Найдите все файлы .conf в /etc и посчитайте их
 
 **Going Deeper:**
+
 - Изучите регулярные выражения для grep и sed
 - Освойте vim или ed для редактирования
 - Познакомьтесь со скриптами на ksh
@@ -878,13 +942,18 @@ $ source ~/.profile
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man intro](https://man.openbsd.org/intro) — введение в команды
 - [man ksh](https://man.openbsd.org/ksh) — документация оболочки
 - [man hier](https://man.openbsd.org/hier) — иерархия файловой системы
 
 **Practice:**
+
 - [Exercism Shell Track](https://exercism.org/tracks/bash) — упражнения (совместимы с ksh)
 - [Command Line Challenge](https://cmdchallenge.com/) — интерактивные задания
 
 ---
+
+
+
 

@@ -31,18 +31,23 @@
 **Register** = language variety appropriate to a particular situation.
 
 ```
+
 VERY FORMAL:    "I would be most grateful if you could..."
 FORMAL:         "Could you please..."
 NEUTRAL:        "Can you..."
 INFORMAL:       "Could you do me a favor?"
 VERY INFORMAL:  "Hey, mind doing..."
+
 ```
 
 ### 1.2 Factors Affecting Register
 
 - **Audience**: Boss vs friend vs stranger
+
 - **Medium**: Academic paper vs email vs text
+
 - **Purpose**: Complaint vs invitation vs report
+
 - **Relationship**: Hierarchy, familiarity
 
 ---
@@ -72,26 +77,31 @@ VERY INFORMAL:  "Hey, mind doing..."
 
 **FORMAL:**
 ```
+
 - Passive voice: "It was decided that..."
 - Full forms: "I am, they are, cannot"
 - Complex sentences
 - Impersonal constructions: "It is believed that..."
 - Subjunctive: "It is essential that he attend"
 - Inversion: "Not only did we achieve..."
+
 ```
 
 **INFORMAL:**
 ```
+
 - Active voice: "We decided..."
 - Contractions: "I'm, they're, can't"
 - Simple sentences
 - Direct statements: "People think..."
 - Phrasal verbs: "find out" vs "discover"
+
 ```
 
 ### 2.3 Contractions
 
 ```
+
 FORMAL (NO contractions):
 "I would be grateful if you could assist me."
 "It is not possible to attend."
@@ -99,11 +109,13 @@ FORMAL (NO contractions):
 INFORMAL (contractions OK):
 "I'd be happy if you could help."
 "It's not possible to come."
+
 ```
 
 ### 2.4 Pronouns
 
 ```
+
 FORMAL/ACADEMIC:
 "One should consider..." (very formal)
 "The researcher observed..."
@@ -113,6 +125,7 @@ INFORMAL:
 "You should think about..."
 "I saw..."
 "I think..."
+
 ```
 
 ---
@@ -123,37 +136,46 @@ INFORMAL:
 
 1. **Hedging** (avoiding absolutes):
 ```
+
 "This may suggest..."
 "It appears that..."
 "The data could indicate..."
 "It seems likely that..."
+
 ```
 
 2. **Nominalization** (verbs → nouns):
 ```
+
 INFORMAL: "The disease spreads quickly."
 ACADEMIC: "The rapid spread of the disease..."
 
 INFORMAL: "Researchers discovered that..."
 ACADEMIC: "The discovery by researchers..."
+
 ```
 
 3. **Impersonal constructions**:
 ```
+
 "It has been demonstrated that..."
 "Research indicates that..."
 "Evidence suggests that..."
+
 ```
 
 4. **Formal linking**:
 ```
+
 Furthermore, Moreover, Nevertheless, Consequently,
 In addition, However, Therefore, Hence
+
 ```
 
 ### 3.2 What to Avoid in Academic Writing
 
 ```
+
 ❌ Contractions (I'm, don't, can't)
 ❌ Phrasal verbs (find out → discover)
 ❌ Personal pronouns (I think → Evidence suggests)
@@ -161,11 +183,13 @@ In addition, However, Therefore, Hence
 ❌ Vague language (thing, stuff → phenomenon, factors)
 ❌ Starting with "And," "But," "So"
 ❌ Questions to reader
+
 ```
 
 ### 3.3 Academic Vocabulary
 
 ```
+
 INSTEAD OF         USE
 think              consider, argue, maintain
 show               demonstrate, indicate, reveal
@@ -176,6 +200,7 @@ a lot of           numerous, considerable, substantial
 also               furthermore, moreover, additionally
 but                however, nevertheless, conversely
 so                 therefore, consequently, hence
+
 ```
 
 ---
@@ -186,32 +211,39 @@ so                 therefore, consequently, hence
 
 **VERY FORMAL (to senior executive, complaint):**
 ```
+
 "Dear Mr. Smith,
 I am writing to express my concern regarding...
 I would be most grateful if you could...
 I look forward to hearing from you at your earliest convenience.
 Yours sincerely,"
+
 ```
 
 **FORMAL (to client):**
 ```
+
 "Dear Ms. Johnson,
 Thank you for your email regarding...
 Please let me know if you require any further information.
 Best regards,"
+
 ```
 
 **NEUTRAL (to colleague):**
 ```
+
 "Hi Sarah,
 Just wanted to follow up on our meeting.
 Let me know if you have any questions.
 Thanks,"
+
 ```
 
 ### 4.2 Professional Phrases
 
 ```
+
 OPENING:
 "I am writing to inquire about..."
 "With reference to your email of..."
@@ -226,6 +258,7 @@ CLOSING:
 "Please do not hesitate to contact me."
 "I look forward to hearing from you."
 "Thank you for your attention to this matter."
+
 ```
 
 ---
@@ -235,25 +268,31 @@ CLOSING:
 ### 5.1 Features
 
 ```
+
 - Contractions (I'm, won't, gonna)
 - Phrasal verbs (put up with, get on with)
 - Slang and idioms
 - Fillers (like, you know, basically)
 - Short sentences
 - Questions to engage
+
 ```
 
 ### 5.2 Spoken vs Written Informal
 
 **SPOKEN:**
 ```
+
 "So basically, like, I was thinking we could, you know,
 maybe grab coffee or something?"
+
 ```
 
 **WRITTEN INFORMAL (text/message):**
 ```
+
 "Hey! Wanna grab coffee later?"
+
 ```
 
 ---
@@ -265,6 +304,7 @@ maybe grab coffee or something?"
 Mixing registers sounds unnatural:
 
 ```
+
 ❌ "The implementation of the new policy was kinda problematic."
 (Academic + slang)
 
@@ -273,6 +313,7 @@ Mixing registers sounds unnatural:
 
 ❌ "Furthermore, the movie was awesome."
 (Academic connector + informal adjective)
+
 ```
 
 ### 6.2 IELTS Register Expectations
@@ -304,20 +345,24 @@ Mixing registers sounds unnatural:
 ### 8.1 Too Informal in Formal Context
 
 ```
+
 IELTS essay:
 ❌ "Global warming is a really big problem these days."
 ✅ "Climate change represents a significant global challenge."
 
 ❌ "A lot of people think..."
 ✅ "Many scholars argue that..."
+
 ```
 
 ### 8.2 Too Formal in Informal Context
 
 ```
+
 Email to friend:
 ❌ "I would be most grateful if you could assist me..."
 ✅ "Can you help me with..."
+
 ```
 
 ### 8.3 Russian Speakers' Issues
@@ -331,9 +376,13 @@ Email to friend:
 ## 💡 Key Takeaways
 
 - **Register = appropriateness**: Match language to context
+
 - **Academic writing**: Hedging, nominalization, passive
+
 - **Business writing**: Polite, clear, professional
+
 - **Don't mix registers**: Stay consistent
+
 - **Russian interference**: Often too direct in English
 
 ---
@@ -341,6 +390,7 @@ Email to friend:
 ## 🚀 Next Steps
 
 **Practice Ideas:**
+
 1. Rewrite an informal text as formal
 2. Analyze register in authentic texts
 3. Practice email writing at different levels
@@ -353,4 +403,7 @@ Email to friend:
 - "Oxford Guide to Plain English"
 
 ---
+
+
+
 

@@ -13,6 +13,7 @@
 - Иметь опыт работы с коллекциями данных
 
 **Recommended prior modules:**
+
 - [Modules](../06_Modules/) — организация кода в модули
 - [Files](../08_Files/) — работа с файлами
 
@@ -36,6 +37,7 @@
 ### 1.1 Основные классы
 
 ```python
+
 from datetime import datetime, date, time, timedelta
 
 # Текущая дата и время
@@ -56,10 +58,12 @@ print(f"Месяц: {now.month}")
 print(f"День: {now.day}")
 print(f"Час: {now.hour}")
 print(f"День недели: {now.weekday()}")  # 0 = понедельник
+
 ```
 
 **Output:**
 ```
+
 Сейчас: 2024-12-02 15:30:45.123456
 Сегодня: 2024-12-02
 День рождения: 1990-05-15 10:30:00
@@ -68,11 +72,13 @@ print(f"День недели: {now.weekday()}")  # 0 = понедельник
 День: 2
 Час: 15
 День недели: 0
+
 ```
 
 ### 1.2 Форматирование и парсинг
 
 ```python
+
 from datetime import datetime
 
 now = datetime.now()
@@ -91,21 +97,25 @@ print(f"Распарсено: {parsed}")
 print(f"ISO: {now.isoformat()}")
 parsed_iso = datetime.fromisoformat("2024-12-25T18:30:00")
 print(f"Из ISO: {parsed_iso}")
+
 ```
 
 **Output:**
 ```
+
 2024-12-02
 02.12.2024 15:30
 Monday, December 02, 2024
 Распарсено: 2024-12-25 18:30:00
 ISO: 2024-12-02T15:30:45.123456
 Из ISO: 2024-12-25 18:30:00
+
 ```
 
 ### 1.3 Арифметика с датами
 
 ```python
+
 from datetime import datetime, timedelta
 
 now = datetime.now()
@@ -129,19 +139,23 @@ print(f"До Рождества: {until_christmas.days} дней")
 # Сравнение дат
 if now < christmas:
     print("Рождество ещё впереди!")
+
 ```
 
 **Output:**
 ```
+
 Завтра: 2024-12-03 15:30:45.123456
 Неделю назад: 2024-11-25 15:30:45.123456
 До Рождества: 22 дней
 Рождество ещё впереди!
+
 ```
 
 ### 1.4 Часовые пояса
 
 ```python
+
 from datetime import datetime, timezone, timedelta
 
 # UTC
@@ -157,13 +171,16 @@ print(f"Москва: {moscow_time}")
 utc_time = datetime(2024, 12, 25, 12, 0, tzinfo=timezone.utc)
 moscow_converted = utc_time.astimezone(moscow_tz)
 print(f"12:00 UTC в Москве: {moscow_converted}")
+
 ```
 
 **Output:**
 ```
+
 UTC: 2024-12-02 12:30:45.123456+00:00
 Москва: 2024-12-02 15:30:45.123456+03:00
 12:00 UTC в Москве: 2024-12-25 15:00:00+03:00
+
 ```
 
 ---
@@ -173,6 +190,7 @@ UTC: 2024-12-02 12:30:45.123456+00:00
 ### 2.1 Counter
 
 ```python
+
 from collections import Counter
 
 # Подсчёт элементов
@@ -192,20 +210,24 @@ c1 = Counter(a=3, b=1)
 c2 = Counter(a=1, b=2)
 print(f"c1 + c2: {c1 + c2}")
 print(f"c1 - c2: {c1 - c2}")
+
 ```
 
 **Output:**
 ```
+
 Counter: Counter({'apple': 3, 'banana': 2, 'cherry': 1})
 Top 2: [('apple', 3), ('banana', 2)]
 Символы: Counter({'i': 4, 's': 4, 'p': 2, 'm': 1})
 c1 + c2: Counter({'a': 4, 'b': 3})
 c1 - c2: Counter({'a': 2})
+
 ```
 
 ### 2.2 defaultdict
 
 ```python
+
 from collections import defaultdict
 
 # Значение по умолчанию — list
@@ -226,18 +248,22 @@ nested["users"]["alice"] += 1
 nested["users"]["bob"] += 2
 nested["admins"]["charlie"] += 1
 print(f"nested: {dict(nested)}")
+
 ```
 
 **Output:**
 ```
+
 groups: {'A': [1, 3], 'B': [2, 4]}
 counts: {'hello': 1, 'world': 1}
 nested: {'users': defaultdict(<class 'int'>, {'alice': 1, 'bob': 2}), 'admins': defaultdict(<class 'int'>, {'charlie': 1})}
+
 ```
 
 ### 2.3 deque — двусторонняя очередь
 
 ```python
+
 from collections import deque
 
 # Создание
@@ -265,10 +291,12 @@ d = deque(maxlen=3)
 for i in range(5):
     d.append(i)
     print(f"После добавления {i}: {list(d)}")
+
 ```
 
 **Output:**
 ```
+
 После append: deque([0, 1, 2, 3, 4])
 После pop: deque([1, 2, 3]), удалено: 0, 4
 rotate(2): deque([4, 5, 1, 2, 3])
@@ -278,11 +306,13 @@ rotate(-2): deque([1, 2, 3, 4, 5])
 После добавления 2: [0, 1, 2]
 После добавления 3: [1, 2, 3]
 После добавления 4: [2, 3, 4]
+
 ```
 
 ### 2.4 namedtuple и OrderedDict
 
 ```python
+
 from collections import namedtuple, OrderedDict
 
 # namedtuple — именованный кортеж
@@ -304,15 +334,18 @@ od['second'] = 2
 od['third'] = 3
 od.move_to_end('first')  # Перемещение в конец
 print(f"OrderedDict: {od}")
+
 ```
 
 **Output:**
 ```
+
 Point: Point(x=3, y=4)
 x=3, y=4
 Как кортеж: 3, 4
 Person: Person(name='Alice', age=30, city='Unknown')
 OrderedDict: OrderedDict([('second', 2), ('third', 3), ('first', 1)])
+
 ```
 
 ---
@@ -322,6 +355,7 @@ OrderedDict: OrderedDict([('second', 2), ('third', 3), ('first', 1)])
 ### 3.1 Базовые операции
 
 ```python
+
 import re
 
 text = "Contact us at support@example.com or sales@company.org"
@@ -338,19 +372,23 @@ print(f"Все email: {emails}")
 # finditer — итератор совпадений
 for match in re.finditer(r'\w+@\w+\.\w+', text):
     print(f"  Позиция {match.start()}-{match.end()}: {match.group()}")
+
 ```
 
 **Output:**
 ```
+
 Найдено: support@example.com
 Все email: ['support@example.com', 'sales@company.org']
   Позиция 14-33: support@example.com
   Позиция 37-54: sales@company.org
+
 ```
 
 ### 3.2 Группы захвата
 
 ```python
+
 import re
 
 text = "John Smith (30), Jane Doe (25)"
@@ -364,18 +402,22 @@ for match in re.finditer(pattern, text):
 pattern = r'(\w+) (\w+) \((\d+)\)'
 matches = re.findall(pattern, text)
 print(f"Кортежи: {matches}")
+
 ```
 
 **Output:**
 ```
+
 Имя: John Smith, Возраст: 30
 Имя: Jane Doe, Возраст: 25
 Кортежи: [('John', 'Smith', '30'), ('Jane', 'Doe', '25')]
+
 ```
 
 ### 3.3 Замена и разделение
 
 ```python
+
 import re
 
 text = "Hello   World!   How    are   you?"
@@ -394,18 +436,22 @@ print(f"Слова из 4 букв в верхнем регистре: '{result}
 # split — разделение
 parts = re.split(r'[,;]\s*', "apple, banana; cherry, date")
 print(f"Разделено: {parts}")
+
 ```
 
 **Output:**
 ```
+
 Убраны лишние пробелы: 'Hello World! How are you?'
 Слова из 4 букв в верхнем регистре: 'THIS is a TEST CASE'
 Разделено: ['apple', 'banana', 'cherry', 'date']
+
 ```
 
 ### 3.4 Компиляция паттернов
 
 ```python
+
 import re
 
 # Компиляция для повторного использования
@@ -421,12 +467,15 @@ text = "Contact: john@example.com, jane.doe@company.co.uk"
 
 for match in email_pattern.finditer(text):
     print(f"User: {match.group('user')}, Domain: {match.group('domain')}.{match.group('tld')}")
+
 ```
 
 **Output:**
 ```
+
 User: john, Domain: example.com
 User: jane.doe, Domain: company.co.uk
+
 ```
 
 ---
@@ -436,6 +485,7 @@ User: jane.doe, Domain: company.co.uk
 ### 4.1 Базовое использование
 
 ```python
+
 import subprocess
 
 # run() — простой запуск
@@ -450,10 +500,12 @@ if result.returncode == 0:
     print(result.stdout[:200] + "...")
 else:
     print(f"Ошибка: {result.stderr}")
+
 ```
 
 **Output:**
 ```
+
 stdout: Hello, World!
 
 return code: 0
@@ -462,11 +514,13 @@ total 48
 drwxrwxrwt 12 root root 4096 Dec  2 15:30 .
 drwxr-xr-x 23 root root 4096 Dec  1 10:00 ..
 ...
+
 ```
 
 ### 4.2 Передача данных
 
 ```python
+
 import subprocess
 
 # stdin
@@ -486,10 +540,12 @@ result = subprocess.run(
     text=True
 )
 print(f"Shell команда:\n{result.stdout}")
+
 ```
 
 **Output:**
 ```
+
 Строки с 'error':
 error: failed
 error: timeout
@@ -497,11 +553,13 @@ error: timeout
 Shell команда:
 /home/user
 /home/user/project
+
 ```
 
 ### 4.3 Пайплайны
 
 ```python
+
 import subprocess
 
 # Пайплайн: ps aux | grep python | head -5
@@ -526,6 +584,7 @@ grep.stdout.close()
 
 output, _ = head.communicate()
 print(f"Python процессы:\n{output}")
+
 ```
 
 ---
@@ -535,6 +594,7 @@ print(f"Python процессы:\n{output}")
 ### 5.1 Базовая настройка
 
 ```python
+
 import logging
 
 # Простая настройка
@@ -551,20 +611,24 @@ logger.info("Информационное сообщение")
 logger.warning("Предупреждение")
 logger.error("Ошибка")
 logger.critical("Критическая ошибка")
+
 ```
 
 **Output:**
 ```
+
 2024-12-02 15:30:00,123 - __main__ - DEBUG - Отладочное сообщение
 2024-12-02 15:30:00,123 - __main__ - INFO - Информационное сообщение
 2024-12-02 15:30:00,123 - __main__ - WARNING - Предупреждение
 2024-12-02 15:30:00,123 - __main__ - ERROR - Ошибка
 2024-12-02 15:30:00,123 - __main__ - CRITICAL - Критическая ошибка
+
 ```
 
 ### 5.2 Логирование в файл
 
 ```python
+
 import logging
 
 # Создаём logger
@@ -593,11 +657,13 @@ logger.debug("Debug — только в файл с уровнем DEBUG")
 logger.info("Info — в файл")
 logger.warning("Warning — в файл и консоль")
 logger.error("Error — в файл и консоль")
+
 ```
 
 ### 5.3 Логирование исключений
 
 ```python
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -614,6 +680,7 @@ except ZeroDivisionError:
 
 **Output:**
 ```
+
 2024-12-02 15:30:00,123 - __main__ - ERROR - Ошибка при выполнении операции
 Traceback (most recent call last):
   File "example.py", line 8, in <module>
@@ -621,6 +688,7 @@ Traceback (most recent call last):
   File "example.py", line 5, in risky_operation
     return 1 / 0
 ZeroDivisionError: division by zero
+
 ```
 
 ---
@@ -630,6 +698,7 @@ ZeroDivisionError: division by zero
 ### 6.1 Модуль os
 
 ```python
+
 import os
 
 # Информация о системе
@@ -653,10 +722,12 @@ os.removedirs("a/b/c")
 # Выполнение команды
 exit_code = os.system("echo 'Hello from shell'")
 print(f"Exit code: {exit_code}")
+
 ```
 
 **Output:**
 ```
+
 OS: posix
 CWD: /home/user/project
 CPU count: 8
@@ -666,11 +737,13 @@ MY_VAR: value
 Создано: True
 Hello from shell
 Exit code: 0
+
 ```
 
 ### 6.2 os.path — работа с путями
 
 ```python
+
 import os.path
 
 path = "/home/user/documents/report.txt"
@@ -686,10 +759,12 @@ print(f"join: {os.path.join('/home', 'user', 'file.txt')}")
 print(f"exists: {os.path.exists('/tmp')}")
 print(f"isfile: {os.path.isfile('/tmp')}")
 print(f"isdir: {os.path.isdir('/tmp')}")
+
 ```
 
 **Output:**
 ```
+
 basename: report.txt
 dirname: /home/user/documents
 split: ('/home/user/documents', 'report.txt')
@@ -699,11 +774,13 @@ join: /home/user/file.txt
 exists: True
 isfile: False
 isdir: True
+
 ```
 
 ### 6.3 Модуль sys
 
 ```python
+
 import sys
 
 # Информация о Python
@@ -728,12 +805,14 @@ print(f"Размер списка: {sys.getsizeof(lst)} bytes")
 
 **Output:**
 ```
+
 Version: 3.11.5 (main, Aug 25 2023, 13:19:05)
 Platform: linux
 Executable: /usr/bin/python3
 Path (первые 3): ['', '/usr/lib/python311.zip', '/usr/lib/python3.11']
 argv: ['example.py']
 Размер списка: 120 bytes
+
 ```
 
 ---
@@ -743,6 +822,7 @@ argv: ['example.py']
 ### 7.1 Комбинаторные функции
 
 ```python
+
 from itertools import permutations, combinations, product
 
 # Перестановки
@@ -755,20 +835,24 @@ print(f"combinations('ABCD', 2): {list(combinations('ABCD', 2))}")
 # Декартово произведение
 print(f"product('AB', '12'): {list(product('AB', '12'))}")
 print(f"product([0,1], repeat=3): {list(product([0, 1], repeat=3))}")
+
 ```
 
 **Output:**
 ```
+
 permutations('AB'): [('A', 'B'), ('B', 'A')]
 permutations('ABC', 2): [('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'C'), ('C', 'A'), ('C', 'B')]
 combinations('ABCD', 2): [('A', 'B'), ('A', 'C'), ('A', 'D'), ('B', 'C'), ('B', 'D'), ('C', 'D')]
 product('AB', '12'): [('A', '1'), ('A', '2'), ('B', '1'), ('B', '2')]
 product([0,1], repeat=3): [(0, 0, 0), (0, 0, 1), (0, 1, 0), (0, 1, 1), (1, 0, 0), (1, 0, 1), (1, 1, 0), (1, 1, 1)]
+
 ```
 
 ### 7.2 Бесконечные итераторы
 
 ```python
+
 from itertools import count, cycle, repeat, islice
 
 # count — бесконечный счётчик
@@ -781,18 +865,22 @@ print(f"cycle: {[next(colors) for _ in range(7)]}")
 
 # repeat — повторение
 print(f"repeat('A', 3): {list(repeat('A', 3))}")
+
 ```
 
 **Output:**
 ```
+
 count(10, 2): [10, 12, 14, 16, 18]
 cycle: ['red', 'green', 'blue', 'red', 'green', 'blue', 'red']
 repeat('A', 3): ['A', 'A', 'A']
+
 ```
 
 ### 7.3 Полезные функции
 
 ```python
+
 from itertools import chain, groupby, accumulate, takewhile, dropwhile
 
 # chain — объединение итераторов
@@ -811,16 +899,19 @@ print(f"accumulate: {list(accumulate([1, 2, 3, 4, 5]))}")
 nums = [1, 3, 5, 7, 2, 4, 6]
 print(f"takewhile(x<6): {list(takewhile(lambda x: x < 6, nums))}")
 print(f"dropwhile(x<6): {list(dropwhile(lambda x: x < 6, nums))}")
+
 ```
 
 **Output:**
 ```
+
 chain: [1, 2, 3, 4, 5]
   A: [('A', 1), ('A', 2), ('A', 5)]
   B: [('B', 3), ('B', 4)]
 accumulate: [1, 3, 6, 10, 15]
 takewhile(x<6): [1, 3, 5]
 dropwhile(x<6): [7, 2, 4, 6]
+
 ```
 
 ---
@@ -830,6 +921,7 @@ dropwhile(x<6): [7, 2, 4, 6]
 ### 8.1 lru_cache
 
 ```python
+
 from functools import lru_cache
 import time
 
@@ -847,18 +939,22 @@ print(f"Время: {time.time() - start:.6f}с")
 
 # Статистика кэша
 print(f"Статистика: {fibonacci.cache_info()}")
+
 ```
 
 **Output:**
 ```
+
 fib(100) = 354224848179261915075
 Время: 0.000123с
 Статистика: CacheInfo(hits=98, misses=101, maxsize=128, currsize=101)
+
 ```
 
 ### 8.2 partial
 
 ```python
+
 from functools import partial
 
 def power(base, exponent):
@@ -875,18 +971,22 @@ print(f"cube(5) = {cube(5)}")
 numbers = [1, 2, 3, 4, 5]
 squared = list(map(partial(power, exponent=2), numbers))
 print(f"Квадраты: {squared}")
+
 ```
 
 **Output:**
 ```
+
 square(5) = 25
 cube(5) = 125
 Квадраты: [1, 4, 9, 16, 25]
+
 ```
 
 ### 8.3 reduce
 
 ```python
+
 from functools import reduce
 
 numbers = [1, 2, 3, 4, 5]
@@ -907,14 +1007,17 @@ print(f"Максимум: {maximum}")
 pairs = [('a', 1), ('b', 2), ('c', 3)]
 d = reduce(lambda acc, pair: {**acc, pair[0]: pair[1]}, pairs, {})
 print(f"Словарь: {d}")
+
 ```
 
 **Output:**
 ```
+
 Сумма: 15
 Произведение: 120
 Максимум: 5
 Словарь: {'a': 1, 'b': 2, 'c': 3}
+
 ```
 
 ---
@@ -924,6 +1027,7 @@ print(f"Словарь: {d}")
 ### 9.1 hashlib — хэширование
 
 ```python
+
 import hashlib
 
 text = "Hello, World!"
@@ -949,13 +1053,16 @@ def hash_file(path, algorithm='sha256'):
 
 **Output:**
 ```
+
 MD5: 65a8e27d8879283831b664bd8b7f0ad4
 SHA256: dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f
+
 ```
 
 ### 9.2 uuid — уникальные идентификаторы
 
 ```python
+
 import uuid
 
 # UUID4 — случайный
@@ -970,21 +1077,25 @@ u = uuid.UUID('12345678-1234-5678-1234-567812345678')
 print(f"Из строки: {u}")
 print(f"Hex: {u.hex}")
 print(f"Bytes: {len(u.bytes)} bytes")
+
 ```
 
 **Output:**
 ```
+
 UUID4: 550e8400-e29b-41d4-a716-446655440000
 UUID4: 6ba7b810-9dad-11d1-80b4-00c04fd430c8
 UUID1: 6ba7b810-9dad-11d1-80b4-00c04fd430c8
 Из строки: 12345678-1234-5678-1234-567812345678
 Hex: 12345678123456781234567812345678
 Bytes: 16 bytes
+
 ```
 
 ### 9.3 random — случайные числа
 
 ```python
+
 import random
 
 # Целые числа
@@ -1009,10 +1120,12 @@ print(f"shuffle: {numbers}")
 # Воспроизводимость
 random.seed(42)
 print(f"seed(42): {[random.randint(1, 100) for _ in range(5)]}")
+
 ```
 
 **Output:**
 ```
+
 randint(1, 10): 7
 randrange(0, 100, 5): 45
 random(): 0.8234
@@ -1022,6 +1135,7 @@ choices (k=3): ['apple', 'cherry', 'apple']
 sample (k=2): ['date', 'banana']
 shuffle: [3, 1, 4, 5, 2]
 seed(42): [82, 15, 4, 95, 36]
+
 ```
 
 ---
@@ -1043,15 +1157,18 @@ seed(42): [82, 15, 4, 95, 36]
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Additional Modules](../10_AdditionalModules/) — популярные pip-пакеты
 
 **Practice Ideas:**
+
 1. Создайте парсер логов с regex и группировкой по дате
 2. Напишите скрипт мониторинга процессов с subprocess и logging
 3. Реализуйте кэширование результатов функций с TTL
 4. Создайте утилиту для поиска дубликатов файлов (hashlib)
 
 **Going Deeper:**
+
 - Изучите `asyncio` для асинхронного программирования
 - Познакомьтесь с `multiprocessing` для параллельных вычислений
 - Изучите `typing` для статической типизации
@@ -1061,14 +1178,19 @@ seed(42): [82, 15, 4, 95, 36]
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Python Standard Library](https://docs.python.org/3/library/)
 - [datetime](https://docs.python.org/3/library/datetime.html)
 - [re](https://docs.python.org/3/library/re.html)
 - [logging](https://docs.python.org/3/library/logging.html)
 
 **Tutorials:**
+
 - [Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html)
 - [Logging HOWTO](https://docs.python.org/3/howto/logging.html)
 
 ---
+
+
+
 

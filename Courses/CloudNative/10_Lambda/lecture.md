@@ -38,11 +38,13 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': f'Hello, {name}!'
     }
+
 ```
 
 ### 1.2 Характеристики
 
 ```python
+
 lambda_limits = {
     "memory": "128 MB - 10,240 MB",
     "timeout": "1 second - 15 minutes",
@@ -56,6 +58,7 @@ lambda_limits = {
 print("Lambda Limits:")
 for limit, value in lambda_limits.items():
     print(f"  {limit}: {value}")
+
 ```
 
 ---
@@ -63,6 +66,7 @@ for limit, value in lambda_limits.items():
 ## 2. Триггеры Lambda
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Lambda Triggers                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -87,11 +91,13 @@ for limit, value in lambda_limits.items():
 │  └── MSK (Kafka)                                                  │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.1 Пример: S3 Trigger
 
 ```python
+
 import boto3
 import urllib.parse
 
@@ -115,6 +121,7 @@ def lambda_handler(event, context):
         process_file(content)
     
     return {'statusCode': 200}
+
 ```
 
 ---
@@ -124,6 +131,7 @@ def lambda_handler(event, context):
 ### 3.1 Что такое Cold Start
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Cold Start vs Warm Start                         │
 ├────────────────────────────────────────────────────────────────────┤
@@ -148,6 +156,7 @@ def lambda_handler(event, context):
 │  Warm start latency: 1-100ms                                      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Оптимизация Cold Start
@@ -171,6 +180,7 @@ def lambda_handler(event, context):
     # Используем уже инициализированные объекты
     response = table.get_item(Key={'id': event['id']})
     return response['Item']
+
 ```
 
 ### 3.3 Provisioned Concurrency
@@ -207,6 +217,7 @@ aws lambda publish-layer-version \
 aws lambda update-function-configuration \
     --function-name my-function \
     --layers arn:aws:lambda:us-east-1:123456789012:layer:my-dependencies:1
+
 ```
 
 ---
@@ -243,6 +254,7 @@ def lambda_handler(event, context):
         'statusCode': 404,
         'body': json.dumps({'error': 'Not found'})
     }
+
 ```
 
 ---
@@ -283,14 +295,17 @@ print("Lambda Monthly Cost Examples:")
 print(f"  100K invocations, 100ms, 128MB: ${calculate_lambda_cost(100_000, 100, 128)}")
 print(f"  1M invocations, 200ms, 256MB: ${calculate_lambda_cost(1_000_000, 200, 256)}")
 print(f"  10M invocations, 500ms, 512MB: ${calculate_lambda_cost(10_000_000, 500, 512)}")
+
 ```
 
 **Output:**
 ```
+
 Lambda Monthly Cost Examples:
   100K invocations, 100ms, 128MB: $0.0
   1M invocations, 200ms, 256MB: $0.83
   10M invocations, 500ms, 512MB: $43.33
+
 ```
 
 ---
@@ -298,6 +313,7 @@ Lambda Monthly Cost Examples:
 ## 7. Best Practices
 
 ```python
+
 best_practices = [
     "Минимизируйте deployment package size",
     "Инициализируйте SDK clients вне handler",
@@ -309,6 +325,7 @@ best_practices = [
     "Мониторинг через CloudWatch Logs/X-Ray",
     "Dead Letter Queue для failed async invocations"
 ]
+
 ```
 
 ---
@@ -316,9 +333,13 @@ best_practices = [
 ## 💡 Key Takeaways
 
 - **Lambda** — serverless compute, pay per execution
+
 - **Триггеры**: API Gateway, S3, SQS, EventBridge, etc.
+
 - **Cold Start** — инициализация при первом вызове (оптимизируйте!)
+
 - **Layers** — переиспользование библиотек между функциями
+
 - **Limits**: 15 min timeout, 10 GB memory, 10 GB /tmp
 
 ---
@@ -333,10 +354,15 @@ best_practices = [
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [11_Containers](../11_Containers/) — ECS и EKS контейнеры
 - [13_APIGateway](../13_APIGateway/) — API Gateway для Lambda
 
 **Практика:**
+
 1. Создайте Lambda функцию на Python/Node.js
 2. Настройте триггер от S3 или API Gateway
 3. Оптимизируйте cold start время
+
+
+

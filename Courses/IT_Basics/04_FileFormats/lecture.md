@@ -30,12 +30,14 @@
 ### 1.1 Текстовые vs Бинарные
 
 **Текстовые файлы:**
+
 - Содержат символы в определённой кодировке
 - Читаемы человеком в текстовом редакторе
 - Разделены на строки переносами (`\n` или `\r\n`)
 - Примеры: `.txt`, `.py`, `.json`, `.html`, `.csv`
 
 **Бинарные файлы:**
+
 - Содержат произвольные байты (0-255)
 - Требуют специальных программ для интерпретации
 - Не имеют концепции "строк"
@@ -65,14 +67,17 @@ cat script.py
 
 # Бинарный файл — hex dump
 xxd image.png | head -5
+
 ```
 
 ```
+
 00000000: 8950 4e47 0d0a 1a0a 0000 000d 4948 4452  .PNG........IHDR
 00000010: 0000 0100 0000 0100 0802 0000 00d3 1025  ...............%
 00000020: 0000 0006 624b 4744 0000 ff00 00ff 00ff  ....bKGD........
 00000030: 0000 0001 7348 4953 0000 0000 0000 0001  ....sHIS........
 00000040: 0100 0101 0001 0000 0001 0000 0001 0100  ................
+
 ```
 
 ---
@@ -84,11 +89,13 @@ xxd image.png | head -5
 **Магические числа** — фиксированные байты в начале файла, идентифицирующие его формат.
 
 ```
+
 PNG:  89 50 4E 47 0D 0A 1A 0A  (.PNG....)
 JPEG: FF D8 FF
 PDF:  25 50 44 46              (%PDF)
 ZIP:  50 4B 03 04              (PK..)
 GIF:  47 49 46 38              (GIF8)
+
 ```
 
 ### 2.2 Популярные сигнатуры
@@ -162,6 +169,7 @@ file *.txt
 
 # Рекурсивно для директории
 find . -type f -exec file {} \;
+
 ```
 
 ### 3.2 Полезные опции
@@ -188,6 +196,7 @@ file -b document.pdf
 
 # Читать список файлов из stdin
 find . -name "*.jpg" | file -f -
+
 ```
 
 ### 3.3 Как работает file
@@ -204,6 +213,7 @@ file -C -m /usr/share/misc/magic
 
 # Версия magic file
 file -v
+
 ```
 
 ### 3.4 Написание собственных magic правил
@@ -215,11 +225,13 @@ file -v
 # Определение гипотетического формата
 0 string MYFORMAT My Custom Format
 >8 lelong x version %d
+
 ```
 
 ```bash
 # Использование с кастомной базой
 file -m my_magic testfile
+
 ```
 
 ---
@@ -233,12 +245,14 @@ file -m my_magic testfile
 Формат: `type/subtype`
 
 ```
+
 text/plain
 text/html
 application/json
 image/png
 audio/mpeg
 video/mp4
+
 ```
 
 ### 4.2 Основные типы
@@ -275,13 +289,16 @@ video/mp4
 ### 4.4 MIME в HTTP
 
 ```http
+
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 
 {"message": "Hello"}
+
 ```
 
 ```http
+
 POST /upload HTTP/1.1
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
 
@@ -291,11 +308,13 @@ Content-Type: image/jpeg
 
 [binary data]
 ------WebKitFormBoundary--
+
 ```
 
 ### 4.5 MIME в Python
 
 ```python
+
 import mimetypes
 
 # По расширению
@@ -331,6 +350,7 @@ print(mime.from_file('photo.jpg'))
 4. **Footer (футер)** — необязательные данные в конце
 
 ```
+
 ┌─────────────────┐
 │  Magic Number   │
 ├─────────────────┤
@@ -344,11 +364,13 @@ print(mime.from_file('photo.jpg'))
 ├─────────────────┤
 │     Footer      │
 └─────────────────┘
+
 ```
 
 ### 5.2 Пример: структура PNG
 
 ```
+
 PNG Signature: 89 50 4E 47 0D 0A 1A 0A (8 bytes)
 
 Chunks:
@@ -364,25 +386,30 @@ Chunks:
 
 Required chunks: IHDR, IDAT, IEND
 Optional: tEXt, gAMA, sRGB, etc.
+
 ```
 
 ```bash
 # Анализ PNG
 xxd image.png | head -10
+
 ```
 
 ```
+
 00000000: 8950 4e47 0d0a 1a0a 0000 000d 4948 4452  .PNG........IHDR
           |_____signature___||len ||__type__|
 00000010: 0000 0100 0000 0100 0802 0000 00d3 1025  ...............%
           |width ||height|| | | ||____CRC____|
                             ↓ ↓
                             bit depth, color type
+
 ```
 
 ### 5.3 Пример: структура JPEG
 
 ```
+
 JPEG Structure:
 
 - SOI (Start Of Image): FF D8
@@ -394,11 +421,13 @@ JPEG Structure:
   - SOS (Start Of Scan): FF DA
 - Image data
 - EOI (End Of Image): FF D9
+
 ```
 
 ```bash
 # Найти маркеры JPEG
 xxd photo.jpg | grep "ff d8\|ff e0\|ff db\|ff c0\|ff d9" | head
+
 ```
 
 ### 5.4 Анализ бинарных файлов
@@ -417,11 +446,13 @@ strings binary_file | head
 
 # exiftool — метаданные медиафайлов
 exiftool photo.jpg
+
 ```
 
 **Python:**
 
 ```python
+
 import struct
 
 with open('image.png', 'rb') as f:
@@ -439,13 +470,16 @@ with open('image.png', 'rb') as f:
         width = struct.unpack('>I', f.read(4))[0]
         height = struct.unpack('>I', f.read(4))[0]
         print(f"Dimensions: {width}x{height}")
+
 ```
 
 **Output:**
 ```
+
 Signature: 89504e470d0a1a0a
 Chunk: IHDR, Length: 13
 Dimensions: 256x256
+
 ```
 
 ---
@@ -457,6 +491,7 @@ Dimensions: 256x256
 **Структура ZIP:**
 
 ```
+
 [Local file header 1]
 [File data 1]
 [Local file header 2]
@@ -464,6 +499,7 @@ Dimensions: 256x256
 ...
 [Central directory]
 [End of central directory record]
+
 ```
 
 ```bash
@@ -475,6 +511,7 @@ zipinfo archive.zip
 
 # DOCX, XLSX, PPTX — это ZIP!
 unzip -l document.docx
+
 ```
 
 ### 6.2 tar
@@ -490,6 +527,7 @@ tar -tzvf archive.tar.gz
 
 # tar.bz2 (bzip2 сжатие)
 tar -tjvf archive.tar.bz2
+
 ```
 
 ### 6.3 gzip vs bzip2 vs xz
@@ -511,6 +549,7 @@ ls -la file.txt.bz2      # ~300000 bytes
 
 xz -k file.txt
 ls -la file.txt.xz       # ~250000 bytes
+
 ```
 
 ---
@@ -534,6 +573,7 @@ readelf -S /bin/ls
 
 # Символы
 nm /bin/ls
+
 ```
 
 ### 7.2 Mach-O (macOS)
@@ -545,6 +585,7 @@ file /bin/ls
 
 # Детальная информация
 otool -h /bin/ls
+
 ```
 
 ### 7.3 PE (Windows)
@@ -556,6 +597,7 @@ file program.exe
 
 # С помощью objdump
 objdump -x program.exe | head
+
 ```
 
 ---
@@ -565,6 +607,7 @@ objdump -x program.exe | head
 ### 8.1 Определение типа в Python
 
 ```python
+
 import magic
 
 # Определение по содержимому
@@ -593,6 +636,7 @@ print(info)
 ### 8.2 Безопасная проверка загружаемых файлов
 
 ```python
+
 import magic
 from pathlib import Path
 
@@ -629,11 +673,13 @@ def validate_upload(file_path: str) -> bool:
             return False
     
     return True
+
 ```
 
 ### 8.3 Чтение бинарных данных
 
 ```python
+
 import struct
 
 def read_png_header(filepath):
@@ -665,6 +711,7 @@ def read_png_header(filepath):
 # Использование
 info = read_png_header('image.png')
 print(f"Image: {info['width']}x{info['height']}")
+
 ```
 
 ---
@@ -682,6 +729,7 @@ print(f"Image: {info['width']}x{info['height']}")
 ### 9.2 Пример простого формата
 
 ```python
+
 import struct
 import hashlib
 
@@ -740,6 +788,7 @@ class SimpleFormat:
 SimpleFormat.write('test.mydata', b'Hello, World!')
 content = SimpleFormat.read('test.mydata')
 print(content)  # b'Hello, World!'
+
 ```
 
 ---
@@ -754,15 +803,18 @@ print(content)  # b'Hello, World!'
 # Небезопасно!
 if filename.endswith('.jpg'):
     process_image(filename)
+
 ```
 
 ✅ **Решение:** Проверять содержимое
 
 ```python
+
 import magic
 mime = magic.Magic(mime=True)
 if mime.from_file(filename) == 'image/jpeg':
     process_image(filename)
+
 ```
 
 ### 10.2 Неправильное чтение бинарных файлов
@@ -773,13 +825,16 @@ if mime.from_file(filename) == 'image/jpeg':
 # Плохо — может испортить данные!
 with open('image.png', 'r') as f:
     data = f.read()
+
 ```
 
 ✅ **Решение:** Всегда использовать binary mode
 
 ```python
+
 with open('image.png', 'rb') as f:
     data = f.read()
+
 ```
 
 ### 10.3 Игнорирование endianness
@@ -789,6 +844,7 @@ with open('image.png', 'rb') as f:
 ```python
 # Какой порядок байтов в файле?
 length = int.from_bytes(f.read(4), 'big')  # или 'little'?
+
 ```
 
 ✅ **Решение:** Знать спецификацию формата
@@ -796,6 +852,7 @@ length = int.from_bytes(f.read(4), 'big')  # или 'little'?
 ```python
 # PNG использует big-endian
 length = struct.unpack('>I', f.read(4))[0]
+
 ```
 
 ### 10.4 Не проверять magic numbers
@@ -805,14 +862,17 @@ length = struct.unpack('>I', f.read(4))[0]
 ```python
 # Опасно — может быть не PNG!
 width = struct.unpack('>I', f.read(4))[0]
+
 ```
 
 ✅ **Решение:** Всегда проверять сигнатуру
 
 ```python
+
 sig = f.read(8)
 if sig != b'\x89PNG\r\n\x1a\n':
     raise ValueError("Not a PNG file")
+
 ```
 
 ---
@@ -834,16 +894,19 @@ if sig != b'\x89PNG\r\n\x1a\n':
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [JSON](../05_JSON/) — структура и работа с JSON
 - [Compression](../10_Compression/) — подробнее о сжатии
 
 **Practice Ideas:**
+
 1. Напишите скрипт, который находит все файлы с неправильным расширением
 2. Проанализируйте структуру JPEG файла с помощью xxd
 3. Создайте свой простой бинарный формат для хранения списка задач
 4. Напишите валидатор загружаемых файлов для веб-приложения
 
 **Going Deeper:**
+
 - Изучите спецификацию PNG (libpng.org)
 - Посмотрите как устроен PDF
 - Разберитесь с форматом ELF для исполняемых файлов Linux
@@ -853,19 +916,25 @@ if sig != b'\x89PNG\r\n\x1a\n':
 ## 📚 Additional Resources
 
 **Tools:**
+
 - [file manual](https://man7.org/linux/man-pages/man1/file.1.html)
 - [binwalk](https://github.com/ReFirmLabs/binwalk)
 - [python-magic](https://github.com/ahupp/python-magic)
 
 **Specifications:**
+
 - [PNG Specification](http://www.libpng.org/pub/png/spec/)
 - [JPEG Format](https://www.w3.org/Graphics/JPEG/)
 - [PDF Reference](https://opensource.adobe.com/dc-acrobat-sdk-docs/pdfstandards/PDF32000_2008.pdf)
 
 **Learning:**
+
 - [File Signatures Table](https://www.garykessler.net/library/file_sigs.html)
 - [MIME Types Registry](https://www.iana.org/assignments/media-types/)
 
 ---
+
+
+
 
 

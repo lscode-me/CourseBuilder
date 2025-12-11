@@ -439,6 +439,7 @@ D) Burnout prevention, sustainable on-call, long-term career
 Вы завершили курс DevOps и SRE! 
 
 **Следующие шаги:**
+
 1. Оцените свои навыки по checklist из лекции
 2. Создайте персональный learning plan
 3. Начните практиковаться с hands-on проектами
@@ -447,4 +448,5 @@ D) Burnout prevention, sustainable on-call, long-term career
 Удачи в карьере! 🚀
 
 ---
+
 

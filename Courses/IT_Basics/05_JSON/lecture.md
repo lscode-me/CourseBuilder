@@ -49,6 +49,7 @@
 ### 1.3 Пример JSON
 
 ```json
+
 {
   "name": "Alice",
   "age": 30,
@@ -60,6 +61,7 @@
     "zip": "101000"
   }
 }
+
 ```
 
 ---
@@ -82,6 +84,7 @@ JSON поддерживает **6 типов данных**:
 ### 2.2 Строки (Strings)
 
 ```json
+
 {
   "simple": "Hello, World!",
   "unicode": "Привет, мир! 你好 🎉",
@@ -90,6 +93,7 @@ JSON поддерживает **6 типов данных**:
   "path": "C:\\Users\\name",
   "special": "\u0041"
 }
+
 ```
 
 **Escape-последовательности:**
@@ -109,6 +113,7 @@ JSON поддерживает **6 типов данных**:
 ### 2.3 Числа (Numbers)
 
 ```json
+
 {
   "integer": 42,
   "negative": -17,
@@ -116,9 +121,11 @@ JSON поддерживает **6 типов данных**:
   "exponent": 1.5e10,
   "negativeExp": 2.5e-3
 }
+
 ```
 
 **Не поддерживаются:**
+
 - Ведущие нули: `007` ❌
 - Hex: `0xFF` ❌
 - Infinity, NaN ❌
@@ -127,6 +134,7 @@ JSON поддерживает **6 типов данных**:
 ### 2.4 Массивы (Arrays)
 
 ```json
+
 {
   "numbers": [1, 2, 3, 4, 5],
   "strings": ["apple", "banana", "cherry"],
@@ -134,11 +142,13 @@ JSON поддерживает **6 типов данных**:
   "nested": [[1, 2], [3, 4]],
   "empty": []
 }
+
 ```
 
 ### 2.5 Объекты (Objects)
 
 ```json
+
 {
   "user": {
     "name": "Alice",
@@ -152,9 +162,11 @@ JSON поддерживает **6 типов данных**:
     }
   }
 }
+
 ```
 
 **Правила:**
+
 - Ключи ВСЕГДА в двойных кавычках
 - Порядок ключей не гарантирован
 - Дубликаты ключей — undefined behavior
@@ -162,6 +174,7 @@ JSON поддерживает **6 типов данных**:
 ### 2.6 Полный пример
 
 ```json
+
 {
   "id": 1,
   "name": "John Doe",
@@ -183,6 +196,7 @@ JSON поддерживает **6 типов данных**:
     {"action": "purchase", "timestamp": "2024-01-15T11:45:00Z"}
   ]
 }
+
 ```
 
 ---
@@ -194,19 +208,23 @@ JSON поддерживает **6 типов данных**:
 ❌ **Ошибка:**
 
 ```json
+
 {
   "name": "Alice",
   "age": 30,
 }
+
 ```
 
 ✅ **Правильно:**
 
 ```json
+
 {
   "name": "Alice",
   "age": 30
 }
+
 ```
 
 ### 3.2 Одинарные кавычки
@@ -214,17 +232,21 @@ JSON поддерживает **6 типов данных**:
 ❌ **Ошибка:**
 
 ```json
+
 {
   'name': 'Alice'
 }
+
 ```
 
 ✅ **Правильно:**
 
 ```json
+
 {
   "name": "Alice"
 }
+
 ```
 
 ### 3.3 Комментарии
@@ -232,11 +254,13 @@ JSON поддерживает **6 типов данных**:
 ❌ **Ошибка:**
 
 ```json
+
 {
   "name": "Alice",  // user name
   /* multi-line comment */
   "age": 30
 }
+
 ```
 
 ✅ **JSON не поддерживает комментарии!**
@@ -249,17 +273,21 @@ JSON поддерживает **6 типов данных**:
 ❌ **Ошибка:**
 
 ```json
+
 {
   name: "Alice"
 }
+
 ```
 
 ✅ **Правильно:**
 
 ```json
+
 {
   "name": "Alice"
 }
+
 ```
 
 ### 3.5 Специальные числа
@@ -267,19 +295,23 @@ JSON поддерживает **6 типов данных**:
 ❌ **Ошибка:**
 
 ```json
+
 {
   "value": NaN,
   "max": Infinity
 }
+
 ```
 
 ✅ **Альтернативы:**
 
 ```json
+
 {
   "value": null,
   "max": 1e308
 }
+
 ```
 
 ---
@@ -307,6 +339,7 @@ echo '{"name":"Alice"}' | python3 -m json.tool
 
 # Проверка синтаксиса
 python3 -m json.tool config.json > /dev/null && echo "Valid JSON"
+
 ```
 
 ### 4.2 Онлайн инструменты
@@ -318,6 +351,7 @@ python3 -m json.tool config.json > /dev/null && echo "Valid JSON"
 ### 4.3 Python валидация
 
 ```python
+
 import json
 
 def validate_json(json_string):
@@ -495,6 +529,7 @@ jq -r '.[] | "User: \(.name), Age: \(.age)"' users.json
 ### 6.1 Базовые операции
 
 ```python
+
 import json
 
 # Python dict → JSON string
@@ -520,11 +555,13 @@ print(pretty_json)
 # JSON string → Python dict
 parsed = json.loads(json_string)
 print(parsed["name"])  # Alice
+
 ```
 
 ### 6.2 Работа с файлами
 
 ```python
+
 import json
 
 # Запись в файл
@@ -537,11 +574,13 @@ with open("data.json", "w", encoding="utf-8") as f:
 with open("data.json", "r", encoding="utf-8") as f:
     loaded = json.load(f)
     print(loaded)
+
 ```
 
 ### 6.3 Обработка ошибок
 
 ```python
+
 import json
 
 def safe_parse_json(json_string):
@@ -560,11 +599,13 @@ def safe_parse_json(json_string):
 data, error = safe_parse_json('{"name": invalid}')
 if error:
     print(f"Error at line {error['line']}, column {error['column']}: {error['error']}")
+
 ```
 
 ### 6.4 Кастомная сериализация
 
 ```python
+
 import json
 from datetime import datetime, date
 from decimal import Decimal
@@ -594,11 +635,13 @@ data = {
 
 json_string = json.dumps(data, cls=CustomEncoder, indent=2)
 print(json_string)
+
 ```
 
 ### 6.5 Работа с большими файлами
 
 ```python
+
 import json
 
 # Для очень больших файлов — построчное чтение JSON Lines
@@ -622,6 +665,7 @@ write_jsonl("users.jsonl", users)
 
 for user in read_jsonl("users.jsonl"):
     print(user)
+
 ```
 
 ---
@@ -633,6 +677,7 @@ for user in read_jsonl("users.jsonl"):
 **JSON Schema** — способ описания структуры JSON документа для валидации.
 
 ```json
+
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
@@ -653,11 +698,13 @@ for user in read_jsonl("users.jsonl"):
   },
   "required": ["name", "email"]
 }
+
 ```
 
 ### 7.2 Валидация по схеме в Python
 
 ```python
+
 from jsonschema import validate, ValidationError
 
 schema = {
@@ -699,6 +746,7 @@ except ValidationError as e:
 ### 8.2 JSON5
 
 ```javascript
+
 // JSON5 поддерживает:
 {
   // Комментарии
@@ -706,11 +754,13 @@ except ValidationError as e:
   age: 30,        // Trailing comma OK
   'special-key': true,
 }
+
 ```
 
 ### 8.3 JSONC (JSON with Comments)
 
 ```jsonc
+
 {
   // VS Code использует JSONC для settings.json
   "editor.fontSize": 14,
@@ -718,6 +768,7 @@ except ValidationError as e:
      comments too */
   "editor.tabSize": 2,
 }
+
 ```
 
 ---
@@ -727,6 +778,7 @@ except ValidationError as e:
 ### 9.1 Именование ключей
 
 ```json
+
 // ✅ camelCase (JavaScript style)
 {"firstName": "Alice", "lastName": "Smith"}
 
@@ -738,11 +790,13 @@ except ValidationError as e:
 
 // ❌ Пробелы в ключах
 {"first name": "Alice"}
+
 ```
 
 ### 9.2 Даты и время
 
 ```json
+
 // ✅ ISO 8601 format
 {
   "created_at": "2024-01-15T10:30:00Z",
@@ -754,11 +808,13 @@ except ValidationError as e:
   "date": "01/15/2024",
   "time": "10:30 AM"
 }
+
 ```
 
 ### 9.3 Nullable поля
 
 ```json
+
 // ✅ Явный null
 {
   "middle_name": null,
@@ -774,11 +830,13 @@ except ValidationError as e:
 {
   "middle_name": ""
 }
+
 ```
 
 ### 9.4 Числовые ID
 
 ```json
+
 // ⚠️ Большие числа могут терять точность в JavaScript
 {
   "id": 9007199254740993
@@ -788,6 +846,7 @@ except ValidationError as e:
 {
   "id": "9007199254740993"
 }
+
 ```
 
 ---
@@ -802,6 +861,7 @@ except ValidationError as e:
 # Всегда указывайте encoding
 with open("data.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False)
+
 ```
 
 ### 10.2 Неэкранированные строки
@@ -809,14 +869,18 @@ with open("data.json", "w", encoding="utf-8") as f:
 ❌ **Ошибка:**
 
 ```json
+
 {"message": "Line 1
 Line 2"}
+
 ```
 
 ✅ **Правильно:**
 
 ```json
+
 {"message": "Line 1\nLine 2"}
+
 ```
 
 ### 10.3 Decimal и float
@@ -824,6 +888,7 @@ Line 2"}
 ❌ **Проблема:**
 
 ```python
+
 import json
 from decimal import Decimal
 
@@ -835,6 +900,7 @@ json.dumps({"price": Decimal("19.99")})
 ✅ **Решение:**
 
 ```python
+
 json.dumps({"price": Decimal("19.99")}, default=str)
 # или используйте CustomEncoder из раздела 6.4
 ```
@@ -844,6 +910,7 @@ json.dumps({"price": Decimal("19.99")}, default=str)
 ❌ **Проблема:**
 
 ```python
+
 a = {"b": None}
 b = {"a": a}
 a["b"] = b
@@ -873,16 +940,19 @@ json.dumps(a)
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [YAML](../06_YAML/) — более читаемая альтернатива для конфигураций
 - [Data Transfer](../12_DataTransfer/) — Base64 для бинарных данных в JSON
 
 **Practice Ideas:**
+
 1. Напишите валидатор JSON файлов с информативными сообщениями об ошибках
 2. Создайте jq фильтры для обработки реального API (GitHub, JSONPlaceholder)
 3. Реализуйте конвертер JSON → CSV для произвольной структуры
 4. Напишите JSON Schema для своего проекта
 
 **Going Deeper:**
+
 - Изучите JSON Patch (RFC 6902) для частичных обновлений
 - Посмотрите JSONPath как альтернативу jq
 - Разберитесь с BSON (Binary JSON) для MongoDB
@@ -892,19 +962,25 @@ json.dumps(a)
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [JSON.org](https://www.json.org/)
 - [RFC 8259](https://datatracker.ietf.org/doc/html/rfc8259)
 - [jq Manual](https://stedolan.github.io/jq/manual/)
 
 **Tools:**
+
 - [jq play](https://jqplay.org/)
 - [JSON Schema](https://json-schema.org/)
 - [JSONLint](https://jsonlint.com/)
 
 **Learning:**
+
 - [jq Cookbook](https://github.com/stedolan/jq/wiki/Cookbook)
 - [JSON Schema Tutorial](https://json-schema.org/learn/getting-started-step-by-step)
 
 ---
+
+
+
 
 

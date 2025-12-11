@@ -33,6 +33,7 @@
 Изоляция предотвращает несанкционированный доступ процессов к ресурсам других процессов или системы в целом.
 
 **Сценарии:**
+
 - Веб-сервер не должен иметь доступа к домашним директориям пользователей
 - Скомпрометированный процесс не должен влиять на остальную систему
 - Пользовательские процессы не должны модифицировать системные файлы
@@ -97,6 +98,7 @@ int main() {
     
     return 0;
 }
+
 ```
 
 ### 2.2 Практическое использование chroot
@@ -112,15 +114,18 @@ cp /bin/bash /var/chroot/jail/bin/
 
 # Определяем зависимости bash
 ldd /bin/bash
+
 ```
 
 **Output:**
 ```
+
 linux-vdso.so.1 (0x00007ffcc3bfe000)
 libtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6
 libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2
 libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6
 /lib64/ld-linux-x86-64.so.2
+
 ```
 
 ```bash
@@ -140,16 +145,19 @@ done
 
 # Входим в chroot
 sudo chroot /var/chroot/jail /bin/bash
+
 ```
 
 **Output (внутри chroot):**
 ```bash
+
 bash-5.1# pwd
 /
 bash-5.1# ls
 bin  lib  lib64  usr
 bash-5.1# cat /etc/passwd
 cat: /etc/passwd: No such file or directory
+
 ```
 
 ### 2.3 Автоматизация создания chroot
@@ -206,6 +214,7 @@ echo "root:x:0:" > "$CHROOT_DIR/etc/group"
 
 echo "Chroot environment created at $CHROOT_DIR"
 echo "Enter with: sudo chroot $CHROOT_DIR /bin/bash"
+
 ```
 
 ---
@@ -251,6 +260,7 @@ int main() {
     
     return 0;
 }
+
 ```
 
 ### 3.2 Отсутствие изоляции процессов
@@ -260,6 +270,7 @@ int main() {
 ```bash
 # Внутри chroot (если /proc примонтирован)
 ps aux  # Покажет ВСЕ процессы системы
+
 ```
 
 ### 3.3 Отсутствие изоляции сети
@@ -269,6 +280,7 @@ ps aux  # Покажет ВСЕ процессы системы
 ```bash
 # Внутри chroot
 netstat -tlnp  # Покажет все сетевые соединения host-системы
+
 ```
 
 ### 3.4 Отсутствие ограничения ресурсов
@@ -334,6 +346,7 @@ jail -c www
 
 # Вход в jail
 jexec www /bin/sh
+
 ```
 
 ### 4.3 Сравнение chroot и Jails
@@ -355,11 +368,13 @@ Solaris 10 (2005) представил Zones — ещё более продви�
 ### 5.1 Типы Zones
 
 **Global Zone:**
+
 - Основная операционная система
 - Имеет доступ ко всему оборудованию
 - Управляет non-global zones
 
 **Non-Global Zones:**
+
 - Изолированные экземпляры Solaris
 - Могут быть sparse (разделяют /usr с global zone) или whole-root
 
@@ -387,6 +402,7 @@ zoneadm -z myzone boot
 
 # Вход в зону
 zlogin myzone
+
 ```
 
 ### 5.3 Resource Management в Solaris
@@ -410,6 +426,7 @@ add capped-memory
 end
 commit
 EOF
+
 ```
 
 ---
@@ -462,9 +479,13 @@ Linux пошёл другим путём — вместо монолитного
 Linux стал платформой для контейнеров благодаря:
 
 - **Открытость**: Полностью open source
+
 - **Модульность**: Отдельные механизмы можно комбинировать
+
 - **Сообщество**: Активная разработка и поддержка
+
 - **Облака**: Доминирование Linux в cloud-инфраструктуре
+
 - **Экосистема**: Docker, Kubernetes изначально для Linux
 
 ---
@@ -476,6 +497,7 @@ LXC (2008) — первая полноценная система контейн
 ### 7.1 Архитектура LXC
 
 ```
+
 ┌─────────────────────────────────────────┐
 │              Host System                │
 ├─────────────────────────────────────────┤
@@ -490,6 +512,7 @@ LXC (2008) — первая полноценная система контейн
 │           Linux Kernel                  │
 │    (Namespaces + Cgroups + Seccomp)     │
 └─────────────────────────────────────────┘
+
 ```
 
 ### 7.2 Работа с LXC
@@ -507,16 +530,19 @@ lxc-start -n mycontainer
 
 # Проверка статуса
 lxc-info -n mycontainer
+
 ```
 
 **Output:**
 ```
+
 Name:           mycontainer
 State:          RUNNING
 PID:            12345
 IP:             10.0.3.100
 CPU use:        0.50 seconds
 Memory use:     48.00 MiB
+
 ```
 
 ```bash
@@ -531,6 +557,7 @@ lxc-stop -n mycontainer
 
 # Удаление контейнера
 lxc-destroy -n mycontainer
+
 ```
 
 ### 7.3 Конфигурация LXC
@@ -560,6 +587,7 @@ lxc.mount.auto = proc:mixed sys:ro cgroup:mixed
 
 # Capabilities
 lxc.cap.drop = sys_admin net_admin
+
 ```
 
 ---
@@ -582,6 +610,7 @@ Docker (2013) не изобрёл контейнеры, но радикальн�
 
 **1. Image Layers:**
 ```
+
 ┌────────────────────────────┐
 │      Application Code      │  ← Layer 4 (your code)
 ├────────────────────────────┤
@@ -591,10 +620,12 @@ Docker (2013) не изобрёл контейнеры, но радикальн�
 ├────────────────────────────┤
 │       Debian Base          │  ← Layer 1 (base image)
 └────────────────────────────┘
+
 ```
 
 **2. Dockerfile:**
 ```dockerfile
+
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -605,9 +636,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["python", "app.py"]
+
 ```
 
 **3. Docker Hub:**
+
 - Централизованный репозиторий образов
 - Версионирование через теги
 - Автоматическая сборка
@@ -615,6 +648,7 @@ CMD ["python", "app.py"]
 ### 8.3 Изначальная архитектура Docker
 
 ```
+
 ┌──────────────────────────────────────────┐
 │                Docker CLI                │
 │              docker run ...              │
@@ -637,6 +671,7 @@ CMD ["python", "app.py"]
 │              Linux Kernel                │
 │      (namespaces, cgroups, etc.)         │
 └──────────────────────────────────────────┘
+
 ```
 
 ---
@@ -648,12 +683,15 @@ CMD ["python", "app.py"]
 В 2015 году Docker передал свой формат контейнеров в OCI, что привело к стандартизации:
 
 - **OCI Runtime Specification** — как запускать контейнеры
+
 - **OCI Image Specification** — формат образов
+
 - **OCI Distribution Specification** — как распространять образы
 
 ### 9.2 Современная архитектура
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │              High-Level Container Runtimes              │
 │    ┌─────────┐  ┌──────────┐  ┌─────────┐  ┌──────────┐ │
@@ -672,6 +710,7 @@ CMD ["python", "app.py"]
 │                      Linux Kernel                       │
 │     Namespaces │ Cgroups │ Seccomp │ Capabilities       │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 9.3 Инструменты экосистемы
@@ -717,9 +756,13 @@ CMD ["python", "app.py"]
 ## 💡 Key Takeaways
 
 - **chroot** — первый механизм изоляции, но небезопасен для production
+
 - **FreeBSD Jails** и **Solaris Zones** — предшественники современных контейнеров
+
 - **Linux контейнеры** — комбинация namespaces, cgroups и других механизмов ядра
+
 - **Docker** революционизировал не технологию, а способ работы с контейнерами
+
 - **OCI** стандартизировал экосистему, сделав её vendor-neutral
 
 ---
@@ -727,16 +770,19 @@ CMD ["python", "app.py"]
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Namespaces](../02_Namespaces/) — детальное изучение Linux namespaces
 - [Cgroups](../03_Cgroups/) — управление ресурсами
 
 **Practice Ideas:**
+
 1. Создайте chroot-окружение с минимальным набором утилит
 2. Попробуйте "сбежать" из chroot (в тестовой среде!)
 3. Установите LXC и создайте первый контейнер
 4. Сравните поведение процесса в chroot и LXC-контейнере
 
 **Going Deeper:**
+
 - История Unix и появление многопользовательских систем
 - Виртуализация vs контейнеризация
 - Kata Containers — гибрид VM и контейнеров
@@ -746,17 +792,23 @@ CMD ["python", "app.py"]
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Linux kernel namespaces](https://man7.org/linux/man-pages/man7/namespaces.7.html)
 - [LXC documentation](https://linuxcontainers.org/lxc/documentation/)
 - [OCI specifications](https://opencontainers.org/)
 
 **Articles:**
+
 - [A Brief History of Containers](https://blog.aquasec.com/a-brief-history-of-containers-from-1970s-chroot-to-docker-2016)
 - [The History of Containers](https://www.redhat.com/en/blog/history-containers)
 
 **Books:**
+
 - "Container Security" by Liz Rice — глава 1-2 об основах
 - "Docker Deep Dive" by Nigel Poulton — история и архитектура
 
 ---
+
+
+
 

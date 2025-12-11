@@ -24,6 +24,7 @@
 ### 1.1 Почему Multi-Cloud
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Multi-Cloud Motivations                                │
 ├────────────────────────────────────────────────────────────────────┤
@@ -44,11 +45,13 @@
 │  • SaaS services on various clouds                                │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Multi-Cloud Patterns
 
 ```python
+
 multicloud_patterns = {
     "Arbitrage": {
         "description": "Use cheapest cloud for each workload",
@@ -81,6 +84,7 @@ for pattern, details in multicloud_patterns.items():
     print(f"\n{pattern}:")
     print(f"  {details['description']}")
     print(f"  Complexity: {details['complexity']}")
+
 ```
 
 ---
@@ -90,6 +94,7 @@ for pattern, details in multicloud_patterns.items():
 ### 2.1 Abstraction Layers
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Cloud Agnostic Stack                                   │
 ├────────────────────────────────────────────────────────────────────┤
@@ -113,6 +118,7 @@ for pattern, details in multicloud_patterns.items():
 │  └─────────────┘  └─────────────┘  └─────────────┘              │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Kubernetes как абстракция
@@ -173,6 +179,7 @@ resource "google_compute_instance" "web" {
   machine_type = "e2-micro"
   zone         = "us-central1-a"
 }
+
 ```
 
 ---
@@ -182,6 +189,7 @@ resource "google_compute_instance" "web" {
 ### 3.1 Уровни Lock-in
 
 ```python
+
 lockin_levels = {
     "Low": {
         "examples": ["EC2", "GCE", "Azure VMs"],
@@ -209,11 +217,13 @@ for level, details in lockin_levels.items():
     print(f"\n{level} Lock-in:")
     print(f"  Examples: {', '.join(details['examples'][:2])}")
     print(f"  Strategy: {details['strategy']}")
+
 ```
 
 ### 3.2 Portable Alternatives
 
 ```python
+
 portable_alternatives = {
     "Serverless": {
         "proprietary": "Lambda, Cloud Functions",
@@ -242,6 +252,7 @@ for category, options in portable_alternatives.items():
     print(f"{category}:")
     print(f"  Proprietary: {options['proprietary']}")
     print(f"  Portable: {options['portable']}\n")
+
 ```
 
 ---
@@ -251,6 +262,7 @@ for category, options in portable_alternatives.items():
 ### 4.1 Cloud Standards
 
 ```python
+
 cloud_standards = {
     "Kubernetes": "Container orchestration standard",
     "OpenTelemetry": "Observability (metrics, traces, logs)",
@@ -266,11 +278,13 @@ cloud_standards = {
 print("Cloud-Agnostic Standards:")
 for standard, purpose in cloud_standards.items():
     print(f"  • {standard}: {purpose}")
+
 ```
 
 ### 4.2 CNCF Projects
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              CNCF Graduated Projects (Cloud Native Standards)       │
 ├────────────────────────────────────────────────────────────────────┤
@@ -287,6 +301,7 @@ for standard, purpose in cloud_standards.items():
 │  Using CNCF projects = more portable cloud-native stack           │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -296,6 +311,7 @@ for standard, purpose in cloud_standards.items():
 ### 5.1 Cloud-to-Cloud Migration
 
 ```python
+
 migration_approaches = {
     "Rehost (Lift & Shift)": {
         "description": "Move VMs as-is",
@@ -331,6 +347,7 @@ migration_approaches = {
 ## 6. Recommendations
 
 ```python
+
 recommendations = {
     "Start cloud-native": [
         "Containerize applications (Docker)",
@@ -356,6 +373,7 @@ for category, items in recommendations.items():
     print(f"\n{category.upper()}:")
     for item in items:
         print(f"  • {item}")
+
 ```
 
 ---
@@ -363,10 +381,15 @@ for category, items in recommendations.items():
 ## 💡 Key Takeaways
 
 - **Multi-cloud ≠ cloud-agnostic** — different strategies
+
 - **Kubernetes** — best compute abstraction layer
+
 - **Terraform** — multi-cloud IaC
+
 - **Lock-in trade-off** — managed services vs portability
+
 - **Standards** — CNCF, OpenTelemetry, S3 API
+
 - **Be pragmatic** — don't optimize for unlikely migration
 
 ---
@@ -381,11 +404,16 @@ for category, items in recommendations.items():
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [25_CaseStudies](../25_CaseStudies/) — Реальные примеры multi-cloud
 
 **Практика:**
+
 1. Разверните одно приложение в AWS и GCP
 2. Настройте Terraform для multi-cloud
 3. Реализуйте Kubernetes deployment в EKS и GKE
 
 **Это предпоследний модуль курса Cloud Native.**
+
+
+

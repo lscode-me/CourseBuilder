@@ -12,6 +12,7 @@
 - Уметь работать с функциями
 
 **Recommended prior modules:**
+
 - [05_DataStructures](../05_DataStructures/) — структуры
 - [06_Pointers](../06_Pointers/) — указатели
 
@@ -36,6 +37,7 @@
 Метод — это функция с receiver (получателем):
 
 ```go
+
 package main
 
 import (
@@ -63,18 +65,22 @@ func main() {
     fmt.Printf("Area: %.2f\n", c.Area())
     fmt.Printf("Perimeter: %.2f\n", c.Perimeter())
 }
+
 ```
 
 **Output:**
 ```
+
 Radius: 5.0
 Area: 78.54
 Perimeter: 31.42
+
 ```
 
 ### 1.2 Value vs Pointer Receiver
 
 ```go
+
 package main
 
 import "fmt"
@@ -113,18 +119,22 @@ func main() {
     c.Add(10)
     fmt.Println("After Add(10):", c.Value())         // 11
 }
+
 ```
 
 **Output:**
 ```
+
 After ValueIncrement: 0
 After Increment: 1
 After Add(10): 11
+
 ```
 
 ### 1.3 Методы на любых типах
 
 ```go
+
 package main
 
 import "fmt"
@@ -168,15 +178,18 @@ func main() {
     fmt.Println("Sum:", nums.Sum())
     fmt.Println("Average:", nums.Average())
 }
+
 ```
 
 **Output:**
 ```
+
 n: 5
 n.Double(): 10
 n.IsPositive(): true
 Sum: 15
 Average: 3
+
 ```
 
 ---
@@ -188,6 +201,7 @@ Average: 3
 Интерфейс определяет набор методов:
 
 ```go
+
 package main
 
 import (
@@ -245,14 +259,17 @@ func main() {
         PrintShapeInfo(s)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Area: 78.54, Perimeter: 31.42
 Area: 50.00, Perimeter: 30.00
 Area: 78.54, Perimeter: 31.42
 Area: 50.00, Perimeter: 30.00
+
 ```
 
 ### 2.2 Неявная реализация
@@ -260,6 +277,7 @@ Area: 50.00, Perimeter: 30.00
 В Go интерфейсы реализуются **неявно** — не нужно объявлять `implements`:
 
 ```go
+
 package main
 
 import "fmt"
@@ -289,12 +307,15 @@ func main() {
     // fmt.Println также использует Stringer
     fmt.Println(p)
 }
+
 ```
 
 **Output:**
 ```
+
 Alice (30 years)
 Alice (30 years)
+
 ```
 
 ### 2.3 Пустой интерфейс
@@ -302,6 +323,7 @@ Alice (30 years)
 `interface{}` (или `any` в Go 1.18+) принимает любое значение:
 
 ```go
+
 package main
 
 import "fmt"
@@ -327,10 +349,12 @@ func main() {
         PrintAny(item)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Type: int, Value: 42
 Type: string, Value: hello
 Type: []int, Value: [1 2 3]
@@ -339,6 +363,7 @@ Type: int, Value: 42
 Type: string, Value: hello
 Type: bool, Value: true
 Type: float64, Value: 3.14
+
 ```
 
 ---
@@ -348,6 +373,7 @@ Type: float64, Value: 3.14
 ### 3.1 Базовый синтаксис
 
 ```go
+
 package main
 
 import "fmt"
@@ -370,18 +396,22 @@ func main() {
     // Panic при неуспешном assertion без ok
     // n = i.(int)  // panic: interface conversion
 }
+
 ```
 
 **Output:**
 ```
+
 String: hello
 String: "hello", ok: true
 Int: 0, ok: false
+
 ```
 
 ### 3.2 Type Switch
 
 ```go
+
 package main
 
 import "fmt"
@@ -411,16 +441,19 @@ func main() {
     describe(nil)
     describe(3.14)
 }
+
 ```
 
 **Output:**
 ```
+
 Integer: 42
 String: "hello" (len 5)
 Boolean: true
 Int slice: [1 2 3]
 Nil value
 Unknown type: float64
+
 ```
 
 ---
@@ -430,6 +463,7 @@ Unknown type: float64
 ### 4.1 Встраивание интерфейсов
 
 ```go
+
 package main
 
 import "fmt"
@@ -473,16 +507,20 @@ func main() {
     n, _ := rw.Read(buf)
     fmt.Printf("Read %d bytes: %s\n", n, buf)
 }
+
 ```
 
 **Output:**
 ```
+
 Read 5 bytes: Hello
+
 ```
 
 ### 4.2 Стандартные интерфейсы
 
 ```go
+
 package main
 
 import (
@@ -504,13 +542,16 @@ func main() {
         fmt.Printf("Read: %q\n", buf[:n])
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Read: "Hello"
 Read: ", Wor"
 Read: "ld!"
+
 ```
 
 ---
@@ -520,6 +561,7 @@ Read: "ld!"
 ### 5.1 Embedding структур
 
 ```go
+
 package main
 
 import "fmt"
@@ -557,19 +599,23 @@ func main() {
     // Методы тоже "наследуются"
     fmt.Println("Full address:", p.FullAddress())
 }
+
 ```
 
 **Output:**
 ```
+
 Name: Alice
 City: Moscow
 Address.City: Moscow
 Full address: Moscow, Russia
+
 ```
 
 ### 5.2 Embedding для реализации интерфейсов
 
 ```go
+
 package main
 
 import "fmt"
@@ -604,19 +650,23 @@ func main() {
     var logger Logger = s
     logger.Log("Direct log call")
 }
+
 ```
 
 **Output:**
 ```
+
 [LOG] Starting work...
 Working on DataProcessor
 [LOG] Work completed
 [LOG] Direct log call
+
 ```
 
 ### 5.3 Переопределение методов
 
 ```go
+
 package main
 
 import "fmt"
@@ -650,14 +700,17 @@ func main() {
     fmt.Println("Dog speaks:", d.Speak())
     fmt.Println("Animal speaks:", d.Animal.Speak())
 }
+
 ```
 
 **Output:**
 ```
+
 Name: Buddy
 Breed: Labrador
 Dog speaks: Woof!
 Animal speaks: ...
+
 ```
 
 ---
@@ -667,6 +720,7 @@ Animal speaks: ...
 ### 6.1 Полиморфизм через интерфейсы
 
 ```go
+
 package main
 
 import "fmt"
@@ -715,13 +769,16 @@ func main() {
         ProcessPayment(m, 99.99)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Paid $99.99 with Credit Card 3456
 Paid $99.99 via PayPal (user@example.com)
 Paid $99.99 in Bitcoin to 1A1zP1eP...
+
 ```
 
 ---
@@ -731,6 +788,7 @@ Paid $99.99 in Bitcoin to 1A1zP1eP...
 ### 7.1 nil интерфейс vs nil значение
 
 ```go
+
 package main
 
 import "fmt"
@@ -764,29 +822,35 @@ func main() {
     fmt.Printf("err == nil: %t\n", err == nil)
     fmt.Printf("Type: %T, Value: %v\n", err, err)
 }
+
 ```
 
 **Output:**
 ```
+
 Got error: <nil>
 err == nil: false
 Type: *main.MyError, Value: <nil>
+
 ```
 
 **Решение:**
 
 ```go
+
 func getErrorCorrect(fail bool) error {
     if fail {
         return &MyError{"something went wrong"}
     }
     return nil  // Возвращаем nil напрямую
 }
+
 ```
 
 ### 7.2 Pointer receiver и интерфейсы
 
 ```go
+
 package main
 
 import "fmt"
@@ -815,6 +879,7 @@ func main() {
     // var i2 Incrementer = c  // Ошибка компиляции!
     // Counter не реализует Incrementer, только *Counter
 }
+
 ```
 
 ---
@@ -836,13 +901,18 @@ func main() {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [08_Errors](../08_Errors/) — error interface
 - [10_Packages](../10_Packages/) — экспорт и видимость
 
 **Practice Ideas:**
+
 1. Создайте интерфейс Shape с несколькими реализациями
 2. Реализуйте паттерн Strategy через интерфейсы
 3. Напишите обёртку для логирования с embedding
 
 ---
+
+
+
 

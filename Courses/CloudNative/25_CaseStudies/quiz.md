@@ -422,6 +422,7 @@ D) Только backup
 Вы завершили курс Cloud Native Development!
 
 Основные темы, которые мы изучили:
+
 - Cloud Architecture и AWS сервисы
 - Compute: EC2, Lambda, ECS, EKS
 - Storage: S3, EBS, DynamoDB, RDS
@@ -431,3 +432,4 @@ D) Только backup
 - Security и Cost Management
 
 ---
+

@@ -6,6 +6,7 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Пройти модуль [01_Terminology](../01_Terminology/) — медицинская терминология
 - Понимать основы работы с бинарными файлами
 - Иметь представление о форматах изображений
@@ -15,6 +16,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Различать типы медицинских изображений (X-ray, CT, MRI, US)
 - Работать с DICOM файлами с помощью Python (pydicom)
 - Понимать архитектуру PACS систем
@@ -35,11 +37,13 @@
 **Принцип:** Рентгеновские лучи проходят через тело, поглощение зависит от плотности ткани.
 
 **Применение:**
+
 - Переломы костей
 - Заболевания лёгких
 - Стоматология
 
 **Характеристики:**
+
 - 2D изображение
 - Низкая доза радиации
 - Быстро и дёшево
@@ -49,11 +53,13 @@
 **Принцип:** Множество X-ray снимков под разными углами, компьютерная реконструкция в 3D.
 
 **Применение:**
+
 - Травмы
 - Опухоли
 - Сосудистые заболевания
 
 **Характеристики:**
+
 - 3D изображение (серия срезов)
 - Высокая доза радиации
 - Детализированное изображение
@@ -63,11 +69,13 @@
 **Принцип:** Магнитное поле и радиоволны создают изображение мягких тканей.
 
 **Применение:**
+
 - Мозг и нервная система
 - Суставы и мышцы
 - Внутренние органы
 
 **Характеристики:**
+
 - Отличная детализация мягких тканей
 - Нет радиации
 - Долго (30-60 минут)
@@ -78,11 +86,13 @@
 **Принцип:** Ультразвуковые волны отражаются от тканей.
 
 **Применение:**
+
 - Беременность
 - Сердце (эхокардиография)
 - Абдоминальные органы
 
 **Характеристики:**
+
 - Реальное время
 - Безопасно (нет радиации)
 - Portable
@@ -93,11 +103,13 @@
 **Принцип:** Радиоактивный индикатор показывает метаболическую активность.
 
 **Применение:**
+
 - Онкология (обнаружение опухолей)
 - Неврология
 - Кардиология
 
 **Характеристики:**
+
 - Функциональная информация
 - Часто комбинируется с CT (PET/CT)
 
@@ -110,12 +122,15 @@
 DICOM — стандарт для хранения и передачи медицинских изображений.
 
 **DICOM файл содержит:**
+
 - **Pixel Data** — само изображение
+
 - **Metadata** — информация о пациенте, исследовании, оборудовании
 
 ### 2.2 Структура DICOM
 
 ```
+
 DICOM File
 ├── File Meta Information (преамбула)
 ├── Data Set
@@ -139,6 +154,7 @@ DICOM File
 │   │   └── Pixel Spacing
 │   └── Pixel Data
 │       └── Image (массив пикселей)
+
 ```
 
 ### 2.3 DICOM Tags
@@ -146,6 +162,7 @@ DICOM File
 DICOM использует теги (group, element) для идентификации полей:
 
 ```
+
 (0010,0010) → Patient Name
 (0010,0020) → Patient ID
 (0010,0030) → Patient Birth Date
@@ -153,11 +170,13 @@ DICOM использует теги (group, element) для идентифика
 (0020,000D) → Study Instance UID
 (0020,000E) → Series Instance UID
 (7FE0,0010) → Pixel Data
+
 ```
 
 ### 2.4 Чтение DICOM в Python
 
 ```python
+
 import pydicom
 import numpy as np
 import matplotlib.pyplot as plt
@@ -187,11 +206,13 @@ if 'WindowCenter' in ds:
 plt.imshow(image, cmap='gray')
 plt.title(f"{ds.Modality} - {ds.StudyDescription}")
 plt.show()
+
 ```
 
 ### 2.5 Создание DICOM
 
 ```python
+
 from pydicom.dataset import Dataset, FileDataset
 import datetime
 
@@ -231,6 +252,7 @@ ds.PixelData = image.tobytes()
 
 # Сохранить
 ds.save_as("output.dcm")
+
 ```
 
 ---
@@ -243,20 +265,27 @@ PACS — система для хранения, получения и расп�
 
 **Компоненты:**
 ```
+
 Modality (CT, MRI) → PACS Server → Viewer (Radiologist Workstation)
                           ↓
                     Archive Storage
+
 ```
 
 ### 3.2 DICOM Networking
 
 **DICOM Services:**
+
 - **C-STORE** — отправить изображение
+
 - **C-FIND** — поиск изображений
+
 - **C-MOVE** — запросить изображение
+
 - **C-GET** — получить изображение
 
 ```python
+
 from pynetdicom import AE, evt
 from pynetdicom.sop_class import StudyRootQueryRetrieveInformationModelFind
 
@@ -280,6 +309,7 @@ if assoc.is_established:
             print(f"Study: {identifier.StudyDescription}")
     
     assoc.release()
+
 ```
 
 ---
@@ -291,6 +321,7 @@ if assoc.is_established:
 CT изображения имеют широкий динамический диапазон. Windowing позволяет выбрать диапазон для визуализации.
 
 ```python
+
 def apply_windowing(image, center, width):
     """
     Window Center — середина окна (HU)
@@ -308,11 +339,13 @@ def apply_windowing(image, center, width):
 # Lung: center=-600, width=1500
 # Soft tissue: center=40, width=400
 # Bone: center=400, width=1800
+
 ```
 
 ### 4.2 Сегментация
 
 ```python
+
 from skimage import filters, morphology
 
 def segment_lungs(ct_image):
@@ -326,11 +359,13 @@ def segment_lungs(ct_image):
     binary = morphology.binary_closing(binary, morphology.disk(5))
     
     return binary
+
 ```
 
 ### 4.3 3D Reconstruction
 
 ```python
+
 import numpy as np
 from skimage import measure
 
@@ -346,6 +381,7 @@ def reconstruct_3d(dicom_files):
     verts, faces, _, _ = measure.marching_cubes(volume, level=200)
     
     return verts, faces
+
 ```
 
 ---
@@ -355,13 +391,17 @@ def reconstruct_3d(dicom_files):
 ### 5.1 Применение
 
 - **Detection** — обнаружение патологий (опухоли, переломы)
+
 - **Segmentation** — выделение органов, опухолей
+
 - **Classification** — классификация заболеваний
+
 - **Registration** — совмещение изображений
 
 ### 5.2 Пример: Классификация X-ray
 
 ```python
+
 import tensorflow as tf
 from tensorflow import keras
 
@@ -382,6 +422,7 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 # Prediction
 prediction = model.predict(xray_image)
 print(f"Pneumonia probability: {prediction[0][1]:.2%}")
+
 ```
 
 ---
@@ -400,11 +441,13 @@ print(f"Pneumonia probability: {prediction[0][1]:.2%}")
 ## 🚀 Следующие Шаги
 
 **Связанные модули:**
+
 - [Medical Terminology](../01_Terminology/) — HL7, FHIR, стандарты обмена данными
 - [EHR Systems](../02_EHR_Systems/) — интеграция изображений в EHR
 - [Security & Privacy](../03_Security_Privacy/) — защита медицинских изображений
 
 **Идеи для практики:**
+
 1. **DICOM Viewer** — чтение DICOM, отображение изображения, метаданные, windowing controls
 2. **Metadata Extractor** — извлечение Patient info, Study, Series из серии DICOM файлов
 3. **DICOM Anonymizer** — де-идентификация DICOM: удаление Patient Name, ID, DOB
@@ -416,20 +459,24 @@ print(f"Pneumonia probability: {prediction[0][1]:.2%}")
 ## 📚 Дополнительные Ресурсы
 
 **DICOM:**
+
 - [DICOM Standard](https://www.dicomstandard.org/) — официальный стандарт DICOM
 - [pydicom Documentation](https://pydicom.github.io/) — Python библиотека для DICOM
 - [DICOM Library](https://www.dicomlibrary.com/) — примеры DICOM файлов
 
 **Viewers:**
+
 - [OHIF Viewer](https://ohif.org/) — open source DICOM viewer (web)
 - [3D Slicer](https://www.slicer.org/) — powerful 3D visualization
 - [Weasis](https://nroduit.github.io/en/) — standalone DICOM viewer
 
 **Datasets:**
+
 - [The Cancer Imaging Archive](https://www.cancerimagingarchive.net/) — публичные медицинские изображения
 - [NIH Chest X-ray Dataset](https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community) — большой датасет для AI
 
 **AI/ML:**
+
 - [Medical Segmentation Decathlon](http://medicaldecathlon.com/) — соревнования по сегментации
 
 ---
@@ -437,9 +484,13 @@ print(f"Pneumonia probability: {prediction[0][1]:.2%}")
 ## 💡 Key Takeaways
 
 - **DICOM** — стандарт для медицинских изображений, включает метаданные и пиксели
+
 - **PACS** — система хранения и архивирования медицинских изображений
+
 - **CT** — 3D из множества X-ray, лучшая визуализация костей и лёгких
+
 - **MRI** — магнитный резонанс, лучшая визуализация мягких тканей
+
 - **AI в радиологии** — активно развивается для detection, segmentation, classification
 
 ---
@@ -449,12 +500,18 @@ print(f"Pneumonia probability: {prediction[0][1]:.2%}")
 **Это последний модуль курса Healthcare Technologies.**
 
 **Практика:**
+
 1. Скачайте DICOM файл и прочитайте его с pydicom
 2. Визуализируйте CT серию с помощью matplotlib или 3D Slicer
 3. Попробуйте pre-trained модель для chest X-ray classification
 
 **Рекомендуемые курсы для продолжения:**
+
 - AI for Medical Diagnosis (Coursera)
 - Deep Learning in Healthcare (edX)
 - DICOM Standards Training (DICOM Standard)
+
+
+
+
 

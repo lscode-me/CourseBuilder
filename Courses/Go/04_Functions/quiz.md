@@ -163,12 +163,14 @@ D) Рекурсивная функция
 Что выведет код?
 
 ```go
+
 func counter() func() int {
     n := 0
     return func() int { n++; return n }
 }
 c := counter()
 fmt.Println(c(), c(), c())
+
 ```
 
 A) 0 0 0
@@ -200,10 +202,12 @@ D) `alias Checker = func(string) bool`
 Что вернёт `factorial(5)`?
 
 ```go
+
 func factorial(n int) int {
     if n <= 1 { return 1 }
     return n * factorial(n-1)
 }
+
 ```
 
 A) 5
@@ -249,9 +253,11 @@ D) Зависит от версии Go
 Что возвращает эта функция?
 
 ```go
+
 func maker(x int) func() int {
     return func() int { return x * 2 }
 }
+
 ```
 
 A) int
@@ -269,9 +275,11 @@ D) *func() int
 Что выведет код?
 
 ```go
+
 x := 10
 defer fmt.Println(x)
 x = 20
+
 ```
 
 A) 10
@@ -289,9 +297,11 @@ D) Ничего
 Что выведет код?
 
 ```go
+
 x := 10
 defer func() { fmt.Println(x) }()
 x = 20
+
 ```
 
 A) 10
@@ -323,9 +333,11 @@ D) B и C
 Что выведет код?
 
 ```go
+
 apply := func(f func(int) int, x int) int { return f(x) }
 double := func(n int) int { return n * 2 }
 fmt.Println(apply(double, 5))
+
 ```
 
 A) 5
@@ -441,11 +453,13 @@ D) По выбору программиста
 Что выведет (до Go 1.22)?
 
 ```go
+
 funcs := []func(){}
 for i := 0; i < 3; i++ {
     funcs = append(funcs, func() { fmt.Print(i) })
 }
 for _, f := range funcs { f() }
+
 ```
 
 A) 012
@@ -521,4 +535,6 @@ D) Только встроенные функции работают
 | **Менее 15 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию и попробуйте ещё раз. |
 
 ---
+
+
 

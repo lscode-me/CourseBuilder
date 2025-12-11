@@ -35,11 +35,13 @@
 /etc/master.passwd  # пароли (только для root)
 /etc/group      # информация о группах
 /etc/shells     # разрешённые оболочки
+
 ```
 
 **Формат /etc/passwd:**
 
 ```sh
+
 $ cat /etc/passwd
 root:*:0:0:Charlie &:/root:/bin/ksh
 daemon:*:1:1:The devil himself:/root:/sbin/nologin
@@ -65,6 +67,7 @@ root:$2b$10$abc...xyz:0:0:daemon:0:0:Charlie &:/root:/bin/ksh
 ### 1.2 Группы
 
 ```sh
+
 $ cat /etc/group
 wheel:*:0:root,admin
 daemon:*:1:
@@ -118,6 +121,7 @@ New password:
 Retype new password:
 passwd: updating the database...
 passwd: done
+
 ```
 
 ### 2.2 adduser (интерактивный)
@@ -146,6 +150,7 @@ Groups:   john staff wheel
 HOME:     /home/john
 Shell:    /bin/ksh
 OK? (y/n) [y]: y
+
 ```
 
 ### 2.3 Шаблон пользователя
@@ -153,6 +158,7 @@ OK? (y/n) [y]: y
 Файлы из `/etc/skel` копируются в домашний каталог:
 
 ```sh
+
 $ ls -la /etc/skel
 -rw-r--r--  1 root  wheel  87 Oct  9 13:57 .Xdefaults
 -rw-r--r--  1 root  wheel  773 Oct  9 13:57 .cshrc
@@ -207,6 +213,7 @@ john:*:1001:1001:John Doe:/home/john:/bin/ksh
 Is this the entry you wish to remove? [y/n] y
 Remove user's home directory (/home/john)? [y/n] y
 Removing user (john): mailspool home passwd.
+
 ```
 
 ---
@@ -256,6 +263,7 @@ OpenBSD использует **bcrypt** по умолчанию:
 
 # Проверить текущий алгоритм
 $ grep cipher /etc/login.conf
+
 ```
 
 > **🔒 Security:**  
@@ -301,6 +309,7 @@ $ grep cipher /etc/login.conf
 # Напрямую редактируя /etc/group
 # doas vi /etc/group
 developers:*:500:john,jane,bob
+
 ```
 
 ---
@@ -321,6 +330,7 @@ permit john
 
 # Разрешить без пароля
 permit nopass john cmd /sbin/reboot
+
 ```
 
 ### 6.2 Опции doas
@@ -352,6 +362,7 @@ deny baduser
 
 # Сохранять переменные при работе с pkg
 permit persist setenv { PKG_PATH } :wheel cmd pkg_add
+
 ```
 
 ### 6.4 Использование doas
@@ -371,6 +382,7 @@ $ doas -s
 # Проверить конфигурацию
 $ doas -C /etc/doas.conf && echo "Config OK"
 Config OK
+
 ```
 
 ---
@@ -380,6 +392,7 @@ Config OK
 ### 7.1 Структура login.conf
 
 ```sh
+
 $ cat /etc/login.conf
 # Класс по умолчанию
 default:\
@@ -442,6 +455,7 @@ $ ulimit -a
 -l: locked-in-memory size (kb) 331085
 -n: file descriptors           512
 -p: processes                  128
+
 ```
 
 ---
@@ -480,17 +494,20 @@ $ last
 admin    ttyC0                     Dec  1 10:00   still logged in
 john     pts/0    192.168.1.100    Dec  1 10:30   still logged in
 reboot   ~                         Dec  1 09:55
+
 ```
 
 ### 8.2 finger
 
 ```sh
+
 $ finger john
 Login: john                             Name: John Doe
 Directory: /home/john                   Shell: /bin/ksh
 Last login Fri Dec  1 10:30 (UTC) on pts/0 from 192.168.1.100
 No mail.
 No Plan.
+
 ```
 
 ### 8.3 getent
@@ -503,6 +520,7 @@ john:*:1001:1001:John Doe:/home/john:/bin/ksh
 # Получить запись из group
 $ getent group wheel
 wheel:*:0:root,admin,john
+
 ```
 
 ---
@@ -524,11 +542,13 @@ wheel:*:0:root,admin,john
 В OpenBSD системные пользователи начинаются с `_`:
 
 ```sh
+
 $ grep "^_" /etc/passwd | head
 _pflogd:*:507:507:pflogd:/var/empty:/sbin/nologin
 _dhcp:*:62:62:DHCP:/var/empty:/sbin/nologin
 _sshd:*:27:27:sshd:/var/empty:/sbin/nologin
 _ntp:*:123:123:NTP:/var/empty:/sbin/nologin
+
 ```
 
 ### 9.3 Запуск процессов от системного пользователя
@@ -539,6 +559,7 @@ daemon_user="_myapp"
 
 # Через doas
 $ doas -u _myapp /usr/local/bin/myapp
+
 ```
 
 ---
@@ -600,9 +621,13 @@ permit nopass operator cmd /usr/bin/tail args -f /var/log/messages
 ## 💡 Key Takeaways
 
 - **bcrypt по умолчанию**: OpenBSD использует самый безопасный алгоритм хеширования паролей
+
 - **doas вместо sudo**: Простой и безопасный, конфигурация в одном файле
+
 - **Группа wheel**: Только члены wheel могут использовать su/doas
+
 - **login.conf**: Мощный инструмент для ограничения ресурсов пользователей
+
 - **Системные пользователи**: Имена начинаются с `_`, используют /sbin/nologin
 
 ---
@@ -610,16 +635,19 @@ permit nopass operator cmd /usr/bin/tail args -f /var/log/messages
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Package Management](../06_PackageManagement/) — установка программ
 - [Security](../10_Security/) — безопасность системы
 
 **Practice Ideas:**
+
 1. Создайте пользователя-разработчика с расширенными лимитами
 2. Настройте doas для оператора с ограниченными правами
 3. Создайте системного пользователя для своего приложения
 4. Настройте класс входа с ограничением памяти
 
 **Going Deeper:**
+
 - Изучите LDAP интеграцию для централизованной аутентификации
 - Настройте YP/NIS для сетевого управления пользователями
 - Разберитесь с Kerberos аутентификацией
@@ -629,10 +657,14 @@ permit nopass operator cmd /usr/bin/tail args -f /var/log/messages
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man useradd](https://man.openbsd.org/useradd) — создание пользователей
 - [man doas.conf](https://man.openbsd.org/doas.conf) — настройка doas
 - [man login.conf](https://man.openbsd.org/login.conf) — классы входа
 - [man passwd](https://man.openbsd.org/passwd) — управление паролями
 
 ---
+
+
+
 

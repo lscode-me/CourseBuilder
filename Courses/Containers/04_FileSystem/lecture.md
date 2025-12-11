@@ -12,6 +12,7 @@
 - Иметь базовое представление о Docker-образах
 
 **Recommended prior modules:**
+
 - [Linux Namespaces](../02_Namespaces/) — mount namespace
 - [Cgroups](../03_Cgroups/) — управление ресурсами
 
@@ -36,15 +37,18 @@ Union filesystem объединяет несколько директорий (�
 
 **Традиционный подход:**
 ```
+
 Container 1: Ubuntu 20.04 + Python + App1  →  3GB
 Container 2: Ubuntu 20.04 + Python + App2  →  3GB
 Container 3: Ubuntu 20.04 + Python + App3  →  3GB
 ─────────────────────────────────────────────────
 Total: 9GB
+
 ```
 
 **С union filesystem:**
 ```
+
 Layer 4: App1          ─┐
 Layer 4: App2          ─┼─ Unique layers (~100MB each)
 Layer 4: App3          ─┘
@@ -53,16 +57,19 @@ Layer 2: Ubuntu base   ─── Shared (~200MB)
 Layer 1: Root FS       ─── Shared (~100MB)
 ─────────────────────────────────────────────────
 Total: ~1.1GB (вместо 9GB!)
+
 ```
 
 ### 1.2 Ключевые концепции
 
 **Copy-on-Write (CoW):**
+
 - Слои нижнего уровня доступны только для чтения
 - При модификации файл копируется в верхний (writable) слой
 - Оригинал остаётся неизменным
 
 **Layered Architecture:**
+
 - Образ состоит из стека слоёв
 - Каждый слой — результат одной инструкции Dockerfile
 - Слои могут переиспользоваться между образами
@@ -86,6 +93,7 @@ OverlayFS — union filesystem, включённая в mainline Linux kernel н
 ### 2.1 Архитектура OverlayFS
 
 ```
+
 ┌─────────────────────────────────────────────┐
 │              Merged View                    │
 │         (то, что видит процесс)            │
@@ -100,12 +108,17 @@ OverlayFS — union filesystem, включённая в mainline Linux kernel н
 │   (read-write)  │   │    (read-only)      │
 │   /upper        │   │    /lower           │
 └─────────────────┘   └─────────────────────┘
+
 ```
 
 **Компоненты:**
+
 - **lowerdir** — нижние слои (read-only), может быть несколько
+
 - **upperdir** — верхний слой (read-write)
+
 - **workdir** — рабочая директория для атомарных операций
+
 - **merged** — точка монтирования с объединённым view
 
 ### 2.2 Базовое использование OverlayFS
@@ -127,16 +140,19 @@ sudo mount -t overlay overlay \
 
 # Проверяем содержимое
 ls -la /tmp/overlay/merged/
+
 ```
 
 **Output:**
 ```
+
 total 12
 drwxr-xr-x 3 root root 4096 Dec  1 12:00 .
 drwxr-xr-x 6 root root 4096 Dec  1 12:00 ..
 drwxr-xr-x 2 root root 4096 Dec  1 12:00 dir1
 -rw-r--r-- 1 root root   22 Dec  1 12:00 file1.txt
 -rw-r--r-- 1 root root   13 Dec  1 12:00 file2.txt
+
 ```
 
 ### 2.3 Copy-on-Write в действии
@@ -147,21 +163,27 @@ echo "Modified content" > /tmp/overlay/merged/file1.txt
 
 # Проверяем — файл скопирован в upper layer
 cat /tmp/overlay/upper/file1.txt
+
 ```
 
 **Output:**
 ```
+
 Modified content
+
 ```
 
 ```bash
 # Оригинал в lower layer не изменился!
 cat /tmp/overlay/lower/file1.txt
+
 ```
 
 **Output:**
 ```
+
 File from lower layer
+
 ```
 
 ### 2.4 Удаление файлов (Whiteout)
@@ -174,34 +196,43 @@ rm /tmp/overlay/merged/file2.txt
 
 # Проверяем merged — файла нет
 ls /tmp/overlay/merged/
+
 ```
 
 **Output:**
 ```
+
 dir1  file1.txt
+
 ```
 
 ```bash
 # В upper layer создан whiteout (character device 0,0)
 ls -la /tmp/overlay/upper/
+
 ```
 
 **Output:**
 ```
+
 total 8
 drwxr-xr-x 2 root root 4096 Dec  1 12:01 .
 c--------- 1 root root 0, 0 Dec  1 12:01 file2.txt
 -rw-r--r-- 1 root root   17 Dec  1 12:00 file1.txt
+
 ```
 
 ```bash
 # Файл в lower layer всё ещё существует
 cat /tmp/overlay/lower/file2.txt
+
 ```
 
 **Output:**
 ```
+
 Another file
+
 ```
 
 ---
@@ -238,14 +269,17 @@ sudo mount -t overlay overlay \
 
 # Результат — объединённое представление
 find /tmp/multilayer/merged -type f
+
 ```
 
 **Output:**
 ```
+
 /tmp/multilayer/merged/config.txt
 /tmp/multilayer/merged/bin/app
 /tmp/multilayer/merged/lib/mylib.so
 /tmp/multilayer/merged/app/main.py
+
 ```
 
 ### 3.2 Приоритет слоёв
@@ -254,11 +288,14 @@ find /tmp/multilayer/merged -type f
 # config.txt есть в layer1 и layer2
 # Какой будет виден?
 cat /tmp/multilayer/merged/config.txt
+
 ```
 
 **Output:**
 ```
+
 runtime config
+
 ```
 
 Файлы из верхних lower layers перекрывают файлы из нижних (layer2 перекрывает layer1).
@@ -266,6 +303,7 @@ runtime config
 ### 3.3 Диаграмма приоритетов
 
 ```
+
               ▲ Visibility Priority
               │
 ┌─────────────┴─────────────┐
@@ -277,6 +315,7 @@ runtime config
 ├───────────────────────────┤
 │      Layer 1 (base)       │  ← Lowest priority
 └───────────────────────────┘
+
 ```
 
 ---
@@ -288,11 +327,13 @@ AUFS (Another Union File System) была первой широко исполь
 ### 4.1 Особенности AUFS
 
 **Преимущества:**
+
 - Зрелая и стабильная (с 2006)
 - Хорошая поддержка множества слоёв
 - Эффективное использование памяти
 
 **Недостатки:**
+
 - Не включена в mainline kernel
 - Требует патчей ядра
 - Сложность сопровождения
@@ -335,17 +376,22 @@ Docker использует storage drivers для работы с файлов�
 ### 5.2 Проверка текущего driver
 
 ```bash
+
 docker info | grep -i storage
+
 ```
 
 **Output:**
 ```
+
  Storage Driver: overlay2
+
 ```
 
 ```bash
 # Детальная информация
 docker info --format '{{json .Driver}}'
+
 ```
 
 ### 5.3 Структура overlay2 в Docker
@@ -353,10 +399,12 @@ docker info --format '{{json .Driver}}'
 ```bash
 # Директория хранения Docker
 ls -la /var/lib/docker/overlay2/
+
 ```
 
 **Output:**
 ```
+
 total 24
 drwx--x--- 6 root root 4096 Dec  1 12:00 .
 drwx--x--- 13 root root 4096 Dec  1 11:00 ..
@@ -364,15 +412,18 @@ drwx--x--- 4 root root 4096 Dec  1 12:00 abc123...
 drwx--x--- 4 root root 4096 Dec  1 12:00 def456...
 drwx--x--- 3 root root 4096 Dec  1 12:00 ghi789...-init
 drwx--x--- 2 root root 4096 Dec  1 12:00 l
+
 ```
 
 ```bash
 # Структура слоя
 ls -la /var/lib/docker/overlay2/abc123.../
+
 ```
 
 **Output:**
 ```
+
 total 16
 drwx--x--- 4 root root 4096 Dec  1 12:00 .
 drwx--x--- 6 root root 4096 Dec  1 12:00 ..
@@ -380,11 +431,15 @@ drwx--x--- 6 root root 4096 Dec  1 12:00 ..
 -rw------- 1 root root   86 Dec  1 12:00 lower
 drwxr-xr-x 2 root root 4096 Dec  1 12:00 diff
 drwx------ 2 root root 4096 Dec  1 12:00 work
+
 ```
 
 - **diff/** — содержимое этого слоя
+
 - **link** — короткий идентификатор для lowerdir
+
 - **lower** — ссылки на нижние слои
+
 - **work/** — рабочая директория OverlayFS
 
 ### 5.4 Анализ слоёв образа
@@ -395,10 +450,12 @@ docker pull nginx:alpine
 
 # Смотрим слои
 docker history nginx:alpine
+
 ```
 
 **Output:**
 ```
+
 IMAGE          CREATED       CREATED BY                                      SIZE
 a2d5e8c4f8b2   2 weeks ago   CMD ["nginx" "-g" "daemon off;"]                0B
 <missing>      2 weeks ago   STOPSIGNAL SIGQUIT                              0B
@@ -414,6 +471,7 @@ a2d5e8c4f8b2   2 weeks ago   CMD ["nginx" "-g" "daemon off;"]                0B
 <missing>      3 weeks ago   /bin/sh -c #(nop)  LABEL maintainer=NGINX Do…   0B
 <missing>      3 weeks ago   /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
 <missing>      3 weeks ago   /bin/sh -c #(nop) ADD file:756183bba9c7f4593…   7.34MB
+
 ```
 
 ### 5.5 Инспекция слоёв контейнера
@@ -424,16 +482,19 @@ docker run -d --name test-nginx nginx:alpine
 
 # Получаем информацию о слоях
 docker inspect test-nginx --format '{{json .GraphDriver.Data}}' | jq
+
 ```
 
 **Output:**
 ```json
+
 {
   "LowerDir": "/var/lib/docker/overlay2/abc.../diff:/var/lib/docker/overlay2/def.../diff",
   "MergedDir": "/var/lib/docker/overlay2/xyz.../merged",
   "UpperDir": "/var/lib/docker/overlay2/xyz.../diff",
   "WorkDir": "/var/lib/docker/overlay2/xyz.../work"
 }
+
 ```
 
 ---
@@ -451,21 +512,26 @@ docker inspect test-nginx --format '{{json .GraphDriver.Data}}' | jq
 ```bash
 # Демонстрация: чтение идёт из lower layer
 strace -e openat cat /tmp/overlay/merged/file_from_lower.txt 2>&1 | grep overlay
+
 ```
 
 ### 6.2 Операции записи
 
 **Изменение существующего файла:**
 ```
+
 1. Файл целиком копируется из lower в upper (copy-up)
 2. Изменения применяются к копии в upper
 3. При последующих чтениях файл берётся из upper
+
 ```
 
 **Создание нового файла:**
 ```
+
 1. Файл создаётся напрямую в upper layer
 2. Нижние слои не затрагиваются
+
 ```
 
 ### 6.3 Copy-up overhead
@@ -484,6 +550,7 @@ time echo "x" >> /tmp/overlay/merged/bigfile
 
 # Файл скопирован в upper
 ls -la /tmp/overlay/upper/bigfile
+
 ```
 
 **Вывод:** Избегайте модификации больших файлов в контейнерах — лучше перезаписать целиком или использовать volumes.
@@ -497,6 +564,7 @@ ls -la /tmp/overlay/upper/bigfile
 sudo mount -t overlay overlay \
     -o lowerdir=/lower,upperdir=/upper,workdir=/work,metacopy=on \
     /merged
+
 ```
 
 ---
@@ -521,6 +589,7 @@ RUN apt-get update && \
     pip3 install flask && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
 ```
 
 ### 7.2 Порядок инструкций
@@ -567,11 +636,13 @@ CMD ["/server"]
 docker run --rm -it \
     -v /var/run/docker.sock:/var/run/docker.sock \
     wagoodman/dive nginx:alpine
+
 ```
 
 ```bash
 # Простой анализ
 docker history --no-trunc nginx:alpine | awk '{print $NF, $1}'
+
 ```
 
 ---
@@ -595,9 +666,11 @@ mount /dev/sdb1 /var/lib/docker
 
 # 3. Перезапустить Docker
 systemctl restart docker
+
 ```
 
 **Преимущества:**
+
 - Нативные snapshots
 - Быстрое создание контейнеров
 - Дедупликация
@@ -616,9 +689,11 @@ cat > /etc/docker/daemon.json << EOF
 EOF
 
 systemctl restart docker
+
 ```
 
 **Преимущества:**
+
 - Надёжность данных (checksums)
 - Compression
 - Мощные snapshots
@@ -653,6 +728,7 @@ apt install fuse-overlayfs
 
 # Использование
 fuse-overlayfs -o lowerdir=/lower,upperdir=/upper,workdir=/work /merged
+
 ```
 
 ### 9.3 Rootless Docker/Podman
@@ -660,13 +736,16 @@ fuse-overlayfs -o lowerdir=/lower,upperdir=/upper,workdir=/work /merged
 ```bash
 # Podman rootless использует fuse-overlayfs по умолчанию
 podman info | grep -A5 graphDriverName
+
 ```
 
 **Output:**
 ```
+
 graphDriverName: overlay
 graphOptions:
   overlay.mount_program: /usr/bin/fuse-overlayfs
+
 ```
 
 ---
@@ -680,6 +759,7 @@ graphOptions:
 ```bash
 # Проверка d_type support
 xfs_info / | grep ftype
+
 ```
 
 Решение: пересоздать файловую систему с `ftype=1` или использовать ext4.
@@ -692,6 +772,7 @@ du -sh /var/lib/docker/overlay2/*
 
 # Очистка неиспользуемых данных
 docker system prune -a
+
 ```
 
 ### 10.2 Проверка overlay mount
@@ -702,6 +783,7 @@ mount | grep overlay
 
 # Или через /proc/mounts
 grep overlay /proc/mounts
+
 ```
 
 ### 10.3 Отладка слоёв контейнера
@@ -713,20 +795,25 @@ docker inspect $CONTAINER_ID --format '{{.GraphDriver.Data.LowerDir}}' | tr ':' 
 
 # Посмотреть что изменилось в контейнере (upper layer)
 docker diff $CONTAINER_ID
+
 ```
 
 **Output:**
 ```
+
 C /var
 C /var/log
 A /var/log/app.log
 C /tmp
 A /tmp/cache
 D /etc/hosts.backup
+
 ```
 
 - **A** — Added
+
 - **C** — Changed
+
 - **D** — Deleted
 
 ---
@@ -734,9 +821,13 @@ D /etc/hosts.backup
 ## 💡 Key Takeaways
 
 - **Union filesystems** объединяют слои, экономя место через переиспользование
+
 - **OverlayFS** — стандарт де-факто, включён в mainline kernel
+
 - **Copy-on-Write** копирует файл целиком при изменении — избегайте модификации больших файлов
+
 - **Порядок инструкций в Dockerfile** влияет на кеширование слоёв
+
 - **Multi-stage builds** уменьшают размер финальных образов
 
 ---
@@ -744,16 +835,19 @@ D /etc/hosts.backup
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [OCI Standards](../05_OCI/) — спецификация образов
 - [Container Runtimes](../06_Runtimes/) — как runtime работают со слоями
 
 **Practice Ideas:**
+
 1. Создайте OverlayFS вручную и исследуйте Copy-on-Write
 2. Оптимизируйте Dockerfile для минимизации размера образа
 3. Используйте `dive` для анализа слоёв образа
 4. Сравните размер одного приложения с разными базовыми образами
 
 **Going Deeper:**
+
 - Btrfs subvolumes для контейнеров
 - ZFS datasets и Docker
 - SquashFS для read-only layers
@@ -763,17 +857,23 @@ D /etc/hosts.backup
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [OverlayFS kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt)
 - [Docker storage drivers](https://docs.docker.com/storage/storagedriver/)
 - [fuse-overlayfs](https://github.com/containers/fuse-overlayfs)
 
 **Articles:**
+
 - [Understanding Docker's storage drivers](https://www.docker.com/blog/deep-dive-into-docker-storage-drivers/)
 - [Docker image layers explained](https://dzone.com/articles/docker-layers-explained)
 
 **Tools:**
+
 - [dive](https://github.com/wagoodman/dive) — анализ слоёв образов
 - [skopeo](https://github.com/containers/skopeo) — работа с образами без Docker daemon
 
 ---
+
+
+
 

@@ -24,6 +24,7 @@
 ### 1.1 Основные модели
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              AWS Pricing Models                                     │
 ├────────────────────────────────────────────────────────────────────┤
@@ -51,6 +52,7 @@
 │  └── Good for: batch, CI/CD, fault-tolerant workloads             │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Сравнение экономии
@@ -70,6 +72,7 @@ for plan, details in pricing_comparison.items():
     print(f"{plan}:")
     print(f"  ${details['hourly']}/hour, ${details['monthly']}/month")
     print(f"  Savings: {details['savings']}\n")
+
 ```
 
 ---
@@ -108,6 +111,7 @@ right_sizing_targets = {
 ### 2.2 Architecture Optimizations
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Cost-Efficient Architecture                            │
 ├────────────────────────────────────────────────────────────────────┤
@@ -124,6 +128,7 @@ right_sizing_targets = {
 │  Cross-region data transfer CloudFront for distribution           │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.3 Spot Instance Strategies
@@ -152,6 +157,7 @@ asg_mixed_config = {
         {"InstanceType": "m5n.large"}
     ]
 }
+
 ```
 
 ---
@@ -161,6 +167,7 @@ asg_mixed_config = {
 ### 3.1 Storage Classes
 
 ```python
+
 s3_storage_classes = {
     "Standard": {
         "cost": "$0.023/GB",
@@ -205,6 +212,7 @@ lifecycle_policy = {
         "Expiration": {"Days": 2555}  # Delete after 7 years
     }]
 }
+
 ```
 
 ---
@@ -252,6 +260,7 @@ aws budgets create-budget \
             "Address": "alerts@example.com"
         }]
     }]'
+
 ```
 
 ---
@@ -282,6 +291,7 @@ tag_policy = {
         }
     }
 }
+
 ```
 
 ---
@@ -289,6 +299,7 @@ tag_policy = {
 ## 6. FinOps Best Practices
 
 ```python
+
 finops_practices = {
     "Visibility": [
         "Enable Cost Explorer",
@@ -318,6 +329,7 @@ for pillar, practices in finops_practices.items():
     print(f"\n{pillar}:")
     for practice in practices:
         print(f"  • {practice}")
+
 ```
 
 ---
@@ -325,10 +337,15 @@ for pillar, practices in finops_practices.items():
 ## 💡 Key Takeaways
 
 - **Right-sizing** — match resources to actual usage
+
 - **Reserved/Savings Plans** — 30-72% savings for steady workloads
+
 - **Spot** — up to 90% savings for interruptible workloads
+
 - **S3 Lifecycle** — automatically move to cheaper storage classes
+
 - **Tagging** — essential for cost allocation and visibility
+
 - **Budgets** — set alerts before overspending
 
 ---
@@ -343,10 +360,15 @@ for pillar, practices in finops_practices.items():
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [24_MultiCloud](../24_MultiCloud/) — Multi-cloud costs
 - [25_CaseStudies](../25_CaseStudies/) — Реальные кейсы оптимизации
 
 **Практика:**
+
 1. Настройте AWS Budgets с алертами
 2. Проанализируйте Cost Explorer для anomalies
 3. Создайте Savings Plan или Reserved Instances план
+
+
+

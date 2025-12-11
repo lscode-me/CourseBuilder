@@ -13,6 +13,7 @@
 - Понимать кодировки текста (UTF-8, ASCII)
 
 **Recommended prior modules:**
+
 - [Exceptions](../07_Exceptions/) — обработка ошибок и контекстные менеджеры
 
 ---
@@ -48,11 +49,14 @@ with open("example.txt", "w") as f:
 with open("example.txt", "r") as f:
     content = f.read()
     print(content)
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
+
 ```
 
 ### 1.2 Режимы открытия файлов
@@ -87,15 +91,18 @@ try:
         f.write("Новый файл")
 except FileExistsError:
     print("Файл уже существует!")
+
 ```
 
 **Output:**
 ```
+
 Первая строка
 Вторая строка
 Третья строка
 
 Файл уже существует!
+
 ```
 
 ### 1.3 Кодировки
@@ -118,7 +125,9 @@ with open("file.txt", "r", encoding="utf-8", errors="ignore") as f:
 
 **Output:**
 ```
+
 Привет, мир! 🌍
+
 ```
 
 ---
@@ -152,10 +161,12 @@ with open("test.txt", "r") as f:
 with open("test.txt", "r") as f:
     lines = f.readlines()
     print(f"readlines(): {lines}")
+
 ```
 
 **Output:**
 ```
+
 read(): 'Строка 1
 Строка 2
 Строка 3
@@ -168,6 +179,7 @@ readline(): 'Строка 1
 ' 'Строка 2
 '
 readlines(): ['Строка 1\n', 'Строка 2\n', 'Строка 3\n', 'Строка 4\n', 'Строка 5\n']
+
 ```
 
 ### 2.2 Итерация по строкам
@@ -182,10 +194,12 @@ with open("test.txt", "r") as f:
 with open("test.txt", "r") as f:
     for num, line in enumerate(f, start=1):
         print(f"{num}: {line.strip()}")
+
 ```
 
 **Output:**
 ```
+
 Строка: Строка 1
 Строка: Строка 2
 Строка: Строка 3
@@ -196,11 +210,13 @@ with open("test.txt", "r") as f:
 3: Строка 3
 4: Строка 4
 5: Строка 5
+
 ```
 
 ### 2.3 Позиция в файле
 
 ```python
+
 with open("test.txt", "r") as f:
     print(f"Позиция: {f.tell()}")  # 0
     
@@ -212,10 +228,12 @@ with open("test.txt", "r") as f:
     
     f.seek(5)  # Перейти к позиции 5
     print(f"После seek(5): {f.read(5)}")
+
 ```
 
 **Output:**
 ```
+
 Позиция: 0
 После read(10): 17
 После seek(0): 0
@@ -247,12 +265,15 @@ with open("output.txt", "w") as f:
 
 with open("output.txt", "r") as f:
     print(f.read())
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
 Another line
+
 ```
 
 ### 3.2 Буферизация
@@ -287,13 +308,16 @@ with open("binary.bin", "rb") as f:
     print(f"Байты: {content}")
     print(f"Как строка: {content.decode('utf-8')}")
     print(f"Hex: {content.hex()}")
+
 ```
 
 **Output:**
 ```
+
 Байты: b'Hello'
 Как строка: Hello
 Hex: 48656c6c6f
+
 ```
 
 ### 4.2 Работа с изображениями (пример)
@@ -315,6 +339,7 @@ def copy_file(src, dst, chunk_size=8192):
 ### 4.3 struct — упаковка бинарных данных
 
 ```python
+
 import struct
 
 # Упаковка данных
@@ -339,10 +364,12 @@ with open("data.bin", "rb") as f:
             break
         i, f_val = struct.unpack("if", data)
         print(f"i={i}, f={f_val}")
+
 ```
 
 **Output:**
 ```
+
 Упакованные данные: b'*\x00\x00\x00\xe8\x03\xc3\xf5H@'
 Размер: 10 байт
 Распаковано: i=42, h=1000, f=3.140000104904175
@@ -351,6 +378,7 @@ i=1, f=1.5
 i=2, f=3.0
 i=3, f=4.5
 i=4, f=6.0
+
 ```
 
 ---
@@ -360,6 +388,7 @@ i=4, f=6.0
 ### 5.1 Создание путей
 
 ```python
+
 from pathlib import Path
 
 # Создание пути
@@ -381,20 +410,24 @@ print(f"Собранный путь: {path}")
 # Или joinpath()
 path = Path.home().joinpath("documents", "file.txt")
 print(f"joinpath(): {path}")
+
 ```
 
 **Output:**
 ```
+
 Path: /home/user/documents
 CWD: /home/user/project
 Home: /home/user
 Собранный путь: /home/user/documents/file.txt
 joinpath(): /home/user/documents/file.txt
+
 ```
 
 ### 5.2 Свойства пути
 
 ```python
+
 from pathlib import Path
 
 p = Path("/home/user/documents/report.txt")
@@ -407,10 +440,12 @@ print(f"parents: {list(p.parents)}")  # Все родительские дире
 print(f"parts: {p.parts}")         # ('/', 'home', 'user', 'documents', 'report.txt')
 print(f"anchor: {p.anchor}")       # /
 print(f"is_absolute: {p.is_absolute()}")  # True
+
 ```
 
 **Output:**
 ```
+
 name: report.txt
 stem: report
 suffix: .txt
@@ -419,11 +454,13 @@ parents: [PosixPath('/home/user/documents'), PosixPath('/home/user'), PosixPath(
 parts: ('/', 'home', 'user', 'documents', 'report.txt')
 anchor: /
 is_absolute: True
+
 ```
 
 ### 5.3 Проверки и операции
 
 ```python
+
 from pathlib import Path
 
 p = Path("test.txt")
@@ -447,10 +484,12 @@ print(f"with_name('other.txt'): {new_path}")
 # Удаление файла
 p.unlink()
 print(f"Файл удалён: {not p.exists()}")
+
 ```
 
 **Output:**
 ```
+
 exists(): True
 is_file(): True
 is_dir(): False
@@ -458,11 +497,13 @@ stat(): 13 bytes
 with_suffix('.md'): test.md
 with_name('other.txt'): other.txt
 Файл удалён: True
+
 ```
 
 ### 5.4 Чтение и запись с pathlib
 
 ```python
+
 from pathlib import Path
 
 p = Path("example.txt")
@@ -483,17 +524,21 @@ print(f"Байты: {data}")
 
 # Очистка
 p.unlink()
+
 ```
 
 **Output:**
 ```
+
 Содержимое: Привет, мир!
 Байты: b'Hello bytes'
+
 ```
 
 ### 5.5 Обход директорий
 
 ```python
+
 from pathlib import Path
 
 # Создадим тестовую структуру
@@ -522,10 +567,12 @@ for txt_file in base.rglob("*.txt"):
 # Очистка
 import shutil
 shutil.rmtree(base)
+
 ```
 
 **Output:**
 ```
+
 iterdir():
   file1.txt (file)
   file2.py (file)
@@ -537,6 +584,7 @@ glob('*.txt'):
 rglob('*.txt'):
   test_dir/file1.txt
   test_dir/subdir/file3.txt
+
 ```
 
 ---
@@ -546,6 +594,7 @@ rglob('*.txt'):
 ### 6.1 JSON
 
 ```python
+
 import json
 
 # Данные
@@ -571,10 +620,12 @@ print(f"JSON строка:\n{json_str}")
 
 parsed = json.loads(json_str)
 print(f"\nРаспарсено: {parsed['name']}")
+
 ```
 
 **Output:**
 ```
+
 Загружено: {'name': 'Alice', 'age': 30, 'skills': ['Python', 'SQL', 'Docker'], 'active': True}
 JSON строка:
 {
@@ -589,11 +640,13 @@ JSON строка:
 }
 
 Распарсено: Alice
+
 ```
 
 ### 6.2 CSV
 
 ```python
+
 import csv
 
 # Запись CSV
@@ -631,10 +684,12 @@ with open("data_dict.csv", "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
         print(f"{row['name']} is {row['age']} years old")
+
 ```
 
 **Output:**
 ```
+
 ['name', 'age', 'city']
 ['Alice', '30', 'Moscow']
 ['Bob', '25', 'London']
@@ -642,11 +697,13 @@ with open("data_dict.csv", "r", encoding="utf-8") as f:
 
 Alice is 30 years old
 Bob is 25 years old
+
 ```
 
 ### 6.3 INI/Config файлы
 
 ```python
+
 import configparser
 
 # Создание конфигурации
@@ -680,14 +737,17 @@ print(f"Секции: {config.sections()}")
 print(f"Database host: {config['database']['host']}")
 print(f"Debug (default): {config['server'].getboolean('debug')}")
 print(f"Port (int): {config['server'].getint('port')}")
+
 ```
 
 **Output:**
 ```
+
 Секции: ['database', 'server']
 Database host: localhost
 Debug (default): False
 Port (int): 8080
+
 ```
 
 ### 6.4 YAML (с библиотекой PyYAML)
@@ -717,12 +777,15 @@ with open("config.yaml", "r") as f:
     loaded = yaml.safe_load(f)
     print(f"Host: {loaded['database']['host']}")
     print(f"Features: {loaded['features']}")
+
 ```
 
 **Output:**
 ```
+
 Host: localhost
 Features: ['auth', 'logging', 'caching']
+
 ```
 
 ---
@@ -732,6 +795,7 @@ Features: ['auth', 'logging', 'caching']
 ### 7.1 Модуль os
 
 ```python
+
 import os
 
 # Информация о системе
@@ -751,11 +815,13 @@ print(f"Содержимое: {os.listdir('.')[:5]}")
 
 # Удаление директорий
 os.removedirs("a/b/c")  # Удаляет пустые директории
+
 ```
 
 ### 7.2 shutil — высокоуровневые операции
 
 ```python
+
 import shutil
 from pathlib import Path
 
@@ -784,16 +850,20 @@ print(f"Диск: {total // (1024**3)} GB всего, {free // (1024**3)} GB с�
 # Очистка
 Path("copy2.txt").unlink()
 Path("moved.txt").unlink()
+
 ```
 
 **Output:**
 ```
+
 Диск: 500 GB всего, 123 GB свободно
+
 ```
 
 ### 7.3 Временные файлы
 
 ```python
+
 import tempfile
 from pathlib import Path
 
@@ -817,15 +887,18 @@ with tempfile.TemporaryDirectory() as tmpdir:
 
 # Получение директории для временных файлов
 print(f"Temp директория системы: {tempfile.gettempdir()}")
+
 ```
 
 **Output:**
 ```
+
 Временный файл: /tmp/tmp12345678.txt
 Существует: True
 Временная директория: /tmp/tmpabc12345
 Файл создан: True
 Temp директория системы: /tmp
+
 ```
 
 ---
@@ -835,6 +908,7 @@ Temp директория системы: /tmp
 ### 8.1 Логирование в файл
 
 ```python
+
 from pathlib import Path
 from datetime import datetime
 
@@ -863,17 +937,21 @@ logger.error("Произошла ошибка")
 
 # Проверка
 print(Path("logs/app.log").read_text())
+
 ```
 
 **Output:**
 ```
+
 [2024-12-02 15:30:00] [INFO] Приложение запущено
 [2024-12-02 15:30:00] [ERROR] Произошла ошибка
+
 ```
 
 ### 8.2 Поиск файлов
 
 ```python
+
 from pathlib import Path
 
 def find_files(directory, pattern, recursive=True):
@@ -905,6 +983,7 @@ def find_large_files(directory, min_size_mb=100):
 ### 8.3 Обработка логов
 
 ```python
+
 from pathlib import Path
 from collections import Counter
 import re
@@ -952,60 +1031,76 @@ def analyze_log(log_path):
 
 ❌ **Плохо:**
 ```python
+
 with open("file.txt", "w") as f:
     f.write("Привет")  # Может сломаться на Windows
+
 ```
 
 ✅ **Хорошо:**
 ```python
+
 with open("file.txt", "w", encoding="utf-8") as f:
     f.write("Привет")
+
 ```
 
 ### 9.2 Использование строк вместо pathlib
 
 ❌ **Плохо:**
 ```python
+
 path = "/home/user" + "/" + "documents" + "/" + "file.txt"
+
 ```
 
 ✅ **Хорошо:**
 ```python
+
 from pathlib import Path
 path = Path.home() / "documents" / "file.txt"
+
 ```
 
 ### 9.3 Чтение большого файла целиком
 
 ❌ **Плохо:**
 ```python
+
 with open("huge.log", "r") as f:
     content = f.read()  # Может не хватить памяти!
     for line in content.split("\n"):
         process(line)
+
 ```
 
 ✅ **Хорошо:**
 ```python
+
 with open("huge.log", "r") as f:
     for line in f:  # Читает по одной строке
         process(line)
+
 ```
 
 ### 9.4 Забытый newline в CSV
 
 ❌ **Плохо:**
 ```python
+
 with open("data.csv", "w") as f:  # Пустые строки на Windows
     writer = csv.writer(f)
     writer.writerow(["a", "b"])
+
 ```
 
 ✅ **Хорошо:**
 ```python
+
 with open("data.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["a", "b"])
+
 ```
 
 ---
@@ -1024,6 +1119,7 @@ with open("file.txt", "w") as f:
 ### 10.2 Проверяйте существование файла
 
 ```python
+
 from pathlib import Path
 
 def safe_read(path):
@@ -1033,11 +1129,13 @@ def safe_read(path):
     if not p.is_file():
         raise IsADirectoryError(f"Это директория: {path}")
     return p.read_text(encoding="utf-8")
+
 ```
 
 ### 10.3 Атомарная запись
 
 ```python
+
 from pathlib import Path
 import tempfile
 import os
@@ -1056,6 +1154,7 @@ def atomic_write(path, content):
     except:
         os.unlink(temp_path)
         raise
+
 ```
 
 ---
@@ -1077,16 +1176,19 @@ def atomic_write(path, content):
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Standard Modules](../09_StandardModules/) — os, shutil, tempfile подробнее
 - [Additional Modules](../10_AdditionalModules/) — pandas для работы с данными
 
 **Practice Ideas:**
+
 1. Напишите утилиту для поиска дубликатов файлов по хэшу
 2. Создайте скрипт резервного копирования с ротацией
 3. Реализуйте парсер логов с группировкой ошибок
 4. Создайте конвертер CSV в JSON
 
 **Going Deeper:**
+
 - Изучите модуль `io` для работы с потоками
 - Познакомьтесь с `mmap` для memory-mapped файлов
 - Изучите асинхронную работу с файлами (`aiofiles`)
@@ -1096,14 +1198,19 @@ def atomic_write(path, content):
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 - [pathlib](https://docs.python.org/3/library/pathlib.html)
 - [shutil](https://docs.python.org/3/library/shutil.html)
 
 **Formats:**
+
 - [json](https://docs.python.org/3/library/json.html)
 - [csv](https://docs.python.org/3/library/csv.html)
 - [configparser](https://docs.python.org/3/library/configparser.html)
 
 ---
+
+
+
 

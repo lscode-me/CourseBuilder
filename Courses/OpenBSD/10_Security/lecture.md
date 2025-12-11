@@ -43,11 +43,13 @@ cron
 ntpd
 pflogd
 sshd
+
 ```
 
 ### 1.2 Многослойная защита
 
 ```
+
 ┌─────────────────────────────────────────────────────┐
 │                   Securelevel                        │
 ├─────────────────────────────────────────────────────┤
@@ -59,6 +61,7 @@ sshd
 ├─────────────────────────────────────────────────────┤
 │    Memory protections (W^X, ASLR, KARL)             │
 └─────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -81,6 +84,7 @@ int main() {
     // После этого fork(), exec(), сеть — запрещены
     // Попытка их использовать = SIGABRT
 }
+
 ```
 
 ### 2.2 Категории pledge
@@ -105,6 +109,7 @@ int main() {
 ### 2.3 Пример использования
 
 ```c
+
 // cat_safe.c - безопасная версия cat
 #include <stdio.h>
 #include <unistd.h>
@@ -134,6 +139,7 @@ int main(int argc, char *argv[]) {
     fclose(f);
     return 0;
 }
+
 ```
 
 ### 2.4 Проверка pledge в программах
@@ -151,6 +157,7 @@ Abort trap (core dumped)
 # В логах:
 $ dmesg | tail
 bad_program(1234): pledge "stdio", syscall 97
+
 ```
 
 ---
@@ -173,6 +180,7 @@ int main() {
     // Теперь /home, /root и т.д. недоступны
     // fopen("/home/user/file", "r") вернёт ENOENT
 }
+
 ```
 
 ### 3.2 Права unveil
@@ -187,6 +195,7 @@ int main() {
 ### 3.3 Пример: безопасный веб-сервер
 
 ```c
+
 // Ограничить веб-сервер только его директориями
 unveil("/var/www", "r");           // Документы
 unveil("/var/www/logs", "rwc");    // Логи
@@ -195,11 +204,13 @@ unveil("/usr/lib", "r");           // Библиотеки
 unveil(NULL, NULL);                // Заблокировать
 
 pledge("stdio rpath wpath inet", NULL);
+
 ```
 
 ### 3.4 Комбинация pledge и unveil
 
 ```c
+
 // Типичный паттерн безопасности
 int main() {
     // Сначала unveil — пока есть полный доступ
@@ -213,6 +224,7 @@ int main() {
     
     // Теперь программа максимально ограничена
 }
+
 ```
 
 ---
@@ -233,11 +245,13 @@ OpenBSD поддерживает уровни защиты ядра:
 ### 4.2 Ограничения securelevel
 
 **Securelevel 1:**
+
 - Нельзя снять флаги schg, sappnd с файлов
 - Нельзя модифицировать /dev/mem, /dev/kmem
 - Нельзя загружать модули ядра
 
 **Securelevel 2:**
+
 - Всё из уровня 1
 - Нельзя изменять время значительно
 - Нельзя модифицировать правила PF
@@ -254,6 +268,7 @@ kern.securelevel=1
 
 # Для постоянной установки в /etc/sysctl.conf
 kern.securelevel=2
+
 ```
 
 > **⚠️ Warning:**  
@@ -287,6 +302,7 @@ $ ls -lo /bsd
 ```sh
 # Проверить защиту
 $ dmesg | grep "protection"
+
 ```
 
 ### 5.2 ASLR (Address Space Layout Randomization)
@@ -349,6 +365,7 @@ $ ps aux | grep sshd
 root     78123  0.0  0.1  1234  5678 ??  Is   10:00  0:00 /usr/sbin/sshd
 _sshd    78456  0.0  0.1  2345  6789 ??  S    10:01  0:00 sshd: user [priv]
 user     78457  0.0  0.1  2345  6790 ??  S    10:01  0:00 sshd: user@pts/0
+
 ```
 
 ### 6.3 Минимизация служб
@@ -362,6 +379,7 @@ user     78457  0.0  0.1  2345  6790 ??  S    10:01  0:00 sshd: user@pts/0
 $ netstat -an | grep LISTEN
 tcp        0      0  *.22                   *.*                    LISTEN
 tcp        0      0  127.0.0.1.25           *.*                    LISTEN
+
 ```
 
 ### 6.4 Безопасность SSH
@@ -388,6 +406,7 @@ ClientAliveCountMax 2
 
 # Ограничить пользователей
 AllowUsers admin operator
+
 ```
 
 ---
@@ -403,6 +422,7 @@ AllowUsers admin operator
 /var/log/messages   # Общие сообщения
 /var/log/daemon     # Демоны
 /var/log/pflog      # Файрвол
+
 ```
 
 ### 7.2 Мониторинг входов
@@ -417,6 +437,7 @@ $ lastb
 
 # Текущие пользователи
 $ who
+
 ```
 
 ### 7.3 Проверка целостности
@@ -431,6 +452,7 @@ $ mtree -p /etc < /root/etc.mtree
 ./ssh/sshd_config changed
         modification time expected Fri Nov 15 14:30:00 2023 found Mon Dec  1 10:00:00 2023
         SHA-256 expected abc123... found def456...
+
 ```
 
 ### 7.4 Проверка портов
@@ -442,6 +464,7 @@ $ netstat -an | grep LISTEN
 # Какие процессы
 # doas fstat | grep internet
 root     sshd       1234   3* internet stream tcp *:22
+
 ```
 
 ---
@@ -467,6 +490,7 @@ PermitRootLogin no
 
 # 5. Включить securelevel 2 (опционально)
 echo "kern.securelevel=2" | doas tee -a /etc/sysctl.conf
+
 ```
 
 ### 8.2 Регулярные проверки
@@ -484,6 +508,7 @@ $ ps auxww
 
 # 4. Проверить соединения
 $ netstat -an
+
 ```
 
 ---
@@ -491,9 +516,13 @@ $ netstat -an
 ## 💡 Key Takeaways
 
 - **pledge**: Ограничивает syscalls — даже при компрометации атакующий ограничен
+
 - **unveil**: Скрывает файловую систему — программа видит только нужное
+
 - **securelevel**: Защита ядра и критических файлов
+
 - **Комбинируйте**: pledge + unveil + chroot + PF = многослойная защита
+
 - **Минимизируйте**: Меньше служб = меньше поверхность атаки
 
 ---
@@ -501,16 +530,19 @@ $ netstat -an
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [System Admin](../11_SystemAdmin/) — мониторинг и логи
 - [PF](../08_PF/) — файрвол
 
 **Practice Ideas:**
+
 1. Напишите программу с pledge и unveil
 2. Настройте securelevel 2 на тестовой системе
 3. Создайте скрипт проверки безопасности
 4. Настройте полный hardening для сервера
 
 **Going Deeper:**
+
 - Изучите исходный код OpenSSH для примеров privsep
 - Создайте chroot для веб-приложения
 - Настройте автоматический аудит с mtree
@@ -520,14 +552,19 @@ $ netstat -an
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man pledge](https://man.openbsd.org/pledge) — ограничение syscalls
 - [man unveil](https://man.openbsd.org/unveil) — ограничение filesystem
 - [man securelevel](https://man.openbsd.org/securelevel) — уровни безопасности
 - [man mtree](https://man.openbsd.org/mtree) — проверка целостности
 
 **Articles:**
+
 - [OpenBSD Innovations](https://www.openbsd.org/innovations.html)
 - [Pledge presentation](https://www.openbsd.org/papers/)
 
 ---
+
+
+
 

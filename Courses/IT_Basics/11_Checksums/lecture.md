@@ -30,9 +30,11 @@
 **Хэш-функция** — преобразует данные произвольного размера в строку фиксированной длины.
 
 ```
+
 Input: "Hello"           → MD5:  8b1a9953c4611296a827abf8c47804d7
 Input: "Hello World"     → MD5:  b10a8db164e0754105b7a99be72e3fe5
 Input: "Hello Worl"      → MD5:  e99c029231c55e55de1dc04a2f1c5e24
+
 ```
 
 ### 1.2 Свойства хэш-функций
@@ -59,10 +61,13 @@ Input: "Hello Worl"      → MD5:  e99c029231c55e55de1dc04a2f1c5e24
 ### 2.1 MD5 (устаревший)
 
 - **Длина**: 128 бит (32 hex символа)
+
 - **Скорость**: Очень быстрый
+
 - **Безопасность**: Скомпрометирован, не для криптографии
 
 ```bash
+
 echo -n "Hello" | md5sum
 # 8b1a9953c4611296a827abf8c47804d7  -
 ```
@@ -70,9 +75,11 @@ echo -n "Hello" | md5sum
 ### 2.2 SHA-1 (устаревший)
 
 - **Длина**: 160 бит (40 hex символов)
+
 - **Безопасность**: Скомпрометирован, используется в Git
 
 ```bash
+
 echo -n "Hello" | sha1sum
 # f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0  -
 ```
@@ -80,9 +87,11 @@ echo -n "Hello" | sha1sum
 ### 2.3 SHA-256 (рекомендуется)
 
 - **Длина**: 256 бит (64 hex символа)
+
 - **Безопасность**: Криптографически стойкий
 
 ```bash
+
 echo -n "Hello" | sha256sum
 # 185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969  -
 ```
@@ -90,10 +99,13 @@ echo -n "Hello" | sha256sum
 ### 2.4 SHA-512
 
 - **Длина**: 512 бит (128 hex символов)
+
 - **Безопасность**: Более стойкий, медленнее
 
 ```bash
+
 echo -n "Hello" | sha512sum
+
 ```
 
 ### 2.5 Сравнение
@@ -125,6 +137,7 @@ sha256sum *.txt
 
 # Из строки (без перевода строки!)
 echo -n "text" | sha256sum
+
 ```
 
 ### 3.2 Проверка хэшей
@@ -150,6 +163,7 @@ shasum -a 512 file.txt
 md5 file.txt
 # или
 md5 -q file.txt  # Только хэш
+
 ```
 
 ---
@@ -175,6 +189,7 @@ sha256sum -c SHA256SUMS 2>/dev/null | grep ubuntu-22.04-desktop-amd64.iso
 if [ "$(md5sum file1)" == "$(md5sum file2)" ]; then
     echo "Files are identical"
 fi
+
 ```
 
 ### 4.3 Дедупликация
@@ -182,16 +197,19 @@ fi
 ```bash
 # Найти дубликаты по хэшу
 find . -type f -exec md5sum {} \; | sort | uniq -d -w32
+
 ```
 
 ### 4.4 Кэширование
 
 ```python
+
 import hashlib
 
 def cache_key(data):
     """Генерирует ключ кэша для данных."""
     return hashlib.sha256(data.encode()).hexdigest()[:16]
+
 ```
 
 ---
@@ -201,6 +219,7 @@ def cache_key(data):
 ### 5.1 hashlib
 
 ```python
+
 import hashlib
 
 # Из строки
@@ -210,11 +229,13 @@ sha256_hash = hashlib.sha256(text.encode()).hexdigest()
 
 print(f"MD5: {md5_hash}")
 print(f"SHA-256: {sha256_hash}")
+
 ```
 
 ### 5.2 Хэш файла
 
 ```python
+
 import hashlib
 
 def file_hash(filepath, algorithm='sha256'):
@@ -231,14 +252,17 @@ def file_hash(filepath, algorithm='sha256'):
 # Использование
 print(file_hash('large_file.iso'))
 print(file_hash('file.txt', 'md5'))
+
 ```
 
 ### 5.3 Сравнение файлов
 
 ```python
+
 def files_equal(file1, file2):
     """Сравнивает файлы по SHA-256."""
     return file_hash(file1) == file_hash(file2)
+
 ```
 
 ---
@@ -262,6 +286,7 @@ hashed = bcrypt.hashpw(password, bcrypt.gensalt())
 # Проверка
 if bcrypt.checkpw(password, hashed):
     print("Password correct!")
+
 ```
 
 ---
@@ -289,11 +314,16 @@ if bcrypt.checkpw(password, hashed):
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [12_DataTransfer](../12_DataTransfer/) — Передача данных и кодирование
 
 **Практика:**
+
 1. Вычислите SHA-256 хеш для скачанного файла и сверьте с официальным
 2. Напишите скрипт для проверки целостности файлов в директории
 3. Изучите разницу между MD5 и SHA-256 на практике
+
+
+
 
 

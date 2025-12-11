@@ -31,6 +31,7 @@
 ### 1.1 Классификация
 
 ```
+
 ┌─────────────────────────────────────────────────────┐
 │                     IPC Methods                      │
 ├──────────────────┬──────────────────────────────────┤
@@ -43,6 +44,7 @@
 │  - Sockets       │                                  │
 │  - Signals       │                                  │
 └──────────────────┴──────────────────────────────────┘
+
 ```
 
 ### 1.2 Сравнение методов
@@ -62,6 +64,7 @@
 ### 2.1 Анонимные pipes
 
 ```python
+
 import os
 
 # Создать pipe: (read_fd, write_fd)
@@ -87,11 +90,13 @@ else:
     
     os.close(read_fd)
     os.wait()
+
 ```
 
 ### 2.2 Двунаправленная связь
 
 ```python
+
 import os
 
 # Два pipe для двусторонней связи
@@ -130,11 +135,13 @@ else:
     os.close(parent_to_child_w)
     os.close(child_to_parent_r)
     os.wait()
+
 ```
 
 ### 2.3 subprocess.Popen с pipes
 
 ```python
+
 import subprocess
 
 # Pipe между процессами
@@ -154,17 +161,20 @@ grep = subprocess.Popen(
 ls.stdout.close()  # Позволить ls получить SIGPIPE
 output, _ = grep.communicate()
 print(output)
+
 ```
 
 ### 2.4 os.pipe2() — с флагами
 
 ```python
+
 import os
 
 # Создать pipe с флагами (Python 3.3+, Linux/BSD)
 # O_CLOEXEC — закрыть при exec
 # O_NONBLOCK — неблокирующий режим
 read_fd, write_fd = os.pipe2(os.O_CLOEXEC | os.O_NONBLOCK)
+
 ```
 
 ---
@@ -174,6 +184,7 @@ read_fd, write_fd = os.pipe2(os.O_CLOEXEC | os.O_NONBLOCK)
 ### 3.1 Создание FIFO
 
 ```python
+
 import os
 import stat
 
@@ -186,11 +197,13 @@ except FileExistsError:
     pass  # Уже существует
 
 print(f"FIFO created: {fifo_path}")
+
 ```
 
 ### 3.2 Писатель (writer)
 
 ```python
+
 import os
 
 fifo_path = "/tmp/myfifo"
@@ -205,11 +218,13 @@ os.write(fd, b"Another message\n")
 
 os.close(fd)
 print("Done")
+
 ```
 
 ### 3.3 Читатель (reader)
 
 ```python
+
 import os
 
 fifo_path = "/tmp/myfifo"
@@ -227,11 +242,13 @@ while True:
 
 os.close(fd)
 print("Done")
+
 ```
 
 ### 3.4 Неблокирующий режим
 
 ```python
+
 import os
 import select
 import errno
@@ -258,6 +275,7 @@ while True:
         print("Timeout, waiting...")
 
 os.close(fd)
+
 ```
 
 ---
@@ -267,6 +285,7 @@ os.close(fd)
 ### 4.1 multiprocessing.shared_memory (Python 3.8+)
 
 ```python
+
 from multiprocessing import shared_memory, Process
 import numpy as np
 
@@ -305,11 +324,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ### 4.2 mmap для shared memory
 
 ```python
+
 import mmap
 import os
 import struct
@@ -364,11 +385,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ### 4.3 POSIX shared memory (через ctypes)
 
 ```python
+
 import ctypes
 import ctypes.util
 import mmap
@@ -404,6 +427,7 @@ if fd >= 0:
     mm.close()
     os.close(fd)
     shm_unlink(shm_name)
+
 ```
 
 ---
@@ -413,6 +437,7 @@ if fd >= 0:
 ### 5.1 multiprocessing.Queue
 
 ```python
+
 from multiprocessing import Process, Queue
 import time
 
@@ -445,11 +470,13 @@ if __name__ == "__main__":
     
     prod.join()
     cons.join()
+
 ```
 
 ### 5.2 Queue с таймаутом
 
 ```python
+
 from multiprocessing import Process, Queue
 from queue import Empty
 
@@ -477,11 +504,13 @@ if __name__ == "__main__":
     queue.put(None)
     
     p.join()
+
 ```
 
 ### 5.3 JoinableQueue — с подтверждением
 
 ```python
+
 from multiprocessing import Process, JoinableQueue
 import time
 
@@ -522,6 +551,7 @@ if __name__ == "__main__":
     
     for p in workers:
         p.join()
+
 ```
 
 ---
@@ -531,6 +561,7 @@ if __name__ == "__main__":
 ### 6.1 multiprocessing.Semaphore
 
 ```python
+
 from multiprocessing import Process, Semaphore
 import time
 
@@ -555,11 +586,13 @@ if __name__ == "__main__":
     
     for p in workers:
         p.join()
+
 ```
 
 ### 6.2 BoundedSemaphore
 
 ```python
+
 from multiprocessing import Process, BoundedSemaphore
 
 # BoundedSemaphore — с проверкой на overflow
@@ -572,6 +605,7 @@ sem = BoundedSemaphore(3)
 ### 6.3 Named Semaphore через ctypes
 
 ```python
+
 import ctypes
 import ctypes.util
 
@@ -600,6 +634,7 @@ def sem_close(sem):
 def sem_unlink(name):
     """Удалить семафор."""
     return libc.sem_unlink(name.encode())
+
 ```
 
 ---
@@ -609,6 +644,7 @@ def sem_unlink(name):
 ### 7.1 multiprocessing.Lock
 
 ```python
+
 from multiprocessing import Process, Lock, Value
 import time
 
@@ -632,11 +668,13 @@ if __name__ == "__main__":
         p.join()
     
     print(f"Final counter: {counter.value}")  # Должно быть 4000
+
 ```
 
 ### 7.2 RLock (Recursive Lock)
 
 ```python
+
 from multiprocessing import Process, RLock
 
 def recursive_function(lock, depth=3):
@@ -653,6 +691,7 @@ if __name__ == "__main__":
     p = Process(target=recursive_function, args=(lock,))
     p.start()
     p.join()
+
 ```
 
 ---
@@ -733,6 +772,7 @@ if __name__ == "__main__":
     prod.join()
     cons1.join()
     cons2.join()
+
 ```
 
 ### 8.2 Простой RPC через FIFO
@@ -817,9 +857,13 @@ class RPCClient:
 ## 💡 Key Takeaways
 
 - **Pipes** — простой способ связи между родственными процессами
+
 - **FIFO** — именованные каналы для несвязанных процессов
+
 - **Shared Memory** — самый быстрый способ, но требует синхронизации
+
 - **Message Queues** — структурированный обмен сообщениями
+
 - **Semaphores/Locks** — синхронизация доступа к ресурсам
 
 ---
@@ -827,16 +871,19 @@ class RPCClient:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Sockets](../07_Sockets/) — сетевое взаимодействие
 - [Unix Sockets](../08_UnixSockets/) — локальные сокеты
 
 **Practice Ideas:**
+
 1. Реализуйте простой shell с поддержкой pipe
 2. Создайте систему логирования через FIFO
 3. Напишите пул рабочих процессов с очередью задач
 4. Реализуйте read-write lock
 
 **Going Deeper:**
+
 - POSIX message queues (mq_*)
 - System V IPC (shmget, semget, msgget)
 - D-Bus для IPC на десктопе
@@ -846,9 +893,13 @@ class RPCClient:
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man pipe(2)](https://man.openbsd.org/pipe.2)
 - [man mkfifo(2)](https://man.openbsd.org/mkfifo.2)
 - [Python multiprocessing](https://docs.python.org/3/library/multiprocessing.html)
 
 ---
+
+
+
 

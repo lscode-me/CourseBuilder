@@ -32,6 +32,7 @@
 DevOps часто визуализируется как бесконечный цикл (infinity loop), подчёркивающий непрерывность процесса:
 
 ```
+
             ┌────────────────────────────────────────────┐
             │                                            │
     ┌───────▼───────┐                        ┌───────────┴───────┐
@@ -59,6 +60,7 @@ DevOps часто визуализируется как бесконечный �
     │     TEST      │────────────────────────▶    RELEASE        │
     │               │                        │                   │
     └───────────────┘                        └───────────────────┘
+
 ```
 
 ### 1.2 Фазы DevOps Lifecycle
@@ -162,12 +164,15 @@ feature = FeatureDelivery(
 
 print(f"Lead Time: {feature.total_lead_time().days} days")
 print(f"Efficiency: {feature.efficiency():.1f}%")
+
 ```
 
 **Output:**
 ```
+
 Lead Time: 14 days
 Efficiency: 57.1%
+
 ```
 
 ---
@@ -177,6 +182,7 @@ Efficiency: 57.1%
 ### 2.1 Уровни планирования
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Strategic Planning                          │
 │              (Quarterly/Yearly • OKRs, Vision)                  │
@@ -190,6 +196,7 @@ Efficiency: 57.1%
 │                       Daily Planning                             │
 │                  (Daily • Standup, Tasks)                        │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 OKRs (Objectives and Key Results)
@@ -197,7 +204,9 @@ Efficiency: 57.1%
 OKR — система целеполагания, популяризированная Google.
 
 **Структура:**
+
 - **Objective**: Качественная цель (что хотим достичь)
+
 - **Key Results**: Измеримые результаты (как поймём, что достигли)
 
 ```python
@@ -247,11 +256,14 @@ def calculate_okr_progress(okr: dict) -> float:
 
 progress = calculate_okr_progress(devops_okr)
 print(f"OKR Progress: {progress:.0f}%")
+
 ```
 
 **Output:**
 ```
+
 OKR Progress: 63%
+
 ```
 
 ### 2.3 Roadmap Planning
@@ -260,15 +272,18 @@ OKR Progress: 63%
 
 1. **Feature-based Roadmap:**
 ```
+
 Q1 2024              Q2 2024              Q3 2024
 ├──────────────────┼──────────────────┼──────────────────┤
 │ • Auth v2        │ • Search v2      │ • Mobile app     │
 │ • Performance    │ • Analytics      │ • API v3         │
 │ • GDPR           │ • Notifications  │ • Marketplace    │
+
 ```
 
 2. **Outcome-based Roadmap:**
 ```
+
 Now                  Next                 Later
 ├──────────────────┼──────────────────┼──────────────────┤
 │ Improve          │ Expand market    │ Platform         │
@@ -276,11 +291,13 @@ Now                  Next                 Later
 │                  │                  │                  │
 │ Goal: -20%       │ Goal: +50%       │ Goal: 3rd party  │
 │ churn            │ new users        │ integrations     │
+
 ```
 
 ### 2.4 Capacity Planning
 
 ```python
+
 from dataclasses import dataclass
 
 @dataclass
@@ -308,12 +325,15 @@ team = TeamCapacity(
 
 print(f"Available hours: {team.available_hours():.0f}")
 print(f"Estimated capacity: {team.story_points()} story points")
+
 ```
 
 **Output:**
 ```
+
 Available hours: 225
 Estimated capacity: 56 story points
+
 ```
 
 ---
@@ -323,23 +343,33 @@ Estimated capacity: 56 story points
 ### 3.1 DevOps Ceremonies
 
 **Daily Standup (15 min):**
+
 - Синхронизация команды
 - Выявление блокеров
 - Обсуждение deployment status
 
 **Weekly:**
+
 - **Planning** — выбор работы на неделю/спринт
+
 - **Demo/Review** — демонстрация результатов
+
 - **On-call handoff** — передача дежурства
 
 **Bi-weekly/Monthly:**
+
 - **Retrospective** — улучшение процесса
+
 - **Post-incident reviews** — разбор инцидентов
+
 - **Architecture review** — технические решения
 
 **Quarterly:**
+
 - **OKR planning** — цели на квартал
+
 - **Roadmap review** — пересмотр плана
+
 - **Capacity planning** — планирование ресурсов
 
 ### 3.2 Эффективные Stand-ups
@@ -364,10 +394,12 @@ Estimated capacity: 56 story points
 ## 3. Quick Topics (3 min)
 - Важные анонсы
 - Парковка тем для отдельного обсуждения
+
 ```
 
 **Anti-patterns:**
 ```python
+
 standup_antipatterns = [
     "Status report для менеджера (а не синхронизация команды)",
     "Детальные технические дискуссии",
@@ -376,6 +408,7 @@ standup_antipatterns = [
     "Нет обсуждения блокеров",
     "Игнорирование production status"
 ]
+
 ```
 
 ### 3.3 Retrospectives
@@ -399,11 +432,13 @@ standup_antipatterns = [
 - Парное программирование для сложных задач
 - Ежедневный мониторинг метрик
 - Документирование решений в ADRs
+
 ```
 
 **5 Whys для root cause analysis:**
 
 ```python
+
 def five_whys(problem: str, answers: list[str]) -> None:
     """Demonstrate 5 Whys technique."""
     print(f"Problem: {problem}\n")
@@ -421,10 +456,12 @@ five_whys(
         "Creating data refresh was never prioritized"
     ]
 )
+
 ```
 
 **Output:**
 ```
+
 Problem: Deployment failed and caused 30 min outage
 
 Why #1? → Database migration script failed
@@ -434,6 +471,7 @@ Why #4? → Team doesn't have process for data refresh in staging
 Why #5? → Creating data refresh was never prioritized
 
 Root cause: Creating data refresh was never prioritized
+
 ```
 
 ---
@@ -447,6 +485,7 @@ Value Stream Mapping (VSM) — метод визуализации всего п
 ### 4.2 Создание Value Stream Map
 
 **Шаги:**
+
 1. Определить начало и конец потока
 2. Идентифицировать все шаги
 3. Измерить время каждого шага
@@ -454,6 +493,7 @@ Value Stream Mapping (VSM) — метод визуализации всего п
 5. Рассчитать efficiency
 
 ```
+
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                        Value Stream Map: Feature Delivery                      │
 ├──────────────────────────────────────────────────────────────────────────────┤
@@ -474,6 +514,7 @@ Value Stream Mapping (VSM) — метод визуализации всего п
 │  Efficiency: 21%                                                             │
 │                                                                               │
 └──────────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.3 Типы waste в Value Stream
@@ -532,19 +573,23 @@ def identify_waste(process_step: dict) -> list[str]:
         wastes.append("defects")
     
     return wastes
+
 ```
 
 ### 4.4 Оптимизация Value Stream
 
 **До оптимизации:**
 ```
+
 Ideation (4h) → Wait (48h) → Dev (16h) → Wait (8h) → Review (2h) → 
 Wait (24h) → Test (4h) → Wait (16h) → Deploy (1h) → Wait (4h)
 
 Total: 127 hours, Efficiency: 21%
+
 ```
 
 **Улучшения:**
+
 1. **Уменьшить batch size** — меньше фичи = быстрее review
 2. **Автоматизировать тесты** — меньше ожидания QA
 3. **Self-service deployment** — нет очереди на deploy
@@ -552,10 +597,12 @@ Total: 127 hours, Efficiency: 21%
 
 **После оптимизации:**
 ```
+
 Ideation (2h) → Dev (8h) → Review (1h) → Automated Test (0.5h) → 
 Auto Deploy (0.25h)
 
 Total: 12 hours, Efficiency: 98%
+
 ```
 
 ---
@@ -633,6 +680,7 @@ If failover fails, revert DNS and investigate primary.
 ## Contacts
 - Database team: #team-database
 - On-call DBA: page via PagerDuty
+
 ```
 
 ### 5.2 Architecture Decision Records (ADRs)
@@ -678,6 +726,7 @@ We will use PostgreSQL 15 for User Service.
 ## Related
 - ADR-0010: Database hosting on AWS RDS
 - ADR-0012: Use Vault for database credentials
+
 ```
 
 ### 5.3 Standard Operating Procedures (SOPs)
@@ -697,7 +746,9 @@ We will use PostgreSQL 15 for User Service.
 
 ## 2. Deployment Window
 - **Standard**: Mon-Thu, 10:00-16:00 UTC
+
 - **Frozen periods**: Last week of quarter, holidays
+
 - **Emergency**: Any time with VP approval
 
 ## 3. Deployment Process
@@ -717,6 +768,7 @@ Rollback immediately if:
 - Update deployment ticket status
 - Notify in #releases channel
 - Monitor for 1 hour
+
 ```
 
 ---
@@ -726,6 +778,7 @@ Rollback immediately if:
 ### 6.1 Типы изменений
 
 ```python
+
 from enum import Enum
 from dataclasses import dataclass
 
@@ -781,24 +834,29 @@ changes = [
 
 for change in changes:
     print(f"{change.change_type.value}: {change.approval_process()}")
+
 ```
 
 **Output:**
 ```
+
 standard: Auto-approved
 normal: Engineering manager approval
 emergency: VP approval, retrospective CAB review
+
 ```
 
 ### 6.2 Change Advisory Board (CAB)
 
 **Когда нужен CAB:**
+
 - High-risk changes
 - Changes affecting multiple teams
 - Major infrastructure changes
 - Compliance-sensitive changes
 
 **DevOps-friendly CAB:**
+
 - Виртуальные CAB meetings (async когда возможно)
 - Pre-approved standard changes
 - Автоматическая оценка риска
@@ -812,27 +870,32 @@ emergency: VP approval, retrospective CAB review
 
 **Big Bang Release:**
 ```
+
 Version 1.0 ──────────────────────▶ Version 2.0
               (все изменения сразу)
 
 ❌ Высокий риск
 ❌ Сложный rollback
 ❌ Долгий feedback loop
+
 ```
 
 **Incremental Release:**
 ```
+
 v1.0 → v1.1 → v1.2 → v1.3 → v1.4 → v2.0
        (маленькие частые релизы)
 
 ✅ Низкий риск
 ✅ Простой rollback
 ✅ Быстрый feedback
+
 ```
 
 ### 7.2 Semantic Versioning
 
 ```
+
 MAJOR.MINOR.PATCH
   │     │     │
   │     │     └── Bug fixes (backward compatible)
@@ -844,9 +907,11 @@ Examples:
 - 1.0.0 → 1.0.1 (bug fix)
 - 1.0.1 → 1.1.0 (new feature)
 - 1.1.0 → 2.0.0 (breaking change)
+
 ```
 
 ```python
+
 from dataclasses import dataclass
 import re
 
@@ -881,14 +946,17 @@ print(f"Current: {current}")
 print(f"Bug fix: {current.bump_patch()}")
 print(f"Feature: {current.bump_minor()}")
 print(f"Breaking: {current.bump_major()}")
+
 ```
 
 **Output:**
 ```
+
 Current: 1.4.2
 Bug fix: 1.4.3
 Feature: 1.5.0
 Breaking: 2.0.0
+
 ```
 
 ### 7.3 Release Notes
@@ -900,7 +968,9 @@ Breaking: 2.0.0
 
 ## 🚀 New Features
 - **OAuth2 Integration** — Added support for Google and GitHub login
+
 - **Dark Mode** — User preference for dark theme
+
 - **API Pagination** — All list endpoints now support pagination
 
 ## 🐛 Bug Fixes
@@ -923,6 +993,7 @@ Breaking: 2.0.0
 
 ## 🙏 Contributors
 @alice, @bob, @carol
+
 ```
 
 ---
@@ -932,6 +1003,7 @@ Breaking: 2.0.0
 ### 8.1 On-Call Rotation
 
 ```python
+
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Optional
@@ -969,17 +1041,20 @@ schedule = OnCallSchedule(shifts=[
     OnCallShift("carol", datetime(2024, 1, 15), datetime(2024, 1, 22)),
     OnCallShift("alice", datetime(2024, 1, 22), datetime(2024, 1, 29)),
 ])
+
 ```
 
 ### 8.2 On-Call Responsibilities
 
 **Primary On-Call:**
+
 - Первая линия реагирования на алерты
 - Triage инцидентов
 - Эскалация при необходимости
 - Handoff документация
 
 **Secondary On-Call:**
+
 - Backup для primary
 - Помощь при major incidents
 - Принимает на себя, если primary недоступен
@@ -1015,8 +1090,10 @@ schedule = OnCallSchedule(shifts=[
 - Team-platform Slack channel for questions
 
 **Handoff confirmed:**
+
 - [ ] Alice (outgoing)
 - [ ] Bob (incoming)
+
 ```
 
 ---
@@ -1038,16 +1115,19 @@ schedule = OnCallSchedule(shifts=[
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [04_CI](../04_CI/) — Continuous Integration
 - [05_CD](../05_CD/) — Continuous Delivery/Deployment
 - [12_Incidents](../12_Incidents/) — Incident Management
 
 **Practice Ideas:**
+
 1. Создайте Value Stream Map для вашего процесса delivery
 2. Напишите runbook для критичной операционной задачи
 3. Определите OKRs для DevOps метрик вашей команды
 
 **Going Deeper:**
+
 - "Value Stream Mapping" by Karen Martin
 - "The Goal" by Eliyahu Goldratt
 - Google SRE Handbook — On-Call chapter
@@ -1057,18 +1137,24 @@ schedule = OnCallSchedule(shifts=[
 ## 📚 Additional Resources
 
 **Books:**
+
 - "Value Stream Mapping" by Karen Martin & Mike Osterling
 - "The Goal" by Eliyahu Goldratt — теория ограничений
 - "Making Work Visible" by Dominica DeGrandis — визуализация работы
 
 **Templates:**
+
 - [ADR Template](https://github.com/joelparkerhenderson/architecture-decision-record)
 - [Runbook Template](https://www.pagerduty.com/resources/learn/what-is-a-runbook/)
 
 **Tools:**
+
 - Miro — для Value Stream Mapping
 - Confluence/Notion — для документации
 - PagerDuty/OpsGenie — для on-call management
 
 ---
+
+
+
 

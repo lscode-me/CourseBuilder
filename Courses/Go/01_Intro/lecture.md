@@ -37,10 +37,13 @@ Go разрабатывался для решения проблем, с кот�
 Go создан командой легендарных разработчиков:
 
 - **Rob Pike** — разработчик Plan 9, UTF-8, редактора Acme
+
 - **Ken Thompson** — создатель Unix, языка B, UTF-8
+
 - **Robert Griesemer** — работал над V8 JavaScript engine, Java HotSpot
 
 ```go
+
 // Первая программа на Go — традиционный Hello, World!
 package main
 
@@ -49,11 +52,14 @@ import "fmt"
 func main() {
     fmt.Println("Hello, World!")
 }
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
+
 ```
 
 ### 1.2 Почему "Go" и "Golang"
@@ -76,6 +82,7 @@ Hello, World!
 Go сознательно ограничивает количество возможностей языка. Вместо десяти способов сделать что-то, Go предлагает один — очевидный и понятный.
 
 ```go
+
 package main
 
 import "fmt"
@@ -98,10 +105,12 @@ func main() {
     //     fmt.Println("forever")
     // }
 }
+
 ```
 
 **Output:**
 ```
+
 0
 1
 2
@@ -110,6 +119,7 @@ func main() {
 j: 0
 j: 1
 j: 2
+
 ```
 
 ### 2.2 Явное лучше неявного
@@ -117,6 +127,7 @@ j: 2
 Go требует явного указания намерений. Нет неявных преобразований типов, нет скрытой магии.
 
 ```go
+
 package main
 
 import "fmt"
@@ -130,12 +141,15 @@ func main() {
     
     // var z float64 = x  // Ошибка компиляции!
 }
+
 ```
 
 **Output:**
 ```
+
 x (int): 42
 y (float64): 42.000000
+
 ```
 
 ### 2.3 Минимализм
@@ -155,12 +169,19 @@ Go намеренно не включает многие "продвинутые
 Rob Pike сформулировал "пословицы Go" — принципы философии языка:
 
 - **Don't communicate by sharing memory, share memory by communicating**
+
 - **Concurrency is not parallelism**
+
 - **Channels orchestrate; mutexes serialize**
+
 - **The bigger the interface, the weaker the abstraction**
+
 - **Make the zero value useful**
+
 - **A little copying is better than a little dependency**
+
 - **Clear is better than clever**
+
 - **Errors are values**
 
 ---
@@ -172,6 +193,7 @@ Rob Pike сформулировал "пословицы Go" — принципы
 Go особенно силён в следующих областях:
 
 **Cloud & Infrastructure:**
+
 - Docker — контейнеризация
 - Kubernetes — оркестрация контейнеров
 - Terraform — Infrastructure as Code
@@ -179,16 +201,19 @@ Go особенно силён в следующих областях:
 - etcd — распределённое хранилище
 
 **Backend & Microservices:**
+
 - gRPC — высокопроизводительный RPC
 - API сервисы
 - Веб-серверы
 
 **CLI Tools:**
+
 - Hugo — генератор статических сайтов
 - gh — GitHub CLI
 - cobra — создание CLI
 
 ```go
+
 // Пример простого HTTP-сервера
 package main
 
@@ -206,6 +231,7 @@ func main() {
     fmt.Println("Сервер запущен на http://localhost:8080")
     http.ListenAndServe(":8080", nil)
 }
+
 ```
 
 ### 3.2 Компании, использующие Go
@@ -222,6 +248,7 @@ func main() {
 ### 3.3 Преимущества Go для backend
 
 ```go
+
 package main
 
 import (
@@ -250,12 +277,15 @@ func main() {
     wg.Wait()
     fmt.Printf("1000 горутин выполнено за: %v\n", time.Since(start))
 }
+
 ```
 
 **Output:**
 ```
+
 Доступно ядер CPU: 8
 1000 горутин выполнено за: 12.345ms
+
 ```
 
 ---
@@ -265,12 +295,16 @@ func main() {
 ### 4.1 Проверка установленной версии
 
 ```bash
+
 go version
+
 ```
 
 **Output:**
 ```
+
 go version go1.22.0 darwin/arm64
+
 ```
 
 ### 4.2 Установка на macOS
@@ -286,12 +320,15 @@ go version
 
 # Путь к установке
 which go
+
 ```
 
 **Output:**
 ```
+
 go version go1.22.0 darwin/arm64
 /opt/homebrew/bin/go
+
 ```
 
 **Через официальный установщик:**
@@ -320,6 +357,7 @@ source ~/.bashrc
 
 # Проверка
 go version
+
 ```
 
 ### 4.4 Настройка переменных окружения
@@ -335,14 +373,17 @@ go env GOROOT   # Где установлен Go
 go env GOPATH   # Рабочая директория (устарело с модулями)
 go env GOBIN    # Куда устанавливаются бинарники
 go env GOPROXY  # Прокси для загрузки модулей
+
 ```
 
 **Output:**
 ```
+
 GOROOT="/opt/homebrew/Cellar/go/1.22.0/libexec"
 GOPATH="/Users/developer/go"
 GOBIN=""
 GOPROXY="https://proxy.golang.org,direct"
+
 ```
 
 Рекомендуемая настройка `~/.bashrc` или `~/.zshrc`:
@@ -351,6 +392,7 @@ GOPROXY="https://proxy.golang.org,direct"
 # Go environment
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
 ```
 
 > **⚠️ Warning:**  
@@ -383,6 +425,7 @@ go test ./...           # Запустить тесты
 # Документация
 go doc fmt              # Документация пакета
 go doc fmt.Println      # Документация функции
+
 ```
 
 ### 5.2 go run — запуск без компиляции
@@ -401,11 +444,14 @@ EOF
 
 # Запускаем
 go run hello.go
+
 ```
 
 **Output:**
 ```
+
 Запущено через go run!
+
 ```
 
 ### 5.3 go build — компиляция
@@ -422,6 +468,7 @@ GOOS=linux GOARCH=amd64 go build -o myapp-linux
 
 # Уменьшение размера бинарника
 go build -ldflags="-s -w" -o myapp-small
+
 ```
 
 **Сравнение размеров:**
@@ -437,19 +484,24 @@ go build -ldflags="-s -w" -o myapp-small
 Go имеет единый стандарт форматирования. Все споры о стиле решены:
 
 ```go
+
 // До форматирования
 package main
 import "fmt"
 func main(){
 fmt.Println("messy")
     fmt.Println("code")}
+
 ```
 
 ```bash
+
 go fmt main.go
+
 ```
 
 ```go
+
 // После форматирования
 package main
 
@@ -459,6 +511,7 @@ func main() {
     fmt.Println("messy")
     fmt.Println("code")
 }
+
 ```
 
 > **💡 Pro Tip:**  
@@ -469,6 +522,7 @@ func main() {
 `go vet` находит подозрительные конструкции, которые могут быть ошибками:
 
 ```go
+
 package main
 
 import "fmt"
@@ -477,15 +531,20 @@ func main() {
     // go vet найдёт эту ошибку
     fmt.Printf("Число: %s\n", 42) // %s для int!
 }
+
 ```
 
 ```bash
+
 go vet main.go
+
 ```
 
 **Output:**
 ```
+
 main.go:7:2: Printf format %s has arg 42 of wrong type int
+
 ```
 
 ---
@@ -495,20 +554,25 @@ main.go:7:2: Printf format %s has arg 42 of wrong type int
 ### 6.1 Простейший проект
 
 ```
+
 myproject/
 ├── go.mod          # Определение модуля
 └── main.go         # Точка входа
+
 ```
 
 **go.mod:**
 ```
+
 module myproject
 
 go 1.22
+
 ```
 
 **main.go:**
 ```go
+
 package main
 
 import "fmt"
@@ -516,11 +580,13 @@ import "fmt"
 func main() {
     fmt.Println("Hello from myproject!")
 }
+
 ```
 
 ### 6.2 Типичный проект
 
 ```
+
 myproject/
 ├── cmd/
 │   └── myapp/
@@ -536,6 +602,7 @@ myproject/
 ├── go.mod
 ├── go.sum                # Контрольные суммы зависимостей
 └── README.md
+
 ```
 
 ### 6.3 Создание нового проекта
@@ -560,11 +627,14 @@ EOF
 
 # Запускаем
 go run .
+
 ```
 
 **Output:**
 ```
+
 Project initialized!
+
 ```
 
 ---
@@ -574,6 +644,7 @@ Project initialized!
 ### 7.1 Анатомия Go-программы
 
 ```go
+
 // 1. Package declaration — каждый файл принадлежит пакету
 package main
 
@@ -589,17 +660,21 @@ func main() {
     fmt.Println("Привет, Go!")
     fmt.Printf("Текущее время: %s\n", time.Now().Format("15:04:05"))
 }
+
 ```
 
 **Output:**
 ```
+
 Привет, Go!
 Текущее время: 14:30:45
+
 ```
 
 ### 7.2 package main
 
 ```go
+
 // package main означает, что это исполняемая программа
 // У библиотек будет другое имя пакета
 package main
@@ -610,6 +685,7 @@ import "fmt"
 func main() {
     fmt.Println("Это исполняемая программа")
 }
+
 ```
 
 Программа без `package main` и `func main()` — это библиотека, не исполняемый файл.
@@ -617,6 +693,7 @@ func main() {
 ### 7.3 Import
 
 ```go
+
 package main
 
 // Одиночный импорт
@@ -639,6 +716,7 @@ import (
 func main() {
     f.Println("Using alias")
 }
+
 ```
 
 > **⚠️ Warning:**  
@@ -647,6 +725,7 @@ func main() {
 ### 7.4 Программа с аргументами
 
 ```go
+
 package main
 
 import (
@@ -669,20 +748,25 @@ func main() {
         }
     }
 }
+
 ```
 
 ```bash
+
 go run main.go hello world 123
+
 ```
 
 **Output:**
 ```
+
 Программа: /tmp/go-build123/main
 Количество аргументов: 4
 Аргументы:
   1: hello
   2: world
   3: 123
+
 ```
 
 ---
@@ -692,6 +776,7 @@ go run main.go hello world 123
 ### 8.1 fmt.Println и fmt.Print
 
 ```go
+
 package main
 
 import "fmt"
@@ -711,18 +796,22 @@ func main() {
     version := 1.22
     fmt.Println("Language:", name, "Version:", version)
 }
+
 ```
 
 **Output:**
 ```
+
 Hello World
 Hello World 2024
 Language: Go Version: 1.22
+
 ```
 
 ### 8.2 fmt.Printf — форматированный вывод
 
 ```go
+
 package main
 
 import "fmt"
@@ -743,10 +832,12 @@ func main() {
     fmt.Printf("Детально: %+v\n", name)     // с именами полей (для структур)
     fmt.Printf("Go-синтаксис: %#v\n", name) // Go-представление
 }
+
 ```
 
 **Output:**
 ```
+
 Имя: Gopher
 Возраст: 10 лет
 Рост: 1.75 м
@@ -755,6 +846,7 @@ func main() {
 Значение: Gopher
 Детально: Gopher
 Go-синтаксис: "Gopher"
+
 ```
 
 ### 8.3 Все форматы Printf
@@ -778,6 +870,7 @@ Go-синтаксис: "Gopher"
 | `%%` | Символ процента | `%` |
 
 ```go
+
 package main
 
 import "fmt"
@@ -796,10 +889,12 @@ func main() {
     fmt.Printf("%.5f\n", pi)           // 5 знаков
     fmt.Printf("%8.2f\n", pi)          // Ширина 8, 2 знака
 }
+
 ```
 
 **Output:**
 ```
+
 |     right|
 |left      |
 |        42|
@@ -808,6 +903,7 @@ func main() {
 3.14
 3.14159
     3.14
+
 ```
 
 ---
@@ -825,6 +921,7 @@ VS Code с расширением Go — наиболее популярный �
 
 **Настройка settings.json:**
 ```json
+
 {
     "go.formatTool": "goimports",
     "go.lintTool": "golangci-lint",
@@ -836,6 +933,7 @@ VS Code с расширением Go — наиболее популярный �
         }
     }
 }
+
 ```
 
 ### 9.2 GoLand
@@ -855,6 +953,7 @@ JetBrains GoLand — профессиональная IDE для Go:
 # Установите vim-go плагин
 # В vimrc:
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 ```
 
 ### 9.4 Полезные инструменты
@@ -865,6 +964,7 @@ go install golang.org/x/tools/gopls@latest          # Language server
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest  # Linter
 go install golang.org/x/tools/cmd/goimports@latest  # Форматирование + imports
 go install github.com/go-delve/delve/cmd/dlv@latest # Debugger
+
 ```
 
 ---
@@ -875,16 +975,19 @@ go install github.com/go-delve/delve/cmd/dlv@latest # Debugger
 
 ❌ **Ошибка компиляции:**
 ```go
+
 package main
 
 func main() {
     x := 42    // Объявлено, но не использовано!
     // main.go:4:2: x declared but not used
 }
+
 ```
 
 ✅ **Решение:**
 ```go
+
 package main
 
 import "fmt"
@@ -896,12 +999,14 @@ func main() {
     // Или используем _ для игнорирования
     _ = 42
 }
+
 ```
 
 ### 10.2 Неиспользуемые импорты
 
 ❌ **Ошибка:**
 ```go
+
 package main
 
 import (
@@ -912,10 +1017,12 @@ import (
 func main() {
     fmt.Println("Hello")
 }
+
 ```
 
 ✅ **Решение:**
 ```go
+
 package main
 
 import "fmt"
@@ -923,6 +1030,7 @@ import "fmt"
 func main() {
     fmt.Println("Hello")
 }
+
 ```
 
 > **💡 Pro Tip:**  
@@ -934,6 +1042,7 @@ func main() {
 ```bash
 # Старый способ — проекты должны быть в $GOPATH/src
 cd $GOPATH/src/github.com/user/project
+
 ```
 
 ✅ **Современный подход (Go Modules):**
@@ -942,6 +1051,7 @@ cd $GOPATH/src/github.com/user/project
 mkdir ~/projects/myapp
 cd ~/projects/myapp
 go mod init github.com/user/myapp
+
 ```
 
 ### 10.4 Забыли инициализировать модуль
@@ -952,6 +1062,7 @@ go: go.mod file not found in current directory or any parent directory
 
 # Решение
 go mod init myproject
+
 ```
 
 ---
@@ -973,16 +1084,19 @@ go mod init myproject
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [02_Basics](../02_Basics/) — переменные, типы, константы, операторы
 - [03_FlowControl](../03_FlowControl/) — условия, циклы, defer
 
 **Practice Ideas:**
+
 1. Установите Go и настройте редактор
 2. Создайте проект с `go mod init` и напишите Hello World
 3. Поэкспериментируйте с `go run`, `go build`, `go fmt`
 4. Напишите программу, которая принимает аргументы командной строки
 
 **Going Deeper:**
+
 - Прочитайте [Effective Go](https://go.dev/doc/effective_go)
 - Изучите [Go Proverbs](https://go-proverbs.github.io/)
 - Посмотрите [Go at Google](https://go.dev/talks/2012/splash.article)
@@ -992,18 +1106,24 @@ go mod init myproject
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [go.dev](https://go.dev/) — официальный сайт
 - [Go Documentation](https://go.dev/doc/) — документация
 - [Go Tour](https://go.dev/tour/) — интерактивный тур
 
 **Books:**
+
 - "The Go Programming Language" by Donovan & Kernighan
 - "Go in Action" by Kennedy, Ketelsen & St. Martin
 - "Learning Go" by Jon Bodner
 
 **Videos:**
+
 - [GopherCon](https://www.youtube.com/c/GopherAcademy) — конференция по Go
 - [justforfunc](https://www.youtube.com/c/JustForFunc) — Go видео-уроки
 
 ---
+
+
+
 

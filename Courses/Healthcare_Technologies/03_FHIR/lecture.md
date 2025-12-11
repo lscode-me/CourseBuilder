@@ -6,11 +6,13 @@
 ## 📋 Prerequisites
 
 Перед началом этого модуля вы должны:
+
 - Знать базовую медицинскую терминологию
 - Понимать REST API и JSON
 - Иметь опыт работы с HTTP-клиентами
 
 **Recommended prior modules:**
+
 - [01_Terminology](../01_Terminology/) — базовая терминология
 - [02_HL7](../02_HL7/) — HL7 v2 (для понимания эволюции стандартов)
 
@@ -19,6 +21,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Понимать архитектуру FHIR и структуру ресурсов
 - Работать с FHIR API (CRUD операции, поиск)
 - Использовать Python библиотеки для работы с FHIR
@@ -33,6 +36,7 @@
 **FHIR (Fast Healthcare Interoperability Resources)** — современный стандарт HL7 для обмена медицинскими данными через REST API.
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         Почему FHIR?                                         │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -51,11 +55,13 @@
 │  • Всё или ничего              • Модульный подход                           │
 │                                                                              │
 └─────────────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Ключевые особенности
 
 ```python
+
 fhir_features = {
     "REST API": {
         "description": "Стандартные HTTP методы",
@@ -77,6 +83,7 @@ fhir_features = {
         "use_case": "Добавление custom полей"
     }
 }
+
 ```
 
 ### 1.3 Версии FHIR
@@ -96,6 +103,7 @@ fhir_features = {
 ### 2.1 Структура ресурса
 
 ```json
+
 {
   "resourceType": "Patient",
   "id": "patient-123",
@@ -119,11 +127,13 @@ fhir_features = {
   "gender": "male",
   "birthDate": "1980-05-15"
 }
+
 ```
 
 ### 2.2 Основные ресурсы
 
 ```python
+
 fhir_resources = {
     "Administrative": {
         "Patient": "Демографические данные пациента",
@@ -148,11 +158,13 @@ fhir_resources = {
         "ImagingStudy": "Исследование изображений"
     }
 }
+
 ```
 
 ### 2.3 Пример Patient Resource
 
 ```json
+
 {
   "resourceType": "Patient",
   "id": "patient-123",
@@ -216,11 +228,13 @@ fhir_resources = {
     }
   ]
 }
+
 ```
 
 ### 2.4 Observation Resource
 
 ```json
+
 {
   "resourceType": "Observation",
   "id": "bp-001",
@@ -276,6 +290,7 @@ fhir_resources = {
     }
   ]
 }
+
 ```
 
 ---
@@ -318,6 +333,7 @@ fhir_operations = {
         "description": "Поиск ресурсов"
     }
 }
+
 ```
 
 ### 3.2 Параметры поиска
@@ -350,11 +366,13 @@ GET /Patient?_count=20&_offset=40
 # Include связанных ресурсов
 GET /Observation?patient=123&_include=Observation:patient
 GET /Patient/123?_revinclude=Observation:patient
+
 ```
 
 ### 3.3 Bundle и Transaction
 
 ```json
+
 {
   "resourceType": "Bundle",
   "type": "transaction",
@@ -384,6 +402,7 @@ GET /Patient/123?_revinclude=Observation:patient
     }
   ]
 }
+
 ```
 
 ---
@@ -393,12 +412,15 @@ GET /Patient/123?_revinclude=Observation:patient
 ### 4.1 Библиотека fhir.resources
 
 ```bash
+
 pip install fhir.resources requests
+
 ```
 
 ### 4.2 Создание ресурсов
 
 ```python
+
 from fhir.resources.patient import Patient
 from fhir.resources.humanname import HumanName
 from fhir.resources.identifier import Identifier
@@ -449,11 +471,13 @@ patient = Patient(
 
 # Конвертация в JSON
 print(patient.json(indent=2))
+
 ```
 
 ### 4.3 FHIR Client
 
 ```python
+
 import requests
 from fhir.resources.patient import Patient
 from fhir.resources.observation import Observation
@@ -527,11 +551,13 @@ print(f"Created patient with ID: {created['id']}")
 # Поиск пациентов
 patients = client.search("Patient", family="Иванов")
 print(f"Found {len(patients)} patients")
+
 ```
 
 ### 4.4 Создание Observation
 
 ```python
+
 from fhir.resources.observation import Observation
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
@@ -593,6 +619,7 @@ temperature = create_vital_sign(
 
 print("Heart Rate:")
 print(heart_rate.json(indent=2))
+
 ```
 
 ---
@@ -621,11 +648,13 @@ references = {
         "reference": "http://other-system.org/fhir/Patient/ext-123"
     }
 }
+
 ```
 
 ### 5.2 Связи между ресурсами
 
 ```
+
 Patient ←──────────────────────────────────────────────────────────┐
    │                                                                │
    │ subject                                                        │
@@ -643,6 +672,7 @@ ServiceRequest
    │ result
    ▼
 DiagnosticReport
+
 ```
 
 ---
@@ -650,6 +680,7 @@ DiagnosticReport
 ## 6. Публичные FHIR серверы
 
 ```python
+
 public_fhir_servers = {
     "HAPI FHIR": {
         "url": "http://hapi.fhir.org/baseR4",
@@ -693,6 +724,7 @@ def check_fhir_server(base_url: str) -> dict:
 for name, info in public_fhir_servers.items():
     result = check_fhir_server(info["url"])
     print(f"{name}: {result['status']}")
+
 ```
 
 ---
@@ -711,6 +743,7 @@ observation = Observation(
 observation = Observation(
     subject={"reference": "Patient/patient-123"}
 )
+
 ```
 
 ### 7.2 Пропущенные обязательные поля
@@ -728,11 +761,13 @@ observation = Observation(
     code={"coding": [{"code": "718-7"}]},
     valueQuantity={"value": 14.5}
 )
+
 ```
 
 ### 7.3 Неправильный формат даты
 
 ```python
+
 from datetime import date
 
 # ❌ Неправильно
@@ -742,6 +777,7 @@ patient = Patient(birthDate="15/05/1980")
 patient = Patient(birthDate=date(1980, 5, 15))
 # или
 patient = Patient(birthDate="1980-05-15")
+
 ```
 
 ---
@@ -749,10 +785,15 @@ patient = Patient(birthDate="1980-05-15")
 ## 💡 Key Takeaways
 
 - **FHIR** — современный REST/JSON стандарт для healthcare
+
 - **Resources** — модульные строительные блоки (~150 типов)
+
 - **REST API** — стандартные HTTP операции (GET, POST, PUT, DELETE)
+
 - **References** — связи между ресурсами через `{"reference": "Type/id"}`
+
 - **R4** — рекомендуемая версия для production
+
 - **Публичные серверы** — доступны для тестирования и обучения
 
 ---
@@ -760,10 +801,12 @@ patient = Patient(birthDate="1980-05-15")
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [04_Standards](../04_Standards/) — ICD-10, SNOMED CT, LOINC
 - [05_EHR_Systems](../05_EHR_Systems/) — Системы электронных медицинских записей
 
 **Практика:**
+
 1. Создайте Patient ресурс с полной информацией
 2. Сделайте запросы к публичному FHIR серверу
 3. Создайте Observation для vital signs
@@ -779,4 +822,8 @@ patient = Patient(birthDate="1980-05-15")
 - [HAPI FHIR Server](https://hapifhir.io/)
 
 ---
+
+
+
+
 

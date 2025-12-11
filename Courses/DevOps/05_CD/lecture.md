@@ -36,6 +36,7 @@
 Расширение Continuous Delivery, где **каждое** успешное изменение **автоматически** деплоится в production.
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           CI/CD Pipeline                                     │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -53,11 +54,13 @@
 │                    Continuous Deployment                                    ││
 │                    (fully automated)                                        ││
 └─────────────────────────────────────────────────────────────────────────────┘│
+
 ```
 
 ### 1.2 Выбор подхода
 
 ```python
+
 def choose_cd_approach(context: dict) -> str:
     """Determine whether to use CD or Continuous Deployment."""
     
@@ -82,6 +85,7 @@ def choose_cd_approach(context: dict) -> str:
     
     # По умолчанию начинаем с CD
     return "continuous_delivery"
+
 ```
 
 ### 1.3 Преимущества обоих подходов
@@ -109,6 +113,7 @@ stages:
   - approve        # Manual gate (для CD)
   - production     # Deploy на production
   - verify         # Post-deploy verification
+
 ```
 
 ### 2.2 Пример полного Pipeline (GitHub Actions)
@@ -234,6 +239,7 @@ jobs:
         if: failure()
         run: |
           helm rollback myapp --namespace production
+
 ```
 
 ---
@@ -245,22 +251,27 @@ jobs:
 Простейшая стратегия: остановить старую версию, запустить новую.
 
 ```
+
 Version 1: ████████████████████ ──▶ Stop
                                     ↓
                               (Downtime)
                                     ↓
 Version 2:                    Start ──▶ ████████████████████
+
 ```
 
 **Плюсы:**
+
 - Простота
 - Никаких проблем совместимости версий
 
 **Минусы:**
+
 - Downtime
 - Нет gradual rollout
 
 **Когда использовать:**
+
 - Dev/test environments
 - Когда downtime допустим
 - При incompatible changes (database schema)
@@ -270,6 +281,7 @@ Version 2:                    Start ──▶ ███████████�
 Постепенная замена instances одной версии на другую.
 
 ```
+
 Time ──────────────────────────────────────────────▶
 
 Pods: [v1] [v1] [v1] [v1]
@@ -277,6 +289,7 @@ Pods: [v1] [v1] [v1] [v1]
       [v1] [v1] [v2] [v2] ← 2 pods updated
       [v1] [v2] [v2] [v2] ← 3 pods updated
       [v2] [v2] [v2] [v2] ← Complete
+
 ```
 
 ```yaml
@@ -303,14 +316,17 @@ spec:
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
+
 ```
 
 **Плюсы:**
+
 - Zero downtime
 - Gradual rollout
 - Easy rollback
 
 **Минусы:**
+
 - Временно две версии одновременно
 - Требует backward compatibility
 
@@ -319,6 +335,7 @@ spec:
 Две идентичные среды: Blue (текущая) и Green (новая).
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                      Load Balancer                           │
 │                           │                                  │
@@ -334,6 +351,7 @@ spec:
 │  После тестирования Green:                                   │
 │  Switch traffic: Blue 0% ↔ Green 100%                       │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ```python
@@ -372,14 +390,17 @@ def rollback_to_blue(target_group_blue: str):
     )
     
     print("Rolled back to blue")
+
 ```
 
 **Плюсы:**
+
 - Мгновенный switch
 - Мгновенный rollback
 - Полное тестирование перед switch
 
 **Минусы:**
+
 - Двойные ресурсы
 - Сложность с stateful data
 
@@ -388,6 +409,7 @@ def rollback_to_blue(target_group_blue: str):
 Постепенное направление трафика на новую версию.
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                      Load Balancer                           │
 │                           │                                  │
@@ -403,6 +425,7 @@ def rollback_to_blue(target_group_blue: str):
 │  Progression: 10% → 25% → 50% → 100%                        │
 │  (based on metrics and time)                                 │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ```yaml
@@ -468,14 +491,17 @@ spec:
             sum(rate(http_requests_total{service="{{args.service-name}}",status=~"2.."}[5m]))
             /
             sum(rate(http_requests_total{service="{{args.service-name}}"}[5m]))
+
 ```
 
 **Плюсы:**
+
 - Минимальный риск
 - Реальный production трафик
 - Автоматический rollback по метрикам
 
 **Минусы:**
+
 - Сложность настройки
 - Требует хорошего мониторинга
 - Дольше, чем blue-green
@@ -551,11 +577,13 @@ def get_checkout_page(user_id: str):
         return render_new_checkout()
     else:
         return render_old_checkout()
+
 ```
 
 ### 4.2 Типы Feature Flags
 
 ```python
+
 feature_flag_types = {
     "release_toggle": {
         "description": "Скрыть незавершённую фичу",
@@ -578,6 +606,7 @@ feature_flag_types = {
         "example": "Premium features"
     }
 }
+
 ```
 
 ### 4.3 Best Practices для Feature Flags
@@ -635,6 +664,7 @@ def test_feature_with_flag_off():
     with feature_flag_override("new_feature", False):
         result = some_function()
         assert result == expected_old_behavior
+
 ```
 
 ### 4.4 Инструменты для Feature Flags
@@ -669,11 +699,13 @@ UPDATE users SET phone = 'unknown' WHERE phone IS NULL;
 
 # Step 4: Make column NOT NULL
 ALTER TABLE users ALTER COLUMN phone SET NOT NULL;
+
 ```
 
 ### 5.2 Expand-Contract Pattern
 
 ```
+
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Expand-Contract Migration                      │
 ├──────────────────────────────────────────────────────────────────┤
@@ -703,6 +735,7 @@ ALTER TABLE users ALTER COLUMN phone SET NOT NULL;
 │  - Clean up code                                                  │
 │                                                                   │
 └──────────────────────────────────────────────────────────────────┘
+
 ```
 
 ```python
@@ -735,6 +768,7 @@ class User(Base):
     @property
     def display_name(self):
         return self.full_name
+
 ```
 
 ---
@@ -744,6 +778,7 @@ class User(Base):
 ### 6.1 Типы Rollback
 
 ```python
+
 rollback_strategies = {
     "instant_rollback": {
         "description": "Немедленный откат на предыдущую версию",
@@ -770,6 +805,7 @@ rollback_strategies = {
         "data_loss": "Нет"
     }
 }
+
 ```
 
 ### 6.2 Автоматический Rollback
@@ -810,6 +846,7 @@ spec:
             initialDelaySeconds: 15
             periodSeconds: 20
             failureThreshold: 3
+
 ```
 
 ```bash
@@ -821,6 +858,7 @@ kubectl rollout undo deployment/myapp --to-revision=5
 
 # История ревизий
 kubectl rollout history deployment/myapp
+
 ```
 
 ### 6.3 Rollback Checklist
@@ -849,6 +887,7 @@ kubectl rollout history deployment/myapp
 - [ ] Подтвердить стабилизацию
 - [ ] Обновить incident timeline
 - [ ] Запланировать RCA (Root Cause Analysis)
+
 ```
 
 ---
@@ -858,6 +897,7 @@ kubectl rollout history deployment/myapp
 ### 7.1 Environment Promotion
 
 ```
+
 ┌───────────────────────────────────────────────────────────────┐
 │                  Environment Promotion Flow                    │
 ├───────────────────────────────────────────────────────────────┤
@@ -875,6 +915,7 @@ kubectl rollout history deployment/myapp
 │  Different configs per environment                            │
 │                                                                │
 └───────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 7.2 Environment Parity
@@ -933,6 +974,7 @@ features:
 logging:
   level: INFO
   format: json
+
 ```
 
 ```python
@@ -962,6 +1004,7 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
 ```
 
 ---
@@ -1003,6 +1046,7 @@ if __name__ == "__main__":
     base_url = sys.argv[1]
     success = run_smoke_tests(base_url)
     sys.exit(0 if success else 1)
+
 ```
 
 ### 8.2 Post-Deployment Monitoring
@@ -1028,6 +1072,7 @@ post_deploy_checks = {
         "database_performance": "stable"
     }
 }
+
 ```
 
 ---
@@ -1049,16 +1094,19 @@ post_deploy_checks = {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [06_IaC](../06_IaC/) — Infrastructure as Code
 - [07_GitOps](../07_GitOps/) — GitOps workflow
 - [08_Monitoring](../08_Monitoring/) — Мониторинг deployments
 
 **Practice Ideas:**
+
 1. Реализуйте blue-green deployment для своего сервиса
 2. Добавьте feature flags с постепенным rollout
 3. Настройте автоматический rollback по метрикам
 
 **Going Deeper:**
+
 - "Continuous Delivery" by Jez Humble
 - Argo Rollouts documentation
 - LaunchDarkly feature flag patterns
@@ -1068,17 +1116,23 @@ post_deploy_checks = {
 ## 📚 Additional Resources
 
 **Books:**
+
 - "Continuous Delivery" by Jez Humble & David Farley
 - "Release It!" by Michael Nygard
 
 **Tools:**
+
 - [Argo Rollouts](https://argoproj.github.io/argo-rollouts/) — Progressive delivery для Kubernetes
 - [Flagger](https://flagger.app/) — Automated canary deployments
 - [LaunchDarkly](https://launchdarkly.com/) — Feature flag management
 
 **Articles:**
+
 - [Martin Fowler: Feature Toggles](https://martinfowler.com/articles/feature-toggles.html)
 - [Deployment Strategies at Netflix](https://netflixtechblog.com/)
 
 ---
+
+
+
 

@@ -12,6 +12,7 @@
 - Задумываться о своём карьерном развитии
 
 **Recommended prior modules:**
+
 - [01_Transition](../01_Transition/) — Senior → Lead: первые шаги
 
 ---
@@ -37,13 +38,16 @@
 **Фокус:** Техническая экспертиза, архитектура, технологическое лидерство
 
 ```
+
 Junior → Middle → Senior → Staff → Principal → Distinguished
                               ↓         ↓            ↓
                            Team-wide  Org-wide   Company-wide
                            Impact     Impact     Impact
+
 ```
 
 **Характеристики:**
+
 - Глубокая техническая экспертиза
 - Решение сложнейших технических проблем
 - Влияние через код, архитектуру, технические решения
@@ -55,13 +59,16 @@ Junior → Middle → Senior → Staff → Principal → Distinguished
 **Фокус:** Люди, процессы, организация, стратегия
 
 ```
+
 Senior → Team Lead → Engineering Manager → Senior EM → Director → VP
                            ↓                   ↓          ↓       ↓
                         5-8 people         10-20+     Multiple  100+
                                                       Teams
+
 ```
 
 **Характеристики:**
+
 - Развитие людей и команд
 - Построение процессов
 - Найм, performance management, карьерный рост людей
@@ -125,40 +132,53 @@ Senior → Team Lead → Engineering Manager → Senior EM → Director → VP
 Will Larson выделяет четыре архетипа Staff Engineers:
 
 **Tech Lead**
+
 ```
+
 - Партнёрство с менеджером команды
 - Техническое направление проекта
 - Code review и технические решения
 - 50-70% времени в одной команде
+
 ```
 
 **Architect**
+
 ```
+
 - Фокус на архитектуре и дизайне
 - Работа над критичными системами
 - Меньше кода, больше документов и диаграмм
 - Влияние через технические спецификации
+
 ```
 
 **Solver**
+
 ```
+
 - Решает сложнейшие проблемы
 - Перемещается между командами
 - "Тушит пожары" и разблокирует блокеры
 - Глубокая экспертиза в узких областях
+
 ```
 
 **Right Hand**
+
 ```
+
 - Помощник VP/Director
 - Делегированное лидерство
 - Организационные проекты с техническим уклоном
 - Требует высокого trust от руководства
+
 ```
 
 ### 2.3 Чем занимается Staff Engineer
 
 **Типичные активности:**
+
 - Разработка технической стратегии
 - Участие в архитектурных review
 - Написание RFC/Design Documents
@@ -169,11 +189,13 @@ Will Larson выделяет четыре архетипа Staff Engineers:
 
 **Соотношение времени (примерное):**
 ```
+
 Coding:           30-40%
 Design/Review:    20-30%
 Mentoring:        15-20%
 Meetings:         15-20%
 Writing:          10-15%
+
 ```
 
 > **💡 Pro Tip:**  
@@ -224,16 +246,19 @@ Writing:          10-15%
 ### 3.2 Эволюция фокуса
 
 ```
+
 TL/TLM:  Tasks → People → Process
 EM:      People → Process → Strategy  
 Sr. EM:  Process → Strategy → Organization
 Director: Strategy → Organization → Business
 VP:      Organization → Business → Industry
+
 ```
 
 ### 3.3 Чем занимается Engineering Manager
 
 **Основные обязанности:**
+
 - 1-on-1 с direct reports
 - Performance management
 - Hiring и onboarding
@@ -243,12 +268,14 @@ VP:      Organization → Business → Industry
 
 **Соотношение времени (примерное):**
 ```
+
 1-on-1s:           25-30%
 Meetings:          25-30%
 Hiring:            15-20%
 Planning:          10-15%
 Admin:             10-15%
 Strategy/Docs:     10-15%
+
 ```
 
 ---
@@ -260,6 +287,7 @@ Strategy/Docs:     10-15%
 Оцените себя по шкале 1-5 для каждого пункта:
 
 **Склонность к IC Track:**
+
 - [ ] Мне нравится решать сложные технические проблемы
 - [ ] Я получаю энергию от написания кода
 - [ ] Я хочу оставаться экспертом в технологиях
@@ -267,6 +295,7 @@ Strategy/Docs:     10-15%
 - [ ] Я предпочитаю глубокую работу разговорам
 
 **Склонность к Management Track:**
+
 - [ ] Мне нравится помогать людям расти
 - [ ] Я получаю энергию от разговоров и митингов
 - [ ] Мне интересны процессы и организация
@@ -277,6 +306,7 @@ Strategy/Docs:     10-15%
 
 **Про удовлетворение:**
 ```
+
 1. Когда я чувствую себя наиболее продуктивным?
    - Когда решил сложную техническую проблему?
    - Когда помог коллеге разобраться с задачей?
@@ -284,10 +314,12 @@ Strategy/Docs:     10-15%
 2. Какие дни работы были лучшими за последний год?
    - Дни глубокой технической работы?
    - Дни успешных разговоров и решения людских проблем?
+
 ```
 
 **Про навыки:**
 ```
+
 3. Что даётся мне легче?
    - Разбираться в сложном коде?
    - Понимать мотивацию людей?
@@ -295,18 +327,22 @@ Strategy/Docs:     10-15%
 4. Какой фидбэк я чаще получаю?
    - "Отличное техническое решение"?
    - "Ты хорошо помог команде"?
+
 ```
 
 **Про будущее:**
 ```
+
 5. Кем я вижу себя через 5 лет?
    - Архитектором, решающим масштабные технические задачи?
    - Лидером, строящим высокоэффективные команды?
+
 ```
 
 ### 4.3 Red Flags при выборе
 
 **Не выбирайте Management, если:**
+
 - ❌ Главная мотивация — деньги и статус
 - ❌ Вы хотите "говорить людям, что делать"
 - ❌ Вы избегаете сложных разговоров
@@ -314,6 +350,7 @@ Strategy/Docs:     10-15%
 - ❌ Вы не готовы отвечать за чужие ошибки
 
 **Не выбирайте IC, если:**
+
 - ❌ Вам скучно от технических деталей
 - ❌ Вы не любите писать код
 - ❌ Вам сложно углубляться в технологии
@@ -329,16 +366,19 @@ Strategy/Docs:     10-15%
 ### 5.1 Tech Lead Manager (TLM)
 
 **Что это:**
+
 - Комбинация Tech Lead + Manager
 - Обычно первая ступень в management
 - 50% техническая работа + 50% management
 
 **Когда работает:**
+
 - Маленькие команды (3-5 человек)
 - Стартапы, где нет ресурсов на две роли
 - Переходный период к полному management
 
 **Когда не работает:**
+
 - Команды > 7 человек
 - Высокая техническая сложность (нужен full-time Tech Lead)
 - Много людских проблем (нужен full-time Manager)
@@ -346,6 +386,7 @@ Strategy/Docs:     10-15%
 ### 5.2 Tech Lead (без управления людьми)
 
 **Что это:**
+
 - Техническое лидерство без management обязанностей
 - Работает в паре с Engineering Manager
 - Фокус на архитектуре, code review, технических решениях
@@ -366,12 +407,14 @@ Strategy/Docs:     10-15%
 На высоких уровнях часто Principal Engineer работает в паре с Director:
 
 ```
+
 Principal Engineer          Director of Engineering
       │                            │
       ├─ Technical strategy        ├─ People strategy
       ├─ Architecture              ├─ Hiring & retention
       ├─ Cross-team tech work      ├─ Budget & resources
       └─ Technical mentoring       └─ Career development
+
 ```
 
 ---
@@ -383,11 +426,14 @@ Principal Engineer          Director of Engineering
 Charity Majors популяризировала модель "маятника" между IC и Management:
 
 ```
+
 IC ───────► Management ───────► IC ───────► Management
            (2-3 года)         (2-3 года)    (и т.д.)
+
 ```
 
 **Преимущества:**
+
 - Разнообразие опыта
 - Эмпатия к обеим ролям
 - Избежание "застревания"
@@ -396,17 +442,20 @@ IC ───────► Management ───────► IC ────�
 ### 6.2 IC → Management
 
 **Когда переходить:**
+
 - Вы достигли Senior/Staff уровня
 - Вам интересны люди больше, чем код
 - Вы готовы к смене профессии
 
 **Как переходить:**
+
 1. Начните с mentoring и tech lead обязанностей
 2. Попробуйте TLM роль
 3. Соберите feedback
 4. Примите решение о полном переходе
 
 **Риски:**
+
 - Потеря технических навыков (если надолго)
 - Разочарование, если люди раздражают
 - Сложно вернуться, если сильно "отстанете" технически
@@ -414,17 +463,20 @@ IC ───────► Management ───────► IC ────�
 ### 6.3 Management → IC
 
 **Когда переходить:**
+
 - Вы скучаете по техническим вызовам
 - Management работа истощает
 - Вы хотите снова "делать", а не "организовывать"
 
 **Как переходить:**
+
 1. Честно поговорите с руководителем
 2. Найдите преемника или передайте команду
 3. Обновите технические навыки
 4. Начните с Senior/Staff роли
 
 **Это НЕ провал:**
+
 - Многие успешные Principal/Distinguished Engineers — бывшие менеджеры
 - Опыт management делает вас лучшим техническим лидером
 - Вы понимаете "другую сторону"
@@ -432,29 +484,41 @@ IC ───────► Management ───────► IC ────�
 ### 6.4 Пример траекторий
 
 **Траектория 1: Традиционная IC**
+
 ```
+
 Junior → Middle → Senior → Staff → Principal
                               ↓
                     (никогда не management)
+
 ```
 
 **Траектория 2: Традиционная Management**
+
 ```
+
 Junior → Middle → Senior → Team Lead → EM → Director → VP
+
 ```
 
 **Траектория 3: Pendulum**
+
 ```
+
 Junior → Middle → Senior → TL/TLM → EM → Staff → Director
                               ↓                      ↓
                     (2-3 года mgmt)      (вернулся в mgmt)
+
 ```
 
 **Траектория 4: Позднее решение**
+
 ```
+
 Junior → Middle → Senior → Staff → Principal → VP
                                               ↓
                                     (switch to exec)
+
 ```
 
 ---
@@ -468,9 +532,11 @@ Junior → Middle → Senior → Staff → Principal → VP
 **Реальность:** В современных tech компаниях IC и Management на одном уровне получают сопоставимую компенсацию.
 
 ```
+
 Staff Engineer ≈ Engineering Manager
 Principal Engineer ≈ Director
 Distinguished Engineer ≈ VP
+
 ```
 
 ### 7.2 Где IC может зарабатывать больше
@@ -488,12 +554,14 @@ Distinguished Engineer ≈ VP
 ### 7.4 Другие факторы
 
 **IC преимущества:**
+
 - Более гибкий график
 - Меньше политики
 - Можно "отключиться" после работы
 - Легче remote работа
 
 **Management преимущества:**
+
 - Более широкая сеть контактов
 - Развитие "бизнес" навыков
 - Путь к executive ролям
@@ -506,6 +574,7 @@ Distinguished Engineer ≈ VP
 ### 8.1 Не торопитесь
 
 **Timing:**
+
 - Оптимальное время для выбора: Senior уровень
 - Не нужно решать на Junior/Middle уровне
 - Можно пересмотреть решение через 2-3 года
@@ -513,6 +582,7 @@ Distinguished Engineer ≈ VP
 ### 8.2 Эксперименты
 
 **Попробуйте перед выбором:**
+
 - Mentoring junior developers
 - Tech Lead роль на проекте
 - Временное управление командой (когда лид в отпуске)
@@ -522,16 +592,19 @@ Distinguished Engineer ≈ VP
 
 **Вопросы для обсуждения:**
 ```
+
 1. Какие карьерные пути есть в компании?
 2. Как выглядит рост на IC track здесь?
 3. Какие возможности для management?
 4. Можно ли попробовать другой трек?
 5. Какие навыки мне нужно развить?
+
 ```
 
 ### 8.4 Framework для решения
 
 ```
+
                     ┌─────────────────────┐
                     │  Вы на Senior уровне │
                     └──────────┬──────────┘
@@ -554,6 +627,7 @@ Distinguished Engineer ≈ VP
     │                   │           │                     │
     │ Staff → Principal │           │ TL → EM → Director  │
     └───────────────────┘           └─────────────────────┘
+
 ```
 
 ---
@@ -561,9 +635,13 @@ Distinguished Engineer ≈ VP
 ## 💡 Key Takeaways
 
 - **Два равноценных пути**: IC и Management треки одинаково ценны и оплачиваемы
+
 - **Разные навыки**: IC фокус на технологиях, Management — на людях и процессах
+
 - **Можно переключаться**: Pendulum model позволяет переходить между треками
+
 - **Выбор не навсегда**: Решение можно пересмотреть через 2-3 года
+
 - **Честная самооценка**: Выбирайте по склонностям, не по деньгам или статусу
 
 ---
@@ -571,15 +649,18 @@ Distinguished Engineer ≈ VP
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [03_StaffEngineering](../03_StaffEngineering/) — подробно о Staff/Principal пути
 - [01_Transition](../01_Transition/) — первые шаги в management
 
 **Practice Ideas:**
+
 1. Заполните framework самооценки из раздела 4.1
 2. Поговорите с Staff Engineer и Engineering Manager в вашей компании
 3. Попросите feedback о своих склонностях от коллег и руководителя
 
 **Going Deeper:**
+
 - Модель "Engineer/Manager Pendulum" от Charity Majors
 - Книга "Staff Engineer" by Will Larson
 - Книга "The Manager's Path" by Camille Fournier
@@ -589,18 +670,25 @@ Distinguished Engineer ≈ VP
 ## 📚 Additional Resources
 
 **Books:**
+
 - "The Manager's Path" by Camille Fournier — обзор обоих треков
 - "Staff Engineer" by Will Larson — глубокое погружение в IC track
 - "An Elegant Puzzle" by Will Larson — системы в engineering management
 
 **Articles:**
+
 - [Charity Majors: The Engineer/Manager Pendulum](https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/)
 - [Will Larson: Staff Engineer Archetypes](https://staffeng.com/guides/staff-archetypes)
 - [Gergely Orosz: The Engineer's Guide to Career Growth](https://blog.pragmaticengineer.com/)
 
 **Podcasts:**
+
 - [StaffEng Podcast](https://staffeng.com/podcast)
 - [The Engineering Manager Podcast](https://www.theengineeringmanager.com/)
 
 ---
+
+
+
+
 

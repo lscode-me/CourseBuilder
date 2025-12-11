@@ -33,6 +33,7 @@
 ### 1.2 Четыре ключевые метрики
 
 ```python
+
 dora_metrics = {
     "deployment_frequency": {
         "description": "Как часто организация деплоит в production",
@@ -67,11 +68,13 @@ dora_metrics = {
         "low": "1 week to 1 month"
     }
 }
+
 ```
 
 ### 1.3 Классификация команд
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    DORA Performance Levels                       │
 ├─────────────────────────────────────────────────────────────────┤
@@ -101,6 +104,7 @@ dora_metrics = {
 │  • MTTR: 1 week - 1 month                                        │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -110,6 +114,7 @@ dora_metrics = {
 ### 2.1 Deployment Frequency
 
 ```python
+
 from datetime import datetime, timedelta
 from collections import defaultdict
 
@@ -151,11 +156,13 @@ deployments = [
 result = calculate_deployment_frequency(deployments)
 print(f"Deployment frequency: {result['deployments_per_day']}/day")
 print(f"Level: {result['level']}")
+
 ```
 
 ### 2.2 Lead Time for Changes
 
 ```python
+
 def calculate_lead_time(
     changes: list[dict]  # {"commit_time": datetime, "deploy_time": datetime}
 ) -> dict:
@@ -189,11 +196,13 @@ def calculate_lead_time(
         "p90_hours": round(p90_hours, 2),
         "level": level
     }
+
 ```
 
 ### 2.3 Change Failure Rate
 
 ```python
+
 def calculate_change_failure_rate(
     deployments: list[dict]  # {"timestamp": datetime, "caused_incident": bool}
 ) -> dict:
@@ -221,11 +230,13 @@ def calculate_change_failure_rate(
         "failure_rate_percent": round(rate, 2),
         "level": level
     }
+
 ```
 
 ### 2.4 Mean Time to Recovery (MTTR)
 
 ```python
+
 def calculate_mttr(
     incidents: list[dict]  # {"start": datetime, "resolved": datetime}
 ) -> dict:
@@ -256,6 +267,7 @@ def calculate_mttr(
         "total_incidents": len(recovery_times),
         "level": level
     }
+
 ```
 
 ---
@@ -265,6 +277,7 @@ def calculate_mttr(
 ### 3.1 Источники данных
 
 ```python
+
 data_sources = {
     "deployment_frequency": [
         "CI/CD pipeline (GitHub Actions, GitLab CI)",
@@ -288,6 +301,7 @@ data_sources = {
         "Custom incident tracking"
     ]
 }
+
 ```
 
 ### 3.2 Автоматизация сбора
@@ -315,6 +329,7 @@ jobs:
               "timestamp": "${{ github.event.workflow_run.updated_at }}",
               "status": "${{ github.event.workflow_run.conclusion }}"
             }'
+
 ```
 
 ---
@@ -351,11 +366,13 @@ dashboard_panels = {
         "queries": ["df_weekly", "lt_weekly", "cfr_weekly", "mttr_weekly"]
     }
 }
+
 ```
 
 ### 4.2 Improvement Actions
 
 ```python
+
 improvement_actions = {
     "low_deployment_frequency": [
         "Уменьшить batch size (меньше изменений за релиз)",
@@ -382,6 +399,7 @@ improvement_actions = {
         "Автоматический rollback"
     ]
 }
+
 ```
 
 ---
@@ -391,6 +409,7 @@ improvement_actions = {
 ### 5.1 Developer Experience Metrics
 
 ```python
+
 dx_metrics = {
     "build_time": {
         "description": "Время сборки в CI",
@@ -409,11 +428,13 @@ dx_metrics = {
         "target": "< 1 week"
     }
 }
+
 ```
 
 ### 5.2 Reliability Metrics
 
 ```python
+
 reliability_metrics = {
     "availability": {
         "description": "% времени сервис доступен",
@@ -428,6 +449,7 @@ reliability_metrics = {
         "target": "Trending down"
     }
 }
+
 ```
 
 ---
@@ -449,10 +471,12 @@ reliability_metrics = {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [14_DevSecOps](../14_DevSecOps/) — Security metrics
 - [04_CI](../04_CI/) — CI optimization
 
 **Practice Ideas:**
+
 1. Измерьте текущие DORA метрики вашей команды
 2. Создайте dashboard для tracking
 3. Определите топ-3 улучшения
@@ -462,12 +486,17 @@ reliability_metrics = {
 ## 📚 Additional Resources
 
 **Reports:**
+
 - [State of DevOps Report](https://dora.dev/)
 - "Accelerate" by Nicole Forsgren
 
 **Tools:**
+
 - [Four Keys](https://github.com/dora-team/fourkeys) — Open source DORA metrics
 - LinearB, Sleuth, Faros.ai
 
 ---
+
+
+
 

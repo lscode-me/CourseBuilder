@@ -34,12 +34,14 @@ DevOps — это не инструмент, не должность и не о�
 Традиционно в IT-организациях существовало чёткое разделение:
 
 **Development (Dev):**
+
 - Пишут код
 - Хотят быстрее выпускать новые фичи
 - Измеряются скоростью разработки
 - Цель: изменения
 
 **Operations (Ops):**
+
 - Поддерживают инфраструктуру
 - Хотят стабильности
 - Измеряются uptime и надёжностью
@@ -48,6 +50,7 @@ DevOps — это не инструмент, не должность и не о�
 Это создаёт **конфликт интересов**: Dev хочет частых релизов, Ops хочет минимума изменений. Результат — «стена» между командами:
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    Традиционная модель                       │
 ├─────────────────────────┬───────────────────────────────────┤
@@ -63,6 +66,7 @@ DevOps — это не инструмент, не должность и не о�
 └─────────────────────────┴───────────────────────────────────┘
                           │
                     "The Wall"
+
 ```
 
 ### 1.2 DevOps как мост
@@ -85,16 +89,19 @@ DevOps разрушает эту стену через:
 ### 2.1 Предпосылки (2000-2008)
 
 **Agile Manifesto (2001):**
+
 - Революция в разработке
 - Короткие итерации, быстрая обратная связь
 - Но... Agile остановился на границе с Operations
 
 **Lean Manufacturing:**
+
 - Принципы Toyota Production System
 - Устранение waste, непрерывное улучшение
 - Mary и Tom Poppendieck адаптировали для IT
 
 **Web 2.0 компании:**
+
 - Flickr, Google, Amazon — деплоили по 10+ раз в день
 - Нужны были новые подходы к операциям
 
@@ -120,16 +127,23 @@ Patrick Debois (разочарованный консультант) орган�
 ### 2.3 Развитие (2010-2015)
 
 - **2010:** "Continuous Delivery" by Jez Humble — библия CD
+
 - **2011:** "The Phoenix Project" by Gene Kim — DevOps для менеджеров
+
 - **2013:** Docker — контейнеры становятся мейнстримом
+
 - **2014:** Kubernetes — оркестрация контейнеров
+
 - **2015:** "DevOps Handbook" — практическое руководство
 
 ### 2.4 Зрелость (2016-настоящее время)
 
 - **SRE книга от Google (2016)** — формализация практик
+
 - **DORA metrics** — научный подход к измерению DevOps
+
 - **GitOps (2017)** — декларативная инфраструктура
+
 - **Platform Engineering (2022+)** — следующая эволюция
 
 ---
@@ -143,14 +157,17 @@ Gene Kim в "The Phoenix Project" сформулировал **Три Пути**
 **Принцип:** Оптимизируй поток работы слева направо (от Dev к Ops к клиенту).
 
 ```
+
 ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐
 │ Dev  │───▶│Build │───▶│ Test │───▶│Deploy│───▶│Client│
 └──────┘    └──────┘    └──────┘    └──────┘    └──────┘
             ───────────────────────────────────────────▶
                         Поток (Flow)
+
 ```
 
 **Практики First Way:**
+
 - Визуализация работы (Kanban board)
 - Ограничение Work in Progress (WIP)
 - Уменьшение размера batch
@@ -169,6 +186,7 @@ risk_per_release = "HIGH"  # Много изменений = много риск
 releases_per_year = 365  # Каждый день
 avg_changes_per_release = 5
 risk_per_release = "LOW"  # Мало изменений = легко откатить
+
 ```
 
 ### 3.2 The Second Way: Feedback (Amplify Feedback Loops)
@@ -176,14 +194,17 @@ risk_per_release = "LOW"  # Мало изменений = легко откат�
 **Принцип:** Создай и усиль петли обратной связи справа налево.
 
 ```
+
 ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐
 │ Dev  │◀───│Build │◀───│ Test │◀───│Deploy│◀───│Client│
 └──────┘    └──────┘    └──────┘    └──────┘    └──────┘
 ◀──────────────────────────────────────────────────────
                     Feedback Loop
+
 ```
 
 **Практики Second Way:**
+
 - Мониторинг и алертинг
 - A/B тестирование
 - Автоматические тесты
@@ -221,6 +242,7 @@ jobs:
 **Принцип:** Создай культуру экспериментирования и обучения.
 
 **Практики Third Way:**
+
 - Выделяй время на эксперименты (20% time)
 - Делись знаниями (tech talks, документация)
 - Blameless postmortems
@@ -242,6 +264,7 @@ def get_recommendations(user_id: int) -> list:
     else:
         # Старый проверенный алгоритм
         return legacy_recommendations(user_id)
+
 ```
 
 ---
@@ -255,6 +278,7 @@ CALMS — это акроним, описывающий ключевые асп�
 **Что это:** Общие ценности, доверие, сотрудничество между командами.
 
 **Признаки здоровой культуры:**
+
 - Dev и Ops работают в одной команде
 - Общие on-call rotation
 - Blameless postmortems
@@ -262,16 +286,20 @@ CALMS — это акроним, описывающий ключевые асп�
 
 **Anti-pattern:**
 ```
+
 ❌ "Это не мой код — я только деплою"
 ❌ "Operations не понимают наш код"
 ❌ "Developers не думают о production"
+
 ```
 
 **Pattern:**
 ```
+
 ✅ "Мы вместе отвечаем за этот сервис"
 ✅ "Давайте разберёмся, как это предотвратить"
 ✅ "Что мы можем автоматизировать?"
+
 ```
 
 ### 4.2 Automation (Автоматизация)
@@ -279,6 +307,7 @@ CALMS — это акроним, описывающий ключевые асп�
 **Что это:** Автоматизация всего, что может быть автоматизировано.
 
 **Области автоматизации:**
+
 - Build и packaging
 - Testing (unit, integration, e2e)
 - Deployment
@@ -314,9 +343,13 @@ resource "aws_instance" "web" {
 **Что это:** Принципы Lean manufacturing, адаптированные для IT.
 
 **Ключевые концепции:**
+
 - **Eliminate waste** — убрать всё, что не добавляет ценности
+
 - **Small batches** — маленькие порции работы
+
 - **Continuous improvement** — постоянное улучшение (Kaizen)
+
 - **Pull system** — работа "вытягивается" по необходимости
 
 **Типы waste в IT:**
@@ -336,6 +369,7 @@ resource "aws_instance" "web" {
 **Что это:** Принятие решений на основе данных, а не интуиции.
 
 **Что измерять:**
+
 - Deployment frequency
 - Lead time for changes
 - Change failure rate
@@ -375,6 +409,7 @@ def calculate_deployment_frequency(
         "deployments_per_day": total / period_days,
         "period_days": period_days
     }
+
 ```
 
 ### 4.5 Sharing (Обмен знаниями)
@@ -382,6 +417,7 @@ def calculate_deployment_frequency(
 **Что это:** Открытость, прозрачность, обмен знаниями и опытом.
 
 **Практики sharing:**
+
 - Internal tech talks
 - Runbooks и документация
 - Postmortem reviews
@@ -416,6 +452,7 @@ to be held longer than expected, exhausting the pool.
 
 ## Lessons Learned
 We need better visibility into database connection usage.
+
 ```
 
 ---
@@ -480,16 +517,19 @@ class SRE(DevOps):
     def collaborate(self):
         """Shared ownership with dev teams."""
         return self.embed_with_dev_teams()
+
 ```
 
 ### 5.4 Когда что использовать?
 
 **DevOps подходит когда:**
+
 - Нужно улучшить collaboration между Dev и Ops
 - Организация начинает трансформацию
 - Фокус на culture change
 
 **SRE подходит когда:**
+
 - Нужны конкретные метрики надёжности
 - Есть ресурсы на dedicated SRE team
 - Требуется формализованный подход к reliability
@@ -505,20 +545,25 @@ class SRE(DevOps):
 **Проблема:** Создание отдельной должности "DevOps Engineer" между Dev и Ops.
 
 ```
+
 ❌ Анти-паттерн:
 Dev ──▶ DevOps Engineer ──▶ Ops
         (новая стена)
+
 ```
 
 **Почему это плохо:**
+
 - Создаёт новый silo вместо устранения старых
 - DevOps становится чужой ответственностью
 - Dev и Ops всё ещё не взаимодействуют
 
 **Правильный подход:**
 ```
+
 ✅ Паттерн:
 Dev + Ops = Одна команда с общей ответственностью
+
 ```
 
 ### 6.2 "Мы внедрили DevOps — купили Jenkins"
@@ -541,6 +586,7 @@ culture_changes = [
 devops_implemented = all(
     change in our_culture for change in culture_changes
 )
+
 ```
 
 ### 6.3 "DevOps — это только автоматизация"
@@ -548,6 +594,7 @@ devops_implemented = all(
 **Проблема:** Фокус только на технической автоматизации без культурных изменений.
 
 **Симптомы:**
+
 - Автоматизированный CI/CD, но команды всё ещё враждуют
 - Тесты есть, но их игнорируют при срочных релизах
 - Infrastructure as Code, но никто не делает code review
@@ -557,6 +604,7 @@ devops_implemented = all(
 **Проблема:** Мышление, что cloud и автоматизация полностью заменят Ops.
 
 **Реальность:**
+
 - Serverless всё ещё требует операционной экспертизы
 - Cloud ≠ автоматическая надёжность
 - Кто-то должен понимать инфраструктуру
@@ -568,20 +616,26 @@ devops_implemented = all(
 ### 7.1 Модели внедрения
 
 **Модель 1: Embedded DevOps**
+
 ```
+
 ┌────────────────────────────────────────┐
 │              Product Team              │
 ├──────────┬──────────┬─────────────────┤
 │   Dev    │    QA    │   Ops/DevOps    │
 │ (5 eng)  │ (1 eng)  │    (1 eng)      │
 └──────────┴──────────┴─────────────────┘
+
 ```
+
 - DevOps/Ops engineer встроен в каждую команду
 - Полная автономия команды
 - Подходит для организаций с сильной инженерной культурой
 
 **Модель 2: Platform Team**
+
 ```
+
 ┌────────────────────────────────────────┐
 │           Platform Team                │
 │  (CI/CD, IaC, Monitoring, Security)   │
@@ -593,13 +647,17 @@ devops_implemented = all(
    │ Team A  │ │ Team B  │ │ Team C  │
    │ (Dev)   │ │ (Dev)   │ │ (Dev)   │
    └─────────┘ └─────────┘ └─────────┘
+
 ```
+
 - Централизованная команда создаёт инструменты
 - Product команды используют платформу
 - Снижает cognitive load на dev teams
 
 **Модель 3: SRE Team**
+
 ```
+
 ┌────────────────────────────────────────┐
 │              SRE Team                  │
 │    (Reliability, Scalability)          │
@@ -611,7 +669,9 @@ devops_implemented = all(
    │ Team A  │ │ Team B  │ │ Team C  │
    │ (Dev)   │ │ (Dev)   │ │ (Dev)   │
    └─────────┘ └─────────┘ └─────────┘
+
 ```
+
 - SRE поддерживает критичные сервисы
 - Консультирует dev teams по надёжности
 - Модель Google
@@ -665,12 +725,14 @@ DORA (DevOps Research and Assessment) провела многолетнее ис
 ### 8.2 ROI от DevOps
 
 **Исследование показало, что Elite performers:**
+
 - Деплоят в **208 раз чаще**
 - Lead time в **106 раз короче**
 - MTTR в **2604 раза быстрее**
 - Change failure rate **7 раз ниже**
 
 **Бизнес-результаты:**
+
 - На **50%** больше вероятность превысить цели по прибыли
 - На **2x** больше вероятность превысить цели по market share
 - На **2x** выше продуктивность разработчиков
@@ -722,14 +784,17 @@ print(f"Deployment frequency: {improvement['deployment_frequency_improvement']:.
 print(f"Lead time: {improvement['lead_time_improvement']:.0f}x faster")
 print(f"Failure rate: {improvement['failure_rate_improvement']:.0f}x lower")
 print(f"MTTR: {improvement['mttr_improvement']:.0f}x faster")
+
 ```
 
 **Output:**
 ```
+
 Deployment frequency: 28x
 Lead time: 540x faster
 Failure rate: 6x lower
 MTTR: 168x faster
+
 ```
 
 ---
@@ -761,6 +826,7 @@ MTTR: 168x faster
 ### 9.2 Roadmap зрелости
 
 ```
+
       ┌─────────────────────────────────────────────────────┐
       │                  DevOps Roadmap                     │
       └─────────────────────────────────────────────────────┘
@@ -788,6 +854,7 @@ Q4    ┌───────────────────────�
       │ • Chaos engineering эксперименты
       │ • Self-service платформа для разработчиков
       └──────────────────────────────────────────────────────
+
 ```
 
 ---
@@ -809,16 +876,19 @@ Q4    ┌───────────────────────�
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [02_Methodologies](../02_Methodologies/) — Agile, Scrum, Kanban и их роль в DevOps
 - [04_CI](../04_CI/) — Continuous Integration на практике
 - [10_SRE](../10_SRE/) — Глубокое погружение в Site Reliability Engineering
 
 **Practice Ideas:**
+
 1. Оцените текущую зрелость вашей организации по CALMS
 2. Измерьте текущие DORA metrics для вашей команды
 3. Проведите первый blameless postmortem
 
 **Going Deeper:**
+
 - "The Phoenix Project" — начните с этой книги
 - Посмотрите "10+ Deploys Per Day" доклад (YouTube)
 - Изучите State of DevOps Report от DORA
@@ -828,21 +898,29 @@ Q4    ┌───────────────────────�
 ## 📚 Additional Resources
 
 **Books:**
+
 - "The Phoenix Project" by Gene Kim — бизнес-роман о DevOps
 - "The DevOps Handbook" by Gene Kim et al. — практическое руководство
 - "Accelerate" by Nicole Forsgren — научный подход к DevOps
 
 **Articles & Reports:**
+
 - [State of DevOps Report](https://dora.dev) — ежегодное исследование
 - [Google SRE Books](https://sre.google/books/) — бесплатные книги от Google
 
 **Videos:**
+
 - [10+ Deploys Per Day: Dev and Ops Cooperation at Flickr](https://www.youtube.com/watch?v=LdOe18KhtT4) — исторический доклад
 - [The Short History of DevOps](https://www.youtube.com/watch?v=o7-IuYS0iSE) — краткая история
 
 **Communities:**
+
 - [DevOpsDays](https://devopsdays.org/) — конференции по всему миру
 - [SRE Weekly](https://sreweekly.com/) — еженедельная рассылка
 
 ---
+
+
+
+
 

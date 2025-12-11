@@ -12,6 +12,7 @@
 - Уметь создавать и запускать Go-программы
 
 **Recommended prior modules:**
+
 - [01_Intro](../01_Intro/) — введение в Go
 - [02_Basics](../02_Basics/) — переменные и типы
 
@@ -36,6 +37,7 @@
 В Go условие `if` **не требует круглых скобок**, но **фигурные скобки обязательны**:
 
 ```go
+
 package main
 
 import "fmt"
@@ -66,13 +68,16 @@ func main() {
         fmt.Println("Пожилой")
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Совершеннолетний
 Есть ограничения
 Взрослый
+
 ```
 
 ### 1.2 if с инициализацией
@@ -80,6 +85,7 @@ func main() {
 Уникальная особенность Go — можно объявить переменную прямо в `if`:
 
 ```go
+
 package main
 
 import (
@@ -108,12 +114,15 @@ func main() {
 func doSomething() error {
     return nil
 }
+
 ```
 
 **Output:**
 ```
+
 Успех!
 Файл не найден
+
 ```
 
 > **💡 Pro Tip:**  
@@ -122,6 +131,7 @@ func doSomething() error {
 ### 1.3 Вложенные условия
 
 ```go
+
 package main
 
 import "fmt"
@@ -144,12 +154,15 @@ func main() {
         fmt.Println("Доступ разрешён (упрощённо)")
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Доступ разрешён
 Доступ разрешён (упрощённо)
+
 ```
 
 ---
@@ -161,6 +174,7 @@ func main() {
 В Go есть только один тип цикла — `for`. Но он покрывает все сценарии:
 
 ```go
+
 package main
 
 import "fmt"
@@ -194,16 +208,19 @@ func main() {
     }
     fmt.Println()
 }
+
 ```
 
 **Output:**
 ```
+
 Классический for:
 0 1 2 3 4 
 While-стиль:
 0 1 2 3 4 
 Бесконечный с break:
 0 1 2 
+
 ```
 
 ### 2.2 for range
@@ -211,6 +228,7 @@ While-стиль:
 `for range` — идиоматический способ итерации по коллекциям:
 
 ```go
+
 package main
 
 import "fmt"
@@ -238,10 +256,12 @@ func main() {
     }
     fmt.Println()
 }
+
 ```
 
 **Output:**
 ```
+
 Index и Value:
   [0] = 10
   [1] = 20
@@ -252,11 +272,13 @@ Index и Value:
 10 20 30 40 50 
 Только indices:
 0 1 2 3 4 
+
 ```
 
 **Итерация по строке:**
 
 ```go
+
 package main
 
 import "fmt"
@@ -270,10 +292,12 @@ func main() {
         fmt.Printf("  byte %2d: %c (U+%04X)\n", i, r, r)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 По рунам:
   byte  0: H (U+0048)
   byte  1: e (U+0065)
@@ -285,11 +309,13 @@ func main() {
   byte  7: 世 (U+4E16)
   byte 10: 界 (U+754C)
   byte 13: ! (U+0021)
+
 ```
 
 **Итерация по map:**
 
 ```go
+
 package main
 
 import "fmt"
@@ -305,13 +331,16 @@ func main() {
         fmt.Printf("%s -> %s\n", country, capital)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Russia -> Moscow
 Japan -> Tokyo
 Germany -> Berlin
+
 ```
 
 > **⚠️ Warning:**  
@@ -320,6 +349,7 @@ Germany -> Berlin
 ### 2.3 break и continue
 
 ```go
+
 package main
 
 import "fmt"
@@ -345,14 +375,17 @@ func main() {
     }
     fmt.Println()
 }
+
 ```
 
 **Output:**
 ```
+
 break:
 0 1 2 3 4 
 continue (пропуск чётных):
 1 3 5 7 9 
+
 ```
 
 ### 2.4 Метки (labels)
@@ -360,6 +393,7 @@ continue (пропуск чётных):
 Метки позволяют выйти из вложенных циклов:
 
 ```go
+
 package main
 
 import "fmt"
@@ -390,14 +424,17 @@ outer:
     }
     fmt.Println()
 }
+
 ```
 
 **Output:**
 ```
+
 Без метки:
 (0,0) (1,0) (2,0) 
 С меткой:
 (0,0) (0,1) (0,2) (1,0) 
+
 ```
 
 ---
@@ -409,6 +446,7 @@ outer:
 В Go `switch` **не требует `break`** — каждый case автоматически завершается:
 
 ```go
+
 package main
 
 import "fmt"
@@ -433,16 +471,20 @@ func main() {
         fmt.Println("Неверный день")
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Среда
+
 ```
 
 ### 3.2 Switch с несколькими значениями
 
 ```go
+
 package main
 
 import "fmt"
@@ -459,11 +501,14 @@ func main() {
         fmt.Println("Согласная или другой символ")
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Гласная
+
 ```
 
 ### 3.3 Switch без выражения
@@ -471,6 +516,7 @@ func main() {
 Switch без выражения — это более читаемая альтернатива цепочке `if-else`:
 
 ```go
+
 package main
 
 import "fmt"
@@ -492,16 +538,20 @@ func main() {
         fmt.Println("Неудовлетворительно (F)")
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Хорошо (B)
+
 ```
 
 ### 3.4 Switch с инициализацией
 
 ```go
+
 package main
 
 import (
@@ -519,11 +569,14 @@ func main() {
         fmt.Println("Добрый вечер!")
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Добрый день!
+
 ```
 
 ### 3.5 fallthrough
@@ -531,6 +584,7 @@ func main() {
 Если нужно "провалиться" в следующий case, используйте `fallthrough`:
 
 ```go
+
 package main
 
 import "fmt"
@@ -551,12 +605,15 @@ func main() {
         fmt.Println("Четыре")
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Два
 Три
+
 ```
 
 > **⚠️ Warning:**  
@@ -567,6 +624,7 @@ func main() {
 Type switch позволяет проверять тип значения интерфейса:
 
 ```go
+
 package main
 
 import "fmt"
@@ -593,15 +651,18 @@ func main() {
     describe([]int{1, 2, 3})
     describe(3.14)
 }
+
 ```
 
 **Output:**
 ```
+
 Целое число: 42
 Строка: "hello" (длина 5)
 Булево: true
 Слайс int: [1 2 3]
 Неизвестный тип: float64
+
 ```
 
 ---
@@ -613,6 +674,7 @@ func main() {
 `defer` откладывает выполнение функции до выхода из текущей функции:
 
 ```go
+
 package main
 
 import "fmt"
@@ -624,15 +686,18 @@ func main() {
     defer fmt.Println("Отложено 3")
     fmt.Println("Конец")
 }
+
 ```
 
 **Output:**
 ```
+
 Начало
 Конец
 Отложено 3
 Отложено 2
 Отложено 1
+
 ```
 
 > **💡 Pro Tip:**  
@@ -643,6 +708,7 @@ func main() {
 **Закрытие файлов:**
 
 ```go
+
 package main
 
 import (
@@ -668,11 +734,13 @@ func readFile(filename string) error {
 func main() {
     readFile("example.txt")
 }
+
 ```
 
 **Освобождение мьютексов:**
 
 ```go
+
 package main
 
 import (
@@ -698,11 +766,14 @@ func main() {
     }
     fmt.Println("Counter:", counter)
 }
+
 ```
 
 **Output:**
 ```
+
 Counter: 5
+
 ```
 
 ### 4.3 Defer и значения аргументов
@@ -710,6 +781,7 @@ Counter: 5
 Аргументы defer вычисляются немедленно, но вызов откладывается:
 
 ```go
+
 package main
 
 import "fmt"
@@ -720,17 +792,21 @@ func main() {
     x = 20
     fmt.Println("Current x =", x)
 }
+
 ```
 
 **Output:**
 ```
+
 Current x = 20
 Deferred x = 10
+
 ```
 
 **Для "захвата" текущего значения используйте замыкание:**
 
 ```go
+
 package main
 
 import "fmt"
@@ -743,12 +819,15 @@ func main() {
     x = 20
     fmt.Println("Current x =", x)
 }
+
 ```
 
 **Output:**
 ```
+
 Current x = 20
 Closure x = 20
+
 ```
 
 ### 4.4 Defer и возвращаемые значения
@@ -756,6 +835,7 @@ Closure x = 20
 Defer может модифицировать именованные возвращаемые значения:
 
 ```go
+
 package main
 
 import "fmt"
@@ -770,16 +850,20 @@ func double(x int) (result int) {
 func main() {
     fmt.Println(double(5))  // 10, не 5!
 }
+
 ```
 
 **Output:**
 ```
+
 10
+
 ```
 
 ### 4.5 Defer в цикле
 
 ```go
+
 package main
 
 import "fmt"
@@ -791,14 +875,17 @@ func main() {
     }
     fmt.Println("После цикла")
 }
+
 ```
 
 **Output:**
 ```
+
 После цикла
 Deferred: 2
 Deferred: 1
 Deferred: 0
+
 ```
 
 > **⚠️ Warning:**  
@@ -813,6 +900,7 @@ Deferred: 0
 Go поддерживает `goto`, но его использование ограничено и обычно не рекомендуется:
 
 ```go
+
 package main
 
 import "fmt"
@@ -829,12 +917,15 @@ loop:
     fmt.Println()
     fmt.Println("Конец")
 }
+
 ```
 
 **Output:**
 ```
+
 0 1 2 3 4 
 Конец
+
 ```
 
 > **⚠️ Warning:**  
@@ -847,6 +938,7 @@ loop:
 ### 6.1 Early Return
 
 ```go
+
 package main
 
 import "fmt"
@@ -880,17 +972,21 @@ func main() {
     processUserBad("John", 25, true)
     processUserGood("Jane", 30, true)
 }
+
 ```
 
 **Output:**
 ```
+
 Обработка пользователя: John
 Обработка пользователя: Jane
+
 ```
 
 ### 6.2 Бесконечный цикл с условием выхода
 
 ```go
+
 package main
 
 import (
@@ -921,20 +1017,24 @@ func main() {
         time.Sleep(30 * time.Millisecond)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Попытка 1...
 Попытка 2...
 Попытка 3...
 Попытка 4...
 Успех!
+
 ```
 
 ### 6.3 Паттерн обработки ошибок с defer
 
 ```go
+
 package main
 
 import (
@@ -969,15 +1069,18 @@ func main() {
         fmt.Println("Ошибка:", err)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Открываем ресурс 1
 Открываем ресурс 2
 Закрываем ресурс 2
 Закрываем ресурс 1
 Ошибка: что-то пошло не так
+
 ```
 
 ---
@@ -987,6 +1090,7 @@ func main() {
 ### 7.1 Забытые фигурные скобки
 
 ```go
+
 // Ошибка компиляции!
 if x > 0
     fmt.Println("positive")
@@ -995,11 +1099,13 @@ if x > 0
 if x > 0 {
     fmt.Println("positive")
 }
+
 ```
 
 ### 7.2 Модификация слайса при итерации
 
 ```go
+
 package main
 
 import "fmt"
@@ -1016,16 +1122,20 @@ func main() {
     
     fmt.Println(nums)  // [4 8 12 16 20]
 }
+
 ```
 
 **Output:**
 ```
+
 [4 8 12 16 20]
+
 ```
 
 ### 7.3 Захват переменной цикла в горутине
 
 ```go
+
 package main
 
 import (
@@ -1054,12 +1164,15 @@ func main() {
     time.Sleep(100 * time.Millisecond)
     fmt.Println()
 }
+
 ```
 
 **Output (может варьироваться):**
 ```
+
 3 3 3 
 0 1 2 
+
 ```
 
 > **💡 Pro Tip:**  
@@ -1084,20 +1197,26 @@ func main() {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [04_Functions](../04_Functions/) — функции и замыкания
 - [08_Errors](../08_Errors/) — обработка ошибок
 - [09_Concurrency](../09_Concurrency/) — горутины и каналы
 
 **Practice Ideas:**
+
 1. Напишите программу FizzBuzz
 2. Создайте простой калькулятор с switch
 3. Реализуйте функцию чтения файла с defer для закрытия
 4. Напишите программу с вложенными циклами и метками
 
 **Going Deeper:**
+
 - Изучите паттерны graceful shutdown с defer
 - Прочитайте о "comma ok" паттерне
 - Изучите context для отмены операций
 
 ---
+
+
+
 

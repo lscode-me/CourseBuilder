@@ -11,6 +11,7 @@
 - Иметь доступ к AWS аккаунту
 
 **Recommended prior modules:**
+
 - [Введение в облака](../01_Intro/)
 - [Архитектура облаков](../03_Architecture/)
 
@@ -38,6 +39,7 @@
 2. **Authorization (AuthZ)**: Что вам разрешено делать?
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                        IAM Overview                                 │
 ├────────────────────────────────────────────────────────────────────┤
@@ -67,6 +69,7 @@
 │                    └─────────────────┘                             │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 IAM — глобальный сервис
@@ -92,10 +95,12 @@ print(f"  Pricing: {iam_characteristics['pricing']}")
 print(f"\nLimits:")
 for limit, value in iam_characteristics['limits'].items():
     print(f"  {limit}: {value}")
+
 ```
 
 **Output:**
 ```
+
 IAM Characteristics:
   Scope: Global (не региональный)
   Pricing: Бесплатный
@@ -106,6 +111,7 @@ Limits:
   roles_per_account: 1000
   policies_per_account: 1500
   managed_policies_per_entity: 10
+
 ```
 
 ---
@@ -131,6 +137,7 @@ aws iam create-login-profile \
     --user-name developer-alice \
     --password "TempPassword123!" \
     --password-reset-required
+
 ```
 
 ### 2.2 IAM Groups
@@ -148,11 +155,13 @@ aws iam attach-group-policy \
 
 # Список пользователей в группе
 aws iam get-group --group-name developers
+
 ```
 
 ### 2.3 Best Practice: группы вместо прямых политик
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              User-Group-Policy Best Practice                        │
 ├────────────────────────────────────────────────────────────────────┤
@@ -182,6 +191,7 @@ aws iam get-group --group-name developers
 │          Policy    ◄── Одна политика для всех                      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -193,6 +203,7 @@ aws iam get-group --group-name developers
 **IAM Role** — это identity с permissions, которую могут "принять" (assume) сервисы AWS, пользователи или внешние identity. Роли предоставляют временные credentials.
 
 ```python
+
 role_use_cases = {
     "ec2_instance_role": {
         "description": "EC2 инстанс получает доступ к S3",
@@ -222,10 +233,12 @@ for role_type, details in role_use_cases.items():
     print(f"   {details['description']}")
     print(f"   Trusted: {details['trusted_entity']}")
     print()
+
 ```
 
 **Output:**
 ```
+
 IAM Role Use Cases:
 
 📋 ec2_instance_role
@@ -243,11 +256,13 @@ IAM Role Use Cases:
 📋 federated_role
    Внешний identity provider (SAML/OIDC)
    Trusted: SAML provider или OIDC provider
+
 ```
 
 ### 3.2 Создание роли для EC2
 
 ```json
+
 // Trust Policy (кто может assume роль)
 {
     "Version": "2012-10-17",
@@ -261,6 +276,7 @@ IAM Role Use Cases:
         }
     ]
 }
+
 ```
 
 ```bash
@@ -288,11 +304,13 @@ aws ec2 run-instances \
     --image-id ami-12345678 \
     --instance-type t3.micro \
     --iam-instance-profile Name=EC2-S3-Access-Profile
+
 ```
 
 ### 3.3 AssumeRole
 
 ```python
+
 import boto3
 
 def assume_role(role_arn: str, session_name: str) -> dict:
@@ -327,6 +345,7 @@ s3 = boto3.client(
     aws_secret_access_key=creds['SecretAccessKey'],
     aws_session_token=creds['SessionToken']
 )
+
 ```
 
 ---
@@ -336,6 +355,7 @@ s3 = boto3.client(
 ### 4.1 Структура политики
 
 ```json
+
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -358,11 +378,13 @@ s3 = boto3.client(
         }
     ]
 }
+
 ```
 
 ### 4.2 Элементы политики
 
 ```python
+
 policy_elements = {
     "Version": {
         "description": "Версия языка политик",
@@ -405,10 +427,12 @@ for element, details in policy_elements.items():
     print(f"  {details['description']}")
     if 'values' in details:
         print(f"  Values: {details['values']}")
+
 ```
 
 **Output:**
 ```
+
 Policy Elements:
 
 Version:
@@ -436,11 +460,13 @@ Resource:
 
 Condition:
   При каких условиях (опционально)
+
 ```
 
 ### 4.3 Типы политик
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                      Types of IAM Policies                          │
 ├────────────────────────────────────────────────────────────────────┤
@@ -476,11 +502,13 @@ Condition:
 │     └── Ограничивают разрешения на уровне аккаунтов              │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.4 Примеры политик
 
 ```json
+
 // Политика для разработчика
 {
     "Version": "2012-10-17",
@@ -519,9 +547,11 @@ Condition:
         }
     ]
 }
+
 ```
 
 ```json
+
 // S3 Bucket Policy (resource-based)
 {
     "Version": "2012-10-17",
@@ -543,6 +573,7 @@ Condition:
         }
     ]
 }
+
 ```
 
 ---
@@ -552,6 +583,7 @@ Condition:
 ### 5.1 Порядок оценки
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                   Policy Evaluation Logic                           │
 ├────────────────────────────────────────────────────────────────────┤
@@ -594,11 +626,13 @@ Condition:
 │  KEY RULE: Explicit Deny > Allow > Implicit Deny                   │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 5.2 Пример оценки
 
 ```python
+
 def evaluate_policy_example():
     """
     Пример: Пользователь Bob пытается s3:GetObject на bucket-A
@@ -628,10 +662,12 @@ def evaluate_policy_example():
     print("\nNote: Even though Bob has s3:* Allow, explicit DENY wins!")
 
 evaluate_policy_example()
+
 ```
 
 **Output:**
 ```
+
 Scenario: Bob requests s3:GetObject on bucket-A/confidential/file.txt
 
 Evaluation:
@@ -641,6 +677,7 @@ Evaluation:
    → RESULT: DENIED
 
 Note: Even though Bob has s3:* Allow, explicit DENY wins!
+
 ```
 
 ---
@@ -685,6 +722,7 @@ better_policy = {
         }
     }
 }
+
 ```
 
 ### 6.2 Инструменты для анализа
@@ -710,6 +748,7 @@ aws accessanalyzer generate-policy \
             "endTime": "2024-01-31T23:59:59Z"
         }
     }'
+
 ```
 
 ---
@@ -719,6 +758,7 @@ aws accessanalyzer generate-policy \
 ### 7.1 Типы MFA
 
 ```python
+
 mfa_types = {
     "virtual_mfa": {
         "description": "Приложения типа Google Authenticator, Authy",
@@ -742,10 +782,12 @@ for mfa_type, details in mfa_types.items():
     print(f"  {mfa_type}:")
     print(f"    {details['description']}")
     print(f"    Cost: {details['cost']}, Security: {details['security']}")
+
 ```
 
 **Output:**
 ```
+
 MFA Options:
 
   virtual_mfa:
@@ -757,11 +799,13 @@ MFA Options:
   u2f_security_key:
     FIDO U2F ключи (YubiKey)
     Cost: $20-50, Security: Best
+
 ```
 
 ### 7.2 MFA условие в политике
 
 ```json
+
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -778,6 +822,7 @@ MFA Options:
         }
     ]
 }
+
 ```
 
 ---
@@ -787,6 +832,7 @@ MFA Options:
 ### 8.1 SAML 2.0 Federation
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    SAML 2.0 Federation Flow                         │
 ├────────────────────────────────────────────────────────────────────┤
@@ -814,6 +860,7 @@ MFA Options:
 │  └──────────┘                                                      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 8.2 AWS IAM Identity Center (SSO)
@@ -852,11 +899,13 @@ permission_set = {
         ]
     }
 }
+
 ```
 
 ### 8.3 OIDC Federation (для CI/CD)
 
 ```json
+
 // Trust policy для GitHub Actions
 {
     "Version": "2012-10-17",
@@ -878,6 +927,7 @@ permission_set = {
         }
     ]
 }
+
 ```
 
 ```yaml
@@ -901,6 +951,7 @@ jobs:
           aws-region: us-east-1
       
       - run: aws s3 ls  # Works with temporary credentials!
+
 ```
 
 ---
@@ -910,6 +961,7 @@ jobs:
 ### 9.1 Структура Organizations
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │                    AWS Organizations Structure                      │
 ├────────────────────────────────────────────────────────────────────┤
@@ -937,11 +989,13 @@ jobs:
 │      └── Account: Developer Sandbox                                │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 9.2 Service Control Policies (SCPs)
 
 ```json
+
 // SCP: Запретить отключение CloudTrail
 {
     "Version": "2012-10-17",
@@ -958,9 +1012,11 @@ jobs:
         }
     ]
 }
+
 ```
 
 ```json
+
 // SCP: Разрешить только определённые регионы
 {
     "Version": "2012-10-17",
@@ -981,6 +1037,7 @@ jobs:
         }
     ]
 }
+
 ```
 
 ---
@@ -1011,11 +1068,13 @@ jobs:
 
 ❌ **Проблема:**
 ```json
+
 {
     "Effect": "Allow",
     "Action": "*",
     "Resource": "*"
 }
+
 ```
 
 ✅ **Решение:**
@@ -1033,6 +1092,7 @@ aws accessanalyzer generate-policy --policy-generation-details ...
 # Access keys в коде или переменных окружения
 AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
 AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
 ```
 
 ✅ **Решение:**
@@ -1050,10 +1110,15 @@ AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 ## 💡 Key Takeaways
 
 - **IAM** — глобальный бесплатный сервис для управления доступом
+
 - **Принцип наименьших привилегий** — давайте только необходимые разрешения
+
 - **Roles > Users** — используйте роли для сервисов и cross-account доступа
+
 - **Groups** — политики через группы, не напрямую к пользователям
+
 - **MFA** — обязательно для root и привилегированных пользователей
+
 - **Explicit Deny всегда побеждает** — любой Deny перекрывает Allow
 
 ---
@@ -1061,16 +1126,19 @@ AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [EC2](../05_EC2/) — виртуальные серверы
 - [VPC](../07_VPC/) — сетевая инфраструктура
 
 **Практические задания:**
+
 1. Создайте IAM пользователя с MFA
 2. Создайте роль для EC2 с доступом к S3
 3. Напишите политику с использованием условий
 4. Настройте OIDC Federation для GitHub Actions
 
 **Для углубления:**
+
 - Изучите Permission Boundaries
 - Настройте AWS Organizations с SCPs
 - Попробуйте IAM Access Analyzer
@@ -1080,15 +1148,21 @@ AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)
 - [IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html)
 
 **Tools:**
+
 - [IAM Policy Simulator](https://policysim.aws.amazon.com/)
 - [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)
 
 **Videos:**
+
 - [AWS re:Invent: IAM Best Practices](https://www.youtube.com/results?search_query=aws+reinvent+iam+best+practices)
 
 ---
+
+
+
 

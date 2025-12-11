@@ -39,8 +39,10 @@
 Кодирование преобразует бинарные данные в безопасный текст:
 
 ```
+
 Binary:  [0x48, 0x65, 0x6C, 0x6C, 0x6F]
 Base64:  "SGVsbG8="
+
 ```
 
 ---
@@ -58,17 +60,20 @@ Base64 использует 64 символа:
 - `=` (padding)
 
 **Алгоритм:**
+
 1. Берём 3 байта (24 бита)
 2. Делим на 4 группы по 6 бит
 3. Каждая группа → один из 64 символов
 
 ```
+
 Input:  "Hi" = 0x48 0x69
 Binary: 01001000 01101001
 Groups: 010010 000110 1001XX
 Base64: S      G      k=
 
 Padding: 2 байта дают 3 символа + 1 "="
+
 ```
 
 ### 2.2 Командная строка
@@ -85,11 +90,13 @@ echo "SGVsbG8sIFdvcmxkIQ==" | base64 -d
 # Файл
 base64 image.png > image.txt
 base64 -d image.txt > restored.png
+
 ```
 
 ### 2.3 Python
 
 ```python
+
 import base64
 
 # Кодирование
@@ -111,6 +118,7 @@ encoded_image = base64.b64encode(image_data).decode()
 decoded_image = base64.b64decode(encoded_image)
 with open('restored.png', 'wb') as f:
     f.write(decoded_image)
+
 ```
 
 ### 2.4 Варианты Base64
@@ -123,18 +131,22 @@ with open('restored.png', 'wb') as f:
 | Base16 | `0-9A-F` | Hex |
 
 ```python
+
 import base64
 
 # URL-safe Base64
 encoded = base64.urlsafe_b64encode(b"data?with/special+chars")
 print(encoded)  # ZGF0YT93aXRoL3NwZWNpYWwrY2hhcnM=
+
 ```
 
 ### 2.5 Data URLs
 
 ```html
+
 <!-- Изображение встроенное в HTML -->
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" />
+
 ```
 
 ```python
@@ -145,6 +157,7 @@ def image_to_data_url(filepath, mime_type):
     return f"data:{mime_type};base64,{data}"
 
 data_url = image_to_data_url('logo.png', 'image/png')
+
 ```
 
 ---
@@ -156,23 +169,28 @@ data_url = image_to_data_url('logo.png', 'image/png')
 URL может содержать только ASCII символы из "безопасного" набора. Специальные символы нужно кодировать.
 
 ```
+
 Небезопасные: пробел, ?, &, =, #, %, русские буквы
+
 ```
 
 ### 3.2 Процент-кодирование
 
 ```
+
 Пробел  →  %20 или +
 ?       →  %3F
 &       →  %26
 =       →  %3D
 #       →  %23
 %       →  %25
+
 ```
 
 ### 3.3 Примеры
 
 ```
+
 До:   "Hello World"
 После: "Hello%20World" или "Hello+World"
 
@@ -181,11 +199,13 @@ URL может содержать только ASCII символы из "без
 
 До:   "Привет"
 После: "%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82"
+
 ```
 
 ### 3.4 Python urllib
 
 ```python
+
 from urllib.parse import quote, unquote, urlencode, parse_qs
 
 # Кодирование строки
@@ -204,6 +224,7 @@ print(query_string)  # name=%D0%98%D0%B2%D0%B0%D0%BD&city=%D0%9C%D0%BE%D1%81%D0%
 # Парсинг параметров
 parsed = parse_qs(query_string)
 print(parsed)  # {'name': ['Иван'], 'city': ['Москва'], 'age': ['30']}
+
 ```
 
 ### 3.5 Командная строка
@@ -214,6 +235,7 @@ python3 -c "from urllib.parse import quote; print(quote('Привет'))"
 
 # jq
 echo '"Привет"' | jq -r '@uri'
+
 ```
 
 ---
@@ -223,6 +245,7 @@ echo '"Привет"' | jq -r '@uri'
 ### 4.1 Структура
 
 ```
+
 type/subtype; parameter=value
 
 Примеры:
@@ -230,6 +253,7 @@ text/plain; charset=utf-8
 application/json
 image/png
 multipart/form-data; boundary=----WebKitFormBoundary
+
 ```
 
 ### 4.2 Основные типы
@@ -257,13 +281,16 @@ HTTP/1.1 200 OK
 Content-Type: image/png
 
 [binary data]
+
 ```
 
 ### 4.4 Content-Disposition
 
 ```http
+
 Content-Disposition: attachment; filename="report.pdf"
 Content-Disposition: inline; filename="image.png"
+
 ```
 
 ---
@@ -273,6 +300,7 @@ Content-Disposition: inline; filename="image.png"
 ### 5.1 Структура
 
 ```http
+
 POST /upload HTTP/1.1
 Content-Type: multipart/form-data; boundary=----Boundary
 
@@ -286,11 +314,13 @@ Content-Type: application/pdf
 
 [binary content]
 ------Boundary--
+
 ```
 
 ### 5.2 Python requests
 
 ```python
+
 import requests
 
 # Загрузка файла
@@ -307,6 +337,7 @@ response = requests.post(
     files=files,
     data=data
 )
+
 ```
 
 ---
@@ -316,6 +347,7 @@ response = requests.post(
 ### 6.1 JWT токены
 
 ```python
+
 import base64
 import json
 
@@ -335,6 +367,7 @@ print(data)
 ### 6.2 Email вложения
 
 ```python
+
 import base64
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
@@ -353,11 +386,13 @@ with open('document.pdf', 'rb') as f:
         'attachment; filename="document.pdf"'
     )
     msg.attach(attachment)
+
 ```
 
 ### 6.3 Изображение в JSON
 
 ```python
+
 import base64
 import json
 
@@ -376,6 +411,7 @@ response = requests.post(
     'https://api.example.com/images',
     json=image_json
 )
+
 ```
 
 ---
@@ -427,13 +463,18 @@ response = requests.post(
 **Это последний модуль курса IT Basics.**
 
 **Практика:**
+
 1. Закодируйте и раскодируйте файл в Base64
 2. Правильно URL-кодируйте строку с кириллицей
 3. Определите MIME type для разных файлов
 
 **Рекомендуемые курсы для продолжения:**
+
 - [Linux](../../Linux/) — Командная строка Linux
 - [Python](../../Python/) — Программирование на Python
 - [Networking](../../Networking/) — Компьютерные сети
+
+
+
 
 

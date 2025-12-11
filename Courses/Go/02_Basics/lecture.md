@@ -12,6 +12,7 @@
 - Понимать базовую структуру Go-программы (package, import, func main)
 
 **Recommended prior modules:**
+
 - [01_Intro](../01_Intro/) — введение в Go
 
 ---
@@ -35,6 +36,7 @@
 В Go есть несколько способов объявить переменную:
 
 ```go
+
 package main
 
 import "fmt"
@@ -57,19 +59,23 @@ func main() {
     fmt.Printf("score: %d (type: %T)\n", score, score)
     fmt.Printf("city: %s (type: %T)\n", city, city)
 }
+
 ```
 
 **Output:**
 ```
+
 name: Gopher (type: string)
 age: 10 (type: int)
 score: 0 (type: int)
 city: Moscow (type: string)
+
 ```
 
 ### 1.2 Множественное объявление
 
 ```go
+
 package main
 
 import "fmt"
@@ -96,15 +102,18 @@ func main() {
     fmt.Println("x, y:", x, y)
     fmt.Println("name, valid:", name, valid)
 }
+
 ```
 
 **Output:**
 ```
+
 a, b, c: 1 2 3
 Name: John Doe
 Age: 30 Active: true
 x, y: 10 20
 name, valid: test true
+
 ```
 
 ### 1.3 Zero Values
@@ -112,6 +121,7 @@ name, valid: test true
 В Go все переменные автоматически инициализируются "нулевыми значениями":
 
 ```go
+
 package main
 
 import "fmt"
@@ -129,15 +139,18 @@ func main() {
     fmt.Printf("string:  %q\n", s)  // %q показывает кавычки
     fmt.Printf("pointer: %v\n", p)
 }
+
 ```
 
 **Output:**
 ```
+
 int:     0
 float64: 0.000000
 bool:    false
 string:  ""
 pointer: <nil>
+
 ```
 
 **Таблица Zero Values:**
@@ -163,6 +176,7 @@ pointer: <nil>
 **Целые числа:**
 
 ```go
+
 package main
 
 import "fmt"
@@ -187,19 +201,23 @@ func main() {
     fmt.Println("uint8 (byte):", u8)
     fmt.Println("uint64:", u64)
 }
+
 ```
 
 **Output:**
 ```
+
 int8: 127
 int: 42
 uint8 (byte): 255
 uint64: 18446744073709551615
+
 ```
 
 **Числа с плавающей точкой:**
 
 ```go
+
 package main
 
 import (
@@ -225,21 +243,25 @@ func main() {
     fmt.Printf("Planck: %e\n", planck)
     fmt.Printf("Max float64: %e\n", math.MaxFloat64)
 }
+
 ```
 
 **Output:**
 ```
+
 float32: 3.14159
 float64: 3.141592653589793
 pi type: float64
 Avogadro: 6.022000e+23
 Planck: 6.626000e-34
 Max float64: 1.797693e+308
+
 ```
 
 **Комплексные числа:**
 
 ```go
+
 package main
 
 import "fmt"
@@ -257,18 +279,22 @@ func main() {
     fmt.Printf("c128: %v\n", c128)
     fmt.Printf("c: %v, real: %.1f, imag: %.1f\n", c, r, i)
 }
+
 ```
 
 **Output:**
 ```
+
 c64: (3+4i)
 c128: (3+4i)
 c: (3+4i), real: 3.0, imag: 4.0
+
 ```
 
 ### 2.2 Boolean
 
 ```go
+
 package main
 
 import "fmt"
@@ -289,20 +315,24 @@ func main() {
     fmt.Println("isPositive:", isPositive)
     fmt.Println("isZero:", isZero)
 }
+
 ```
 
 **Output:**
 ```
+
 active: true
 deleted: false
 enabled: false
 isPositive: true
 isZero: false
+
 ```
 
 ### 2.3 Строки
 
 ```go
+
 package main
 
 import "fmt"
@@ -329,10 +359,12 @@ raw string`
     fmt.Println()
     fmt.Println("s4:", s4)
 }
+
 ```
 
 **Output:**
 ```
+
 s1: Hello, World!
 s1 length: 13
 
@@ -344,11 +376,13 @@ multiline
 raw string
 
 s4: Path: C:\Users\name
+
 ```
 
 **Работа с Unicode:**
 
 ```go
+
 package main
 
 import (
@@ -369,10 +403,12 @@ func main() {
         fmt.Printf("  index: %2d, rune: %c, code: %U\n", i, r, r)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Строка: Привет, 世界! 🌍
 len() (байты): 29
 Количество рун: 14
@@ -391,6 +427,7 @@ len() (байты): 29
   index: 20, rune: !, code: U+0021
   index: 21, rune:  , code: U+0020
   index: 22, rune: 🌍, code: U+1F30D
+
 ```
 
 > **⚠️ Warning:**  
@@ -399,6 +436,7 @@ len() (байты): 29
 ### 2.4 Rune и Byte
 
 ```go
+
 package main
 
 import "fmt"
@@ -418,14 +456,17 @@ func main() {
     fmt.Printf("s[0]: %d (%c)\n", s[0], s[0])
     fmt.Printf("s[1]: %d (%c)\n", s[1], s[1])
 }
+
 ```
 
 **Output:**
 ```
+
 byte 'A': 65 (A)
 rune 'Я': 1071 (Я) U+042F
 s[0]: 71 (G)
 s[1]: 111 (o)
+
 ```
 
 ---
@@ -435,6 +476,7 @@ s[1]: 111 (o)
 ### 3.1 Базовые константы
 
 ```go
+
 package main
 
 import "fmt"
@@ -457,14 +499,17 @@ func main() {
     fmt.Println("StatusOK:", StatusOK)
     fmt.Println("TypedConst:", TypedConst)
 }
+
 ```
 
 **Output:**
 ```
+
 Pi: 3.14159
 MaxSize: 1000
 StatusOK: 200
 TypedConst: 9223372036854775807
+
 ```
 
 ### 3.2 Untyped Constants
@@ -472,6 +517,7 @@ TypedConst: 9223372036854775807
 Константы в Go могут быть "нетипизированными" — их тип определяется контекстом:
 
 ```go
+
 package main
 
 import "fmt"
@@ -494,19 +540,23 @@ func main() {
     fmt.Printf("pi32: %.20f\n", pi32)
     fmt.Printf("pi64: %.20f\n", pi64)
 }
+
 ```
 
 **Output:**
 ```
+
 f32: 10000000000
 f64: 10000000000
 pi32: 3.14159274101257324219
 pi64: 3.14159265358979311600
+
 ```
 
 ### 3.3 iota — Генератор констант
 
 ```go
+
 package main
 
 import "fmt"
@@ -553,10 +603,12 @@ func main() {
     fmt.Println("  Exec:", FlagExec)
     fmt.Println("  Read+Write:", FlagRead|FlagWrite)
 }
+
 ```
 
 **Output:**
 ```
+
 Days:
   Sunday: 0 Saturday: 6
 
@@ -570,6 +622,7 @@ Flags:
   Write: 2
   Exec: 4
   Read+Write: 3
+
 ```
 
 > **💡 Pro Tip:**  
@@ -582,6 +635,7 @@ Flags:
 ### 4.1 Арифметические операторы
 
 ```go
+
 package main
 
 import "fmt"
@@ -606,10 +660,12 @@ func main() {
     c--
     fmt.Println("c-- =", c)
 }
+
 ```
 
 **Output:**
 ```
+
 17 + 5 = 22
 17 - 5 = 12
 17 * 5 = 85
@@ -618,6 +674,7 @@ func main() {
 17.0 / 5.0 = 3.40
 c++ = 11
 c-- = 10
+
 ```
 
 > **⚠️ Warning:**  
@@ -626,6 +683,7 @@ c-- = 10
 ### 4.2 Операторы сравнения
 
 ```go
+
 package main
 
 import "fmt"
@@ -644,10 +702,12 @@ func main() {
     s1, s2 := "apple", "banana"
     fmt.Printf("%q < %q: %t\n", s1, s2, s1 < s2)
 }
+
 ```
 
 **Output:**
 ```
+
 10 == 20: false
 10 != 20: true
 10 < 20: true
@@ -655,11 +715,13 @@ func main() {
 10 <= 20: true
 10 >= 20: false
 "apple" < "banana": true
+
 ```
 
 ### 4.3 Логические операторы
 
 ```go
+
 package main
 
 import "fmt"
@@ -688,19 +750,23 @@ func someFunc() bool {
     fmt.Println("someFunc called")
     return true
 }
+
 ```
 
 **Output:**
 ```
+
 true && false = false
 true || false = true
 !true = false
 Short-circuit works!
+
 ```
 
 ### 4.4 Побитовые операторы
 
 ```go
+
 package main
 
 import "fmt"
@@ -723,10 +789,12 @@ func main() {
     fmt.Printf("1 << 4 = %d\n", c<<4)   // Сдвиг влево (умножение на 2^4)
     fmt.Printf("16 >> 2 = %d\n", 16>>2) // Сдвиг вправо (деление на 2^2)
 }
+
 ```
 
 **Output:**
 ```
+
 a = 1100 (12)
 b = 1010 (10)
 
@@ -737,11 +805,13 @@ a &^ b (AND NOT) = 0100 (4)
 
 1 << 4 = 16
 16 >> 2 = 4
+
 ```
 
 ### 4.5 Операторы присваивания
 
 ```go
+
 package main
 
 import "fmt"
@@ -772,10 +842,12 @@ func main() {
     y |= 0b0001
     fmt.Printf("y |= 0b0001: %04b\n", y)
 }
+
 ```
 
 **Output:**
 ```
+
 x += 5: 15
 x -= 3: 12
 x *= 2: 24
@@ -783,6 +855,7 @@ x /= 4: 6
 x %= 2: 0
 y &= 0b1010: 1010
 y |= 0b0001: 1011
+
 ```
 
 ---
@@ -794,6 +867,7 @@ y |= 0b0001: 1011
 Go требует явного преобразования между типами:
 
 ```go
+
 package main
 
 import "fmt"
@@ -818,19 +892,23 @@ func main() {
     import_strconv := fmt.Sprintf("%d", n)
     fmt.Printf("int %d -> string %q (correct)\n", n, import_strconv)
 }
+
 ```
 
 **Output:**
 ```
+
 int 42 -> float64 42.000000
 float64 3.990000 -> int 3
 int 65 -> string "A" (code point!)
 int 65 -> string "65" (correct)
+
 ```
 
 ### 5.2 Преобразование строк
 
 ```go
+
 package main
 
 import (
@@ -868,15 +946,18 @@ func main() {
     b, _ := strconv.ParseBool(sb)
     fmt.Printf("string %q -> bool %t\n", sb, b)
 }
+
 ```
 
 **Output:**
 ```
+
 string "42" -> int 42
 int 123 -> string "123"
 string "3.14159" -> float64 3.141590
 float64 2.718280 -> string "2.7183"
 string "true" -> bool true
+
 ```
 
 > **⚠️ Warning:**  
@@ -889,6 +970,7 @@ string "true" -> bool true
 ### 6.1 Package-level vs Local
 
 ```go
+
 package main
 
 import "fmt"
@@ -914,19 +996,23 @@ func showGlobal() {
     fmt.Println("From showGlobal:", globalVar)
     // fmt.Println(localVar) // Ошибка! localVar не видна здесь
 }
+
 ```
 
 **Output:**
 ```
+
 I'm global
 I'm local
 100
 From showGlobal: I'm global
+
 ```
 
 ### 6.2 Shadowing (затенение)
 
 ```go
+
 package main
 
 import "fmt"
@@ -946,14 +1032,17 @@ func main() {
     
     fmt.Println("4:", x)  // main-local (block-local вышла из области видимости)
 }
+
 ```
 
 **Output:**
 ```
+
 1: global
 2: main-local
 3: block-local
 4: main-local
+
 ```
 
 > **⚠️ Warning:**  
@@ -966,6 +1055,7 @@ func main() {
 ### 7.1 Разные системы счисления
 
 ```go
+
 package main
 
 import "fmt"
@@ -988,14 +1078,17 @@ func main() {
     fmt.Printf("oct: 0o%o = %d\n", oct, oct)
     fmt.Printf("hex: 0x%X = %d\n", hex, hex)
 }
+
 ```
 
 **Output:**
 ```
+
 dec: 42
 bin: 0b101010 = 42
 oct: 0o52 = 42
 hex: 0x2A = 42
+
 ```
 
 ### 7.2 Разделители для читаемости
@@ -1003,6 +1096,7 @@ hex: 0x2A = 42
 Go 1.13+ позволяет использовать `_` как разделитель в числовых литералах:
 
 ```go
+
 package main
 
 import "fmt"
@@ -1018,14 +1112,17 @@ func main() {
     fmt.Printf("Color: #%06X\n", hexColor)
     fmt.Printf("Binary: %016b\n", binary)
 }
+
 ```
 
 **Output:**
 ```
+
 Billion: 1000000000
 Card: 1234567890123456
 Color: #FFFFFF
 Binary: 1111000011110000
+
 ```
 
 ---
@@ -1036,6 +1133,7 @@ Binary: 1111000011110000
 
 ❌ **Проблема:**
 ```go
+
 package main
 
 import "fmt"
@@ -1044,10 +1142,12 @@ func main() {
     result := 5 / 2
     fmt.Println(result)  // 2, не 2.5!
 }
+
 ```
 
 ✅ **Решение:**
 ```go
+
 package main
 
 import "fmt"
@@ -1061,11 +1161,13 @@ func main() {
     result2 := float64(a) / float64(b)
     fmt.Println(result2)  // 2.5
 }
+
 ```
 
 ### 8.2 Переполнение чисел
 
 ```go
+
 package main
 
 import "fmt"
@@ -1079,17 +1181,21 @@ func main() {
     u8++  // Переполнение!
     fmt.Println("uint8 overflow:", u8)  // 0
 }
+
 ```
 
 **Output:**
 ```
+
 int8 overflow: -128
 uint8 overflow: 0
+
 ```
 
 ### 8.3 Сравнение float
 
 ```go
+
 package main
 
 import (
@@ -1110,14 +1216,17 @@ func main() {
     epsilon := 1e-9
     fmt.Println("With epsilon:", math.Abs(a-b) < epsilon)
 }
+
 ```
 
 **Output:**
 ```
+
 0.1 + 0.2 == 0.3: false
 0.1 + 0.2 = 0.30000000000000004
 0.3      = 0.29999999999999999
 With epsilon: true
+
 ```
 
 ---
@@ -1139,20 +1248,26 @@ With epsilon: true
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [03_FlowControl](../03_FlowControl/) — условия, циклы, defer
 - [04_Functions](../04_Functions/) — функции и замыкания
 - [05_DataStructures](../05_DataStructures/) — массивы, слайсы, мапы
 
 **Practice Ideas:**
+
 1. Создайте конвертер температур (Цельсий ↔ Фаренгейт)
 2. Напишите программу расчёта возраста по году рождения
 3. Поэкспериментируйте с iota для создания констант дней недели и месяцев
 4. Напишите калькулятор, обрабатывающий разные типы чисел
 
 **Going Deeper:**
+
 - Изучите пакет `math` для математических операций
 - Изучите пакет `strconv` для преобразований
 - Прочитайте о IEEE 754 для понимания чисел с плавающей точкой
 
 ---
+
+
+
 

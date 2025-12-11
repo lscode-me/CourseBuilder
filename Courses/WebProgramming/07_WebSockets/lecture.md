@@ -12,6 +12,7 @@
 - Иметь базовые знания JavaScript
 
 **Recommended prior modules:**
+
 - [HTTP Protocol](../01_HTTP/) — основы HTTP
 - [ASGI](../06_ASGI/) — асинхронный интерфейс
 
@@ -34,11 +35,13 @@
 ### 1.1 Зачем нужен WebSocket
 
 **Проблемы HTTP для real-time:**
+
 - Request-Response модель — сервер не может инициировать отправку
 - Polling — неэффективен (много запросов)
 - Long polling — сложен, ограничен
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                 HTTP Polling vs WebSocket                   │
 ├────────────────────────────────────────────────────────────┤
@@ -62,6 +65,7 @@
 │  Много накладных расходов          Эффективно     │      │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Что такое WebSocket
@@ -71,13 +75,17 @@
 Особенности:
 
 - **Персистентное соединение** — один раз подключился
+
 - **Двунаправленность** — оба могут отправлять когда угодно
+
 - **Низкие накладные расходы** — минимальный заголовок (2-14 байт)
+
 - **Начинается как HTTP** — совместим с прокси и файрволами
 
 ### 1.3 WebSocket Handshake
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                  WebSocket Handshake                        │
 ├────────────────────────────────────────────────────────────┤
@@ -104,10 +112,12 @@
 │    │◄═══════════════════════════════════════│            │
 │    │                                          │            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 **Клиентский запрос:**
 ```http
+
 GET /chat HTTP/1.1
 Host: server.example.com
 Upgrade: websocket
@@ -115,14 +125,17 @@ Connection: Upgrade
 Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
 Sec-WebSocket-Version: 13
 Origin: http://example.com
+
 ```
 
 **Серверный ответ:**
 ```http
+
 HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
 Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
+
 ```
 
 ### 1.4 Sec-WebSocket-Accept
@@ -130,6 +143,7 @@ Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 Сервер вычисляет `Sec-WebSocket-Accept` по формуле:
 
 ```python
+
 import base64
 import hashlib
 
@@ -145,6 +159,7 @@ def compute_accept(key: str) -> str:
 key = "dGhlIHNhbXBsZSBub25jZQ=="
 accept = compute_accept(key)
 print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
+
 ```
 
 ---
@@ -154,6 +169,7 @@ print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 ### 2.1 Структура фрейма
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    WebSocket Frame                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -176,6 +192,7 @@ print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 │  +---------------------------------------------------------------+
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Opcode
@@ -195,6 +212,7 @@ print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 **Сервер → Клиент**: данные НЕ ДОЛЖНЫ быть замаскированы
 
 ```python
+
 def mask_data(data: bytes, mask_key: bytes) -> bytes:
     """Маскирование данных WebSocket."""
     masked = bytearray(len(data))
@@ -208,6 +226,7 @@ data = b'Hello'
 masked = mask_data(data, mask_key)
 # Демаскирование — та же операция
 original = mask_data(masked, mask_key)
+
 ```
 
 ---
@@ -247,6 +266,7 @@ async def client():
 
 if __name__ == "__main__":
     asyncio.run(client())
+
 ```
 
 ### 3.2 Сервер с библиотекой websockets
@@ -284,6 +304,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 ```
 
 ### 3.3 Broadcast сервер (чат)
@@ -369,6 +390,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 ```
 
 ---
@@ -406,6 +428,7 @@ websocket_send = {
     'text': 'Response',  # или 'bytes'
 }
 websocket_close = {'type': 'websocket.close', 'code': 1000}
+
 ```
 
 ### 4.2 ASGI WebSocket приложение
@@ -612,6 +635,7 @@ async def app(scope, receive, send):
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=8000)
+
 ```
 
 ---
@@ -621,6 +645,7 @@ if __name__ == '__main__':
 ### 5.1 FastAPI
 
 ```python
+
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from typing import List
@@ -689,6 +714,7 @@ async def websocket_endpoint(websocket: WebSocket):
     except WebSocketDisconnect:
         manager.disconnect(websocket)
         await manager.broadcast("A user left the chat")
+
 ```
 
 ### 5.2 Django Channels
@@ -737,6 +763,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps({
             'message': event['message']
         }))
+
 ```
 
 ```python
@@ -747,6 +774,7 @@ from . import consumers
 websocket_urlpatterns = [
     re_path(r'ws/chat/(?P<room_name>\w+)/$', consumers.ChatConsumer.as_asgi()),
 ]
+
 ```
 
 ---
@@ -756,6 +784,7 @@ websocket_urlpatterns = [
 ### 6.1 Базовый клиент
 
 ```javascript
+
 // Создание соединения
 const ws = new WebSocket('ws://localhost:8000/ws');
 
@@ -791,11 +820,13 @@ ws.send(JSON.stringify({type: 'message', text: 'Hello'}));
 
 // Закрытие
 ws.close(1000, 'Normal closure');
+
 ```
 
 ### 6.2 Reconnecting WebSocket
 
 ```javascript
+
 class ReconnectingWebSocket {
     constructor(url, options = {}) {
         this.url = url;
@@ -877,6 +908,7 @@ class ReconnectingWebSocket {
 // Использование
 const ws = new ReconnectingWebSocket('ws://localhost:8000/ws');
 ws.onmessage = (event) => console.log(event.data);
+
 ```
 
 ---
@@ -886,6 +918,7 @@ ws.onmessage = (event) => console.log(event.data);
 ### 7.1 Проблема масштабирования
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │              WebSocket Scaling Problem                      │
 ├────────────────────────────────────────────────────────────┤
@@ -902,11 +935,13 @@ ws.onmessage = (event) => console.log(event.data);
 │  (они на разных серверах!)                                 │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 7.2 Решение: Pub/Sub с Redis
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │              WebSocket with Redis Pub/Sub                   │
 ├────────────────────────────────────────────────────────────┤
@@ -926,6 +961,7 @@ ws.onmessage = (event) => console.log(event.data);
 │  Client A → Server 1 → Redis → All Servers → All Clients   │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ```python
@@ -980,6 +1016,7 @@ async def websocket_endpoint(websocket: WebSocket):
         pass
     finally:
         connected_websockets.discard(websocket)
+
 ```
 
 ### 7.3 Sticky Sessions
@@ -987,6 +1024,7 @@ async def websocket_endpoint(websocket: WebSocket):
 Альтернативный подход — sticky sessions на load balancer:
 
 ```nginx
+
 upstream websocket_servers {
     ip_hash;  # Sticky sessions по IP
     server server1:8000;
@@ -1002,6 +1040,7 @@ server {
         proxy_set_header Connection "upgrade";
     }
 }
+
 ```
 
 ---
@@ -1009,10 +1048,15 @@ server {
 ## 💡 Key Takeaways
 
 - **WebSocket** — протокол полнодуплексной связи поверх TCP
+
 - **Handshake** — начинается как HTTP Upgrade запрос
+
 - **Фреймы** — минимальный overhead (2-14 байт заголовка)
+
 - **ASGI** — нативно поддерживает WebSocket
+
 - **Масштабирование** — требует Pub/Sub (Redis) или sticky sessions
+
 - **Ping/Pong** — для поддержания соединения
 
 ---
@@ -1020,16 +1064,19 @@ server {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Architecture](../08_Architecture/) — Архитектура веб-приложений
 - [ASGI](../06_ASGI/) — Асинхронный интерфейс
 
 **Practice Ideas:**
+
 1. Создайте чат-приложение с комнатами
 2. Реализуйте real-time уведомления
 3. Создайте collaborative editor
 4. Настройте WebSocket с Redis для масштабирования
 
 **Going Deeper:**
+
 - RFC 6455 — WebSocket Protocol
 - Socket.IO — библиотека с fallback
 - Server-Sent Events как альтернатива
@@ -1039,15 +1086,21 @@ server {
 ## 📚 Additional Resources
 
 **Specifications:**
+
 - [RFC 6455](https://tools.ietf.org/html/rfc6455) — WebSocket Protocol
 
 **Libraries:**
+
 - [websockets](https://websockets.readthedocs.io/) — Python WebSocket
 - [Django Channels](https://channels.readthedocs.io/) — WebSocket для Django
 - [Socket.IO](https://socket.io/) — Real-time библиотека
 
 **Articles:**
+
 - [WebSocket MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket)
 
 ---
+
+
+
 

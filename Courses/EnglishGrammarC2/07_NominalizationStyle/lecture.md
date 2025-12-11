@@ -46,6 +46,7 @@ Academic English differs from general English in:
 **Nominalization** = turning verbs and adjectives into nouns:
 
 ```
+
 Verbal style (informal):
 "Scientists discovered that the drug works effectively."
 
@@ -54,6 +55,7 @@ Nominalized style (academic):
 
 Verbal: "The economy grew rapidly."
 Nominal: "The rapid growth of the economy..."
+
 ```
 
 ### 1.3 Why Nominalize?
@@ -61,9 +63,13 @@ Nominal: "The rapid growth of the economy..."
 Nominalization serves academic purposes:
 
 - **Density** — packing more information per sentence
+
 - **Objectivity** — removing human actors
+
 - **Abstraction** — discussing concepts, not events
+
 - **Cohesion** — linking sentences smoothly
+
 - **Convention** — expected in academic writing
 
 ---
@@ -101,6 +107,7 @@ Common patterns:
 **Step-by-step nominalization:**
 
 ```
+
 ORIGINAL (verbal):
 "The government decided to increase taxes because the economy was failing."
 
@@ -112,11 +119,13 @@ NOMINALIZED:
 
 OR MORE FORMAL:
 "The decision to increase taxation arose from economic failure."
+
 ```
 
 ### 2.4 Examples of Transformation
 
 ```
+
 VERBAL:
 "When researchers discovered that the drug worked, they were excited."
 
@@ -128,6 +137,7 @@ VERBAL:
 
 NOMINALIZED:
 "Increasing urbanization is driven by employment-seeking behavior."
+
 ```
 
 ---
@@ -139,6 +149,7 @@ NOMINALIZED:
 Academic writing often **removes personal subjects**:
 
 ```
+
 Personal: "I believe that climate change is real."
 Impersonal: "It is believed that climate change is real."
             "There is evidence that climate change is occurring."
@@ -148,31 +159,38 @@ Personal: "We found that X affects Y."
 Impersonal: "It was found that X affects Y."
             "X was found to affect Y."
             "The results indicate that X affects Y."
+
 ```
 
 ### 3.2 Impersonal Patterns
 
 **It + passive + that-clause:**
 ```
+
 "It is argued that..."
 "It is believed that..."
 "It has been suggested that..."
 "It can be observed that..."
 "It should be noted that..."
+
 ```
 
 **There + BE:**
 ```
+
 "There is evidence that..."
 "There appears to be a correlation..."
 "There exists a relationship between..."
+
 ```
 
 **Thing/Finding as subject:**
 ```
+
 "This finding suggests..."
 "The evidence indicates..."
 "These results demonstrate..."
+
 ```
 
 ### 3.3 The "Author's We"
@@ -180,15 +198,19 @@ Impersonal: "It was found that X affects Y."
 Academic "we" (even for single authors):
 
 ```
+
 "We argue that..." (author's position)
 "We can see that..." (guiding reader)
 "In this paper, we examine..." (describing research)
+
 ```
 
 **NOT:**
 ```
+
 ❌ "I think that..." (too personal)
 ❌ "I believe..." (too personal)
+
 ```
 
 ---
@@ -201,12 +223,14 @@ Academic "we" (even for single authors):
 
 Academic writing is DENSE:
 ```
+
 Conversational (low density):
 "The researchers wanted to find out if the drug would work well 
 when they gave it to patients who were sick."
 
 Academic (high density):
 "The researchers investigated the drug's efficacy in clinical trials."
+
 ```
 
 The academic version says the same thing in fewer words.
@@ -217,32 +241,40 @@ The academic version says the same thing in fewer words.
 
 **1. Nominalization:**
 ```
+
 "The fact that prices increased" → "The price increase"
+
 ```
 
 **2. Pre-modification:**
 ```
+
 "a study that was carried out recently" 
 → "a recent study"
 
 "patients who are diabetic"
 → "diabetic patients"
+
 ```
 
 **3. Post-modification with phrases (not clauses):**
 ```
+
 "factors that influence behavior"
 → "factors influencing behavior"
 → "behavioral factors"
+
 ```
 
 **4. Compounding:**
 ```
+
 "issues related to the environment"
 → "environmental issues"
 
 "analysis that is based on data"
 → "data-based analysis"
+
 ```
 
 ### 4.3 Noun Phrases in Academic Writing
@@ -250,6 +282,7 @@ The academic version says the same thing in fewer words.
 Academic writing uses **long, complex noun phrases**:
 
 ```
+
 CONVERSATIONAL:
 "Scientists who study how the climate is changing have found that 
 temperatures are increasing more quickly than they expected."
@@ -257,10 +290,12 @@ temperatures are increasing more quickly than they expected."
 ACADEMIC:
 "Climate researchers have identified accelerated temperature increases 
 exceeding initial projections."
+
 ```
 
 **Structure of academic noun phrase:**
 ```
+
 [pre-modifiers] + head noun + [post-modifiers]
 
 "The rapidly increasing global temperature projections 
@@ -269,6 +304,7 @@ based on recent climate models"
 Pre: "rapidly increasing global"
 Head: "temperature projections"
 Post: "based on recent climate models"
+
 ```
 
 ---
@@ -284,6 +320,7 @@ Passive voice in academic writing:
 - Is **expected** in certain sections (Methods, Results)
 
 ```
+
 Active: "We analyzed the data using SPSS."
 Passive: "The data were analyzed using SPSS."
 (Focus on data, not researcher)
@@ -291,17 +328,20 @@ Passive: "The data were analyzed using SPSS."
 Active: "Researchers have investigated this phenomenon."
 Passive: "This phenomenon has been investigated."
 (Focus on phenomenon)
+
 ```
 
 ### 5.2 When to Use Passive
 
 **Use passive in:**
+
 - Methods sections: "Participants were recruited..."
 - Describing procedures: "The samples were heated..."
 - General statements: "It has been established that..."
 - When agent is unknown or unimportant
 
 **Keep active for:**
+
 - Your argument: "We argue that..."
 - Citing others: "Smith (2020) demonstrated that..."
 - Clear agency: "The government implemented policies..."
@@ -310,14 +350,18 @@ Passive: "This phenomenon has been investigated."
 
 **GET-passive (informal):**
 ```
+
 "The window got broken." (conversational)
 "The window was broken." (neutral/academic)
+
 ```
 
 **Passive + infinitive:**
 ```
+
 "X is believed to cause Y."
 "The drug was found to be effective."
+
 ```
 
 ---
@@ -372,32 +416,38 @@ Academic writing avoids **phrasal verbs**:
 ### 7.1 Avoiding Contractions
 
 ```
+
 ❌ "It's important to note..."
 ✅ "It is important to note..."
 
 ❌ "The results don't support..."
 ✅ "The results do not support..."
+
 ```
 
 ### 7.2 Avoiding Questions
 
 ```
+
 ❌ "How does temperature affect growth?"
 ✅ "The effect of temperature on growth was examined."
 
 ❌ "What causes this phenomenon?"
 ✅ "The causes of this phenomenon are discussed below."
+
 ```
 
 ### 7.3 Avoiding First Person (in some disciplines)
 
 ```
+
 ❌ "I will discuss..."
 ✅ "This paper discusses..."
 ✅ "The following section discusses..."
 
 ❌ "I analyzed..."
 ✅ "The data were analyzed..." / "We analyzed..."
+
 ```
 
 Note: "We" (author's we) is acceptable in many disciplines.
@@ -407,11 +457,13 @@ Note: "We" (author's we) is acceptable in many disciplines.
 Use **hedging** (see Module 05):
 
 ```
+
 ❌ "This proves that X causes Y."
 ✅ "This suggests that X may contribute to Y."
 
 ❌ "It is clear that..."
 ✅ "It appears that..." / "The evidence suggests..."
+
 ```
 
 ---
@@ -423,12 +475,14 @@ Use **hedging** (see Module 05):
 Too much nominalization creates **unclear, heavy prose**:
 
 ```
+
 ❌ Over-nominalized:
 "The implementation of the utilization of the methodology 
 for the investigation of the phenomenon..."
 
 ✅ Balanced:
 "The methodology was implemented to investigate the phenomenon..."
+
 ```
 
 **Test:** Can you easily identify WHO does WHAT?
@@ -440,9 +494,11 @@ for the investigation of the phenomenon..."
 Using big words incorrectly:
 
 ```
+
 ❌ "utilize" when "use" is fine
 ❌ "facilitate" when "help" or "enable" works
 ❌ "methodology" when you mean "method"
+
 ```
 
 ### 8.3 Russian Academic Style Transfer
@@ -450,6 +506,7 @@ Using big words incorrectly:
 Russian academic writing differs from English:
 
 ```
+
 Russian style transferred:
 ❌ "In the given article, we consider the question of..."
 ✅ "This article examines..."
@@ -459,6 +516,7 @@ Russian style transferred:
 
 ❌ "The actuality of the problem is..."
 ✅ "This problem is relevant because..." / "The significance of..."
+
 ```
 
 ### 8.4 Choppy vs Flowing
@@ -466,6 +524,7 @@ Russian style transferred:
 Academic writing should **flow**:
 
 ```
+
 ❌ Choppy:
 "The study examined climate change. Climate change affects agriculture.
 Agriculture is important for food security."
@@ -473,6 +532,7 @@ Agriculture is important for food security."
 ✅ Flowing:
 "The study examined climate change and its effects on agriculture, 
 a sector of critical importance for food security."
+
 ```
 
 ---
@@ -487,8 +547,10 @@ a sector of critical importance for food security."
 - No citations usually
 
 ```
+
 "This study investigated... The results indicate that... 
 These findings suggest that..."
+
 ```
 
 ### 9.2 Introduction
@@ -498,9 +560,11 @@ These findings suggest that..."
 - Past tense for specific studies
 
 ```
+
 "Climate change is a significant challenge (present: general truth).
 Recent studies have shown that... (present perfect: recent research).
 Smith (2020) demonstrated that... (past: specific study)."
+
 ```
 
 ### 9.3 Methods
@@ -510,8 +574,10 @@ Smith (2020) demonstrated that... (past: specific study)."
 - Precise, replicable
 
 ```
+
 "Participants were recruited from... Data were collected using...
 The samples were analyzed with..."
+
 ```
 
 ### 9.4 Results
@@ -520,8 +586,10 @@ The samples were analyzed with..."
 - Tables and figures referenced
 
 ```
+
 "The results showed a significant correlation (p < .05).
 As shown in Table 1, the mean values..."
+
 ```
 
 ### 9.5 Discussion/Conclusion
@@ -531,8 +599,10 @@ As shown in Table 1, the mean values..."
 - Present for implications
 
 ```
+
 "These findings suggest that... This may be explained by...
 Future research should examine..."
+
 ```
 
 ---
@@ -543,20 +613,24 @@ Future research should examine..."
 
 **INFORMAL VERSION:**
 ```
+
 "We wanted to find out if making people exercise more would make them 
 less stressed. So we got 100 people to do exercise programs for 8 weeks, 
 and then we looked at how stressed they were. It turns out that the people 
 who exercised more were less stressed than before."
+
 ```
 
 **ACADEMIC VERSION:**
 ```
+
 "This study investigated the relationship between physical activity 
 and stress levels. One hundred participants underwent an eight-week 
 exercise intervention, following which stress levels were assessed. 
 The findings indicate a significant reduction in reported stress among 
 participants, suggesting that increased physical activity may contribute 
 to improved psychological well-being."
+
 ```
 
 ### 10.2 Key Transformations
@@ -575,10 +649,15 @@ to improved psychological well-being."
 ## 💡 Key Takeaways
 
 - **Nominalization** transforms verbs/adjectives into nouns for density and formality
+
 - **Impersonal constructions** remove personal subjects for objectivity
+
 - **Information density** increases through pre/post-modification and compounding
+
 - **Passive voice** focuses on actions/results rather than actors
+
 - **Balance is key**: Over-nominalization creates unclear prose
+
 - **Russian academic style differs**: Avoid direct transfer of conventions
 
 ---
@@ -586,15 +665,18 @@ to improved psychological well-being."
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [05_ModalNuances](../05_ModalNuances/) — Hedging in academic writing
 - [08_EllipsisCohesion](../08_EllipsisCohesion/) — Creating flow between sentences
 
 **Practice Ideas:**
+
 1. Transform a paragraph from informal to academic style
 2. Find nominalized forms in a published paper
 3. Review your own academic writing for over-nominalization
 
 **Going Deeper:**
+
 - Study published papers in your field
 - Analyze the abstract structure of top journals
 - Practice IMRaD (Introduction, Methods, Results, Discussion) structure
@@ -604,14 +686,19 @@ to improved psychological well-being."
 ## 📚 Additional Resources
 
 **Books:**
+
 - "Academic Writing for Graduate Students" by Swales & Feak — the standard
 - "They Say / I Say" by Graff & Birkenstein — academic argument
 - "Writing Science" by Joshua Schimel — for scientists
 
 **Online:**
+
 - [Academic Phrasebank](https://www.phrasebank.manchester.ac.uk/) — useful phrases
 - [Purdue OWL](https://owl.purdue.edu/) — writing resources
 - [COCA Academic Sub-Corpus](https://www.english-corpora.org/coca/)
 
 ---
+
+
+
 

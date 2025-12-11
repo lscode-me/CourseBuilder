@@ -12,6 +12,7 @@
 - Иметь базовые знания systemd или inetd
 
 **Recommended prior modules:**
+
 - [HTTP Protocol](../01_HTTP/) — структура HTTP
 - [Sockets](../../UnixProgramming/07_Sockets/) — сетевое программирование
 - [Daemons](../../UnixProgramming/12_Daemons/) — фоновые процессы
@@ -36,6 +37,7 @@
 
 **Традиционный подход:**
 ```
+
 ┌──────────────────────────────────────────────────────────────┐
 │            Traditional Daemon Startup                        │
 ├──────────────────────────────────────────────────────────────┤
@@ -60,15 +62,18 @@
 │  └─────────────┘                                             │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
+
 ```
 
 **Проблемы:**
+
 - Все демоны стартуют при загрузке (медленно)
 - Потребляют память даже без нагрузки
 - Жёсткий порядок запуска (зависимости)
 
 **Socket Activation:**
 ```
+
 ┌──────────────────────────────────────────────────────────────┐
 │            Socket Activation (systemd)                       │
 ├──────────────────────────────────────────────────────────────┤
@@ -100,6 +105,7 @@
 │  └─────────────┘                                             │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 Преимущества socket activation
@@ -123,6 +129,7 @@ echo       stream  tcp       nowait root  internal
 daytime    stream  tcp       nowait root  internal
 ftp        stream  tcp       nowait root  /usr/sbin/ftpd  ftpd
 telnet     stream  tcp       nowait root  /usr/sbin/telnetd  telnetd
+
 ```
 
 inetd слушает все порты и запускает соответствующую программу при подключении.
@@ -186,6 +193,7 @@ echo -en "Connection: close\r\n"
 echo -en "Server: ShellHTTP/1.0\r\n"
 echo -en "\r\n"
 echo -n "$body"
+
 ```
 
 ### 2.2 Тестирование с netcat
@@ -202,6 +210,7 @@ while true; do nc -l -p 8080 -e ./simple_http.sh; done
 curl http://localhost:8080/
 curl http://localhost:8080/time
 curl http://localhost:8080/json
+
 ```
 
 ### 2.3 Расширенный shell сервер
@@ -307,6 +316,7 @@ main() {
 }
 
 main
+
 ```
 
 ---
@@ -423,6 +433,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ### 3.2 Python сервер с сокетом
@@ -615,6 +626,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ---
@@ -634,6 +646,7 @@ Accept=no
 
 [Install]
 WantedBy=sockets.target
+
 ```
 
 **Параметры [Socket]:**
@@ -673,6 +686,7 @@ ProtectHome=yes
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 ### 4.3 Активация и запуск
@@ -694,16 +708,19 @@ curl http://localhost:8080/
 
 # Теперь сервис запущен
 sudo systemctl status myhttp.service
+
 ```
 
 ### 4.4 Accept=yes vs Accept=no
 
 **Accept=no (по умолчанию):**
+
 - Один долгоживущий процесс
 - Сам делает accept() в цикле
 - Эффективнее для высокой нагрузки
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │  Accept=no                                              │
 ├─────────────────────────────────────────────────────────┤
@@ -721,14 +738,17 @@ sudo systemctl status myhttp.service
 │      │                          └─────────┘             │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 **Accept=yes:**
+
 - Новый процесс на каждое соединение
 - Как inetd — stdin/stdout это соединение
 - Простой код, но дорого при высокой нагрузке
 
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │  Accept=yes                                             │
 ├─────────────────────────────────────────────────────────┤
@@ -746,6 +766,7 @@ sudo systemctl status myhttp.service
 │      ...                                                │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.5 Socket unit с Accept=yes
@@ -762,6 +783,7 @@ MaxConnections=100
 
 [Install]
 WantedBy=sockets.target
+
 ```
 
 ```ini
@@ -777,6 +799,7 @@ StandardInput=socket
 StandardOutput=socket
 StandardError=journal
 User=www-data
+
 ```
 
 ---
@@ -786,6 +809,7 @@ User=www-data
 ### 5.1 Структура проекта
 
 ```
+
 /opt/myhttp/
 ├── http_server.py      # Основной сервер
 ├── handlers.py         # Обработчики маршрутов
@@ -795,6 +819,7 @@ User=www-data
 │   └── script.js
 └── templates/          # HTML шаблоны
     └── base.html
+
 ```
 
 ### 5.2 Продвинутый HTTP сервер
@@ -1130,11 +1155,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 
 ### 5.3 Создание статических файлов
 
 ```bash
+
 mkdir -p /opt/myhttp/static
 
 cat > /opt/myhttp/static/index.html << 'EOF'
@@ -1169,6 +1196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.innerHTML += '<p><em>JavaScript is working!</em></p>';
 });
 EOF
+
 ```
 
 ---
@@ -1181,6 +1209,7 @@ EOF
 # /etc/inetd.conf
 # service  socket  protocol  wait/nowait  user     program        args
 8080       stream  tcp       nowait       www-data /opt/myhttp/simple_http.py simple_http.py
+
 ```
 
 ### 6.2 xinetd (расширенный inetd)
@@ -1202,6 +1231,7 @@ service myhttp
     log_on_failure  = HOST
     disable         = no
 }
+
 ```
 
 ### 6.3 OpenBSD inetd
@@ -1209,11 +1239,13 @@ service myhttp
 ```
 # /etc/inetd.conf на OpenBSD
 8080 stream tcp nowait www /opt/myhttp/simple_http.py simple_http.py
+
 ```
 
 ```bash
 # Перезапуск inetd
 rcctl restart inetd
+
 ```
 
 ---
@@ -1240,6 +1272,7 @@ systemctl list-sockets
 
 # Детали socket unit
 systemctl show myhttp.socket
+
 ```
 
 ### 7.2 Отладка сети
@@ -1258,6 +1291,7 @@ curl -v http://localhost:8080/json
 
 # Смотреть пакеты
 sudo tcpdump -i lo port 8080 -A
+
 ```
 
 ### 7.3 Тестирование socket activation
@@ -1272,6 +1306,7 @@ LISTEN_PID=$$ LISTEN_FDS=1 ./http_server.py 3<>/dev/tcp/localhost/8080
 
 # Используем systemd-socket-activate для тестирования
 systemd-socket-activate -l 8080 ./http_server.py
+
 ```
 
 ---
@@ -1279,9 +1314,13 @@ systemd-socket-activate -l 8080 ./http_server.py
 ## 💡 Key Takeaways
 
 - **Socket activation** — systemd открывает сокет, запускает демон при первом соединении
+
 - **Accept=no** — один процесс обрабатывает все соединения (эффективно)
+
 - **Accept=yes** — новый процесс на каждое соединение (просто как inetd)
+
 - **LISTEN_FDS** и **LISTEN_PID** — переменные окружения от systemd
+
 - **FD 3** — первый переданный файловый дескриптор (после 0, 1, 2)
 - Shell и Python легко могут работать в режиме stdin/stdout для Accept=yes
 
@@ -1290,16 +1329,19 @@ systemd-socket-activate -l 8080 ./http_server.py
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Web Servers](../03_WebServers/) — Apache, Nginx и другие
 - [CGI](../04_CGI/) — Common Gateway Interface
 
 **Practice Ideas:**
+
 1. Создайте systemd socket unit для своего сервера
 2. Реализуйте поддержку POST запросов с телом
 3. Добавьте логирование в файл
 4. Создайте простой reverse proxy на Python
 
 **Going Deeper:**
+
 - systemd.socket(5) man page
 - sd_listen_fds(3) — библиотека для работы с socket activation
 - xinetd documentation
@@ -1309,13 +1351,18 @@ systemd-socket-activate -l 8080 ./http_server.py
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [systemd.socket](https://www.freedesktop.org/software/systemd/man/systemd.socket.html)
 - [sd_listen_fds](https://www.freedesktop.org/software/systemd/man/sd_listen_fds.html)
 - [inetd(8)](https://man.openbsd.org/inetd.8)
 
 **Articles:**
+
 - [Socket Activation](http://0pointer.de/blog/projects/socket-activation.html) — Lennart Poettering
 - [systemd for Developers](https://www.freedesktop.org/wiki/Software/systemd/DaemonSocketActivation/)
 
 ---
+
+
+
 

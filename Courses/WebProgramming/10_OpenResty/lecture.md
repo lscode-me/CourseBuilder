@@ -12,6 +12,7 @@
 - Знать основы любого скриптового языка (Python, JavaScript, etc.)
 
 **Recommended prior modules:**
+
 - [Web Servers](../03_WebServers/) — архитектура Nginx
 - [HTTP Protocol](../01_HTTP/) — основы HTTP
 
@@ -36,6 +37,7 @@
 **OpenResty** — это расширенная версия Nginx, объединяющая стандартный Nginx с LuaJIT и набором Lua-библиотек. По сути, это полноценная платформа для создания высокопроизводительных веб-приложений.
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                      OpenResty                              │
 ├────────────────────────────────────────────────────────────┤
@@ -67,6 +69,7 @@
 │  └────────────────────────────────────────────────────┘    │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 1.2 История и мотивация
@@ -99,6 +102,7 @@ OpenResty был создан **Yichun Zhang (agentzh)** в 2009 году, ко�
 Lua — минималистичный язык, легко изучаемый за несколько часов.
 
 ```lua
+
 -- Это комментарий
 
 --[[
@@ -120,11 +124,14 @@ local concat = s1 .. " " .. s2  -- конкатенация через ..
 
 -- Вывод
 print(concat)  -- Hello World
+
 ```
 
 **Output:**
 ```
+
 Hello World
+
 ```
 
 ### 2.2 Таблицы — универсальная структура данных
@@ -132,6 +139,7 @@ Hello World
 В Lua **таблицы** — единственная структура данных. Они могут быть массивами, словарями или объектами.
 
 ```lua
+
 -- Массив (индексы начинаются с 1!)
 local fruits = {"apple", "banana", "cherry"}
 print(fruits[1])  -- apple
@@ -160,10 +168,12 @@ print(#fruits)  -- 3
 for key, value in pairs(user) do
     print(key .. ": " .. tostring(value))
 end
+
 ```
 
 **Output:**
 ```
+
 apple
 Alice
 alice@example.com
@@ -171,11 +181,13 @@ alice@example.com
 name: Alice
 age: 30
 email: alice@example.com
+
 ```
 
 ### 2.3 Управляющие конструкции
 
 ```lua
+
 -- if/elseif/else
 local status = 200
 
@@ -212,11 +224,13 @@ repeat
     print("x = " .. x)
     x = x - 1
 until x < 8
+
 ```
 
 ### 2.4 Функции
 
 ```lua
+
 -- Обычная функция
 local function greet(name)
     return "Hello, " .. name .. "!"
@@ -257,19 +271,23 @@ local function sum(...)
 end
 
 print(sum(1, 2, 3, 4, 5))  -- 15
+
 ```
 
 **Output:**
 ```
+
 Hello, World!
 Result: 5.0
 42
 15
+
 ```
 
 ### 2.5 Особенности Lua
 
 ```lua
+
 -- Локальные vs глобальные переменные
 local safe_var = "локальная"
 global_var = "ГЛОБАЛЬНАЯ (не делайте так!)"
@@ -296,6 +314,7 @@ local c = not true        -- false
 local name = nil
 local display_name = name or "Anonymous"
 print(display_name)  -- Anonymous
+
 ```
 
 ---
@@ -307,6 +326,7 @@ print(display_name)  -- Anonymous
 OpenResty позволяет выполнять Lua-код в разных фазах обработки HTTP-запроса:
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │              Nginx Request Processing Phases                │
 ├────────────────────────────────────────────────────────────┤
@@ -330,6 +350,7 @@ OpenResty позволяет выполнять Lua-код в разных фа�
 │  * Также есть _block версии (inline в конфиге)             │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 | Фаза | Директива | Назначение |
@@ -368,6 +389,7 @@ http {
         }
     }
 }
+
 ```
 
 ```bash
@@ -376,16 +398,20 @@ openresty
 
 # Тестирование
 curl http://localhost:8080/hello
+
 ```
 
 **Output:**
 ```
+
 Hello from OpenResty!
+
 ```
 
 ### 3.3 Доступ к данным запроса
 
 ```nginx
+
 location /request-info {
     default_type application/json;
     
@@ -404,15 +430,19 @@ location /request-info {
         ngx.say(cjson.encode(info))
     }
 }
+
 ```
 
 ```bash
+
 curl "http://localhost:8080/request-info?name=Alice&age=30" \
      -H "X-Custom: test"
+
 ```
 
 **Output:**
 ```json
+
 {
     "method": "GET",
     "uri": "/request-info",
@@ -421,11 +451,13 @@ curl "http://localhost:8080/request-info?name=Alice&age=30" \
     "remote_addr": "127.0.0.1",
     "http_version": 1.1
 }
+
 ```
 
 ### 3.4 Чтение тела запроса
 
 ```nginx
+
 location /echo {
     default_type application/json;
     
@@ -448,16 +480,21 @@ location /echo {
         ngx.say("Received: " .. (body or "empty"))
     }
 }
+
 ```
 
 ```bash
+
 curl -X POST http://localhost:8080/echo \
      -d '{"message": "Hello!"}'
+
 ```
 
 **Output:**
 ```
+
 Received: {"message": "Hello!"}
+
 ```
 
 ---
@@ -467,6 +504,7 @@ Received: {"message": "Hello!"}
 ### 4.1 Установка статуса и заголовков
 
 ```nginx
+
 location /custom-response {
     content_by_lua_block {
         -- Установка статуса
@@ -490,11 +528,13 @@ location /custom-response {
         }))
     }
 }
+
 ```
 
 ### 4.2 Редиректы
 
 ```nginx
+
 location /old-url {
     content_by_lua_block {
         -- Внешний редирект (302 по умолчанию)
@@ -511,11 +551,13 @@ location /internal-redirect {
         return ngx.exec("/actual-handler")
     }
 }
+
 ```
 
 ### 4.3 Немедленное завершение
 
 ```nginx
+
 location /protected {
     access_by_lua_block {
         local token = ngx.req.get_headers()["Authorization"]
@@ -534,6 +576,7 @@ location /protected {
         ngx.say('{"data": "secret information"}')
     }
 }
+
 ```
 
 ---
@@ -545,6 +588,7 @@ location /protected {
 **Cosockets** — это неблокирующие сокеты OpenResty, которые автоматически передают управление другим корутинам во время ожидания I/O.
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                    Cosocket Architecture                    │
 ├────────────────────────────────────────────────────────────┤
@@ -571,11 +615,13 @@ location /protected {
 │  Преимущество: 1 worker обрабатывает тысячи соединений     │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 5.2 TCP клиент
 
 ```nginx
+
 location /tcp-example {
     content_by_lua_block {
         local sock = ngx.socket.tcp()
@@ -604,6 +650,7 @@ location /tcp-example {
         ngx.say(data)
     }
 }
+
 ```
 
 ---
@@ -613,6 +660,7 @@ location /tcp-example {
 ### 6.1 lua-resty-redis
 
 ```nginx
+
 location /redis-example {
     content_by_lua_block {
         local redis = require "resty.redis"
@@ -652,16 +700,20 @@ location /redis-example {
         ngx.say("Value: ", res)
     }
 }
+
 ```
 
 **Output:**
 ```
+
 Value: myvalue
+
 ```
 
 ### 6.2 lua-resty-http
 
 ```nginx
+
 location /proxy-api {
     content_by_lua_block {
         local http = require "resty.http"
@@ -687,11 +739,13 @@ location /proxy-api {
         ngx.say(res.body)
     }
 }
+
 ```
 
 ### 6.3 lua-resty-mysql
 
 ```nginx
+
 location /db-query {
     content_by_lua_block {
         local mysql = require "resty.mysql"
@@ -728,6 +782,7 @@ location /db-query {
         db:set_keepalive(10000, 100)
     }
 }
+
 ```
 
 ---
@@ -737,6 +792,7 @@ location /db-query {
 ### 7.1 Rate Limiting
 
 ```nginx
+
 http {
     # Shared memory для rate limiting
     lua_shared_dict rate_limit 10m;
@@ -774,11 +830,13 @@ http {
         }
     }
 }
+
 ```
 
 ### 7.2 JWT аутентификация
 
 ```nginx
+
 http {
     lua_shared_dict jwt_cache 10m;
     
@@ -825,11 +883,13 @@ http {
         }
     }
 }
+
 ```
 
 ### 7.3 Кеширование ответов
 
 ```nginx
+
 http {
     lua_shared_dict cache 100m;
     
@@ -874,11 +934,13 @@ http {
         }
     }
 }
+
 ```
 
 ### 7.4 A/B тестирование
 
 ```nginx
+
 http {
     lua_shared_dict ab_stats 10m;
     
@@ -932,6 +994,7 @@ http {
         }
     }
 }
+
 ```
 
 ---
@@ -941,6 +1004,7 @@ http {
 ### 8.1 Основы работы с shared dict
 
 ```nginx
+
 http {
     # Объявление shared memory зон
     lua_shared_dict my_cache 10m;    # 10 мегабайт
@@ -985,11 +1049,13 @@ http {
         }
     }
 }
+
 ```
 
 ### 8.2 Mutex/Lock паттерн
 
 ```nginx
+
 http {
     lua_shared_dict locks 1m;
     lua_shared_dict cache 10m;
@@ -1045,6 +1111,7 @@ http {
         }
     }
 }
+
 ```
 
 ---
@@ -1054,6 +1121,7 @@ http {
 ### 9.1 Захват внутренних location
 
 ```nginx
+
 server {
     # Внутренний location для получения данных пользователя
     location = /internal/user {
@@ -1091,11 +1159,13 @@ server {
         }
     }
 }
+
 ```
 
 ### 9.2 Параллельные subrequests
 
 ```nginx
+
 location /dashboard {
     content_by_lua_block {
         -- Параллельные запросы к нескольким сервисам
@@ -1117,6 +1187,7 @@ location /dashboard {
         ngx.say(cjson.encode(dashboard))
     }
 }
+
 ```
 
 ---
@@ -1128,6 +1199,7 @@ location /dashboard {
 **Kong** — популярнейший API Gateway, построенный на OpenResty.
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                       Kong Architecture                     │
 ├────────────────────────────────────────────────────────────┤
@@ -1159,6 +1231,7 @@ location /dashboard {
 │  └───────────────────────────────────────────────────┘     │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 10.2 Apache APISIX
@@ -1166,6 +1239,7 @@ location /dashboard {
 **APISIX** — альтернатива Kong от Apache Foundation, также на OpenResty.
 
 Преимущества APISIX:
+
 - Полностью динамическая конфигурация (etcd)
 - Dashboard из коробки
 - Больше встроенных плагинов
@@ -1176,8 +1250,11 @@ location /dashboard {
 Cloudflare использует модифицированный OpenResty для своей edge-платформы:
 
 - **WAF** (Web Application Firewall)
+
 - **DDoS защита**
+
 - **Cloudflare Workers** (serverless на edge)
+
 - **Маршрутизация**
 
 ---
@@ -1187,6 +1264,7 @@ Cloudflare использует модифицированный OpenResty дл�
 ### 11.1 Логирование
 
 ```nginx
+
 location /debug-example {
     content_by_lua_block {
         -- Уровни логирования
@@ -1208,11 +1286,13 @@ location /debug-example {
         ngx.say("Check error.log for messages")
     }
 }
+
 ```
 
 ### 11.2 Таймеры и профилирование
 
 ```nginx
+
 location /timed-operation {
     content_by_lua_block {
         local start_time = ngx.now()
@@ -1227,11 +1307,13 @@ location /timed-operation {
         ngx.say("Completed in ", elapsed, " seconds")
     }
 }
+
 ```
 
 ### 11.3 Рекомендации по отладке
 
 ```lua
+
 -- 1. Используйте pcall для перехвата ошибок
 local ok, result = pcall(function()
     -- потенциально опасный код
@@ -1251,6 +1333,7 @@ end
 
 -- 3. Используйте ngx.var.request_id для трассировки
 ngx.log(ngx.INFO, "[", ngx.var.request_id, "] Processing request")
+
 ```
 
 ---
@@ -1260,6 +1343,7 @@ ngx.log(ngx.INFO, "[", ngx.var.request_id, "] Processing request")
 ### 12.1 Производительность
 
 ```lua
+
 -- 1. ВСЕГДА используйте local
 local ngx = ngx  -- кешировать ngx в локальной переменной
 local cjson = require "cjson"
@@ -1285,11 +1369,13 @@ local msg = string.format("User %s from %s requested %s", user_id, ip, uri)
 
 -- 4. Используйте ngx.re.match вместо string.match для regex
 local m = ngx.re.match(uri, [[^/api/v(\d+)/]], "jo")  -- "jo" = JIT + compile once
+
 ```
 
 ### 12.2 Безопасность
 
 ```lua
+
 -- 1. Экранируйте пользовательский ввод
 local user_input = ngx.var.arg_query
 local safe_input = ngx.quote_sql_str(user_input)  -- для SQL
@@ -1308,11 +1394,13 @@ end
 -- 4. Не доверяйте заголовкам
 local real_ip = ngx.var.remote_addr  -- не X-Forwarded-For!
 -- X-Forwarded-For можно использовать только если настроен set_real_ip_from
+
 ```
 
 ### 12.3 Код организация
 
 ```lua
+
 -- Выносите логику в отдельные файлы
 
 -- /usr/local/openresty/lualib/myapp/auth.lua
@@ -1333,6 +1421,7 @@ content_by_lua_block {
     local auth = require "myapp.auth"
     local ok, user = auth.verify_token(token)
 }
+
 ```
 
 ---
@@ -1340,9 +1429,13 @@ content_by_lua_block {
 ## 💡 Key Takeaways
 
 - **OpenResty = Nginx + LuaJIT** — программируемый веб-сервер с производительностью близкой к C
+
 - **Cosockets** — неблокирующий I/O позволяет обрабатывать тысячи соединений на один worker
+
 - **Фазы обработки** — Lua-код выполняется в конкретных фазах (rewrite, access, content, log)
+
 - **lua_shared_dict** — быстрая shared memory между workers для кеширования и rate limiting
+
 - **lua-resty-*** — богатая экосистема библиотек для Redis, MySQL, HTTP, JWT и многого другого
 
 ---
@@ -1350,16 +1443,19 @@ content_by_lua_block {
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Web Servers](../03_WebServers/) — базовая конфигурация Nginx
 - [Architecture](../08_Architecture/) — архитектура веб-приложений
 
 **Practice Ideas:**
+
 1. Реализуйте простой API Gateway с rate limiting и JWT аутентификацией
 2. Настройте кеширующий прокси с OpenResty и Redis
 3. Создайте A/B тестирование на edge
 4. Реализуйте WAF с базовыми правилами безопасности
 
 **Going Deeper:**
+
 - Изучите Kong и APISIX для production API Gateway
 - Попробуйте написать свой Kong plugin
 - Изучите Lua coroutines и ngx.thread для параллелизма
@@ -1369,23 +1465,31 @@ content_by_lua_block {
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [OpenResty Documentation](https://openresty.org/en/docs.html) — официальная документация
 - [lua-nginx-module](https://github.com/openresty/lua-nginx-module) — полный API reference
 - [Lua 5.1 Reference Manual](https://www.lua.org/manual/5.1/) — справочник по Lua
 
 **Books:**
+
 - "Programming in Lua" by Roberto Ierusalimschy — библия Lua
 - "OpenResty Best Practices" — сборник рецептов (на GitHub)
 
 **Tools:**
+
 - [OPM](https://opm.openresty.org/) — OpenResty Package Manager
 - [resty-cli](https://github.com/openresty/resty-cli) — CLI для запуска Lua скриптов
 
 **Projects:**
+
 - [Kong](https://konghq.com/) — API Gateway
 - [Apache APISIX](https://apisix.apache.org/) — динамический API Gateway
 - [lua-resty-* libraries](https://github.com/openresty) — библиотеки OpenResty
 
 ---
+
+
+
+
 
 

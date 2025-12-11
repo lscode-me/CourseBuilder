@@ -22,6 +22,7 @@
 ## 1. OLTP vs OLAP
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              OLTP vs OLAP                                           │
 ├────────────────────────────────────────────────────────────────────┤
@@ -43,6 +44,7 @@
 │  • Use case: Business intelligence, reporting                      │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ---
@@ -52,6 +54,7 @@
 ### 2.1 Архитектура
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Redshift Architecture                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -79,11 +82,13 @@
 │  • Data distributed across slices                                  │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 2.2 Создание Cluster
 
 ```bash
+
 aws redshift create-cluster \
     --cluster-identifier my-cluster \
     --node-type dc2.large \
@@ -94,6 +99,7 @@ aws redshift create-cluster \
     --vpc-security-group-ids sg-123 \
     --cluster-subnet-group-name my-subnet-group \
     --encrypted
+
 ```
 
 ### 2.3 Redshift Serverless
@@ -117,6 +123,7 @@ redshift_serverless_config = {
 ### 2.4 Data Loading
 
 ```sql
+
 -- COPY command - fastest way to load data
 COPY orders
 FROM 's3://my-bucket/orders/'
@@ -134,6 +141,7 @@ MANIFEST;
 -- • Split large files into multiple smaller files
 -- • Use compression (gzip, lzo)
 -- • Match number of files to number of slices
+
 ```
 
 ---
@@ -143,6 +151,7 @@ MANIFEST;
 ### 3.1 Serverless SQL for S3
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Athena Architecture                                    │
 ├────────────────────────────────────────────────────────────────────┤
@@ -172,11 +181,13 @@ MANIFEST;
 │  • Standard SQL (Presto/Trino)                                    │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 3.2 Создание таблицы
 
 ```sql
+
 -- Create external table in Athena
 CREATE EXTERNAL TABLE logs (
     timestamp string,
@@ -197,11 +208,13 @@ MSCK REPAIR TABLE logs;  -- Auto-discover partitions
 -- Or manually
 ALTER TABLE logs ADD PARTITION (year='2024', month='01', day='15')
 LOCATION 's3://my-bucket/logs/year=2024/month=01/day=15/';
+
 ```
 
 ### 3.3 Query Optimization
 
 ```python
+
 athena_optimization = {
     "Use columnar formats": "Parquet, ORC - read only needed columns",
     "Partition data": "By date, region - scan only relevant partitions",
@@ -223,6 +236,7 @@ athena_optimization = {
 ### 4.1 Kinesis Services
 
 ```
+
 ┌────────────────────────────────────────────────────────────────────┐
 │              Kinesis Family                                         │
 ├────────────────────────────────────────────────────────────────────┤
@@ -243,11 +257,13 @@ athena_optimization = {
 │  └── Real-time analytics, aggregations                            │
 │                                                                     │
 └────────────────────────────────────────────────────────────────────┘
+
 ```
 
 ### 4.2 Kinesis Data Streams
 
 ```python
+
 import boto3
 
 kinesis = boto3.client('kinesis')
@@ -276,6 +292,7 @@ records = kinesis.get_records(ShardIterator=shard_iterator, Limit=100)
 for record in records['Records']:
     data = json.loads(record['Data'])
     print(f"Event: {data['event_type']}")
+
 ```
 
 ### 4.3 Kinesis Firehose
@@ -306,6 +323,7 @@ firehose.put_record(
 ## 5. Сравнение
 
 ```python
+
 comparison = {
     "Redshift": {
         "type": "Data Warehouse",
@@ -334,6 +352,7 @@ for service, details in comparison.items():
     print(f"\n{service}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 ---
@@ -341,10 +360,15 @@ for service, details in comparison.items():
 ## 💡 Key Takeaways
 
 - **Redshift** — data warehouse, complex analytics, sub-second
+
 - **Athena** — serverless SQL on S3, pay per query
+
 - **Kinesis Streams** — real-time ingestion, custom processing
+
 - **Kinesis Firehose** — managed loading to destinations
+
 - **Columnar formats** — critical for OLAP performance
+
 - **Partitioning** — reduces data scanned and cost
 
 ---
@@ -360,10 +384,15 @@ for service, details in comparison.items():
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [16_IaC](../16_IaC/) — Infrastructure as Code
 - [21_Observability](../21_Observability/) — Мониторинг и логирование
 
 **Практика:**
+
 1. Выполните SQL запросы к S3 данным через Athena
 2. Настройте Kinesis Data Stream для real-time данных
 3. Создайте простой ETL pipeline с Glue
+
+
+

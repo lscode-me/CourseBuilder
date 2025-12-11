@@ -60,6 +60,7 @@ $ export PKG_PATH=https://cdn.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(una
 # Проверить
 $ echo $PKG_PATH
 https://cdn.openbsd.org/pub/OpenBSD/7.4/packages/amd64/
+
 ```
 
 ---
@@ -88,6 +89,7 @@ a       0: <None>
         1: vim-9.0.1897-gtk3
         2: vim-9.0.1897-no_x11
 Your choice: 2
+
 ```
 
 ### 2.2 Flavors (варианты пакетов)
@@ -106,6 +108,7 @@ python-3.11.6
 # Firefox ESR и обычный
 firefox-119.0
 firefox-esr-115.4.0
+
 ```
 
 ```sh
@@ -126,6 +129,7 @@ git-2.42.0:libcurl-8.4.0: ok
 git-2.42.0:p5-Error-0.17029: ok
 git-2.42.0:p5-Authen-SASL-2.16p0: ok
 git-2.42.0: ok
+
 ```
 
 ---
@@ -157,6 +161,7 @@ pkg_add -u 2>&1 | mail -s "Package updates" root
 # Или через crontab
 # doas crontab -e
 0 3 * * * /usr/sbin/pkg_add -u >/dev/null 2>&1
+
 ```
 
 > **⚠️ Warning:**  
@@ -229,6 +234,7 @@ Files:
 # Какому пакету принадлежит файл
 $ pkg_info -E /usr/local/bin/vim
 vim-9.0.1897-no_x11
+
 ```
 
 ### 5.2 Поиск пакетов
@@ -251,6 +257,7 @@ nano-7.2            pico clone with enhancements
 vim-9.0.1897-gtk3   vi clone, many additional features
 vim-9.0.1897-no_x11 vi clone, many additional features
 ...
+
 ```
 
 ### 5.3 Зависимости
@@ -268,6 +275,7 @@ Information for curl-8.4.0
 Required by:
 git-2.42.0
 wget-1.21.4
+
 ```
 
 ---
@@ -279,6 +287,7 @@ wget-1.21.4
 **Ports** — система сборки ПО из исходников с автоматическим управлением зависимостями.
 
 ```
+
 /usr/ports/
 ├── archivers/      # архиваторы
 ├── databases/      # базы данных
@@ -292,6 +301,7 @@ wget-1.21.4
 ├── sysutils/       # системные утилиты
 ├── www/            # веб
 └── ...
+
 ```
 
 ### 6.2 Установка портов
@@ -350,6 +360,7 @@ no_x11 gtk3 huge
 $ cd /usr/ports/databases/postgresql
 $ make show=SUBPACKAGES
 postgresql-client postgresql-server postgresql-contrib
+
 ```
 
 ### 6.5 Обновление портов
@@ -370,6 +381,7 @@ $ cd /usr/ports
 ### 7.1 Когда использовать pkg_add
 
 ✅ **Используйте pkg_add когда:**
+
 - Нужна стандартная конфигурация
 - Важна скорость установки
 - Хотите стабильность
@@ -378,6 +390,7 @@ $ cd /usr/ports
 ### 7.2 Когда использовать ports
 
 ✅ **Используйте ports когда:**
+
 - Нужны специфические опции компиляции
 - Пакет отсутствует в бинарном репозитории
 - Нужна самая свежая версия
@@ -407,6 +420,7 @@ $ cd /usr/ports
 # Включить службы
 # doas rcctl enable nginx php82_fpm mysqld
 # doas rcctl start nginx php82_fpm mysqld
+
 ```
 
 ### 8.2 Установка окружения разработчика
@@ -426,6 +440,7 @@ $ cd /usr/ports
 
 # Редакторы
 # doas pkg_add vim--no_x11 nano
+
 ```
 
 ### 8.3 Установка графического окружения
@@ -444,6 +459,7 @@ $ cd /usr/ports
 
 # Браузер
 # doas pkg_add firefox
+
 ```
 
 ### 8.4 Сборка с кастомными опциями
@@ -458,6 +474,7 @@ lua naxsi passenger slice stream
 
 # Собрать с нужными опциями
 # doas env FLAVOR="lua stream" make install clean
+
 ```
 
 ---
@@ -472,6 +489,7 @@ lua naxsi passenger slice stream
 
 # Игнорировать зависимости (опасно!)
 # doas pkg_add -D installed vim
+
 ```
 
 ### 9.2 Проверка целостности
@@ -482,6 +500,7 @@ lua naxsi passenger slice stream
 
 # Исправить повреждённые
 # doas pkg_check -f
+
 ```
 
 ### 9.3 Откат к предыдущей версии
@@ -492,6 +511,7 @@ $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.3/packages/amd64/vim-9.0.1500-no_x11
 
 # Установить
 # doas pkg_add -D installed vim-9.0.1500-no_x11.tgz
+
 ```
 
 ---
@@ -521,6 +541,7 @@ pkg_info -R name        # обратные зависимости
 
 # Прочее
 pkg_check               # проверить целостность
+
 ```
 
 ### 10.2 Полезные скрипты
@@ -535,6 +556,7 @@ pkg_info -E "$1" 2>/dev/null || echo "Not found"
 $ cat ~/bin/pkg_update
 #!/bin/sh
 doas pkg_add -u 2>&1 | tee /var/log/pkg_update.log
+
 ```
 
 ---
@@ -542,9 +564,13 @@ doas pkg_add -u 2>&1 | tee /var/log/pkg_update.log
 ## 💡 Key Takeaways
 
 - **/etc/installurl**: Основной способ указать зеркало пакетов
+
 - **pkg_add -u**: Обновление всех пакетов одной командой
+
 - **Flavors**: Разные варианты одного пакета (с GUI / без GUI)
+
 - **Ports**: Используйте только когда нужна кастомизация
+
 - **Не смешивайте**: Пакеты из pkg и ports для одного ПО
 
 ---
@@ -552,16 +578,19 @@ doas pkg_add -u 2>&1 | tee /var/log/pkg_update.log
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [Networking](../07_Networking/) — настройка сети
 - [Services](../09_Services/) — управление службами
 
 **Practice Ideas:**
+
 1. Установите стек LEMP (Linux→OpenBSD, Nginx, MariaDB, PHP)
 2. Соберите nginx из портов с модулем stream
 3. Создайте скрипт для еженедельной проверки обновлений
 4. Установите и настройте графическое окружение
 
 **Going Deeper:**
+
 - Создание собственных пакетов
 - Локальное зеркало пакетов
 - Написание собственных портов
@@ -571,14 +600,20 @@ doas pkg_add -u 2>&1 | tee /var/log/pkg_update.log
 ## 📚 Additional Resources
 
 **Documentation:**
+
 - [man pkg_add](https://man.openbsd.org/pkg_add) — установка пакетов
 - [man pkg_info](https://man.openbsd.org/pkg_info) — информация
 - [man ports](https://man.openbsd.org/ports) — система портов
 - [OpenBSD FAQ 15](https://www.openbsd.org/faq/faq15.html) — пакеты и порты
 
 **Ports:**
+
 - [Ports README](https://cvsweb.openbsd.org/ports/infrastructure/templates/README)
 - [Ports Guide](https://www.openbsd.org/faq/ports/)
 
 ---
+
+
+
+
 

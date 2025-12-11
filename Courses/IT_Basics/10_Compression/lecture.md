@@ -29,11 +29,13 @@
 ### 1.1 Lossless vs Lossy
 
 **Lossless (без потерь):**
+
 - gzip, bzip2, xz, ZIP
 - Полное восстановление данных
 - Для текста, кода, данных
 
 **Lossy (с потерями):**
+
 - JPEG, MP3, H.264
 - Меньший размер, потеря качества
 - Для медиа
@@ -41,10 +43,12 @@
 ### 1.2 Соотношение размер/скорость
 
 ```
+
 Скорость сжатия                    Степень сжатия
 ←─────────────────────────────────────────────────→
 lz4   gzip   bzip2   xz/lzma
 fast  ←──────────────────→  slow
+
 ```
 
 ---
@@ -80,6 +84,7 @@ gzip -r directory/
 
 # Просмотр информации
 gzip -l file.txt.gz
+
 ```
 
 ### 2.3 Чтение сжатых файлов
@@ -89,6 +94,7 @@ gzip -l file.txt.gz
 zcat file.txt.gz
 zless file.txt.gz
 zgrep "pattern" file.txt.gz
+
 ```
 
 ---
@@ -108,6 +114,7 @@ bzip2 -d file.txt.bz2
 
 # Сохранить оригинал
 bzip2 -k file.txt
+
 ```
 
 ### 3.2 Сравнение с gzip
@@ -139,6 +146,7 @@ xz -k file.txt
 
 # Просмотр
 xzcat file.txt.xz
+
 ```
 
 ### 4.2 Преимущества xz
@@ -169,6 +177,7 @@ tar -xvf archive.tar
 
 # В конкретную директорию
 tar -xvf archive.tar -C /destination/
+
 ```
 
 ### 5.2 tar + сжатие
@@ -185,9 +194,11 @@ tar -xjvf archive.tar.bz2
 # tar.xz (xz)
 tar -cJvf archive.tar.xz directory/
 tar -xJvf archive.tar.xz
+
 ```
 
 **Флаги сжатия:**
+
 - `-z` = gzip
 - `-j` = bzip2
 - `-J` = xz
@@ -209,6 +220,7 @@ unzip archive.zip -d /destination/
 
 # Просмотр
 unzip -l archive.zip
+
 ```
 
 ### 6.2 ZIP vs tar.gz
@@ -227,6 +239,7 @@ unzip -l archive.zip
 ### 7.1 gzip
 
 ```python
+
 import gzip
 
 # Запись
@@ -236,11 +249,13 @@ with gzip.open('file.txt.gz', 'wt', encoding='utf-8') as f:
 # Чтение
 with gzip.open('file.txt.gz', 'rt', encoding='utf-8') as f:
     content = f.read()
+
 ```
 
 ### 7.2 tarfile
 
 ```python
+
 import tarfile
 
 # Создание tar.gz
@@ -256,11 +271,13 @@ with tarfile.open('archive.tar.gz', 'r:gz') as tar:
 with tarfile.open('archive.tar.gz', 'r:gz') as tar:
     for member in tar.getmembers():
         print(member.name)
+
 ```
 
 ### 7.3 zipfile
 
 ```python
+
 import zipfile
 
 # Создание
@@ -272,6 +289,7 @@ with zipfile.ZipFile('archive.zip', 'w') as zf:
 with zipfile.ZipFile('archive.zip', 'r') as zf:
     print(zf.namelist())
     content = zf.read('file.txt')
+
 ```
 
 ---
@@ -311,12 +329,17 @@ with zipfile.ZipFile('archive.zip', 'r') as zf:
 ## 🚀 Next Steps
 
 **Следующие модули:**
+
 - [11_Checksums](../11_Checksums/) — Контрольные суммы и хеширование
 - [12_DataTransfer](../12_DataTransfer/) — Передача данных и кодирование
 
 **Практика:**
+
 1. Сравните степень сжатия gzip, bzip2 и xz на разных типах файлов
 2. Создайте архив tar.gz и распакуйте его
 3. Измерьте время сжатия vs размер для разных алгоритмов
+
+
+
 
 
