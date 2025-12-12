@@ -6,281 +6,301 @@
 
 ## Question 1: Определение роли
 
+
 Чем Staff Engineer отличается от "очень хорошего Senior Engineer"?
 
-A) Staff Engineer управляет людьми
+A) Staff Engineer пишет значительно больше кода чем Senior
 
-B) Staff Engineer пишет больше кода
+B) Staff Engineer работает только над legacy системами компании
 
-C) Staff Engineer работает только над legacy системами
+C) Staff Engineer имеет качественно другой scope — влияние на несколько команд
 
-D) Staff Engineer имеет качественно другой scope — влияние на несколько команд
+D) Staff Engineer управляет людьми и проводит performance review
 
 ---
 
 ## Question 2: Формула Impact
 
+
 Какая формула описывает Staff-level impact?
 
-A) Impact = Years of Experience × Projects
+A) Impact равен числу митингов умноженному на зарплату
 
-B) Impact = Lines of Code × Time
+B) Impact равен Technical Depth умноженному на Scope и Influence
 
-C) Impact = Number of Meetings × Salary
+C) Impact равен годам опыта умноженным на количество проектов
 
-D) Impact = Technical Depth × Scope × Influence
+D) Impact равен количеству строк кода умноженному на время
 
 ---
 
 ## Question 3: Архетип Tech Lead
 
+
 Какой Staff Engineer архетип описывает партнёрство с EM команды и 50-70% времени в одной команде?
 
-A) Solver
+A) Architect — работает над системной архитектурой компании
 
-B) Tech Lead
+B) Tech Lead — техническое лидерство в партнёрстве с EM
 
-C) Architect
+C) Right Hand — помогает VP или Director с инициативами
 
-D) Right Hand
+D) Solver — решает критические проблемы между командами
 
 ---
 
 ## Question 4: Архетип Solver
 
-Что характерно для архетипа Solver?
 
-A) Решение сложнейших проблем, перемещение между командами, "тушение пожаров"
+Что характерно для архетипа Solver среди Staff Engineers?
 
-B) Постоянная работа в одной команде
+A) Решение сложнейших проблем, перемещение между командами
 
-C) Фокус на документации и спецификациях
+B) Фокус на документации и написании спецификаций
 
-D) Фокус на организационных инициативах
+C) Постоянная работа в одной команде над её задачами
+
+D) Фокус на организационных инициативах и процессах
 
 ---
 
 ## Question 5: Архетип Architect
 
+
 Чем занимается Staff Engineer архетипа Architect?
 
-A) Фокус на архитектуре и дизайне, меньше кода, больше спецификаций и RFC
+A) Только проводит интервью для найма новых инженеров
 
-B) Много кодит в одной команде
+B) Управляет бюджетом команды и распределяет ресурсы
 
-C) Только проводит интервью
+C) Фокус на архитектуре и дизайне, больше спецификаций и RFC
 
-D) Управляет бюджетом команды
+D) Много кодит в одной команде над конкретными задачами
 
 ---
 
 ## Question 6: Right Hand
 
+
 Для кого архетип Right Hand подходит лучше всего?
 
-A) Для тех, кто избегает meetings
+A) Для тех, кто комфортно работает в политической среде и понимает бизнес
 
-B) Для тех, кто работает remote без коммуникаций
+B) Для тех, кто работает remote без активных коммуникаций
 
-C) Для тех, кто комфортно работает в политической среде и понимает бизнес
+C) Для тех, кто избегает митингов и предпочитает глубокую работу
 
-D) Для тех, кто хочет только писать код
+D) Для тех, кто хочет только писать код без коммуникаций
 
 ---
 
 ## Question 7: Критичный навык
 
+
 Какой навык становится критически важным на Staff уровне (даже важнее coding)?
 
-A) Знание 10+ языков программирования
+A) Знание всех популярных frameworks и библиотек
 
-B) Знание всех frameworks
+B) Writing — документы читают больше людей, чем ваш код
 
-C) Умение работать по ночам
+C) Знание десяти и более языков программирования
 
-D) Writing — документы читают больше людей, чем ваш код
+D) Умение работать по ночам и в выходные дни
 
 ---
 
 ## Question 8: Influence without authority
 
-Что означает "influence without authority"?
 
-A) Влияние на решения через экспертизу и убеждение, без прямого управления
+Что означает "influence without authority" на практике?
 
-B) Игнорирование других мнений
+A) Игнорирование других мнений и навязывание своего решения
 
-C) Отказ от участия в решениях
+B) Влияние на решения через экспертизу и убеждение без прямого управления
 
-D) Управление людьми через административную власть
+C) Управление людьми через административную власть и позицию
+
+D) Отказ от участия в принятии решений командой
 
 ---
 
 ## Question 9: Staff Project
 
-Что такое "Staff Project"?
 
-A) Проект без документации
+Что такое "Staff Project" для продвижения на Staff уровень?
 
-B) Проект с cross-team scope, значительным business impact, требующий leadership без authority
+A) Любой проект, над которым работает Staff Engineer
 
-C) Проект только для junior developers
+B) Проект без документации и формального процесса
 
-D) Любой проект, над которым работает Staff Engineer
+C) Проект с cross-team scope и significant business impact
+
+D) Проект только для junior developers в команде
 
 ---
 
 ## Question 10: Visibility
 
+
 Как Staff Engineer создаёт visibility своей работы?
 
 A) Отказывается от работы, пока не получит повышение
 
-B) Жалуется руководству на отсутствие признания
+B) Жалуется руководству на отсутствие признания заслуг
 
-C) Writing (blog posts, updates), Speaking (tech talks), Networking
+C) Делает всю работу молча и ждёт признания от менеджера
 
-D) Делает всю работу молча и ждёт признания
+D) Writing (блог, апдейты), Speaking (tech talks), Networking
 
 ---
 
 ## Question 11: Время Staff Engineer
 
+
 Как примерно распределяется время Staff Engineer?
 
-A) 30-40% coding, 20-30% design/review, 15-25% meetings, 10-15% mentoring
+A) Тридцать-сорок процентов код, двадцать-тридцать дизайн и ревью
 
-B) 50% hiring, 50% firing
+B) Сто процентов времени только на написание кода
 
-C) 100% coding
+C) Сто процентов времени только на митинги
 
-D) 100% meetings
+D) Пятьдесят процентов на найм и пятьдесят на увольнения
 
 ---
 
 ## Question 12: Partnership с EM
 
+
 Какие отношения между Staff Engineer и Engineering Manager?
 
-A) Партнёрство — Staff отвечает за technical, EM за people
+A) Полное игнорирование друг друга в работе
 
-B) Полное игнорирование друг друга
+B) Конкуренция за власть и влияние в команде
 
-C) Staff подчиняется EM напрямую во всём
+C) Партнёрство — Staff отвечает за technical, EM за people
 
-D) Конкуренция за власть
+D) Staff подчиняется EM напрямую во всех вопросах
 
 ---
 
 ## Question 13: Challenge "скучаю по коду"
 
+
 Как Staff Engineer может справиться с ощущением "скучаю по коду"?
 
-A) Вернуться на Junior позицию
+A) Жаловаться менеджеру на недостаток технической работы
 
-B) Полностью отказаться от coding
+B) Полностью отказаться от coding и сосредоточиться на менеджменте
 
-C) Жаловаться менеджеру
+C) Вернуться на Junior позицию для большего кодинга
 
-D) Выделять protected time для coding, выбирать high-impact tasks, использовать prototyping
+D) Выделять protected time для coding, выбирать high-impact tasks
 
 ---
 
 ## Question 14: Что НЕ делает Staff Engineer
 
-Что Staff Engineer НЕ должен делать?
+
+Что Staff Engineer НЕ должен делать в своей работе?
 
 A) Брать на себя всю работу команды и решать все проблемы лично
 
-B) Участвовать в architecture review
+B) Писать design documents и технические спецификации
 
-C) Менторить senior engineers
+C) Менторить senior engineers и помогать их развитию
 
-D) Писать design documents
+D) Участвовать в architecture review и технических обсуждениях
 
 ---
 
 ## Question 15: Technical Skills
 
+
 Какое утверждение о technical skills на Staff уровне верно?
 
-A) Staff Engineer не должен понимать production systems
+A) Technical skills больше не нужны на Staff уровне
 
-B) Technical skills необходимы, но недостаточны — нужны communication и leadership
+B) Staff Engineer не должен понимать production systems
 
-C) Technical skills больше не нужны на Staff уровне
+C) Достаточно знать только один язык программирования
 
-D) Достаточно знать только один язык программирования
+D) Technical skills необходимы, но недостаточны — нужны communication и leadership
 
 ---
 
 ## Question 16: Startup vs Enterprise
 
+
 Как роль Staff Engineer отличается в startup vs enterprise?
 
-A) В enterprise меньше процессов
+A) Нет никакой разницы между startup и enterprise
 
-B) В startup роль более формализована
+B) В enterprise значительно меньше процессов и документации
 
-C) Нет разницы
+C) В startup больше hands-on coding, в enterprise больше organizational work
 
-D) В startup больше hands-on coding, в enterprise больше organizational work
+D) В startup роль более формализована с чёткими обязанностями
 
 ---
 
 ## Question 17: Поиск работы
 
+
 Как Staff Engineer находит, над чем работать?
 
-A) Ищет high-impact проблемы сам, спрашивает leadership о болях
+A) Работает только над тем, что интересно лично ему
 
-B) Работает только над тем, что интересно лично
+B) Ищет high-impact проблемы сам, спрашивает leadership о болях
 
-C) Ждёт, пока менеджер назначит задачу
+C) Избегает любой работы и ответственности в команде
 
-D) Избегает любой работы
+D) Ждёт, пока менеджер назначит конкретную задачу
 
 ---
 
 ## Question 18: Gap Analysis
 
+
 Что помогает определить готовность к Staff уровню?
 
-A) Количество подписчиков в Twitter
+A) Количество подписчиков в социальных сетях
 
-B) Gap analysis: оценка навыков (technical depth, scope, writing, speaking, mentoring)
+B) Только мнение друзей и знакомых о работе
 
-C) Только количество лет опыта
+C) Только количество лет опыта в индустрии
 
-D) Только мнение друзей
+D) Gap analysis: оценка навыков (technical depth, scope, writing, speaking)
 
 ---
 
 ## Question 19: Promotion packet
 
+
 Что включает promotion packet для Staff уровня?
 
-A) Summary impact, примеры Staff-level работы, testimonials, метрики
+A) Только список выполненных задач без контекста
 
-B) Жалобы на текущую роль
+B) Жалобы на текущую роль и недовольство позицией
 
-C) Только желание получить повышение
+C) Summary impact, примеры Staff-level работы, testimonials, метрики
 
-D) Только список выполненных задач
+D) Только желание получить повышение и больше денег
 
 ---
 
 ## Question 20: Strategic Thinking
 
+
 Почему strategic thinking важен для Staff Engineer?
 
-A) Чтобы принимать решения без данных
+A) Чтобы игнорировать бизнес и фокусироваться только на технологиях
 
-B) Чтобы избегать долгосрочного планирования
+B) Чтобы понимать бизнес-цели и выравнивать технические решения с ними
 
-C) Чтобы игнорировать бизнес и фокусироваться только на технологиях
+C) Чтобы принимать решения без данных и анализа
 
-D) Чтобы понимать бизнес-цели и выравнивать технические решения с ними
+D) Чтобы избегать долгосрочного планирования вообще
 
 ---
 
@@ -290,26 +310,26 @@ D) Чтобы понимать бизнес-цели и выравнивать �
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Staff имеет качественно другой scope — влияние на несколько команд, не "super Senior" |
-| 2 | D | Impact = Technical Depth × Scope × Influence — все три фактора должны быть высокими |
+| 1 | C | Staff имеет качественно другой scope — влияние на несколько команд, не "super Senior" |
+| 2 | B | Impact = Technical Depth × Scope × Influence — все три фактора должны быть высокими |
 | 3 | B | Tech Lead работает в партнёрстве с EM, 50-70% времени в одной команде |
 | 4 | A | Solver решает сложнейшие проблемы, перемещается между командами, "тушит пожары" |
-| 5 | A | Architect фокусируется на архитектуре и дизайне, пишет больше спецификаций, чем кода |
-| 6 | C | Right Hand подходит тем, кто комфортен в политической среде и понимает бизнес |
-| 7 | D | Writing критичен — документы читают больше людей, чем код Staff Engineer |
-| 8 | A | Influence without authority — влияние через экспертизу и убеждение, без прямого управления |
-| 9 | B | Staff Project — cross-team scope, significant business impact, требует leadership без authority |
-| 10 | C | Visibility создаётся через writing, speaking и networking |
+| 5 | C | Architect фокусируется на архитектуре и дизайне, пишет больше спецификаций, чем кода |
+| 6 | A | Right Hand подходит тем, кто комфортен в политической среде и понимает бизнес |
+| 7 | B | Writing критичен — документы читают больше людей, чем код Staff Engineer |
+| 8 | B | Influence without authority — влияние через экспертизу и убеждение, без прямого управления |
+| 9 | C | Staff Project — cross-team scope, significant business impact, требует leadership без authority |
+| 10 | D | Visibility создаётся через writing, speaking и networking |
 | 11 | A | Примерное распределение: 30-40% coding, 20-30% design/review, 15-25% meetings, 10-15% mentoring |
-| 12 | A | Партнёрство: Staff отвечает за technical аспекты, EM за people |
+| 12 | C | Партнёрство: Staff отвечает за technical аспекты, EM за people |
 | 13 | D | Protected time для coding, high-impact tasks, prototyping для exploration |
 | 14 | A | Staff НЕ должен брать всю работу на себя и решать все проблемы лично |
-| 15 | B | Technical skills необходимы, но недостаточны — нужны также communication и leadership |
-| 16 | D | В startup больше hands-on coding, в enterprise больше organizational work |
-| 17 | A | Staff ищет high-impact проблемы сам, спрашивает leadership о болях |
-| 18 | B | Gap analysis оценивает навыки: technical depth, scope, writing, speaking, mentoring |
-| 19 | A | Promotion packet: summary impact, примеры работы, testimonials, метрики |
-| 20 | D | Strategic thinking нужен для alignment технических решений с бизнес-целями |
+| 15 | D | Technical skills необходимы, но недостаточны — нужны также communication и leadership |
+| 16 | C | В startup больше hands-on coding, в enterprise больше organizational work |
+| 17 | B | Staff ищет high-impact проблемы сам, спрашивает leadership о болях |
+| 18 | D | Gap analysis оценивает навыки: technical depth, scope, writing, speaking, mentoring |
+| 19 | C | Promotion packet: summary impact, примеры работы, testimonials, метрики |
+| 20 | B | Strategic thinking нужен для alignment технических решений с бизнес-целями |
 
 ---
 
@@ -325,4 +345,3 @@ D) Чтобы понимать бизнес-цели и выравнивать �
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал заново. |
 
 ---
-

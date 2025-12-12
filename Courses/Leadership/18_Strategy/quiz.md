@@ -1,496 +1,531 @@
 # Engineering Strategy - Quiz
 
-Этот квиз проверяет понимание стратегического планирования, связи с бизнесом и organizational development.
+Этот квиз проверяет понимание стратегического планирования, связи с бизнесом и организационного развития.
 
 ---
 
 ## Question 1: Strategy Definition
 
+
 Что такое Engineering Strategy?
 
-A) Только технические решения
+A) Список технологий, которые команда планирует использовать
 
-B) План на неделю
+B) Как инженерия достигнет бизнес-целей, какие инвестиции и компромиссы
 
-C) Только roadmap
+C) План работ команды на ближайший квартал с задачами
 
-D) Как engineering достигнет business goals, какие инвестиции сделать, trade-offs
+D) Техническая документация с описанием архитектуры системы
 
 ---
 
 ## Question 2: Strategy vs Tactics
 
-В чём разница между strategy и tactics?
 
-A) Нет разницы
+В чём разница между стратегией и тактикой?
 
-B) Tactics важнее
+A) Стратегия про технологии, тактика про процессы
 
-C) Strategy короче
+B) Тактика более важна, так как это конкретные действия
 
-D) Strategy: why/what, quarters/years; Tactics: how, weeks/months
+C) Стратегия: зачем и что делать, горизонт кварталы/годы; тактика: как, недели/месяцы
+
+D) Стратегия создаётся руководством, тактика — командой разработки
 
 ---
 
 ## Question 3: Business Connection
 
-Как engineering strategy связана с business?
 
-A) Company Strategy → Business Goals → Product Strategy → Eng Strategy
+Как engineering strategy связана с бизнесом?
 
-B) Engineering определяет business goals
+A) Engineering определяет технические возможности, бизнес адаптируется
 
-C) Никак не связана
+B) Бизнес-стратегия определяется техническими ограничениями
 
-D) Это независимые процессы
+C) Engineering и бизнес планируют независимо и синхронизируются
+
+D) Стратегия компании → Бизнес-цели → Продуктовая стратегия → Engineering стратегия
 
 ---
 
 ## Question 4: Build vs Buy
 
-Когда лучше build вместо buy?
 
-A) Когда core competency, strategic importance, long-term investment
+Когда лучше строить самим вместо покупки готового решения?
 
-B) Всегда buy
+A) Когда на рынке нет готовых решений нужного качества
 
-C) Всегда build
+B) Когда команда хочет освоить новую технологию или практику
 
-D) Случайный выбор
+C) Когда это ключевая компетенция, стратегически важно и долгосрочная инвестиция
+
+D) Когда покупка готового решения дороже разработки своего
 
 ---
 
 ## Question 5: Technical Debt
 
-Когда стоит платить technical debt?
 
-A) Никогда
+Когда стоит платить технический долг?
 
-B) Когда блокирует development, вызывает reliability issues, замедляет velocity
+A) В выделенное время в конце каждого спринта регулярно
 
-C) Всегда сразу всё
+B) Когда команда завершила основные продуктовые задачи
 
-D) Только в пятницу
+C) Когда накопилось достаточно долга для отдельного проекта
+
+D) Когда блокирует разработку, вызывает проблемы стабильности, замедляет скорость
 
 ---
 
 ## Question 6: Annual Planning
 
-Что включает annual planning?
 
-A) Themes, goals, headcount, major investments
+Что включает годовое планирование?
 
-B) Только bugs
+A) Детальный список всех задач с оценками и исполнителями
 
-C) Только headcount
+B) Планы по найму с профилями кандидатов и сроками
 
-D) Только meetings schedule
+C) Бюджет на инфраструктуру и инструменты разработки
+
+D) Темы и цели года, планы по численности, крупные инвестиции
 
 ---
 
 ## Question 7: Portfolio Allocation
 
-Типичное allocation для product work?
 
-A) 60-70%
+Типичное распределение времени на продуктовую работу?
 
-B) 0%
+A) Около 80-90% максимум на продукт для скорости
 
-C) 100%
+B) Около 40-50% с остальным на платформу и долг
 
-D) 10%
+C) Около 60-70% времени команды на продуктовые фичи
+
+D) Около 30-40% при большом техническом долге
 
 ---
 
 ## Question 8: Technical Principles
 
-Пример хорошего technical principle?
 
-A) "Нет принципов"
+Пример хорошего технического принципа?
 
-B) "Security by default — built in, not added"
+A) Используем проверенные технологии с большим сообществом
 
-C) "Использовать все новые технологии"
+B) Код должен быть читаемым и хорошо документированным
 
-D) "Делать что хотим"
+C) Безопасность по умолчанию — встроена, а не добавлена потом
+
+D) Минимизируем зависимости между компонентами системы
 
 ---
 
 ## Question 9: DORA Metrics
 
-Что такое DORA metrics?
 
-A) Lines of code
+Что такое DORA метрики?
 
-B) Количество митингов
+A) Частота деплоев, время доставки, процент сбоев, время восстановления
 
-C) Метрики красоты
+B) Количество фич, закрытые баги, время ревью, аптайм
 
-D) Deployment frequency, lead time, change failure rate, time to restore
+C) Скорость команды, качество кода, покрытие тестами, удовлетворённость
+
+D) Выручка, конверсия, retention, активные пользователи
 
 ---
 
 ## Question 10: Good OKR
 
+
 Пример хорошего engineering Key Result?
 
-A) "Писать код"
+A) Повысить качество кода и уменьшить технический долг
 
-B) "Провести митинги"
+B) Внедрить новые практики разработки в команде
 
-C) "Делать лучше"
+C) Обрабатывать 2x текущей нагрузки при 99.9% доступности
 
-D) "Handle 2x current load, 99.9% uptime"
+D) Улучшить архитектуру системы для масштабирования
 
 ---
 
 ## Question 11: Change Management
 
-Первый шаг в change management?
 
-A) Игнорировать сопротивление
+Первый шаг в управлении изменениями?
 
-B) Create urgency — why now?
+A) Сформулировать видение того, как будет после изменений
 
-C) Сразу менять
+B) Собрать команду сторонников для продвижения изменений
 
-D) Declare victory
+C) Провести пилот для демонстрации результатов
+
+D) Создать срочность — почему нужно меняться сейчас
 
 ---
 
 ## Question 12: Strategic Communication
 
+
 Что включает engineering narrative?
 
-A) Where going, why choices, what enables, how to get there
+A) Сравнение с индустрией и конкурентами
 
-B) Только числа
+B) Достижения команды за прошедший период
 
-C) Только технические детали
+C) Текущие проблемы и планы по их решению
 
-D) Только проблемы
+D) Куда движемся, почему такие решения, что позволяет, как достигнем
 
 ---
 
 ## Question 13: Team Topology
 
+
 Какие типы команд в Team Topologies?
 
-A) Stream-aligned, Platform, Enabling, Complicated subsystem
+A) Разработка, тестирование, эксплуатация, поддержка
 
-B) Только infrastructure
+B) Продуктовые, инфраструктурные, QA и security команды
 
-C) Только feature teams
+C) Stream-aligned, Platform, Enabling, Complicated subsystem
 
-D) Только managers
+D) Frontend, backend, mobile, data команды
 
 ---
 
 ## Question 14: Strategy Antipattern
 
-Что является strategy antipattern?
 
-A) Clear choices
+Что является антипаттерном стратегии?
 
-B) Explicit trade-offs
+A) Стратегия обновляется слишком часто без причины
 
-C) Too many priorities, strategy not connected to business
+B) Стратегия известна только руководству компании
 
-D) Communicated strategy
+C) Стратегия слишком детальная и негибкая
+
+D) Слишком много приоритетов и стратегия не связана с бизнесом
 
 ---
 
 ## Question 15: Signs of Good Strategy
 
-Признак хорошей strategy?
 
-A) Никто не знает
+Признак хорошей стратегии?
 
-B) Всё important
+A) Чёткие решения приняты, компромиссы явные, люди могут объяснить её
 
-C) Clear choices made, trade-offs explicit, people can explain it
+B) Стратегия амбициозная и вдохновляющая для команды
 
-D) Никогда не меняется
+C) Стратегия документирована и регулярно обновляется
+
+D) Стратегия одобрена всеми стейкхолдерами без возражений
 
 ---
 
 ## Question 16: Headcount Planning
 
-Что учитывается в headcount planning?
 
-A) Business growth, scaling needs, new initiatives, attrition
+Что учитывается в планировании численности?
 
-B) Только желания
+A) Сложность проектов и требуемые компетенции
 
-C) Только текущая численность
+B) Рост бизнеса, потребности масштабирования, новые инициативы, отток
 
-D) Только budget
+C) Текущая нагрузка на команду и планы на год
+
+D) Бюджет на зарплаты и желания менеджеров команд
 
 ---
 
 ## Question 17: Technology Choices
 
-Какой принцип для technology choices?
 
-A) Boring technology for core, new tech for isolated experiments
+Какой принцип для выбора технологий?
 
-B) Всегда newest tech
+A) Следовать за индустрией и использовать популярное
 
-C) Random selection
+B) Выбирать то, что знает команда для скорости
 
-D) Никаких principles
+C) Минимизировать количество технологий в стеке
+
+D) Проверенные технологии для core, новые для изолированных экспериментов
 
 ---
 
 ## Question 18: Roadmap Quality
 
+
 Признак хорошего roadmap?
 
-A) Tied to goals, realistic, flexibility, clear dependencies
+A) Детализирован до уровня задач с точными датами
 
-B) Never updated
+B) Согласован со всеми стейкхолдерами и командами
 
-C) Everything P0
+C) Привязан к целям, реалистичный, гибкий, с понятными зависимостями
 
-D) Wishful thinking
+D) Охватывает длительный период для планирования ресурсов
 
 ---
 
 ## Question 19: Communicating to Executives
 
-Что коммуницировать executives?
 
-A) Технические детали
+Что коммуницировать руководителям?
 
-B) Только хорошее
+A) Сравнение производительности с предыдущим периодом
 
-C) Code качество
+B) Проблемы команды и планы по их решению
 
-D) Business impact, goal progress, risks, resource needs
+C) Технические достижения и улучшения в системе
+
+D) Бизнес-влияние, прогресс по целям, риски, потребности в ресурсах
 
 ---
 
 ## Question 20: Strategy Process
 
-Какой первый шаг в creating strategy?
 
-A) Create slides
+Какой первый шаг в создании стратегии?
 
-B) Hire people
+A) Понять бизнес-контекст и цели компании
 
-C) Understand business context
+B) Собрать input от всех заинтересованных сторон
 
-D) Написать roadmap
+C) Проанализировать текущее состояние системы
+
+D) Изучить лучшие практики индустрии
 
 ---
 
 ## Question 21: Strategy Test
 
+
 Как проверить, является ли решение стратегическим?
 
-A) Если оно дешёвое
+A) Если ошибка дорого стоит и меняет направление организации
 
-B) Если оно дорого стоит при ошибке и меняет направление организации
+B) Если решение влияет на несколько команд сразу
 
-C) Если о нём знает только один человек
+C) Если для решения нужно много времени и ресурсов
 
-D) Если его легко отменить
+D) Если решение принимается на уровне руководства
 
 ---
 
 ## Question 22: Technology Radar
 
+
 Что означает "HOLD" в Technology Radar?
 
-A) Активно использовать
+A) Не начинать новое использование, только поддерживать существующее
 
-B) Немедленно удалить
+B) Технология заморожена до появления новой версии
 
-C) Не начинать новое, только поддерживать существующее
+C) Технология в процессе вывода из использования
 
-D) Пробовать в проектах
+D) Технология требует дополнительного исследования и оценки
 
 ---
 
 ## Question 23: ADR Format
 
-Что должен включать Architecture Decision Record (ADR)?
 
-A) Context, decision, alternatives considered, trade-offs, consequences
+Что должен включать Architecture Decision Record?
 
-B) Только список участников
+A) Описание проблемы и выбранного технического решения
 
-C) Только диаграммы
+B) Диаграммы архитектуры до и после изменения
 
-D) Только код
+C) Список участников обсуждения и их позиции
+
+D) Контекст, решение, рассмотренные альтернативы, компромиссы, последствия
 
 ---
 
 ## Question 24: Capacity Planning
 
-Что включает формула capacity planning?
 
-A) Только story points
+Что включает формула планирования capacity?
 
-B) Только бюджет
+A) Сумма оценок всех запланированных задач в часах
 
-C) Только количество людей
+B) Velocity команды умноженная на количество спринтов
 
-D) Engineers × Working Days × Focus Factor - Vacations - Oncall - Buffer
+C) Инженеры × Рабочие дни × Фокус-фактор минус отпуска, дежурства, буфер
+
+D) Количество инженеров умноженное на производительность
 
 ---
 
 ## Question 25: Portfolio Model
 
-Какая модель allocation подходит для startup в aggressive growth?
 
-A) Scale mode (50% product, 35% platform)
+Какая модель allocation подходит для стартапа в активном росте?
 
-B) Balanced (60% product, 25% platform)
+A) Scale mode — 50% продукт, 35% платформа, 15% долг
 
-C) Speed mode (75% product, 15% platform)
+B) Speed mode — 75% на продукт, 15% на платформу, 10% на долг
 
-D) Maintenance mode (90% support)
+C) Balanced — 60% продукт, 25% платформа, 15% долг
+
+D) Foundation — 40% продукт, 40% платформа, 20% долг
 
 ---
 
 ## Question 26: Headcount Justification
 
-Что должно быть в headcount justification для executive?
 
-A) Business justification, ROI, alternatives considered
+Что должно быть в обосновании headcount для руководителя?
 
-B) Только salary информация
+A) Описание открытых вакансий и требования к кандидатам
 
-C) Только "хотим больше людей"
+B) Планы по использованию новых сотрудников и их onboarding
 
-D) Только имена кандидатов
+C) Бизнес-обоснование, расчёт ROI, рассмотренные альтернативы
+
+D) Текущая нагрузка на команду и метрики производительности
 
 ---
 
 ## Question 27: Boring Technology
 
+
 Что означает принцип "Boring Technology"?
 
-A) Игнорировать технологии
+A) Минимизировать количество технологий в стеке
 
-B) Boring technology для core, new tech для experiments где дифференциация
+B) Использовать только технологии старше пяти лет
 
-C) Не использовать технологии вообще
+C) Избегать хайповых технологий и следить за стабильностью
 
-D) Использовать самые новые технологии
+D) Проверенные технологии для core, новые только где дифференциация
 
 ---
 
 ## Question 28: Tech Debt Prioritization
 
-По какой формуле приоритизировать tech debt?
 
-A) Impact × Frequency × Effort_Ratio
+По какой формуле приоритизировать технический долг?
 
-B) Случайно
+A) Размер долга делённый на время на исправление
 
-C) Только по размеру
+B) Количество багов в компоненте за последний квартал
 
-D) Только по возрасту кода
+C) Влияние × Частота проблем × Отношение усилий к пользе
+
+D) Критичность компонента умноженная на возраст кода
 
 ---
 
 ## Question 29: Quarterly Planning
 
-Когда начинать quarterly planning?
 
-A) Не нужно планировать
+Когда начинать квартальное планирование?
 
-B) 6 недель до начала квартала
+A) Постоянно в режиме rolling planning без чётких границ
 
-C) В день начала квартала
+B) За 2-3 недели до начала квартала для актуальности
 
-D) После окончания квартала
+C) За 6 недель до начала квартала для качественной подготовки
+
+D) В первую неделю квартала по результатам прошлого
 
 ---
 
 ## Question 30: DORA Elite
 
-Какой deployment frequency у Elite команды по DORA?
 
-A) Раз в год
+Какая частота деплоев у Elite команды по DORA?
 
-B) Раз в квартал
+A) По требованию — несколько раз в день при необходимости
 
-C) On-demand (несколько раз в день)
+B) Ежедневные деплои в рабочие дни команды
 
-D) Раз в месяц
+C) Несколько раз в неделю после тестирования
+
+D) Раз в неделю с накоплением изменений
 
 ---
 
 ## Question 31: Goodhart's Law
 
-Что утверждает Goodhart's Law о метриках?
 
-A) Метрики не нужны
+Что утверждает закон Goodhart о метриках?
 
-B) Метрики всегда точны
+A) Чем больше метрик, тем сложнее их интерпретировать
 
-C) Чем больше метрик, тем лучше
+B) Когда метрика становится целью, она перестаёт быть хорошей метрикой
 
-D) Когда метрика становится целью, она перестаёт быть хорошей метрикой
+C) Метрики должны измеряться автоматически для точности
+
+D) Любая метрика искажает поведение людей в системе
 
 ---
 
 ## Question 32: Roadmap Antipattern
 
+
 Какой признак плохого roadmap?
 
-A) Tied to business goals
+A) Всё помечено как P0, wishful thinking, никогда не обновляется
 
-B) Flexibility built in
+B) Меняется каждый месяц под запросы стейкхолдеров
 
-C) Everything is P0, wishful thinking, never updated
+C) Не содержит технических задач только продуктовые
 
-D) Realistic commitments
+D) Слишком детализирован с точными датами на год
 
 ---
 
 ## Question 33: Strategy Communication
 
-Кому коммуницировать strategy по-разному?
 
-A) Всем одинаково
+Кому коммуницировать стратегию по-разному?
 
-B) Board (business impact), Product (capacity), Engineering (technical direction)
+A) Борду — бизнес-влияние, Продукту — capacity, Engineering — техническое направление
 
-C) Только CEO
+B) Руководству — детали, командам — общее видение
 
-D) Никому
+C) Всем одинаково для consistency и alignment
+
+D) Стейкхолдерам — полную, командам — их часть
 
 ---
 
 ## Question 34: Platform ROI
 
-Как посчитать ROI для platform investment?
 
-A) (Time_Saved × Num_Teams × Duration) - Build_Cost
+Как посчитать ROI для инвестиций в платформу?
 
-B) Случайно
+A) Стоимость платформы делённая на число команд-пользователей
 
-C) Невозможно посчитать
+B) Опрос команд об удовлетворённости и полезности инструментов
 
-D) Только по количеству строк кода
+C) (Сэкономленное время × Число команд × Период) минус Затраты на создание
+
+D) Сравнение velocity команд до и после внедрения платформы
 
 ---
 
 ## Question 35: Strategy Living Document
 
+
 Как часто обновлять engineering strategy?
 
-A) Каждый день
+A) Раз в год при годовом планировании
 
-B) Quarterly review и update based on learning
+B) При значительных изменениях в бизнесе или рынке
 
-C) Никогда после создания
+C) Квартальный review и обновление на основе полученного опыта
 
-D) Только при смене CEO
+D) Постоянно по мере появления новой информации
 
 ---
 
@@ -500,41 +535,41 @@ D) Только при смене CEO
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | How engineering achieves goals, investments, trade-offs |
-| 2 | D | Strategy: why/what, quarters/years; Tactics: how, weeks/months |
-| 3 | A | Company → Business → Product → Eng Strategy |
-| 4 | A | Build when core competency, strategic, long-term |
-| 5 | B | Pay when blocks development, reliability issues, slows velocity |
-| 6 | A | Annual: themes, goals, headcount, major investments |
-| 7 | A | Product work: 60-70% |
-| 8 | B | "Security by default — built in, not added" |
-| 9 | D | DORA: deployment frequency, lead time, failure rate, restore time |
-| 10 | D | "Handle 2x load, 99.9% uptime" - measurable |
-| 11 | B | First: create urgency — why now? |
-| 12 | A | Narrative: direction, why, what enables, how |
-| 13 | A | Stream-aligned, Platform, Enabling, Complicated subsystem |
-| 14 | C | Antipattern: too many priorities, not connected to business |
-| 15 | C | Good: clear choices, explicit trade-offs, explainable |
-| 16 | A | Headcount: growth, scaling, initiatives, attrition |
-| 17 | A | Boring for core, new for experiments |
-| 18 | A | Good roadmap: tied to goals, realistic, flexible |
-| 19 | D | To execs: business impact, progress, risks, needs |
-| 20 | C | First: understand business context |
-| 21 | B | Strategic если дорого при ошибке, меняет направление |
-| 22 | C | HOLD: не начинать новое, только поддерживать |
-| 23 | A | ADR: context, decision, alternatives, trade-offs, consequences |
-| 24 | D | Capacity: Engineers × Days × Focus - Vacations - Oncall - Buffer |
-| 25 | C | Startup: Speed mode 75% product |
-| 26 | A | Justification: business case, ROI, alternatives |
-| 27 | B | Boring for core, new for differentiation |
-| 28 | A | Tech Debt: Impact × Frequency × Effort_Ratio |
-| 29 | B | Start 6 weeks before quarter |
-| 30 | C | Elite: on-demand, multiple per day |
-| 31 | D | Goodhart: metric as target stops being good metric |
-| 32 | C | Bad roadmap: all P0, wishful, never updated |
-| 33 | B | Different audiences: Board, Product, Engineering |
-| 34 | A | Platform ROI: (Time × Teams × Duration) - Cost |
-| 35 | B | Strategy: quarterly review and update |
+| 1 | B | Как инженерия достигает целей, инвестиции, компромиссы |
+| 2 | C | Стратегия: зачем/что, кварталы/годы; Тактика: как, недели/месяцы |
+| 3 | D | Компания → Бизнес → Продукт → Engineering Strategy |
+| 4 | C | Build когда core competency, стратегически важно, долгосрочно |
+| 5 | D | Платить когда блокирует, проблемы стабильности, замедляет |
+| 6 | D | Годовое: темы, цели, headcount, крупные инвестиции |
+| 7 | C | Product work: 60-70% |
+| 8 | C | Безопасность по умолчанию — встроена, не добавлена |
+| 9 | A | DORA: частота деплоев, lead time, failure rate, restore time |
+| 10 | C | 2x нагрузки, 99.9% uptime — измеримо |
+| 11 | D | Первый шаг: создать срочность — почему сейчас |
+| 12 | D | Narrative: направление, почему, что позволяет, как |
+| 13 | C | Stream-aligned, Platform, Enabling, Complicated subsystem |
+| 14 | D | Антипаттерн: много приоритетов, не связана с бизнесом |
+| 15 | A | Хорошая: чёткие решения, явные компромиссы, объяснима |
+| 16 | B | Headcount: рост, масштабирование, инициативы, отток |
+| 17 | D | Boring для core, новое для экспериментов |
+| 18 | C | Хороший roadmap: привязан к целям, реалистичный, гибкий |
+| 19 | D | Руководителям: бизнес-влияние, прогресс, риски, потребности |
+| 20 | A | Первый шаг: понять бизнес-контекст |
+| 21 | A | Стратегическое если дорого при ошибке, меняет направление |
+| 22 | A | HOLD: не начинать новое, только поддерживать |
+| 23 | D | ADR: контекст, решение, альтернативы, компромиссы, последствия |
+| 24 | C | Capacity: Инженеры × Дни × Фокус - Отпуска - Oncall - Буфер |
+| 25 | B | Стартап: Speed mode 75% продукт |
+| 26 | C | Justification: бизнес-кейс, ROI, альтернативы |
+| 27 | D | Boring для core, новое для дифференциации |
+| 28 | C | Tech Debt: Влияние × Частота × Effort_Ratio |
+| 29 | C | Начинать за 6 недель до квартала |
+| 30 | A | Elite: по требованию, несколько раз в день |
+| 31 | B | Goodhart: метрика как цель перестаёт быть хорошей |
+| 32 | A | Плохой roadmap: всё P0, wishful, не обновляется |
+| 33 | A | Разным аудиториям: Board, Product, Engineering |
+| 34 | C | Platform ROI: (Время × Команды × Период) - Затраты |
+| 35 | C | Strategy: квартальный review и обновление |
 
 ---
 
@@ -550,4 +585,3 @@ D) Только при смене CEO
 | **Менее 18 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
-

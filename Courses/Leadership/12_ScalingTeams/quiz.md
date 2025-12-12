@@ -6,139 +6,149 @@
 
 ## Question 1: Optimal Team Size
 
+
 Какой оптимальный размер команды для одного менеджера?
 
-A) 20-30 человек
+A) Пятьдесят и более человек
 
-B) 50+ человек
+B) Семь-восемь человек максимум
 
-C) 7-8 человек максимум
+C) Один-два человека только
 
-D) 1-2 человека
+D) Двадцать-тридцать человек в команде
 
 ---
 
 ## Question 2: Warning Signs
 
+
 Какой признак указывает, что пора масштабировать команду?
 
-A) Команда из 3 человек
+A) Всё работает отлично без проблем
 
-B) Standup занимает 5 минут
+B) 1-on-1 становятся поверхностными, нет времени на development людей
 
-C) 1-on-1 становятся поверхностными, нет времени на development людей
+C) Команда из трёх человек работает хорошо
 
-D) Всё работает отлично
+D) Standup занимает всего пять минут
 
 ---
 
 ## Question 3: Split by Product
 
-Какой плюс разделения команды по продукту/feature?
+
+Какой плюс разделения команды по продукту или feature?
 
 A) Clear ownership, end-to-end responsibility
 
-B) Больше handoffs
+B) Duplication усилий и кода
 
-C) Knowledge silos
+C) Knowledge silos и потеря знаний
 
-D) Duplication
+D) Больше handoffs между командами
 
 ---
 
 ## Question 4: Split by Layer
 
-Какой минус разделения по слоям (frontend/backend)?
+
+Какой минус разделения по слоям (frontend и backend)?
 
 A) Handoffs между командами, slower end-to-end delivery
 
-B) Clear technical ownership
+B) Deep expertise в каждой области
 
-C) Deep expertise
+C) Clear technical ownership в каждой команде
 
-D) Reusable solutions
+D) Reusable solutions и переиспользование
 
 ---
 
 ## Question 5: Stream-aligned Team
 
+
 Что такое Stream-aligned Team в Team Topologies?
 
-A) Platform команда
+A) Команда aligned с business stream, end-to-end delivery
 
-B) Команда, aligned с business stream, end-to-end delivery
+B) Команда которая помогает другим временно
 
-C) Команда, которая помогает другим
+C) Команда сложной подсистемы
 
-D) Команда сложной подсистемы
+D) Platform команда для внутренних сервисов
 
 ---
 
 ## Question 6: Platform Team
 
-Какова роль Platform Team?
 
-A) Работа с клиентами
+Какова роль Platform Team в организации?
 
-B) Internal product для других команд, self-service capabilities
+A) Internal product для других команд, self-service capabilities
 
-C) Временная поддержка
+B) Delivery business features напрямую
 
-D) Delivery business features
+C) Временная поддержка других команд
+
+D) Работа с внешними клиентами продукта
 
 ---
 
 ## Question 7: Cognitive Load
 
+
 Что происходит, когда cognitive load команды слишком высока?
 
-A) Команда бездельничает
+A) Команда работает лучше и продуктивнее
 
-B) Команда работает лучше
+B) Shallow understanding, качество страдает, много context switching
 
-C) Shallow understanding, качество страдает, много context switching
+C) Команда бездельничает и скучает
 
-D) Cognitive load не важна
+D) Cognitive load не важна для работы
 
 ---
 
 ## Question 8: Delegation Level 7
 
+
 Что означает Level 7 делегирования?
 
-A) "You handle it" — полное делегирование с доверием
+A) You handle it — полное делегирование с доверием
 
-B) "Делай точно так"
+B) Что ты решил, расскажи мне
 
-C) "Давай решим вместе"
+C) Делай точно так как я сказал
 
-D) "Что ты решил?"
+D) Давай решим вместе сейчас
 
 ---
 
 ## Question 9: Growing Leaders
 
-Как развивать будущих лидеров?
 
-A) Identify potential, give opportunities, coach actively, gradual transition
+Как развивать будущих лидеров в команде?
 
-B) Сразу назначить на позицию без подготовки
+A) Сразу назначить на позицию без подготовки
 
-C) Не давать никаких возможностей
+B) Не давать никаких возможностей пробовать
 
-D) Игнорировать их развитие
+C) Identify potential, give opportunities, coach actively, gradual transition
+
+D) Игнорировать их развитие полностью
 
 ---
 
 ## Question 10: 80% Quality
 
+
 Почему "80% качества от 3 людей лучше чем 100% от одного"?
 
-A) Математика не сходится
+A) Восемьдесят процентов качества достаточно плохо
 
-B) 80% качества достаточно плохо
+B) Одному лучше делать всё самому
 
-C) Одному лучше делать всё
+C) Математика не сходится в расчётах
 
 D) Масштабирование требует делегирования, совокупный output выше
 
@@ -146,141 +156,151 @@ D) Масштабирование требует делегирования, с�
 
 ## Question 11: Culture at Scale
 
-Как сохранить культуру при росте?
 
-A) Documentation, rituals, hiring for culture, leaders model values
+Как сохранить культуру при росте организации?
 
-B) Ничего не делать, культура сама сохранится
+A) Забыть о культуре при росте
 
-C) Забыть о культуре
+B) Documentation, rituals, hiring for culture, leaders model values
 
-D) Сменить культуру полностью
+C) Сменить культуру полностью с нуля
+
+D) Ничего не делать, культура сама сохранится
 
 ---
 
 ## Question 12: Brooks's Law
 
+
 Что описывает Brooks's Law о communication overhead?
 
-A) Communication paths уменьшаются
+A) Коммуникация улучшается с ростом команды
 
 B) Размер команды не влияет на communication
 
-C) Коммуникация улучшается с ростом
+C) Communication paths растут как n(n-1)/2, больше людей = больше overhead
 
-D) Communication paths растут как n(n-1)/2, больше людей = больше overhead
+D) Communication paths уменьшаются с ростом
 
 ---
 
 ## Question 13: Us vs Them
 
+
 Как бороться с "Us vs Them" между командами?
 
-A) Изолировать команды полностью
+A) Поощрять конкуренцию между командами
 
-B) Blame culture
+B) Shared goals, cross-team projects, rotation программы
 
-C) Shared goals, cross-team projects, rotation программы
+C) Изолировать команды полностью друг от друга
 
-D) Поощрять конкуренцию
+D) Blame culture и публичная критика
 
 ---
 
 ## Question 14: Spotify Squads
 
+
 Что такое Squad в Spotify Model?
 
-A) HR department
+A) Менеджмент высшего уровня
 
-B) Cross-functional team с end-to-end ownership
+B) Functional team только frontend или backend
 
-C) Менеджмент
+C) Cross-functional team с end-to-end ownership
 
-D) Functional team (только frontend)
+D) HR department компании
 
 ---
 
 ## Question 15: Functional Structure
 
-Какой минус функциональной структуры (Frontend/Backend/QA)?
+
+Какой минус функциональной структуры (Frontend, Backend, QA)?
 
 A) Handoffs и silos между функциями
 
-B) Expertise
+B) Expertise и глубокие знания
 
-C) Специализация
+C) Career paths и рост
 
-D) Career paths
+D) Специализация сотрудников
 
 ---
 
 ## Question 16: Enabling Team
 
+
 Какова роль Enabling Team в Team Topologies?
 
-A) Постоянная разработка features
+A) Владеет platform и инфраструктурой
 
-B) Помогает другим командам adopt capabilities, temporary support
+B) Постоянная разработка features продукта
 
-C) Сложная подсистема
+C) Сложная подсистема требующая экспертизы
 
-D) Владеет platform
+D) Помогает другим командам adopt capabilities, temporary support
 
 ---
 
 ## Question 17: Communication at Scale
 
+
 Какой инструмент помогает communication в большой организации?
 
-A) All-hands, written updates, documentation, Slack channels
+A) Отсутствие коммуникации вообще
 
-B) Отсутствие коммуникации
+B) Только личные разговоры без записи
 
-C) Секретность
+C) Секретность и закрытость информации
 
-D) Только личные разговоры
+D) All-hands, written updates, documentation, Slack channels
 
 ---
 
 ## Question 18: Slowing Down
 
-Как бороться с замедлением при росте?
 
-A) Добавить больше процессов
+Как бороться с замедлением при росте организации?
 
-B) Добавить больше митингов
+A) Minimal viable process, empower teams, reduce approval chains
 
-C) Централизовать все решения
+B) Централизовать все решения наверху
 
-D) Minimal viable process, empower teams, reduce approval chains
+C) Добавить больше процессов и согласований
+
+D) Добавить больше митингов и обсуждений
 
 ---
 
 ## Question 19: Dunbar's 15
 
+
 Что означает число 15 в контексте команд?
 
-A) 15 минут на standup
+A) Пятнадцать лет опыта в индустрии
 
-B) 15 митингов в день
+B) Пятнадцать митингов в день
 
-C) 15 лет опыта
+C) Extended team, где coordination ещё возможна
 
-D) Extended team, где coordination ещё возможна
+D) Пятнадцать минут на standup максимум
 
 ---
 
 ## Question 20: Matrix Structure
 
-Что характерно для Matrix структуры?
 
-A) Один руководитель
+Что характерно для Matrix структуры организации?
 
-B) Простота
+A) Один руководитель для каждого сотрудника
 
-C) Dual reporting, flexibility, complexity
+B) Dual reporting, flexibility, complexity — двойное подчинение
 
-D) Нет структуры
+C) Простота и понятность структуры
+
+D) Отсутствие формальной структуры
 
 ---
 
@@ -290,26 +310,26 @@ D) Нет структуры
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | C | 7-8 человек максимум для одного менеджера |
-| 2 | C | 1-on-1 поверхностные, нет времени на development — признак |
+| 1 | B | 7-8 человек максимум для одного менеджера |
+| 2 | B | 1-on-1 поверхностные, нет времени на development — признак |
 | 3 | A | По продукту: clear ownership, end-to-end responsibility |
 | 4 | A | По слоям: handoffs, slower end-to-end delivery |
-| 5 | B | Stream-aligned: aligned с business, end-to-end delivery |
-| 6 | B | Platform: internal product, self-service для других команд |
-| 7 | C | Высокая cognitive load: shallow understanding, quality страдает |
+| 5 | A | Stream-aligned: aligned с business, end-to-end delivery |
+| 6 | A | Platform: internal product, self-service для других команд |
+| 7 | B | Высокая cognitive load: shallow understanding, quality страдает |
 | 8 | A | Level 7: полное делегирование с доверием |
-| 9 | A | Identify, give opportunities, coach, gradual transition |
+| 9 | C | Identify, give opportunities, coach, gradual transition |
 | 10 | D | Масштабирование требует делегирования, совокупный output выше |
-| 11 | A | Documentation, rituals, hiring, leaders model values |
-| 12 | D | Communication paths = n(n-1)/2, больше людей = больше overhead |
-| 13 | C | Shared goals, cross-team projects, rotation |
-| 14 | B | Squad: cross-functional team с end-to-end ownership |
+| 11 | B | Documentation, rituals, hiring, leaders model values |
+| 12 | C | Communication paths = n(n-1)/2, больше людей = больше overhead |
+| 13 | B | Shared goals, cross-team projects, rotation |
+| 14 | C | Squad: cross-functional team с end-to-end ownership |
 | 15 | A | Functional: handoffs и silos |
-| 16 | B | Enabling: помогает adopt capabilities, temporary support |
-| 17 | A | All-hands, updates, documentation, Slack channels |
-| 18 | D | Minimal process, empower teams, reduce approvals |
-| 19 | D | 15: extended team, coordination возможна |
-| 20 | C | Matrix: dual reporting, flexibility, complexity |
+| 16 | D | Enabling: помогает adopt capabilities, temporary support |
+| 17 | D | All-hands, updates, documentation, Slack channels |
+| 18 | A | Minimal process, empower teams, reduce approvals |
+| 19 | C | 15: extended team, coordination возможна |
+| 20 | B | Matrix: dual reporting, flexibility, complexity |
 
 ---
 
@@ -325,4 +345,3 @@ D) Нет структуры
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
-
