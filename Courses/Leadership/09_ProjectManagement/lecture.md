@@ -34,130 +34,224 @@
 
 ### 1.1 Зоопарк ролей
 
-В IT командах часто встречается путаница с ролями:
+В IT командах часто встречается путаница с ролями. Одни и те же названия могут означать разное в разных компаниях.
 
-```
+**Основные роли:**
 
-Product Manager (PdM)    — что делать (product vision, roadmap)
-Project Manager (PM)     — как и когда (delivery, timeline)
-Team Lead (TL)           — техническое лидерство
-Engineering Manager (EM) — people management
-Scrum Master (SM)        — процесс и ceremonies
-Tech Lead                — техническая экспертиза
-
-```
+| Роль | Главный фокус | Ключевые вопросы |
+|------|---------------|------------------|
+| **Product Manager (PdM)** | WHAT & WHY | Что строить? Для кого? Почему? |
+| **Project Manager (PM)** | WHEN & HOW (process) | Когда готово? Какие риски? |
+| **Team Lead (TL)** | HOW (technical) | Как построить? Какая архитектура? |
+| **Engineering Manager (EM)** | WHO | Кто делает? Как развивать людей? |
+| **Scrum Master (SM)** | PROCESS | Как улучшить процесс? |
+| **Tech Lead** | HOW (deep technical) | Как решить сложную техническую проблему? |
 
 > **💡 Key Insight:**  
-> В разных компаниях одни и те же названия могут означать разное. Важнее понимать responsibilities, чем titles.
+> Важнее понимать **responsibilities**, чем titles. В разных компаниях "Team Lead" может означать совершенно разное.
 
-### 1.2 Различие ролей
+### 1.2 Детальное сравнение ролей
 
 **Product Manager (PdM):**
-```
 
-Фокус: WHAT и WHY
-- Что строить?
-- Для кого?
-- Почему это важно?
-- Приоритизация features
-- Roadmap
-
-```
+| Responsibility | Описание |
+|----------------|----------|
+| Product Vision | Куда движется продукт на 1-3 года |
+| Roadmap | Что делаем в ближайшие кварталы |
+| Prioritization | Что важнее: Feature A или B? |
+| Customer Research | Что нужно пользователям? |
+| Go-to-Market | Как запускаем и продвигаем? |
+| Metrics | Product metrics (retention, conversion) |
 
 **Project Manager (PM):**
-```
 
-Фокус: WHEN и HOW (процесс)
-- Когда будет готово?
-- Как организовать работу?
-- Risk management
-- Stakeholder communication
-- Budget и resources
-
-```
+| Responsibility | Описание |
+|----------------|----------|
+| Planning | Когда будет готово? Какие milestones? |
+| Tracking | Где мы сейчас vs plan? |
+| Risk Management | Что может пойти не так? |
+| Stakeholder Comm | Информирование всех заинтересованных |
+| Resource Allocation | Достаточно ли людей? Budget? |
+| Dependencies | Кто от нас зависит? От кого мы? |
+| Process | Какой процесс используем? |
 
 **Team Lead / Engineering Manager:**
-```
 
-Фокус: WHO и HOW (люди + техника)
-- Кто делает?
-- Как технически?
-- Развитие людей
-- Качество кода
-- Technical decisions
+| Responsibility | Описание |
+|----------------|----------|
+| Technical Direction | Как строить? Какие технологии? |
+| Code Quality | Ревью, стандарты, архитектура |
+| Team Health | Мотивация, развитие, retention |
+| Estimation | Сколько времени займёт? |
+| Blocker Removal | Что мешает команде? |
+| Hiring | Кого нанимать? |
+| Performance | Как работает каждый человек? |
 
-```
-
-### 1.3 Пересечения
-
-```
-
-               PdM
-              /   \
-             /     \
-          WHAT    WHY
-             \     /
-              \   /
-       ┌───────┼───────┐
-       │       │       │
-      PM ──── TL/EM ────
-       │       │       │
-      WHEN   WHO/HOW  PEOPLE
+### 1.3 Пересечения ролей
 
 ```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│                          PdM                                    │
+│                    (WHAT & WHY)                                 │
+│                    ┌─────────┐                                  │
+│                    │ Product │                                  │
+│                    │ Vision  │                                  │
+│                    └────┬────┘                                  │
+│                         │                                       │
+│         ┌───────────────┼───────────────┐                       │
+│         │               │               │                       │
+│         ▼               ▼               ▼                       │
+│    ┌─────────┐    ┌─────────┐    ┌─────────┐                   │
+│    │   PM    │◄───│  TL/EM  │───►│   SM    │                   │
+│    │  WHEN   │    │ WHO/HOW │    │ PROCESS │                   │
+│    └─────────┘    └─────────┘    └─────────┘                   │
+│                                                                 │
+│    GREY ZONES (need explicit agreement):                        │
+│    • Estimation: PM needs, TL/EM provides                       │
+│    • Scope changes: PdM decides, PM tracks, TL assesses         │
+│    • Risk communication: PM process, TL technical               │
+│    • Team capacity: TL/EM owns, PM needs to know                │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-В реальности роли пересекаются. Важно чётко договориться о responsibilities.
+### 1.4 RACI Matrix для типичных ситуаций
+
+**RACI:**
+- **R**esponsible — делает работу
+- **A**ccountable — несёт ответственность за результат
+- **C**onsulted — консультируется
+- **I**nformed — информируется
+
+| Активность | PdM | PM | TL/EM | Team |
+|------------|-----|-----|-------|------|
+| Product roadmap | A, R | I | C | I |
+| Sprint planning | C | C | A | R |
+| Technical estimation | I | C | A | R |
+| Timeline commitment | A | R | C | I |
+| Technical decisions | I | I | A, R | C |
+| Risk identification | C | A | R | C |
+| Stakeholder updates | C | R | C | I |
+| Hiring decisions | C | I | A, R | C |
+| Performance reviews | I | I | A, R | - |
+| Scope changes | A | R | C | I |
+
+> **💡 Pro Tip:**  
+> Создайте RACI для вашей команды и согласуйте со всеми. Это предотвратит многие конфликты.
 
 ---
 
 ## 2. Когда нужен Project Manager
 
-### 2.1 Когда PM необходим
+### 2.1 Матрица принятия решения
 
-**Сложные проекты:**
+```
+                    HIGH COMPLEXITY
+                         │
+    PM HELPFUL           │        PM ESSENTIAL
+    ─────────────        │        ────────────
+    • 2-3 teams          │        • 4+ teams involved
+    • Medium scope       │        • Large scope (6+ months)
+    • Some stakeholders  │        • Many stakeholders
+    • Flexible deadline  │        • Hard deadline (contract)
+                         │
+    ─────────────────────┼─────────────────────
+                         │
+    PM NOT NEEDED        │        PM HELPFUL
+    ─────────────        │        ────────────
+    • 1 team             │        • 1-2 teams
+    • Small scope        │        • Medium scope
+    • Few stakeholders   │        • Regulatory requirements
+    • Internal only      │        • External visibility
+                         │
+                    LOW COMPLEXITY
+    ────────────────────────────────────────────
+    LOW                 CROSS-TEAM              HIGH
+                       DEPENDENCIES
+```
 
-- Много зависимостей между командами
-- Большой scope (6+ месяцев)
-- Много stakeholders
-- Строгие deadlines (регуляторные, контрактные)
+### 2.2 Когда PM необходим
 
-**Примеры:**
+| Фактор | Threshold для PM | Почему |
+|--------|-----------------|--------|
+| **Количество команд** | 3+ команд | Coordination overhead |
+| **Длительность** | 6+ месяцев | Long-term tracking |
+| **Stakeholders** | 5+ stakeholders | Communication management |
+| **Зависимости** | Много внешних | Dependency tracking |
+| **Deadline тип** | Контрактный, регуляторный | Risk management critical |
+| **Budget** | > $500K | Financial tracking |
 
-- Enterprise интеграции
-- Product launches с marketing
-- Compliance проекты
-- Large migrations
+**Примеры проектов, требующих PM:**
 
-### 2.2 Когда PM не нужен
+| Тип проекта | Почему нужен PM |
+|-------------|-----------------|
+| Enterprise Integration | Много систем, stakeholders, контракты |
+| Product Launch с Marketing | Координация с non-eng командами |
+| Compliance (SOC2, GDPR) | Регуляторные deadlines, documentation |
+| Large Migration | Много команд, risks, downtime planning |
+| M&A Integration | Cross-company, legal, timeline-driven |
+| Multi-region Launch | Time zones, localization, dependencies |
 
-**Простые ситуации:**
+### 2.3 Когда PM не нужен
 
-- Маленькая команда (3-5 человек)
-- Стабильный backlog
-- Минимум внешних зависимостей
-- Agile команда с опытным PO
+| Ситуация | Почему можно без PM |
+|----------|---------------------|
+| Маленькая команда (3-7 человек) | TL может справиться |
+| Стабильный backlog, routine work | Нет coordination complexity |
+| Одна команда, нет внешних deps | Нет cross-team overhead |
+| Agile команда с опытным PO | PO + TL покрывают нужды |
+| Internal tools, flexible timeline | Low stakes |
 
-### 2.3 "TL как PM" — распространённая практика
+### 2.4 "TL как PM" — распространённая практика
 
-В стартапах и небольших командах TL часто совмещает роли:
+В стартапах и небольших командах TL часто совмещает роли.
 
-**Плюсы:**
+**Когда это работает:**
 
-- Меньше overhead на coordination
-- Техническое понимание рисков
-- Быстрее принимаются решения
+| Условие | Почему работает |
+|---------|-----------------|
+| Маленькая команда (< 7) | Управляемый overhead |
+| Один проект в фокусе | Нет context switching |
+| TL имеет PM навыки | Может делать обе роли |
+| Минимум stakeholders | Меньше communication |
+| Гибкие deadlines | Меньше pressure |
 
-**Минусы:**
+**Trade-offs:**
 
-- Перегрузка TL
-- Меньше времени на people/technical leadership
-- Risk: ни одна роль не выполняется хорошо
+```
+┌─────────────────────────────────────────────────────────────────┐
+│               TL КАК PM: TRADE-OFFS                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ПЛЮСЫ                              МИНУСЫ                      │
+│  ─────                              ──────                      │
+│  • Меньше overhead                  • Перегрузка TL             │
+│  • Техническое понимание рисков     • Меньше времени на людей   │
+│  • Быстрее решения                  • Меньше времени на технику │
+│  • Единая точка контакта            • Burnout риск              │
+│  • Меньше miscommunication          • Bottleneck на TL          │
+│                                                                 │
+│  РИСКИ:                                                         │
+│  • Ни одна роль не делается хорошо                              │
+│  • Technical debt накапливается (нет времени)                   │
+│  • Team development страдает                                    │
+│  • TL burnout                                                   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
 
-**Когда работает:**
+**Сигналы, что пора добавить PM:**
 
-- Маленькая команда
-- Относительно простые проекты
-- TL имеет PM навыки
+```
+🚨 Пора искать PM когда:
+□ TL тратит > 50% времени на coordination
+□ Команда растёт > 7-8 человек
+□ Появляются значительные внешние зависимости
+□ Stakeholders жалуются на communication
+□ TL не успевает на technical leadership
+□ Проект становится cross-team
+```
 
 ---
 
@@ -260,79 +354,173 @@ Organizational риски:
 
 ## 4. Работа с Project Manager
 
-### 4.1 Разделение responsibilities
+### 4.1 Разделение responsibilities: детальный RACI
 
 **Здоровое разделение:**
 
-| Aspect | PM | TL |
-|--------|-----|-----|
-| Timeline planning | Leads | Input |
-| Technical estimates | Input | Leads |
-| Stakeholder comms | Leads | Technical input |
-| Risk management | Process risks | Technical risks |
-| Team capacity | Awareness | Leads |
-| Technical decisions | Awareness | Leads |
-| Process | Leads | Follows/Input |
-| People issues | Awareness | Leads (or EM) |
+| Aspect | PM | TL | Комментарий |
+|--------|-----|-----|-------------|
+| Timeline planning | **A** | C, R | PM commits, TL provides estimates |
+| Technical estimates | I | **A, R** | TL owns, PM uses |
+| Stakeholder comms | **A, R** | C | PM leads, TL provides tech input |
+| Process risks | **A, R** | C | PM identifies, TL helps |
+| Technical risks | C | **A, R** | TL identifies, PM tracks |
+| Team capacity | I | **A** | TL knows, PM needs awareness |
+| Technical decisions | I | **A, R** | PM should be informed |
+| Process | **A, R** | C | PM proposes, team inputs |
+| People issues | I | **A** | TL or EM handles |
+| Scope changes | **A** | C | PM tracks, TL assesses impact |
 
-### 4.2 Типичные конфликты
+### 4.2 Типичные конфликты и как решать
 
-**"PM давит на сроки":**
-```
-
-PM: "Нужно сделать к пятнице"
-TL: "Это невозможно качественно"
-
-Решение:
-
-- Объясните технические constraints
-- Предложите варианты (scope cut, phased delivery)
-- Escalate если нет согласия
+**Конфликт 1: "PM давит на сроки"**
 
 ```
+Ситуация:
+PM: "Нам нужно сделать это к пятнице."
+TL: (понимает, что это невозможно качественно)
 
-**"PM не понимает technical complexity":**
+Плохой ответ:
+"Невозможно." (без alternatives)
+
+Хороший ответ:
+"Давай обсудим. К пятнице мы можем сделать [scope A],
+но полный scope займёт [N дней].
+
+Варианты:
+1. Делаем [scope A] к пятнице, [scope B] на следующей неделе
+2. Сдвигаем deadline на [дата] для полного scope
+3. Добавляем людей (если есть) — риск: onboarding overhead
+
+Какой вариант лучше для бизнеса?"
 ```
 
-Решение:
-
-- Объясняйте в бизнес-терминах
-- Используйте аналогии
-- Показывайте риски для пользователей
+**Конфликт 2: "PM не понимает complexity"**
 
 ```
+Ситуация:
+PM: "Это же просто добавить кнопку, почему 2 недели?"
 
-**"PM микроменеджит команду":**
+Плохой ответ:
+"Ты не понимаешь технику." (dismissive)
+
+Хороший ответ:
+"Кнопка — это UI часть, она займёт 1 день.
+Но эта кнопка запускает процесс, который:
+- Требует изменения 3 сервисов
+- Должен быть надёжным (retry logic, error handling)
+- Требует интеграции с [System X], у них API quirks
+
+Вот breakdown:
+- UI: 1 день
+- Backend logic: 3 дня
+- Integration: 4 дня
+- Testing: 2 дня
+- Buffer: 1 день
+
+Если хочешь быстрее — можем упростить [X]."
 ```
 
-Решение:
+**Конфликт 3: "PM микроменеджит команду"**
 
-- Обсудите роли и границы
-- Предложите альтернативы (status updates)
-- Escalate к общему руководителю если нужно
+```
+Ситуация:
+PM ходит к разработчикам напрямую, спрашивает статус,
+даёт задачи минуя TL.
 
+Разговор с PM:
+"Я заметил, что ты общаешься с командой напрямую 
+по задачам и статусам.
+
+Это создаёт путаницу — люди не знают, кого слушать.
+И я теряю картину происходящего.
+
+Давай договоримся:
+- Для статуса проекта — спрашивай меня или на standup
+- Для технических деталей — я организую нужного человека
+- Если срочно — напиши мне, я быстро найду ответ
+
+Так мы оба будем в курсе. Работает?"
+```
+
+**Конфликт 4: "Мы не можем договориться о приоритетах"**
+
+```
+Ситуация:
+PM хочет feature A, TL считает нужно сначала 
+исправить tech debt B.
+
+Подход:
+"У нас разные views на приоритеты. Давай разберём:
+
+Твой view (PM): Feature A важнее потому что [business reason]
+Мой view (TL): Tech debt B потому что [technical reason + business impact]
+
+Я понимаю business pressure. Вот что я вижу:
+- Если делаем A сейчас: работает, но займёт 3 недели
+- Если сначала B (1 неделя), потом A: общее время 3.5 недели,
+  но будущие фичи будут быстрее
+
+Trade-off: 0.5 недели сейчас vs [X] недель за год.
+
+Давай обсудим это с [PdM/Director], 
+чтобы принять решение вместе."
 ```
 
 ### 4.3 Эффективное партнёрство
 
-**Что работает:**
+**Ключевые принципы:**
 
-- Регулярные sync (2-3 раза в неделю)
-- Aligned на goals
-- Честность о рисках и проблемах
-- Mutual respect
+| Принцип | Как реализовать |
+|---------|-----------------|
+| **Aligned goals** | Обсудите shared metrics успеха |
+| **Regular sync** | 2-3 раза в неделю, 15-30 мин |
+| **No surprises** | Плохие новости сразу, не копите |
+| **Mutual respect** | Признавайте expertise друг друга |
+| **United front** | Не спорьте при stakeholders |
 
-**Формат sync:**
+**Формат PM-TL Weekly Sync (30-45 min):**
+
+```markdown
+## PM-TL Weekly Sync
+
+### 1. Progress Review (10 min)
+- What was completed this week?
+- What's in progress?
+- Any delays vs plan?
+
+### 2. Risks & Blockers (10 min)
+- New risks identified?
+- Blocker status?
+- Mitigation updates?
+
+### 3. Upcoming Week (10 min)
+- What's planned?
+- Any concerns about capacity?
+- Dependencies to watch?
+
+### 4. Stakeholder Updates (5 min)
+- What do stakeholders need to know?
+- Any questions to address?
+- Upcoming presentations?
+
+### 5. Decisions Needed (5 min)
+- Any decisions pending?
+- Who needs to be involved?
 ```
 
-Weekly PM-TL Sync (30 min)
+### 4.4 Building Trust с PM
 
-1. Progress review (10 min)
-2. Risks and blockers (10 min)
-3. Upcoming decisions (5 min)
-4. Stakeholder communications (5 min)
+**Как завоевать trust:**
 
-```
+| Action | Why It Works |
+|--------|--------------|
+| Deliver on commitments | Trust через reliability |
+| Flag risks early | PM can manage expectations |
+| Provide options, not just problems | Solution-oriented |
+| Explain technical constraints clearly | Educated PM = better PM |
+| Respect their expertise | They know things you don't |
+| Support them publicly | United front |
 
 ---
 
@@ -552,15 +740,21 @@ Owner: [кто следит]
 
 ## 💡 Key Takeaways
 
-- **Роли не titles:** Важнее agreements о responsibilities, чем названия
+- **Роли не titles:** Важнее agreements о responsibilities. Создайте RACI для вашей ситуации
 
-- **TL часто = delivery:** Особенно в маленьких командах
+- **PM нужен когда:** 3+ команды, 6+ месяцев, много stakeholders, hard deadline. Иначе TL справится
 
-- **Partnership с PM:** Честность, регулярные sync, mutual respect
+- **TL как PM:** Работает в маленьких командах, но watch for burnout и quality tradeoffs
 
-- **Scope management:** Каждое изменение имеет cost
+- **Partnership с PM:** Aligned goals, no surprises, mutual respect, united front
 
-- **Risks — ваша работа:** Выявлять, коммуницировать, mitigation
+- **Конфликты:** Объясняйте в бизнес-терминах, предлагайте варианты, не просто проблемы
+
+- **Scope management:** Каждое изменение имеет cost. "Yes, and..." вместо "No"
+
+- **Risks = your job:** TL owns technical risks, PM owns process risks. Communicate early
+
+- **Metrics для improvement:** Velocity, Lead Time, Cycle Time — для понимания, не для pressure
 
 ---
 
@@ -570,18 +764,22 @@ Owner: [кто следит]
 
 - [07_TeamProcesses](../07_TeamProcesses/) — процессы для delivery
 - [08_Meetings](../08_Meetings/) — planning и coordination meetings
+- [11_Communication](../11_Communication/) — stakeholder management
 
 **Practice Ideas:**
 
-1. Составьте RACI матрицу для вашей команды
-2. Создайте risk register для текущего проекта
-3. Попробуйте weekly status update формат
+1. **RACI Matrix:** Составьте для вашей команды и согласуйте со всеми
+2. **Risk Register:** Создайте для текущего проекта с mitigation plans
+3. **PM Sync:** Установите regular sync format с PM (если есть)
+4. **Status Update:** Попробуйте предложенный weekly format
+5. **Delivery Metrics:** Настройте tracking Cycle Time и Lead Time
 
 **Going Deeper:**
 
-- Agile project management
-- Risk management frameworks
+- Agile project management certifications
+- Risk management frameworks (PMBOK)
 - Stakeholder management techniques
+- Negotiation skills (для scope discussions)
 
 ---
 
@@ -592,17 +790,22 @@ Owner: [кто следит]
 - "The Mythical Man-Month" by Fred Brooks — классика о software projects
 - "Making Things Happen" by Scott Berkun — PM perspective
 - "User Story Mapping" by Jeff Patton — scope management
+- "The Phoenix Project" by Gene Kim — DevOps и delivery
+- "Accelerate" by Nicole Forsgren — delivery metrics (DORA)
 
 **Articles:**
 
 - [Atlassian: RACI Matrix](https://www.atlassian.com/team-playbook/plays/raci)
 - [Product vs Project Management](https://www.productplan.com/glossary/product-manager-vs-project-manager/)
+- [Engineering Manager vs Tech Lead](https://www.atlassian.com/engineering/engineering-manager-vs-tech-lead)
 
 **Frameworks:**
 
 - RACI (Responsible, Accountable, Consulted, Informed)
 - MoSCoW (Must, Should, Could, Won't)
 - RICE scoring (Reach, Impact, Confidence, Effort)
+- Eisenhower Matrix (Urgent vs Important)
+- DORA Metrics (Deployment Frequency, Lead Time, etc.)
 
 ---
 
