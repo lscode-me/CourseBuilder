@@ -359,6 +359,190 @@ U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
 
 ```
 
+### 4.7 Unicode — это набор спецификаций
+
+**Unicode — это не просто таблица символов.** Это целый набор стандартов и спецификаций, который включает:
+
+| Спецификация | Описание |
+|--------------|----------|
+| **UCD** (Unicode Character Database) | База данных всех символов с их свойствами |
+| **UAX** (Unicode Standard Annexes) | Дополнения к стандарту (нормализация, сегментация, BiDi) |
+| **UTS** (Unicode Technical Standards) | Технические стандарты (Emoji, регулярные выражения) |
+| **UTR** (Unicode Technical Reports) | Технические отчёты |
+| **CLDR** (Common Locale Data Repository) | Локализация: форматы дат, чисел, валют |
+| **ICU** (International Components for Unicode) | Библиотека для работы с Unicode |
+
+Каждый символ в Unicode имеет множество **свойств** (properties), не только код и название:
+
+| Свойство | Описание | Пример |
+|----------|----------|--------|
+| **Code Point** | Уникальный номер символа | U+0041 |
+| **Name** | Официальное название | LATIN CAPITAL LETTER A |
+| **General Category** | Основная категория | Lu (Letter, uppercase) |
+| **Script** | Письменность | Latin |
+| **Block** | Блок Unicode | Basic Latin |
+| **Bidirectional Class** | Направление текста | L (Left-to-Right) |
+| **Numeric Value** | Числовое значение (для цифр) | 5.0 |
+| **Decomposition** | Разложение на компоненты | é → e + ́ |
+| **Case Mapping** | Преобразование регистра | A ↔ a |
+| **Age** | Версия Unicode, когда добавлен | 1.1 |
+
+#### Примеры символов с их Unicode-свойствами
+
+**Цифры:**
+
+| Символ | Code Point | Категория | Имя | Числовое значение |
+|--------|------------|-----------|-----|-------------------|
+| 0 | U+0030 | Nd | DIGIT ZERO | 0 |
+| 5 | U+0035 | Nd | DIGIT FIVE | 5 |
+| ٥ | U+0665 | Nd | ARABIC-INDIC DIGIT FIVE | 5 |
+| ५ | U+096B | Nd | DEVANAGARI DIGIT FIVE | 5 |
+| Ⅳ | U+2163 | Nl | ROMAN NUMERAL FOUR | 4 |
+| ½ | U+00BD | No | VULGAR FRACTION ONE HALF | 0.5 |
+
+**Латинские буквы:**
+
+| Символ | Code Point | Категория | Имя | Регистр |
+|--------|------------|-----------|-----|---------|
+| A | U+0041 | Lu | LATIN CAPITAL LETTER A | a (U+0061) |
+| z | U+007A | Ll | LATIN SMALL LETTER Z | Z (U+005A) |
+| é | U+00E9 | Ll | LATIN SMALL LETTER E WITH ACUTE | É (U+00C9) |
+| ß | U+00DF | Ll | LATIN SMALL LETTER SHARP S | SS (особый случай) |
+
+**Кириллица:**
+
+| Символ | Code Point | Категория | Имя | Регистр |
+|--------|------------|-----------|-----|---------|
+| А | U+0410 | Lu | CYRILLIC CAPITAL LETTER A | а (U+0430) |
+| я | U+044F | Ll | CYRILLIC SMALL LETTER YA | Я (U+042F) |
+| Ж | U+0416 | Lu | CYRILLIC CAPITAL LETTER ZHE | ж (U+0436) |
+| ё | U+0451 | Ll | CYRILLIC SMALL LETTER IO | Ё (U+0401) |
+
+**Арабские символы:**
+
+| Символ | Code Point | Категория | Имя | BiDi |
+|--------|------------|-----------|-----|------|
+| ا | U+0627 | Lo | ARABIC LETTER ALEF | AL (Arabic Letter) |
+| ب | U+0628 | Lo | ARABIC LETTER BEH | AL |
+| م | U+0645 | Lo | ARABIC LETTER MEEM | AL |
+| ٠ | U+0660 | Nd | ARABIC-INDIC DIGIT ZERO | AN (Arabic Number) |
+
+**Китайские/Японские:**
+
+| Символ | Code Point | Категория | Имя | Script |
+|--------|------------|-----------|-----|--------|
+| 中 | U+4E2D | Lo | CJK UNIFIED IDEOGRAPH-4E2D | Han |
+| 日 | U+65E5 | Lo | CJK UNIFIED IDEOGRAPH-65E5 | Han |
+| あ | U+3042 | Lo | HIRAGANA LETTER A | Hiragana |
+| ア | U+30A2 | Lo | KATAKANA LETTER A | Katakana |
+
+**Математические символы:**
+
+| Символ | Code Point | Категория | Имя |
+|--------|------------|-----------|-----|
+| + | U+002B | Sm | PLUS SIGN |
+| ∞ | U+221E | Sm | INFINITY |
+| √ | U+221A | Sm | SQUARE ROOT |
+| ∑ | U+2211 | Sm | N-ARY SUMMATION |
+| π | U+03C0 | Ll | GREEK SMALL LETTER PI |
+| ≠ | U+2260 | Sm | NOT EQUAL TO |
+
+**Валюты:**
+
+| Символ | Code Point | Категория | Имя |
+|--------|------------|-----------|-----|
+| $ | U+0024 | Sc | DOLLAR SIGN |
+| € | U+20AC | Sc | EURO SIGN |
+| ₽ | U+20BD | Sc | RUBLE SIGN |
+| ¥ | U+00A5 | Sc | YEN SIGN |
+| ₿ | U+20BF | Sc | BITCOIN SIGN |
+
+**Эмодзи:**
+
+| Символ | Code Point | Категория | Имя |
+|--------|------------|-----------|-----|
+| 😀 | U+1F600 | So | GRINNING FACE |
+| ❤️ | U+2764 | So | HEAVY BLACK HEART |
+| 🚀 | U+1F680 | So | ROCKET |
+| 🎉 | U+1F389 | So | PARTY POPPER |
+| 👨‍💻 | U+1F468 U+200D U+1F4BB | — | MAN TECHNOLOGIST (ZWJ sequence) |
+
+**Специальные и управляющие:**
+
+| Символ | Code Point | Категория | Имя | Назначение |
+|--------|------------|-----------|-----|------------|
+| (space) | U+0020 | Zs | SPACE | Обычный пробел |
+| (nbsp) | U+00A0 | Zs | NO-BREAK SPACE | Неразрывный пробел |
+| ​ | U+200B | Cf | ZERO WIDTH SPACE | Невидимый разделитель |
+| ‍ | U+200D | Cf | ZERO WIDTH JOINER | Соединитель (эмодзи) |
+| ← | U+2190 | Sm | LEFTWARDS ARROW | Стрелка |
+| • | U+2022 | Po | BULLET | Маркер списка |
+
+```python
+# Получение всех свойств символа в Python
+import unicodedata
+
+def show_char_properties(char):
+    """Показывает основные Unicode-свойства символа."""
+    print(f"Символ: {char}")
+    print(f"  Code Point: U+{ord(char):04X}")
+    print(f"  Name: {unicodedata.name(char, 'N/A')}")
+    print(f"  Category: {unicodedata.category(char)}")
+    print(f"  Bidirectional: {unicodedata.bidirectional(char)}")
+    print(f"  East Asian Width: {unicodedata.east_asian_width(char)}")
+    print(f"  Combining: {unicodedata.combining(char)}")
+    print(f"  Mirrored: {unicodedata.mirrored(char)}")
+    try:
+        print(f"  Numeric Value: {unicodedata.numeric(char)}")
+    except ValueError:
+        print(f"  Numeric Value: N/A")
+
+show_char_properties('5')
+print()
+show_char_properties('Ж')
+print()
+show_char_properties('😀')
+
+```
+
+**Output:**
+```
+
+Символ: 5
+  Code Point: U+0035
+  Name: DIGIT FIVE
+  Category: Nd
+  Bidirectional: EN
+  East Asian Width: Na
+  Combining: 0
+  Mirrored: 0
+  Numeric Value: 5.0
+
+Символ: Ж
+  Code Point: U+0416
+  Name: CYRILLIC CAPITAL LETTER ZHE
+  Category: Lu
+  Bidirectional: L
+  East Asian Width: A
+  Combining: 0
+  Mirrored: 0
+  Numeric Value: N/A
+
+Символ: 😀
+  Code Point: U+1F600
+  Name: GRINNING FACE
+  Category: So
+  Bidirectional: ON
+  East Asian Width: W
+  Combining: 0
+  Mirrored: 0
+  Numeric Value: N/A
+
+```
+
+> **📝 Note:**  
+> Полная база данных Unicode доступна на [unicode.org](https://www.unicode.org/ucd/) и обновляется с каждой новой версией стандарта.
+
 ---
 
 ## 5. UTF-8 — современный стандарт
