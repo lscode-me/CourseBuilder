@@ -6,12 +6,6 @@
 
 ## Question 1: Hiring Bar
 
-
-
-
-
-
-
 Какой принцип описывает "hiring bar"?
 
 A) Нанимать самого дешёвого
@@ -25,12 +19,6 @@ D) Нанимать кого угодно
 ---
 
 ## Question 2: Cost of Bad Hire
-
-
-
-
-
-
 
 Почему важно избегать bad hire?
 
@@ -46,12 +34,6 @@ D) Bad hire дёшево исправить
 
 ## Question 3: Job Description
 
-
-
-
-
-
-
 Чего следует избегать в Job Description?
 
 A) Честное описание роли
@@ -65,12 +47,6 @@ D) "10 лет опыта в технологии, которой 5 лет"
 ---
 
 ## Question 4: Referrals
-
-
-
-
-
-
 
 Почему referrals считаются лучшим источником кандидатов?
 
@@ -86,12 +62,6 @@ D) Referrals не работают
 
 ## Question 5: Diversity Sourcing
 
-
-
-
-
-
-
 Как улучшить diversity в sourcing?
 
 A) Использовать только referrals
@@ -105,12 +75,6 @@ D) Diverse sourcing channels, blind review, diverse interview panels
 ---
 
 ## Question 6: Structured Interviews
-
-
-
-
-
-
 
 Зачем нужны structured interviews?
 
@@ -126,12 +90,6 @@ D) Consistent across candidates, reduces bias, better predictions
 
 ## Question 7: Scorecard
 
-
-
-
-
-
-
 Что включает interview scorecard?
 
 A) Competencies, questions, scores, notes
@@ -145,12 +103,6 @@ D) Только зарплатные ожидания
 ---
 
 ## Question 8: Coding Interview
-
-
-
-
-
-
 
 Какая best practice для coding interview?
 
@@ -166,12 +118,6 @@ D) Gotcha questions и obscure algorithms
 
 ## Question 9: STAR Method
 
-
-
-
-
-
-
 Что означает STAR в behavioral interview?
 
 A) Situation, Task, Action, Result
@@ -185,12 +131,6 @@ D) Stars rating
 ---
 
 ## Question 10: Bias in Interviews
-
-
-
-
-
-
 
 Что такое "Affinity bias"?
 
@@ -206,12 +146,6 @@ D) Отвержение всех кандидатов
 
 ## Question 11: Debrief Process
 
-
-
-
-
-
-
 Когда интервьюеры должны submit feedback?
 
 A) После обсуждения с другими
@@ -225,12 +159,6 @@ D) Только устно
 ---
 
 ## Question 12: Red Flags
-
-
-
-
-
-
 
 Что является strong "No Hire" signal?
 
@@ -246,12 +174,6 @@ D) Unconventional background
 
 ## Question 13: When in Doubt
 
-
-
-
-
-
-
 Как решать при неуверенности в кандидате (culture concerns)?
 
 A) Спросить HR
@@ -265,12 +187,6 @@ D) Подбросить монетку
 ---
 
 ## Question 14: Onboarding Week 1
-
-
-
-
-
-
 
 Какой goal для end of Week 1 onboarding?
 
@@ -286,12 +202,6 @@ D) Promoted
 
 ## Question 15: Onboarding Month 3
 
-
-
-
-
-
-
 Какой goal для end of Month 3?
 
 A) Ещё onboarding
@@ -305,12 +215,6 @@ D) Ещё не начал работать
 ---
 
 ## Question 16: Buddy Role
-
-
-
-
-
-
 
 Какая роль buddy в onboarding?
 
@@ -326,12 +230,6 @@ D) Technical mentor only
 
 ## Question 17: Take-Home vs Live
 
-
-
-
-
-
-
 Какой плюс take-home assignment?
 
 A) Verifies skills directly
@@ -345,12 +243,6 @@ D) Faster process
 ---
 
 ## Question 18: System Design Interview
-
-
-
-
-
-
 
 Что оценивается в system design interview?
 
@@ -366,12 +258,6 @@ D) Clarifying questions, trade-offs, communication, depth
 
 ## Question 19: First 90 Days
 
-
-
-
-
-
-
 Почему первые 90 дней критичны?
 
 A) Onboarding заканчивается в день 1
@@ -385,12 +271,6 @@ D) 20% turnover в первые 45 дней, experience shapes engagement
 ---
 
 ## Question 20: Setting Expectations
-
-
-
-
-
-
 
 Почему важно быть честным о challenges во время hiring?
 

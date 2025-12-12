@@ -6,12 +6,6 @@
 
 ## Question 1: Эквивалентность уровней
 
-
-
-
-
-
-
 Какой уровень Management Track примерно соответствует Staff Engineer по статусу и компенсации?
 
 A) Engineering Manager
@@ -25,12 +19,6 @@ D) Director of Engineering
 ---
 
 ## Question 2: Фокус IC Track
-
-
-
-
-
-
 
 Что является основным фокусом IC Track?
 
@@ -46,12 +34,6 @@ D) Найм и развитие сотрудников
 
 ## Question 3: Архетипы Staff Engineers
 
-
-
-
-
-
-
 Какой архетип Staff Engineer описывает человека, который "тушит пожары" и решает сложнейшие проблемы, перемещаясь между командами?
 
 A) Architect
@@ -65,12 +47,6 @@ D) Solver
 ---
 
 ## Question 4: Время Staff Engineer
-
-
-
-
-
-
 
 Как примерно распределяется время типичного Staff Engineer?
 
@@ -86,12 +62,6 @@ D) 100% coding, 0% meetings
 
 ## Question 5: Tech Lead Manager
 
-
-
-
-
-
-
 Когда роль Tech Lead Manager (50% tech + 50% management) работает эффективно?
 
 A) Только в enterprise компаниях
@@ -105,12 +75,6 @@ D) В любых командах
 ---
 
 ## Question 6: Признак для Management
-
-
-
-
-
-
 
 Какой признак указывает на склонность к Management Track?
 
@@ -126,12 +90,6 @@ D) "Мне интересен рост других людей"
 
 ## Question 7: Red Flag для Management
 
-
-
-
-
-
-
 Какая мотивация является red flag для выбора Management Track?
 
 A) "Я хочу строить эффективные процессы"
@@ -145,12 +103,6 @@ D) "Мне интересно помогать людям развиваться
 ---
 
 ## Question 8: Pendulum Model
-
-
-
-
-
-
 
 Что описывает модель "Pendulum" (маятника)?
 
@@ -166,12 +118,6 @@ D) Необходимость выбрать один трек навсегда
 
 ## Question 9: Scope Staff Engineer
 
-
-
-
-
-
-
 Какой scope (масштаб влияния) типичен для Staff Engineer?
 
 A) Одна feature
@@ -185,12 +131,6 @@ D) Команда / несколько команд (area)
 ---
 
 ## Question 10: Management → IC
-
-
-
-
-
-
 
 Как следует относиться к переходу из Management обратно в IC Track?
 
@@ -206,12 +146,6 @@ D) Это означает понижение в должности
 
 ## Question 11: Эволюция фокуса
 
-
-
-
-
-
-
 Как меняется фокус на уровне Director of Engineering?
 
 A) Strategy → Organization → Business
@@ -225,12 +159,6 @@ D) Code → Architecture
 ---
 
 ## Question 12: Tech Lead vs Engineering Manager
-
-
-
-
-
-
 
 За что отвечает Tech Lead в паре с Engineering Manager?
 
@@ -246,12 +174,6 @@ D) 1-on-1 встречи и развитие людей
 
 ## Question 13: Время для выбора
 
-
-
-
-
-
-
 Когда оптимально принимать решение о выборе между IC и Management треками?
 
 A) На Middle уровне
@@ -265,12 +187,6 @@ D) Только после 15 лет опыта
 ---
 
 ## Question 14: Компенсация
-
-
-
-
-
-
 
 Какое утверждение о компенсации верно для современных tech компаний?
 
@@ -286,12 +202,6 @@ D) Management всегда платит больше
 
 ## Question 15: Distinguished Engineer
 
-
-
-
-
-
-
 Какой scope влияния у Distinguished Engineer?
 
 A) Организация
@@ -305,12 +215,6 @@ D) Несколько команд
 ---
 
 ## Question 16: Engineering Manager activities
-
-
-
-
-
-
 
 Какая деятельность занимает наибольшую часть времени Engineering Manager?
 
@@ -326,12 +230,6 @@ D) Архитектурные решения
 
 ## Question 17: Гибридная роль
 
-
-
-
-
-
-
 Что такое Tech Lead (не TLM)?
 
 A) Полностью management роль
@@ -345,12 +243,6 @@ D) Роль без технической работы
 ---
 
 ## Question 18: IC Track миф
-
-
-
-
-
-
 
 Какое утверждение является мифом об IC Track?
 
@@ -366,12 +258,6 @@ D) Principal Engineers влияют на технологический стек
 
 ## Question 19: Experiment before choosing
 
-
-
-
-
-
-
 Что полезно попробовать перед выбором между треками?
 
 A) Увольнение с текущей работы
@@ -385,12 +271,6 @@ D) Mentoring, tech lead роль на проекте, участие в hiring
 ---
 
 ## Question 20: Architect archetype
-
-
-
-
-
-
 
 Чем характеризуется архетип "Architect" среди Staff Engineers?
 

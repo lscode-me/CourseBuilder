@@ -6,13 +6,6 @@
 
 ## Question 1: Фокус Product Manager
 
-
-
-
-
-
-
-
 На чём фокусируется Product Manager (PdM)?
 
 A) Только технические решения
@@ -26,13 +19,6 @@ D) WHEN и HOW (процесс)
 ---
 
 ## Question 2: Фокус Project Manager
-
-
-
-
-
-
-
 
 На чём фокусируется Project Manager?
 
@@ -48,13 +34,6 @@ D) WHEN и HOW (процесс), timeline, risk management
 
 ## Question 3: Когда нужен PM
 
-
-
-
-
-
-
-
 Когда Project Manager необходим?
 
 A) Только в стартапах
@@ -68,13 +47,6 @@ D) Сложные проекты: много зависимостей, боль�
 ---
 
 ## Question 4: TL как PM
-
-
-
-
-
-
-
 
 Когда Team Lead может совмещать роль PM?
 
@@ -90,13 +62,6 @@ D) Никогда
 
 ## Question 5: Delivery responsibilities TL
 
-
-
-
-
-
-
-
 За что отвечает Team Lead в delivery даже без PM?
 
 A) Planning, execution (убирание блокеров), tracking, risk communication
@@ -110,13 +75,6 @@ D) Только люди
 ---
 
 ## Question 6: Estimation
-
-
-
-
-
-
-
 
 Как TL должен участвовать в estimation?
 
@@ -132,13 +90,6 @@ D) Участвовать, не навязывая; учитывать неоп�
 
 ## Question 7: Конфликт с PM
 
-
-
-
-
-
-
-
 PM давит на нереалистичные сроки. Что делать?
 
 A) Молча согласиться
@@ -152,13 +103,6 @@ D) Отказаться работать
 ---
 
 ## Question 8: Разделение responsibilities
-
-
-
-
-
-
-
 
 Кто leads технические estimates в партнёрстве TL-PM?
 
@@ -174,13 +118,6 @@ D) PM
 
 ## Question 9: Self-managing teams
 
-
-
-
-
-
-
-
 Что характеризует self-managing team?
 
 A) Нет никакого планирования
@@ -194,13 +131,6 @@ D) Команда сама планирует, ownership за delivery, TL фа�
 ---
 
 ## Question 10: Lead Time vs Cycle Time
-
-
-
-
-
-
-
 
 Чем Lead Time отличается от Cycle Time?
 
@@ -216,13 +146,6 @@ D) Это одно и то же
 
 ## Question 11: Использование metrics
 
-
-
-
-
-
-
-
 Как НЕ следует использовать метрики delivery?
 
 A) Для выявления проблем в процессе
@@ -236,13 +159,6 @@ D) Для улучшения estimation
 ---
 
 ## Question 12: Scope Creep
-
-
-
-
-
-
-
 
 Как управлять scope creep?
 
@@ -258,13 +174,6 @@ D) Игнорировать requests
 
 ## Question 13: Saying "No"
 
-
-
-
-
-
-
-
 Как правильно отказать stakeholder в новой feature?
 
 A) Просто сказать "Нет"
@@ -278,13 +187,6 @@ D) Игнорировать request
 ---
 
 ## Question 14: MoSCoW
-
-
-
-
-
-
-
 
 Что означает MoSCoW в приоритизации?
 
@@ -300,13 +202,6 @@ D) Must have, Should have, Could have, Won't have
 
 ## Question 15: Risk Categories
 
-
-
-
-
-
-
-
 Какая категория риска включает "ключевой человек уходит"?
 
 A) Resource
@@ -320,13 +215,6 @@ D) Technical
 ---
 
 ## Question 16: Risk Mitigation
-
-
-
-
-
-
-
 
 Какая стратегия mitigation означает "изменить план, чтобы исключить риск"?
 
@@ -342,13 +230,6 @@ D) Accept
 
 ## Question 17: MVP Mindset
 
-
-
-
-
-
-
-
 Что означает MVP Mindset в delivery?
 
 A) Максимальный scope
@@ -362,13 +243,6 @@ D) Не делать ничего
 ---
 
 ## Question 18: Burndown Chart
-
-
-
-
-
-
-
 
 Что показывает Burndown Chart?
 
@@ -384,13 +258,6 @@ D) Оставшуюся работу vs время (должна идти вни
 
 ## Question 19: PM-TL Sync
 
-
-
-
-
-
-
-
 Как часто рекомендуется sync между PM и TL?
 
 A) Никогда
@@ -404,13 +271,6 @@ D) 2-3 раза в неделю
 ---
 
 ## Question 20: Technical Risks
-
-
-
-
-
-
-
 
 Что является примером technical risk?
 
@@ -426,7 +286,6 @@ D) Незнакомая технология, performance concerns, security req
 
 ## Question 21: RACI Accountable
 
-
 Что означает "A" (Accountable) в RACI матрице?
 
 A) Делает работу
@@ -440,7 +299,6 @@ D) Консультируется
 ---
 
 ## Question 22: PM Threshold
-
 
 При каком количестве вовлечённых команд обычно нужен PM?
 
@@ -456,7 +314,6 @@ D) 3+ команд — coordination overhead
 
 ## Question 23: TL Overload Signal
 
-
 Какой сигнал, что TL перегружен и пора нанять PM?
 
 A) TL тратит > 50% времени на coordination, не успевает на technical leadership
@@ -470,7 +327,6 @@ D) Всё отлично
 ---
 
 ## Question 24: PM Pressure Response
-
 
 PM давит на сроки. Какой лучший ответ?
 
@@ -486,7 +342,6 @@ D) "Да, сделаем" (зная что невозможно)
 
 ## Question 25: Technical Complexity
 
-
 PM не понимает, почему "просто кнопка" занимает 2 недели. Что делать?
 
 A) Игнорировать
@@ -500,7 +355,6 @@ D) Согласиться на 1 день
 ---
 
 ## Question 26: PM Micromanagement
-
 
 PM ходит к разработчикам напрямую, давая задачи. Что делать?
 
@@ -516,7 +370,6 @@ D) Делать то же самое
 
 ## Question 27: Burnup Chart
 
-
 Что показывает Burnup Chart в отличие от Burndown?
 
 A) Только velocity
@@ -530,7 +383,6 @@ D) То же самое
 ---
 
 ## Question 28: RACI TL Role
-
 
 Кто обычно Accountable за technical decisions в RACI?
 
@@ -546,7 +398,6 @@ D) TL/EM
 
 ## Question 29: Dependency Risk
 
-
 Что является примером Dependency риска?
 
 A) Security requirements
@@ -560,7 +411,6 @@ D) Другая команда delayed — мы от них зависим
 ---
 
 ## Question 30: Accept Risk Strategy
-
 
 Что означает "Accept" стратегия для риска?
 
@@ -576,7 +426,6 @@ D) Переложить на vendor
 
 ## Question 31: Velocity Usage
 
-
 Для чего НЕ следует использовать Velocity?
 
 A) Для сравнения команд между собой
@@ -590,7 +439,6 @@ D) Для понимания predictability
 ---
 
 ## Question 32: Status Update Format
-
 
 Что должен включать weekly status update?
 
@@ -606,7 +454,6 @@ D) Progress, risks, this week plan, decisions needed
 
 ## Question 33: Stakeholder Communication TL
 
-
 Что TL должен делать без PM для stakeholders?
 
 A) Игнорировать stakeholders
@@ -621,7 +468,6 @@ D) Делегировать всё команде
 
 ## Question 34: Scrum Master Role
 
-
 Какой фокус у Scrum Master?
 
 A) WHEN и HOW (timeline)
@@ -635,7 +481,6 @@ D) PROCESS — улучшение процесса и ceremonies
 ---
 
 ## Question 35: PM-TL Partnership
-
 
 Что критично для эффективного партнёрства PM-TL?
 

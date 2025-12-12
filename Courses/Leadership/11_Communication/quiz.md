@@ -6,12 +6,6 @@
 
 ## Question 1: Stakeholder Definition
 
-
-
-
-
-
-
 Кто такой stakeholder?
 
 A) Любой, кто влияет на вашу работу или на кого влияет ваша работа
@@ -25,12 +19,6 @@ D) Только ваш руководитель
 ---
 
 ## Question 2: Power/Interest Grid
-
-
-
-
-
-
 
 Кого нужно "Manage Closely" согласно Power/Interest Grid?
 
@@ -46,12 +34,6 @@ D) High Power + Low Interest
 
 ## Question 3: Адаптация message
 
-
-
-
-
-
-
 Почему нужно адаптировать message под аудиторию?
 
 A) Это не нужно, один message для всех
@@ -65,12 +47,6 @@ D) Только для презентаций
 ---
 
 ## Question 4: Executive Communication
-
-
-
-
-
-
 
 Какой уровень детализации нужен для executives?
 
@@ -86,12 +62,6 @@ D) Исходный код
 
 ## Question 5: BLUF
 
-
-
-
-
-
-
 Что означает BLUF (Bottom Line Up Front)?
 
 A) Много деталей без сути
@@ -105,12 +75,6 @@ D) Скрыть главное в конце
 ---
 
 ## Question 6: Weekly Update
-
-
-
-
-
-
 
 Что должен включать Weekly Update?
 
@@ -126,12 +90,6 @@ D) Только хорошие новости
 
 ## Question 7: No Surprises
 
-
-
-
-
-
-
 Почему важен принцип "No Surprises" в reporting?
 
 A) Скрывать проблемы дольше
@@ -145,12 +103,6 @@ D) Никогда не сообщать о проблемах
 ---
 
 ## Question 8: Influence без Authority
-
-
-
-
-
-
 
 Что помогает влиять без формального авторитета?
 
@@ -166,12 +118,6 @@ D) Угрозы
 
 ## Question 9: Building Coalitions
 
-
-
-
-
-
-
 Что такое "Building Coalition" как техника влияния?
 
 A) Найти allies, согласовать с ними, прийти к decision-maker вместе
@@ -185,12 +131,6 @@ D) Никого не слушать
 ---
 
 ## Question 10: Reciprocity
-
-
-
-
-
-
 
 Как работает принцип Reciprocity для влияния?
 
@@ -206,12 +146,6 @@ D) Только брать
 
 ## Question 11: Difficult Conversation Prepare
 
-
-
-
-
-
-
 Что включает подготовка к сложному разговору?
 
 A) Не готовиться
@@ -225,12 +159,6 @@ D) Только обвинения
 ---
 
 ## Question 12: During Difficult Conversation
-
-
-
-
-
-
 
 Что важно делать во время сложного разговора?
 
@@ -246,12 +174,6 @@ D) Только говорить, не слушать
 
 ## Question 13: Email Subject
 
-
-
-
-
-
-
 Какой хороший subject для email, требующего действия?
 
 A) "Важно!!!!!!"
@@ -265,12 +187,6 @@ D) Пустой subject
 ---
 
 ## Question 14: Slack Etiquette
-
-
-
-
-
-
 
 Какая практика хороша для Slack/Teams?
 
@@ -286,12 +202,6 @@ D) @channel для любого сообщения
 
 ## Question 15: Presentation Structure
 
-
-
-
-
-
-
 Какая структура презентации для business audience?
 
 A) Без структуры
@@ -305,12 +215,6 @@ D) Hook, Problem, Solution, Evidence, Ask
 ---
 
 ## Question 16: Executive Presentations
-
-
-
-
-
-
 
 Что характерно для executive presentations?
 
@@ -326,12 +230,6 @@ D) Только технические термины
 
 ## Question 17: Cross-team Dependencies
 
-
-
-
-
-
-
 Как отслеживать dependencies от других команд?
 
 A) What needed, when needed, impact if delayed, contact, status
@@ -345,12 +243,6 @@ D) Надеяться на лучшее
 ---
 
 ## Question 18: Conflict with Other Teams
-
-
-
-
-
-
 
 Как подходить к конфликту с другой командой?
 
@@ -366,12 +258,6 @@ D) Обвинять их
 
 ## Question 19: Data over Opinion
 
-
-
-
-
-
-
 Почему "Data over Opinion" работает для влияния?
 
 A) Opinion всегда достаточно
@@ -385,12 +271,6 @@ D) Факты и данные более убедительны, чем мнен
 ---
 
 ## Question 20: Documentation Principles
-
-
-
-
-
-
 
 Какой принцип хорошей документации?
 

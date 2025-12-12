@@ -6,12 +6,6 @@
 
 ## Question 1: Определение роли
 
-
-
-
-
-
-
 Чем Staff Engineer отличается от "очень хорошего Senior Engineer"?
 
 A) Staff Engineer управляет людьми
@@ -25,12 +19,6 @@ D) Staff Engineer имеет качественно другой scope — вл�
 ---
 
 ## Question 2: Формула Impact
-
-
-
-
-
-
 
 Какая формула описывает Staff-level impact?
 
@@ -46,12 +34,6 @@ D) Impact = Technical Depth × Scope × Influence
 
 ## Question 3: Архетип Tech Lead
 
-
-
-
-
-
-
 Какой Staff Engineer архетип описывает партнёрство с EM команды и 50-70% времени в одной команде?
 
 A) Solver
@@ -65,12 +47,6 @@ D) Right Hand
 ---
 
 ## Question 4: Архетип Solver
-
-
-
-
-
-
 
 Что характерно для архетипа Solver?
 
@@ -86,12 +62,6 @@ D) Фокус на организационных инициативах
 
 ## Question 5: Архетип Architect
 
-
-
-
-
-
-
 Чем занимается Staff Engineer архетипа Architect?
 
 A) Фокус на архитектуре и дизайне, меньше кода, больше спецификаций и RFC
@@ -105,12 +75,6 @@ D) Управляет бюджетом команды
 ---
 
 ## Question 6: Right Hand
-
-
-
-
-
-
 
 Для кого архетип Right Hand подходит лучше всего?
 
@@ -126,12 +90,6 @@ D) Для тех, кто хочет только писать код
 
 ## Question 7: Критичный навык
 
-
-
-
-
-
-
 Какой навык становится критически важным на Staff уровне (даже важнее coding)?
 
 A) Знание 10+ языков программирования
@@ -145,12 +103,6 @@ D) Writing — документы читают больше людей, чем �
 ---
 
 ## Question 8: Influence without authority
-
-
-
-
-
-
 
 Что означает "influence without authority"?
 
@@ -166,12 +118,6 @@ D) Управление людьми через административную
 
 ## Question 9: Staff Project
 
-
-
-
-
-
-
 Что такое "Staff Project"?
 
 A) Проект без документации
@@ -185,12 +131,6 @@ D) Любой проект, над которым работает Staff Enginee
 ---
 
 ## Question 10: Visibility
-
-
-
-
-
-
 
 Как Staff Engineer создаёт visibility своей работы?
 
@@ -206,12 +146,6 @@ D) Делает всю работу молча и ждёт признания
 
 ## Question 11: Время Staff Engineer
 
-
-
-
-
-
-
 Как примерно распределяется время Staff Engineer?
 
 A) 30-40% coding, 20-30% design/review, 15-25% meetings, 10-15% mentoring
@@ -225,12 +159,6 @@ D) 100% meetings
 ---
 
 ## Question 12: Partnership с EM
-
-
-
-
-
-
 
 Какие отношения между Staff Engineer и Engineering Manager?
 
@@ -246,12 +174,6 @@ D) Конкуренция за власть
 
 ## Question 13: Challenge "скучаю по коду"
 
-
-
-
-
-
-
 Как Staff Engineer может справиться с ощущением "скучаю по коду"?
 
 A) Вернуться на Junior позицию
@@ -265,12 +187,6 @@ D) Выделять protected time для coding, выбирать high-impact t
 ---
 
 ## Question 14: Что НЕ делает Staff Engineer
-
-
-
-
-
-
 
 Что Staff Engineer НЕ должен делать?
 
@@ -286,12 +202,6 @@ D) Писать design documents
 
 ## Question 15: Technical Skills
 
-
-
-
-
-
-
 Какое утверждение о technical skills на Staff уровне верно?
 
 A) Staff Engineer не должен понимать production systems
@@ -305,12 +215,6 @@ D) Достаточно знать только один язык програм
 ---
 
 ## Question 16: Startup vs Enterprise
-
-
-
-
-
-
 
 Как роль Staff Engineer отличается в startup vs enterprise?
 
@@ -326,12 +230,6 @@ D) В startup больше hands-on coding, в enterprise больше organizat
 
 ## Question 17: Поиск работы
 
-
-
-
-
-
-
 Как Staff Engineer находит, над чем работать?
 
 A) Ищет high-impact проблемы сам, спрашивает leadership о болях
@@ -345,12 +243,6 @@ D) Избегает любой работы
 ---
 
 ## Question 18: Gap Analysis
-
-
-
-
-
-
 
 Что помогает определить готовность к Staff уровню?
 
@@ -366,12 +258,6 @@ D) Только мнение друзей
 
 ## Question 19: Promotion packet
 
-
-
-
-
-
-
 Что включает promotion packet для Staff уровня?
 
 A) Summary impact, примеры Staff-level работы, testimonials, метрики
@@ -385,12 +271,6 @@ D) Только список выполненных задач
 ---
 
 ## Question 20: Strategic Thinking
-
-
-
-
-
-
 
 Почему strategic thinking важен для Staff Engineer?
 

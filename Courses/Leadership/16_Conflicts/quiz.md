@@ -6,13 +6,6 @@
 
 ## Question 1: Healthy Conflict
 
-
-
-
-
-
-
-
 Какой тип конфликта может быть полезен?
 
 A) Все конфликты вредны
@@ -26,13 +19,6 @@ D) Task conflict (дебаты о решениях и подходах)
 ---
 
 ## Question 2: Thomas-Kilmann Collaborating
-
-
-
-
-
-
-
 
 Когда использовать Collaborating стиль?
 
@@ -48,13 +34,6 @@ D) Когда issue trivial
 
 ## Question 3: Positions vs Interests
 
-
-
-
-
-
-
-
 Что такое "Interest" в conflict resolution?
 
 A) То, что человек говорит, что хочет
@@ -68,13 +47,6 @@ D) Позиция власти
 ---
 
 ## Question 4: When to Mediate
-
-
-
-
-
-
-
 
 Когда лидеру следует вмешаться в конфликт?
 
@@ -90,13 +62,6 @@ D) Никогда
 
 ## Question 5: Mediator Role
 
-
-
-
-
-
-
-
 Что должен делать медиатор?
 
 A) Навязать своё решение
@@ -110,13 +75,6 @@ D) Обвинить обе стороны
 ---
 
 ## Question 6: DESC Framework
-
-
-
-
-
-
-
 
 Что означает "D" в DESC?
 
@@ -132,13 +90,6 @@ D) Deny
 
 ## Question 7: Handling Defensive Reaction
 
-
-
-
-
-
-
-
 Как реагировать на defensive reaction?
 
 A) Атаковать в ответ
@@ -152,13 +103,6 @@ D) Закончить разговор
 ---
 
 ## Question 8: Task vs Relationship Conflict
-
-
-
-
-
-
-
 
 Что такое Relationship Conflict?
 
@@ -174,13 +118,6 @@ D) Обсуждение процессов
 
 ## Question 9: Resolution Process
 
-
-
-
-
-
-
-
 Какой первый шаг в resolution process?
 
 A) Игнорировать
@@ -194,13 +131,6 @@ D) Acknowledge — "Я вижу, есть разногласие"
 ---
 
 ## Question 10: Competing Style
-
-
-
-
-
-
-
 
 Когда использовать Competing (win-lose) стиль?
 
@@ -216,13 +146,6 @@ D) Всегда
 
 ## Question 11: Avoiding Style
 
-
-
-
-
-
-
-
 Когда Avoiding стиль уместен?
 
 A) Когда нужен commitment
@@ -236,13 +159,6 @@ D) Trivial issue, need to cool down, no chance of winning
 ---
 
 ## Question 12: Common Ground
-
-
-
-
-
-
-
 
 Зачем искать common ground в конфликте?
 
@@ -258,13 +174,6 @@ D) Common ground не важен
 
 ## Question 13: Toxic Team Member
 
-
-
-
-
-
-
-
 Как действовать с toxic team member?
 
 A) Публично критиковать
@@ -278,13 +187,6 @@ D) Сразу уволить без предупреждения
 ---
 
 ## Question 14: Escalation
-
-
-
-
-
-
-
 
 Когда escalate конфликт к HR/руководителю?
 
@@ -300,13 +202,6 @@ D) Никогда
 
 ## Question 15: Self-Management
 
-
-
-
-
-
-
-
 Что делать перед сложным разговором?
 
 A) Отменить разговор
@@ -320,13 +215,6 @@ D) Ничего
 ---
 
 ## Question 16: Conflict Prevention
-
-
-
-
-
-
-
 
 Как предотвратить конфликты?
 
@@ -342,13 +230,6 @@ D) Конфликты неизбежны, prevention не работает
 
 ## Question 17: Disagree and Commit
 
-
-
-
-
-
-
-
 Что означает "Disagree and commit"?
 
 A) Саботировать решения
@@ -362,13 +243,6 @@ D) Всегда соглашаться
 ---
 
 ## Question 18: Mediation Ground Rules
-
-
-
-
-
-
-
 
 Какие ground rules для mediation?
 
@@ -384,13 +258,6 @@ D) Без правил
 
 ## Question 19: Emotional Reaction
 
-
-
-
-
-
-
-
 Как реагировать если собеседник расплакался?
 
 A) "Вижу, это upset. Хочешь паузу? Можем продолжить когда готов"
@@ -404,13 +271,6 @@ D) Игнорировать
 ---
 
 ## Question 20: Follow Up
-
-
-
-
-
-
-
 
 Зачем follow up после resolution?
 
@@ -426,7 +286,6 @@ D) Чтобы повторить конфликт
 
 ## Question 21: Escalation Stages
 
-
 На какой стадии escalation конфликта нужно вмешательство менеджера?
 
 A) Stage 1: Disagreement
@@ -440,7 +299,6 @@ D) Stage 5: Breakdown
 ---
 
 ## Question 22: Accommodating Style
-
 
 Когда использовать Accommodating (уступить) стиль?
 
@@ -456,7 +314,6 @@ D) Когда вы неправы, harmony важнее, building goodwill
 
 ## Question 23: DESC Express
 
-
 Что означает "E" в DESC framework?
 
 A) Express — выразить impact ситуации
@@ -470,7 +327,6 @@ D) Evaluate
 ---
 
 ## Question 24: Conflict Types
-
 
 Какой тип конфликта всегда негативен и требует немедленного решения?
 
@@ -486,7 +342,6 @@ D) Process conflict
 
 ## Question 25: Interest Discovery
 
-
 Какой вопрос помогает выявить underlying interest?
 
 A) "Когда ты уйдёшь?"
@@ -500,7 +355,6 @@ D) "Сколько стоит?"
 ---
 
 ## Question 26: Brilliant Jerk
-
 
 Что делать с "Brilliant Jerk" — высокопроизводительным, но токсичным человеком?
 
@@ -516,7 +370,6 @@ D) Давать больше власти
 
 ## Question 27: Counter-Attack Handling
 
-
 Как реагировать если собеседник контратакует: "А ты сам...!"
 
 A) Закончить разговор
@@ -530,7 +383,6 @@ D) Атаковать в ответ
 ---
 
 ## Question 28: Denial Script
-
 
 Как реагировать на отрицание: "Такого не было!"
 
@@ -546,7 +398,6 @@ D) Кричать громче
 
 ## Question 29: Layoff Communication
 
-
 Что важно при сообщении о layoff?
 
 A) Делать это публично
@@ -560,7 +411,6 @@ D) Чётко: причина, дата, severance, reference — и дать в
 ---
 
 ## Question 30: Conflict with Boss
-
 
 Как действовать при disagreement с вашим руководителем?
 
@@ -576,7 +426,6 @@ D) Сразу уволиться
 
 ## Question 31: Mediation Opening
 
-
 Что сказать в начале mediation сессии?
 
 A) "Это твоя вина"
@@ -590,7 +439,6 @@ D) Ground rules: respect, no interrupting, goal is solution not blame
 ---
 
 ## Question 32: Timing Difficult Conversation
-
 
 Когда лучше проводить сложный разговор?
 
@@ -606,7 +454,6 @@ D) В конце regular 1-on-1 "ой, кстати..."
 
 ## Question 33: Process Conflict
 
-
 Что такое Process Conflict?
 
 A) Личная неприязнь
@@ -621,7 +468,6 @@ D) Обсуждение зарплаты
 
 ## Question 34: Compromising Style
 
-
 Что характерно для Compromising стиля?
 
 A) Split — каждая сторона уступает часть
@@ -635,7 +481,6 @@ D) Полная победа одной стороны
 ---
 
 ## Question 35: Conflict Source
-
 
 Какой source конфликтов связан с "Misaligned OKRs"?
 

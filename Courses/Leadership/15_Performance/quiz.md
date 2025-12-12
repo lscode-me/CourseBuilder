@@ -6,12 +6,6 @@
 
 ## Question 1: Continuous vs Annual
 
-
-
-
-
-
-
 Какой подход к performance management современный?
 
 A) Continuous: ongoing feedback, regular 1-on-1, no surprises
@@ -25,12 +19,6 @@ D) Annual review раз в год с surprises
 ---
 
 ## Question 2: OKR
-
-
-
-
-
-
 
 Что такое Key Result в OKR?
 
@@ -46,12 +34,6 @@ D) Quantitative metric для измерения прогресса к objective
 
 ## Question 3: SMART Goals
 
-
-
-
-
-
-
 Что означает "M" в SMART goals?
 
 A) Mandatory
@@ -65,12 +47,6 @@ D) Measurable
 ---
 
 ## Question 4: Self-Assessment
-
-
-
-
-
-
 
 Что включает self-assessment?
 
@@ -86,12 +62,6 @@ D) Только rating
 
 ## Question 5: Review Meeting
 
-
-
-
-
-
-
 Какой принцип важен для performance review meeting?
 
 A) Surprises хороши для motivation
@@ -105,12 +75,6 @@ D) Только похвала
 ---
 
 ## Question 6: Career Conversations
-
-
-
-
-
-
 
 Как часто проводить career conversations?
 
@@ -126,12 +90,6 @@ D) Каждый день
 
 ## Question 7: Promotion Criteria
 
-
-
-
-
-
-
 Какой критерий правильный для promotion?
 
 A) "Уже работает на следующем уровне consistently"
@@ -145,12 +103,6 @@ D) Только tenure (сколько лет работает)
 ---
 
 ## Question 8: Calibration
-
-
-
-
-
-
 
 Зачем нужна calibration для promotions?
 
@@ -166,12 +118,6 @@ D) Чтобы отменить все promotions
 
 ## Question 9: Underperformance Root Cause
 
-
-
-
-
-
-
 Что делать перед action по underperformance?
 
 A) Публично критиковать
@@ -185,12 +131,6 @@ D) Understand WHY — skill gap, clarity, fit, personal, motivation
 ---
 
 ## Question 10: PIP
-
-
-
-
-
-
 
 Что такое PIP?
 
@@ -206,12 +146,6 @@ D) Project Implementation Phase
 
 ## Question 11: PIP Period
 
-
-
-
-
-
-
 Какой типичный период для PIP?
 
 A) 1 час
@@ -225,12 +159,6 @@ D) 30-90 дней
 ---
 
 ## Question 12: PIP Best Practice
-
-
-
-
-
-
 
 Какая best practice для PIP?
 
@@ -246,12 +174,6 @@ D) Ignore during PIP
 
 ## Question 13: Warning Signs
 
-
-
-
-
-
-
 Что является warning sign underperformance?
 
 A) Просьба о feedback
@@ -265,12 +187,6 @@ D) Отличная работа
 ---
 
 ## Question 14: Development Plan
-
-
-
-
-
-
 
 Что включает development plan?
 
@@ -286,12 +202,6 @@ D) Только current state
 
 ## Question 15: Career Ladders
 
-
-
-
-
-
-
 Зачем нужны career ladders?
 
 A) Только для HR
@@ -305,12 +215,6 @@ D) Transparent expectations для каждого уровня
 ---
 
 ## Question 16: Compensation Link
-
-
-
-
-
-
 
 Как performance связан с compensation?
 
@@ -326,12 +230,6 @@ D) Низкий performance → выше зарплата
 
 ## Question 17: Goal Balance
 
-
-
-
-
-
-
 Какое примерное соотношение individual vs team goals?
 
 A) 100% team
@@ -345,12 +243,6 @@ D) 100% individual
 ---
 
 ## Question 18: Review Feedback
-
-
-
-
-
-
 
 Каким должен быть feedback в review?
 
@@ -366,12 +258,6 @@ D) General и vague
 
 ## Question 19: OKR Achievement
 
-
-
-
-
-
-
 Какой процент achievement считается success для stretch OKRs?
 
 A) 10%
@@ -385,12 +271,6 @@ D) 100%
 ---
 
 ## Question 20: Exit Decision
-
-
-
-
-
-
 
 Когда принимать exit decision после PIP?
 

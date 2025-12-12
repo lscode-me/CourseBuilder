@@ -6,13 +6,6 @@
 
 ## Question 1: Определение культуры
 
-
-
-
-
-
-
-
 Что такое культура в контексте команды?
 
 A) Только dress code
@@ -26,13 +19,6 @@ D) "Как мы делаем вещи здесь" — неписаные пра�
 ---
 
 ## Question 2: Project Aristotle
-
-
-
-
-
-
-
 
 Что Google's Project Aristotle определил как главный фактор эффективности команды?
 
@@ -48,13 +34,6 @@ D) Psychological Safety (психологическая безопасность
 
 ## Question 3: Psychological Safety
 
-
-
-
-
-
-
-
 Что означает психологическая безопасность?
 
 A) Страхование здоровья
@@ -68,13 +47,6 @@ D) Физическая охрана офиса
 ---
 
 ## Question 4: Создание безопасности
-
-
-
-
-
-
-
 
 Какое поведение лидера создаёт психологическую безопасность?
 
@@ -90,13 +62,6 @@ D) Признавать свои ошибки публично, благодар
 
 ## Question 5: Schein's Model
 
-
-
-
-
-
-
-
 Какой уровень культуры по модели Schein самый глубокий?
 
 A) Artifacts (видимое)
@@ -110,13 +75,6 @@ D) Underlying Assumptions (глубинные убеждения)
 ---
 
 ## Question 6: Culture Fit vs Culture Add
-
-
-
-
-
-
-
 
 Что такое подход "Culture Add"?
 
@@ -132,13 +90,6 @@ D) Нанимать разделяющих ценности И добавляю�
 
 ## Question 7: Изменение культуры
 
-
-
-
-
-
-
-
 Почему изменение культуры сложно?
 
 A) Habits глубоко укоренены, требуется consistent behavior от лидеров
@@ -152,13 +103,6 @@ D) Культура не важна
 ---
 
 ## Question 8: Kotter's Steps
-
-
-
-
-
-
-
 
 Какой первый шаг в изменении культуры по Kotter?
 
@@ -174,13 +118,6 @@ D) Remove Obstacles
 
 ## Question 9: Westrum Typology
 
-
-
-
-
-
-
-
 Какой тип культуры по Westrum коррелирует с высокой производительностью?
 
 A) Pathological
@@ -194,13 +131,6 @@ D) Generative
 ---
 
 ## Question 10: Generative Culture
-
-
-
-
-
-
-
 
 Как в Generative культуре относятся к failures?
 
@@ -216,13 +146,6 @@ D) Punished (наказание)
 
 ## Question 11: Netflix Culture
 
-
-
-
-
-
-
-
 Какой принцип характеризует Netflix культуру?
 
 A) Micromanagement
@@ -236,13 +159,6 @@ D) Strict hierarchy
 ---
 
 ## Question 12: Признаки плохой культуры
-
-
-
-
-
-
-
 
 Что является признаком плохой культуры?
 
@@ -258,13 +174,6 @@ D) Blame culture, информация скрывается, люди боятс
 
 ## Question 13: Lead by Example
 
-
-
-
-
-
-
-
 Почему важно лидеру демонстрировать ценности первым?
 
 A) Можно говорить одно, делать другое
@@ -278,13 +187,6 @@ D) Inconsistency kills change, лидер моделирует культуру
 ---
 
 ## Question 14: Командные ценности
-
-
-
-
-
-
-
 
 Как поддерживать командные ценности?
 
@@ -300,13 +202,6 @@ D) Hiring, recognition, performance reviews, stories, onboarding
 
 ## Question 15: Распределённые команды
 
-
-
-
-
-
-
-
 Какой challenge для культуры в remote командах?
 
 A) Нет challenges
@@ -320,13 +215,6 @@ D) Меньше casual interactions, культура распространяе
 ---
 
 ## Question 16: Interview для культуры
-
-
-
-
-
-
-
 
 Какой вопрос помогает оценить alignment с ценностями?
 
@@ -342,13 +230,6 @@ D) "Сколько лет ты работаешь?"
 
 ## Question 17: Toxic culture действия
 
-
-
-
-
-
-
-
 Что делать лидеру в toxic culture?
 
 A) Участвовать в toxic behaviors
@@ -362,13 +243,6 @@ D) Create safe space в своей команде, escalate serious issues
 ---
 
 ## Question 18: Формула культуры
-
-
-
-
-
-
-
 
 Что включает формула культуры?
 
@@ -384,13 +258,6 @@ D) Values × Behaviors × Habits × Stories
 
 ## Question 19: Measurement
 
-
-
-
-
-
-
-
 Как измерить психологическую безопасность?
 
 A) Количество кода
@@ -404,13 +271,6 @@ D) Невозможно измерить
 ---
 
 ## Question 20: Start small
-
-
-
-
-
-
-
 
 Как лучше начинать изменение культуры?
 
@@ -426,7 +286,6 @@ D) Не начинать
 
 ## Question 21: Schein's Artifacts
 
-
 Что относится к уровню Artifacts в модели Schein?
 
 A) Глубинные убеждения
@@ -440,7 +299,6 @@ D) Mission statements
 ---
 
 ## Question 22: Safety Script
-
 
 Как лидер должен реагировать на ошибку члена команды?
 
@@ -456,7 +314,6 @@ D) "Давай разберёмся, что произошло" — focus на l
 
 ## Question 23: Westrum Pathological
 
-
 Как в Pathological культуре относятся к messengers плохих новостей?
 
 A) Игнорируют
@@ -470,7 +327,6 @@ D) Благодарят и обучают
 ---
 
 ## Question 24: Netflix Keeper Test
-
 
 Что такое "Keeper Test" в Netflix культуре?
 
@@ -486,7 +342,6 @@ D) "Would I fight to keep this person?" — критерий для сотруд
 
 ## Question 25: Spotify Model Elements
 
-
 Что такое "Chapter" в Spotify модели?
 
 A) Функциональная экспертиза (Backend, QA) — growth path
@@ -500,7 +355,6 @@ D) Community of interest
 ---
 
 ## Question 26: Culture Interview Red Flag
-
 
 Какой red flag на culture interview?
 
@@ -516,7 +370,6 @@ D) Честный рассказ об ошибках
 
 ## Question 27: Safety Destruction
 
-
 Что может быстро разрушить psychological safety?
 
 A) Признание своих ошибок
@@ -530,7 +383,6 @@ D) Регулярные 1-on-1
 ---
 
 ## Question 28: Westrum Information
-
 
 Как в Generative культуре относятся к информации?
 
@@ -546,7 +398,6 @@ D) Actively sought — активно ищут
 
 ## Question 29: Culture vs Declarations
 
-
 Что определяет реальную культуру?
 
 A) Слова CEO
@@ -560,7 +411,6 @@ D) Корпоративные документы
 ---
 
 ## Question 30: Safety Measurement
-
 
 Сколько вопросов в survey Edmondson для измерения psychological safety?
 
@@ -576,7 +426,6 @@ D) 50
 
 ## Question 31: Culture Change Speed
 
-
 Почему изменение культуры сложное и медленное?
 
 A) Культура не существует
@@ -590,7 +439,6 @@ D) Habits глубоко укоренены, incentives часто против�
 ---
 
 ## Question 32: Leader Modeling
-
 
 Что означает "Lead by Example" в контексте культуры?
 
@@ -606,7 +454,6 @@ D) Лидер первым демонстрирует желаемое пове�
 
 ## Question 33: Values Workshop
 
-
 Сколько длится типичный workshop по командным ценностям?
 
 A) 15 минут
@@ -621,7 +468,6 @@ D) 5 минут
 
 ## Question 34: Spotify Warning
 
-
 Почему нельзя copy-paste Spotify Model?
 
 A) Spotify сами эволюционировали, это snapshot 2012 года, адаптируйте под context
@@ -635,7 +481,6 @@ D) Потому что она не работает
 ---
 
 ## Question 35: Remote Culture
-
 
 Что критично для культуры в distributed teams?
 

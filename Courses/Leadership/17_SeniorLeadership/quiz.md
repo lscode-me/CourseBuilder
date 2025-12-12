@@ -6,13 +6,6 @@
 
 ## Question 1: Manager of Managers
 
-
-
-
-
-
-
-
 Что главное меняется при переходе от EM к Director?
 
 A) Только больше зарплата
@@ -26,13 +19,6 @@ D) Impact через менеджеров, фокус на strategy и systems
 ---
 
 ## Question 2: 1-on-1 с менеджерами
-
-
-
-
-
-
-
 
 На чём фокус 1-on-1 с менеджерами (в отличие от ICs)?
 
@@ -48,13 +34,6 @@ D) Только задачи
 
 ## Question 3: Coaching vs Directing
 
-
-
-
-
-
-
-
 Когда использовать coaching вместо directing?
 
 A) Всегда directing
@@ -68,13 +47,6 @@ D) Никогда coaching
 ---
 
 ## Question 4: Skip-Level Purpose
-
-
-
-
-
-
-
 
 Зачем нужны skip-level 1-on-1?
 
@@ -90,13 +62,6 @@ D) Unfiltered view, culture check, build trust, career conversations
 
 ## Question 5: Handling Manager Complaints
 
-
-
-
-
-
-
-
 Как реагировать если IC жалуется на менеджера на skip-level?
 
 A) Сразу уволить менеджера
@@ -110,13 +75,6 @@ D) Игнорировать
 ---
 
 ## Question 6: Common Mistake
-
-
-
-
-
-
-
 
 Какая common mistake нового Director?
 
@@ -132,13 +90,6 @@ D) Micromanaging менеджеров, solving проблемы за них
 
 ## Question 7: Executive Communication
 
-
-
-
-
-
-
-
 Что нужно executives в коммуникации?
 
 A) Длинные документы
@@ -152,13 +103,6 @@ D) Business impact, clear asks, risks, no surprises
 ---
 
 ## Question 8: Executive Presence
-
-
-
-
-
-
-
 
 Что включает executive presence?
 
@@ -174,13 +118,6 @@ D) Aggressive behavior
 
 ## Question 9: Time Horizon
 
-
-
-
-
-
-
-
 Какой time horizon для Director?
 
 A) Quarters to year
@@ -194,13 +131,6 @@ D) Часы
 ---
 
 ## Question 10: Conway's Law
-
-
-
-
-
-
-
 
 Что утверждает Conway's Law?
 
@@ -216,13 +146,6 @@ D) Организации создают системы, отражающие и
 
 ## Question 11: Team Design
 
-
-
-
-
-
-
-
 Какой принцип хорошего team design?
 
 A) Teams own проекты временно
@@ -236,13 +159,6 @@ D) Максимальные dependencies
 ---
 
 ## Question 12: When to Reorg
-
-
-
-
-
-
-
 
 Когда делать reorg?
 
@@ -258,13 +174,6 @@ D) Каждую неделю
 
 ## Question 13: Portfolio Thinking
 
-
-
-
-
-
-
-
 Какое типичное allocation для tech debt?
 
 A) 90%
@@ -278,13 +187,6 @@ D) ~20%
 ---
 
 ## Question 14: Coaching Framework
-
-
-
-
-
-
-
 
 Какой первый шаг в coaching менеджера?
 
@@ -300,13 +202,6 @@ D) Criticize
 
 ## Question 15: Org Health Indicators
 
-
-
-
-
-
-
-
 Какой indicator team health?
 
 A) Lines of code
@@ -320,13 +215,6 @@ D) Количество митингов
 ---
 
 ## Question 16: Strategic Questions
-
-
-
-
-
-
-
 
 Какой стратегический вопрос для Director?
 
@@ -342,13 +230,6 @@ D) "Где мы должны быть через год? Какие capabilities
 
 ## Question 17: Building Leadership Pipeline
 
-
-
-
-
-
-
-
 Как развивать leadership pipeline?
 
 A) Ждать пока сами вырастут
@@ -362,13 +243,6 @@ D) Не развивать
 ---
 
 ## Question 18: Intervention Pattern
-
-
-
-
-
-
-
 
 Если команда struggling, какой первый вопрос?
 
@@ -384,13 +258,6 @@ D) Игнорировать
 
 ## Question 19: Self-Care
 
-
-
-
-
-
-
-
 Какие challenges на senior levels?
 
 A) More responsibility less control, political complexity, loneliness
@@ -404,13 +271,6 @@ D) Меньше stress
 ---
 
 ## Question 20: Leadership Team Dynamics
-
-
-
-
-
-
-
 
 Что важно для leadership team?
 
@@ -426,7 +286,6 @@ D) Blame culture
 
 ## Question 21: GROW Model
 
-
 Какой первый шаг в GROW модели коучинга?
 
 A) Will — что конкретно сделаешь?
@@ -440,7 +299,6 @@ D) Reality — какая ситуация сейчас?
 ---
 
 ## Question 22: Первые 90 дней Director
-
 
 Что должен делать новый Director в первый месяц?
 
@@ -456,7 +314,6 @@ D) Уволить слабых менеджеров
 
 ## Question 23: Skip-Level Best Practice
 
-
 Что НЕ следует делать на skip-level 1-on-1?
 
 A) Спрашивать о культуре команды
@@ -470,7 +327,6 @@ D) Слушать perspective IC
 ---
 
 ## Question 24: Org Health Dashboard
-
 
 Какой показатель относится к Manager Health?
 
@@ -486,7 +342,6 @@ D) Lead time
 
 ## Question 25: Intervention Playbook
 
-
 Если команда struggling, какой первый шаг диагностики?
 
 A) Определить: это проблема менеджера или проблема команды?
@@ -500,7 +355,6 @@ D) Реорганизовать структуру
 ---
 
 ## Question 26: Executive Summary
-
 
 Что должно быть в Executive Summary документа?
 
@@ -516,7 +370,6 @@ D) История проекта с начала
 
 ## Question 27: No Surprises Rule
 
-
 Что означает правило "No Surprises" в работе с руководителем?
 
 A) Только хорошие новости
@@ -530,7 +383,6 @@ D) Никогда не сообщать плохие новости
 ---
 
 ## Question 28: Succession Planning
-
 
 Зачем нужно succession planning?
 
@@ -546,7 +398,6 @@ D) Только для compliance
 
 ## Question 29: Development Plan для менеджера
 
-
 Что должен включать development plan для менеджера?
 
 A) Только похвалу
@@ -560,7 +411,6 @@ D) Только критику
 ---
 
 ## Question 30: Senior Leader Burnout
-
 
 Какой уникальный challenge для senior leader?
 
@@ -576,7 +426,6 @@ D) Проще работа
 
 ## Question 31: Coaching When
 
-
 Когда использовать Directing вместо Coaching?
 
 A) В crisis situations, при явных ошибках, time-sensitive decisions
@@ -590,7 +439,6 @@ D) Когда есть development opportunity
 ---
 
 ## Question 32: Team Topologies
-
 
 Какой тип команды в Team Topologies создаёт внутренний продукт для других команд?
 
@@ -606,7 +454,6 @@ D) Platform team
 
 ## Question 33: Reorg Execution
 
-
 Как правильно выполнять reorganization?
 
 A) Затянуть на полгода
@@ -621,7 +468,6 @@ D) Не предупреждать людей
 
 ## Question 34: Feedback менеджеру
 
-
 Как давать feedback менеджеру на его лидерство?
 
 A) Игнорировать проблемы
@@ -635,7 +481,6 @@ D) Конкретный пример поведения + вопрос: "Что 
 ---
 
 ## Question 35: Self-Care Strategy
-
 
 Какая стратегия self-care рекомендуется для senior leaders?
 

@@ -6,12 +6,6 @@
 
 ## Question 1: Async-First
 
-
-
-
-
-
-
 Что означает принцип Async-First?
 
 A) Async должен быть default, sync — exception
@@ -25,12 +19,6 @@ D) Всё общение только синхронное
 ---
 
 ## Question 2: When to Sync
-
-
-
-
-
-
 
 Когда sync communication предпочтительнее?
 
@@ -46,12 +34,6 @@ D) FYI information
 
 ## Question 3: Async Message
 
-
-
-
-
-
-
 Какой элемент важен в async сообщении?
 
 A) Полный context, clear ask, deadline для ответа
@@ -65,12 +47,6 @@ D) Без структуры
 ---
 
 ## Question 4: Time Zone Overlap
-
-
-
-
-
-
 
 Как использовать overlap hours между time zones?
 
@@ -86,12 +62,6 @@ D) Для sync meetings и высокоприоритетных обсужден
 
 ## Question 5: Meeting Rotation
 
-
-
-
-
-
-
 Зачем rotate meeting times?
 
 A) Чтобы уменьшить количество митингов
@@ -105,12 +75,6 @@ D) Rotation не нужен
 ---
 
 ## Question 6: Remote Culture
-
-
-
-
-
-
 
 Как строить culture в remote команде?
 
@@ -126,12 +90,6 @@ D) Игнорировать culture
 
 ## Question 7: Video On
 
-
-
-
-
-
-
 Почему рекомендуется video ON для team meetings?
 
 A) Building connection, better engagement, non-verbal communication
@@ -145,12 +103,6 @@ D) Для surveillance
 ---
 
 ## Question 8: Hofstede Power Distance
-
-
-
-
-
-
 
 Что означает High Power Distance?
 
@@ -166,12 +118,6 @@ D) Hierarchy important, defer to authority
 
 ## Question 9: Direct vs Indirect
 
-
-
-
-
-
-
 Как адаптировать feedback для культуры с indirect communication?
 
 A) Ещё более прямо
@@ -185,12 +131,6 @@ D) Не давать feedback
 ---
 
 ## Question 10: Remote Onboarding
-
-
-
-
-
-
 
 Что важно для remote onboarding?
 
@@ -206,12 +146,6 @@ D) Только документация
 
 ## Question 11: Output vs Presence
 
-
-
-
-
-
-
 Что измерять в remote work?
 
 A) Количество сообщений
@@ -225,12 +159,6 @@ D) Часы online
 ---
 
 ## Question 12: Async Standup
-
-
-
-
-
-
 
 Как организовать async standup?
 
@@ -246,12 +174,6 @@ D) Sync звонок каждый день
 
 ## Question 13: Trust in Remote
 
-
-
-
-
-
-
 Как строить trust в remote команде?
 
 A) Clear expectations, regular check-ins, assume good intent, focus on outcomes
@@ -265,12 +187,6 @@ D) Постоянный контроль
 ---
 
 ## Question 14: Buddy System
-
-
-
-
-
-
 
 Для чего нужен buddy при remote onboarding?
 
@@ -286,12 +202,6 @@ D) Для формальности
 
 ## Question 15: Hub and Spoke Risk
 
-
-
-
-
-
-
 Какой risk у модели Hub and Spoke?
 
 A) Нет офиса
@@ -305,12 +215,6 @@ D) Слишком много remote
 ---
 
 ## Question 16: Follow-the-Sun
-
-
-
-
-
-
 
 Что такое Follow-the-Sun?
 
@@ -326,12 +230,6 @@ D) Работа только днём
 
 ## Question 17: Cultural Silence
 
-
-
-
-
-
-
 Как интерпретировать молчание в meeting?
 
 A) Как несогласие
@@ -345,12 +243,6 @@ D) Не обращать внимания
 ---
 
 ## Question 18: In-Person Value
-
-
-
-
-
-
 
 Зачем team offsites 1-2x в год?
 
@@ -366,12 +258,6 @@ D) Только для работы
 
 ## Question 19: Home Office
 
-
-
-
-
-
-
 Что компания должна предоставить для remote работы?
 
 A) Только laptop
@@ -385,12 +271,6 @@ D) Equipment budget, internet stipend, ergonomic setup
 ---
 
 ## Question 20: Remote 1-on-1
-
-
-
-
-
-
 
 Какие вопросы добавить в remote 1-on-1?
 

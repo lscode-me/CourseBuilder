@@ -6,12 +6,6 @@
 
 ## Question 1: Radical Candor
 
-
-
-
-
-
-
 Что характеризует Radical Candor согласно Kim Scott?
 
 A) Ни Care, ни Challenge
@@ -25,12 +19,6 @@ D) Care Personally + Challenge Directly
 ---
 
 ## Question 2: Ruinous Empathy
-
-
-
-
-
-
 
 Что такое "Ruinous Empathy" в framework Radical Candor?
 
@@ -46,12 +34,6 @@ D) Критика без эмпатии
 
 ## Question 3: Obnoxious Aggression
 
-
-
-
-
-
-
 Какой квадрант описывает критику без заботы о человеке?
 
 A) Ruinous Empathy
@@ -65,12 +47,6 @@ D) Manipulative Insincerity
 ---
 
 ## Question 4: SBI Model
-
-
-
-
-
-
 
 Что означает SBI в модели feedback?
 
@@ -86,12 +62,6 @@ D) Simple, Basic, Important
 
 ## Question 5: SBI Example
 
-
-
-
-
-
-
 Какой пример соответствует модели SBI?
 
 A) "Тебе нужно стать лучше"
@@ -105,12 +75,6 @@ D) "На митинге вчера ты пришёл на 15 минут позж
 ---
 
 ## Question 6: Timing положительного feedback
-
-
-
-
-
-
 
 Когда лучше всего давать positive feedback?
 
@@ -126,12 +90,6 @@ D) На годовом performance review
 
 ## Question 7: Setting для constructive feedback
 
-
-
-
-
-
-
 Где лучше давать constructive feedback?
 
 A) В общем чате Slack
@@ -145,12 +103,6 @@ D) Публично на standup
 ---
 
 ## Question 8: Фокус feedback
-
-
-
-
-
-
 
 На чём должен быть фокус feedback?
 
@@ -166,12 +118,6 @@ D) На конкретном поведении и его impact
 
 ## Question 9: "Я" высказывания
 
-
-
-
-
-
-
 Какой формат предпочтительнее для feedback?
 
 A) "Я заметил, что..." / "Мне показалось, что..."
@@ -185,12 +131,6 @@ D) "Ты сделал плохо"
 ---
 
 ## Question 10: Получение feedback
-
-
-
-
-
-
 
 Что рекомендуется делать при получении feedback?
 
@@ -206,12 +146,6 @@ D) Слушать полностью, поблагодарить, уточнит
 
 ## Question 11: Truth Trigger
 
-
-
-
-
-
-
 Что такое "Truth Trigger" при получении feedback?
 
 A) Реакция "Значит, я плохой человек"
@@ -225,12 +159,6 @@ D) Реакция "Кто ты такой, чтобы мне говорить?"
 ---
 
 ## Question 12: Запрашивание feedback
-
-
-
-
-
-
 
 Какой вопрос более эффективен для получения полезного feedback?
 
@@ -246,12 +174,6 @@ D) "Всё было хорошо?"
 
 ## Question 13: Psychological Safety
 
-
-
-
-
-
-
 Что необходимо для культуры открытого feedback?
 
 A) Psychological Safety — люди чувствуют безопасность для честности
@@ -265,12 +187,6 @@ D) Избегание любой критики
 ---
 
 ## Question 14: Моделирование поведения
-
-
-
-
-
-
 
 Как лидер создаёт культуру feedback?
 
@@ -286,12 +202,6 @@ D) Делегирует feedback HR
 
 ## Question 15: Feedback senior сотруднику
 
-
-
-
-
-
-
 Какой подход эффективен для feedback опытному сотруднику?
 
 A) Публичная критика для примера
@@ -305,12 +215,6 @@ D) Директивный тон "Ты должен"
 ---
 
 ## Question 16: 360 Feedback
-
-
-
-
-
-
 
 Что такое 360 Feedback?
 
@@ -326,12 +230,6 @@ D) Сбор feedback от коллег, подчинённых и руковод
 
 ## Question 17: Накопление feedback
 
-
-
-
-
-
-
 Почему не рекомендуется накапливать feedback до performance review?
 
 A) Performance review отменяется
@@ -345,12 +243,6 @@ D) Это экономит время менеджера
 ---
 
 ## Question 18: Manipulative Insincerity
-
-
-
-
-
-
 
 Что характеризует квадрант "Manipulative Insincerity"?
 
@@ -366,12 +258,6 @@ D) Забота и честность
 
 ## Question 19: Care Personally
 
-
-
-
-
-
-
 Как показать "Care Personally" в Radical Candor?
 
 A) Узнать человека как личность, помнить детали, признавать успехи
@@ -385,12 +271,6 @@ D) Игнорировать личную жизнь сотрудника
 ---
 
 ## Question 20: Challenge Directly
-
-
-
-
-
-
 
 Как практиковать "Challenge Directly"?
 

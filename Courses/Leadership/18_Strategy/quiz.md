@@ -6,13 +6,6 @@
 
 ## Question 1: Strategy Definition
 
-
-
-
-
-
-
-
 Что такое Engineering Strategy?
 
 A) Только технические решения
@@ -26,13 +19,6 @@ D) Как engineering достигнет business goals, какие инвест
 ---
 
 ## Question 2: Strategy vs Tactics
-
-
-
-
-
-
-
 
 В чём разница между strategy и tactics?
 
@@ -48,13 +34,6 @@ D) Strategy: why/what, quarters/years; Tactics: how, weeks/months
 
 ## Question 3: Business Connection
 
-
-
-
-
-
-
-
 Как engineering strategy связана с business?
 
 A) Company Strategy → Business Goals → Product Strategy → Eng Strategy
@@ -68,13 +47,6 @@ D) Это независимые процессы
 ---
 
 ## Question 4: Build vs Buy
-
-
-
-
-
-
-
 
 Когда лучше build вместо buy?
 
@@ -90,13 +62,6 @@ D) Случайный выбор
 
 ## Question 5: Technical Debt
 
-
-
-
-
-
-
-
 Когда стоит платить technical debt?
 
 A) Никогда
@@ -110,13 +75,6 @@ D) Только в пятницу
 ---
 
 ## Question 6: Annual Planning
-
-
-
-
-
-
-
 
 Что включает annual planning?
 
@@ -132,13 +90,6 @@ D) Только meetings schedule
 
 ## Question 7: Portfolio Allocation
 
-
-
-
-
-
-
-
 Типичное allocation для product work?
 
 A) 60-70%
@@ -152,13 +103,6 @@ D) 10%
 ---
 
 ## Question 8: Technical Principles
-
-
-
-
-
-
-
 
 Пример хорошего technical principle?
 
@@ -174,13 +118,6 @@ D) "Делать что хотим"
 
 ## Question 9: DORA Metrics
 
-
-
-
-
-
-
-
 Что такое DORA metrics?
 
 A) Lines of code
@@ -194,13 +131,6 @@ D) Deployment frequency, lead time, change failure rate, time to restore
 ---
 
 ## Question 10: Good OKR
-
-
-
-
-
-
-
 
 Пример хорошего engineering Key Result?
 
@@ -216,13 +146,6 @@ D) "Handle 2x current load, 99.9% uptime"
 
 ## Question 11: Change Management
 
-
-
-
-
-
-
-
 Первый шаг в change management?
 
 A) Игнорировать сопротивление
@@ -236,13 +159,6 @@ D) Declare victory
 ---
 
 ## Question 12: Strategic Communication
-
-
-
-
-
-
-
 
 Что включает engineering narrative?
 
@@ -258,13 +174,6 @@ D) Только проблемы
 
 ## Question 13: Team Topology
 
-
-
-
-
-
-
-
 Какие типы команд в Team Topologies?
 
 A) Stream-aligned, Platform, Enabling, Complicated subsystem
@@ -278,13 +187,6 @@ D) Только managers
 ---
 
 ## Question 14: Strategy Antipattern
-
-
-
-
-
-
-
 
 Что является strategy antipattern?
 
@@ -300,13 +202,6 @@ D) Communicated strategy
 
 ## Question 15: Signs of Good Strategy
 
-
-
-
-
-
-
-
 Признак хорошей strategy?
 
 A) Никто не знает
@@ -320,13 +215,6 @@ D) Никогда не меняется
 ---
 
 ## Question 16: Headcount Planning
-
-
-
-
-
-
-
 
 Что учитывается в headcount planning?
 
@@ -342,13 +230,6 @@ D) Только budget
 
 ## Question 17: Technology Choices
 
-
-
-
-
-
-
-
 Какой принцип для technology choices?
 
 A) Boring technology for core, new tech for isolated experiments
@@ -362,13 +243,6 @@ D) Никаких principles
 ---
 
 ## Question 18: Roadmap Quality
-
-
-
-
-
-
-
 
 Признак хорошего roadmap?
 
@@ -384,13 +258,6 @@ D) Wishful thinking
 
 ## Question 19: Communicating to Executives
 
-
-
-
-
-
-
-
 Что коммуницировать executives?
 
 A) Технические детали
@@ -404,13 +271,6 @@ D) Business impact, goal progress, risks, resource needs
 ---
 
 ## Question 20: Strategy Process
-
-
-
-
-
-
-
 
 Какой первый шаг в creating strategy?
 
@@ -426,7 +286,6 @@ D) Написать roadmap
 
 ## Question 21: Strategy Test
 
-
 Как проверить, является ли решение стратегическим?
 
 A) Если оно дешёвое
@@ -440,7 +299,6 @@ D) Если его легко отменить
 ---
 
 ## Question 22: Technology Radar
-
 
 Что означает "HOLD" в Technology Radar?
 
@@ -456,7 +314,6 @@ D) Пробовать в проектах
 
 ## Question 23: ADR Format
 
-
 Что должен включать Architecture Decision Record (ADR)?
 
 A) Context, decision, alternatives considered, trade-offs, consequences
@@ -470,7 +327,6 @@ D) Только код
 ---
 
 ## Question 24: Capacity Planning
-
 
 Что включает формула capacity planning?
 
@@ -486,7 +342,6 @@ D) Engineers × Working Days × Focus Factor - Vacations - Oncall - Buffer
 
 ## Question 25: Portfolio Model
 
-
 Какая модель allocation подходит для startup в aggressive growth?
 
 A) Scale mode (50% product, 35% platform)
@@ -500,7 +355,6 @@ D) Maintenance mode (90% support)
 ---
 
 ## Question 26: Headcount Justification
-
 
 Что должно быть в headcount justification для executive?
 
@@ -516,7 +370,6 @@ D) Только имена кандидатов
 
 ## Question 27: Boring Technology
 
-
 Что означает принцип "Boring Technology"?
 
 A) Игнорировать технологии
@@ -530,7 +383,6 @@ D) Использовать самые новые технологии
 ---
 
 ## Question 28: Tech Debt Prioritization
-
 
 По какой формуле приоритизировать tech debt?
 
@@ -546,7 +398,6 @@ D) Только по возрасту кода
 
 ## Question 29: Quarterly Planning
 
-
 Когда начинать quarterly planning?
 
 A) Не нужно планировать
@@ -560,7 +411,6 @@ D) После окончания квартала
 ---
 
 ## Question 30: DORA Elite
-
 
 Какой deployment frequency у Elite команды по DORA?
 
@@ -576,7 +426,6 @@ D) Раз в месяц
 
 ## Question 31: Goodhart's Law
 
-
 Что утверждает Goodhart's Law о метриках?
 
 A) Метрики не нужны
@@ -590,7 +439,6 @@ D) Когда метрика становится целью, она перес�
 ---
 
 ## Question 32: Roadmap Antipattern
-
 
 Какой признак плохого roadmap?
 
@@ -606,7 +454,6 @@ D) Realistic commitments
 
 ## Question 33: Strategy Communication
 
-
 Кому коммуницировать strategy по-разному?
 
 A) Всем одинаково
@@ -621,7 +468,6 @@ D) Никому
 
 ## Question 34: Platform ROI
 
-
 Как посчитать ROI для platform investment?
 
 A) (Time_Saved × Num_Teams × Duration) - Build_Cost
@@ -635,7 +481,6 @@ D) Только по количеству строк кода
 ---
 
 ## Question 35: Strategy Living Document
-
 
 Как часто обновлять engineering strategy?
 

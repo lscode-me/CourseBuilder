@@ -6,12 +6,6 @@
 
 ## Question 1: Стоимость митингов
 
-
-
-
-
-
-
 Почему важно осознавать стоимость митингов?
 
 A) Стоимость митингов не важна
@@ -25,12 +19,6 @@ D) Чтобы проводить больше митингов
 ---
 
 ## Question 2: Три элемента
-
-
-
-
-
-
 
 Какие три элемента обязательны для каждого митинга?
 
@@ -46,12 +34,6 @@ D) Презентация, кофе, перерыв
 
 ## Question 3: Daily Standup длительность
 
-
-
-
-
-
-
 Какая рекомендуемая максимальная длительность Daily Standup?
 
 A) 1 час
@@ -65,12 +47,6 @@ D) 30 минут
 ---
 
 ## Question 4: Standup anti-pattern
-
-
-
-
-
-
 
 Что является anti-pattern для standup?
 
@@ -86,12 +62,6 @@ D) Начинать без опоздавших
 
 ## Question 5: Sprint Planning структура
 
-
-
-
-
-
-
 Какие две основные части Sprint Planning?
 
 A) START и FINISH
@@ -105,12 +75,6 @@ D) TALK и LISTEN
 ---
 
 ## Question 6: Story Points
-
-
-
-
-
-
 
 Что означает Story Points 8?
 
@@ -126,12 +90,6 @@ D) Very Large — скорее всего нужно разбить
 
 ## Question 7: Focus Factor
 
-
-
-
-
-
-
 Какой реалистичный Focus Factor для capacity planning?
 
 A) 150%
@@ -145,12 +103,6 @@ D) 100%
 ---
 
 ## Question 8: Retro без action items
-
-
-
-
-
-
 
 Что происходит, если Retrospective заканчивается без action items?
 
@@ -166,12 +118,6 @@ D) Это нормально
 
 ## Question 9: Start/Stop/Continue
 
-
-
-
-
-
-
 Что означает формат Start/Stop/Continue для retro?
 
 A) Начало дня, конец дня, обед
@@ -185,12 +131,6 @@ D) Start проект, Stop проект, Continue проект
 ---
 
 ## Question 10: Action Item качество
-
-
-
-
-
-
 
 Какой action item из retro хороший?
 
@@ -206,12 +146,6 @@ D) "Подумать об улучшениях"
 
 ## Question 11: Disagree and Commit
 
-
-
-
-
-
-
 Что означает "Disagree and Commit"?
 
 A) Молча соглашаться со всем
@@ -225,12 +159,6 @@ D) После обсуждения и решения — все поддержи
 ---
 
 ## Question 12: RAPID Model
-
-
-
-
-
-
 
 Кто в RAPID Model принимает финальное решение?
 
@@ -246,12 +174,6 @@ D) Recommend
 
 ## Question 13: Sprint Review
 
-
-
-
-
-
-
 Что показывают на Sprint Review (Demo)?
 
 A) Графики и метрики
@@ -265,12 +187,6 @@ D) Список задач
 ---
 
 ## Question 14: Backlog Grooming
-
-
-
-
-
-
 
 Какова цель Backlog Grooming (Refinement)?
 
@@ -286,12 +202,6 @@ D) Создать новый проект
 
 ## Question 15: Async vs Sync
 
-
-
-
-
-
-
 Для чего лучше использовать async communication?
 
 A) Complex discussions
@@ -305,12 +215,6 @@ D) Emotional conversations
 ---
 
 ## Question 16: No-meeting days
-
-
-
-
-
-
 
 Что такое no-meeting days?
 
@@ -326,12 +230,6 @@ D) Дни без работы
 
 ## Question 17: Planning Poker
 
-
-
-
-
-
-
 Как работает Planning Poker?
 
 A) Все одновременно показывают оценку, обсуждаем крайние значения
@@ -345,12 +243,6 @@ D) Играем в карты
 ---
 
 ## Question 18: Фасилитация retro
-
-
-
-
-
-
 
 Какое правило важно для фасилитации retro?
 
@@ -366,12 +258,6 @@ D) Только негатив
 
 ## Question 19: Отказ от митинга
 
-
-
-
-
-
-
 Когда можно отказаться от митинга?
 
 A) Всегда
@@ -385,12 +271,6 @@ D) Если нет agenda, ваш input не нужен, можно узнать
 ---
 
 ## Question 20: Meeting policy
-
-
-
-
-
-
 
 Какой default для длительности митинга рекомендуется?
 
