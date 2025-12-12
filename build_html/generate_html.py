@@ -11,6 +11,7 @@
       <Module>.html         - страница лекции с тестом
 """
 
+import html
 import os
 import re
 from pathlib import Path
@@ -23,9 +24,11 @@ COURSE_NAMES = {
     "Bioinformatics": "🧬 Биоинформатика",
     "CloudNative": "☁️ Cloud Native",
     "Containers": "🐳 Контейнеры",
+    "CustomerAndServices": "🤝 Customer & Services",
     "DevOps": "🔧 DevOps",
     "EnglishGrammarC1": "🇬🇧 English Grammar C1",
     "EnglishGrammarC2": "🇬🇧 English Grammar C2",
+    "Go": "🐹 Go",
     "Healthcare_Technologies": "🏥 Healthcare Technologies",
     "IT_Basics": "💻 IT Basics",
     "Leadership": "👔 Leadership",
@@ -123,6 +126,20 @@ class CourseHTMLGenerator:
         md = markdown.Markdown(extensions=['extra', 'codehilite', 'tables', 'fenced_code'])
         return md.convert(text)
     
+    def _text_to_safe_html(self, text: str) -> str:
+        """Конвертирует текст в безопасный HTML без markdown-интерпретации.
+        
+        Экранирует HTML-сущности и обрабатывает только backticks для inline кода.
+        Используется для вариантов ответа, чтобы символы вроде # не становились заголовками.
+        """
+        if not text:
+            return ""
+        # Экранируем HTML
+        escaped = html.escape(text)
+        # Заменяем `code` на <code>code</code>
+        escaped = re.sub(r'`([^`]+)`', r'<code>\1</code>', escaped)
+        return f"<p>{escaped}</p>"
+    
     def parse_quiz(self, quiz_path: Path) -> List[Dict]:
         """Парсит quiz.md и возвращает список вопросов с ответами"""
         with open(quiz_path, 'r', encoding='utf-8') as f:
@@ -162,8 +179,9 @@ class CourseHTMLGenerator:
                 question_text = ""
                 options_text = full_text
             
-            # Конвертируем текст вопроса в HTML
-            question_html = self._md_to_html(question_text)
+            # Экранируем HTML-сущности и конвертируем текст вопроса в HTML
+            question_text_escaped = html.escape(question_text)
+            question_html = self._md_to_html(question_text_escaped)
             
             # Парсим опции
             options = []
@@ -172,14 +190,15 @@ class CourseHTMLGenerator:
             
             for match in option_matches:
                 option_text = match.group(2).strip()
-                # Конвертируем вариант ответа в HTML
-                option_html = self._md_to_html(option_text)
+                # Конвертируем в безопасный HTML без markdown-интерпретации
+                # (чтобы # не становился заголовком, < > не парсились как теги и т.д.)
+                option_html = self._text_to_safe_html(option_text)
                 options.append(option_html)
             
             if len(options) == 4:  # Должно быть ровно 4 варианта
                 questions.append({
                     "number": question_num,
-                    "title": title,
+                    "title": html.escape(title),  # Экранируем заголовок для безопасного отображения
                     "text": question_html,
                     "options": options,
                     "correct": None,
@@ -210,7 +229,7 @@ class CourseHTMLGenerator:
                     for q in questions:
                         if q["number"] == q_num:
                             q["correct"] = ord(correct_letter) - ord('A')
-                            q["explanation"] = explanation
+                            q["explanation"] = html.escape(explanation)
                             break
             else:
                 # Формат списка: N. **X** - Explanation
@@ -227,7 +246,7 @@ class CourseHTMLGenerator:
                     for q in questions:
                         if q["number"] == q_num:
                             q["correct"] = ord(correct_letter) - ord('A')
-                            q["explanation"] = explanation
+                            q["explanation"] = html.escape(explanation)
                             break
         
         return questions
@@ -307,7 +326,7 @@ class CourseHTMLGenerator:
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 CourseBuilder | {category_name}</p>
+            <p>&copy; 2025 lscode.me | {category_name}</p>
         </div>
     </footer>
 
@@ -1154,24 +1173,54 @@ class CourseHTMLGenerator:
         renderQuiz();
     </script>'''
     
-    def generate_course_index(self, category: str, modules: List[Dict]) -> str:
-        """Генерирует страницу курса со списком лекций"""
+    def generate_course_index(self, category: str, modules: List[Dict], category_path: Path) -> str:
+        """Генерирует страницу курса из README.md"""
         
         category_name = COURSE_NAMES.get(category, category)
+        readme_path = category_path / "README.md"
         
-        modules_html = []
-        for module in modules:
-            module_name = module["module_name"]
-            # Парсим заголовок лекции
-            lecture_data = self.parse_lecture(module["lecture_path"], category)
-            title = lecture_data["title"]
+        # Читаем README.md, если существует
+        if readme_path.exists():
+            with open(readme_path, 'r', encoding='utf-8') as f:
+                readme_content = f.read()
             
-            filename = f"{module_name}.html"
-            modules_html.append(f'''
-                <a href="{filename}" class="module-card">
-                    <span class="module-number">{module_name.split("_")[0]}</span>
-                    <span class="module-title">{title}</span>
-                </a>''')
+            # Заменяем ссылки на модули: ./01_Intro/ или (01_Intro/) -> 01_Intro.html
+            def replace_module_link(match):
+                module_dir = match.group(1).rstrip('/')
+                return f']({module_dir}.html)'
+            
+            # Форматы: [text](./01_Intro/) или [text](01_Intro/) или [text](./01_Intro/lecture.md)
+            readme_content = re.sub(r'\]\(\./(\d{2}_[^/)]+)/(?:lecture\.md)?\)', replace_module_link, readme_content)
+            readme_content = re.sub(r'\]\((\d{2}_[^/)]+)/(?:lecture\.md)?\)', replace_module_link, readme_content)
+            
+            # Конвертируем markdown в HTML
+            md = markdown.Markdown(extensions=['extra', 'codehilite', 'tables', 'fenced_code'])
+            readme_html = md.convert(readme_content)
+            
+            # Оборачиваем в content-card блоки
+            content_html = self._wrap_lecture_in_cards(readme_html)
+        else:
+            # Fallback: генерируем список модулей
+            modules_html = []
+            for module in modules:
+                module_name = module["module_name"]
+                lecture_data = self.parse_lecture(module["lecture_path"], category)
+                title = lecture_data["title"]
+                
+                filename = f"{module_name}.html"
+                modules_html.append(f'''
+                    <a href="{filename}" class="module-card">
+                        <span class="module-number">{module_name.split("_")[0]}</span>
+                        <span class="module-title">{title}</span>
+                    </a>''')
+            
+            content_html = f'''
+                <div class="content-card">
+                    <h2>Модули курса</h2>
+                    <div class="modules-list">
+                        {''.join(modules_html)}
+                    </div>
+                </div>'''
         
         return f'''<!DOCTYPE html>
 <html lang="ru">
@@ -1299,9 +1348,134 @@ class CourseHTMLGenerator:
             padding: 2rem 0;
         }}
 
+        /* Content card styles for README */
+        .content-card {{
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }}
+
+        h2 {{
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+        }}
+
+        .content-card h2:first-child {{
+            margin-top: 0;
+        }}
+
+        h3 {{
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem 0;
+        }}
+
+        h4 {{
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.8rem 0;
+        }}
+
+        p {{
+            margin: 1rem 0;
+            line-height: 1.8;
+        }}
+
+        ul, ol {{
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }}
+
+        li {{
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }}
+
+        code {{
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--primary-dark);
+        }}
+
+        pre {{
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary);
+        }}
+
+        pre code {{
+            background: none;
+            padding: 0;
+            color: var(--text-primary);
+        }}
+
+        table {{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }}
+
+        th, td {{
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }}
+
+        th {{
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }}
+
+        tr:hover {{
+            background: var(--bg-main);
+        }}
+
+        a {{
+            color: var(--primary);
+            text-decoration: none;
+        }}
+
+        a:hover {{
+            text-decoration: underline;
+        }}
+
+        hr {{
+            border: none;
+            border-top: 2px solid var(--border);
+            margin: 2rem 0;
+        }}
+
+        blockquote {{
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }}
+
         @media (max-width: 768px) {{
             header h1 {{
                 font-size: 1.8rem;
+            }}
+
+            .content-card {{
+                padding: 1.5rem;
             }}
 
             .module-card {{
@@ -1330,14 +1504,12 @@ class CourseHTMLGenerator:
     </header>
 
     <main class="container">
-        <div class="modules-list">
-            {''.join(modules_html)}
-        </div>
+        {content_html}
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 CourseBuilder</p>
+            <p>&copy; 2025 lscode.me</p>
         </div>
     </footer>
 </body>
@@ -1367,7 +1539,7 @@ class CourseHTMLGenerator:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CourseBuilder - Все курсы</title>
+    <title>lscode.me - Все курсы</title>
     <style>
         * {{
             margin: 0;
@@ -1505,8 +1677,8 @@ class CourseHTMLGenerator:
 <body>
     <header>
         <div class="container">
-            <h1>📚 CourseBuilder</h1>
-            <p>Интерактивные курсы с лекциями и тестами</p>
+            <h1>📚 lscode.me</h1>
+            <p>Курсы по программированию и IT</p>
         </div>
     </header>
 
@@ -1518,7 +1690,7 @@ class CourseHTMLGenerator:
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 CourseBuilder</p>
+            <p>&copy; 2025 lscode.me</p>
         </div>
     </footer>
 </body>
@@ -1571,7 +1743,8 @@ class CourseHTMLGenerator:
                     f.write(html_content)
             
             # Генерируем index.html для курса
-            course_index_html = self.generate_course_index(category, category_modules)
+            category_path = self.courses_dir / category
+            course_index_html = self.generate_course_index(category, category_modules, category_path)
             course_index_path = course_html_dir / "index.html"
             with open(course_index_path, 'w', encoding='utf-8') as f:
                 f.write(course_index_html)
