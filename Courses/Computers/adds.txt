@@ -1,0 +1,21 @@
+Smalltalk-машины
+
+Self — радикализация Smalltalk
+
+Forth-машины — Lisp machines для аскетов
+
+Oberon / Modula-машины (Никлаус Вирт)
+
+Erlang machines (логические, а не аппаратные)
+
+Java Smalltalk → JVM как «обобщённая Lisp machine»
+
+Emacs — карманная Lisp machine
+
+Racket — Lisp machine без железа
+
+NixOS / Guix — функциональные ОС
+
+Unikernels, WASM, Elixir.
+
+AMD, Intel, Xeon, серверные процессоры vs десктопные.
