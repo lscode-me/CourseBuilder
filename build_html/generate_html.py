@@ -21,6 +21,7 @@ import markdown
 
 # Названия курсов для отображения
 COURSE_NAMES = {
+    "AI": "🚀 Искусственный Интеллект",
     "Bioinformatics": "🧬 Биоинформатика",
     "CloudNative": "☁️ Cloud Native",
     "Containers": "🐳 Контейнеры",
@@ -34,6 +35,7 @@ COURSE_NAMES = {
     "Leadership": "👔 Leadership",
     "OpenBSD": "🐡 OpenBSD",
     "Python": "🐍 Python",
+    "Python.Interview": "🎯 Python Interview",
     "UnixProgramming": "🖥️ Unix Programming",
     "WebProgramming": "🌐 Web Programming",
 }
@@ -179,9 +181,9 @@ class CourseHTMLGenerator:
                 question_text = ""
                 options_text = full_text
             
-            # Экранируем HTML-сущности и конвертируем текст вопроса в HTML
-            question_text_escaped = html.escape(question_text)
-            question_html = self._md_to_html(question_text_escaped)
+            # Конвертируем текст вопроса в HTML через markdown
+            # НЕ экранируем заранее - markdown/codehilite сам обработает code blocks
+            question_html = self._md_to_html(question_text)
             
             # Парсим опции
             options = []
@@ -1044,10 +1046,10 @@ class CourseHTMLGenerator:
                     <h3>${{q.question}}</h3>
                     <div class="question-text">${{q.text}}</div>
                     <div class="quiz-options">
-                        ${{q.options.map((option, optIndex) => `
-                            <label class="quiz-option" data-question="${{index}}" data-option="${{optIndex}}">
-                                <input type="radio" name="question${{index}}" value="${{optIndex}}">
-                                <span class="option-text">${{option}}</span>
+                        ${{[0, 1, 2, 3].map((optionIndex) => `
+                            <label class="quiz-option" data-question="${{index}}" data-option="${{optionIndex}}">
+                                <input type="radio" name="question${{index}}" value="${{optionIndex}}">
+                                <span class="option-text">${{q.options[optionIndex]}}</span>
                             </label>
                         `).join('')}}
                     </div>
@@ -1099,11 +1101,12 @@ class CourseHTMLGenerator:
 
                 // Highlight answers
                 const options = document.querySelectorAll(`[data-question="${{index}}"]`);
-                options.forEach((option, optIndex) => {{
+                options.forEach((option) => {{
+                    const optionIndex = parseInt(option.dataset.option);
                     option.classList.add('disabled');
-                    if (optIndex === q.correct) {{
+                    if (optionIndex === q.correct) {{
                         option.classList.add('correct');
-                    }} else if (optIndex === userAnswer && !isCorrect) {{
+                    }} else if (optionIndex === userAnswer && !isCorrect) {{
                         option.classList.add('incorrect');
                     }}
                 }});
