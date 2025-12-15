@@ -178,9 +178,11 @@ def check_blank_lines_around_code_blocks(lines: list[str]) -> list[FormatIssue]:
                     while j < len(lines) and not lines[j].strip():
                         j += 1
                     
+                    # Если есть следующая непустая строка, проверяем её
                     if j < len(lines):
                         next_line = lines[j].strip()
                         # Исключения: заголовок, ---, **Output:**
+                        # Если следующая непустая строка - это заголовок или другой разрешённый элемент, это нормально
                         if not next_line.startswith('#') and next_line != "---" and not next_line.startswith('**'):
                             issues.append(FormatIssue(
                                 line_num=i + 1,
