@@ -138,7 +138,7 @@ A) `-c`
 
 B) `-n`
 
-C) -r
+C) `-r`
 
 D) `-s`
 
@@ -150,7 +150,7 @@ D) `-s`
 
 A) `json.dump()`
 
-B) json.dumps()
+B) `json.dumps()`
 
 C) `json.load()`
 
@@ -164,7 +164,7 @@ D) `json.loads()`
 
 A) `json.loads(file)`
 
-B) json.load(file)
+B) `json.load(file)`
 
 C) `json.parse(file)`
 
@@ -190,7 +190,7 @@ D) "line1/nline2"
 
 Как записываются логические значения в JSON?
 
-A) true / false
+A) `true` / `false`
 
 B) `TRUE` / `FALSE`
 
@@ -206,7 +206,7 @@ D) `True` / `False`
 
 A) `{1, 2, 3}`
 
-B) [1, 2, 3]
+B) `[1, 2, 3]`
 
 C) `(1, 2, 3)`
 
@@ -262,7 +262,7 @@ D) UTF-16
 
 A) `jq '.[] | filter(.active)'`
 
-B) jq '.[] | select(.active == true)'
+B) `jq '.[] | select(.active == true)'`
 
 C) `jq '.[] | where(.active)'`
 
