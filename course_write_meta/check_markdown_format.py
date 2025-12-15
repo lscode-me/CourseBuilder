@@ -6,6 +6,7 @@
 - Отсутствие пустых строк перед/после заголовков
 - Отсутствие пустых строк перед/после блоков кода
 - Отсутствие пустых строк между пунктами списка с **bold**
+- Отсутствие пустых строк между текстом и списком (списки склеиваются в строку)
 - Слипшиеся секции
 """
 
@@ -238,7 +239,7 @@ def check_bold_heading_before_list(lines: list[str], code_ranges: list[tuple[int
 
 
 def check_text_colon_before_list(lines: list[str], code_ranges: list[tuple[int, int]]) -> list[FormatIssue]:
-    """Проверка пустой строки между обычным текстом с двоеточием и последующим списком."""
+    """Проверка пустой строки между обычным текстом и последующим списком."""
     issues = []
     
     for i, line in enumerate(lines):
@@ -259,19 +260,17 @@ def check_text_colon_before_list(lines: list[str], code_ranges: list[tuple[int, 
             stripped.startswith('**') and stripped.endswith('**')):
             continue
         
-        # Проверяем, заканчивается ли строка двоеточием
-        if ends_with_colon(stripped):
-            # Проверяем следующую строку
-            if i + 1 < len(lines):
-                next_line = lines[i + 1].strip()
-                # Если следующая строка — пункт списка, нужна пустая строка
-                if next_line.startswith('-') or next_line.startswith('*') or re.match(r'^\d+\.', next_line):
-                    issues.append(FormatIssue(
-                        line_num=i + 1,
-                        issue_type="text_colon_no_blank_before_list",
-                        description="Нет пустой строки между текстом с двоеточием и списком (список не отрендерится)",
-                        context=f"→ {i+1}: {line.strip()}\n  {i+2}: {next_line[:50]}..."
-                    ))
+        # Проверяем следующую строку - если это список, нужна пустая строка
+        if i + 1 < len(lines):
+            next_line = lines[i + 1].strip()
+            # Если следующая строка — пункт списка, нужна пустая строка
+            if next_line.startswith('-') or next_line.startswith('*') or re.match(r'^\d+\.', next_line):
+                issues.append(FormatIssue(
+                    line_num=i + 1,
+                    issue_type="text_no_blank_before_list",
+                    description="Нет пустой строки между текстом и списком (список склеится в строку при сборке HTML)",
+                    context=f"→ {i+1}: {line.strip()}\n  {i+2}: {next_line[:50]}..."
+                ))
     
     return issues
 
@@ -335,6 +334,7 @@ def check_file(filepath: Path) -> FileReport:
     report.issues.extend(check_blank_lines_around_code_blocks(lines))
     report.issues.extend(check_bold_list_items(lines))
     report.issues.extend(check_bold_heading_before_list(lines, code_ranges))
+    report.issues.extend(check_text_colon_before_list(lines, code_ranges))
     report.issues.extend(check_section_separators(lines, code_ranges))
     
     # Сортируем по номеру строки

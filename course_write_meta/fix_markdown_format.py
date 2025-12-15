@@ -2,9 +2,10 @@
 """
 Автоматическое исправление форматирования Markdown файлов.
 
-Исправляет пять самых частых ошибок:
+Исправляет шесть самых частых ошибок:
 - Нет пустой строки между bold-пунктами (могут слипнуться)
 - Нет пустой строки между **Bold:** и списком (список не отрендерится)
+- Нет пустой строки между текстом и списком (списки склеиваются в строку)
 - Нет пустой строки ПЕРЕД блоком кода
 - Нет пустой строки ПОСЛЕ блока кода
 - Нет пустой строки ПОСЛЕ заголовка
@@ -268,7 +269,7 @@ def fix_bold_heading_before_list(lines: List[str], code_ranges: List[Tuple[int, 
 
 
 def fix_text_colon_before_list(lines: List[str], code_ranges: List[Tuple[int, int]]) -> Tuple[List[str], int]:
-    """Исправление пустой строки между обычным текстом с двоеточием и последующим списком.
+    """Исправление пустой строки между обычным текстом и последующим списком.
     
     Возвращает исправленные строки и количество исправлений.
     """
@@ -294,22 +295,20 @@ def fix_text_colon_before_list(lines: List[str], code_ranges: List[Tuple[int, in
             (stripped.startswith('**') and stripped.endswith('**'))):
             continue
         
-        # Проверяем, заканчивается ли строка двоеточием
-        if ends_with_colon(stripped):
-            # Проверяем следующую строку
-            if i + 1 < len(fixed_lines):
-                next_line_raw = fixed_lines[i + 1]
-                next_line = next_line_raw.strip()
-                # Если следующая строка — пункт списка
-                if (next_line.startswith('-') or 
-                    next_line.startswith('*') or 
-                    re.match(r'^\d+\.', next_line)):
-                    # Проверяем, что между ними действительно нет пустой строки
-                    # (следующая строка не пустая, значит пустой строки между ними нет)
-                    if next_line:
-                        # Вставляем пустую строку после текущей строки
-                        fixed_lines.insert(i + 1, '')
-                        fixes_count += 1
+        # Проверяем следующую строку - если это список, нужна пустая строка
+        if i + 1 < len(fixed_lines):
+            next_line_raw = fixed_lines[i + 1]
+            next_line = next_line_raw.strip()
+            # Если следующая строка — пункт списка
+            if (next_line.startswith('-') or 
+                next_line.startswith('*') or 
+                re.match(r'^\d+\.', next_line)):
+                # Проверяем, что между ними действительно нет пустой строки
+                # (следующая строка не пустая, значит пустой строки между ними нет)
+                if next_line:
+                    # Вставляем пустую строку после текущей строки
+                    fixed_lines.insert(i + 1, '')
+                    fixes_count += 1
     
     return fixed_lines, fixes_count
 
@@ -361,12 +360,12 @@ def fix_file(filepath: Path, dry_run: bool = False) -> Tuple[int, int, int, int,
             print(f"✅ {filepath}: исправлено {total_fixes} проблем "
                   f"(bold_list: {fixes_bold_list}, bold_heading: {fixes_bold_heading}, "
                   f"code_before: {fixes_code_block_before}, code_after: {fixes_code_block_after}, "
-                  f"header_after: {fixes_header_after}, text_colon: {fixes_text_colon})")
+                  f"header_after: {fixes_header_after}, text_before_list: {fixes_text_colon})")
         else:
             print(f"🔍 {filepath}: найдено {total_fixes} проблем для исправления "
                   f"(bold_list: {fixes_bold_list}, bold_heading: {fixes_bold_heading}, "
                   f"code_before: {fixes_code_block_before}, code_after: {fixes_code_block_after}, "
-                  f"header_after: {fixes_header_after}, text_colon: {fixes_text_colon})")
+                  f"header_after: {fixes_header_after}, text_before_list: {fixes_text_colon})")
     
     return (fixes_bold_list, fixes_bold_heading, fixes_code_block_before, fixes_code_block_after, fixes_header_after, fixes_text_colon)
 
@@ -516,7 +515,7 @@ def main():
         print(f"📊 Итого исправлено:")
         print(f"   - Пустых строк между bold-пунктами: {total_bold_list}")
         print(f"   - Пустых строк между **Bold:** и списком: {total_bold_heading}")
-        print(f"   - Пустых строк между текстом с двоеточием и списком: {total_text_colon}")
+        print(f"   - Пустых строк между текстом и списком: {total_text_colon}")
         print(f"   - Пустых строк ПЕРЕД блоками кода: {total_code_block_before}")
         print(f"   - Пустых строк ПОСЛЕ блоков кода: {total_code_block_after}")
         print(f"   - Пустых строк ПОСЛЕ заголовков: {total_header_after}")
