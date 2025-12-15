@@ -22,6 +22,7 @@
 ### Важно: `range()` — это НЕ итератор!
 
 ```python
+
 >>> r = range(5)
 >>> next(r)  # TypeError: 'range' object is not an iterator
 >>> it = iter(r)
@@ -37,6 +38,7 @@
 ### 1. Генератор чисел Фибоначчи
 
 ```python
+
 def fibonacci():
     a, b = 0, 1
     while True:
@@ -51,6 +53,7 @@ print([next(fib) for _ in range(10)])  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ### 2. Функция index через next() и enumerate()
 
 ```python
+
 def index(iterable, element):
     return next((i for i, e in enumerate(iterable) if e == element), -1)
 
@@ -61,6 +64,7 @@ index = lambda it, el: next(i for i, e in enumerate(it) if e == el)
 ### 3. Класс iter_int — итерируемое целое число
 
 ```python
+
 class iter_int(int):
     def __iter__(self):
         return iter(range(self))
@@ -91,6 +95,7 @@ while True:
 ### Q: Сколько аргументов принимают iter() и next()?
 
 **A:** 
+
 - `iter(obj)` — один аргумент (iterable)
 - `iter(callable, sentinel)` — два аргумента (вызывает callable пока не получит sentinel)
 - `next(iterator)` — один аргумент
@@ -109,11 +114,13 @@ squares_gen = (x**2 for x in range(1000000))  # Почти не занимает
 ### Q: Что выведет этот код?
 
 ```python
+
 for i in [lambda x: x**y for y in range(5)]: print(i(2))
 for i in (lambda x: x**y for y in range(5)): print(i(2))
 ```
 
 **A:**
+
 - Первый цикл: `16 16 16 16 16` — все lambda захватывают **последнее** значение y=4
 - Второй цикл: `1 2 4 8 16` — generator вычисляет лениво, y разный каждый раз
 
@@ -126,6 +133,7 @@ for i in (lambda x: x**y for y in range(5)): print(i(2))
 Напишите функцию, которая сливает два отсортированных итератора:
 
 ```python
+
 def merge_sorted(iter1, iter2):
     val1 = next(iter1, None)
     val2 = next(iter2, None)
@@ -141,6 +149,7 @@ def merge_sorted(iter1, iter2):
 # Тест
 list(merge_sorted(iter([1, 3, 5]), iter([2, 4, 6])))
 # [1, 2, 3, 4, 5, 6]
+
 ```
 
 ---
@@ -152,4 +161,5 @@ list(merge_sorted(iter([1, 3, 5]), iter([2, 4, 6])))
 - "Fluent Python" Chapter 14: Iterables, Iterators, and Generators
 
 ---
+
 

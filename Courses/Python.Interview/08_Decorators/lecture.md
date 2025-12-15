@@ -16,6 +16,7 @@
 ### Декоратор без @
 
 ```python
+
 def decorator(func):
     def wrapper(*args, **kwargs):
         print("Before")
@@ -43,6 +44,7 @@ def say_hello():
 ### 1. Timing декоратор
 
 ```python
+
 import time
 from functools import wraps
 
@@ -66,6 +68,7 @@ slow_function()  # slow_function took 1.0012s
 ### 2. Memoization декоратор
 
 ```python
+
 from functools import wraps
 
 def memoize(func):
@@ -90,6 +93,7 @@ print(fibonacci(100))  # Мгновенно!
 ### 3. Встроенный lru_cache
 
 ```python
+
 from functools import lru_cache
 
 @lru_cache(maxsize=128)
@@ -102,6 +106,7 @@ def fibonacci(n):
 ### 4. Декоратор с параметрами
 
 ```python
+
 from functools import wraps
 
 def repeat(times):
@@ -152,6 +157,7 @@ print(hello.__doc__)   # None — потеряна документация!
 > "Нужен дополнительный уровень вложенности: внешняя функция принимает параметры и возвращает декоратор."
 
 ```python
+
 def decorator_with_args(arg):
     def decorator(func):
         def wrapper(*args, **kwargs):
@@ -171,6 +177,7 @@ def func():
 > "Да, декораторы применяются снизу вверх."
 
 ```python
+
 @decorator1
 @decorator2
 @decorator3
@@ -208,4 +215,5 @@ func = decorator1(decorator2(decorator3(func)))
 - "Fluent Python" Chapter 7: Function Decorators and Closures
 
 ---
+
 

@@ -30,6 +30,7 @@
 ### 1.1 Ограничения LLM
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │          Что LLM НЕ может делать сам                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -56,6 +57,7 @@
 Tool use (function calling) — способность LLM вызывать внешние функции:
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                   Tool Use Flow                              │
 ├─────────────────────────────────────────────────────────────┤
@@ -84,6 +86,7 @@ Tool use (function calling) — способность LLM вызывать вн
 ### 2.1 Определение функций
 
 ```python
+
 from openai import OpenAI
 client = OpenAI()
 
@@ -133,6 +136,7 @@ tools = [
 ### 2.2 Базовый pipeline
 
 ```python
+
 import json
 
 def process_with_tools(user_message):
@@ -185,6 +189,7 @@ def execute_function(name, args):
 ### 2.3 Реальные функции
 
 ```python
+
 import requests
 
 def get_weather(city: str, units: str = "celsius") -> dict:
@@ -242,6 +247,7 @@ async def process_parallel_tools(tool_calls):
 ### 4.1 Что делает LLM vs что делает код
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │              Разделение ответственности                      │
 ├─────────────────────────────────────────────────────────────┤
@@ -264,6 +270,7 @@ async def process_parallel_tools(tool_calls):
 ### 4.2 Валидация и безопасность
 
 ```python
+
 def execute_function_safe(name: str, args: dict, user_context: dict):
     """Безопасное выполнение функции"""
     
@@ -296,6 +303,7 @@ def execute_function_safe(name: str, args: dict, user_context: dict):
 ### 5.1 Калькулятор
 
 ```python
+
 tools_calculator = [{
     "type": "function",
     "function": {
@@ -325,6 +333,7 @@ def calculate(expression: str) -> dict:
 ### 5.2 Поиск в базе данных
 
 ```python
+
 tools_database = [{
     "type": "function",
     "function": {
@@ -364,6 +373,7 @@ def search_products(query: str, category: str = None, max_price: float = None):
 ### 6.1 Проектирование функций
 
 ```python
+
 function_design_tips = {
     "Naming": "Используйте глаголы: get_weather, send_email, create_order",
     "Description": "Пишите чёткие описания — LLM их читает!",
@@ -376,6 +386,7 @@ function_design_tips = {
 ### 6.2 Обработка ошибок
 
 ```python
+
 def execute_with_error_handling(name, args):
     try:
         result = execute_function(name, args)
@@ -410,4 +421,5 @@ def execute_with_error_handling(name, args):
 - [10_Agents_Basics](../10_Agents_Basics/) — AI-агенты
 
 ---
+
 

@@ -14,6 +14,7 @@
 > "В Python используется duck typing: 'Если оно ходит как утка и крякает как утка, это утка'. Мы не проверяем тип объекта, а только наличие нужных методов."
 
 ```python
+
 def process(obj):
     # Не проверяем тип, просто вызываем метод
     return obj.read()
@@ -43,6 +44,7 @@ def process(obj):
 ### Зачем нужны ABC
 
 ```python
+
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
@@ -65,6 +67,7 @@ print(dog.speak())  # Woof!
 ### Абстрактный Iterable
 
 ```python
+
 from abc import ABC, abstractmethod
 
 class MyIterable(ABC):
@@ -76,6 +79,7 @@ class MyIterable(ABC):
 ### Абстрактный Mapping
 
 ```python
+
 from abc import ABC, abstractmethod
 
 class MyMapping(ABC):
@@ -107,6 +111,7 @@ class MyMapping(ABC):
 ### Через collections.abc
 
 ```python
+
 from collections.abc import Iterable, Hashable, Callable, Mapping
 
 # Проверка iterable
@@ -129,6 +134,7 @@ isinstance([], Mapping)           # False
 ### Через hasattr (duck typing)
 
 ```python
+
 def is_iterable(obj):
     return hasattr(obj, '__iter__')
 
@@ -144,6 +150,7 @@ def is_callable(obj):
 
 **A:**
 ```python
+
 from collections.abc import Iterable
 
 # Способ 1: isinstance
@@ -186,6 +193,7 @@ d = {[1, 2]: 1}  # TypeError: unhashable type: 'list'
 ### Q: Назовите стандартные ABC из collections.abc
 
 **A:**
+
 - `Iterable`, `Iterator`, `Generator`
 - `Sequence`, `MutableSequence`
 - `Mapping`, `MutableMapping`
@@ -203,4 +211,5 @@ d = {[1, 2]: 1}  # TypeError: unhashable type: 'list'
 - "Fluent Python" Chapter 11: Interfaces, Protocols, and ABCs
 
 ---
+
 

@@ -52,6 +52,7 @@
 **Формула культуры:**
 
 ```
+
 Culture = Values × Behaviors × Habits × Stories × Incentives
 
 Values:     Что мы считаем важным (на словах и на деле)
@@ -74,6 +75,7 @@ Incentives: Что награждается и что наказывается
 **Пример разрыва:**
 
 ```
+
 Декларируемое:                         Реальное:
 ───────────────────────────────────────────────────────────────
 "Мы ценим work-life balance"     →     Руководители пишут в 11 PM,
@@ -95,6 +97,7 @@ Incentives: Что награждается и что наказывается
 ### 1.3 Edgar Schein's Model: Три уровня культуры
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │  LEVEL 1: ARTIFACTS (Visible)                                   │
@@ -151,6 +154,7 @@ Incentives: Что награждается и что наказывается
 ### 2.1 Влияние на performance: Google's Project Aristotle
 
 **Исследование:**
+
 - Google изучил 180+ команд
 - Цель: найти, что отличает эффективные команды от неэффективных
 - Результаты удивили
@@ -221,6 +225,7 @@ Incentives: Что награждается и что наказывается
 **Тест "что происходит когда...":**
 
 ```
+
 Что происходит когда...                 Здоровая культура        Токсичная культура
 ───────────────────────────────────────────────────────────────────────────────────
 ...кто-то ошибается?                    Разбор, learning         Наказание, shame
@@ -240,6 +245,7 @@ Incentives: Что награждается и что наказывается
 **Три шага для лидера:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │  STEP 1: SET THE STAGE                                          │
@@ -355,6 +361,7 @@ Incentives: Что награждается и что наказывается
 | 7 | Работая с членами этой команды, мои уникальные навыки и таланты ценятся | Agree = good |
 
 **Scoring:**
+
 - 5-point scale (1 = Strongly Disagree, 5 = Strongly Agree)
 - Reverse score questions 1, 3, 5
 - Average = Psychological Safety Score
@@ -462,6 +469,7 @@ Incentives: Что награждается и что наказывается
 **Традиционный подход и его ловушки:**
 
 ```
+
 "Нам нужен человек, который впишется в культуру"
                     ↓
 Часто на практике означает:
@@ -484,6 +492,7 @@ Incentives: Что награждается и что наказывается
 **Формула Culture Add:**
 
 ```
+
 Culture Add = 
   Shares Core Values (necessary)
   + Brings New Perspective (differentiator)
@@ -493,6 +502,7 @@ Culture Add =
 **Матрица оценки кандидата:**
 
 ```
+
                     SHARES VALUES
                     │
            YES      │      NO
@@ -523,6 +533,7 @@ Culture Add =
 **Structured Culture Interview (45-60 min):**
 
 ```
+
 [5 min]  Intro и context
 [15 min] Values alignment questions
 [15 min] Culture add questions  
@@ -602,6 +613,7 @@ Date: _______________
 □ No Hire (Red flags)
 
 ## Detailed Notes
+
 [Free-form observations]
 ```
 
@@ -683,6 +695,7 @@ Culture change is SLOW because:
 Westrum классифицировал организации по тому, как они обрабатывают информацию:
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                                                                │
 │   PATHOLOGICAL        BUREAUCRATIC        GENERATIVE           │
@@ -739,6 +752,7 @@ Westrum классифицировал организации по тому, к�
 **Netflix Practices:**
 
 ```
+
 Unlimited PTO:           Нет лимита отпуска (но есть expectations)
 No Expense Policy:       "Act in Netflix's best interest"
 Information Sharing:     Вся информация открыта (почти)
@@ -754,6 +768,7 @@ No Performance Reviews:  360 feedback вместо formal reviews
 **Структура Spotify:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                         TRIBE                                   │
 │                    (100+ people, business area)                 │
@@ -815,6 +830,7 @@ No Performance Reviews:  360 feedback вместо formal reviews
 **Не copy-paste:**
 
 ```
+
 ❌ "Netflix не делает performance reviews, мы тоже не будем"
    Problem: Нет high talent density, feedback не работает
 
@@ -977,6 +993,7 @@ Remote/distributed teams:
 - [Team Health Check (Spotify)](https://engineering.atspotify.com/2014/09/squad-health-check-model/)
 
 ---
+
 
 
 

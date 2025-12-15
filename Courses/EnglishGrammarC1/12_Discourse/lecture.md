@@ -262,6 +262,7 @@ THAT/THOSE: Distant, earlier, what precedes
 ### 5.1 Paragraphing
 
 Each paragraph = one main idea
+
 - Topic sentence (first)
 - Supporting sentences
 - Concluding/transitional sentence (last)
@@ -418,6 +419,7 @@ FORMAL: "However, there is a problem."
 - "Writing Academic English" by Oshima & Hogue
 
 ---
+
 
 
 

@@ -38,6 +38,7 @@ lst.append(4)  # Тот же объект list
 ### Код-ловушка (вас попросят объяснить)
 
 ```python
+
 def append_to(element, lst=[]):
     lst.append(element)
     return lst
@@ -53,6 +54,7 @@ print(append_to(3))  # [1, 2, 3] — НЕ [3]!
 ### Правильное решение
 
 ```python
+
 def append_to(element, lst=None):
     if lst is None:
         lst = []
@@ -93,6 +95,7 @@ b = copy.deepcopy(a)
 ### Почему tuple может содержать mutable объекты?
 
 ```python
+
 t = ([1, 2], [3, 4])
 t[0].append(5)  # Работает!
 print(t)  # ([1, 2, 5], [3, 4])
@@ -111,9 +114,13 @@ t[0] = [6, 7]  # TypeError: tuple doesn't support item assignment
 ### Q: Почему immutability важна?
 
 **A:**
+
 - **Thread safety** — immutable объекты безопасны для многопоточного доступа
+
 - **Хэширование** — immutable объекты можно использовать как ключи dict и элементы set
+
 - **Предсказуемость** — функция не может случайно изменить ваши данные
+
 - **Кэширование** — можно безопасно кэшировать immutable объекты
 
 ### Q: Можно ли использовать список как ключ словаря?
@@ -122,6 +129,7 @@ t[0] = [6, 7]  # TypeError: tuple doesn't support item assignment
 > "Нет, потому что list — mutable. Ключи словаря должны быть hashable, а hashable могут быть только immutable объекты. Используйте tuple вместо list."
 
 ```python
+
 d = {}
 d[[1, 2, 3]] = "value"  # TypeError: unhashable type: 'list'
 d[(1, 2, 3)] = "value"  # Работает
@@ -131,6 +139,7 @@ d[(1, 2, 3)] = "value"  # Работает
 
 **A:**
 ```python
+
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -151,4 +160,5 @@ p.x = 3  # FrozenInstanceError
 - [Real Python: Pass by Reference in Python](https://realpython.com/python-pass-by-reference/)
 
 ---
+
 

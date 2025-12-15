@@ -373,6 +373,7 @@ D) All reductions are correct.
 
 
 What's the difference?
+
 - "My brother who lives in Paris is visiting."
 - "My brother, who lives in Paris, is visiting."
 
@@ -445,4 +446,5 @@ D) Time
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Relative clauses требуют внимания. |
 
 ---
+
 

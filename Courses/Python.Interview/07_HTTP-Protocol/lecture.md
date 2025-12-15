@@ -52,6 +52,7 @@ HTTP — основа веб-разработки. Вас могут спрос�
 ## 🔗 Структура URL
 
 ```
+
 scheme://user:password@host:port/path?query#fragment
 ```
 
@@ -67,6 +68,7 @@ scheme://user:password@host:port/path?query#fragment
 ### Парсинг URL в Python
 
 ```python
+
 from urllib.parse import urlparse, parse_qs
 
 url = "https://example.com:8080/path?name=john&age=30#top"
@@ -90,6 +92,7 @@ print(params)  # {'name': ['john'], 'age': ['30']}
 ### requests (рекомендуется)
 
 ```python
+
 import requests
 
 # GET
@@ -179,4 +182,5 @@ response = session.get("https://example.com")
 - [HTTP/2 Explained](https://http2-explained.haxx.se/)
 
 ---
+
 

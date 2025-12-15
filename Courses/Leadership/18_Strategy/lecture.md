@@ -50,6 +50,7 @@
 **Формула:**
 
 ```
+
 Engineering Strategy = 
   Business Goals (what we're trying to achieve)
   + Technical Bets (how technology helps)
@@ -60,6 +61,7 @@ Engineering Strategy =
 ### 1.2 Strategy vs Tactics
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │   STRATEGY                              TACTICS                 │
@@ -89,6 +91,7 @@ Engineering Strategy =
 ### 1.3 Components of Eng Strategy
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    ENGINEERING STRATEGY                         │
 ├─────────────────────────────────────────────────────────────────┤
@@ -131,6 +134,7 @@ Engineering Strategy =
 **Плохой пример:**
 
 ```
+
 "Мы будем использовать современные технологии и best practices,
 чтобы делать качественные продукты быстро."
 
@@ -144,6 +148,7 @@ Engineering Strategy =
 **Хороший пример:**
 
 ```
+
 Engineering Strategy 2025:
 
 Vision: Стать платформенной компанией с 10x скоростью
@@ -174,6 +179,7 @@ Engineering strategy не существует в вакууме — она до
 ### 2.1 Strategy Cascade
 
 ```
+
 ┌────────────────────────────────────────────────────────────────┐
 │                      STRATEGY CASCADE                          │
 └────────────────────────────────────────────────────────────────┘
@@ -220,6 +226,7 @@ Engineering strategy не существует в вакууме — она до
 **Как получить эту информацию:**
 
 ```
+
 1. Company all-hands и strategy presentations
 2. 1-on-1 с вашим руководителем
 3. Разговоры с Product leadership
@@ -245,6 +252,7 @@ Engineering strategy не существует в вакууме — она до
 **Ситуация:**
 
 ```
+
 Company: B2B SaaS product
 Business Goal: Grow from $10M to $25M ARR in 2 years
 Strategy: Expand to Enterprise customers
@@ -263,6 +271,7 @@ Strategy: Expand to Enterprise customers
 **Шаг 2: Quantify engineering investment**
 
 ```
+
 SOC2 Certification:
 - Eng work: 3 months, 2 engineers
 - External audit: $50K
@@ -331,6 +340,7 @@ Enterprise requires: SOC2, SSO, SLA guarantees.
 **Decision Tree:**
 
 ```
+
                     Это core competency?
                     /              \
                   Yes               No
@@ -346,6 +356,7 @@ Enterprise requires: SOC2, SSO, SLA guarantees.
 **Пример: Authentication System**
 
 ```
+
 Question: Build custom auth или использовать Auth0?
 
 Analysis:
@@ -385,6 +396,7 @@ Trade-off: Vendor dependency, но saves 6 months и ongoing work
 **Tech Debt Prioritization:**
 
 ```
+
 Tech Debt Score = Impact × Frequency × Effort_Ratio
 
 Impact: 1-5 (how much it hurts when triggered)
@@ -408,6 +420,7 @@ Priority order: highest score first
 **Когда инвестировать в Platform:**
 
 ```
+
 Platform ROI = (Time_Saved × Num_Teams × Duration) - Build_Cost
 
 Example:
@@ -481,6 +494,7 @@ This aligns with our principle "data integrity first."
 Перед принятием стратегического решения:
 
 ```
+
 □ Понимаю ли я ЗАЧЕМ это нужно бизнесу?
 □ Рассмотрел ли я альтернативы? (минимум 2-3)
 □ Записал ли я trade-offs?
@@ -501,6 +515,7 @@ This aligns with our principle "data integrity first."
 ### 4.1 Planning Rhythm Overview
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    PLANNING RHYTHM                              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -593,6 +608,7 @@ This aligns with our principle "data integrity first."
 **Quarterly Planning Process:**
 
 ```
+
 T-6 weeks: PREPARATION
 ├── Review roadmap status
 ├── Gather inputs from Product, stakeholders
@@ -619,6 +635,7 @@ T-0: QUARTER START
 **Capacity Planning Formula:**
 
 ```
+
 Available Capacity = 
   (Engineers × Working Days × Focus Factor)
   - Vacations
@@ -707,7 +724,9 @@ Convert to story points or project estimates accordingly.
 **Три модели allocation:**
 
 **Model A: Balanced (typical for growth company)**
+
 ```
+
 ┌─────────────────────────────────────────────────────────┐
 │  PRODUCT/FEATURES         │ 55-65%                     │
 │  ─────────────────────────┼────────────────────────────│
@@ -728,13 +747,17 @@ Convert to story points or project estimates accordingly.
 ```
 
 **Model B: Speed mode (startup / aggressive growth)**
+
 ```
+
 Product: 75%, Platform: 15%, Innovation: 5%, Buffer: 5%
 Trade-off: Tech debt accumulates, fast now, pay later
 ```
 
 **Model C: Scale mode (post product-market fit)**
+
 ```
+
 Product: 50%, Platform: 35%, Innovation: 10%, Buffer: 5%
 Trade-off: Slower features, investing in sustainable speed
 ```
@@ -754,6 +777,7 @@ Trade-off: Slower features, investing in sustainable speed
 **Comprehensive Headcount Formula:**
 
 ```
+
 Target Headcount = 
     Current Sustainable Work
   + New Initiatives
@@ -766,6 +790,7 @@ Target Headcount =
 **Пример расчёта:**
 
 ```
+
 Current team: 20 engineers
 Attrition rate: 15%
 
@@ -830,6 +855,7 @@ Timeline: Start hiring Q1 to have team by Q3
 **Team Investment Matrix:**
 
 ```
+
               HIGH BUSINESS IMPACT
                       │
          INVEST       │      INVEST MORE
@@ -876,6 +902,7 @@ Technical strategy — это **architecture и technology decisions** на го
 **Шаг 2: Define Target State**
 
 ```
+
 Example Target Architecture Statement:
 
 "By end of 2026, we will have:
@@ -889,6 +916,7 @@ Example Target Architecture Statement:
 **Шаг 3: Migration Path**
 
 ```
+
 Current State          Transition              Target State
 ─────────────────────────────────────────────────────────────
    Monolith      →    Modular Monolith    →    Microservices
@@ -902,6 +930,7 @@ Current State          Transition              Target State
 **Technology Radar** — инструмент для категоризации технологий:
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    TECHNOLOGY RADAR                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -964,6 +993,7 @@ Technical principles — это **decision-making shortcuts** для коман�
 **Как формулировать принципы:**
 
 ```
+
 Формула: [Action] + [Rationale]
 
 Example:
@@ -986,6 +1016,7 @@ Example:
 **Как использовать принципы:**
 
 ```
+
 Team: "Мы хотим использовать новую database X для core service"
 
 Check against principles:
@@ -1016,6 +1047,7 @@ Decision: No. Use for non-core experiments first.
 **Как измерять:**
 
 ```
+
 Deployment Frequency:
 - Source: CI/CD system (Jenkins, GitHub Actions, etc.)
 - Query: COUNT(deployments) / time period
@@ -1038,6 +1070,7 @@ MTTR:
 **Balanced Scorecard for Engineering:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                 ENGINEERING METRICS DASHBOARD                   │
 ├─────────────────────────────────────────────────────────────────┤
@@ -1073,6 +1106,7 @@ MTTR:
 **OKR Structure:**
 
 ```
+
 Objective: Qualitative, inspiring goal
 Key Results: 3-5 quantitative measures of success
 Initiatives: Projects/work that drive Key Results
@@ -1081,7 +1115,9 @@ Initiatives: Projects/work that drive Key Results
 **Example OKRs by Strategic Area:**
 
 **Objective: Enable 10x deployment speed**
+
 ```
+
 KR1: Reduce lead time from 5 days to 1 day
 KR2: Increase deployment frequency from weekly to daily
 KR3: Reduce build time from 30 min to 5 min
@@ -1094,7 +1130,9 @@ Initiatives:
 ```
 
 **Objective: Achieve enterprise-grade reliability**
+
 ```
+
 KR1: Improve uptime from 99.5% to 99.9%
 KR2: Reduce P1 incidents from 5/month to 1/month
 KR3: Reduce MTTR from 4 hours to 30 minutes
@@ -1107,7 +1145,9 @@ Initiatives:
 ```
 
 **Objective: Build high-performing engineering culture**
+
 ```
+
 KR1: Improve developer NPS from +20 to +40
 KR2: Reduce voluntary attrition from 15% to 10%
 KR3: 100% of engineers have development plans
@@ -1176,6 +1216,7 @@ One risk: Enterprise timeline may slip 3 weeks.
 **Team Communication:**
 
 ```
+
 1. WHY: Connect to business goals and strategy
 2. WHAT: Current progress and upcoming work
 3. HOW: How we measure success
@@ -1509,6 +1550,7 @@ What could go wrong
 - [LinearB](https://linearb.io/) — DORA metrics tracking
 
 ---
+
 
 
 

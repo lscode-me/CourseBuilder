@@ -52,6 +52,7 @@
 ### 1.2 Формула изменения роли
 
 ```
+
 EM:       Успех = Результаты_моей_команды × Развитие_моих_людей
 
 Director: Успех = Результаты_нескольких_команд × Качество_моих_менеджеров × Системы_для_scale
@@ -75,6 +76,7 @@ VP:       Успех = Результаты_организации × Страт
 **Ошибка 2: Skip-level bypass**
 
 ```
+
 ❌ Неправильно:
 IC приходит к вам → вы решаете проблему → менеджер узнаёт постфактум
 Результат: менеджер теряет authority, IC ходит через голову
@@ -88,6 +90,7 @@ IC приходит к вам → "Ты обсуждал это с [Manager]?" �
 **Ошибка 3: Бесконечные 1-on-1 со всеми**
 
 ```
+
 Типичный расклад:
 - 5 менеджеров × 30 мин = 2.5 часа/неделю (ваши direct reports)
 - Skip-level: 2-3 человека × 30 мин = 1.5 часа/неделю (ротация)
@@ -178,6 +181,7 @@ IC приходит к вам → "Ты обсуждал это с [Manager]?" �
 **Структура 1-on-1 с менеджером (45-60 мин):**
 
 ```
+
 [10 мин] Check-in: Как ты? Как команда?
 [15 мин] Их agenda: Что хочешь обсудить?
 [15 мин] Team health: Кто растёт, кто struggling, риски
@@ -211,6 +215,7 @@ IC приходит к вам → "Ты обсуждал это с [Manager]?" �
 **Категория: Стратегия и Alignment**
 
 ```
+
 - "Мы работаем над правильными вещами?"
 - "Что нам следует прекратить делать?"
 - "Какие решения ты не можешь принять сам?"
@@ -223,6 +228,7 @@ IC приходит к вам → "Ты обсуждал это с [Manager]?" �
 **GROW** — классическая модель коучинга, особенно полезная для развития менеджеров:
 
 ```
+
 G - Goal:     Чего хочешь достичь?
 R - Reality:  Какая ситуация сейчас?
 O - Options:  Какие варианты есть?
@@ -259,6 +265,7 @@ W - Will:     Что конкретно сделаешь?
 **Сигналы, что нужно перейти к direct:**
 
 ```
+
 🚨 Переходите к directing когда:
 - Менеджер делает ту же ошибку 3+ раз
 - Ситуация влияет на людей негативно
@@ -283,6 +290,7 @@ Feedback менеджерам отличается от feedback IC: вы оце
 
 **Feedback на команду:**
 ```
+
 ❌ "Твоя команда плохо работает"
 ✅ "Я заметил, что за последние 3 спринта velocity упала на 30%.
     Какой у тебя read на ситуацию? Что происходит?"
@@ -290,6 +298,7 @@ Feedback менеджерам отличается от feedback IC: вы оце
 
 **Feedback на лидерство:**
 ```
+
 ❌ "Ты плохо провёл тот митинг"
 ✅ "На design review в понедельник ты предложил решение
     в первые 5 минут, до того как команда обсудила проблему.
@@ -299,6 +308,7 @@ Feedback менеджерам отличается от feedback IC: вы оце
 
 **Feedback на рост:**
 ```
+
 ❌ "Тебе нужно быть более стратегичным"
 ✅ "Ты отлично справляешься с execution — команда deliver'ит стабильно.
     Для роста до Senior EM тебе нужно больше влиять за пределами команды.
@@ -378,6 +388,7 @@ Skip-level 1-on-1 — это встречи с людьми, которые по
 **Как объяснить менеджеру:**
 
 ```
+
 "Я провожу skip-level 1-on-1 со всеми людьми в организации.
 Это стандартная практика для меня, не связанная с проблемами.
 Цель — понимать culture и слышать разные perspectives.
@@ -388,6 +399,7 @@ Skip-level 1-on-1 — это встречи с людьми, которые по
 **Как начать skip-level с IC:**
 
 ```
+
 "Привет! Я провожу skip-level 1-on-1 со всеми в организации,
 чтобы лучше понимать, как дела, и слышать разные perspectives.
 Это не performance review и не жалобная сессия.
@@ -430,6 +442,7 @@ Skip-level 1-on-1 — это встречи с людьми, которые по
 **Сценарий 1: Всё хорошо**
 
 ```
+
 IC: "Всё отлично, мне нравится команда, [Manager] классный."
 
 Вы: "Рад слышать! Что конкретно работает хорошо?
@@ -441,6 +454,7 @@ IC: "Всё отлично, мне нравится команда, [Manager] к
 **Сценарий 2: Жалоба на процессы**
 
 ```
+
 IC: "У нас слишком много митингов, не хватает времени на код."
 
 Вы: "Расскажи подробнее. Какие митинги кажутся лишними?
@@ -452,6 +466,7 @@ IC: "У нас слишком много митингов, не хватает �
 **Сценарий 3: Жалоба на менеджера**
 
 ```
+
 IC: "[Manager] не даёт мне feedback, я не знаю, хорошо ли работаю."
 
 Вы: "Спасибо, что поделился. Ты говорил [Manager], что хочешь 
@@ -466,6 +481,7 @@ IC: "Нет, мне неловко."
 **Сценарий 4: Серьёзная проблема**
 
 ```
+
 IC: "[Manager] кричит на людей на митингах."
 
 Вы: "Это серьёзно. Можешь привести конкретный пример?
@@ -505,6 +521,7 @@ IC: "[Manager] кричит на людей на митингах."
 **Пример monthly dashboard:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                    ORG HEALTH DASHBOARD - Q2                    │
 ├─────────────────────────────────────────────────────────────────┤
@@ -564,6 +581,7 @@ IC: "[Manager] кричит на людей на митингах."
 **Пример: Высокий attrition в Team B**
 
 ```
+
 Сигнал: 3 человека ушли за квартал (из 8) = 37.5% annualized
 
 Вопросы для расследования:
@@ -591,6 +609,7 @@ Week 4+: Monitor и follow-up
 **Quarterly Org Review (2-3 часа с leadership team):**
 
 ```
+
 Agenda:
 
 1. Dashboard Review (20 min)
@@ -623,6 +642,7 @@ Agenda:
 **Playbook: Team Struggling**
 
 ```
+
 Step 1: Diagnose
 ┌────────────────────────────────────────────────────┐
 │ Это проблема менеджера или проблема команды?      │
@@ -652,6 +672,7 @@ Team issue:
 **Playbook: Manager Struggling**
 
 ```
+
 Timeline: 30-60-90 days
 
 Day 0-30: Assessment
@@ -686,6 +707,7 @@ Decision Tree:
 **Playbook: Re-org Needed**
 
 ```
+
 Signals that re-org may be needed:
 - Dependencies causing consistent friction
 - Teams too large (> 10) или too small (< 4)
@@ -787,6 +809,7 @@ One risk: Team B capacity issue.
 **Presenting Bad News:**
 
 ```
+
 Структура:
 
 1. State the problem clearly
@@ -813,6 +836,7 @@ One risk: Team B capacity issue.
 **Три компонента executive presence:**
 
 ```
+
                     EXECUTIVE PRESENCE
                            │
           ┌────────────────┼────────────────┐
@@ -842,6 +866,7 @@ One risk: Team B capacity issue.
 **Фразы, которые демонстрируют executive presence:**
 
 ```
+
 ✅ Уверенность + Honesty:
 "Я уверен в этом решении потому что..."
 "Я не знаю ответ, но узнаю и вернусь к вам к [дате]"
@@ -858,6 +883,7 @@ One risk: Team B capacity issue.
 **Framework для influence:**
 
 ```
+
 Step 1: Understand their priorities
 ├── Что важно для этого executive?
 ├── Какие у них goals и pressures?
@@ -883,6 +909,7 @@ Step 4: Make the ask explicit
 **Пример: Запрос headcount**
 
 ```
+
 ❌ Плохо:
 "Команде нужно больше людей, мы перегружены"
 
@@ -919,6 +946,7 @@ My recommendation: Hire 2 FTE"
 **Weekly 1-on-1 с вашим руководителем (30-45 min):**
 
 ```
+
 Вы готовите agenda:
 
 1. Highlights (2-3 wins)
@@ -940,6 +968,7 @@ My recommendation: Hire 2 FTE"
 ### 6.1 Time Horizon Shift
 
 ```
+
                     TIME HORIZON
                          │
     EM        Director      VP         C-level
@@ -1003,6 +1032,7 @@ My recommendation: Hire 2 FTE"
 **Четыре bucket'а инвестиций:**
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    PORTFOLIO ALLOCATION                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -1062,6 +1092,7 @@ My recommendation: Hire 2 FTE"
 **Пример стратегического решения:**
 
 ```
+
 Решение: Строить свою платформу auth или купить?
 
 Build:
@@ -1100,6 +1131,7 @@ vendor cost < cost of team building it.
 **Пример framing:**
 
 ```
+
 ❌ "Мы сделали refactoring модуля X"
 
 ✅ "Мы улучшили checkout flow:
@@ -1122,6 +1154,7 @@ Org design — одна из самых сильных рычагов влиян
 **Практическое значение:**
 
 ```
+
 Если ваши команды организованы так:        Вы получите архитектуру:
 
 ┌──────────┬──────────┬──────────┐         ┌──────────┬──────────┬──────────┐
@@ -1168,6 +1201,7 @@ Org design — одна из самых сильных рычагов влиян
 **Step 1: Начните с outcomes, не с boxes**
 
 ```
+
 ❌ "Давайте реорганизуем команды"
 
 ✅ "Наши цели:
@@ -1181,6 +1215,7 @@ Org design — одна из самых сильных рычагов влиян
 **Step 2: Design options**
 
 ```
+
 Option A: By product
 ┌─────────────────────────────────────────┐
 │              Engineering                 │
@@ -1228,6 +1263,7 @@ Scaling   ✅ Easy to add teams  ⚠️ Harder to split
 **How to execute:**
 
 ```
+
 Timeline: 4-6 weeks
 
 Week 1-2: Design
@@ -1320,6 +1356,7 @@ Week 7+: Stabilization
 **Reference check questions:**
 
 ```
+
 "Если бы [кандидат] пришёл работать к вам снова, 
 как бы вы отреагировали?"
 
@@ -1351,6 +1388,7 @@ Week 7+: Stabilization
 **Как развивать будущих лидеров:**
 
 ```
+
 Progression: IC → Tech Lead → EM
 
 Step 1: Identify potential (Senior IC)
@@ -1394,6 +1432,7 @@ Step 4: Transition to EM
 **Leadership Team Meeting format (60 min weekly):**
 
 ```
+
 [5 min]  Check-in: How is everyone?
 [15 min] Metrics & Highlights: Quick round-robin
 [25 min] Discussion topic: One topic deep-dive
@@ -1439,6 +1478,7 @@ Step 4: Transition to EM
 **Conflict resolution process:**
 
 ```
+
 Step 1: Let them try to resolve
 - Encourage direct conversation
 - Don't immediately intervene
@@ -1507,6 +1547,7 @@ Step 3: If needed, decide
 **2. Peer Network (вне компании)**
 
 ```
+
 Где найти:
 - Former colleagues на аналогичных ролях
 - Industry communities (LeadDev, Rands Leadership)
@@ -1533,6 +1574,7 @@ Step 3: If needed, decide
 **4. Delegation Discipline**
 
 ```
+
 Ваша работа теперь — делегировать, не делать.
 
 Questions to ask yourself:
@@ -1556,6 +1598,7 @@ If not "only me" and not "disaster" → Delegate.
 **Ваша support network:**
 
 ```
+
 ┌────────────────────────────────────────────────────────────┐
 │                    YOUR SUPPORT SYSTEM                      │
 ├────────────────────────────────────────────────────────────┤
@@ -1673,6 +1716,7 @@ If not "only me" and not "disaster" → Delegate.
 - [Rands Leadership Slack](https://randsinrepose.com/welcome-to-rands-leadership-slack/)
 
 ---
+
 
 
 

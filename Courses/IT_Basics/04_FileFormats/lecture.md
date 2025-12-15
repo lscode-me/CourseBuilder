@@ -463,6 +463,7 @@ video/mp4           # MP4 видео
 Для текстовых MIME types (`text/*`) часто нужно указывать кодировку символов. Это делается через параметр `charset`:
 
 ```
+
 text/plain; charset=utf-8
 text/html; charset=utf-8
 text/css; charset=windows-1251
@@ -472,11 +473,13 @@ text/css; charset=windows-1251
 
 1. **В HTTP заголовках** — через параметр `charset` в заголовке `Content-Type`:
    ```http
+
    Content-Type: text/html; charset=utf-8
    ```
 
 2. **В HTML документах** — через мета-тег или атрибут:
    ```html
+
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
    <!-- или -->
    <meta charset="utf-8">
@@ -484,6 +487,7 @@ text/css; charset=windows-1251
 
 3. **В email** — в заголовке `Content-Type`:
    ```
+
    Content-Type: text/plain; charset=utf-8
    ```
 
@@ -615,8 +619,11 @@ print(mime.from_file('photo.jpg'))
 **Почему бинарные форматы структурированы именно так:**
 
 - **Эффективность** — бинарные данные занимают меньше места, чем текстовые представления
+
 - **Скорость** — не нужно парсить текст, можно читать данные напрямую как числа
+
 - **Точность** — нет проблем с округлением или потерей точности при преобразовании в текст и обратно
+
 - **Расширяемость** — можно добавлять новые типы chunks без нарушения старых парсеров
 
 ```
@@ -661,6 +668,7 @@ Optional: tEXt, gAMA, sRGB, etc.
 
 ```bash
 # Анализ PNG
+
 xxd image.png | head -10
 
 ```
@@ -696,6 +704,7 @@ JPEG Structure:
 
 ```bash
 # Найти маркеры JPEG
+
 xxd photo.jpg | grep "ff d8\|ff e0\|ff db\|ff c0\|ff d9" | head
 
 ```
@@ -715,6 +724,7 @@ binwalk firmware.bin
 strings binary_file | head
 
 # exiftool — метаданные медиафайлов
+
 exiftool photo.jpg
 
 ```
@@ -793,6 +803,7 @@ unzip -l archive.zip
 zipinfo archive.zip
 
 # DOCX, XLSX, PPTX — это ZIP!
+
 unzip -l document.docx
 
 ```
@@ -825,6 +836,7 @@ tar -tvf archive.tar
 tar -tzvf archive.tar.gz
 
 # tar.bz2 (bzip2 сжатие)
+
 tar -tjvf archive.tar.bz2
 
 ```
@@ -844,7 +856,9 @@ tar -tjvf archive.tar.bz2
 Все три алгоритма используют вариации одного принципа: находят повторяющиеся паттерны в данных и заменяют их более короткими кодами. Разница в методах:
 
 - **gzip** использует алгоритм Deflate (LZ77 + Huffman coding) — хороший баланс скорости и сжатия
+
 - **bzip2** использует Burrows-Wheeler transform + Huffman — лучше сжимает, но медленнее
+
 - **xz** использует LZMA2 — самый эффективный алгоритм, но требует больше времени и памяти
 
 **Практические рекомендации:**
@@ -876,8 +890,11 @@ ls -la file.txt.xz       # ~250000 bytes
 **Что содержится в исполняемом файле:**
 
 - **Машинный код** — инструкции процессора в бинарном виде
+
 - **Метаданные** — информация о том, как загрузить программу в память
+
 - **Секции** — код, данные, строки, символы организованы в секции
+
 - **Таблицы** — таблицы символов, релокаций, динамических библиотек
 
 Каждая операционная система использует свой формат исполняемых файлов, потому что они тесно связаны с архитектурой ОС и процессора.
@@ -889,28 +906,37 @@ ls -la file.txt.xz       # ~250000 bytes
 **Структура ELF:**
 
 - **ELF Header** — общая информация о файле (архитектура, тип, точки входа)
+
 - **Program Header Table** — описывает сегменты для загрузчика
+
 - **Section Header Table** — описывает секции для линкера
+
 - **Секции** — .text (код), .data (инициализированные данные), .bss (неинициализированные данные), .rodata (только чтение), .symtab (символы) и др.
 
 **Типы ELF файлов:**
 
 - **Executable** — исполняемая программа
+
 - **Shared Object** (.so) — динамическая библиотека
+
 - **Relocatable** (.o) — объектный файл для линковки
 
 ```bash
 # Информация о ELF
+
 file /bin/ls
 # /bin/ls: ELF 64-bit LSB pie executable, x86-64
 
 # Детальная информация
+
 readelf -h /bin/ls
 
 # Секции
+
 readelf -S /bin/ls
 
 # Символы
+
 nm /bin/ls
 
 ```
@@ -934,13 +960,16 @@ nm /bin/ls
 
 ```bash
 # Информация о Mach-O
+
 file /bin/ls
 # /bin/ls: Mach-O 64-bit executable arm64
 
 # Детальная информация
+
 otool -h /bin/ls
 
 # Проверка подписи
+
 codesign -dv /bin/ls
 
 ```
@@ -969,10 +998,12 @@ codesign -dv /bin/ls
 
 ```bash
 # В Linux можно анализировать PE файлы
+
 file program.exe
 # program.exe: PE32+ executable (GUI) x86-64
 
 # С помощью objdump
+
 objdump -x program.exe | head
 
 # В Windows можно использовать:
@@ -1003,6 +1034,7 @@ def get_file_type(filepath):
     }
 
 # Проверка на изображение
+
 def is_image(filepath):
     """Проверяет, является ли файл изображением."""
     mime = magic.Magic(mime=True)
@@ -1090,6 +1122,7 @@ def read_png_header(filepath):
         }
 
 # Использование
+
 info = read_png_header('image.png')
 print(f"Image: {info['width']}x{info['height']}")
 
@@ -1166,6 +1199,7 @@ class SimpleFormat:
             return data
 
 # Использование
+
 SimpleFormat.write('test.mydata', b'Hello, World!')
 content = SimpleFormat.read('test.mydata')
 print(content)  # b'Hello, World!'
@@ -1204,6 +1238,7 @@ if mime.from_file(filename) == 'image/jpeg':
 
 ```python
 # Плохо — может испортить данные!
+
 with open('image.png', 'r') as f:
     data = f.read()
 
@@ -1224,6 +1259,7 @@ with open('image.png', 'rb') as f:
 
 ```python
 # Какой порядок байтов в файле?
+
 length = int.from_bytes(f.read(4), 'big')  # или 'little'?
 
 ```
@@ -1232,6 +1268,7 @@ length = int.from_bytes(f.read(4), 'big')  # или 'little'?
 
 ```python
 # PNG использует big-endian
+
 length = struct.unpack('>I', f.read(4))[0]
 
 ```
@@ -1242,6 +1279,7 @@ length = struct.unpack('>I', f.read(4))[0]
 
 ```python
 # Опасно — может быть не PNG!
+
 width = struct.unpack('>I', f.read(4))[0]
 
 ```
@@ -1314,6 +1352,7 @@ if sig != b'\x89PNG\r\n\x1a\n':
 - [MIME Types Registry](https://www.iana.org/assignments/media-types/)
 
 ---
+
 
 
 

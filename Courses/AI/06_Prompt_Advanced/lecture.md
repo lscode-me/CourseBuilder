@@ -32,6 +32,7 @@
 Chain of Thought — техника, заставляющая модель рассуждать пошагово:
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                   Chain of Thought                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -113,6 +114,7 @@ Problem: [problem]
 ### 1.4 Когда использовать CoT
 
 ```python
+
 cot_effectiveness = {
     "Хорошо работает": [
         "Математические задачи",
@@ -139,6 +141,7 @@ cot_effectiveness = {
 Сложные задачи разбиваются на простые подзадачи:
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    Декомпозиция                              │
 ├─────────────────────────────────────────────────────────────┤
@@ -208,6 +211,7 @@ def analyze_document(document):
 ### 2.3 Промпт для декомпозиции
 
 ```python
+
 decomposition_prompt = """
 I need to accomplish the following complex task:
 {task_description}
@@ -289,6 +293,7 @@ Improved description:
 ### 3.3 Паттерн Reflection
 
 ```python
+
 reflection_prompt = """
 You are solving a {task_type} problem.
 
@@ -352,6 +357,7 @@ Format your response as:
 ### 4.2 JSON Mode (OpenAI)
 
 ```python
+
 from openai import OpenAI
 client = OpenAI()
 
@@ -378,6 +384,7 @@ data = json.loads(response.choices[0].message.content)
 ### 4.3 Structured Outputs с Pydantic
 
 ```python
+
 from pydantic import BaseModel
 from openai import OpenAI
 
@@ -410,6 +417,7 @@ print(person.age)   # 30
 Guardrails — ограничения, предотвращающие нежелательное поведение:
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                      Guardrails                              │
 ├─────────────────────────────────────────────────────────────┤
@@ -429,6 +437,7 @@ Guardrails — ограничения, предотвращающие нежел
 ### 5.2 Guardrails в System Prompt
 
 ```python
+
 system_with_guardrails = """
 You are a customer support assistant for TechCorp.
 
@@ -531,6 +540,7 @@ response = rails.generate(
 Генерация нескольких ответов и выбор консенсуса:
 
 ```python
+
 def self_consistency(prompt, n=5):
     """Генерируем несколько ответов и выбираем наиболее частый"""
     responses = []
@@ -597,6 +607,7 @@ Question: {question}
 ### 7.1 Чеклист продвинутого промптинга
 
 ```python
+
 advanced_checklist = [
     "✅ Используйте CoT для сложных рассуждений",
     "✅ Декомпозируйте сложные задачи",
@@ -611,6 +622,7 @@ advanced_checklist = [
 ### 7.2 Когда что применять
 
 ```python
+
 technique_selection = {
     "Chain of Thought": "Математика, логика, многошаговые задачи",
     "Декомпозиция": "Сложные задачи, требующие разных навыков",
@@ -667,4 +679,5 @@ technique_selection = {
 - [Guardrails AI](https://github.com/guardrails-ai/guardrails)
 
 ---
+
 

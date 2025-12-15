@@ -30,6 +30,7 @@
 ### 1.1 Ограничения LLM
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │              Проблемы "чистого" LLM                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -55,6 +56,7 @@
 RAG (Retrieval-Augmented Generation) — подход, где LLM дополняется релевантной информацией из внешних источников:
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                     RAG Pipeline                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -249,6 +251,7 @@ vector_databases = {
 ### 3.4 Пример с Chroma
 
 ```python
+
 import chromadb
 from chromadb.utils import embedding_functions
 
@@ -293,6 +296,7 @@ print(results['documents'])
 ### 4.1 Зачем нужен chunking
 
 Документы разбиваются на части (chunks) потому что:
+
 - Контекстное окно LLM ограничено
 - Мелкие chunks дают более точный поиск
 - Крупные chunks дают больше контекста
@@ -325,11 +329,13 @@ def sentence_chunks(text, sentences_per_chunk=5):
 
 # 4. Document-structure chunking
 # Используем структуру документа (заголовки, параграфы)
+
 ```
 
 ### 4.3 Рекомендации по chunking
 
 ```python
+
 chunking_guidelines = {
     "chunk_size": "256-1024 токенов (зависит от задачи)",
     "overlap": "10-20% от chunk_size",
@@ -345,6 +351,7 @@ chunking_guidelines = {
 ### 5.1 RAG нужен
 
 ```python
+
 use_rag_when = [
     "Нужны актуальные данные (после training cutoff)",
     "Работа с внутренними документами компании",
@@ -358,6 +365,7 @@ use_rag_when = [
 ### 5.2 RAG не нужен
 
 ```python
+
 skip_rag_when = [
     "Общие знания, покрытые training data",
     "Креативные задачи (генерация, рерайт)",
@@ -370,6 +378,7 @@ skip_rag_when = [
 ### 5.3 Альтернативы RAG
 
 ```python
+
 alternatives = {
     "Fine-tuning": "Для специфичного стиля или формата",
     "Long context": "Если данные умещаются в 128K+ токенов",
@@ -384,6 +393,7 @@ alternatives = {
 ### 6.1 Проблемы базового RAG
 
 ```python
+
 basic_rag_problems = {
     "Низкое качество retrieval": "Находим не те документы",
     "Lost in the middle": "LLM игнорирует середину контекста",
@@ -494,4 +504,5 @@ rag_metrics = {
 - [Chroma](https://www.trychroma.com/)
 
 ---
+
 

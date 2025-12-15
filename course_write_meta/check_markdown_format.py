@@ -173,16 +173,20 @@ def check_blank_lines_around_code_blocks(lines: list[str]) -> list[FormatIssue]:
                     in_code_block = False
                     opening_backticks = 0
                     
-                    # Проверяем следующую строку
-                    if i + 1 < len(lines):
-                        next_line = lines[i + 1].strip()
-                        # Исключения: пустая строка, заголовок, ---, **Output:**
-                        if next_line and not next_line.startswith('#') and next_line != "---" and not next_line.startswith('**'):
+                    # Проверяем следующую непустую строку (пропускаем пустые строки)
+                    j = i + 1
+                    while j < len(lines) and not lines[j].strip():
+                        j += 1
+                    
+                    if j < len(lines):
+                        next_line = lines[j].strip()
+                        # Исключения: заголовок, ---, **Output:**
+                        if not next_line.startswith('#') and next_line != "---" and not next_line.startswith('**'):
                             issues.append(FormatIssue(
                                 line_num=i + 1,
                                 issue_type="code_no_blank_after",
                                 description="Нет пустой строки ПОСЛЕ блока кода",
-                                context=f"→ {i+1}: {line[:50]}\n  {i+2}: {lines[i+1][:50]}..."
+                                context=f"→ {i+1}: {line[:50]}\n  {j+1}: {lines[j][:50]}..."
                             ))
     
     return issues

@@ -11,6 +11,7 @@
 ### Навигация и файлы
 
 ```bash
+
 ls -la          # Список файлов с правами и скрытыми
 cd /path        # Сменить директорию
 pwd             # Текущая директория
@@ -27,6 +28,7 @@ tail -f file    # Последние строки (follow)
 ### Права доступа
 
 ```bash
+
 chmod 755 file  # rwxr-xr-x
 chmod +x file   # Добавить право выполнения
 chown user:group file  # Сменить владельца
@@ -40,6 +42,7 @@ chown user:group file  # Сменить владельца
 ### Управление сервисами (systemctl)
 
 ```bash
+
 sudo systemctl start nginx    # Запустить
 sudo systemctl stop nginx     # Остановить
 sudo systemctl restart nginx  # Перезапустить
@@ -50,6 +53,7 @@ sudo systemctl enable nginx   # Автозапуск при загрузке
 ### Диагностика
 
 ```bash
+
 df -h           # Использование дисков
 du -sh /path    # Размер директории
 free -h         # Использование памяти
@@ -78,6 +82,7 @@ sudo dnf install package
 ### Ключевые команды
 
 ```bash
+
 docker build -t myapp .       # Собрать образ
 docker run -d -p 8080:80 myapp  # Запустить контейнер
 docker ps                     # Запущенные контейнеры
@@ -93,6 +98,7 @@ docker exec -it container bash  # Зайти в контейнер
 ### Базовый Dockerfile
 
 ```dockerfile
+
 FROM python:3.11
 
 COPY . /app
@@ -111,6 +117,7 @@ CMD ["python", "main.py"]
 ### Неоптимальный Dockerfile
 
 ```dockerfile
+
 FROM python:3.11
 
 COPY . /app
@@ -125,6 +132,7 @@ CMD ["python", "main.py"]
 ### Оптимизированный Dockerfile
 
 ```dockerfile
+
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -147,6 +155,7 @@ CMD ["python", "main.py"]
 ```
 
 **Оптимизации:**
+
 1. **python:3.11-slim** — меньший базовый образ
 2. **COPY requirements.txt первым** — кэширование слоёв
 3. **Объединение RUN** — меньше слоёв
@@ -162,6 +171,7 @@ CMD ["python", "main.py"]
 
 **A:**
 ```bash
+
 ls -la file      # Проверить права
 whoami           # Текущий пользователь
 groups           # Группы пользователя
@@ -173,6 +183,7 @@ sudo command     # Выполнить от root
 
 **A:**
 ```bash
+
 df -h            # Общее использование
 du -sh /*        # Размер директорий в корне
 du -sh * | sort -hr | head  # Топ больших директорий
@@ -201,4 +212,5 @@ du -sh * | sort -hr | head  # Топ больших директорий
 - "The Docker Book" by James Turnbull
 
 ---
+
 
