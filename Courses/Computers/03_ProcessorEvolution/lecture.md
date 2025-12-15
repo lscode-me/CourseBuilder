@@ -561,7 +561,7 @@ STORE R2, [address]    ; Сохранить регистр в память
 **Related Modules:**
 
 - [04_ProcessorArchitectures](../04_ProcessorArchitectures/) — конкретные архитектуры процессоров: x86, ARM, PowerPC, SPARC
-- [05_UNIX](../05_UNIX/) — как операционные системы используют возможности процессоров
+- [10_UNIX](../10_UNIX/) — как операционные системы используют возможности процессоров
 
 **Practice Ideas:**
 

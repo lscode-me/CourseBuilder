@@ -10,14 +10,16 @@
 - Представление о современных архитектурах
 
 **Recommended prior modules:**
+
 - [17_Networks](../17_Networks/)
-- [11_VirtualMachines](../16_VirtualMachines/)
+- [16_VirtualMachines](../16_VirtualMachines/)
 
 ---
 
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснять концепцию облачных вычислений и их преимущества
 - Понимать архитектуру датацентров
 - Анализировать различия между IaaS, PaaS, SaaS
@@ -33,6 +35,7 @@
 **Cloud Computing** — предоставление вычислительных ресурсов через интернет
 
 **Ключевые характеристики (NIST):**
+
 1. **On-demand self-service:** Пользователь сам создаёт ресурсы
 2. **Broad network access:** Доступ из любого места
 3. **Resource pooling:** Ресурсы shared между клиентами
@@ -42,12 +45,14 @@
 ### 1.2 Преимущества облака
 
 **Для бизнеса:**
+
 - CapEx → OpEx (покупка → аренда)
 - Быстрое масштабирование
 - Глобальное присутствие
 - Меньше инфраструктурных проблем
 
 **Trade-offs:**
+
 - Vendor lock-in
 - Latency
 - Privacy/security concerns
@@ -62,12 +67,14 @@
 **Что предоставляется:** Виртуальные машины, сети, storage
 
 **Примеры:**
+
 - AWS EC2
 - Azure Virtual Machines
 - Google Compute Engine
 
 **Контроль пользователя:**
 ```
+
 [User управляет]
   ↓ Operating System
   ↓ Applications
@@ -84,12 +91,14 @@
 **Что предоставляется:** Платформа для разработки и деплоя
 
 **Примеры:**
+
 - Heroku
 - Google App Engine
 - Azure App Service
 
 **Контроль:**
 ```
+
 [User]
   ↓ Applications
   ↓ Data
@@ -104,12 +113,14 @@
 **Что предоставляется:** Готовые приложения
 
 **Примеры:**
+
 - Gmail, Office 365
 - Salesforce
 - Dropbox
 
 **Контроль:**
 ```
+
 [User]
   ↓ Data
 [Provider]
@@ -125,6 +136,7 @@
 **Типичный датацентр:**
 
 ```
+
 Building
 ├── Cooling Systems (огромные кондиционеры)
 ├── Power (резервные генераторы, UPS)
@@ -143,6 +155,7 @@ Building
 **Three-tier архитектура:**
 
 ```
+
 Core Routers (internet connectivity)
     ↓
 Aggregation Switches
@@ -153,6 +166,7 @@ Servers
 ```
 
 **Современность: Spine-Leaf (Clos network):**
+
 - Меньше latency
 - Лучше для east-west traffic (server-to-server)
 
@@ -160,6 +174,7 @@ Servers
 
 **PUE (Power Usage Effectiveness):**
 ```
+
 PUE = Total Power / IT Equipment Power
 ```
 
@@ -168,6 +183,7 @@ PUE = Total Power / IT Equipment Power
 - Идеал: PUE = 1.0 (невозможен)
 
 **Охлаждение:**
+
 - Air cooling
 - Liquid cooling
 - Free cooling (использование наружного воздуха)
@@ -182,6 +198,7 @@ PUE = Total Power / IT Equipment Power
 
 **Type 1 (Bare-metal):**
 ```
+
 Hardware
   ↓
 Hypervisor (ESXi, Hyper-V, KVM)
@@ -192,6 +209,7 @@ VM1     VM2     VM3
 
 **Type 2 (Hosted):**
 ```
+
 Hardware
   ↓
 Host OS
@@ -202,6 +220,7 @@ VM1     VM2
 ```
 
 **Overhead:**
+
 - Каждая VM = полная OS
 - Больше памяти, медленнее старт
 
@@ -210,6 +229,7 @@ VM1     VM2
 **Идея:** Изоляция на уровне процессов, не отдельные OS
 
 ```
+
 Hardware
   ↓
 Host OS (Linux)
@@ -221,11 +241,13 @@ Container1  Container2  Container3
 ```
 
 **Преимущества:**
+
 - Лёгкие (МБ vs ГБ для VM)
 - Быстрый старт (секунды vs минуты)
 - Higher density (больше контейнеров на сервер)
 
 **Недостатки:**
+
 - Меньше изоляции, чем VM
 - Только Linux (хотя Windows поддержка есть)
 
@@ -234,6 +256,7 @@ Container1  Container2  Container3
 **Orchestration platform для контейнеров:**
 
 **Задачи:**
+
 - Scheduling (какой контейнер на каком узле)
 - Load balancing
 - Auto-scaling
@@ -252,11 +275,13 @@ Container1  Container2  Container3
 Серверы есть, но вы о них не думаете.
 
 **Function as a Service (FaaS):**
+
 - Вы пишете функцию
 - Provider запускает её по событию
 - Оплата за execution time (миллисекунды!)
 
 **Примеры:**
+
 - AWS Lambda
 - Azure Functions
 - Google Cloud Functions
@@ -265,27 +290,32 @@ Container1  Container2  Container3
 
 **Event-driven:**
 ```
+
 HTTP request → Lambda function
 S3 upload → Process image
 Database change → Update cache
 ```
 
 **Stateless:**
+
 - Функция не хранит состояние между вызовами
 - State в databases, caches
 
 **Автомасштабирование:**
+
 - 0 requests → 0 running instances (экономия)
 - 10,000 requests → 10,000 instances (масштаб)
 
 ### 5.3 Trade-offs
 
 **Плюсы:**
+
 - Нет управления серверами
 - Автоматическое масштабирование
 - Оплата за использование
 
 **Минусы:**
+
 - Cold start (первый запуск медленный)
 - Ограничения (timeout, memory)
 - Vendor lock-in
@@ -300,16 +330,19 @@ Database change → Update cache
 **Key-Value store для файлов:**
 
 ```
+
 Bucket: my-photos
   Key: "vacation/IMG_001.jpg" → Object (binary data)
   Key: "vacation/IMG_002.jpg" → Object
 ```
 
 **Не filesystem:**
+
 - Нет иерархии (ключи могут выглядеть как пути, но это просто строки)
 - Нет POSIX операций (rename, append)
 
 **Преимущества:**
+
 - Unlimited scale
 - Durability (11 девяток: 99.999999999%)
 - HTTP API
@@ -319,12 +352,14 @@ Bucket: my-photos
 **Идея:** Кэшировать статику близко к пользователям
 
 ```
+
 User (Москва) → Edge location (Москва) → Origin (US East)
                 ↑
          Кэшируется локально
 ```
 
 **Примеры:**
+
 - CloudFront (AWS)
 - Cloudflare
 - Akamai
@@ -338,11 +373,13 @@ User (Москва) → Edge location (Москва) → Origin (US East)
 **Комбинация on-premise + cloud:**
 
 ```
+
 On-Premise DC ←→ Public Cloud
 (sensitive data)  (burst capacity)
 ```
 
 **Применение:**
+
 - Compliance requirements
 - Legacy systems
 - Cost optimization
@@ -352,15 +389,18 @@ On-Premise DC ←→ Public Cloud
 **Использование нескольких провайдеров:**
 
 ```
+
 AWS (compute) + Azure (databases) + GCP (ML)
 ```
 
 **Причины:**
+
 - Избежать vendor lock-in
 - Best-of-breed подход
 - Redundancy
 
 **Сложности:**
+
 - Управление
 - Интеграция
 - Expertise в нескольких платформах
@@ -370,9 +410,13 @@ AWS (compute) + Azure (databases) + GCP (ML)
 ## 💡 Key Takeaways
 
 - **Облако** — не про технологию, а про модель предоставления услуг (on-demand, self-service, pay-as-you-go)
+
 - **IaaS/PaaS/SaaS** — разные уровни абстракции и контроля
+
 - **Контейнеры** легче VM, но VM предоставляют сильнее изоляцию
+
 - **Serverless** упрощает разработку, но имеет ограничения
+
 - **Датацентры** — огромные инвестиции в infrastructure, энергопотребление, охлаждение
 
 ---
@@ -387,7 +431,9 @@ AWS (compute) + Azure (databases) + GCP (ML)
 ## 📚 Additional Resources
 
 - **"Designing Data-Intensive Applications"** — Martin Kleppmann (distributed systems)
+
 - **"Site Reliability Engineering"** — Google (SRE practices)
 - AWS/Azure/GCP documentation
 
 ---
+

@@ -9,6 +9,7 @@
 - Базовые знания об архитектуре компьютера
 
 **Recommended prior modules:**
+
 - [08_IO_Subsystems](../08_IO_Subsystems/)
 
 ---
@@ -16,6 +17,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснять эволюцию шин от ISA до PCIe
 - Понимать концепции bandwidth и latency для шин
 - Анализировать архитектуру современных шинных систем
@@ -27,6 +29,7 @@
 ### 1.1 ISA (Industry Standard Architecture, 1981)
 
 **IBM PC:**
+
 - 8-bit, затем 16-bit
 - 8 MHz
 - ~8 MB/s bandwidth
@@ -35,6 +38,7 @@
 ### 1.2 PCI (Peripheral Component Interconnect, 1992)
 
 **Характеристики:**
+
 - 32-bit, 33 MHz
 - 133 MB/s
 - Plug and Play
@@ -45,6 +49,7 @@
 ### 1.3 AGP (Accelerated Graphics Port, 1997)
 
 **Специально для видеокарт:**
+
 - Dedicated connection
 - До 2 GB/s (AGP 8x)
 
@@ -77,27 +82,33 @@
 ### 2.1 Эволюция USB
 
 **USB 1.0 (1996):**
+
 - 12 Mbps (1.5 MB/s)
 - Клавиатуры, мыши
 
 **USB 2.0 (2000):**
+
 - 480 Mbps (60 MB/s)
 - "Hi-Speed"
 
 **USB 3.0 (2008):**
+
 - 5 Gbps (625 MB/s)
 - "SuperSpeed"
 
 **USB 3.2 (2017):**
+
 - До 20 Gbps (2.5 GB/s)
 
 **USB4 (2019):**
+
 - До 40 Gbps (5 GB/s)
 - Based on Thunderbolt 3
 
 ### 2.2 USB-C
 
 **Единый коннектор:**
+
 - Reversible (нет "правильной" стороны)
 - Power Delivery (до 240W)
 - Video output (DisplayPort Alt Mode)
@@ -118,11 +129,13 @@
 ### 3.2 NVMe (Non-Volatile Memory Express)
 
 **Протокол для PCIe SSD:**
+
 - Использует PCIe напрямую
 - Low latency
 - High parallelism (64K queues)
 
 **Performance:**
+
 - SATA SSD: ~550 MB/s
 - NVMe PCIe 3.0 x4: ~3,500 MB/s
 - NVMe PCIe 4.0 x4: ~7,000 MB/s
@@ -133,8 +146,11 @@
 ## 💡 Key Takeaways
 
 - **Эволюция шин:** От shared buses (ISA, PCI) к point-to-point (PCIe)
+
 - **PCIe** — доминирующая шина, scalable через lanes
+
 - **USB-C** — универсальный коннектор будущего
+
 - **NVMe** раскрывает потенциал SSD через PCIe
 
 ---
@@ -145,3 +161,4 @@
 - USB.org standards
 
 ---
+

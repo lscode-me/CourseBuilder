@@ -10,6 +10,7 @@
 - Базовые представления об ОС
 
 **Recommended prior modules:**
+
 - [04_ProcessorArchitectures](../04_ProcessorArchitectures/)
 - [05_MemoryHierarchy](../05_MemoryHierarchy/)
 
@@ -18,6 +19,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснять уровни привилегий и защитные кольца
 - Понимать механизмы защиты памяти
 - Анализировать hardware vulnerabilities (Spectre, Meltdown)
@@ -32,6 +34,7 @@
 **x86 архитектура: 4 уровня (Ring 0-3)**
 
 ```
+
 Ring 0: Kernel Mode
   ↓
 Ring 1-2: Device Drivers (rarely used)
@@ -40,6 +43,7 @@ Ring 3: User Mode (приложения)
 ```
 
 **Что можно делать:**
+
 - Ring 0: всё (I/O, управление памятью, прерывания)
 - Ring 3: ограниченный набор инструкций
 
@@ -49,6 +53,7 @@ Ring 3: User Mode (приложения)
 ### 1.2 ARM: Exception Levels
 
 **EL0 - EL3:**
+
 - EL0: User space
 - EL1: Operating System
 - EL2: Hypervisor
@@ -63,12 +68,16 @@ Ring 3: User Mode (приложения)
 **Page-level protection:**
 
 Каждая страница имеет флаги:
+
 - **R (Read):** можно читать
+
 - **W (Write):** можно писать
+
 - **X (Execute):** можно выполнять код
 
 **Примеры:**
 ```
+
 Code section: R-X (можно читать и выполнять, нельзя писать)
 Data section: RW- (можно читать/писать, нельзя выполнять)
 Stack: RW- (защита от выполнения кода на стеке)
@@ -89,6 +98,7 @@ Stack: RW- (защита от выполнения кода на стеке)
 **Идея:** Рандомизировать адреса при каждом запуске
 
 ```
+
 Process 1:
   Stack at 0x7fff1234
   Libraries at 0x4000abcd
@@ -112,6 +122,7 @@ Process 2:
 
 **Как это работает:**
 ```c
+
 if (x < array_size) {   // Предсказание: true
     y = array[x];       // Спекулятивно выполняется
                         // даже если x >= array_size!
@@ -123,6 +134,7 @@ if (x < array_size) {   // Предсказание: true
 **Эффект:** Утечка данных между процессами
 
 **Mitigation:**
+
 - Microcode updates
 - Software barriers (retpoline)
 - Performance penalty ~5-30%
@@ -132,6 +144,7 @@ if (x < array_size) {   // Предсказание: true
 **Проблема:** Kernel memory читается из user space через спекуляцию
 
 ```c
+
 // В user space:
 char value = *kernel_address;  // должен быть exception
 // Но спекулятивно читается ДО проверки прав!
@@ -141,6 +154,7 @@ char value = *kernel_address;  // должен быть exception
 **Эффект:** Пользовательский процесс читает kernel memory
 
 **Mitigation:**
+
 - KPTI (Kernel Page Table Isolation) — отдельные page tables для kernel и user
 - Performance penalty ~5%
 
@@ -150,6 +164,7 @@ char value = *kernel_address;  // должен быть exception
 
 **Атака:**
 ```
+
 Быстро читать строки A и C в DRAM
 → Биты в строке B между ними могут flip!
 ```
@@ -157,6 +172,7 @@ char value = *kernel_address;  // должен быть exception
 **Эффект:** Изменение памяти без записи в неё
 
 **Mitigation:**
+
 - ECC memory
 - Targeted Row Refresh (TRR)
 
@@ -169,6 +185,7 @@ char value = *kernel_address;  // должен быть exception
 **Идея:** Изолированная область памяти (enclave), защищена даже от OS
 
 ```
+
 ┌──────────────────────┐
 │   Enclave Memory     │ ← Encrypted
 │  (protected by CPU)  │
@@ -178,11 +195,13 @@ char value = *kernel_address;  // должен быть exception
 ```
 
 **Применение:**
+
 - DRM
 - Cryptocurrency wallets
 - Secure computation
 
 **Ограничения:**
+
 - Малый размер enclave
 - Performance overhead
 - Side-channel attacks
@@ -192,6 +211,7 @@ char value = *kernel_address;  // должен быть exception
 **Secure World vs Normal World:**
 
 ```
+
 ┌─────────────┬─────────────┐
 │ Normal World│ Secure World│
 │   (Rich OS) │  (Trusted OS│
@@ -200,6 +220,7 @@ char value = *kernel_address;  // должен быть exception
 ```
 
 **Применение:**
+
 - Mobile payments
 - Biometric authentication
 - DRM
@@ -211,6 +232,7 @@ char value = *kernel_address;  // должен быть exception
 ### 5.1 Что такое TPM
 
 **Отдельный чип на материнской плате:**
+
 - Хранит криптографические ключи
 - Измеряет boot process (Measured Boot)
 - Attestation — доказывает, что система не скомпрометирована
@@ -218,10 +240,12 @@ char value = *kernel_address;  // должен быть exception
 ### 5.2 Применение
 
 **BitLocker (Windows):**
+
 - Ключ шифрования диска хранится в TPM
 - Невозможно извлечь
 
 **Secure Boot:**
+
 - TPM проверяет подпись bootloader
 - Защита от rootkit'ов
 
@@ -240,6 +264,7 @@ char value = *kernel_address;  // должен быть exception
 **Compiler-generated protection:**
 
 ```c
+
 void function() {
     int canary = RANDOM_VALUE;
     char buffer[100];
@@ -256,6 +281,7 @@ void function() {
 **Идея:** Проверять, что программа прыгает только в легальные места
 
 **Реализация:**
+
 - Compiler adds checks
 - CPU features (Intel CET — Control-flow Enforcement Technology)
 
@@ -264,9 +290,13 @@ void function() {
 ## 💡 Key Takeaways
 
 - **Protection rings** изолируют kernel от user space
+
 - **Memory protection** (NX bit, ASLR) усложняет эксплуатацию уязвимостей
+
 - **Spectre/Meltdown** показали, что speculative execution имеет security implications
+
 - **Secure enclaves** (SGX, TrustZone) защищают данные даже от OS
+
 - **Trade-off:** Security vs Performance — многие mitigation techniques снижают производительность
 
 ---
@@ -285,3 +315,4 @@ void function() {
 - Spectre & Meltdown papers
 
 ---
+

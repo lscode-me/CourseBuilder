@@ -9,6 +9,7 @@
 - Базовые знания об устройствах компьютера
 
 **Recommended prior modules:**
+
 - [04_ProcessorArchitectures](../04_ProcessorArchitectures/)
 - [05_MemoryHierarchy](../05_MemoryHierarchy/)
 
@@ -17,6 +18,7 @@
 ## 🎯 Learning Objectives
 
 После завершения этого модуля вы сможете:
+
 - Объяснять различные методы ввода-вывода
 - Понимать концепции прерываний и DMA
 - Анализировать архитектуру шин и их эволюцию
@@ -31,12 +33,14 @@
 **Простейший метод:** CPU постоянно проверяет готовность устройства
 
 ```c
+
 while (device_not_ready())
     ; // busy wait
 read_data_from_device();
 ```
 
 **Проблемы:**
+
 - CPU тратит время на ожидание
 - Неэффективно для медленных устройств
 
@@ -45,6 +49,7 @@ read_data_from_device();
 **Концепция:** Устройство посылает interrupt, когда готово
 
 ```
+
 CPU выполняет программу
     ↓
 Устройство готово → IRQ (Interrupt Request)
@@ -57,10 +62,12 @@ CPU сохраняет контекст
 ```
 
 **Преимущества:**
+
 - CPU может делать полезную работу
 - Быстрая реакция на события
 
 **Interrupt Controller:**
+
 - Intel 8259 PIC (Programmable Interrupt Controller)
 - Современный: APIC (Advanced PIC)
 
@@ -71,6 +78,7 @@ CPU сохраняет контекст
 **DMA решение:** Специальный контроллер копирует данные напрямую в память
 
 ```
+
 CPU: "DMA, скопируй 1 MB с диска в память по адресу 0x1000000"
 DMA: "OK" (CPU продолжает работу)
 ...
@@ -79,6 +87,7 @@ DMA: посылает interrupt "готово"
 ```
 
 **Преимущества:**
+
 - CPU свободен во время transfer
 - High throughput
 
@@ -91,11 +100,13 @@ DMA: посылает interrupt "готово"
 **Отдельное адресное пространство для устройств:**
 
 ```assembly
+
 IN  AL, 0x60    ; читать с порта клавиатуры
 OUT 0x20, AL    ; писать в порт
 ```
 
 **Характеристики:**
+
 - Специальные инструкции (IN/OUT)
 - Ограниченное пространство (64K портов на x86)
 
@@ -104,11 +115,14 @@ OUT 0x20, AL    ; писать в порт
 **Устройства отображаются в адресное пространство памяти:**
 
 ```c
+
 volatile uint32_t *uart = (uint32_t *)0x10000000;
+
 *uart = 'A';  // обычная запись в "память" = запись в устройство
 ```
 
 **Преимущества:**
+
 - Используются обычные инструкции LOAD/STORE
 - Удобнее программировать
 - Используется в ARM, RISC-V
@@ -122,6 +136,7 @@ volatile uint32_t *uart = (uint32_t *)0x10000000;
 **Драйвер** — программа, управляющая устройством
 
 **Задачи:**
+
 - Инициализация устройства
 - Обработка запросов ОС
 - Interrupt handling
@@ -130,14 +145,17 @@ volatile uint32_t *uart = (uint32_t *)0x10000000;
 ### 3.2 Типы драйверов
 
 **Character devices:**
+
 - Sequential access
 - Пример: keyboard, serial port
 
 **Block devices:**
+
 - Random access, блоками
 - Пример: HDD, SSD
 
 **Network devices:**
+
 - Packet-based
 - Пример: Ethernet, WiFi
 
@@ -146,7 +164,9 @@ volatile uint32_t *uart = (uint32_t *)0x10000000;
 ## 💡 Key Takeaways
 
 - **Три метода I/O:** Polling (простой но неэффективный), Interrupts (эффективный), DMA (для bulk transfers)
+
 - **Memory-mapped I/O** упрощает программирование устройств
+
 - **Драйверы** изолируют специфику hardware от ОС
 
 ---
@@ -156,3 +176,4 @@ volatile uint32_t *uart = (uint32_t *)0x10000000;
 - **"Operating Systems: Three Easy Pieces"** — Remzi, Andrea Arpaci-Dusseau (I/O chapters)
 
 ---
+

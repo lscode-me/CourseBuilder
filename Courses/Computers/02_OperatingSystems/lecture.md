@@ -517,7 +517,7 @@ Time-sharing изменил способ программирования:
 **Related Modules:**
 
 - [03_ProcessorEvolution](../03_ProcessorEvolution/) — как развивались процессоры, поддерживающие многозадачность
-- [05_UNIX](../05_UNIX/) — UNIX как пример успешной time-sharing системы
+- [10_UNIX](../10_UNIX/) — UNIX как пример успешной time-sharing системы
 
 **Practice Ideas:**
 
