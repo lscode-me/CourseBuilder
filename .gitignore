@@ -12,6 +12,8 @@
 # Метаданные для написания курсов
 !course_write_meta/
 !course_write_meta/**
+!course_validate_tools/
+!course_validate_tools/**
 
 # Скрипты сборки HTML
 !build_html/
