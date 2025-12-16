@@ -38,6 +38,7 @@ COURSE_NAMES = {
     "OpenBSD": "🐡 OpenBSD",
     "Python": "🐍 Python",
     "Python.Interview": "🎯 Python Interview",
+    "Scientific_Informatics": "🔬 Scientific Informatics",
     "UnixProgramming": "🖥️ Unix Programming",
     "WebProgramming": "🌐 Web Programming",
 }
