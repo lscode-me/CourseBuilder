@@ -354,6 +354,7 @@ counter1++;                   counter2++;
 ### 7.2 Механизм
 
 ```
+
 Cache Line (64 bytes):
 ┌─────────────────────────────────────┐
 │ counter1 │ counter2 │ ... padding   │
@@ -476,4 +477,5 @@ alignas(64) int counter2;
 - **"Memory Barriers: a Hardware View for Software Hackers"** — Paul McKenney
 
 ---
+
 

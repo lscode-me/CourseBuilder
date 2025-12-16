@@ -197,6 +197,7 @@ JSON Value
 ```
 
 Строка может содержать:
+
 - Любые Unicode символы (UTF-8 кодировка)
 - Escape-последовательности для специальных символов
 - Многострочный текст (через `\n`)
@@ -819,6 +820,7 @@ echo '{"name":}' | jq .
 # Компактный вывод (без форматирования)
 echo '{"name":"Alice","age":30}' | jq -c .
 # {"name":"Alice","age":30}
+
 ```
 
 **Python json.tool — встроенный валидатор**
@@ -875,6 +877,7 @@ print(f"Valid: {valid}")  # Valid: True
 valid, error = validate_json('{"name": }')
 print(f"Valid: {valid}, Error: {error}")
 # Valid: False, Error: Expecting value: line 1 column 10 (char 9)
+
 ```
 
 ---
@@ -899,6 +902,7 @@ echo '{"name":"Alice","age":30}' | jq '.name'
 # Без кавычек
 echo '{"name":"Alice"}' | jq -r '.name'
 # Alice
+
 ```
 
 ### 5.2 Навигация по структуре
@@ -926,6 +930,7 @@ echo '[1,2,3,4,5]' | jq '.[-1]'
 # Срез
 echo '[1,2,3,4,5]' | jq '.[1:3]'
 # [2, 3]
+
 ```
 
 ### 5.3 Фильтрация и трансформация
@@ -958,6 +963,7 @@ jq '.[] | {username: .name, years: .age}' users.json
 # Преобразование в массив
 jq '[.[] | .name]' users.json
 # ["Alice", "Bob", "Charlie"]
+
 ```
 
 ### 5.4 Модификация данных
@@ -979,6 +985,7 @@ echo '{"name":"Alice","age":30}' | jq 'del(.age)'
 # Обновление вложенного
 echo '{"user":{"name":"Alice"}}' | jq '.user.name = "Bob"'
 # {"user": {"name": "Bob"}}
+
 ```
 
 ### 5.5 Агрегация
@@ -1006,6 +1013,7 @@ jq 'group_by(.active)' users.json
 # Уникальные значения
 echo '["a","b","a","c","b"]' | jq 'unique'
 # ["a", "b", "c"]
+
 ```
 
 ### 5.6 Практические примеры
@@ -1034,6 +1042,7 @@ jq -r '.[] | "User: \(.name), Age: \(.age)"' users.json
 # User: Alice, Age: 30
 # User: Bob, Age: 25
 # User: Charlie, Age: 35
+
 ```
 
 ---
@@ -1254,6 +1263,7 @@ def process_large_file(filepath):
             print(f"Processed {count} records")
 
 # Память используется только для одной записи за раз
+
 ```
 
 ---
@@ -1607,6 +1617,7 @@ from decimal import Decimal
 # Ошибка!
 json.dumps({"price": Decimal("19.99")})
 # TypeError: Object of type Decimal is not JSON serializable
+
 ```
 
 ✅ **Решение:**
@@ -1699,3 +1710,4 @@ json.dumps(a)
 - [JSON Schema Tutorial](https://json-schema.org/learn/getting-started-step-by-step)
 
 ---
+
