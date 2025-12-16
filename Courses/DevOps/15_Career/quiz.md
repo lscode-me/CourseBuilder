@@ -6,57 +6,39 @@
 
 ## Question 1: DevOps vs SRE
 
-
-
-
-
-
-
 Какой основной фокус SRE по сравнению с DevOps?
 
 A) Reliability и scalability
 
 B) Скорость разработки
 
-C) Marketing
+C) UI/UX
 
-D) UI/UX
+D) Marketing
 
 ---
 
 ## Question 2: Platform Engineering
 
-
-
-
-
-
-
 Чем занимается Platform Engineer?
 
 A) Sales
 
-B) Создание Internal Developer Platform и developer tools
+B) Data Science
 
 C) Разработка мобильных приложений
 
-D) Data Science
+D) Создание Internal Developer Platform и developer tools
 
 ---
 
 ## Question 3: Entry Level
 
-
-
-
-
-
-
 Какие навыки важны для Junior DevOps?
 
-A) Только Kubernetes
+A) Только soft skills
 
-B) Только soft skills
+B) Только Kubernetes
 
 C) Linux, Git, Scripting, Containers basics
 
@@ -66,99 +48,69 @@ D) Только cloud
 
 ## Question 4: CKA
 
-
-
-
-
-
-
 Что такое CKA?
 
-A) Cloud Knowledge Assessment
+A) Certified Knowledge Architect
 
-B) Container Key Access
+B) Certified Kubernetes Administrator
 
-C) Certified Knowledge Architect
+C) Cloud Knowledge Assessment
 
-D) Certified Kubernetes Administrator
+D) Container Key Access
 
 ---
 
 ## Question 5: Career Tracks
 
-
-
-
-
-
-
 Какие два основных карьерных трека существуют?
 
-A) Junior и Senior
+A) DevOps и Developer
 
-B) Frontend и Backend
+B) Individual Contributor и Management
 
-C) DevOps и Developer
+C) Frontend и Backend
 
-D) Individual Contributor и Management
+D) Junior и Senior
 
 ---
 
 ## Question 6: Platform Engineering Trend
 
-
-
-
-
-
-
 Почему Platform Engineering — тренд?
 
-A) Это дешевле
+A) Не требует навыков
 
-B) Не требует навыков
+B) Улучшает developer experience и productivity
 
-C) Улучшает developer experience и productivity
+C) Заменяет DevOps
 
-D) Заменяет DevOps
+D) Это дешевле
 
 ---
 
 ## Question 7: Soft Skills
 
-
-
-
-
-
-
 Какой soft skill критичен для DevOps/SRE?
 
 A) Только coding
 
-B) Только менеджмент
+B) Только продажи
 
-C) Communication и collaboration
+C) Только менеджмент
 
-D) Только продажи
+D) Communication и collaboration
 
 ---
 
 ## Question 8: Senior Expectations
 
-
-
-
-
-
-
 Что ожидается от Senior DevOps/SRE?
 
-A) Технический лидерство, архитектура, менторинг
+A) Только on-call
 
-B) Только выполнение задач
+B) Технический лидерство, архитектура, менторинг
 
-C) Только on-call
+C) Только выполнение задач
 
 D) Только документация
 
@@ -166,77 +118,55 @@ D) Только документация
 
 ## Question 9: Learning
 
-
-
-
-
-
-
 Как эффективно развиваться в DevOps?
 
 A) Только читать книги
 
-B) Ждать training от компании
+B) Hands-on практика, сертификации, community
 
-C) Hands-on практика, сертификации, community
+C) Только смотреть видео
 
-D) Только смотреть видео
+D) Ждать training от компании
 
 ---
 
 ## Question 10: Interview Prep
 
-
-
-
-
-
-
 Что важно при подготовке к DevOps интервью?
 
-A) Только теория
+A) Только soft skills
 
 B) Portfolio проектов, system design практика, STAR stories
 
 C) Только сертификации
 
-D) Только soft skills
+D) Только теория
 
 ---
 
 ## Question 11: T-Shaped Skills
 
-
-
-
-
-
 Что означает T-shaped профиль в DevOps?
 
-A) Только узкая специализация
+A) Только широкие знания
 
 B) Только management skills
 
-C) Глубокая экспертиза в одной области + широкие знания в смежных
+C) Только узкая специализация
 
-D) Только широкие знания
+D) Глубокая экспертиза в одной области + широкие знания в смежных
 
 ---
 
 ## Question 12: On-Call Experience
 
-
-
-
-
-
 Почему on-call опыт важен для карьеры?
 
 A) Только для money
 
-B) Не важен
+B) Развивает debugging skills, system understanding, ownership
 
-C) Развивает debugging skills, system understanding, ownership
+C) Не важен
 
 D) Только для junior
 
@@ -244,29 +174,19 @@ D) Только для junior
 
 ## Question 13: Writing Skills
 
-
-
-
-
-
 Почему writing важен для DevOps/SRE?
 
-A) Только для PM
+A) Не важен
 
-B) Документация, postmortems, proposals, communication
+B) Только для PM
 
-C) Не важен
+C) Документация, postmortems, proposals, communication
 
 D) Только для marketing
 
 ---
 
 ## Question 14: Open Source
-
-
-
-
-
 
 Как участие в open source помогает карьере?
 
@@ -282,115 +202,85 @@ D) Только для students
 
 ## Question 15: Specialization
 
-
-
-
-
-
 Какие specializations востребованы в DevOps/SRE?
 
 A) Только networking
 
 B) Cloud, Kubernetes, Security, Platform Engineering
 
-C) Только databases
+C) Только coding
 
-D) Только coding
+D) Только databases
 
 ---
 
 ## Question 16: Leadership Path
 
-
-
-
-
-
 Как развиваться в техническое лидерство?
 
-A) Только coding
+A) Ждать повышения
 
 B) Только management
 
 C) Mentoring, tech decisions, cross-team projects, proposals
 
-D) Ждать повышения
+D) Только coding
 
 ---
 
 ## Question 17: Certifications Value
 
-
-
-
-
-
 Какова роль сертификаций?
 
-A) Единственное что важно
+A) Гарантия трудоустройства
 
-B) Бесполезны
+B) Структурированное обучение, baseline validation, не замена опыту
 
-C) Гарантия трудоустройства
+C) Бесполезны
 
-D) Структурированное обучение, baseline validation, не замена опыту
+D) Единственное что важно
 
 ---
 
 ## Question 18: Networking
 
-
-
-
-
-
 Как эффективно networking в DevOps community?
 
-A) Только LinkedIn
+A) Meetups, conferences, online communities, blogging
 
-B) Только internal
+B) Только LinkedIn
 
-C) Не нужен
+C) Только internal
 
-D) Meetups, conferences, online communities, blogging
+D) Не нужен
 
 ---
 
 ## Question 19: Salary Negotiation
 
-
-
-
-
-
 Что важно для salary negotiation?
 
-A) Только сертификации
+A) Только опыт
 
-B) Только degree
+B) Market data, demonstrated value, total compensation view
 
-C) Market data, demonstrated value, total compensation view
+C) Только degree
 
-D) Только опыт
+D) Только сертификации
 
 ---
 
 ## Question 20: Work-Life Balance
 
-
-
-
-
-
 Почему work-life balance важен в DevOps/SRE?
 
 A) Не важен
 
-B) Только для senior
+B) Burnout prevention, sustainable on-call, long-term career
 
-C) Снижает productivity
+C) Только для senior
 
-D) Burnout prevention, sustainable on-call, long-term career
+D) Снижает productivity
 
 ---
 
@@ -401,25 +291,25 @@ D) Burnout prevention, sustainable on-call, long-term career
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | A | SRE фокус на reliability и scalability |
-| 2 | B | Platform Engineer создаёт IDP и developer tools |
+| 2 | D | Platform Engineer создаёт IDP и developer tools |
 | 3 | C | Junior нужны core skills: Linux, Git, scripting, containers |
-| 4 | D | CKA = Certified Kubernetes Administrator |
-| 5 | D | IC (технический путь) и Management (people путь) |
-| 6 | C | Platform Engineering улучшает DX и productivity |
-| 7 | C | Communication и collaboration критичны |
-| 8 | A | Senior: tech leadership, architecture, mentoring |
-| 9 | C | Практика + сертификации + community |
+| 4 | B | CKA = Certified Kubernetes Administrator |
+| 5 | B | IC (технический путь) и Management (people путь) |
+| 6 | B | Platform Engineering улучшает DX и productivity |
+| 7 | D | Communication и collaboration критичны |
+| 8 | B | Senior: tech leadership, architecture, mentoring |
+| 9 | B | Практика + сертификации + community |
 | 10 | B | Portfolio, system design, behavioral stories |
-| 11 | C | T-shaped: глубина в одной области + ширина в смежных |
-| 12 | C | On-call развивает debugging, system understanding, ownership |
-| 13 | B | Writing важен для документации, postmortems, proposals |
+| 11 | D | T-shaped: глубина в одной области + ширина в смежных |
+| 12 | B | On-call развивает debugging, system understanding, ownership |
+| 13 | C | Writing важен для документации, postmortems, proposals |
 | 14 | C | Open source: portfolio, community, learning, networking |
 | 15 | B | Cloud, Kubernetes, Security, Platform Engineering |
 | 16 | C | Mentoring, tech decisions, cross-team projects, proposals |
-| 17 | D | Сертификации: структурированное обучение, не замена опыту |
-| 18 | D | Meetups, conferences, online communities, blogging |
-| 19 | C | Market data, demonstrated value, total compensation |
-| 20 | D | Work-life balance: burnout prevention, sustainable career |
+| 17 | B | Сертификации: структурированное обучение, не замена опыту |
+| 18 | A | Meetups, conferences, online communities, blogging |
+| 19 | B | Market data, demonstrated value, total compensation |
+| 20 | B | Work-life balance: burnout prevention, sustainable career |
 
 ---
 

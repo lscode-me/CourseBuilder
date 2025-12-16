@@ -6,51 +6,33 @@
 
 ## Question 1: Мониторинг
 
-
-
-
-
-
-
 Какая утилита предоставляет интерактивный мониторинг системы?
 
-A) htop
+A) systat
 
-B) monitor
+B) htop
 
-C) watch
+C) monitor
 
-D) systat
+D) watch
 
 ---
 
 ## Question 2: Логи
 
-
-
-
-
-
-
 В каком файле находятся общие системные сообщения?
 
-A) /var/log/kern.log
+A) /var/log/messages
 
 B) /var/log/syslog
 
-C) /var/log/messages
+C) /var/log/kern.log
 
 D) /var/log/system
 
 ---
 
 ## Question 3: Патчи безопасности
-
-
-
-
-
-
 
 Какая команда устанавливает патчи безопасности?
 
@@ -66,12 +48,6 @@ D) security-update
 
 ## Question 4: Ротация логов
 
-
-
-
-
-
-
 Какая утилита управляет ротацией логов в OpenBSD?
 
 A) rotatelog
@@ -86,37 +62,25 @@ D) logrotate
 
 ## Question 5: Резервное копирование
 
-
-
-
-
-
-
 Какая команда создаёт полный бэкап файловой системы?
 
-A) tar
+A) dump
 
-B) rsync
+B) backup
 
-C) backup
+C) rsync
 
-D) dump
+D) tar
 
 ---
 
 ## Question 6: cron формат
 
-
-
-
-
-
-
 Что означает запись "0 3 * * *" в crontab?
 
-A) Каждые 3 часа
+A) В 3:00 каждый день
 
-B) В 3:00 каждый день
+B) Каждые 3 часа
 
 C) Каждую третью минуту
 
@@ -126,99 +90,69 @@ D) Третьего числа каждого месяца
 
 ## Question 7: Системные скрипты
 
-
-
-
-
-
-
 Какой файл выполняется ежедневно?
 
-A) /var/cron/daily
+A) /etc/cron.daily
 
-B) /etc/cron.daily
+B) /var/cron/daily
 
-C) /etc/daily
+C) /etc/daily.sh
 
-D) /etc/daily.sh
+D) /etc/daily
 
 ---
 
 ## Question 8: Обновление системы
 
-
-
-
-
-
-
 Какая утилита обновляет систему между релизами?
 
-A) openbsd-upgrade
+A) sysupgrade
 
-B) upgrade
+B) openbsd-upgrade
 
-C) sysupgrade
+C) release-upgrade
 
-D) release-upgrade
+D) upgrade
 
 ---
 
 ## Question 9: Информация о системе
 
-
-
-
-
-
-
 Какая команда показывает сообщения загрузки ядра?
 
-A) syslog
+A) kernlog
 
-B) bootlog
+B) syslog
 
-C) kernlog
+C) dmesg
 
-D) dmesg
+D) bootlog
 
 ---
 
 ## Question 10: Дисковое пространство
 
-
-
-
-
-
-
 Какая команда показывает использование дисков?
 
-A) du -h
+A) disk -h
 
-B) df -h
+B) du -h
 
-C) disk -h
+C) space -h
 
-D) space -h
+D) df -h
 
 ---
 
 ## Question 11: Сетевая статистика
 
-
-
-
-
-
-
 Какая команда показывает сетевые соединения?
 
-A) netstat -an
+A) ss -an
 
-B) ipstat
+B) netstat -an
 
-C) ss -an
+C) ipstat
 
 D) connections
 
@@ -226,19 +160,13 @@ D) connections
 
 ## Question 12: Периодические скрипты
 
-
-
-
-
-
-
 Куда добавлять локальные ежедневные задачи?
 
-A) /etc/daily/local
+A) /etc/daily.local
 
-B) /etc/local.daily
+B) /etc/daily/local
 
-C) /etc/daily.local
+C) /etc/local.daily
 
 D) /etc/cron.d/daily
 
@@ -246,17 +174,11 @@ D) /etc/cron.d/daily
 
 ## Question 13: Датчики
 
-
-
-
-
-
-
 Какая команда показывает температуру и другие датчики?
 
-A) sensors
+A) hwmon
 
-B) hwmon
+B) sensors
 
 C) temp
 
@@ -266,56 +188,39 @@ D) sysctl hw.sensors
 
 ## Question 14: Просмотр crontab
 
-
-
-
-
-
-
 Какая команда показывает текущий crontab?
 
 A) crontab -l
 
-B) show cron
+B) cron -l
 
-C) cron -l
+C) cat /etc/crontab
 
-D) cat /etc/crontab
+D) show cron
 
 ---
 
 ## Question 15: Проверка файловой системы
 
-
-
-
-
-
-
 Какая команда проверяет целостность файловой системы?
 
-A) fscheck
+A) fsck
 
-B) diskcheck
+B) checkfs
 
-C) fsck
+C) fscheck
 
-D) checkfs
+D) diskcheck
 
 ---
 
 ## Question 16: sysupgrade
 
-
-
-
-
-
 Что делает sysupgrade?
 
-A) Обновляет систему до новой версии
+A) Обновляет только ядро
 
-B) Обновляет только ядро
+B) Обновляет систему до новой версии
 
 C) Обновляет пакеты
 
@@ -325,67 +230,47 @@ D) Обновляет порты
 
 ## Question 17: daily/weekly/monthly
 
-
-
-
-
-
 Где настраиваются автоматические скрипты обслуживания?
 
-A) /usr/local/etc/maintenance
+A) /etc/daily.local, /etc/weekly.local, /etc/monthly.local
 
 B) /var/maintenance/
 
-C) /etc/cron.d/
+C) /usr/local/etc/maintenance
 
-D) /etc/daily.local, /etc/weekly.local, /etc/monthly.local
+D) /etc/cron.d/
 
 ---
 
 ## Question 18: newsyslog
 
-
-
-
-
-
 Для чего используется newsyslog?
 
-A) Для отправки логов
+A) Для ротации лог-файлов
 
-B) Для создания новых логов
+B) Для чтения системных логов
 
-C) Для ротации лог-файлов
+C) Для отправки логов
 
-D) Для чтения системных логов
+D) Для создания новых логов
 
 ---
 
 ## Question 19: sendbug
 
-
-
-
-
-
 Для чего используется sendbug?
 
 A) Для отладки
 
-B) Для отправки отчётов об ошибках разработчикам OpenBSD
+B) Для тестирования
 
-C) Для тестирования
+C) Для отправки отчётов об ошибках разработчикам OpenBSD
 
 D) Для поиска багов
 
 ---
 
 ## Question 20: fw_update
-
-
-
-
-
 
 Что делает команда fw_update?
 
@@ -405,25 +290,25 @@ D) Обновляет прошивку BIOS
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | systat — интерактивная утилита мониторинга с различными представлениями |
-| 2 | C | /var/log/messages — основной файл системных сообщений |
+| 1 | A | systat — интерактивная утилита мониторинга с различными представлениями |
+| 2 | A | /var/log/messages — основной файл системных сообщений |
 | 3 | A | syspatch устанавливает бинарные патчи безопасности |
 | 4 | C | newsyslog — утилита ротации логов в BSD системах |
-| 5 | D | dump создаёт полный бэкап файловой системы на уровне блоков |
-| 6 | B | 0 минут, 3 часа, любой день = в 3:00 каждый день |
-| 7 | C | /etc/daily выполняется ежедневно через cron |
-| 8 | C | sysupgrade обновляет OpenBSD между релизами |
-| 9 | D | dmesg показывает сообщения ядра, включая загрузку |
-| 10 | B | df -h показывает использование дисков в читаемом формате |
-| 11 | A | netstat -an показывает все соединения в числовом формате |
-| 12 | C | /etc/daily.local — место для локальных ежедневных задач |
+| 5 | A | dump создаёт полный бэкап файловой системы на уровне блоков |
+| 6 | A | 0 минут, 3 часа, любой день = в 3:00 каждый день |
+| 7 | D | /etc/daily выполняется ежедневно через cron |
+| 8 | A | sysupgrade обновляет OpenBSD между релизами |
+| 9 | C | dmesg показывает сообщения ядра, включая загрузку |
+| 10 | D | df -h показывает использование дисков в читаемом формате |
+| 11 | B | netstat -an показывает все соединения в числовом формате |
+| 12 | A | /etc/daily.local — место для локальных ежедневных задач |
 | 13 | D | sysctl hw.sensors показывает данные датчиков |
 | 14 | A | crontab -l показывает crontab текущего пользователя |
-| 15 | C | fsck проверяет и восстанавливает файловую систему |
-| 16 | A | sysupgrade обновляет систему до новой версии OpenBSD |
-| 17 | D | *.local файлы в /etc для локальных настроек обслуживания |
-| 18 | C | newsyslog ротирует и сжимает лог-файлы |
-| 19 | B | sendbug отправляет отчёты об ошибках разработчикам |
+| 15 | A | fsck проверяет и восстанавливает файловую систему |
+| 16 | B | sysupgrade обновляет систему до новой версии OpenBSD |
+| 17 | A | *.local файлы в /etc для локальных настроек обслуживания |
+| 18 | A | newsyslog ротирует и сжимает лог-файлы |
+| 19 | C | sendbug отправляет отчёты об ошибках разработчикам |
 | 20 | B | fw_update загружает firmware для устройств (Wi-Fi, GPU и т.д.) |
 
 ---

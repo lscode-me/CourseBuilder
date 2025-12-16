@@ -6,17 +6,13 @@
 
 ## Question 1: EHR vs EMR
 
-
-
-
-
 В чём основное отличие EHR от EMR?
 
-A) EHR дороже
+A) EMR более современный
 
 B) EHR предназначен для обмена между организациями
 
-C) EMR более современный
+C) EHR дороже
 
 D) Нет различий
 
@@ -24,53 +20,41 @@ D) Нет различий
 
 ## Question 2: CPOE
 
-
-
-
-
 CPOE означает:
 
-A) Computerized Physician Order Entry
+A) Clinical Processing of Orders
 
-B) Clinical Processing of Orders
+B) Clinical Patient Order Entry
 
-C) Computer Protocol for Orders
+C) Computerized Physician Order Entry
 
-D) Clinical Patient Order Entry
+D) Computer Protocol for Orders
 
 ---
 
 ## Question 3: CDSS
 
-
-
-
-
 Что делает CDSS?
 
-A) Предоставляет decision support (alerts, guidelines)
+A) Шифрует данные
 
 B) Хранит медицинские документы
 
 C) Выполняет billing
 
-D) Шифрует данные
+D) Предоставляет decision support (alerts, guidelines)
 
 ---
 
 ## Question 4: HIE
 
-
-
-
-
 Health Information Exchange позволяет:
 
-A) Хранить изображения
+A) Обрабатывать платежи
 
 B) Назначать лекарства
 
-C) Обрабатывать платежи
+C) Хранить изображения
 
 D) Обмениваться данными между организациями
 
@@ -78,35 +62,27 @@ D) Обмениваться данными между организациями
 
 ## Question 5: SMART on FHIR
 
-
-
-
-
 SMART on FHIR это:
 
-A) Платформа для интеграции приложений с EHR
+A) База данных
 
-B) Протокол шифрования
+B) Медицинское оборудование
 
-C) Медицинское оборудование
+C) Платформа для интеграции приложений с EHR
 
-D) База данных
+D) Протокол шифрования
 
 ---
 
 ## Question 6: Master Patient Index
 
-
-
-
-
 MPI (Master Patient Index) используется для:
 
-A) Уникальной идентификации пациентов в системе
+A) Scheduling appointments
 
 B) Хранения лабораторных результатов
 
-C) Scheduling appointments
+C) Уникальной идентификации пациентов в системе
 
 D) Шифрования данных
 
@@ -114,35 +90,27 @@ D) Шифрования данных
 
 ## Question 7: HL7 MLLP
 
-
-
-
-
 HL7 MLLP это:
 
-A) Формат изображений
+A) База данных
 
-B) База данных
+B) Формат изображений
 
-C) Протокол передачи HL7 сообщений по TCP
+C) Язык программирования
 
-D) Язык программирования
+D) Протокол передачи HL7 сообщений по TCP
 
 ---
 
 ## Question 8: HIE модели
 
-
-
-
-
 Какая модель HIE хранит все данные в центральном репозитории?
 
-A) Federated
+A) Centralized
 
-B) Centralized
+B) Hybrid
 
-C) Hybrid
+C) Federated
 
 D) Distributed
 
@@ -150,35 +118,27 @@ D) Distributed
 
 ## Question 9: DICOM интеграция
 
-
-
-
-
 Для получения медицинских изображений из PACS используется:
 
-A) FTP
+A) HTTP REST API
 
-B) DICOM C-FIND и C-MOVE
+B) Email
 
-C) Email
+C) DICOM C-FIND и C-MOVE
 
-D) HTTP REST API
+D) FTP
 
 ---
 
 ## Question 10: Clinical Documentation
 
-
-
-
-
 Какой компонент EHR отвечает за progress notes и discharge summaries?
 
-A) Clinical Documentation
+A) Results Management
 
-B) Results Management
+B) CPOE
 
-C) CPOE
+C) Clinical Documentation
 
 D) CDSS
 
@@ -186,53 +146,41 @@ D) CDSS
 
 ## Question 11: Drug-drug interaction
 
-
-
-
-
 Какой компонент EHR проверяет drug-drug interactions?
 
-A) Patient Management
+A) Billing
 
-B) Billing
+B) CDSS
 
-C) CPOE
+C) Patient Management
 
-D) CDSS
+D) CPOE
 
 ---
 
 ## Question 12: EHR архитектура
 
-
-
-
-
 Какой слой EHR отвечает за интеграцию с внешними системами?
 
-A) User Interface Layer
+A) Integration Layer
 
-B) Data Layer
+B) Application Services Layer
 
-C) Application Services Layer
+C) Data Layer
 
-D) Integration Layer
+D) User Interface Layer
 
 ---
 
 ## Question 13: SMART App
 
-
-
-
-
 Для авторизации SMART on FHIR приложения используется:
 
-A) API Key
+A) Basic Authentication
 
 B) Certificate
 
-C) Basic Authentication
+C) API Key
 
 D) OAuth 2.0
 
@@ -240,17 +188,13 @@ D) OAuth 2.0
 
 ## Question 14: Query Types
 
-
-
-
-
 Какой тип HIE запроса используется для поиска пациента в сети?
 
-A) Patient Discovery
+A) Document Query
 
-B) Data Exchange
+B) Patient Discovery
 
-C) Document Query
+C) Data Exchange
 
 D) Document Retrieve
 
@@ -258,53 +202,41 @@ D) Document Retrieve
 
 ## Question 15: EHR Performance
 
-
-
-
-
 Какое максимальное рекомендованное время отклика для критических операций в EHR?
 
-A) 2 секунды
+A) 30 секунд
 
-B) 30 секунд
+B) 5 секунд
 
 C) 10 секунд
 
-D) 5 секунд
+D) 2 секунды
 
 ---
 
 ## Question 16: Federated HIE
 
-
-
-
-
 В федеративной модели HIE данные:
 
-A) Дублируются во всех организациях
+A) Хранятся в центральном репозитории
 
-B) Хранятся в облаке
+B) Остаются в источниках, запросы маршрутизируются
 
-C) Хранятся в центральном репозитории
+C) Хранятся в облаке
 
-D) Остаются в источниках, запросы маршрутизируются
+D) Дублируются во всех организациях
 
 ---
 
 ## Question 17: Results Management
 
-
-
-
-
 Results Management в EHR включает:
 
 A) Только лабораторные результаты
 
-B) Lab results, radiology reports, pathology reports
+B) Только назначения врача
 
-C) Только назначения врача
+C) Lab results, radiology reports, pathology reports
 
 D) Billing информацию
 
@@ -312,53 +244,41 @@ D) Billing информацию
 
 ## Question 18: HL7 MLLP Framing
 
-
-
-
-
 Какие символы используются для framing в HL7 MLLP?
 
-A) [ и ]
+A) { и }
 
-B) Vertical Tab (0x0B) и File Separator (0x1C)
+B) [ и ]
 
 C) HTTP headers
 
-D) { и }
+D) Vertical Tab (0x0B) и File Separator (0x1C)
 
 ---
 
 ## Question 19: DICOM Metadata
 
-
-
-
-
 Какие метаданные можно получить из DICOM файла?
 
 A) SQL запросы
 
-B) PatientName, StudyDate, Modality
+B) Только изображение
 
-C) Только изображение
+C) Только имя файла
 
-D) Только имя файла
+D) PatientName, StudyDate, Modality
 
 ---
 
 ## Question 20: EHR Data Layer
 
-
-
-
-
 Data Layer в EHR содержит:
 
 A) Только UI компоненты
 
-B) Только Integration Engine
+B) Только FHIR API
 
-C) Только FHIR API
+C) Только Integration Engine
 
 D) Relational DB, Document Store, BLOB Storage
 
@@ -371,24 +291,24 @@ D) Relational DB, Document Store, BLOB Storage
 | # | Answer | Explanation |
 |---|--------|-------------|
 | 1 | B | EHR для обмена между организациями |
-| 2 | A | Computerized Physician Order Entry |
-| 3 | A | Decision support (alerts, guidelines) |
+| 2 | C | Computerized Physician Order Entry |
+| 3 | D | Decision support (alerts, guidelines) |
 | 4 | D | Обмен данными между организациями |
-| 5 | A | Платформа для интеграции медицинских приложений с EHR |
-| 6 | A | Уникальная идентификация пациентов в системе |
-| 7 | C | Протокол передачи HL7 сообщений по TCP (MLLP) |
-| 8 | B | Centralized модель хранит данные в центральном репозитории |
-| 9 | B | DICOM C-FIND для поиска и C-MOVE для получения |
-| 10 | A | Clinical Documentation отвечает за notes и summaries |
-| 11 | D | CDSS (Clinical Decision Support System) |
-| 12 | D | Integration Layer с HL7 Interface Engine и FHIR API Gateway |
+| 5 | C | Платформа для интеграции медицинских приложений с EHR |
+| 6 | C | Уникальная идентификация пациентов в системе |
+| 7 | D | Протокол передачи HL7 сообщений по TCP (MLLP) |
+| 8 | A | Centralized модель хранит данные в центральном репозитории |
+| 9 | C | DICOM C-FIND для поиска и C-MOVE для получения |
+| 10 | C | Clinical Documentation отвечает за notes и summaries |
+| 11 | B | CDSS (Clinical Decision Support System) |
+| 12 | A | Integration Layer с HL7 Interface Engine и FHIR API Gateway |
 | 13 | D | OAuth 2.0 для авторизации SMART приложений |
-| 14 | A | Patient Discovery для поиска пациента |
-| 15 | A | 2 секунды для критических операций |
-| 16 | D | Federated модель не хранит данные централизованно |
-| 17 | B | Results Management включает lab, radiology, pathology reports |
-| 18 | B | START_BLOCK (0x0B) и END_BLOCK (0x1C) + CR |
-| 19 | B | DICOM содержит PatientName, StudyDate, Modality |
+| 14 | B | Patient Discovery для поиска пациента |
+| 15 | D | 2 секунды для критических операций |
+| 16 | B | Federated модель не хранит данные централизованно |
+| 17 | C | Results Management включает lab, radiology, pathology reports |
+| 18 | D | START_BLOCK (0x0B) и END_BLOCK (0x1C) + CR |
+| 19 | D | DICOM содержит PatientName, StudyDate, Modality |
 | 20 | D | Data Layer содержит Relational DB, Document Store, BLOB Storage |
 
 ---

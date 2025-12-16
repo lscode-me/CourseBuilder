@@ -10,11 +10,11 @@
 
 A) `http.Start()`
 
-B) `http.ListenAndServe()`
+B) `http.Run()`
 
-C) `http.Run()`
+C) `http.Server()`
 
-D) `http.Server()`
+D) `http.ListenAndServe()`
 
 ---
 
@@ -22,11 +22,11 @@ D) `http.Server()`
 
 Какая сигнатура у HTTP handler функции?
 
-A) `func(w http.Writer, r *http.Request)`
+A) `func(r *http.Request) http.Response`
 
-B) `func(w http.ResponseWriter, r *http.Request)`
+B) `func(w http.Writer, r *http.Request)`
 
-C) `func(r *http.Request) http.Response`
+C) `func(w http.ResponseWriter, r *http.Request)`
 
 D) `func(w http.Response, r http.Request)`
 
@@ -36,11 +36,11 @@ D) `func(w http.Response, r http.Request)`
 
 Как сделать простой GET запрос?
 
-A) `http.Get(url)`
+A) `http.Fetch(url)`
 
-B) `http.Request(url)`
+B) `http.Get(url)`
 
-C) `http.Fetch(url)`
+C) `http.Request(url)`
 
 D) `http.Download(url)`
 
@@ -50,13 +50,13 @@ D) `http.Download(url)`
 
 Какой тег игнорирует поле при JSON?
 
-A) `json:"ignore"`
+A) `json:"skip"`
 
-B) `json:"-"`
+B) `json:"omit"`
 
-C) `json:"omit"`
+C) `json:"-"`
 
-D) `json:"skip"`
+D) `json:"ignore"`
 
 ---
 
@@ -68,9 +68,9 @@ A) Делает поле обязательным
 
 B) Пропускает zero value при сериализации
 
-C) Игнорирует поле
+C) Устанавливает default
 
-D) Устанавливает default
+D) Игнорирует поле
 
 ---
 
@@ -80,11 +80,11 @@ D) Устанавливает default
 
 A) string
 
-B) []byte, error
+B) *json.Result
 
-C) io.Reader
+C) []byte, error
 
-D) *json.Result
+D) io.Reader
 
 ---
 
@@ -94,11 +94,11 @@ D) *json.Result
 
 A) Декодирование строки
 
-B) Потоковое декодирование из Reader
+B) Шифрование JSON
 
-C) Шифрование JSON
+C) Валидация JSON
 
-D) Валидация JSON
+D) Потоковое декодирование из Reader
 
 ---
 
@@ -106,13 +106,13 @@ D) Валидация JSON
 
 Какой метод определяет io.Reader?
 
-A) `Read(p []byte) (n int, err error)`
+A) `GetBytes() []byte`
 
 B) `ReadAll() []byte`
 
-C) `GetBytes() []byte`
+C) `Data() []byte`
 
-D) `Data() []byte`
+D) `Read(p []byte) (n int, err error)`
 
 ---
 
@@ -124,9 +124,9 @@ A) Ошибка чтения
 
 B) Конец данных
 
-C) Файл не найден
+C) Timeout
 
-D) Timeout
+D) Файл не найден
 
 ---
 
@@ -134,13 +134,13 @@ D) Timeout
 
 Что делает io.Copy?
 
-A) Копирует файлы
+A) Создаёт бэкап
 
 B) Копирует данные из Reader в Writer
 
-C) Клонирует объект
+C) Копирует файлы
 
-D) Создаёт бэкап
+D) Клонирует объект
 
 ---
 
@@ -148,13 +148,13 @@ D) Создаёт бэкап
 
 Что возвращает os.ReadFile?
 
-A) *os.File
+A) []byte, error
 
-B) []byte, error
+B) io.Reader
 
-C) string
+C) *os.File
 
-D) io.Reader
+D) string
 
 ---
 
@@ -162,11 +162,11 @@ D) io.Reader
 
 Какие права у файла по умолчанию?
 
-A) 0644
+A) 0777
 
-B) 0755
+B) 0644
 
-C) 0777
+C) 0755
 
 D) 0666
 
@@ -176,13 +176,13 @@ D) 0666
 
 Что возвращает os.Getenv для несуществующей переменной?
 
-A) nil
+A) Пустую строку
 
-B) Пустую строку
+B) panic
 
-C) Ошибку
+C) nil
 
-D) panic
+D) Ошибку
 
 ---
 
@@ -190,13 +190,13 @@ D) panic
 
 Что содержит os.Args[0]?
 
-A) Первый аргумент
+A) Имя программы
 
-B) Имя программы
+B) Первый аргумент
 
-C) Рабочую директорию
+C) Версию Go
 
-D) Версию Go
+D) Рабочую директорию
 
 ---
 
@@ -204,13 +204,13 @@ D) Версию Go
 
 Что возвращает strings.Contains?
 
-A) int
+A) bool
 
-B) bool
+B) error
 
 C) string
 
-D) error
+D) int
 
 ---
 
@@ -218,13 +218,13 @@ D) error
 
 Для чего используется strings.Builder?
 
-A) Парсинг строк
+A) Форматирование
 
-B) Эффективная конкатенация строк
+B) Парсинг строк
 
-C) Поиск в строках
+C) Эффективная конкатенация строк
 
-D) Форматирование
+D) Поиск в строках
 
 ---
 
@@ -232,13 +232,13 @@ D) Форматирование
 
 Что возвращает time.Now()?
 
-A) int64
+A) string
 
-B) string
+B) int64
 
-C) time.Time
+C) *time.Time
 
-D) *time.Time
+D) time.Time
 
 ---
 
@@ -246,13 +246,13 @@ D) *time.Time
 
 Какое референсное время используется?
 
-A) 1970-01-01 00:00:00
+A) Текущее время
 
-B) 2000-01-01 00:00:00
+B) 2006-01-02 15:04:05
 
-C) 2006-01-02 15:04:05
+C) 2000-01-01 00:00:00
 
-D) Текущее время
+D) 1970-01-01 00:00:00
 
 ---
 
@@ -260,11 +260,11 @@ D) Текущее время
 
 Как создать duration в 5 секунд?
 
-A) `time.Duration(5)`
+A) `5 * time.Second`
 
-B) `5 * time.Second`
+B) `time.Seconds(5)`
 
-C) `time.Seconds(5)`
+C) `time.Duration(5)`
 
 D) `time.NewDuration(5)`
 
@@ -276,11 +276,11 @@ D) `time.NewDuration(5)`
 
 A) Только логирует
 
-B) Логирует и вызывает os.Exit(1)
+B) Возвращает ошибку
 
 C) Вызывает panic
 
-D) Возвращает ошибку
+D) Логирует и вызывает os.Exit(1)
 
 ---
 
@@ -288,13 +288,13 @@ D) Возвращает ошибку
 
 Что возвращает fmt.Sprintf?
 
-A) error
+A) []byte
 
 B) int
 
-C) string
+C) error
 
-D) []byte
+D) string
 
 ---
 
@@ -304,9 +304,9 @@ D) []byte
 
 A) string
 
-B) error
+B) panic
 
-C) panic
+C) error
 
 D) nil
 
@@ -316,13 +316,13 @@ D) nil
 
 Для чего используется filepath.Join?
 
-A) Объединение строк
+A) Только для Unix
 
-B) Кроссплатформенное объединение путей
+B) Только для Windows
 
-C) Только для Unix
+C) Кроссплатформенное объединение путей
 
-D) Только для Windows
+D) Объединение строк
 
 ---
 
@@ -330,13 +330,13 @@ D) Только для Windows
 
 Какой метод устанавливает статус код?
 
-A) `w.Status(code)`
+A) `w.SetStatus(code)`
 
-B) `w.WriteHeader(code)`
+B) `w.StatusCode = code`
 
-C) `w.SetStatus(code)`
+C) `w.Status(code)`
 
-D) `w.StatusCode = code`
+D) `w.WriteHeader(code)`
 
 ---
 
@@ -344,13 +344,13 @@ D) `w.StatusCode = code`
 
 Когда использовать http.NewRequest вместо http.Get?
 
-A) Для GET запросов
+A) Для синхронных запросов
 
 B) Для кастомных headers и методов
 
-C) Для быстрых запросов
+C) Для GET запросов
 
-D) Для синхронных запросов
+D) Для быстрых запросов
 
 ---
 
@@ -358,13 +358,13 @@ D) Для синхронных запросов
 
 Куда пишет json.NewEncoder?
 
-A) В файл
+A) В строку
 
-B) В io.Writer
+B) В массив
 
-C) В строку
+C) В io.Writer
 
-D) В массив
+D) В файл
 
 ---
 
@@ -374,9 +374,9 @@ D) В массив
 
 A) Создаёт только один уровень
 
-B) Создаёт все промежуточные директории
+B) Работает быстрее
 
-C) Работает быстрее
+C) Создаёт все промежуточные директории
 
 D) Требует права root
 
@@ -400,13 +400,13 @@ D) Для записи
 
 Как установить timeout для HTTP клиента?
 
-A) `client.Timeout = time.Second`
+A) `client.SetTimeout(time.Second)`
 
-B) `client.SetTimeout(time.Second)`
+B) Через context
 
 C) `client.Config.Timeout = time.Second`
 
-D) Через context
+D) `client.Timeout = time.Second`
 
 ---
 
@@ -414,13 +414,15 @@ D) Через context
 
 Зачем defer для file.Close()?
 
-A) Для скорости
+A) Для логирования
 
 B) Гарантированное закрытие при выходе
 
-C) Для логирования
+C) Для скорости
 
 D) Не обязательно
+
+---
 
 ---
 
@@ -428,35 +430,35 @@ D) Не обязательно
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | `http.ListenAndServe(":8080", handler)` запускает сервер. |
-| 2 | B | `func(w http.ResponseWriter, r *http.Request)`. |
-| 3 | A | `http.Get(url)` для простого GET. |
-| 4 | B | `json:"-"` игнорирует поле. |
+| 1 | D | `http.ListenAndServe(":8080", handler)` запускает сервер. |
+| 2 | C | `func(w http.ResponseWriter, r *http.Request)`. |
+| 3 | B | `http.Get(url)` для простого GET. |
+| 4 | C | `json:"-"` игнорирует поле. |
 | 5 | B | omitempty пропускает zero values. |
-| 6 | B | Возвращает `[]byte, error`. |
-| 7 | B | Decoder для потокового чтения из Reader. |
-| 8 | A | `Read(p []byte) (n int, err error)`. |
+| 6 | C | Возвращает `[]byte, error`. |
+| 7 | D | Decoder для потокового чтения из Reader. |
+| 8 | D | `Read(p []byte) (n int, err error)`. |
 | 9 | B | EOF — конец данных, не ошибка. |
 | 10 | B | Копирует из Reader в Writer. |
-| 11 | B | Возвращает `[]byte, error`. |
-| 12 | A | 0644 (rw-r--r--) по умолчанию для Create. |
-| 13 | B | Пустую строку для несуществующей. |
-| 14 | B | Args[0] — имя программы. |
-| 15 | B | Возвращает bool. |
-| 16 | B | Для эффективной конкатенации. |
-| 17 | C | Возвращает time.Time. |
-| 18 | C | 2006-01-02 15:04:05 — референсное время Go. |
-| 19 | B | `5 * time.Second`. |
-| 20 | B | Логирует и вызывает os.Exit(1). |
-| 21 | C | Возвращает string. |
-| 22 | B | Возвращает error. |
-| 23 | B | Кроссплатформенное объединение путей. |
-| 24 | B | `WriteHeader(code)` устанавливает статус. |
+| 11 | A | Возвращает `[]byte, error`. |
+| 12 | B | 0644 (rw-r--r--) по умолчанию для Create. |
+| 13 | A | Пустую строку для несуществующей. |
+| 14 | A | Args[0] — имя программы. |
+| 15 | A | Возвращает bool. |
+| 16 | C | Для эффективной конкатенации. |
+| 17 | D | Возвращает time.Time. |
+| 18 | B | 2006-01-02 15:04:05 — референсное время Go. |
+| 19 | A | `5 * time.Second`. |
+| 20 | D | Логирует и вызывает os.Exit(1). |
+| 21 | D | Возвращает string. |
+| 22 | C | Возвращает error. |
+| 23 | C | Кроссплатформенное объединение путей. |
+| 24 | D | `WriteHeader(code)` устанавливает статус. |
 | 25 | B | Для кастомных headers и методов. |
-| 26 | B | Пишет в io.Writer. |
-| 27 | B | Создаёт все промежуточные директории. |
+| 26 | C | Пишет в io.Writer. |
+| 27 | C | Создаёт все промежуточные директории. |
 | 28 | B | Для чтения маленьких данных целиком. |
-| 29 | A | `client.Timeout = duration`. |
+| 29 | D | `client.Timeout = duration`. |
 | 30 | B | Гарантированное закрытие файла. |
 
 ---

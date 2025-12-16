@@ -6,251 +6,195 @@
 
 ## Question 1: HIPAA
 
-
-
-
-
 HIPAA регулирует:
 
-A) Качество медицинской помощи
+A) Обучение врачей
 
-B) Обучение врачей
+B) Защиту медицинских данных
 
-C) Цены на лекарства
+C) Качество медицинской помощи
 
-D) Защиту медицинских данных
+D) Цены на лекарства
 
 ---
 
 ## Question 2: PHI
 
-
-
-
-
 Что такое PHI?
 
-A) Public Health Information
+A) Protected Health Information
 
-B) Protected Health Information
+B) Public Health Information
 
-C) Personal Health Insurance
+C) Primary Health Indicator
 
-D) Primary Health Indicator
+D) Personal Health Insurance
 
 ---
 
 ## Question 3: De-identification
 
-
-
-
-
 Сколько идентификаторов нужно удалить для Safe Harbor de-identification?
 
 A) 18
 
-B) 10
+B) Все персональные данные
 
-C) Все персональные данные
+C) 25
 
-D) 25
+D) 10
 
 ---
 
 ## Question 4: GDPR Right to Erasure
 
-
-
-
-
 GDPR "Right to Erasure" означает:
 
-A) Право на копию данных
+A) Право на удаление данных
 
 B) Право на шифрование
 
-C) Право на удаление данных
+C) Право на доступ к данным
 
-D) Право на доступ к данным
+D) Право на копию данных
 
 ---
 
 ## Question 5: TLS
 
-
-
-
-
 TLS используется для:
 
-A) Encryption at rest
+A) Audit logging
 
-B) Audit logging
+B) Access control
 
 C) Encryption in transit
 
-D) Access control
+D) Encryption at rest
 
 ---
 
 ## Question 6: RBAC
 
-
-
-
-
 RBAC означает:
 
-A) Remote Backup and Control
+A) Role-Based Access Control
 
-B) Risk-Based Audit Compliance
+B) Remote Backup and Control
 
-C) Role-Based Access Control
+C) Record-Based Authentication Control
 
-D) Record-Based Authentication Control
+D) Risk-Based Audit Compliance
 
 ---
 
 ## Question 7: Audit Logging
 
-
-
-
-
 Что НЕ нужно логировать при доступе к PHI?
 
-A) К чему обращались (resource_id)
+A) Кто обращался (user_id)
 
 B) Пароль пользователя
 
 C) Когда (timestamp)
 
-D) Кто обращался (user_id)
+D) К чему обращались (resource_id)
 
 ---
 
 ## Question 8: MFA
 
-
-
-
-
 Многофакторная аутентификация (MFA) требует:
 
-A) Только биометрию
+A) Два или более факторов аутентификации
 
-B) Только пароль
+B) Только биометрию
 
-C) Два или более факторов аутентификации
+C) Только смарт-карту
 
-D) Только смарт-карту
+D) Только пароль
 
 ---
 
 ## Question 9: HIPAA Breach Notification
 
-
-
-
-
 В течение какого времени нужно уведомить пациентов о breach (если затронуто >500 человек)?
 
-A) 24 часа
+A) 30 дней
 
-B) 90 дней
+B) 24 часа
 
-C) 30 дней
+C) 60 дней
 
-D) 60 дней
+D) 90 дней
 
 ---
 
 ## Question 10: SQL Injection
 
-
-
-
-
 Как защититься от SQL Injection?
 
-A) Отключить интернет
+A) Шифровать базу данных
 
-B) Использовать firewall
+B) Использовать parameterized queries
 
-C) Шифровать базу данных
+C) Использовать firewall
 
-D) Использовать parameterized queries
+D) Отключить интернет
 
 ---
 
 ## Question 11: Session Timeout
 
-
-
-
-
 Рекомендуемый session timeout для healthcare приложений:
 
-A) 1 минута
+A) 15 минут
 
-B) 15 минут
+B) 8 часов
 
 C) 1 час
 
-D) 8 часов
+D) 1 минута
 
 ---
 
 ## Question 12: GDPR Consent
 
-
-
-
-
 Что требует GDPR для обработки персональных данных?
 
 A) Явное согласие пациента
 
-B) Согласие не требуется
+B) Только устное согласие
 
-C) Только устное согласие
+C) Письменное согласие на бумаге
 
-D) Письменное согласие на бумаге
+D) Согласие не требуется
 
 ---
 
 ## Question 13: Business Associate Agreement
 
-
-
-
-
 BAA (Business Associate Agreement) требуется:
 
-A) Только с страховыми компаниями
+A) С третьими сторонами, имеющими доступ к PHI
 
-B) С третьими сторонами, имеющими доступ к PHI
+B) Только с страховыми компаниями
 
-C) Между всеми сотрудниками
+C) Только с пациентами
 
-D) Только с пациентами
+D) Между всеми сотрудниками
 
 ---
 
 ## Question 14: Encryption at Rest
 
-
-
-
-
 Encryption at rest защищает данные:
 
 A) При хранении на диске
 
-B) При передаче по сети
+B) При отображении пользователю
 
-C) При отображении пользователю
+C) При передаче по сети
 
 D) При обработке в памяти
 
@@ -258,53 +202,41 @@ D) При обработке в памяти
 
 ## Question 15: Breach Response
 
-
-
-
-
 Первый шаг при обнаружении breach:
 
-A) Уведомить прессу
+A) Identify и Contain (выявить и остановить)
 
-B) Identify и Contain (выявить и остановить)
+B) Удалить все данные
 
-C) Удалить все данные
+C) Уволить ответственных
 
-D) Уволить ответственных
+D) Уведомить прессу
 
 ---
 
 ## Question 16: Least Privilege
 
-
-
-
-
 Принцип "наименьших привилегий" означает:
 
-A) Запретить весь доступ
+A) Права только для администраторов
 
-B) Дать максимальные права для удобства
+B) Давать только минимальные необходимые права
 
-C) Давать только минимальные необходимые права
+C) Дать максимальные права для удобства
 
-D) Права только для администраторов
+D) Запретить весь доступ
 
 ---
 
 ## Question 17: GDPR DPO
 
-
-
-
-
 Кто такой DPO в контексте GDPR?
 
-A) Document Production Officer
+A) Database Protection Officer
 
 B) Data Protection Officer
 
-C) Database Protection Officer
+C) Document Production Officer
 
 D) Digital Processing Operator
 
@@ -312,55 +244,43 @@ D) Digital Processing Operator
 
 ## Question 18: XSS Prevention
 
-
-
-
-
 Как защититься от XSS (Cross-Site Scripting)?
 
-A) Экранировать (escape) user input
+A) Использовать firewall
 
-B) Использовать firewall
+B) Увеличить timeout
 
 C) Использовать VPN
 
-D) Увеличить timeout
+D) Экранировать (escape) user input
 
 ---
 
 ## Question 19: Account Lockout
 
-
-
-
-
 После скольких неудачных попыток входа рекомендуется блокировать аккаунт?
 
-A) 5
+A) 20
 
-B) 20
+B) 5
 
-C) 10
+C) 2
 
-D) 2
+D) 10
 
 ---
 
 ## Question 20: GDPR Right to Portability
 
-
-
-
-
 GDPR "Right to Portability" означает:
 
-A) Право перенести данные в другую систему
+A) Право на анонимность
 
 B) Право удалить данные
 
-C) Право на анонимность
+C) Право на шифрование
 
-D) Право на шифрование
+D) Право перенести данные в другую систему
 
 ---
 
@@ -370,26 +290,26 @@ D) Право на шифрование
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | Защита медицинских данных (HIPAA) |
-| 2 | B | Protected Health Information |
+| 1 | B | Защита медицинских данных (HIPAA) |
+| 2 | A | Protected Health Information |
 | 3 | A | 18 идентификаторов по правилу Safe Harbor |
-| 4 | C | Право на удаление данных ("право быть забытым") |
+| 4 | A | Право на удаление данных ("право быть забытым") |
 | 5 | C | Encryption in transit (шифрование при передаче) |
-| 6 | C | Role-Based Access Control |
+| 6 | A | Role-Based Access Control |
 | 7 | B | Пароли никогда не логируются, даже хэши |
-| 8 | C | Два или более факторов (пароль + OTP, биометрия) |
-| 9 | D | 60 дней для уведомления пациентов |
-| 10 | D | Parameterized queries предотвращают SQL injection |
-| 11 | B | 15 минут неактивности — стандартный таймаут |
+| 8 | A | Два или более факторов (пароль + OTP, биометрия) |
+| 9 | C | 60 дней для уведомления пациентов |
+| 10 | B | Parameterized queries предотвращают SQL injection |
+| 11 | A | 15 минут неактивности — стандартный таймаут |
 | 12 | A | Явное (explicit) согласие пациента |
-| 13 | B | С третьими сторонами, обрабатывающими PHI |
+| 13 | A | С третьими сторонами, обрабатывающими PHI |
 | 14 | A | При хранении на диске (at rest) |
-| 15 | B | Identify и Contain — сначала выявить и остановить |
-| 16 | C | Минимальные необходимые права |
+| 15 | A | Identify и Contain — сначала выявить и остановить |
+| 16 | B | Минимальные необходимые права |
 | 17 | B | Data Protection Officer |
-| 18 | A | Экранировать user input предотвращает XSS |
-| 19 | A | 5 неудачных попыток — стандартная практика |
-| 20 | A | Right to Portability — право перенести данные |
+| 18 | D | Экранировать user input предотвращает XSS |
+| 19 | B | 5 неудачных попыток — стандартная практика |
+| 20 | D | Right to Portability — право перенести данные |
 
 ---
 

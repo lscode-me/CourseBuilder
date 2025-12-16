@@ -6,31 +6,19 @@
 
 ## Question 1: Определение CI
 
-
-
-
-
-
-
 Что является ключевой практикой Continuous Integration?
 
-A) Написание документации для каждого commit
+A) Частая интеграция кода с автоматической проверкой каждого изменения
 
-B) Ручное тестирование после каждого merge
+B) Деплой в production каждый час
 
-C) Деплой в production каждый час
+C) Ручное тестирование после каждого merge
 
-D) Частая интеграция кода с автоматической проверкой каждого изменения
+D) Написание документации для каждого commit
 
 ---
 
 ## Question 2: Branching Strategy
-
-
-
-
-
-
 
 Какая branching стратегия лучше всего подходит для CI/CD с частыми деплоями?
 
@@ -38,39 +26,27 @@ A) Feature branches живущие месяцами
 
 B) Trunk-based development
 
-C) GitFlow с долгоживущими ветками
+C) Отдельная ветка для каждого разработчика
 
-D) Отдельная ветка для каждого разработчика
+D) GitFlow с долгоживущими ветками
 
 ---
 
 ## Question 3: Test Pyramid
 
-
-
-
-
-
-
 Согласно Test Pyramid, каких тестов должно быть больше всего?
 
-A) Manual тестов
+A) E2E тестов
 
-B) Unit тестов
+B) Integration тестов
 
-C) Integration тестов
+C) Unit тестов
 
-D) E2E тестов
+D) Manual тестов
 
 ---
 
 ## Question 4: Pipeline Time
-
-
-
-
-
-
 
 Какое целевое время выполнения CI pipeline считается оптимальным?
 
@@ -78,87 +54,63 @@ A) < 1 час
 
 B) < 10-15 минут
 
-C) < 5 минут для всех тестов включая E2E
+C) < 30 минут
 
-D) < 30 минут
+D) < 5 минут для всех тестов включая E2E
 
 ---
 
 ## Question 5: Flaky Tests
 
-
-
-
-
-
-
 Что такое flaky test?
 
-A) Тест, который иногда проходит, иногда нет без изменений в коде
+A) Тест, который всегда падает
 
-B) Тест, который всегда падает
+B) Тест, написанный на устаревшем фреймворке
 
 C) Тест без assertions
 
-D) Тест, написанный на устаревшем фреймворке
+D) Тест, который иногда проходит, иногда нет без изменений в коде
 
 ---
 
 ## Question 6: Broken Build
 
-
-
-
-
-
-
 Какой должен быть приоритет при обнаружении сломанного build?
 
 A) Запланировать исправление на следующий спринт
 
-B) Исправить немедленно (максимум 10 минут) или revert
+B) Подождать, пока автор заметит
 
 C) Исправить в течение рабочего дня
 
-D) Подождать, пока автор заметит
+D) Исправить немедленно (максимум 10 минут) или revert
 
 ---
 
 ## Question 7: Caching
 
-
-
-
-
-
-
 Что из перечисленного обычно кэшируется в CI pipeline?
 
-A) Test results
+A) Исходный код
 
-B) Git history
+B) Test results
 
 C) Зависимости (pip packages, npm modules)
 
-D) Исходный код
+D) Git history
 
 ---
 
 ## Question 8: GitHub Flow
 
-
-
-
-
-
-
 Какой порядок шагов в GitHub Flow?
 
-A) Merge → Branch → PR → Deploy
+A) Review → Branch → Merge → CI
 
-B) Review → Branch → Merge → CI
+B) Deploy → PR → Review → Merge
 
-C) Deploy → PR → Review → Merge
+C) Merge → Branch → PR → Deploy
 
 D) Branch → Changes → PR → CI + Review → Merge → Deploy
 
@@ -166,19 +118,13 @@ D) Branch → Changes → PR → CI + Review → Merge → Deploy
 
 ## Question 9: Build Once Deploy Many
 
-
-
-
-
-
-
 Что означает принцип "Build once, deploy many"?
 
-A) Деплоить только один раз
+A) Собрать artifact один раз и использовать для всех environments
 
 B) Использовать только один сервер
 
-C) Собрать artifact один раз и использовать для всех environments
+C) Деплоить только один раз
 
 D) Собирать заново для каждого environment
 
@@ -186,179 +132,125 @@ D) Собирать заново для каждого environment
 
 ## Question 10: Test Types
 
-
-
-
-
-
-
 Какой тип тестов обычно запускается последним в CI pipeline?
 
-A) Unit tests
+A) Type checking
 
 B) E2E tests
 
-C) Type checking
+C) Lint checks
 
-D) Lint checks
+D) Unit tests
 
 ---
 
 ## Question 11: Branch Protection
 
-
-
-
-
-
-
 Что обеспечивает Branch Protection в GitHub?
 
-A) Шифрование веток
+A) Backup веток
 
-B) Обязательные проверки и reviews перед merge
+B) Автоматическое удаление веток
 
-C) Автоматическое удаление веток
+C) Обязательные проверки и reviews перед merge
 
-D) Backup веток
+D) Шифрование веток
 
 ---
 
 ## Question 12: Parallelization
 
-
-
-
-
-
-
 Как параллелизация улучшает CI pipeline?
 
-A) Выполняет независимые задачи одновременно, сокращая общее время
+A) Увеличивает надёжность
 
-B) Уменьшает количество тестов
+B) Выполняет независимые задачи одновременно, сокращая общее время
 
-C) Упрощает код тестов
+C) Уменьшает количество тестов
 
-D) Увеличивает надёжность
+D) Упрощает код тестов
 
 ---
 
 ## Question 13: CODEOWNERS
 
-
-
-
-
-
-
 Для чего используется файл CODEOWNERS?
 
 A) Для автоматического форматирования
 
-B) Для логирования изменений
+B) Для определения, кто должен review изменения в определённых файлах
 
 C) Для хранения паролей
 
-D) Для определения, кто должен review изменения в определённых файлах
+D) Для логирования изменений
 
 ---
 
 ## Question 14: CI Metrics
 
-
-
-
-
-
-
 Какая метрика показывает процент успешных builds?
 
-A) Pipeline duration
+A) Success rate
 
-B) Queue time
+B) Test coverage
 
-C) Test coverage
+C) Pipeline duration
 
-D) Success rate
+D) Queue time
 
 ---
 
 ## Question 15: Trunk-based Development
 
-
-
-
-
-
-
 Сколько максимум должна жить feature branch в trunk-based development?
 
-A) Пока фича не готова полностью
+A) 1 месяц
 
 B) 1-2 дня
 
 C) 1 неделя
 
-D) 1 месяц
+D) Пока фича не готова полностью
 
 ---
 
 ## Question 16: Security in CI
 
-
-
-
-
-
-
 Какой инструмент используется для сканирования Docker images на уязвимости?
 
-A) Trivy
+A) ruff
 
-B) mypy
+B) Trivy
 
-C) ruff
+C) pytest
 
-D) pytest
+D) mypy
 
 ---
 
 ## Question 17: Test Sharding
 
-
-
-
-
-
-
 Что такое test sharding в CI?
 
 A) Шифрование результатов тестов
 
-B) Группировка тестов по категориям
+B) Разбиение тестов на части для параллельного выполнения
 
-C) Разбиение тестов на части для параллельного выполнения
+C) Удаление ненужных тестов
 
-D) Удаление ненужных тестов
+D) Группировка тестов по категориям
 
 ---
 
 ## Question 18: Quality Gates
 
-
-
-
-
-
-
 Что из перечисленного является типичным quality gate?
 
-A) Минимальное количество комментариев в коде
+A) Время написания кода
 
-B) Максимальное количество файлов в PR
+B) Минимальное количество комментариев в коде
 
-C) Время написания кода
+C) Максимальное количество файлов в PR
 
 D) Code coverage > 80%
 
@@ -366,19 +258,13 @@ D) Code coverage > 80%
 
 ## Question 19: Self-hosted Runners
 
-
-
-
-
-
-
 Когда имеет смысл использовать self-hosted runners?
 
-A) Когда нет интернета
+A) Когда нужен доступ к internal resources или специфическое hardware
 
-B) Только для open source проектов
+B) Когда нет интернета
 
-C) Когда нужен доступ к internal resources или специфическое hardware
+C) Только для open source проектов
 
 D) Всегда, для экономии
 
@@ -386,21 +272,15 @@ D) Всегда, для экономии
 
 ## Question 20: Environment Variables
 
-
-
-
-
-
-
 Как правильно хранить секреты в CI pipeline?
 
-A) В защищённых secrets хранилище CI системы (GitHub Secrets и т.д.)
+A) В переменных окружения, захардкоженных в workflow файле
 
-B) В исходном коде
+B) В README файле
 
-C) В README файле
+C) В исходном коде
 
-D) В переменных окружения, захардкоженных в workflow файле
+D) В защищённых secrets хранилище CI системы (GitHub Secrets и т.д.)
 
 ---
 
@@ -410,26 +290,26 @@ D) В переменных окружения, захардкоженных в w
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | D | CI — частая интеграция с автоматической проверкой каждого изменения |
+| 1 | A | CI — частая интеграция с автоматической проверкой каждого изменения |
 | 2 | B | Trunk-based: короткие ветки, частые merge, идеально для CI/CD |
-| 3 | B | Test pyramid: много unit tests (быстрые), меньше integration, мало E2E |
+| 3 | C | Test pyramid: много unit tests (быстрые), меньше integration, мало E2E |
 | 4 | B | 10-15 минут — оптимальное время для быстрой обратной связи |
-| 5 | A | Flaky test проходит/падает случайно без изменений в коде |
-| 6 | B | Сломанный build — приоритет #1, максимум 10 минут на фикс или revert |
+| 5 | D | Flaky test проходит/падает случайно без изменений в коде |
+| 6 | D | Сломанный build — приоритет #1, максимум 10 минут на фикс или revert |
 | 7 | C | Кэширование зависимостей значительно ускоряет pipeline |
 | 8 | D | GitHub Flow: branch → changes → PR → CI + review → merge → deploy |
-| 9 | C | Build once: один artifact используется во всех environments |
+| 9 | A | Build once: один artifact используется во всех environments |
 | 10 | B | E2E тесты медленные, запускаются после быстрых проверок |
-| 11 | B | Branch protection обеспечивает обязательные checks и reviews |
-| 12 | A | Параллельные независимые jobs сокращают общее время |
-| 13 | D | CODEOWNERS определяет required reviewers для файлов |
-| 14 | D | Success rate = successful builds / total builds |
+| 11 | C | Branch protection обеспечивает обязательные checks и reviews |
+| 12 | B | Параллельные независимые jobs сокращают общее время |
+| 13 | B | CODEOWNERS определяет required reviewers для файлов |
+| 14 | A | Success rate = successful builds / total builds |
 | 15 | B | Trunk-based: branches живут 1-2 дня максимум |
-| 16 | A | Trivy — популярный scanner для контейнеров и кода |
-| 17 | C | Sharding — разбиение тестов для параллельного выполнения |
+| 16 | B | Trivy — популярный scanner для контейнеров и кода |
+| 17 | B | Sharding — разбиение тестов для параллельного выполнения |
 | 18 | D | Coverage > 80% — типичный quality gate |
-| 19 | C | Self-hosted нужны для internal resources или спец. hardware |
-| 20 | A | Секреты хранятся в защищённом secrets хранилище CI системы |
+| 19 | A | Self-hosted нужны для internal resources или спец. hardware |
+| 20 | D | Секреты хранятся в защищённом secrets хранилище CI системы |
 
 ---
 

@@ -8,11 +8,11 @@
 
 Что означает `chmod 755 file`?
 
-A) Только владелец может читать
+A) rwxr-xr-x — владелец всё, остальные читать и выполнять
 
-B) rwxr-xr-x — владелец всё, остальные читать и выполнять
+B) Все могут всё
 
-C) Все могут всё
+C) Только владелец может читать
 
 D) Файл удаляется
 
@@ -22,11 +22,11 @@ D) Файл удаляется
 
 Какая команда включит автозапуск сервиса при загрузке системы?
 
-A) `systemctl start nginx`
+A) `systemctl restart nginx`
 
-B) `systemctl restart nginx`
+B) `systemctl enable nginx`
 
-C) `systemctl enable nginx`
+C) `systemctl start nginx`
 
 D) `systemctl autostart nginx`
 
@@ -36,13 +36,13 @@ D) `systemctl autostart nginx`
 
 Почему рекомендуется копировать requirements.txt перед копированием всего кода?
 
-A) Это обязательное требование Docker
+A) requirements.txt должен быть первым файлом
 
 B) Для использования кэша слоёв — зависимости не пересобираются при изменении кода
 
-C) requirements.txt должен быть первым файлом
+C) Иначе pip не найдёт файл
 
-D) Иначе pip не найдёт файл
+D) Это обязательное требование Docker
 
 ---
 
@@ -50,11 +50,11 @@ D) Иначе pip не найдёт файл
 
 Какая команда покажет размер директории /var/log?
 
-A) `ls -l /var/log`
+A) `df -h /var/log`
 
-B) `du -sh /var/log`
+B) `ls -l /var/log`
 
-C) `df -h /var/log`
+C) `du -sh /var/log`
 
 D) `size /var/log`
 
@@ -64,13 +64,13 @@ D) `size /var/log`
 
 Как войти в работающий контейнер с bash?
 
-A) `docker run container bash`
+A) `docker connect container bash`
 
-B) `docker exec -it container bash`
+B) `docker ssh container`
 
-C) `docker ssh container`
+C) `docker exec -it container bash`
 
-D) `docker connect container bash`
+D) `docker run container bash`
 
 ---
 
@@ -78,13 +78,13 @@ D) `docker connect container bash`
 
 Как уменьшить количество слоёв в Docker образе?
 
-A) Использовать больше FROM
+A) Удалить все комментарии
 
 B) Объединять RUN команды через &&
 
 C) Использовать только COPY
 
-D) Удалить все комментарии
+D) Использовать больше FROM
 
 ---
 
@@ -92,13 +92,13 @@ D) Удалить все комментарии
 
 ## Answer Key
 
-| # | Ответ | Пояснение |
-|---|-------|-----------|
-| 1 | B | 755 = rwx(7) r-x(5) r-x(5) — владелец всё, остальные читать/выполнять |
-| 2 | C | `enable` добавляет в автозапуск, `start` только запускает |
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | A | 755 = rwx(7) r-x(5) r-x(5) — владелец всё, остальные читать/выполнять |
+| 2 | B | `enable` добавляет в автозапуск, `start` только запускает |
 | 3 | B | Docker кэширует слои; если requirements.txt не изменился, pip install пропускается |
-| 4 | B | `du -sh` — disk usage, `-s` summary, `-h` human-readable |
-| 5 | B | `exec -it` запускает команду в работающем контейнере с tty |
+| 4 | C | `du -sh` — disk usage, `-s` summary, `-h` human-readable |
+| 5 | C | `exec -it` запускает команду в работающем контейнере с tty |
 | 6 | B | Каждый RUN создаёт слой; объединение через && уменьшает их количество |
 
 ---

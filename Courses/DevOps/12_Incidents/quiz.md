@@ -6,39 +6,27 @@
 
 ## Question 1: Blameless Culture
 
-
-
-
-
-
-
 Что означает blameless postmortem?
 
-A) Фокус на системных проблемах, не на обвинении людей
+A) Не записывать имена участников
 
-B) Не проводить postmortem вообще
+B) Никто не несёт ответственности
 
-C) Никто не несёт ответственности
+C) Фокус на системных проблемах, не на обвинении людей
 
-D) Не записывать имена участников
+D) Не проводить postmortem вообще
 
 ---
 
 ## Question 2: Incident Commander
 
-
-
-
-
-
-
 Какова главная роль Incident Commander?
 
-A) Писать код fix
+A) Коммуникация с клиентами
 
-B) Координация response и принятие решений
+B) Писать код fix
 
-C) Коммуникация с клиентами
+C) Координация response и принятие решений
 
 D) Документирование timeline
 
@@ -46,39 +34,27 @@ D) Документирование timeline
 
 ## Question 3: SEV1
 
-
-
-
-
-
-
 Что характеризует SEV1 инцидент?
 
 A) Cosmetic issues
 
-B) Сервис недоступен, все пользователи затронуты
+B) Минимальное влияние
 
-C) Non-critical feature broken
+C) Сервис недоступен, все пользователи затронуты
 
-D) Минимальное влияние
+D) Non-critical feature broken
 
 ---
 
 ## Question 4: MTTR
 
-
-
-
-
-
-
 Что измеряет MTTR?
 
 A) Время до acknowledge
 
-B) Время до обнаружения
+B) Время от обнаружения до resolution
 
-C) Время от обнаружения до resolution
+C) Время до обнаружения
 
 D) Количество инцидентов
 
@@ -86,59 +62,41 @@ D) Количество инцидентов
 
 ## Question 5: 5 Whys
 
-
-
-
-
-
-
 Для чего используется техника 5 Whys?
 
-A) Для планирования capacity
+A) Для подсчёта инцидентов
 
 B) Для обвинения виновных
 
 C) Для поиска root cause проблемы
 
-D) Для подсчёта инцидентов
+D) Для планирования capacity
 
 ---
 
 ## Question 6: On-Call Handoff
 
-
-
-
-
-
-
 Что должен содержать on-call handoff?
 
-A) Только имена on-call
+A) Зарплаты команды
 
-B) Active issues, recent incidents, scheduled maintenance
+B) Код последнего релиза
 
-C) Зарплаты команды
+C) Active issues, recent incidents, scheduled maintenance
 
-D) Код последнего релиза
+D) Только имена on-call
 
 ---
 
 ## Question 7: Action Items
 
-
-
-
-
-
-
 Какие action items хорошие?
 
 A) Конкретные, с owner, priority и deadline
 
-B) Без owner
+B) Без deadline
 
-C) Без deadline
+C) Без owner
 
 D) "Улучшить систему"
 
@@ -146,59 +104,41 @@ D) "Улучшить систему"
 
 ## Question 8: Postmortem Timing
 
-
-
-
-
-
-
 Когда проводить postmortem?
 
-A) Никогда
+A) Только для SEV4
 
-B) В течение нескольких дней после resolution
+B) Никогда
 
-C) Только для SEV4
+C) Через месяц после инцидента
 
-D) Через месяц после инцидента
+D) В течение нескольких дней после resolution
 
 ---
 
 ## Question 9: Mitigation vs Resolution
 
-
-
-
-
-
-
 Чем mitigation отличается от resolution?
 
 A) Resolution проще
 
-B) Mitigation — временное уменьшение impact, resolution — устранение причины
+B) Mitigation дольше
 
-C) Mitigation дольше
+C) Это одно и то же
 
-D) Это одно и то же
+D) Mitigation — временное уменьшение impact, resolution — устранение причины
 
 ---
 
 ## Question 10: Good On-Call Alert
 
-
-
-
-
-
-
 Что характеризует хороший on-call алерт?
 
-A) Actionable, с runbook, low noise
+A) Срабатывает на всё
 
-B) Срабатывает на всё
+B) Без документации
 
-C) Без документации
+C) Actionable, с runbook, low noise
 
 D) Максимальная чувствительность
 
@@ -206,48 +146,33 @@ D) Максимальная чувствительность
 
 ## Question 11: Detection
 
-
-
-
-
-
 Как улучшить incident detection?
 
 A) Меньше мониторинга
 
 B) Только ручные проверки
 
-C) Качественные алерты на SLO breach, anomaly detection
+C) Ожидать жалоб пользователей
 
-D) Ожидать жалоб пользователей
+D) Качественные алерты на SLO breach, anomaly detection
 
 ---
 
 ## Question 12: Communication
 
-
-
-
-
-
 Какой канал лучше для incident communication?
 
-A) Бумажные записки
+A) Dedicated war room (chat channel) с timeline
 
-B) Dedicated war room (chat channel) с timeline
+B) Личные сообщения
 
-C) Email
+C) Бумажные записки
 
-D) Личные сообщения
+D) Email
 
 ---
 
 ## Question 13: Escalation
-
-
-
-
-
 
 Когда происходит escalation?
 
@@ -263,56 +188,41 @@ D) Только для SEV1
 
 ## Question 14: Timeline
 
-
-
-
-
-
 Зачем вести timeline инцидента?
 
-A) Для postmortem analysis и будущих улучшений
+A) Для красоты
 
-B) Не нужен
+B) Для отчётности HR
 
-C) Для отчётности HR
+C) Не нужен
 
-D) Для красоты
+D) Для postmortem analysis и будущих улучшений
 
 ---
 
 ## Question 15: Testing Runbooks
 
-
-
-
-
-
 Почему важно тестировать runbooks?
 
-A) Только для документации
+A) Чтобы убедиться что они работают во время реального инцидента
 
-B) Для развлечения
+B) Не важно
 
-C) Чтобы убедиться что они работают во время реального инцидента
+C) Только для документации
 
-D) Не важно
+D) Для развлечения
 
 ---
 
 ## Question 16: War Room Etiquette
 
-
-
-
-
-
 Какие правила в incident war room?
 
-A) Говорить обо всём
+A) Только релевантная информация, координация через IC
 
-B) Только релевантная информация, координация через IC
+B) Без правил
 
-C) Без правил
+C) Говорить обо всём
 
 D) Обсуждать другие проекты
 
@@ -320,75 +230,55 @@ D) Обсуждать другие проекты
 
 ## Question 17: Page Storm
 
-
-
-
-
-
 Что такое page storm?
 
-A) Погодное явление
+A) Тип сервера
 
-B) Множество связанных алертов от одной проблемы
+B) Вид деплоя
 
-C) Вид деплоя
+C) Погодное явление
 
-D) Тип сервера
+D) Множество связанных алертов от одной проблемы
 
 ---
 
 ## Question 18: RCA
 
-
-
-
-
-
 Что такое RCA?
 
-A) Root Cause Analysis — анализ первопричины
+A) Rapid Code Adjustment
 
-B) Rapid Code Adjustment
+B) Regular Cleanup Activity
 
-C) Remote Computer Access
+C) Root Cause Analysis — анализ первопричины
 
-D) Regular Cleanup Activity
+D) Remote Computer Access
 
 ---
 
 ## Question 19: Customer Communication
 
-
-
-
-
-
 Когда сообщать клиентам об инциденте?
 
-A) После полного resolution
+A) Только по запросу
 
-B) Только по запросу
+B) После полного resolution
 
-C) При значительном impact, согласно communication plan
+C) Никогда
 
-D) Никогда
+D) При значительном impact, согласно communication plan
 
 ---
 
 ## Question 20: Learning from Incidents
 
-
-
-
-
-
 Как команда учится на инцидентах?
 
-A) Штрафы
+A) Увольнения
 
-B) Увольнения
+B) Blameless postmortems, action items, sharing learnings
 
-C) Blameless postmortems, action items, sharing learnings
+C) Штрафы
 
 D) Не учится
 
@@ -400,26 +290,26 @@ D) Не учится
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | Blameless = фокус на системах, не людях |
-| 2 | B | IC координирует response |
-| 3 | B | SEV1 = critical, сервис недоступен |
-| 4 | C | MTTR = Mean Time to Resolve |
+| 1 | C | Blameless = фокус на системах, не людях |
+| 2 | C | IC координирует response |
+| 3 | C | SEV1 = critical, сервис недоступен |
+| 4 | B | MTTR = Mean Time to Resolve |
 | 5 | C | 5 Whys для поиска root cause |
-| 6 | B | Handoff содержит context для incoming |
+| 6 | C | Handoff содержит context для incoming |
 | 7 | A | Action items конкретные, с owner и deadline |
-| 8 | B | Postmortem в течение нескольких дней |
-| 9 | B | Mitigation временно, resolution устраняет причину |
-| 10 | A | Хороший алерт actionable с документацией |
-| 11 | C | Качественные алерты на SLO breach, anomaly detection |
-| 12 | B | War room (chat channel) с timeline для coordination |
+| 8 | D | Postmortem в течение нескольких дней |
+| 9 | D | Mitigation временно, resolution устраняет причину |
+| 10 | C | Хороший алерт actionable с документацией |
+| 11 | D | Качественные алерты на SLO breach, anomaly detection |
+| 12 | A | War room (chat channel) с timeline для coordination |
 | 13 | B | Escalation когда не resolve в рамках компетенции/времени |
-| 14 | A | Timeline нужен для postmortem и улучшений |
-| 15 | C | Тестирование runbooks гарантирует их работоспособность |
-| 16 | B | War room: только релевантная информация, координация через IC |
-| 17 | B | Page storm — множество алертов от одной проблемы |
-| 18 | A | RCA — Root Cause Analysis |
-| 19 | C | Сообщать клиентам при значительном impact |
-| 20 | C | Blameless postmortems, action items, sharing learnings |
+| 14 | D | Timeline нужен для postmortem и улучшений |
+| 15 | A | Тестирование runbooks гарантирует их работоспособность |
+| 16 | A | War room: только релевантная информация, координация через IC |
+| 17 | D | Page storm — множество алертов от одной проблемы |
+| 18 | C | RCA — Root Cause Analysis |
+| 19 | D | Сообщать клиентам при значительном impact |
+| 20 | B | Blameless postmortems, action items, sharing learnings |
 
 ---
 

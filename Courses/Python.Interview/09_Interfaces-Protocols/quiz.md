@@ -8,11 +8,11 @@
 
 Что означает duck typing в Python?
 
-A) Специальный тип для работы с птицами
+A) Динамическое создание типов
 
 B) Проверяем не тип объекта, а наличие нужных методов
 
-C) Динамическое создание типов
+C) Специальный тип для работы с птицами
 
 D) Типизация через аннотации
 
@@ -22,13 +22,13 @@ D) Типизация через аннотации
 
 Какой тип НЕ является hashable?
 
-A) str
+A) tuple
 
-B) tuple
+B) int
 
-C) list
+C) str
 
-D) int
+D) list
 
 ---
 
@@ -36,11 +36,11 @@ D) int
 
 Какой метод делает объект iterable?
 
-A) `__next__()`
+A) `__len__()`
 
-B) `__iter__()`
+B) `__next__()`
 
-C) `__len__()`
+C) `__iter__()`
 
 D) `__contains__()`
 
@@ -50,13 +50,13 @@ D) `__contains__()`
 
 Что произойдёт при попытке создать экземпляр абстрактного класса?
 
-A) Создастся пустой объект
+A) Вызовется метод по умолчанию
 
-B) TypeError — нельзя создать экземпляр абстрактного класса
+B) Ничего, это разрешено
 
-C) Вызовется метод по умолчанию
+C) TypeError — нельзя создать экземпляр абстрактного класса
 
-D) Ничего, это разрешено
+D) Создастся пустой объект
 
 ---
 
@@ -66,11 +66,11 @@ D) Ничего, это разрешено
 
 A) `isinstance(obj, Function)`
 
-B) `callable(obj)` или `isinstance(obj, Callable)`
+B) `type(obj) == function`
 
 C) `hasattr(obj, '__run__')`
 
-D) `type(obj) == function`
+D) `callable(obj)` или `isinstance(obj, Callable)`
 
 ---
 
@@ -78,13 +78,13 @@ D) `type(obj) == function`
 
 Какой ABC проверяет, что объект можно использовать как словарь?
 
-A) Iterable
+A) Sequence
 
-B) Sequence
+B) Iterable
 
-C) Mapping
+C) Container
 
-D) Container
+D) Mapping
 
 ---
 
@@ -92,14 +92,14 @@ D) Container
 
 ## Answer Key
 
-| # | Ответ | Пояснение |
-|---|-------|-----------|
+| # | Answer | Explanation |
+|---|--------|-------------|
 | 1 | B | Duck typing: проверяем методы, а не тип |
-| 2 | C | list — mutable, поэтому не hashable |
-| 3 | B | `__iter__()` делает объект iterable |
-| 4 | B | TypeError при попытке создать экземпляр ABC |
-| 5 | B | `callable()` — встроенная функция, или isinstance с Callable |
-| 6 | C | Mapping — для словарь-подобных объектов |
+| 2 | D | list — mutable, поэтому не hashable |
+| 3 | C | `__iter__()` делает объект iterable |
+| 4 | C | TypeError при попытке создать экземпляр ABC |
+| 5 | D | `callable()` — встроенная функция, или isinstance с Callable |
+| 6 | D | Mapping — для словарь-подобных объектов |
 
 ---
 

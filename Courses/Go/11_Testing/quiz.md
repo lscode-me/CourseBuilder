@@ -10,9 +10,9 @@
 
 A) _spec.go
 
-B) _test.go
+B) .test.go
 
-C) .test.go
+C) _test.go
 
 D) _tests.go
 
@@ -22,13 +22,13 @@ D) _tests.go
 
 Какая сигнатура правильная для теста?
 
-A) `func TestAdd()`
+A) `func testAdd(t *testing.T)`
 
-B) `func TestAdd(t *testing.T)`
+B) `func Test_Add(t testing.T)`
 
-C) `func Test_Add(t testing.T)`
+C) `func TestAdd(t *testing.T)`
 
-D) `func testAdd(t *testing.T)`
+D) `func TestAdd()`
 
 ---
 
@@ -36,11 +36,11 @@ D) `func testAdd(t *testing.T)`
 
 Какая команда запускает все тесты?
 
-A) `go run test`
+A) `go check`
 
 B) `go test`
 
-C) `go check`
+C) `go run test`
 
 D) `go verify`
 
@@ -52,9 +52,9 @@ D) `go verify`
 
 A) `go test --verbose`
 
-B) `go test -v`
+B) `go test -debug`
 
-C) `go test -debug`
+C) `go test -v`
 
 D) `go test -d`
 
@@ -66,9 +66,9 @@ D) `go test -d`
 
 A) `go test TestAdd`
 
-B) `go test -run TestAdd`
+B) `go test -only TestAdd`
 
-C) `go test -only TestAdd`
+C) `go test -run TestAdd`
 
 D) `go test -name TestAdd`
 
@@ -78,13 +78,13 @@ D) `go test -name TestAdd`
 
 В чём разница между t.Error и t.Fatal?
 
-A) Error быстрее
+A) Error для warnings
 
-B) Fatal останавливает тест, Error продолжает
+B) Error быстрее
 
 C) Разницы нет
 
-D) Error для warnings
+D) Fatal останавливает тест, Error продолжает
 
 ---
 
@@ -92,11 +92,11 @@ D) Error для warnings
 
 Что такое table-driven tests?
 
-A) Тесты для баз данных
+A) HTML тесты
 
 B) Тесты с таблицей тестовых случаев
 
-C) HTML тесты
+C) Тесты для баз данных
 
 D) Тесты Excel файлов
 
@@ -106,13 +106,13 @@ D) Тесты Excel файлов
 
 Для чего используется t.Run?
 
-A) Запуск программы
+A) Выполнение скрипта
 
-B) Создание подтестов
+B) Запуск горутины
 
-C) Запуск горутины
+C) Создание подтестов
 
-D) Выполнение скрипта
+D) Запуск программы
 
 ---
 
@@ -120,11 +120,11 @@ D) Выполнение скрипта
 
 Что делает t.Parallel()?
 
-A) Запускает тест параллельно
+A) Ускоряет тест
 
-B) Создаёт несколько копий теста
+B) Запускает тест параллельно
 
-C) Ускоряет тест
+C) Создаёт несколько копий теста
 
 D) Блокирует параллельное выполнение
 
@@ -134,11 +134,11 @@ D) Блокирует параллельное выполнение
 
 Для чего используется t.Helper()?
 
-A) Ускоряет тест
+A) Показывает правильную строку в ошибках
 
-B) Показывает правильную строку в ошибках
+B) Создаёт helper функцию
 
-C) Создаёт helper функцию
+C) Ускоряет тест
 
 D) Пропускает тест
 
@@ -148,13 +148,13 @@ D) Пропускает тест
 
 Какой префикс у бенчмарков?
 
-A) Test
+A) Speed
 
 B) Benchmark
 
-C) Perf
+C) Test
 
-D) Speed
+D) Perf
 
 ---
 
@@ -162,13 +162,13 @@ D) Speed
 
 Какая сигнатура правильная?
 
-A) `func BenchmarkAdd(t *testing.T)`
+A) `func Benchmark_Add(b testing.B)`
 
 B) `func BenchmarkAdd(b *testing.B)`
 
 C) `func BenchmarkAdd()`
 
-D) `func Benchmark_Add(b testing.B)`
+D) `func BenchmarkAdd(t *testing.T)`
 
 ---
 
@@ -176,13 +176,13 @@ D) `func Benchmark_Add(b testing.B)`
 
 Что такое b.N в бенчмарке?
 
-A) Количество запусков, определённое фреймворком
+A) Номер итерации
 
-B) Номер итерации
+B) Количество CPU
 
 C) Размер данных
 
-D) Количество CPU
+D) Количество запусков, определённое фреймворком
 
 ---
 
@@ -190,9 +190,9 @@ D) Количество CPU
 
 Как запустить бенчмарки?
 
-A) `go bench`
+A) `go test -bench=.`
 
-B) `go test -bench=.`
+B) `go bench`
 
 C) `go test -benchmark`
 
@@ -204,13 +204,13 @@ D) `go test -perf`
 
 Что делает b.ReportAllocs()?
 
-A) Выделяет память
+A) Логирует ошибки
 
-B) Показывает количество аллокаций
+B) Освобождает память
 
-C) Освобождает память
+C) Показывает количество аллокаций
 
-D) Логирует ошибки
+D) Выделяет память
 
 ---
 
@@ -222,9 +222,9 @@ A) `go test -cover`
 
 B) `go test -coverage`
 
-C) `go cover`
+C) `go test -report`
 
-D) `go test -report`
+D) `go cover`
 
 ---
 
@@ -232,13 +232,13 @@ D) `go test -report`
 
 Как сгенерировать HTML отчёт coverage?
 
-A) `go test -html`
+A) `go test -coverhtml`
 
-B) `go tool cover -html=coverage.out`
+B) `go cover -html`
 
-C) `go cover -html`
+C) `go tool cover -html=coverage.out`
 
-D) `go test -coverhtml`
+D) `go test -html`
 
 ---
 
@@ -250,9 +250,9 @@ A) Как альтернативная точка входа
 
 B) Для setup/teardown всего пакета
 
-C) Для main тестов
+C) Для запуска main функции
 
-D) Для запуска main функции
+D) Для main тестов
 
 ---
 
@@ -260,13 +260,13 @@ D) Для запуска main функции
 
 Когда выполняется t.Cleanup?
 
-A) В начале теста
+A) После завершения теста
 
-B) После завершения теста
+B) Вручную
 
 C) При ошибке
 
-D) Вручную
+D) В начале теста
 
 ---
 
@@ -276,11 +276,11 @@ D) Вручную
 
 A) `// Expected:`
 
-B) `// Output:`
+B) `// Returns:`
 
 C) `// Result:`
 
-D) `// Returns:`
+D) `// Output:`
 
 ---
 
@@ -288,13 +288,13 @@ D) `// Returns:`
 
 Как запустить с race detector?
 
-A) `go test -race`
+A) `go test -thread`
 
-B) `go test -detect-race`
+B) `go test -race`
 
 C) `go test -concurrent`
 
-D) `go test -thread`
+D) `go test -detect-race`
 
 ---
 
@@ -302,11 +302,11 @@ D) `go test -thread`
 
 Как пропустить тест?
 
-A) `t.Skip("reason")`
+A) `t.Ignore("reason")`
 
-B) `t.Ignore("reason")`
+B) `return`
 
-C) `return`
+C) `t.Skip("reason")`
 
 D) `t.Pass()`
 
@@ -316,11 +316,11 @@ D) `t.Pass()`
 
 Что рекомендуется для mocking в Go?
 
-A) Специальные mock библиотеки
+A) Reflection
 
 B) Интерфейсы и свои mock реализации
 
-C) Reflection
+C) Специальные mock библиотеки
 
 D) Generics
 
@@ -330,13 +330,13 @@ D) Generics
 
 Как пометить тест как failed без остановки?
 
-A) `t.Fail()`
+A) `t.SetFailed()`
 
 B) `t.Failed()`
 
-C) `t.SetFailed()`
+C) `t.Mark()`
 
-D) `t.Mark()`
+D) `t.Fail()`
 
 ---
 
@@ -344,13 +344,13 @@ D) `t.Mark()`
 
 Для чего используется директория testdata/?
 
-A) Кэш тестов
+A) Временные файлы
 
-B) Тестовые данные (игнорируется go build)
+B) Результаты тестов
 
-C) Результаты тестов
+C) Тестовые данные (игнорируется go build)
 
-D) Временные файлы
+D) Кэш тестов
 
 ---
 
@@ -358,13 +358,13 @@ D) Временные файлы
 
 Как увидеть coverage по функциям?
 
-A) `go tool cover -func=coverage.out`
+A) `go test -show-funcs`
 
-B) `go test -func-coverage`
+B) `go tool cover -func=coverage.out`
 
-C) `go cover -functions`
+C) `go test -func-coverage`
 
-D) `go test -show-funcs`
+D) `go cover -functions`
 
 ---
 
@@ -374,11 +374,11 @@ D) `go test -show-funcs`
 
 A) Нет проблем
 
-B) Нужно копировать переменную
+B) Нельзя использовать
 
 C) Нужен mutex
 
-D) Нельзя использовать
+D) Нужно копировать переменную
 
 ---
 
@@ -386,13 +386,13 @@ D) Нельзя использовать
 
 В каком пакете пишутся тесты?
 
-A) Отдельном test пакете
+A) Только в отдельном
 
-B) В том же пакете или *_test
+B) Только в том же пакете
 
-C) Только в том же пакете
+C) Отдельном test пакете
 
-D) Только в отдельном
+D) В том же пакете или *_test
 
 ---
 
@@ -400,13 +400,13 @@ D) Только в отдельном
 
 Как писать black-box тесты?
 
-A) Использовать пакет package_test
+A) Использовать internal
 
 B) Невозможно в Go
 
 C) Через reflection
 
-D) Использовать internal
+D) Использовать пакет package_test
 
 ---
 
@@ -414,13 +414,15 @@ D) Использовать internal
 
 Как установить timeout для теста?
 
-A) `go test -timeout 30s`
+A) `go test -limit 30s`
 
-B) `go test -time 30s`
+B) `go test -timeout 30s`
 
-C) `go test -limit 30s`
+C) `go test -max 30s`
 
-D) `go test -max 30s`
+D) `go test -time 30s`
+
+---
 
 ---
 
@@ -428,36 +430,36 @@ D) `go test -max 30s`
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | Тестовые файлы должны иметь суффикс _test.go. |
-| 2 | B | `func TestXxx(t *testing.T)` — правильная сигнатура. |
+| 1 | C | Тестовые файлы должны иметь суффикс _test.go. |
+| 2 | C | `func TestXxx(t *testing.T)` — правильная сигнатура. |
 | 3 | B | `go test` запускает тесты. |
-| 4 | B | `-v` для verbose output. |
-| 5 | B | `-run TestAdd` запускает конкретный тест. |
-| 6 | B | Fatal останавливает, Error продолжает тест. |
+| 4 | C | `-v` для verbose output. |
+| 5 | C | `-run TestAdd` запускает конкретный тест. |
+| 6 | D | Fatal останавливает, Error продолжает тест. |
 | 7 | B | Паттерн с таблицей тестовых случаев. |
-| 8 | B | t.Run создаёт подтесты. |
-| 9 | A | t.Parallel запускает тест параллельно. |
-| 10 | B | Helper показывает caller в сообщениях об ошибках. |
+| 8 | C | t.Run создаёт подтесты. |
+| 9 | B | t.Parallel запускает тест параллельно. |
+| 10 | A | Helper показывает caller в сообщениях об ошибках. |
 | 11 | B | Benchmark* — префикс для бенчмарков. |
 | 12 | B | `func BenchmarkXxx(b *testing.B)`. |
-| 13 | A | b.N — количество итераций от фреймворка. |
-| 14 | B | `go test -bench=.` запускает все бенчмарки. |
-| 15 | B | ReportAllocs показывает количество аллокаций. |
+| 13 | D | b.N — количество итераций от фреймворка. |
+| 14 | A | `go test -bench=.` запускает все бенчмарки. |
+| 15 | C | ReportAllocs показывает количество аллокаций. |
 | 16 | A | `go test -cover` показывает coverage. |
-| 17 | B | `go tool cover -html=file` создаёт HTML. |
+| 17 | C | `go tool cover -html=file` создаёт HTML. |
 | 18 | B | TestMain для setup/teardown пакета. |
-| 19 | B | Cleanup выполняется после теста. |
-| 20 | B | `// Output:` проверяет вывод example. |
-| 21 | A | `-race` включает race detector. |
-| 22 | A | `t.Skip()` пропускает тест. |
+| 19 | A | Cleanup выполняется после теста. |
+| 20 | D | `// Output:` проверяет вывод example. |
+| 21 | B | `-race` включает race detector. |
+| 22 | C | `t.Skip()` пропускает тест. |
 | 23 | B | Интерфейсы — рекомендуемый способ. |
-| 24 | A | `t.Fail()` помечает failed без остановки. |
-| 25 | B | testdata/ для тестовых данных. |
-| 26 | A | `go tool cover -func` показывает по функциям. |
-| 27 | B | Нужно копировать: `tt := tt`. |
-| 28 | B | В том же или с суффиксом _test. |
-| 29 | A | `package_test` для black-box testing. |
-| 30 | A | `-timeout 30s` устанавливает timeout. |
+| 24 | D | `t.Fail()` помечает failed без остановки. |
+| 25 | C | testdata/ для тестовых данных. |
+| 26 | B | `go tool cover -func` показывает по функциям. |
+| 27 | D | Нужно копировать: `tt := tt`. |
+| 28 | D | В том же или с суффиксом _test. |
+| 29 | D | `package_test` для black-box testing. |
+| 30 | B | `-timeout 30s` устанавливает timeout. |
 
 ---
 

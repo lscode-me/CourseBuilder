@@ -6,12 +6,6 @@
 
 ## Question 1: Конфигурация интерфейса
 
-
-
-
-
-
-
 В каком файле настраивается интерфейс em0?
 
 A) /etc/hostname.em0
@@ -26,17 +20,11 @@ D) /etc/conf.d/net
 
 ## Question 2: DHCP
 
-
-
-
-
-
-
 Что нужно написать в hostname.if для получения адреса по DHCP?
 
-A) bootp
+A) dynamic
 
-B) dynamic
+B) bootp
 
 C) dhcp
 
@@ -46,79 +34,55 @@ D) auto
 
 ## Question 3: Шлюз по умолчанию
 
-
-
-
-
-
-
 В каком файле указывается шлюз по умолчанию?
 
-A) /etc/gateway
+A) /etc/mygate
 
 B) /etc/sysconfig/network
 
 C) /etc/default/route
 
-D) /etc/mygate
+D) /etc/gateway
 
 ---
 
 ## Question 4: Имя хоста
 
-
-
-
-
-
-
 В каком файле хранится имя хоста системы?
 
-A) /etc/sysconfig/network
+A) /etc/myname
 
 B) /etc/HOSTNAME
 
-C) /etc/myname
+C) /etc/hostname
 
-D) /etc/hostname
+D) /etc/sysconfig/network
 
 ---
 
 ## Question 5: Просмотр интерфейсов
 
-
-
-
-
-
-
 Какая команда показывает конфигурацию сетевых интерфейсов?
 
-A) ipconfig
+A) ifconfig
 
-B) ip addr
+B) netstat -i
 
-C) ifconfig
+C) ipconfig
 
-D) netstat -i
+D) ip addr
 
 ---
 
 ## Question 6: Таблица маршрутизации
 
-
-
-
-
-
-
 Какая команда показывает таблицу маршрутизации?
 
-A) netstat -rn
+A) route -n
 
-B) B верно
+B) netstat -rn
 
-C) route -n
+C) B верно
 
 D) ip route
 
@@ -126,59 +90,41 @@ D) ip route
 
 ## Question 7: IP forwarding
 
-
-
-
-
-
-
 Какой параметр sysctl включает пересылку IP пакетов?
 
 A) net.inet.ip.forwarding
 
-B) net.ipv4.ip_forward
+B) kernel.ip_forward
 
-C) net.core.forwarding
+C) net.ipv4.ip_forward
 
-D) kernel.ip_forward
+D) net.core.forwarding
 
 ---
 
 ## Question 8: WiFi подключение
 
-
-
-
-
-
-
 Какая директива используется для подключения к WiFi с WPA2?
 
 A) wpa_supplicant
 
-B) connect wpa2
+B) join "SSID" wpakey "password"
 
-C) join "SSID" wpakey "password"
+C) wifi connect
 
-D) wifi connect
+D) connect wpa2
 
 ---
 
 ## Question 9: VLAN
 
-
-
-
-
-
-
 Какой параметр задаёт номер VLAN?
 
-A) vlan_id
+A) vid
 
 B) tag
 
-C) vid
+C) vlan_id
 
 D) vnetid
 
@@ -186,77 +132,53 @@ D) vnetid
 
 ## Question 10: DNS серверы
 
-
-
-
-
-
-
 В каком файле настраиваются DNS серверы?
 
-A) /etc/named.conf
+A) /etc/nameservers
 
 B) /etc/resolv.conf
 
 C) /etc/dns.conf
 
-D) /etc/nameservers
+D) /etc/named.conf
 
 ---
 
 ## Question 11: Применение настроек
 
-
-
-
-
-
-
 Какая команда применяет сетевую конфигурацию?
 
-A) systemctl restart network
+A) /etc/init.d/networking restart
 
-B) sh /etc/netstart
+B) systemctl restart network
 
 C) service network restart
 
-D) /etc/init.d/networking restart
+D) sh /etc/netstart
 
 ---
 
 ## Question 12: Захват трафика
 
-
-
-
-
-
-
 Какая утилита используется для захвата сетевого трафика?
 
-A) tshark
+A) snoop
 
-B) tcpdump
+B) wireshark
 
-C) snoop
+C) tcpdump
 
-D) wireshark
+D) tshark
 
 ---
 
 ## Question 13: Группа egress
 
-
-
-
-
-
-
 Что означает группа интерфейсов "egress"?
 
-A) Интерфейс в состоянии ошибки
+A) Интерфейс для исходящего трафика по умолчанию
 
-B) Интерфейс для исходящего трафика по умолчанию
+B) Интерфейс в состоянии ошибки
 
 C) Виртуальный интерфейс
 
@@ -266,19 +188,13 @@ D) Отключённый интерфейс
 
 ## Question 14: Trunk (агрегация)
 
-
-
-
-
-
-
 Какой протокол используется для агрегации каналов по стандарту 802.3ad?
 
 A) failover
 
-B) bonding
+B) balance
 
-C) balance
+C) bonding
 
 D) lacp
 
@@ -286,87 +202,61 @@ D) lacp
 
 ## Question 15: Проверка порта
 
-
-
-
-
-
-
 Какая команда проверяет доступность порта на удалённом хосте?
 
-A) telnet host port
+A) ping host:port
 
-B) ping host:port
+B) A и B верны
 
-C) A и B верны
+C) nc -vz host port
 
-D) nc -vz host port
+D) telnet host port
 
 ---
 
 ## Question 16: route
 
-
-
-
-
-
 Как добавить статический маршрут?
 
 A) netstat -add
 
-B) ip route add
+B) route add destination gateway
 
-C) routing add
+C) ip route add
 
-D) route add destination gateway
+D) routing add
 
 ---
 
 ## Question 17: ping6
 
-
-
-
-
-
 Для чего используется ping6?
 
-A) Для ping на порт 6
+A) Для 6 пакетов ping
 
-B) Для 6 пакетов ping
+B) Для ping версии 6
 
-C) Для тестирования IPv6 соединения
+C) Для ping на порт 6
 
-D) Для ping версии 6
+D) Для тестирования IPv6 соединения
 
 ---
 
 ## Question 18: hostname.carp0
 
-
-
-
-
-
 Для чего используется CARP в OpenBSD?
 
-A) Для балансировки нагрузки
+A) Для VPN
 
 B) Для шифрования трафика
 
-C) Для VPN
+C) Для отказоустойчивости сетевых сервисов
 
-D) Для отказоустойчивости сетевых сервисов
+D) Для балансировки нагрузки
 
 ---
 
 ## Question 19: ifconfig down
-
-
-
-
-
 
 Что делает ifconfig em0 down?
 
@@ -382,20 +272,15 @@ D) Удаляет интерфейс
 
 ## Question 20: /etc/hosts
 
-
-
-
-
-
 Для чего используется /etc/hosts?
 
-A) Для настройки DHCP
+A) Для firewall правил
 
-B) Для firewall правил
+B) Для списка хостов в сети
 
-C) Для списка хостов в сети
+C) Для локального разрешения имён в IP-адреса
 
-D) Для локального разрешения имён в IP-адреса
+D) Для настройки DHCP
 
 ---
 
@@ -407,24 +292,24 @@ D) Для локального разрешения имён в IP-адреса
 |---|--------|-------------|
 | 1 | A | /etc/hostname.em0 — файл конфигурации интерфейса em0 |
 | 2 | C | Простое слово "dhcp" включает получение адреса по DHCP |
-| 3 | D | /etc/mygate содержит IP адрес шлюза по умолчанию |
-| 4 | C | /etc/myname содержит полное имя хоста (FQDN) |
-| 5 | C | ifconfig — стандартная команда для просмотра интерфейсов в BSD |
-| 6 | A | netstat -rn показывает таблицу маршрутизации в числовом формате |
+| 3 | A | /etc/mygate содержит IP адрес шлюза по умолчанию |
+| 4 | A | /etc/myname содержит полное имя хоста (FQDN) |
+| 5 | A | ifconfig — стандартная команда для просмотра интерфейсов в BSD |
+| 6 | B | netstat -rn показывает таблицу маршрутизации в числовом формате |
 | 7 | A | net.inet.ip.forwarding=1 включает IP forwarding в OpenBSD |
-| 8 | C | join "SSID" wpakey "password" — синтаксис WiFi в hostname.if |
+| 8 | B | join "SSID" wpakey "password" — синтаксис WiFi в hostname.if |
 | 9 | D | vnetid задаёт номер VLAN для интерфейса |
 | 10 | B | /etc/resolv.conf — стандартный файл для DNS настроек |
-| 11 | B | sh /etc/netstart применяет сетевую конфигурацию |
-| 12 | B | tcpdump — встроенная утилита для захвата трафика в OpenBSD |
-| 13 | B | egress — группа интерфейсов для исходящего трафика по умолчанию |
+| 11 | D | sh /etc/netstart применяет сетевую конфигурацию |
+| 12 | C | tcpdump — встроенная утилита для захвата трафика в OpenBSD |
+| 13 | A | egress — группа интерфейсов для исходящего трафика по умолчанию |
 | 14 | D | lacp (Link Aggregation Control Protocol) — стандарт 802.3ad |
-| 15 | C | И telnet, и nc -vz могут проверить доступность порта |
-| 16 | D | route add destination gateway — синтаксис добавления маршрута |
-| 17 | C | ping6 используется для тестирования IPv6 соединений |
-| 18 | D | CARP обеспечивает отказоустойчивость сетевых сервисов |
+| 15 | B | И telnet, и nc -vz могут проверить доступность порта |
+| 16 | B | route add destination gateway — синтаксис добавления маршрута |
+| 17 | D | ping6 используется для тестирования IPv6 соединений |
+| 18 | C | CARP обеспечивает отказоустойчивость сетевых сервисов |
 | 19 | C | ifconfig em0 down отключает (деактивирует) интерфейс |
-| 20 | D | /etc/hosts — локальное разрешение имён хостов в IP |
+| 20 | C | /etc/hosts — локальное разрешение имён хостов в IP |
 
 ---
 

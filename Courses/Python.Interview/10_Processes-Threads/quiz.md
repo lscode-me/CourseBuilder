@@ -8,13 +8,13 @@
 
 Что такое GIL в Python?
 
-A) Библиотека для работы с графикой
+A) Global Interpreter Lock — mutex, позволяющий только одному потоку выполнять Python код
 
-B) Global Interpreter Lock — mutex, позволяющий только одному потоку выполнять Python код
+B) Garbage Interrupt Lock
 
-C) Garbage Interrupt Lock
+C) Способ синхронизации процессов
 
-D) Способ синхронизации процессов
+D) Библиотека для работы с графикой
 
 ---
 
@@ -22,11 +22,11 @@ D) Способ синхронизации процессов
 
 Что лучше использовать для CPU-bound задач?
 
-A) threading
+A) multiprocessing
 
-B) multiprocessing
+B) asyncio
 
-C) asyncio
+C) threading
 
 D) Всё одинаково эффективно
 
@@ -38,9 +38,9 @@ D) Всё одинаково эффективно
 
 A) Python не поддерживает сложение
 
-B) Операция не атомарна: read-modify-write
+B) GIL защищает от race conditions
 
-C) GIL защищает от race conditions
+C) Операция не атомарна: read-modify-write
 
 D) Это синтаксическая ошибка
 
@@ -50,13 +50,13 @@ D) Это синтаксическая ошибка
 
 Как threads и processes отличаются по работе с памятью?
 
-A) Threads имеют раздельную память, processes — общую
+A) Оба имеют общую память
 
-B) Threads имеют общую память, processes — раздельную
+B) Threads имеют раздельную память, processes — общую
 
-C) Оба имеют раздельную память
+C) Threads имеют общую память, processes — раздельную
 
-D) Оба имеют общую память
+D) Оба имеют раздельную память
 
 ---
 
@@ -68,9 +68,9 @@ A) multiprocessing
 
 B) threading или asyncio
 
-C) Только single-threaded код
+C) subprocess
 
-D) subprocess
+D) Только single-threaded код
 
 ---
 
@@ -78,13 +78,13 @@ D) subprocess
 
 Как правильно использовать Lock для защиты от race condition?
 
-A) `lock.acquire(); code; lock.release()`
+A) Оба варианта правильные
 
 B) `with lock: code`
 
-C) Оба варианта правильные
+C) Lock не защищает от race conditions
 
-D) Lock не защищает от race conditions
+D) `lock.acquire(); code; lock.release()`
 
 ---
 
@@ -92,14 +92,14 @@ D) Lock не защищает от race conditions
 
 ## Answer Key
 
-| # | Ответ | Пояснение |
-|---|-------|-----------|
-| 1 | B | GIL позволяет только одному потоку выполнять Python байткод |
-| 2 | B | multiprocessing обходит GIL, каждый процесс имеет свой |
-| 3 | B | += состоит из read, modify, write — между ними может вклиниться другой поток |
-| 4 | B | Threads делят память процесса, processes имеют раздельную |
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | A | GIL позволяет только одному потоку выполнять Python байткод |
+| 2 | A | multiprocessing обходит GIL, каждый процесс имеет свой |
+| 3 | C | += состоит из read, modify, write — между ними может вклиниться другой поток |
+| 4 | C | Threads делят память процесса, processes имеют раздельную |
 | 5 | B | threading или asyncio эффективны для I/O из-за GIL |
-| 6 | C | Оба способа работают, with — предпочтительнее (безопаснее) |
+| 6 | A | Оба способа работают, with — предпочтительнее (безопаснее) |
 
 ---
 

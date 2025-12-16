@@ -10,9 +10,9 @@
 
 A) UDP
 
-B) TCP
+B) IP
 
-C) IP
+C) TCP
 
 D) ICMP
 
@@ -22,13 +22,13 @@ D) ICMP
 
 Какой порт по умолчанию использует HTTPS?
 
-A) 80
+A) 8080
 
-B) 22
+B) 80
 
 C) 443
 
-D) 8080
+D) 22
 
 ---
 
@@ -36,13 +36,13 @@ D) 8080
 
 Какой тип DNS записи связывает доменное имя с IPv4 адресом?
 
-A) CNAME
+A) A
 
-B) MX
+B) CNAME
 
-C) A
+C) TXT
 
-D) TXT
+D) MX
 
 ---
 
@@ -52,11 +52,11 @@ D) TXT
 
 A) ACK → SYN → SYN-ACK
 
-B) SYN → SYN-ACK → ACK
+B) UDP не использует handshake
 
-C) SYN → ACK → SYN-ACK
+C) SYN → SYN-ACK → ACK
 
-D) UDP не использует handshake
+D) SYN → ACK → SYN-ACK
 
 ---
 
@@ -64,9 +64,9 @@ D) UDP не использует handshake
 
 Какой socket type используется для TCP?
 
-A) SOCK_DGRAM
+A) SOCK_STREAM
 
-B) SOCK_STREAM
+B) SOCK_DGRAM
 
 C) SOCK_RAW
 
@@ -82,9 +82,9 @@ A) `ping host 80`
 
 B) `telnet host 80`
 
-C) `traceroute host 80`
+C) `dig host 80`
 
-D) `dig host 80`
+D) `traceroute host 80`
 
 ---
 
@@ -92,13 +92,13 @@ D) `dig host 80`
 
 ## Answer Key
 
-| # | Ответ | Пояснение |
-|---|-------|-----------|
-| 1 | B | TCP гарантирует доставку; UDP — нет |
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | C | TCP гарантирует доставку; UDP — нет |
 | 2 | C | HTTPS использует порт 443, HTTP — порт 80 |
-| 3 | C | A-запись связывает имя с IPv4, AAAA — с IPv6 |
-| 4 | B | SYN → SYN-ACK → ACK — классический three-way handshake |
-| 5 | B | SOCK_STREAM для TCP, SOCK_DGRAM для UDP |
+| 3 | A | A-запись связывает имя с IPv4, AAAA — с IPv6 |
+| 4 | C | SYN → SYN-ACK → ACK — классический three-way handshake |
+| 5 | A | SOCK_STREAM для TCP, SOCK_DGRAM для UDP |
 | 6 | B | `telnet host port` проверяет TCP соединение на порт |
 
 ---

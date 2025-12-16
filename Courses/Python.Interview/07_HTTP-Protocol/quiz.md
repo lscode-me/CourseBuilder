@@ -8,13 +8,13 @@
 
 Какой HTTP метод является idempotent?
 
-A) POST
+A) Все вышеперечисленные
 
 B) GET
 
-C) PATCH
+C) POST
 
-D) Все вышеперечисленные
+D) PATCH
 
 ---
 
@@ -24,11 +24,11 @@ D) Все вышеперечисленные
 
 A) Шифрование
 
-B) Multiplexing — много запросов через одно соединение
+B) Cookies
 
-C) Поддержка JSON
+C) Multiplexing — много запросов через одно соединение
 
-D) Cookies
+D) Поддержка JSON
 
 ---
 
@@ -38,11 +38,11 @@ D) Cookies
 
 A) HTTP с сжатием
 
-B) HTTP поверх TLS/SSL с шифрованием
+B) HTTP для мобильных устройств
 
 C) Быстрая версия HTTP
 
-D) HTTP для мобильных устройств
+D) HTTP поверх TLS/SSL с шифрованием
 
 ---
 
@@ -50,11 +50,11 @@ D) HTTP для мобильных устройств
 
 Какая часть URL идёт после знака вопроса?
 
-A) fragment
+A) path
 
-B) path
+B) query
 
-C) query
+C) fragment
 
 D) scheme
 
@@ -68,9 +68,9 @@ A) Успех (2xx)
 
 B) Редирект (3xx)
 
-C) Ошибка клиента (4xx)
+C) Ошибка сервера (5xx)
 
-D) Ошибка сервера (5xx)
+D) Ошибка клиента (4xx)
 
 ---
 
@@ -92,13 +92,13 @@ D) `requests.post(url, content={"key": "value"})`
 
 ## Answer Key
 
-| # | Ответ | Пояснение |
-|---|-------|-----------|
+| # | Answer | Explanation |
+|---|--------|-------------|
 | 1 | B | GET, PUT, DELETE — idempotent; POST, PATCH — нет |
-| 2 | B | HTTP/2 поддерживает multiplexing — много запросов в одном соединении |
-| 3 | B | HTTPS = HTTP + TLS шифрование |
-| 4 | C | URL: scheme://host/path?query#fragment |
-| 5 | C | 4xx — ошибки клиента (404 Not Found) |
+| 2 | C | HTTP/2 поддерживает multiplexing — много запросов в одном соединении |
+| 3 | D | HTTPS = HTTP + TLS шифрование |
+| 4 | B | URL: scheme://host/path?query#fragment |
+| 5 | D | 4xx — ошибки клиента (404 Not Found) |
 | 6 | B | `json=` автоматически сериализует и ставит Content-Type |
 
 ---

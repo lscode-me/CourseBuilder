@@ -8,13 +8,13 @@
 
 Какие методы должен реализовать объект, чтобы быть **итератором** (Iterator)?
 
-A) Только `__iter__()`
+A) `__iter__()` и `__next__()`
 
 B) Только `__next__()`
 
-C) `__iter__()` и `__next__()`
+C) `__iter__()`, `__next__()` и `__len__()`
 
-D) `__iter__()`, `__next__()` и `__len__()`
+D) Только `__iter__()`
 
 ---
 
@@ -30,11 +30,11 @@ print(next(r))
 
 A) Выведет `0`
 
-B) Выведет `range(0, 5)`
+B) TypeError: 'range' object is not an iterator
 
-C) TypeError: 'range' object is not an iterator
+C) StopIteration
 
-D) StopIteration
+D) Выведет `range(0, 5)`
 
 ---
 
@@ -44,9 +44,9 @@ D) StopIteration
 
 A) Ничем, это синтаксический сахар
 
-B) Generator expression вычисляется лениво и не хранит все значения в памяти
+B) List comprehension быстрее generator expression
 
-C) List comprehension быстрее generator expression
+C) Generator expression вычисляется лениво и не хранит все значения в памяти
 
 D) Generator expression нельзя использовать в for-цикле
 
@@ -66,13 +66,13 @@ result = next(it, "empty")
 print(result)
 ```
 
-A) StopIteration exception
+A) "empty"
 
 B) None
 
-C) "empty"
+C) 3
 
-D) 3
+D) StopIteration exception
 
 ---
 
@@ -86,13 +86,13 @@ funcs = [lambda x: x * i for i in range(3)]
 print(funcs[0](10))
 ```
 
-A) 0
+A) 10
 
-B) 10
+B) 20
 
-C) 20
+C) 30
 
-D) 30
+D) 0
 
 ---
 
@@ -102,11 +102,11 @@ D) 30
 
 A) Возвращает значение и завершает функцию
 
-B) Возвращает значение и приостанавливает выполнение функции до следующего вызова next()
+B) Создаёт список из всех значений
 
-C) Создаёт список из всех значений
+C) Вызывает исключение StopIteration
 
-D) Вызывает исключение StopIteration
+D) Возвращает значение и приостанавливает выполнение функции до следующего вызова next()
 
 ---
 
@@ -114,13 +114,13 @@ D) Вызывает исключение StopIteration
 
 Что делает `iter(callable, sentinel)`?
 
-A) Вызывает callable дважды
+A) Вызывает callable пока не получит значение sentinel, затем останавливается
 
-B) Вызывает callable пока не получит значение sentinel, затем останавливается
+B) Возвращает sentinel если callable вызывает исключение
 
-C) Возвращает sentinel если callable вызывает исключение
+C) Это недопустимый синтаксис
 
-D) Это недопустимый синтаксис
+D) Вызывает callable дважды
 
 ---
 
@@ -128,15 +128,15 @@ D) Это недопустимый синтаксис
 
 ## Answer Key
 
-| # | Ответ | Пояснение |
-|---|-------|-----------|
-| 1 | C | Iterator должен реализовать `__iter__()` (возвращает self) и `__next__()` |
-| 2 | C | `range()` — это iterable, но не iterator. Нужно вызвать `iter(r)` |
-| 3 | B | Generator expression вычисляет значения лениво (lazy evaluation), экономя память |
-| 4 | C | Второй аргумент next() возвращается вместо StopIteration когда итератор исчерпан |
-| 5 | C | Closure захватывает переменную i по ссылке. К моменту вызова i=2, поэтому 10*2=20 |
-| 6 | B | `yield` приостанавливает функцию и превращает её в генератор |
-| 7 | B | `iter(callable, sentinel)` вызывает callable до получения sentinel |
+| # | Answer | Explanation |
+|---|--------|-------------|
+| 1 | A | Iterator должен реализовать `__iter__()` (возвращает self) и `__next__()` |
+| 2 | B | `range()` — это iterable, но не iterator. Нужно вызвать `iter(r)` |
+| 3 | C | Generator expression вычисляет значения лениво (lazy evaluation), экономя память |
+| 4 | A | Второй аргумент next() возвращается вместо StopIteration когда итератор исчерпан |
+| 5 | B | Closure захватывает переменную i по ссылке. К моменту вызова i=2, поэтому 10*2=20 |
+| 6 | D | `yield` приостанавливает функцию и превращает её в генератор |
+| 7 | A | `iter(callable, sentinel)` вызывает callable до получения sentinel |
 
 ---
 

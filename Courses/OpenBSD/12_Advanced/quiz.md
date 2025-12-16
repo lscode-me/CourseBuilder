@@ -6,19 +6,13 @@
 
 ## Question 1: vmm
 
-
-
-
-
-
-
 Как называется гипервизор в OpenBSD?
 
-A) bhyve
+A) vmm
 
-B) vmm
+B) xen
 
-C) xen
+C) bhyve
 
 D) KVM
 
@@ -26,77 +20,53 @@ D) KVM
 
 ## Question 2: vmd
 
-
-
-
-
-
-
 Какая команда управляет виртуальными машинами?
 
-A) vmctl
+A) virsh
 
 B) vm
 
-C) virsh
+C) vbox
 
-D) vbox
+D) vmctl
 
 ---
 
 ## Question 3: Создание VM диска
 
-
-
-
-
-
-
 Какая команда создаёт диск для виртуальной машины?
 
-A) dd if=/dev/zero of=disk.qcow2
+A) qemu-img create disk.qcow2
 
-B) vmctl disk create
+B) vmctl create -s 10G disk.qcow2
 
-C) qemu-img create disk.qcow2
+C) vmctl disk create
 
-D) vmctl create -s 10G disk.qcow2
+D) dd if=/dev/zero of=disk.qcow2
 
 ---
 
 ## Question 4: CARP
 
-
-
-
-
-
-
 Для чего используется CARP?
 
-A) Отказоустойчивость (failover)
+A) Логирование
 
 B) Шифрование трафика
 
-C) Сжатие данных
+C) Отказоустойчивость (failover)
 
-D) Логирование
+D) Сжатие данных
 
 ---
 
 ## Question 5: CARP параметр
 
-
-
-
-
-
-
 Что определяет параметр advskew в CARP?
 
-A) Приоритет (меньше = выше приоритет)
+A) Интервал проверки
 
-B) Интервал проверки
+B) Приоритет (меньше = выше приоритет)
 
 C) Размер пакета
 
@@ -106,99 +76,69 @@ D) Скорость интерфейса
 
 ## Question 6: pfsync
 
-
-
-
-
-
-
 Для чего используется pfsync?
 
-A) Синхронизация файлов
+A) Резервное копирование
 
-B) Синхронизация состояний PF между нодами
+B) Мониторинг
 
-C) Мониторинг
+C) Синхронизация состояний PF между нодами
 
-D) Резервное копирование
+D) Синхронизация файлов
 
 ---
 
 ## Question 7: Сборка ядра
 
-
-
-
-
-
-
 Где находятся исходники ядра?
 
-A) /usr/src/kernel
+A) /usr/src/sys
 
 B) /opt/kernel
 
 C) /var/src/kern
 
-D) /usr/src/sys
+D) /usr/src/kernel
 
 ---
 
 ## Question 8: Конфигурация ядра
 
-
-
-
-
-
-
 Где находятся файлы конфигурации ядра для amd64?
 
-A) /usr/src/conf/amd64
+A) /boot/kernel.conf
 
-B) /usr/src/sys/arch/amd64/conf
+B) /usr/src/conf/amd64
 
-C) /boot/kernel.conf
+C) /etc/kernel.conf
 
-D) /etc/kernel.conf
+D) /usr/src/sys/arch/amd64/conf
 
 ---
 
 ## Question 9: IP forwarding
 
-
-
-
-
-
-
 Какой sysctl включает пересылку IP пакетов?
 
-A) net.ipv4.ip_forward
+A) ip.forward.enable
 
-B) net.core.forwarding
+B) net.ipv4.ip_forward
 
-C) ip.forward.enable
+C) net.inet.ip.forwarding
 
-D) net.inet.ip.forwarding
+D) net.core.forwarding
 
 ---
 
 ## Question 10: WireGuard
 
-
-
-
-
-
-
 Какой интерфейс создаётся для WireGuard?
 
 A) vpn0
 
-B) tun0
+B) wg0
 
-C) wg0
+C) tun0
 
 D) wire0
 
@@ -206,59 +146,41 @@ D) wire0
 
 ## Question 11: WireGuard порт
 
-
-
-
-
-
-
 Какой UDP порт использует WireGuard по умолчанию?
 
-A) 1194
+A) 443
 
-B) 51820
+B) 500
 
-C) 443
+C) 51820
 
-D) 500
+D) 1194
 
 ---
 
 ## Question 12: Подключение к консоли VM
 
-
-
-
-
-
-
 Какая команда подключает к консоли виртуальной машины?
 
-A) vmctl console vmname
+A) vmctl connect vmname
 
-B) vmctl attach vmname
+B) vmctl tty vmname
 
-C) vmctl connect vmname
+C) vmctl console vmname
 
-D) vmctl tty vmname
+D) vmctl attach vmname
 
 ---
 
 ## Question 13: Откат ядра
 
-
-
-
-
-
-
 Как загрузить старое ядро?
 
-A) boot /bsd.old
+A) boot /obsd
 
-B) boot /obsd
+B) boot /kernel.old
 
-C) boot /kernel.old
+C) boot /bsd.old
 
 D) boot -o
 
@@ -266,31 +188,19 @@ D) boot -o
 
 ## Question 14: ktrace
 
-
-
-
-
-
-
 Для чего используется ktrace?
 
-A) Трассировка системных вызовов
+A) Трассировка маршрутов
 
-B) Трассировка файловой системы
+B) Трассировка сетевого трафика
 
-C) Трассировка сетевого трафика
+C) Трассировка системных вызовов
 
-D) Трассировка маршрутов
+D) Трассировка файловой системы
 
 ---
 
 ## Question 15: DHCP для роутера
-
-
-
-
-
-
 
 Какой флаг указывает интерфейс для dhcpd?
 
@@ -298,37 +208,27 @@ A) rcctl set dhcpd listen em1
 
 B) rcctl set dhcpd flags em1
 
-C) rcctl set dhcpd -i em1
+C) rcctl set dhcpd interface em1
 
-D) rcctl set dhcpd interface em1
+D) rcctl set dhcpd -i em1
 
 ---
 
 ## Question 16: vmd
 
-
-
-
-
-
 Какой демон управляет виртуальными машинами?
 
 A) qemu
 
-B) vmd
+B) vmm
 
-C) vmm
+C) libvirt
 
-D) libvirt
+D) vmd
 
 ---
 
 ## Question 17: vio
-
-
-
-
-
 
 Что такое vio в контексте vmm?
 
@@ -336,66 +236,51 @@ A) Виртуальная консоль
 
 B) Виртуальный порт
 
-C) Виртуальный сетевой интерфейс
+C) Виртуальный диск
 
-D) Виртуальный диск
+D) Виртуальный сетевой интерфейс
 
 ---
 
 ## Question 18: rdsetroot
 
-
-
-
-
-
 Для чего используется rdsetroot?
 
-A) Для настройки DNS
+A) Для настройки root раздела
 
 B) Для создания RAID
 
-C) Для настройки root раздела
+C) Для встраивания ramdisk в ядро
 
-D) Для встраивания ramdisk в ядро
+D) Для настройки DNS
 
 ---
 
 ## Question 19: make build
 
-
-
-
-
-
 Что делает make build в /usr/src?
 
-A) Собирает пакеты
+A) Компилирует систему из исходников
 
-B) Обновляет порты
+B) Создаёт билд-сервер
 
-C) Компилирует систему из исходников
+C) Обновляет порты
 
-D) Создаёт билд-сервер
+D) Собирает пакеты
 
 ---
 
 ## Question 20: releng
 
-
-
-
-
-
 Что такое release engineering в контексте OpenBSD?
 
-A) Модуль ядра
+A) Процесс создания официальных релизов системы
 
-B) Инженерное ПО
+B) Система мониторинга
 
-C) Система мониторинга
+C) Модуль ядра
 
-D) Процесс создания официальных релизов системы
+D) Инженерное ПО
 
 ---
 
@@ -405,26 +290,26 @@ D) Процесс создания официальных релизов сис�
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | vmm (Virtual Machine Monitor) — гипервизор в ядре OpenBSD |
-| 2 | A | vmctl — утилита для управления виртуальными машинами |
-| 3 | D | vmctl create -s SIZE FILE создаёт диск для VM |
-| 4 | A | CARP обеспечивает отказоустойчивость через виртуальный IP |
-| 5 | A | advskew определяет приоритет: 0 = master, 100 = backup |
-| 6 | B | pfsync синхронизирует таблицы состояний PF между нодами |
-| 7 | D | /usr/src/sys содержит исходники ядра |
-| 8 | B | Конфигурации ядра в /usr/src/sys/arch/ARCH/conf |
-| 9 | D | net.inet.ip.forwarding=1 включает IP forwarding |
-| 10 | C | wg0 — имя WireGuard интерфейса |
-| 11 | B | WireGuard по умолчанию использует UDP порт 51820 |
-| 12 | A | vmctl console vmname подключает к консоли VM |
-| 13 | B | boot /obsd загружает предыдущее ядро (original bsd) |
-| 14 | A | ktrace трассирует системные вызовы процесса |
+| 1 | A | vmm (Virtual Machine Monitor) — гипервизор в ядре OpenBSD |
+| 2 | D | vmctl — утилита для управления виртуальными машинами |
+| 3 | B | vmctl create -s SIZE FILE создаёт диск для VM |
+| 4 | C | CARP обеспечивает отказоустойчивость через виртуальный IP |
+| 5 | B | advskew определяет приоритет: 0 = master, 100 = backup |
+| 6 | C | pfsync синхронизирует таблицы состояний PF между нодами |
+| 7 | A | /usr/src/sys содержит исходники ядра |
+| 8 | D | Конфигурации ядра в /usr/src/sys/arch/ARCH/conf |
+| 9 | C | net.inet.ip.forwarding=1 включает IP forwarding |
+| 10 | B | wg0 — имя WireGuard интерфейса |
+| 11 | C | WireGuard по умолчанию использует UDP порт 51820 |
+| 12 | C | vmctl console vmname подключает к консоли VM |
+| 13 | A | boot /obsd загружает предыдущее ядро (original bsd) |
+| 14 | C | ktrace трассирует системные вызовы процесса |
 | 15 | B | rcctl set dhcpd flags em1 указывает интерфейс |
-| 16 | B | vmd — демон, управляющий виртуальными машинами |
-| 17 | C | vio — виртуальный сетевой интерфейс для VM |
-| 18 | D | rdsetroot встраивает ramdisk образ в ядро |
-| 19 | C | make build компилирует систему из исходников |
-| 20 | D | release engineering — процесс создания официальных релизов |
+| 16 | D | vmd — демон, управляющий виртуальными машинами |
+| 17 | D | vio — виртуальный сетевой интерфейс для VM |
+| 18 | C | rdsetroot встраивает ramdisk образ в ядро |
+| 19 | A | make build компилирует систему из исходников |
+| 20 | A | release engineering — процесс создания официальных релизов |
 
 ---
 

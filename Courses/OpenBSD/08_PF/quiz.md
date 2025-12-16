@@ -6,179 +6,125 @@
 
 ## Question 1: Конфигурация PF
 
-
-
-
-
-
-
 В каком файле находится конфигурация PF?
 
-A) /etc/iptables.conf
+A) /etc/pf.conf
 
-B) /etc/pf.conf
+B) /etc/iptables.conf
 
-C) /etc/pf/rules.conf
+C) /etc/firewall.conf
 
-D) /etc/firewall.conf
+D) /etc/pf/rules.conf
 
 ---
 
 ## Question 2: Включение PF
 
-
-
-
-
-
-
 Какая команда включает PF?
 
-A) pf enable
+A) service pf start
 
-B) pfctl -e
+B) pf enable
 
-C) pfctl -s
+C) pfctl -e
 
-D) service pf start
+D) pfctl -s
 
 ---
 
 ## Question 3: Действие block
 
-
-
-
-
-
-
 Что делает действие `block` по умолчанию?
 
 A) Зависит от настройки block-policy
 
-B) Логирует и пропускает
+B) Отправляет RST отправителю
 
-C) Отбрасывает пакет без уведомления
+C) Логирует и пропускает
 
-D) Отправляет RST отправителю
+D) Отбрасывает пакет без уведомления
 
 ---
 
 ## Question 4: Ключевое слово quick
 
-
-
-
-
-
-
 Что делает ключевое слово `quick` в правиле?
 
-A) Включает быстрый режим PF
+A) Немедленно применяет действие без проверки остальных правил
 
-B) Немедленно применяет действие без проверки остальных правил
+B) Ускоряет обработку пакета
 
 C) Добавляет правило в начало списка
 
-D) Ускоряет обработку пакета
+D) Включает быстрый режим PF
 
 ---
 
 ## Question 5: Stateful filtering
 
-
-
-
-
-
-
 Что делает опция `keep state`?
 
 A) Отслеживает состояние соединения
 
-B) Сохраняет конфигурацию
+B) Включает persist режим
 
 C) Блокирует stateful пакеты
 
-D) Включает persist режим
+D) Сохраняет конфигурацию
 
 ---
 
 ## Question 6: Таблицы
 
-
-
-
-
-
-
 Какая команда добавляет IP в таблицу bruteforce?
 
-A) pftable add bruteforce 192.168.1.1
+A) pfctl -t bruteforce -T add 192.168.1.1
 
-B) pfctl -t bruteforce -a 192.168.1.1
+B) pfctl --table bruteforce --add 192.168.1.1
 
-C) pfctl -t bruteforce -T add 192.168.1.1
+C) pftable add bruteforce 192.168.1.1
 
-D) pfctl --table bruteforce --add 192.168.1.1
+D) pfctl -t bruteforce -a 192.168.1.1
 
 ---
 
 ## Question 7: NAT
 
-
-
-
-
-
-
 Какое ключевое слово используется для NAT исходящего трафика?
 
 A) nat-to
 
-B) snat
+B) masquerade
 
-C) outbound-nat
+C) snat
 
-D) masquerade
+D) outbound-nat
 
 ---
 
 ## Question 8: Port forwarding
 
-
-
-
-
-
-
 Какое ключевое слово используется для перенаправления портов?
 
-A) dnat
+A) port-forward
 
-B) rdr-to
+B) redirect
 
-C) redirect
+C) dnat
 
-D) port-forward
+D) rdr-to
 
 ---
 
 ## Question 9: Логирование
 
-
-
-
-
-
-
 Какой интерфейс используется для просмотра логов PF?
 
 A) firewall0
 
-B) log0
+B) pflog0
 
-C) pflog0
+C) log0
 
 D) pf0
 
@@ -186,57 +132,39 @@ D) pf0
 
 ## Question 10: Просмотр правил
 
-
-
-
-
-
-
 Какая команда показывает активные правила PF?
 
-A) pf status
+A) pfctl -l
 
-B) pfctl -sr
+B) pf status
 
-C) pfctl --rules
+C) pfctl -sr
 
-D) pfctl -l
+D) pfctl --rules
 
 ---
 
 ## Question 11: Синтаксис проверка
 
-
-
-
-
-
-
 Как проверить синтаксис pf.conf без применения?
 
-A) pf test /etc/pf.conf
+A) pfctl -t /etc/pf.conf
 
-B) pfctl -c /etc/pf.conf
+B) pf test /etc/pf.conf
 
-C) pfctl -nf /etc/pf.conf
+C) pfctl -c /etc/pf.conf
 
-D) pfctl -t /etc/pf.conf
+D) pfctl -nf /etc/pf.conf
 
 ---
 
 ## Question 12: Группа интерфейсов
 
-
-
-
-
-
-
 Какой макрос обычно используется для внешнего интерфейса?
 
-A) $wan
+A) $external
 
-B) $external
+B) $wan
 
 C) $ext_if
 
@@ -246,19 +174,13 @@ D) $outside
 
 ## Question 13: Защита от SYN flood
 
-
-
-
-
-
-
 Какая опция защищает от SYN flood атак?
 
-A) anti-syn state
+A) flood-protect
 
-B) flood-protect
+B) synproxy state
 
-C) synproxy state
+C) anti-syn state
 
 D) syn-protect state
 
@@ -266,31 +188,19 @@ D) syn-protect state
 
 ## Question 14: scrub
 
-
-
-
-
-
-
 Для чего используется директива scrub?
 
-A) Удаление правил
+A) Очистка логов
 
 B) Нормализация пакетов
 
-C) Сброс состояний
+C) Удаление правил
 
-D) Очистка логов
+D) Сброс состояний
 
 ---
 
 ## Question 15: Просмотр состояний
-
-
-
-
-
-
 
 Какая команда показывает таблицу состояний соединений?
 
@@ -298,43 +208,33 @@ A) pfctl -state
 
 B) pfctl -st
 
-C) pfctl -sc
+C) pfctl -ss
 
-D) pfctl -ss
+D) pfctl -sc
 
 ---
 
 ## Question 16: anchor
 
-
-
-
-
-
 Для чего используются anchors в PF?
 
 A) Для блокировки трафика
 
-B) Для защиты от спуфинга
+B) Для якорной точки NAT
 
-C) Для подключения внешних наборов правил
+C) Для защиты от спуфинга
 
-D) Для якорной точки NAT
+D) Для подключения внешних наборов правил
 
 ---
 
 ## Question 17: max-src-conn
 
-
-
-
-
-
 Что ограничивает параметр max-src-conn?
 
-A) Максимум источников
+A) Максимум соединений с одного IP
 
-B) Максимум соединений с одного IP
+B) Максимум источников
 
 C) Максимум подключений к порту
 
@@ -344,37 +244,27 @@ D) Максимум состояний
 
 ## Question 18: antispoof
 
-
-
-
-
-
 Для чего используется директива antispoof?
 
-A) Для блокировки ботов
+A) Для защиты от DDoS
 
-B) Для блокировки пакетов с поддельными адресами
+B) Для блокировки ботов
 
-C) Для антиспам фильтрации
+C) Для блокировки пакетов с поддельными адресами
 
-D) Для защиты от DDoS
+D) Для антиспам фильтрации
 
 ---
 
 ## Question 19: pfctl -k
 
-
-
-
-
-
 Что делает pfctl -k host?
 
-A) Показывает состояния хоста
+A) Проверяет хост
 
-B) Блокирует хост
+B) Показывает состояния хоста
 
-C) Проверяет хост
+C) Блокирует хост
 
 D) Удаляет состояния для указанного хоста
 
@@ -382,18 +272,13 @@ D) Удаляет состояния для указанного хоста
 
 ## Question 20: set skip
 
-
-
-
-
-
 Что делает директива set skip on lo0?
 
 A) Пропускает scrub
 
-B) Пропускает логирование
+B) Пропускает NAT
 
-C) Пропускает NAT
+C) Пропускает логирование
 
 D) PF не фильтрует трафик на loopback
 
@@ -405,24 +290,24 @@ D) PF не фильтрует трафик на loopback
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | B | /etc/pf.conf — стандартный файл конфигурации PF |
-| 2 | B | pfctl -e (enable) включает PF |
+| 1 | A | /etc/pf.conf — стандартный файл конфигурации PF |
+| 2 | C | pfctl -e (enable) включает PF |
 | 3 | A | Зависит от set block-policy (drop или return) |
-| 4 | B | quick немедленно применяет действие без обработки остальных правил |
+| 4 | A | quick немедленно применяет действие без обработки остальных правил |
 | 5 | A | keep state создаёт запись состояния для отслеживания соединения |
-| 6 | C | pfctl -t bruteforce -T add IP — синтаксис добавления в таблицу |
+| 6 | A | pfctl -t bruteforce -T add IP — синтаксис добавления в таблицу |
 | 7 | A | nat-to используется для Source NAT в OpenBSD |
-| 8 | B | rdr-to (redirect to) — перенаправление входящего трафика |
-| 9 | C | pflog0 — псевдоинтерфейс для логирования PF |
-| 10 | B | pfctl -sr (show rules) показывает правила фильтрации |
-| 11 | C | pfctl -nf (no-action, file) проверяет синтаксис без применения |
+| 8 | D | rdr-to (redirect to) — перенаправление входящего трафика |
+| 9 | B | pflog0 — псевдоинтерфейс для логирования PF |
+| 10 | C | pfctl -sr (show rules) показывает правила фильтрации |
+| 11 | D | pfctl -nf (no-action, file) проверяет синтаксис без применения |
 | 12 | C | $ext_if — общепринятый макрос для внешнего интерфейса |
-| 13 | C | synproxy state проксирует TCP handshake для защиты от SYN flood |
+| 13 | B | synproxy state проксирует TCP handshake для защиты от SYN flood |
 | 14 | B | scrub нормализует пакеты (фрагментация, TTL, и т.д.) |
-| 15 | D | pfctl -ss (show states) показывает таблицу состояний |
-| 16 | C | anchors позволяют подключать внешние наборы правил |
-| 17 | B | max-src-conn ограничивает число соединений с одного IP |
-| 18 | B | antispoof блокирует пакеты с поддельными source адресами |
+| 15 | C | pfctl -ss (show states) показывает таблицу состояний |
+| 16 | D | anchors позволяют подключать внешние наборы правил |
+| 17 | A | max-src-conn ограничивает число соединений с одного IP |
+| 18 | C | antispoof блокирует пакеты с поддельными source адресами |
 | 19 | D | pfctl -k удаляет состояния для указанного хоста |
 | 20 | D | set skip отключает фильтрацию PF на указанном интерфейсе |
 

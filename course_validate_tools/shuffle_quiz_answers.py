@@ -314,6 +314,105 @@ def calculate_deviation(distribution: dict) -> float:
     return max_deviation
 
 
+def process_single_course(course_path: Path, workspace: Path, dry_run: bool, force: bool) -> bool:
+    """
+    Обрабатывает один курс: проверяет распределение и шафлит при необходимости.
+    Возвращает True, если курс был обработан (или пропущен по причине), False при ошибке.
+    """
+    course_name = course_path.name
+    print(f"\n📚 Курс: {course_name}")
+    print("=" * 60)
+    
+    # Получаем распределение для этого курса
+    before = get_answer_distribution(course_path)
+    total_before = sum(before.values())
+    
+    if total_before == 0:
+        print("   ⚠️  Нет квизов в этом курсе")
+        return True
+    
+    print("📊 Before shuffle:")
+    for letter, count in sorted(before.items()):
+        pct = count / total_before * 100 if total_before > 0 else 0
+        print(f"   {letter}: {count:4d} ({pct:5.1f}%)")
+    
+    # Calculate deviation from uniform distribution
+    deviation = calculate_deviation(before)
+    print(f"\n📈 Maximum deviation from uniform: {deviation:.1f}%")
+    
+    # Check if shuffling is needed
+    if not force and deviation < 5.0:
+        print(f"⏭️  Skipping shuffle: deviation ({deviation:.1f}%) is less than 5%")
+        print("   Use -f/--force to shuffle anyway")
+        return True
+    
+    quiz_files = list(course_path.rglob('quiz.md'))
+    max_iterations = 50  # Максимальное количество попыток шафлинга
+    
+    # Итеративный шафлинг до достижения отклонения < 5%
+    for iteration in range(1, max_iterations + 1):
+        if iteration > 1:
+            print(f"\n🔄 Попытка {iteration} (текущее отклонение: {deviation:.1f}%)...")
+        else:
+            print("\n🔀 Shuffling quizzes...")
+        
+        # Изменяем seed для каждой итерации, чтобы получить разные результаты
+        # Используем комбинацию базового seed и номера итерации для воспроизводимости
+        # Умножаем на большое простое число для большей вариативности
+        random.seed(42 + iteration * 7919)
+        
+        processed = 0
+        for quiz_file in sorted(quiz_files):
+            relative_path = quiz_file.relative_to(workspace) if str(quiz_file).startswith(str(workspace)) else quiz_file
+            if iteration == 1:
+                print(f"   Processing {relative_path}...", end='')
+            if process_quiz_file(quiz_file, dry_run=dry_run):
+                processed += 1
+                if iteration == 1:
+                    if dry_run:
+                        print(" (would shuffle)")
+                    else:
+                        print(" ✓")
+            else:
+                if iteration == 1:
+                    print()
+        
+        if iteration == 1:
+            print(f"\n✅ Processed {processed}/{len(quiz_files)} quiz files")
+        
+        # Проверяем результат после шафлинга
+        if not dry_run:
+            after = get_answer_distribution(course_path)
+            total_after = sum(after.values())
+            deviation = calculate_deviation(after)
+            
+            # Если достигли нужного отклонения, останавливаемся
+            if deviation < 5.0:
+                print(f"\n✅ Достигнуто отклонение {deviation:.1f}% после {iteration} попыток")
+                print("\n📊 After shuffle:")
+                for letter, count in sorted(after.items()):
+                    pct = count / total_after * 100 if total_after > 0 else 0
+                    print(f"   {letter}: {count:4d} ({pct:5.1f}%)")
+                break
+        else:
+            # В dry-run режиме просто показываем, что будет сделано
+            if iteration == 1:
+                print("\n💡 В реальном режиме будет выполнено итеративное шафлинг до достижения отклонения < 5%")
+            break
+    
+    if not dry_run and deviation >= 5.0:
+        print(f"\n⚠️  Не удалось достичь отклонения < 5% за {max_iterations} попыток")
+        print(f"   Текущее отклонение: {deviation:.1f}%")
+        after = get_answer_distribution(course_path)
+        total_after = sum(after.values())
+        print("\n📊 After shuffle:")
+        for letter, count in sorted(after.items()):
+            pct = count / total_after * 100 if total_after > 0 else 0
+            print(f"   {letter}: {count:4d} ({pct:5.1f}%)")
+    
+    return True
+
+
 def main():
     import sys
     import argparse
@@ -330,6 +429,7 @@ def main():
     # Get workspace path relative to script location
     script_dir = Path(__file__).parent
     workspace = script_dir.parent
+    courses_dir = workspace / 'Courses'
     
     # Allow specifying a target directory as argument
     if args.path:
@@ -339,57 +439,60 @@ def main():
         if not target_dir.exists():
             print(f"❌ Directory not found: {target_dir}")
             sys.exit(1)
-        print(f"🎯 Target: {target_dir}")
     else:
-        target_dir = workspace
+        target_dir = courses_dir
     
     if args.dry_run:
         print("🔍 Режим проверки (dry-run): файлы не будут изменены")
-        print("=" * 60)
     
-    print("📊 Before shuffle:")
-    before = get_answer_distribution(target_dir)
-    total_before = sum(before.values())
-    for letter, count in sorted(before.items()):
-        pct = count / total_before * 100 if total_before > 0 else 0
-        print(f"   {letter}: {count:4d} ({pct:5.1f}%)")
+    # Определяем, это один курс или директория с курсами
+    courses_to_process = []
     
-    # Calculate deviation from uniform distribution
-    deviation = calculate_deviation(before)
-    print(f"\n📈 Maximum deviation from uniform: {deviation:.1f}%")
-    
-    # Check if shuffling is needed
-    if not args.force and deviation < 5.0:
-        print(f"\n⏭️  Skipping shuffle: deviation ({deviation:.1f}%) is less than 5%")
-        print("   Use -f/--force to shuffle anyway")
-        return
-    
-    print("\n🔀 Shuffling quizzes...")
-    
-    quiz_files = list(target_dir.rglob('quiz.md'))
-    processed = 0
-    
-    for quiz_file in sorted(quiz_files):
-        relative_path = quiz_file.relative_to(workspace) if str(quiz_file).startswith(str(workspace)) else quiz_file
-        print(f"   Processing {relative_path}...", end='')
-        if process_quiz_file(quiz_file, dry_run=args.dry_run):
-            processed += 1
-            if args.dry_run:
-                print(" (would shuffle)")
-            else:
-                print(" ✓")
+    # Проверяем, является ли target_dir курсом (есть README.md)
+    if (target_dir / 'README.md').exists():
+        # Это один курс
+        courses_to_process = [target_dir]
+        print(f"🎯 Target: {target_dir}")
+    elif target_dir.is_dir():
+        # Это директория - ищем курсы внутри
+        # Курс определяется наличием README.md в папке
+        for item in target_dir.iterdir():
+            if item.is_dir() and not item.name.startswith('.') and (item / 'README.md').exists():
+                courses_to_process.append(item)
+        
+        if not courses_to_process:
+            # Если не нашли курсы, возможно это модуль или файл
+            # Обрабатываем как один курс
+            courses_to_process = [target_dir]
+            print(f"🎯 Target: {target_dir}")
         else:
-            print()
+            print(f"🎯 Найдено курсов: {len(courses_to_process)}")
+    else:
+        print(f"❌ Путь не найден или не является директорией: {target_dir}")
+        sys.exit(1)
     
-    print(f"\n✅ Processed {processed}/{len(quiz_files)} quiz files")
+    if not courses_to_process:
+        print("❌ Не найдено курсов для обработки")
+        sys.exit(1)
     
-    if not args.dry_run:
-        print("\n📊 After shuffle:")
-        after = get_answer_distribution(target_dir)
-        total_after = sum(after.values())
-        for letter, count in sorted(after.items()):
-            pct = count / total_after * 100 if total_after > 0 else 0
-            print(f"   {letter}: {count:4d} ({pct:5.1f}%)")
+    # Обрабатываем каждый курс отдельно
+    total_processed = 0
+    total_skipped = 0
+    
+    for course_path in sorted(courses_to_process):
+        if process_single_course(course_path, workspace, args.dry_run, args.force):
+            total_processed += 1
+        else:
+            total_skipped += 1
+    
+    # Итоговая статистика
+    if len(courses_to_process) > 1:
+        print("\n" + "=" * 60)
+        print(f"📊 ИТОГОВАЯ СТАТИСТИКА")
+        print("=" * 60)
+        print(f"Курсов обработано: {total_processed}")
+        if total_skipped > 0:
+            print(f"Курсов пропущено: {total_skipped}")
 
 
 if __name__ == '__main__':
