@@ -116,8 +116,41 @@ class CourseHTMLGenerator:
         content = re.sub(r'\]\(\.\./(\d{2}_[^/)]+)/?\)', replace_link, content)
         
         # Конвертируем markdown в HTML
-        md = markdown.Markdown(extensions=['extra', 'codehilite', 'tables', 'fenced_code'])
+        # Настраиваем codehilite для совместимости с highlight.js
+        md = markdown.Markdown(extensions=[
+            'extra', 
+            'codehilite',
+            'tables', 
+            'fenced_code'
+        ], extension_configs={
+            'codehilite': {
+                'css_class': 'hljs',
+                'use_pygments': False,
+                'noclasses': False,
+            }
+        })
         html_content = md.convert(content)
+        
+        # Post-processing: преобразуем классы codehilite в классы для highlight.js
+        # codehilite генерирует <pre class="codehilite"><code class="language-xxx">
+        # highlight.js ожидает <pre><code class="language-xxx hljs">
+        html_content = re.sub(
+            r'<pre class="codehilite"><code class="language-(\w+)"',
+            r'<pre><code class="language-\1 hljs"',
+            html_content
+        )
+        # Для блоков без указания языка
+        html_content = re.sub(
+            r'<pre class="codehilite"><code>',
+            r'<pre><code class="hljs">',
+            html_content
+        )
+        # Для блоков с классом codehilite но без language
+        html_content = re.sub(
+            r'<pre class="codehilite"><code class="hljs"',
+            r'<pre><code class="hljs"',
+            html_content
+        )
         
         return {
             "title": title,
@@ -128,8 +161,38 @@ class CourseHTMLGenerator:
         """Конвертирует markdown текст в HTML"""
         if not text:
             return ""
-        md = markdown.Markdown(extensions=['extra', 'codehilite', 'tables', 'fenced_code'])
-        return md.convert(text)
+        md = markdown.Markdown(extensions=[
+            'extra', 
+            'codehilite',
+            'tables', 
+            'fenced_code'
+        ], extension_configs={
+            'codehilite': {
+                'css_class': 'hljs',
+                'use_pygments': False,
+                'noclasses': False,
+            }
+        })
+        html_content = md.convert(text)
+        
+        # Post-processing: преобразуем классы codehilite в классы для highlight.js
+        html_content = re.sub(
+            r'<pre class="codehilite"><code class="language-(\w+)"',
+            r'<pre><code class="language-\1 hljs"',
+            html_content
+        )
+        html_content = re.sub(
+            r'<pre class="codehilite"><code>',
+            r'<pre><code class="hljs">',
+            html_content
+        )
+        html_content = re.sub(
+            r'<pre class="codehilite"><code class="hljs"',
+            r'<pre><code class="hljs"',
+            html_content
+        )
+        
+        return html_content
     
     def _text_to_safe_html(self, text: str) -> str:
         """Конвертирует текст в безопасный HTML без markdown-интерпретации.
@@ -278,6 +341,8 @@ class CourseHTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{module_title}</title>
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     {self._get_css()}
 </head>
 <body>
@@ -335,6 +400,25 @@ class CourseHTMLGenerator:
         </div>
     </footer>
 
+    <!-- Highlight.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/shell.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
+    <script>
+        // Инициализация highlight.js для всех блоков кода
+        document.addEventListener('DOMContentLoaded', function() {{
+            hljs.highlightAll();
+        }});
+    </script>
     {self._get_javascript(quiz_js_data, len(quiz_data))}
 </body>
 </html>'''
@@ -606,6 +690,16 @@ class CourseHTMLGenerator:
             color: var(--primary-dark);
         }
 
+        /* Стили для inline кода (не в pre) */
+        code:not(pre code) {
+            background: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--primary-dark);
+        }
+
         pre {
             background: var(--code-bg);
             padding: 1.5rem;
@@ -615,6 +709,70 @@ class CourseHTMLGenerator:
             border-left: 4px solid var(--primary);
         }
 
+        /* Стили для highlight.js блоков кода */
+        pre code.hljs {
+            background: transparent;
+            padding: 0;
+            display: block;
+            overflow-x: auto;
+        }
+
+        pre.hljs {
+            background: #f6f8fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Улучшение контраста для highlight.js */
+        .hljs {
+            color: #24292e;
+            background: #f6f8fa;
+        }
+
+        .hljs-comment,
+        .hljs-quote {
+            color: #6a737d;
+            font-style: italic;
+        }
+
+        .hljs-keyword,
+        .hljs-selector-tag,
+        .hljs-type {
+            color: #d73a49;
+        }
+
+        .hljs-string,
+        .hljs-literal {
+            color: #032f62;
+        }
+
+        .hljs-number {
+            color: #005cc5;
+        }
+
+        .hljs-function,
+        .hljs-title {
+            color: #6f42c1;
+        }
+
+        .hljs-variable,
+        .hljs-attr {
+            color: #e36209;
+        }
+
+        .hljs-built_in,
+        .hljs-builtin-name {
+            color: #005cc5;
+        }
+
+        .hljs-meta {
+            color: #6a737d;
+        }
+
+        /* Совместимость со старыми блоками кода */
         pre code {
             background: none;
             padding: 0;
@@ -1200,8 +1358,36 @@ class CourseHTMLGenerator:
             readme_content = re.sub(r'\]\((\d{2}_[^/)]+)/(?:lecture\.md)?\)', replace_module_link, readme_content)
             
             # Конвертируем markdown в HTML
-            md = markdown.Markdown(extensions=['extra', 'codehilite', 'tables', 'fenced_code'])
+            md = markdown.Markdown(extensions=[
+                'extra', 
+                'codehilite',
+                'tables', 
+                'fenced_code'
+            ], extension_configs={
+                'codehilite': {
+                    'css_class': 'hljs',
+                    'use_pygments': False,
+                    'noclasses': False,
+                }
+            })
             readme_html = md.convert(readme_content)
+            
+            # Post-processing: преобразуем классы codehilite в классы для highlight.js
+            readme_html = re.sub(
+                r'<pre class="codehilite"><code class="language-(\w+)"',
+                r'<pre><code class="language-\1 hljs"',
+                readme_html
+            )
+            readme_html = re.sub(
+                r'<pre class="codehilite"><code>',
+                r'<pre><code class="hljs">',
+                readme_html
+            )
+            readme_html = re.sub(
+                r'<pre class="codehilite"><code class="hljs"',
+                r'<pre><code class="hljs"',
+                readme_html
+            )
             
             # Оборачиваем в content-card блоки
             content_html = self._wrap_lecture_in_cards(readme_html)
@@ -1234,6 +1420,8 @@ class CourseHTMLGenerator:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{category_name}</title>
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     <style>
         * {{
             margin: 0;
@@ -1518,6 +1706,25 @@ class CourseHTMLGenerator:
             <p>&copy; 2025 lscode.me</p>
         </div>
     </footer>
+    <!-- Highlight.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/shell.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
+    <script>
+        // Инициализация highlight.js для всех блоков кода
+        document.addEventListener('DOMContentLoaded', function() {{
+            hljs.highlightAll();
+        }});
+    </script>
 </body>
 </html>'''
     
