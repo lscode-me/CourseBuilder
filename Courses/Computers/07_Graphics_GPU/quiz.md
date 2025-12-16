@@ -92,13 +92,13 @@ D) Графический API
 
 Какой порядок этапов в графическом pipeline?
 
-A) Display → Fragment Processing → Rasterization → Vertex Processing
+A) Fragment Processing → Vertex Processing → Rasterization → Display
 
 B) 3D Model → Vertex Processing → Rasterization → Fragment Processing → Display
 
-C) Vertex Processing → Display → Rasterization → Fragment Processing
+C) Display → Fragment Processing → Rasterization → Vertex Processing
 
-D) Fragment Processing → Vertex Processing → Rasterization → Display
+D) Vertex Processing → Display → Rasterization → Fragment Processing
 
 ---
 
@@ -120,13 +120,13 @@ D) Graphics Performance GPU
 
 Что такое kernel в контексте CUDA?
 
-A) Ядро операционной системы
+A) Графический процессор
 
 B) Функция, выполняемая на GPU
 
-C) Тип памяти GPU
+C) Ядро операционной системы
 
-D) Графический процессор
+D) Тип памяти GPU
 
 ---
 
@@ -176,13 +176,13 @@ D) Тип файловой системы
 
 В чём основное отличие ray tracing от rasterization?
 
-A) Ray tracing быстрее
+A) Rasterization более реалистичен
 
 B) Ray tracing симулирует физику света, rasterization — проекция треугольников
 
-C) Rasterization более реалистичен
+C) Нет различий
 
-D) Нет различий
+D) Ray tracing быстрее
 
 ---
 
@@ -190,13 +190,13 @@ D) Нет различий
 
 Для чего используются RT Cores в NVIDIA RTX?
 
-A) Для обработки текста
+A) Для работы с памятью
 
-B) Для сетевых операций
+B) Для обработки текста
 
 C) Для hardware-accelerated ray-triangle intersection
 
-D) Для работы с памятью
+D) Для сетевых операций
 
 ---
 
@@ -262,11 +262,11 @@ D) Нет различий
 
 A) Старая версия OpenGL
 
-B) Современная low-level API, преемник OpenGL
+B) Графический процессор
 
-C) Графический процессор
+C) Тип памяти
 
-D) Тип памяти
+D) Современная low-level API, преемник OpenGL
 
 ---
 
@@ -308,7 +308,7 @@ D) GPU не могут выполнять вычисления
 | 16 | A | DLSS — это Deep Learning Super Sampling, AI upscaling для повышения производительности при сохранении качества. |
 | 17 | C | GPU может быть до 100 раз быстрее CPU для параллельных задач (пример: 10,000 GFLOPS vs 100 GFLOPS). |
 | 18 | B | OpenGL — cross-platform open standard, DirectX — Microsoft, в основном для Windows/Xbox. |
-| 19 | B | Vulkan — это современная low-level API, преемник OpenGL. |
+| 19 | D | Vulkan — это современная low-level API, преемник OpenGL. |
 | 20 | C | GPU быстры для параллельных задач, но медленны для последовательных задач. |
 
 ---

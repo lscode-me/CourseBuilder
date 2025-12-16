@@ -22,11 +22,11 @@ D) 3 уровня
 
 Что можно делать в Ring 0 (Kernel Mode)?
 
-A) Только выполнение программ
+A) Только чтение памяти
 
-B) Только работа с файлами
+B) Только выполнение программ
 
-C) Только чтение памяти
+C) Только работа с файлами
 
 D) Всё: I/O, управление памятью, прерывания
 
@@ -52,11 +52,11 @@ D) 6 уровней
 
 A) Только Write
 
-B) Только Execute
+B) Только Read
 
-C) Read, Write, Execute (R, W, X)
+C) Только Execute
 
-D) Только Read
+D) Read, Write, Execute (R, W, X)
 
 ---
 
@@ -66,11 +66,11 @@ D) Только Read
 
 A) Для ускорения работы
 
-B) Защита от выполнения кода на стеке (защита от buffer overflow)
+B) Для защиты от чтения
 
-C) Для защиты от чтения
+C) Для экономии памяти
 
-D) Для экономии памяти
+D) Защита от выполнения кода на стеке (защита от buffer overflow)
 
 ---
 
@@ -190,13 +190,13 @@ D) Шифрование данных
 
 Для чего используются Stack Canaries?
 
-A) Для экономии памяти
+A) Защита от stack overflow через обнаружение изменения canary
 
-B) Защита от stack overflow через обнаружение изменения canary
+B) Для защиты от чтения
 
 C) Для ускорения работы
 
-D) Для защиты от чтения
+D) Для экономии памяти
 
 ---
 
@@ -232,11 +232,11 @@ D) Только обновление драйверов
 
 Какое mitigation используется для Meltdown?
 
-A) Только обновление драйверов
+A) Только перезагрузка
 
-B) Только перезагрузка
+B) Только обновление ОС
 
-C) Только обновление ОС
+C) Только обновление драйверов
 
 D) KPTI (Kernel Page Table Isolation) — отдельные page tables для kernel и user
 
@@ -246,11 +246,11 @@ D) KPTI (Kernel Page Table Isolation) — отдельные page tables для 
 
 Какое mitigation используется для Rowhammer?
 
-A) Только обновление ОС
+A) Только обновление драйверов
 
-B) ECC memory, Targeted Row Refresh (TRR)
+B) Только обновление ОС
 
-C) Только обновление драйверов
+C) ECC memory, Targeted Row Refresh (TRR)
 
 D) Только перезагрузка
 
@@ -260,13 +260,13 @@ D) Только перезагрузка
 
 Какое trade-off характерно для security features?
 
-A) Security всегда бесплатна
+A) Security vs Performance — многие mitigation techniques снижают производительность
 
 B) Security не влияет на производительность
 
-C) Security vs Performance — многие mitigation techniques снижают производительность
+C) Security всегда улучшает производительность
 
-D) Security всегда улучшает производительность
+D) Security всегда бесплатна
 
 ---
 
@@ -293,8 +293,8 @@ D) Только для веб-браузеров
 | 1 | A | Архитектура x86 имеет 4 уровня привилегий (Ring 0-3). |
 | 2 | D | Ring 0 (Kernel Mode) позволяет делать всё: I/O, управление памятью, прерывания. |
 | 3 | B | ARM имеет 4 Exception Levels (EL0-EL3): EL0 (User), EL1 (OS), EL2 (Hypervisor), EL3 (Secure Monitor). |
-| 4 | C | Страница памяти может иметь флаги Read, Write, Execute (R, W, X). |
-| 5 | B | NX bit используется для защиты от выполнения кода на стеке, что защищает от buffer overflow эксплойтов. |
+| 4 | D | Страница памяти может иметь флаги Read, Write, Execute (R, W, X). |
+| 5 | D | NX bit используется для защиты от выполнения кода на стеке, что защищает от buffer overflow эксплойтов. |
 | 6 | C | ASLR рандомизирует адреса при каждом запуске процесса, усложняя эксплуатацию уязвимостей. |
 | 7 | C | Spectre использует speculative execution + branch prediction, которые оставляют следы в кэше, позволяя извлечь данные через timing attack. |
 | 8 | B | Meltdown позволяет читать kernel memory из user space через спекулятивное выполнение до проверки прав. |
@@ -303,12 +303,12 @@ D) Только для веб-браузеров
 | 11 | C | ARM TrustZone разделяет Secure World и Normal World для изоляции критичных данных. |
 | 12 | A | TPM — это отдельный чип на материнской плате, который хранит криптографические ключи и измеряет boot process. |
 | 13 | B | DEP (Data Execution Prevention) = NX bit + OS support, защищает от выполнения кода на стеке и heap. |
-| 14 | B | Stack Canaries защищают от stack overflow через обнаружение изменения случайного значения (canary) перед возвратом из функции. |
+| 14 | A | Stack Canaries защищают от stack overflow через обнаружение изменения случайного значения (canary) перед возвратом из функции. |
 | 15 | A | Control Flow Integrity проверяет, что программа прыгает только в легальные места, защищая от ROP атак. |
 | 16 | A | Mitigation для Spectre включает microcode updates, software barriers (retpoline), с performance penalty ~5-30%. |
 | 17 | D | Mitigation для Meltdown — KPTI (Kernel Page Table Isolation), отдельные page tables для kernel и user, с performance penalty ~5%. |
-| 18 | B | Mitigation для Rowhammer включает ECC memory и Targeted Row Refresh (TRR). |
-| 19 | C | Security vs Performance — многие mitigation techniques снижают производительность, это важный trade-off. |
+| 18 | C | Mitigation для Rowhammer включает ECC memory и Targeted Row Refresh (TRR). |
+| 19 | A | Security vs Performance — многие mitigation techniques снижают производительность, это важный trade-off. |
 | 20 | B | Secure Enclaves применяются для DRM, cryptocurrency wallets, secure computation. |
 
 ---

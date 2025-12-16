@@ -176,11 +176,11 @@ D) Удаление старых данных
 
 Что такое deduplication в файловых системах?
 
-A) Удаление дубликатов файлов
+A) Хранение одинаковых блоков один раз, несколько указателей
 
-B) Шифрование данных
+B) Удаление дубликатов файлов
 
-C) Хранение одинаковых блоков один раз, несколько указателей
+C) Шифрование данных
 
 D) Сжатие файлов
 
@@ -204,11 +204,11 @@ D) Упрощение программирования
 
 Что характеризует APFS (Apple File System)?
 
-A) CoW, snapshots, space sharing, encryption, оптимизировано для SSD
+A) Нет snapshots
 
-B) Только для старых Mac
+B) CoW, snapshots, space sharing, encryption, оптимизировано для SSD
 
-C) Нет snapshots
+C) Только для старых Mac
 
 D) Только для Windows
 
@@ -302,9 +302,9 @@ D) NTFS
 | 10 | B | Btrfs характеризуется CoW, built-in RAID, snapshots, compression, data checksums. |
 | 11 | D | ZFS combines FS + Volume Manager, имеет CoW, software RAID, snapshots, data integrity (checksums везде). |
 | 12 | B | Snapshots в CoW FS работают через запоминание указателя на root, занимают место только для изменённых блоков. |
-| 13 | C | Deduplication — это хранение одинаковых блоков один раз с несколькими указателями на них. |
+| 13 | A | Deduplication — это хранение одинаковых блоков один раз с несколькими указателями на них. |
 | 14 | B | On-the-fly сжатие экономит место и может ускорить I/O, так как меньше данных читается с диска. |
-| 15 | A | APFS характеризуется CoW, snapshots, space sharing, encryption, оптимизировано для SSD. |
+| 15 | B | APFS характеризуется CoW, snapshots, space sharing, encryption, оптимизировано для SSD. |
 | 16 | D | F2FS оптимизирована для SSD/flash, учитывает износ flash, log-structured. |
 | 17 | A | exFAT — это Extended FAT без ограничения 4 GB файлов, проще NTFS, используется на SD картах и флешках >32 GB. |
 | 18 | C | NFS (Network File System) — это remote file access, сервер экспортирует каталоги, клиенты монтируют как локальные. |

@@ -92,13 +92,13 @@ D) Написание пользовательских приложений
 
 Что характеризует character devices?
 
-A) Random access, блоками
+A) Sequential access, пример: keyboard, serial port
 
-B) Sequential access, пример: keyboard, serial port
+B) Только для хранения данных
 
 C) Packet-based
 
-D) Только для хранения данных
+D) Random access, блоками
 
 ---
 
@@ -120,13 +120,13 @@ D) Sequential access
 
 Что характеризует network devices?
 
-A) Random access
+A) Packet-based, пример: Ethernet, WiFi
 
 B) Sequential access
 
-C) Только для хранения данных
+C) Random access
 
-D) Packet-based, пример: Ethernet, WiFi
+D) Только для хранения данных
 
 ---
 
@@ -156,9 +156,9 @@ D) Операционная система
 | 4 | B | Port-Mapped I/O использует отдельное адресное пространство для устройств с специальными инструкциями IN/OUT, ограничено 64K портов на x86. |
 | 5 | B | Memory-Mapped I/O использует обычные инструкции LOAD/STORE, что удобнее для программирования, используется в ARM, RISC-V. |
 | 6 | D | Написание пользовательских приложений не является задачей драйвера — драйвер управляет устройством. |
-| 7 | B | Character devices характеризуются sequential access, примеры: keyboard, serial port. |
+| 7 | A | Character devices характеризуются sequential access, примеры: keyboard, serial port. |
 | 8 | C | Block devices характеризуются random access, блоками, примеры: HDD, SSD. |
-| 9 | D | Network devices характеризуются packet-based подходом, примеры: Ethernet, WiFi. |
+| 9 | A | Network devices характеризуются packet-based подходом, примеры: Ethernet, WiFi. |
 | 10 | A | Interrupt Controller — это устройство для управления прерываниями, примеры: Intel 8259 PIC, современный APIC. |
 
 ---
