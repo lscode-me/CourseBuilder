@@ -35,6 +35,7 @@ COURSE_NAMES = {
     "Healthcare_Technologies": "🏥 Healthcare Technologies",
     "IT_Basics": "💻 IT Basics",
     "Leadership": "👔 Leadership",
+    "LS_Intro": "🧬 Introduction to Life Sciences Informatics",
     "OpenBSD": "🐡 OpenBSD",
     "Python": "🐍 Python",
     "Python.Interview": "🎯 Python Interview",
