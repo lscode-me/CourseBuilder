@@ -370,16 +370,74 @@ Workflow Management:
 **Пример использования:**
 
 ```nextflow
+#!/usr/bin/env nextflow
 
-process align {
-    container 'biocontainers/bwa'
+// Параметры pipeline
+params.reads = "data/*_{1,2}.fastq.gz"
+params.reference = "refs/genome.fa"
+params.outdir = "results"
+
+// Канал для входных данных
+Channel
+    .fromFilePairs(params.reads)
+    .set { reads_ch }
+
+// Процесс 1: Контроль качества
+process fastqc {
+    container 'biocontainers/fastqc:v0.11.9'
+    publishDir "${params.outdir}/qc", mode: 'copy'
+    
     input:
-    file reads from reads_ch
+    tuple val(sample_id), path(reads) from reads_ch
+    
     output:
-    file '*.bam' into bam_ch
+    path "*.html" into qc_reports
+    tuple val(sample_id), path(reads) into trimmed_reads
+    
     script:
     """
-    bwa mem reference.fa ${reads} | samtools view -Sb - > output.bam
+    fastqc ${reads[0]} ${reads[1]}
+    """
+}
+
+// Процесс 2: Выравнивание
+process align {
+    container 'biocontainers/bwa:v0.7.17'
+    cpus 8
+    memory '16 GB'
+    
+    input:
+    tuple val(sample_id), path(reads) from trimmed_reads
+    path reference from params.reference
+    
+    output:
+    tuple val(sample_id), path("${sample_id}.bam") into bam_ch
+    
+    script:
+    """
+    bwa mem -t ${task.cpus} ${reference} ${reads[0]} ${reads[1]} | \
+        samtools sort -@ ${task.cpus} -o ${sample_id}.bam -
+    samtools index ${sample_id}.bam
+    """
+}
+
+// Процесс 3: Вызов вариантов
+process variant_calling {
+    container 'broadinstitute/gatk:4.2.0.0'
+    publishDir "${params.outdir}/variants", mode: 'copy'
+    
+    input:
+    tuple val(sample_id), path(bam) from bam_ch
+    
+    output:
+    path "${sample_id}.vcf.gz"
+    
+    script:
+    """
+    gatk HaplotypeCaller \
+        -R ${params.reference} \
+        -I ${bam} \
+        -O ${sample_id}.vcf.gz
     """
 }
 ```
@@ -425,17 +483,78 @@ process align {
 **Пример использования:**
 
 ```python
+# Snakefile - workflow для анализа RNA-seq данных
 
+# Конфигурация
+configfile: "config.yaml"
+
+# Получение списка образцов из config
+SAMPLES = config["samples"]
+
+# Финальное правило: определяет все выходные файлы
+rule all:
+    input:
+        expand("results/counts/{sample}.counts", sample=SAMPLES),
+        "results/qc/multiqc_report.html"
+
+# Правило 1: Контроль качества
+rule fastqc:
+    input:
+        "data/{sample}.fastq.gz"
+    output:
+        html="results/qc/{sample}_fastqc.html",
+        zip="results/qc/{sample}_fastqc.zip"
+    threads: 2
+    conda:
+        "envs/qc.yaml"
+    shell:
+        "fastqc -t {threads} -o results/qc {input}"
+
+# Правило 2: Выравнивание с STAR
 rule align:
     input:
-        reads="data/{sample}.fastq",
-        reference="refs/genome.fa"
+        reads="data/{sample}.fastq.gz",
+        index=config["star_index"]
     output:
-        bam="results/{sample}.bam"
+        bam="results/aligned/{sample}.bam"
+    threads: 8
+    resources:
+        mem_mb=32000
     conda:
         "envs/alignment.yaml"
     shell:
-        "bwa mem {input.reference} {input.reads} | samtools view -Sb - > {output.bam}"
+        """
+        STAR --runThreadN {threads} \
+             --genomeDir {input.index} \
+             --readFilesIn {input.reads} \
+             --readFilesCommand zcat \
+             --outSAMtype BAM SortedByCoordinate \
+             --outFileNamePrefix results/aligned/{wildcards.sample}_
+        mv results/aligned/{wildcards.sample}_Aligned.sortedByCoord.out.bam {output.bam}
+        """
+
+# Правило 3: Подсчёт экспрессии с использованием Python
+rule count_reads:
+    input:
+        bam="results/aligned/{sample}.bam",
+        gtf=config["annotation"]
+    output:
+        "results/counts/{sample}.counts"
+    conda:
+        "envs/counting.yaml"
+    script:
+        "scripts/count_reads.py"
+
+# Правило 4: Объединённый QC отчёт
+rule multiqc:
+    input:
+        expand("results/qc/{sample}_fastqc.zip", sample=SAMPLES)
+    output:
+        "results/qc/multiqc_report.html"
+    conda:
+        "envs/qc.yaml"
+    shell:
+        "multiqc results/qc -o results/qc"
 ```
 
 ### 3.4 Сравнение Workflow Tools
@@ -527,12 +646,75 @@ rule align:
 **Пример Dockerfile:**
 
 ```dockerfile
+# Dockerfile для биоинформатического анализа
+# Multi-stage build для оптимизации размера
 
-FROM python:3.9-slim
-RUN pip install biopython pandas scikit-learn
-COPY . /app
-WORKDIR /app
-CMD ["python", "analysis.py"]
+# Stage 1: Build environment
+FROM python:3.11-slim as builder
+
+# Установка системных зависимостей для компиляции
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    libhts-dev \
+    zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Установка Python зависимостей
+COPY requirements.txt /tmp/
+RUN pip install --user --no-cache-dir -r /tmp/requirements.txt
+
+# Stage 2: Runtime environment
+FROM python:3.11-slim as runtime
+
+# Метаданные контейнера
+LABEL maintainer="bioinformatics@example.com"
+LABEL version="1.0"
+LABEL description="Container for genomic analysis pipeline"
+
+# Создание непривилегированного пользователя
+RUN useradd --create-home --shell /bin/bash analyst
+USER analyst
+WORKDIR /home/analyst
+
+# Копирование установленных пакетов из builder
+COPY --from=builder /root/.local /home/analyst/.local
+ENV PATH=/home/analyst/.local/bin:$PATH
+
+# Копирование кода приложения
+COPY --chown=analyst:analyst scripts/ ./scripts/
+COPY --chown=analyst:analyst config/ ./config/
+
+# Определение volume для данных
+VOLUME ["/home/analyst/data", "/home/analyst/results"]
+
+# Точка входа
+ENTRYPOINT ["python", "scripts/run_analysis.py"]
+CMD ["--help"]
+```
+
+**Пример requirements.txt:**
+
+```text
+
+biopython==1.81
+pandas==2.0.0
+numpy==1.24.0
+pysam==0.21.0
+scikit-learn==1.2.0
+matplotlib==3.7.0
+```
+
+**Команды для сборки и запуска:**
+
+```bash
+# Сборка образа
+docker build -t genomic-analysis:1.0 .
+
+# Запуск с монтированием данных
+docker run -v $(pwd)/data:/home/analyst/data \
+           -v $(pwd)/results:/home/analyst/results \
+           genomic-analysis:1.0 --input data/sample.fastq --output results/
 ```
 
 ### 4.3 Singularity
@@ -703,6 +885,7 @@ CMD ["python", "analysis.py"]
 - [Snakemake Documentation](https://snakemake.readthedocs.io/)
 
 ---
+
 
 
 
