@@ -1,5 +1,4 @@
 # Introduction to Life Sciences Informatics
-## Введение в информатику наук о жизни
 
 ---
 
