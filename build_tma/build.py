@@ -155,11 +155,13 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       flex: 0 0 60%;
       max-height: 45vh;
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), var(--tg-surface));
+      display: none;
     }
 
     #content-column {
       flex: 1;
       background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), var(--tg-surface));
+      display: none;
     }
 
     @media (min-width: 768px) {
@@ -534,6 +536,10 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       const tabLectureBtn = document.getElementById("tab-lecture");
       const tabQuizBtn = document.getElementById("tab-quiz");
 
+      const VIEW_COURSES = "courses";
+      const VIEW_MODULES = "modules";
+      const VIEW_CONTENT = "content";
+
       // Показ данных пользователя Telegram
       if (tg && tg.initDataUnsafe && tg.initDataUnsafe.user && userPillEl) {
         const u = tg.initDataUnsafe.user;
@@ -580,6 +586,39 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       function getCourseIcon(course) {
         const id = (course && course.course_id ? String(course.course_id) : "").toLowerCase();
         return COURSE_ICONS[id] || "📚";
+      }
+
+      const canUseBackButton =
+        !!(
+          tg &&
+          tg.BackButton &&
+          typeof tg.BackButton.show === "function" &&
+          typeof tg.isVersionAtLeast === "function" &&
+          tg.isVersionAtLeast("6.1")
+        );
+
+      const canUseCloudStorage =
+        !!(
+          tg &&
+          tg.CloudStorage &&
+          typeof tg.CloudStorage.getItems === "function" &&
+          typeof tg.isVersionAtLeast === "function" &&
+          tg.isVersionAtLeast("6.9")
+        );
+
+      function setView(view) {
+        const coursesCol = document.getElementById("courses-column");
+        const modulesCol = document.getElementById("modules-column");
+        const contentCol = document.getElementById("content-column");
+        if (coursesCol) {
+          coursesCol.style.display = view === VIEW_COURSES ? "flex" : "none";
+        }
+        if (modulesCol) {
+          modulesCol.style.display = view === VIEW_MODULES ? "flex" : "none";
+        }
+        if (contentCol) {
+          contentCol.style.display = view === VIEW_CONTENT ? "flex" : "none";
+        }
       }
 
       let indexData = null;
@@ -633,12 +672,20 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       }
 
       function updateBackButton() {
-        if (!tg || !tg.BackButton) return;
+        if (!canUseBackButton) return;
         if (!currentCourseId) {
-          tg.BackButton.hide();
+          try {
+            tg.BackButton.hide();
+          } catch (e) {
+            // ignore
+          }
           return;
         }
-        tg.BackButton.show();
+        try {
+          tg.BackButton.show();
+        } catch (e) {
+          // ignore
+        }
       }
 
       function updateMainButton() {
@@ -658,7 +705,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       }
 
       function saveSelection(courseId, moduleId) {
-        if (!tg || !tg.CloudStorage || typeof tg.CloudStorage.setItem !== "function") return;
+        if (!canUseCloudStorage) return;
         const cVal = courseId ? String(courseId) : "";
         const mVal = moduleId ? String(moduleId) : "";
         try {
@@ -670,7 +717,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       }
 
       function restoreSelection() {
-        if (!tg || !tg.CloudStorage || typeof tg.CloudStorage.getItems !== "function") return;
+        if (!canUseCloudStorage) return;
         if (!indexData || !Array.isArray(indexData.courses) || !coursesEl) return;
         try {
           tg.CloudStorage.getItems(["last_course_id", "last_module_id"], function (err, data) {
@@ -695,7 +742,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       }
 
       function handleBackClick() {
-        if (!tg || !tg.BackButton) return;
+        if (!canUseBackButton) return;
         if (currentModuleId) {
           currentModuleId = null;
           clearActive(modulesEl);
@@ -704,6 +751,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           }
           setStatus("Выберите модуль, чтобы открыть лекцию.");
           saveSelection(currentCourseId, null);
+          setView(VIEW_MODULES);
           updateBackButton();
           updateMainButton();
           return;
@@ -725,6 +773,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           }
           setStatus("Выберите курс.");
           saveSelection(null, null);
+          setView(VIEW_COURSES);
           updateBackButton();
           updateMainButton();
         }
@@ -744,8 +793,12 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         }
       }
 
-      if (tg && tg.BackButton && typeof tg.BackButton.onClick === "function") {
-        tg.BackButton.hide();
+      if (canUseBackButton && tg && tg.BackButton && typeof tg.BackButton.onClick === "function") {
+        try {
+          tg.BackButton.hide();
+        } catch (e) {
+          // ignore
+        }
         tg.BackButton.onClick(handleBackClick);
       }
       if (tg && tg.MainButton && typeof tg.MainButton.onClick === "function") {
@@ -759,6 +812,9 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       if (tabQuizBtn) {
         tabQuizBtn.addEventListener("click", () => setActiveTab("quiz"));
       }
+
+      // Начальный экран — список курсов
+      setView(VIEW_COURSES);
 
       async function loadIndex() {
         setStatus("Загружаем список курсов…");
@@ -824,6 +880,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         saveSelection(currentCourseId, null);
         updateBackButton();
         updateMainButton();
+        setView(VIEW_MODULES);
 
         if (modulesEl) {
           modulesEl.innerHTML = "";
@@ -927,6 +984,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         saveSelection(currentCourseId, currentModuleId);
         updateBackButton();
         updateMainButton();
+        setView(VIEW_CONTENT);
 
         if (contentTitleEl) {
           contentTitleEl.textContent = mod.title || mod.module_id || "Лекция";
