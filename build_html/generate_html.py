@@ -22,6 +22,7 @@ import markdown
 # Названия курсов для отображения
 COURSE_NAMES = {
     "AI": "🚀 Искусственный Интеллект",
+    "Astronomy": "🌌 Астрономия",
     "Bioinformatics": "🧬 Биоинформатика",
     "CloudNative": "☁️ Cloud Native",
     "Computers": "💾 История компьютеров",

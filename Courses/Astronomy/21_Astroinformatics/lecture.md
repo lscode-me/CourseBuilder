@@ -75,6 +75,7 @@ for key, value in astronomy_data_scale.items():
 
 **Output:**
 ```
+
 Масштабы данных в астрономии:
   Проблема: Объёмы данных превысили возможности ручного анализа
 
@@ -131,6 +132,7 @@ for period, details in astronomy_history.items():
 
 **Output:**
 ```
+
 Исторический контекст:
   До Xx Века:
     Метод: Визуальные наблюдения
@@ -196,6 +198,7 @@ for data_type, details in data_types.items():
 
 **Output:**
 ```
+
 Типы астрономических данных:
   Изображения:
     Описание: 2D или 3D изображения неба
@@ -269,6 +272,7 @@ for task, details in computational_tasks.items():
 
 **Output:**
 ```
+
 Вычислительные задачи:
   Калибровка:
     Задача: Коррекция систематических ошибок
@@ -330,6 +334,7 @@ for language, details in programming_languages.items():
 
 **Output:**
 ```
+
 Языки программирования:
   Python:
     Роль: Де-факто стандарт
@@ -367,6 +372,7 @@ for library, description in python_libraries.items():
 
 **Output:**
 ```
+
 Библиотеки и фреймворки:
   NumPy: Численные вычисления, массивы
   SciPy: Научные вычисления
@@ -410,6 +416,7 @@ for format_name, details in data_formats.items():
 
 **Output:**
 ```
+
 Форматы данных:
   FITS:
     Название: Flexible Image Transport System
@@ -467,6 +474,7 @@ for application, details in ml_applications.items():
 
 **Output:**
 ```
+
 Применения машинного обучения:
   Классификация Галактик:
     Задача: Автоматическая классификация по типам
@@ -526,6 +534,7 @@ for method, details in ml_methods.items():
 
 **Output:**
 ```
+
 Методы машинного обучения:
   Классический ML:
     Примеры: Random Forest, SVM, k-means
@@ -581,6 +590,7 @@ for sim_type, details in simulation_types.items():
 
 **Output:**
 ```
+
 Типы симуляций:
   N Body:
     Описание: Симуляции гравитационных систем
@@ -631,6 +641,7 @@ for simulation, details in famous_simulations.items():
 
 **Output:**
 ```
+
 Известные симуляции:
   Millennium:
     Тип: N-body космологическая
@@ -693,6 +704,7 @@ for concept, details in key_concepts.items():
 
 **Output:**
 ```
+
 Ключевые концепты:
   Data Pipelines:
     Описание: Автоматизированная обработка данных
@@ -720,10 +732,15 @@ FAIR:
 ## 💡 Key Takeaways
 
 - **Астроинформатика** — применение информатики и data science к астрономии
+
 - **Масштабы данных** — петабайты данных требуют автоматизированного анализа
+
 - **Инструменты** — Python, Astropy, машинное обучение, HPC
+
 - **Машинное обучение** — классификация, поиск, обработка изображений
+
 - **Симуляции** — N-body, гидродинамика, космологические модели
+
 - **Современные принципы** — reproducibility, open data, FAIR
 
 ---
@@ -731,15 +748,18 @@ FAIR:
 ## 🚀 Next Steps
 
 **Related Modules:**
+
 - [14_Observing](../14_Observing/) — методы наблюдений (источники данных)
 - [15_Spectra](../15_Spectra/) — спектры (обработка данных)
 
 **Practice Ideas:**
+
 1. Изучите Astropy и работу с FITS файлами
 2. Попробуйте классифицировать галактики с помощью ML
 3. Исследуйте открытые каталоги (SDSS, Gaia)
 
 **Going Deeper:**
+
 - Детальная обработка изображений
 - Продвинутое машинное обучение
 - Высокопроизводительные вычисления
@@ -749,12 +769,15 @@ FAIR:
 ## 📚 Additional Resources
 
 **Websites:**
+
 - Astropy — астрономические инструменты Python
 - SDSS — открытые данные
 - LSST — будущие данные
 
 **Videos:**
+
 - Лекции по астроинформатике
 - Туториалы по Astropy
 
 ---
+
