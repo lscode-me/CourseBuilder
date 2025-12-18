@@ -397,24 +397,75 @@ def print_summary(all_metrics: dict[str, list[ModuleMetrics]]):
 
 def main():
     """Главная функция."""
-    courses_path = Path(__file__).parent.parent / 'Courses'
-    
-    if not courses_path.exists():
-        print(f"Папка {courses_path} не найдена!")
-        return
-    
-    # Собираем все курсы
-    courses = [d.name for d in sorted(courses_path.iterdir()) if d.is_dir()]
-    
-    all_metrics = {}
-    
+    import argparse
+    import sys
+
+    script_dir = Path(__file__).parent
+    workspace = script_dir.parent
+    default_courses_path = workspace / 'Courses'
+
+    parser = argparse.ArgumentParser(
+        description='Анализ качества курсов (лекции, квизы, структура) согласно стандартам CourseBuilder'
+    )
+    parser.add_argument(
+        'path',
+        nargs='?',
+        help='Путь к курсу или директории с курсами (по умолчанию: Courses/)'
+    )
+    args = parser.parse_args()
+
+    # Определяем базовую директорию с курсами и список курсов для анализа
+    if args.path:
+        target = Path(args.path)
+        if not target.is_absolute():
+            target = workspace / args.path
+        if not target.exists():
+            print(f"❌ Путь не найден: {target}")
+            sys.exit(1)
+
+        # Если явно передана папка Courses/ или её абсолютный путь
+        if target == default_courses_path or target.name == 'Courses':
+            courses_path = target
+            courses = [d.name for d in sorted(courses_path.iterdir()) if d.is_dir()]
+        # Если это один курс (есть README.md)
+        elif (target / 'README.md').exists():
+            courses_path = target.parent
+            courses = [target.name]
+        # Если это директория, внутри которой лежат несколько курсов
+        elif target.is_dir():
+            courses_path = target
+            courses = [
+                d.name
+                for d in sorted(courses_path.iterdir())
+                if d.is_dir() and (d / 'README.md').exists()
+            ]
+            if not courses:
+                print(f"❌ В директории {target} не найдено ни одного курса (папка с README.md)")
+                sys.exit(1)
+        else:
+            print(f"❌ Ожидалась директория курса или директория с курсами, получено: {target}")
+            sys.exit(1)
+    else:
+        # Старое поведение по умолчанию: все директории в Courses/
+        courses_path = default_courses_path
+        if not courses_path.exists():
+            print(f"Папка {courses_path} не найдена!")
+            sys.exit(1)
+        courses = [d.name for d in sorted(courses_path.iterdir()) if d.is_dir()]
+
+    if not courses:
+        print("❌ Не найдено курсов для анализа")
+        sys.exit(1)
+
+    all_metrics: dict[str, list[ModuleMetrics]] = {}
+
     # Анализируем каждый курс
     for course_name in courses:
         modules = analyze_course(courses_path, course_name)
         all_metrics[course_name] = modules
         print_course_report(course_name, modules)
     
-    # Общая сводка
+    # Общая сводка (по только что проанализированным курсам)
     print_summary(all_metrics)
     
     # Легенда

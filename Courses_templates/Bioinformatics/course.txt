@@ -1,11 +1,13 @@
 Bioinformatics
 Курс по биоинформатике для инженеров-программистов. Биологические концепции через аналогии из IT, форматы файлов и пайплайны обработки данных.
-01_Basics ДНК, гены, мутации, геном, секвенирование — биология для программистов.
-02_File_Formats FASTQ, SAM/BAM, VCF, BED, FASTA — форматы данных биоинформатики.
-03_Variant_Calling QC, выравнивание, variant calling, аннотация, фильтрация.
-04_CLI_Tools samtools, bcftools, bedtools, seqtk — CLI-инструменты биоинформатики.
-05_Epigenetics_Markers эпигенетика, метилирование, SNP, STR, CNV, GWAS, фармакогенетика.
+01_Basics ДНК, РНК, белки, гены, геном — биология для программистов.
+02_Sequencing_Basics Секвенирование, риды, покрытие, мутации, координаты и базовые метрики качества.
+03_File_Formats FASTQ, SAM/BAM, VCF, BED, FASTA — форматы данных биоинформатики.
+04_Variant_Calling QC, выравнивание, variant calling, аннотация, фильтрация.
+05_CLI_Tools samtools, bcftools, bedtools, seqtk — CLI-инструменты биоинформатики.
+06_Epigenetics эпигенетика, метилирование, модификации гистонов, эпигенетические часы.
+07_Genetic_Markers SNP, STR, CNV, генетические маркеры и их применение.
+08_GWAS_Pharmacogenetics GWAS, фармакогенетика, биомаркеры и интеграция данных.
 
 Требования: Python 3.8+, Linux/macOS, 8GB RAM, samtools, bcftools, bedtools.
-
 

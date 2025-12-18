@@ -671,8 +671,8 @@ faToTwoBit genome.fasta genome.2bit
 
 **Связанные модули:**
 
-- [Variant Calling](../03_Variant_Calling/) — как из FASTQ файлов получить VCF с вариантами
-- [CLI Tools](../04_CLI_Tools/) — работа с файлами через командную строку
+- [Variant Calling](../04_Variant_Calling/) — как из FASTQ файлов получить VCF с вариантами
+- [CLI Tools](../05_CLI_Tools/) — работа с файлами через командную строку
 
 **Практические задачи для закрепления:**
 
@@ -750,8 +750,8 @@ faToTwoBit genome.fasta genome.2bit
 
 **Следующие модули:**
 
-- [03_Variant_Calling](../03_Variant_Calling/) — Пайплайны от FASTQ до VCF
-- [04_CLI_Tools](../04_CLI_Tools/) — Инструменты командной строки для работы с файлами
+- [04_Variant_Calling](../04_Variant_Calling/) — Пайплайны от FASTQ до VCF
+- [05_CLI_Tools](../05_CLI_Tools/) — Инструменты командной строки для работы с файлами
 
 **Практика:**
 

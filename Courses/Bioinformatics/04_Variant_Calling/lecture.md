@@ -7,7 +7,7 @@
 
 Перед началом этого модуля вы должны:
 
-- Пройти модуль [02_File_Formats](../02_File_Formats/) — форматы файлов
+- Пройти модуль [02_File_Formats](../03_File_Formats/) — форматы файлов
 - Понимать структуру FASTQ, BAM, VCF файлов
 - Иметь опыт работы с командной строкой Linux/macOS
 
@@ -445,8 +445,8 @@ for variant in vcf:
 
 **Связанные модули:**
 
-- [CLI Tools](../04_CLI_Tools/) — детальная работа с samtools, bcftools, bedtools
-- [Эпигенетика](../05_Epigenetics_Markers/) — GWAS, фармакогенетика, клиническая интерпретация
+- [CLI Tools](../05_CLI_Tools/) — детальная работа с samtools, bcftools, bedtools
+- [Эпигенетика](../06_Epigenetics/) — GWAS, фармакогенетика, клиническая интерпретация
 
 **Практические задачи для закрепления:**
 
@@ -509,8 +509,8 @@ for variant in vcf:
 
 **Следующие модули:**
 
-- [04_CLI_Tools](../04_CLI_Tools/) — Инструменты командной строки (samtools, bcftools)
-- [05_Epigenetics_Markers](../05_Epigenetics_Markers/) — Эпигенетика и маркеры
+- [05_CLI_Tools](../05_CLI_Tools/) — Инструменты командной строки (samtools, bcftools)
+- [Эпигенетика и Маркеры](../06_Epigenetics/) — Эпигенетика и генетические маркеры
 
 **Практика:**
 
