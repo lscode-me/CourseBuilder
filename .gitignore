@@ -20,6 +20,10 @@
 !build_html/**
 build_html/venv/
 build_html/__pycache__/
+!build_tma/
+!build_tma/**
+build_tma/venv/
+build_tma/__pycache__/
 
 # HTML вывод (генерируется автоматически)
 html/
