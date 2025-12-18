@@ -74,6 +74,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       align-items: center;
       justify-content: space-between;
       gap: 8px;
+      background: linear-gradient(90deg, rgba(37, 99, 235, 0.06), rgba(255, 255, 255, 0));
     }
 
     .app-title {
@@ -147,15 +148,18 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
     #courses-column {
       flex: 0 0 40%;
       max-height: 45vh;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), var(--tg-surface));
     }
 
     #modules-column {
       flex: 0 0 60%;
       max-height: 45vh;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), var(--tg-surface));
     }
 
     #content-column {
       flex: 1;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), var(--tg-surface));
     }
 
     @media (min-width: 768px) {
@@ -548,6 +552,36 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         );
       }
 
+      const COURSE_ICONS = {
+        ai: "🤖",
+        astronomy: "🌌",
+        bioinformatics: "🧬",
+        cloudnative: "☁️",
+        computers: "💻",
+        containers: "📦",
+        crypto: "🪙",
+        customerandservices: "🤝",
+        devops: "⚙️",
+        englishgrammarc1: "📘",
+        englishgrammarc2: "📙",
+        go: "🐹",
+        "healthcare-technologies": "🏥",
+        "it-basics": "🧩",
+        leadership: "👑",
+        "ls-intro": "🎓",
+        openbsd: "🐡",
+        python: "🐍",
+        pythoninterview: "🎯",
+        "scientific-informatics": "🔬",
+        unixprogramming: "🐚",
+        webprogramming: "🌐",
+      };
+
+      function getCourseIcon(course) {
+        const id = (course && course.course_id ? String(course.course_id) : "").toLowerCase();
+        return COURSE_ICONS[id] || "📚";
+      }
+
       let indexData = null;
       let currentCourseId = null;
       let currentModules = [];
@@ -766,7 +800,9 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 
           const title = document.createElement("span");
           title.className = "item-title";
-          title.textContent = course.title || course.course_id;
+          const icon = getCourseIcon(course);
+          const label = course.title || course.course_id;
+          title.textContent = icon + " " + label;
 
           btn.appendChild(badge);
           btn.appendChild(title);
