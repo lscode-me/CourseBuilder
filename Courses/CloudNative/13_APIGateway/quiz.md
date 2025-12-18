@@ -5,12 +5,6 @@
 
 ## Question 1: REST vs HTTP API
 
-
-
-
-
-
-
 Какое преимущество HTTP API над REST API?
 
 A) Поддержка caching
@@ -24,12 +18,6 @@ D) Ниже latency и цена
 ---
 
 ## Question 2: Lambda Proxy
-
-
-
-
-
-
 
 Что такое Lambda Proxy Integration?
 
@@ -45,12 +33,6 @@ D) Шифрование между API Gateway и Lambda
 
 ## Question 3: Authorization
 
-
-
-
-
-
-
 Какой тип авторизации лучше для валидации JWT от Auth0 в HTTP API?
 
 A) IAM Authorization
@@ -64,12 +46,6 @@ D) JWT Authorizer
 ---
 
 ## Question 4: API Keys
-
-
-
-
-
-
 
 Для чего используются API Keys в API Gateway?
 
@@ -85,12 +61,6 @@ D) Для безопасной аутентификации пользовате
 
 ## Question 5: Caching
 
-
-
-
-
-
-
 Какой тип API Gateway поддерживает встроенный caching?
 
 A) WebSocket API
@@ -104,11 +74,6 @@ D) REST API
 ---
 
 ## Question 6: Stages
-
-
-
-
-
 
 Для чего используются Stages в API Gateway?
 
@@ -124,11 +89,6 @@ D) Для billing
 
 ## Question 7: Request Validation
 
-
-
-
-
-
 Что может валидировать API Gateway?
 
 A) Только body
@@ -142,11 +102,6 @@ D) Только headers
 ---
 
 ## Question 8: Throttling
-
-
-
-
-
 
 Какой default throttling limit для API Gateway?
 
@@ -162,11 +117,6 @@ D) Unlimited
 
 ## Question 9: Lambda Integration Types
 
-
-
-
-
-
 Чем PROXY отличается от non-proxy integration?
 
 A) Proxy быстрее
@@ -180,11 +130,6 @@ D) Proxy передаёт всё в Lambda, non-proxy позволяет mapping
 ---
 
 ## Question 10: Custom Domain
-
-
-
-
-
 
 Как использовать custom domain с API Gateway?
 
@@ -200,11 +145,6 @@ D) Только с CloudFront
 
 ## Question 11: CORS
 
-
-
-
-
-
 Как включить CORS в API Gateway?
 
 A) Невозможно
@@ -218,11 +158,6 @@ D) Автоматически
 ---
 
 ## Question 12: VPC Link
-
-
-
-
-
 
 Для чего используется VPC Link?
 
@@ -238,11 +173,6 @@ D) Для private integration с resources в VPC
 
 ## Question 13: Access Logs
 
-
-
-
-
-
 Куда можно отправлять access logs?
 
 A) Только Kinesis
@@ -256,11 +186,6 @@ D) CloudWatch Logs, Kinesis Firehose
 ---
 
 ## Question 14: Mock Integration
-
-
-
-
-
 
 Для чего используется Mock Integration?
 
@@ -276,11 +201,6 @@ D) Для caching
 
 ## Question 15: Usage Plans
 
-
-
-
-
-
 Что позволяют настроить Usage Plans?
 
 A) Только security
@@ -294,11 +214,6 @@ D) Throttling и quota для API keys
 ---
 
 ## Question 16: WebSocket API
-
-
-
-
-
 
 Для чего используется WebSocket API?
 
@@ -314,11 +229,6 @@ D) Для real-time bidirectional communication
 
 ## Question 17: Resource Policies
 
-
-
-
-
-
 Что контролируют Resource Policies?
 
 A) Только caching
@@ -332,11 +242,6 @@ D) Cross-account и IP-based access к API
 ---
 
 ## Question 18: Request/Response Transformation
-
-
-
-
-
 
 Как трансформировать request/response?
 
@@ -352,11 +257,6 @@ D) Невозможно
 
 ## Question 19: Private API
 
-
-
-
-
-
 Как создать API доступный только из VPC?
 
 A) Private API с VPC Endpoint
@@ -370,11 +270,6 @@ D) IP whitelist
 ---
 
 ## Question 20: Canary Deployments
-
-
-
-
-
 
 Как реализовать canary deployment?
 
@@ -416,3 +311,4 @@ D) Только через Lambda
 | 20 | A | Canary settings для traffic splitting |
 
 ---
+

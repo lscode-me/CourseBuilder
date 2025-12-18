@@ -6,12 +6,6 @@
 
 ## Question 1: Backshift
 
-
-
-
-
-
-
 "I am studying." → She said she ___ studying.
 
 A) is
@@ -25,12 +19,6 @@ D) was
 ---
 
 ## Question 2: No Backshift
-
-
-
-
-
-
 
 When is backshift NOT necessary?
 
@@ -46,12 +34,6 @@ D) When reporting commands
 
 ## Question 3: Say vs Tell
 
-
-
-
-
-
-
 Which sentence is correct?
 
 A) She said me that she was tired.
@@ -65,12 +47,6 @@ D) She told me that she was tired.
 ---
 
 ## Question 4: Reporting Questions
-
-
-
-
-
-
 
 "Where do you live?" → He asked ___.
 
@@ -86,12 +62,6 @@ D) where I live
 
 ## Question 5: Yes/No Questions
 
-
-
-
-
-
-
 "Are you coming?" → She asked ___.
 
 A) if I was coming
@@ -105,12 +75,6 @@ D) whether was I coming
 ---
 
 ## Question 6: Reporting Commands
-
-
-
-
-
-
 
 "Don't touch that!" → She told him ___.
 
@@ -126,12 +90,6 @@ D) that don't touch that
 
 ## Question 7: Suggest
 
-
-
-
-
-
-
 Which sentence is INCORRECT?
 
 A) She suggested that we should go to the cinema.
@@ -145,12 +103,6 @@ D) She suggested that we go to the cinema.
 ---
 
 ## Question 8: Offer
-
-
-
-
-
-
 
 "I'll help you with that." → He offered ___.
 
@@ -166,12 +118,6 @@ D) me to help
 
 ## Question 9: Time Reference
 
-
-
-
-
-
-
 "I'll see you tomorrow." (said on Monday, reported on Wednesday)
 
 A) She said she will see me the next day.
@@ -185,12 +131,6 @@ D) She said she would see me today.
 ---
 
 ## Question 10: Modal Backshift
-
-
-
-
-
-
 
 "I can swim." → He said he ___ swim.
 
@@ -206,12 +146,6 @@ D) would can
 
 ## Question 11: Reporting Verb Choice
 
-
-
-
-
-
-
 Which verb expresses that the speaker strongly insisted?
 
 A) mentioned
@@ -225,12 +159,6 @@ D) urged
 ---
 
 ## Question 12: Academic Reporting
-
-
-
-
-
-
 
 In academic writing, "Smith (2020) argues that..." uses present tense because:
 
@@ -246,12 +174,6 @@ D) The argument is still relevant/current
 
 ## Question 13: Warn
 
-
-
-
-
-
-
 "Be careful! The floor is wet." → She ___.
 
 A) warned that be careful
@@ -265,12 +187,6 @@ D) said me to be careful
 ---
 
 ## Question 14: Agree
-
-
-
-
-
-
 
 "OK, I'll do it." → He ___ to do it.
 
@@ -286,12 +202,6 @@ D) agreed
 
 ## Question 15: Complex Backshift
 
-
-
-
-
-
-
 "I have been waiting for an hour." → She said she ___ for an hour.
 
 A) had been waiting
@@ -305,12 +215,6 @@ D) has been waiting
 ---
 
 ## Question 16: Question Word Order
-
-
-
-
-
-
 
 Which sentence has correct word order?
 
@@ -326,12 +230,6 @@ D) He asked what is my name.
 
 ## Question 17: Pronoun Change
 
-
-
-
-
-
-
 "I will call you tomorrow." → He told me ___.
 
 A) I would call you the next day
@@ -345,12 +243,6 @@ D) I will call me tomorrow
 ---
 
 ## Question 18: Deny
-
-
-
-
-
-
 
 "I didn't take the money." → She denied ___.
 
@@ -366,12 +258,6 @@ D) taking the money
 
 ## Question 19: Promise
 
-
-
-
-
-
-
 Which structure is correct with "promise"?
 
 A) He promised me helping.
@@ -385,12 +271,6 @@ D) He promised me to help.
 ---
 
 ## Question 20: Optional Backshift
-
-
-
-
-
-
 
 "Water boils at 100°C." → The teacher explained that water ___ at 100°C.
 
@@ -445,4 +325,5 @@ D) was boiling
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Reported speech требует внимания. Изучите лекцию заново. |
 
 ---
+
 

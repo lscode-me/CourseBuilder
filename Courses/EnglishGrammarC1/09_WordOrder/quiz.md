@@ -6,12 +6,6 @@
 
 ## Question 1: Basic Word Order
 
-
-
-
-
-
-
 Which sentence has correct word order?
 
 A) I bought a new car yesterday.
@@ -26,12 +20,6 @@ D) Yesterday I a new car bought.
 
 ## Question 2: Adverb Position
 
-
-
-
-
-
-
 Which sentence is correct?
 
 A) She speaks English very well.
@@ -45,12 +33,6 @@ D) Very well she speaks English.
 ---
 
 ## Question 3: Frequency Adverbs
-
-
-
-
-
-
 
 Where should "always" go?
 
@@ -68,12 +50,6 @@ D) Position 3
 
 ## Question 4: Negative Inversion
 
-
-
-
-
-
-
 "Never ___ such a beautiful sunset."
 
 A) did I saw
@@ -87,12 +63,6 @@ D) I saw
 ---
 
 ## Question 5: Only Inversion
-
-
-
-
-
-
 
 "Only after the meeting ___ the truth."
 
@@ -108,12 +78,6 @@ D) I did learn
 
 ## Question 6: Conditional Inversion
 
-
-
-
-
-
-
 "___ I known about the problem, I would have helped."
 
 A) Did
@@ -127,12 +91,6 @@ D) Would
 ---
 
 ## Question 7: It-Cleft
-
-
-
-
-
-
 
 "It was ___ who broke the window."
 
@@ -148,12 +106,6 @@ D) him
 
 ## Question 8: What-Cleft
 
-
-
-
-
-
-
 "___ is a good night's sleep."
 
 A) That I need
@@ -167,12 +119,6 @@ D) What I need
 ---
 
 ## Question 9: Embedded Question
-
-
-
-
-
-
 
 Which sentence is correct?
 
@@ -188,12 +134,6 @@ D) I don't know where she is.
 
 ## Question 10: Subject Question
 
-
-
-
-
-
-
 "___ happened last night?"
 
 A) Did what
@@ -207,12 +147,6 @@ D) What was
 ---
 
 ## Question 11: End-Weight
-
-
-
-
-
-
 
 Which sentence follows the end-weight principle?
 
@@ -228,12 +162,6 @@ D) I gave a book to the woman who helped me.
 
 ## Question 12: Extraposition
 
-
-
-
-
-
-
 Which is the more natural word order?
 
 A) It was obvious that he lied.
@@ -247,12 +175,6 @@ D) That he lied was obvious.
 ---
 
 ## Question 13: Emphatic Do
-
-
-
-
-
-
 
 "I ___ tell you the truth yesterday!"
 
@@ -268,12 +190,6 @@ D) was
 
 ## Question 14: Inversion After So
 
-
-
-
-
-
-
 "So beautiful ___ that I couldn't stop looking."
 
 A) was the painting
@@ -287,12 +203,6 @@ D) the painting did
 ---
 
 ## Question 15: Russian Interference
-
-
-
-
-
-
 
 Which error is typical for Russian speakers?
 
@@ -308,12 +218,6 @@ D) "Yesterday I bought a book."
 
 ## Question 16: Fronting
 
-
-
-
-
-
-
 Which sentence uses fronting for emphasis?
 
 A) She really likes coffee.
@@ -327,12 +231,6 @@ D) Coffee she likes, but tea she hates.
 ---
 
 ## Question 17: Question Formation
-
-
-
-
-
-
 
 Which question is correctly formed?
 
@@ -348,12 +246,6 @@ D) This word means what?
 
 ## Question 18: No Sooner
 
-
-
-
-
-
-
 "No sooner ___ than it started raining."
 
 A) had I arrived
@@ -367,12 +259,6 @@ D) I arrived
 ---
 
 ## Question 19: Cleft for Correction
-
-
-
-
-
-
 
 Someone says: "John called you."
 You correct: "No, ___ Mike who called me."
@@ -388,12 +274,6 @@ D) he was
 ---
 
 ## Question 20: Indirect Question
-
-
-
-
-
-
 
 "Can you tell me ___?"
 
@@ -446,4 +326,5 @@ D) where the station is
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Word order требует серьёзного внимания. |
 
 ---
+
 

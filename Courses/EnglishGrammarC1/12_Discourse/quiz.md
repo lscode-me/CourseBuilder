@@ -6,12 +6,6 @@
 
 ## Question 1: Adding Information
 
-
-
-
-
-
-
 Which connector adds information formally?
 
 A) Plus
@@ -25,12 +19,6 @@ D) Furthermore
 ---
 
 ## Question 2: Contrasting
-
-
-
-
-
-
 
 "The plan seemed good. ___, it failed."
 
@@ -46,12 +34,6 @@ D) However
 
 ## Question 3: Result
 
-
-
-
-
-
-
 "Sales increased. ___, profits rose."
 
 A) However
@@ -65,12 +47,6 @@ D) Although
 ---
 
 ## Question 4: Reference
-
-
-
-
-
-
 
 "John bought a car. ___ is blue."
 
@@ -86,12 +62,6 @@ D) It
 
 ## Question 5: Substitution
 
-
-
-
-
-
-
 "I can swim but she can't ___."
 
 A) swim
@@ -105,12 +75,6 @@ D) to swim
 ---
 
 ## Question 6: Substitution with "One"
-
-
-
-
-
-
 
 "I need a pen. Do you have ___?"
 
@@ -126,12 +90,6 @@ D) it
 
 ## Question 7: "So" Substitution
 
-
-
-
-
-
-
 "Will it rain?" — "I think ___."
 
 A) that
@@ -145,12 +103,6 @@ D) it
 ---
 
 ## Question 8: Formal Contrast
-
-
-
-
-
-
 
 Which is MOST formal?
 
@@ -166,12 +118,6 @@ D) Still, there's a problem.
 
 ## Question 9: Purpose
 
-
-
-
-
-
-
 "She studied hard ___ pass the exam."
 
 A) because
@@ -185,12 +131,6 @@ D) in order to
 ---
 
 ## Question 10: Example
-
-
-
-
-
-
 
 Which introduces an example?
 
@@ -206,12 +146,6 @@ D) For instance
 
 ## Question 11: Comma Splice
 
-
-
-
-
-
-
 Which sentence has a comma splice error?
 
 A) It was raining; I stayed home.
@@ -225,12 +159,6 @@ D) Although it was raining, I went out.
 ---
 
 ## Question 12: Despite/Although
-
-
-
-
-
-
 
 Which is correct?
 
@@ -246,12 +174,6 @@ D) Despite he was tired, he worked.
 
 ## Question 13: Such
 
-
-
-
-
-
-
 "There were delays and errors. ___ problems are unacceptable."
 
 A) Such
@@ -265,12 +187,6 @@ D) That
 ---
 
 ## Question 14: Conclusion
-
-
-
-
-
-
 
 Which signals a conclusion?
 
@@ -286,12 +202,6 @@ D) For example
 
 ## Question 15: Sequence
 
-
-
-
-
-
-
 Which shows sequence?
 
 A) Because
@@ -305,12 +215,6 @@ D) Subsequently
 ---
 
 ## Question 16: Given-New
-
-
-
-
-
-
 
 Which follows the given-new principle better?
 
@@ -326,12 +230,6 @@ D) A blue car was bought by John.
 
 ## Question 17: Parallel Structure
 
-
-
-
-
-
-
 Which has correct parallel structure?
 
 A) He likes reading, to write, and swimming.
@@ -345,12 +243,6 @@ D) He likes reading, writing, and swimming.
 ---
 
 ## Question 18: Academic Hedging
-
-
-
-
-
-
 
 Which is appropriately hedged for academic writing?
 
@@ -366,12 +258,6 @@ D) This causes cancer.
 
 ## Question 19: Demonstrative Reference
 
-
-
-
-
-
-
 "I'll tell you ___: it won't be easy."
 
 A) this
@@ -385,12 +271,6 @@ D) that
 ---
 
 ## Question 20: Ellipsis
-
-
-
-
-
-
 
 "She can speak French and he can ___ too."
 
@@ -443,4 +323,5 @@ D) too
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Cohesion требует внимания. |
 
 ---
+
 

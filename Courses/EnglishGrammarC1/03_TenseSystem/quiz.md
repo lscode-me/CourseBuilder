@@ -6,12 +6,6 @@
 
 ## Question 1: Tense vs Aspect
 
-
-
-
-
-
-
 What is the difference between "tense" and "aspect" in English grammar?
 
 A) Tense is for verbs; Aspect is for nouns
@@ -25,12 +19,6 @@ D) Tense is formal; Aspect is informal
 ---
 
 ## Question 2: Present Perfect vs Past Simple
-
-
-
-
-
-
 
 Choose the correct sentence: "I ___ my keys. Can you help me find them?"
 
@@ -46,12 +34,6 @@ D) had lost
 
 ## Question 3: Time Markers
 
-
-
-
-
-
-
 Which time expression requires Past Simple (not Present Perfect)?
 
 A) ever
@@ -65,12 +47,6 @@ D) already
 ---
 
 ## Question 4: Duration Until Now
-
-
-
-
-
-
 
 How do you say "Я живу здесь 5 лет" in English?
 
@@ -86,12 +62,6 @@ D) I am living here for 5 years.
 
 ## Question 5: Future After "When"
 
-
-
-
-
-
-
 Which sentence is correct?
 
 A) When I arrive, I call you.
@@ -105,12 +75,6 @@ D) When I will arrive, I'll call you.
 ---
 
 ## Question 6: Stative Verbs
-
-
-
-
-
-
 
 Which sentence is INCORRECT?
 
@@ -126,12 +90,6 @@ D) I know the answer.
 
 ## Question 7: Present Simple vs Continuous
 
-
-
-
-
-
-
 "What ___ you ___ ?" — "I'm a software developer."
 
 A) do / do
@@ -145,12 +103,6 @@ D) do / doing
 ---
 
 ## Question 8: Present Perfect Continuous
-
-
-
-
-
-
 
 Which sentence best shows duration of activity leading to now?
 
@@ -166,12 +118,6 @@ D) I wrote three reports today.
 
 ## Question 9: Past Perfect
 
-
-
-
-
-
-
 "When I arrived at the party, everyone ___."
 
 A) has left
@@ -185,12 +131,6 @@ D) was leaving
 ---
 
 ## Question 10: Life Experience
-
-
-
-
-
-
 
 "___ you ever ___ to Australia?"
 
@@ -206,12 +146,6 @@ D) Did / go
 
 ## Question 11: Verb with Dual Meaning
 
-
-
-
-
-
-
 "I ___ about your offer." (= considering)
 
 A) have thought
@@ -225,12 +159,6 @@ D) am thinking
 ---
 
 ## Question 12: Going To vs Will
-
-
-
-
-
-
 
 Someone looks at dark clouds and says:
 
@@ -246,12 +174,6 @@ D) "It's going to rain."
 
 ## Question 13: Narrative Tenses
 
-
-
-
-
-
-
 "I ___ down the street when I ___ an old friend."
 
 A) was walking / saw
@@ -265,12 +187,6 @@ D) walked / had seen
 ---
 
 ## Question 14: Used to vs Would
-
-
-
-
-
-
 
 Which sentence is INCORRECT?
 
@@ -286,12 +202,6 @@ D) This used to be a restaurant.
 
 ## Question 15: Russian Interference
 
-
-
-
-
-
-
 What is the typical error Russian speakers make with "I know him for 10 years"?
 
 A) Missing Present Perfect (should be "I've known")
@@ -305,12 +215,6 @@ D) Wrong preposition
 ---
 
 ## Question 16: Perfect Infinitive
-
-
-
-
-
-
 
 "He seems ___ early." (It appears he left)
 
@@ -326,12 +230,6 @@ D) to leave
 
 ## Question 17: Future Continuous
 
-
-
-
-
-
-
 "This time tomorrow, I ___ to London."
 
 A) will fly
@@ -345,12 +243,6 @@ D) am flying
 ---
 
 ## Question 18: Present for Scheduled Future
-
-
-
-
-
-
 
 "The concert ___ at 8 pm."
 
@@ -366,12 +258,6 @@ D) will start
 
 ## Question 19: Past Simple or Present Perfect?
 
-
-
-
-
-
-
 "___ the new James Bond film yet?"
 
 A) Were you seeing
@@ -385,12 +271,6 @@ D) Have you seen
 ---
 
 ## Question 20: Tense Shift Error
-
-
-
-
-
-
 
 Which sentence contains a tense error typical for Russian speakers?
 
@@ -445,4 +325,5 @@ D) She has worked here since 2015.
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Времена — серьёзная проблема. Изучите лекцию заново, делая заметки. |
 
 ---
+
 

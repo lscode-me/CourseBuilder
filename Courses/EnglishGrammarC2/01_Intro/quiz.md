@@ -6,12 +6,6 @@
 
 ## Question 1: C2 Definition
 
-
-
-
-
-
-
 According to CEFR, what distinguishes C2 from C1?
 
 A) C2 speakers can understand native speakers better
@@ -25,12 +19,6 @@ D) C2 speakers know more vocabulary than C1 speakers
 ---
 
 ## Question 2: Natural vs Correct
-
-
-
-
-
-
 
 Which sentence sounds MOST natural in everyday professional English?
 
@@ -46,12 +34,6 @@ D) "The responsibility for this project lies with myself."
 
 ## Question 3: Article Subtlety
 
-
-
-
-
-
-
 Choose the correct option: "___ science has made great progress in recent decades."
 
 A) A science
@@ -65,12 +47,6 @@ D) The science
 ---
 
 ## Question 4: Article with Specification
-
-
-
-
-
-
 
 Choose the correct option: "___ English spoken in Singapore has unique features."
 
@@ -86,12 +62,6 @@ D) An English
 
 ## Question 5: Hedging
 
-
-
-
-
-
-
 Which response is MOST appropriate for a British professional context when giving negative feedback?
 
 A) "The report is unacceptable and must be rewritten."
@@ -105,12 +75,6 @@ D) "Well, it's not terrible, I suppose, but maybe you could possibly consider...
 ---
 
 ## Question 6: Pragmatic Meaning
-
-
-
-
-
-
 
 A colleague says: "That's certainly one way of looking at it." What do they most likely mean?
 
@@ -126,12 +90,6 @@ D) They think your perspective is unique and valuable
 
 ## Question 7: Register Identification
 
-
-
-
-
-
-
 Which sentence is appropriate for academic writing?
 
 A) "Scientists have found out that the treatment works."
@@ -145,12 +103,6 @@ D) "The cure does what it's supposed to do."
 ---
 
 ## Question 8: Marked Structures
-
-
-
-
-
-
 
 "Never have I encountered such incompetence." This structure is:
 
@@ -166,12 +118,6 @@ D) Only appropriate in legal contexts
 
 ## Question 9: Fossilization
 
-
-
-
-
-
-
 What is a "fossilized error"?
 
 A) An error related to outdated grammar rules
@@ -185,12 +131,6 @@ D) An error that native speakers also make
 ---
 
 ## Question 10: Russian Interference
-
-
-
-
-
-
 
 Which error is MOST typical of Russian speakers at C1 level?
 
@@ -206,12 +146,6 @@ D) Using double negatives
 
 ## Question 11: Pragmatic Competence
 
-
-
-
-
-
-
 "I'll bear that in mind" typically means:
 
 A) I don't understand what you mean
@@ -225,12 +159,6 @@ D) I will definitely follow your suggestion
 ---
 
 ## Question 12: Corpus Evidence
-
-
-
-
-
-
 
 According to corpus data, why might "very crucial" sound unnatural?
 
@@ -246,12 +174,6 @@ D) "Very" cannot modify adjectives
 
 ## Question 13: Register Continuum
 
-
-
-
-
-
-
 Which register would you use for a formal business proposal?
 
 A) Consultative
@@ -265,12 +187,6 @@ D) Casual
 ---
 
 ## Question 14: Descriptive vs Prescriptive
-
-
-
-
-
-
 
 "Who did you see?" (instead of "Whom did you see?") is:
 
@@ -286,12 +202,6 @@ D) Grammatically incorrect and should be avoided
 
 ## Question 15: C2 Writing Characteristics
 
-
-
-
-
-
-
 Which is a characteristic of C2-level writing?
 
 A) Using simple sentences for maximum clarity
@@ -305,12 +215,6 @@ D) Using as many complex words as possible
 ---
 
 ## Question 16: Natural Collocation
-
-
-
-
-
-
 
 Which collocation is MOST natural?
 
@@ -326,12 +230,6 @@ D) "She was highly disappointed."
 
 ## Question 17: Politeness Strategy
 
-
-
-
-
-
-
 In English professional culture, why might direct requests sound rude?
 
 A) Native speakers never make direct requests
@@ -345,12 +243,6 @@ D) Indirectness signals respect for the listener's autonomy
 ---
 
 ## Question 18: Receptive-Productive Gap
-
-
-
-
-
-
 
 What is the "receptive-productive gap"?
 
@@ -366,12 +258,6 @@ D) The gap between British and American English
 
 ## Question 19: Course Methodology
 
-
-
-
-
-
-
 What is the recommended order for learning new structures in this course?
 
 A) Notice → Discriminate → Analyse → Produce
@@ -385,12 +271,6 @@ D) Discriminate → Notice → Produce → Analyse
 ---
 
 ## Question 20: Self-Assessment
-
-
-
-
-
-
 
 Which is a sign that you're ready for C2-level study?
 
@@ -443,4 +323,5 @@ D) You never make any grammatical errors
 | **Below 10 (<50%)** | 📚 Not ready | This course may be too advanced. Consider completing C1 materials first. |
 
 ---
+
 

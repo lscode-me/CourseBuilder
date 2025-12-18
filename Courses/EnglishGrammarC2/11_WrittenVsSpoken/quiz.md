@@ -6,12 +6,6 @@
 
 ## Question 1: Spoken Ellipsis
 
-
-
-
-
-
-
 "Sounds good" is:
 
 A) Rude and informal
@@ -25,12 +19,6 @@ D) Grammatically incorrect
 ---
 
 ## Question 2: Vague Language
-
-
-
-
-
-
 
 In spoken English, "There were like thirty people or something" is:
 
@@ -46,12 +34,6 @@ D) Only used by uneducated speakers
 
 ## Question 3: Discourse Markers
 
-
-
-
-
-
-
 "So basically what happened was..." is:
 
 A) A natural way to organize spoken narrative
@@ -65,12 +47,6 @@ D) Only for academic writing
 ---
 
 ## Question 4: Contractions
-
-
-
-
-
-
 
 In spoken English:
 
@@ -86,12 +62,6 @@ D) Contractions are rude
 
 ## Question 5: Heads and Tails
 
-
-
-
-
-
-
 "Your sister, is she coming?" is:
 
 A) Too formal for conversation
@@ -105,12 +75,6 @@ D) Only used in writing
 ---
 
 ## Question 6: "Gonna"
-
-
-
-
-
-
 
 "I'm gonna do it" in spoken English is:
 
@@ -126,12 +90,6 @@ D) Only for uneducated speakers
 
 ## Question 7: Response Tokens
 
-
-
-
-
-
-
 Which is a natural backchannel in English conversation?
 
 A) "I hear your words"
@@ -145,12 +103,6 @@ D) "I acknowledge your statement"
 ---
 
 ## Question 8: Russian Interference
-
-
-
-
-
-
 
 Russian speakers often sound ___ in spoken English:
 
@@ -166,12 +118,6 @@ D) Too casual
 
 ## Question 9: Tag Questions
 
-
-
-
-
-
-
 "It's nice, isn't it?" is:
 
 A) Incorrect grammar
@@ -185,12 +131,6 @@ D) Too informal
 ---
 
 ## Question 10: Written vs Spoken
-
-
-
-
-
-
 
 Which is more appropriate for casual spoken English?
 
@@ -206,12 +146,6 @@ D) "Can I get a coffee?"
 
 ## Question 11: "Be Like" Reporting
 
-
-
-
-
-
-
 "And she's like, 'No way!'" is:
 
 A) Very common in informal spoken English
@@ -225,12 +159,6 @@ D) Formal language
 ---
 
 ## Question 12: Sentence Structure
-
-
-
-
-
-
 
 Spoken English typically uses:
 
@@ -246,12 +174,6 @@ D) Long complex sentences with multiple subordinate clauses
 
 ## Question 13: Vague Category Markers
 
-
-
-
-
-
-
 "...and stuff like that" is:
 
 A) A common spoken category marker
@@ -265,12 +187,6 @@ D) Academic language
 ---
 
 ## Question 14: Missing Subject
-
-
-
-
-
-
 
 "Got a minute?" (meaning "Have you got a minute?") is:
 
@@ -286,12 +202,6 @@ D) British only
 
 ## Question 15: Progressive with "Always"
 
-
-
-
-
-
-
 "She's always complaining!" in spoken English:
 
 A) Expresses emotion/irritation naturally
@@ -305,12 +215,6 @@ D) Is incorrect (should be "She always complains")
 ---
 
 ## Question 16: Hyper-Formality
-
-
-
-
-
-
 
 Speaking very formally in casual contexts:
 
@@ -326,12 +230,6 @@ D) Sounds unnatural and creates distance
 
 ## Question 17: Echo Question
 
-
-
-
-
-
-
 "You did WHAT?" is:
 
 A) Grammatically incorrect
@@ -345,12 +243,6 @@ D) Too informal
 ---
 
 ## Question 18: Fillers
-
-
-
-
-
-
 
 "Um" and "uh" in speech are:
 
@@ -366,12 +258,6 @@ D) Only for non-native speakers
 
 ## Question 19: Invariant Tag
 
-
-
-
-
-
-
 "You're coming, yeah?" is:
 
 A) Too formal
@@ -385,12 +271,6 @@ D) Only for British English
 ---
 
 ## Question 20: Mode Matching
-
-
-
-
-
-
 
 When should you use full formal grammar?
 
@@ -443,4 +323,5 @@ D) Never
 | **Below 10 (<50%)** | 📚 Needs work | Listen to unscripted English (podcasts, vlogs) more. |
 
 ---
+
 

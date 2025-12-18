@@ -84,6 +84,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                  Engineering Leadership Course                    │
 └─────────────────────────────────────────────────────────────────┘
@@ -155,6 +156,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки
@@ -163,11 +165,17 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения
+
 - **Основной материал** — теория с реальными примерами
+
 - **Frameworks & Models** — практические фреймворки
+
 - **Key Takeaways** — главные выводы
+
 - **Next Steps** — что изучить дальше
+
 - **Additional Resources** — книги, статьи, подкасты
 
 ### Quiz
@@ -229,25 +237,33 @@ XX_ModuleName/
 ### Для начинающих лидов
 
 - **"The Manager's Path"** by Camille Fournier — библия engineering leadership
+
 - **"Radical Candor"** by Kim Scott — фидбэк и прямая коммуникация
+
 - **"The Making of a Manager"** by Julie Zhuo — взгляд изнутри Meta
 
 ### Для опытных менеджеров
 
 - **"An Elegant Puzzle"** by Will Larson — системы в engineering management
+
 - **"Staff Engineer"** by Will Larson — путь technical leadership
+
 - **"High Output Management"** by Andy Grove — классика от CEO Intel
 
 ### Для senior leadership
 
 - **"The Hard Thing About Hard Things"** by Ben Horowitz — сложные решения
+
 - **"No Rules Rules"** by Reed Hastings — культура Netflix
+
 - **"Team of Teams"** by Gen. Stanley McChrystal — масштабирование организаций
 
 ### Soft skills
 
 - **"Crucial Conversations"** — сложные разговоры
+
 - **"Never Split the Difference"** by Chris Voss — переговоры
+
 - **"Nonviolent Communication"** by Marshall Rosenberg — эмпатичное общение
 
 ---
@@ -255,8 +271,11 @@ XX_ModuleName/
 ## 🎙️ Полезные подкасты
 
 - **[The Engineering Manager Podcast](https://www.theengineeringmanager.com/)**
+
 - **[Level Up Engineering Podcast](https://codingsans.com/engineering-management-podcast)**
+
 - **[Soft Skills Engineering](https://softskills.audio/)**
+
 - **[Manager Tools](https://www.manager-tools.com/)**
 
 ---
@@ -270,4 +289,5 @@ XX_ModuleName/
 Курс поддерживается в актуальном состоянии. При обнаружении устаревшей информации создайте issue или pull request.
 
 ---
+
 

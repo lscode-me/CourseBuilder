@@ -5,12 +5,6 @@
 
 ## Question 1: Bounded Context
 
-
-
-
-
-
-
 Что определяет границы микросервиса в DDD подходе?
 
 A) База данных
@@ -24,12 +18,6 @@ D) Количество строк кода
 ---
 
 ## Question 2: Database Strategy
-
-
-
-
-
-
 
 Какая стратегия работы с данными рекомендуется для микросервисов?
 
@@ -45,12 +33,6 @@ D) Database per service
 
 ## Question 3: Circuit Breaker
 
-
-
-
-
-
-
 Что делает паттерн Circuit Breaker?
 
 A) Останавливает запросы к failing сервису, предотвращая cascade failures
@@ -64,12 +46,6 @@ D) Балансирует нагрузку
 ---
 
 ## Question 4: Sync vs Async
-
-
-
-
-
-
 
 Какое преимущество асинхронной коммуникации?
 
@@ -85,12 +61,6 @@ D) Не требует message broker
 
 ## Question 5: Saga Pattern
 
-
-
-
-
-
-
 Для чего используется Saga Pattern?
 
 A) Для управления распределёнными транзакциями
@@ -104,11 +74,6 @@ D) Для кэширования
 ---
 
 ## Question 6: API Gateway Pattern
-
-
-
-
-
 
 Для чего используется API Gateway в микросервисах?
 
@@ -124,11 +89,6 @@ D) Только для routing
 
 ## Question 7: Service Discovery
 
-
-
-
-
-
 Как сервисы находят друг друга?
 
 A) Hardcoded IPs
@@ -142,11 +102,6 @@ D) Manual configuration
 ---
 
 ## Question 8: Sidecar Pattern
-
-
-
-
-
 
 Что такое Sidecar Pattern?
 
@@ -162,11 +117,6 @@ D) Helper container рядом с main для cross-cutting concerns
 
 ## Question 9: Event Sourcing
 
-
-
-
-
-
 Что такое Event Sourcing?
 
 A) Хранение изменений как events, восстановление state
@@ -180,11 +130,6 @@ D) Event notifications
 ---
 
 ## Question 10: CQRS
-
-
-
-
-
 
 Что такое CQRS?
 
@@ -200,11 +145,6 @@ D) Command Query Response System
 
 ## Question 11: Strangler Pattern
 
-
-
-
-
-
 Для чего используется Strangler Pattern?
 
 A) Для logging
@@ -218,11 +158,6 @@ D) Для постепенной migration от monolith к microservices
 ---
 
 ## Question 12: Bulkhead Pattern
-
-
-
-
-
 
 Что делает Bulkhead Pattern?
 
@@ -238,11 +173,6 @@ D) Load balancing
 
 ## Question 13: Retry Pattern
 
-
-
-
-
-
 Как правильно реализовать retries?
 
 A) Exponential backoff с jitter
@@ -256,11 +186,6 @@ D) No retries
 ---
 
 ## Question 14: Timeout Pattern
-
-
-
-
-
 
 Почему важны timeouts?
 
@@ -276,11 +201,6 @@ D) Для logging
 
 ## Question 15: Health Checks
 
-
-
-
-
-
 Какие типы health checks используются?
 
 A) Только readiness
@@ -294,11 +214,6 @@ D) Liveness (alive?) и readiness (ready for traffic?)
 ---
 
 ## Question 16: Distributed Tracing
-
-
-
-
-
 
 Для чего используется distributed tracing?
 
@@ -314,11 +229,6 @@ D) Для logging
 
 ## Question 17: Choreography vs Orchestration
 
-
-
-
-
-
 Чем Choreography отличается от Orchestration?
 
 A) Choreography: events, децентрализовано. Orchestration: центральный coordinator
@@ -332,11 +242,6 @@ D) Choreography быстрее
 ---
 
 ## Question 18: Contract Testing
-
-
-
-
-
 
 Что тестирует Contract Testing?
 
@@ -352,11 +257,6 @@ D) UI
 
 ## Question 19: Domain Events
 
-
-
-
-
-
 Что такое Domain Events?
 
 A) UI events
@@ -370,11 +270,6 @@ D) System events
 ---
 
 ## Question 20: Anti-Corruption Layer
-
-
-
-
-
 
 Для чего используется Anti-Corruption Layer?
 
@@ -416,3 +311,4 @@ D) Для изоляции от legacy или external systems
 | 20 | D | Anti-Corruption Layer: изоляция от legacy |
 
 ---
+

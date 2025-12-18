@@ -6,12 +6,6 @@
 
 ## Question 1: Were-Subjunctive
 
-
-
-
-
-
-
 Choose the FORMAL/STANDARD form:
 
 A) If I were you, I would apologize.
@@ -25,12 +19,6 @@ D) If I was you, I would apologize.
 ---
 
 ## Question 2: Mandative Subjunctive
-
-
-
-
-
-
 
 Choose the correct formal sentence:
 
@@ -46,12 +34,6 @@ D) The committee recommended that the report be submitted.
 
 ## Question 3: Wish - Present Unreal
 
-
-
-
-
-
-
 Choose the correct sentence:
 
 A) Both B and C are acceptable.
@@ -65,12 +47,6 @@ D) I wish I am taller.
 ---
 
 ## Question 4: Wish - Past Regret
-
-
-
-
-
-
 
 Choose the correct sentence:
 
@@ -86,12 +62,6 @@ D) I wish I would have studied harder last year.
 
 ## Question 5: Wish - Future Change
 
-
-
-
-
-
-
 "I wish you would stop making noise" expresses:
 
 A) An impossible wish
@@ -105,12 +75,6 @@ D) A formal request
 ---
 
 ## Question 6: Would Rather + Others
-
-
-
-
-
-
 
 Choose the correct sentence:
 
@@ -126,12 +90,6 @@ D) I would rather you came tomorrow.
 
 ## Question 7: Mandative Subjunctive Trigger
 
-
-
-
-
-
-
 Which verb does NOT typically trigger mandative subjunctive?
 
 A) insist
@@ -145,12 +103,6 @@ D) suggest
 ---
 
 ## Question 8: Negative Mandative Subjunctive
-
-
-
-
-
-
 
 Choose the correct sentence:
 
@@ -166,12 +118,6 @@ D) I suggest that he not leave early.
 
 ## Question 9: American vs British
 
-
-
-
-
-
-
 In British English, which is an acceptable alternative to "I suggest he be present"?
 
 A) I suggest he is present.
@@ -185,12 +131,6 @@ D) Both A and B are acceptable in British English.
 ---
 
 ## Question 10: Russian Interference
-
-
-
-
-
-
 
 Which error is typical of Russian speakers?
 
@@ -206,12 +146,6 @@ D) "Were I you, I would help."
 
 ## Question 11: "Were to" Form
 
-
-
-
-
-
-
 "If he were to arrive late" is:
 
 A) More emphatic/formal than "If he arrived late"
@@ -225,12 +159,6 @@ D) Only used in American English
 ---
 
 ## Question 12: Formulaic Subjunctive
-
-
-
-
-
-
 
 "Be that as it may" is:
 
@@ -246,12 +174,6 @@ D) Only used in legal contexts
 
 ## Question 13: Adjective Trigger
 
-
-
-
-
-
-
 Choose the correct sentence:
 
 A) It's essential that he attend the meeting.
@@ -265,12 +187,6 @@ D) It's essential that he attending the meeting.
 ---
 
 ## Question 14: If Only
-
-
-
-
-
-
 
 "If only I had known!" expresses:
 
@@ -286,12 +202,6 @@ D) A past regret (stronger than "I wish")
 
 ## Question 15: Mixed Conditional
 
-
-
-
-
-
-
 "If I weren't so lazy, I would have finished yesterday." This sentence:
 
 A) Has a past condition and present result
@@ -305,12 +215,6 @@ D) Is a standard third conditional
 ---
 
 ## Question 16: Would Rather - Self
-
-
-
-
-
-
 
 "I would rather stay home" — the verb after "rather" is:
 
@@ -326,12 +230,6 @@ D) A past tense form
 
 ## Question 17: As If/As Though
 
-
-
-
-
-
-
 "He acts as if he were the boss" uses subjunctive because:
 
 A) He is the boss
@@ -345,12 +243,6 @@ D) It's a polite expression
 ---
 
 ## Question 18: Inverted Conditional
-
-
-
-
-
-
 
 Which is the correct formal inversion of "If I had known earlier"?
 
@@ -366,12 +258,6 @@ D) "Did I know earlier"
 
 ## Question 19: First Person Wish
 
-
-
-
-
-
-
 Which is INCORRECT?
 
 A) I wish I would be smarter.
@@ -385,12 +271,6 @@ D) I wish I could speak French.
 ---
 
 ## Question 20: Formal Writing
-
-
-
-
-
-
 
 In formal academic writing, which subjunctive form should you use?
 
@@ -443,4 +323,5 @@ D) "I suggest that he be informed." (standard)
 | **Below 10 (<50%)** | 📚 Needs work | Focus on conditional forms and "wish" constructions before proceeding. |
 
 ---
+
 

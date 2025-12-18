@@ -6,12 +6,6 @@
 
 ## Question 1: Минимальная единица
 
-
-
-
-
-
-
 Что является минимальной единицей развёртывания в Kubernetes?
 
 A) Pod
@@ -25,12 +19,6 @@ D) Service
 ---
 
 ## Question 2: Control Plane
-
-
-
-
-
-
 
 Какой компонент хранит всё состояние кластера?
 
@@ -46,12 +34,6 @@ D) Controller Manager
 
 ## Question 3: kubelet
 
-
-
-
-
-
-
 Какова роль kubelet?
 
 A) Маршрутизация трафика
@@ -65,12 +47,6 @@ D) Управление жизненным циклом Pods на ноде
 ---
 
 ## Question 4: Service Types
-
-
-
-
-
-
 
 Какой тип Service создаёт внешний load balancer в cloud?
 
@@ -86,12 +62,6 @@ D) ClusterIP
 
 ## Question 5: Deployment
 
-
-
-
-
-
-
 Что обеспечивает Deployment?
 
 A) Декларативные обновления и ReplicaSet
@@ -105,12 +75,6 @@ D) Сетевую изоляцию
 ---
 
 ## Question 6: kubectl apply
-
-
-
-
-
-
 
 Что делает команда kubectl apply -f manifest.yaml?
 
@@ -126,12 +90,6 @@ D) Показывает diff между файлом и кластером
 
 ## Question 7: ConfigMap
 
-
-
-
-
-
-
 Для чего используется ConfigMap?
 
 A) Хранение конфигурации (не секретной)
@@ -145,12 +103,6 @@ D) Хранение volumes
 ---
 
 ## Question 8: Secret
-
-
-
-
-
-
 
 В каком формате хранятся данные в Secret по умолчанию?
 
@@ -166,12 +118,6 @@ D) Hashed
 
 ## Question 9: Namespace
 
-
-
-
-
-
-
 Как получить Pods из всех namespaces?
 
 A) kubectl get pods --global
@@ -185,12 +131,6 @@ D) kubectl get pods -A
 ---
 
 ## Question 10: Rolling Update
-
-
-
-
-
-
 
 Какой параметр определяет максимальное количество недоступных Pods при обновлении?
 
@@ -206,12 +146,6 @@ D) updateBatch
 
 ## Question 11: Probes
 
-
-
-
-
-
-
 Какой probe проверяет готовность Pod принимать трафик?
 
 A) healthProbe
@@ -225,12 +159,6 @@ D) startupProbe
 ---
 
 ## Question 12: PersistentVolumeClaim
-
-
-
-
-
-
 
 Что делает PersistentVolumeClaim?
 
@@ -246,12 +174,6 @@ D) Удаляет данные при удалении Pod
 
 ## Question 13: Labels и Selectors
 
-
-
-
-
-
-
 Как Service находит Pods для маршрутизации?
 
 A) По selector, соответствующему labels
@@ -265,12 +187,6 @@ D) По имени Pod
 ---
 
 ## Question 14: DNS в Kubernetes
-
-
-
-
-
-
 
 Какой формат DNS имени для Service в namespace production?
 
@@ -286,12 +202,6 @@ D) service.production.cluster
 
 ## Question 15: Ingress
 
-
-
-
-
-
-
 Для чего используется Ingress?
 
 A) HTTP/HTTPS маршрутизация извне в кластер
@@ -305,12 +215,6 @@ D) Мониторинг
 ---
 
 ## Question 16: Resource limits
-
-
-
-
-
-
 
 Как ограничить Pod использованием максимум 512Mi памяти?
 
@@ -326,12 +230,6 @@ D) memory: 512Mi
 
 ## Question 17: kubectl exec
 
-
-
-
-
-
-
 Как выполнить интерактивную команду sh в Pod?
 
 A) kubectl exec -it pod -- sh
@@ -345,12 +243,6 @@ D) kubectl shell pod
 ---
 
 ## Question 18: ReplicaSet
-
-
-
-
-
-
 
 Кто управляет ReplicaSet?
 
@@ -366,12 +258,6 @@ D) Service
 
 ## Question 19: Port Forward
 
-
-
-
-
-
-
 Как прокинуть порт 8080 локально на порт 80 Pod'а?
 
 A) kubectl forward 8080:80 pod
@@ -385,12 +271,6 @@ D) kubectl port-forward pod/name 8080:80
 ---
 
 ## Question 20: Network Policy
-
-
-
-
-
-
 
 Для чего используется NetworkPolicy?
 
@@ -443,5 +323,6 @@ D) Ограничение сетевого трафика между Pods
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется практика с Minikube или kind. |
 
 ---
+
 
 

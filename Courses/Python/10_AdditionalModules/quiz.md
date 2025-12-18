@@ -6,12 +6,6 @@
 
 ## Question 1: pip
 
-
-
-
-
-
-
 Что такое pip?
 
 A) Интерпретатор Python
@@ -25,12 +19,6 @@ D) Фреймворк для веб-разработки
 ---
 
 ## Question 2: Установка пакета
-
-
-
-
-
-
 
 Как установить последнюю версию пакета requests?
 
@@ -46,12 +34,6 @@ D) `import requests --install`
 
 ## Question 3: requests
 
-
-
-
-
-
-
 Какой метод отправляет GET-запрос в библиотеке requests?
 
 A) `requests.fetch()`
@@ -65,12 +47,6 @@ D) `requests.get()`
 ---
 
 ## Question 4: requests response
-
-
-
-
-
-
 
 Как получить JSON из ответа requests?
 
@@ -86,12 +62,6 @@ D) `response.content`
 
 ## Question 5: HTTP Status Code
 
-
-
-
-
-
-
 Какое свойство содержит код статуса HTTP?
 
 A) `response.http_code`
@@ -105,12 +75,6 @@ D) `response.status_code`
 ---
 
 ## Question 6: requests POST
-
-
-
-
-
-
 
 Как отправить POST-запрос с JSON-данными?
 
@@ -126,12 +90,6 @@ D) `requests.post(url, data=json_data)`
 
 ## Question 7: NumPy
 
-
-
-
-
-
-
 Для чего используется NumPy?
 
 A) Веб-разработка
@@ -146,12 +104,6 @@ D) Парсинг HTML
 
 ## Question 8: NumPy массив
 
-
-
-
-
-
-
 Как создать NumPy массив?
 
 A) `numpy.create([1, 2, 3])`
@@ -165,12 +117,6 @@ D) `numpy.list([1, 2, 3])`
 ---
 
 ## Question 9: NumPy операции
-
-
-
-
-
-
 
 Что выведет следующий код?
 
@@ -194,12 +140,6 @@ D) 6
 
 ## Question 10: Pandas
 
-
-
-
-
-
-
 Что такое DataFrame в Pandas?
 
 A) Двумерная табличная структура данных
@@ -213,12 +153,6 @@ D) Одномерный массив
 ---
 
 ## Question 11: Создание DataFrame
-
-
-
-
-
-
 
 Как создать DataFrame из словаря?
 
@@ -234,12 +168,6 @@ D) `pd.create(dict)`
 
 ## Question 12: Чтение CSV
 
-
-
-
-
-
-
 Какая функция читает CSV файл в Pandas?
 
 A) `pd.import_csv()`
@@ -253,12 +181,6 @@ D) `pd.load_csv()`
 ---
 
 ## Question 13: Выбор колонки
-
-
-
-
-
-
 
 Как выбрать колонку 'name' из DataFrame df?
 
@@ -274,12 +196,6 @@ D) `df.get_column('name')`
 
 ## Question 14: Flask
 
-
-
-
-
-
-
 Что такое Flask?
 
 A) Микро веб-фреймворк
@@ -293,12 +209,6 @@ D) База данных
 ---
 
 ## Question 15: Flask маршрут
-
-
-
-
-
-
 
 Как определить маршрут в Flask?
 
@@ -314,12 +224,6 @@ D) `app.path('/')`
 
 ## Question 16: Flask запуск
 
-
-
-
-
-
-
 Как запустить Flask-приложение в режиме отладки?
 
 A) `app.start(debug=True)`
@@ -333,12 +237,6 @@ D) Оба варианта A и C
 ---
 
 ## Question 17: pytest
-
-
-
-
-
-
 
 Как обозначается тестовая функция в pytest?
 
@@ -354,12 +252,6 @@ D) Начинается с `test_`
 
 ## Question 18: pytest assert
 
-
-
-
-
-
-
 Какой синтаксис проверки в pytest?
 
 A) `self.assertEqual(a, b)`
@@ -373,12 +265,6 @@ D) `expect(a).toBe(b)`
 ---
 
 ## Question 19: pytest фикстуры
-
-
-
-
-
-
 
 Для чего используются фикстуры в pytest?
 
@@ -394,12 +280,6 @@ D) Для отчётов
 
 ## Question 20: Beautiful Soup
 
-
-
-
-
-
-
 Для чего используется Beautiful Soup?
 
 A) Работа с базами данных
@@ -413,12 +293,6 @@ D) Парсинг HTML/XML
 ---
 
 ## Question 21: Pillow
-
-
-
-
-
-
 
 Что такое Pillow?
 
@@ -434,12 +308,6 @@ D) Тестовый фреймворк
 
 ## Question 22: SQLAlchemy
 
-
-
-
-
-
-
 Что такое SQLAlchemy?
 
 A) Библиотека для тестирования
@@ -453,12 +321,6 @@ D) Веб-фреймворк
 ---
 
 ## Question 23: virtualenv vs venv
-
-
-
-
-
-
 
 В чём разница между virtualenv и venv?
 
@@ -474,12 +336,6 @@ D) venv не работает на Windows
 
 ## Question 24: requirements.txt
 
-
-
-
-
-
-
 Как создать requirements.txt с текущими пакетами?
 
 A) `pip export requirements.txt`
@@ -493,12 +349,6 @@ D) `pip save > requirements.txt`
 ---
 
 ## Question 25: PyPI
-
-
-
-
-
-
 
 Что такое PyPI?
 
@@ -556,6 +406,7 @@ D) Python Package Index — репозиторий пакетов
 | **Менее 13 правильных (<50%)** | 📚 Нужно повторить | Начните с практического использования pip и requests. |
 
 ---
+
 
 
 

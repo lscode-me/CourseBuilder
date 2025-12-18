@@ -7,8 +7,11 @@
 ## 📋 Требования
 
 - **ОС**: OpenBSD 7.4+ (рекомендуется), также подходит Linux/macOS
+
 - **Python**: 3.10+
+
 - **Знания**: Базовый Python, основы Unix (курс OpenBSD)
+
 - **Инструменты**: терминал, текстовый редактор
 
 ---
@@ -53,6 +56,7 @@
 ## 🗺️ Карта зависимостей модулей
 
 ```
+
 01_Intro
     │
     ▼
@@ -104,6 +108,7 @@ $ python3 -m venv venv
 $ source venv/bin/activate
 
 # Установить зависимости (если нужны)
+
 $ pip install psutil
 ```
 
@@ -117,7 +122,9 @@ $ pip install psutil
 ### 3. Практика
 
 Каждый модуль содержит:
+
 - **Practice Ideas** — задачи для закрепления
+
 - **Going Deeper** — продвинутые темы
 
 ---
@@ -125,12 +132,15 @@ $ pip install psutil
 ## 📖 Навигация по модулям
 
 ### Начинающим в системном программировании
+
 Изучите модули 01-06 последовательно, уделяя внимание примерам.
 
 ### Опытным Python разработчикам
+
 Можете быстро пройти 01-03 и сосредоточиться на процессах и IPC (04-08).
 
 ### Для разработки серверов
+
 Фокус на модули 07-09 (сокеты и асинхронный I/O) и 12 (демоны).
 
 ---
@@ -176,6 +186,7 @@ if __name__ == "__main__":
 
 **Output:**
 ```
+
 PID: 12345
 ```
 
@@ -192,16 +203,19 @@ PID: 12345
 ## 🔗 Дополнительные ресурсы
 
 **Книги:**
+
 - "Advanced Programming in the UNIX Environment" by W. Richard Stevens
 - "The Linux Programming Interface" by Michael Kerrisk
 - "Unix Network Programming" by W. Richard Stevens
 
 **Документация:**
+
 - [Python os module](https://docs.python.org/3/library/os.html)
 - [Python socket module](https://docs.python.org/3/library/socket.html)
 - [OpenBSD man pages](https://man.openbsd.org/)
 
 **Отладка:**
+
 - `ktrace` / `kdump` — трассировка syscalls на OpenBSD
 - `strace` — трассировка syscalls на Linux
 - `lsof` — открытые файлы и сокеты
@@ -220,4 +234,5 @@ PID: 12345
 **Target OS**: OpenBSD 7.4+
 
 ---
+
 

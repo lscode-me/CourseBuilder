@@ -5,12 +5,6 @@
 
 ## Question 1: Максимальный timeout Lambda?
 
-
-
-
-
-
-
 A) 15 минут
 
 B) 30 минут
@@ -22,12 +16,6 @@ D) 60 минут
 ---
 
 ## Question 2: Что такое Cold Start?
-
-
-
-
-
-
 
 A) Запуск Lambda в холодном регионе
 
@@ -41,12 +29,6 @@ D) Задержка при первом вызове из-за инициали�
 
 ## Question 3: Где инициализировать boto3 client?
 
-
-
-
-
-
-
 A) Внутри handler функции
 
 B) Вне handler функции (global scope)
@@ -58,12 +40,6 @@ D) В отдельном Lambda layer
 ---
 
 ## Question 4: Какой триггер СИНХРОННЫЙ?
-
-
-
-
-
-
 
 A) S3 (object created)
 
@@ -77,12 +53,6 @@ D) SNS
 
 ## Question 5: Что делает Provisioned Concurrency?
 
-
-
-
-
-
-
 A) Увеличивает memory
 
 B) Держит warm instances готовыми для устранения cold start
@@ -94,11 +64,6 @@ D) Ограничивает concurrent executions
 ---
 
 ## Question 6: Layers
-
-
-
-
-
 
 Для чего используются Lambda Layers?
 
@@ -114,11 +79,6 @@ D) Для networking
 
 ## Question 7: Memory
 
-
-
-
-
-
 Как memory влияет на CPU в Lambda?
 
 A) Меньше memory = больше CPU
@@ -132,11 +92,6 @@ D) Не влияет
 ---
 
 ## Question 8: Concurrency Limit
-
-
-
-
-
 
 Какой default лимит concurrent executions?
 
@@ -152,11 +107,6 @@ D) 100
 
 ## Question 9: Reserved Concurrency
 
-
-
-
-
-
 Что делает Reserved Concurrency?
 
 A) Включает VPC
@@ -170,11 +120,6 @@ D) Резервирует capacity для function, ограничивает max
 ---
 
 ## Question 10: Destinations
-
-
-
-
-
 
 Для чего используются Destinations?
 
@@ -190,11 +135,6 @@ D) Для шифрования
 
 ## Question 11: VPC Lambda
 
-
-
-
-
-
 Какие компоненты нужны для Lambda в VPC?
 
 A) Internet Gateway
@@ -208,11 +148,6 @@ D) Только subnet
 ---
 
 ## Question 12: Environment Variables
-
-
-
-
-
 
 Как безопасно хранить секреты для Lambda?
 
@@ -228,11 +163,6 @@ D) В S3
 
 ## Question 13: Dead Letter Queue
 
-
-
-
-
-
 Для чего используется DLQ в Lambda?
 
 A) Для шифрования
@@ -246,11 +176,6 @@ D) Для хранения результатов
 ---
 
 ## Question 14: SnapStart
-
-
-
-
-
 
 Что делает Lambda SnapStart (Java)?
 
@@ -266,11 +191,6 @@ D) Увеличивает memory
 
 ## Question 15: Function URL
 
-
-
-
-
-
 Что такое Function URL?
 
 A) VPC endpoint
@@ -284,11 +204,6 @@ D) Dedicated HTTP endpoint для Lambda без API Gateway
 ---
 
 ## Question 16: Ephemeral Storage
-
-
-
-
-
 
 Какой размер /tmp в Lambda?
 
@@ -304,11 +219,6 @@ D) 512 MB до 10 GB (configurable)
 
 ## Question 17: X-Ray
 
-
-
-
-
-
 Для чего Lambda использует X-Ray?
 
 A) Для distributed tracing
@@ -322,11 +232,6 @@ D) Для шифрования
 ---
 
 ## Question 18: Alias
-
-
-
-
-
 
 Для чего используются Lambda Aliases?
 
@@ -342,11 +247,6 @@ D) Для шифрования
 
 ## Question 19: Extensions
 
-
-
-
-
-
 Что такое Lambda Extensions?
 
 A) Увеличение memory
@@ -360,11 +260,6 @@ D) Новые языки
 ---
 
 ## Question 20: ARM vs x86
-
-
-
-
-
 
 Какое преимущество AWS Graviton2 (ARM) для Lambda?
 
@@ -406,3 +301,4 @@ D) Больше memory
 | 20 | B | Graviton2 ARM дешевле ~34% |
 
 ---
+

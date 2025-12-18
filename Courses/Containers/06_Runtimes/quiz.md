@@ -6,12 +6,6 @@
 
 ## Question 1: Уровни runtime
 
-
-
-
-
-
-
 Какой уровень занимает containerd в иерархии container runtimes?
 
 A) Container engine
@@ -25,12 +19,6 @@ D) High-level runtime
 ---
 
 ## Question 2: containerd
-
-
-
-
-
-
 
 Какие компании используют containerd в своих продуктах?
 
@@ -46,12 +34,6 @@ D) Только Red Hat
 
 ## Question 3: Podman архитектура
 
-
-
-
-
-
-
 В чём ключевое отличие архитектуры Podman от Docker?
 
 A) Podman быстрее
@@ -65,12 +47,6 @@ D) Podman не использует runc
 ---
 
 ## Question 4: CRI-O назначение
-
-
-
-
-
-
 
 Для чего специально разработан CRI-O?
 
@@ -86,12 +62,6 @@ D) Для IoT устройств
 
 ## Question 5: ctr utility
 
-
-
-
-
-
-
 Что такое ctr?
 
 A) Container registry
@@ -105,12 +75,6 @@ D) CLI для containerd
 ---
 
 ## Question 6: nerdctl
-
-
-
-
-
-
 
 Какое преимущество nerdctl над ctr?
 
@@ -126,12 +90,6 @@ D) Быстрее работает
 
 ## Question 7: Rootless containers
 
-
-
-
-
-
-
 Какой инструмент лучше всего подходит для rootless контейнеров из коробки?
 
 A) CRI-O
@@ -145,12 +103,6 @@ D) containerd
 ---
 
 ## Question 8: Podman pods
-
-
-
-
-
-
 
 Что такое pod в контексте Podman?
 
@@ -166,12 +118,6 @@ D) Формат образов
 
 ## Question 9: Buildah
 
-
-
-
-
-
-
 Для чего используется Buildah?
 
 A) Мониторинг контейнеров
@@ -185,12 +131,6 @@ D) Создание OCI-совместимых образов
 ---
 
 ## Question 10: containerd namespaces
-
-
-
-
-
-
 
 Что такое namespaces в контексте containerd (не Linux namespaces)?
 
@@ -206,12 +146,6 @@ D) Изоляция ресурсов контейнера
 
 ## Question 11: conmon
 
-
-
-
-
-
-
 Какова роль conmon в Podman/CRI-O?
 
 A) Мониторинг контейнера (держит stdin/stdout)
@@ -225,12 +159,6 @@ D) Сборка образов
 ---
 
 ## Question 12: containerd-shim
-
-
-
-
-
-
 
 Зачем нужен containerd-shim?
 
@@ -246,12 +174,6 @@ D) Для сборки образов
 
 ## Question 13: CRI интерфейс
 
-
-
-
-
-
-
 Что такое CRI?
 
 A) Container Runtime Interface для Kubernetes
@@ -265,12 +187,6 @@ D) Container Restart Implementation
 ---
 
 ## Question 14: Docker без containerd
-
-
-
-
-
-
 
 Может ли Docker работать без containerd?
 
@@ -286,12 +202,6 @@ D) Да, containerd опционален
 
 ## Question 15: Выбор runtime для Kubernetes
 
-
-
-
-
-
-
 Какие runtime рекомендуются для production Kubernetes?
 
 A) Buildah и skopeo
@@ -305,12 +215,6 @@ D) Docker и Podman
 ---
 
 ## Question 16: systemd интеграция Podman
-
-
-
-
-
-
 
 Как сгенерировать systemd unit для Podman контейнера?
 
@@ -326,12 +230,6 @@ D) podman systemd generate
 
 ## Question 17: containerd конфигурация
 
-
-
-
-
-
-
 Где находится основной файл конфигурации containerd?
 
 A) /var/lib/containerd/config.json
@@ -345,12 +243,6 @@ D) /etc/cri-o/config.yaml
 ---
 
 ## Question 18: Buildah vs docker build
-
-
-
-
-
-
 
 Какое преимущество Buildah над docker build?
 
@@ -366,12 +258,6 @@ D) Возможность скриптовой сборки без Dockerfile
 
 ## Question 19: crictl
 
-
-
-
-
-
-
 Для чего используется crictl?
 
 A) Мониторинг кластера
@@ -385,12 +271,6 @@ D) Управление сетью
 ---
 
 ## Question 20: Миграция Docker → Podman
-
-
-
-
-
-
 
 Как проще всего мигрировать с Docker на Podman?
 
@@ -443,4 +323,5 @@ D) alias docker=podman и совместимый CLI
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется практика с разными runtime: containerd, Podman. |
 
 ---
+
 

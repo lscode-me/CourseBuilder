@@ -6,12 +6,6 @@
 
 ## Question 1: Дефолтный режим
 
-
-
-
-
-
-
 Какой сетевой режим используется Docker по умолчанию?
 
 A) host
@@ -25,12 +19,6 @@ D) none
 ---
 
 ## Question 2: veth pairs
-
-
-
-
-
-
 
 Что такое veth pair?
 
@@ -46,12 +34,6 @@ D) Виртуальный Ethernet кабель между namespaces
 
 ## Question 3: Host network
 
-
-
-
-
-
-
 Какое преимущество даёт режим host network?
 
 A) Overlay networking
@@ -65,12 +47,6 @@ D) Лучшая изоляция
 ---
 
 ## Question 4: Port mapping
-
-
-
-
-
-
 
 Какая команда опубликует порт 80 контейнера на порт 8080 хоста?
 
@@ -86,12 +62,6 @@ D) docker run -p 8080:80 nginx
 
 ## Question 5: User-defined networks
 
-
-
-
-
-
-
 Какое преимущество user-defined networks перед default bridge?
 
 A) Быстрее работает
@@ -105,12 +75,6 @@ D) Меньше потребление памяти
 ---
 
 ## Question 6: CNI
-
-
-
-
-
-
 
 Что такое CNI?
 
@@ -126,12 +90,6 @@ D) Container Name Index
 
 ## Question 7: Overlay networks
 
-
-
-
-
-
-
 Для чего нужны overlay networks?
 
 A) Изоляция от интернета
@@ -145,12 +103,6 @@ D) Ускорение локальной сети
 ---
 
 ## Question 8: VXLAN
-
-
-
-
-
-
 
 На каком порту работает VXLAN по умолчанию?
 
@@ -166,12 +118,6 @@ D) 4789
 
 ## Question 9: Internal network
 
-
-
-
-
-
-
 Что особенного в internal network Docker?
 
 A) Более высокая скорость
@@ -185,12 +131,6 @@ D) Автоматическое масштабирование
 ---
 
 ## Question 10: docker0
-
-
-
-
-
-
 
 Что такое docker0?
 
@@ -206,12 +146,6 @@ D) Конфигурационный файл
 
 ## Question 11: Embedded DNS
 
-
-
-
-
-
-
 На каком IP работает встроенный DNS Docker?
 
 A) 127.0.0.1
@@ -225,12 +159,6 @@ D) 172.17.0.1
 ---
 
 ## Question 12: Network aliases
-
-
-
-
-
-
 
 Для чего используются network aliases?
 
@@ -246,12 +174,6 @@ D) Шифрование имён
 
 ## Question 13: Macvlan
 
-
-
-
-
-
-
 Когда следует использовать macvlan driver?
 
 A) Для изоляции контейнеров
@@ -265,12 +187,6 @@ D) Когда контейнеру нужен IP из физической се�
 ---
 
 ## Question 14: iptables
-
-
-
-
-
-
 
 Как Docker использует iptables?
 
@@ -286,12 +202,6 @@ D) Для NAT и port forwarding
 
 ## Question 15: Container network mode
 
-
-
-
-
-
-
 Как запустить контейнер в network namespace другого контейнера?
 
 A) --net-alias other
@@ -305,12 +215,6 @@ D) --network container:other
 ---
 
 ## Question 16: Kubernetes CNI
-
-
-
-
-
-
 
 Какой CNI plugin использует eBPF для высокой производительности?
 
@@ -326,12 +230,6 @@ D) Weave
 
 ## Question 17: Network isolation
 
-
-
-
-
-
-
 Контейнеры в разных user-defined networks могут общаться?
 
 A) Только через DNS
@@ -345,12 +243,6 @@ D) Только по IP
 ---
 
 ## Question 18: Диагностика
-
-
-
-
-
-
 
 Какой инструмент лучше всего подходит для диагностики сети контейнера?
 
@@ -366,12 +258,6 @@ D) docker stats
 
 ## Question 19: Subnet
 
-
-
-
-
-
-
 Какой параметр задаёт подсеть при создании Docker network?
 
 A) --cidr
@@ -385,12 +271,6 @@ D) --ip-range
 ---
 
 ## Question 20: Multi-network
-
-
-
-
-
-
 
 Можно ли подключить контейнер к нескольким сетям?
 
@@ -443,4 +323,5 @@ D) Нет
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется практика с разными сетевыми режимами Docker. |
 
 ---
+
 

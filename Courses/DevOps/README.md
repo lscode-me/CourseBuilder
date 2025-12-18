@@ -77,6 +77,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                     DevOps & SRE Course                         │
 └─────────────────────────────────────────────────────────────────┘
@@ -151,6 +152,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки
@@ -159,11 +161,17 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения
+
 - **Основной материал** — теория с практическими примерами
+
 - **Tools & Technologies** — обзор инструментов
+
 - **Key Takeaways** — главные выводы
+
 - **Next Steps** — что изучить дальше
+
 - **Additional Resources** — книги, статьи, документация
 
 ### Quiz
@@ -226,25 +234,33 @@ XX_ModuleName/
 ### Фундаментальные
 
 - **"The Phoenix Project"** by Gene Kim — бизнес-роман о DevOps трансформации
+
 - **"The DevOps Handbook"** by Gene Kim et al. — практическое руководство
+
 - **"Accelerate"** by Nicole Forsgren — научный подход к DevOps метрикам
 
 ### SRE
 
 - **"Site Reliability Engineering"** by Google — библия SRE
+
 - **"The Site Reliability Workbook"** by Google — практические упражнения
+
 - **"Seeking SRE"** by David Blank-Edelman — сборник эссе от практиков
 
 ### Практика
 
 - **"Infrastructure as Code"** by Kief Morris — IaC patterns
+
 - **"Continuous Delivery"** by Jez Humble — CD principles
+
 - **"Observability Engineering"** by Charity Majors — современный подход
 
 ### Процессы и культура
 
 - **"Team Topologies"** by Matthew Skelton — организация команд
+
 - **"The Unicorn Project"** by Gene Kim — продолжение Phoenix Project
+
 - **"Release It!"** by Michael Nygard — паттерны надёжных систем
 
 ---
@@ -252,19 +268,23 @@ XX_ModuleName/
 ## 🛠️ Ключевые инструменты курса
 
 ### CI/CD
+
 - GitHub Actions, GitLab CI, Jenkins
 - ArgoCD, Flux
 
 ### Infrastructure
+
 - Terraform, Pulumi
 - Ansible, Chef
 
 ### Monitoring & Observability
+
 - Prometheus, Grafana
 - ELK Stack (Elasticsearch, Logstash, Kibana)
 - Jaeger, OpenTelemetry
 
 ### Platforms
+
 - Kubernetes
 - AWS, GCP, Azure
 
@@ -279,4 +299,5 @@ XX_ModuleName/
 Курс поддерживается в актуальном состоянии. При обнаружении устаревшей информации создайте issue или pull request.
 
 ---
+
 

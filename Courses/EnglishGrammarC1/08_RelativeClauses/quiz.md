@@ -6,12 +6,6 @@
 
 ## Question 1: Defining vs Non-Defining
 
-
-
-
-
-
-
 Which sentence is NON-DEFINING (needs commas)?
 
 A) My brother who lives in Paris is a doctor.
@@ -25,12 +19,6 @@ D) My mother who is 65 works as a teacher.
 ---
 
 ## Question 2: Punctuation
-
-
-
-
-
-
 
 Which punctuation is correct?
 
@@ -46,12 +34,6 @@ D) My sister, who lives in London, is visiting.
 
 ## Question 3: That vs Which
 
-
-
-
-
-
-
 Which sentence is INCORRECT?
 
 A) The film which won the award was excellent.
@@ -65,12 +47,6 @@ D) The book that I read was interesting.
 ---
 
 ## Question 4: Omitting Pronouns
-
-
-
-
-
-
 
 In which sentence can the relative pronoun be omitted?
 
@@ -86,12 +62,6 @@ D) The car which is parked outside is mine.
 
 ## Question 5: Whose
 
-
-
-
-
-
-
 Which sentence correctly uses "whose"?
 
 A) The boy whose is tall plays basketball.
@@ -105,12 +75,6 @@ D) The woman whose daughter is a doctor called.
 ---
 
 ## Question 6: Sentence Relative
-
-
-
-
-
-
 
 "He didn't reply, ___ annoyed me."
 
@@ -126,12 +90,6 @@ D) which
 
 ## Question 7: Reducing to Participle
 
-
-
-
-
-
-
 "The man who is standing there is my boss." Can be reduced to:
 
 A) The man is standing there is my boss.
@@ -145,12 +103,6 @@ D) The man to stand there is my boss.
 ---
 
 ## Question 8: Past Participle Reduction
-
-
-
-
-
-
 
 "The book which was written by Tolstoy is famous." Reduces to:
 
@@ -166,12 +118,6 @@ D) The book written by Tolstoy is famous.
 
 ## Question 9: Subject vs Object
 
-
-
-
-
-
-
 In "The woman who I met...", "who" is:
 
 A) Possessive
@@ -185,12 +131,6 @@ D) Adverbial
 ---
 
 ## Question 10: Whom
-
-
-
-
-
-
 
 Which sentence uses "whom" correctly?
 
@@ -206,12 +146,6 @@ D) The man whom called me was rude.
 
 ## Question 11: Where
 
-
-
-
-
-
-
 "The city ___ I was born is beautiful."
 
 A) Both A and B are correct
@@ -225,12 +159,6 @@ D) which
 ---
 
 ## Question 12: When
-
-
-
-
-
-
 
 Which is correct?
 
@@ -246,12 +174,6 @@ D) The day when we met was sunny.
 
 ## Question 13: Dangling Participle
 
-
-
-
-
-
-
 Which sentence has a DANGLING PARTICIPLE error?
 
 A) Walking down the street, a cat crossed my path.
@@ -265,12 +187,6 @@ D) Walking down the street, I saw a cat.
 ---
 
 ## Question 14: Perfect Participle
-
-
-
-
-
-
 
 "Having finished his work, he went home" means:
 
@@ -286,12 +202,6 @@ D) He was finishing work while going home.
 
 ## Question 15: Non-Defining Position
 
-
-
-
-
-
-
 Where can non-defining clauses appear?
 
 A) Only at the end of sentences
@@ -305,12 +215,6 @@ D) Only after the main subject
 ---
 
 ## Question 16: What vs Which
-
-
-
-
-
-
 
 "I don't understand ___ you mean."
 
@@ -326,12 +230,6 @@ D) what
 
 ## Question 17: Formal Style
 
-
-
-
-
-
-
 Which is MOST FORMAL?
 
 A) The person I spoke to was helpful.
@@ -346,12 +244,6 @@ D) The person that I spoke to was helpful.
 
 ## Question 18: Reduction Error
 
-
-
-
-
-
-
 Which reduction is INCORRECT?
 
 A) "The woman who knows" → "The woman knowing"
@@ -365,12 +257,6 @@ D) All reductions are correct.
 ---
 
 ## Question 19: Meaning Difference
-
-
-
-
-
-
 
 What's the difference?
 
@@ -388,12 +274,6 @@ D) First implies multiple brothers; second implies one brother
 ---
 
 ## Question 20: Participle for Reason
-
-
-
-
-
-
 
 "Being tired, she went to bed early" expresses:
 
@@ -446,5 +326,6 @@ D) Time
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Relative clauses требуют внимания. |
 
 ---
+
 
 

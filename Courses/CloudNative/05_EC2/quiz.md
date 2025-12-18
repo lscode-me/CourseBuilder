@@ -7,12 +7,6 @@
 
 ## Question 1: Instance Types
 
-
-
-
-
-
-
 Что означает "m" в названии инстанса m5.xlarge?
 
 A) Memory optimized
@@ -26,12 +20,6 @@ D) General purpose (balanced)
 ---
 
 ## Question 2: Graviton
-
-
-
-
-
-
 
 Какое главное преимущество Graviton (ARM) инстансов?
 
@@ -47,12 +35,6 @@ D) Только для Windows
 
 ## Question 3: Spot Instances
 
-
-
-
-
-
-
 Какова максимальная скидка на Spot Instances по сравнению с On-Demand?
 
 A) До 70%
@@ -66,12 +48,6 @@ D) До 30%
 ---
 
 ## Question 4: EBS Types
-
-
-
-
-
-
 
 Какой тип EBS volume рекомендуется для большинства workloads?
 
@@ -87,12 +63,6 @@ D) st1
 
 ## Question 5: Auto Scaling
 
-
-
-
-
-
-
 Что определяет Launch Template?
 
 A) Health check интервал
@@ -106,12 +76,6 @@ D) Количество инстансов в группе
 ---
 
 ## Question 6: Placement Groups
-
-
-
-
-
-
 
 Какой тип Placement Group обеспечивает минимальную латентность?
 
@@ -127,12 +91,6 @@ D) Partition
 
 ## Question 7: Reserved Instances
 
-
-
-
-
-
-
 На какой срок можно купить Reserved Instance?
 
 A) От 1 до 5 лет
@@ -146,12 +104,6 @@ D) 1 год или 3 года
 ---
 
 ## Question 8: Instance Metadata
-
-
-
-
-
-
 
 По какому адресу доступен Instance Metadata Service?
 
@@ -167,12 +119,6 @@ D) http://169.254.169.254/latest/meta-data/
 
 ## Question 9: User Data
 
-
-
-
-
-
-
 Когда выполняется User Data script?
 
 A) Вручную администратором
@@ -186,12 +132,6 @@ D) Только при первом запуске инстанса
 ---
 
 ## Question 10: AMI
-
-
-
-
-
-
 
 Что НЕ включено в AMI?
 
@@ -207,12 +147,6 @@ D) Установленное ПО
 
 ## Question 11: T-series Burstable
 
-
-
-
-
-
-
 Как работает burstable performance в T-серии инстансов?
 
 A) Подключается дополнительный CPU при нагрузке
@@ -226,12 +160,6 @@ D) Накапливаются CPU credits, которые тратятся пр�
 ---
 
 ## Question 12: EBS Snapshots
-
-
-
-
-
-
 
 Куда сохраняются EBS snapshots?
 
@@ -247,12 +175,6 @@ D) В S3 (managed AWS)
 
 ## Question 13: Security Groups
 
-
-
-
-
-
-
 На каком уровне работают Security Groups для EC2?
 
 A) На уровне инстанса (ENI)
@@ -266,12 +188,6 @@ D) На уровне региона
 ---
 
 ## Question 14: Savings Plans
-
-
-
-
-
-
 
 Чем Compute Savings Plan отличается от EC2 Instance Savings Plan?
 
@@ -287,12 +203,6 @@ D) Compute SP только для Lambda
 
 ## Question 15: Auto Scaling Health Check
 
-
-
-
-
-
-
 Какой тип health check рекомендуется при использовании ALB?
 
 A) Custom
@@ -306,11 +216,6 @@ D) EC2
 ---
 
 ## Question 16: Placement Groups
-
-
-
-
-
 
 Какой placement group обеспечивает минимальную latency?
 
@@ -326,11 +231,6 @@ D) Cluster
 
 ## Question 17: Instance Store
 
-
-
-
-
-
 Что происходит с данными instance store при остановке EC2?
 
 A) Сохраняются
@@ -344,11 +244,6 @@ D) Переносятся в S3
 ---
 
 ## Question 18: Elastic IP
-
-
-
-
-
 
 Сколько Elastic IP бесплатно на аккаунт?
 
@@ -364,11 +259,6 @@ D) Неограниченно
 
 ## Question 19: Launch Template
 
-
-
-
-
-
 Чем Launch Template лучше Launch Configuration?
 
 A) Дешевле
@@ -382,11 +272,6 @@ D) Поддерживает версионирование и mixing instance ty
 ---
 
 ## Question 20: EC2 Hibernate
-
-
-
-
-
 
 Что сохраняется при hibernate?
 
@@ -439,4 +324,5 @@ D) Ничего
 | **Менее 8 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию. |
 
 ---
+
 

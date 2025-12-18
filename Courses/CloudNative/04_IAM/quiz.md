@@ -7,12 +7,6 @@
 
 ## Question 1: IAM Scope
 
-
-
-
-
-
-
 Какой scope имеет IAM в AWS?
 
 A) Глобальный (один для всего аккаунта)
@@ -26,12 +20,6 @@ D) Региональный (отдельный для каждого регио
 ---
 
 ## Question 2: IAM Entities
-
-
-
-
-
-
 
 Какой IAM entity предназначен для предоставления временных credentials сервисам AWS?
 
@@ -47,12 +35,6 @@ D) IAM Role
 
 ## Question 3: Policy Evaluation
 
-
-
-
-
-
-
 Если у пользователя есть политика с Allow на s3:*, а на S3 bucket есть политика с Deny на s3:GetObject, что произойдёт при запросе GetObject?
 
 A) Allow (identity policy побеждает)
@@ -66,12 +48,6 @@ D) Deny (explicit deny всегда побеждает)
 ---
 
 ## Question 4: Best Practice для Users
-
-
-
-
-
-
 
 Какой подход к назначению политик пользователям считается best practice?
 
@@ -87,12 +63,6 @@ D) Прикреплять политики напрямую к каждому п
 
 ## Question 5: Root Account
 
-
-
-
-
-
-
 Для каких действий рекомендуется использовать root account?
 
 A) Закрытие аккаунта и восстановление IAM admin доступа
@@ -106,12 +76,6 @@ D) Повседневное администрирование
 ---
 
 ## Question 6: Trust Policy
-
-
-
-
-
-
 
 Что определяет Trust Policy роли?
 
@@ -127,12 +91,6 @@ D) Кто может принять (assume) эту роль
 
 ## Question 7: MFA Condition
 
-
-
-
-
-
-
 Какое условие в политике требует наличия MFA?
 
 A) `"aws:MFARequired": "true"`
@@ -146,12 +104,6 @@ D) `"aws:MultiFactorAuthPresent": "true"`
 ---
 
 ## Question 8: Cross-Account Access
-
-
-
-
-
-
 
 Как предоставить пользователю из аккаунта A доступ к ресурсам в аккаунте B?
 
@@ -167,12 +119,6 @@ D) Создать роль в аккаунте B с Trust Policy для акка
 
 ## Question 9: Policy Elements
 
-
-
-
-
-
-
 Какой элемент политики определяет "на каких ресурсах" применяется правило?
 
 A) Action
@@ -186,12 +132,6 @@ D) Principal
 ---
 
 ## Question 10: AssumeRole
-
-
-
-
-
-
 
 Какой AWS сервис используется для получения временных credentials через AssumeRole?
 
@@ -207,12 +147,6 @@ D) STS (Security Token Service)
 
 ## Question 11: AWS Managed Policies
 
-
-
-
-
-
-
 Какое преимущество AWS Managed Policies?
 
 A) Не учитываются в лимитах политик
@@ -226,12 +160,6 @@ D) Работают быстрее customer managed policies
 ---
 
 ## Question 12: Instance Profile
-
-
-
-
-
-
 
 Для чего нужен Instance Profile?
 
@@ -247,12 +175,6 @@ D) Для мониторинга производительности
 
 ## Question 13: Permission Boundary
 
-
-
-
-
-
-
 Что делает Permission Boundary?
 
 A) Устанавливает лимиты на количество политик
@@ -266,12 +188,6 @@ D) Определяет границы VPC
 ---
 
 ## Question 14: Service Control Policies
-
-
-
-
-
-
 
 Где применяются Service Control Policies (SCPs)?
 
@@ -287,12 +203,6 @@ D) К отдельным IAM пользователям
 
 ## Question 15: OIDC Federation
 
-
-
-
-
-
-
 Какой use case подходит для OIDC Federation?
 
 A) Предоставление временных credentials для GitHub Actions
@@ -306,12 +216,6 @@ D) Аутентификация сотрудников через корпора
 ---
 
 ## Question 16: Policy Version
-
-
-
-
-
-
 
 Какую версию следует указывать в IAM политиках?
 
@@ -327,12 +231,6 @@ D) Версия не обязательна
 
 ## Question 17: Implicit Deny
 
-
-
-
-
-
-
 Что такое Implicit Deny в IAM?
 
 A) Отсутствие разрешения автоматически означает запрет
@@ -346,12 +244,6 @@ D) Явный запрет в политике
 ---
 
 ## Question 18: Access Analyzer
-
-
-
-
-
-
 
 Для чего используется IAM Access Analyzer?
 
@@ -367,12 +259,6 @@ D) Мониторинг стоимости IAM
 
 ## Question 19: Условия в политиках
 
-
-
-
-
-
-
 Какое условие ограничивает доступ по IP-адресу?
 
 A) `IpAddress`
@@ -386,12 +272,6 @@ D) `NetworkAddress`
 ---
 
 ## Question 20: IAM Identity Center
-
-
-
-
-
-
 
 Что такое AWS IAM Identity Center (ранее AWS SSO)?
 
@@ -444,4 +324,5 @@ D) Сервис для шифрования
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию, особенно про структуру политик. |
 
 ---
+
 

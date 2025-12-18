@@ -6,7 +6,6 @@
 
 ## Question 1: Определение роли
 
-
 Чем Staff Engineer отличается от "очень хорошего Senior Engineer"?
 
 A) Staff Engineer пишет значительно больше кода чем Senior
@@ -20,7 +19,6 @@ D) Staff Engineer управляет людьми и проводит performanc
 ---
 
 ## Question 2: Формула Impact
-
 
 Какая формула описывает Staff-level impact?
 
@@ -36,7 +34,6 @@ D) Impact равен количеству строк кода умноженно
 
 ## Question 3: Архетип Tech Lead
 
-
 Какой Staff Engineer архетип описывает партнёрство с EM команды и 50-70% времени в одной команде?
 
 A) Architect — работает над системной архитектурой компании
@@ -50,7 +47,6 @@ D) Solver — решает критические проблемы между к
 ---
 
 ## Question 4: Архетип Solver
-
 
 Что характерно для архетипа Solver среди Staff Engineers?
 
@@ -66,7 +62,6 @@ D) Фокус на организационных инициативах и пр
 
 ## Question 5: Архетип Architect
 
-
 Чем занимается Staff Engineer архетипа Architect?
 
 A) Только проводит интервью для найма новых инженеров
@@ -80,7 +75,6 @@ D) Много кодит в одной команде над конкретны�
 ---
 
 ## Question 6: Right Hand
-
 
 Для кого архетип Right Hand подходит лучше всего?
 
@@ -96,7 +90,6 @@ D) Для тех, кто хочет только писать код без ко
 
 ## Question 7: Критичный навык
 
-
 Какой навык становится критически важным на Staff уровне (даже важнее coding)?
 
 A) Знание всех популярных frameworks и библиотек
@@ -110,7 +103,6 @@ D) Умение работать по ночам и в выходные дни
 ---
 
 ## Question 8: Influence without authority
-
 
 Что означает "influence without authority" на практике?
 
@@ -126,7 +118,6 @@ D) Отказ от участия в принятии решений коман�
 
 ## Question 9: Staff Project
 
-
 Что такое "Staff Project" для продвижения на Staff уровень?
 
 A) Любой проект, над которым работает Staff Engineer
@@ -140,7 +131,6 @@ D) Проект только для junior developers в команде
 ---
 
 ## Question 10: Visibility
-
 
 Как Staff Engineer создаёт visibility своей работы?
 
@@ -156,7 +146,6 @@ D) Writing (блог, апдейты), Speaking (tech talks), Networking
 
 ## Question 11: Время Staff Engineer
 
-
 Как примерно распределяется время Staff Engineer?
 
 A) Тридцать-сорок процентов код, двадцать-тридцать дизайн и ревью
@@ -170,7 +159,6 @@ D) Пятьдесят процентов на найм и пятьдесят н�
 ---
 
 ## Question 12: Partnership с EM
-
 
 Какие отношения между Staff Engineer и Engineering Manager?
 
@@ -186,7 +174,6 @@ D) Staff подчиняется EM напрямую во всех вопроса
 
 ## Question 13: Challenge "скучаю по коду"
 
-
 Как Staff Engineer может справиться с ощущением "скучаю по коду"?
 
 A) Жаловаться менеджеру на недостаток технической работы
@@ -200,7 +187,6 @@ D) Выделять protected time для coding, выбирать high-impact t
 ---
 
 ## Question 14: Что НЕ делает Staff Engineer
-
 
 Что Staff Engineer НЕ должен делать в своей работе?
 
@@ -216,7 +202,6 @@ D) Участвовать в architecture review и технических об�
 
 ## Question 15: Technical Skills
 
-
 Какое утверждение о technical skills на Staff уровне верно?
 
 A) Technical skills больше не нужны на Staff уровне
@@ -230,7 +215,6 @@ D) Technical skills необходимы, но недостаточны — ну
 ---
 
 ## Question 16: Startup vs Enterprise
-
 
 Как роль Staff Engineer отличается в startup vs enterprise?
 
@@ -246,7 +230,6 @@ D) В startup роль более формализована с чёткими �
 
 ## Question 17: Поиск работы
 
-
 Как Staff Engineer находит, над чем работать?
 
 A) Работает только над тем, что интересно лично ему
@@ -260,7 +243,6 @@ D) Ждёт, пока менеджер назначит конкретную з�
 ---
 
 ## Question 18: Gap Analysis
-
 
 Что помогает определить готовность к Staff уровню?
 
@@ -276,7 +258,6 @@ D) Gap analysis: оценка навыков (technical depth, scope, writing, s
 
 ## Question 19: Promotion packet
 
-
 Что включает promotion packet для Staff уровня?
 
 A) Только список выполненных задач без контекста
@@ -290,7 +271,6 @@ D) Только желание получить повышение и больш
 ---
 
 ## Question 20: Strategic Thinking
-
 
 Почему strategic thinking важен для Staff Engineer?
 
@@ -345,3 +325,4 @@ D) Чтобы избегать долгосрочного планировани
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал заново. |
 
 ---
+

@@ -6,7 +6,6 @@
 
 ## Question 1: Chain of Thought
 
-
 Что такое Chain of Thought (CoT)?
 
 A) Алгоритм поиска
@@ -20,7 +19,6 @@ D) Техника, заставляющая модель рассуждать п
 ---
 
 ## Question 2: Активация CoT
-
 
 Как активировать Chain of Thought в zero-shot режиме?
 
@@ -36,7 +34,6 @@ D) Добавить "Let's think step by step" к промпту
 
 ## Question 3: Эффективность CoT
 
-
 Для каких задач CoT наиболее эффективен?
 
 A) Математические и логические задачи
@@ -50,7 +47,6 @@ D) Простые фактические вопросы
 ---
 
 ## Question 4: Декомпозиция
-
 
 Что такое декомпозиция задачи в контексте промптинга?
 
@@ -66,7 +62,6 @@ D) Сжатие текста
 
 ## Question 5: Преимущества декомпозиции
 
-
 Почему декомпозиция улучшает результаты?
 
 A) Уменьшает стоимость API
@@ -80,7 +75,6 @@ D) Увеличивает контекстное окно
 ---
 
 ## Question 6: Self-Reflection
-
 
 Что такое self-reflection в промптинге?
 
@@ -96,7 +90,6 @@ D) Модель проверяет и улучшает собственные о
 
 ## Question 7: Паттерн Refine
 
-
 Какой порядок шагов в паттерне "Generate then Refine"?
 
 A) Generate → Refine → Critique
@@ -110,7 +103,6 @@ D) Generate → Critique → Refine
 ---
 
 ## Question 8: Structured Output
-
 
 Почему важен structured output?
 
@@ -126,7 +118,6 @@ D) Критичен для интеграции LLM в системы
 
 ## Question 9: JSON Mode
 
-
 Что гарантирует JSON mode в OpenAI API?
 
 A) Более быстрый ответ
@@ -140,7 +131,6 @@ D) Отсутствие ошибок в логике
 ---
 
 ## Question 10: Guardrails
-
 
 Что такое guardrails в контексте LLM?
 
@@ -156,7 +146,6 @@ D) Физические ограждения серверов
 
 ## Question 11: Input Guardrails
 
-
 Что проверяют input guardrails?
 
 A) Формат ответа модели
@@ -170,7 +159,6 @@ D) Размер модели
 ---
 
 ## Question 12: Prompt Injection
-
 
 Какой пример является попыткой prompt injection?
 
@@ -186,7 +174,6 @@ D) "Summarize this text"
 
 ## Question 13: Self-Consistency
 
-
 Что такое техника Self-Consistency?
 
 A) Генерация одного ответа
@@ -200,7 +187,6 @@ D) Генерация нескольких ответов и выбор конс
 ---
 
 ## Question 14: Голосование
-
 
 Как self-consistency выбирает финальный ответ?
 
@@ -216,7 +202,6 @@ D) Случайно
 
 ## Question 15: Tree of Thoughts
 
-
 Чем Tree of Thoughts отличается от Chain of Thought?
 
 A) Ничем не отличается
@@ -230,7 +215,6 @@ D) ToT быстрее
 ---
 
 ## Question 16: ReAct
-
 
 Что чередуется в паттерне ReAct?
 
@@ -246,7 +230,6 @@ D) Промпт и ответ
 
 ## Question 17: Output Guardrails
 
-
 Что проверяют output guardrails?
 
 A) Ответ модели перед отправкой пользователю
@@ -260,7 +243,6 @@ D) API ключи
 ---
 
 ## Question 18: PII Detection
-
 
 Что такое PII в контексте guardrails?
 
@@ -276,7 +258,6 @@ D) Prompt Injection Indicator
 
 ## Question 19: Когда CoT не помогает
 
-
 Для какой задачи CoT наименее полезен?
 
 A) Простой перевод текста
@@ -290,7 +271,6 @@ D) Решение уравнений
 ---
 
 ## Question 20: Комбинирование техник
-
 
 Можно ли комбинировать CoT и self-reflection?
 
@@ -343,4 +323,5 @@ D) Только в особых случаях
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию. |
 
 ---
+
 

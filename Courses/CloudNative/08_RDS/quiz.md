@@ -5,12 +5,6 @@
 
 ## Question 1: Multi-AZ Replication
 
-
-
-
-
-
-
 Какой тип репликации используется в Multi-AZ deployment?
 
 A) Asynchronous
@@ -24,12 +18,6 @@ D) Semi-synchronous
 ---
 
 ## Question 2: Read Replicas
-
-
-
-
-
-
 
 Можно ли читать данные из Standby instance в Multi-AZ deployment?
 
@@ -45,12 +33,6 @@ D) Да, но с задержкой 5 минут
 
 ## Question 3: Aurora Storage
 
-
-
-
-
-
-
 Сколько копий данных хранит Aurora по умолчанию?
 
 A) 3 копии в 2 AZ
@@ -64,12 +46,6 @@ D) 2 копии в 1 AZ
 ---
 
 ## Question 4: Read Replica Promotion
-
-
-
-
-
-
 
 Что происходит при promote Read Replica?
 
@@ -85,12 +61,6 @@ D) Replica удаляется
 
 ## Question 5: Encryption
 
-
-
-
-
-
-
 Когда можно включить encryption at rest для RDS?
 
 A) Только для Aurora
@@ -104,12 +74,6 @@ D) В любое время
 ---
 
 ## Question 6: Backup Retention
-
-
-
-
-
-
 
 Какой максимальный retention period для automated backups?
 
@@ -125,12 +89,6 @@ D) 365 дней
 
 ## Question 7: Aurora Serverless
 
-
-
-
-
-
-
 Что такое ACU в Aurora Serverless?
 
 A) Aurora Connection Unit
@@ -144,12 +102,6 @@ D) Aurora Cache Unit
 ---
 
 ## Question 8: Failover Time
-
-
-
-
-
-
 
 Какое примерное время failover для Multi-AZ?
 
@@ -165,12 +117,6 @@ D) 30+ минут
 
 ## Question 9: Cross-Region
 
-
-
-
-
-
-
 Какая функция RDS позволяет репликацию в другой регион?
 
 A) Parameter Group
@@ -184,12 +130,6 @@ D) Multi-AZ
 ---
 
 ## Question 10: IAM Authentication
-
-
-
-
-
-
 
 Какой сервис используется для IAM Database Authentication?
 
@@ -205,11 +145,6 @@ D) Secrets Manager
 
 ## Question 11: Performance Insights
 
-
-
-
-
-
 Что показывает RDS Performance Insights?
 
 A) Database load, top SQLs, wait events
@@ -223,11 +158,6 @@ D) Только storage
 ---
 
 ## Question 12: Enhanced Monitoring
-
-
-
-
-
 
 Чем Enhanced Monitoring отличается от стандартного?
 
@@ -243,11 +173,6 @@ D) Только для Aurora
 
 ## Question 13: Parameter Groups
 
-
-
-
-
-
 Для чего используются Parameter Groups?
 
 A) Для networking
@@ -261,11 +186,6 @@ D) Для security
 ---
 
 ## Question 14: Option Groups
-
-
-
-
-
 
 Что такое Option Groups в RDS?
 
@@ -281,11 +201,6 @@ D) Networking options
 
 ## Question 15: Snapshot
 
-
-
-
-
-
 Какой тип snapshot можно копировать между регионами?
 
 A) Никакой
@@ -299,11 +214,6 @@ D) Manual snapshots
 ---
 
 ## Question 16: Encryption
-
-
-
-
-
 
 Когда можно включить шифрование для RDS?
 
@@ -319,11 +229,6 @@ D) Только для Enterprise
 
 ## Question 17: Aurora Serverless
 
-
-
-
-
-
 Какое преимущество Aurora Serverless v2?
 
 A) Только дешевле
@@ -337,11 +242,6 @@ D) Быстрее
 ---
 
 ## Question 18: Proxy
-
-
-
-
-
 
 Для чего используется RDS Proxy?
 
@@ -357,11 +257,6 @@ D) Для encryption
 
 ## Question 19: Blue/Green Deployment
 
-
-
-
-
-
 Что обеспечивает RDS Blue/Green deployment?
 
 A) Шифрование
@@ -375,11 +270,6 @@ D) Backup
 ---
 
 ## Question 20: Reserved Instances
-
-
-
-
-
 
 Какая экономия от RDS Reserved Instances?
 
@@ -432,3 +322,4 @@ D) До 72% (1-3 года commitment)
 | **< 5 (<50%)** | 📚 Нужно повторить |
 
 ---
+

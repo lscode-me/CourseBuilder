@@ -62,6 +62,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                        IT Basics Course                          │
 └─────────────────────────────────────────────────────────────────┘
@@ -102,6 +103,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки
@@ -110,10 +112,15 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения
+
 - **Основной материал** — теория с практическими примерами
+
 - **Key Takeaways** — главные выводы
+
 - **Next Steps** — что изучить дальше
+
 - **Additional Resources** — дополнительные материалы
 
 ### Quiz
@@ -251,6 +258,7 @@ brew install jq coreutils exiftool binwalk
 # https://github.com/mikefarah/yq/releases
 
 # Python библиотеки (опционально, для практики)
+
 pip install chardet pyyaml
 ```
 
@@ -328,5 +336,6 @@ pip install chardet pyyaml
 Курс поддерживается в актуальном состоянии. При обнаружении устаревшей информации создайте issue или pull request.
 
 ---
+
 
 

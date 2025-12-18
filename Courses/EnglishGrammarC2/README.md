@@ -81,6 +81,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │           English Grammar C2: Native-Like Mastery               │
 └─────────────────────────────────────────────────────────────────┘
@@ -156,6 +157,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки (20 вопросов)
@@ -164,12 +166,19 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения (C2-level)
+
 - **Theory** — объяснение с фокусом на нюансы
+
 - **Corpus Evidence** — данные из языковых корпусов
+
 - **Native vs Non-Native** — как отличаются
+
 - **Russian Interference** — почему русскоязычные ошибаются
+
 - **Practice** — упражнения на discrimination и production
+
 - **Key Takeaways** — главные выводы
 
 ### Quiz
@@ -226,14 +235,19 @@ XX_ModuleName/
 ### Грамматические справочники (C2)
 
 - **"Cambridge Grammar of English"** by Carter & McCarthy — исчерпывающий справочник
+
 - **"Longman Grammar of Spoken and Written English"** by Biber et al. — corpus-based
+
 - **"Practical English Usage"** by Michael Swan — нюансы
+
 - **"Oxford Learner's Grammar: Finder"** — для быстрой проверки
 
 ### Для продвинутых
 
 - **"Language in Use"** by Adrian Doff — discourse-based
+
 - **"CPE Use of English"** — практика уровня C2
+
 - **"Academic Writing for Graduate Students"** — академический стиль
 
 ### Корпусные ресурсы
@@ -302,4 +316,5 @@ XX_ModuleName/
 **Целевой уровень:** C1+ → C2
 
 ---
+
 

@@ -465,6 +465,27 @@ def fix_course(course_path: Path, dry_run: bool = False) -> Tuple[int, int, int,
     total_header_after = 0
     total_text_colon = 0
     total_question_header_blanks = 0
+
+    # Сначала пробуем исправить корневые markdown-файлы курса (например, README.md),
+    # потому что они тоже попадают в HTML и могут страдать от тех же проблем со списками.
+    for root_md in ['README.md']:
+        root_md_path = course_path / root_md
+        if root_md_path.exists():
+            (fixes_bold_list,
+             fixes_bold_heading,
+             fixes_code_block_before,
+             fixes_code_block_after,
+             fixes_header_after,
+             fixes_text_colon,
+             fixes_question_header_blanks) = fix_file(root_md_path, dry_run)
+
+            total_bold_list += fixes_bold_list
+            total_bold_heading += fixes_bold_heading
+            total_code_block_before += fixes_code_block_before
+            total_code_block_after += fixes_code_block_after
+            total_header_after += fixes_header_after
+            total_text_colon += fixes_text_colon
+            total_question_header_blanks += fixes_question_header_blanks
     
     for item in sorted(course_path.iterdir()):
         if item.is_dir() and item.name[0].isdigit():

@@ -5,12 +5,6 @@
 
 ## Question 1: Multi-Cloud Complexity
 
-
-
-
-
-
-
 Какой главный недостаток multi-cloud стратегии?
 
 A) Меньше сервисов доступно
@@ -24,12 +18,6 @@ D) Операционная сложность и требуемые навык�
 ---
 
 ## Question 2: Kubernetes Portability
-
-
-
-
-
-
 
 Почему Kubernetes считается cloud-agnostic?
 
@@ -45,12 +33,6 @@ D) Принадлежит Google
 
 ## Question 3: Lock-in Level
 
-
-
-
-
-
-
 Какой сервис имеет наивысший уровень vendor lock-in?
 
 A) DynamoDB
@@ -64,12 +46,6 @@ D) RDS PostgreSQL
 ---
 
 ## Question 4: Portable Alternative
-
-
-
-
-
-
 
 Какая portable альтернатива AWS Lambda?
 
@@ -85,12 +61,6 @@ D) Knative на Kubernetes
 
 ## Question 5: Pragmatic Approach
 
-
-
-
-
-
-
 Какой прагматичный подход к multi-cloud?
 
 A) Всегда дублировать в двух clouds
@@ -104,11 +74,6 @@ D) Использовать proprietary сервисы когда value > lock-i
 ---
 
 ## Question 6: Terraform Providers
-
-
-
-
-
 
 Как Terraform поддерживает multi-cloud?
 
@@ -124,11 +89,6 @@ D) Не поддерживает
 
 ## Question 7: Container Portability
 
-
-
-
-
-
 Почему containers portable?
 
 A) Быстрее
@@ -142,11 +102,6 @@ D) Одинаковый runtime environment везде
 ---
 
 ## Question 8: Anthos
-
-
-
-
-
 
 Что такое Google Anthos?
 
@@ -162,11 +117,6 @@ D) Multi-cloud Kubernetes management platform
 
 ## Question 9: Azure Arc
 
-
-
-
-
-
 Что делает Azure Arc?
 
 A) Управление ресурсами в любом cloud или on-premises через Azure
@@ -180,11 +130,6 @@ D) Database
 ---
 
 ## Question 10: Data Portability
-
-
-
-
-
 
 Какой формат данных наиболее portable?
 
@@ -200,11 +145,6 @@ D) Proprietary formats
 
 ## Question 11: Cross-Cloud Networking
 
-
-
-
-
-
 Как соединить clouds?
 
 A) Только VPN
@@ -218,11 +158,6 @@ D) Только internet
 ---
 
 ## Question 12: Identity Federation
-
-
-
-
-
 
 Как управлять identity across clouds?
 
@@ -238,11 +173,6 @@ D) Отдельные accounts везде
 
 ## Question 13: Observability Tools
 
-
-
-
-
-
 Какие multi-cloud observability tools?
 
 A) Только Azure Monitor
@@ -256,11 +186,6 @@ D) Только CloudWatch
 ---
 
 ## Question 14: GitOps for Multi-Cloud
-
-
-
-
-
 
 Почему GitOps хорош для multi-cloud?
 
@@ -276,11 +201,6 @@ D) Git как единый source of truth для всех clouds
 
 ## Question 15: API Gateway Portability
 
-
-
-
-
-
 Какой API Gateway наиболее portable?
 
 A) Azure API Management
@@ -294,11 +214,6 @@ D) Kong, Istio Gateway — работают везде
 ---
 
 ## Question 16: Cost Management
-
-
-
-
-
 
 Как управлять costs across clouds?
 
@@ -314,11 +229,6 @@ D) Отдельно для каждого cloud
 
 ## Question 17: Disaster Recovery
 
-
-
-
-
-
 Как multi-cloud помогает с DR?
 
 A) Дороже без benefit
@@ -332,11 +242,6 @@ D) Не помогает
 ---
 
 ## Question 18: Vendor Lock-in Mitigation
-
-
-
-
-
 
 Как снизить vendor lock-in?
 
@@ -352,11 +257,6 @@ D) Open standards, abstraction layers, portable formats
 
 ## Question 19: Crossplane
 
-
-
-
-
-
 Что такое Crossplane?
 
 A) Security tool
@@ -370,11 +270,6 @@ D) Database
 ---
 
 ## Question 20: Skills Challenge
-
-
-
-
-
 
 Какой challenge для multi-cloud teams?
 
@@ -416,3 +311,4 @@ D) Только security
 | 20 | C | Экспертиза в нескольких clouds |
 
 ---
+

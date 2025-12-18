@@ -6,7 +6,6 @@
 
 ## Question 1: Вероятность продажи
 
-
 Какова вероятность продажи существующему клиенту по сравнению с новым?
 
 A) Одинаковая
@@ -20,7 +19,6 @@ D) Существующему клиенту в 3-10 раз выше (60-70% vs 
 ---
 
 ## Question 2: NRR
-
 
 Что означает NRR (Net Revenue Retention) > 100%?
 
@@ -36,7 +34,6 @@ D) Выручка от существующих клиентов растёт б
 
 ## Question 3: Позитивный сигнал
 
-
 Что является позитивным сигналом возможности роста?
 
 A) Клиент сокращает команду
@@ -50,7 +47,6 @@ D) Смена руководства клиента
 ---
 
 ## Question 4: Негативный сигнал
-
 
 Что является негативным сигналом (риском)?
 
@@ -66,7 +62,6 @@ D) Высокий NPS
 
 ## Question 5: Upsell определение
 
-
 Что такое Upsell?
 
 A) Уход клиента
@@ -80,7 +75,6 @@ D) Продажа большего объёма того же сервиса
 ---
 
 ## Question 6: Cross-sell определение
-
 
 Что такое Cross-sell?
 
@@ -96,7 +90,6 @@ D) Увеличение команды на текущем проекте
 
 ## Question 7: Upsell пример
 
-
 Какой пример является Upsell?
 
 A) Команда из 5 → команда из 10 человек
@@ -110,7 +103,6 @@ D) Project → Project + Support
 ---
 
 ## Question 8: Cross-sell пример
-
 
 Какой пример является Cross-sell?
 
@@ -126,7 +118,6 @@ D) Увеличение billable часов
 
 ## Question 9: Land and Expand
 
-
 Что означает стратегия "Land and Expand"?
 
 A) Начать с максимальной команды
@@ -140,7 +131,6 @@ D) Никогда не расширяться
 ---
 
 ## Question 10: Discovery вопросы
-
 
 Какой вопрос подходит для discovery потребностей клиента?
 
@@ -156,7 +146,6 @@ D) "Какие главные бизнес-цели на этот год?"
 
 ## Question 11: SIP
 
-
 Что такое Service Improvement Plan (SIP)?
 
 A) Финансовый отчёт
@@ -170,7 +159,6 @@ D) План увольнения
 ---
 
 ## Question 12: SIP цель
-
 
 Какова главная цель SIP?
 
@@ -186,7 +174,6 @@ D) Демонстрировать value и создать основу для р
 
 ## Question 13: Expansion участники
 
-
 Кто инициирует и ведёт коммерческие переговоры при expansion?
 
 A) Только TL
@@ -200,7 +187,6 @@ D) Только DM
 ---
 
 ## Question 14: Account Health Score
-
 
 Что измеряет Account Health Score?
 
@@ -216,7 +202,6 @@ D) Только финансы
 
 ## Question 15: Health Score интерпретация
 
-
 Что означает Account Health Score 85/100?
 
 A) Критическая ситуация
@@ -230,7 +215,6 @@ D) Ничего не делать
 ---
 
 ## Question 16: Strategic account
-
 
 Какой аккаунт считается Strategic в Growth Potential Matrix?
 
@@ -246,7 +230,6 @@ D) High satisfaction + Small budget
 
 ## Question 17: Recover account
 
-
 Какой аккаунт требует срочного восстановления (Recover)?
 
 A) High satisfaction + Small budget
@@ -260,7 +243,6 @@ D) Low satisfaction + Small budget
 ---
 
 ## Question 18: Expansion ROI
-
 
 Что включает ROI analysis в expansion proposal?
 
@@ -276,7 +258,6 @@ D) Только timeline
 
 ## Question 19: Growth timeline
 
-
 В кейсе роста с 3 до 30 человек, за какой период это произошло?
 
 A) 6 месяцев
@@ -290,7 +271,6 @@ D) 24 месяца
 ---
 
 ## Question 20: Growth success factor
-
 
 Что было ключевым фактором успеха при росте с 3 до 30?
 
@@ -306,7 +286,6 @@ D) Excellent initial delivery и proactive expansion proposals
 
 ## Question 21: Target NRR
 
-
 Какой target NRR для здорового бизнеса?
 
 A) 200%
@@ -320,7 +299,6 @@ D) <80%
 ---
 
 ## Question 22: Signal Detection Matrix
-
 
 Что означает High Satisfaction + Low Contact Frequency?
 
@@ -336,7 +314,6 @@ D) At Risk (почему не зовут?)
 
 ## Question 23: Active Listening
 
-
 Что входит в Active Listening Framework?
 
 A) Listen, Clarify, Connect
@@ -351,7 +328,6 @@ D) Игнорировать
 
 ## Question 24: Expansion timeline
 
-
 Какой типичный timeline для полного expansion process (от identify до execute)?
 
 A) 1 час
@@ -365,7 +341,6 @@ D) 6-12 недель
 ---
 
 ## Question 25: Quality during growth
-
 
 Что важно сохранять при быстром росте команды?
 
@@ -425,5 +400,6 @@ D) Только низкие цены
 | **Менее 13 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию и попробуйте ещё раз. |
 
 ---
+
 
 

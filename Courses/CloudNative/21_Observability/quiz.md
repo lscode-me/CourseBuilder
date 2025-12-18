@@ -5,12 +5,6 @@
 
 ## Question 1: Три столпа
 
-
-
-
-
-
-
 Какие три столпа observability?
 
 A) Logs, Alerts, Dashboards
@@ -24,12 +18,6 @@ D) Monitoring, Alerting, Logging
 ---
 
 ## Question 2: Structured Logging
-
-
-
-
-
-
 
 Почему structured logging (JSON) лучше plain text?
 
@@ -45,12 +33,6 @@ D) Легче парсить и искать, можно добавлять meta
 
 ## Question 3: Trace vs Log
 
-
-
-
-
-
-
 Что уникального предоставляют distributed traces?
 
 A) Агрегированные метрики
@@ -64,12 +46,6 @@ D) Больше деталей об ошибках
 ---
 
 ## Question 4: RED Method
-
-
-
-
-
-
 
 Что означает RED в контексте метрик сервисов?
 
@@ -85,12 +61,6 @@ D) Real-time, Exact, Distributed
 
 ## Question 5: X-Ray Annotation vs Metadata
 
-
-
-
-
-
-
 В чём разница между X-Ray Annotation и Metadata?
 
 A) Annotations дороже
@@ -104,11 +74,6 @@ D) Metadata только для errors
 ---
 
 ## Question 6: USE Method
-
-
-
-
-
 
 Для каких ресурсов применяется USE Method?
 
@@ -124,11 +89,6 @@ D) Только для networks
 
 ## Question 7: CloudWatch Logs Insights
 
-
-
-
-
-
 Для чего используется CloudWatch Logs Insights?
 
 A) Только для storage
@@ -142,11 +102,6 @@ D) Только для metrics
 ---
 
 ## Question 8: Container Insights
-
-
-
-
-
 
 Что предоставляет Container Insights?
 
@@ -162,11 +117,6 @@ D) Только logs
 
 ## Question 9: CloudWatch Dashboards
 
-
-
-
-
-
 Для чего используются CloudWatch Dashboards?
 
 A) Для визуализации metrics и logs
@@ -180,11 +130,6 @@ D) Только для alerting
 ---
 
 ## Question 10: Embedded Metric Format
-
-
-
-
-
 
 Что такое Embedded Metric Format?
 
@@ -200,11 +145,6 @@ D) Формат для traces
 
 ## Question 11: X-Ray Sampling
 
-
-
-
-
-
 Зачем нужен sampling в X-Ray?
 
 A) Для красоты
@@ -218,11 +158,6 @@ D) Для security
 ---
 
 ## Question 12: ServiceLens
-
-
-
-
-
 
 Что такое CloudWatch ServiceLens?
 
@@ -238,11 +173,6 @@ D) Unified view: metrics, traces, logs для service health
 
 ## Question 13: Anomaly Detection
 
-
-
-
-
-
 Что делает CloudWatch Anomaly Detection?
 
 A) ML-based обнаружение аномальных значений metrics
@@ -256,11 +186,6 @@ D) Только для security
 ---
 
 ## Question 14: Contributor Insights
-
-
-
-
-
 
 Для чего используется CloudWatch Contributor Insights?
 
@@ -276,11 +201,6 @@ D) Для анализа top contributors (top IPs, users, etc.)
 
 ## Question 15: Synthetics
 
-
-
-
-
-
 Что делает CloudWatch Synthetics?
 
 A) Synthetic metrics
@@ -294,11 +214,6 @@ D) Создаёт synthetic data
 ---
 
 ## Question 16: Application Insights
-
-
-
-
-
 
 Что делает CloudWatch Application Insights?
 
@@ -314,11 +229,6 @@ D) Только logging
 
 ## Question 17: Log Retention
 
-
-
-
-
-
 Как настроить log retention?
 
 A) Автоматически
@@ -332,11 +242,6 @@ D) Retention policy per log group
 ---
 
 ## Question 18: Metric Math
-
-
-
-
-
 
 Для чего используется Metric Math?
 
@@ -352,11 +257,6 @@ D) Только для алертов
 
 ## Question 19: Alarms Actions
 
-
-
-
-
-
 Какие actions поддерживают CloudWatch Alarms?
 
 A) Только SNS
@@ -370,11 +270,6 @@ D) Только email
 ---
 
 ## Question 20: Cross-Account Observability
-
-
-
-
-
 
 Как реализовать cross-account observability?
 
@@ -416,3 +311,4 @@ D) Невозможно
 | 20 | B | Cross-account observability или centralized account |
 
 ---
+

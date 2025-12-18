@@ -5,12 +5,6 @@
 
 ## Question 1: Primary Key
 
-
-
-
-
-
-
 Какие варианты Primary Key поддерживает DynamoDB?
 
 A) Только Partition Key
@@ -24,12 +18,6 @@ D) Partition Key only ИЛИ Partition Key + Sort Key
 ---
 
 ## Question 2: GSI vs LSI
-
-
-
-
-
-
 
 Какое ключевое отличие GSI от LSI?
 
@@ -45,12 +33,6 @@ D) LSI можно создать в любое время
 
 ## Question 3: Query vs Scan
 
-
-
-
-
-
-
 Почему Query предпочтительнее Scan?
 
 A) Query поддерживает SQL синтаксис
@@ -64,12 +46,6 @@ D) Scan не работает в production
 ---
 
 ## Question 4: Hot Partition
-
-
-
-
-
-
 
 Что вызывает "hot partition" проблему?
 
@@ -85,12 +61,6 @@ D) Слишком много GSI
 
 ## Question 5: DAX
 
-
-
-
-
-
-
 Что такое DAX?
 
 A) DynamoDB Access Extension
@@ -104,12 +74,6 @@ D) In-memory cache для DynamoDB с микросекундной latency
 ---
 
 ## Question 6: Item Size Limit
-
-
-
-
-
-
 
 Какой максимальный размер одного item в DynamoDB?
 
@@ -125,12 +89,6 @@ D) 1 MB
 
 ## Question 7: Capacity Mode
 
-
-
-
-
-
-
 Когда лучше использовать On-Demand capacity?
 
 A) Только для тестирования
@@ -144,12 +102,6 @@ D) Для постоянной высокой нагрузки
 ---
 
 ## Question 8: Global Tables
-
-
-
-
-
-
 
 Какая модель репликации у Global Tables?
 
@@ -165,12 +117,6 @@ D) Single-master
 
 ## Question 9: DynamoDB Streams
 
-
-
-
-
-
-
 Сколько времени хранятся записи в DynamoDB Stream?
 
 A) 24 часа
@@ -184,12 +130,6 @@ D) 30 дней
 ---
 
 ## Question 10: RCU Calculation
-
-
-
-
-
-
 
 1 RCU позволяет прочитать сколько данных strongly consistent?
 
@@ -205,11 +145,6 @@ D) 1 MB per second
 
 ## Question 11: WCU Calculation
 
-
-
-
-
-
 1 WCU позволяет записать сколько данных?
 
 A) 1 MB per second
@@ -223,11 +158,6 @@ D) 4 KB per second
 ---
 
 ## Question 12: Eventually Consistent
-
-
-
-
-
 
 Сколько RCU нужно для eventually consistent read?
 
@@ -243,11 +173,6 @@ D) 2 RCU
 
 ## Question 13: TTL
 
-
-
-
-
-
 Для чего используется TTL в DynamoDB?
 
 A) Для шифрования
@@ -261,11 +186,6 @@ D) Для автоматического удаления устаревших i
 ---
 
 ## Question 14: Backup
-
-
-
-
-
 
 Какие типы backup поддерживает DynamoDB?
 
@@ -281,11 +201,6 @@ D) Нет backup
 
 ## Question 15: DAX
 
-
-
-
-
-
 Что такое DAX?
 
 A) Data Analysis eXtension
@@ -299,11 +214,6 @@ D) In-memory caching для DynamoDB
 ---
 
 ## Question 16: Batch Operations
-
-
-
-
-
 
 Какой лимит items для BatchWriteItem?
 
@@ -319,11 +229,6 @@ D) 25
 
 ## Question 17: Query vs Scan
 
-
-
-
-
-
 Чем Query отличается от Scan?
 
 A) Ничем
@@ -337,11 +242,6 @@ D) Query дороже
 ---
 
 ## Question 18: Projection Expression
-
-
-
-
-
 
 Что делает Projection Expression?
 
@@ -357,11 +257,6 @@ D) Создаёт index
 
 ## Question 19: Condition Expression
 
-
-
-
-
-
 Для чего используется Condition Expression?
 
 A) Для шифрования
@@ -375,11 +270,6 @@ D) Для индексации
 ---
 
 ## Question 20: PartiQL
-
-
-
-
-
 
 Что такое PartiQL в DynamoDB?
 
@@ -432,3 +322,4 @@ D) Monitoring service
 | **< 5 (<50%)** | 📚 Нужно повторить |
 
 ---
+

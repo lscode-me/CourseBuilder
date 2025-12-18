@@ -6,12 +6,6 @@
 
 ## Question 1: Pragmatic Meaning
 
-
-
-
-
-
-
 "That's an interesting approach" from a manager often means:
 
 A) They want more information
@@ -25,12 +19,6 @@ D) They have doubts or disagree
 ---
 
 ## Question 2: Face-Saving
-
-
-
-
-
-
 
 A request threatens hearer's "negative face" because it:
 
@@ -46,12 +34,6 @@ D) Insults them
 
 ## Question 3: Politeness Level
 
-
-
-
-
-
-
 Rank from LEAST to MOST polite: (1) "Give me the file" (2) "Could you give me the file?" (3) "I was wondering if you might be able to send the file"
 
 A) All equally polite
@@ -65,12 +47,6 @@ D) 1, 2, 3 (least to most)
 ---
 
 ## Question 4: Understatement
-
-
-
-
-
-
 
 "That's not bad" usually means:
 
@@ -86,12 +62,6 @@ D) I don't care
 
 ## Question 5: Social Formula
 
-
-
-
-
-
-
 "We should do lunch sometime" typically means:
 
 A) A formal business request
@@ -105,12 +75,6 @@ D) A concrete invitation to lunch
 ---
 
 ## Question 6: Register Match
-
-
-
-
-
-
 
 For a formal business email to a CEO, which opening is appropriate?
 
@@ -126,12 +90,6 @@ D) "Yo!"
 
 ## Question 7: Diplomatic Disagreement
 
-
-
-
-
-
-
 The most diplomatic way to disagree is:
 
 A) "I wonder if there might be another perspective."
@@ -145,12 +103,6 @@ D) "I disagree completely."
 ---
 
 ## Question 8: Russian Interference
-
-
-
-
-
-
 
 Russian speakers often sound ___ in English professional contexts:
 
@@ -166,12 +118,6 @@ D) Too formal
 
 ## Question 9: Implied Criticism
 
-
-
-
-
-
-
 "With the greatest respect..." usually signals:
 
 A) Confusion
@@ -185,12 +131,6 @@ D) Agreement
 ---
 
 ## Question 10: Register Feature
-
-
-
-
-
-
 
 Which is appropriate for formal writing?
 
@@ -206,12 +146,6 @@ D) Full forms and Latinate vocabulary
 
 ## Question 11: Request Softening
 
-
-
-
-
-
-
 "I was just wondering if you could possibly help" uses which softening devices?
 
 A) Direct statements
@@ -225,12 +159,6 @@ D) Intensifiers
 ---
 
 ## Question 12: Polite Refusal
-
-
-
-
-
-
 
 The most diplomatic refusal is:
 
@@ -246,12 +174,6 @@ D) "Absolutely not."
 
 ## Question 13: Compliment Response
 
-
-
-
-
-
-
 In English, the appropriate response to "Great presentation!" is:
 
 A) "You're wrong."
@@ -265,12 +187,6 @@ D) "Thank you! I'm glad it went well."
 ---
 
 ## Question 14: "I'll Bear That in Mind"
-
-
-
-
-
-
 
 This phrase usually indicates:
 
@@ -286,12 +202,6 @@ D) Polite dismissal—unlikely to act
 
 ## Question 15: British vs American
 
-
-
-
-
-
-
 Generally, British English is:
 
 A) Identical to American English
@@ -305,12 +215,6 @@ D) Less polite than American English
 ---
 
 ## Question 16: Indirect Speech Act
-
-
-
-
-
-
 
 "It's cold in here" (said to someone near the window) functions as:
 
@@ -326,12 +230,6 @@ D) A complaint about the building
 
 ## Question 17: Email Closing
 
-
-
-
-
-
-
 For a professional but not overly formal email, use:
 
 A) "Cheers mate,"
@@ -345,12 +243,6 @@ D) "Kind regards,"
 ---
 
 ## Question 18: Small Talk
-
-
-
-
-
-
 
 In English business culture:
 
@@ -366,12 +258,6 @@ D) Small talk is expected before business
 
 ## Question 19: Self-Deprecation
 
-
-
-
-
-
-
 English speakers often respond to praise by:
 
 A) Strongly agreeing
@@ -385,12 +271,6 @@ D) Ignoring the comment
 ---
 
 ## Question 20: Giving Feedback
-
-
-
-
-
-
 
 "There might be some room for improvement" diplomatically means:
 
@@ -443,4 +323,5 @@ D) No changes needed
 | **Below 10 (<50%)** | 📚 Needs work | Study politeness strategies and observe native speaker interactions. |
 
 ---
+
 

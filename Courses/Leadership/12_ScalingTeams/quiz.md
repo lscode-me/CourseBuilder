@@ -6,7 +6,6 @@
 
 ## Question 1: Optimal Team Size
 
-
 Какой оптимальный размер команды для одного менеджера?
 
 A) Пятьдесят и более человек
@@ -20,7 +19,6 @@ D) Двадцать-тридцать человек в команде
 ---
 
 ## Question 2: Warning Signs
-
 
 Какой признак указывает, что пора масштабировать команду?
 
@@ -36,7 +34,6 @@ D) Standup занимает всего пять минут
 
 ## Question 3: Split by Product
 
-
 Какой плюс разделения команды по продукту или feature?
 
 A) Clear ownership, end-to-end responsibility
@@ -50,7 +47,6 @@ D) Больше handoffs между командами
 ---
 
 ## Question 4: Split by Layer
-
 
 Какой минус разделения по слоям (frontend и backend)?
 
@@ -66,7 +62,6 @@ D) Reusable solutions и переиспользование
 
 ## Question 5: Stream-aligned Team
 
-
 Что такое Stream-aligned Team в Team Topologies?
 
 A) Команда aligned с business stream, end-to-end delivery
@@ -80,7 +75,6 @@ D) Platform команда для внутренних сервисов
 ---
 
 ## Question 6: Platform Team
-
 
 Какова роль Platform Team в организации?
 
@@ -96,7 +90,6 @@ D) Работа с внешними клиентами продукта
 
 ## Question 7: Cognitive Load
 
-
 Что происходит, когда cognitive load команды слишком высока?
 
 A) Команда работает лучше и продуктивнее
@@ -110,7 +103,6 @@ D) Cognitive load не важна для работы
 ---
 
 ## Question 8: Delegation Level 7
-
 
 Что означает Level 7 делегирования?
 
@@ -126,7 +118,6 @@ D) Давай решим вместе сейчас
 
 ## Question 9: Growing Leaders
 
-
 Как развивать будущих лидеров в команде?
 
 A) Сразу назначить на позицию без подготовки
@@ -140,7 +131,6 @@ D) Игнорировать их развитие полностью
 ---
 
 ## Question 10: 80% Quality
-
 
 Почему "80% качества от 3 людей лучше чем 100% от одного"?
 
@@ -156,7 +146,6 @@ D) Масштабирование требует делегирования, с�
 
 ## Question 11: Culture at Scale
 
-
 Как сохранить культуру при росте организации?
 
 A) Забыть о культуре при росте
@@ -170,7 +159,6 @@ D) Ничего не делать, культура сама сохранитс�
 ---
 
 ## Question 12: Brooks's Law
-
 
 Что описывает Brooks's Law о communication overhead?
 
@@ -186,7 +174,6 @@ D) Communication paths уменьшаются с ростом
 
 ## Question 13: Us vs Them
 
-
 Как бороться с "Us vs Them" между командами?
 
 A) Поощрять конкуренцию между командами
@@ -200,7 +187,6 @@ D) Blame culture и публичная критика
 ---
 
 ## Question 14: Spotify Squads
-
 
 Что такое Squad в Spotify Model?
 
@@ -216,7 +202,6 @@ D) HR department компании
 
 ## Question 15: Functional Structure
 
-
 Какой минус функциональной структуры (Frontend, Backend, QA)?
 
 A) Handoffs и silos между функциями
@@ -230,7 +215,6 @@ D) Специализация сотрудников
 ---
 
 ## Question 16: Enabling Team
-
 
 Какова роль Enabling Team в Team Topologies?
 
@@ -246,7 +230,6 @@ D) Помогает другим командам adopt capabilities, temporary 
 
 ## Question 17: Communication at Scale
 
-
 Какой инструмент помогает communication в большой организации?
 
 A) Отсутствие коммуникации вообще
@@ -260,7 +243,6 @@ D) All-hands, written updates, documentation, Slack channels
 ---
 
 ## Question 18: Slowing Down
-
 
 Как бороться с замедлением при росте организации?
 
@@ -276,7 +258,6 @@ D) Добавить больше митингов и обсуждений
 
 ## Question 19: Dunbar's 15
 
-
 Что означает число 15 в контексте команд?
 
 A) Пятнадцать лет опыта в индустрии
@@ -290,7 +271,6 @@ D) Пятнадцать минут на standup максимум
 ---
 
 ## Question 20: Matrix Structure
-
 
 Что характерно для Matrix структуры организации?
 
@@ -345,3 +325,4 @@ D) Отсутствие формальной структуры
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Необходимо внимательно изучить материал. |
 
 ---
+

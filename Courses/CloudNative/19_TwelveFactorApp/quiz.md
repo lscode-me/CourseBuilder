@@ -5,12 +5,6 @@
 
 ## Question 1: Codebase
 
-
-
-
-
-
-
 Что означает принцип "One codebase, many deploys"?
 
 A) Каждый deploy имеет свой репозиторий
@@ -24,12 +18,6 @@ D) Один репозиторий деплоится в разные среды
 ---
 
 ## Question 2: Config
-
-
-
-
-
-
 
 Где должна храниться конфигурация по 12-factor?
 
@@ -45,12 +33,6 @@ D) В environment variables
 
 ## Question 3: Backing Services
 
-
-
-
-
-
-
 Как 12-factor app относится к базе данных?
 
 A) База должна быть встроена в приложение
@@ -64,12 +46,6 @@ D) Только локальная база данных
 ---
 
 ## Question 4: Processes
-
-
-
-
-
-
 
 Какой тип процессов требует 12-factor?
 
@@ -85,12 +61,6 @@ D) Singleton процессы
 
 ## Question 5: Port Binding
 
-
-
-
-
-
-
 Что означает принцип Port Binding?
 
 A) Приложение само экспортирует HTTP сервис, слушая порт
@@ -104,12 +74,6 @@ D) Нужен отдельный веб-сервер (Apache, nginx)
 ---
 
 ## Question 6: Build, Release, Run
-
-
-
-
-
-
 
 Какой порядок этапов правильный?
 
@@ -125,12 +89,6 @@ D) Build → Run → Release
 
 ## Question 7: Logs
 
-
-
-
-
-
-
 Куда должны писаться логи по 12-factor?
 
 A) В файлы на диске
@@ -144,12 +102,6 @@ D) В сетевой сокет
 ---
 
 ## Question 8: Dev/Prod Parity
-
-
-
-
-
-
 
 Что НЕ является целью Dev/Prod Parity?
 
@@ -165,12 +117,6 @@ D) Разработчики деплоят свой код
 
 ## Question 9: Concurrency
 
-
-
-
-
-
-
 Как масштабируется 12-factor app?
 
 A) Добавлением RAM и CPU (вертикально)
@@ -184,12 +130,6 @@ D) Кэшированием всего в памяти
 ---
 
 ## Question 10: Disposability
-
-
-
-
-
-
 
 Что означает Disposability?
 
@@ -205,12 +145,6 @@ D) Приложение можно удалить
 
 ## Question 11: Dependencies
 
-
-
-
-
-
-
 Как должны управляться зависимости?
 
 A) Явно объявлены и изолированы (requirements.txt, package.json)
@@ -224,12 +158,6 @@ D) Загружаются при каждом запросе
 ---
 
 ## Question 12: Admin Processes
-
-
-
-
-
-
 
 Как выполняются административные задачи (миграции)?
 
@@ -245,12 +173,6 @@ D) Отдельное приложение с другим кодом
 
 ## Question 13: Config Test
 
-
-
-
-
-
-
 Какой тест проверяет правильность хранения конфигурации?
 
 A) Используется YAML формат
@@ -264,12 +186,6 @@ D) Codebase можно сделать open-source без раскрытия cred
 ---
 
 ## Question 14: Backing Service Change
-
-
-
-
-
-
 
 Что нужно изменить для смены PostgreSQL на другой инстанс?
 
@@ -285,12 +201,6 @@ D) Код приложения
 
 ## Question 15: Stateless Principle
 
-
-
-
-
-
-
 Где должно храниться состояние сессии пользователя?
 
 A) В локальных файлах
@@ -304,11 +214,6 @@ D) В памяти процесса
 ---
 
 ## Question 16: Disposability
-
-
-
-
-
 
 Что означает принцип Disposability?
 
@@ -324,11 +229,6 @@ D) Использовать disposable VMs
 
 ## Question 17: Dev/Prod Parity
 
-
-
-
-
-
 Почему важна Dev/Prod Parity?
 
 A) Для экономии
@@ -342,11 +242,6 @@ D) Для security
 ---
 
 ## Question 18: Port Binding
-
-
-
-
-
 
 Что означает Port Binding?
 
@@ -362,11 +257,6 @@ D) Только HTTPS
 
 ## Question 19: Concurrency
 
-
-
-
-
-
 Как масштабировать по принципу Concurrency?
 
 A) Через threads только
@@ -380,11 +270,6 @@ D) Через bigger instances
 ---
 
 ## Question 20: Build/Release/Run
-
-
-
-
-
 
 Какие три стадии в Build, Release, Run?
 
@@ -437,4 +322,5 @@ D) Build (compile), Release (config), Run (execute)
 | **< 8 (<50%)** | 📚 Нужно повторить |
 
 ---
+
 

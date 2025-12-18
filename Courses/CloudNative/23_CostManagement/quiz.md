@@ -5,12 +5,6 @@
 
 ## Question 1: Spot Instances
 
-
-
-
-
-
-
 Какой discount можно получить с Spot instances?
 
 A) До 100%
@@ -24,12 +18,6 @@ D) До 90%
 ---
 
 ## Question 2: Reserved vs Savings Plans
-
-
-
-
-
-
 
 Какое преимущество Savings Plans над Reserved Instances?
 
@@ -45,12 +33,6 @@ D) Нет commitment
 
 ## Question 3: S3 Storage Class
 
-
-
-
-
-
-
 Какой storage class самый дешёвый для архивных данных?
 
 A) Glacier Deep Archive
@@ -64,12 +46,6 @@ D) Standard
 ---
 
 ## Question 4: Right-Sizing
-
-
-
-
-
-
 
 Что такое right-sizing?
 
@@ -85,12 +61,6 @@ D) Соответствие ресурсов фактическому испол
 
 ## Question 5: Cost Visibility
 
-
-
-
-
-
-
 Что необходимо для cost allocation по проектам/командам?
 
 A) Reserved Instances
@@ -104,11 +74,6 @@ D) Tags на ресурсах
 ---
 
 ## Question 6: Cost Explorer
-
-
-
-
-
 
 Что позволяет Cost Explorer?
 
@@ -124,11 +89,6 @@ D) Визуализация, анализ и forecasting costs
 
 ## Question 7: Budgets
 
-
-
-
-
-
 Для чего используются AWS Budgets?
 
 A) Только для reports
@@ -142,11 +102,6 @@ D) Только для billing
 ---
 
 ## Question 8: Cost Anomaly Detection
-
-
-
-
-
 
 Что делает Cost Anomaly Detection?
 
@@ -162,11 +117,6 @@ D) Создаёт бюджеты
 
 ## Question 9: Compute Optimizer
 
-
-
-
-
-
 Что рекомендует Compute Optimizer?
 
 A) Только network
@@ -180,11 +130,6 @@ D) Только storage
 ---
 
 ## Question 10: Trusted Advisor
-
-
-
-
-
 
 Какие проверки включает Trusted Advisor?
 
@@ -200,11 +145,6 @@ D) Только limits
 
 ## Question 11: S3 Intelligent-Tiering
 
-
-
-
-
-
 Как работает S3 Intelligent-Tiering?
 
 A) Только для large objects
@@ -218,11 +158,6 @@ D) Автоматическое перемещение objects между tiers 
 ---
 
 ## Question 12: Instance Scheduler
-
-
-
-
-
 
 Что делает AWS Instance Scheduler?
 
@@ -238,11 +173,6 @@ D) Автоматический start/stop EC2 и RDS по расписанию
 
 ## Question 13: Cost Categories
 
-
-
-
-
-
 Для чего используются Cost Categories?
 
 A) Только для reports
@@ -256,11 +186,6 @@ D) Только для billing
 ---
 
 ## Question 14: RI Coverage
-
-
-
-
-
 
 Что показывает RI Coverage report?
 
@@ -276,11 +201,6 @@ D) RI inventory
 
 ## Question 15: Graviton
 
-
-
-
-
-
 Какая экономия от AWS Graviton processors?
 
 A) Нет экономии
@@ -294,11 +214,6 @@ D) 1%
 ---
 
 ## Question 16: Data Transfer Costs
-
-
-
-
-
 
 Как минимизировать data transfer costs?
 
@@ -314,11 +229,6 @@ D) VPC Endpoints, same AZ, CloudFront, compression
 
 ## Question 17: Billing Conductor
 
-
-
-
-
-
 Для чего используется AWS Billing Conductor?
 
 A) Custom billing для resellers и showback/chargeback
@@ -332,11 +242,6 @@ D) Только для invoices
 ---
 
 ## Question 18: Commitment Discounts
-
-
-
-
-
 
 Какие типы commitment discounts в AWS?
 
@@ -352,11 +257,6 @@ D) Reserved Instances, Savings Plans
 
 ## Question 19: Unused Resources
 
-
-
-
-
-
 Как находить unused resources?
 
 A) Manually
@@ -370,11 +270,6 @@ D) Только через console
 ---
 
 ## Question 20: FinOps
-
-
-
-
-
 
 Что такое FinOps?
 
@@ -416,3 +311,4 @@ D) Только budgeting
 | 20 | A | FinOps: collaboration engineering и finance |
 
 ---
+

@@ -6,12 +6,6 @@
 
 ## Question 1: Historic Present
 
-
-
-
-
-
-
 Which sentence uses Historic Present appropriately?
 
 A) "I am walking to work every day." (describing routine)
@@ -25,12 +19,6 @@ D) "So I'm at the store, and this guy comes up to me..." (telling a story)
 ---
 
 ## Question 2: Effect of Historic Present
-
-
-
-
-
-
 
 The Historic Present creates what effect in storytelling?
 
@@ -46,12 +34,6 @@ D) Formality and distance
 
 ## Question 3: Academic Tense Choice
 
-
-
-
-
-
-
 "Smith (2010) argues that climate change is accelerating." The present tense suggests:
 
 A) The argument is being made right now
@@ -65,12 +47,6 @@ D) Climate change started in 2010
 ---
 
 ## Question 4: Academic Distancing
-
-
-
-
-
-
 
 Which sentence creates the most NEUTRAL stance toward the cited research?
 
@@ -86,12 +62,6 @@ D) "Jones proved that the theory was correct."
 
 ## Question 5: Progressive as Attitude
 
-
-
-
-
-
-
 "You're always leaving your things everywhere!" The progressive here expresses:
 
 A) A fact about ongoing behavior
@@ -105,12 +75,6 @@ D) Praise for consistency
 ---
 
 ## Question 6: Progressive for Politeness
-
-
-
-
-
-
 
 Which request is MOST polite?
 
@@ -126,12 +90,6 @@ D) "I want to ask you something."
 
 ## Question 7: Past Perfect Function
 
-
-
-
-
-
-
 "When I arrived, she had already left." The Past Perfect here:
 
 A) Is incorrect and should be Simple Past
@@ -145,12 +103,6 @@ D) Expresses a hypothetical situation
 ---
 
 ## Question 8: Optional Past Perfect
-
-
-
-
-
-
 
 When is Past Perfect OPTIONAL?
 
@@ -166,12 +118,6 @@ D) After "when" with unclear sequence
 
 ## Question 9: Will Be -ing
 
-
-
-
-
-
-
 "Will you be using the car tonight?" compared to "Will you use the car tonight?" is:
 
 A) Softer and less intrusive
@@ -185,12 +131,6 @@ D) More grammatically correct
 ---
 
 ## Question 10: Future in Time Clauses
-
-
-
-
-
-
 
 Choose the correct sentence:
 
@@ -206,12 +146,6 @@ D) "I call you when I will arrive."
 
 ## Question 11: Reported Speech Backshift
 
-
-
-
-
-
-
 "Water boils at 100 degrees," the teacher said. The best reported form is:
 
 A) The teacher said water boiled at 100 degrees. (only)
@@ -225,12 +159,6 @@ D) Either is acceptable since it's a universal truth.
 ---
 
 ## Question 12: Foreground vs Background
-
-
-
-
-
-
 
 In "The sun was setting when he reached the top," which is foreground?
 
@@ -246,12 +174,6 @@ D) Both are foreground
 
 ## Question 13: Tense for Distance
 
-
-
-
-
-
-
 Which creates more emotional DISTANCE from the event?
 
 A) "He realized he lost his wallet."
@@ -265,12 +187,6 @@ D) "He realized he had lost his wallet."
 ---
 
 ## Question 14: Present Continuous for Future
-
-
-
-
-
-
 
 "I'm meeting John at 6" implies:
 
@@ -286,12 +202,6 @@ D) An external timetable
 
 ## Question 15: Present Simple for Future
 
-
-
-
-
-
-
 "The train leaves at 8 pm" uses Present Simple because:
 
 A) Trains always leave at 8 pm
@@ -305,12 +215,6 @@ D) The speaker is uncertain
 ---
 
 ## Question 16: Narrative Tense Mixing
-
-
-
-
-
-
 
 In conversational storytelling, mixing Historic Present with past tenses is:
 
@@ -326,12 +230,6 @@ D) A sign of non-native speaker
 
 ## Question 17: Stylistic Choice
 
-
-
-
-
-
-
 "Jones (2022) claimed that..." vs "Jones (2022) argues that..." The difference is:
 
 A) Past = neutral report; Present = endorsement
@@ -345,12 +243,6 @@ D) Past vs Present = formal vs informal
 ---
 
 ## Question 18: Progressive Subjectivity
-
-
-
-
-
-
 
 "Rain was falling" vs "Rain fell" — the Progressive version:
 
@@ -366,12 +258,6 @@ D) Indicates the rain stopped
 
 ## Question 19: Creating Engagement
 
-
-
-
-
-
-
 To make a story more engaging in casual speech, you should:
 
 A) Use Past Perfect for all events
@@ -385,12 +271,6 @@ D) Use only Past Simple throughout
 ---
 
 ## Question 20: Russian Interference
-
-
-
-
-
-
 
 Which error is typical of Russian speakers with tenses?
 
@@ -443,4 +323,5 @@ D) Using "will" after "when" and "if"
 | **Below 10 (<50%)** | 📚 Needs work | Consider more practice with C1 tense materials before proceeding. |
 
 ---
+
 

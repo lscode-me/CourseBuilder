@@ -6,11 +6,6 @@
 
 ## Question 1: Base64 назначение
 
-
-
-
-
-
 Для чего используется Base64?
 
 A) Хэширование
@@ -24,11 +19,6 @@ D) Сжатие данных
 ---
 
 ## Question 2: Base64 символы
-
-
-
-
-
 
 Сколько символов использует стандартный Base64?
 
@@ -44,11 +34,6 @@ D) 64
 
 ## Question 3: Base64 размер
 
-
-
-
-
-
 На сколько увеличивается размер данных при Base64 кодировании?
 
 A) ~50%
@@ -62,11 +47,6 @@ D) ~100%
 ---
 
 ## Question 4: Base64 padding
-
-
-
-
-
 
 Что означает символ `=` в конце Base64 строки?
 
@@ -82,11 +62,6 @@ D) Padding для выравнивания
 
 ## Question 5: URL encoding
 
-
-
-
-
-
 Как кодируется пробел в URL?
 
 A) `\ `
@@ -100,11 +75,6 @@ D) `%10`
 ---
 
 ## Question 6: URL-safe Base64
-
-
-
-
-
 
 Какие символы используются в URL-safe Base64 вместо `+/`?
 
@@ -120,11 +90,6 @@ D) `*&`
 
 ## Question 7: Python base64
 
-
-
-
-
-
 Как закодировать строку в Base64 в Python?
 
 A) base64.b64encode("text".encode())
@@ -138,11 +103,6 @@ D) `encode64("text")`
 ---
 
 ## Question 8: urlencode
-
-
-
-
-
 
 Какая функция Python кодирует параметры URL?
 
@@ -158,11 +118,6 @@ D) `url.encode(params)`
 
 ## Question 9: MIME type JSON
 
-
-
-
-
-
 Какой MIME type у JSON?
 
 A) `json/text`
@@ -176,11 +131,6 @@ D) application/json
 ---
 
 ## Question 10: Data URL
-
-
-
-
-
 
 Как начинается Data URL для PNG изображения?
 
@@ -196,11 +146,6 @@ D) `image:data/png;`
 
 ## Question 11: Content-Type charset
 
-
-
-
-
-
 Как указать UTF-8 в Content-Type?
 
 A) `text/html; encoding=utf-8`
@@ -214,11 +159,6 @@ D) text/html; charset=utf-8
 ---
 
 ## Question 12: Процент-кодирование
-
-
-
-
-
 
 Как закодировать символ `&` в URL?
 
@@ -234,11 +174,6 @@ D) `%25`
 
 ## Question 13: JWT
 
-
-
-
-
-
 В каком формате закодированы части JWT токена?
 
 A) Hex
@@ -252,11 +187,6 @@ D) Base64 URL-safe
 ---
 
 ## Question 14: multipart/form-data
-
-
-
-
-
 
 Для чего используется multipart/form-data?
 
@@ -272,11 +202,6 @@ D) Для сжатия форм
 
 ## Question 15: Безопасность кодирования
 
-
-
-
-
-
 Является ли Base64 шифрованием?
 
 A) Нет, это только кодирование, данные легко декодировать
@@ -290,11 +215,6 @@ D) Зависит от данных
 ---
 
 ## Question 16: Base32
-
-
-
-
-
 
 Какие символы использует Base32?
 
@@ -310,11 +230,6 @@ D) 0-9 и A-F
 
 ## Question 17: quote/unquote
 
-
-
-
-
-
 Какие функции Python кодируют/декодируют отдельную строку для URL?
 
 A) url_encode/url_decode
@@ -328,11 +243,6 @@ D) escape/unescape
 ---
 
 ## Question 18: Content-Disposition inline
-
-
-
-
-
 
 Что означает `Content-Disposition: inline`?
 
@@ -348,11 +258,6 @@ D) Показать файл в браузере
 
 ## Question 19: multipart boundary
 
-
-
-
-
-
 Для чего нужен boundary в multipart/form-data?
 
 A) Для разделения частей формы
@@ -366,11 +271,6 @@ D) Для подсчёта размера
 ---
 
 ## Question 20: parse_qs
-
-
-
-
-
 
 Что делает функция `urllib.parse.parse_qs()`?
 
@@ -423,4 +323,5 @@ D) Парсит query string в словарь
 | **Менее 7 правильных (<47%)** | 📚 Нужно повторить | Рекомендуется перечитать лекцию. |
 
 ---
+
 

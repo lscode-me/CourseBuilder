@@ -6,12 +6,6 @@
 
 ## Question 1: Epistemic vs Deontic
 
-
-
-
-
-
-
 In "She must be tired," what does "must" express?
 
 A) Obligation — she is required to be tired
@@ -25,12 +19,6 @@ D) Ability — she has the capacity to be tired
 ---
 
 ## Question 2: Certainty Scale
-
-
-
-
-
-
 
 Which sentence expresses the HIGHEST certainty?
 
@@ -46,12 +34,6 @@ D) She might be at home.
 
 ## Question 3: Must vs Have to
 
-
-
-
-
-
-
 Which sentence expresses EXTERNAL obligation (a rule)?
 
 A) I have to wear a uniform at work.
@@ -65,12 +47,6 @@ D) I must call my mother.
 ---
 
 ## Question 4: Don't Have to vs Mustn't
-
-
-
-
-
-
 
 What is the difference between "You don't have to come" and "You mustn't come"?
 
@@ -86,12 +62,6 @@ D) "Don't have to" is formal; "Mustn't" is informal
 
 ## Question 5: Politeness Level
 
-
-
-
-
-
-
 Which request is MOST polite?
 
 A) Can you open the window?
@@ -105,12 +75,6 @@ D) Open the window.
 ---
 
 ## Question 6: Hedging
-
-
-
-
-
-
 
 Which sentence uses hedging appropriately for academic writing?
 
@@ -126,12 +90,6 @@ D) This causes cancer.
 
 ## Question 7: Modal + Perfect
 
-
-
-
-
-
-
 "You should have called me." What does this express?
 
 A) Criticism — you didn't call but should have
@@ -145,12 +103,6 @@ D) Ability to call in the past
 ---
 
 ## Question 8: Past Deduction
-
-
-
-
-
-
 
 "He isn't here. He must have ___."
 
@@ -166,12 +118,6 @@ D) leaving
 
 ## Question 9: Can vs Could for Past
 
-
-
-
-
-
-
 Which sentence is correct for describing a specific achievement in the past?
 
 A) Yesterday I can fix the computer.
@@ -185,12 +131,6 @@ D) Yesterday I could fix the computer.
 ---
 
 ## Question 10: Russian Interference
-
-
-
-
-
-
 
 Which sentence contains a typical error by Russian speakers?
 
@@ -206,12 +146,6 @@ D) I must to call him.
 
 ## Question 11: Modal Forms
 
-
-
-
-
-
-
 Which sentence is grammatically INCORRECT?
 
 A) He musts leave now.
@@ -225,12 +159,6 @@ D) You should try it.
 ---
 
 ## Question 12: Could Have
-
-
-
-
-
-
 
 "You could have helped me!" expresses:
 
@@ -246,12 +174,6 @@ D) Past ability without action (complaint/reproach)
 
 ## Question 13: Needn't Have vs Didn't Need To
 
-
-
-
-
-
-
 "You needn't have brought a gift" means:
 
 A) You didn't bring a gift (it wasn't necessary)
@@ -265,12 +187,6 @@ D) You forgot to bring a gift
 ---
 
 ## Question 14: Will vs Would
-
-
-
-
-
-
 
 Which sentence uses "would" for a POLITE REQUEST?
 
@@ -286,12 +202,6 @@ D) Would you sign here, please?
 
 ## Question 15: Shall
 
-
-
-
-
-
-
 "Shall I open the window?" is:
 
 A) A command
@@ -305,12 +215,6 @@ D) A prediction
 ---
 
 ## Question 16: May vs Might
-
-
-
-
-
-
 
 Which is more FORMAL and suggests higher probability?
 
@@ -326,12 +230,6 @@ D) They are identical.
 
 ## Question 17: Would for Tentative
 
-
-
-
-
-
-
 "I would think we need to change our approach" — why use "would"?
 
 A) To refer to the past
@@ -345,12 +243,6 @@ D) It's incorrect; should be "I think"
 ---
 
 ## Question 18: Can't Have
-
-
-
-
-
-
 
 "She can't have said that!" expresses:
 
@@ -366,12 +258,6 @@ D) I believe it's impossible that she said it
 
 ## Question 19: Double Modal Error
 
-
-
-
-
-
-
 Which sentence is incorrect in standard English?
 
 A) I might be able to help.
@@ -385,12 +271,6 @@ D) I will can come tomorrow.
 ---
 
 ## Question 20: Softening
-
-
-
-
-
-
 
 Which is the SOFTEST way to say "You're wrong"?
 
@@ -445,4 +325,5 @@ D) You may be wrong.
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Модальные глаголы требуют серьёзного внимания. Изучите лекцию заново. |
 
 ---
+
 

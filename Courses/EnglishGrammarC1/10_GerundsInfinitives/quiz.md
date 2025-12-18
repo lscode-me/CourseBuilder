@@ -6,12 +6,6 @@
 
 ## Question 1: Verb + Gerund
 
-
-
-
-
-
-
 "I enjoy ___."
 
 A) swim
@@ -25,12 +19,6 @@ D) swimming
 ---
 
 ## Question 2: Verb + Infinitive
-
-
-
-
-
-
 
 "She decided ___."
 
@@ -46,12 +34,6 @@ D) leaving
 
 ## Question 3: Stop (Gerund)
 
-
-
-
-
-
-
 "I stopped smoking" means:
 
 A) I started smoking
@@ -65,12 +47,6 @@ D) I considered smoking
 ---
 
 ## Question 4: Stop (Infinitive)
-
-
-
-
-
-
 
 "I stopped to smoke" means:
 
@@ -86,12 +62,6 @@ D) I finished my cigarette
 
 ## Question 5: Remember
 
-
-
-
-
-
-
 "I remember ___ him at the party." (I met him, I remember it)
 
 A) to meet
@@ -105,12 +75,6 @@ D) meet
 ---
 
 ## Question 6: Remember
-
-
-
-
-
-
 
 "Remember ___ the door." (Don't forget to do this)
 
@@ -126,12 +90,6 @@ D) locked
 
 ## Question 7: Preposition + Gerund
 
-
-
-
-
-
-
 "I'm interested in ___."
 
 A) to learn
@@ -145,12 +103,6 @@ D) learn
 ---
 
 ## Question 8: Look Forward To
-
-
-
-
-
-
 
 "I look forward to ___ you."
 
@@ -166,12 +118,6 @@ D) see
 
 ## Question 9: Be Used To
 
-
-
-
-
-
-
 "I'm used to ___ early."
 
 A) waking up
@@ -185,12 +131,6 @@ D) wake up
 ---
 
 ## Question 10: Worth
-
-
-
-
-
-
 
 "This book is worth ___."
 
@@ -206,12 +146,6 @@ D) to read
 
 ## Question 11: Suggest
 
-
-
-
-
-
-
 "I suggest ___ a break."
 
 A) take
@@ -225,12 +159,6 @@ D) to take
 ---
 
 ## Question 12: Try (Experiment)
-
-
-
-
-
-
 
 "Try ___ more salt." (experiment)
 
@@ -246,12 +174,6 @@ D) adding
 
 ## Question 13: Try (Attempt)
 
-
-
-
-
-
-
 "I tried ___ the door, but it was locked." (attempt)
 
 A) opening
@@ -265,12 +187,6 @@ D) open
 ---
 
 ## Question 14: Verb + Object + Infinitive
-
-
-
-
-
-
 
 "She asked me ___."
 
@@ -286,12 +202,6 @@ D) helping
 
 ## Question 15: Allow (No Object)
 
-
-
-
-
-
-
 "They don't allow ___ here."
 
 A) to smoke
@@ -305,12 +215,6 @@ D) smoking
 ---
 
 ## Question 16: Allow (With Object)
-
-
-
-
-
-
 
 "They don't allow us ___."
 
@@ -326,12 +230,6 @@ D) smoked
 
 ## Question 17: Mean (Involve)
 
-
-
-
-
-
-
 "This ___ working weekends."
 
 A) mean
@@ -345,12 +243,6 @@ D) meaning
 ---
 
 ## Question 18: Mean (Intend)
-
-
-
-
-
-
 
 "I didn't mean ___ you."
 
@@ -366,12 +258,6 @@ D) hurting
 
 ## Question 19: Perfect Infinitive
 
-
-
-
-
-
-
 "She seems ___ the answer."
 
 A) to forgot
@@ -385,12 +271,6 @@ D) having forgotten
 ---
 
 ## Question 20: Passive Gerund
-
-
-
-
-
-
 
 "I hate ___."
 
@@ -443,4 +323,5 @@ D) ignored
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Требуется изучить и запомнить verb patterns. |
 
 ---
+
 

@@ -6,7 +6,6 @@
 
 ## Question 1: Роль C&S
 
-
 Какова основная роль Customer & Services в аутсорсинговой IT-компании?
 
 A) Только техническая разработка
@@ -20,7 +19,6 @@ D) Только HR функции
 ---
 
 ## Question 2: NPS расчёт
-
 
 Как рассчитывается NPS?
 
@@ -36,7 +34,6 @@ D) % Passives + % Detractors
 
 ## Question 3: ITIL принцип
 
-
 Какой принцип ITIL 4 говорит "делать только необходимое"?
 
 A) Start where you are
@@ -50,7 +47,6 @@ D) Keep it simple
 ---
 
 ## Question 4: Incident vs Problem
-
 
 Чем отличается Problem Management от Incident Management?
 
@@ -66,7 +62,6 @@ D) Problem быстрее решает
 
 ## Question 5: SLA
 
-
 Что такое SLA?
 
 A) Формальное соглашение об уровне сервиса между провайдером и клиентом
@@ -80,7 +75,6 @@ D) Маркетинговый материал
 ---
 
 ## Question 6: Проактивная коммуникация
-
 
 Что означает проактивная коммуникация?
 
@@ -96,7 +90,6 @@ D) Отвечать когда спросят
 
 ## Question 7: SPADE
 
-
 Для чего используется framework SPADE?
 
 A) Финансовый анализ
@@ -110,7 +103,6 @@ D) Оценка бюджета
 ---
 
 ## Question 8: SBI Feedback
-
 
 Что означает SBI в технике обратной связи?
 
@@ -126,7 +118,6 @@ D) System, Bug, Issue
 
 ## Question 9: Utilization
 
-
 Как рассчитывается Billable Utilization?
 
 A) Total hours / Available hours
@@ -140,7 +131,6 @@ D) Vacation / Working hours
 ---
 
 ## Question 10: Gross Margin target
-
 
 Какой target Gross Margin для аутсорсинга?
 
@@ -156,7 +146,6 @@ D) 80-90%
 
 ## Question 11: T&M риск
 
-
 В контракте Time & Materials кто несёт больший риск?
 
 A) Никто
@@ -170,7 +159,6 @@ D) Provider
 ---
 
 ## Question 12: Fixed Price риск
-
 
 В контракте Fixed Price кто несёт больший риск?
 
@@ -186,7 +174,6 @@ D) Client
 
 ## Question 13: Upsell vs Cross-sell
 
-
 Что такое Upsell?
 
 A) Продажа большего объёма того же сервиса
@@ -200,7 +187,6 @@ D) Отказ от клиента
 ---
 
 ## Question 14: Land and Expand
-
 
 Что означает стратегия "Land and Expand"?
 
@@ -216,7 +202,6 @@ D) Сразу уходить
 
 ## Question 15: Risk Score
 
-
 Как рассчитывается Risk Score?
 
 A) Likelihood + Impact
@@ -230,7 +215,6 @@ D) Likelihood / Impact
 ---
 
 ## Question 16: RCA цель
-
 
 Какова цель Root Cause Analysis?
 
@@ -246,7 +230,6 @@ D) Наказать команду
 
 ## Question 17: Escalation timing
 
-
 Когда лучше эскалировать?
 
 A) Только после провала
@@ -260,7 +243,6 @@ D) В последний момент
 ---
 
 ## Question 18: Burnout prevention
-
 
 Какой workload считается sustainable pace?
 
@@ -276,7 +258,6 @@ D) 40 часов в неделю
 
 ## Question 19: Bus Factor
 
-
 Что такое Bus Factor?
 
 A) Количество багов
@@ -290,7 +271,6 @@ D) Скорость разработки
 ---
 
 ## Question 20: DM vs TL
-
 
 Что входит в зону DM, а не TL?
 
@@ -306,7 +286,6 @@ D) Code review
 
 ## Question 21: Capacity Gap
 
-
 Что делать если Demand > Capacity?
 
 A) Игнорировать
@@ -320,7 +299,6 @@ D) Reduce scope, add resources, extend timeline
 ---
 
 ## Question 22: NRR
-
 
 Что означает NRR > 100%?
 
@@ -336,7 +314,6 @@ D) Убытки
 
 ## Question 23: RACI Accountable
 
-
 Сколько человек может быть Accountable для одной задачи?
 
 A) Ровно один
@@ -350,7 +327,6 @@ D) Сколько угодно
 ---
 
 ## Question 24: Status Report
-
 
 Что должно быть в начале Weekly Status Report?
 
@@ -366,7 +342,6 @@ D) Список задач
 
 ## Question 25: Saying No
 
-
 Как правильно сказать "нет" клиенту?
 
 A) "Acknowledge + Explain + Alternative"
@@ -380,7 +355,6 @@ D) "Это не моя работа"
 ---
 
 ## Question 26: Warning Signs
-
 
 Что является сигналом недовольства клиента?
 
@@ -396,7 +370,6 @@ D) Приглашения на митинги
 
 ## Question 27: P&L
 
-
 Что такое P&L?
 
 A) Profit & Loss — отчёт о прибылях и убытках
@@ -410,7 +383,6 @@ D) HR документ
 ---
 
 ## Question 28: Herzberg Motivators
-
 
 Что мотивирует разработчиков больше зарплаты?
 
@@ -426,7 +398,6 @@ D) Строгий контроль
 
 ## Question 29: 5 Whys
 
-
 Для чего используется метод 5 Whys?
 
 A) Оценка бюджета
@@ -440,7 +411,6 @@ D) Выявление корневой причины проблемы
 ---
 
 ## Question 30: Onboarding metric
-
 
 Что измеряет Time to First Value?
 
@@ -456,7 +426,6 @@ D) Время до увольнения
 
 ## Question 31: HEARD Framework
 
-
 Какой первый шаг при работе с angry client по HEARD?
 
 A) Apologize
@@ -470,7 +439,6 @@ D) Diagnose
 ---
 
 ## Question 32: Traffic Light Status
-
 
 Когда статус проекта YELLOW?
 
@@ -486,7 +454,6 @@ D) Полный провал
 
 ## Question 33: Three 9s
 
-
 Сколько downtime допускает 99.9% availability в месяц?
 
 A) 7 часов
@@ -500,7 +467,6 @@ D) 4 минуты
 ---
 
 ## Question 34: Team Composition
-
 
 Какое типичное соотношение Dev:QA?
 
@@ -516,7 +482,6 @@ D) 3-5:1
 
 ## Question 35: Service Improvement Plan
 
-
 Какова главная цель SIP?
 
 A) Демонстрировать value и создать основу для расширения
@@ -530,7 +495,6 @@ D) Снизить цену
 ---
 
 ## Question 36: Lifecycle фазы
-
 
 Какой правильный порядок lifecycle клиента?
 
@@ -546,7 +510,6 @@ D) Acquire → Onboard → Deliver → Grow → Renew
 
 ## Question 37: Performance Review
 
-
 Какова главная цель Performance Review?
 
 A) Найти повод для увольнения
@@ -560,7 +523,6 @@ D) Сравнить людей
 ---
 
 ## Question 38: Client Satisfaction Signal
-
 
 Что означает High Satisfaction + Low Contact Frequency?
 
@@ -576,7 +538,6 @@ D) Growth Ready
 
 ## Question 39: Scope Creep Protection
 
-
 Как защитить margin от scope creep?
 
 A) Игнорировать запросы
@@ -590,7 +551,6 @@ D) Change Request process с дополнительной оплатой
 ---
 
 ## Question 40: Blameless Culture
-
 
 Что означает Blameless culture?
 
@@ -673,5 +633,6 @@ D) Все виноваты
 Удачи! 🎓
 
 ---
+
 
 

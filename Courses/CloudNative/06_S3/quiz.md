@@ -5,12 +5,6 @@
 
 ## Question 1: Durability
 
-
-
-
-
-
-
 Какова durability S3 Standard?
 
 A) 99.9%
@@ -24,12 +18,6 @@ D) 100%
 ---
 
 ## Question 2: Storage Classes
-
-
-
-
-
-
 
 Какой storage class рекомендуется для данных с неизвестным паттерном доступа?
 
@@ -45,12 +33,6 @@ D) S3 Standard
 
 ## Question 3: Object Size
 
-
-
-
-
-
-
 Какой максимальный размер одного объекта в S3?
 
 A) 5 TB
@@ -64,12 +46,6 @@ D) 5 GB
 ---
 
 ## Question 4: Bucket Names
-
-
-
-
-
-
 
 Какое утверждение о bucket names ВЕРНО?
 
@@ -85,12 +61,6 @@ D) Могут быть изменены после создания
 
 ## Question 5: Versioning
 
-
-
-
-
-
-
 Что происходит при "удалении" объекта в bucket с включённым versioning?
 
 A) Удаляются все версии объекта
@@ -104,12 +74,6 @@ D) Versioning автоматически отключается
 ---
 
 ## Question 6: Encryption
-
-
-
-
-
-
 
 Какой тип шифрования S3 использует по умолчанию с 2023 года?
 
@@ -125,12 +89,6 @@ D) SSE-KMS
 
 ## Question 7: Glacier Retrieval
 
-
-
-
-
-
-
 Какое минимальное время retrieval для S3 Glacier Deep Archive (Standard retrieval)?
 
 A) 1-5 минут
@@ -144,12 +102,6 @@ D) 1-12 часов
 ---
 
 ## Question 8: Lifecycle
-
-
-
-
-
-
 
 Что можно настроить через S3 Lifecycle Policy?
 
@@ -165,12 +117,6 @@ D) Только репликацию
 
 ## Question 9: Block Public Access
 
-
-
-
-
-
-
 На каком уровне можно настроить Block Public Access?
 
 A) На уровне bucket и аккаунта
@@ -184,12 +130,6 @@ D) Только на уровне bucket
 ---
 
 ## Question 10: Presigned URLs
-
-
-
-
-
-
 
 Для чего используются Presigned URLs?
 
@@ -205,12 +145,6 @@ D) Для версионирования
 
 ## Question 11: Cross-Region Replication
 
-
-
-
-
-
-
 Что требуется для настройки S3 Cross-Region Replication?
 
 A) Versioning включён на source bucket
@@ -224,12 +158,6 @@ D) Только destination bucket
 ---
 
 ## Question 12: Multipart Upload
-
-
-
-
-
-
 
 Для файлов какого размера рекомендуется Multipart Upload?
 
@@ -245,12 +173,6 @@ D) > 50 MB
 
 ## Question 13: Pricing
 
-
-
-
-
-
-
 За что НЕ нужно платить в S3?
 
 A) PUT requests
@@ -264,12 +186,6 @@ D) Data transfer IN
 ---
 
 ## Question 14: S3 Select
-
-
-
-
-
-
 
 Что позволяет S3 Select?
 
@@ -285,12 +201,6 @@ D) Выбирать регион bucket
 
 ## Question 15: Event Notifications
 
-
-
-
-
-
-
 Куда S3 может отправлять event notifications?
 
 A) Только в Lambda
@@ -304,11 +214,6 @@ D) Только в SNS
 ---
 
 ## Question 16: Object Lock
-
-
-
-
-
 
 Что обеспечивает S3 Object Lock?
 
@@ -324,11 +229,6 @@ D) Версионирование
 
 ## Question 17: Cross-Region Replication
 
-
-
-
-
-
 Что требуется для S3 Cross-Region Replication?
 
 A) Versioning на обоих buckets
@@ -342,11 +242,6 @@ D) Только шифрование
 ---
 
 ## Question 18: Inventory
-
-
-
-
-
 
 Для чего используется S3 Inventory?
 
@@ -362,11 +257,6 @@ D) Для шифрования
 
 ## Question 19: Access Points
 
-
-
-
-
-
 Какое преимущество S3 Access Points?
 
 A) Дешевле хранение
@@ -380,11 +270,6 @@ D) Автоматическое шифрование
 ---
 
 ## Question 20: S3 Transfer Acceleration
-
-
-
-
-
 
 Как работает S3 Transfer Acceleration?
 
@@ -437,4 +322,5 @@ D) Использует CloudFront edge locations для ускорения uplo
 | **< 8 (<50%)** | 📚 Нужно повторить |
 
 ---
+
 

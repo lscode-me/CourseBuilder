@@ -6,12 +6,6 @@
 
 ## Question 1: MAKE vs DO
 
-
-
-
-
-
-
 Choose the correct collocation:
 
 A) have a mistake
@@ -25,12 +19,6 @@ D) make a mistake
 ---
 
 ## Question 2: Heavy vs Strong
-
-
-
-
-
-
 
 Choose the natural collocation:
 
@@ -46,12 +34,6 @@ D) big rain
 
 ## Question 3: Delexical TAKE
 
-
-
-
-
-
-
 Complete: "Let's ___ a break."
 
 A) make
@@ -65,12 +47,6 @@ D) take
 ---
 
 ## Question 4: Adverb-Adjective
-
-
-
-
-
-
 
 Choose the natural collocation:
 
@@ -86,12 +62,6 @@ D) deeply unlikely
 
 ## Question 5: Russian Calque
 
-
-
-
-
-
-
 "Делать фото" in English is:
 
 A) do a photo
@@ -105,12 +75,6 @@ D) have a photo
 ---
 
 ## Question 6: Preposition Collocation
-
-
-
-
-
-
 
 "Depend ___" — complete with the correct preposition:
 
@@ -126,12 +90,6 @@ D) by
 
 ## Question 7: Extreme Adjective
 
-
-
-
-
-
-
 "Very ___" is unnatural with which word?
 
 A) unique
@@ -145,12 +103,6 @@ D) important
 ---
 
 ## Question 8: Business Idiom
-
-
-
-
-
-
 
 "Think outside the box" means:
 
@@ -166,12 +118,6 @@ D) Move outside the office
 
 ## Question 9: HAVE Collocation
 
-
-
-
-
-
-
 Which is NOT a natural collocation with HAVE?
 
 A) have difficulty
@@ -185,12 +131,6 @@ D) have a decision
 ---
 
 ## Question 10: Binomial
-
-
-
-
-
-
 
 Which order is correct?
 
@@ -206,12 +146,6 @@ D) Both are equally common
 
 ## Question 11: Academic Collocation
 
-
-
-
-
-
-
 "___ conclusions" — the most formal option is:
 
 A) do conclusions
@@ -225,12 +159,6 @@ D) make conclusions
 ---
 
 ## Question 12: Intensifying Adverb
-
-
-
-
-
-
 
 "___ disappointed" — choose the natural collocation:
 
@@ -246,12 +174,6 @@ D) strongly disappointed
 
 ## Question 13: False Friend
 
-
-
-
-
-
-
 Russian "актуальный" (meaning current/relevant) translates as:
 
 A) real
@@ -265,12 +187,6 @@ D) actual
 ---
 
 ## Question 14: GIVE Collocation
-
-
-
-
-
-
 
 Which is natural?
 
@@ -286,12 +202,6 @@ D) give advice
 
 ## Question 15: Register Awareness
 
-
-
-
-
-
-
 "Kick the bucket" (meaning to die) is:
 
 A) Appropriate for a formal obituary
@@ -305,12 +215,6 @@ D) Informal/slang, inappropriate for formal contexts
 ---
 
 ## Question 16: Widely + Adjective
-
-
-
-
-
-
 
 Choose the natural collocation:
 
@@ -326,12 +230,6 @@ D) widely tired
 
 ## Question 17: Commit Collocation
 
-
-
-
-
-
-
 "Commit ___" is natural with:
 
 A) a decision
@@ -345,12 +243,6 @@ D) a crime
 ---
 
 ## Question 18: DO Collocation
-
-
-
-
-
-
 
 Which is correct with DO?
 
@@ -366,12 +258,6 @@ D) do a complaint
 
 ## Question 19: Deeply + Adjective
 
-
-
-
-
-
-
 "Deeply ___" is natural with:
 
 A) unlikely
@@ -385,12 +271,6 @@ D) successful
 ---
 
 ## Question 20: Collocation Error
-
-
-
-
-
-
 
 Which sentence has a collocation error?
 
@@ -443,4 +323,5 @@ D) They took action immediately.
 | **Below 10 (<50%)** | 📚 Needs work | Get a collocation dictionary and study systematically. |
 
 ---
+
 

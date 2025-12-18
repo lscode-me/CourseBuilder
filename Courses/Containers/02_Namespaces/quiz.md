@@ -6,12 +6,6 @@
 
 ## Question 1: Типы Namespaces
 
-
-
-
-
-
-
 Сколько типов namespaces поддерживает современное ядро Linux (5.6+)?
 
 A) 6
@@ -25,12 +19,6 @@ D) 10
 ---
 
 ## Question 2: Mount Namespace
-
-
-
-
-
-
 
 Какой флаг используется для создания mount namespace?
 
@@ -46,12 +34,6 @@ D) CLONE_NEWNS
 
 ## Question 3: PID Namespace
 
-
-
-
-
-
-
 Что произойдёт, если процесс PID 1 внутри PID namespace завершится?
 
 A) Ничего, namespace продолжит работать
@@ -65,12 +47,6 @@ D) Все процессы в namespace получат SIGKILL
 ---
 
 ## Question 4: Network Namespace
-
-
-
-
-
-
 
 Что верно для нового network namespace сразу после создания?
 
@@ -86,12 +62,6 @@ D) Он содержит все интерфейсы хост-системы
 
 ## Question 5: User Namespace
 
-
-
-
-
-
-
 Какое главное преимущество user namespace для контейнеров?
 
 A) Изоляция временных файлов
@@ -105,12 +75,6 @@ D) Автоматическое шифрование данных пользов
 ---
 
 ## Question 6: UTS Namespace
-
-
-
-
-
-
 
 Что изолирует UTS namespace?
 
@@ -126,12 +90,6 @@ D) Unix Terminal Settings
 
 ## Question 7: Системные вызовы
 
-
-
-
-
-
-
 Какой системный вызов используется для присоединения к существующему namespace?
 
 A) setns()
@@ -145,12 +103,6 @@ D) enter()
 ---
 
 ## Question 8: IPC Namespace
-
-
-
-
-
-
 
 Какие объекты изолирует IPC namespace?
 
@@ -166,12 +118,6 @@ D) Переменные окружения
 
 ## Question 9: veth пары
 
-
-
-
-
-
-
 Для чего используются veth-пары в контексте network namespaces?
 
 A) Для шифрования сетевого трафика
@@ -185,12 +131,6 @@ D) Для связи между network namespaces
 ---
 
 ## Question 10: Утилита unshare
-
-
-
-
-
-
 
 Какая команда создаст новый PID namespace с правильно работающим `ps`?
 
@@ -206,12 +146,6 @@ D) `unshare --pid --fork --mount-proc /bin/bash`
 
 ## Question 11: Хронология namespaces
 
-
-
-
-
-
-
 Какой namespace был добавлен первым в Linux?
 
 A) PID namespace
@@ -225,12 +159,6 @@ D) Network namespace
 ---
 
 ## Question 12: nsenter
-
-
-
-
-
-
 
 Для чего используется утилита `nsenter`?
 
@@ -246,12 +174,6 @@ D) Вход в существующие namespaces процесса
 
 ## Question 13: Просмотр namespaces
 
-
-
-
-
-
-
 Где находятся файлы namespaces процесса?
 
 A) /etc/ns/[PID]/
@@ -265,12 +187,6 @@ D) /var/run/ns/[PID]/
 ---
 
 ## Question 14: Cgroup Namespace
-
-
-
-
-
-
 
 Какова основная функция cgroup namespace?
 
@@ -286,12 +202,6 @@ D) Мониторинг ресурсов
 
 ## Question 15: Mount Propagation
 
-
-
-
-
-
-
 Какой тип mount propagation делает изменения локальными только для текущего namespace?
 
 A) MS_PRIVATE
@@ -305,12 +215,6 @@ D) MS_UNBINDABLE
 ---
 
 ## Question 16: User Namespace Mapping
-
-
-
-
-
-
 
 Что определяет файл `/proc/[PID]/uid_map`?
 
@@ -326,12 +230,6 @@ D) Соответствие между UID в namespace и на хосте
 
 ## Question 17: Time Namespace
 
-
-
-
-
-
-
 В какой версии ядра Linux появился time namespace?
 
 A) 5.0
@@ -345,12 +243,6 @@ D) 5.6
 ---
 
 ## Question 18: clone()
-
-
-
-
-
-
 
 Какой флаг НЕ относится к созданию namespaces?
 
@@ -366,12 +258,6 @@ D) CLONE_NEWPID
 
 ## Question 19: PID в разных namespaces
 
-
-
-
-
-
-
 Если процесс имеет PID 1 в своём namespace, какой у него PID на хосте?
 
 A) Отрицательное число
@@ -385,12 +271,6 @@ D) Тоже 1
 ---
 
 ## Question 20: Rootless Containers
-
-
-
-
-
-
 
 Какой namespace критически важен для работы rootless-контейнеров?
 
@@ -443,4 +323,5 @@ D) Mount namespace
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется внимательно перечитать лекцию и выполнить практические примеры. |
 
 ---
+
 

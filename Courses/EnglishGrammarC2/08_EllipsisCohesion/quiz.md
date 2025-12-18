@@ -6,12 +6,6 @@
 
 ## Question 1: Ellipsis Definition
 
-
-
-
-
-
-
 Ellipsis is:
 
 A) Changing sentence structure
@@ -25,12 +19,6 @@ D) Omitting words that are understood from context
 ---
 
 ## Question 2: Verbal Ellipsis
-
-
-
-
-
-
 
 Complete: "Can you swim?" — "Yes, I ___."
 
@@ -46,12 +34,6 @@ D) am
 
 ## Question 3: Substitution with ONE
 
-
-
-
-
-
-
 Complete: "I don't like this shirt. Show me another ___."
 
 A) shirt
@@ -65,12 +47,6 @@ D) that
 ---
 
 ## Question 4: SO for Clause Substitution
-
-
-
-
-
-
 
 "Will it rain?" — "I hope ___."
 
@@ -86,12 +62,6 @@ D) that
 
 ## Question 5: SO with Inversion
 
-
-
-
-
-
-
 "She's tall." — "___ is her brother."
 
 A) As well
@@ -105,12 +75,6 @@ D) Also
 ---
 
 ## Question 6: NEITHER Pattern
-
-
-
-
-
-
 
 "I can't sing." — "___ can I."
 
@@ -126,12 +90,6 @@ D) Either
 
 ## Question 7: Given-New Principle
 
-
-
-
-
-
-
 Information structure typically places:
 
 A) New information before given information
@@ -145,12 +103,6 @@ D) All important information at the beginning
 ---
 
 ## Question 8: Reference with Demonstratives
-
-
-
-
-
-
 
 "He made several suggestions. ___ were all rejected."
 
@@ -166,12 +118,6 @@ D) This
 
 ## Question 9: Discourse Marker
 
-
-
-
-
-
-
 "The data are inconclusive. ___, some patterns emerge."
 
 A) Consequently
@@ -185,12 +131,6 @@ D) However
 ---
 
 ## Question 10: Russian Interference
-
-
-
-
-
-
 
 Which shows typical Russian speaker over-repetition?
 
@@ -206,12 +146,6 @@ D) "I bought an interesting book to read."
 
 ## Question 11: End Weight
 
-
-
-
-
-
-
 Which follows the end-weight principle better?
 
 A) "That he would succeed was obvious to everyone."
@@ -225,12 +159,6 @@ D) Neither follows end weight.
 ---
 
 ## Question 12: Comparative Ellipsis
-
-
-
-
-
-
 
 "She works harder than I ___" — what's omitted?
 
@@ -246,12 +174,6 @@ D) do
 
 ## Question 13: Lexical Reference
 
-
-
-
-
-
-
 "A new study was published. The ___ focused on climate change."
 
 A) study
@@ -265,12 +187,6 @@ D) research
 ---
 
 ## Question 14: Topic Chain
-
-
-
-
-
-
 
 Which maintains better topic consistency?
 
@@ -286,12 +202,6 @@ D) Both are equally good.
 
 ## Question 15: Gapping
 
-
-
-
-
-
-
 "She plays tennis and he ___ golf."
 
 A) does
@@ -305,12 +215,6 @@ D) (nothing—verb omitted)
 ---
 
 ## Question 16: Pronoun Clarity
-
-
-
-
-
-
 
 "John saw Peter when he was leaving." This is:
 
@@ -326,12 +230,6 @@ D) Clear (obviously refers to John)
 
 ## Question 17: DO Substitution
 
-
-
-
-
-
-
 "He plays guitar, and so ___ his brother."
 
 A) has
@@ -345,12 +243,6 @@ D) is
 ---
 
 ## Question 18: Missing Marker
-
-
-
-
-
-
 
 "The results were significant. They support the hypothesis." Adding what would improve flow?
 
@@ -366,12 +258,6 @@ D) "The" before "results"
 
 ## Question 19: SUCH Reference
 
-
-
-
-
-
-
 "He showed great courage. ___ bravery should be recognized."
 
 A) That
@@ -385,12 +271,6 @@ D) The
 ---
 
 ## Question 20: Coordination Ellipsis
-
-
-
-
-
-
 
 "She bought bread and ___ butter."
 
@@ -443,4 +323,5 @@ D) did buy
 | **Below 10 (<50%)** | 📚 Needs work | Focus on basic patterns before tackling advanced cohesion. |
 
 ---
+
 

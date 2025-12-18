@@ -6,12 +6,6 @@
 
 ## Question 1: Articles
 
-
-
-
-
-
-
 Which sentence is correct?
 
 A) She is a beautiful woman.
@@ -25,12 +19,6 @@ D) She beautiful woman.
 ---
 
 ## Question 2: Missing "Be"
-
-
-
-
-
-
 
 Which sentence has a Russian interference error?
 
@@ -46,12 +34,6 @@ D) She seems intelligent.
 
 ## Question 3: "I Am Agree"
 
-
-
-
-
-
-
 Which is correct?
 
 A) I agree with you.
@@ -65,12 +47,6 @@ D) I have agree with you.
 ---
 
 ## Question 4: "Feel Myself"
-
-
-
-
-
-
 
 Which is correct?
 
@@ -86,12 +62,6 @@ D) I feel tired.
 
 ## Question 5: Dependent Prepositions
 
-
-
-
-
-
-
 "It depends ___ the weather."
 
 A) from
@@ -105,12 +75,6 @@ D) of
 ---
 
 ## Question 6: "Explain"
-
-
-
-
-
-
 
 Which is correct?
 
@@ -126,12 +90,6 @@ D) Can you explain me about this rule?
 
 ## Question 7: Present Perfect for Duration
 
-
-
-
-
-
-
 "I ___ here for 5 years."
 
 A) am living
@@ -145,12 +103,6 @@ D) live
 ---
 
 ## Question 8: Future After "When"
-
-
-
-
-
-
 
 Which is correct?
 
@@ -166,12 +118,6 @@ D) When I will arrive, I call you.
 
 ## Question 9: Word Order
 
-
-
-
-
-
-
 Which has correct word order?
 
 A) I bought a book yesterday.
@@ -185,12 +131,6 @@ D) I bought yesterday a book.
 ---
 
 ## Question 10: Uncountable Nouns
-
-
-
-
-
-
 
 Which is INCORRECT?
 
@@ -206,12 +146,6 @@ D) The advice was helpful.
 
 ## Question 11: False Friends - "Actual"
 
-
-
-
-
-
-
 "This is a very ___ problem." (meaning: current, relevant)
 
 A) actually
@@ -225,12 +159,6 @@ D) actual
 ---
 
 ## Question 12: Double Subject
-
-
-
-
-
-
 
 Which has a Russian interference error?
 
@@ -246,12 +174,6 @@ D) My brother works in a bank.
 
 ## Question 13: Since vs For
 
-
-
-
-
-
-
 "I have known him ___ 2015."
 
 A) during
@@ -265,12 +187,6 @@ D) since
 ---
 
 ## Question 14: Born
-
-
-
-
-
-
 
 Which is correct?
 
@@ -286,12 +202,6 @@ D) I was born in Moscow.
 
 ## Question 15: Make vs Do
 
-
-
-
-
-
-
 Which is correct?
 
 A) I did a mistake.
@@ -305,12 +215,6 @@ D) I made a mistake.
 ---
 
 ## Question 16: Conditional
-
-
-
-
-
-
 
 Which is correct?
 
@@ -326,12 +230,6 @@ D) If I would have time, I would help.
 
 ## Question 17: "Marry"
 
-
-
-
-
-
-
 Which is correct?
 
 A) She was married with John.
@@ -345,12 +243,6 @@ D) She married John.
 ---
 
 ## Question 18: Direct vs Polite
-
-
-
-
-
-
 
 Which is most appropriate when asking a stranger for directions?
 
@@ -366,12 +258,6 @@ D) Could you tell me where the station is, please?
 
 ## Question 19: "Listen"
 
-
-
-
-
-
-
 Which is correct?
 
 A) Listen at me carefully.
@@ -385,12 +271,6 @@ D) Listen on me carefully.
 ---
 
 ## Question 20: "Interested"
-
-
-
-
-
-
 
 Which is correct?
 
@@ -459,5 +339,6 @@ D) I'm interested in this topic.
 **Продолжайте практиковаться и удачи на пути к уровню C1!**
 
 ---
+
 
 

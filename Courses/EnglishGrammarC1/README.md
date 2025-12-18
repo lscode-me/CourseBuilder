@@ -87,6 +87,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │           English Grammar: B2+ → C1/C1+ Course                  │
 └─────────────────────────────────────────────────────────────────┘
@@ -170,6 +171,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки
@@ -178,12 +180,19 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения
+
 - **Theory** — грамматические правила и объяснения
+
 - **Examples** — примеры с контекстом
+
 - **Russian Interference** — типичные ошибки из-за русского
+
 - **Practice** — упражнения на закрепление
+
 - **Key Takeaways** — главные выводы
+
 - **Next Steps** — что изучить дальше
 
 ### Quiz
@@ -241,13 +250,17 @@ XX_ModuleName/
 ### Грамматические справочники
 
 - **"Advanced Grammar in Use"** by Martin Hewings — классика для C1
+
 - **"English Grammar in Use"** by Raymond Murphy — для повторения B2
+
 - **"Practical English Usage"** by Michael Swan — справочник нюансов
+
 - **"Cambridge Grammar of English"** by Carter & McCarthy — академический справочник
 
 ### Для русскоязычных
 
 - **"Почему так? Трудности английской грамматики"** — Н.К. Рябцева
+
 - **"A Practical Grammar of English for Russian Speakers"** — полезно для сравнения
 
 ### Онлайн-ресурсы
@@ -295,4 +308,5 @@ XX_ModuleName/
 **Последнее обновление:** Декабрь 2024
 
 ---
+
 

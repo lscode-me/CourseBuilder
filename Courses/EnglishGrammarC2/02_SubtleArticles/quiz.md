@@ -6,12 +6,6 @@
 
 ## Question 1: Generic Reference
 
-
-
-
-
-
-
 Choose the correct sentence:
 
 A) The climate changes are affecting the world.
@@ -25,12 +19,6 @@ D) A climate change is affecting the world.
 ---
 
 ## Question 2: Specified Abstract
-
-
-
-
-
-
 
 Choose the correct sentence:
 
@@ -46,12 +34,6 @@ D) A music of the Baroque period is complex.
 
 ## Question 3: Associative Reference
 
-
-
-
-
-
-
 Complete: "I bought a new laptop. ___ screen is excellent."
 
 A) The screen
@@ -65,12 +47,6 @@ D) A screen
 ---
 
 ## Question 4: Generic THE in Academic Writing
-
-
-
-
-
-
 
 In formal academic writing, which is acceptable for a generic statement?
 
@@ -86,12 +62,6 @@ D) A computer has revolutionized society.
 
 ## Question 5: THE + Adjective
 
-
-
-
-
-
-
 Choose the correct sentence:
 
 A) The poors need more support from government.
@@ -105,12 +75,6 @@ D) A poor needs more support from the government.
 ---
 
 ## Question 6: Abstract with Post-Modification
-
-
-
-
-
-
 
 Choose the correct sentence:
 
@@ -126,12 +90,6 @@ D) The knowledge she gained was valuable.
 
 ## Question 7: Category vs Instance
 
-
-
-
-
-
-
 Choose the GENERIC statement:
 
 A) The smartphones have become essential tools.
@@ -145,12 +103,6 @@ D) The smartphone on the table is ringing.
 ---
 
 ## Question 8: Zero Article with Subject
-
-
-
-
-
-
 
 Which is grammatically correct for a generic statement?
 
@@ -166,12 +118,6 @@ D) The happiness is important for health.
 
 ## Question 9: Academic Writing Convention
 
-
-
-
-
-
-
 In academic writing, which is most appropriate?
 
 A) Research suggests that the students learn better with feedback.
@@ -185,12 +131,6 @@ D) A research suggests that students learn better with feedback.
 ---
 
 ## Question 10: Limited Quantity
-
-
-
-
-
-
 
 "Did you bring ___ water we discussed?" — The speaker means:
 
@@ -206,12 +146,6 @@ D) the specific water they talked about
 
 ## Question 11: Multiple Correct Forms
 
-
-
-
-
-
-
 Which sentence has the WRONG article?
 
 A) Science has advanced rapidly.
@@ -225,12 +159,6 @@ D) A new science is emerging.
 ---
 
 ## Question 12: Context Determines Article
-
-
-
-
-
-
 
 "I'll meet you at ___ station." — This uses THE because:
 
@@ -246,12 +174,6 @@ D) The speaker assumes shared knowledge of which station
 
 ## Question 13: Nationality Pattern
 
-
-
-
-
-
-
 Choose the correct sentence:
 
 A) French are known for their cuisine.
@@ -265,12 +187,6 @@ D) Frenchs are known for their cuisine.
 ---
 
 ## Question 14: Article with Modified Noun
-
-
-
-
-
-
 
 "___ unconditional love of a parent is remarkable."
 
@@ -286,12 +202,6 @@ D) An
 
 ## Question 15: Error Identification
 
-
-
-
-
-
-
 Which sentence contains a typical Russian speaker's article error?
 
 A) Education is important for success.
@@ -305,12 +215,6 @@ D) The life is full of surprises.
 ---
 
 ## Question 16: Institutional Reference
-
-
-
-
-
-
 
 Choose the most natural British English:
 
@@ -326,12 +230,6 @@ D) He's in the hospital. (as a patient)
 
 ## Question 17: Generic with Specification
 
-
-
-
-
-
-
 "___ technology in the 21st century has transformed communication."
 
 A) A technology
@@ -345,12 +243,6 @@ D) Technologies
 ---
 
 ## Question 18: Type vs Instance
-
-
-
-
-
-
 
 "This is a good wine" means:
 
@@ -366,12 +258,6 @@ D) This is a good type/example of wine
 
 ## Question 19: Information Structure
 
-
-
-
-
-
-
 "___ man walked into a bar." — We use A/AN because:
 
 A) "Man" is always indefinite
@@ -385,12 +271,6 @@ D) This is new information to the listener
 ---
 
 ## Question 20: Complex Academic Sentence
-
-
-
-
-
-
 
 Choose the sentence with correct article usage:
 
@@ -443,4 +323,5 @@ D) Analysis of data revealed relationship between variables.
 | **Below 10 (<50%)** | 📚 Needs work | Consider reviewing C1-level article materials first. |
 
 ---
+
 

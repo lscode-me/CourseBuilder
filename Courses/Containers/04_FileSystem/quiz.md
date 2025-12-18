@@ -6,12 +6,6 @@
 
 ## Question 1: Назначение Union FS
 
-
-
-
-
-
-
 Какую основную проблему решают union filesystems?
 
 A) Шифрование данных контейнеров
@@ -25,12 +19,6 @@ D) Изоляция процессов
 ---
 
 ## Question 2: OverlayFS статус
-
-
-
-
-
-
 
 Начиная с какой версии ядра OverlayFS включена в mainline Linux?
 
@@ -46,12 +34,6 @@ D) 3.18
 
 ## Question 3: Компоненты OverlayFS
 
-
-
-
-
-
-
 Какой компонент OverlayFS является записываемым?
 
 A) lowerdir
@@ -65,12 +47,6 @@ D) workdir
 ---
 
 ## Question 4: Copy-on-Write
-
-
-
-
-
-
 
 Что происходит при изменении файла из lower layer в OverlayFS?
 
@@ -86,12 +62,6 @@ D) Изменения записываются в workdir
 
 ## Question 5: Whiteout файлы
 
-
-
-
-
-
-
 Что такое whiteout в контексте OverlayFS?
 
 A) Специальный файл, маскирующий удалённый файл из lower layer
@@ -105,12 +75,6 @@ D) Временный файл для кеширования
 ---
 
 ## Question 6: Приоритет слоёв
-
-
-
-
-
-
 
 Если файл с одинаковым именем существует в нескольких lower layers, какой будет виден?
 
@@ -126,12 +90,6 @@ D) Будет ошибка конфликта
 
 ## Question 7: AUFS vs OverlayFS
 
-
-
-
-
-
-
 Почему Docker перешёл с AUFS на OverlayFS?
 
 A) OverlayFS включён в mainline kernel
@@ -145,12 +103,6 @@ D) AUFS не поддерживает multiple layers
 ---
 
 ## Question 8: Docker storage driver
-
-
-
-
-
-
 
 Какой storage driver рекомендуется для Docker?
 
@@ -166,12 +118,6 @@ D) overlay2
 
 ## Question 9: Структура overlay2
 
-
-
-
-
-
-
 Что содержит директория `diff/` в слое overlay2 Docker?
 
 A) Содержимое файлов этого слоя
@@ -185,12 +131,6 @@ D) Разницу между слоями в бинарном формате
 ---
 
 ## Question 10: Оптимизация Dockerfile
-
-
-
-
-
-
 
 Какой порядок инструкций в Dockerfile оптимален для кеширования?
 
@@ -206,12 +146,6 @@ D) COPY requirements.txt → RUN pip install → COPY код
 
 ## Question 11: Multi-stage builds
 
-
-
-
-
-
-
 Какова главная цель multi-stage builds в Docker?
 
 A) Ускорение сборки
@@ -225,12 +159,6 @@ D) Улучшение безопасности
 ---
 
 ## Question 12: Copy-up overhead
-
-
-
-
-
-
 
 Когда copy-up создаёт наибольший overhead?
 
@@ -246,12 +174,6 @@ D) При создании новых файлов
 
 ## Question 13: Metacopy
 
-
-
-
-
-
-
 Что такое metacopy в OverlayFS (kernel 4.19+)?
 
 A) Метаданные о слоях образа
@@ -265,12 +187,6 @@ D) Шифрование метаданных
 ---
 
 ## Question 14: Docker diff
-
-
-
-
-
-
 
 Что показывает команда `docker diff`?
 
@@ -286,12 +202,6 @@ D) Изменения в файловой системе контейнера (u
 
 ## Question 15: fuse-overlayfs
 
-
-
-
-
-
-
 Для чего используется fuse-overlayfs?
 
 A) Для rootless контейнеров без CAP_SYS_ADMIN
@@ -305,12 +215,6 @@ D) Для сжатия данных
 ---
 
 ## Question 16: Btrfs driver
-
-
-
-
-
-
 
 Какое преимущество имеет Btrfs storage driver?
 
@@ -326,12 +230,6 @@ D) Максимальная совместимость
 
 ## Question 17: Workdir назначение
 
-
-
-
-
-
-
 Для чего используется workdir в OverlayFS?
 
 A) Хранение метаданных
@@ -345,12 +243,6 @@ D) Логирование операций
 ---
 
 ## Question 18: d_type ошибка
-
-
-
-
-
-
 
 Что означает ошибка "upper fs needs to support d_type"?
 
@@ -366,12 +258,6 @@ D) Неправильная версия ядра
 
 ## Question 19: Количество слоёв
 
-
-
-
-
-
-
 Сколько lower layers поддерживает OverlayFS?
 
 A) Максимум 2
@@ -385,12 +271,6 @@ D) Максимум 10
 ---
 
 ## Question 20: Docker history
-
-
-
-
-
-
 
 Что показывает команда `docker history`?
 
@@ -443,4 +323,5 @@ D) Историю pull/push операций
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется выполнить практические примеры с OverlayFS вручную. |
 
 ---
+
 

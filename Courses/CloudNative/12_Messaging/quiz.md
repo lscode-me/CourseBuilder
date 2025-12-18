@@ -5,12 +5,6 @@
 
 ## Question 1: SQS Queue Types
 
-
-
-
-
-
-
 Какой тип SQS queue гарантирует FIFO ordering и exactly-once delivery?
 
 A) Express Queue
@@ -24,12 +18,6 @@ D) Standard Queue
 ---
 
 ## Question 2: SNS vs SQS
-
-
-
-
-
-
 
 Какое ключевое отличие SNS от SQS?
 
@@ -45,12 +33,6 @@ D) SNS — pub/sub (fan-out), SQS — point-to-point queue
 
 ## Question 3: Visibility Timeout
 
-
-
-
-
-
-
 Что такое Visibility Timeout в SQS?
 
 A) Время жизни сообщения в очереди
@@ -64,12 +46,6 @@ D) Время, в течение которого сообщение невид�
 ---
 
 ## Question 4: Long Polling
-
-
-
-
-
-
 
 Зачем использовать Long Polling в SQS?
 
@@ -85,12 +61,6 @@ D) Для увеличения скорости доставки
 
 ## Question 5: EventBridge vs SNS
 
-
-
-
-
-
-
 Когда предпочтительнее EventBridge вместо SNS?
 
 A) Для маршрутизации событий на основе их содержимого (content-based routing)
@@ -104,11 +74,6 @@ D) Для простого fan-out
 ---
 
 ## Question 6: SQS Message Size
-
-
-
-
-
 
 Какой максимальный размер сообщения SQS?
 
@@ -124,11 +89,6 @@ D) 256 KB
 
 ## Question 7: DLQ
 
-
-
-
-
-
 Для чего используется Dead Letter Queue?
 
 A) Для логирования
@@ -142,11 +102,6 @@ D) Для архивации
 ---
 
 ## Question 8: SNS Filter Policy
-
-
-
-
-
 
 Что делает SNS Filter Policy?
 
@@ -162,11 +117,6 @@ D) Ограничивает rate
 
 ## Question 9: FIFO Throughput
 
-
-
-
-
-
 Какой throughput у SQS FIFO queue?
 
 A) 10 TPS
@@ -180,11 +130,6 @@ D) Unlimited
 ---
 
 ## Question 10: Message Groups
-
-
-
-
-
 
 Для чего используются Message Group IDs?
 
@@ -200,11 +145,6 @@ D) Для ordering внутри группы в FIFO queue
 
 ## Question 11: EventBridge Rules
 
-
-
-
-
-
 Какие типы rules в EventBridge?
 
 A) Только event patterns
@@ -218,11 +158,6 @@ D) Только scheduled
 ---
 
 ## Question 12: EventBridge Archive
-
-
-
-
-
 
 Для чего используется Archive в EventBridge?
 
@@ -238,11 +173,6 @@ D) Для backup
 
 ## Question 13: Step Functions
 
-
-
-
-
-
 Для чего используется Step Functions?
 
 A) Только для Lambda
@@ -256,11 +186,6 @@ D) Только для messaging
 ---
 
 ## Question 14: SQS Batching
-
-
-
-
-
 
 Какой максимум messages в batch для SQS?
 
@@ -276,11 +201,6 @@ D) 100
 
 ## Question 15: SNS FIFO
 
-
-
-
-
-
 Что такое SNS FIFO Topic?
 
 A) Только для SMS
@@ -294,11 +214,6 @@ D) Topic с ordering и deduplication (для SQS FIFO)
 ---
 
 ## Question 16: Kinesis vs SQS
-
-
-
-
-
 
 Когда использовать Kinesis вместо SQS?
 
@@ -314,11 +229,6 @@ D) Всегда
 
 ## Question 17: Amazon MQ
 
-
-
-
-
-
 Когда использовать Amazon MQ?
 
 A) Для migration от on-premises message brokers (ActiveMQ/RabbitMQ)
@@ -332,11 +242,6 @@ D) Для новых приложений
 ---
 
 ## Question 18: EventBridge Pipes
-
-
-
-
-
 
 Что делает EventBridge Pipes?
 
@@ -352,11 +257,6 @@ D) Security
 
 ## Question 19: SQS Delay Queue
 
-
-
-
-
-
 Что делает Delay Queue?
 
 A) Шифрует сообщения
@@ -370,11 +270,6 @@ D) Фильтрует сообщения
 ---
 
 ## Question 20: SNS Mobile Push
-
-
-
-
-
 
 Куда может отправлять SNS push notifications?
 
@@ -416,3 +311,4 @@ D) Только SMS
 | 20 | B | SNS push: iOS, Android, и другие платформы |
 
 ---
+

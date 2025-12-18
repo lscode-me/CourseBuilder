@@ -6,12 +6,6 @@
 
 ## Question 1: Why Passive?
 
-
-
-
-
-
-
 When is passive voice MOST appropriate?
 
 A) Always in academic writing
@@ -25,12 +19,6 @@ D) When you want to write longer sentences
 ---
 
 ## Question 2: Passive Form
-
-
-
-
-
-
 
 "The report ___ by tomorrow." (future passive)
 
@@ -46,12 +34,6 @@ D) will be finishing
 
 ## Question 3: Modal Passive
 
-
-
-
-
-
-
 Which sentence is correct?
 
 A) The work must be done immediately.
@@ -65,12 +47,6 @@ D) The work must done immediately.
 ---
 
 ## Question 4: Two Objects
-
-
-
-
-
-
 
 "They gave her a prize." Which passive is MORE natural?
 
@@ -86,12 +62,6 @@ D) A prize was given by her.
 
 ## Question 5: Reporting Verbs
 
-
-
-
-
-
-
 "It is believed that he is guilty" can be rewritten as:
 
 A) He is believed that he's guilty.
@@ -105,12 +75,6 @@ D) He is believed being guilty.
 ---
 
 ## Question 6: Get-Passive
-
-
-
-
-
-
 
 "She got promoted last week" is:
 
@@ -126,12 +90,6 @@ D) Formal passive voice
 
 ## Question 7: Born
 
-
-
-
-
-
-
 Which sentence is correct?
 
 A) I am born in Moscow.
@@ -145,12 +103,6 @@ D) I have born in Moscow.
 ---
 
 ## Question 8: Causative
-
-
-
-
-
-
 
 "I had my car repaired" means:
 
@@ -166,12 +118,6 @@ D) Someone repaired my car (I arranged it)
 
 ## Question 9: Have vs Get Something Done
 
-
-
-
-
-
-
 Which sentence is MORE FORMAL?
 
 A) I made my suit cleaned.
@@ -185,12 +131,6 @@ D) I got my suit cleaned.
 ---
 
 ## Question 10: Experience Passive
-
-
-
-
-
-
 
 "I had my wallet stolen" describes:
 
@@ -206,12 +146,6 @@ D) A future plan
 
 ## Question 11: Have Someone Do
 
-
-
-
-
-
-
 "I had him ___ the report."
 
 A) checking
@@ -225,12 +159,6 @@ D) check
 ---
 
 ## Question 12: Get Someone To Do
-
-
-
-
-
-
 
 "I got her ___ the proposal."
 
@@ -246,12 +174,6 @@ D) approving
 
 ## Question 13: Ergative Verbs
 
-
-
-
-
-
-
 "The door opened." This is:
 
 A) Ergative intransitive (the door opened by itself)
@@ -265,12 +187,6 @@ D) Active voice with hidden object
 ---
 
 ## Question 14: Ergative vs Passive
-
-
-
-
-
-
 
 What's the difference between "The vase broke" and "The vase was broken"?
 
@@ -286,12 +202,6 @@ D) "Broke" = no agent implied; "Was broken" = someone broke it
 
 ## Question 15: Academic Style
 
-
-
-
-
-
-
 In traditional academic writing, passive is often used to:
 
 A) Make sentences longer
@@ -305,12 +215,6 @@ D) Sound informal
 ---
 
 ## Question 16: Unnecessary Passive
-
-
-
-
-
-
 
 Which sentence should be rewritten in active voice?
 
@@ -326,12 +230,6 @@ D) A decision was made by the committee.
 
 ## Question 17: Missing "Be"
 
-
-
-
-
-
-
 Which sentence has an error?
 
 A) The house was built in 2010.
@@ -345,12 +243,6 @@ D) The window was broken.
 ---
 
 ## Question 18: Passive with Perfect
-
-
-
-
-
-
 
 "The work ___ by the time you arrive."
 
@@ -366,12 +258,6 @@ D) will have been finished
 
 ## Question 19: Passive Gerund
 
-
-
-
-
-
-
 "I don't like ___."
 
 A) interrupted
@@ -385,12 +271,6 @@ D) to being interrupted
 ---
 
 ## Question 20: Appropriate Use
-
-
-
-
-
-
 
 "Shakespeare wrote Hamlet." Should this be passive?
 
@@ -445,4 +325,5 @@ D) No, because passive is always wrong.
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Пассивный залог требует внимания. Изучите лекцию заново. |
 
 ---
+
 

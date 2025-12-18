@@ -61,6 +61,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │              Customer & Services Manager Course                  │
 └─────────────────────────────────────────────────────────────────┘
@@ -115,6 +116,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки
@@ -123,11 +125,17 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения
+
 - **Основной материал** — теория с практическими примерами и кейсами
+
 - **Templates & Tools** — шаблоны документов и инструменты
+
 - **Key Takeaways** — главные выводы
+
 - **Next Steps** — что изучить дальше
+
 - **Additional Resources** — книги, статьи, документация
 
 ### Quiz
@@ -188,24 +196,31 @@ XX_ModuleName/
 ### Сервисный менеджмент
 
 - **"ITIL 4 Foundation"** — базовый курс по ITIL
+
 - **"The Service Culture Handbook"** by Jeff Toister — построение сервисной культуры
+
 - **"Delivering Happiness"** by Tony Hsieh — культура клиентского сервиса
 
 ### Клиентские отношения
 
 - **"Customer Success"** by Nick Mehta — управление успехом клиента
+
 - **"The Challenger Sale"** by Matthew Dixon — методология продаж
+
 - **"Never Split the Difference"** by Chris Voss — переговоры
 
 ### Управление командой
 
 - **"The Manager's Path"** by Camille Fournier — путь менеджера в IT
+
 - **"Radical Candor"** by Kim Scott — честная обратная связь
+
 - **"Drive"** by Daniel Pink — мотивация команды
 
 ### Финансы и бизнес
 
 - **"Financial Intelligence for IT Professionals"** — финансы для IT
+
 - **"The Lean Startup"** by Eric Ries — метрики и эксперименты
 
 ---
@@ -215,6 +230,7 @@ XX_ModuleName/
 Курс включает готовые к использованию шаблоны:
 
 ### Документы
+
 - Шаблон статус-отчёта (Weekly Status Report)
 - Шаблон RCA (Root Cause Analysis)
 - Шаблон Service Improvement Plan
@@ -222,6 +238,7 @@ XX_ModuleName/
 - Пример SLA и OLA
 
 ### Инструменты
+
 - P&L калькулятор
 - Capacity planning таблица
 - Словарь терминов C&S
@@ -237,5 +254,6 @@ XX_ModuleName/
 Курс поддерживается в актуальном состоянии. При обнаружении устаревшей информации создайте issue или pull request.
 
 ---
+
 
 

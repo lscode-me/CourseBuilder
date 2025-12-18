@@ -6,12 +6,6 @@
 
 ## Question 1: B2 vs C1 Difference
 
-
-
-
-
-
-
 What is the main difference between B2 and C1 grammar knowledge?
 
 A) C1 speakers know more grammar rules than B2 speakers
@@ -25,12 +19,6 @@ D) C1 speakers make appropriate choices; B2 speakers follow rules
 ---
 
 ## Question 2: Russian Interference
-
-
-
-
-
-
 
 Which error is a typical example of Russian language interference?
 
@@ -46,12 +34,6 @@ D) "Do you want tea?" instead of "Want you tea?"
 
 ## Question 3: B2 Plateau
 
-
-
-
-
-
-
 Why do many learners get stuck at B2 level?
 
 A) English becomes more irregular after B2
@@ -65,12 +47,6 @@ D) Teachers don't know how to teach beyond B2
 ---
 
 ## Question 4: Grammaticality vs Appropriateness
-
-
-
-
-
-
 
 Which sentence is grammatically correct but inappropriate in most contexts?
 
@@ -86,12 +62,6 @@ D) Could you help?
 
 ## Question 5: Article Errors
 
-
-
-
-
-
-
 Why are article errors so common among Russian speakers?
 
 A) Russian has no articles at all
@@ -105,12 +75,6 @@ D) Russian speakers are careless
 ---
 
 ## Question 6: Error Type
-
-
-
-
-
-
 
 What type of error is this: "It depends from the weather"?
 
@@ -126,12 +90,6 @@ D) Spelling error
 
 ## Question 7: Fossilization
 
-
-
-
-
-
-
 What is "fossilization" in language learning?
 
 A) Errors that become permanent habits and are hard to fix
@@ -145,12 +103,6 @@ D) Using academic/formal language
 ---
 
 ## Question 8: Corpus Use
-
-
-
-
-
-
 
 Why are language corpora useful for advanced learners?
 
@@ -166,12 +118,6 @@ D) They translate between languages
 
 ## Question 9: Noticing
 
-
-
-
-
-
-
 What is "noticing" in language learning?
 
 A) Reading more books
@@ -185,12 +131,6 @@ D) Making native speakers notice your errors
 ---
 
 ## Question 10: Register
-
-
-
-
-
-
 
 What does "register" mean in linguistics?
 
@@ -206,12 +146,6 @@ D) A type of formal test
 
 ## Question 11: Marked vs Unmarked
 
-
-
-
-
-
-
 In the sentence "Tired, she was, after the long journey", what is the effect of this unusual word order?
 
 A) It's formal academic style
@@ -225,12 +159,6 @@ D) It creates emphasis on "tired"
 ---
 
 ## Question 12: Collocation Error
-
-
-
-
-
-
 
 Which collocation is incorrect?
 
@@ -246,12 +174,6 @@ D) do an effort
 
 ## Question 13: Russian Transfer
 
-
-
-
-
-
-
 The error "She very beautiful" typically occurs because:
 
 A) Russian doesn't require "to be" in present tense predicate adjectives
@@ -265,12 +187,6 @@ D) The learner forgot the verb
 ---
 
 ## Question 14: CEFR C1 Descriptors
-
-
-
-
-
-
 
 According to CEFR, what characterizes C1 grammar?
 
@@ -286,12 +202,6 @@ D) Using only simple sentences correctly
 
 ## Question 15: Priority Areas
 
-
-
-
-
-
-
 For Russian speakers at B2 level, which area typically needs the MOST attention?
 
 A) Articles (a/the/zero article)
@@ -305,12 +215,6 @@ D) Question formation
 ---
 
 ## Question 16: Learning Strategy
-
-
-
-
-
-
 
 What is the recommended approach to improving from B2 to C1?
 
@@ -326,12 +230,6 @@ D) Learn more vocabulary
 
 ## Question 17: Error Log Purpose
 
-
-
-
-
-
-
 Why is keeping an error log recommended?
 
 A) To compare errors with other learners
@@ -345,12 +243,6 @@ D) To identify patterns in your personal errors
 ---
 
 ## Question 18: Input vs Output
-
-
-
-
-
-
 
 What does "input without noticing" refer to?
 
@@ -366,12 +258,6 @@ D) Consuming English content without paying attention to forms
 
 ## Question 19: Grammar Flexibility
 
-
-
-
-
-
-
 A C1 speaker can:
 
 A) Use any grammar in any situation
@@ -385,12 +271,6 @@ D) Avoid grammar rules when speaking casually
 ---
 
 ## Question 20: Course Approach
-
-
-
-
-
-
 
 How does this course treat grammar differently from B2 level courses?
 
@@ -445,4 +325,5 @@ D) More rules and exceptions
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте всю лекцию и убедитесь, что понимаете базовые концепции. |
 
 ---
+
 

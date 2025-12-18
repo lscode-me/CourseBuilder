@@ -6,12 +6,6 @@
 
 ## Question 1: Nominalization Definition
 
-
-
-
-
-
-
 Nominalization is:
 
 A) Turning verbs and adjectives into nouns
@@ -25,12 +19,6 @@ D) Using more verbs in sentences
 ---
 
 ## Question 2: Transform to Academic
-
-
-
-
-
-
 
 "Scientists discovered that the drug works" becomes:
 
@@ -46,12 +34,6 @@ D) Discovering that the drug works, scientists...
 
 ## Question 3: Impersonal Construction
 
-
-
-
-
-
-
 Which is the most impersonal?
 
 A) It is believed that climate change is real.
@@ -65,12 +47,6 @@ D) People believe that climate change is real.
 ---
 
 ## Question 4: Information Density
-
-
-
-
-
-
 
 Which sentence is most informationally dense?
 
@@ -86,12 +62,6 @@ D) The researchers looked at how well the drug works.
 
 ## Question 5: Formal Vocabulary
 
-
-
-
-
-
-
 Which is the most formal equivalent of "find out"?
 
 A) get to know
@@ -105,12 +75,6 @@ D) learn
 ---
 
 ## Question 6: Phrasal Verb Replacement
-
-
-
-
-
-
 
 "The researchers carried out a study" should become:
 
@@ -126,12 +90,6 @@ D) The researchers conducted a study.
 
 ## Question 7: Passive Appropriateness
 
-
-
-
-
-
-
 Where is passive voice MOST appropriate?
 
 A) Citing specific researchers
@@ -145,12 +103,6 @@ D) Introduction stating your argument
 ---
 
 ## Question 8: Over-Nominalization
-
-
-
-
-
-
 
 Which sentence is over-nominalized (too heavy)?
 
@@ -166,12 +118,6 @@ D) The study examined the relationship between variables.
 
 ## Question 9: Author's We
 
-
-
-
-
-
-
 "We argue that..." is:
 
 A) Grammatically incorrect
@@ -185,12 +131,6 @@ D) Too personal for academic writing
 ---
 
 ## Question 10: Hedging in Academic Writing
-
-
-
-
-
-
 
 "This proves that X causes Y" should be:
 
@@ -206,12 +146,6 @@ D) This suggests that X may contribute to Y.
 
 ## Question 11: Contraction Usage
 
-
-
-
-
-
-
 In academic writing:
 
 A) Contractions are required in abstracts
@@ -225,12 +159,6 @@ D) Contractions are preferred for readability
 ---
 
 ## Question 12: Russian Style Transfer
-
-
-
-
-
-
 
 Which reflects Russian academic style inappropriately transferred to English?
 
@@ -246,12 +174,6 @@ D) "The results indicate..."
 
 ## Question 13: Pre-modification
 
-
-
-
-
-
-
 "A study that was carried out recently" becomes:
 
 A) A recent study
@@ -265,12 +187,6 @@ D) A study recently
 ---
 
 ## Question 14: Methods Section Tense
-
-
-
-
-
-
 
 Methods sections typically use:
 
@@ -286,12 +202,6 @@ D) Present perfect throughout
 
 ## Question 15: Latinate Vocabulary
 
-
-
-
-
-
-
 Which word pair shows Germanic → Latinate formal shift?
 
 A) show → indicate
@@ -305,12 +215,6 @@ D) fast → quick
 ---
 
 ## Question 16: Noun Phrase Structure
-
-
-
-
-
-
 
 "The rapidly increasing global temperature" — the head noun is:
 
@@ -326,12 +230,6 @@ D) increasing
 
 ## Question 17: Flowing vs Choppy
 
-
-
-
-
-
-
 Which writing flows better?
 
 A) The study examined climate change and its effects on agriculture, a sector of critical importance.
@@ -345,12 +243,6 @@ D) The study examined climate change. Climate change affects agriculture. Agricu
 ---
 
 ## Question 18: Discussion Section
-
-
-
-
-
-
 
 Discussion sections typically:
 
@@ -366,12 +258,6 @@ D) Use only past tense
 
 ## Question 19: Colloquialism Avoidance
 
-
-
-
-
-
-
 "Lots of researchers" should become:
 
 A) A lot researchers
@@ -385,12 +271,6 @@ D) Many researchers / Numerous researchers
 ---
 
 ## Question 20: Balance Test
-
-
-
-
-
-
 
 A well-written academic sentence should:
 
@@ -443,4 +323,5 @@ D) Avoid all nominalizations
 | **Below 10 (<50%)** | 📚 Needs work | Study academic writing conventions more systematically. |
 
 ---
+
 

@@ -5,12 +5,6 @@
 
 ## Question 1: Что такое CNCF?
 
-
-
-
-
-
-
 A) Тип базы данных
 
 B) Язык программирования
@@ -22,12 +16,6 @@ D) Облачный провайдер
 ---
 
 ## Question 2: "Pets vs Cattle"
-
-
-
-
-
-
 
 Что означает подход "Cattle"?
 
@@ -43,12 +31,6 @@ D) Серверы заменяемы и эфемерны
 
 ## Question 3: Какой проект НЕ является CNCF Graduated?
 
-
-
-
-
-
-
 A) Prometheus
 
 B) Kubernetes
@@ -60,12 +42,6 @@ D) MySQL
 ---
 
 ## Question 4: Основной принцип Cloud Native
-
-
-
-
-
-
 
 A) Design for on-premise
 
@@ -79,12 +55,6 @@ D) Design for failure
 
 ## Question 5: Когда Cloud Native НЕ нужен?
 
-
-
-
-
-
-
 A) Высоконагруженные системы
 
 B) Глобальное распределённое приложение
@@ -96,11 +66,6 @@ D) Простое CRUD приложение маленькой команды
 ---
 
 ## Question 6: Containers
-
-
-
-
-
 
 Почему контейнеры важны для Cloud Native?
 
@@ -116,11 +81,6 @@ D) Не требуют ОС
 
 ## Question 7: Service Mesh
 
-
-
-
-
-
 Для чего используется Service Mesh?
 
 A) Observability, security, traffic management между сервисами
@@ -134,11 +94,6 @@ D) Только для compute
 ---
 
 ## Question 8: Prometheus
-
-
-
-
-
 
 Что такое Prometheus?
 
@@ -154,11 +109,6 @@ D) Container runtime
 
 ## Question 9: Immutable Infrastructure
 
-
-
-
-
-
 Что означает Immutable Infrastructure?
 
 A) Только read-only storage
@@ -172,11 +122,6 @@ D) Не изменять running infrastructure, а заменять
 ---
 
 ## Question 10: GitOps
-
-
-
-
-
 
 Что такое GitOps?
 
@@ -192,11 +137,6 @@ D) Git hosting
 
 ## Question 11: Declarative Configuration
 
-
-
-
-
-
 Что означает Declarative подход?
 
 A) Только JSON файлы
@@ -210,11 +150,6 @@ D) Описывать желаемое состояние, система сам
 ---
 
 ## Question 12: Observability
-
-
-
-
-
 
 Что включает Observability?
 
@@ -230,11 +165,6 @@ D) Только alerting
 
 ## Question 13: Loose Coupling
 
-
-
-
-
-
 Почему Loose Coupling важен?
 
 A) Дешевле
@@ -248,11 +178,6 @@ D) Независимое развитие и deployment компонентов
 ---
 
 ## Question 14: Resilience
-
-
-
-
-
 
 Что означает Resilience?
 
@@ -268,11 +193,6 @@ D) Низкая стоимость
 
 ## Question 15: Horizontal Scaling
 
-
-
-
-
-
 Что такое Horizontal Scaling?
 
 A) Увеличение bandwidth
@@ -286,11 +206,6 @@ D) Увеличение размера сервера
 ---
 
 ## Question 16: Automation
-
-
-
-
-
 
 Почему Automation критичен?
 
@@ -306,11 +221,6 @@ D) Для экономии времени
 
 ## Question 17: Self-Healing
 
-
-
-
-
-
 Что означает Self-Healing?
 
 A) Ручное восстановление
@@ -324,11 +234,6 @@ D) Backups
 ---
 
 ## Question 18: API-First
-
-
-
-
-
 
 Что означает API-First подход?
 
@@ -344,11 +249,6 @@ D) Дизайн API/контрактов до implementation
 
 ## Question 19: Security by Design
 
-
-
-
-
-
 Что означает Security by Design?
 
 A) Security audit после deployment
@@ -362,11 +262,6 @@ D) Firewall только
 ---
 
 ## Question 20: Cost Optimization
-
-
-
-
-
 
 Как Cloud Native помогает с Cost Optimization?
 
@@ -408,3 +303,4 @@ D) Только для enterprise
 | 20 | C | Cost: pay per use, auto-scaling |
 
 ---
+

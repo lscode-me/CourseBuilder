@@ -66,6 +66,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────┐
 │                     Linux Containers Course                      │
 └─────────────────────────────────────────────────────────────────┘
@@ -106,6 +107,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки
@@ -114,10 +116,15 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения
+
 - **Основной материал** — теория с практическими примерами
+
 - **Key Takeaways** — главные выводы
+
 - **Next Steps** — что изучить дальше
+
 - **Additional Resources** — дополнительные материалы
 
 ### Quiz
@@ -163,6 +170,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # kubectl
+
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install kubectl /usr/local/bin/kubectl
 ```
@@ -238,5 +246,6 @@ sudo install kubectl /usr/local/bin/kubectl
 Курс поддерживается в актуальном состоянии. При обнаружении устаревшей информации создайте issue или pull request.
 
 ---
+
 
 

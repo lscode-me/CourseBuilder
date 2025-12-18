@@ -6,12 +6,6 @@
 
 ## Question 1: Определение systemd-nspawn
 
-
-
-
-
-
-
 Какой тип контейнеров создаёт systemd-nspawn?
 
 A) System containers — полная ОС с init системой
@@ -25,12 +19,6 @@ D) Application containers — один процесс, без init систем�
 ---
 
 ## Question 2: Сравнение с Docker
-
-
-
-
-
-
 
 Какое главное отличие systemd-nspawn от Docker в плане образов?
 
@@ -46,12 +34,6 @@ D) systemd-nspawn работает с директориями, tar-архива
 
 ## Question 3: Запуск контейнера
 
-
-
-
-
-
-
 Что делает флаг `-b` в команде `systemd-nspawn -b -D /var/lib/machines/debian`?
 
 A) Запускает контейнер в background
@@ -65,12 +47,6 @@ D) Запускает boot sequence — init систему контейнера
 ---
 
 ## Question 4: Директория машин
-
-
-
-
-
-
 
 Какая директория является стандартным местом для хранения машин systemd-nspawn?
 
@@ -86,12 +62,6 @@ D) /var/containers/
 
 ## Question 5: machinectl
 
-
-
-
-
-
-
 Какая команда используется для просмотра списка запущенных машин?
 
 A) `systemd-nspawn --list`
@@ -105,12 +75,6 @@ D) `machinectl list`
 ---
 
 ## Question 6: Сетевые режимы
-
-
-
-
-
-
 
 Какой флаг создаёт virtual ethernet pair между хостом и контейнером?
 
@@ -126,12 +90,6 @@ D) `--network-host`
 
 ## Question 7: Конфигурационные файлы
 
-
-
-
-
-
-
 Где должен располагаться файл конфигурации `.nspawn` для машины с именем "webserver"?
 
 A) /etc/systemd/nspawn/webserver.nspawn
@@ -145,12 +103,6 @@ D) /etc/machines/webserver.conf
 ---
 
 ## Question 8: Capabilities
-
-
-
-
-
-
 
 Какая команда запустит контейнер с дополнительной capability CAP_NET_ADMIN?
 
@@ -166,12 +118,6 @@ D) `systemd-nspawn --cap-add=NET_ADMIN -D /path`
 
 ## Question 9: Bind mounts
 
-
-
-
-
-
-
 Какой флаг используется для монтирования директории хоста в контейнер в режиме только для чтения?
 
 A) `--mount-ro`
@@ -185,12 +131,6 @@ D) `--bind-ro`
 ---
 
 ## Question 10: Boot mode
-
-
-
-
-
-
 
 Что произойдёт, если запустить `systemd-nspawn -D /var/lib/machines/debian` без флага `-b`?
 
@@ -206,12 +146,6 @@ D) Будет выдана ошибка "Boot flag required"
 
 ## Question 11: Private network
 
-
-
-
-
-
-
 Что делает флаг `--private-network`?
 
 A) Создаёт полностью изолированную сеть (только loopback)
@@ -225,12 +159,6 @@ D) Подключает контейнер к bridge
 ---
 
 ## Question 12: machinectl shell
-
-
-
-
-
-
 
 Какая команда позволяет выполнить команду внутри запущенной машины "debian"?
 
@@ -246,12 +174,6 @@ D) `machinectl shell debian /bin/ls`
 
 ## Question 13: Volatile режим
 
-
-
-
-
-
-
 Что означает опция `--volatile=yes`?
 
 A) Root filesystem будет overlay — изменения не сохраняются
@@ -265,12 +187,6 @@ D) Контейнер будет автоматически удалён пос�
 ---
 
 ## Question 14: Экспорт образа
-
-
-
-
-
-
 
 Какая команда экспортирует машину "debian" в tar-архив?
 
@@ -286,12 +202,6 @@ D) `machinectl export-tar debian debian.tar.gz`
 
 ## Question 15: systemd интеграция
 
-
-
-
-
-
-
 Какой systemd unit отвечает за автозапуск машины "myserver"?
 
 A) `systemd-nspawn-myserver.service`
@@ -305,12 +215,6 @@ D) `machine-myserver.service`
 ---
 
 ## Question 16: Journald
-
-
-
-
-
-
 
 Какая команда показывает логи контейнера "debian" через journald?
 
@@ -326,12 +230,6 @@ D) `journalctl -u debian`
 
 ## Question 17: User namespaces
 
-
-
-
-
-
-
 Какой флаг включает user namespace с автоматическим выбором UID/GID mapping?
 
 A) `--map-users=auto`
@@ -345,12 +243,6 @@ D) `--userns=random`
 ---
 
 ## Question 18: .nspawn секции
-
-
-
-
-
-
 
 Какая секция в .nspawn файле отвечает за настройку сети?
 
@@ -374,12 +266,6 @@ D) [Network]
 
 ## Question 19: Клонирование машины
 
-
-
-
-
-
-
 Какая команда создаст копию машины "debian" с именем "debian-test"?
 
 A) `cp -r /var/lib/machines/debian /var/lib/machines/debian-test`
@@ -393,12 +279,6 @@ D) `machinectl duplicate debian debian-test`
 ---
 
 ## Question 20: Сравнение подходов
-
-
-
-
-
-
 
 Для какого сценария systemd-nspawn подходит лучше, чем Docker?
 
@@ -453,6 +333,7 @@ D) Микросервисная архитектура с сотнями кон�
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию, особенно базовые команды и концепции. |
 
 ---
+
 
 
 

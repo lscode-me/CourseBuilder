@@ -6,12 +6,6 @@
 
 ## Question 1: docker compose up
 
-
-
-
-
-
-
 Какой флаг запускает сервисы в фоновом режиме?
 
 A) -d
@@ -25,12 +19,6 @@ D) --background
 ---
 
 ## Question 2: depends_on
-
-
-
-
-
-
 
 Как дождаться готовности базы данных перед запуском приложения?
 
@@ -46,12 +34,6 @@ D) depends_on: [db]
 
 ## Question 3: Volumes в Compose
 
-
-
-
-
-
-
 Как определить named volume в docker-compose.yml?
 
 A) Volumes не поддерживаются в Compose
@@ -65,12 +47,6 @@ D) В секции volumes сервиса и на верхнем уровне ф
 ---
 
 ## Question 4: Networks
-
-
-
-
-
-
 
 Какой тип сети используется для изоляции от интернета?
 
@@ -86,12 +62,6 @@ D) isolated: true
 
 ## Question 5: Profiles
 
-
-
-
-
-
-
 Как запустить сервисы с профилем debug?
 
 A) docker compose up debug
@@ -105,12 +75,6 @@ D) docker compose -p debug up
 ---
 
 ## Question 6: Environment variables
-
-
-
-
-
-
 
 Как использовать переменную окружения из .env файла?
 
@@ -126,12 +90,6 @@ D) %VAR_NAME%
 
 ## Question 7: Swarm init
 
-
-
-
-
-
-
 Какая команда инициализирует Swarm кластер?
 
 A) docker swarm create
@@ -145,12 +103,6 @@ D) docker cluster init
 ---
 
 ## Question 8: Swarm replicas
-
-
-
-
-
-
 
 Как масштабировать сервис до 5 реплик?
 
@@ -166,12 +118,6 @@ D) Оба B и C правильны
 
 ## Question 9: Overlay network
 
-
-
-
-
-
-
 Для чего нужен overlay network в Swarm?
 
 A) Для изоляции от интернета
@@ -185,12 +131,6 @@ D) Для ускорения сети
 ---
 
 ## Question 10: Swarm secrets
-
-
-
-
-
-
 
 Как создать secret в Swarm?
 
@@ -206,12 +146,6 @@ D) docker config create secret name ./file
 
 ## Question 11: Stack deploy
 
-
-
-
-
-
-
 Какая команда деплоит stack из docker-compose.yml в Swarm?
 
 A) docker compose deploy
@@ -225,12 +159,6 @@ D) docker service deploy -f docker-compose.yml
 ---
 
 ## Question 12: Node availability
-
-
-
-
-
-
 
 Какое значение availability выводит ноду из обслуживания?
 
@@ -246,12 +174,6 @@ D) drain
 
 ## Question 13: Update config
 
-
-
-
-
-
-
 Какой параметр определяет количество одновременно обновляемых реплик?
 
 A) batch_size
@@ -265,12 +187,6 @@ D) concurrency
 ---
 
 ## Question 14: Extension fields
-
-
-
-
-
-
 
 Как определить переиспользуемый блок конфигурации в Compose?
 
@@ -286,12 +202,6 @@ D) template-name
 
 ## Question 15: Healthcheck в Compose
 
-
-
-
-
-
-
 Какой параметр определяет время ожидания перед первой проверкой?
 
 A) wait_time
@@ -305,12 +215,6 @@ D) startup_delay
 ---
 
 ## Question 16: docker compose down
-
-
-
-
-
-
 
 Какой флаг удаляет volumes при остановке?
 
@@ -326,12 +230,6 @@ D) -v
 
 ## Question 17: Swarm managers
 
-
-
-
-
-
-
 Какое рекомендуемое количество manager нод?
 
 A) Чётное число
@@ -345,12 +243,6 @@ D) Нечётное число (3, 5, 7)
 ---
 
 ## Question 18: Rolling update order
-
-
-
-
-
-
 
 Какой order запускает новый контейнер перед остановкой старого?
 
@@ -366,12 +258,6 @@ D) start-first
 
 ## Question 19: Compose override
 
-
-
-
-
-
-
 Какой файл автоматически применяется вместе с docker-compose.yml?
 
 A) docker-compose.dev.yml
@@ -385,12 +271,6 @@ D) docker-compose.extra.yml
 ---
 
 ## Question 20: Placement constraints
-
-
-
-
-
-
 
 Как ограничить сервис только worker нодами?
 
@@ -443,4 +323,5 @@ D) node.type == worker
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется практика с docker-compose.yml и Swarm. |
 
 ---
+
 

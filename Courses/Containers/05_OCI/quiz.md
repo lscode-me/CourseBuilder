@@ -6,12 +6,6 @@
 
 ## Question 1: История OCI
 
-
-
-
-
-
-
 В каком году была основана Open Container Initiative?
 
 A) 2017
@@ -25,12 +19,6 @@ D) 2019
 ---
 
 ## Question 2: OCI спецификации
-
-
-
-
-
-
 
 Сколько основных спецификаций определяет OCI?
 
@@ -46,12 +34,6 @@ D) 4 (Runtime, Image, Distribution и Security)
 
 ## Question 3: OCI Bundle
 
-
-
-
-
-
-
 Что входит в состав OCI Bundle?
 
 A) Только rootfs
@@ -65,12 +47,6 @@ D) Docker image и Dockerfile
 ---
 
 ## Question 4: runC
-
-
-
-
-
-
 
 Что такое runC?
 
@@ -86,12 +62,6 @@ D) Референсная реализация OCI runtime
 
 ## Question 5: config.json
 
-
-
-
-
-
-
 Какой раздел config.json определяет ограничения ресурсов?
 
 A) root
@@ -105,12 +75,6 @@ D) mounts
 ---
 
 ## Question 6: Жизненный цикл контейнера
-
-
-
-
-
-
 
 Какие состояния проходит контейнер по OCI спецификации?
 
@@ -126,12 +90,6 @@ D) created → running → stopped
 
 ## Question 7: unshare
 
-
-
-
-
-
-
 Для чего используется утилита unshare?
 
 A) Для удаления namespaces
@@ -145,12 +103,6 @@ D) Для sharing файлов между контейнерами
 ---
 
 ## Question 8: nsenter
-
-
-
-
-
-
 
 Какую функцию выполняет nsenter?
 
@@ -166,12 +118,6 @@ D) Выход из namespace
 
 ## Question 9: OCI Image Manifest
 
-
-
-
-
-
-
 Что содержит manifest образа OCI?
 
 A) Конфигурацию сети
@@ -185,12 +131,6 @@ D) Ссылки на config и layers с их digest'ами
 ---
 
 ## Question 10: skopeo
-
-
-
-
-
-
 
 Для чего используется утилита skopeo?
 
@@ -206,12 +146,6 @@ D) Запуск контейнеров
 
 ## Question 11: crun
 
-
-
-
-
-
-
 В чём преимущество crun над runC?
 
 A) Поддержка Windows
@@ -225,12 +159,6 @@ D) Более высокая производительность (написа�
 ---
 
 ## Question 12: Kata Containers
-
-
-
-
-
-
 
 Какой тип изоляции использует Kata Containers?
 
@@ -246,12 +174,6 @@ D) Userspace kernel
 
 ## Question 13: gVisor
 
-
-
-
-
-
-
 Как gVisor обеспечивает изоляцию?
 
 A) Перехват syscalls в userspace
@@ -265,12 +187,6 @@ D) Через VM
 ---
 
 ## Question 14: OCI Distribution API
-
-
-
-
-
-
 
 Какой endpoint используется для получения manifest образа?
 
@@ -286,12 +202,6 @@ D) /v2/<name>/layers/<ref>
 
 ## Question 15: Операции runC
 
-
-
-
-
-
-
 Какая команда создаёт контейнер без запуска процесса?
 
 A) runc create
@@ -305,12 +215,6 @@ D) runc start
 ---
 
 ## Question 16: Capabilities в config.json
-
-
-
-
-
-
 
 Для чего используется раздел capabilities в config.json?
 
@@ -326,12 +230,6 @@ D) Возможности сети
 
 ## Question 17: maskedPaths
 
-
-
-
-
-
-
 Что делает параметр maskedPaths в config.json?
 
 A) Делает указанные пути в /proc недоступными
@@ -345,12 +243,6 @@ D) Шифрует файлы по указанным путям
 ---
 
 ## Question 18: containerd и runC
-
-
-
-
-
-
 
 Какова роль containerd-shim между containerd и runC?
 
@@ -366,12 +258,6 @@ D) Шифрование трафика
 
 ## Question 19: OCI версия
 
-
-
-
-
-
-
 Какое поле в config.json указывает версию OCI спецификации?
 
 A) apiVersion
@@ -385,12 +271,6 @@ D) specVersion
 ---
 
 ## Question 20: Альтернативные runtime в Docker
-
-
-
-
-
-
 
 Как запустить контейнер с альтернативным runtime в Docker?
 
@@ -443,4 +323,5 @@ D) docker run --use-runtime kata
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется выполнить практические примеры с runC и skopeo. |
 
 ---
+
 

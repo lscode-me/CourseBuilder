@@ -5,12 +5,6 @@
 
 ## Question 1: ECS vs EKS
 
-
-
-
-
-
-
 Какое ключевое отличие EKS от ECS?
 
 A) ECS не поддерживает Fargate
@@ -24,12 +18,6 @@ D) EKS дешевле
 ---
 
 ## Question 2: Fargate
-
-
-
-
-
-
 
 Что такое AWS Fargate?
 
@@ -45,12 +33,6 @@ D) Kubernetes distribution
 
 ## Question 3: ECS Control Plane Cost
 
-
-
-
-
-
-
 Сколько стоит ECS control plane?
 
 A) $0.10 per hour
@@ -64,12 +46,6 @@ D) $73/month
 ---
 
 ## Question 4: Task Definition
-
-
-
-
-
-
 
 Что определяет Task Definition в ECS?
 
@@ -85,12 +61,6 @@ D) VPC configuration
 
 ## Question 5: awsvpc Network Mode
 
-
-
-
-
-
-
 Что происходит при использовании awsvpc network mode?
 
 A) Каждая task получает свой ENI и private IP
@@ -104,11 +74,6 @@ D) Tasks общаются только через public IP
 ---
 
 ## Question 6: Service
-
-
-
-
-
 
 Что делает ECS Service?
 
@@ -124,11 +89,6 @@ D) Поддерживает desired count tasks, интегрирует с LB
 
 ## Question 7: IAM Roles
 
-
-
-
-
-
 Какие IAM роли используются в ECS?
 
 A) Только instance role
@@ -142,11 +102,6 @@ D) Только task role
 ---
 
 ## Question 8: Auto Scaling
-
-
-
-
-
 
 Какие типы auto scaling для ECS Service?
 
@@ -162,11 +117,6 @@ D) Нет auto scaling
 
 ## Question 9: ECR
 
-
-
-
-
-
 Что такое Amazon ECR?
 
 A) Managed Docker registry для container images
@@ -180,11 +130,6 @@ D) Container orchestrator
 ---
 
 ## Question 10: EKS Node Groups
-
-
-
-
-
 
 Какие типы node groups в EKS?
 
@@ -200,11 +145,6 @@ D) Только EC2
 
 ## Question 11: App Runner
 
-
-
-
-
-
 Для чего используется AWS App Runner?
 
 A) Только для Lambda
@@ -218,11 +158,6 @@ D) Только для EKS
 ---
 
 ## Question 12: Spot Instances
-
-
-
-
-
 
 Можно ли использовать Spot Instances с ECS?
 
@@ -238,11 +173,6 @@ D) Да, для cost savings (до 90%)
 
 ## Question 13: Service Discovery
 
-
-
-
-
-
 Как работает service discovery в ECS?
 
 A) Только через LB
@@ -256,11 +186,6 @@ D) Только manual
 ---
 
 ## Question 14: Capacity Providers
-
-
-
-
-
 
 Что делают Capacity Providers?
 
@@ -276,11 +201,6 @@ D) Только monitoring
 
 ## Question 15: Blue/Green
 
-
-
-
-
-
 Как реализовать Blue/Green deployment в ECS?
 
 A) Невозможно
@@ -294,11 +214,6 @@ D) Только manual
 ---
 
 ## Question 16: Secrets
-
-
-
-
-
 
 Как передать secrets в ECS tasks?
 
@@ -314,11 +229,6 @@ D) В environment variables plaintext
 
 ## Question 17: Logging
 
-
-
-
-
-
 Как настроить logging для ECS?
 
 A) awslogs driver → CloudWatch Logs
@@ -332,11 +242,6 @@ D) Только в файлы
 ---
 
 ## Question 18: Health Checks
-
-
-
-
-
 
 Какие health checks в ECS?
 
@@ -352,11 +257,6 @@ D) Нет health checks
 
 ## Question 19: Proton
 
-
-
-
-
-
 Что такое AWS Proton?
 
 A) Platform for infrastructure templates and CI/CD
@@ -370,11 +270,6 @@ D) Monitoring service
 ---
 
 ## Question 20: Copilot
-
-
-
-
-
 
 Что делает AWS Copilot CLI?
 
@@ -416,3 +311,4 @@ D) Monitoring tool
 | 20 | A | Copilot — упрощает deployment на ECS |
 
 ---
+

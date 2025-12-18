@@ -6,12 +6,6 @@
 
 ## Question 1: История cgroups
 
-
-
-
-
-
-
 Какая компания изначально разработала механизм cgroups?
 
 A) Google
@@ -25,12 +19,6 @@ D) Red Hat
 ---
 
 ## Question 2: Назначение cgroups
-
-
-
-
-
-
 
 Какова основная функция cgroups?
 
@@ -46,12 +34,6 @@ D) Шифрование данных
 
 ## Question 3: Cgroups v1 vs v2
 
-
-
-
-
-
-
 В чём главное отличие cgroups v2 от v1?
 
 A) v2 не требует root-прав
@@ -65,12 +47,6 @@ D) v2 работает только с контейнерами
 ---
 
 ## Question 4: CPU Controller
-
-
-
-
-
-
 
 Какой формат имеет параметр `cpu.max` в cgroups v2?
 
@@ -86,12 +62,6 @@ D) Количество ядер (например, "2")
 
 ## Question 5: Memory Controller
 
-
-
-
-
-
-
 Какой параметр устанавливает мягкий лимит памяти в cgroups v2?
 
 A) memory.max
@@ -105,12 +75,6 @@ D) memory.soft
 ---
 
 ## Question 6: OOM Killer
-
-
-
-
-
-
 
 Что произойдёт, когда процесс превысит значение `memory.max`?
 
@@ -126,12 +90,6 @@ D) Процесс будет убит OOM killer
 
 ## Question 7: I/O Controller
 
-
-
-
-
-
-
 Какой формат имеет ограничение I/O в параметре `io.max`?
 
 A) Байты в секунду (например, "10485760")
@@ -145,12 +103,6 @@ D) IOPS без указания устройства
 ---
 
 ## Question 8: PIDs Controller
-
-
-
-
-
-
 
 Для чего используется PIDs controller?
 
@@ -166,12 +118,6 @@ D) Ограничение CPU для каждого процесса
 
 ## Question 9: systemd интеграция
 
-
-
-
-
-
-
 Какой параметр в unit-файле systemd ограничивает CPU до 50%?
 
 A) CPUQuota=50%
@@ -185,12 +131,6 @@ D) CPULimit=50%
 ---
 
 ## Question 10: Иерархия systemd
-
-
-
-
-
-
 
 Что такое "slice" в терминологии systemd cgroups?
 
@@ -206,12 +146,6 @@ D) Ограничение CPU
 
 ## Question 11: Файловая система cgroups v2
 
-
-
-
-
-
-
 Где находится файловая система cgroups v2?
 
 A) /proc/cgroups
@@ -225,12 +159,6 @@ D) /var/lib/cgroups
 ---
 
 ## Question 12: Добавление процесса
-
-
-
-
-
-
 
 В какой файл нужно записать PID, чтобы добавить процесс в cgroup v2?
 
@@ -246,12 +174,6 @@ D) cgroup.procs
 
 ## Question 13: CPU weight
 
-
-
-
-
-
-
 Что означает `cpu.weight = 100` в cgroups v2?
 
 A) Относительный вес по умолчанию
@@ -265,12 +187,6 @@ D) 100 микросекунд CPU
 ---
 
 ## Question 14: Memory pressure
-
-
-
-
-
-
 
 Что показывает файл `memory.pressure`?
 
@@ -286,12 +202,6 @@ D) Количество страниц памяти
 
 ## Question 15: Включение контроллеров
 
-
-
-
-
-
-
 Как включить контроллер memory для дочерних cgroups?
 
 A) `echo "+memory" > /sys/fs/cgroup/cgroup.subtree_control`
@@ -305,12 +215,6 @@ D) `echo "memory" > /sys/fs/cgroup/cgroup.controllers`
 ---
 
 ## Question 16: Throttling
-
-
-
-
-
-
 
 Когда начинается memory throttling?
 
@@ -326,12 +230,6 @@ D) Throttling не существует для memory
 
 ## Question 17: Swap limit
 
-
-
-
-
-
-
 Как полностью отключить swap для cgroup в v2?
 
 A) `echo "0" > memory.swap.max`
@@ -345,12 +243,6 @@ D) Swap нельзя отключить для отдельной cgroup
 ---
 
 ## Question 18: systemd-cgtop
-
-
-
-
-
-
 
 Что показывает утилита systemd-cgtop?
 
@@ -366,12 +258,6 @@ D) Топ процессов по PID
 
 ## Question 19: Наследование
 
-
-
-
-
-
-
 Как процессы наследуют cgroup?
 
 A) Только процессы с тем же UID
@@ -385,12 +271,6 @@ D) Наследования не существует
 ---
 
 ## Question 20: Graceful degradation
-
-
-
-
-
-
 
 Какой паттерн обеспечивает graceful degradation для памяти?
 
@@ -443,4 +323,5 @@ D) Использование только memory.max
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется внимательно перечитать лекцию и выполнить практические примеры. |
 
 ---
+
 

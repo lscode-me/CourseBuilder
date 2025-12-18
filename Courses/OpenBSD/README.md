@@ -7,9 +7,13 @@
 ## 📋 Требования
 
 - **Железо**: x86_64 или arm64 (физическая машина или виртуальная)
+
 - **RAM**: минимум 512 MB (рекомендуется 2 GB+)
+
 - **Диск**: минимум 5 GB (рекомендуется 20 GB+)
+
 - **Сеть**: доступ к интернету для загрузки образа и пакетов
+
 - **Базовые знания**: опыт работы с командной строкой Unix/Linux
 
 ---
@@ -55,6 +59,7 @@
 ## 🗺️ Карта зависимостей модулей
 
 ```
+
 01_Intro
     │
     ▼
@@ -106,6 +111,7 @@ VBoxManage createvm --name "OpenBSD" --ostype OpenBSD_64 --register
 VBoxManage modifyvm "OpenBSD" --memory 2048 --cpus 2
 
 # Для QEMU:
+
 qemu-img create -f qcow2 openbsd.qcow2 20G
 qemu-system-x86_64 -enable-kvm -m 2048 -cdrom install74.iso -hda openbsd.qcow2
 ```
@@ -124,7 +130,9 @@ qemu-system-x86_64 -enable-kvm -m 2048 -cdrom install74.iso -hda openbsd.qcow2
 ### 3. Практика
 
 После каждого модуля:
+
 - **Practice Ideas** — задачи для закрепления
+
 - **Going Deeper** — продвинутые темы для самостоятельного изучения
 
 ---
@@ -132,12 +140,15 @@ qemu-system-x86_64 -enable-kvm -m 2048 -cdrom install74.iso -hda openbsd.qcow2
 ## 📖 Навигация по модулям
 
 ### Начинающим
+
 Если вы новичок в BSD-системах, обязательно изучите модули 01-05 последовательно.
 
 ### Опытным Linux пользователям
+
 Можете быстро пройти модули 01-03 и сфокусироваться на специфике OpenBSD в 06-10.
 
 ### Администраторам
+
 Если вы настраиваете сервер, сразу переходите к модулям 07-12 после базовой установки.
 
 ---
@@ -164,12 +175,14 @@ $ ls -la /etc
 # doas pkg_add vim
 
 # Интерактивный ввод показан так:
+
 $ fdisk -iy sd0
 Writing MBR at offset 0.
 ```
 
 **Output:**
 ```
+
 Результат выполнения показан здесь
 ```
 
@@ -186,15 +199,18 @@ Writing MBR at offset 0.
 ## 🔗 Дополнительные ресурсы
 
 **Официальная документация:**
+
 - [OpenBSD FAQ](https://www.openbsd.org/faq/) — официальное руководство
 - [OpenBSD man pages](https://man.openbsd.org/) — справочные страницы онлайн
 - [PF User's Guide](https://www.openbsd.org/faq/pf/) — руководство по PF
 
 **Книги:**
+
 - "Absolute OpenBSD" by Michael W. Lucas — отличная книга для начинающих
 - "The Book of PF" by Peter N. M. Hansteen — глубокое погружение в PF
 
 **Сообщество:**
+
 - [misc@openbsd.org](https://lists.openbsd.org/cgi-bin/mj_wwwusr?func=lists-long-full&extra=misc) — общая рассылка
 - [OpenBSD Journal](https://undeadly.org/) — новости и статьи
 
@@ -224,4 +240,5 @@ Writing MBR at offset 0.
 **OpenBSD version**: 7.4+
 
 ---
+
 

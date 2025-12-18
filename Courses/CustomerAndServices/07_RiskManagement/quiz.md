@@ -6,7 +6,6 @@
 
 ## Question 1: Формула риска
 
-
 Как рассчитывается Risk Score?
 
 A) Likelihood - Impact
@@ -20,7 +19,6 @@ D) Likelihood × Impact
 ---
 
 ## Question 2: Likelihood 5
-
 
 Что означает Likelihood = 5?
 
@@ -36,7 +34,6 @@ D) Невозможно (0%)
 
 ## Question 3: Impact 5
 
-
 Что означает Impact = 5?
 
 A) Небольшие неудобства
@@ -50,7 +47,6 @@ D) Нет влияния
 ---
 
 ## Question 4: Risk Score интерпретация
-
 
 Что означает Risk Score 16-25?
 
@@ -66,7 +62,6 @@ D) Нормально, ничего не делать
 
 ## Question 5: Risk категории
 
-
 Что относится к People Risks?
 
 A) Vendor delays
@@ -80,7 +75,6 @@ D) Regulatory changes
 ---
 
 ## Question 6: Mitigation стратегия
-
 
 Какая стратегия митигации предполагает изменение плана для исключения риска?
 
@@ -96,7 +90,6 @@ D) Avoid
 
 ## Question 7: Accept стратегия
 
-
 Когда используется стратегия Accept?
 
 A) Для low risks или когда митигация невозможна
@@ -110,7 +103,6 @@ D) Никогда
 ---
 
 ## Question 8: Warning sign
-
 
 Что является сигналом недовольства клиента?
 
@@ -126,7 +118,6 @@ D) Клиент делится планами
 
 ## Question 9: Micromanagement signal
 
-
 Что означает, если клиент начинает микроменеджмент?
 
 A) Всё идёт отлично
@@ -140,7 +131,6 @@ D) Клиент хочет больше работы
 ---
 
 ## Question 10: Functional escalation
-
 
 Что такое Functional (Horizontal) Escalation?
 
@@ -156,7 +146,6 @@ D) Эскалация к юристам
 
 ## Question 11: Hierarchical escalation
 
-
 Когда нужна Hierarchical (Vertical) Escalation?
 
 A) Никогда
@@ -170,7 +159,6 @@ D) Когда нужны ресурсы или решения вне твоих 
 ---
 
 ## Question 12: Escalate early
-
 
 Какой подход к эскалации правильный?
 
@@ -186,7 +174,6 @@ D) Эскалировать в последний момент
 
 ## Question 13: Escalation message
 
-
 Что должно быть в escalation message?
 
 A) Обвинения
@@ -200,7 +187,6 @@ D) Только жалобы
 ---
 
 ## Question 14: RCA определение
-
 
 Что такое Root Cause Analysis?
 
@@ -216,7 +202,6 @@ D) Систематический процесс выявления корнев
 
 ## Question 15: 5 Whys
 
-
 Для чего используется метод 5 Whys?
 
 A) Для планирования отпусков
@@ -230,7 +215,6 @@ D) Для оценки бюджета
 ---
 
 ## Question 16: RCA focus
-
 
 На чём должен быть focus при RCA?
 
@@ -246,7 +230,6 @@ D) На наказании
 
 ## Question 17: Blameless culture
 
-
 Что означает Blameless culture?
 
 A) Никто не несёт ответственности
@@ -260,7 +243,6 @@ D) Все виноваты
 ---
 
 ## Question 18: Action items
-
 
 Что должен иметь каждый action item из RCA?
 
@@ -276,7 +258,6 @@ D) Только пожелания
 
 ## Question 19: Protect team
 
-
 От чего менеджер должен защищать команду?
 
 A) От обучения
@@ -290,7 +271,6 @@ D) От любой работы
 ---
 
 ## Question 20: Client wants to remove developer
-
 
 Как правильно реагировать если клиент хочет убрать разработчика за ошибку?
 
@@ -306,7 +286,6 @@ D) Сразу согласиться
 
 ## Question 21: Risk Register
 
-
 Что такое Risk Register?
 
 A) Документ для tracking всех рисков с assessment и mitigation
@@ -320,7 +299,6 @@ D) Журнал посещений
 ---
 
 ## Question 22: Risk lifecycle
-
 
 Какой порядок Risk Lifecycle?
 
@@ -336,7 +314,6 @@ D) Execute → Identify → Assess
 
 ## Question 23: Repeat incidents
 
-
 Как предотвратить повторные инциденты?
 
 A) RCA, action items, verification, continual improvement
@@ -351,7 +328,6 @@ D) Игнорировать
 
 ## Question 24: High Impact + High Likelihood
 
-
 Какой приоритет у риска с High Impact (4) и High Likelihood (4)?
 
 A) Medium
@@ -365,7 +341,6 @@ D) High/Critical (Score = 16)
 ---
 
 ## Question 25: Escalation timing
-
 
 Когда лучше эскалировать?
 
@@ -425,5 +400,6 @@ D) Когда уже поздно
 | **Менее 13 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию и попробуйте ещё раз. |
 
 ---
+
 
 

@@ -6,12 +6,6 @@
 
 ## Question 1: Negative Inversion
 
-
-
-
-
-
-
 Choose the correct inverted form of "I have never seen such a performance":
 
 A) Never have I seen such a performance.
@@ -25,12 +19,6 @@ D) Never I have seen such a performance.
 ---
 
 ## Question 2: Triggering Words
-
-
-
-
-
-
 
 Which word does NOT trigger negative inversion?
 
@@ -46,12 +34,6 @@ D) Always
 
 ## Question 3: "Only" Inversion
 
-
-
-
-
-
-
 Choose the correct sentence:
 
 A) Only after the meeting did I realize my mistake.
@@ -65,12 +47,6 @@ D) Only after the meeting I realized my mistake.
 ---
 
 ## Question 4: Conditional Inversion
-
-
-
-
-
-
 
 "If I had known earlier" becomes:
 
@@ -86,12 +62,6 @@ D) If had I known earlier
 
 ## Question 5: It-Cleft
 
-
-
-
-
-
-
 To focus on WHO in "Mary called yesterday," use:
 
 A) Mary was who called yesterday.
@@ -105,12 +75,6 @@ D) Yesterday it was Mary called.
 ---
 
 ## Question 6: What-Cleft
-
-
-
-
-
-
 
 "I need some peace and quiet" as a what-cleft becomes:
 
@@ -126,12 +90,6 @@ D) What do I need is some peace and quiet.
 
 ## Question 7: "Not Only... But Also"
 
-
-
-
-
-
-
 Choose the correct inverted form:
 
 A) She not only did pass but also got the highest mark.
@@ -145,12 +103,6 @@ D) Not only did she pass, but she also got the highest mark.
 ---
 
 ## Question 8: Were-Inversion
-
-
-
-
-
-
 
 "If she were here, she could explain" becomes:
 
@@ -166,12 +118,6 @@ D) If were she here, she could explain.
 
 ## Question 9: Should-Inversion
 
-
-
-
-
-
-
 "If you should need help, contact me" becomes:
 
 A) Should you need help, contact me.
@@ -185,12 +131,6 @@ D) You should need help, contact me.
 ---
 
 ## Question 10: Context Appropriateness
-
-
-
-
-
-
 
 Where is negative inversion MOST appropriate?
 
@@ -206,12 +146,6 @@ D) A formal academic essay
 
 ## Question 11: So... That Inversion
 
-
-
-
-
-
-
 "The problem was so complex that no one solved it" inverted becomes:
 
 A) The problem so complex was that no one solved it.
@@ -225,12 +159,6 @@ D) So complex was the problem that no one could solve it.
 ---
 
 ## Question 12: Emphatic DO
-
-
-
-
-
-
 
 "She DID finish the project" is used when:
 
@@ -246,12 +174,6 @@ D) Asking a question about finishing
 
 ## Question 13: Fronting for Cohesion
 
-
-
-
-
-
-
 "She offered me tea. This I gratefully accepted." — the fronting:
 
 A) Is grammatically incorrect
@@ -265,12 +187,6 @@ D) Links the second sentence to the first for cohesion
 ---
 
 ## Question 14: All-Cleft
-
-
-
-
-
-
 
 "All I want is a cup of coffee" — the focus is on:
 
@@ -286,12 +202,6 @@ D) The simplicity/singularity of the desire
 
 ## Question 15: Overuse Warning
 
-
-
-
-
-
-
 Using multiple inverted structures in one paragraph sounds:
 
 A) Sophisticated and native-like
@@ -305,12 +215,6 @@ D) Completely natural
 ---
 
 ## Question 16: Adverbial Fronting with Inversion
-
-
-
-
-
-
 
 "On the hill stood a castle" has inversion because:
 
@@ -326,12 +230,6 @@ D) "On the hill" is negative
 
 ## Question 17: The Reason Cleft
 
-
-
-
-
-
-
 "She left because of the argument" with focus on the reason:
 
 A) The argument was why she left because of.
@@ -345,12 +243,6 @@ D) Because she left was the argument.
 ---
 
 ## Question 18: Participial Fronting
-
-
-
-
-
-
 
 "Built in the 18th century, the house has historical value" — the participle:
 
@@ -366,12 +258,6 @@ D) Is the subject of the sentence
 
 ## Question 19: Russian Interference
 
-
-
-
-
-
-
 Russian speakers typically:
 
 A) Overuse inversion correctly
@@ -385,12 +271,6 @@ D) Never learn inversion at all
 ---
 
 ## Question 20: Appropriate Usage
-
-
-
-
-
-
 
 Which sentence uses inversion appropriately?
 
@@ -443,4 +323,5 @@ D) "Hey, never have I seen such an awesome car!" (to a friend)
 | **Below 10 (<50%)** | 📚 Needs work | Focus on basic inversion patterns before tackling stylistic choices. |
 
 ---
+
 

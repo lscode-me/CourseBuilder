@@ -6,12 +6,6 @@
 
 ## Question 1: Make vs Do
 
-
-
-
-
-
-
 "She ___ a mistake."
 
 A) had
@@ -25,12 +19,6 @@ D) took
 ---
 
 ## Question 2: Make vs Do
-
-
-
-
-
-
 
 "I need to ___ my homework."
 
@@ -46,12 +34,6 @@ D) do
 
 ## Question 3: Make vs Do
 
-
-
-
-
-
-
 "They ___ business together."
 
 A) get
@@ -65,12 +47,6 @@ D) make
 ---
 
 ## Question 4: Have vs Take
-
-
-
-
-
-
 
 "Let's ___ a break."
 
@@ -86,12 +62,6 @@ D) make
 
 ## Question 5: Heavy/Strong
 
-
-
-
-
-
-
 "There was ___ rain yesterday."
 
 A) big
@@ -105,12 +75,6 @@ D) strong
 ---
 
 ## Question 6: High/Tall
-
-
-
-
-
-
 
 "He is a very ___ man."
 
@@ -126,12 +90,6 @@ D) tall
 
 ## Question 7: Dependent Preposition
 
-
-
-
-
-
-
 "It depends ___ the weather."
 
 A) from
@@ -145,12 +103,6 @@ D) on
 ---
 
 ## Question 8: Dependent Preposition
-
-
-
-
-
-
 
 "I'm interested ___ learning more."
 
@@ -166,12 +118,6 @@ D) in
 
 ## Question 9: Dependent Preposition
 
-
-
-
-
-
-
 "She's afraid ___ spiders."
 
 A) from
@@ -185,12 +131,6 @@ D) about
 ---
 
 ## Question 10: Russian Interference
-
-
-
-
-
-
 
 Which preposition error is typical for Russian speakers?
 
@@ -206,12 +146,6 @@ D) interested of (should be "in")
 
 ## Question 11: No Preposition
 
-
-
-
-
-
-
 Which verb takes NO preposition before its object?
 
 A) discuss ___
@@ -225,12 +159,6 @@ D) depend ___
 ---
 
 ## Question 12: Collocation
-
-
-
-
-
-
 
 "___ a phone call"
 
@@ -246,12 +174,6 @@ D) Take
 
 ## Question 13: Collocation
 
-
-
-
-
-
-
 "___ attention"
 
 A) Pay
@@ -265,12 +187,6 @@ D) Do
 ---
 
 ## Question 14: Collocation
-
-
-
-
-
-
 
 "___ advice"
 
@@ -286,12 +202,6 @@ D) do
 
 ## Question 15: Natural Collocation
 
-
-
-
-
-
-
 Which is the natural collocation?
 
 A) strong rain
@@ -305,12 +215,6 @@ D) hard rain
 ---
 
 ## Question 16: Take Collocation
-
-
-
-
-
-
 
 "___ a photo"
 
@@ -326,12 +230,6 @@ D) Have
 
 ## Question 17: Get Collocation
 
-
-
-
-
-
-
 "___ married"
 
 A) Get
@@ -345,12 +243,6 @@ D) Have
 ---
 
 ## Question 18: Explain
-
-
-
-
-
-
 
 Which is correct?
 
@@ -366,12 +258,6 @@ D) Can you explain me about this?
 
 ## Question 19: Marry
 
-
-
-
-
-
-
 Which is correct?
 
 A) She married John.
@@ -385,12 +271,6 @@ D) She married to John.
 ---
 
 ## Question 20: Enter
-
-
-
-
-
-
 
 Which is correct?
 
@@ -443,4 +323,5 @@ D) He entered to the room.
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Collocations требуют серьёзного изучения. |
 
 ---
+
 

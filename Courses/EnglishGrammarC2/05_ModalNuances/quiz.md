@@ -6,12 +6,6 @@
 
 ## Question 1: Epistemic vs Deontic
 
-
-
-
-
-
-
 "She must be tired after that long flight." This is:
 
 A) Epistemic (inference)
@@ -25,12 +19,6 @@ D) Grammatically incorrect
 ---
 
 ## Question 2: Probability Scale
-
-
-
-
-
-
 
 Which modal expresses the HIGHEST certainty?
 
@@ -46,12 +34,6 @@ D) might
 
 ## Question 3: MAY vs MIGHT
 
-
-
-
-
-
-
 Which sentence sounds more tentative/uncertain?
 
 A) "She might arrive late."
@@ -65,12 +47,6 @@ D) Neither expresses uncertainty.
 ---
 
 ## Question 4: Academic Hedging
-
-
-
-
-
-
 
 Which is the most appropriate hedged version of "X causes Y"?
 
@@ -86,12 +62,6 @@ D) "X appears to contribute to Y."
 
 ## Question 5: Diplomatic Language
 
-
-
-
-
-
-
 Which is the most diplomatic way to say "Your report has errors"?
 
 A) "I found several mistakes in your report."
@@ -105,12 +75,6 @@ D) "The report is unacceptable."
 ---
 
 ## Question 6: Modal + Perfect
-
-
-
-
-
-
 
 "She must have left already" expresses:
 
@@ -126,12 +90,6 @@ D) An obligation in the past
 
 ## Question 7: Should Have + PP
 
-
-
-
-
-
-
 "You should have told me earlier" expresses:
 
 A) Strong recommendation
@@ -145,12 +103,6 @@ D) Permission that was needed
 ---
 
 ## Question 8: Could Have + PP
-
-
-
-
-
-
 
 "I could have helped if you had asked" means:
 
@@ -166,12 +118,6 @@ D) I helped you
 
 ## Question 9: CAN for Possibility
 
-
-
-
-
-
-
 Which use of CAN is correct?
 
 A) "She can be at the office right now." (specific)
@@ -185,12 +131,6 @@ D) "It can rain tonight." (specific prediction)
 ---
 
 ## Question 10: Russian Interference
-
-
-
-
-
-
 
 Which sentence reflects typical Russian speaker directness?
 
@@ -206,12 +146,6 @@ D) "There may be some room for improvement."
 
 ## Question 11: Hedging Combination
 
-
-
-
-
-
-
 Which sentence has appropriately balanced hedging (not too much, not too little)?
 
 A) "It could maybe potentially seem to indicate."
@@ -225,12 +159,6 @@ D) "It might perhaps possibly be somewhat true."
 ---
 
 ## Question 12: SHALL Usage
-
-
-
-
-
-
 
 When is SHALL most naturally used in modern English?
 
@@ -246,12 +174,6 @@ D) "I shall go to the store."
 
 ## Question 13: OUGHT TO vs SHOULD
 
-
-
-
-
-
-
 Which is more common and versatile?
 
 A) Neither is commonly used
@@ -265,12 +187,6 @@ D) Ought to
 ---
 
 ## Question 14: Diplomatic Email
-
-
-
-
-
-
 
 The most diplomatic way to follow up on an unanswered email is:
 
@@ -286,12 +202,6 @@ D) "I was wondering if you had a chance to look at this."
 
 ## Question 15: Epistemic CAN
 
-
-
-
-
-
-
 Which sentence uses epistemic CAN correctly?
 
 A) "She can be at home now." ❌
@@ -305,12 +215,6 @@ D) "That can't be right." ✓
 ---
 
 ## Question 16: Hedging in Academic Writing
-
-
-
-
-
-
 
 In academic English, "The results prove that X causes Y" should be:
 
@@ -326,12 +230,6 @@ D) Removed entirely—claims shouldn't be made
 
 ## Question 17: Politeness Scale
 
-
-
-
-
-
-
 Rank these from LEAST to MOST polite: (1) "Can you help?" (2) "Could you help?" (3) "I was wondering if you might help?"
 
 A) 3, 2, 1
@@ -345,12 +243,6 @@ D) 2, 1, 3
 ---
 
 ## Question 18: MUST vs HAVE TO
-
-
-
-
-
-
 
 Which sounds more natural in everyday speech?
 
@@ -366,12 +258,6 @@ D) "I shall go now—the meeting starts soon."
 
 ## Question 19: Past Inference Comparison
 
-
-
-
-
-
-
 "She may have left" vs "She must have left" — the difference is:
 
 A) No difference in meaning
@@ -385,12 +271,6 @@ D) "May" is more certain than "must"
 ---
 
 ## Question 20: Disagreement Formula
-
-
-
-
-
-
 
 The most diplomatically appropriate way to disagree in a professional context is:
 
@@ -443,4 +323,5 @@ D) "I see it slightly differently."
 | **Below 10 (<50%)** | 📚 Needs work | Review basic modal meanings before proceeding to advanced nuances. |
 
 ---
+
 

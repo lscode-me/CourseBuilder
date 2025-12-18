@@ -6,7 +6,6 @@
 
 ## Question 1: Базовая формула
 
-
 Как рассчитывается Profit?
 
 A) Revenue × Costs
@@ -20,7 +19,6 @@ D) Revenue - Costs
 ---
 
 ## Question 2: Direct Costs
-
 
 Что относится к Direct Costs проекта?
 
@@ -36,7 +34,6 @@ D) Зарплаты инженеров на проекте
 
 ## Question 3: Overhead
 
-
 Что такое Overhead?
 
 A) Общие затраты компании, не относящиеся напрямую к проекту
@@ -50,7 +47,6 @@ D) Бонусы команде
 ---
 
 ## Question 4: Gross Margin расчёт
-
 
 Как рассчитывается Gross Margin?
 
@@ -66,7 +62,6 @@ D) Net Profit / Revenue
 
 ## Question 5: Target Gross Margin
 
-
 Какой target Gross Margin для аутсорсинга?
 
 A) 70-80%
@@ -80,7 +75,6 @@ D) 90-100%
 ---
 
 ## Question 6: Net Margin
-
 
 Чем Net Margin отличается от Gross Margin?
 
@@ -96,7 +90,6 @@ D) Net Margin учитывает Overhead, Gross Margin — нет
 
 ## Question 7: Target Net Margin
 
-
 Какой target Net Margin для аутсорсинга?
 
 A) 80-90%
@@ -110,7 +103,6 @@ D) 50-60%
 ---
 
 ## Question 8: Utilization формула
-
 
 Как рассчитывается Billable Utilization?
 
@@ -126,7 +118,6 @@ D) Billable hours / Available hours × 100%
 
 ## Question 9: Target Utilization для Middle Developer
 
-
 Какой target utilization для Middle Developer?
 
 A) 50-60%
@@ -140,7 +131,6 @@ D) 100%
 ---
 
 ## Question 10: Target Utilization для Delivery Manager
-
 
 Почему у Delivery Manager target utilization ниже чем у Developer?
 
@@ -156,7 +146,6 @@ D) Потому что DM ленивый
 
 ## Question 11: Bench
 
-
 Что такое Bench?
 
 A) Рабочий стол
@@ -170,7 +159,6 @@ D) Вид контракта
 ---
 
 ## Question 12: Bench Rate Target
-
 
 Какой target Bench Rate для компании?
 
@@ -186,7 +174,6 @@ D) 0%
 
 ## Question 13: Utilization влияние
 
-
 Как снижение utilization на 10% влияет на margin?
 
 A) Не влияет
@@ -200,7 +187,6 @@ D) Снижает margin примерно на 10%
 ---
 
 ## Question 14: Role Rate
-
 
 Что такое Role Rate?
 
@@ -216,7 +202,6 @@ D) Скорость работы
 
 ## Question 15: Blended Rate
 
-
 Что такое Blended Rate?
 
 A) Ставка самого дорогого специалиста
@@ -230,7 +215,6 @@ D) Ставка джуниора
 ---
 
 ## Question 16: Team Mix влияние
-
 
 Как senior-heavy команда влияет на margin?
 
@@ -246,7 +230,6 @@ D) Делает проект убыточным
 
 ## Question 17: T&M контракт
 
-
 В контракте Time & Materials, кто несёт больший риск?
 
 A) Client (клиент)
@@ -260,7 +243,6 @@ D) Никто не несёт риск
 ---
 
 ## Question 18: Fixed Price риск
-
 
 В контракте Fixed Price, кто несёт больший риск?
 
@@ -276,7 +258,6 @@ D) Риск одинаковый
 
 ## Question 19: Fixed Price проблема
 
-
 Какой главный риск Fixed Price для провайдера?
 
 A) Неверная оценка и scope creep ведут к убыткам
@@ -290,7 +271,6 @@ D) Клиент может не заплатить
 ---
 
 ## Question 20: Retainer
-
 
 Что такое Retainer контракт?
 
@@ -306,7 +286,6 @@ D) Клиент платит только за результат
 
 ## Question 21: Managed Services
 
-
 Для чего лучше подходит Managed Services?
 
 A) R&D с неясным scope
@@ -320,7 +299,6 @@ D) Стартап MVP
 ---
 
 ## Question 22: DM влияние на прибыль
-
 
 Как DM может влиять на прибыльность проекта?
 
@@ -336,7 +314,6 @@ D) Никак, это не его зона ответственности
 
 ## Question 23: Scope Creep
 
-
 Что происходит если соглашаться на бесплатную дополнительную работу?
 
 A) Клиент становится лояльнее
@@ -350,7 +327,6 @@ D) Ничего не происходит
 ---
 
 ## Question 24: Change Request
-
 
 Как правильно обработать запрос клиента на дополнительную фичу?
 
@@ -366,7 +342,6 @@ D) Игнорировать
 
 ## Question 25: Financial Review частота
 
-
 Как часто нужно проводить финансовый review проекта?
 
 A) Никогда
@@ -380,7 +355,6 @@ D) Ежемесячно
 ---
 
 ## Question 26: P&L компонент
-
 
 Что НЕ входит в P&L проекта?
 
@@ -396,7 +370,6 @@ D) Overhead
 
 ## Question 27: Revenue формула T&M
 
-
 Как рассчитывается Revenue в T&M контракте?
 
 A) По результатам проекта
@@ -410,7 +383,6 @@ D) Случайным образом
 ---
 
 ## Question 28: Markup
-
 
 Если Cost Rate = $30/h и Bill Rate = $60/h, какой Markup?
 
@@ -426,7 +398,6 @@ D) $30
 
 ## Question 29: Break-even Utilization
 
-
 При какой utilization прибыль = 0 (break-even)?
 
 A) 0%
@@ -440,7 +411,6 @@ D) 75%
 ---
 
 ## Question 30: Margin interpretation
-
 
 Если Net Margin проекта < 15%, что это означает?
 
@@ -505,5 +475,6 @@ D) Ничего особенного
 | **Менее 15 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию и попробуйте ещё раз. |
 
 ---
+
 
 

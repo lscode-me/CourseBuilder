@@ -5,12 +5,6 @@
 
 ## Question 1: Shared Responsibility
 
-
-
-
-
-
-
 За что отвечает КЛИЕНТ в Shared Responsibility Model?
 
 A) Hypervisor patching
@@ -24,12 +18,6 @@ D) IAM, шифрование данных, security groups
 ---
 
 ## Question 2: Least Privilege
-
-
-
-
-
-
 
 Что означает принцип Least Privilege?
 
@@ -45,12 +33,6 @@ D) Минимум IAM пользователей
 
 ## Question 3: Secrets Management
 
-
-
-
-
-
-
 Какой сервис рекомендуется для хранения database credentials с автоматической ротацией?
 
 A) IAM
@@ -64,12 +46,6 @@ D) Parameter Store Standard
 ---
 
 ## Question 4: WAF
-
-
-
-
-
-
 
 Какие атаки защищает WAF?
 
@@ -85,12 +61,6 @@ D) Brute force на SSH
 
 ## Question 5: GuardDuty
 
-
-
-
-
-
-
 Что делает GuardDuty?
 
 A) Шифрует данные
@@ -104,11 +74,6 @@ D) Сканирует EC2 на уязвимости
 ---
 
 ## Question 6: Inspector
-
-
-
-
-
 
 Что делает AWS Inspector?
 
@@ -124,11 +89,6 @@ D) Шифрует данные
 
 ## Question 7: Security Hub
 
-
-
-
-
-
 Для чего используется Security Hub?
 
 A) Только для encryption
@@ -142,11 +102,6 @@ D) Только для logging
 ---
 
 ## Question 8: Macie
-
-
-
-
-
 
 Что обнаруживает Amazon Macie?
 
@@ -162,11 +117,6 @@ D) DDoS attacks
 
 ## Question 9: KMS
 
-
-
-
-
-
 Какие типы ключей в KMS?
 
 A) Только symmetric
@@ -180,11 +130,6 @@ D) Только AWS managed
 ---
 
 ## Question 10: CloudTrail
-
-
-
-
-
 
 Что логирует CloudTrail?
 
@@ -200,11 +145,6 @@ D) API calls и management events в AWS account
 
 ## Question 11: IAM Access Analyzer
 
-
-
-
-
-
 Что делает IAM Access Analyzer?
 
 A) Создаёт IAM roles
@@ -218,11 +158,6 @@ D) Находит ресурсы shared с external entities
 ---
 
 ## Question 12: Config Rules
-
-
-
-
-
 
 Для чего используются AWS Config Rules?
 
@@ -238,11 +173,6 @@ D) Для deployment
 
 ## Question 13: Network Firewall
 
-
-
-
-
-
 Когда использовать AWS Network Firewall?
 
 A) Для application layer
@@ -256,11 +186,6 @@ D) Для API protection
 ---
 
 ## Question 14: Shield Advanced
-
-
-
-
-
 
 Что даёт Shield Advanced по сравнению со Standard?
 
@@ -276,11 +201,6 @@ D) Только logging
 
 ## Question 15: IAM Policies
 
-
-
-
-
-
 Какие типы IAM policies существуют?
 
 A) Только custom
@@ -294,11 +214,6 @@ D) Только managed
 ---
 
 ## Question 16: SCP
-
-
-
-
-
 
 Что делают Service Control Policies в Organizations?
 
@@ -314,11 +229,6 @@ D) Только для billing
 
 ## Question 17: Private CA
 
-
-
-
-
-
 Для чего используется AWS Private CA?
 
 A) Для API keys
@@ -332,11 +242,6 @@ D) Для SSH keys
 ---
 
 ## Question 18: Firewall Manager
-
-
-
-
-
 
 Что делает AWS Firewall Manager?
 
@@ -352,11 +257,6 @@ D) Создаёт firewalls
 
 ## Question 19: Detective
 
-
-
-
-
-
 Что делает Amazon Detective?
 
 A) Создаёт alerts
@@ -370,11 +270,6 @@ D) Investigates security findings с graph analysis
 ---
 
 ## Question 20: Zero Trust
-
-
-
-
-
 
 Как реализовать Zero Trust в AWS?
 
@@ -416,3 +311,4 @@ D) VPN только
 | 20 | C | Zero Trust: IAM, Verified Access, private endpoints |
 
 ---
+

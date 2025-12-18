@@ -6,12 +6,6 @@
 
 ## Question 1: Real vs Unreal
 
-
-
-
-
-
-
 What is the main difference between "If I have time" and "If I had time"?
 
 A) "Have" = real possibility; "had" = hypothetical/unreal
@@ -25,12 +19,6 @@ D) "Have" is present tense, "had" is past tense
 ---
 
 ## Question 2: Future in If-Clause
-
-
-
-
-
-
 
 Which sentence is correct?
 
@@ -46,12 +34,6 @@ D) If it rains tomorrow, we'll stay home.
 
 ## Question 3: Second Conditional
 
-
-
-
-
-
-
 "If I ___ more money, I ___ a bigger apartment."
 
 A) would have / would buy
@@ -65,12 +47,6 @@ D) have / will buy
 ---
 
 ## Question 4: Third Conditional
-
-
-
-
-
-
 
 "If I ___ about the party, I ___ ."
 
@@ -86,12 +62,6 @@ D) had known / would have come
 
 ## Question 5: Were vs Was
 
-
-
-
-
-
-
 Which is most appropriate in formal English?
 
 A) If I would be you, I would accept.
@@ -105,12 +75,6 @@ D) If I was you, I would accept.
 ---
 
 ## Question 6: Mixed Conditional (Past → Present)
-
-
-
-
-
-
 
 "If I ___ medicine, I ___ a doctor now."
 
@@ -126,12 +90,6 @@ D) studied / would be
 
 ## Question 7: Mixed Conditional (Present → Past)
 
-
-
-
-
-
-
 "If she ___ so shy, she ___ at the meeting yesterday."
 
 A) hadn't been / would have spoken
@@ -145,12 +103,6 @@ D) isn't / would have spoken
 ---
 
 ## Question 8: Wish + Past
-
-
-
-
-
-
 
 "I wish I ___ French." (I don't speak French)
 
@@ -166,12 +118,6 @@ D) speak
 
 ## Question 9: Wish + Past Perfect
 
-
-
-
-
-
-
 "I wish I ___ that job last year." (I didn't take it)
 
 A) would take
@@ -185,12 +131,6 @@ D) had taken
 ---
 
 ## Question 10: Wish + Would
-
-
-
-
-
-
 
 Which sentence is INCORRECT?
 
@@ -206,12 +146,6 @@ D) I wish I would speak better English.
 
 ## Question 11: Subjunctive
 
-
-
-
-
-
-
 "I suggest that he ___ the meeting."
 
 A) attends
@@ -225,12 +159,6 @@ D) attend
 ---
 
 ## Question 12: Subjunctive with "Be"
-
-
-
-
-
-
 
 "It's essential that everyone ___ informed."
 
@@ -246,12 +174,6 @@ D) is
 
 ## Question 13: Unless
 
-
-
-
-
-
-
 "Unless you ___, you'll fail the exam."
 
 A) don't study
@@ -265,12 +187,6 @@ D) study
 ---
 
 ## Question 14: If Only
-
-
-
-
-
-
 
 What does "If only I had listened!" express?
 
@@ -286,12 +202,6 @@ D) A past regret
 
 ## Question 15: Zero Conditional
 
-
-
-
-
-
-
 When do we use Zero conditional?
 
 A) For general truths and facts
@@ -305,12 +215,6 @@ D) For hypothetical situations
 ---
 
 ## Question 16: Russian Interference
-
-
-
-
-
-
 
 What is the typical error in: "If I would have more time, I would help"?
 
@@ -326,12 +230,6 @@ D) Missing article
 
 ## Question 17: But for
 
-
-
-
-
-
-
 "But for your help, I ___."
 
 A) would have failed
@@ -345,12 +243,6 @@ D) failed
 ---
 
 ## Question 18: Provided that
-
-
-
-
-
-
 
 "You can go ___ you finish your homework."
 
@@ -366,12 +258,6 @@ D) or else
 
 ## Question 19: Third Conditional Meaning
 
-
-
-
-
-
-
 "If I had known you were coming, I would have baked a cake." What does this mean?
 
 A) I always bake cakes when you come.
@@ -385,12 +271,6 @@ D) I knew you were coming, so I baked a cake.
 ---
 
 ## Question 20: Complete the Pattern
-
-
-
-
-
-
 
 "If I knew the answer, ___."
 
@@ -445,4 +325,5 @@ D) I will tell you.
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Conditionals требуют серьёзного внимания. Изучите лекцию заново. |
 
 ---
+
 

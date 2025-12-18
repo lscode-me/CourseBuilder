@@ -6,12 +6,6 @@
 
 ## Question 1: Запуск контейнера
 
-
-
-
-
-
-
 Какой флаг запускает контейнер в detached mode?
 
 A) -t
@@ -25,12 +19,6 @@ D) -d
 ---
 
 ## Question 2: Port mapping
-
-
-
-
-
-
 
 Как опубликовать порт 80 контейнера на порт 8080 только для localhost?
 
@@ -46,12 +34,6 @@ D) -p 80:8080
 
 ## Question 3: ENTRYPOINT vs CMD
 
-
-
-
-
-
-
 Что произойдёт при docker run myimage arg1, если Dockerfile содержит ENTRYPOINT ["echo"] CMD ["hello"]?
 
 A) hello arg1
@@ -65,12 +47,6 @@ D) arg1
 ---
 
 ## Question 4: Multi-stage builds
-
-
-
-
-
-
 
 Какова главная цель multi-stage builds?
 
@@ -86,12 +62,6 @@ D) Уменьшение размера финального образа
 
 ## Question 5: Кеширование слоёв
 
-
-
-
-
-
-
 Какой порядок инструкций оптимален для кеширования при сборке Python-приложения?
 
 A) Порядок не влияет
@@ -105,12 +75,6 @@ D) COPY requirements.txt . → RUN pip install → COPY . .
 ---
 
 ## Question 6: Volumes vs Bind mounts
-
-
-
-
-
-
 
 Какое преимущество volumes перед bind mounts?
 
@@ -126,12 +90,6 @@ D) Поддерживают больше файловых систем
 
 ## Question 7: docker exec
 
-
-
-
-
-
-
 Как выполнить интерактивную команду sh в запущенном контейнере?
 
 A) docker exec -it container sh
@@ -145,12 +103,6 @@ D) docker attach container sh
 ---
 
 ## Question 8: Логи контейнера
-
-
-
-
-
-
 
 Какая команда показывает логи в реальном времени?
 
@@ -166,12 +118,6 @@ D) docker logs container
 
 ## Question 9: Resource limits
 
-
-
-
-
-
-
 Как ограничить контейнер использованием 1.5 CPU?
 
 A) --cpu=1.5
@@ -185,12 +131,6 @@ D) --cpus="1.5"
 ---
 
 ## Question 10: Health check
-
-
-
-
-
-
 
 Какой параметр HEALTHCHECK определяет интервал проверки?
 
@@ -206,12 +146,6 @@ D) --interval
 
 ## Question 11: USER instruction
 
-
-
-
-
-
-
 Для чего используется инструкция USER в Dockerfile?
 
 A) Ограничение доступа к volume
@@ -225,12 +159,6 @@ D) Запуск процессов от указанного пользоват�
 ---
 
 ## Question 12: .dockerignore
-
-
-
-
-
-
 
 Что делает файл .dockerignore?
 
@@ -246,12 +174,6 @@ D) Блокирует порты
 
 ## Question 13: docker inspect
 
-
-
-
-
-
-
 Как получить только IP-адрес контейнера?
 
 A) docker ip container
@@ -265,12 +187,6 @@ D) docker network ip container
 ---
 
 ## Question 14: Restart policy
-
-
-
-
-
-
 
 Какая restart policy перезапускает контейнер, кроме случая ручной остановки?
 
@@ -286,12 +202,6 @@ D) unless-stopped
 
 ## Question 15: docker tag
 
-
-
-
-
-
-
 Какая команда создаёт тег для push в registry?
 
 A) docker rename myapp:1.0 registry/myapp:1.0
@@ -305,12 +215,6 @@ D) docker label myapp:1.0 registry/myapp:1.0
 ---
 
 ## Question 16: Read-only filesystem
-
-
-
-
-
-
 
 Как запустить контейнер с read-only root filesystem?
 
@@ -326,12 +230,6 @@ D) --immutable
 
 ## Question 17: Capabilities
 
-
-
-
-
-
-
 Как удалить все capabilities из контейнера?
 
 A) --capabilities=none
@@ -345,12 +243,6 @@ D) --cap-drop=ALL
 ---
 
 ## Question 18: Storage driver
-
-
-
-
-
-
 
 Какой storage driver рекомендуется для Docker?
 
@@ -366,12 +258,6 @@ D) overlay2
 
 ## Question 19: docker system prune
 
-
-
-
-
-
-
 Что удаляет docker system prune -a?
 
 A) Только остановленные контейнеры
@@ -385,12 +271,6 @@ D) Только dangling images
 ---
 
 ## Question 20: Build context
-
-
-
-
-
-
 
 Что означает точка в команде docker build -t myapp .?
 
@@ -443,4 +323,5 @@ D) Build context — текущая директория
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Рекомендуется практика с Docker CLI и Dockerfile. |
 
 ---
+
 

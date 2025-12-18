@@ -6,7 +6,6 @@
 
 ## Question 1: Соотношение Dev:QA
 
-
 Какое типичное соотношение разработчиков к QA инженерам в команде?
 
 A) 20:1
@@ -20,7 +19,6 @@ D) 3-5:1
 ---
 
 ## Question 2: Tech Lead
-
 
 На сколько разработчиков обычно приходится один Tech Lead?
 
@@ -36,7 +34,6 @@ D) 1-2
 
 ## Question 3: Dedicated Team Model
 
-
 Какое преимущество модели Dedicated Team?
 
 A) Легко масштабировать
@@ -50,7 +47,6 @@ D) Минимальные затраты на координацию
 ---
 
 ## Question 4: Shared Resources
-
 
 Какой риск при использовании Shared Resource Model?
 
@@ -66,7 +62,6 @@ D) Конфликт приоритетов и context switching
 
 ## Question 5: Bus Factor
 
-
 Что такое "Bus Factor"?
 
 A) Количество автобусов до офиса
@@ -80,7 +75,6 @@ D) Минимальное количество людей, потеря кото
 ---
 
 ## Question 6: T-shaped Specialist
-
 
 Что означает концепция "T-shaped specialist"?
 
@@ -96,7 +90,6 @@ D) Универсальный специалист без глубины
 
 ## Question 7: DM vs TL
 
-
 Что входит в зону ответственности Delivery Manager, а не Tech Lead?
 
 A) Code review
@@ -110,7 +103,6 @@ D) Архитектурные решения
 ---
 
 ## Question 8: Utilization
-
 
 Как рассчитывается Utilization?
 
@@ -126,7 +118,6 @@ D) Total hours / Available hours × 100%
 
 ## Question 9: Effective Capacity
 
-
 Какой примерный процент от календарного времени составляет эффективная capacity?
 
 A) 50-55%
@@ -140,7 +131,6 @@ D) 70-75%
 ---
 
 ## Question 10: Capacity Gap
-
 
 Что делать, если Demand превышает Capacity?
 
@@ -156,7 +146,6 @@ D) Игнорировать разрыв
 
 ## Question 11: Performance Review
 
-
 Какова главная цель Performance Review?
 
 A) Обосновать снижение зарплаты
@@ -170,7 +159,6 @@ D) Сравнить сотрудников между собой
 ---
 
 ## Question 12: SBI Technique
-
 
 Что означает SBI в технике обратной связи?
 
@@ -186,7 +174,6 @@ D) Senior, Business, Individual
 
 ## Question 13: Constructive Feedback
 
-
 Какой пример правильного SBI feedback?
 
 A) "На вчерашнем демо (S), ты перебил клиента (B), это создало напряжение (I)"
@@ -200,7 +187,6 @@ D) "Все жалуются на тебя"
 ---
 
 ## Question 14: PIP
-
 
 Что такое PIP (Performance Improvement Plan)?
 
@@ -216,7 +202,6 @@ D) Структурированный план улучшения произво
 
 ## Question 15: Herzberg Motivators
 
-
 Что из перечисленного является Motivator по Herzberg?
 
 A) Интересная работа и признание
@@ -230,7 +215,6 @@ D) Зарплата
 ---
 
 ## Question 16: Hygiene Factors
-
 
 Что происходит при отсутствии Hygiene Factors?
 
@@ -246,7 +230,6 @@ D) Повышается мотивация
 
 ## Question 17: Developer Motivation
 
-
 Что больше всего мотивирует разработчиков (по исследованиям)?
 
 A) Частые митинги
@@ -260,7 +243,6 @@ D) Строгий контроль
 ---
 
 ## Question 18: Burnout Signs
-
 
 Что является признаком burnout?
 
@@ -276,7 +258,6 @@ D) Частые инициативы
 
 ## Question 19: Sustainable Pace
 
-
 Какой workload считается sustainable pace?
 
 A) Unlimited overtime
@@ -290,7 +271,6 @@ D) 60+ часов в неделю
 ---
 
 ## Question 20: Protecting Team
-
 
 Когда менеджер должен сказать "нет" клиенту?
 
@@ -306,7 +286,6 @@ D) Всегда
 
 ## Question 21: Tech Debt Budget
 
-
 Какой процент времени рекомендуется выделять на tech debt?
 
 A) 100%
@@ -320,7 +299,6 @@ D) 50%
 ---
 
 ## Question 22: Velocity Stability
-
 
 Какой допустимый разброс velocity для стабильной команды?
 
@@ -336,7 +314,6 @@ D) ±15%
 
 ## Question 23: Sprint Predictability
 
-
 Какой target для % committed vs delivered?
 
 A) >85%
@@ -350,7 +327,6 @@ D) Не важно
 ---
 
 ## Question 24: DM-TL Sync
-
 
 Как часто рекомендуется проводить detailed sync между DM и TL?
 
@@ -366,7 +342,6 @@ D) Раз в месяц
 
 ## Question 25: 1-on-1 Purpose
 
-
 Для чего нужны регулярные 1-on-1?
 
 A) Только для плохих новостей
@@ -380,7 +355,6 @@ D) Контроль работы
 ---
 
 ## Question 26: Early Warning Signs
-
 
 Что является ранним признаком performance проблем?
 
@@ -396,7 +370,6 @@ D) Частые отпуска по графику
 
 ## Question 27: Knowledge Sharing
 
-
 Зачем нужен knowledge sharing в команде?
 
 A) По требованию HR
@@ -410,7 +383,6 @@ D) Для развлечения
 ---
 
 ## Question 28: Sprint Hygiene
-
 
 Что входит в Sprint Hygiene?
 
@@ -426,7 +398,6 @@ D) Ежедневная смена задач
 
 ## Question 29: Client Question about Team Member
 
-
 Клиент спрашивает "что с John?" (низкая производительность). Как ответить?
 
 A) Игнорировать вопрос
@@ -440,7 +411,6 @@ D) Раскрыть все личные детали
 ---
 
 ## Question 30: Staffing Best Practice
-
 
 Что должно быть в здоровой команде?
 
@@ -505,5 +475,6 @@ D) Хотя бы один Senior на направление, bus factor > 1
 | **Менее 15 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию и попробуйте ещё раз. |
 
 ---
+
 
 

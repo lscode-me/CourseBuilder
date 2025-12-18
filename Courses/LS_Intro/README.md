@@ -58,6 +58,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │         Introduction to Life Sciences Informatics          │
 └─────────────────────────────────────────────────────────────┘
@@ -113,6 +114,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки (25-30 вопросов)
@@ -121,11 +123,17 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения (3-5 пунктов)
+
 - **Основной материал** — теория с практическими примерами
+
 - **Примеры кода** — демонстрации концепций
+
 - **Key Takeaways** — главные выводы (3-5 пунктов)
+
 - **Next Steps** — что изучить дальше
+
 - **Additional Resources** — документация, статьи, видео
 
 ---
@@ -168,19 +176,25 @@ XX_ModuleName/
 ### Общие
 
 - **"Bioinformatics and Functional Genomics"** by Jonathan Pevsner — биоинформатика
+
 - **"Introduction to Cheminformatics"** — химическая информатика
+
 - **"Biomedical Informatics"** by Shortliffe & Cimino — медицинская информатика
 
 ### Данные и воспроизводимость
 
 - **"The Fourth Paradigm: Data-Intensive Scientific Discovery"** — роль данных в науке
+
 - **"Reproducible Research in Computational Science"** — воспроизводимость исследований
+
 - **FAIR Data Principles** (https://www.go-fair.org/) — принципы управления данными
 
 ### Практика
 
 - **"Python for Bioinformatics"** — практическое применение Python
+
 - **"R for Data Science"** — статистический анализ в R
+
 - **Nextflow Documentation** (https://www.nextflow.io/) — workflow management
 
 ---
@@ -188,11 +202,13 @@ XX_ModuleName/
 ## 🛠️ Инструменты курса
 
 ### Языки программирования
+
 - Python 3.x
 - R
 - Bash (для workflows)
 
 ### Библиотеки и инструменты
+
 - Biopython (биоинформатика)
 - RDKit (химическая информатика)
 - pandas, numpy (обработка данных)
@@ -202,6 +218,7 @@ XX_ModuleName/
 - Git (версионирование)
 
 ### Публичные базы данных
+
 - NCBI (геномные данные)
 - PDB (структуры белков)
 - PubChem (химические соединения)
@@ -214,8 +231,11 @@ XX_ModuleName/
 После прохождения этого курса вы можете углубиться в:
 
 - **Bioinformatics Foundations** — углублённое изучение биоинформатики
+
 - **Scientific Informatics & Data Engineering** — инженерия данных для науки
+
 - **AI & LLM for Life Sciences** — применение AI в life sciences
+
 - **Healthcare & Pharma Data Platforms** — платформы данных для healthcare и pharma
 
 ---
@@ -229,4 +249,5 @@ XX_ModuleName/
 Курс поддерживается в актуальном состоянии. Область Life Sciences Informatics быстро развивается — мы отслеживаем важные изменения.
 
 ---
+
 

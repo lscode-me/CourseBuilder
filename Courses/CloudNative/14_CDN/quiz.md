@@ -5,12 +5,6 @@
 
 ## Question 1: CDN Purpose
 
-
-
-
-
-
-
 Какая основная цель CDN?
 
 A) Балансировка нагрузки
@@ -24,12 +18,6 @@ D) Доставка контента с низкой latency через edge loc
 ---
 
 ## Question 2: Cache Key
-
-
-
-
-
-
 
 Что входит в cache key по умолчанию?
 
@@ -45,12 +33,6 @@ D) Только URL path
 
 ## Question 3: OAC
 
-
-
-
-
-
-
 Для чего используется Origin Access Control?
 
 A) Для кэширования
@@ -64,12 +46,6 @@ D) Для ограничения доступа к S3 только через Cl
 ---
 
 ## Question 4: CloudFront Functions vs Lambda@Edge
-
-
-
-
-
-
 
 Какое преимущество CloudFront Functions?
 
@@ -85,12 +61,6 @@ D) Network доступ
 
 ## Question 5: Invalidation
 
-
-
-
-
-
-
 Какой лучший способ обновить кэшированный контент?
 
 A) Invalidation API
@@ -104,11 +74,6 @@ D) Использовать versioned URLs (app.v2.js)
 ---
 
 ## Question 6: Price Classes
-
-
-
-
-
 
 Что такое Price Classes в CloudFront?
 
@@ -124,11 +89,6 @@ D) Cache tiers
 
 ## Question 7: Signed URLs
 
-
-
-
-
-
 Для чего используются Signed URLs?
 
 A) Для кэширования
@@ -142,11 +102,6 @@ D) Для SEO
 ---
 
 ## Question 8: Field-Level Encryption
-
-
-
-
-
 
 Что делает Field-Level Encryption?
 
@@ -162,11 +117,6 @@ D) Шифрует весь трафик
 
 ## Question 9: Geo Restriction
 
-
-
-
-
-
 Как ограничить доступ по географии?
 
 A) Geo Restriction (whitelist/blacklist countries)
@@ -180,11 +130,6 @@ D) Через WAF только
 ---
 
 ## Question 10: WAF Integration
-
-
-
-
-
 
 Как защитить CloudFront от атак?
 
@@ -200,11 +145,6 @@ D) Security Groups
 
 ## Question 11: Multiple Origins
 
-
-
-
-
-
 Как настроить multiple origins?
 
 A) Origin Groups с failover или path-based routing
@@ -218,11 +158,6 @@ D) Через Lambda only
 ---
 
 ## Question 12: Compression
-
-
-
-
-
 
 Как включить сжатие в CloudFront?
 
@@ -238,11 +173,6 @@ D) Невозможно
 
 ## Question 13: Real-Time Logs
 
-
-
-
-
-
 Куда можно отправлять real-time logs?
 
 A) Только файлы
@@ -256,11 +186,6 @@ D) Только CloudWatch
 ---
 
 ## Question 14: Alternate Domain Names
-
-
-
-
-
 
 Что такое CNAMEs в CloudFront?
 
@@ -276,11 +201,6 @@ D) Custom domain names для distribution
 
 ## Question 15: S3 vs Custom Origin
 
-
-
-
-
-
 Когда использовать Custom Origin вместо S3?
 
 A) Никогда
@@ -294,11 +214,6 @@ D) Для static content
 ---
 
 ## Question 16: Behaviors
-
-
-
-
-
 
 Что настраивают Cache Behaviors?
 
@@ -314,11 +229,6 @@ D) Только logging
 
 ## Question 17: HTTP/3
 
-
-
-
-
-
 Поддерживает ли CloudFront HTTP/3?
 
 A) Нет
@@ -332,11 +242,6 @@ D) Только enterprise
 ---
 
 ## Question 18: Viewer Protocol Policy
-
-
-
-
-
 
 Что настраивает Viewer Protocol Policy?
 
@@ -352,11 +257,6 @@ D) HTTP/HTTPS/redirect между viewer и CloudFront
 
 ## Question 19: Origin Shield
 
-
-
-
-
-
 Что делает Origin Shield?
 
 A) Security feature
@@ -370,11 +270,6 @@ D) DDoS protection
 ---
 
 ## Question 20: Continuous Deployment
-
-
-
-
-
 
 Как тестировать изменения в CloudFront?
 
@@ -416,3 +311,4 @@ D) Только локально
 | 20 | C | Staging distribution или continuous deployment |
 
 ---
+

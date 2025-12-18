@@ -6,12 +6,6 @@
 
 ## Question 1: Countable/Uncountable
 
-
-
-
-
-
-
 Which word is UNCOUNTABLE in English?
 
 A) opinion
@@ -25,12 +19,6 @@ D) suggestion
 ---
 
 ## Question 2: Much/Many
-
-
-
-
-
-
 
 "I don't have ___ time."
 
@@ -46,12 +34,6 @@ D) a lot
 
 ## Question 3: Much/Many
 
-
-
-
-
-
-
 "There aren't ___ people here."
 
 A) little
@@ -65,12 +47,6 @@ D) a little
 ---
 
 ## Question 4: Few vs A Few
-
-
-
-
-
-
 
 "She has ___ friends, so she's very lonely."
 
@@ -86,12 +62,6 @@ D) few
 
 ## Question 5: Little vs A Little
 
-
-
-
-
-
-
 "I have ___ money, so I can buy lunch."
 
 A) little
@@ -105,12 +75,6 @@ D) few
 ---
 
 ## Question 6: Some/Any
-
-
-
-
-
-
 
 "Would you like ___ coffee?"
 
@@ -126,12 +90,6 @@ D) some
 
 ## Question 7: Some/Any
 
-
-
-
-
-
-
 "I don't have ___ questions."
 
 A) no
@@ -145,12 +103,6 @@ D) some
 ---
 
 ## Question 8: Uncountable Agreement
-
-
-
-
-
-
 
 "The news ___ good today."
 
@@ -166,12 +118,6 @@ D) is
 
 ## Question 9: Uncountable Error
 
-
-
-
-
-
-
 Which sentence is INCORRECT?
 
 A) I need some information.
@@ -185,12 +131,6 @@ D) The furniture is new.
 ---
 
 ## Question 10: Each/Every
-
-
-
-
-
-
 
 "___ student received a certificate."
 
@@ -206,12 +146,6 @@ D) Every
 
 ## Question 11: Another/Other
 
-
-
-
-
-
-
 "Can I have ___ cup of coffee?"
 
 A) the other
@@ -225,12 +159,6 @@ D) others
 ---
 
 ## Question 12: Either/Neither
-
-
-
-
-
-
 
 "___ option is acceptable to me."
 
@@ -246,12 +174,6 @@ D) Neither
 
 ## Question 13: All/Both
 
-
-
-
-
-
-
 "___ of my parents work."
 
 A) Each
@@ -265,12 +187,6 @@ D) All
 ---
 
 ## Question 14: Adjective Order
-
-
-
-
-
-
 
 Which is the correct order?
 
@@ -286,12 +202,6 @@ D) A wooden old beautiful table
 
 ## Question 15: Quantifier with Uncountable
 
-
-
-
-
-
-
 "How ___ money do you need?"
 
 A) much
@@ -305,12 +215,6 @@ D) a lot
 ---
 
 ## Question 16: Plural/Singular
-
-
-
-
-
-
 
 Which is correct?
 
@@ -326,12 +230,6 @@ D) Mathematics is difficult.
 
 ## Question 17: The Other
 
-
-
-
-
-
-
 "I have two books. One is fiction, ___ is non-fiction."
 
 A) another
@@ -345,12 +243,6 @@ D) other
 ---
 
 ## Question 18: No/None
-
-
-
-
-
-
 
 "___ of them came to the party."
 
@@ -366,12 +258,6 @@ D) Nothing
 
 ## Question 19: A Lot Of
 
-
-
-
-
-
-
 Where is "a lot of" MOST natural?
 
 A) In affirmative sentences
@@ -385,12 +271,6 @@ D) In negative sentences
 ---
 
 ## Question 20: Piece of
-
-
-
-
-
-
 
 How do you make "advice" countable?
 
@@ -443,4 +323,5 @@ D) an advice
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Quantifiers требуют внимания. |
 
 ---
+
 

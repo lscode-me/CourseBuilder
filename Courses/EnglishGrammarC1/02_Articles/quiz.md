@@ -6,12 +6,6 @@
 
 ## Question 1: Generic Reference
 
-
-
-
-
-
-
 Which sentence correctly expresses a general truth about water?
 
 A) Waters are essential for life.
@@ -25,12 +19,6 @@ D) Water is essential for life.
 ---
 
 ## Question 2: Classification
-
-
-
-
-
-
 
 Complete the sentence: "My sister is ___ excellent doctor."
 
@@ -46,12 +34,6 @@ D) (no article)
 
 ## Question 3: Shared Knowledge
 
-
-
-
-
-
-
 Why do we say "Can you close THE door?" and not "Can you close A door?"
 
 A) Because we're being polite
@@ -65,12 +47,6 @@ D) Because "door" is always used with "the"
 ---
 
 ## Question 4: Geographic Names
-
-
-
-
-
-
 
 Which sentence is correct?
 
@@ -86,12 +62,6 @@ D) The Thames flows through London.
 
 ## Question 5: Abstract Concepts
 
-
-
-
-
-
-
 Choose the correct sentence:
 
 A) An love is blind.
@@ -105,12 +75,6 @@ D) A love is blind.
 ---
 
 ## Question 6: First Mention
-
-
-
-
-
-
 
 Which article should fill the blank? "Yesterday I saw ___ strange bird in my garden."
 
@@ -126,12 +90,6 @@ D) (no article)
 
 ## Question 7: Institution vs Building
 
-
-
-
-
-
-
 What's the difference between "He's in prison" and "He's at the prison"?
 
 A) "In prison" is British; "at the prison" is American
@@ -145,12 +103,6 @@ D) "In prison" is informal; "at the prison" is formal
 ---
 
 ## Question 8: Languages
-
-
-
-
-
-
 
 Choose the correct sentence:
 
@@ -166,12 +118,6 @@ D) I'm learning a Japanese.
 
 ## Question 9: Uncountable Nouns
 
-
-
-
-
-
-
 Which sentence is INCORRECT?
 
 A) I need information about the project.
@@ -185,12 +131,6 @@ D) I received an important information.
 ---
 
 ## Question 10: Plural Generic
-
-
-
-
-
-
 
 How do you say "Dogs are loyal animals" thinking about articles?
 
@@ -206,12 +146,6 @@ D) Some dogs are loyal animals.
 
 ## Question 11: Specifying Phrase
 
-
-
-
-
-
-
 Why does "the book on the table" use "the"?
 
 A) Books always take "the"
@@ -225,12 +159,6 @@ D) It's a proper noun
 ---
 
 ## Question 12: Russian Interference
-
-
-
-
-
-
 
 Which error is typical for Russian speakers?
 
@@ -246,12 +174,6 @@ D) Using "a" instead of "an"
 
 ## Question 13: Fixed Expressions
 
-
-
-
-
-
-
 Which phrase is correct?
 
 A) by a car
@@ -265,12 +187,6 @@ D) by car
 ---
 
 ## Question 14: Proper Nouns with Articles
-
-
-
-
-
-
 
 What does "There's a Mr. Johnson here to see you" imply?
 
@@ -286,12 +202,6 @@ D) You know Mr. Johnson well
 
 ## Question 15: Superlatives
 
-
-
-
-
-
-
 Complete: "This is ___ best restaurant in town."
 
 A) an
@@ -305,12 +215,6 @@ D) the
 ---
 
 ## Question 16: Same Word, Different Articles
-
-
-
-
-
-
 
 What's the difference between "Let's have lunch" and "The lunch was delicious"?
 
@@ -326,12 +230,6 @@ D) No difference
 
 ## Question 17: Generic THE
 
-
-
-
-
-
-
 In academic writing, "The tiger is endangered" means:
 
 A) One specific tiger is endangered
@@ -345,12 +243,6 @@ D) Some tigers are endangered
 ---
 
 ## Question 18: Error Correction
-
-
-
-
-
-
 
 Which sentence has an article error?
 
@@ -366,12 +258,6 @@ D) The President gave speech yesterday.
 
 ## Question 19: Decision Process
 
-
-
-
-
-
-
 You want to say you need to buy a car (any car, you don't have one yet). Which article?
 
 A) (no article) (because it's a generic concept)
@@ -385,12 +271,6 @@ D) some car (because it's uncertain)
 ---
 
 ## Question 20: Complex Case
-
-
-
-
-
-
 
 "I studied ___ history of ___ Russia at ___ university."
 
@@ -445,4 +325,5 @@ D) the / the / the
 | **Менее 10 правильных (<50%)** | 📚 Нужно повторить | Артикли — ваше слабое место. Внимательно изучите всю лекцию и делайте упражнения. |
 
 ---
+
 

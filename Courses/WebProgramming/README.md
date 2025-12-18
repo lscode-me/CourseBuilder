@@ -7,6 +7,7 @@
 ## 🎯 О курсе
 
 Этот курс раскрывает полный стек веб-технологий:
+
 - Как работает HTTP на уровне байтов
 - Как Linux обрабатывает сетевые соединения
 - Эволюция веб-серверов от Apache до современных решений
@@ -61,6 +62,7 @@
 ## 🗺️ Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────┐
 │                    Web Programming                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -116,6 +118,7 @@ pip3 install flask django gunicorn uvicorn starlette websockets
 ## 📖 Recommended Reading
 
 **Specifications:**
+
 - [RFC 7230-7235](https://tools.ietf.org/html/rfc7230) — HTTP/1.1
 - [RFC 7540](https://tools.ietf.org/html/rfc7540) — HTTP/2
 - [RFC 6455](https://tools.ietf.org/html/rfc6455) — WebSocket
@@ -123,9 +126,11 @@ pip3 install flask django gunicorn uvicorn starlette websockets
 - [ASGI Spec](https://asgi.readthedocs.io/) — ASGI
 
 **Books:**
+
 - "HTTP: The Definitive Guide" — полное руководство по HTTP
 - "High Performance Browser Networking" by Ilya Grigorik
 - "nginx: A Practical Guide to High Performance"
 
 ---
+
 

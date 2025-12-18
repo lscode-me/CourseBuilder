@@ -5,12 +5,6 @@
 
 ## Question 1: Что делает подсеть "public"?
 
-
-
-
-
-
-
 A) Имеет route к Internet Gateway в route table
 
 B) Находится в первой AZ
@@ -22,12 +16,6 @@ D) Использует публичные IP адреса
 ---
 
 ## Question 2: Security Groups vs NACLs
-
-
-
-
-
-
 
 Какое утверждение ВЕРНО?
 
@@ -43,12 +31,6 @@ D) Security Groups stateless, NACLs stateful
 
 ## Question 3: NAT Gateway
 
-
-
-
-
-
-
 Для чего нужен NAT Gateway?
 
 A) Для DNS resolution
@@ -62,12 +44,6 @@ D) Для связи между VPC
 ---
 
 ## Question 4: VPC Endpoints
-
-
-
-
-
-
 
 Какой тип VPC Endpoint для S3 бесплатный?
 
@@ -83,12 +59,6 @@ D) Interface Endpoint
 
 ## Question 5: CIDR
 
-
-
-
-
-
-
 Сколько IP адресов AWS резервирует в каждой подсети?
 
 A) 3
@@ -102,11 +72,6 @@ D) 10
 ---
 
 ## Question 6: NACL vs SG
-
-
-
-
-
 
 Чем NACL отличается от Security Group?
 
@@ -122,11 +87,6 @@ D) NACL stateful
 
 ## Question 7: VPC Peering
 
-
-
-
-
-
 Что позволяет VPC Peering?
 
 A) Private connectivity между VPCs (включая cross-region)
@@ -140,11 +100,6 @@ D) Автоматический routing
 ---
 
 ## Question 8: Transit Gateway
-
-
-
-
-
 
 Когда использовать Transit Gateway вместо VPC Peering?
 
@@ -160,11 +115,6 @@ D) Transit Gateway устарел
 
 ## Question 9: Flow Logs
 
-
-
-
-
-
 Что записывают VPC Flow Logs?
 
 A) Содержимое трафика
@@ -178,11 +128,6 @@ D) Только errors
 ---
 
 ## Question 10: Bastion Host
-
-
-
-
-
 
 Для чего используется Bastion Host?
 
@@ -198,11 +143,6 @@ D) Для хранения данных
 
 ## Question 11: VPN
 
-
-
-
-
-
 Какие компоненты нужны для Site-to-Site VPN?
 
 A) Virtual Private Gateway + Customer Gateway
@@ -216,11 +156,6 @@ D) Только Internet Gateway
 ---
 
 ## Question 12: Direct Connect
-
-
-
-
-
 
 Что такое AWS Direct Connect?
 
@@ -236,11 +171,6 @@ D) Интернет соединение
 
 ## Question 13: PrivateLink
 
-
-
-
-
-
 Что обеспечивает AWS PrivateLink?
 
 A) Быстрее интернет
@@ -254,11 +184,6 @@ D) Private доступ к AWS сервисам без интернета
 ---
 
 ## Question 14: Elastic Network Interface
-
-
-
-
-
 
 Что такое ENI?
 
@@ -274,11 +199,6 @@ D) Тип storage
 
 ## Question 15: Secondary CIDR
 
-
-
-
-
-
 Когда добавляют secondary CIDR в VPC?
 
 A) Никогда не нужно
@@ -292,11 +212,6 @@ D) Для DNS
 ---
 
 ## Question 16: Route Tables
-
-
-
-
-
 
 Как работает routing в VPC?
 
@@ -312,11 +227,6 @@ D) Через DNS
 
 ## Question 17: IPv6
 
-
-
-
-
-
 Как включить IPv6 в VPC?
 
 A) Автоматически включён
@@ -330,11 +240,6 @@ D) Только в US regions
 ---
 
 ## Question 18: Egress-Only Internet Gateway
-
-
-
-
-
 
 Для чего используется Egress-Only IGW?
 
@@ -350,11 +255,6 @@ D) Для S3
 
 ## Question 19: Network ACL Order
 
-
-
-
-
-
 Как обрабатываются правила NACL?
 
 A) По номеру правила (от низшего к высшему), первое совпадение
@@ -368,11 +268,6 @@ D) Все правила вместе
 ---
 
 ## Question 20: VPC Limits
-
-
-
-
-
 
 Какой лимит VPC на регион по умолчанию?
 
@@ -414,4 +309,5 @@ D) Неограниченно
 | 20 | B | Default лимит 5 VPC на регион |
 
 ---
+
 

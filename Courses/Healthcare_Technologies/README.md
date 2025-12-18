@@ -7,6 +7,7 @@
 Healthcare IT — это применение информационных технологий в медицине. Если вы работали с enterprise системами, базами данных, или безопасностью — многие концепции покажутся знакомыми, но с особенностями медицинского домена.
 
 **Что вы изучите:**
+
 - Медицинскую терминологию и стандарты для эффективной коммуникации
 - Стандарты обмена данными: HL7 v2 и FHIR
 - Медицинские классификаторы: ICD-10, SNOMED CT, LOINC
@@ -23,12 +24,14 @@ Healthcare IT — это применение информационных те�
 Базовые концепции и терминология Healthcare IT.
 
 **Темы:**
+
 - Основные сущности: Patient, Encounter, Diagnosis
 - Типы медицинских данных
 - Идентификаторы в Healthcare (MRN, СНИЛС)
 - Обзор стандартов
 
 **Материалы:**
+
 - [Lecture](01_Terminology/lecture.md) — Терминология для IT-специалистов
 - [Quiz](01_Terminology/quiz.md)
 
@@ -39,12 +42,14 @@ Healthcare IT — это применение информационных те�
 Legacy стандарт обмена медицинскими данными, широко используемый в существующих системах.
 
 **Темы:**
+
 - Структура HL7 v2 сообщений (сегменты, поля, компоненты)
 - Типы сообщений: ADT, ORM, ORU
 - Парсинг HL7 в Python
 - MLLP протокол
 
 **Материалы:**
+
 - [Lecture](02_HL7/lecture.md) — Детальный разбор HL7 v2
 - [Quiz](02_HL7/quiz.md)
 
@@ -55,12 +60,14 @@ Legacy стандарт обмена медицинскими данными, ш
 Современный REST API стандарт для обмена медицинскими данными.
 
 **Темы:**
+
 - FHIR Resources: Patient, Observation, Condition
 - REST API операции
 - Работа с FHIR в Python
 - Публичные FHIR серверы
 
 **Материалы:**
+
 - [Lecture](03_FHIR/lecture.md) — Современный FHIR стандарт
 - [Quiz](03_FHIR/quiz.md)
 
@@ -71,12 +78,14 @@ Legacy стандарт обмена медицинскими данными, ш
 Стандартные системы кодирования медицинской информации.
 
 **Темы:**
+
 - ICD-10 — классификация болезней
 - SNOMED CT — клиническая терминология
 - LOINC — лабораторные коды
 - Mapping между системами
 
 **Материалы:**
+
 - [Lecture](04_Standards/lecture.md) — ICD-10, SNOMED CT, LOINC
 - [Quiz](04_Standards/quiz.md)
 
@@ -87,6 +96,7 @@ Legacy стандарт обмена медицинскими данными, ш
 Архитектура и функциональность современных EHR систем.
 
 **Темы:**
+
 - Что такое EHR и EMR
 - Архитектура EHR систем
 - Интеграция с медицинским оборудованием
@@ -94,6 +104,7 @@ Legacy стандарт обмена медицинскими данными, ш
 - Health Information Exchange (HIE)
 
 **Материалы:**
+
 - [Lecture](05_EHR_Systems/lecture.md) — Детальный разбор EHR
 - [Quiz](05_EHR_Systems/quiz.md)
 
@@ -104,6 +115,7 @@ Legacy стандарт обмена медицинскими данными, ш
 Требования к безопасности медицинских данных и compliance.
 
 **Темы:**
+
 - HIPAA (Health Insurance Portability and Accountability Act)
 - GDPR в контексте здравоохранения
 - Protected Health Information (PHI)
@@ -111,6 +123,7 @@ Legacy стандарт обмена медицинскими данными, ш
 - Audit trails и access control
 
 **Материалы:**
+
 - [Lecture](06_Security_Privacy/lecture.md) — Безопасность медицинских данных
 - [Quiz](06_Security_Privacy/quiz.md)
 
@@ -121,6 +134,7 @@ Legacy стандарт обмена медицинскими данными, ш
 Технологии медицинской визуализации и их обработка.
 
 **Темы:**
+
 - Типы медицинских изображений (X-ray, CT, MRI, Ultrasound)
 - DICOM стандарт
 - PACS (Picture Archiving and Communication System)
@@ -128,6 +142,7 @@ Legacy стандарт обмена медицинскими данными, ш
 - AI в медицинской диагностике
 
 **Материалы:**
+
 - [Lecture](07_Medical_Imaging/lecture.md) — Технологии визуализации
 - [Quiz](07_Medical_Imaging/quiz.md)
 
@@ -136,7 +151,9 @@ Legacy стандарт обмена медицинскими данными, ш
 ## 🎯 Путь Обучения
 
 ### Прогрессия
+
 ```
+
 Терминология → HL7 → FHIR → Классификаторы → EHR → Безопасность → Визуализация
 ```
 
@@ -149,8 +166,11 @@ Legacy стандарт обмена медицинскими данными, ш
 7. **Модуль 7** — Медицинская визуализация (работа с изображениями)
 
 ### Рекомендуемый порядок:
+
 - **Последовательно:** Модули 1→2→3→4→5→6→7
+
 - **Время:** ~3-4 недели при 10-15 часах в неделю
+
 - **Практика:** Работа с реальными стандартами и данными
 
 ---
@@ -158,11 +178,13 @@ Legacy стандарт обмена медицинскими данными, ш
 ## 📖 Как Использовать Этот Курс
 
 ### Для Каждого Модуля:
+
 1. **Прочитайте лекцию** — Теория с примерами из практики
 2. **Выполните практику** — Примеры кода из лекции
 3. **Пройдите тест** — Проверка понимания
 
 ### Советы:
+
 - 🏥 Думайте о пациентах и их безопасности — это главный приоритет
 - 📜 Изучайте стандарты — они критически важны в healthcare
 - 🔒 Безопасность прежде всего — ошибки здесь дорого стоят
@@ -173,23 +195,32 @@ Legacy стандарт обмена медицинскими данными, ш
 ## 🛠️ Требования
 
 ### Необходимые Знания
+
 - **Программирование:** Python, понимание REST API
+
 - **Базы данных:** SQL, NoSQL
+
 - **Сети:** HTTP/HTTPS, сетевые протоколы
+
 - **Безопасность:** Базовое понимание encryption, authentication
 
 ### Инструменты
+
 - **Python библиотеки:** `pydicom`, `hl7`, `fhir.resources`
+
 - **Docker** для развёртывания FHIR серверов
+
 - **Postman** для работы с API
 
 ### Установка
 
 ```bash
 # Python библиотеки
+
 pip install pydicom hl7 fhir.resources python-hl7 requests
 
 # HAPI FHIR Server (Docker)
+
 docker run -p 8080:8080 hapiproject/hapi:latest
 ```
 
@@ -198,20 +229,24 @@ docker run -p 8080:8080 hapiproject/hapi:latest
 ## 📚 Рекомендуемые Ресурсы
 
 ### Стандарты
+
 - [HL7 Standards](https://www.hl7.org/)
 - [FHIR Specification](https://www.hl7.org/fhir/)
 - [DICOM Standard](https://www.dicomstandard.org/)
 
 ### Терминологии
+
 - [ICD-10 Browser](https://icd.who.int/browse10/)
 - [SNOMED CT Browser](https://browser.ihtsdotools.org/)
 - [LOINC Search](https://loinc.org/search/)
 
 ### Законодательство
+
 - [HIPAA Overview](https://www.hhs.gov/hipaa/index.html)
 - [GDPR](https://gdpr.eu/)
 
 ### Сообщества
+
 - [FHIR Chat](https://chat.fhir.org/)
 - [r/healthIT](https://www.reddit.com/r/healthIT/)
 
@@ -220,10 +255,15 @@ docker run -p 8080:8080 hapiproject/hapi:latest
 ## 🧪 Практические Проекты
 
 ### Идеи для проектов
+
 - **Проект 1:** FHIR API клиент для работы с пациентами
+
 - **Проект 2:** HL7 message parser и validator
+
 - **Проект 3:** DICOM viewer на Python
+
 - **Проект 4:** Конвертер HL7 v2 → FHIR
+
 - **Проект 5:** De-identification утилита для медицинских данных
 
 ---
@@ -231,3 +271,5 @@ docker run -p 8080:8080 hapiproject/hapi:latest
 Happy learning! 🏥💻
 
 **Следующий шаг:** Начните с [Модуль 1: Медицинская Терминология](01_Terminology/lecture.md)
+
+

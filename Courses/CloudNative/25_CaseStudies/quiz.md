@@ -5,12 +5,6 @@
 
 ## Question 1: E-commerce Cart
 
-
-
-
-
-
-
 Какой сервис лучше для хранения shopping cart?
 
 A) Aurora
@@ -24,12 +18,6 @@ D) DynamoDB
 ---
 
 ## Question 2: Real-time Analytics
-
-
-
-
-
-
 
 Какой сервис использовать для ingestion streaming данных?
 
@@ -45,12 +33,6 @@ D) Redshift
 
 ## Question 3: Serverless Benefits
 
-
-
-
-
-
-
 Какое главное преимущество serverless архитектуры?
 
 A) Scale to zero и pay per use
@@ -64,12 +46,6 @@ D) Быстрее контейнеров
 ---
 
 ## Question 4: Microservices Communication
-
-
-
-
-
-
 
 Какой сервис AWS обеспечивает service mesh с mTLS?
 
@@ -85,12 +61,6 @@ D) API Gateway
 
 ## Question 5: Architecture Choice
 
-
-
-
-
-
-
 Какая архитектура лучше для MVP/стартапа?
 
 A) Kubernetes с микросервисами
@@ -104,11 +74,6 @@ D) EC2 с monolith
 ---
 
 ## Question 6: E-commerce Platform
-
-
-
-
-
 
 Какие сервисы для high-traffic e-commerce?
 
@@ -124,11 +89,6 @@ D) Только Lambda
 
 ## Question 7: Data Lake
 
-
-
-
-
-
 Какая архитектура для data lake?
 
 A) Только Redshift
@@ -142,11 +102,6 @@ D) Только DynamoDB
 ---
 
 ## Question 8: Machine Learning Pipeline
-
-
-
-
-
 
 Какие сервисы для ML pipeline?
 
@@ -162,11 +117,6 @@ D) Только Lambda
 
 ## Question 9: Multi-Region DR
 
-
-
-
-
-
 Как реализовать multi-region DR?
 
 A) Только cold standby
@@ -180,11 +130,6 @@ D) Backup только
 ---
 
 ## Question 10: IoT Platform
-
-
-
-
-
 
 Какие сервисы для IoT platform?
 
@@ -200,11 +145,6 @@ D) Только EC2
 
 ## Question 11: Media Streaming
 
-
-
-
-
-
 Какая архитектура для video streaming?
 
 A) Только Lambda
@@ -218,11 +158,6 @@ D) S3, CloudFront, MediaConvert, MediaLive
 ---
 
 ## Question 12: SaaS Multi-Tenant
-
-
-
-
-
 
 Как реализовать multi-tenancy?
 
@@ -238,11 +173,6 @@ D) Отдельный account для каждого tenant
 
 ## Question 13: Batch Processing
 
-
-
-
-
-
 Какие сервисы для batch processing?
 
 A) Только EC2
@@ -256,11 +186,6 @@ D) Только ECS
 ---
 
 ## Question 14: API Platform
-
-
-
-
-
 
 Как построить scalable API platform?
 
@@ -276,11 +201,6 @@ D) Только monolith
 
 ## Question 15: DevOps Pipeline
 
-
-
-
-
-
 Какие сервисы для CI/CD pipeline?
 
 A) Только manual
@@ -294,11 +214,6 @@ D) CodePipeline, CodeBuild, CodeDeploy, ECR
 ---
 
 ## Question 16: Compliance Architecture
-
-
-
-
-
 
 Как обеспечить compliance (HIPAA, PCI)?
 
@@ -314,11 +229,6 @@ D) Только firewall
 
 ## Question 17: Cost-Optimized Architecture
 
-
-
-
-
-
 Как оптимизировать costs для variable workloads?
 
 A) Только On-Demand
@@ -332,11 +242,6 @@ D) Larger instances
 ---
 
 ## Question 18: Event-Driven Architecture
-
-
-
-
-
 
 Какие сервисы для event-driven architecture?
 
@@ -352,11 +257,6 @@ D) Только Kinesis
 
 ## Question 19: Legacy Migration
 
-
-
-
-
-
 Как мигрировать legacy application?
 
 A) Оставить on-premises
@@ -370,11 +270,6 @@ D) Lift-and-shift → re-platform → refactor (постепенно)
 ---
 
 ## Question 20: High Availability
-
-
-
-
-
 
 Как обеспечить 99.99% availability?
 
@@ -432,4 +327,5 @@ D) Только backup
 - Security и Cost Management
 
 ---
+
 

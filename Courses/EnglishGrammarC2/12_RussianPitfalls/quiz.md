@@ -6,12 +6,6 @@
 
 ## Question 1: Article with Modified Noun
 
-
-
-
-
-
-
 "___ modern technology has changed our lives" — choose correctly:
 
 A) Some modern technology
@@ -25,12 +19,6 @@ D) The modern technology
 ---
 
 ## Question 2: Associative THE
-
-
-
-
-
-
 
 "I bought a car. ___ engine is powerful."
 
@@ -46,12 +34,6 @@ D) One engine
 
 ## Question 3: Preposition Calque
 
-
-
-
-
-
-
 "It depends ___ the weather."
 
 A) on
@@ -65,12 +47,6 @@ D) from
 ---
 
 ## Question 4: Duration with Present Perfect
-
-
-
-
-
-
 
 "I ___ him since 2010."
 
@@ -86,12 +62,6 @@ D) know
 
 ## Question 5: Future in Time Clause
 
-
-
-
-
-
-
 "When I ___, I will call you."
 
 A) arrive
@@ -105,12 +75,6 @@ D) will arrive
 ---
 
 ## Question 6: Diplomatic Language
-
-
-
-
-
-
 
 The most diplomatically appropriate is:
 
@@ -126,12 +90,6 @@ D) "This is incorrect."
 
 ## Question 7: Collocation
 
-
-
-
-
-
-
 "She ___ a serious mistake."
 
 A) took
@@ -145,12 +103,6 @@ D) made
 ---
 
 ## Question 8: Weather Collocation
-
-
-
-
-
-
 
 "There was ___ rain yesterday."
 
@@ -166,12 +118,6 @@ D) strong
 
 ## Question 9: Word Order
 
-
-
-
-
-
-
 Which is correct?
 
 A) "I very much like this idea."
@@ -185,12 +131,6 @@ D) "I like this idea very much."
 ---
 
 ## Question 10: False Friend
-
-
-
-
-
-
 
 Russian "актуальный" in English is:
 
@@ -206,12 +146,6 @@ D) active
 
 ## Question 11: Academic Style
 
-
-
-
-
-
-
 "In the given article, we consider the question of..." should be:
 
 A) "We will consider the question..."
@@ -225,12 +159,6 @@ D) "This article examines..."
 ---
 
 ## Question 12: Explain Transitivity
-
-
-
-
-
-
 
 "Can you explain ___ this rule?"
 
@@ -246,12 +174,6 @@ D) at me
 
 ## Question 13: Stative Verb
 
-
-
-
-
-
-
 Which is correct?
 
 A) "I am understanding now."
@@ -265,12 +187,6 @@ D) "I do understand now." (only for emphasis)
 ---
 
 ## Question 14: Hedging
-
-
-
-
-
-
 
 "The results ___ that X causes Y."
 
@@ -286,12 +202,6 @@ D) certainly demonstrate
 
 ## Question 15: MAKE vs DO
 
-
-
-
-
-
-
 Which is correct?
 
 A) "make a photo"
@@ -305,12 +215,6 @@ D) "have a photo"
 ---
 
 ## Question 16: Over-Formality
-
-
-
-
-
-
 
 In spoken English, which is too formal?
 
@@ -326,12 +230,6 @@ D) "No problem."
 
 ## Question 17: Small Talk
 
-
-
-
-
-
-
 In English professional emails:
 
 A) Include a brief greeting/small talk element
@@ -345,12 +243,6 @@ D) Skip greetings and go straight to business
 ---
 
 ## Question 18: Listen Transitivity
-
-
-
-
-
-
 
 "Please ___ me."
 
@@ -366,12 +258,6 @@ D) listen for
 
 ## Question 19: Married Preposition
 
-
-
-
-
-
-
 "She is married ___ John."
 
 A) with
@@ -385,12 +271,6 @@ D) to
 ---
 
 ## Question 20: Final Self-Assessment
-
-
-
-
-
-
 
 The most important takeaway for C2 Russian speakers is:
 
@@ -471,5 +351,6 @@ Continue practicing, noticing, and refining your English.
 **Good luck!** 🎓
 
 ---
+
 
 

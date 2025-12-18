@@ -5,12 +5,6 @@
 
 ## Question 1: CI vs CD
 
-
-
-
-
-
-
 Что означает CI (Continuous Integration)?
 
 A) Контейнеризация приложений
@@ -24,12 +18,6 @@ D) Автоматический deploy в production
 ---
 
 ## Question 2: Blue/Green Deployment
-
-
-
-
-
-
 
 Какое преимущество Blue/Green deployment?
 
@@ -45,12 +33,6 @@ D) Меньше ресурсов
 
 ## Question 3: Canary Deployment
 
-
-
-
-
-
-
 Что такое Canary deployment?
 
 A) Постепенный shift трафика с мониторингом
@@ -64,12 +46,6 @@ D) Deployment в разные regions
 ---
 
 ## Question 4: CodeBuild
-
-
-
-
-
-
 
 Где определяются build steps в CodeBuild?
 
@@ -85,12 +61,6 @@ D) В CloudFormation
 
 ## Question 5: Pipeline Stages
 
-
-
-
-
-
-
 Какой правильный порядок stages в типичном pipeline?
 
 A) Test → Build → Deploy → Source
@@ -104,11 +74,6 @@ D) Source → Build → Test → Deploy
 ---
 
 ## Question 6: Artifacts
-
-
-
-
-
 
 Куда CodeBuild сохраняет artifacts?
 
@@ -124,11 +89,6 @@ D) EFS
 
 ## Question 7: CodeDeploy
 
-
-
-
-
-
 Какие compute platforms поддерживает CodeDeploy?
 
 A) Только Lambda
@@ -142,11 +102,6 @@ D) Только EC2
 ---
 
 ## Question 8: AppSpec
-
-
-
-
-
 
 Для чего используется appspec.yml?
 
@@ -162,11 +117,6 @@ D) Для testing
 
 ## Question 9: GitHub Actions vs CodePipeline
 
-
-
-
-
-
 Какое преимущество GitHub Actions?
 
 A) Дешевле
@@ -180,11 +130,6 @@ D) Только AWS
 ---
 
 ## Question 10: Rollback
-
-
-
-
-
 
 Как работает automatic rollback в CodeDeploy?
 
@@ -200,11 +145,6 @@ D) Всегда manual
 
 ## Question 11: Multi-Account
 
-
-
-
-
-
 Как deploy в multiple accounts?
 
 A) Только через консоль
@@ -218,11 +158,6 @@ D) Cross-account roles, CodePipeline с multiple actions
 ---
 
 ## Question 12: Secrets in Pipeline
-
-
-
-
-
 
 Как хранить secrets в CI/CD?
 
@@ -238,11 +173,6 @@ D) В environment variables plaintext
 
 ## Question 13: Testing in Pipeline
 
-
-
-
-
-
 Какие типы тестов включать в pipeline?
 
 A) Никаких
@@ -256,11 +186,6 @@ D) Unit, integration, security, performance (по времени/важност�
 ---
 
 ## Question 14: Feature Flags
-
-
-
-
-
 
 Для чего используются feature flags?
 
@@ -276,11 +201,6 @@ D) Для включения/выключения features без redeploy
 
 ## Question 15: Trunk-Based Development
 
-
-
-
-
-
 Что такое trunk-based development?
 
 A) Все работают с main/trunk, короткие feature branches
@@ -294,11 +214,6 @@ D) Много долгоживущих веток
 ---
 
 ## Question 16: GitOps
-
-
-
-
-
 
 Что такое GitOps?
 
@@ -314,11 +229,6 @@ D) Git backup
 
 ## Question 17: ArgoCD
 
-
-
-
-
-
 Для чего используется ArgoCD?
 
 A) Для builds
@@ -332,11 +242,6 @@ D) Для monitoring
 ---
 
 ## Question 18: Promotion
-
-
-
-
-
 
 Как продвигать артефакты между environments?
 
@@ -352,11 +257,6 @@ D) Manual copy
 
 ## Question 19: Pipeline as Code
 
-
-
-
-
-
 Почему Pipeline as Code важен?
 
 A) Быстрее
@@ -370,11 +270,6 @@ D) Версионирование, review, воспроизводимость
 ---
 
 ## Question 20: Zero Downtime
-
-
-
-
-
 
 Как обеспечить zero downtime deployment?
 
@@ -416,3 +311,4 @@ D) Только для статики
 | 20 | C | Blue/Green, Rolling, Canary |
 
 ---
+

@@ -87,6 +87,7 @@
 ## 🎯 Learning Path
 
 ```
+
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    Cloud Native Development                          │
 └─────────────────────────────────────────────────────────────────────┘
@@ -187,6 +188,7 @@
 Каждый модуль содержит:
 
 ```
+
 XX_ModuleName/
 ├── lecture.md    # Основной материал лекции
 └── quiz.md       # Вопросы для самопроверки (15-20 вопросов)
@@ -195,14 +197,23 @@ XX_ModuleName/
 ### Структура лекции
 
 - **Prerequisites** — что нужно знать перед началом
+
 - **Learning Objectives** — цели обучения (3-5 пунктов)
+
 - **Историческая справка** — как появился сервис/концепция
+
 - **Основной материал** — теория с практическими примерами
+
 - **Hands-on примеры** — CLI команды, код, конфигурации
+
 - **Best Practices** — рекомендации от AWS и сообщества
+
 - **Common Pitfalls** — типичные ошибки и как их избежать
+
 - **Key Takeaways** — главные выводы (3-5 пунктов)
+
 - **Next Steps** — что изучить дальше
+
 - **Additional Resources** — документация, статьи, видео
 
 ---
@@ -263,24 +274,31 @@ XX_ModuleName/
 ### Облачная архитектура
 
 - **"Designing Data-Intensive Applications"** by Martin Kleppmann — архитектура данных
+
 - **"Cloud Native Patterns"** by Cornelia Davis — паттерны Cloud Native
+
 - **"Building Microservices"** by Sam Newman — микросервисная архитектура
 
 ### AWS специфичные
 
 - **"AWS Certified Solutions Architect Study Guide"** — подготовка к сертификации
+
 - **"Amazon Web Services in Action"** by Wittig & Wittig — практическое руководство
+
 - **"Serverless Architectures on AWS"** by Peter Sbarski — serverless паттерны
 
 ### Практика
 
 - **"Infrastructure as Code"** by Kief Morris — IaC паттерны
+
 - **"The Twelve-Factor App"** (https://12factor.net) — обязательное чтение
+
 - **"Release It!"** by Michael Nygard — паттерны надёжных систем
 
 ### Безопасность
 
 - **"AWS Security"** by Dylan Shields — безопасность в AWS
+
 - **"Cloud Security and Privacy"** by Tim Mather — общие принципы
 
 ---
@@ -288,21 +306,25 @@ XX_ModuleName/
 ## 🛠️ Инструменты курса
 
 ### CLI и SDK
+
 - AWS CLI v2
 - AWS SDK (Python boto3, Node.js, Go)
 - Terraform CLI
 
 ### Локальная разработка
+
 - LocalStack (эмуляция AWS локально)
 - SAM CLI (Serverless Application Model)
 - Docker
 
 ### Мониторинг и отладка
+
 - AWS CloudWatch
 - AWS X-Ray
 - CloudWatch Logs Insights
 
 ### IDE и расширения
+
 - VS Code + AWS Toolkit
 - IntelliJ + AWS Toolkit
 
@@ -313,7 +335,9 @@ XX_ModuleName/
 Курс готовит к сдаче:
 
 - **AWS Certified Cloud Practitioner** (базовый уровень)
+
 - **AWS Certified Solutions Architect – Associate** (средний уровень)
+
 - **AWS Certified Developer – Associate** (средний уровень)
 
 ---
@@ -327,4 +351,5 @@ XX_ModuleName/
 Курс поддерживается в актуальном состоянии. AWS регулярно обновляет сервисы — мы отслеживаем важные изменения.
 
 ---
+
 

@@ -5,12 +5,6 @@
 
 ## Question 1: OLTP vs OLAP
 
-
-
-
-
-
-
 Какой тип workload характерен для Redshift?
 
 A) Caching
@@ -24,12 +18,6 @@ D) OLTP (транзакции)
 ---
 
 ## Question 2: Athena Pricing
-
-
-
-
-
-
 
 Как оплачивается Athena?
 
@@ -45,12 +33,6 @@ D) Per-hour
 
 ## Question 3: Data Format
 
-
-
-
-
-
-
 Какой формат данных рекомендуется для Athena/Redshift?
 
 A) JSON
@@ -64,12 +46,6 @@ D) Parquet/ORC (columnar)
 ---
 
 ## Question 4: Kinesis Firehose
-
-
-
-
-
-
 
 Что делает Kinesis Firehose?
 
@@ -85,12 +61,6 @@ D) Хранит данные 365 дней
 
 ## Question 5: Partitioning
 
-
-
-
-
-
-
 Зачем партиционировать данные в S3 для Athena?
 
 A) Для уменьшения объёма сканируемых данных и стоимости
@@ -104,11 +74,6 @@ D) Для шифрования
 ---
 
 ## Question 6: Redshift Spectrum
-
-
-
-
-
 
 Что делает Redshift Spectrum?
 
@@ -124,11 +89,6 @@ D) Ускоряет Redshift
 
 ## Question 7: Glue
 
-
-
-
-
-
 Для чего используется AWS Glue?
 
 A) ETL, Data Catalog, crawlers для metadata
@@ -142,11 +102,6 @@ D) Только storage
 ---
 
 ## Question 8: QuickSight
-
-
-
-
-
 
 Что такое Amazon QuickSight?
 
@@ -162,11 +117,6 @@ D) ETL tool
 
 ## Question 9: Lake Formation
 
-
-
-
-
-
 Для чего используется Lake Formation?
 
 A) Создание озёр
@@ -180,11 +130,6 @@ D) Только storage
 ---
 
 ## Question 10: OpenSearch
-
-
-
-
-
 
 Когда использовать OpenSearch вместо Athena?
 
@@ -200,11 +145,6 @@ D) Для batch analytics
 
 ## Question 11: EMR
 
-
-
-
-
-
 Для чего используется Amazon EMR?
 
 A) Big data processing с Spark, Hadoop, Presto
@@ -218,11 +158,6 @@ D) Monitoring
 ---
 
 ## Question 12: Data Pipeline
-
-
-
-
-
 
 Что такое AWS Data Pipeline?
 
@@ -238,11 +173,6 @@ D) Orchestration для data movement и transformation
 
 ## Question 13: Glue Jobs
 
-
-
-
-
-
 Какие типы jobs поддерживает Glue?
 
 A) Только Scala
@@ -256,11 +186,6 @@ D) Spark (Python/Scala) и Python Shell
 ---
 
 ## Question 14: Athena Workgroups
-
-
-
-
-
 
 Для чего используются Athena Workgroups?
 
@@ -276,11 +201,6 @@ D) Только для users
 
 ## Question 15: Kinesis Analytics
 
-
-
-
-
-
 Что делает Kinesis Data Analytics?
 
 A) Storage
@@ -294,11 +214,6 @@ D) Real-time SQL/Flink на streaming data
 ---
 
 ## Question 16: Redshift Serverless
-
-
-
-
-
 
 Какое преимущество Redshift Serverless?
 
@@ -314,11 +229,6 @@ D) Быстрее
 
 ## Question 17: Data Exchange
 
-
-
-
-
-
 Что такое AWS Data Exchange?
 
 A) ETL service
@@ -332,11 +242,6 @@ D) Database
 ---
 
 ## Question 18: Clean Rooms
-
-
-
-
-
 
 Для чего используется AWS Clean Rooms?
 
@@ -352,11 +257,6 @@ D) Storage
 
 ## Question 19: MSK
 
-
-
-
-
-
 Что такое Amazon MSK?
 
 A) SQL service
@@ -370,11 +270,6 @@ D) Managed Kafka for streaming
 ---
 
 ## Question 20: DataZone
-
-
-
-
-
 
 Для чего используется Amazon DataZone?
 
@@ -416,3 +311,4 @@ D) DNS service
 | 20 | A | DataZone: data governance и cataloging |
 
 ---
+

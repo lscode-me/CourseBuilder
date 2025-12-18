@@ -6,7 +6,6 @@
 
 ## Question 1: Определение услуги
 
-
 Что такое услуга (service) согласно ITIL?
 
 A) Контракт между поставщиком и клиентом
@@ -20,7 +19,6 @@ D) Способ предоставления ценности клиенту б�
 ---
 
 ## Question 2: Компоненты ценности услуги
-
 
 Из каких компонентов складывается ценность услуги?
 
@@ -36,7 +34,6 @@ D) Utility + Warranty + Experience
 
 ## Question 3: ITIL 4
 
-
 Что такое ITIL?
 
 A) Обязательный стандарт для всех IT-компаний
@@ -50,7 +47,6 @@ D) Сертификация для IT-менеджеров
 ---
 
 ## Question 4: Четыре измерения
-
 
 Какое из перечисленного НЕ является одним из четырёх измерений управления услугами в ITIL 4?
 
@@ -66,7 +62,6 @@ D) Budget & Finance
 
 ## Question 5: Принцип ITIL
 
-
 Какой принцип ITIL 4 гласит, что нужно делать только необходимое?
 
 A) Start where you are
@@ -80,7 +75,6 @@ D) Progress iteratively
 ---
 
 ## Question 6: Определение инцидента
-
 
 Что такое инцидент согласно ITIL?
 
@@ -96,7 +90,6 @@ D) Ошибка в коде программы
 
 ## Question 7: Приоритизация инцидентов
 
-
 Как рассчитывается приоритет инцидента?
 
 A) Priority = Impact × Urgency
@@ -110,7 +103,6 @@ D) Priority = Impact / Urgency
 ---
 
 ## Question 8: High Impact + Medium Urgency
-
 
 Какой приоритет получит инцидент с High Impact и Medium Urgency?
 
@@ -126,7 +118,6 @@ D) P4 (Low)
 
 ## Question 9: Incident vs Problem
 
-
 Чем отличается цель Problem Management от Incident Management?
 
 A) Problem Management находит и устраняет корневые причины инцидентов
@@ -140,7 +131,6 @@ D) Problem Management работает только с критическими 
 ---
 
 ## Question 10: 5 Whys
-
 
 Для чего используется метод "5 Whys"?
 
@@ -156,7 +146,6 @@ D) Для оценки времени решения инцидента
 
 ## Question 11: Known Error
 
-
 Что такое Known Error?
 
 A) Ошибка в документации
@@ -170,7 +159,6 @@ D) Инцидент высокого приоритета
 ---
 
 ## Question 12: Типы изменений
-
 
 Какой тип изменения требует одобрения CAB (Change Advisory Board)?
 
@@ -186,7 +174,6 @@ D) Minor
 
 ## Question 13: Emergency Change
 
-
 Когда применяется Emergency Change?
 
 A) При добавлении новой функциональности
@@ -200,7 +187,6 @@ D) При любом срочном запросе от клиента
 ---
 
 ## Question 14: Rollback Plan
-
 
 Что должен включать Change Request?
 
@@ -216,7 +202,6 @@ D) Описание, риски, план тестирования и rollback p
 
 ## Question 15: Service Request
 
-
 Что из перечисленного является примером Service Request?
 
 A) Запрос на доступ к системе
@@ -230,7 +215,6 @@ D) Ошибка в production
 ---
 
 ## Question 16: SLA определение
-
 
 Что такое SLA?
 
@@ -246,7 +230,6 @@ D) Формальное соглашение об уровне сервиса м
 
 ## Question 17: Availability расчёт
 
-
 Если за месяц (720 часов) было 43 минуты downtime, какова доступность?
 
 A) 99.999%
@@ -260,7 +243,6 @@ D) 99%
 ---
 
 ## Question 18: Three 9s
-
 
 Сколько downtime в месяц допускает availability 99.9% (three 9s)?
 
@@ -276,7 +258,6 @@ D) 26 секунд
 
 ## Question 19: OLA
 
-
 Что такое OLA (Operational Level Agreement)?
 
 A) Лицензионное соглашение
@@ -290,7 +271,6 @@ D) Контракт на поставку оборудования
 ---
 
 ## Question 20: SLA vs OLA
-
 
 Как соотносятся SLA и OLA?
 
@@ -306,7 +286,6 @@ D) OLA должен быть строже, чем SLA
 
 ## Question 21: RACI - Accountable
 
-
 Сколько человек может быть "Accountable" для одной задачи в RACI-матрице?
 
 A) Ни одного (опционально)
@@ -320,7 +299,6 @@ D) Сколько угодно
 ---
 
 ## Question 22: RACI роли
-
 
 В RACI-матрице, что означает буква "C"?
 
@@ -336,7 +314,6 @@ D) Выполняет работу
 
 ## Question 23: Responsible vs Accountable
 
-
 Чем отличается Responsible от Accountable?
 
 A) Responsible выполняет работу, Accountable несёт ответственность за результат
@@ -350,7 +327,6 @@ D) Responsible и Accountable — это одно и то же
 ---
 
 ## Question 24: Functional Escalation
-
 
 Что такое Functional (Horizontal) Escalation?
 
@@ -366,7 +342,6 @@ D) Эскалация к специалистам с нужной эксперт
 
 ## Question 25: Hierarchical Escalation
 
-
 Когда необходима Hierarchical (Vertical) Escalation?
 
 A) Только для P4 инцидентов
@@ -380,7 +355,6 @@ D) Когда SLA под угрозой и нужны дополнительны
 ---
 
 ## Question 26: Escalation Best Practice
-
 
 Какой подход к эскалации является правильным?
 
@@ -396,7 +370,6 @@ D) Эскалировать только по просьбе клиента
 
 ## Question 27: Service Catalogue
 
-
 Зачем нужен Service Catalogue?
 
 A) Только для внутреннего использования IT-отдела
@@ -410,7 +383,6 @@ D) Для хранения технической документации
 ---
 
 ## Question 28: PIR
-
 
 Что такое PIR (Post Implementation Review)?
 
@@ -426,7 +398,6 @@ D) Отчёт перед внедрением изменения
 
 ## Question 29: Post-mortem цель
 
-
 Какова главная цель Post-mortem (Post-Incident Review)?
 
 A) Наказать команду
@@ -440,7 +411,6 @@ D) Найти виновного
 ---
 
 ## Question 30: Continual Improvement
-
 
 Какой принцип лежит в основе ITIL 4?
 
@@ -505,5 +475,6 @@ D) Continual Improvement — постоянное улучшение
 | **Менее 15 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию и попробуйте ещё раз. |
 
 ---
+
 
 

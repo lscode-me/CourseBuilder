@@ -5,12 +5,6 @@
 
 ## Question 1: IaC Benefit
 
-
-
-
-
-
-
 Какое главное преимущество IaC?
 
 A) Не требует знания AWS
@@ -24,12 +18,6 @@ D) Воспроизводимость и version control
 ---
 
 ## Question 2: Terraform State
-
-
-
-
-
-
 
 Где рекомендуется хранить Terraform state для team work?
 
@@ -45,12 +33,6 @@ D) В Terraform Cloud только
 
 ## Question 3: CloudFormation
 
-
-
-
-
-
-
 Какая функция CloudFormation позволяет предварительно просмотреть изменения?
 
 A) Change Set
@@ -64,12 +46,6 @@ D) Stack Policy
 ---
 
 ## Question 4: Terraform vs CloudFormation
-
-
-
-
-
-
 
 Какое преимущество Terraform над CloudFormation?
 
@@ -85,12 +61,6 @@ D) Managed state
 
 ## Question 5: Best Practice
 
-
-
-
-
-
-
 Как хранить secrets в IaC коде?
 
 A) Не хранить, использовать SSM/Secrets Manager references
@@ -104,11 +74,6 @@ D) В переменных
 ---
 
 ## Question 6: CDK
-
-
-
-
-
 
 Что такое AWS CDK?
 
@@ -124,11 +89,6 @@ D) Cloud Database Kit
 
 ## Question 7: SAM
 
-
-
-
-
-
 Для чего используется AWS SAM?
 
 A) Для VMs
@@ -142,11 +102,6 @@ D) Для любой инфраструктуры
 ---
 
 ## Question 8: Drift Detection
-
-
-
-
-
 
 Что такое Drift Detection в CloudFormation?
 
@@ -162,11 +117,6 @@ D) Security scan
 
 ## Question 9: Terraform Modules
 
-
-
-
-
-
 Для чего используются Terraform Modules?
 
 A) Для reusable infrastructure components
@@ -180,11 +130,6 @@ D) Для state
 ---
 
 ## Question 10: Stack Sets
-
-
-
-
-
 
 Что делают CloudFormation StackSets?
 
@@ -200,11 +145,6 @@ D) Только backup
 
 ## Question 11: Pulumi
 
-
-
-
-
-
 Чем Pulumi отличается от Terraform?
 
 A) Не поддерживает state
@@ -218,11 +158,6 @@ D) Ничем
 ---
 
 ## Question 12: terraform plan
-
-
-
-
-
 
 Что делает terraform plan?
 
@@ -238,11 +173,6 @@ D) Удаляет ресурсы
 
 ## Question 13: CloudFormation Parameters
 
-
-
-
-
-
 Для чего используются Parameters?
 
 A) Для input values при создании stack
@@ -256,11 +186,6 @@ D) Для secrets
 ---
 
 ## Question 14: terraform import
-
-
-
-
-
 
 Что делает terraform import?
 
@@ -276,11 +201,6 @@ D) Удаляет ресурсы
 
 ## Question 15: Nested Stacks
 
-
-
-
-
-
 Для чего используются Nested Stacks?
 
 A) Для monitoring
@@ -294,11 +214,6 @@ D) Для организации больших templates в reusable components
 ---
 
 ## Question 16: terraform workspace
-
-
-
-
-
 
 Для чего используются Terraform Workspaces?
 
@@ -314,11 +229,6 @@ D) Для security
 
 ## Question 17: cfn-lint
 
-
-
-
-
-
 Что делает cfn-lint?
 
 A) Мониторит ресурсы
@@ -332,11 +242,6 @@ D) Шифрует templates
 ---
 
 ## Question 18: terraform.tfvars
-
-
-
-
-
 
 Для чего используется terraform.tfvars?
 
@@ -352,11 +257,6 @@ D) Для значений переменных
 
 ## Question 19: Outputs
 
-
-
-
-
-
 Для чего используются Outputs в CloudFormation?
 
 A) Только для logging
@@ -370,11 +270,6 @@ D) Для экспорта значений для других stacks или п
 ---
 
 ## Question 20: terraform destroy
-
-
-
-
-
 
 Что делает terraform destroy?
 
@@ -416,3 +311,4 @@ D) Создаёт ресурсы
 | 20 | C | terraform destroy удаляет все ресурсы |
 
 ---
+
