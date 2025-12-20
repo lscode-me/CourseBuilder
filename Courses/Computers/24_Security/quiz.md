@@ -8,13 +8,13 @@
 
 Сколько уровней привилегий (rings) в архитектуре x86?
 
-A) 4 уровня (Ring 0-3)
+A) 8 уровней
 
-B) 2 уровня
+B) 4 уровня (Ring 0-3)
 
-C) 8 уровней
+C) 3 уровня
 
-D) 3 уровня
+D) 2 уровня
 
 ---
 
@@ -22,13 +22,13 @@ D) 3 уровня
 
 Что можно делать в Ring 0 (Kernel Mode)?
 
-A) Только чтение памяти
+A) Только выполнение программ
 
-B) Только выполнение программ
+B) Всё: I/O, управление памятью, прерывания
 
-C) Только работа с файлами
+C) Только чтение памяти
 
-D) Всё: I/O, управление памятью, прерывания
+D) Только работа с файлами
 
 ---
 
@@ -36,11 +36,11 @@ D) Всё: I/O, управление памятью, прерывания
 
 Сколько Exception Levels в архитектуре ARM?
 
-A) 2 уровня (EL0-EL1)
+A) 3 уровня (EL0-EL2)
 
 B) 4 уровня (EL0-EL3)
 
-C) 3 уровня (EL0-EL2)
+C) 2 уровня (EL0-EL1)
 
 D) 6 уровней
 
@@ -64,11 +64,11 @@ D) Read, Write, Execute (R, W, X)
 
 Для чего используется NX bit (No-eXecute)?
 
-A) Для ускорения работы
+A) Для экономии памяти
 
-B) Для защиты от чтения
+B) Для ускорения работы
 
-C) Для экономии памяти
+C) Для защиты от чтения
 
 D) Защита от выполнения кода на стеке (защита от buffer overflow)
 
@@ -78,13 +78,13 @@ D) Защита от выполнения кода на стеке (защита
 
 Что такое ASLR (Address Space Layout Randomization)?
 
-A) Рандомизация паролей
+A) Шифрование памяти
 
-B) Шифрование памяти
+B) Сжатие данных
 
-C) Рандомизация адресов при каждом запуске процесса
+C) Рандомизация паролей
 
-D) Сжатие данных
+D) Рандомизация адресов при каждом запуске процесса
 
 ---
 
@@ -94,11 +94,11 @@ D) Сжатие данных
 
 A) Проблема в операционной системе
 
-B) Проблема в компиляторе
+B) Проблема в сети
 
 C) Speculative execution + branch prediction оставляют следы в кэше
 
-D) Проблема в сети
+D) Проблема в компиляторе
 
 ---
 
@@ -106,11 +106,11 @@ D) Проблема в сети
 
 В чём проблема Meltdown vulnerability?
 
-A) Проблема в драйверах
+A) Проблема в файловой системе
 
 B) Kernel memory читается из user space через спекуляцию
 
-C) Проблема в файловой системе
+C) Проблема в драйверах
 
 D) Проблема в сети
 
@@ -120,13 +120,13 @@ D) Проблема в сети
 
 Что такое Rowhammer атака?
 
-A) Атака через программное обеспечение
+A) Атака через файловую систему
 
 B) Физический дефект DRAM, быстрое чтение строк вызывает flip битов
 
 C) Атака через сеть
 
-D) Атака через файловую систему
+D) Атака через программное обеспечение
 
 ---
 
@@ -136,11 +136,11 @@ D) Атака через файловую систему
 
 A) Протокол сети
 
-B) Тип процессора
+B) Тип памяти
 
-C) Изолированная область памяти (enclave), защищена даже от OS
+C) Тип процессора
 
-D) Тип памяти
+D) Изолированная область памяти (enclave), защищена даже от OS
 
 ---
 
@@ -150,9 +150,9 @@ D) Тип памяти
 
 A) Тип процессора
 
-B) Тип памяти
+B) Secure World vs Normal World разделение
 
-C) Secure World vs Normal World разделение
+C) Тип памяти
 
 D) Файловая система
 
@@ -164,11 +164,11 @@ D) Файловая система
 
 A) Отдельный чип, хранит криптографические ключи, измеряет boot process
 
-B) Тип памяти
+B) Тип процессора
 
-C) Тип процессора
+C) Протокол сети
 
-D) Протокол сети
+D) Тип памяти
 
 ---
 
@@ -178,11 +178,11 @@ D) Протокол сети
 
 A) Сжатие данных
 
-B) NX bit + OS support, защита от выполнения кода на стеке и heap
+B) Защита данных от чтения
 
-C) Защита данных от чтения
+C) Шифрование данных
 
-D) Шифрование данных
+D) NX bit + OS support, защита от выполнения кода на стеке и heap
 
 ---
 
@@ -190,13 +190,13 @@ D) Шифрование данных
 
 Для чего используются Stack Canaries?
 
-A) Защита от stack overflow через обнаружение изменения canary
+A) Для ускорения работы
 
-B) Для защиты от чтения
+B) Для экономии памяти
 
-C) Для ускорения работы
+C) Защита от stack overflow через обнаружение изменения canary
 
-D) Для экономии памяти
+D) Для защиты от чтения
 
 ---
 
@@ -204,9 +204,9 @@ D) Для экономии памяти
 
 Что такое Control Flow Integrity (CFI)?
 
-A) Проверка, что программа прыгает только в легальные места
+A) Сжатие кода
 
-B) Сжатие кода
+B) Проверка, что программа прыгает только в легальные места
 
 C) Шифрование кода
 
@@ -220,11 +220,11 @@ D) Защита данных
 
 A) Microcode updates, software barriers (retpoline), performance penalty
 
-B) Только обновление ОС
+B) Только обновление драйверов
 
 C) Только перезагрузка
 
-D) Только обновление драйверов
+D) Только обновление ОС
 
 ---
 
@@ -232,13 +232,13 @@ D) Только обновление драйверов
 
 Какое mitigation используется для Meltdown?
 
-A) Только перезагрузка
+A) KPTI (Kernel Page Table Isolation) — отдельные page tables для kernel и user
 
-B) Только обновление ОС
+B) Только обновление драйверов
 
-C) Только обновление драйверов
+C) Только обновление ОС
 
-D) KPTI (Kernel Page Table Isolation) — отдельные page tables для kernel и user
+D) Только перезагрузка
 
 ---
 
@@ -246,13 +246,13 @@ D) KPTI (Kernel Page Table Isolation) — отдельные page tables для 
 
 Какое mitigation используется для Rowhammer?
 
-A) Только обновление драйверов
+A) Только перезагрузка
 
-B) Только обновление ОС
+B) ECC memory, Targeted Row Refresh (TRR)
 
-C) ECC memory, Targeted Row Refresh (TRR)
+C) Только обновление ОС
 
-D) Только перезагрузка
+D) Только обновление драйверов
 
 ---
 
@@ -260,11 +260,11 @@ D) Только перезагрузка
 
 Какое trade-off характерно для security features?
 
-A) Security vs Performance — многие mitigation techniques снижают производительность
+A) Security всегда улучшает производительность
 
 B) Security не влияет на производительность
 
-C) Security всегда улучшает производительность
+C) Security vs Performance — многие mitigation techniques снижают производительность
 
 D) Security всегда бесплатна
 
@@ -274,13 +274,153 @@ D) Security всегда бесплатна
 
 Где применяются Secure Enclaves (SGX, TrustZone)?
 
-A) Только для игр
+A) Только для веб-браузеров
 
-B) DRM, cryptocurrency wallets, secure computation
+B) Только для игр
 
-C) Только для файловых систем
+C) DRM, cryptocurrency wallets, secure computation
 
-D) Только для веб-браузеров
+D) Только для файловых систем
+
+---
+
+## Question 21: Buffer Overflow без NX
+
+Что происходит при buffer overflow без NX bit?
+
+A) Код может быть записан на стек и выполнен
+
+B) Только запись данных
+
+C) Нет проблем
+
+D) Только чтение данных
+
+---
+
+## Question 22: ASLR Эффект
+
+Какой эффект имеет ASLR на эксплуатацию уязвимостей?
+
+A) Полностью предотвращает эксплуатацию
+
+B) Упрощает эксплуатацию
+
+C) Не влияет на эксплуатацию
+
+D) Усложняет эксплуатацию, так как атакующий не знает адреса
+
+---
+
+## Question 23: Spectre Performance Penalty
+
+Какой performance penalty у mitigation для Spectre?
+
+A) ~5-30% в зависимости от workload
+
+B) Нет penalty
+
+C) ~50%
+
+D) ~100%
+
+---
+
+## Question 24: KPTI Overhead
+
+Почему KPTI имеет performance overhead?
+
+A) Из-за сжатия данных
+
+B) Из-за шифрования
+
+C) Нет overhead
+
+D) Из-за переключения page tables при syscall
+
+---
+
+## Question 25: Stack Canaries Типы
+
+Какие типы stack canaries существуют?
+
+A) Terminator canaries, Random canaries, XOR canaries
+
+B) Только terminator canaries
+
+C) Только random canaries
+
+D) Только один тип
+
+---
+
+## Question 26: CFI Hardware Support
+
+Какая CPU feature поддерживает CFI?
+
+A) Только software support
+
+B) Только для ARM
+
+C) Нет hardware support
+
+D) Intel CET (Control-flow Enforcement Technology)
+
+---
+
+## Question 27: Address Sanitizer
+
+Что обнаруживает Address Sanitizer (ASan)?
+
+A) Только memory leaks
+
+B) Только use-after-free
+
+C) Use-after-free, buffer overflow, memory leaks и другие memory errors
+
+D) Только buffer overflow
+
+---
+
+## Question 28: Format String Vulnerability
+
+В чём проблема format string vulnerability?
+
+A) Нет проблемы
+
+B) Использование user input в format string может привести к утечке данных или записи в память
+
+C) Проблема с чтением файлов
+
+D) Только проблема с сетью
+
+---
+
+## Question 29: Timing Attack
+
+Что такое timing attack?
+
+A) Измерение времени выполнения для извлечения секретов
+
+B) Атака через файловую систему
+
+C) Атака через сеть
+
+D) Атака через память
+
+---
+
+## Question 30: Defense in Depth
+
+Что означает defense in depth в контексте security?
+
+A) Только одна защита
+
+B) Только hardware защита
+
+C) Только software защита
+
+D) Комбинация множества mitigation techniques (NX + ASLR + Canaries + CFI)
 
 ---
 
@@ -290,38 +430,48 @@ D) Только для веб-браузеров
 
 | # | Answer | Explanation |
 |---|--------|-------------|
-| 1 | A | Архитектура x86 имеет 4 уровня привилегий (Ring 0-3). |
-| 2 | D | Ring 0 (Kernel Mode) позволяет делать всё: I/O, управление памятью, прерывания. |
+| 1 | B | Архитектура x86 имеет 4 уровня привилегий (Ring 0-3). |
+| 2 | B | Ring 0 (Kernel Mode) позволяет делать всё: I/O, управление памятью, прерывания. |
 | 3 | B | ARM имеет 4 Exception Levels (EL0-EL3): EL0 (User), EL1 (OS), EL2 (Hypervisor), EL3 (Secure Monitor). |
 | 4 | D | Страница памяти может иметь флаги Read, Write, Execute (R, W, X). |
 | 5 | D | NX bit используется для защиты от выполнения кода на стеке, что защищает от buffer overflow эксплойтов. |
-| 6 | C | ASLR рандомизирует адреса при каждом запуске процесса, усложняя эксплуатацию уязвимостей. |
+| 6 | D | ASLR рандомизирует адреса при каждом запуске процесса, усложняя эксплуатацию уязвимостей. |
 | 7 | C | Spectre использует speculative execution + branch prediction, которые оставляют следы в кэше, позволяя извлечь данные через timing attack. |
 | 8 | B | Meltdown позволяет читать kernel memory из user space через спекулятивное выполнение до проверки прав. |
 | 9 | B | Rowhammer — это физический дефект DRAM, где быстрое чтение строк A и C вызывает flip битов в строке B между ними. |
-| 10 | C | Intel SGX создаёт изолированную область памяти (enclave), защищённую даже от операционной системы. |
-| 11 | C | ARM TrustZone разделяет Secure World и Normal World для изоляции критичных данных. |
+| 10 | D | Intel SGX создаёт изолированную область памяти (enclave), защищённую даже от операционной системы. |
+| 11 | B | ARM TrustZone разделяет Secure World и Normal World для изоляции критичных данных. |
 | 12 | A | TPM — это отдельный чип на материнской плате, который хранит криптографические ключи и измеряет boot process. |
-| 13 | B | DEP (Data Execution Prevention) = NX bit + OS support, защищает от выполнения кода на стеке и heap. |
-| 14 | A | Stack Canaries защищают от stack overflow через обнаружение изменения случайного значения (canary) перед возвратом из функции. |
-| 15 | A | Control Flow Integrity проверяет, что программа прыгает только в легальные места, защищая от ROP атак. |
+| 13 | D | DEP (Data Execution Prevention) = NX bit + OS support, защищает от выполнения кода на стеке и heap. |
+| 14 | C | Stack Canaries защищают от stack overflow через обнаружение изменения случайного значения (canary) перед возвратом из функции. |
+| 15 | B | Control Flow Integrity проверяет, что программа прыгает только в легальные места, защищая от ROP атак. |
 | 16 | A | Mitigation для Spectre включает microcode updates, software barriers (retpoline), с performance penalty ~5-30%. |
-| 17 | D | Mitigation для Meltdown — KPTI (Kernel Page Table Isolation), отдельные page tables для kernel и user, с performance penalty ~5%. |
-| 18 | C | Mitigation для Rowhammer включает ECC memory и Targeted Row Refresh (TRR). |
-| 19 | A | Security vs Performance — многие mitigation techniques снижают производительность, это важный trade-off. |
-| 20 | B | Secure Enclaves применяются для DRM, cryptocurrency wallets, secure computation. |
+| 17 | A | Mitigation для Meltdown — KPTI (Kernel Page Table Isolation), отдельные page tables для kernel и user, с performance penalty ~5%. |
+| 18 | B | Mitigation для Rowhammer включает ECC memory и Targeted Row Refresh (TRR). |
+| 19 | C | Security vs Performance — многие mitigation techniques снижают производительность, это важный trade-off. |
+| 20 | C | Secure Enclaves применяются для DRM, cryptocurrency wallets, secure computation. |
+| 21 | A | Без NX bit код может быть записан на стек через buffer overflow и выполнен, что позволяет атакующему выполнить произвольный код. |
+| 22 | D | ASLR усложняет эксплуатацию, так как атакующий не знает адреса функций и данных (они меняются при каждом запуске), но не предотвращает полностью. |
+| 23 | A | Mitigation для Spectre имеет performance penalty ~5-30% в зависимости от workload из-за барьеров и ограничений спекулятивного выполнения. |
+| 24 | D | KPTI имеет performance overhead из-за переключения page tables при каждом syscall, что добавляет latency (~5% overhead). |
+| 25 | A | Существуют разные типы stack canaries: Terminator canaries (содержат NULL, CR, LF), Random canaries (случайные значения), XOR canaries (XOR с return address). |
+| 26 | D | Intel CET (Control-flow Enforcement Technology) предоставляет hardware support для CFI через Indirect Branch Tracking (IBT) и Shadow Stack. |
+| 27 | C | Address Sanitizer (ASan) обнаруживает use-after-free, buffer overflow, memory leaks и другие memory errors во время выполнения с overhead ~2x slowdown. |
+| 28 | B | Format string vulnerability возникает при использовании user input в format string (printf, sprintf), что может привести к утечке данных со стека или записи в память через %n. |
+| 29 | A | Timing attack — это извлечение секретов через измерение времени выполнения операций (например, сравнение паролей, доступ к кэшу). |
+| 30 | D | Defense in depth означает использование комбинации множества mitigation techniques (NX + ASLR + Canaries + CFI), что значительно усложняет эксплуатацию уязвимостей. |
 
 ---
 
 ## Scoring Guide
 
-- **18-20 правильных ответов (90-100%):** 🏆 Отлично! Вы отлично усвоили материал. Переходите к следующему модулю.
+- **27-30 правильных ответов (90-100%):** 🏆 Отлично! Вы отлично усвоили материал. Переходите к следующему модулю.
 
-- **14-17 правильных ответов (70-89%):** ✅ Хорошо! Хороший результат! Повторите темы, в которых ошиблись.
+- **21-26 правильных ответов (70-89%):** ✅ Хорошо! Хороший результат! Повторите темы, в которых ошиблись.
 
-- **10-13 правильных ответов (50-69%):** ⚠️ Удовлетворительно. Рекомендуется перечитать соответствующие разделы лекции.
+- **15-20 правильных ответов (50-69%):** ⚠️ Удовлетворительно. Рекомендуется перечитать соответствующие разделы лекции.
 
-- **Менее 10 правильных ответов (<50%):** 📚 Нужно повторить. Внимательно перечитайте лекцию и попробуйте ещё раз.
+- **Менее 15 правильных ответов (<50%):** 📚 Нужно повторить. Внимательно перечитайте лекцию и попробуйте ещё раз.
 
 ---
 

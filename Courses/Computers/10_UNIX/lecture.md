@@ -157,18 +157,72 @@ find . -name "*.txt" | sort | head -10
 3. Оба процесса продолжают выполнение с того же места
 4. Различаются только возвращаемым значением fork()
 
+**Пример: fork() в деталях**
+
+```c
+#include <unistd.h>
+#include <stdio.h>
+#include <sys/wait.h>
+
+int main() {
+    printf("Before fork: PID=%d\n", getpid());
+    
+    pid_t pid = fork();
+    
+    if (pid == 0) {
+        // Дочерний процесс
+        printf("Child: PID=%d, Parent PID=%d\n", 
+               getpid(), getppid());
+    } else if (pid > 0) {
+        // Родительский процесс
+        printf("Parent: PID=%d, Child PID=%d\n", 
+               getpid(), pid);
+        wait(NULL);  // Ждать завершения дочернего процесса
+    } else {
+        // Ошибка
+        perror("fork failed");
+        return 1;
+    }
+    
+    return 0;
+}
+```
+
 **exec()** — системный вызов для замены программы в процессе.
+
+**Пример: exec() семейство**
+
+```c
+#include <unistd.h>
+
+// exec() семейство функций
+execl("/bin/ls", "ls", "-l", NULL);           // Список аргументов
+execv("/bin/ls", argv);                        // Массив аргументов
+execlp("ls", "ls", "-l", NULL);                // Поиск в PATH
+execvp("ls", argv);                            // PATH + массив
+execle("/bin/ls", "ls", NULL, envp);           // С переменными окружения
+execve("/bin/ls", argv, envp);                 // Полный контроль
+```
 
 **Типичный паттерн:**
 ```c
 
-pid = fork();
+pid_t pid = fork();
 if (pid == 0) {
     // Дочерний процесс
-    exec("/bin/ls", ...);
-} else {
+    execl("/bin/ls", "ls", "-l", NULL);
+    // Если exec() успешен, этот код не выполнится
+    perror("exec failed");
+    exit(1);
+} else if (pid > 0) {
     // Родительский процесс
-    wait(pid);
+    int status;
+    waitpid(pid, &status, 0);  // Ждать завершения
+    if (WIFEXITED(status)) {
+        printf("Child exited with code %d\n", WEXITSTATUS(status));
+    }
+} else {
+    perror("fork failed");
 }
 ```
 
@@ -176,15 +230,134 @@ if (pid == 0) {
 
 **Механизмы:**
 
-- **Pipes** — однонаправленная коммуникация
+**1. Pipes** — однонаправленная коммуникация
 
-- **Named pipes (FIFO)** — именованные каналы
+**Пример: Anonymous pipe**
 
-- **Signals** — асинхронные уведомления
+```c
+#include <unistd.h>
 
-- **Shared memory** — общая память
+int pipefd[2];
+pipe(pipefd);  // pipefd[0] - read, pipefd[1] - write
 
-- **Sockets** — сетевые соединения
+pid_t pid = fork();
+if (pid == 0) {
+    // Дочерний процесс - пишет
+    close(pipefd[0]);  // Закрыть read end
+    write(pipefd[1], "Hello", 5);
+    close(pipefd[1]);
+} else {
+    // Родительский процесс - читает
+    close(pipefd[1]);  // Закрыть write end
+    char buffer[100];
+    read(pipefd[0], buffer, 100);
+    printf("Received: %s\n", buffer);
+    close(pipefd[0]);
+}
+```
+
+**2. Named pipes (FIFO)** — именованные каналы
+
+**Пример: FIFO**
+
+```bash
+# Создание FIFO
+mkfifo mypipe
+
+# Процесс 1 (пишет)
+echo "Hello" > mypipe
+
+# Процесс 2 (читает)
+cat < mypipe
+```
+
+```c
+
+// Программное создание FIFO
+#include <sys/stat.h>
+mkfifo("/tmp/mypipe", 0666);
+
+// Открытие для записи
+int fd = open("/tmp/mypipe", O_WRONLY);
+write(fd, "Hello", 5);
+close(fd);
+```
+
+**3. Signals** — асинхронные уведомления
+
+**Пример: Обработка сигналов**
+
+```c
+#include <signal.h>
+#include <stdio.h>
+
+void signal_handler(int sig) {
+    printf("Received signal %d\n", sig);
+    if (sig == SIGINT) {
+        printf("Interrupt signal, cleaning up...\n");
+        exit(0);
+    }
+}
+
+int main() {
+    // Установка обработчика
+    signal(SIGINT, signal_handler);
+    
+    // Игнорирование сигнала
+    signal(SIGTERM, SIG_IGN);
+    
+    // Бесконечный цикл
+    while (1) {
+        sleep(1);
+    }
+    
+    return 0;
+}
+```
+
+**4. Shared memory** — общая память
+
+**Пример: Shared memory**
+
+```c
+#include <sys/shm.h>
+#include <sys/ipc.h>
+
+// Создание shared memory
+key_t key = ftok("/tmp", 'A');
+int shmid = shmget(key, 1024, IPC_CREAT | 0666);
+
+// Присоединение к shared memory
+void *shm = shmat(shmid, NULL, 0);
+
+// Использование
+strcpy((char*)shm, "Hello from shared memory");
+
+// Отсоединение
+shmdt(shm);
+```
+
+**5. Sockets** — сетевые соединения
+
+**Пример: Unix domain socket**
+
+```c
+#include <sys/socket.h>
+#include <sys/un.h>
+
+// Создание socket
+int sockfd = socket(AF_UNIX, SOCK_STREAM, 0);
+
+struct sockaddr_un addr;
+addr.sun_family = AF_UNIX;
+strcpy(addr.sun_path, "/tmp/mysocket");
+
+bind(sockfd, (struct sockaddr*)&addr, sizeof(addr));
+listen(sockfd, 5);
+
+// Принятие соединения
+int client = accept(sockfd, NULL, NULL);
+```
 
 ---
 
@@ -220,15 +393,101 @@ if (pid == 0) {
 
 **Права:**
 
-- Чтение (r)
-- Запись (w)
-- Выполнение (x)
+- Чтение (r) = 4
+- Запись (w) = 2
+- Выполнение (x) = 1
 
 **Пример:**
 ```bash
 
 -rwxr-xr-- 1 user group 1024 file.txt
+│││││││││
+││││││││└── others: r-- (read only)
+│││││││└─── others: r--
+││││││└──── others: r--
+│││││└───── group: r-x (read + execute)
+││││└────── group: r-x
+│││└─────── group: r-x
+││└──────── owner: rwx (read + write + execute)
+│└───────── owner: rwx
+└────────── owner: rwx
 ```
+
+**Числовое представление:**
+```bash
+# rwxr-xr-- = 754
+# owner:  rwx = 4+2+1 = 7
+# group:  r-x = 4+0+1 = 5
+# others: r-- = 4+0+0 = 4
+
+chmod 755 file.txt  # rwxr-xr-x
+chmod 644 file.txt  # rw-r--r--
+chmod 700 file.txt  # rwx------
+```
+
+**Пример: Изменение прав в C**
+
+```c
+#include <sys/stat.h>
+
+// Установка прав
+chmod("file.txt", S_IRUSR | S_IWUSR | S_IXUSR |  // owner: rwx
+                  S_IRGRP | S_IXGRP |            // group: r-x
+                  S_IROTH);                      // others: r--
+
+// Или числовое
+chmod("file.txt", 0754);  // rwxr-xr--
+```
+
+**Sticky bit, setuid, setgid:**
+```bash
+# Sticky bit (t) - только владелец может удалить файл в /tmp
+chmod +t /tmp/file
+
+# Setuid (s) - выполняется с правами владельца
+chmod u+s /usr/bin/passwd
+
+# Setgid (s) - выполняется с правами группы
+chmod g+s /usr/bin/write
+```
+
+### 4.3 Символические и жёсткие ссылки
+
+**Hard links:**
+```bash
+# Создание hard link
+ln original.txt link.txt
+
+# Оба файла указывают на одни данные
+# Удаление одного не удаляет данные, пока есть другой
+```
+
+**Symbolic links:**
+```bash
+# Создание symbolic link
+ln -s original.txt symlink.txt
+
+# symlink.txt → указывает на original.txt
+# Если original.txt удалён, symlink "сломается"
+```
+
+**Пример: Работа со ссылками в C**
+
+```c
+#include <unistd.h>
+
+// Создание hard link
+link("original.txt", "hardlink.txt");
+
+// Создание symbolic link
+symlink("original.txt", "symlink.txt");
+
+// Чтение symbolic link
+char target[256];
+readlink("symlink.txt", target, sizeof(target));
+```
+
+---
 
 ---
 
@@ -256,9 +515,29 @@ if (pid == 0) {
 
 **Применение:**
 
-- Контейнеры (Docker) используют идеи изоляции процессов
-- Микросервисы следуют принципу "одна программа — одна задача"
-- DevOps инструменты используют pipes и композицию
+**Контейнеры (Docker):**
+```bash
+# Используют изоляцию процессов из UNIX
+docker run ubuntu ls -l
+
+# Композиция через pipes
+docker ps | grep running | awk '{print $1}'
+```
+
+**Микросервисы:**
+
+- Следуют принципу "одна программа — одна задача"
+- Коммуникация через простые интерфейсы (как pipes)
+- Легко комбинируются
+
+**DevOps инструменты:**
+```bash
+# Композиция через pipes
+kubectl get pods | grep running | awk '{print $1}' | xargs kubectl logs
+
+# Каждая команда делает одну вещь
+git log | grep "fix" | wc -l
+```
 
 **Функциональные ОС:**
 
@@ -267,8 +546,46 @@ if (pid == 0) {
 - Воспроизводимые сборки
 - Продолжают идеи UNIX о композиции и предсказуемости
 
+**Пример: NixOS декларативная конфигурация**
+
+```nix
+# /etc/nixos/configuration.nix
+{ config, pkgs, ... }:
+{
+  services.nginx.enable = true;
+  services.nginx.virtualHosts."example.com" = {
+    root = "/var/www";
+  };
+  
+  # Вся система описана декларативно
+  # Воспроизводимые сборки
+}
+```
+
 **Актуальность:**
 Философия UNIX остаётся актуальной спустя 50+ лет.
+
+### 5.3 POSIX стандарт
+
+**POSIX (Portable Operating System Interface):**
+
+- Стандарт совместимости между UNIX-подобными системами
+- Определяет API для системных вызовов
+- Обеспечивает переносимость программ
+
+**Пример: POSIX-совместимый код**
+
+```c
+
+// POSIX-совместимый код работает на Linux, macOS, BSD
+#include <unistd.h>
+#include <sys/types.h>
+
+pid_t pid = fork();
+if (pid == 0) {
+    execl("/bin/ls", "ls", NULL);
+}
+```
 
 ---
 
@@ -320,5 +637,6 @@ if (pid == 0) {
 - История UNIX и его создателей
 
 ---
+
 
 

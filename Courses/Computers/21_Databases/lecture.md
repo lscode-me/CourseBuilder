@@ -62,18 +62,81 @@ id | name  | email
 
 **SQL (Structured Query Language)** — язык для работы с реляционными БД.
 
+**Пример: Создание таблицы**
+
+```sql
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE orders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    amount DECIMAL(10, 2),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+```
+
 **Операции:**
 
-- SELECT — выборка данных
-- INSERT — вставка данных
-- UPDATE — обновление данных
-- DELETE — удаление данных
+**SELECT — выборка данных:**
+```sql
+
+-- Простой запрос
+SELECT name, email FROM users WHERE id = 1;
+
+-- JOIN для связи таблиц
+SELECT u.name, o.amount 
+FROM users u
+JOIN orders o ON u.id = o.user_id
+WHERE o.amount > 100;
+
+-- Агрегация
+SELECT user_id, SUM(amount) as total
+FROM orders
+GROUP BY user_id
+HAVING total > 1000;
+```
+
+**INSERT — вставка данных:**
+```sql
+
+INSERT INTO users (name, email) 
+VALUES ('Alice', 'alice@example.com');
+
+-- Множественная вставка
+INSERT INTO users (name, email) VALUES
+    ('Bob', 'bob@example.com'),
+    ('Charlie', 'charlie@example.com');
+```
+
+**UPDATE — обновление данных:**
+```sql
+
+UPDATE users 
+SET email = 'newemail@example.com'
+WHERE id = 1;
+```
+
+**DELETE — удаление данных:**
+```sql
+
+DELETE FROM users WHERE id = 1;
+
+-- Каскадное удаление (если настроено)
+DELETE FROM users WHERE id = 1;  -- Удалит связанные orders
+```
 
 **Преимущества:**
 
-- Стандартизированный язык
-- Мощные возможности запросов
-- Оптимизация запросов
+- Стандартизированный язык (ANSI SQL)
+- Мощные возможности запросов (JOIN, подзапросы, агрегация)
+- Оптимизация запросов (query optimizer)
+- Декларативный подход (описываем что нужно, не как)
 
 ---
 
@@ -99,8 +162,48 @@ id | name  | email
 - Предсказуемое поведение
 - Защита от ошибок
 
-**Пример:**
-Перевод денег должен быть атомарным — либо оба счёта обновляются, либо ни один.
+**Пример: Перевод денег**
+
+```sql
+
+BEGIN TRANSACTION;
+
+-- Снять со счёта A
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+
+-- Добавить на счёт B
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+
+-- Если обе операции успешны
+COMMIT;
+-- Если ошибка
+ROLLBACK;  -- Откат обеих операций
+```
+
+**Без транзакций:**
+```sql
+
+-- Плохо: нет атомарности
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+-- Если здесь сбой → деньги потеряны!
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+```
+
+**Isolation уровни:**
+```sql
+
+-- READ UNCOMMITTED: видим незафиксированные изменения
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+
+-- READ COMMITTED: видим только зафиксированные (стандарт)
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+-- REPEATABLE READ: одинаковые чтения в транзакции
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+
+-- SERIALIZABLE: полная изоляция (самый строгий)
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+```
 
 ---
 
@@ -122,21 +225,83 @@ id | name  | email
 - Гибкая схема
 - Примеры: MongoDB, CouchDB
 
+**Пример: MongoDB**
+
+```javascript
+
+// Вставка документа
+db.users.insertOne({
+    name: "Alice",
+    email: "alice@example.com",
+    orders: [
+        { product: "Laptop", price: 999 },
+        { product: "Mouse", price: 29 }
+    ]
+});
+
+// Запрос
+db.users.find({ "orders.price": { $gt: 100 } });
+```
+
 **Ключ-значение:**
 
 - Простая структура
 - Быстрый доступ
 - Примеры: Redis, DynamoDB
 
+**Пример: Redis**
+
+```python
+
+import redis
+r = redis.Redis()
+
+# Запись
+r.set("user:1:name", "Alice")
+r.set("user:1:email", "alice@example.com")
+
+# Чтение
+name = r.get("user:1:name")
+```
+
 **Колоночные:**
 
 - Оптимизация для аналитики
 - Примеры: Cassandra, HBase
 
+**Пример: Cassandra CQL**
+
+```sql
+
+CREATE TABLE sales (
+    date DATE,
+    product TEXT,
+    amount DECIMAL,
+    PRIMARY KEY (date, product)
+);
+
+-- Эффективно для аналитики (агрегация по колонкам)
+SELECT date, SUM(amount) FROM sales GROUP BY date;
+```
+
 **Графовые:**
 
 - Хранение связей
 - Примеры: Neo4j
+
+**Пример: Neo4j Cypher**
+
+```cypher
+
+// Создание узлов и связей
+CREATE (alice:Person {name: "Alice"})
+CREATE (bob:Person {name: "Bob"})
+CREATE (alice)-[:FRIENDS_WITH]->(bob)
+
+// Запрос связей
+MATCH (a:Person)-[:FRIENDS_WITH]->(b:Person)
+RETURN a.name, b.name
+```
 
 ---
 
@@ -202,6 +367,52 @@ id | name  | email
 **Результат:**
 Базы данных развиваются как отдельная область со своими специалистами и технологиями.
 
+### 5.3 Индексы
+
+**Индексы ускоряют поиск:**
+
+**Пример: B-tree индекс**
+
+```sql
+
+-- Создание индекса
+CREATE INDEX idx_email ON users(email);
+
+-- Запрос использует индекс
+SELECT * FROM users WHERE email = 'alice@example.com';
+-- Без индекса: полное сканирование таблицы (O(n))
+-- С индексом: поиск в B-tree (O(log n))
+```
+
+**Типы индексов:**
+
+- B-tree: для большинства запросов
+- Hash: для точного совпадения
+- Full-text: для текстового поиска
+
+### 5.4 Оптимизация запросов
+
+**Query Optimizer:**
+```sql
+
+-- Плохой запрос (N+1 проблема)
+SELECT * FROM users;
+-- Для каждого user:
+SELECT * FROM orders WHERE user_id = ?;
+
+-- Хороший запрос (JOIN)
+SELECT u.*, o.* 
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id;
+```
+
+**EXPLAIN для анализа:**
+```sql
+
+EXPLAIN SELECT * FROM users WHERE email = 'alice@example.com';
+-- Показывает план выполнения, использование индексов
+```
+
 ---
 
 ## 💡 Key Takeaways
@@ -241,5 +452,6 @@ id | name  | email
 - "Designing Data-Intensive Applications" by Martin Kleppmann
 
 ---
+
 
 

@@ -26,6 +26,15 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
+# Импортируем названия курсов из отдельного файла
+sys.path.insert(0, str(Path(__file__).parent.parent))
+try:
+    from Courses.course_names import COURSE_NAMES
+except ImportError as e:
+    print(f"⚠️  Не удалось импортировать COURSE_NAMES: {e}", file=sys.stderr)
+    print("   Используется пустой словарь COURSE_NAMES", file=sys.stderr)
+    COURSE_NAMES = {}
+
 
 SCHEMA_VERSION = 1
 GENERATOR_NAME = "build_tma"
@@ -601,31 +610,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       }
 
       const COURSE_ICONS = {
-        ai: "🤖",
-        astronomy: "🌌",
-        bioinformatics: "🧬",
-        cloudnative: "☁️",
-        computers: "💻",
-        containers: "📦",
-        crypto: "🪙",
-        customerandservices: "🤝",
-        "data-structures": "📊",
-        "data-systems": "🗄️",
-        devops: "⚙️",
-        englishgrammarc1: "📘",
-        englishgrammarc2: "📙",
-        go: "🐹",
-        "healthcare-technologies": "🏥",
-        "it-basics": "🧩",
-        leadership: "👑",
-        "ls-intro": "🎓",
-        openbsd: "🐡",
-        protocols: "📡",
-        python: "🐍",
-        pythoninterview: "🎯",
-        "scientific-informatics": "🔬",
-        unixprogramming: "🐚",
-        webprogramming: "🌐",
+{COURSE_ICONS_PLACEHOLDER}
       };
 
       function getCourseIcon(course) {
@@ -1404,6 +1389,43 @@ def slugify(value: str) -> str:
     value = re.sub(r"[^a-z0-9\-]", "", value)
     value = re.sub(r"-{2,}", "-", value)
     return value.strip("-")
+
+
+def generate_course_icons_js() -> str:
+    """
+    Генерирует JavaScript код для COURSE_ICONS из COURSE_NAMES.
+    Использует slugify для преобразования ключей курсов в course_id.
+    """
+    try:
+        icons_list = []
+        for course_key, course_info in COURSE_NAMES.items():
+            if isinstance(course_info, dict) and "icon" in course_info:
+                course_id = slugify(course_key)
+                icon = course_info["icon"]
+                # Если course_id содержит дефисы, нужно обернуть в кавычки
+                if "-" in course_id:
+                    key_str = f'"{course_id}"'
+                else:
+                    key_str = course_id
+                icons_list.append((key_str, icon))
+        
+        # Сортируем по ключу (без учета кавычек)
+        icons_list.sort(key=lambda x: x[0].strip('"'))
+        
+        # Формируем JavaScript объект
+        items = []
+        for key_str, icon in icons_list:
+            # Используем json.dumps для правильного экранирования строк в JavaScript
+            icon_escaped = json.dumps(icon)
+            items.append(f'        {key_str}: {icon_escaped}')
+        
+        result = ",\n".join(items)
+        # Если список пустой, возвращаем пустую строку (что даст {} в JS)
+        return result
+    except Exception as e:
+        # В случае ошибки возвращаем пустую строку, чтобы не сломать JavaScript
+        print(f"⚠️  Ошибка при генерации COURSE_ICONS: {e}", file=sys.stderr)
+        return ""
 
 
 def normalize_newlines(text: str) -> str:
@@ -2205,8 +2227,43 @@ def build(
 
     # index.html оболочки mini app
     index_html_path = out_dir / "index.html"
+    # Генерируем COURSE_ICONS из COURSE_NAMES
+    try:
+        course_icons_js = generate_course_icons_js()
+        if "{COURSE_ICONS_PLACEHOLDER}" not in INDEX_HTML_TEMPLATE:
+            report.add_error(
+                code="TEMPLATE_PLACEHOLDER_MISSING",
+                path=index_html_path,
+                message="Placeholder {COURSE_ICONS_PLACEHOLDER} not found in INDEX_HTML_TEMPLATE",
+            )
+            course_icons_js = ""  # Fallback to empty
+        index_html_content = INDEX_HTML_TEMPLATE.replace(
+            "{COURSE_ICONS_PLACEHOLDER}", course_icons_js
+        )
+        # Проверяем, что замена произошла
+        if "{COURSE_ICONS_PLACEHOLDER}" in index_html_content:
+            report.add_error(
+                code="TEMPLATE_PLACEHOLDER_NOT_REPLACED",
+                path=index_html_path,
+                message="Placeholder {COURSE_ICONS_PLACEHOLDER} was not replaced in generated HTML",
+            )
+            # Fallback: заменяем вручную
+            index_html_content = index_html_content.replace(
+                "{COURSE_ICONS_PLACEHOLDER}", ""
+            )
+    except Exception as e:
+        report.add_error(
+            code="COURSE_ICONS_GENERATION_ERROR",
+            path=index_html_path,
+            message=f"Error generating COURSE_ICONS: {e}",
+        )
+        # Fallback: используем пустой объект
+        index_html_content = INDEX_HTML_TEMPLATE.replace(
+            "{COURSE_ICONS_PLACEHOLDER}", ""
+        )
+    
     with index_html_path.open("w", encoding="utf-8") as f:
-        f.write(INDEX_HTML_TEMPLATE)
+        f.write(index_html_content)
 
     # Простая проверка url_* → существующие файлы
     def check_url(path_value: str, container_path: Path) -> None:

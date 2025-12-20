@@ -14,39 +14,14 @@
 import html
 import os
 import re
+import sys
 from pathlib import Path
 from typing import List, Dict, Tuple
 import markdown
 
-
-# Названия курсов для отображения
-COURSE_NAMES = {
-    "AI": "🚀 Искусственный Интеллект",
-    "Astronomy": "🌌 Астрономия",
-    "Bioinformatics": "🧬 Биоинформатика",
-    "CloudNative": "☁️ Cloud Native",
-    "Computers": "💾 История компьютеров",
-    "Containers": "🐳 Контейнеры",
-    "Crypto": "₿ Криптовалюты и блокчейн",
-    "CustomerAndServices": "🤝 Customer & Services",
-    "Data_Structures": "📊 Структуры данных",
-    "Data_Systems": "🗄️ Системы данных",
-    "DevOps": "🔧 DevOps",
-    "EnglishGrammarC1": "🇬🇧 English Grammar C1",
-    "EnglishGrammarC2": "🇬🇧 English Grammar C2",
-    "Go": "🐹 Go",
-    "Healthcare_Technologies": "🏥 Healthcare Technologies",
-    "IT_Basics": "💻 IT Basics",
-    "Leadership": "👔 Leadership",
-    "LS_Intro": "🧬 Introduction to Life Sciences Informatics",
-    "OpenBSD": "🐡 OpenBSD",
-    "Protocols": "📡 Протоколы",
-    "Python": "🐍 Python",
-    "Python.Interview": "🎯 Python Interview",
-    "Scientific_Informatics": "🔬 Scientific Informatics",
-    "UnixProgramming": "🖥️ Unix Programming",
-    "WebProgramming": "🌐 Web Programming",
-}
+# Импортируем названия курсов из отдельного файла
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from Courses.course_names import COURSE_NAMES
 
 
 class CourseHTMLGenerator:
@@ -328,7 +303,10 @@ class CourseHTMLGenerator:
         """Генерирует HTML страницу для курса"""
         
         category = course["category"]
-        category_name = COURSE_NAMES.get(category, category)
+        course_info = COURSE_NAMES.get(category, {})
+        category_name = course_info.get("name", category) if isinstance(course_info, dict) else category
+        category_icon = course_info.get("icon", "") if isinstance(course_info, dict) else ""
+        category_display = f"{category_icon} {category_name}".strip() if category_icon else category_name
         module_name = course["module_name"]
         
         # Получаем красивое название модуля
@@ -356,10 +334,10 @@ class CourseHTMLGenerator:
             <div class="breadcrumbs">
                 <a href="../index.html" class="back-link">← Все курсы</a>
                 <span class="separator">/</span>
-                <a href="index.html" class="back-link">{category_name}</a>
+                <a href="index.html" class="back-link">{category_display}</a>
             </div>
             <h1>{module_title}</h1>
-            <p>{category_name} • {module_name}</p>
+            <p>{category_display} • {module_name}</p>
         </div>
     </header>
 
@@ -401,7 +379,7 @@ class CourseHTMLGenerator:
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 lscode.me | {category_name}</p>
+            <p>&copy; 2025 lscode.me | {category_display}</p>
         </div>
     </footer>
 
@@ -1345,7 +1323,10 @@ class CourseHTMLGenerator:
     def generate_course_index(self, category: str, modules: List[Dict], category_path: Path) -> str:
         """Генерирует страницу курса из README.md"""
         
-        category_name = COURSE_NAMES.get(category, category)
+        course_info = COURSE_NAMES.get(category, {})
+        category_name = course_info.get("name", category) if isinstance(course_info, dict) else category
+        category_icon = course_info.get("icon", "") if isinstance(course_info, dict) else ""
+        category_display = f"{category_icon} {category_name}".strip() if category_icon else category_name
         readme_path = category_path / "README.md"
         
         # Читаем README.md, если существует
@@ -1424,7 +1405,7 @@ class CourseHTMLGenerator:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{category_name}</title>
+    <title>{category_display}</title>
     <!-- Highlight.js CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     <style>
@@ -1697,7 +1678,7 @@ class CourseHTMLGenerator:
     <header>
         <div class="container">
             <a href="../index.html" class="back-link">← Все курсы</a>
-            <h1>{category_name}</h1>
+            <h1>{category_display}</h1>
             <p>{len(modules)} лекций</p>
         </div>
     </header>
@@ -1740,13 +1721,16 @@ class CourseHTMLGenerator:
         categories_html = []
         for category in sorted(courses_by_category.keys()):
             course_list = courses_by_category[category]
-            category_name = COURSE_NAMES.get(category, category)
+            course_info = COURSE_NAMES.get(category, {})
+            category_name = course_info.get("name", category) if isinstance(course_info, dict) else category
+            category_icon = course_info.get("icon", "") if isinstance(course_info, dict) else ""
+            category_display = f"{category_icon} {category_name}".strip() if category_icon else category_name
             num_modules = len(course_list)
             
             categories_html.append(f'''
                 <a href="{category}/index.html" class="course-card">
                     <div class="course-info">
-                        <h2>{category_name}</h2>
+                        <h2>{category_display}</h2>
                         <p>{num_modules} лекций</p>
                     </div>
                     <span class="arrow">→</span>
@@ -1931,9 +1915,12 @@ class CourseHTMLGenerator:
         # Обрабатываем каждую категорию
         for category in sorted(courses_by_category.keys()):
             category_modules = courses_by_category[category]
-            category_name = COURSE_NAMES.get(category, category)
+            course_info = COURSE_NAMES.get(category, {})
+            category_name = course_info.get("name", category) if isinstance(course_info, dict) else category
+            category_icon = course_info.get("icon", "") if isinstance(course_info, dict) else ""
+            category_display = f"{category_icon} {category_name}".strip() if category_icon else category_name
             
-            print(f"\n📂 {category_name} ({len(category_modules)} модулей)")
+            print(f"\n📂 {category_display} ({len(category_modules)} модулей)")
             
             # Создаём директорию для курса
             course_html_dir = self.html_dir / category

@@ -97,6 +97,7 @@ Stack: RW- (защита от выполнения кода на стеке)
 
 **Идея:** Рандомизировать адреса при каждом запуске
 
+**Без ASLR:**
 ```
 
 Process 1:
@@ -104,13 +105,62 @@ Process 1:
   Libraries at 0x4000abcd
 
 Process 2:
-  Stack at 0x7ffe9876
-  Libraries at 0x40005678
+  Stack at 0x7fff1234  // Тот же адрес!
+  Libraries at 0x4000abcd  // Тот же адрес!
+```
+
+**С ASLR:**
+```
+
+Process 1:
+  Stack at 0x7fff1234
+  Libraries at 0x4000abcd
+
+Process 2:
+  Stack at 0x7ffe9876  // Другой адрес!
+  Libraries at 0x40005678  // Другой адрес!
 ```
 
 **Эффект:** Атакующий не знает, куда прыгать
 
+**Пример: Эксплойт без ASLR**
+
+```c
+
+// Атакующий знает адрес функции system()
+void exploit() {
+    char buffer[100];
+    // ... overflow buffer ...
+    // Перезаписать return address на известный адрес
+    *((void**)&buffer[100]) = (void*)0x4000abcd;  // system()
+}
+```
+
+**С ASLR:**
+```c
+
+// Атакующий не знает адрес (он меняется каждый запуск)
+void exploit() {
+    char buffer[100];
+    // ... overflow buffer ...
+    // Куда прыгать? Адрес неизвестен!
+    // Эксплойт не работает
+}
+```
+
 **Реализация:** OS + CPU (random generators)
+
+**Проверка ASLR:**
+```bash
+# Проверка статуса ASLR в Linux
+cat /proc/sys/kernel/randomize_va_space
+# 0 = отключено
+# 1 = частично (только stack)
+# 2 = полностью включено
+
+# Включение ASLR
+echo 2 > /proc/sys/kernel/randomize_va_space
+```
 
 ---
 
@@ -280,24 +330,269 @@ void function() {
 
 **Идея:** Проверять, что программа прыгает только в легальные места
 
+**Проблема без CFI:**
+```c
+
+// Атакующий может перезаписать function pointer
+void (*func_ptr)() = legitimate_function;
+// ... overflow ...
+func_ptr = attacker_code;  // Перезапись
+func_ptr();  // Выполнение attacker code
+```
+
+**С CFI:**
+```c
+
+// CFI добавляет проверки
+void (*func_ptr)() = legitimate_function;
+// ... overflow ...
+func_ptr = attacker_code;  // Перезапись
+// CFI проверка перед вызовом
+if (!is_valid_target(func_ptr)) {
+    abort();  // Нелегальный target!
+}
+func_ptr();
+```
+
 **Реализация:**
 
-- Compiler adds checks
-- CPU features (Intel CET — Control-flow Enforcement Technology)
+**1. Compiler-based CFI (LLVM):**
+```bash
+# Включение CFI в LLVM
+clang -fsanitize=cfi program.c
+```
+
+**2. Hardware CFI (Intel CET):**
+```
+
+- Indirect Branch Tracking (IBT): Защита indirect calls/jumps
+- Shadow Stack: Отдельный стек для return addresses
+```
+
+**Пример: Shadow Stack**
+
+```
+
+Normal Stack:          Shadow Stack:
+[return addr 1]  ←→   [return addr 1]
+[local vars]          [protected copy]
+[return addr 2]  ←→   [return addr 2]
+
+При return: проверка совпадения адресов
+Если не совпадают → abort()
+```
+
+**Включение Intel CET:**
+```bash
+# Требует поддержку в CPU и OS
+# Проверка поддержки
+grep cet /proc/cpuinfo
+
+# Компиляция с CET
+gcc -fcf-protection=full program.c
+```
+
+### 6.4 Address Sanitizer (ASan)
+
+**Runtime detection of memory errors:**
+
+```c
+
+// ASan обнаруживает use-after-free, buffer overflow и др.
+#include <stdlib.h>
+
+int main() {
+    int *p = malloc(10 * sizeof(int));
+    free(p);
+    p[5] = 42;  // Use-after-free → ASan обнаруживает!
+    return 0;
+}
+```
+
+**Компиляция с ASan:**
+```bash
+
+gcc -fsanitize=address -g program.c
+./a.out
+# Output: AddressSanitizer: heap-use-after-free
+```
+
+**Overhead:** ~2x slowdown, ~3x memory
+
+### 6.5 Format String Protection
+
+**Проблема: Format string vulnerabilities**
+
+```c
+
+// Уязвимый код
+char user_input[100];
+fgets(user_input, 100, stdin);
+printf(user_input);  // Опасно! Если user_input содержит %x, %s и т.д.
+
+// Эксплойт
+// Ввод: "%x %x %x" → утечка данных со стека
+// Ввод: "%n" → запись в память
+```
+
+**Защита:**
+```c
+
+// Правильно: всегда использовать format string
+printf("%s", user_input);  // Безопасно
+```
+
+**Compiler warning:**
+```bash
+
+gcc -Wformat-security program.c
+# Предупреждение при использовании user input в format string
+```
+
+---
+
+## 7. Secure Boot и Chain of Trust
+
+### 7.1 Chain of Trust
+
+**Идея:** Каждый компонент проверяет следующий перед загрузкой
+
+```
+
+Hardware (ROM) → Bootloader → Kernel → OS
+     ↓              ↓           ↓       ↓
+  Verified      Verified   Verified  Verified
+```
+
+**Пример: UEFI Secure Boot**
+
+```bash
+# Проверка статуса Secure Boot
+mokutil --sb-state
+
+# Просмотр загруженных ключей
+mokutil --list-enrolled
+```
+
+### 7.2 Measured Boot
+
+**TPM измеряет каждый компонент при загрузке:**
+
+```
+
+1. Bootloader → Hash → TPM PCR[0]
+2. Kernel → Hash → TPM PCR[1]
+3. Initrd → Hash → TPM PCR[2]
+...
+```
+
+**Attestation:** Удалённая сторона может проверить, что система не скомпрометирована
+
+**Пример: Remote attestation**
+
+```python
+# Упрощённый пример
+import tpm2_pytss
+
+# Чтение PCR values из TPM
+pcr_values = tpm2_pytss.read_pcr()
+
+# Отправка на сервер для проверки
+server.verify_boot_integrity(pcr_values)
+# Сервер сравнивает с известными good values
+```
+
+---
+
+## 8. Side-Channel Attacks
+
+### 8.1 Timing Attacks
+
+**Идея:** Измерение времени выполнения для извлечения секретов
+
+**Пример: Уязвимое сравнение паролей**
+
+```c
+
+// Уязвимый код
+int compare_passwords(char *input, char *correct) {
+    for (int i = 0; i < strlen(correct); i++) {
+        if (input[i] != correct[i]) {
+            return 0;  // Возврат при первом несовпадении
+        }
+    }
+    return 1;
+}
+
+// Timing attack
+uint64_t start = rdtsc();
+compare_passwords("A...", "B...");
+uint64_t end = rdtsc();
+// Время выполнения зависит от количества совпадающих символов
+```
+
+**Защита: Constant-time comparison**
+
+```c
+
+// Безопасное сравнение
+int secure_compare(char *a, char *b, size_t len) {
+    int result = 0;
+    for (size_t i = 0; i < len; i++) {
+        result |= a[i] ^ b[i];  // Всегда проверяет все байты
+    }
+    return result == 0;
+}
+```
+
+### 8.2 Cache Attacks
+
+**Идея:** Использование shared cache для извлечения данных
+
+**Пример: Flush+Reload**
+
+```c
+
+// Атакующий процесс
+void attack() {
+    // 1. Flush shared memory из cache
+    _mm_clflush(shared_memory);
+    
+    // 2. Ждать выполнения victim
+    sleep(1);
+    
+    // 3. Проверить, что загружено в cache
+    uint64_t start = rdtsc();
+    access(shared_memory);
+    uint64_t end = rdtsc();
+    
+    if (end - start < threshold) {
+        // Данные в cache → victim их использовал
+    }
+}
+```
+
+**Mitigation:**
+
+- Cache partitioning
+- Constant-time algorithms
+- Cache randomization
 
 ---
 
 ## 💡 Key Takeaways
 
-- **Protection rings** изолируют kernel от user space
+- **Protection rings** изолируют kernel от user space, предотвращая доступ пользовательских процессов к привилегированным операциям
 
-- **Memory protection** (NX bit, ASLR) усложняет эксплуатацию уязвимостей
+- **Memory protection** (NX bit предотвращает выполнение кода на стеке, ASLR рандомизирует адреса) усложняет эксплуатацию уязвимостей, но не делает её невозможной
 
-- **Spectre/Meltdown** показали, что speculative execution имеет security implications
+- **Spectre/Meltdown** показали, что speculative execution имеет серьёзные security implications — даже оптимизации производительности могут быть уязвимыми
 
-- **Secure enclaves** (SGX, TrustZone) защищают данные даже от OS
+- **Secure enclaves** (SGX, TrustZone) защищают данные даже от OS, но имеют ограничения (размер, overhead, side-channel attacks)
 
-- **Trade-off:** Security vs Performance — многие mitigation techniques снижают производительность
+- **Defense in depth** — комбинация mitigation techniques (NX + ASLR + Canaries + CFI) значительно усложняет эксплуатацию
+
+- **Trade-off:** Security vs Performance — многие mitigation techniques снижают производительность (5-30%), но необходимы для защиты
 
 ---
 
@@ -315,4 +610,5 @@ void function() {
 - Spectre & Meltdown papers
 
 ---
+
 

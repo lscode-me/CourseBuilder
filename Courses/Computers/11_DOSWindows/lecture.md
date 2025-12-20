@@ -87,8 +87,73 @@
 - Нет защиты памяти
 - Один пользователь
 
+**Пример: DOS команды**
+
+```batch
+
+REM DOS batch file пример
+@echo off
+echo Current directory:
+cd
+
+REM Копирование файлов
+copy C:\source\*.txt C:\backup\
+
+REM Создание директории
+mkdir C:\newdir
+
+REM Запуск программы
+C:\programs\app.exe
+
+REM Условное выполнение
+if exist file.txt (
+    echo File exists
+) else (
+    echo File not found
+)
+```
+
+**Пример: DOS программирование (упрощённо)**
+
+```c
+
+// DOS программа на C
+#include <stdio.h>
+#include <dos.h>
+
+int main() {
+    // Прямой доступ к видеопамяти (нет защиты!)
+    char far *video = (char far*)0xB8000000;
+    video[0] = 'H';
+    video[1] = 0x07;  // Цвет
+    
+    // Прямой доступ к портам
+    outportb(0x60, 0xFF);  // Клавиатура
+    
+    return 0;
+}
+```
+
 **Последствия:**
 Программы могли "упасть" всю систему, не было изоляции между программами.
+
+**640 KB ограничение:**
+```
+
+0x00000 - 0x9FFFF: Conventional memory (640 KB)
+0xA0000 - 0xBFFFF: Video memory
+0xC0000 - 0xFFFFF: BIOS, ROM
+```
+
+**Расширенная память (EMS/XMS):**
+```c
+
+// Expanded Memory Specification (EMS)
+// Использование памяти выше 640 KB
+int handle = _dos_allocmem(64, &segment);  // 64 KB блок
+// ...
+_dos_freemem(segment);
+```
 
 ---
 
@@ -103,11 +168,54 @@
 - Многозадачность (cooperative)
 - Программы могли "зависнуть" систему
 
+**Cooperative Multitasking:**
+```c
+
+// Программа должна добровольно отдавать CPU
+while (running) {
+    process_events();  // Обработка сообщений
+    do_work();
+    yield();  // Отдать CPU другим программам
+    // Если программа не вызывает yield() → система зависает!
+}
+```
+
 **Windows 95/98:**
 
 - Более интегрированная с DOS
 - Улучшенный графический интерфейс
 - Всё ещё основана на DOS
+
+**Пример: Windows API (Win16)**
+
+```c
+
+// Windows 3.x программирование
+#include <windows.h>
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                   LPSTR lpCmdLine, int nCmdShow) {
+    // Создание окна
+    HWND hwnd = CreateWindow(
+        "MyClass", "My Window",
+        WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, CW_USEDEFAULT,
+        640, 480,
+        NULL, NULL, hInstance, NULL
+    );
+    
+    ShowWindow(hwnd, nCmdShow);
+    
+    // Message loop
+    MSG msg;
+    while (GetMessage(&msg, NULL, 0, 0)) {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+    
+    return 0;
+}
+```
 
 ### 3.2 Windows NT и переход к полноценной ОС
 
@@ -119,10 +227,55 @@
 - Многопользовательский режим
 - Не основана на DOS
 
+**Preemptive Multitasking:**
+```c
+
+// NT kernel сам управляет переключением
+// Программа не может "зависнуть" систему
+while (running) {
+    do_work();
+    // Kernel автоматически переключает процессы
+    // Нет необходимости в yield()
+}
+```
+
+**Пример: Windows NT API (Win32)**
+
+```c
+#include <windows.h>
+
+// Создание процесса в NT
+STARTUPINFO si = {0};
+PROCESS_INFORMATION pi = {0};
+si.cb = sizeof(si);
+
+CreateProcess(
+    NULL,                    // Application name
+    "notepad.exe",           // Command line
+    NULL, NULL,              // Security attributes
+    FALSE,                   // Inherit handles
+    0,                       // Creation flags
+    NULL, NULL,              // Environment, directory
+    &si, &pi                 // Startup info, process info
+);
+
+// Ожидание завершения
+WaitForSingleObject(pi.hProcess, INFINITE);
+CloseHandle(pi.hProcess);
+CloseHandle(pi.hThread);
+```
+
 **Windows XP (2001):**
 
 - Объединение линий NT и 9x
 - Стабильность NT с совместимостью
+
+**Windows Vista/7/8/10/11:**
+
+- Развитие архитектуры NT
+- Улучшенная безопасность
+- Виртуализация
+- Облачная интеграция
 
 ### 3.3 Современные Windows
 
@@ -162,8 +315,51 @@
 - Устаревший код
 - Ограничения в архитектуре
 
+**Пример: Режимы совместимости**
+
+```c
+
+// Windows может эмулировать старые версии
+// Compatibility mode для старых программ
+// Registry keys для настройки совместимости
+HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags
+```
+
 **Баланс:**
 Microsoft балансирует между инновациями и совместимостью.
+
+### 4.3 Windows Registry
+
+**Централизованная база данных конфигурации:**
+
+**Структура:**
+```
+
+HKEY_CLASSES_ROOT    - Ассоциации файлов, COM
+HKEY_CURRENT_USER    - Настройки текущего пользователя
+HKEY_LOCAL_MACHINE   - Системные настройки
+HKEY_USERS           - Все пользователи
+HKEY_CURRENT_CONFIG  - Текущая конфигурация
+```
+
+**Пример: Работа с Registry**
+
+```c
+#include <windows.h>
+
+// Чтение из Registry
+HKEY hKey;
+RegOpenKeyEx(HKEY_CURRENT_USER, 
+             "Software\\MyApp", 
+             0, KEY_READ, &hKey);
+
+DWORD value;
+DWORD size = sizeof(value);
+RegQueryValueEx(hKey, "Setting", NULL, NULL, 
+                (LPBYTE)&value, &size);
+
+RegCloseKey(hKey);
+```
 
 ---
 
@@ -196,17 +392,54 @@ Microsoft балансирует между инновациями и совме
 
 ---
 
+## 6. Windows vs UNIX подходы
+
+### 6.1 Различия в философии
+
+**UNIX:**
+
+- "Всё — файл"
+- Командная строка
+- Композиция простых программ
+- Минимализм
+
+**Windows:**
+
+- Registry для конфигурации
+- GUI-first подход
+- Монолитные приложения
+- Обратная совместимость
+
+### 6.2 Влияние на экосистему
+
+**Windows экосистема:**
+
+- Большая база приложений
+- Стандартизированный GUI
+- Централизованное управление (Active Directory)
+- Доминирование на desktop
+
+**Сравнение:**
+| Аспект | Windows | UNIX/Linux |
+|--------|---------|------------|
+| Конфигурация | Registry | Файлы в /etc |
+| GUI | Нативный | Опциональный |
+| CLI | PowerShell | Bash/sh |
+| Совместимость | Критична | Меньше приоритет |
+
+---
+
 ## 💡 Key Takeaways
 
-- **IBM PC** стандартизировал архитектуру персональных компьютеров, создав экосистему совместимых систем
+- **IBM PC** стандартизировал архитектуру персональных компьютеров через открытую архитектуру, создав экосистему совместимых систем и снизив цены
 
-- **DOS** была простой ОС с серьёзными ограничениями, но достаточной для ранних PC
+- **DOS** была простой ОС с серьёзными ограничениями (640 KB память, нет многозадачности, нет защиты памяти), но достаточной для ранних PC
 
-- **Windows** эволюционировала от оболочки над DOS к полноценной операционной системе
+- **Windows** эволюционировала от графической оболочки над DOS (1.0-3.x, 95/98) к полноценной операционной системе (NT линия), сохраняя обратную совместимость
 
-- **Обратная совместимость** критически важна в мире PC, но имеет свою цену в сложности системы
+- **Обратная совместимость** критически важна в мире PC (огромная база ПО), но имеет свою цену в сложности системы, устаревшем коде, ограничениях архитектуры
 
-- **Массовый пользователь** изменил требования к ОС: простота использования важнее гибкости
+- **Массовый пользователь** изменил требования к ОС: простота использования (GUI) важнее гибкости (CLI), стандартизация интерфейса, интуитивность
 
 ---
 
@@ -233,5 +466,6 @@ Microsoft балансирует между инновациями и совме
 - История Microsoft и Windows
 
 ---
+
 
 

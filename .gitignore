@@ -4,6 +4,7 @@
 # Готовые курсы
 !Courses/
 !Courses/**
+Courses/__pycache__/
 
 # Шаблоны курсов (неготовые)
 !Courses_templates/

@@ -42,13 +42,70 @@
 
 **Особенности:**
 
-- **ZFS** — продвинутая файловая система
+**ZFS** — продвинутая файловая система
 
-- **DTrace** — инструмент динамической трассировки
+**Пример: ZFS команды**
 
-- **Контейнеры** — ранняя реализация контейнеризации (zones)
+```bash
+# Создание ZFS pool
+zpool create tank mirror /dev/sda /dev/sdb
 
-- **Масштабируемость** — поддержка больших систем
+# Создание файловой системы
+zfs create tank/documents
+
+# Создание snapshot
+zfs snapshot tank/documents@backup1
+
+# Клонирование snapshot
+zfs clone tank/documents@backup1 tank/documents-clone
+
+# Проверка целостности
+zfs scrub tank
+
+# Информация о pool
+zpool status tank
+zfs list
+```
+
+**DTrace** — инструмент динамической трассировки
+
+**Пример: DTrace скрипт**
+
+```dtrace
+#!/usr/sbin/dtrace -s
+
+syscall:::entry
+{
+    @[execname] = count();
+}
+
+END
+{
+    printa("System calls by process: %s = %@d\n", @);
+}
+```
+
+**Контейнеры** — ранняя реализация контейнеризации (zones)
+
+**Пример: Solaris Zones**
+
+```bash
+# Создание zone
+zonecfg -z myzone
+zonecfg:myzone> create
+zonecfg:myzone> set zonepath=/zones/myzone
+zonecfg:myzone> set autoboot=true
+zonecfg:myzone> commit
+zonecfg:myzone> exit
+
+# Установка zone
+zoneadm -z myzone install
+
+# Запуск zone
+zoneadm -z myzone boot
+```
+
+**Масштабируемость** — поддержка больших систем
 
 ### 1.2 Связь с SPARC
 
@@ -85,10 +142,41 @@
 
 **Вклад:**
 
-- TCP/IP стек
-- Виртуальная память
-- Файловая система FFS
-- Множество утилит
+**TCP/IP стек:**
+```c
+
+// BSD sockets API (стал стандартом)
+#include <sys/socket.h>
+#include <netinet/in.h>
+
+// Создание TCP socket
+int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+
+struct sockaddr_in addr;
+addr.sin_family = AF_INET;
+addr.sin_port = htons(80);
+inet_aton("192.168.1.1", &addr.sin_addr);
+
+connect(sockfd, (struct sockaddr*)&addr, sizeof(addr));
+```
+
+**Виртуальная память:**
+
+- Demand paging
+- Memory mapping
+- Swap space
+
+**Файловая система FFS (Fast File System):**
+
+- Улучшения над оригинальной файловой системой UNIX
+- Цилиндрические группы
+- Лучшая производительность
+
+**Множество утилит:**
+
+- vi, csh, tcsh
+- Сетевые утилиты (ping, traceroute)
+- Системные утилиты
 
 ### 2.2 Варианты BSD
 
@@ -98,11 +186,40 @@
 - Широкое использование в серверах
 - Основа для многих систем
 
+**Пример: FreeBSD особенности**
+
+```bash
+# Ports system для установки ПО
+cd /usr/ports/www/nginx
+make install clean
+
+# Jail (контейнеры)
+jail -c name=myjail path=/jails/myjail \
+     command=/bin/sh
+
+# ZFS поддержка
+
+zpool create tank /dev/ada0
+```
+
 **OpenBSD:**
 
 - Фокус на безопасности
 - Аудит безопасности кода
 - Используется в критичных системах
+
+**Пример: OpenBSD security features**
+
+```bash
+# W^X (Write XOR Execute) - страницы либо writable, либо executable
+# ASLR (Address Space Layout Randomization)
+# Stack canaries
+# Privilege separation
+
+# Проверка безопасности
+
+auditd  # Security audit daemon
+```
 
 **NetBSD:**
 
@@ -110,10 +227,36 @@
 - Работает на множестве платформ
 - Встроенные системы
 
+**Поддерживаемые платформы:**
+
+- x86, ARM, MIPS, PowerPC, SPARC, Alpha
+- Embedded systems
+- Рекордное количество платформ
+
 **macOS:**
 
 - Основан на BSD (Darwin)
 - Показывает успех BSD в настольных системах
+
+**Пример: macOS BSD команды**
+
+```bash
+# macOS использует BSD версии утилит
+
+ps aux    # BSD формат (не System V)
+ls -l     # BSD ls
+```
+
+### 2.3 BSD vs Linux
+
+**Различия:**
+| Аспект | BSD | Linux |
+|--------|-----|-------|
+| Лицензия | BSD (свободная) | GPL (copyleft) |
+| Kernel + Userland | Единая система | Kernel + разные дистрибутивы |
+| Происхождение | Прямой потомок UNIX | Клон UNIX |
+| Инициализация | BSD init | systemd/sysvinit |
+| Производительность | Высокая | Высокая |
 
 ### 2.3 Лицензия BSD
 
@@ -154,15 +297,65 @@
 - Избыточное хранение данных
 - Защита от отказов дисков
 
+**Пример: RAID в Solaris**
+
+```bash
+# Solaris Volume Manager
+metainit d10 1 1 c0t0d0s0
+metainit d20 1 1 c0t1d0s0
+metainit d0 -m d10
+metattach d0 d20  # Mirror
+```
+
 **Кластеризация:**
 
 - Несколько серверов работают вместе
 - Высокая доступность
 
+**Пример: Solaris Cluster**
+
+```bash
+# Высокая доступность через кластеризацию
+# Автоматический failover при отказе узла
+# Shared storage между узлами
+
+```
+
 **Резервное копирование:**
 
 - Регулярные бэкапы
 - Восстановление данных
+
+**Пример: ZFS snapshots для backup**
+
+```bash
+# Автоматические snapshots
+zfs set snapdir=visible tank/documents
+zfs snapshot -r tank/documents@$(date +%Y%m%d)
+
+# Отправка snapshots на удалённый сервер
+
+zfs send tank/documents@snapshot1 | \
+    ssh remote zfs receive tank/backup
+```
+
+### 3.3 Мониторинг и обслуживание
+
+**Пример: Мониторинг системы**
+
+```bash
+# Solaris prstat (аналог top)
+prstat -a
+
+# iostat для I/O статистики
+iostat -xn 1
+
+# DTrace для детального анализа
+
+dtrace -n 'syscall:::entry { @[execname] = count(); }'
+```
+
+---
 
 ### 3.3 Масштабирование
 
@@ -225,15 +418,53 @@
 
 ---
 
+## 5. Современное состояние
+
+### 5.1 illumos и OpenSolaris наследие
+
+**illumos:**
+
+- Форк OpenSolaris после закрытия Oracle
+- Развитие ZFS, DTrace
+- Используется в специализированных системах
+
+**Примеры использования:**
+
+- OmniOS, SmartOS
+- Joyent Triton (cloud platform)
+- Nexenta (storage systems)
+
+### 5.2 BSD в современности
+
+**FreeBSD:**
+
+- Используется в Netflix (CDN)
+- PlayStation 4 (основана на FreeBSD)
+- Множество серверов
+
+**OpenBSD:**
+
+- OpenSSH (используется везде)
+- pf firewall (портирован в другие системы)
+- Критичные системы безопасности
+
+**NetBSD:**
+
+- Embedded systems
+- Портативные устройства
+- Специализированные платформы
+
+---
+
 ## 💡 Key Takeaways
 
-- **Solaris** показала важность интеграции ОС и аппаратуры для серверных систем
+- **Solaris** показала важность интеграции ОС и аппаратуры (SPARC) для серверных систем, создала технологии (ZFS, DTrace, zones), которые повлияли на современные системы
 
-- **BSD** внесла огромный вклад в развитие UNIX и сетевых технологий
+- **BSD** внесла огромный вклад в развитие UNIX (TCP/IP, виртуальная память, FFS) и сетевых технологий, более свободная лицензия способствовала распространению
 
-- **Надёжность и масштабируемость** — ключевые требования корпоративных систем
+- **Надёжность и масштабируемость** — ключевые требования корпоративных систем (RAID, кластеризация, резервное копирование, вертикальное и горизонтальное масштабирование)
 
-- **Серверный мир 90-2000-х** был эпохой доминирования UNIX, которая сформировала современные подходы
+- **Серверный мир 90-2000-х** был эпохой доминирования UNIX (Solaris, AIX, HP-UX, BSD), которая сформировала современные подходы, многие идеи перешли в Linux и современные системы
 
 ---
 
@@ -260,5 +491,6 @@
 - История развития BSD и Solaris
 
 ---
+
 
 
