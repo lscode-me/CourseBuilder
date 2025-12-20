@@ -609,6 +609,8 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         containers: "📦",
         crypto: "🪙",
         customerandservices: "🤝",
+        "data-structures": "📊",
+        "data-systems": "🗄️",
         devops: "⚙️",
         englishgrammarc1: "📘",
         englishgrammarc2: "📙",

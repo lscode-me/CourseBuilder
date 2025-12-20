@@ -29,6 +29,8 @@ COURSE_NAMES = {
     "Containers": "🐳 Контейнеры",
     "Crypto": "₿ Криптовалюты и блокчейн",
     "CustomerAndServices": "🤝 Customer & Services",
+    "Data_Structures": "📊 Структуры данных",
+    "Data_Systems": "🗄️ Системы данных",
     "DevOps": "🔧 DevOps",
     "EnglishGrammarC1": "🇬🇧 English Grammar C1",
     "EnglishGrammarC2": "🇬🇧 English Grammar C2",
