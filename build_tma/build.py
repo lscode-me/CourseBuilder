@@ -38,6 +38,8 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
   <title>LSCode Mini App</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -320,16 +322,51 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
     }
 
     #lecture code {
-      background: #f3f4f6;
       padding: 1px 4px;
       border-radius: 4px;
       font-family: ui-monospace, Menlo, Monaco, "SF Mono", monospace;
       font-size: 12px;
     }
 
+    /* Инлайн-код внутри текста (не в блоках pre) — светлый фон, тёмный текст */
+    #lecture :not(pre) > code {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
     #lecture pre code {
       background: transparent;
       padding: 0;
+    }
+
+    /* Цвета для подсветки синтаксиса (highlight.js и/или кастомные классы) */
+    #lecture pre .hljs-keyword,
+    #lecture pre .tok-kw {
+      color: #93c5fd;
+    }
+
+    #lecture pre .hljs-built_in,
+    #lecture pre .hljs-type,
+    #lecture pre .hljs-literal,
+    #lecture pre .tok-builtin {
+      color: #a5b4fc;
+    }
+
+    #lecture pre .hljs-string,
+    #lecture pre .hljs-attr,
+    #lecture pre .tok-str {
+      color: #f97316;
+    }
+
+    #lecture pre .hljs-number,
+    #lecture pre .tok-key {
+      color: #facc15;
+    }
+
+    #lecture pre .hljs-comment,
+    #lecture pre .tok-comment {
+      color: #9ca3af;
+      font-style: italic;
     }
 
     #quiz .quiz-question {
@@ -558,6 +595,11 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         );
       }
 
+      // Настройки marked: подсветку делаем через highlight.js после рендера
+      if (window.marked && typeof window.marked.setOptions === "function") {
+        window.marked.setOptions({});
+      }
+
       const COURSE_ICONS = {
         ai: "🤖",
         astronomy: "🌌",
@@ -576,6 +618,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         leadership: "👑",
         "ls-intro": "🎓",
         openbsd: "🐡",
+        protocols: "📡",
         python: "🐍",
         pythoninterview: "🎯",
         "scientific-informatics": "🔬",
@@ -1027,6 +1070,13 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 
           if (lectureEl) {
             lectureEl.innerHTML = html;
+            if (window.hljs && typeof window.hljs.highlightAll === "function") {
+              try {
+                window.hljs.highlightAll();
+              } catch (e) {
+                console.warn("hljs.highlightAll error:", e);
+              }
+            }
           }
           setStatus("Лекция загружена.");
 

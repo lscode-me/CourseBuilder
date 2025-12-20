@@ -38,6 +38,7 @@ COURSE_NAMES = {
     "Leadership": "👔 Leadership",
     "LS_Intro": "🧬 Introduction to Life Sciences Informatics",
     "OpenBSD": "🐡 OpenBSD",
+    "Protocols": "📡 Протоколы",
     "Python": "🐍 Python",
     "Python.Interview": "🎯 Python Interview",
     "Scientific_Informatics": "🔬 Scientific Informatics",
