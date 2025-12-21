@@ -98,6 +98,15 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       color: var(--tg-subtle);
     }
 
+    .app-subtitle a {
+      color: var(--tg-accent);
+      text-decoration: none;
+    }
+
+    .app-subtitle a:hover {
+      text-decoration: underline;
+    }
+
     .user-pill {
       font-size: 12px;
       padding: 4px 8px;
@@ -501,7 +510,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
     <header>
       <div>
         <div class="app-title">LSCode Mini App</div>
-        <div class="app-subtitle">Курсы и квизы из lscode.me</div>
+        <div class="app-subtitle">Курсы и квизы из <a href="https://lscode.me" target="_blank" rel="noopener noreferrer">lscode.me</a> | <a href="mailto:admin@lscode.me">admin@lscode.me</a></div>
       </div>
       <div id="user-pill" class="user-pill" title=""></div>
     </header>

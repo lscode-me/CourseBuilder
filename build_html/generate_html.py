@@ -331,6 +331,15 @@ class CourseHTMLGenerator:
 <body>
     <header>
         <div class="container">
+            <div class="header-links">
+                <a href="mailto:admin@lscode.me">admin@lscode.me</a>
+                <a href="https://t.me/lscode_me_bot" target="_blank" rel="noopener noreferrer">
+                    <svg class="telegram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.169 1.858-.896 6.375-1.269 8.453-.152.855-.45 1.14-.74 1.17-.63.06-1.11-.415-1.72-.815-.955-.64-1.496-1.038-2.424-1.662-1.074-.72-.378-1.116.234-1.763.162-.17 2.97-2.723 3.024-2.954.006-.03.011-.15-.056-.212-.067-.058-.166-.038-.238-.023-.101.02-1.705 1.085-4.816 3.188-.456.31-.87.461-1.241.453-.409-.009-1.195-.231-1.78-.42-.718-.234-1.288-.36-1.24-.76.024-.2.36-.405.99-.614 3.884-1.7 6.48-2.82 7.785-3.36 3.774-1.6 4.556-1.88 5.068-1.89.114-.002.37.027.536.16.133.106.17.25.188.352.017.102.038.335.02.515z"/>
+                    </svg>
+                    Mini App
+                </a>
+            </div>
             <div class="breadcrumbs">
                 <a href="../index.html" class="back-link">← Все курсы</a>
                 <span class="separator">/</span>
@@ -527,6 +536,11 @@ class CourseHTMLGenerator:
             color: white;
             padding: 2rem 0;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        header .container {
+            position: relative;
         }
 
         header h1 {
@@ -538,6 +552,37 @@ class CourseHTMLGenerator:
         header p {
             opacity: 0.9;
             font-size: 1.1rem;
+        }
+
+        .header-links {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.85;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .header-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .header-links .telegram-icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
 
         .breadcrumbs {
@@ -1058,6 +1103,31 @@ class CourseHTMLGenerator:
             margin-top: 4rem;
         }
 
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .telegram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .telegram-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+
         hr {
             border: none;
             border-top: 2px solid var(--border);
@@ -1067,6 +1137,18 @@ class CourseHTMLGenerator:
         @media (max-width: 768px) {
             header h1 {
                 font-size: 1.5rem;
+            }
+
+            .header-links {
+                font-size: 0.75rem;
+                gap: 0.5rem;
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+
+            .header-links .telegram-icon {
+                width: 12px;
+                height: 12px;
             }
 
             .content-card {
@@ -1444,12 +1526,48 @@ class CourseHTMLGenerator:
             color: white;
             padding: 3rem 0;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }}
+
+        header .container {{
+            position: relative;
         }}
 
         header h1 {{
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+        }}
+
+        .header-links {{
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }}
+
+        .header-links a {{
+            color: white;
+            text-decoration: none;
+            opacity: 0.85;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: opacity 0.3s ease;
+        }}
+
+        .header-links a:hover {{
+            opacity: 1;
+            text-decoration: underline;
+        }}
+
+        .header-links .telegram-icon {{
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }}
 
         header p {{
@@ -1526,6 +1644,31 @@ class CourseHTMLGenerator:
             color: white;
             text-align: center;
             padding: 2rem 0;
+        }}
+
+        footer a {{
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: opacity 0.3s ease;
+        }}
+
+        footer a:hover {{
+            opacity: 0.8;
+            text-decoration: underline;
+        }}
+
+        .telegram-link {{
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }}
+
+        .telegram-icon {{
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            vertical-align: middle;
         }}
 
         /* Content card styles for README */
@@ -1654,6 +1797,18 @@ class CourseHTMLGenerator:
                 font-size: 1.8rem;
             }}
 
+            .header-links {{
+                font-size: 0.75rem;
+                gap: 0.5rem;
+                top: 0.5rem;
+                right: 0.5rem;
+            }}
+
+            .header-links .telegram-icon {{
+                width: 12px;
+                height: 12px;
+            }}
+
             .content-card {{
                 padding: 1.5rem;
             }}
@@ -1677,6 +1832,15 @@ class CourseHTMLGenerator:
 <body>
     <header>
         <div class="container">
+            <div class="header-links">
+                <a href="mailto:admin@lscode.me">admin@lscode.me</a>
+                <a href="https://t.me/lscode_me_bot" target="_blank" rel="noopener noreferrer">
+                    <svg class="telegram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.169 1.858-.896 6.375-1.269 8.453-.152.855-.45 1.14-.74 1.17-.63.06-1.11-.415-1.72-.815-.955-.64-1.496-1.038-2.424-1.662-1.074-.72-.378-1.116.234-1.763.162-.17 2.97-2.723 3.024-2.954.006-.03.011-.15-.056-.212-.067-.058-.166-.038-.238-.023-.101.02-1.705 1.085-4.816 3.188-.456.31-.87.461-1.241.453-.409-.009-1.195-.231-1.78-.42-.718-.234-1.288-.36-1.24-.76.024-.2.36-.405.99-.614 3.884-1.7 6.48-2.82 7.785-3.36 3.774-1.6 4.556-1.88 5.068-1.89.114-.002.37.027.536.16.133.106.17.25.188.352.017.102.038.335.02.515z"/>
+                    </svg>
+                    Mini App
+                </a>
+            </div>
             <a href="../index.html" class="back-link">← Все курсы</a>
             <h1>{category_display}</h1>
             <p>{len(modules)} лекций</p>
@@ -1815,6 +1979,11 @@ class CourseHTMLGenerator:
             padding: 4rem 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }}
+
+        header .container {{
+            position: relative;
         }}
 
         header h1 {{
@@ -1826,6 +1995,37 @@ class CourseHTMLGenerator:
         header p {{
             opacity: 0.9;
             font-size: 1.3rem;
+        }}
+
+        .header-links {{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+        }}
+
+        .header-links a {{
+            color: white;
+            text-decoration: none;
+            opacity: 0.85;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: opacity 0.3s ease;
+        }}
+
+        .header-links a:hover {{
+            opacity: 1;
+            text-decoration: underline;
+        }}
+
+        .header-links .telegram-icon {{
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }}
 
         main {{
@@ -1911,6 +2111,18 @@ class CourseHTMLGenerator:
                 font-size: 1.1rem;
             }}
 
+            .header-links {{
+                font-size: 0.75rem;
+                gap: 0.5rem;
+                top: 0.5rem;
+                right: 0.5rem;
+            }}
+
+            .header-links .telegram-icon {{
+                width: 12px;
+                height: 12px;
+            }}
+
             .courses-grid {{
                 grid-template-columns: 1fr;
             }}
@@ -1932,8 +2144,17 @@ class CourseHTMLGenerator:
 <body>
     <header>
         <div class="container">
+            <div class="header-links">
+                <a href="mailto:admin@lscode.me">admin@lscode.me</a>
+                <a href="https://t.me/lscode_me_bot" target="_blank" rel="noopener noreferrer">
+                    <svg class="telegram-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.169 1.858-.896 6.375-1.269 8.453-.152.855-.45 1.14-.74 1.17-.63.06-1.11-.415-1.72-.815-.955-.64-1.496-1.038-2.424-1.662-1.074-.72-.378-1.116.234-1.763.162-.17 2.97-2.723 3.024-2.954.006-.03.011-.15-.056-.212-.067-.058-.166-.038-.238-.023-.101.02-1.705 1.085-4.816 3.188-.456.31-.87.461-1.241.453-.409-.009-1.195-.231-1.78-.42-.718-.234-1.288-.36-1.24-.76.024-.2.36-.405.99-.614 3.884-1.7 6.48-2.82 7.785-3.36 3.774-1.6 4.556-1.88 5.068-1.89.114-.002.37.027.536.16.133.106.17.25.188.352.017.102.038.335.02.515z"/>
+                    </svg>
+                    Mini App
+                </a>
+            </div>
             <h1>📚 lscode.me</h1>
-            <p>Курсы по программированию и IT</p>
+            <p>Курсы по программированию, IT и естественным наукам</p>
         </div>
     </header>
 
