@@ -5,6 +5,10 @@ COURSE_NAMES = {
         "icon": "🚀",
         "name": "Искусственный Интеллект"
     },
+    "API": {
+        "icon": "🔌",
+        "name": "API и интеграции"
+    },
     "Astronomy": {
         "icon": "🌌",
         "name": "Астрономия"
