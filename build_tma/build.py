@@ -442,11 +442,19 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 
     .quiz-option.correct {
       border-color: #16a34a;
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.15), rgba(22, 163, 74, 0.08));
+      border-width: 2px;
+      font-weight: 600;
+      color: #15803d;
     }
 
     .quiz-option.incorrect {
       border-color: #dc2626;
-      opacity: 0.9;
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.08));
+      border-width: 2px;
+      font-weight: 600;
+      color: #b91c1c;
+      opacity: 1;
     }
 
     .quiz-explanation {
@@ -459,6 +467,18 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       margin-top: 6px;
       font-size: 12px;
       color: var(--tg-subtle);
+    }
+
+    .quiz-footer.has-results {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
+      border: 2px solid var(--tg-accent);
+      color: var(--tg-accent);
     }
 
     .quiz-check-btn {
@@ -476,6 +496,35 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 
     .quiz-check-btn:active {
       transform: scale(0.99);
+    }
+
+    .lecture-quiz-btn {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 2px solid var(--tg-accent);
+      background: var(--tg-accent);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s ease, transform 0.05s ease;
+    }
+
+    .lecture-quiz-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .lecture-quiz-btn:active {
+      transform: scale(0.98);
+    }
+
+    .lecture-quiz-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
 
     #status {
@@ -686,6 +735,45 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       let currentCourseId = null;
       let currentModules = [];
       let currentModuleId = null;
+
+      function processModuleLinks(container) {
+        /**
+         * Обрабатывает ссылки на другие модули в контейнере.
+         * Находит ссылки вида content/courses/{course_id}/modules/{module_id}/lecture.json
+         * и добавляет обработчик клика для навигации к соответствующему модулю.
+         */
+        if (!container || !currentModules || currentModules.length === 0) {
+          return;
+        }
+
+        const links = container.querySelectorAll('a[href]');
+        links.forEach((link) => {
+          const href = link.getAttribute('href');
+          if (!href) return;
+
+          // Проверяем, является ли ссылка ссылкой на модуль TMA
+          // Формат: content/courses/{course_id}/modules/{module_id}/lecture.json
+          // или courses/{course_id}/modules/{module_id}/lecture.json
+          const moduleLinkMatch = href.match(/(?:content\/)?courses\/[^\/]+\/modules\/([^\/]+)\/lecture\.json/);
+          if (moduleLinkMatch) {
+            const targetModuleId = moduleLinkMatch[1];
+            
+            // Ищем модуль в текущем списке модулей
+            const targetModule = currentModules.find((m) => m.module_id === targetModuleId);
+            if (targetModule) {
+              // Предотвращаем стандартное поведение ссылки
+              link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Выбираем целевой модуль
+                selectModule(targetModule);
+              });
+              // Добавляем визуальный индикатор, что это ссылка на модуль
+              link.style.cursor = 'pointer';
+              link.style.textDecoration = 'underline';
+            }
+          }
+        });
+      }
       let pendingModuleId = null;
       let currentQuiz = null;
 
@@ -1033,6 +1121,13 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           tabQuizBtn.textContent = "Квиз";
         }
         setActiveTab("lecture");
+        // Удаляем кнопку квиза из лекции при смене модуля
+        if (lectureEl) {
+          const oldBtn = lectureEl.querySelector(".lecture-quiz-btn");
+          if (oldBtn) {
+            oldBtn.remove();
+          }
+        }
 
         if (modulesTitleEl) {
           modulesTitleEl.textContent = "Модули: " + (course.title || course.course_id);
@@ -1137,6 +1232,13 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           tabQuizBtn.textContent = "Квиз";
         }
         setActiveTab("lecture");
+        // Удаляем старую кнопку квиза из лекции при загрузке нового модуля
+        if (lectureEl) {
+          const oldBtn = lectureEl.querySelector(".lecture-quiz-btn");
+          if (oldBtn) {
+            oldBtn.remove();
+          }
+        }
         setStatus("Загружаем lecture.json…");
 
         if (!mod.url_lecture) {
@@ -1170,6 +1272,28 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
               } catch (e) {
                 console.warn("hljs.highlightAll error:", e);
               }
+            }
+            // Обрабатываем ссылки на другие модули
+            processModuleLinks(lectureEl);
+            // Добавляем кнопку квиза в конец лекции, если квиз есть
+            if (mod.has_quiz && mod.url_quiz) {
+              const quizBtn = document.createElement("button");
+              quizBtn.type = "button";
+              quizBtn.className = "lecture-quiz-btn";
+              quizBtn.id = "lecture-quiz-btn";
+              quizBtn.textContent = "✅ Загрузка квиза...";
+              quizBtn.disabled = true;
+              quizBtn.style.opacity = "0.6";
+              quizBtn.addEventListener("click", () => {
+                if (currentQuiz && !tabQuizBtn.disabled) {
+                  setActiveTab("quiz");
+                  // Прокручиваем к началу квиза
+                  if (quizEl) {
+                    quizEl.scrollTop = 0;
+                  }
+                }
+              });
+              lectureEl.appendChild(quizBtn);
             }
           }
           setStatus("Лекция загружена.");
@@ -1210,6 +1334,22 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
             tabQuizBtn.textContent = count > 0 ? `Квиз (${count})` : "Квиз";
           }
 
+          // Обновляем кнопку в конце лекции, если она уже была добавлена
+          if (lectureEl) {
+            const existingBtn = lectureEl.querySelector("#lecture-quiz-btn");
+            if (existingBtn) {
+              if (count > 0) {
+                existingBtn.textContent = `✅ Перейти к квизу (${count} вопросов)`;
+                existingBtn.disabled = false;
+                existingBtn.style.opacity = "1";
+              } else {
+                existingBtn.textContent = "Квиз недоступен";
+                existingBtn.disabled = true;
+                existingBtn.style.opacity = "0.6";
+              }
+            }
+          }
+
           setStatus(
             count > 0
               ? `Лекция и квиз загружены (${count} вопросов).`
@@ -1218,6 +1358,15 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         } catch (err) {
           console.error(err);
           setStatus("Ошибка загрузки quiz.json: " + (err && err.message ? err.message : err));
+          // Обновляем кнопку в конце лекции при ошибке
+          if (lectureEl) {
+            const existingBtn = lectureEl.querySelector("#lecture-quiz-btn");
+            if (existingBtn) {
+              existingBtn.textContent = "❌ Ошибка загрузки квиза";
+              existingBtn.disabled = true;
+              existingBtn.style.opacity = "0.6";
+            }
+          }
         }
       }
 
@@ -1367,7 +1516,18 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
         const pct = Math.round((correctCount / total) * 100);
         const footer = quizEl.querySelector("#quiz-footer");
         if (footer) {
-          footer.textContent = `Результат: ${correctCount}/${total} (${pct}%)`;
+          footer.classList.add("has-results");
+          footer.textContent = `🎯 Результат: ${correctCount}/${total} (${pct}%)`;
+          // Добавляем цветовую индикацию в зависимости от результата
+          footer.style.borderColor = pct >= 90 ? "#16a34a" : pct >= 70 ? "#2563eb" : pct >= 50 ? "#f59e0b" : "#dc2626";
+          footer.style.color = pct >= 90 ? "#16a34a" : pct >= 70 ? "#2563eb" : pct >= 50 ? "#f59e0b" : "#dc2626";
+          footer.style.background = pct >= 90 
+            ? "linear-gradient(135deg, rgba(22, 163, 74, 0.1), rgba(22, 163, 74, 0.05))"
+            : pct >= 70 
+            ? "linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05))"
+            : pct >= 50
+            ? "linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05))"
+            : "linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05))";
         }
 
         if (tg && tg.HapticFeedback && typeof tg.HapticFeedback.notificationOccurred === "function") {
@@ -1603,6 +1763,43 @@ def extract_anchors(markdown: str) -> List[Dict[str, str]]:
             continue
         anchors.append({"id": anchor_id, "text": text})
     return anchors
+
+
+def replace_module_links_in_markdown(
+    markdown: str, module_name_to_id: Dict[str, str], course_id: str
+) -> str:
+    """
+    Заменяет ссылки на другие модули в markdown на формат TMA.
+    
+    Преобразует ссылки вида [Text](../NN_ModuleName/) в формат:
+    [Text](content/courses/{course_id}/modules/{module_id}/lecture.json)
+    
+    Args:
+        markdown: Исходный markdown текст
+        module_name_to_id: Словарь маппинга module_name -> module_id
+        course_id: ID курса
+    
+    Returns:
+        Markdown с замененными ссылками
+    """
+    def replace_link(match):
+        link_text = match.group(1)  # Текст ссылки
+        module_name = match.group(2).rstrip('/')  # Имя модуля (например, "07_Sockets")
+        
+        # Ищем module_id для этого модуля
+        if module_name in module_name_to_id:
+            module_id = module_name_to_id[module_name]
+            # Формируем URL в формате TMA
+            tma_url = f"content/courses/{course_id}/modules/{module_id}/lecture.json"
+            return f'[{link_text}]({tma_url})'
+        else:
+            # Если модуль не найден, оставляем ссылку как есть (или можно вывести предупреждение)
+            return match.group(0)
+    
+    # Паттерн для поиска ссылок вида [Text](../NN_ModuleName/)
+    # Поддерживает варианты: [Text](../07_Sockets/), [Text](../07_Sockets)
+    pattern = r'\[([^\]]+)\]\(\.\./(\d{2}_[^/)]+)/?\)'
+    return re.sub(pattern, replace_link, markdown)
 
 
 def parse_quiz_markdown(markdown: str, base_path: Path) -> List[QuizQuestion]:
@@ -2087,7 +2284,11 @@ def build(
 
         # Для уникальности module_id внутри курса
         module_id_counts: Dict[str, int] = {}
+        
+        # Маппинг module_name -> module_id для замены ссылок
+        module_name_to_id: Dict[str, str] = {}
 
+        # Первый проход: собираем маппинг module_name -> module_id
         for mdir in valid_modules:
             module_name = mdir.name
             m = re.match(r"^(\d{2})_(.+)$", module_name)
@@ -2104,14 +2305,42 @@ def build(
                 module_id_counts[module_id] += 1
                 suffix = module_id_counts[module_id]
                 new_module_id = f"{module_id}-{suffix}"
-                report.add_warning(
-                    code="MODULE_SLUG_CONFLICT",
-                    path=mdir,
-                    message=f"module_id conflict for '{module_id}', resolved as '{new_module_id}'",
-                )
                 module_id = new_module_id
             else:
                 module_id_counts[module_id] = 1
+            
+            # Сохраняем маппинг
+            module_name_to_id[module_name] = module_id
+
+        # Второй проход: обрабатываем модули и заменяем ссылки
+        for mdir in valid_modules:
+            module_name = mdir.name
+            m = re.match(r"^(\d{2})_(.+)$", module_name)
+            if not m:
+                continue
+            module_no = int(m.group(1))
+            module_name_rest = m.group(2)
+            
+            # Используем module_id из маппинга, собранного в первом проходе
+            module_id = module_name_to_id.get(module_name)
+            if not module_id:
+                # Если по какой-то причине модуль не найден в маппинге, вычисляем заново
+                module_id_base = slugify(module_name_rest)
+                if not module_id_base:
+                    module_id_base = f"m{module_no}"
+                module_id = module_id_base
+                if module_id in module_id_counts:
+                    module_id_counts[module_id] += 1
+                    suffix = module_id_counts[module_id]
+                    new_module_id = f"{module_id}-{suffix}"
+                    report.add_warning(
+                        code="MODULE_SLUG_CONFLICT",
+                        path=mdir,
+                        message=f"module_id conflict for '{module_id}', resolved as '{new_module_id}'",
+                    )
+                    module_id = new_module_id
+                else:
+                    module_id_counts[module_id] = 1
 
             lecture_path = mdir / "lecture.md"
             quiz_path = mdir / "quiz.md"
@@ -2128,13 +2357,19 @@ def build(
 
             # Чтение и метаданные лекции
             lecture_src = read_file_with_front_matter(lecture_path)
+            
+            # Заменяем ссылки на другие модули в markdown
+            processed_markdown = replace_module_links_in_markdown(
+                lecture_src.markdown, module_name_to_id, course_id
+            )
+            
             lecture_title = (
                 lecture_src.meta.get("title")
                 if isinstance(lecture_src.meta.get("title"), str)
                 else None
             )
             if not lecture_title:
-                heading = extract_first_heading(lecture_src.markdown)
+                heading = extract_first_heading(processed_markdown)
                 if heading:
                     lecture_title = heading
                 else:
@@ -2146,7 +2381,7 @@ def build(
             if not isinstance(tags, list):
                 tags = None
 
-            anchors = extract_anchors(lecture_src.markdown) if emit_anchors else None
+            anchors = extract_anchors(processed_markdown) if emit_anchors else None
 
             # Генерация lecture.json
             module_out_dir = course_out_dir / "modules" / module_id
@@ -2159,7 +2394,7 @@ def build(
                 "module_no": module_no,
                 "module_id": module_id,
                 "title": lecture_title,
-                "markdown": lecture_src.markdown,
+                "markdown": processed_markdown,
                 "source": {
                     "path": str(lecture_path.relative_to(repo_root)).replace(os.sep, "/"),
                     "sha256": lecture_src.sha256,
