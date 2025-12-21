@@ -1,5 +1,4 @@
-# Архитектуры и процессоры
-## x86, PowerPC, SPARC, ARM
+# x86, PowerPC, SPARC, ARM
 
 ---
 

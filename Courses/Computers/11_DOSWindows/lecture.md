@@ -1,5 +1,4 @@
-# Операционные системы
-## DOS, Windows и мир PC
+# DOS, Windows и мир PC
 
 ---
 

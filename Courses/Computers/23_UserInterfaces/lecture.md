@@ -1,5 +1,4 @@
-# Эволюция пользовательских интерфейсов
-## От CLI к GUI, Touch, Voice и beyond
+# От CLI к GUI, Touch, Voice и beyond
 
 ---
 

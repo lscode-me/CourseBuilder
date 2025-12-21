@@ -1,5 +1,4 @@
-# Lisp машины и язык-ориентированные системы
-## Lisp машины и software-hardware co-design
+# Lisp машины и software-hardware co-design
 
 ---
 
