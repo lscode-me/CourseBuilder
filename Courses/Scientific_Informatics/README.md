@@ -1,4 +1,4 @@
-# 📘 Курс: Scientific Informatics
+# Scientific Informatics
 ## Применение информатики для научных исследований и анализа данных
 
 ---

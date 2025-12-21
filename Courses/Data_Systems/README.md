@@ -1,4 +1,4 @@
-# 📘 Курс: Data Structures & Systems — от алгоритмов к архитектуре
+# Data Structures & Systems — от алгоритмов к архитектуре
 
 ## Описание курса
 
