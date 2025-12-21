@@ -157,14 +157,12 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
     }
 
     #courses-column {
-      flex: 0 0 40%;
-      max-height: 45vh;
+      flex: 1;
       background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), var(--tg-surface));
     }
 
     #modules-column {
-      flex: 0 0 60%;
-      max-height: 45vh;
+      flex: 1;
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), var(--tg-surface));
       display: none;
     }
