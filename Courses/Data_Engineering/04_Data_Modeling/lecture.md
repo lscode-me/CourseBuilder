@@ -1,5 +1,4 @@
-# Data Engineering
-## Основы data modeling
+# Основы data modeling
 
 ---
 

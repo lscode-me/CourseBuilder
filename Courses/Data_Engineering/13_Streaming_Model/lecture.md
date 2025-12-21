@@ -1,5 +1,4 @@
-# Data Engineering
-## Streaming как модель обработки
+# Streaming как модель обработки
 
 ---
 

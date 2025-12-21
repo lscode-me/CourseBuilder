@@ -1,5 +1,4 @@
-# Data Engineering
-## Data Engineering как system design
+# Data Engineering как system design
 
 ---
 

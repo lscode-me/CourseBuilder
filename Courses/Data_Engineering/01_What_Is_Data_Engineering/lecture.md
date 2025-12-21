@@ -1,5 +1,4 @@
-# Data Engineering
-## Что такое Data Engineering
+# Что такое Data Engineering
 
 ---
 

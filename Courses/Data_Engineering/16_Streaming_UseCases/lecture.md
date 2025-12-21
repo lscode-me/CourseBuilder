@@ -1,5 +1,4 @@
-# Data Engineering
-## Streaming use cases
+# Streaming use cases
 
 ---
 

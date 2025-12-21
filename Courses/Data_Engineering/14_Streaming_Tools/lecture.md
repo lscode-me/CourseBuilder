@@ -1,5 +1,4 @@
-# Data Engineering
-## Инструменты streaming обработки
+# Инструменты streaming обработки
 
 ---
 
