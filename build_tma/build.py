@@ -198,6 +198,21 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       gap: 4px;
     }
 
+    .section-header {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--tg-accent);
+      padding: 8px 10px 4px 10px;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--tg-border);
+    }
+
+    .section-header:first-child {
+      margin-top: 0;
+    }
+
     .list-item {
       width: 100%;
       text-align: left;
@@ -882,32 +897,108 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           return;
         }
 
+        // Группируем курсы по разделам
+        const sectionsToCourses = {};
+        const coursesWithoutSections = [];
+
         indexData.courses.forEach((course) => {
-          const btn = document.createElement("button");
-          btn.className = "list-item";
-          btn.dataset.courseId = course.course_id;
+          const sections = course.sections || [];
+          if (sections.length === 0) {
+            coursesWithoutSections.push(course);
+          } else {
+            sections.forEach((section) => {
+              if (!sectionsToCourses[section]) {
+                sectionsToCourses[section] = [];
+              }
+              sectionsToCourses[section].push(course);
+            });
+          }
+        });
 
-          const badge = document.createElement("span");
-          badge.className = "badge";
-          badge.textContent = String(course.modules_count || 0);
+        // Сортируем разделы по алфавиту
+        const sortedSections = Object.keys(sectionsToCourses).sort();
 
-          const title = document.createElement("span");
-          title.className = "item-title";
-          const icon = getCourseIcon(course);
-          const label = course.title || course.course_id;
-          title.textContent = icon + " " + label;
+        // Рендерим разделы
+        sortedSections.forEach((section) => {
+          // Заголовок раздела
+          const sectionHeader = document.createElement("div");
+          sectionHeader.className = "section-header";
+          sectionHeader.textContent = section;
+          coursesEl.appendChild(sectionHeader);
 
-          btn.appendChild(badge);
-          btn.appendChild(title);
-
-          btn.addEventListener("click", () => {
-            clearActive(coursesEl);
-            btn.classList.add("active");
-            selectCourse(course);
+          // Курсы в разделе (сортируем по названию)
+          const sectionCourses = sectionsToCourses[section].sort((a, b) => {
+            const titleA = a.title || a.course_id;
+            const titleB = b.title || b.course_id;
+            return titleA.localeCompare(titleB);
           });
 
-          coursesEl.appendChild(btn);
+          sectionCourses.forEach((course) => {
+            const btn = document.createElement("button");
+            btn.className = "list-item";
+            btn.dataset.courseId = course.course_id;
+
+            const badge = document.createElement("span");
+            badge.className = "badge";
+            badge.textContent = String(course.modules_count || 0);
+
+            const title = document.createElement("span");
+            title.className = "item-title";
+            const icon = getCourseIcon(course);
+            const label = course.title || course.course_id;
+            title.textContent = icon + " " + label;
+
+            btn.appendChild(badge);
+            btn.appendChild(title);
+
+            btn.addEventListener("click", () => {
+              clearActive(coursesEl);
+              btn.classList.add("active");
+              selectCourse(course);
+            });
+
+            coursesEl.appendChild(btn);
+          });
         });
+
+        // Курсы без разделов (если есть)
+        if (coursesWithoutSections.length > 0) {
+          const sectionHeader = document.createElement("div");
+          sectionHeader.className = "section-header";
+          sectionHeader.textContent = "Другие";
+          coursesEl.appendChild(sectionHeader);
+
+          coursesWithoutSections.sort((a, b) => {
+            const titleA = a.title || a.course_id;
+            const titleB = b.title || b.course_id;
+            return titleA.localeCompare(titleB);
+          }).forEach((course) => {
+            const btn = document.createElement("button");
+            btn.className = "list-item";
+            btn.dataset.courseId = course.course_id;
+
+            const badge = document.createElement("span");
+            badge.className = "badge";
+            badge.textContent = String(course.modules_count || 0);
+
+            const title = document.createElement("span");
+            title.className = "item-title";
+            const icon = getCourseIcon(course);
+            const label = course.title || course.course_id;
+            title.textContent = icon + " " + label;
+
+            btn.appendChild(badge);
+            btn.appendChild(title);
+
+            btn.addEventListener("click", () => {
+              clearActive(coursesEl);
+              btn.classList.add("active");
+              selectCourse(course);
+            });
+
+            coursesEl.appendChild(btn);
+          });
+        }
       }
 
       async function selectCourse(course) {
@@ -2198,16 +2289,23 @@ def build(
 
         report.stats.courses_total += 1
 
+        # Получаем информацию о разделах из COURSE_NAMES
+        course_info = COURSE_NAMES.get(course_dir.name, {})
+        sections = []
+        if isinstance(course_info, dict):
+            sections = list(course_info.get("sections", set()))
+
         # Элемент для index.json
-        index_courses.append(
-            {
-                "course_id": course_id,
-                "title": course_title,
-                "modules_count": len(modules_index),
-                "url_course": f"courses/{course_id}/course.json",
-                "url_modules": f"courses/{course_id}/modules.json",
-            }
-        )
+        course_entry = {
+            "course_id": course_id,
+            "title": course_title,
+            "modules_count": len(modules_index),
+            "url_course": f"courses/{course_id}/course.json",
+            "url_modules": f"courses/{course_id}/modules.json",
+        }
+        if sections:
+            course_entry["sections"] = sorted(sections)
+        index_courses.append(course_entry)
 
     # index.json
     index_courses.sort(key=lambda c: c["title"])

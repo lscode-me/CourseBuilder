@@ -5,6 +5,7 @@
 !Courses/
 !Courses/**
 Courses/__pycache__/
+Courses/Shell/
 
 # Шаблоны курсов (неготовые)
 !Courses_templates/

@@ -1715,26 +1715,62 @@ class CourseHTMLGenerator:
 </html>'''
     
     def generate_main_index(self, courses_by_category: Dict[str, List[Dict]]) -> str:
-        """Генерирует главную страницу со списком всех курсов"""
+        """Генерирует главную страницу со списком всех курсов, сгруппированных по разделам"""
         
-        # Генерируем HTML для каждой категории
-        categories_html = []
+        # Собираем все используемые разделы и группируем курсы по разделам
+        sections_to_courses: Dict[str, List[Tuple[str, Dict]]] = {}
+        
         for category in sorted(courses_by_category.keys()):
             course_list = courses_by_category[category]
             course_info = COURSE_NAMES.get(category, {})
-            category_name = course_info.get("name", category) if isinstance(course_info, dict) else category
-            category_icon = course_info.get("icon", "") if isinstance(course_info, dict) else ""
-            category_display = f"{category_icon} {category_name}".strip() if category_icon else category_name
-            num_modules = len(course_list)
             
-            categories_html.append(f'''
-                <a href="{category}/index.html" class="course-card">
-                    <div class="course-info">
-                        <h2>{category_display}</h2>
-                        <p>{num_modules} лекций</p>
+            if not isinstance(course_info, dict):
+                continue
+            
+            # Получаем разделы для этого курса
+            course_sections = course_info.get("sections", set())
+            if not course_sections:
+                # Если у курса нет разделов, пропускаем его или добавляем в "Другие"
+                continue
+            
+            # Добавляем курс во все его разделы
+            for section in course_sections:
+                if section not in sections_to_courses:
+                    sections_to_courses[section] = []
+                sections_to_courses[section].append((category, course_info))
+        
+        # Генерируем HTML для разделов
+        sections_html = []
+        for section in sorted(sections_to_courses.keys()):
+            courses_in_section = sections_to_courses[section]
+            # Сортируем курсы внутри раздела по названию
+            courses_in_section.sort(key=lambda x: x[1].get("name", x[0]))
+            
+            # Генерируем HTML для курсов в разделе
+            courses_html = []
+            for category, course_info in courses_in_section:
+                course_list = courses_by_category[category]
+                category_name = course_info.get("name", category)
+                category_icon = course_info.get("icon", "")
+                category_display = f"{category_icon} {category_name}".strip() if category_icon else category_name
+                num_modules = len(course_list)
+                
+                courses_html.append(f'''
+                    <a href="{category}/index.html" class="course-card">
+                        <div class="course-info">
+                            <h3>{category_display}</h3>
+                            <p>{num_modules} лекций</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </a>''')
+            
+            sections_html.append(f'''
+                <section class="section-group">
+                    <h2 class="section-title">{section}</h2>
+                    <div class="courses-grid">
+                        {''.join(courses_html)}
                     </div>
-                    <span class="arrow">→</span>
-                </a>''')
+                </section>''')
         
         return f'''<!DOCTYPE html>
 <html lang="ru">
@@ -1796,6 +1832,19 @@ class CourseHTMLGenerator:
             padding: 3rem 0 4rem;
         }}
 
+        .section-group {{
+            margin-bottom: 3rem;
+        }}
+
+        .section-title {{
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary);
+        }}
+
         .courses-grid {{
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -1822,7 +1871,7 @@ class CourseHTMLGenerator:
             box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }}
 
-        .course-info h2 {{
+        .course-info h3 {{
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
@@ -1870,7 +1919,11 @@ class CourseHTMLGenerator:
                 padding: 1.5rem;
             }}
 
-            .course-info h2 {{
+            .section-title {{
+                font-size: 1.5rem;
+            }}
+
+            .course-info h3 {{
                 font-size: 1.2rem;
             }}
         }}
@@ -1885,9 +1938,7 @@ class CourseHTMLGenerator:
     </header>
 
     <main class="container">
-        <div class="courses-grid">
-            {''.join(categories_html)}
-        </div>
+        {''.join(sections_html)}
     </main>
 
     <footer>

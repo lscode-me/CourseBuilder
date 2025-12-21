@@ -7,7 +7,6 @@ SECTIONS = {
     "IT Basics",
     "Artificial Intelligence",
     "Integrations",
-    "Security",
     "Soft Skills",
     "Systems",
 }
@@ -18,142 +17,142 @@ COURSE_NAMES = {
     "AI": {
         "icon": "🚀",
         "name": "Искусственный Интеллект",
-        "раздел": {"Artificial Intelligence"}
+        "sections": {"Artificial Intelligence"}
     },
     "API": {
         "icon": "🔌",
         "name": "API и интеграции",
-        "раздел": {"Integrations"}
+        "sections": {"Integrations"}
     },
     "Astronomy": {
         "icon": "🌌",
         "name": "Астрономия",
-        "раздел": {"Natural Sciences"}
+        "sections": {"Natural Sciences"}
     },
     "Bioinformatics": {
         "icon": "🧬",
         "name": "Биоинформатика",
-        "раздел": {"Natural Sciences"}
+        "sections": {"Natural Sciences"}
     },
     "CloudNative": {
         "icon": "☁️",
         "name": "Cloud Native",
-        "раздел": {"Infrastructure"}
+        "sections": {"Infrastructure"}
     },
     "Computers": {
         "icon": "💾",
         "name": "История компьютеров",
-        "раздел": {"IT Basics"}
+        "sections": {"IT Basics"}
     },
     "Containers": {
         "icon": "🐳",
         "name": "Контейнеры",
-        "раздел": {"Infrastructure"}
+        "sections": {"Infrastructure"}
     },
     "Crypto": {
         "icon": "₿",
         "name": "Криптовалюты и блокчейн",
-        "раздел": {"IT Basics"}
+        "sections": {"IT Basics"}
     },
     "CustomerAndServices": {
         "icon": "🤝",
         "name": "Customer & Services",
-        "раздел": {"Soft Skills"}
+        "sections": {"Soft Skills"}
     },
     "Data_Engineering": {
         "icon": "⚙️",
         "name": "Data Engineering",
-        "раздел": {"Data"}
+        "sections": {"Data"}
     },
     "Data_Structures": {
         "icon": "📊",
         "name": "Структуры данных",
-        "раздел": {"Programming", "Data"}
+        "sections": {"Programming", "Data"}
     },
     "Data_Systems": {
         "icon": "🗄️",
         "name": "Системы данных",
-        "раздел": {"Data"}
+        "sections": {"Data"}
     },
     "DevOps": {
         "icon": "🔧",
         "name": "DevOps",
-        "раздел": {"Infrastructure"}
+        "sections": {"Infrastructure"}
     },
     "EnglishGrammarC1": {
         "icon": "🇬🇧",
         "name": "English Grammar C1",
-        "раздел": {"Soft Skills"}
+        "sections": {"Soft Skills"}
     },
     "EnglishGrammarC2": {
         "icon": "🇬🇧",
         "name": "English Grammar C2",
-        "раздел": {"Soft Skills"}
+        "sections": {"Soft Skills"}
     },
     "Go": {
         "icon": "🐹",
         "name": "Go",
-        "раздел": {"Programming"}
+        "sections": {"Programming"}
     },
     "Healthcare_Technologies": {
         "icon": "🏥",
         "name": "Healthcare Technologies",
-        "раздел": {"Natural Sciences"}
+        "sections": {"Natural Sciences"}
     },
     "IT_Basics": {
         "icon": "💻",
         "name": "IT Basics",
-        "раздел": {"IT Basics"}
+        "sections": {"IT Basics"}
     },
     "Leadership": {
         "icon": "👔",
         "name": "Leadership",
-        "раздел": {"Soft Skills"}
+        "sections": {"Soft Skills"}
     },
     "LS_Intro": {
         "icon": "🧬",
         "name": "Introduction to Life Sciences Informatics",
-        "раздел": {"Natural Sciences"}
+        "sections": {"Natural Sciences"}
     },
     "OpenBSD": {
         "icon": "🐡",
         "name": "OpenBSD",
-        "раздел": {"Systems"}
+        "sections": {"Systems"}
     },
     "Protocols": {
         "icon": "📡",
         "name": "Протоколы",
-        "раздел": {"IT Basics"}
+        "sections": {"IT Basics"}
     },
     "Python": {
         "icon": "🐍",
         "name": "Python",
-        "раздел": {"Programming"}
+        "sections": {"Programming"}
     },
     "Python.Interview": {
         "icon": "🎯",
         "name": "Python Interview",
-        "раздел": {"Programming"}
+        "sections": {"Programming"}
     },
     "Scientific_Informatics": {
         "icon": "🔬",
         "name": "Scientific Informatics",
-        "раздел": {"Natural Sciences"}
+        "sections": {"Natural Sciences"}
     },
     "SQL": {
         "icon": "🗃️",
         "name": "SQL",
-        "раздел": {"Data"}
+        "sections": {"Data"}
     },
     "UnixProgramming": {
         "icon": "🖥️",
         "name": "Unix Programming",
-        "раздел": {"Programming", "Systems"}
+        "sections": {"Programming", "Systems"}
     },
     "WebProgramming": {
         "icon": "🌐",
         "name": "Web Programming",
-        "раздел": {"Programming"}
+        "sections": {"Programming"}
     },
 }
 
