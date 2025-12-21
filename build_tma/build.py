@@ -47,7 +47,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
   <title>LSCode Mini App</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <style>
     * {
@@ -320,8 +320,8 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
     }
 
     #lecture pre {
-      background: #111827;
-      color: #e5e7eb;
+      background: #f6f8fa;
+      color: #24292e;
       border-radius: 8px;
       padding: 8px;
       font-size: 12px;
@@ -346,33 +346,33 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       padding: 0;
     }
 
-    /* Цвета для подсветки синтаксиса (highlight.js и/или кастомные классы) */
+    /* Цвета для подсветки синтаксиса (highlight.js и/или кастомные классы) - светлая тема */
     #lecture pre .hljs-keyword,
     #lecture pre .tok-kw {
-      color: #93c5fd;
+      color: #d73a49;
     }
 
     #lecture pre .hljs-built_in,
     #lecture pre .hljs-type,
     #lecture pre .hljs-literal,
     #lecture pre .tok-builtin {
-      color: #a5b4fc;
+      color: #005cc5;
     }
 
     #lecture pre .hljs-string,
     #lecture pre .hljs-attr,
     #lecture pre .tok-str {
-      color: #f97316;
+      color: #032f62;
     }
 
     #lecture pre .hljs-number,
     #lecture pre .tok-key {
-      color: #facc15;
+      color: #005cc5;
     }
 
     #lecture pre .hljs-comment,
     #lecture pre .tok-comment {
-      color: #9ca3af;
+      color: #6a737d;
       font-style: italic;
     }
 
@@ -474,8 +474,8 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       margin-top: 4px;
       max-height: 140px;
       overflow: auto;
-      background: #0f172a;
-      color: #e5e7eb;
+      background: #f6f8fa;
+      color: #24292e;
       padding: 6px;
       border-radius: 8px;
     }
@@ -541,17 +541,17 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
 
       function applyTheme(themeParams, colorScheme) {
         const root = document.documentElement;
-        const tp = themeParams || {};
-        const scheme = colorScheme || (tg && tg.colorScheme) || "light";
-        const isDark = scheme === "dark";
+        // Жестко задаем светлую тему, игнорируя настройки Telegram
+        const isDark = false;
 
-        root.style.setProperty("--tg-bg", tp.bg_color || (isDark ? "#0f172a" : "#ffffff"));
-        root.style.setProperty("--tg-text", tp.text_color || (isDark ? "#e5e7eb" : "#111827"));
-        root.style.setProperty("--tg-subtle", tp.hint_color || (isDark ? "#9ca3af" : "#6b7280"));
-        root.style.setProperty("--tg-accent", tp.button_color || "#2563eb");
-        root.style.setProperty("--tg-accent-soft", isDark ? "#1e293b" : "#dbeafe");
-        root.style.setProperty("--tg-border", isDark ? "#1f2937" : "#e5e7eb");
-        root.style.setProperty("--tg-surface", tp.secondary_bg_color || (isDark ? "#020617" : "#ffffff"));
+        // Всегда используем светлые цвета, независимо от настроек
+        root.style.setProperty("--tg-bg", "#ffffff");
+        root.style.setProperty("--tg-text", "#111827");
+        root.style.setProperty("--tg-subtle", "#6b7280");
+        root.style.setProperty("--tg-accent", "#2563eb");
+        root.style.setProperty("--tg-accent-soft", "#dbeafe");
+        root.style.setProperty("--tg-border", "#e5e7eb");
+        root.style.setProperty("--tg-surface", "#ffffff");
       }
 
       if (tg) {
@@ -559,10 +559,19 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           if (typeof tg.expand === "function") {
             tg.expand();
           }
+          // Отключаем закрытие при скролле вверх
+          if (typeof tg.disableVerticalSwipes === "function") {
+            tg.disableVerticalSwipes();
+          }
+          // Требуем подтверждение перед закрытием
+          if (typeof tg.enableClosingConfirmation === "function") {
+            tg.enableClosingConfirmation();
+          }
         } catch (e) {
-          console.warn("Telegram expand() failed:", e);
+          console.warn("Telegram API call failed:", e);
         }
-        applyTheme(tg.themeParams || {}, tg.colorScheme);
+        // Всегда применяем светлую тему, игнорируя настройки Telegram
+        applyTheme({}, "light");
       } else {
         // В браузере вне Telegram используем светлую тему по умолчанию
         applyTheme({}, "light");
