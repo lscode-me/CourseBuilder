@@ -67,7 +67,7 @@ COURSE_NAMES = {
     "Data_Structures": {
         "icon": "📊",
         "name": "Структуры данных",
-        "sections": {"Programming", "Data"}
+        "sections": {"Programming", "Data", "IT Basics"}
     },
     "Data_Systems": {
         "icon": "🗄️",
@@ -132,6 +132,11 @@ COURSE_NAMES = {
     "Python.Interview": {
         "icon": "🎯",
         "name": "Python Interview",
+        "sections": {"Programming"}
+    },
+    "Rust": {
+        "icon": "🦀",
+        "name": "Rust",
         "sections": {"Programming"}
     },
     "Scientific_Informatics": {
