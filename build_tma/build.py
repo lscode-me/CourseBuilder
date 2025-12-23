@@ -261,6 +261,16 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       color: var(--tg-accent);
     }
 
+    .badge-completed {
+      background: #16a34a;
+      color: #ffffff;
+    }
+
+    .badge-progress {
+      background: #f59e0b;
+      color: #ffffff;
+    }
+
     .item-title {
       font-size: 13px;
       flex: 1;
@@ -735,6 +745,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
       let currentCourseId = null;
       let currentModules = [];
       let currentModuleId = null;
+      let quizProgress = {}; // { "course_id:module_id": { correctCount, total, pct, timestamp } }
 
       function processModuleLinks(container) {
         /**
@@ -862,6 +873,90 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           tg.CloudStorage.setItem("last_module_id", mVal, function () {});
         } catch (e) {
           console.warn("CloudStorage.setItem error:", e);
+        }
+      }
+
+      function saveQuizResult(courseId, moduleId, correctCount, total, pct) {
+        if (!canUseCloudStorage || !courseId || !moduleId) return;
+        const key = `quiz_result_${courseId}_${moduleId}`;
+        const result = {
+          correctCount: correctCount,
+          total: total,
+          pct: pct,
+          timestamp: Date.now()
+        };
+        try {
+          tg.CloudStorage.setItem(key, JSON.stringify(result), function (err) {
+            if (err) {
+              console.warn("CloudStorage.setItem error for quiz result:", err);
+            } else {
+              // Обновляем локальный кэш
+              const cacheKey = `${courseId}:${moduleId}`;
+              quizProgress[cacheKey] = result;
+              // Обновляем отображение модулей, если мы на экране модулей
+              if (currentCourseId === courseId && modulesEl) {
+                renderModules();
+              }
+            }
+          });
+        } catch (e) {
+          console.warn("CloudStorage.setItem exception:", e);
+        }
+      }
+
+      function loadQuizProgress(courseId, callback) {
+        if (!canUseCloudStorage || !courseId) {
+          if (callback) callback({});
+          return;
+        }
+        try {
+          // Получаем все ключи из CloudStorage
+          // К сожалению, CloudStorage не поддерживает получение всех ключей напрямую
+          // Поэтому мы будем загружать прогресс для каждого модуля отдельно при рендеринге
+          if (callback) callback({});
+        } catch (e) {
+          console.warn("CloudStorage.getItems exception for quiz progress:", e);
+          if (callback) callback({});
+        }
+      }
+
+      function getQuizResult(courseId, moduleId, callback) {
+        if (!canUseCloudStorage || !courseId || !moduleId) {
+          if (callback) callback(null);
+          return;
+        }
+        const key = `quiz_result_${courseId}_${moduleId}`;
+        const cacheKey = `${courseId}:${moduleId}`;
+        
+        // Проверяем кэш
+        if (quizProgress[cacheKey]) {
+          if (callback) callback(quizProgress[cacheKey]);
+          return;
+        }
+
+        try {
+          tg.CloudStorage.getItem(key, function (err, value) {
+            if (err) {
+              console.warn("CloudStorage.getItem error for quiz result:", err);
+              if (callback) callback(null);
+              return;
+            }
+            if (!value) {
+              if (callback) callback(null);
+              return;
+            }
+            try {
+              const result = JSON.parse(value);
+              quizProgress[cacheKey] = result;
+              if (callback) callback(result);
+            } catch (e) {
+              console.warn("Failed to parse quiz result:", e);
+              if (callback) callback(null);
+            }
+          });
+        } catch (e) {
+          console.warn("CloudStorage.getItem exception:", e);
+          if (callback) callback(null);
         }
       }
 
@@ -1171,6 +1266,8 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           return;
         }
 
+        // Сначала создаем все элементы модулей
+        const moduleElements = [];
         currentModules.forEach((mod) => {
           const btn = document.createElement("button");
           btn.className = "list-item";
@@ -1188,6 +1285,7 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           const quizBadge = document.createElement("span");
           quizBadge.className = "badge" + (mod.has_quiz ? " badge-strong" : "");
           quizBadge.textContent = mod.has_quiz ? "Квиз" : "Лекция";
+          quizBadge.id = `quiz-badge-${mod.module_id}`;
 
           btn.appendChild(badge);
           btn.appendChild(title);
@@ -1200,6 +1298,28 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
           });
 
           modulesEl.appendChild(btn);
+          moduleElements.push({ mod: mod, badge: quizBadge });
+        });
+
+        // Загружаем прогресс для каждого модуля с квизом
+        moduleElements.forEach(({ mod, badge }) => {
+          if (mod.has_quiz && currentCourseId) {
+            getQuizResult(currentCourseId, mod.module_id, function (result) {
+              if (result && result.total > 0) {
+                const pct = result.pct || Math.round((result.correctCount / result.total) * 100);
+                if (pct >= 90) {
+                  badge.className = "badge badge-completed";
+                  badge.textContent = "✓ " + pct + "%";
+                } else if (pct >= 50) {
+                  badge.className = "badge badge-progress";
+                  badge.textContent = pct + "%";
+                } else {
+                  badge.className = "badge badge-strong";
+                  badge.textContent = pct + "%";
+                }
+              }
+            });
+          }
         });
 
         if (pendingModuleId && modulesEl) {
@@ -1528,6 +1648,11 @@ INDEX_HTML_TEMPLATE = """<!doctype html>
             : pct >= 50
             ? "linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05))"
             : "linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05))";
+        }
+
+        // Сохраняем результат quiz-а
+        if (currentCourseId && currentModuleId) {
+          saveQuizResult(currentCourseId, currentModuleId, correctCount, total, pct);
         }
 
         if (tg && tg.HapticFeedback && typeof tg.HapticFeedback.notificationOccurred === "function") {
