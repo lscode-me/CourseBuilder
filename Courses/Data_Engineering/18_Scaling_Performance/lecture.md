@@ -394,6 +394,7 @@ for cpu in cpu_levels:
 
 **Output:**
 ```
+
 ➡️  No scaling: CPU=75%, instances=2
 ⬆️  Scale UP: CPU=85%, instances=3
 ⬆️  Scale UP: CPU=90%, instances=4
@@ -535,6 +536,7 @@ analyzer.analyze_usage(
 
 **Output:**
 ```
+
 📊 Right-sizing анализ:
    Средний CPU: 28.8%
    Средний Memory: 48.8%
@@ -614,6 +616,7 @@ for i in range(5):
 
 **Output:**
 ```
+
 ➕ Сервер 'server-1' добавлен
 ➕ Сервер 'server-2' добавлен
 ➕ Сервер 'server-3' добавлен
@@ -713,6 +716,7 @@ print(f"\n📊 Статистика кэша: {stats}")
 
 **Output:**
 ```
+
 💾 Установлено: user_1 = Alice
 💾 Установлено: user_2 = Bob
 ❌ Cache MISS: user_1 = Alice (загружено из БД и сохранено в кэш)
@@ -809,6 +813,7 @@ print(f"\n🐌 Медленных запросов: {len(slow)}")
 
 **Output:**
 ```
+
 ✅ Быстрый запрос: SELECT * FROM users WHERE id = 1 (5ms)
 ⚠️  Медленный запрос: SELECT * FROM orders WHERE user_id = 1 (150ms)
 💡 Рекомендуется индекс на orders.user_id
@@ -882,5 +887,6 @@ print(f"\n🐌 Медленных запросов: {len(slow)}")
 - Google Cloud Performance: https://cloud.google.com/performance
 
 ---
+
 
 

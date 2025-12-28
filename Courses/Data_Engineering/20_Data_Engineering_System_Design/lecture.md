@@ -390,6 +390,7 @@ cap.classify_system("Cassandra", consistency=False, availability=True, partition
 
 **Output:**
 ```
+
 📊 PostgreSQL: CP (Consistency + Partition Tolerance)
 📊 MongoDB: AP (Availability + Partition Tolerance)
 📊 Cassandra: AP (Availability + Partition Tolerance)
@@ -608,6 +609,7 @@ checklist.validate_design()
 
 **Output:**
 ```
+
 ✅ Требования определены
 ✅ Компоненты выбраны
 ✅ Архитектура спроектирована
@@ -695,6 +697,7 @@ print(f"Состояние после replay: {es.get_current_state()}")
 
 **Output:**
 ```
+
 📝 Событие добавлено: user_created
 📝 Событие добавлено: user_updated
 Текущее состояние: {'user_id': 1, 'name': 'Alice Updated'}
@@ -767,6 +770,7 @@ print(f"Результат query: {user}")
 
 **Output:**
 ```
+
 ✍️  Command выполнена: create_user
 📖 Query выполнена: get_user
 Результат query: {'id': 1, 'name': 'Alice', 'email': 'alice@example.com', 'full_profile': 'Alice (alice@example.com)'}
@@ -836,6 +840,7 @@ design.design_platform()
 
 **Output:**
 ```
+
 🏗️  Analytics Platform Design:
 
 Компоненты:
@@ -932,5 +937,6 @@ Data Flow:
 - Google Cloud Architecture: https://cloud.google.com/architecture
 
 ---
+
 
 

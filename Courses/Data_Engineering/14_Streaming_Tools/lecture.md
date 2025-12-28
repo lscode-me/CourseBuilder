@@ -512,6 +512,7 @@ streams.source("user-events") \
 
 **Output:**
 ```
+
 📥 Source: user-events
 ⚙️  MapValues: parse_json
 🔍 Filter: valid_events
@@ -591,6 +592,7 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
+
 Сравнение Kafka vs Pulsar:
   Пример 1: Kafka (более зрелая экосистема, высокая пропускная способность)
   Пример 2: Pulsar (cloud-native, multi-tenancy, geo-replication)
@@ -639,6 +641,7 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
+
 Сравнение Flink vs Spark Streaming:
   Пример 1: Flink (true streaming, низкая задержка)
   Пример 2: Spark Streaming (интеграция с Spark, микробатчи)
@@ -778,6 +781,7 @@ for i, practice in enumerate(practices.get_practices("flink"), 1):
 
 **Output:**
 ```
+
 Best Practices для Kafka:
   1. Используйте партиционирование для масштабирования
   2. Настройте replication factor для надёжности
@@ -846,6 +850,7 @@ print(f"\nPipeline конфигурация: {pipeline}")
 
 **Output:**
 ```
+
 🔗 Настройка pipeline: raw-events -> Flink -> processed-events
   📥 Kafka source: чтение из 'raw-events'
   ⚙️  Flink processing: трансформация данных
@@ -920,6 +925,7 @@ kafka_config.configure_consumer(group_id="analytics-group")
 
 **Output:**
 ```
+
 ⚙️  Topic 'user-events' настроен:
    Partitions: 5
    Replication: 3
@@ -989,5 +995,6 @@ kafka_config.configure_consumer(group_id="analytics-group")
 - Apache Flink: https://flink.apache.org/docs/
 
 ---
+
 
 

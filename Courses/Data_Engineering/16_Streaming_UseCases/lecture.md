@@ -549,6 +549,7 @@ print(f"Алертов: {len(processor.alerts)}")
 
 **Output:**
 ```
+
 📡 Обработано: device=device_1, sensor=temperature, value=25
 📡 Обработано: device=device_1, sensor=temperature, value=105
 ⚠️  ALERT: device_1/temperature = 105 превышает 100
@@ -610,6 +611,7 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
+
 Рекомендации use cases:
   Пример 1: Fraud Detection (очень низкая задержка, высокая пропускная способность)
   Пример 2: Monitoring (низкая задержка, алерты)
@@ -674,5 +676,6 @@ for i, req in enumerate(examples, 1):
 - Kafka Streams: https://kafka.apache.org/documentation/streams/ (event processing)
 
 ---
+
 
 

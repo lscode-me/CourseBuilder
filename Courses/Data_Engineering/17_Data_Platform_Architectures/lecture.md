@@ -452,6 +452,7 @@ mesh.discover_data_product("customer_orders")
 
 **Output:**
 ```
+
 🏢 Домен 'sales' зарегистрирован, владелец: Sales Team
 🏢 Домен 'marketing' зарегистрирован, владелец: Marketing Team
 📦 Data product 'customer_orders' создан в домене 'sales'
@@ -585,6 +586,7 @@ practices.get_recommendation("modern_data_stack", {})
 
 **Output:**
 ```
+
 📋 Рекомендации для lambda:
    Используйте когда: Требуется высокая точность, Низкая задержка для новых данных
    Избегайте когда: Простая система, Ограниченные ресурсы
@@ -667,6 +669,7 @@ result = lakehouse.query("users", "SELECT * FROM users")
 
 **Output:**
 ```
+
 💾 Данные сохранены в 'users' (формат: parquet)
 💾 Данные сохранены в 'orders' (формат: delta)
 📋 Схема применена к 'users': {'id': 'int', 'name': 'string'}
@@ -752,6 +755,7 @@ migration.create_migration_plan("on_premise", "modern_data_stack")
 
 **Output:**
 ```
+
 📋 План миграции: lambda -> kappa
    1. Унифицировать логику обработки
    2. Настроить replay механизм
@@ -845,5 +849,6 @@ migration.create_migration_plan("on_premise", "modern_data_stack")
 - Apache Airflow: https://airflow.apache.org/docs/
 
 ---
+
 
 

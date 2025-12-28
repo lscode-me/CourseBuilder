@@ -518,6 +518,7 @@ storage.migrate()
 
 **Output:**
 ```
+
 🔥 Hot storage: event_1 (дней назад: 5)
 🌡️  Warm storage: event_2 (дней назад: 15)
 ❄️  Cold storage: event_3 (дней назад: 30)
@@ -574,6 +575,7 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
+
 Рекомендации retention policies:
   Пример 1: Time-based retention (соответствие требованиям)
   Пример 2: Size-based retention (контроль размера)
@@ -622,6 +624,7 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
+
 Рекомендации по compaction:
   Пример 1: Compaction рекомендуется: key-value данные, важны только последние значения
   Пример 2: Compaction НЕ рекомендуется: все события важны или нет ключей
@@ -694,6 +697,7 @@ optimizer.optimize("user-events")
 
 **Output:**
 ```
+
 📦 Topic 'user-events' разделён на 5 партиций
 🔍 Индекс создан для 'user-events': тип offset
 ⚡ Оптимизации для 'user-events':
@@ -759,5 +763,6 @@ optimizer.optimize("user-events")
 - Event Sourcing: паттерн проектирования
 
 ---
+
 
 

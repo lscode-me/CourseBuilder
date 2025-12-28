@@ -389,6 +389,7 @@ print(f"\nTrace Summary: {summary}")
 
 **Output:**
 ```
+
 🔍 Trace начат: trace_001, операция: user_request
   📍 Span: api_gateway (gateway), duration: 10ms
   📍 Span: auth_service (auth), duration: 5ms
@@ -565,6 +566,7 @@ for metric, value in slis.items():
 
 **Output:**
 ```
+
 📊 SLI метрики:
    latency: {'p99_latency_ms': 200}
    error_rate: {'error_rate_percent': 0.9900990099009901}
@@ -657,6 +659,7 @@ chaos.get_system_health()
 
 **Output:**
 ```
+
 ✅ Сервис 'api' зарегистрирован: healthy
 ✅ Сервис 'database' зарегистрирован: healthy
 ✅ Сервис 'cache' зарегистрирован: healthy
@@ -762,6 +765,7 @@ print(f"\n📋 Открытых инцидентов: {len(open_incidents)}")
 
 **Output:**
 ```
+
 🚨 Инцидент #1 создан: High error rate on API (severity: high)
 👤 Инцидент #1 назначен: on-call-engineer
 ✅ Инцидент #1 разрешён: Fixed database connection pool
@@ -841,6 +845,7 @@ dr.test_recovery()
 
 **Output:**
 ```
+
 💾 Backup создан: full (100GB)
 💾 Backup создан: incremental (50GB)
 🧪 Тестирование восстановления из backup: incremental
@@ -916,5 +921,6 @@ dr.test_recovery()
 - Grafana: https://grafana.com/docs/ (visualization)
 
 ---
+
 
 
