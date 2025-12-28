@@ -25,40 +25,40 @@
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Content Delivery Network                               │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  Without CDN:                                                      │
+┌───────────────────────────────────────────────────────────────────┐
+│              Content Delivery Network                             │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  Without CDN:                                                     │
 │  User (Tokyo) ────────── 200ms ──────────► Origin (US-East)       │
-│                                                                     │
-│  With CDN:                                                         │
+│                                                                   │
+│  With CDN:                                                        │
 │  User (Tokyo) ── 20ms ──► Edge (Tokyo) ── cached ──► Origin       │
-│                                                                     │
-│                                                                     │
-│                    ┌─────────────────┐                             │
-│                    │   Origin        │                             │
-│                    │   (S3, ALB)     │                             │
-│                    └────────┬────────┘                             │
-│                             │                                      │
+│                                                                   │
+│                                                                   │
+│                    ┌─────────────────┐                            │
+│                    │   Origin        │                            │
+│                    │   (S3, ALB)     │                            │
+│                    └────────┬────────┘                            │
+│                             │                                     │
 │           ┌─────────────────┼─────────────────┐                   │
 │           │                 │                 │                   │
 │           ▼                 ▼                 ▼                   │
-│     ┌──────────┐     ┌──────────┐     ┌──────────┐              │
-│     │  Edge    │     │  Edge    │     │  Edge    │              │
-│     │ (Tokyo)  │     │ (London) │     │ (Sydney) │              │
-│     └────┬─────┘     └────┬─────┘     └────┬─────┘              │
+│     ┌──────────┐     ┌──────────┐     ┌──────────┐                │
+│     │  Edge    │     │  Edge    │     │  Edge    │                │
+│     │ (Tokyo)  │     │ (London) │     │ (Sydney) │                │
+│     └────┬─────┘     └────┬─────┘     └────┬─────┘                │
 │          │                │                │                      │
 │          ▼                ▼                ▼                      │
 │       Users            Users            Users                     │
-│                                                                     │
-│  Benefits:                                                         │
+│                                                                   │
+│  Benefits:                                                        │
 │  • Lower latency (content closer to users)                        │
 │  • Reduced origin load                                            │
 │  • DDoS protection                                                │
 │  • SSL termination at edge                                        │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -146,24 +146,24 @@ distribution_config = {
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Cache Key Components                                   │
+│              Cache Key Components                                  │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Default Cache Key:                                                │
 │  └── URL path                                                      │
-│                                                                     │
+│                                                                    │
 │  Optional additions:                                               │
 │  ├── Query strings                                                 │
-│  │   example.com/api?page=1&sort=date                             │
+│  │   example.com/api?page=1&sort=date                              │
 │  │                                                                 │
 │  ├── Headers                                                       │
 │  │   Accept-Language: en-US                                        │
 │  │                                                                 │
 │  └── Cookies                                                       │
 │      session_id=abc123                                             │
-│                                                                     │
+│                                                                    │
 │  Best practice: Minimize cache key for better hit ratio            │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -234,18 +234,18 @@ cache_control_examples = {
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Cache Behaviors                                        │
+│              Cache Behaviors                                       │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Path Pattern         Origin            Cache Policy               │
 │  ─────────────        ──────            ────────────               │
 │  /api/*               ALB               CachingDisabled            │
 │  /static/*            S3 bucket         CachingOptimized (1 year)  │
 │  /images/*            S3 bucket         CachingOptimized           │
 │  Default (*)          S3 bucket         CachingOptimized           │
-│                                                                     │
+│                                                                    │
 │  Order matters! More specific patterns first.                      │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -338,25 +338,25 @@ signed_url = cloudfront_signer.generate_presigned_url(
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Edge Computing                                         │
+│              Edge Computing                                        │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │                      CloudFront Functions    Lambda@Edge           │
-│  ────────────────    ───────────────────    ───────────           │
+│  ────────────────    ───────────────────    ───────────            │
 │  Runtime              JavaScript             Node.js, Python       │
 │  Execution time       < 1 ms                 5-30 seconds          │
 │  Memory               2 MB                   128-10,240 MB         │
 │  Network access       No                     Yes                   │
 │  File system          No                     Yes (/tmp)            │
 │  Pricing              $0.10/million          $0.60/million         │
-│  Trigger points       Viewer request/resp    All 4 trigger points │
-│                                                                     │
+│  Trigger points       Viewer request/resp    All 4 trigger points  │
+│                                                                    │
 │  Use cases:                                                        │
-│  CloudFront Functions: URL rewrites, header manipulation,         │
+│  CloudFront Functions: URL rewrites, header manipulation,          │
 │                        redirects, simple auth                      │
-│  Lambda@Edge: A/B testing, image optimization,                    │
+│  Lambda@Edge: A/B testing, image optimization,                     │
 │               authentication, geo-based routing                    │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```

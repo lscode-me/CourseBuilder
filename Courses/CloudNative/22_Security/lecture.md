@@ -25,38 +25,38 @@
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Shared Responsibility Model                            │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+┌───────────────────────────────────────────────────────────────────┐
+│              Shared Responsibility Model                          │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
 │  ┌──────────────────────────────────────────────────────────────┐ │
-│  │                    CUSTOMER RESPONSIBILITY                    │ │
-│  │                    "Security IN the Cloud"                    │ │
-│  │                                                               │ │
+│  │                    CUSTOMER RESPONSIBILITY                    ││
+│  │                    "Security IN the Cloud"                    ││
+│  │                                                               ││
 │  │  • Customer data                                             │ │
 │  │  • Platform, applications, IAM                               │ │
-│  │  • Operating system, network, firewall config               │ │
+│  │  • Operating system, network, firewall config               │  │
 │  │  • Client-side encryption                                    │ │
 │  │  • Server-side encryption                                    │ │
-│  │  • Network traffic protection                               │ │
+│  │  • Network traffic protection                               │  │
 │  └──────────────────────────────────────────────────────────────┘ │
-│                                                                     │
+│                                                                   │
 │  ┌──────────────────────────────────────────────────────────────┐ │
-│  │                      AWS RESPONSIBILITY                       │ │
-│  │                    "Security OF the Cloud"                    │ │
-│  │                                                               │ │
+│  │                      AWS RESPONSIBILITY                       ││
+│  │                    "Security OF the Cloud"                    ││
+│  │                                                               ││
 │  │  • Hardware / AWS Global Infrastructure                      │ │
-│  │  • Regions, Availability Zones, Edge Locations              │ │
-│  │  • Compute, Storage, Database, Networking (physical)        │ │
-│  │  • Software: Hypervisor, Network                            │ │
+│  │  • Regions, Availability Zones, Edge Locations              │  │
+│  │  • Compute, Storage, Database, Networking (physical)        │  │
+│  │  • Software: Hypervisor, Network                            │  │
 │  └──────────────────────────────────────────────────────────────┘ │
-│                                                                     │
+│                                                                   │
 │  Managed Services shift more responsibility to AWS:               │
 │  EC2: You manage OS, apps                                         │
 │  RDS: AWS manages OS, DB patching                                 │
 │  Lambda: AWS manages everything except code                       │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -156,38 +156,38 @@ LambdaRole:
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Network Security Layers                                │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  Internet                                                          │
-│      │                                                              │
-│      ▼                                                              │
+┌───────────────────────────────────────────────────────────────────┐
+│              Network Security Layers                              │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  Internet                                                         │
+│      │                                                            │
+│      ▼                                                            │
 │  ┌─────────────────────────────────────────────────────────────┐  │
 │  │  AWS Shield / WAF (DDoS, application attacks)               │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│      │                                                              │
-│      ▼                                                              │
+│  └────────────────────────────────────────────────────────────┘   │
+│      │                                                            │
+│      ▼                                                            │
 │  ┌─────────────────────────────────────────────────────────────┐  │
 │  │  CloudFront (SSL termination, geo-blocking)                 │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│      │                                                              │
-│      ▼                                                              │
+│  └────────────────────────────────────────────────────────────┘   │
+│      │                                                            │
+│      ▼                                                            │
 │  ┌─────────────────────────────────────────────────────────────┐  │
-│  │  VPC                                                         │  │
+│  │  VPC                                                         │ │
 │  │  ┌───────────────────────────────────────────────────────┐  │  │
 │  │  │  Public Subnet (ALB, NAT Gateway)                     │  │  │
-│  │  │  └── NACL: stateless firewall                        │  │  │
-│  │  │  └── Security Group: stateful firewall               │  │  │
+│  │  │  └── NACL: stateless firewall                        │  │   │
+│  │  │  └── Security Group: stateful firewall               │  │   │
 │  │  └───────────────────────────────────────────────────────┘  │  │
 │  │  ┌───────────────────────────────────────────────────────┐  │  │
 │  │  │  Private Subnet (EC2, RDS, Lambda)                    │  │  │
 │  │  │  └── No direct internet access                        │  │  │
-│  │  │  └── Security Group: only from ALB                   │  │  │
+│  │  │  └── Security Group: only from ALB                   │  │   │
 │  │  └───────────────────────────────────────────────────────┘  │  │
 │  └─────────────────────────────────────────────────────────────┘  │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 

@@ -529,9 +529,9 @@ IC: "[Manager] кричит на людей на митингах."
 │  PEOPLE                          DELIVERY                       │
 │  ─────────────────────           ─────────────────────          │
 │  Headcount:     45 (+3)          Velocity:      +5% vs Q1       │
-│  Attrition:     8% (YTD)  ⚠️     Lead Time:     12 days  ✅     │
+│  Attrition:     8% (YTD)  ⚠️     Lead Time:     12 days  ✅    │
 │  Open Roles:    4                Incidents P1:  2 this month    │
-│  Engagement:    72 (-3)  ⚠️      Tech Debt:     23% of work     │
+│  Engagement:    72 (-3)  ⚠️      Tech Debt:     23% of work    │
 │  1-on-1 Coverage: 95%   ✅                                      │
 │                                                                 │
 │  MANAGERS                        TEAMS                          │
@@ -645,13 +645,13 @@ Agenda:
 
 Step 1: Diagnose
 ┌────────────────────────────────────────────────────┐
-│ Это проблема менеджера или проблема команды?      │
+│ Это проблема менеджера или проблема команды?       │
 ├───────────────────────┬────────────────────────────┤
 │ Manager issue         │ Team issue                 │
 │ - Нет feedback        │ - Scope слишком большой    │
-│ - Micromanagement     │ - Skills gap              │
-│ - Poor decisions      │ - Toxic member            │
-│ - Communication       │ - Technical debt          │
+│ - Micromanagement     │ - Skills gap               │
+│ - Poor decisions      │ - Toxic member             │
+│ - Communication       │ - Technical debt           │
 └───────────────────────┴────────────────────────────┘
 
 Step 2: Intervene (зависит от диагноза)
@@ -841,9 +841,9 @@ One risk: Team B capacity issue.
                            │
           ┌────────────────┼────────────────┐
           │                │                │
-     ┌────┴────┐     ┌─────┴─────┐    ┌─────┴─────┐
-     │ CLARITY │     │CONFIDENCE │    │ COMPOSURE │
-     └────┬────┘     └─────┬─────┘    └─────┬─────┘
+     ┌────┴────┐     ┌─────┴─────┐    ┌┐
+     │ CLARITY │     │CONFIDENCE │    ││
+     └────┬────┘     └─────┬─────┘    └┘
           │                │                │
     Structured       Speak with        Calm under
     thinking         conviction        pressure
@@ -978,7 +978,7 @@ My recommendation: Hire 2 FTE"
 │ Weeks   │ Quarters   │ 1-3 years│ 3-5+ years     │
 │ Sprints │ Roadmap    │ Strategy │ Vision         │
 └─────────┴────────────┴──────────┴────────────────┘
-     │            │          │             │
+     │            │          │                          │
   "Как мы      "Что мы    "Куда мы     "Кем мы
    сделаем     сделаем    движемся?"    хотим
    это?"       в этом                    быть?"
@@ -1033,39 +1033,39 @@ My recommendation: Hire 2 FTE"
 
 ```
 
-┌─────────────────────────────────────────────────────────────┐
-│                    PORTFOLIO ALLOCATION                     │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
+┌────────────────────────────────────────────────────────────┐
+│                    PORTFOLIO ALLOCATION                    │
+├────────────────────────────────────────────────────────────┤
+│                                                            │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │ KEEP THE LIGHTS ON (15-25%)                         │   │
 │  │ - Bug fixes, security patches                       │   │
 │  │ - Operations, monitoring                            │   │
 │  │ - Customer support                                  │   │
 │  └─────────────────────────────────────────────────────┘   │
-│                                                             │
+│                                                            │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │ CORE PRODUCT (50-60%)                               │   │
 │  │ - New features                                      │   │
 │  │ - Improvements                                      │   │
 │  │ - Customer requests                                 │   │
 │  └─────────────────────────────────────────────────────┘   │
-│                                                             │
+│                                                            │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │ TECH INVESTMENT (15-25%)                            │   │
 │  │ - Tech debt reduction                               │   │
 │  │ - Platform/infrastructure                           │   │
 │  │ - Developer experience                              │   │
 │  └─────────────────────────────────────────────────────┘   │
-│                                                             │
+│                                                            │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │ INNOVATION (5-10%)                                  │   │
 │  │ - Experiments                                       │   │
 │  │ - New technology exploration                        │   │
 │  │ - Proofs of concept                                 │   │
 │  └─────────────────────────────────────────────────────┘   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+│                                                            │
+└────────────────────────────────────────────────────────────┘
 ```
 
 **Как определить allocation:**
@@ -1158,8 +1158,8 @@ Org design — одна из самых сильных рычагов влиян
 Если ваши команды организованы так:        Вы получите архитектуру:
 
 ┌──────────┬──────────┬──────────┐         ┌──────────┬──────────┬──────────┐
-│ Frontend │ Backend  │ Database │    →    │ Monolithic│  with    │ layers   │
-│   Team   │   Team   │   Team   │         │   app     │ tight    │          │
+│ Frontend │ Backend  │ Database │    →    │ Monolithic│  with    │ layers  │
+│   Team   │   Team   │   Team   │         │   app     │ tight    │         │
 └──────────┴──────────┴──────────┘         └──────────┴──────────┴──────────┘
          Horizontal teams                        Layered monolith
 
@@ -1218,7 +1218,7 @@ Org design — одна из самых сильных рычагов влиян
 
 Option A: By product
 ┌─────────────────────────────────────────┐
-│              Engineering                 │
+│              Engineering                │
 ├─────────────┬─────────────┬─────────────┤
 │  Product A  │  Product B  │  Platform   │
 │  (8 people) │  (8 people) │  (6 people) │
@@ -1226,7 +1226,7 @@ Option A: By product
 
 Option B: By customer segment
 ┌─────────────────────────────────────────┐
-│              Engineering                 │
+│              Engineering                │
 ├─────────────┬─────────────┬─────────────┤
 │  Consumer   │ Enterprise  │  Platform   │
 │  (10 people)│  (6 people) │  (6 people) │
@@ -1600,16 +1600,16 @@ If not "only me" and not "disaster" → Delegate.
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                    YOUR SUPPORT SYSTEM                      │
+│                    YOUR SUPPORT SYSTEM                     │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  AT WORK                        OUTSIDE WORK               │
 │  ───────────────                ──────────────             │
-│  • Your manager                 • Executive coach           │
-│  • Peer directors               • Industry peers            │
-│  • HRBP                         • Friends/family            │
+│  • Your manager                 • Executive coach          │
+│  • Peer directors               • Industry peers           │
+│  • HRBP                         • Friends/family           │
 │  • Mentor (if have one)         • Therapist (if needed)    │
-│                                 • Hobbies community         │
+│                                 • Hobbies community        │
 │                                                            │
 │  FOR DIFFERENT NEEDS:                                      │
 │  ───────────────────                                       │

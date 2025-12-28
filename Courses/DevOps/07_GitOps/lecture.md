@@ -34,27 +34,27 @@
 
 ```
 
-┌─────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────┐
 │                      GitOps Workflow                             │
-├─────────────────────────────────────────────────────────────────┤
+├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│  Developer ──▶ Git Push ──▶ Git Repository                      │
+│  Developer ──▶ Git Push ──▶ Git Repository                       │
 │                                    │                             │
 │                                    ▼                             │
 │                            GitOps Operator                       │
 │                           (ArgoCD, Flux)                         │
 │                                    │                             │
-│                          ┌─────────┴─────────┐                  │
-│                          │  Reconciliation   │                  │
-│                          │  Loop             │                  │
-│                          └─────────┬─────────┘                  │
+│                          ┌─────────┴─────────┐                   │
+│                          │  Reconciliation   │                   │
+│                          │  Loop             │                   │
+│                          └─────────┬─────────┘                   │
 │                                    │                             │
 │                                    ▼                             │
 │                            Kubernetes Cluster                    │
 │                                                                  │
-│  Desired State (Git) ←──── Compare ────▶ Actual State (K8s)    │
+│  Desired State (Git) ←──── Compare ────▶ Actual State (K8s)      │
 │                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -430,32 +430,32 @@ spec:
 
 ```
 
-┌─────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────┐
 │                    GitOps Development Flow                       │
-├─────────────────────────────────────────────────────────────────┤
+├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  1. Developer creates feature branch                             │
-│     └──▶ git checkout -b feature/new-feature                    │
+│     └──▶ git checkout -b feature/new-feature                     │
 │                                                                  │
-│  2. Update manifests (image tag, config)                        │
-│     └──▶ Update kustomization.yaml with new image tag           │
+│  2. Update manifests (image tag, config)                         │
+│     └──▶ Update kustomization.yaml with new image tag            │
 │                                                                  │
 │  3. Create Pull Request                                          │
-│     └──▶ PR triggers CI validation                              │
+│     └──▶ PR triggers CI validation                               │
 │                                                                  │
 │  4. CI validates manifests                                       │
-│     └──▶ kustomize build, kubeval, policy checks                │
+│     └──▶ kustomize build, kubeval, policy checks                 │
 │                                                                  │
 │  5. Code review and approval                                     │
-│     └──▶ CODEOWNERS review required                             │
+│     └──▶ CODEOWNERS review required                              │
 │                                                                  │
 │  6. Merge to main                                                │
-│     └──▶ ArgoCD detects change                                  │
+│     └──▶ ArgoCD detects change                                   │
 │                                                                  │
 │  7. ArgoCD syncs to cluster                                      │
-│     └──▶ New version deployed                                   │
+│     └──▶ New version deployed                                    │
 │                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────┘
 
 ```
 

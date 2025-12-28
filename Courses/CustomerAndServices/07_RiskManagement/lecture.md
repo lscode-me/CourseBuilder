@@ -38,30 +38,30 @@
 
   ┌──────────────────────────────────────────────────────────────────────┐
   │                        DELIVERY RISKS                                │
-  │  • Scope creep                    • Tech debt accumulation          │
+  │  • Scope creep                    • Tech debt accumulation           │
   │  • Missed deadlines               • Quality issues                   │
-  │  • Underestimation                • Integration problems            │
+  │  • Underestimation                • Integration problems             │
   └──────────────────────────────────────────────────────────────────────┘
   
   ┌──────────────────────────────────────────────────────────────────────┐
   │                        PEOPLE RISKS                                  │
-  │  • Key person dependency          • Burnout                         │
-  │  • Attrition / turnover           • Skill gaps                      │
-  │  • Team conflicts                 • Performance issues              │
+  │  • Key person dependency          • Burnout                          │
+  │  • Attrition / turnover           • Skill gaps                       │
+  │  • Team conflicts                 • Performance issues               │
   └──────────────────────────────────────────────────────────────────────┘
   
   ┌──────────────────────────────────────────────────────────────────────┐
   │                        CLIENT RISKS                                  │
-  │  • Changing requirements          • Stakeholder changes             │
-  │  • Budget cuts                    • Strategic pivot                 │
-  │  • Communication breakdown        • Unrealistic expectations        │
+  │  • Changing requirements          • Stakeholder changes              │
+  │  • Budget cuts                    • Strategic pivot                  │
+  │  • Communication breakdown        • Unrealistic expectations         │
   └──────────────────────────────────────────────────────────────────────┘
   
   ┌──────────────────────────────────────────────────────────────────────┐
   │                        EXTERNAL RISKS                                │
-  │  • Vendor/3rd party issues        • Regulatory changes              │
-  │  • Market changes                 • Force majeure                   │
-  │  • Technology obsolescence        • Security threats                │
+  │  • Vendor/3rd party issues        • Regulatory changes               │
+  │  • Market changes                 • Force majeure                    │
+  │  • Technology obsolescence        • Security threats                 │
   └──────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -201,12 +201,12 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
   IDENTIFY        ASSESS          PLAN           EXECUTE         MONITOR
   ────────        ──────          ────           ───────         ───────
   
-┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐
-│ Discover │──▶│ L × I =  │──▶│ Mitigation│──▶│ Implement│──▶│ Track &  │
-│ new risks│   │ Score    │   │ strategy  │   │ controls │   │ review   │
-└──────────┘   └──────────┘   └──────────┘   └──────────┘   └──────────┘
-                    │                             │               │
-                    │                             │               │
+┌──────────┐   ┌──────────┐   ┌──────────┐   ┌──────────┐ ┐
+│ Discover │──▶│ L × I =  │──▶│ Mitigation│──▶│ Implement││
+│ new risks│   │ Score    │   │ strategy  │   │ controls ││
+└──────────┘   └──────────┘   └──────────┘   └──────────┘ ┘
+                    │                             │                           │
+                    │                             │                           │
               ┌─────▼─────┐                 ┌─────▼─────┐   ┌─────▼─────┐
               │ Prioritize│                 │ Update    │   │ Close or  │
               │           │                 │ Register  │   │ Escalate  │
@@ -428,8 +428,8 @@ ACTION: Add error scenario coverage to load testing requirements
                                         │   Service down │
                                         └───────┬────────┘
                                                 │
-        ┌───────────────┬───────────────────────┼───────────────────────┬───────────────┐
-        │               │                       │                       │               │
+        ┌───────────────┬───────────────────────┼───────────────────────┬───────────────────┐
+        │               │                       │                       │                   │
    ┌────┴────┐    ┌─────┴─────┐           ┌─────┴─────┐           ┌─────┴─────┐        │
    │ PEOPLE  │    │  PROCESS  │           │TECHNOLOGY │           │ENVIRONMENT│        │
    │         │    │           │           │           │           │           │        │
@@ -446,24 +446,24 @@ ACTION: Add error scenario coverage to load testing requirements
 
 ```
 
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    ROOT CAUSE ANALYSIS REPORT                           │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│ Incident ID: INC-2024-0142                                              │
-│ Date: December 10, 2024                                                 │
-│ Author: John Smith, Delivery Manager                                    │
-│ Status: Final                                                           │
-│                                                                         │
+┌────────────────────────────────────────────────────────────────────────┐
+│                    ROOT CAUSE ANALYSIS REPORT                          │
+├────────────────────────────────────────────────────────────────────────┤
+│                                                                        │
+│ Incident ID: INC-2024-0142                                             │
+│ Date: December 10, 2024                                                │
+│ Author: John Smith, Delivery Manager                                   │
+│ Status: Final                                                          │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════════════════│
-│ 1. EXECUTIVE SUMMARY                                                    │
+│ 1. EXECUTIVE SUMMARY                                                   │
 │ ─────────────────────────────────────────────────────────────────────  │
 │ Payment service experienced 2-hour outage on Dec 10, 2024, affecting   │
 │ all payment transactions. Root cause was database connection leak in   │
 │ new release. Service was restored at 16:30 UTC.                        │
-│                                                                         │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════════════════│
-│ 2. TIMELINE                                                             │
+│ 2. TIMELINE                                                            │
 │ ─────────────────────────────────────────────────────────────────────  │
 │ 12:00 - Release 2.3.1 deployed to production                           │
 │ 14:25 - First user complaints received                                 │
@@ -472,52 +472,52 @@ ACTION: Add error scenario coverage to load testing requirements
 │ 15:30 - Decision to rollback made                                      │
 │ 16:00 - Rollback completed                                             │
 │ 16:30 - Service fully restored, monitoring continues                   │
-│                                                                         │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════════════════│
-│ 3. IMPACT                                                               │
+│ 3. IMPACT                                                              │
 │ ─────────────────────────────────────────────────────────────────────  │
 │ • Duration: 2 hours                                                    │
 │ • Users affected: All (100%)                                           │
 │ • Transactions blocked: ~5,000                                         │
 │ • Estimated revenue impact: $20,000                                    │
 │ • SLA impact: P1 target met (4h), but close                            │
-│                                                                         │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════════════════│
-│ 4. ROOT CAUSE                                                           │
+│ 4. ROOT CAUSE                                                          │
 │ ─────────────────────────────────────────────────────────────────────  │
-│                                                                         │
-│ DIRECT CAUSE:                                                           │
+│                                                                        │
+│ DIRECT CAUSE:                                                          │
 │ Database connection leak in payment service v2.3.1                     │
-│                                                                         │
-│ CONTRIBUTING FACTORS:                                                   │
+│                                                                        │
+│ CONTRIBUTING FACTORS:                                                  │
 │ • Error handling path didn't close connections properly                │
 │ • Code review didn't catch the issue                                   │
 │ • Load testing didn't include error scenarios                          │
 │ • No connection pool monitoring in place                               │
-│                                                                         │
-│ ROOT CAUSE:                                                             │
+│                                                                        │
+│ ROOT CAUSE:                                                            │
 │ Missing error path testing in load test suite                          │
-│                                                                         │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════════════════│
-│ 5. WHAT WENT WELL                                                       │
+│ 5. WHAT WENT WELL                                                      │
 │ ─────────────────────────────────────────────────────────────────────  │
 │ ✅ Quick incident detection (5 minutes from first symptoms)            │
 │ ✅ Fast decision to rollback rather than debug in production           │
 │ ✅ Good communication with client throughout                           │
-│ ✅ SLA target was met                                                   │
-│                                                                         │
+│ ✅ SLA target was met                                                  │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════────────────│
-│ 6. WHAT COULD BE IMPROVED                                               │
+│ 6. WHAT COULD BE IMPROVED                                              │
 │ ─────────────────────────────────────────────────────────────────────  │
 │ ❌ Connection leak wasn't caught in code review                        │
 │ ❌ Load testing didn't cover error scenarios                           │
 │ ❌ No automated monitoring for connection pool                         │
 │ ❌ Deploy happened on Friday (high-risk day)                           │
-│                                                                         │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════════════════│
-│ 7. ACTION ITEMS                                                         │
+│ 7. ACTION ITEMS                                                        │
 │ ─────────────────────────────────────────────────────────────────────  │
-│                                                                         │
+│                                                                        │
 │ # │ Action                              │ Owner    │ Due    │ Status   │
 │───┼─────────────────────────────────────┼──────────┼────────┼──────────│
 │ 1 │ Add error scenario to load tests    │ QA Lead  │ Dec 20 │ Open     │
@@ -525,16 +525,16 @@ ACTION: Add error scenario coverage to load testing requirements
 │ 3 │ Update code review checklist        │ TL       │ Dec 17 │ Open     │
 │ 4 │ No-Friday-deploy policy             │ DM       │ Dec 11 │ Done     │
 │ 5 │ Fix connection leak in code         │ Senior   │ Dec 12 │ Done     │
-│                                                                         │
+│                                                                        │
 │ ═══════════════════════════════════════════════════════════════════════│
-│ 8. LESSONS LEARNED                                                      │
+│ 8. LESSONS LEARNED                                                     │
 │ ─────────────────────────────────────────────────────────────────────  │
 │ 1. Error handling paths need same testing rigor as happy paths         │
 │ 2. Connection pool monitoring is essential for database-heavy services │
 │ 3. Friday deployments carry higher risk                                │
 │ 4. Quick rollback capability saved significant impact                  │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
+│                                                                        │
+└────────────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -623,11 +623,11 @@ we can discuss further options."
         └───────┬───────┘
                 │
                 ▼
-        ┌───────────────┐
+        ┌─────────────────────────────────────────────┐
         │   RESOLVE     │─────────────────────────────┐
         │   (ASAP)      │                             │
         └───────┬───────┘                             │
-                │                                      │
+                │                                             │
                 ▼                                      ▼
         ┌───────────────┐                     ┌───────────────┐
         │     RCA       │                     │   PREVENT     │
@@ -635,8 +635,8 @@ we can discuss further options."
         └───────┬───────┘                     └───────────────┘
                 │                                      ▲
                 ▼                                      │
-        ┌───────────────┐                             │
-        │ ACTION ITEMS  │─────────────────────────────┘
+        ┌───────────────│
+        │ ACTION ITEMS  ┘
         │ (implement    │
         │  fixes)       │
         └───────────────┘

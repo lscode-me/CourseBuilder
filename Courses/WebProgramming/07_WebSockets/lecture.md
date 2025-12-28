@@ -43,26 +43,26 @@
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                 HTTP Polling vs WebSocket                   │
+│                 HTTP Polling vs WebSocket                  │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  HTTP Polling                     WebSocket                │
 │                                                            │
 │  Client         Server            Client         Server    │
 │    │               │                │               │      │
-│    ├──► Request   │                │◄─────────────►│      │
-│    │◄── Response ─┤                │ (persistent)  │      │
+│    ├──► Request   │                │◄─────────────►│       │
+│    │◄── Response ─┤                │ (persistent)  │       │
 │    │               │                │               │      │
-│    ├──► Request   │                │◄── message ───┤      │
-│    │◄── Response ─┤                │               │      │
+│    ├──► Request   │                │◄── message ───┤       │
+│    │◄── Response ─┤                │               │       │
 │    │               │                ├── message ───►│      │
-│    ├──► Request   │                │               │      │
-│    │◄── Response ─┤                │◄── message ───┤      │
-│    │   (data!)    │                │               │      │
+│    ├──► Request   │                │               │       │
+│    │◄── Response ─┤                │◄── message ───┤       │
+│    │   (data!)    │                │               │       │
 │    │               │                ├── message ───►│      │
 │    ...             ...              │               │      │
 │                                     │   (both ways!)│      │
-│  Много накладных расходов          Эффективно     │      │
+│  Много накладных расходов          Эффективно     │        │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
 
@@ -87,29 +87,29 @@
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                  WebSocket Handshake                        │
+│                  WebSocket Handshake                       │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  Client                                    Server          │
 │    │                                          │            │
 │    │  HTTP Upgrade Request                    │            │
-│    ├────────────────────────────────────────►│            │
+│    ├────────────────────────────────────────►│             │
 │    │  GET /chat HTTP/1.1                      │            │
 │    │  Host: server.example.com                │            │
 │    │  Upgrade: websocket                      │            │
 │    │  Connection: Upgrade                     │            │
-│    │  Sec-WebSocket-Key: dGhlIHNhbXBsZS...   │            │
-│    │  Sec-WebSocket-Version: 13              │            │
+│    │  Sec-WebSocket-Key: dGhlIHNhbXBsZS...   │             │
+│    │  Sec-WebSocket-Version: 13              │             │
 │    │                                          │            │
-│    │  HTTP 101 Switching Protocols           │            │
-│    │◄────────────────────────────────────────┤            │
+│    │  HTTP 101 Switching Protocols           │             │
+│    │◄────────────────────────────────────────┤             │
 │    │  Upgrade: websocket                      │            │
 │    │  Connection: Upgrade                     │            │
-│    │  Sec-WebSocket-Accept: s3pPLMBiTx...    │            │
+│    │  Sec-WebSocket-Accept: s3pPLMBiTx...    │             │
 │    │                                          │            │
-│    │═══════════════════════════════════════►│            │
-│    │        WebSocket connection             │            │
-│    │◄═══════════════════════════════════════│            │
+│    │═══════════════════════════════════════►│              │
+│    │        WebSocket connection             │             │
+│    │◄═══════════════════════════════════════│              │
 │    │                                          │            │
 └────────────────────────────────────────────────────────────┘
 
@@ -171,11 +171,11 @@ print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 ```
 
 ┌─────────────────────────────────────────────────────────────┐
-│                    WebSocket Frame                           │
+│                    WebSocket Frame                          │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │   0                   1                   2                 │
-│   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 ...      │
+│   0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 ...       │
 │  +-+-+-+-+-------+-+-------------+-------------------------------+
 │  |F|R|R|R| opcode|M| Payload len |    Extended payload length    │
 │  |I|S|S|S|  (4)  |A|     (7)     |             (16/64)           │
@@ -920,7 +920,7 @@ ws.onmessage = (event) => console.log(event.data);
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│              WebSocket Scaling Problem                      │
+│              WebSocket Scaling Problem                     │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  Load Balancer                                             │
@@ -943,7 +943,7 @@ ws.onmessage = (event) => console.log(event.data);
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│              WebSocket with Redis Pub/Sub                   │
+│              WebSocket with Redis Pub/Sub                  │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │                        Redis                               │

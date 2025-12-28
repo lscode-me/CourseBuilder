@@ -464,7 +464,7 @@ Connection 1: GET /style.css ... (waiting) ... 200 OK
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                      HTTP/2 Connection                      │
+│                      HTTP/2 Connection                     │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  Stream 1: GET /style.css ──────► ◄────── 200 OK           │
@@ -553,7 +553,7 @@ TCP пакеты: [1] [2] [X] [4] [5]
 ```
 
 ┌──────────────────────────────────────────────────────────┐
-│                    Protocol Stack                         │
+│                    Protocol Stack                        │
 ├──────────────────────────────────────────────────────────┤
 │                                                          │
 │  HTTP/1.1      HTTP/2          HTTP/3                    │
@@ -911,14 +911,14 @@ ETag: "abc123"
 │                                                            │
 │  Client                                    Server          │
 │    │                                          │            │
-│    ├── ClientHello ─────────────────────────►│            │
-│    │   (supported ciphers, random)           │            │
+│    ├── ClientHello ─────────────────────────►│             │
+│    │   (supported ciphers, random)           │             │
 │    │                                          │            │
 │    │◄────────────────────────── ServerHello ──┤            │
 │    │   (selected cipher, certificate)         │            │
 │    │                                          │            │
-│    ├── Key Exchange ────────────────────────►│            │
-│    │   (verify cert, generate keys)          │            │
+│    ├── Key Exchange ────────────────────────►│             │
+│    │   (verify cert, generate keys)          │             │
 │    │                                          │            │
 │    │◄─────────────────────── Finished ────────┤            │
 │    │                                          │            │

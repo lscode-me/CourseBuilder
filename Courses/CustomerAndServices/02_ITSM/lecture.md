@@ -63,31 +63,31 @@
 │                         СЕРВИСНАЯ МОДЕЛЬ                                │
 └─────────────────────────────────────────────────────────────────────────┘
 
-┌─────────────────────────────────────────────────────────────────────────┐
-│  SERVICE PROVIDER (Мы)                                                  │
+┌────────────────────────────────────────────────────────────────────────┐
+│  SERVICE PROVIDER (Мы)                                                 │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐    │
 │  │   People    │  │  Processes  │  │ Technology  │  │  Partners   │    │
 │  │  (Команда)  │  │  (ITSM)     │  │ (Tools)     │  │ (Vendors)   │    │
 │  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘    │
-└─────────────────────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────────────────┘
                                 │
                                 │ SERVICE DELIVERY
                                 ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│  SERVICES                                                               │
+┌────────────────────────────────────────────────────────────────────────┐
+│  SERVICES                                                              │
 │  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐         │
 │  │ Development     │  │ QA & Testing    │  │ DevOps          │         │
 │  │ Team            │  │ Services        │  │ Support         │         │
 │  └─────────────────┘  └─────────────────┘  └─────────────────┘         │
-└─────────────────────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────────────────┘
                                 │
                                 │ VALUE
                                 ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
 │  SERVICE CONSUMER (Клиент)                                              │
-│  ┌───────────────────────────────────────────────────────────────────┐ │
-│  │  Business Outcomes: Быстрее выходить на рынок, снижать риски      │ │
-│  └───────────────────────────────────────────────────────────────────┘ │
+│  ┌───────────────────────────────────────────────────────────────────┐  │
+│  │  Business Outcomes: Быстрее выходить на рынок, снижать риски      │  │
+│  └───────────────────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -166,19 +166,19 @@
      ▼                                                               │
 ┌─────────┐     ┌─────────────────────────────────────────────┐     │
 │Opportun-│────▶│              SERVICE VALUE CHAIN            │─────┘
-│ity/     │     │  Plan → Improve → Engage → Design →        │
-│Demand   │     │  → Obtain/Build → Deliver & Support        │
-└─────────┘     └─────────────────────────────────────────────┘
+│ity/     │     │  Plan → Improve → Engage → Design →               │
+│Demand   │     │  → Obtain/Build → Deliver & Support               │
+└─────────┘     └─────────────────────────────────────────────      ┘
                                     ▲
-                    ┌───────────────┴───────────────┐
-                    │                               │
+                    ┌───────────────┴───────────────────────────────┐
+                    │                                               │
             ┌───────────────┐               ┌───────────────┐
             │  GOVERNANCE   │               │   PRACTICES   │
             │  (Политики,   │               │  (ITSM        │
             │   принципы)   │               │   практики)   │
             └───────────────┘               └───────────────┘
-                    │                               │
-                    └───────────────┬───────────────┘
+                    │                                               │
+                    └───────────────┬───────────────────────────────┘
                                     │
                           ┌─────────────────┐
                           │ CONTINUAL       │
@@ -226,8 +226,8 @@
                                                                    │
                                                                    ▼
  ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────────────────────┐
- │ Closure │◀───│ Verify  │◀───│Resolution│◀───│ Investigation &       │
- │         │    │         │    │         │    │ Diagnosis / Escalation │
+ │ Closure │◀───│ Verify  │◀───│Resolution│◀───│ Investigation &        │
+ │         │    │         │    │         │    │ Diagnosis / Escalation  │
  └─────────┘    └─────────┘    └─────────┘    └─────────────────────────┘
 
 ```
@@ -275,7 +275,7 @@ Urgency: Как быстро нужно решить
 │                                                                         │
 │ Reported by: Client PM                                                  │
 │ Assigned to: Backend Team                                               │
-│ Created: 2024-12-10 14:30 UTC                                          │
+│ Created: 2024-12-10 14:30 UTC                                           │
 │ SLA Target: 4 hours (Resolution)                                        │
 │                                                                         │
 │ Description:                                                            │
@@ -283,10 +283,10 @@ Urgency: Как быстро нужно решить
 │ Error message: "Authentication service unavailable"                     │
 │                                                                         │
 │ Updates:                                                                │
-│ 14:35 - Assigned to Backend team, initial investigation started        │
-│ 14:45 - Identified: Auth service pod crashed due to memory leak        │
-│ 14:55 - Workaround applied: Restarted auth service pods                │
-│ 15:00 - Service restored, monitoring for stability                     │
+│ 14:35 - Assigned to Backend team, initial investigation started         │
+│ 14:45 - Identified: Auth service pod crashed due to memory leak         │
+│ 14:55 - Workaround applied: Restarted auth service pods                 │
+│ 15:00 - Service restored, monitoring for stability                      │
 └─────────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -371,8 +371,8 @@ Action: Добавить 24-hour soak test перед production
                                     │   Сервис упал       │
                                     └─────────────────────┘
                                               ▲
-                    ┌─────────────────────────┼─────────────────────────┐
-                    │                         │                         │
+                    ┌─────────────────────────┼─────────────────────────────────────────┐
+                    │                         │                                         │
             ┌───────┴───────┐         ┌───────┴───────┐         ┌───────┴───────┐
             │    PEOPLE     │         │   PROCESS     │         │  TECHNOLOGY   │
             │               │         │               │         │               │
@@ -411,7 +411,7 @@ Action: Добавить 24-hour soak test перед production
   │ for     │    │ & Plan  │    │         │    │         │    │ & Close │
   │ Change  │    │         │    │         │    │         │    │         │
   └─────────┘    └─────────┘    └─────────┘    └─────────┘    └─────────┘
-       │              │              │              │              │
+       │              │              │              │                        │
        ▼              ▼              ▼              ▼              ▼
   Описание,      Риски,         CAB,           Deploy,        PIR
   Причина,       Impact,        Manager,       Test,          (Post
@@ -456,10 +456,10 @@ Action: Добавить 24-hour soak test перед production
 │ 4. Rollback time: <15 minutes                                           │
 │                                                                         │
 │ TESTING:                                                                │
-│ - Unit tests: ✓ Passed                                                  │
-│ - Integration tests: ✓ Passed                                           │
-│ - Staging environment: ✓ Verified                                       │
-│ - Load test: ✓ 10K TPS achieved                                         │
+│ - Unit tests: ✓ Passed                                                 │
+│ - Integration tests: ✓ Passed                                          │
+│ - Staging environment: ✓ Verified                                      │
+│ - Load test: ✓ 10K TPS achieved                                        │
 └─────────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -670,13 +670,13 @@ SLA buffer: 4 hours - 3.5 hours = 30 min
 ┌─────────────────────────────────────────────────────────────────────────┐
 │ SERVICE CATALOGUE ENTRY                                                 │
 ├─────────────────────────────────────────────────────────────────────────┤
-│ Service Name: Dedicated Development Team                               │
-│ Category: Professional Services                                        │
+│ Service Name: Dedicated Development Team                                │
+│ Category: Professional Services                                         │
 │ Status: Active                                                          │
 │                                                                         │
 │ DESCRIPTION:                                                            │
-│ A dedicated team of engineers working exclusively on your project,     │
-│ including developers, QA, and technical lead.                          │
+│ A dedicated team of engineers working exclusively on your project,      │
+│ including developers, QA, and technical lead.                           │
 │                                                                         │
 │ SERVICE COMPONENTS:                                                     │
 │ - Backend Development                                                   │
@@ -686,7 +686,7 @@ SLA buffer: 4 hours - 3.5 hours = 30 min
 │ - Daily Standups                                                        │
 │ - Sprint Planning & Review                                              │
 │                                                                         │
-│ SERVICE HOURS: 9:00-18:00 CET (Client timezone overlap)                │
+│ SERVICE HOURS: 9:00-18:00 CET (Client timezone overlap)                 │
 │                                                                         │
 │ STANDARD SLA:                                                           │
 │ - Response time: 2 hours (business hours)                               │
@@ -898,30 +898,30 @@ NEXT UPDATE:
 │ Impact: Mobile app unavailable for all users                            │
 │                                                                         │
 │ TIMELINE:                                                               │
-│ 16:30 - Deployment of version 2.3.1 completed                          │
-│ 16:45 - First user reports received                                    │
-│ 17:20 - Service restored via rollback                                  │
+│ 16:30 - Deployment of version 2.3.1 completed                           │
+│ 16:45 - First user reports received                                     │
+│ 17:20 - Service restored via rollback                                   │
 │                                                                         │
 │ ROOT CAUSE:                                                             │
-│ New health check endpoint /health/ready was not properly configured    │
-│ in the Kubernetes deployment manifest. Load balancer marked all pods   │
+│ New health check endpoint /health/ready was not properly configured     │
+│ in the Kubernetes deployment manifest. Load balancer marked all pods    │
 │ as unhealthy.                                                           │
 │                                                                         │
 │ WHAT WENT WELL:                                                         │
-│ - Fast incident detection (15 min)                                     │
-│ - Quick rollback decision                                              │
+│ - Fast incident detection (15 min)                                      │
+│ - Quick rollback decision                                               │
 │ - Good communication with client                                        │
 │                                                                         │
 │ WHAT COULD BE IMPROVED:                                                 │
-│ - Health check was not tested in staging                               │
-│ - No automated smoke test after deployment                             │
-│ - Deployment happened at high-risk time (Friday afternoon)             │
+│ - Health check was not tested in staging                                │
+│ - No automated smoke test after deployment                              │
+│ - Deployment happened at high-risk time (Friday afternoon)              │
 │                                                                         │
 │ ACTION ITEMS:                                                           │
-│ 1. Add health check verification to staging tests (Owner: TL, Due: W1) │
-│ 2. Implement automated smoke tests post-deploy (Owner: DevOps, Due: W2)│
-│ 3. Update deployment policy: no Friday deploys (Owner: DM, Due: Now)   │
-│ 4. Add monitoring for health check failures (Owner: DevOps, Due: W1)   │
+│ 1. Add health check verification to staging tests (Owner: TL, Due: W1)  │
+│ 2. Implement automated smoke tests post-deploy (Owner: DevOps, Due: W2) │
+│ 3. Update deployment policy: no Friday deploys (Owner: DM, Due: Now)    │
+│ 4. Add monitoring for health check failures (Owner: DevOps, Due: W1)    │
 └─────────────────────────────────────────────────────────────────────────┘
 
 ```

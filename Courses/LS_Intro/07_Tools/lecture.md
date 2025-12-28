@@ -800,14 +800,14 @@ docker run -v $(pwd)/data:/home/analyst/data \
 ┌─────────────────────────────────────────────────────────┐
 │              Life Sciences Informatics Stack            │
 ├─────────────────────────────────────────────────────────┤
-│  Languages: Python, R, C/C++                           │
-│  ↓                                                       │
+│  Languages: Python, R, C/C++                            │
+│  ↓                                                      │
 │  Development: Jupyter, Git                              │
-│  ↓                                                       │
+│  ↓                                                      │
 │  Workflows: Nextflow, Snakemake                         │
-│  ↓                                                       │
+│  ↓                                                      │
 │  Containerization: Docker, Singularity                  │
-│  ↓                                                       │
+│  ↓                                                      │
 │  Execution: Local, HPC, Cloud                           │
 └─────────────────────────────────────────────────────────┘
 ```

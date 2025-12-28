@@ -755,13 +755,13 @@ sudo systemctl status myhttp.service
 │                                                         │
 │   systemd                                               │
 │      │                                                  │
-│      ├── accept() ──► fork() ──► Service Instance 1    │
+│      ├── accept() ──► fork() ──► Service Instance 1     │
 │      │                              stdin/stdout = conn │
 │      │                                                  │
-│      ├── accept() ──► fork() ──► Service Instance 2    │
+│      ├── accept() ──► fork() ──► Service Instance 2     │
 │      │                              stdin/stdout = conn │
 │      │                                                  │
-│      ├── accept() ──► fork() ──► Service Instance 3    │
+│      ├── accept() ──► fork() ──► Service Instance 3     │
 │      │                              stdin/stdout = conn │
 │      ...                                                │
 │                                                         │

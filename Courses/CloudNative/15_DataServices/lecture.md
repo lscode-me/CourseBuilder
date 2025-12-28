@@ -24,9 +24,9 @@
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              OLTP vs OLAP                                           │
+│              OLTP vs OLAP                                          │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  OLTP (Online Transaction Processing)                              │
 │  ───────────────────────────────────                               │
 │  • Short, simple queries                                           │
@@ -34,15 +34,15 @@
 │  • Row-based storage                                               │
 │  • Examples: RDS, DynamoDB, Aurora                                 │
 │  • Use case: E-commerce orders, banking                            │
-│                                                                     │
+│                                                                    │
 │  OLAP (Online Analytical Processing)                               │
 │  ─────────────────────────────────                                 │
 │  • Complex queries, aggregations                                   │
 │  • Large data scans                                                │
 │  • Columnar storage                                                │
-│  • Examples: Redshift, Athena, BigQuery                           │
+│  • Examples: Redshift, Athena, BigQuery                            │
 │  • Use case: Business intelligence, reporting                      │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -56,31 +56,31 @@
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Redshift Architecture                                  │
+│              Redshift Architecture                                 │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ┌───────────────────────────────────────────────────────────────┐│
+│                                                                    │
+│  ┌───────────────────────────────────────────────────────────────┐ │
 │  │                    Leader Node                                 ││
 │  │  • Query planning & optimization                               ││
 │  │  • Result aggregation                                          ││
 │  │  • Client connections                                          ││
-│  └───────────────────────────────────────────────────────────────┘│
+│  └───────────────────────────────────────────────────────────────┘ │
 │                            │                                       │
-│          ┌─────────────────┼─────────────────┐                    │
-│          ▼                 ▼                 ▼                    │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐            │
-│  │ Compute Node │  │ Compute Node │  │ Compute Node │            │
-│  │              │  │              │  │              │            │
-│  │  ┌────────┐  │  │  ┌────────┐  │  │  ┌────────┐  │            │
-│  │  │ Slice  │  │  │  │ Slice  │  │  │  │ Slice  │  │            │
-│  │  │ Slice  │  │  │  │ Slice  │  │  │  │ Slice  │  │            │
-│  │  └────────┘  │  │  └────────┘  │  │  └────────┘  │            │
-│  └──────────────┘  └──────────────┘  └──────────────┘            │
-│                                                                     │
+│          ┌─────────────────┼─────────────────┐                     │
+│          ▼                 ▼                 ▼                     │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │
+│  │ Compute Node │  │ Compute Node │  │ Compute Node │              │
+│  │              │  │              │  │              │              │
+│  │  ┌────────┐  │  │  ┌────────┐  │  │  ┌────────┐  │              │
+│  │  │ Slice  │  │  │  │ Slice  │  │  │  │ Slice  │  │              │
+│  │  │ Slice  │  │  │  │ Slice  │  │  │  │ Slice  │  │              │
+│  │  └────────┘  │  │  └────────┘  │  │  └────────┘  │              │
+│  └──────────────┘  └──────────────┘  └──────────────┘              │
+│                                                                    │
 │  • Columnar storage (compressed)                                   │
-│  • Massively Parallel Processing (MPP)                            │
+│  • Massively Parallel Processing (MPP)                             │
 │  • Data distributed across slices                                  │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -153,15 +153,15 @@ MANIFEST;
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Athena Architecture                                    │
+│              Athena Architecture                                   │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  User                                                              │
 │    │                                                               │
 │    │ SQL Query                                                     │
 │    ▼                                                               │
 │  ┌──────────────┐                                                  │
-│  │   Athena     │ ◄─── AWS Glue Data Catalog (schema)             │
+│  │   Athena     │ ◄─── AWS Glue Data Catalog (schema)              │
 │  │              │                                                  │
 │  └──────┬───────┘                                                  │
 │         │                                                          │
@@ -175,11 +175,11 @@ MANIFEST;
 │  │ ├── events/  │                                                  │
 │  │ └── sales/   │                                                  │
 │  └──────────────┘                                                  │
-│                                                                     │
+│                                                                    │
 │  • No infrastructure to manage                                     │
-│  • Pay per query ($5 per TB scanned)                              │
-│  • Standard SQL (Presto/Trino)                                    │
-│                                                                     │
+│  • Pay per query ($5 per TB scanned)                               │
+│  • Standard SQL (Presto/Trino)                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -237,26 +237,26 @@ athena_optimization = {
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Kinesis Family                                         │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  Kinesis Data Streams                                              │
+┌───────────────────────────────────────────────────────────────────┐
+│              Kinesis Family                                       │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  Kinesis Data Streams                                             │
 │  └── Real-time streaming data ingestion                           │
 │  └── Custom consumers (Lambda, EC2, etc.)                         │
 │  └── Retention: 24 hours - 365 days                               │
-│                                                                     │
-│  Kinesis Data Firehose                                             │
+│                                                                   │
+│  Kinesis Data Firehose                                            │
 │  └── Load streaming data to destinations                          │
 │  └── S3, Redshift, OpenSearch, HTTP                               │
 │  └── Near real-time (60 seconds buffer)                           │
 │  └── Automatic scaling, no management                             │
-│                                                                     │
-│  Kinesis Data Analytics                                            │
+│                                                                   │
+│  Kinesis Data Analytics                                           │
 │  └── SQL or Apache Flink on streaming data                        │
 │  └── Real-time analytics, aggregations                            │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 

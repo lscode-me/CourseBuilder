@@ -41,17 +41,17 @@
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                        IAM Overview                                 │
+│                        IAM Overview                                │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐          │
-│  │   Users     │     │   Groups    │     │    Roles    │          │
-│  │  (people)   │     │ (of users)  │     │ (services)  │          │
-│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘          │
+│                                                                    │
+│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐           │
+│  │   Users     │     │   Groups    │     │    Roles    │           │
+│  │  (people)   │     │ (of users)  │     │ (services)  │           │
+│  └──────┬──────┘     └──────┬──────┘     └──────┬──────┘           │
 │         │                   │                   │                  │
 │         └───────────────────┼───────────────────┘                  │
-│                             │                                       │
-│                             ▼                                       │
+│                             │                                      │
+│                             ▼                                      │
 │                    ┌─────────────────┐                             │
 │                    │    Policies     │                             │
 │                    │   (JSON docs)   │                             │
@@ -61,13 +61,13 @@
 │                    │ denied on which │                             │
 │                    │ resources       │                             │
 │                    └────────┬────────┘                             │
-│                             │                                       │
-│                             ▼                                       │
+│                             │                                      │
+│                             ▼                                      │
 │                    ┌─────────────────┐                             │
 │                    │  AWS Resources  │                             │
 │                    │  (EC2, S3, RDS) │                             │
 │                    └─────────────────┘                             │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -163,33 +163,33 @@ aws iam get-group --group-name developers
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              User-Group-Policy Best Practice                        │
+│              User-Group-Policy Best Practice                       │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ❌ BAD: Политики напрямую к пользователям                        │
-│                                                                     │
-│  ┌─────┐  ┌─────┐  ┌─────┐                                        │
-│  │Alice│  │ Bob │  │Carol│                                        │
-│  └──┬──┘  └──┬──┘  └──┬──┘                                        │
+│                                                                    │
+│  ❌ BAD: Политики напрямую к пользователям                         │
+│                                                                    │
+│  ┌─────┐  ┌─────┐  ┌─────┐                                         │
+│  │Alice│  │ Bob │  │Carol│                                         │
+│  └──┬──┘  └──┬──┘  └──┬──┘                                         │
 │     │        │        │                                            │
 │     ▼        ▼        ▼                                            │
-│  Policy   Policy   Policy   ◄── Сложно управлять!                 │
-│                                                                     │
+│  Policy   Policy   Policy   ◄── Сложно управлять!                  │
+│                                                                    │
 │  ✅ GOOD: Политики через группы                                    │
-│                                                                     │
-│  ┌─────┐  ┌─────┐  ┌─────┐                                        │
-│  │Alice│  │ Bob │  │Carol│                                        │
-│  └──┬──┘  └──┬──┘  └──┬──┘                                        │
+│                                                                    │
+│  ┌─────┐  ┌─────┐  ┌─────┐                                         │
+│  │Alice│  │ Bob │  │Carol│                                         │
+│  └──┬──┘  └──┬──┘  └──┬──┘                                         │
 │     │        │        │                                            │
 │     └────────┼────────┘                                            │
-│              ▼                                                      │
+│              ▼                                                     │
 │        ┌──────────┐                                                │
 │        │Developers│  ◄── Группа                                    │
 │        │  Group   │                                                │
 │        └────┬─────┘                                                │
-│             ▼                                                       │
+│             ▼                                                      │
 │          Policy    ◄── Одна политика для всех                      │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -467,41 +467,41 @@ Condition:
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                      Types of IAM Policies                          │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  1. AWS Managed Policies                                           │
+┌───────────────────────────────────────────────────────────────────┐
+│                      Types of IAM Policies                        │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  1. AWS Managed Policies                                          │
 │     └── Созданы и управляются AWS                                 │
 │     └── Пример: AmazonS3ReadOnlyAccess, PowerUserAccess           │
 │     └── Автоматически обновляются AWS                             │
-│                                                                     │
-│  2. Customer Managed Policies                                       │
+│                                                                   │
+│  2. Customer Managed Policies                                     │
 │     └── Созданы вами в вашем аккаунте                             │
 │     └── Полный контроль                                           │
 │     └── Можно прикрепить к нескольким identity                    │
-│                                                                     │
-│  3. Inline Policies                                                │
+│                                                                   │
+│  3. Inline Policies                                               │
 │     └── Встроены напрямую в user/group/role                       │
 │     └── 1:1 связь с entity                                        │
 │     └── Удаляются вместе с entity                                 │
 │     └── Не рекомендуется (сложнее управлять)                      │
-│                                                                     │
-│  4. Resource-based Policies                                        │
-│     └── Прикреплены к ресурсу (S3 bucket, SQS queue)             │
-│     └── Определяют кто может обращаться к ресурсу                │
+│                                                                   │
+│  4. Resource-based Policies                                       │
+│     └── Прикреплены к ресурсу (S3 bucket, SQS queue)              │
+│     └── Определяют кто может обращаться к ресурсу                 │
 │     └── Содержат Principal                                        │
-│                                                                     │
-│  5. Permission Boundaries                                          │
+│                                                                   │
+│  5. Permission Boundaries                                         │
 │     └── Ограничивают максимальные разрешения                      │
-│     └── Не дают разрешений сами по себе                          │
+│     └── Не дают разрешений сами по себе                           │
 │     └── Используются для делегирования                            │
-│                                                                     │
-│  6. Service Control Policies (SCPs)                                │
-│     └── Для AWS Organizations                                      │
-│     └── Ограничивают разрешения на уровне аккаунтов              │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+│  6. Service Control Policies (SCPs)                               │
+│     └── Для AWS Organizations                                     │
+│     └── Ограничивают разрешения на уровне аккаунтов               │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -585,46 +585,46 @@ Condition:
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                   Policy Evaluation Logic                           │
+│                   Policy Evaluation Logic                          │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Запрос от Principal                                               │
-│         │                                                           │
-│         ▼                                                           │
+│         │                                                          │
+│         ▼                                                          │
 │  ┌──────────────────┐                                              │
-│  │ 1. Explicit DENY │ ──► DENY найден? ──► DENIED                 │
+│  │ 1. Explicit DENY │ ──► DENY найден? ──► DENIED                  │
 │  │    anywhere?     │                                              │
 │  └────────┬─────────┘                                              │
-│           │ No                                                      │
-│           ▼                                                         │
+│           │ No                                                     │
+│           ▼                                                        │
 │  ┌──────────────────┐                                              │
-│  │ 2. SCP Allow?    │ ──► Нет SCP Allow? ──► DENIED               │
+│  │ 2. SCP Allow?    │ ──► Нет SCP Allow? ──► DENIED                │
 │  │    (Organizations)│                                             │
 │  └────────┬─────────┘                                              │
-│           │ Yes                                                     │
-│           ▼                                                         │
+│           │ Yes                                                    │
+│           ▼                                                        │
 │  ┌──────────────────┐                                              │
-│  │ 3. Resource-based│ ──► Allow с Principal ──► ALLOWED           │
+│  │ 3. Resource-based│ ──► Allow с Principal ──► ALLOWED            │
 │  │    policy Allow? │     и нет Deny                               │
 │  └────────┬─────────┘                                              │
-│           │ No                                                      │
-│           ▼                                                         │
+│           │ No                                                     │
+│           ▼                                                        │
 │  ┌──────────────────┐                                              │
-│  │ 4. Permission    │ ──► Превышает boundary? ──► DENIED          │
+│  │ 4. Permission    │ ──► Превышает boundary? ──► DENIED           │
 │  │    Boundary?     │                                              │
 │  └────────┬─────────┘                                              │
-│           │ No                                                      │
-│           ▼                                                         │
+│           │ No                                                     │
+│           ▼                                                        │
 │  ┌──────────────────┐                                              │
-│  │ 5. Identity-based│ ──► Allow найден? ──► ALLOWED               │
+│  │ 5. Identity-based│ ──► Allow найден? ──► ALLOWED                │
 │  │    policy Allow? │                                              │
 │  └────────┬─────────┘                                              │
-│           │ No                                                      │
-│           ▼                                                         │
-│       DENIED (implicit deny)                                        │
-│                                                                     │
+│           │ No                                                     │
+│           ▼                                                        │
+│       DENIED (implicit deny)                                       │
+│                                                                    │
 │  KEY RULE: Explicit Deny > Allow > Implicit Deny                   │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -834,15 +834,15 @@ MFA Options:
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    SAML 2.0 Federation Flow                         │
+│                    SAML 2.0 Federation Flow                        │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  1. User authenticates with Corporate IdP (Okta, AD FS)           │
-│                                                                     │
-│  ┌──────────┐         ┌──────────┐         ┌──────────┐           │
-│  │   User   │ ──1──►  │Corporate │ ──2──►  │   AWS    │           │
-│  │          │         │   IdP    │         │   STS    │           │
-│  └──────────┘         └──────────┘         └──────────┘           │
+│                                                                    │
+│  1. User authenticates with Corporate IdP (Okta, AD FS)            │
+│                                                                    │
+│  ┌──────────┐         ┌──────────┐         ┌──────────┐            │
+│  │   User   │ ──1──►  │Corporate │ ──2──►  │   AWS    │            │
+│  │          │         │   IdP    │         │   STS    │            │
+│  └──────────┘         └──────────┘         └──────────┘            │
 │       │                    │                    │                  │
 │       │                    │ SAML Assertion     │                  │
 │       │                    └──────────────────► │                  │
@@ -850,7 +850,7 @@ MFA Options:
 │       │           Temporary Credentials         │                  │
 │       │◄────────────────────────────────────────┘                  │
 │       │                                                            │
-│       │  3. User accesses AWS with temp creds                     │
+│       │  3. User accesses AWS with temp creds                      │
 │       │                                                            │
 │       ▼                                                            │
 │  ┌──────────┐                                                      │
@@ -858,7 +858,7 @@ MFA Options:
 │  │ Console/ │                                                      │
 │  │   API    │                                                      │
 │  └──────────┘                                                      │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -963,31 +963,31 @@ jobs:
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    AWS Organizations Structure                      │
+│                    AWS Organizations Structure                     │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Root (Management Account)                                         │
-│  │                                                                  │
+│  │                                                                 │
 │  ├── OU: Security                                                  │
-│  │   ├── Account: Log Archive (centralized logs)                  │
-│  │   └── Account: Security Tooling (GuardDuty, SecurityHub)       │
-│  │                                                                  │
+│  │   ├── Account: Log Archive (centralized logs)                   │
+│  │   └── Account: Security Tooling (GuardDuty, SecurityHub)        │
+│  │                                                                 │
 │  ├── OU: Infrastructure                                            │
-│  │   ├── Account: Shared Services (DNS, AD)                       │
-│  │   └── Account: Network (Transit Gateway)                       │
-│  │                                                                  │
+│  │   ├── Account: Shared Services (DNS, AD)                        │
+│  │   └── Account: Network (Transit Gateway)                        │
+│  │                                                                 │
 │  ├── OU: Workloads                                                 │
 │  │   ├── OU: Production                                            │
-│  │   │   ├── Account: Prod-App-A                                  │
-│  │   │   └── Account: Prod-App-B                                  │
-│  │   │                                                              │
+│  │   │   ├── Account: Prod-App-A                                   │
+│  │   │   └── Account: Prod-App-B                                   │
+│  │   │                                                             │
 │  │   └── OU: Development                                           │
-│  │       ├── Account: Dev-App-A                                   │
-│  │       └── Account: Dev-App-B                                   │
-│  │                                                                  │
+│  │       ├── Account: Dev-App-A                                    │
+│  │       └── Account: Dev-App-B                                    │
+│  │                                                                 │
 │  └── OU: Sandbox                                                   │
 │      └── Account: Developer Sandbox                                │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```

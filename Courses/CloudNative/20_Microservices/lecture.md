@@ -26,35 +26,35 @@
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Monolith vs Microservices                              │
+│              Monolith vs Microservices                             │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  MONOLITH                        MICROSERVICES                     │
 │  ────────                        ─────────────                     │
-│  ┌──────────────────┐           ┌─────┐ ┌─────┐ ┌─────┐          │
-│  │                  │           │ Svc │ │ Svc │ │ Svc │          │
-│  │   All features   │           │  A  │ │  B  │ │  C  │          │
-│  │   in one app     │           └──┬──┘ └──┬──┘ └──┬──┘          │
-│  │                  │              │       │       │              │
-│  │  ┌────────────┐  │              ▼       ▼       ▼              │
-│  │  │  Single    │  │           ┌────┐  ┌────┐  ┌────┐           │
-│  │  │  Database  │  │           │ DB │  │ DB │  │ DB │           │
-│  │  └────────────┘  │           │  A │  │  B │  │  C │           │
-│  │                  │           └────┘  └────┘  └────┘           │
-│  └──────────────────┘                                             │
-│                                                                     │
+│  ┌──────────────────┐           ┌─────┐ ┌─────┐ ┌─────┐            │
+│  │                  │           │ Svc │ │ Svc │ │ Svc │            │
+│  │   All features   │           │  A  │ │  B  │ │  C  │            │
+│  │   in one app     │           └──┬──┘ └──┬──┘ └──┬──┘            │
+│  │                  │              │       │       │               │
+│  │  ┌────────────┐  │              ▼       ▼       ▼               │
+│  │  │  Single    │  │           ┌────┐  ┌────┐  ┌────┐             │
+│  │  │  Database  │  │           │ DB │  │ DB │  │ DB │             │
+│  │  └────────────┘  │           │  A │  │  B │  │  C │             │
+│  │                  │           └────┘  └────┘  └────┘             │
+│  └──────────────────┘                                              │
+│                                                                    │
 │  Pros:                          Pros:                              │
 │  • Simple deployment            • Independent deployment           │
 │  • Simple debugging             • Technology diversity             │
 │  • No network overhead          • Scalability per service          │
 │  • ACID transactions            • Team autonomy                    │
-│                                                                     │
+│                                                                    │
 │  Cons:                          Cons:                              │
-│  • Scaling is all-or-nothing   • Distributed complexity           │
+│  • Scaling is all-or-nothing   • Distributed complexity            │
 │  • Tight coupling              • Network latency                   │
 │  • Long deployment cycles      • Data consistency challenges       │
 │  • Technology lock-in          • Operational overhead              │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -98,13 +98,13 @@ for case in microservices_indicators['bad_fit']:
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Bounded Contexts → Microservices                       │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  E-commerce Domain                                                 │
-│  ┌─────────────────────────────────────────────────────────────┐  │
-│  │                                                              │  │
+┌──────────────────────────────────────────────────────────────────┐
+│              Bounded Contexts → Microservices                    │
+├──────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  E-commerce Domain                                               │
+│  ┌─────────────────────────────────────────────────────────────┐ │
+│  │                                                              ││
 │  │  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐    │  │
 │  │  │   Catalog    │   │    Order     │   │   Shipping   │    │  │
 │  │  │   Context    │   │   Context    │   │   Context    │    │  │
@@ -114,18 +114,18 @@ for case in microservices_indicators['bad_fit']:
 │  │  │ • Inventory  │   │ • Payments   │   │ • Carriers   │    │  │
 │  │  │              │   │              │   │              │    │  │
 │  │  └──────────────┘   └──────────────┘   └──────────────┘    │  │
-│  │         │                  │                  │             │  │
-│  │         ▼                  ▼                  ▼             │  │
+│  │         │                  │                  │             │ │
+│  │         ▼                  ▼                  ▼             │ │
 │  │  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐    │  │
 │  │  │ Catalog Svc  │   │  Order Svc   │   │ Shipping Svc │    │  │
 │  │  │   + DB       │   │    + DB      │   │    + DB      │    │  │
 │  │  └──────────────┘   └──────────────┘   └──────────────┘    │  │
-│  │                                                              │  │
-│  └─────────────────────────────────────────────────────────────┘  │
-│                                                                     │
-│  Each Bounded Context = potential Microservice                     │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│  │                                                              ││
+│  └─────────────────────────────────────────────────────────────┘ │
+│                                                                  │
+│  Each Bounded Context = potential Microservice                   │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -161,31 +161,31 @@ service_sizing_guidelines = {
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Communication Patterns                                 │
+│              Communication Patterns                                │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  SYNCHRONOUS (Request/Response)                                    │
 │  ─────────────────────────────                                     │
-│  ┌────────┐  HTTP/gRPC  ┌────────┐                                │
-│  │Service │────────────►│Service │                                │
-│  │   A    │◄────────────│   B    │                                │
-│  └────────┘   Response  └────────┘                                │
-│                                                                     │
+│  ┌────────┐  HTTP/gRPC  ┌────────┐                                 │
+│  │Service │────────────►│Service │                                 │
+│  │   A    │◄────────────│   B    │                                 │
+│  └────────┘   Response  └────────┘                                 │
+│                                                                    │
 │  Pros: Simple, immediate response                                  │
 │  Cons: Tight coupling, cascading failures, latency                 │
 │  AWS: API Gateway, ALB, App Mesh                                   │
-│                                                                     │
+│                                                                    │
 │  ASYNCHRONOUS (Event-Driven)                                       │
 │  ──────────────────────────                                        │
-│  ┌────────┐  Publish   ┌────────┐  Subscribe  ┌────────┐         │
-│  │Service │───────────►│ Event  │◄────────────│Service │         │
-│  │   A    │            │  Bus   │             │   B    │         │
-│  └────────┘            └────────┘             └────────┘         │
-│                                                                     │
-│  Pros: Loose coupling, resilience, scalability                    │
+│  ┌────────┐  Publish   ┌────────┐  Subscribe  ┌────────┐           │
+│  │Service │───────────►│ Event  │◄────────────│Service │           │
+│  │   A    │            │  Bus   │             │   B    │           │
+│  └────────┘            └────────┘             └────────┘           │
+│                                                                    │
+│  Pros: Loose coupling, resilience, scalability                     │
 │  Cons: Eventual consistency, complexity, debugging                 │
-│  AWS: SQS, SNS, EventBridge, Kinesis                              │
-│                                                                     │
+│  AWS: SQS, SNS, EventBridge, Kinesis                               │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -272,31 +272,31 @@ class CircuitBreaker:
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Resilience Patterns                                    │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  RETRY                                                             │
+┌───────────────────────────────────────────────────────────────────┐
+│              Resilience Patterns                                  │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  RETRY                                                            │
 │  └── Повтор запроса при transient failures                        │
 │  └── Exponential backoff: 1s, 2s, 4s, 8s...                       │
-│                                                                     │
-│  TIMEOUT                                                           │
+│                                                                   │
+│  TIMEOUT                                                          │
 │  └── Не ждать ответ вечно                                         │
 │  └── Fail fast, освобождай ресурсы                                │
-│                                                                     │
-│  BULKHEAD                                                          │
+│                                                                   │
+│  BULKHEAD                                                         │
 │  └── Изоляция ресурсов (отдельные connection pools)               │
 │  └── Сбой одного сервиса не затрагивает другие                    │
-│                                                                     │
-│  FALLBACK                                                          │
+│                                                                   │
+│  FALLBACK                                                         │
 │  └── Альтернативный ответ при сбое                                │
 │  └── Cached data, default values, degraded service                │
-│                                                                     │
-│  RATE LIMITING                                                     │
+│                                                                   │
+│  RATE LIMITING                                                    │
 │  └── Защита от перегрузки                                         │
 │  └── Token bucket, sliding window                                 │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -340,30 +340,30 @@ data_patterns = {
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Saga: Order Processing                                 │
+│              Saga: Order Processing                                │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Choreography Saga:                                                │
-│                                                                     │
+│                                                                    │
 │  1. Order Service creates order                                    │
 │     → publishes OrderCreated                                       │
-│                                                                     │
+│                                                                    │
 │  2. Payment Service listens                                        │
 │     → processes payment                                            │
 │     → publishes PaymentCompleted or PaymentFailed                  │
-│                                                                     │
+│                                                                    │
 │  3. Inventory Service listens                                      │
 │     → reserves items                                               │
 │     → publishes ItemsReserved or ItemsUnavailable                  │
-│                                                                     │
+│                                                                    │
 │  4. Shipping Service listens                                       │
 │     → creates shipment                                             │
 │     → publishes ShipmentCreated                                    │
-│                                                                     │
+│                                                                    │
 │  Compensation (rollback):                                          │
 │  If PaymentFailed → cancel order                                   │
 │  If ItemsUnavailable → refund payment, cancel order                │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -376,17 +376,17 @@ data_patterns = {
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Service Mesh                                           │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ┌────────────────────────────────────────────────────────────┐   │
-│  │                    Control Plane                            │   │
-│  │                 (App Mesh / Istio)                          │   │
-│  └────────────────────────────────────────────────────────────┘   │
-│                           │                                        │
-│          ┌────────────────┴────────────────┐                      │
-│          ▼                                 ▼                      │
+┌──────────────────────────────────────────────────────────────────┐
+│              Service Mesh                                        │
+├──────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  ┌────────────────────────────────────────────────────────────┐  │
+│  │                    Control Plane                            │ │
+│  │                 (App Mesh / Istio)                          │ │
+│  └────────────────────────────────────────────────────────────┘  │
+│                           │                                      │
+│          ┌────────────────┴────────────────┐                     │
+│          ▼                                 ▼                     │
 │  ┌───────────────┐                ┌───────────────┐              │
 │  │  Service A    │                │  Service B    │              │
 │  │  ┌─────────┐  │    traffic     │  ┌─────────┐  │              │
@@ -398,14 +398,14 @@ data_patterns = {
 │  │  │ Sidecar │  │                │  │ Sidecar │  │              │
 │  │  └─────────┘  │                │  └─────────┘  │              │
 │  └───────────────┘                └───────────────┘              │
-│                                                                     │
-│  Service Mesh provides:                                            │
-│  • mTLS (encryption)                                              │
-│  • Traffic management (canary, blue-green)                        │
-│  • Observability (metrics, traces)                                │
-│  • Circuit breaking, retries                                      │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                  │
+│  Service Mesh provides:                                          │
+│  • mTLS (encryption)                                             │
+│  • Traffic management (canary, blue-green)                       │
+│  • Observability (metrics, traces)                               │
+│  • Circuit breaking, retries                                     │
+│                                                                  │
+└──────────────────────────────────────────────────────────────────┘
 
 ```
 

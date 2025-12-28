@@ -194,7 +194,7 @@ Leader overload:
 ```
 
 ┌─────────────────────────────────────────┐
-│            Product Organization          │
+│            Product Organization         │
 ├─────────────┬─────────────┬─────────────┤
 │   Team A    │   Team B    │   Team C    │
 │  (Growth)   │   (Core)    │ (Platform)  │
@@ -503,9 +503,9 @@ Tribe A                    Tribe B
 │ Squad 1  Squad 2│       │ Squad 5  Squad 6│
 │ Squad 3  Squad 4│       │ Squad 7  Squad 8│
 └─────────────────┘       └─────────────────┘
-         │                         │
-         └────── Chapters ─────────┘
-         └────── Guilds ───────────┘
+         │                                           │
+         └────── Chapters ─────────                  ┘
+         └────── Guilds ───────────                  ┘
 
 ```
 

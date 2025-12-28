@@ -39,7 +39,7 @@
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                    CGI Architecture                         │
+│                    CGI Architecture                        │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  Client          Web Server              CGI Script        │
@@ -54,7 +54,7 @@
 │    │                 │◄── stdout (HTML) ─────┤             │
 │    │                 │                       │             │
 │    │                 │                  Process exits      │
-│    │◄── HTTP Response │                       │             │
+│    │◄── HTTP Response │                       │            │
 │    │                 │                       │             │
 └────────────────────────────────────────────────────────────┘
 
@@ -388,7 +388,7 @@ server {
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                    CGI Overhead                             │
+│                    CGI Overhead                            │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  Request 1:                                                │
@@ -440,7 +440,7 @@ server {
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                   FastCGI Architecture                      │
+│                   FastCGI Architecture                     │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  Web Server          FastCGI Process Manager               │
@@ -454,17 +454,17 @@ server {
 │       │  │           │                    │           │    │
 │       │  │ - initialized                  │ - initialized  │
 │       │  │ - DB connected                 │ - DB connected │
-│       │  │ - modules loaded               │ - modules loaded│
+│       │  │ - modules loaded               │ - modules loade│
 │       │  └───────────┘                    └───────────┘    │
 │       │        │                                │          │
 │       │        │ socket/TCP                     │          │
 │       │        │                                │          │
 │       └────────┼────────────────────────────────┤          │
 │                │                                │          │
-│  Request 1 ────┴──► Worker 1 обрабатывает      │          │
+│  Request 1 ────┴──► Worker 1 обрабатывает      │           │
 │  Request 2 ─────────────────────────────────────┴──►       │
 │                      Worker N обрабатывает                 │
-│  Request 3 ────────► Worker 1 (уже освободился)           │
+│  Request 3 ────────► Worker 1 (уже освободился)            │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
 
@@ -484,7 +484,7 @@ FastCGI использует бинарные записи (records):
 ```
 
 ┌─────────────────────────────────────────────────────────┐
-│                FastCGI Record Format                     │
+│                FastCGI Record Format                    │
 ├─────────────────────────────────────────────────────────┤
 │ Version (1)   │ Type (1)     │ Request ID (2)           │
 ├─────────────────────────────────────────────────────────┤
@@ -632,13 +632,13 @@ if __name__ == '__main__':
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                    SCGI Protocol                            │
+│                    SCGI Protocol                           │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  Format: <length>:<headers>,<body>                         │
 │                                                            │
 │  Example:                                                  │
-│  70:CONTENT_LENGTH\x0027\x00SCGI\x001\x00REQUEST_METHOD\x00POST\x00,body │
+│  70:CONTENT_LENGTH\x0027\x00SCGI\x001\x00REQUEST_METHOD\x00│
 │                                                            │
 │  - Length of headers in decimal ASCII                      │
 │  - Headers as null-terminated key-value pairs              │

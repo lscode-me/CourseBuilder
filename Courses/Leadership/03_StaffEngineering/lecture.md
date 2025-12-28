@@ -401,15 +401,15 @@ Will Larson выделяет четыре архетипа. Большинств
 ```
 
 ┌─────────────────────────────────────────────────────────┐
-│ Coding/Hands-on Technical Work          │ 30-40%       │
+│ Coding/Hands-on Technical Work          │ 30-40%        │
 ├─────────────────────────────────────────────────────────┤
-│ Design/Review/Writing                   │ 20-30%       │
+│ Design/Review/Writing                   │ 20-30%        │
 ├─────────────────────────────────────────────────────────┤
-│ Meetings/Communication                  │ 15-25%       │
+│ Meetings/Communication                  │ 15-25%        │
 ├─────────────────────────────────────────────────────────┤
-│ Mentoring                               │ 10-15%       │
+│ Mentoring                               │ 10-15%        │
 ├─────────────────────────────────────────────────────────┤
-│ Learning/Exploration                    │ 5-10%        │
+│ Learning/Exploration                    │ 5-10%         │
 └─────────────────────────────────────────────────────────┘
 
 ```
@@ -458,14 +458,14 @@ Staff Engineer и Engineering Manager — партнёры, не конкуре�
           │   Team Success / Delivery / Growth  │
           └─────────────────────────────────────┘
                     ▲               ▲
-                    │               │
+                    │                                               │
     ┌───────────────┴───┐     ┌─────┴───────────────┐
     │   STAFF ENGINEER  │     │ ENGINEERING MANAGER │
     │                   │     │                     │
-    │ ✓ Technical       │     │ ✓ People            │
-    │ ✓ Architecture    │     │ ✓ Process           │
-    │ ✓ Code quality    │     │ ✓ Career growth     │
-    │ ✓ Tech standards  │     │ ✓ Hiring            │
+    │ ✓ Technical       │     │ ✓ People          │
+    │ ✓ Architecture    │     │ ✓ Process         │
+    │ ✓ Code quality    │     │ ✓ Career growth   │
+    │ ✓ Tech standards  │     │ ✓ Hiring          │
     └───────────────────┘     └─────────────────────┘
 
 ```

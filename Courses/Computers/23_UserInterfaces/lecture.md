@@ -255,7 +255,7 @@ ssh -L 8080:localhost:80 user@server
 │ [Start] [🗁] [⊞] [📁]       │ ← Taskbar
 ├─────────────────────────────┤
 │  My Computer  Recycle Bin   │
-│  [🖥️]         [🗑️]          │
+│  [🖥️]         [🗑️]        │
 │                             │
 │  My Documents               │
 │  [📁]                       │

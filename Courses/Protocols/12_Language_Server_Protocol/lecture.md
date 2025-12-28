@@ -77,8 +77,8 @@ N языков + M редакторов = N+M реализаций
 │   IDE Client │◄────LSP─────►│Lang Server   │
 │  (VS Code)   │              │  (Pyright)   │
 └──────────────┘              └──────────────┘
-       │                              │
-       │                              │
+       │                                            │
+       │                                            │
     UI/UX                       Language
                                 Analysis
 ```

@@ -33,26 +33,26 @@
 
 ```
 
-┌─────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────┐
 │                     Traditional vs IaC                           │
-├─────────────────────────────────────────────────────────────────┤
+├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  Traditional:                                                    │
-│  Admin ──▶ Click UI ──▶ Configure ──▶ Document ──▶ Hope it works│
+│  Admin ──▶ Click UI ──▶ Configure ──▶ Document ──▶ Hope it works │
 │           │              │              │                        │
 │           │              │              └── Often outdated       │
 │           │              └── Not reproducible                    │
 │           └── Error-prone, slow                                  │
 │                                                                  │
 │  Infrastructure as Code:                                         │
-│  Dev ──▶ Write Code ──▶ Review ──▶ Apply ──▶ Version Control    │
+│  Dev ──▶ Write Code ──▶ Review ──▶ Apply ──▶ Version Control     │
 │           │              │          │          │                 │
 │           │              │          │          └── Full history  │
 │           │              │          └── Automated, fast          │
 │           │              └── Peer review                         │
 │           └── Reproducible, testable                             │
 │                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────┘
 
 ```
 

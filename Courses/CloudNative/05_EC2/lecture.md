@@ -69,23 +69,23 @@ for concept, description in ec2_key_concepts.items():
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                      EC2 Evolution                                  │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+┌───────────────────────────────────────────────────────────────────┐
+│                      EC2 Evolution                                │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
 │  2006 ─── EC2 Beta Launch (только Linux, m1.small)                │
 │  2008 ─── Windows support, Elastic IPs, Availability Zones        │
 │  2009 ─── Reserved Instances, Auto Scaling, Load Balancing        │
 │  2010 ─── Micro instances (free tier), Cluster instances          │
 │  2012 ─── SSD-backed instances, HVM virtualization                │
-│  2014 ─── T2 (burstable), R3 (memory), C4 (compute)              │
+│  2014 ─── T2 (burstable), R3 (memory), C4 (compute)               │
 │  2017 ─── Nitro System (custom hypervisor)                        │
 │  2018 ─── Graviton (ARM processors)                               │
 │  2020 ─── Graviton2 (40% better price/performance)                │
 │  2021 ─── Graviton3                                               │
-│  2023 ─── Graviton4, Inf2 (ML inference)                         │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│  2023 ─── Graviton4, Inf2 (ML inference)                          │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -103,9 +103,9 @@ Instance Type: m5.2xlarge
   5   = Generation (5th generation)
   2xlarge = Size
 
-┌─────────────────────────────────────────────────────────────────┐
-│ Family │ Use Case                    │ Examples                 │
-├────────┼─────────────────────────────┼──────────────────────────┤
+┌────────────────────────────────────────────────────────────────┐
+│ Family │ Use Case                    │ Examples                │
+├────────┼─────────────────────────────┼─────────────────────────┤
 │   M    │ General Purpose             │ m7g, m6i, m5            │
 │   C    │ Compute Optimized           │ c7g, c6i, c5            │
 │   R    │ Memory Optimized            │ r7g, r6i, r5            │
@@ -114,7 +114,7 @@ Instance Type: m5.2xlarge
 │   P/G  │ GPU (ML, Graphics)          │ p5, p4d, g5             │
 │   Inf  │ ML Inference               │ inf2, inf1               │
 │   Trn  │ ML Training                │ trn1                     │
-└─────────────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────────┘
 
 Suffixes:
   g = Graviton (ARM) - лучший price/performance
@@ -207,35 +207,35 @@ for use_case, rec in use_case_recommendations.items():
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                    EC2 Pricing Models                               │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ON-DEMAND                                                         │
+┌───────────────────────────────────────────────────────────────────┐
+│                    EC2 Pricing Models                             │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  ON-DEMAND                                                        │
 │  ├── Оплата по часам/секундам                                     │
-│  ├── Нет commitment                                                │
+│  ├── Нет commitment                                               │
 │  ├── Полная гибкость                                              │
 │  └── Цена: базовая (100%)                                         │
-│                                                                     │
-│  RESERVED INSTANCES (RI)                                           │
+│                                                                   │
+│  RESERVED INSTANCES (RI)                                          │
 │  ├── Commitment на 1 или 3 года                                   │
 │  ├── Payment: All Upfront / Partial / No Upfront                  │
 │  ├── Standard RI или Convertible RI                               │
 │  └── Скидка: до 72% от On-Demand                                  │
-│                                                                     │
-│  SAVINGS PLANS                                                     │
-│  ├── Commitment на $/hour usage                                    │
+│                                                                   │
+│  SAVINGS PLANS                                                    │
+│  ├── Commitment на $/hour usage                                   │
 │  ├── Compute SP (любой instance, region, OS)                      │
 │  ├── EC2 Instance SP (конкретная family в регионе)                │
 │  └── Скидка: до 72% от On-Demand                                  │
-│                                                                     │
-│  SPOT INSTANCES                                                    │
+│                                                                   │
+│  SPOT INSTANCES                                                   │
 │  ├── Неиспользуемая capacity AWS                                  │
 │  ├── Может быть прервана с 2-min warning                          │
 │  ├── Подходит для fault-tolerant workloads                        │
 │  └── Скидка: до 90% от On-Demand                                  │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -426,35 +426,35 @@ aws ec2 copy-image \
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                      EBS Volume Types                               │
+│                      EBS Volume Types                              │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  gp3 (General Purpose SSD) - РЕКОМЕНДУЕТСЯ                        │
-│  ├── IOPS: 3,000 - 16,000 (настраивается отдельно)                │
+│                                                                    │
+│  gp3 (General Purpose SSD) - РЕКОМЕНДУЕТСЯ                         │
+│  ├── IOPS: 3,000 - 16,000 (настраивается отдельно)                 │
 │  ├── Throughput: 125 - 1,000 MB/s                                  │
-│  ├── Size: 1 GB - 16 TB                                           │
-│  └── Use case: Boot volumes, development, web servers             │
-│                                                                     │
+│  ├── Size: 1 GB - 16 TB                                            │
+│  └── Use case: Boot volumes, development, web servers              │
+│                                                                    │
 │  gp2 (General Purpose SSD) - Legacy                                │
-│  ├── IOPS: 3 IOPS/GB (burst to 3,000)                             │
-│  ├── Size: 1 GB - 16 TB                                           │
-│  └── Use case: Старые workloads (мигрируйте на gp3)               │
-│                                                                     │
+│  ├── IOPS: 3 IOPS/GB (burst to 3,000)                              │
+│  ├── Size: 1 GB - 16 TB                                            │
+│  └── Use case: Старые workloads (мигрируйте на gp3)                │
+│                                                                    │
 │  io2/io2 Block Express (Provisioned IOPS SSD)                      │
 │  ├── IOPS: до 256,000                                              │
 │  ├── Multi-attach support                                          │
 │  └── Use case: Databases, latency-sensitive apps                   │
-│                                                                     │
+│                                                                    │
 │  st1 (Throughput Optimized HDD)                                    │
 │  ├── Throughput: 500 MB/s                                          │
 │  ├── НЕ может быть boot volume                                     │
 │  └── Use case: Big data, data warehouses, log processing           │
-│                                                                     │
+│                                                                    │
 │  sc1 (Cold HDD)                                                    │
 │  ├── Throughput: 250 MB/s                                          │
 │  ├── Lowest cost                                                   │
-│  └── Use case: Архивы, редко используемые данные                  │
-│                                                                     │
+│  └── Use case: Архивы, редко используемые данные                   │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -489,15 +489,15 @@ aws ec2 copy-snapshot \
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                    Auto Scaling Components                          │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+┌───────────────────────────────────────────────────────────────────┐
+│                    Auto Scaling Components                        │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
 │  ┌─────────────────────┐                                          │
 │  │   Launch Template   │ ◄── AMI, instance type, user data        │
 │  └──────────┬──────────┘                                          │
-│             │                                                       │
-│             ▼                                                       │
+│             │                                                     │
+│             ▼                                                     │
 │  ┌─────────────────────┐                                          │
 │  │  Auto Scaling Group │                                          │
 │  │                     │                                          │
@@ -505,11 +505,11 @@ aws ec2 copy-snapshot \
 │  │  Max: 10            │ ◄── Максимум инстансов                   │
 │  │  Desired: 4         │ ◄── Желаемое количество                  │
 │  │                     │                                          │
-│  │  AZs: 1a, 1b, 1c   │ ◄── Распределение по AZ                  │
+│  │  AZs: 1a, 1b, 1c   │ ◄── Распределение по AZ                   │
 │  │                     │                                          │
 │  └──────────┬──────────┘                                          │
-│             │                                                       │
-│             ▼                                                       │
+│             │                                                     │
+│             ▼                                                     │
 │  ┌─────────────────────┐                                          │
 │  │  Scaling Policies   │                                          │
 │  │                     │                                          │
@@ -518,8 +518,8 @@ aws ec2 copy-snapshot \
 │  │  • Scheduled        │ ◄── Scale at specific times              │
 │  │                     │                                          │
 │  └─────────────────────┘                                          │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 

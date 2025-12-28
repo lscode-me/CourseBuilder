@@ -26,9 +26,9 @@
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Infrastructure as Code                                 │
+│              Infrastructure as Code                                │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Manual Infrastructure                IaC                          │
 │  ──────────────────────              ───                           │
 │  • Click in console                  • Code in version control     │
@@ -37,13 +37,13 @@
 │  • No audit trail                    • Git history = audit trail   │
 │  • Error-prone                       • Automated, consistent       │
 │  • Slow to scale                     • Scale easily                │
-│                                                                     │
+│                                                                    │
 │  Key Principles:                                                   │
-│  1. Declarative: describe WHAT, not HOW                           │
-│  2. Idempotent: same result on repeated runs                      │
-│  3. Version controlled: Git for infrastructure                    │
-│  4. Self-documenting: code describes current state                │
-│                                                                     │
+│  1. Declarative: describe WHAT, not HOW                            │
+│  2. Idempotent: same result on repeated runs                       │
+│  3. Version controlled: Git for infrastructure                     │
+│  4. Self-documenting: code describes current state                 │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```

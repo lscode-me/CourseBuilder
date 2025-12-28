@@ -106,13 +106,13 @@
 │• Skills needed  │──▶│• Internal pool  │──▶│• Skills match   │
 │• Level          │   │• Bench          │   │• Cultural fit   │
 │• Start date     │   │• New hire       │   │• Availability   │
-│• Duration       │   │• Contractors    │   │• Client interview│
+│• Duration       │   │• Contractors    │   │• Client intervie│
 └─────────────────┘   └─────────────────┘   └─────────────────┘
-        │                     │                     │
-        └─────────────────────┼─────────────────────┘
+        │                     │                                       │
+        └─────────────────────┼───────────────────────────────────────┘
                               ▼
                     4. ONBOARDING
-                       ──────────────
+                       ───────────────────
                     ┌─────────────────┐
                     │• Project intro  │
                     │• Tech setup     │
@@ -168,15 +168,15 @@
 └─────────────────────────────────────────────────────────────────────────┘
 
             DM                                    TL
-            │                                      │
-            │     ┌───────────────────────┐       │
-            │     │    SHARED ZONE        │       │
-            │◀────│  • Sprint planning    │──────▶│
-            │     │  • Risk assessment    │       │
-            │     │  • Team health        │       │
-            │     │  • Estimates          │       │
-            │     └───────────────────────┘       │
-            │                                      │
+            │                                                   │
+            │     ┌───────────────────────┐                     │
+            │     │    SHARED ZONE        │                     │
+            │◀────│  • Sprint planning    │──────▶              │
+            │     │  • Risk assessment    │                     │
+            │     │  • Team health        │                     │
+            │     │  • Estimates          │                     │
+            │     └───────────────────────┘                     │
+            │                                                   │
      ┌──────▼──────┐                      ┌───────▼──────┐
      │ DM ZONE     │                      │ TL ZONE      │
      │             │                      │              │
@@ -278,22 +278,22 @@ Utilization = (Billable hours / Available hours) × 100%
 │ Working days: 22                                                        │
 │ Working hours: 176                                                      │
 │                                                                         │
-│ ┌────────────────────────────────────────────────────────────────────┐ │
-│ │ TEAM MEMBER      │ AVAILABLE │ PLANNED PTO │ NET HOURS │ PROJECT  │ │
-│ ├──────────────────┼───────────┼─────────────┼───────────┼──────────┤ │
-│ │ Alex (TL)        │    176    │      0      │    150    │ Phoenix  │ │
-│ │ Maria (Senior)   │    176    │     16      │    136    │ Phoenix  │ │
-│ │ John (Middle)    │    176    │      0      │    150    │ Phoenix  │ │
-│ │ Kate (Middle)    │    176    │      8      │    143    │ Phoenix  │ │
-│ │ Tom (Junior)     │    176    │      0      │    150    │ Phoenix  │ │
-│ │ Sarah (QA)       │    176    │     24      │    129    │ Phoenix  │ │
-│ ├──────────────────┼───────────┼─────────────┼───────────┼──────────┤ │
-│ │ TOTAL            │   1056    │     48      │    858    │          │ │
-│ └────────────────────────────────────────────────────────────────────┘ │
+│ ┌────────────────────────────────────────────────────────────────────┐  │
+│ │ TEAM MEMBER      │ AVAILABLE │ PLANNED PTO │ NET HOURS │ PROJECT  │   │
+│ ├──────────────────┼───────────┼─────────────┼───────────┼──────────┤   │
+│ │ Alex (TL)        │    176    │      0      │    150    │ Phoenix  │   │
+│ │ Maria (Senior)   │    176    │     16      │    136    │ Phoenix  │   │
+│ │ John (Middle)    │    176    │      0      │    150    │ Phoenix  │   │
+│ │ Kate (Middle)    │    176    │      8      │    143    │ Phoenix  │   │
+│ │ Tom (Junior)     │    176    │      0      │    150    │ Phoenix  │   │
+│ │ Sarah (QA)       │    176    │     24      │    129    │ Phoenix  │   │
+│ ├──────────────────┼───────────┼─────────────┼───────────┼──────────┤   │
+│ │ TOTAL            │   1056    │     48      │    858    │          │   │
+│ └────────────────────────────────────────────────────────────────────┘  │
 │                                                                         │
-│ Estimated velocity: ~180 SP (based on 80 SP/4 devs per sprint)         │
-│ Risk: QA capacity reduced due to PTO                                   │
-│ Mitigation: Shift QA tasks to early in month                           │
+│ Estimated velocity: ~180 SP (based on 80 SP/4 devs per sprint)          │
+│ Risk: QA capacity reduced due to PTO                                    │
+│ Mitigation: Shift QA tasks to early in month                            │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 
@@ -314,8 +314,8 @@ Utilization = (Billable hours / Available hours) × 100%
   ┌─────────┐                          ┌─────────┐
   │  858 h  │                          │  920 h  │
   └─────────┘                          └─────────┘
-       │                                     │
-       └──────────────┬──────────────────────┘
+       │                                              │
+       └──────────────┬───────────────────────────────┘
                       ▼
               ┌─────────────┐
               │   GAP: 62h  │
@@ -347,40 +347,40 @@ Utilization = (Billable hours / Available hours) × 100%
 
 ```
 
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    PERFORMANCE REVIEW STRUCTURE                         │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
+┌────────────────────────────────────────────────────────────────────────┐
+│                    PERFORMANCE REVIEW STRUCTURE                        │
+├────────────────────────────────────────────────────────────────────────┤
+│                                                                        │
 │ 1. SELF-ASSESSMENT (от сотрудника)                                     │
 │    ─────────────────────────────────                                   │
 │    • Что считаю главными достижениями?                                 │
 │    • Где вижу области для улучшения?                                   │
 │    • Какие цели хочу поставить?                                        │
-│                                                                         │
-│ 2. MANAGER ASSESSMENT                                                   │
+│                                                                        │
+│ 2. MANAGER ASSESSMENT                                                  │
 │    ─────────────────────────────────                                   │
 │    • Достижения и сильные стороны                                      │
 │    • Области для развития                                              │
 │    • Оценка по критериям                                               │
-│                                                                         │
+│                                                                        │
 │ 3. 360° FEEDBACK (опционально)                                         │
 │    ─────────────────────────────────                                   │
 │    • Обратная связь от коллег                                          │
 │    • Feedback от клиента                                               │
-│                                                                         │
-│ 4. REVIEW MEETING                                                       │
+│                                                                        │
+│ 4. REVIEW MEETING                                                      │
 │    ─────────────────────────────────                                   │
 │    • Обсуждение всех inputs                                            │
 │    • Согласование целей                                                │
 │    • Определение плана развития                                        │
-│                                                                         │
-│ 5. DEVELOPMENT PLAN                                                     │
+│                                                                        │
+│ 5. DEVELOPMENT PLAN                                                    │
 │    ─────────────────────────────────                                   │
 │    • Конкретные цели на период                                         │
 │    • Необходимые ресурсы/обучение                                      │
-│    • Check-in points                                                    │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
+│    • Check-in points                                                   │
+│                                                                        │
+└────────────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -434,8 +434,8 @@ Utilization = (Billable hours / Available hours) × 100%
 │ Заметить  │────▶│1-on-1     │────▶│ PIP или   │────▶│ Regular   │
 │ симптомы  │     │ разговор  │     │ поддержка │     │ check-ins │
 └───────────┘     └───────────┘     └───────────┘     └───────────┘
-                        │                  │
-                        │                  │
+                        │                                                                 │
+                        │                                                                 │
                 Понять причину     Дать ресурсы и время
 
 ```
@@ -448,35 +448,35 @@ Utilization = (Billable hours / Available hours) × 100%
 ├─────────────────────────────────────────────────────────────────────────┤
 │ Employee: John Smith                                                    │
 │ Manager: Alex Johnson                                                   │
-│ Period: Jan 15 - Mar 15, 2025 (60 days)                                │
+│ Period: Jan 15 - Mar 15, 2025 (60 days)                                 │
 │                                                                         │
 │ CURRENT ISSUES:                                                         │
-│ • Velocity below team average (15 SP vs 25 SP target)                  │
-│ • 3 critical bugs in last month attributed to code                     │
-│ • Missed 2 sprint commitments                                          │
+│ • Velocity below team average (15 SP vs 25 SP target)                   │
+│ • 3 critical bugs in last month attributed to code                      │
+│ • Missed 2 sprint commitments                                           │
 │                                                                         │
 │ IMPROVEMENT GOALS:                                                      │
-│ 1. Increase velocity to 22+ SP/sprint                                  │
-│ 2. Zero critical bugs in code                                          │
-│ 3. Meet all sprint commitments                                         │
+│ 1. Increase velocity to 22+ SP/sprint                                   │
+│ 2. Zero critical bugs in code                                           │
+│ 3. Meet all sprint commitments                                          │
 │                                                                         │
 │ SUPPORT PROVIDED:                                                       │
-│ • Weekly 1-on-1 with TL (code review, pairing)                         │
-│ • Reduced scope for first 2 weeks                                      │
-│ • Testing course enrollment                                            │
+│ • Weekly 1-on-1 with TL (code review, pairing)                          │
+│ • Reduced scope for first 2 weeks                                       │
+│ • Testing course enrollment                                             │
 │                                                                         │
 │ CHECK-IN SCHEDULE:                                                      │
-│ • Weekly: progress review with TL                                      │
-│ • Bi-weekly: 1-on-1 with DM                                            │
-│ • Day 30: mid-point assessment                                         │
-│ • Day 60: final assessment                                             │
+│ • Weekly: progress review with TL                                       │
+│ • Bi-weekly: 1-on-1 with DM                                             │
+│ • Day 30: mid-point assessment                                          │
+│ • Day 60: final assessment                                              │
 │                                                                         │
 │ OUTCOME:                                                                │
-│ Goals met → Continue normal work                                       │
-│ Goals not met → Further actions to be discussed                        │
+│ Goals met → Continue normal work                                        │
+│ Goals not met → Further actions to be discussed                         │
 │                                                                         │
 │ Signatures:                                                             │
-│ Employee: ____________  Manager: ____________  Date: ____________      │
+│ Employee: ____________  Manager: ____________  Date: ____________       │
 └─────────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -509,7 +509,7 @@ Utilization = (Billable hours / Available hours) × 100%
   │  Не мотивируют сами по себе,      │  Создают мотивацию
   │  но их отсутствие                 │  и удовлетворение
   │  создаёт недовольство             │
-  │                                    │
+  │                                   │
 
 ```
 

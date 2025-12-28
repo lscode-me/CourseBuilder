@@ -25,10 +25,10 @@
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Three Pillars of Observability                         │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+┌───────────────────────────────────────────────────────────────────┐
+│              Three Pillars of Observability                       │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐             │
 │  │    LOGS      │  │   METRICS    │  │   TRACES     │             │
 │  │              │  │              │  │              │             │
@@ -42,12 +42,12 @@
 │  │ High volume, │  │ Low volume,  │  │ Sampled,     │             │
 │  │ detailed     │  │ aggregated   │  │ contextual   │             │
 │  └──────────────┘  └──────────────┘  └──────────────┘             │
-│                                                                     │
-│  AWS Services:                                                     │
-│  CloudWatch Logs   CloudWatch       X-Ray                          │
-│                    Metrics                                         │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+│  AWS Services:                                                    │
+│  CloudWatch Logs   CloudWatch       X-Ray                         │
+│                    Metrics                                        │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -301,12 +301,12 @@ for metric, desc in use_metrics.items():
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              X-Ray Trace                                            │
+│              X-Ray Trace                                           │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Trace ID: 1-abc-def                                               │
 │  ─────────────────────────────────────────────────────────────     │
-│                                                                     │
+│                                                                    │
 │  Segment: API Gateway                                              │
 │  │─────────────────────│ 200ms                                     │
 │       │                                                            │
@@ -314,19 +314,19 @@ for metric, desc in use_metrics.items():
 │  Segment: Lambda/OrderService                                      │
 │       │──────────────│ 150ms                                       │
 │       │   │                                                        │
-│       │   ├── Subsegment: DynamoDB GetItem                        │
-│       │   │   │────│ 20ms                                         │
+│       │   ├── Subsegment: DynamoDB GetItem                         │
+│       │   │   │────│ 20ms                                          │
 │       │   │                                                        │
-│       │   ├── Subsegment: External API Call                       │
-│       │   │   │──────│ 50ms                                       │
+│       │   ├── Subsegment: External API Call                        │
+│       │   │   │──────│ 50ms                                        │
 │       │   │                                                        │
-│       │   └── Subsegment: DynamoDB PutItem                        │
-│       │       │───│ 15ms                                          │
+│       │   └── Subsegment: DynamoDB PutItem                         │
+│       │       │───│ 15ms                                           │
 │       │                                                            │
 │       ▼                                                            │
 │  Segment: SNS Publish                                              │
 │       │──│ 10ms                                                    │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```

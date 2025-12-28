@@ -68,8 +68,8 @@ External:
       ┌───────────┼───────────┐
       │   KEEP    │   MANAGE  │
       │ SATISFIED │  CLOSELY  │
-      │           │    ★      │
-──────┼───────────┼───────────┼──────
+      │           │    ★     │
+──────┼───────────┼──────
       │  MINIMAL  │   KEEP    │
       │  EFFORT   │ INFORMED  │
       │           │           │

@@ -25,17 +25,17 @@
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              API Gateway                                            │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  Clients                                                           │
-│  (Web, Mobile, IoT)                                                │
-│      │                                                              │
-│      ▼                                                              │
+┌───────────────────────────────────────────────────────────────────┐
+│              API Gateway                                          │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  Clients                                                          │
+│  (Web, Mobile, IoT)                                               │
+│      │                                                            │
+│      ▼                                                            │
 │  ┌─────────────────────────────────────────────────────────────┐  │
-│  │                    API Gateway                               │  │
-│  │                                                              │  │
+│  │                    API Gateway                               │ │
+│  │                                                              │ │
 │  │  • Request routing                                          │  │
 │  │  • Authentication & Authorization                           │  │
 │  │  • Rate limiting & Throttling                               │  │
@@ -43,17 +43,17 @@
 │  │  • Caching                                                  │  │
 │  │  • SSL termination                                          │  │
 │  │  • API versioning                                           │  │
-│  │                                                              │  │
+│  │                                                              │ │
 │  └─────────────────────────────────────────────────────────────┘  │
-│                        │                                           │
+│                        │                                          │
 │        ┌───────────────┼───────────────┐                          │
 │        ▼               ▼               ▼                          │
-│    ┌────────┐     ┌────────┐     ┌────────┐                      │
-│    │ Lambda │     │  ECS   │     │  HTTP  │                      │
-│    │Function│     │Service │     │Backend │                      │
-│    └────────┘     └────────┘     └────────┘                      │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│    ┌────────┐     ┌────────┐     ┌────────┐                       │
+│    │ Lambda │     │  ECS   │     │  HTTP  │                       │
+│    │Function│     │Service │     │Backend │                       │
+│    └────────┘     └────────┘     └────────┘                       │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -225,31 +225,31 @@ def lambda_handler(event, context):
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Authorization Options                                  │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  IAM Authorization                                                 │
+┌───────────────────────────────────────────────────────────────────┐
+│              Authorization Options                                │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  IAM Authorization                                                │
 │  └── AWS Signature v4                                             │
 │  └── For AWS services, internal APIs                              │
-│                                                                     │
-│  Lambda Authorizer                                                 │
+│                                                                   │
+│  Lambda Authorizer                                                │
 │  └── Custom auth logic in Lambda                                  │
 │  └── JWT validation, database lookup                              │
-│                                                                     │
-│  Cognito Authorizer                                                │
+│                                                                   │
+│  Cognito Authorizer                                               │
 │  └── JWT tokens from Cognito User Pools                           │
 │  └── Best for user authentication                                 │
-│                                                                     │
+│                                                                   │
 │  JWT Authorizer (HTTP API only)                                   │
 │  └── Built-in JWT validation                                      │
-│  └── OIDC providers (Auth0, Okta, etc.)                          │
-│                                                                     │
-│  API Keys                                                          │
+│  └── OIDC providers (Auth0, Okta, etc.)                           │
+│                                                                   │
+│  API Keys                                                         │
 │  └── For rate limiting, not security!                             │
 │  └── Usage plans and quotas                                       │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 

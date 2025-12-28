@@ -61,7 +61,7 @@ def wsgi_app(environ, start_response):
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│                   ASGI vs WSGI                              │
+│                   ASGI vs WSGI                             │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  WSGI                          ASGI                        │
@@ -69,7 +69,7 @@ def wsgi_app(environ, start_response):
 │  Синхронный                    Асинхронный                 │
 │  Только HTTP                   HTTP, WebSocket, HTTP/2     │
 │  Request-Response              Event-driven                │
-│  def app(environ, start)       async def app(scope, recv, send) │
+│  def app(environ, start)       async def app(scope, recv, s│
 │  Один запрос = один поток      Тысячи соединений в одном   │
 │                                event loop                  │
 │                                                            │
@@ -1061,7 +1061,7 @@ application = ProtocolTypeRouter({
 ```
 
 ┌────────────────────────────────────────────────────────────┐
-│              I/O Bound Request Handling                     │
+│              I/O Bound Request Handling                    │
 ├────────────────────────────────────────────────────────────┤
 │                                                            │
 │  WSGI (4 workers):                                         │

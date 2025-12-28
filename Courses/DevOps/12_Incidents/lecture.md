@@ -29,18 +29,18 @@
 ```
 
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Incident Lifecycle                            │
+│                    Incident Lifecycle                           │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
+│                                                                 │
 │  Detection ──▶ Triage ──▶ Response ──▶ Resolution ──▶ Postmortem│
-│      │           │          │            │              │        │
-│      ▼           ▼          ▼            ▼              ▼        │
+│      │           │          │            │              │       │
+│      ▼           ▼          ▼            ▼              ▼       │
 │   Alert      Severity    Mitigation   Root Cause   Lessons      │
 │   fires      assigned   deployed      identified   learned      │
-│                                                                  │
-│  Timeline:                                                       │
+│                                                                 │
+│  Timeline:                                                      │
 │  Minutes    Minutes    Minutes-Hours  Hours-Days   Days-Week    │
-│                                                                  │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 
 ```

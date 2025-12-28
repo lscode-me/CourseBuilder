@@ -26,9 +26,9 @@
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              Multi-Cloud Motivations                                │
+│              Multi-Cloud Motivations                               │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  REASONS FOR                         REASONS AGAINST               │
 │  ───────────                         ───────────────               │
 │  • Avoid vendor lock-in             • Operational complexity       │
@@ -38,12 +38,12 @@
 │  • Negotiation leverage             • Security surface area        │
 │  • Disaster recovery                • Skill requirements           │
 │  • M&A (inherited clouds)           • Data egress costs            │
-│                                                                     │
+│                                                                    │
 │  Reality: Most "multi-cloud" is:                                   │
-│  • Primary cloud + secondary for specific use cases               │
-│  • DR in different cloud                                          │
-│  • SaaS services on various clouds                                │
-│                                                                     │
+│  • Primary cloud + secondary for specific use cases                │
+│  • DR in different cloud                                           │
+│  • SaaS services on various clouds                                 │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -95,29 +95,29 @@ for pattern, details in multicloud_patterns.items():
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Cloud Agnostic Stack                                   │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  APPLICATION LAYER                                                 │
+┌───────────────────────────────────────────────────────────────────┐
+│              Cloud Agnostic Stack                                 │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  APPLICATION LAYER                                                │
 │  ┌──────────────────────────────────────────────────────────────┐ │
 │  │  Cloud-native app (stateless, 12-factor)                     │ │
 │  └──────────────────────────────────────────────────────────────┘ │
-│                            │                                       │
-│  ABSTRACTION LAYER         ▼                                       │
+│                            │                                      │
+│  ABSTRACTION LAYER         ▼                                      │
 │  ┌──────────────────────────────────────────────────────────────┐ │
 │  │  Kubernetes (EKS / GKE / AKS)                                │ │
 │  │  Terraform (multi-cloud IaC)                                 │ │
 │  │  Cloud-agnostic databases (PostgreSQL, MongoDB)              │ │
 │  │  Standard protocols (S3 API, OpenTelemetry)                  │ │
 │  └──────────────────────────────────────────────────────────────┘ │
-│                            │                                       │
-│  CLOUD LAYER               ▼                                       │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
-│  │     AWS     │  │     GCP     │  │    Azure    │              │
-│  └─────────────┘  └─────────────┘  └─────────────┘              │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                            │                                      │
+│  CLOUD LAYER               ▼                                      │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                │
+│  │     AWS     │  │     GCP     │  │    Azure    │                │
+│  └─────────────┘  └─────────────┘  └─────────────┘                │
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -286,20 +286,20 @@ for standard, purpose in cloud_standards.items():
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              CNCF Graduated Projects (Cloud Native Standards)       │
+│              CNCF Graduated Projects (Cloud Native Standards)      │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Orchestration: Kubernetes                                         │
 │  Service Mesh: Istio, Linkerd                                      │
 │  Observability: Prometheus, Jaeger, Fluentd                        │
-│  Storage: Rook, Longhorn                                          │
-│  Networking: CoreDNS, Envoy, CNI                                  │
-│  Security: Falco, OPA                                             │
-│  CI/CD: Argo, Flux                                                │
-│  Runtime: containerd, CRI-O                                       │
-│                                                                     │
-│  Using CNCF projects = more portable cloud-native stack           │
-│                                                                     │
+│  Storage: Rook, Longhorn                                           │
+│  Networking: CoreDNS, Envoy, CNI                                   │
+│  Security: Falco, OPA                                              │
+│  CI/CD: Argo, Flux                                                 │
+│  Runtime: containerd, CRI-O                                        │
+│                                                                    │
+│  Using CNCF projects = more portable cloud-native stack            │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```

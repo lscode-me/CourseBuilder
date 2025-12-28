@@ -50,21 +50,21 @@ for pillar, description in cloud_native_pillars.items():
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│           Traditional vs Cloud Native                               │
+│           Traditional vs Cloud Native                              │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  TRADITIONAL                    CLOUD NATIVE                       │
 │  ───────────                    ────────────                       │
 │  Monolithic                     Microservices                      │
 │  Physical/VMs                   Containers                         │
 │  Manual deployment              CI/CD automation                   │
 │  Vertical scaling               Horizontal scaling                 │
-│  Stateful                       Stateless (12-factor)             │
+│  Stateful                       Stateless (12-factor)              │
 │  Long release cycles            Continuous delivery                │
-│  Ops managed infra              DevOps/Platform teams             │
-│  Pets (named servers)           Cattle (disposable)               │
-│  Waterfall/ITIL                 Agile/DevOps                      │
-│                                                                     │
+│  Ops managed infra              DevOps/Platform teams              │
+│  Pets (named servers)           Cattle (disposable)                │
+│  Waterfall/ITIL                 Agile/DevOps                       │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -104,30 +104,30 @@ for project, description in list(cncf_graduated_projects.items())[:6]:
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    CNCF Trail Map                                   │
+│                    CNCF Trail Map                                  │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  1. CONTAINERIZATION                                               │
 │     └── Docker, containerd, buildah                                │
-│                                                                     │
+│                                                                    │
 │  2. CI/CD                                                          │
-│     └── Jenkins, GitLab CI, GitHub Actions, Argo CD               │
-│                                                                     │
+│     └── Jenkins, GitLab CI, GitHub Actions, Argo CD                │
+│                                                                    │
 │  3. ORCHESTRATION                                                  │
-│     └── Kubernetes (EKS, GKE, AKS)                                │
-│                                                                     │
+│     └── Kubernetes (EKS, GKE, AKS)                                 │
+│                                                                    │
 │  4. OBSERVABILITY                                                  │
-│     └── Prometheus, Grafana, Jaeger, ELK                          │
-│                                                                     │
+│     └── Prometheus, Grafana, Jaeger, ELK                           │
+│                                                                    │
 │  5. SERVICE MESH                                                   │
-│     └── Istio, Linkerd, AWS App Mesh                              │
-│                                                                     │
+│     └── Istio, Linkerd, AWS App Mesh                               │
+│                                                                    │
 │  6. NETWORKING & POLICY                                            │
-│     └── Calico, Cilium, OPA                                       │
-│                                                                     │
+│     └── Calico, Cilium, OPA                                        │
+│                                                                    │
 │  7. DISTRIBUTED DATABASE & STORAGE                                 │
-│     └── Vitess, TiKV, Rook                                        │
-│                                                                     │
+│     └── Vitess, TiKV, Rook                                         │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -175,23 +175,23 @@ for principle, details in cloud_native_principles.items():
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    Pets vs Cattle                                   │
+│                    Pets vs Cattle                                  │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  PETS (Traditional)              CATTLE (Cloud Native)             │
-│  ─────────────────               ─────────────────────            │
+│  ─────────────────               ─────────────────────             │
 │  • Unique names                  • Numbered/random IDs             │
 │  • Manually configured           • Automated provisioning          │
 │  • Carefully maintained          • Easily replaceable              │
 │  • When sick: heal               • When sick: destroy & replace    │
 │  • Long-lived                    • Short-lived/ephemeral           │
-│  • "We can't lose this server"  • "Just spin up another one"      │
-│                                                                     │
+│  • "We can't lose this server"  • "Just spin up another one"       │
+│                                                                    │
 │  Example: "prod-db-master"       Example: "pod-abc123-xyz"         │
-│                                                                     │
+│                                                                    │
 │  "Treat your servers like cattle, not pets."                       │
 │                                  — Randy Bias (2011)               │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -205,32 +205,32 @@ for principle, details in cloud_native_principles.items():
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    Microservices Architecture                       │
+│                    Microservices Architecture                      │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │         ┌──────────────────────────────────────────┐               │
-│         │           API Gateway                     │               │
+│         │           API Gateway                     │              │
 │         └─────────────────┬────────────────────────┘               │
-│                           │                                         │
+│                           │                                        │
 │     ┌─────────────────────┼─────────────────────┐                  │
 │     │                     │                     │                  │
 │     ▼                     ▼                     ▼                  │
-│  ┌──────┐            ┌──────┐            ┌──────┐                 │
+│  ┌──────┐            ┌──────┐            ┌──────┐                  │
 │  │User  │            │Order │            │Product│                 │
-│  │Svc   │            │Svc   │            │Svc   │                 │
-│  └──┬───┘            └──┬───┘            └──┬───┘                 │
+│  │Svc   │            │Svc   │            │Svc   │                  │
+│  └──┬───┘            └──┬───┘            └──┬───┘                  │
 │     │                   │                   │                      │
 │     ▼                   ▼                   ▼                      │
-│  ┌──────┐            ┌──────┐            ┌──────┐                 │
-│  │UserDB│            │OrderDB│           │ProductDB│              │
-│  └──────┘            └──────┘            └──────┘                 │
-│                                                                     │
+│  ┌──────┐            ┌──────┐            ┌──────┐                  │
+│  │UserDB│            │OrderDB│           │ProductDB│               │
+│  └──────┘            └──────┘            └──────┘                  │
+│                                                                    │
 │  Каждый сервис:                                                    │
-│  • Независимо деплоится                                           │
-│  • Имеет свою базу данных                                         │
-│  • Общается через API (REST/gRPC)                                 │
-│  • Может использовать разные технологии                           │
-│                                                                     │
+│  • Независимо деплоится                                            │
+│  • Имеет свою базу данных                                          │
+│  • Общается через API (REST/gRPC)                                  │
+│  • Может использовать разные технологии                            │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```

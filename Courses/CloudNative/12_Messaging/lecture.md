@@ -26,24 +26,24 @@
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              AWS Messaging Services                                 │
+│              AWS Messaging Services                                │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  SQS (Simple Queue Service)                                        │
 │  └── Message queues                                                │
 │  └── Point-to-point                                                │
 │  └── Decoupling, buffering                                         │
-│                                                                     │
+│                                                                    │
 │  SNS (Simple Notification Service)                                 │
 │  └── Pub/Sub messaging                                             │
 │  └── Fan-out to multiple subscribers                               │
 │  └── Push notifications                                            │
-│                                                                     │
+│                                                                    │
 │  EventBridge                                                       │
 │  └── Serverless event bus                                          │
 │  └── Event routing with rules                                      │
 │  └── Schema registry                                               │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -122,27 +122,27 @@ for message in response.get('Messages', []):
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                    SQS Key Concepts                                 │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  VISIBILITY TIMEOUT                                                │
+┌───────────────────────────────────────────────────────────────────┐
+│                    SQS Key Concepts                               │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  VISIBILITY TIMEOUT                                               │
 │  └── Message invisible to other consumers while being processed   │
 │  └── Default: 30 seconds, Max: 12 hours                           │
 │  └── If not deleted, message becomes visible again                │
-│                                                                     │
-│  LONG POLLING                                                      │
+│                                                                   │
+│  LONG POLLING                                                     │
 │  └── Wait for messages (reduces empty responses and cost)         │
 │  └── WaitTimeSeconds: 1-20 seconds                                │
-│                                                                     │
+│                                                                   │
 │  DEAD LETTER QUEUE (DLQ)                                          │
 │  └── Messages that fail processing multiple times                 │
 │  └── For debugging and manual intervention                        │
-│                                                                     │
-│  MESSAGE RETENTION                                                 │
+│                                                                   │
+│  MESSAGE RETENTION                                                │
 │  └── Default: 4 days, Max: 14 days                                │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -155,27 +155,27 @@ for message in response.get('Messages', []):
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    SNS Pub/Sub                                      │
+│                    SNS Pub/Sub                                     │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Publisher                                                         │
-│      │                                                              │
-│      ▼                                                              │
+│      │                                                             │
+│      ▼                                                             │
 │  ┌─────────────────┐                                               │
 │  │   SNS Topic     │                                               │
 │  │  (order-events) │                                               │
 │  └────────┬────────┘                                               │
-│           │                                                         │
-│     ┌─────┼─────┬─────────┬─────────┐                             │
-│     ▼     ▼     ▼         ▼         ▼                             │
-│  ┌─────┐┌─────┐┌─────┐ ┌─────┐ ┌─────────┐                       │
-│  │ SQS ││ SQS ││Lambda│ │Email│ │HTTP/S   │                       │
-│  │Queue││Queue││      │ │     │ │Endpoint │                       │
-│  └─────┘└─────┘└─────┘ └─────┘ └─────────┘                       │
-│                                                                     │
+│           │                                                        │
+│     ┌─────┼─────┬─────────┬─────────┐                              │
+│     ▼     ▼     ▼         ▼         ▼                              │
+│  ┌─────┐┌─────┐┌─────┐ ┌─────┐ ┌─────────┐                         │
+│  │ SQS ││ SQS ││Lambda│ │Email│ │HTTP/S   │                        │
+│  │Queue││Queue││      │ │     │ │Endpoint │                        │
+│  └─────┘└─────┘└─────┘ └─────┘ └─────────┘                         │
+│                                                                    │
 │  Supported Protocols:                                              │
-│  • SQS, Lambda, HTTP/S, Email, SMS, Mobile Push, Firehose         │
-│                                                                     │
+│  • SQS, Lambda, HTTP/S, Email, SMS, Mobile Push, Firehose          │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -230,11 +230,11 @@ response = sns.publish(
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                    EventBridge                                      │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  Event Sources                    Event Bus                        │
+┌───────────────────────────────────────────────────────────────────┐
+│                    EventBridge                                    │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  Event Sources                    Event Bus                       │
 │  ┌──────────────┐               ┌─────────────────┐               │
 │  │ AWS Services │──────────────►│                 │               │
 │  │(EC2,S3,etc.) │               │   default or    │               │
@@ -247,11 +247,11 @@ response = sns.publish(
 │  │   SaaS       │──────────────►│    │ Rule 3  │──┼──► Step Func  │
 │  │(Zendesk,etc.)│               │    └─────────┘  │               │
 │  └──────────────┘               └─────────────────┘               │
-│                                                                     │
+│                                                                   │
 │  Targets: Lambda, SQS, SNS, Step Functions, ECS, API Gateway,     │
 │           Kinesis, CodePipeline, EventBridge (cross-account)      │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -369,12 +369,12 @@ for service, use_cases in decision_guide.items():
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│              SNS + SQS Pattern                                      │
+│              SNS + SQS Pattern                                     │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Publisher                                                         │
-│      │                                                              │
-│      ▼                                                              │
+│      │                                                             │
+│      ▼                                                             │
 │  ┌─────────┐                                                       │
 │  │   SNS   │                                                       │
 │  │  Topic  │                                                       │
@@ -388,13 +388,13 @@ for service, use_cases in decision_guide.items():
 │  ▼         ▼                                                       │
 │Consumer  Consumer                                                  │
 │  A         B                                                       │
-│                                                                     │
+│                                                                    │
 │  Benefits:                                                         │
 │  • Fan-out with persistence                                        │
 │  • Each consumer processes at own pace                             │
 │  • DLQ for failed messages                                         │
 │  • Retry logic per consumer                                        │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```

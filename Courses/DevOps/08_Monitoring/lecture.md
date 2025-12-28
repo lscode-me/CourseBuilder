@@ -45,32 +45,32 @@ monitoring_purposes = {
 
 ```
 
-┌─────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────┐
 │                     Monitoring Stack                             │
-├─────────────────────────────────────────────────────────────────┤
+├──────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  Infrastructure Monitoring                                       │
-│  ├── Hardware (CPU, Memory, Disk, Network)                      │
-│  ├── Operating System metrics                                   │
-│  └── Container metrics (Docker, K8s)                            │
+│  ├── Hardware (CPU, Memory, Disk, Network)                       │
+│  ├── Operating System metrics                                    │
+│  └── Container metrics (Docker, K8s)                             │
 │                                                                  │
 │  Application Monitoring                                          │
-│  ├── Application metrics (requests, latency, errors)            │
-│  ├── Business metrics (orders, revenue, users)                  │
+│  ├── Application metrics (requests, latency, errors)             │
+│  ├── Business metrics (orders, revenue, users)                   │
 │  └── Custom metrics                                              │
 │                                                                  │
 │  Network Monitoring                                              │
-│  ├── Bandwidth, latency, packet loss                            │
+│  ├── Bandwidth, latency, packet loss                             │
 │  └── DNS, SSL certificates                                       │
 │                                                                  │
 │  Synthetic Monitoring                                            │
-│  ├── Uptime checks                                              │
+│  ├── Uptime checks                                               │
 │  └── User journey simulation                                     │
 │                                                                  │
 │  Real User Monitoring (RUM)                                      │
 │  └── Actual user experience metrics                              │
 │                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -112,16 +112,16 @@ metric_types = {
 ```
 
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Prometheus Architecture                       │
+│                    Prometheus Architecture                      │
 ├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐      │
-│  │   Target 1   │    │   Target 2   │    │   Target 3   │      │
-│  │  /metrics    │    │  /metrics    │    │  /metrics    │      │
-│  └──────┬───────┘    └──────┬───────┘    └──────┬───────┘      │
+│                                                                 │
+│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐       │
+│  │   Target 1   │    │   Target 2   │    │   Target 3   │       │
+│  │  /metrics    │    │  /metrics    │    │  /metrics    │       │
+│  └──────┬───────┘    └──────┬───────┘    └──────┬───────┘       │
 │         │                   │                   │               │
 │         └───────────────────┼───────────────────┘               │
-│                             │                                    │
+│                             │                                   │
 │                      ┌──────▼──────┐                            │
 │                      │  Prometheus │                            │
 │                      │   Server    │                            │
@@ -134,15 +134,15 @@ metric_types = {
 │                      │ │ PromQL  │ │◀── Query Language          │
 │                      │ └─────────┘ │                            │
 │                      └──────┬──────┘                            │
-│                             │                                    │
+│                             │                                   │
 │         ┌───────────────────┼───────────────────┐               │
 │         │                   │                   │               │
 │         ▼                   ▼                   ▼               │
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐         │
-│  │   Grafana   │    │ Alertmanager│    │    API      │         │
-│  │             │    │             │    │  Clients    │         │
-│  └─────────────┘    └─────────────┘    └─────────────┘         │
-│                                                                  │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐          │
+│  │   Grafana   │    │ Alertmanager│    │    API      │          │
+│  │             │    │             │    │  Clients    │          │
+│  └─────────────┘    └─────────────┘    └─────────────┘          │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 
 ```

@@ -49,28 +49,28 @@ Electronic Health Record (EHR) системы — это цифровая вер
 ```
 
 ┌─────────────────────────────────────────────────┐
-│            User Interface Layer                  │
+│            User Interface Layer                 │
 │  (Web, Mobile, Desktop Client)                  │
 └─────────────────────────────────────────────────┘
                      ↕
 ┌─────────────────────────────────────────────────┐
-│         Application Services Layer               │
-│  • Patient Management                            │
-│  • Clinical Documentation                        │
+│         Application Services Layer              │
+│  • Patient Management                           │
+│  • Clinical Documentation                       │
 │  • Order Entry (CPOE)                           │
 │  • Clinical Decision Support (CDSS)             │
 │  • Reporting & Analytics                        │
 └─────────────────────────────────────────────────┘
                      ↕
 ┌─────────────────────────────────────────────────┐
-│          Integration Layer                       │
+│          Integration Layer                      │
 │  • HL7 Interface Engine                         │
 │  • FHIR API Gateway                             │
 │  • DICOM Integration                            │
 └─────────────────────────────────────────────────┘
                      ↕
 ┌─────────────────────────────────────────────────┐
-│            Data Layer                            │
+│            Data Layer                           │
 │  • Relational DB (Patient Demographics)         │
 │  • Document Store (Clinical Notes)              │
 │  • BLOB Storage (Images)                        │

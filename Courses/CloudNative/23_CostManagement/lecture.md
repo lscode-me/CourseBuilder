@@ -25,33 +25,33 @@
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              AWS Pricing Models                                     │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ON-DEMAND                                                         │
+┌───────────────────────────────────────────────────────────────────┐
+│              AWS Pricing Models                                   │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  ON-DEMAND                                                        │
 │  └── Pay per use, no commitment                                   │
 │  └── Highest price, maximum flexibility                           │
 │  └── Good for: unpredictable, short-term workloads                │
-│                                                                     │
+│                                                                   │
 │  RESERVED (1 or 3 years)                                          │
 │  └── Up to 72% discount                                           │
 │  └── Commit to specific instance type/region                      │
 │  └── Payment: All upfront, Partial, No upfront                    │
 │  └── Good for: steady-state, predictable workloads                │
-│                                                                     │
-│  SAVINGS PLANS                                                     │
+│                                                                   │
+│  SAVINGS PLANS                                                    │
 │  └── Flexible alternative to Reserved                             │
 │  └── Commit to $/hour spend, not instance type                    │
 │  └── Compute SP: EC2, Fargate, Lambda                             │
 │  └── EC2 Instance SP: specific instance family                    │
-│                                                                     │
-│  SPOT INSTANCES                                                    │
+│                                                                   │
+│  SPOT INSTANCES                                                   │
 │  └── Up to 90% discount                                           │
 │  └── Can be interrupted with 2-min notice                         │
 │  └── Good for: batch, CI/CD, fault-tolerant workloads             │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -112,12 +112,12 @@ right_sizing_targets = {
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Cost-Efficient Architecture                            │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  INSTEAD OF                  CONSIDER                              │
-│  ──────────                  ────────                              │
+┌───────────────────────────────────────────────────────────────────┐
+│              Cost-Efficient Architecture                          │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  INSTEAD OF                  CONSIDER                             │
+│  ──────────                  ────────                             │
 │  Always-on EC2              Auto Scaling (scale to 0)             │
 │  EC2 for batch jobs         Lambda or Spot instances              │
 │  Provisioned throughput     On-Demand capacity (DynamoDB)         │
@@ -126,8 +126,8 @@ right_sizing_targets = {
 │  NAT Gateway                NAT Instance (for low traffic)        │
 │  Multiple Load Balancers    Shared ALB with path routing          │
 │  Cross-region data transfer CloudFront for distribution           │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 

@@ -38,8 +38,8 @@
 ```
 
 ┌─────────────────────────────────┐
-│  Tape Header  │  Data Blocks   │
-│  (metadata)   │  (sequential)  │
+│  Tape Header  │  Data Blocks    │
+│  (metadata)   │  (sequential)   │
 └─────────────────────────────────┘
 ```
 
@@ -138,7 +138,7 @@ LTO-9: 18 TB native, 45 TB compressed
 ```
 
 ┌─────────────────────────┐
-│  Platter (магнитный диск)│
+│  Platter (магнитный диск│
 │  ├── Track (дорожка)    │
 │  │   └── Sector (сектор)│
 │  └── Head (головка)     │

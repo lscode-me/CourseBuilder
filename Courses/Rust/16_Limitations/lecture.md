@@ -369,7 +369,7 @@ fn main() -> std::io::Result<()> {
 │ Frontend: TypeScript/React          │
 │ Backend API: Rust (actix-web)       │
 │ Data Processing: Python (Pandas)    │
-│ ML Model: Python (scikit-learn)    │
+│ ML Model: Python (scikit-learn)     │
 │ Critical Path: Rust (интеграция)    │
 └─────────────────────────────────────┘
 ```

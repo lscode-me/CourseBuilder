@@ -413,11 +413,11 @@ What's happening? When will this be fixed?
 │                                                                         │
 │ DEVELOPMENT ACTIONS:                                                    │
 │                                                                         │
-│ # │ Action                        │ Resources        │ Timeline        │
-│ ──┼───────────────────────────────┼──────────────────┼─────────────────│
-│ 1 │ [Specific action]             │ [Book/course]    │ [Weeks]         │
-│ 2 │ [Specific action]             │ [Mentor/coach]   │ [Weeks]         │
-│ 3 │ [Practical experience]        │ [Project]        │ [Weeks]         │
+│ # │ Action                        │ Resources        │ Timeline         │
+│ ──┼───────────────────────────────┼──────────────────┼───────────────── │
+│ 1 │ [Specific action]             │ [Book/course]    │ [Weeks]          │
+│ 2 │ [Specific action]             │ [Mentor/coach]   │ [Weeks]          │
+│ 3 │ [Practical experience]        │ [Project]        │ [Weeks]          │
 │                                                                         │
 │ CHECK-IN SCHEDULE:                                                      │
 │ • 30-day review: [Date]                                                 │

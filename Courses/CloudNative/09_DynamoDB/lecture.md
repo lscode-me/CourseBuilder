@@ -84,27 +84,27 @@ for case in not_a_fit[:3]:
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                    DynamoDB Data Model                              │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  TABLE                                                             │
-│  └── Collection of Items (like rows)                               │
-│                                                                     │
-│  ITEM                                                              │
-│  └── Collection of Attributes (like columns)                       │
+┌───────────────────────────────────────────────────────────────────┐
+│                    DynamoDB Data Model                            │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  TABLE                                                            │
+│  └── Collection of Items (like rows)                              │
+│                                                                   │
+│  ITEM                                                             │
+│  └── Collection of Attributes (like columns)                      │
 │  └── Max size: 400 KB                                             │
-│                                                                     │
-│  PRIMARY KEY (required)                                            │
+│                                                                   │
+│  PRIMARY KEY (required)                                           │
 │  ├── Partition Key (PK) only                                      │
 │  │   └── Single attribute                                         │
 │  │   └── Hash-based distribution                                  │
-│  │                                                                 │
+│  │                                                                │
 │  └── Partition Key + Sort Key (PK + SK)                           │
-│      └── Composite primary key                                     │
+│      └── Composite primary key                                    │
 │      └── Items with same PK stored together, sorted by SK         │
-│                                                                     │
-│  EXAMPLE:                                                          │
+│                                                                   │
+│  EXAMPLE:                                                         │
 │  ┌────────────┬────────────┬──────────┬──────────────┐            │
 │  │ PK (user)  │ SK (order) │ product  │ amount       │            │
 │  ├────────────┼────────────┼──────────┼──────────────┤            │
@@ -112,8 +112,8 @@ for case in not_a_fit[:3]:
 │  │ user123    │ order#002  │ gadget   │ 49.99        │            │
 │  │ user456    │ order#001  │ thing    │ 19.99        │            │
 │  └────────────┴────────────┴──────────┴──────────────┘            │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -143,14 +143,14 @@ for case in not_a_fit[:3]:
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                    Global Secondary Index                           │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  BASE TABLE                    GSI                                 │
+┌───────────────────────────────────────────────────────────────────┐
+│                    Global Secondary Index                         │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  BASE TABLE                    GSI                                │
 │  PK: user_id                   PK: email                          │
 │  SK: order_id                  SK: created_at                     │
-│                                                                     │
+│                                                                   │
 │  ┌─────────┬─────────┐        ┌─────────────┬────────────┐        │
 │  │ user_id │order_id │        │ email       │ created_at │        │
 │  ├─────────┼─────────┤   ──►  ├─────────────┼────────────┤        │
@@ -158,15 +158,15 @@ for case in not_a_fit[:3]:
 │  │ u1      │ o2      │        │ a@test.com  │ 2024-01-02 │        │
 │  │ u2      │ o1      │        │ b@test.com  │ 2024-01-01 │        │
 │  └─────────┴─────────┘        └─────────────┴────────────┘        │
-│                                                                     │
+│                                                                   │
 │  GSI Характеристики:                                              │
-│  • Можно создать до 20 GSI на таблицу                            │
+│  • Можно создать до 20 GSI на таблицу                             │
 │  • Другой PK и/или SK                                             │
-│  • Eventually consistent reads only                                │
+│  • Eventually consistent reads only                               │
 │  • Отдельная capacity (своя RCU/WCU)                              │
 │  • Можно создать после таблицы                                    │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -292,9 +292,9 @@ response = table.scan(
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    Capacity Modes                                   │
+│                    Capacity Modes                                  │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  ON-DEMAND                       PROVISIONED                       │
 │  ─────────                       ───────────                       │
 │  • Pay per request               • Pay for RCU/WCU per hour        │
@@ -302,16 +302,16 @@ response = table.scan(
 │  • No capacity planning          • Capacity planning required      │
 │  • Good for unpredictable        • Good for predictable workloads  │
 │  • Higher per-request cost       • Lower cost at steady traffic    │
-│                                                                     │
+│                                                                    │
 │  Pricing (us-east-1):                                              │
 │  On-Demand:                                                        │
 │    Write: $1.25 per million WRU                                    │
 │    Read:  $0.25 per million RRU                                    │
-│                                                                     │
+│                                                                    │
 │  Provisioned:                                                      │
-│    WCU: $0.00065 per hour                                         │
-│    RCU: $0.00013 per hour                                         │
-│                                                                     │
+│    WCU: $0.00065 per hour                                          │
+│    RCU: $0.00013 per hour                                          │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -352,27 +352,27 @@ print(f"Writing 50 items/sec (3KB each): {calculate_wcu(3, 50)} WCU")
 ```
 
 ┌────────────────────────────────────────────────────────────────────┐
-│                    DynamoDB Streams                                 │
+│                    DynamoDB Streams                                │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
+│                                                                    │
 │  Application ──► DynamoDB Table ──► Stream ──► Lambda              │
 │                       │                           │                │
 │                       │                           ▼                │
 │                       │                      Process changes       │
 │                       │                      - Send notifications  │
 │                       │                      - Update search index │
-│                       │                      - Replicate to other DB│
+│                       │                      - Replicate to other D│
 │                       │                      - Analytics           │
 │                       │                                            │
 │  Stream Record Types:                                              │
-│  • KEYS_ONLY: only the key attributes                             │
+│  • KEYS_ONLY: only the key attributes                              │
 │  • NEW_IMAGE: entire item after modification                       │
 │  • OLD_IMAGE: entire item before modification                      │
-│  • NEW_AND_OLD_IMAGES: both before and after                      │
-│                                                                     │
+│  • NEW_AND_OLD_IMAGES: both before and after                       │
+│                                                                    │
 │  Retention: 24 hours                                               │
 │  Ordering: per-partition key ordered                               │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 
 ```
@@ -411,27 +411,27 @@ dax_features = {
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│                    Global Tables                                    │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│         us-east-1                        eu-west-1                 │
+┌───────────────────────────────────────────────────────────────────┐
+│                    Global Tables                                  │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│         us-east-1                        eu-west-1                │
 │    ┌─────────────────┐              ┌─────────────────┐           │
 │    │   DynamoDB      │◄────────────►│   DynamoDB      │           │
 │    │   Table         │  Multi-master│   Table         │           │
 │    │   (replica)     │  Replication │   (replica)     │           │
 │    └─────────────────┘              └─────────────────┘           │
-│            ▲                                ▲                      │
-│            │                                │                      │
+│            ▲                                ▲                     │
+│            │                                │                     │
 │    US Users write/read              EU Users write/read           │
-│                                                                     │
-│  Характеристики:                                                   │
+│                                                                   │
+│  Характеристики:                                                  │
 │  • Multi-master (read/write to any region)                        │
 │  • Async replication (< 1 second typically)                       │
 │  • Conflict resolution: last writer wins                          │
 │  • 99.999% availability SLA                                       │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 

@@ -25,16 +25,16 @@
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              CI/CD Pipeline                                         │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  SOURCE          BUILD           TEST           DEPLOY             │
-│  ──────          ─────           ────           ──────             │
-│  ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐        │
-│  │ Git     │───►│ Compile │───►│ Unit    │───►│ Staging │        │
-│  │ push    │    │ Package │    │ tests   │    │         │        │
-│  └─────────┘    │ Docker  │    │ Lint    │    └────┬────┘        │
+┌───────────────────────────────────────────────────────────────────┐
+│              CI/CD Pipeline                                       │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  SOURCE          BUILD           TEST           DEPLOY            │
+│  ──────          ─────           ────           ──────            │
+│  ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐         │
+│  │ Git     │───►│ Compile │───►│ Unit    │───►│ Staging │         │
+│  │ push    │    │ Package │    │ tests   │    │         │         │
+│  └─────────┘    │ Docker  │    │ Lint    │    └────┬────┘         │
 │                 └─────────┘    │ SAST    │         │              │
 │                                └─────────┘         │              │
 │                                                    ▼              │
@@ -48,12 +48,12 @@
 │                                              │ Prod    │          │
 │                                              │ Deploy  │          │
 │                                              └─────────┘          │
-│                                                                     │
+│                                                                   │
 │  CI (Continuous Integration): Build → Test (automated)            │
 │  CD (Continuous Delivery): Deploy to staging (automated)          │
 │  CD (Continuous Deployment): Deploy to prod (automated, optional) │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 
@@ -246,38 +246,38 @@ Resources:
 
 ```
 
-┌────────────────────────────────────────────────────────────────────┐
-│              Deployment Strategies                                  │
-├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ROLLING                                                           │
-│  ───────                                                           │
+┌───────────────────────────────────────────────────────────────────┐
+│              Deployment Strategies                                │
+├───────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  ROLLING                                                          │
+│  ───────                                                          │
 │  [v1][v1][v1][v1] → [v2][v1][v1][v1] → [v2][v2][v1][v1] → [v2]x4  │
 │  • Replace instances one by one                                   │
 │  • Zero downtime                                                  │
 │  • Mixed versions during rollout                                  │
-│                                                                     │
-│  BLUE/GREEN                                                        │
-│  ──────────                                                        │
+│                                                                   │
+│  BLUE/GREEN                                                       │
+│  ──────────                                                       │
 │  [BLUE: v1] ──── switch ────► [GREEN: v2]                         │
 │  • Run two environments                                           │
 │  • Instant rollback                                               │
 │  • Higher cost (2x resources briefly)                             │
-│                                                                     │
-│  CANARY                                                            │
-│  ──────                                                            │
-│  [v1: 90%] [v2: 10%] → [v1: 50%] [v2: 50%] → [v2: 100%]          │
+│                                                                   │
+│  CANARY                                                           │
+│  ──────                                                           │
+│  [v1: 90%] [v2: 10%] → [v1: 50%] [v2: 50%] → [v2: 100%]           │
 │  • Gradual traffic shift                                          │
-│  • Monitor metrics between shifts                                  │
+│  • Monitor metrics between shifts                                 │
 │  • Automatic rollback on errors                                   │
-│                                                                     │
-│  ALL-AT-ONCE                                                       │
-│  ───────────                                                       │
+│                                                                   │
+│  ALL-AT-ONCE                                                      │
+│  ───────────                                                      │
 │  [v1][v1][v1][v1] → [v2][v2][v2][v2]                              │
 │  • Fastest, but risky                                             │
 │  • Downtime during deploy                                         │
-│                                                                     │
-└────────────────────────────────────────────────────────────────────┘
+│                                                                   │
+└───────────────────────────────────────────────────────────────────┘
 
 ```
 

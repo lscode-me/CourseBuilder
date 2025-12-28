@@ -131,7 +131,7 @@
                   │   IMMINENT      │   REQUIRED │
                   │   (готовьте     │   (action!)│
                   │   exit plan)    │            │
-                   ─────────────────────────────
+                   ────────────────────────────────
 
 ```
 
@@ -272,59 +272,59 @@
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                         │
 │ 1. CURRENT STATE ASSESSMENT                                             │
-│ ─────────────────────────────────────────────────────────────────────  │
-│ • Team: 5 developers (1 TL, 2 Senior, 2 Middle)                        │
-│ • Delivery: 45 SP/sprint average, 92% predictability                  │
-│ • Quality: 2.1 escaped defects/month                                   │
+│ ─────────────────────────────────────────────────────────────────────   │
+│ • Team: 5 developers (1 TL, 2 Senior, 2 Middle)                         │
+│ • Delivery: 45 SP/sprint average, 92% predictability                    │
+│ • Quality: 2.1 escaped defects/month                                    │
 │ • NPS: +42                                                              │
 │ • Revenue: $55,000/month                                                │
 │                                                                         │
 │ 2. ACHIEVEMENTS (Last Quarter)                                          │
-│ ─────────────────────────────────────────────────────────────────────  │
+│ ─────────────────────────────────────────────────────────────────────   │
 │ ✅ Delivered payment integration on time                                │
 │ ✅ Reduced app load time by 40%                                         │
 │ ✅ Zero P1 incidents                                                    │
 │ ✅ Successfully onboarded 2 new team members                            │
 │                                                                         │
 │ 3. IMPROVEMENT OPPORTUNITIES                                            │
-│ ─────────────────────────────────────────────────────────────────────  │
+│ ─────────────────────────────────────────────────────────────────────   │
 │                                                                         │
 │ OPPORTUNITY 1: Increase Release Frequency                               │
 │ Current: Monthly releases                                               │
 │ Target: Bi-weekly releases                                              │
 │ How: Add DevOps engineer, implement feature flags                       │
 │ Investment: +1 DevOps ($8K/month)                                       │
-│ Benefit: Faster time to market, competitive advantage                  │
+│ Benefit: Faster time to market, competitive advantage                   │
 │                                                                         │
 │ OPPORTUNITY 2: Improve Test Coverage                                    │
 │ Current: 60% code coverage                                              │
 │ Target: 80% code coverage                                               │
 │ How: Add QA automation engineer                                         │
 │ Investment: +1 QA ($6K/month)                                           │
-│ Benefit: Fewer bugs, faster releases, lower support cost               │
+│ Benefit: Fewer bugs, faster releases, lower support cost                │
 │                                                                         │
 │ OPPORTUNITY 3: New Mobile Platform                                      │
 │ Current: iOS only                                                       │
 │ Target: iOS + Android                                                   │
 │ How: Add cross-platform team                                            │
 │ Investment: +3 developers ($25K/month)                                  │
-│ Benefit: 2x market reach, Android market share                         │
+│ Benefit: 2x market reach, Android market share                          │
 │                                                                         │
 │ 4. RECOMMENDED ROADMAP                                                  │
-│ ─────────────────────────────────────────────────────────────────────  │
+│ ─────────────────────────────────────────────────────────────────────   │
 │                                                                         │
-│ Q1: Add DevOps (+$8K/month)                                            │
-│ Q2: Add QA Automation (+$6K/month)                                     │
-│ Q3: Start Android team (+$25K/month)                                   │
+│ Q1: Add DevOps (+$8K/month)                                             │
+│ Q2: Add QA Automation (+$6K/month)                                      │
+│ Q3: Start Android team (+$25K/month)                                    │
 │                                                                         │
-│ Total investment by Q3: +$39K/month (+71%)                             │
-│ Expected benefits: 2x release speed, 2x market reach                   │
+│ Total investment by Q3: +$39K/month (+71%)                              │
+│ Expected benefits: 2x release speed, 2x market reach                    │
 │                                                                         │
 │ 5. NEXT STEPS                                                           │
-│ ─────────────────────────────────────────────────────────────────────  │
-│ □ Schedule roadmap discussion with client leadership                   │
-│ □ Prepare detailed proposal for DevOps addition                        │
-│ □ Conduct Android market analysis with product team                    │
+│ ─────────────────────────────────────────────────────────────────────   │
+│ □ Schedule roadmap discussion with client leadership                    │
+│ □ Prepare detailed proposal for DevOps addition                         │
+│ □ Conduct Android market analysis with product team                     │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 
@@ -352,7 +352,7 @@
 │ Signals   │─────▶│ Discovery │─────▶│ Proposal  │─────▶│ Staffing  │
 │ Analysis  │      │ Call      │      │ & SOW     │      │ Onboarding│
 └───────────┘      └───────────┘      └───────────┘      └───────────┘
-     │                  │                  │                  │
+     │                  │                  │                              │
    1-2 weeks          1-2 weeks         2-4 weeks          2-4 weeks
 
 ```
@@ -470,7 +470,7 @@ NEXT STEPS:
             LOW   │                 │              │
                   │   MAINTAIN      │   RECOVER    │
                   │   (minimal)     │   (urgent)   │
-                   ─────────────────────────────────
+                   ──────────────────────────────────
 
   STRATEGIC (High satisfaction + Large budget):
   → Maximum investment in growth

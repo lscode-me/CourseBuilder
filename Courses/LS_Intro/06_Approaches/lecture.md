@@ -217,7 +217,7 @@ Orchestrator Engine
     ↓
 ┌─────────────────────────────────────┐
 │  Task Scheduling & Execution        │
-│  - Dependency resolution           │
+│  - Dependency resolution            │
 │  - Resource management              │
 │  - Error handling & retry           │
 │  - Monitoring & logging             │
@@ -337,16 +337,16 @@ Workflow Orchestration:
 ```
 
 ┌─────────────────────────────────────────┐
-│      Reproducible Research Stack         │
+│      Reproducible Research Stack        │
 ├─────────────────────────────────────────┤
 │  Code: Git versioning, documentation    │
-│  ↓                                       │
+│  ↓                                      │
 │  Data: Versioning, metadata, provenance │
-│  ↓                                       │
+│  ↓                                      │
 │  Environment: Containers, dependencies  │
-│  ↓                                       │
+│  ↓                                      │
 │  Workflow: Automation, parametrization  │
-│  ↓                                       │
+│  ↓                                      │
 │  Results: Reports, visualizations       │
 └─────────────────────────────────────────┘
 ```
@@ -484,12 +484,12 @@ Workflow:
 │         HPC Cluster                 │
 ├─────────────────────────────────────┤
 │  Login Node (доступ)                │
-│  ↓                                   │
-│  Scheduler (SLURM, PBS)            │
-│  ↓                                   │
+│  ↓                                  │
+│  Scheduler (SLURM, PBS)             │
+│  ↓                                  │
 │  Compute Nodes (вычисления)         │
-│  - CPU nodes                         │
-│  - GPU nodes                         │
+│  - CPU nodes                        │
+│  - GPU nodes                        │
 │  - High-memory nodes                │
 └─────────────────────────────────────┘
 ```
@@ -533,13 +533,13 @@ Workflow:
 │         Cloud Platform              │
 ├─────────────────────────────────────┤
 │  Management Layer                   │
-│  ↓                                   │
+│  ↓                                  │
 │  Virtualization Layer               │
-│  ↓                                   │
+│  ↓                                  │
 │  Compute Resources                  │
 │  - Virtual machines                 │
 │  - Containers                       │
-│  - Serverless                        │
+│  - Serverless                       │
 └─────────────────────────────────────┘
 ```
 
