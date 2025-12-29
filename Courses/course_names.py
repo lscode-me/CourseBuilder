@@ -89,6 +89,11 @@ COURSE_NAMES = {
         "name": "English Grammar C2",
         "sections": {"Soft Skills"}
     },
+    "Finance": {
+        "icon": "💰",
+        "name": "Корпоративные финансы",
+        "sections": {"Soft Skills"}
+    },
     "Go": {
         "icon": "🐹",
         "name": "Go",
@@ -148,6 +153,11 @@ COURSE_NAMES = {
         "icon": "🗃️",
         "name": "SQL",
         "sections": {"Data"}
+    },
+    "Taxes": {
+        "icon": "🧾",
+        "name": "Налоги",
+        "sections": {"Soft Skills"}
     },
     "UnixProgramming": {
         "icon": "🖥️",
