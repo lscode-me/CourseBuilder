@@ -28,57 +28,15 @@
 
 ## 1. Performance Tuning
 
+Оптимизация производительности научных pipeline критически важна для эффективной работы с большими данными. Неоптимизированные pipeline могут работать дни или недели, в то время как оптимизированные могут выполнить ту же работу за часы.
+
 ### 1.1 Профилирование и оптимизация
 
-**Пример: Выявление узких мест**
+Профилирование — это первый шаг к оптимизации. Без понимания того, где тратится время, невозможно эффективно оптимизировать код. Принцип Парето применим и здесь: обычно 80% времени тратится на 20% кода.
 
-```python
+Профилирование pipeline позволяет выявить узкие места (bottlenecks) — этапы, которые занимают непропорционально много времени. Например, если pipeline состоит из трёх этапов (load: 0.1s, process: 0.5s, save: 0.1s), то этап 'process' занимает более 70% общего времени и является узким местом. Оптимизация этого этапа даст наибольший эффект.
 
-import time
-import cProfile
-
-def profile_pipeline(steps):
-    """Профилирование pipeline"""
-    step_times = {}
-    total_start = time.time()
-    
-    for step_name, step_func in steps.items():
-        step_start = time.time()
-        result = step_func()
-        step_time = time.time() - step_start
-        step_times[step_name] = step_time
-        print(f"{step_name}: {step_time:.4f}s")
-    
-    total_time = time.time() - total_start
-    print(f"\nTotal time: {total_time:.4f}s")
-    
-    # Выявление узких мест
-    bottlenecks = [s for s, t in step_times.items() if t > total_time * 0.2]
-    if bottlenecks:
-        print(f"Bottlenecks (>20% of total): {bottlenecks}")
-    
-    return step_times
-
-# Пример
-steps = {
-    'load': lambda: time.sleep(0.1),
-    'process': lambda: time.sleep(0.5),  # Узкое место
-    'save': lambda: time.sleep(0.1)
-}
-
-profile_pipeline(steps)
-```
-
-**Output:**
-```
-
-load: 0.1001s
-process: 0.5002s
-save: 0.1001s
-
-Total time: 0.7004s
-Bottlenecks (>20% of total): ['process']
-```
+Важно помнить, что преждевременная оптимизация — это корень всех зол. Оптимизация должна основываться на профилировании, а не на предположениях о том, где могут быть проблемы.
 
 ### 1.2 Оптимизация алгоритмов
 

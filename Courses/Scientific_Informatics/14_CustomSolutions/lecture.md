@@ -28,60 +28,20 @@
 
 ## 1. Domain-Specific Pipelines
 
+Каждая научная область имеет свои специфические требования к обработке данных, которые требуют специализированных pipeline. Эти pipeline объединяют различные инструменты в единый рабочий процесс, оптимизированный для конкретных научных задач.
+
 ### 1.1 Проектирование pipeline
 
-**Domain-specific pipeline** — pipeline, разработанный для конкретной научной области.
+**Domain-specific pipeline** — pipeline, разработанный для конкретной научной области. В отличие от универсальных инструментов, domain-specific pipeline оптимизированы для конкретных типов данных и задач, что делает их более эффективными и удобными для исследователей.
 
-**Пример: Pipeline для геномного анализа**
-
-```python
-# Концепция domain-specific pipeline для геномного анализа
-genomics_pipeline = {
-    'input': {
-        'format': 'FASTA/BAM',
-        'sources': ['sequencing_machine', 'database']
-    },
-    'steps': [
-        {
-            'name': 'Quality control',
-            'tool': 'FastQC',
-            'output': 'qc_report.html'
-        },
-        {
-            'name': 'Alignment',
-            'tool': 'BWA/Bowtie',
-            'output': 'aligned.bam'
-        },
-        {
-            'name': 'Variant calling',
-            'tool': 'GATK',
-            'output': 'variants.vcf'
-        },
-        {
-            'name': 'Annotation',
-            'tool': 'ANNOVAR',
-            'output': 'annotated_variants.vcf'
-        }
-    ],
-    'output': {
-        'format': 'VCF',
-        'metadata': 'Full pipeline metadata'
-    }
-}
-
-print("Genomics Pipeline:")
-for step in genomics_pipeline['steps']:
-    print(f"  {step['name']}: {step['tool']} -> {step['output']}")
-```
-
-**Output:**
-```
+Например, pipeline для геномного анализа включает несколько этапов: (1) Quality control с использованием FastQC для проверки качества данных секвенирования, (2) Alignment с использованием BWA или Bowtie для выравнивания последовательностей на референсный геном, (3) Variant calling с использованием GATK для обнаружения генетических вариантов, (4) Annotation с использованием ANNOVAR для аннотации вариантов. Каждый этап использует специализированные инструменты и производит выходные данные, которые становятся входными для следующего этапа. Это критически важно для геномного анализа, где каждый этап требует специфических знаний и инструментов.
 
 Genomics Pipeline:
   Quality control: FastQC -> qc_report.html
   Alignment: BWA/Bowtie -> aligned.bam
   Variant calling: GATK -> variants.vcf
   Annotation: ANNOVAR -> annotated_variants.vcf
+
 ```
 
 ### 1.2 Адаптация под требования
@@ -121,12 +81,14 @@ class ConfigurablePipeline:
         return results
 
 # Пример использования
+
 pipeline = ConfigurablePipeline({})
 pipeline.add_step('QC', 'FastQC', condition=lambda d: d.get('needs_qc', True))
 pipeline.add_step('Analysis', 'CustomTool')
 
 data = {'needs_qc': False}
 results = pipeline.execute(data)
+
 ```
 
 **Output:**
@@ -134,6 +96,7 @@ results = pipeline.execute(data)
 
 Skipping QC (condition not met)
 Executing Analysis with CustomTool
+
 ```
 
 ---
@@ -177,9 +140,11 @@ class AutomatedDataCollection:
         print(f"Scheduled data collection every {interval_minutes} minutes")
 
 # Пример
+
 collector = AutomatedDataCollection()
 collector.schedule_collection(interval_minutes=60)
 print("Automated data collection configured")
+
 ```
 
 **Output:**
@@ -187,6 +152,7 @@ print("Automated data collection configured")
 
 Scheduled data collection every 60 minutes
 Automated data collection configured
+
 ```
 
 ### 2.2 Автоматизация анализа
@@ -224,12 +190,14 @@ class AutomatedAnalysis:
         return report
 
 # Пример
+
 config = {'calculate_mean': True, 'calculate_std': True}
 analyzer = AutomatedAnalysis(config)
 data = np.array([1, 2, 3, 4, 5])
 result = analyzer.run_analysis(data)
 report = analyzer.generate_report()
 print(report)
+
 ```
 
 **Output:**
@@ -238,6 +206,7 @@ print(report)
 Analysis Report
 Total analyses: 1
 Latest result: {'mean': 3.0, 'std': 1.4142135623730951}
+
 ```
 
 ---
@@ -281,15 +250,18 @@ class LIMSIntegration:
         return True
 
 # Пример использования
+
 lims = LIMSIntegration('https://lims.example.com/api')
 samples = lims.fetch_samples('EXP-001')
 print(f"Fetched {len(samples)} samples from LIMS")
+
 ```
 
 **Output:**
 ```
 
 Fetched 2 samples from LIMS
+
 ```
 
 ### 3.2 Интеграция с инструментами
@@ -331,10 +303,12 @@ class InstrumentIntegration:
         return True
 
 # Пример
+
 instrument = InstrumentIntegration('Spectrophotometer')
 instrument.connect()
 data = instrument.read_data()
 print(f"Read data: {data}")
+
 ```
 
 **Output:**
@@ -342,6 +316,7 @@ print(f"Read data: {data}")
 
 Connecting to Spectrophotometer...
 Read data: {'timestamp': '2024-01-15T10:30:00', 'measurements': [10.5, 10.6, 10.4], 'metadata': {'instrument': 'Spectrophotometer'}}
+
 ```
 
 ---
@@ -387,6 +362,7 @@ class ScientificTool:
         }
 
 # Специализированный инструмент
+
 class SequenceAnalyzer(ScientificTool):
     """Анализатор последовательностей"""
     
@@ -410,16 +386,19 @@ class SequenceAnalyzer(ScientificTool):
         return analysis
 
 # Пример использования
+
 analyzer = SequenceAnalyzer()
 sequence = "ATGCGATCGATCG"
 result = analyzer.analyze(sequence)
 print(f"Analysis result: {result}")
+
 ```
 
 **Output:**
 ```
 
 Analysis result: {'length': 13, 'gc_content': 53.84615384615385, 'nucleotide_counts': {'A': 4, 'T': 3, 'G': 3, 'C': 3}}
+
 ```
 
 ### 4.2 Best Practices разработки
@@ -436,6 +415,7 @@ Analysis result: {'length': 13, 'gc_content': 53.84615384615385, 'nucleotide_cou
 
 ```python
 # Структура научного инструмента
+
 project_structure = {
     'src/': {
         'main.py': 'Entry point',
@@ -461,6 +441,7 @@ for folder, contents in project_structure.items():
     if isinstance(contents, dict):
         for file, desc in contents.items():
             print(f"  {file}: {desc}")
+
 ```
 
 **Output:**
@@ -483,6 +464,7 @@ docs/
 
 config/
   default.yaml: Default configuration
+
 ```
 
 ---
@@ -531,5 +513,6 @@ config/
 - [Scientific Python Development](https://scipy-dev.scipy.org/)
 
 ---
+
 
 

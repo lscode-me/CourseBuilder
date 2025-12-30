@@ -28,57 +28,21 @@
 
 ## 1. Data Governance в научных проектах
 
+Data Governance — это не просто техническая задача, а комплексный подход к управлению данными, который включает политики, процессы, роли и мониторинг. В научных проектах это критически важно для обеспечения качества данных, соблюдения требований и эффективного использования данных.
+
 ### 1.1 Принципы Data Governance
 
-**Data Governance** — управление доступностью, целостностью и безопасностью данных.
+**Data Governance** — управление доступностью, целостностью и безопасностью данных. Это не одноразовая задача, а непрерывный процесс, который должен быть интегрирован во все аспекты работы с данными.
 
 **Компоненты:**
 
-- **Политики** — правила работы с данными
+- **Политики** — правила работы с данными. Политики определяют классификацию данных по чувствительности, периоды хранения данных, контроль доступа (кто может получить доступ к каким данным). Это критически важно для соблюдения требований и защиты данных.
 
-- **Процессы** — процедуры управления
+- **Процессы** — процедуры управления. Процессы включают workflow для одобрения доступа к данным, проверки качества данных и валидации, управления жизненным циклом данных (от создания до архивирования). Это обеспечивает систематический подход к работе с данными.
 
-- **Ответственность** — роли и обязанности
+- **Ответственность** — роли и обязанности. Чёткое определение ролей (data owner — ответственный за данные, data steward — управляет качеством данных, data user — использует данные для исследований) критически важно для эффективного управления данными.
 
-- **Мониторинг** — отслеживание использования
-
-**Пример: Структура Data Governance**
-
-```python
-# Структура Data Governance
-data_governance = {
-    'policies': {
-        'data_classification': 'Classify data by sensitivity',
-        'retention': 'Define data retention periods',
-        'access_control': 'Who can access what data'
-    },
-    'processes': {
-        'data_approval': 'Approval workflow for data access',
-        'data_quality': 'Quality checks and validation',
-        'data_lifecycle': 'From creation to archival'
-    },
-    'roles': {
-        'data_owner': 'Responsible for data',
-        'data_steward': 'Manages data quality',
-        'data_user': 'Uses data for research'
-    },
-    'monitoring': {
-        'access_logs': 'Track who accessed what',
-        'usage_metrics': 'Monitor data usage',
-        'compliance_checks': 'Verify compliance'
-    }
-}
-
-print("Data Governance Structure:")
-for component, details in data_governance.items():
-    print(f"\n{component.upper()}:")
-    if isinstance(details, dict):
-        for key, value in details.items():
-            print(f"  {key}: {value}")
-```
-
-**Output:**
-```
+- **Мониторинг** — отслеживание использования. Мониторинг включает логи доступа (отслеживание того, кто получил доступ к каким данным), метрики использования (мониторинг использования данных), проверки соответствия (проверка соблюдения требований). Это позволяет выявлять проблемы и обеспечивать соблюдение политик.
 
 Data Governance Structure:
 
@@ -101,6 +65,7 @@ MONITORING:
   access_logs: Track who accessed what
   usage_metrics: Monitor data usage
   compliance_checks: Verify compliance
+
 ```
 
 ### 1.2 Классификация данных
@@ -109,6 +74,7 @@ MONITORING:
 
 ```python
 # Классификация данных по чувствительности
+
 data_classification = {
     'public': {
         'description': 'Publicly available data',
@@ -137,6 +103,7 @@ for level, details in data_classification.items():
     print(f"\n{level.upper()}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 **Output:**
@@ -163,6 +130,7 @@ RESTRICTED:
   description: Highly sensitive data
   examples: ['Patient data', 'Proprietary data']
   requirements: Maximum security, compliance required
+
 ```
 
 ---
@@ -219,12 +187,14 @@ class GDPRCompliance:
 gdpr = GDPRCompliance()
 gdpr.record_consent('SUBJECT-001', 'research', consent_given=True)
 print("GDPR compliance: Consent recorded")
+
 ```
 
 **Output:**
 ```
 
 GDPR compliance: Consent recorded
+
 ```
 
 ### 2.2 HIPAA
@@ -288,12 +258,14 @@ hipaa = HIPAACompliance()
 hipaa.store_phi('PATIENT-001', 'Medical record', encrypted=True)
 access = hipaa.access_phi('USER-001', 'PATIENT-001', 'Treatment')
 print(f"HIPAA compliance: Access logged, {len(hipaa.get_access_logs())} log entries")
+
 ```
 
 **Output:**
 ```
 
 HIPAA compliance: Access logged, 1 log entries
+
 ```
 
 ---
@@ -337,6 +309,7 @@ class RBAC:
         return self.check_permission(user_id, permission)
 
 # Пример
+
 rbac = RBAC()
 rbac.assign_role('user1', 'researcher')
 rbac.assign_role('user2', 'admin')
@@ -344,6 +317,7 @@ rbac.assign_role('user2', 'admin')
 print(f"User1 can read: {rbac.check_permission('user1', 'read_data')}")
 print(f"User1 can delete: {rbac.check_permission('user1', 'delete_data')}")
 print(f"User2 can delete: {rbac.check_permission('user2', 'delete_data')}")
+
 ```
 
 **Output:**
@@ -352,6 +326,7 @@ print(f"User2 can delete: {rbac.check_permission('user2', 'delete_data')}")
 User1 can read: True
 User1 can delete: False
 User2 can delete: True
+
 ```
 
 ### 3.2 Attribute-Based Access Control (ABAC)
@@ -381,8 +356,10 @@ class ABAC:
         return False
 
 # Пример
+
 abac = ABAC()
 # Политика: пользователь может читать данные своего проекта
+
 abac.add_policy(
     condition=lambda u, r: u.get('project') == r.get('project'),
     action='read'
@@ -392,12 +369,14 @@ user = {'project': 'PROJECT-A', 'role': 'researcher'}
 resource = {'project': 'PROJECT-A', 'sensitivity': 'internal'}
 can_read = abac.check_access(user, resource, 'read')
 print(f"Can read: {can_read}")
+
 ```
 
 **Output:**
 ```
 
 Can read: True
+
 ```
 
 ---
@@ -461,12 +440,14 @@ audit.log_access('user1', 'dataset1', 'read')
 audit.log_access('user2', 'dataset1', 'write')
 report = audit.generate_audit_report()
 print(f"Audit report: {report}")
+
 ```
 
 **Output:**
 ```
 
 Audit report: {'total_accesses': 2, 'unique_users': 2, 'time_range': {'start': '2024-01-15T10:30:00', 'end': '2024-01-15T10:30:00'}}
+
 ```
 
 ### 4.2 Data Lineage
@@ -516,6 +497,7 @@ class DataLineage:
         return result
 
 # Пример
+
 lineage = DataLineage()
 lineage.track_transformation('processed_data', ['raw_data1', 'raw_data2'], 'merge')
 lineage.track_transformation('final_results', ['processed_data'], 'analysis')
@@ -524,6 +506,7 @@ full_lineage = lineage.get_full_lineage('final_results')
 print("Data Lineage:")
 for step in full_lineage:
     print(f"  {step}")
+
 ```
 
 **Output:**
@@ -534,6 +517,7 @@ Data Lineage:
   {'id': 'processed_data', 'transformation': 'merge'}
   {'id': 'raw_data1', 'type': 'source'}
   {'id': 'raw_data2', 'type': 'source'}
+
 ```
 
 ---
@@ -546,6 +530,7 @@ Data Lineage:
 
 ```python
 # Концепция шифрования данных
+
 encryption_concepts = {
     'encryption_at_rest': {
         'purpose': 'Защита данных на диске',
@@ -569,6 +554,7 @@ for concept, details in encryption_concepts.items():
     print(f"\n{concept.replace('_', ' ').title()}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 **Output:**
@@ -590,6 +576,7 @@ Key Management:
   purpose: Безопасное хранение ключей
   methods: ['Key management services', 'Hardware security modules']
   importance: Critical
+
 ```
 
 ---
@@ -640,5 +627,6 @@ Key Management:
 - [HIPAA Compliance Guide](https://www.hhs.gov/hipaa/)
 
 ---
+
 
 

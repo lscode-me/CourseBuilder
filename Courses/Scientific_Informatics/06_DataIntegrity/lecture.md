@@ -27,130 +27,37 @@
 
 ## 1. Качество данных
 
+Обеспечение качества данных — это не просто техническая задача, а фундаментальный принцип научных исследований. Ошибки в данных могут привести к неверным научным выводам, которые могут повлиять на целые области исследований. Поэтому контроль качества данных должен быть интегрирован в каждый этап работы с данными.
+
 ### 1.1 Критерии качества
 
-**Качество данных** определяется несколькими критериями:
+**Качество данных** определяется несколькими критериями, каждый из которых критически важен для надёжности научных результатов. Эти критерии не являются независимыми — проблемы в одном аспекте могут влиять на другие.
 
 | Критерий | Описание | Методы проверки |
 |----------|----------|----------------|
-| **Полнота** | Отсутствие пропущенных значений | Проверка на NaN, None |
-| **Точность** | Соответствие реальным значениям | Сравнение с референсом |
-| **Согласованность** | Логическая корректность | Проверка диапазонов, ограничений |
-| **Актуальность** | Соответствие времени | Проверка дат, версий |
-| **Валидность** | Соответствие формату | Проверка типов, структур |
+| **Полнота** | Отсутствие пропущенных значений. Пропущенные значения могут возникать из-за ошибок измерений, сбоев оборудования или проблем при записи данных. Они могут искажать статистические выводы и делать данные непригодными для анализа. | Проверка на NaN, None. Для научных данных обычно требуется полнота не менее 95%, хотя это зависит от конкретной задачи. |
+| **Точность** | Соответствие реальным значениям. Данные могут быть полными, но неточными — например, из-за неправильной калибровки инструментов или систематических ошибок. Точность критически важна для научных выводов. | Сравнение с референсными данными, проверка известных значений, валидация с помощью независимых измерений. |
+| **Согласованность** | Логическая корректность. Данные должны соответствовать логическим ограничениям: температуры не могут быть отрицательными (в Кельвинах), проценты должны быть от 0 до 100, даты должны быть в хронологическом порядке. | Проверка диапазонов, ограничений, логических связей между переменными. |
+| **Актуальность** | Соответствие времени. Данные могут быть устаревшими или не соответствовать текущему состоянию системы. Это особенно важно для временных рядов и динамических систем. | Проверка дат, версий, временных меток, сравнение с текущим состоянием системы. |
+| **Валидность** | Соответствие формату. Данные должны соответствовать ожидаемому формату: типы данных должны быть правильными, структура должна соответствовать схеме, значения должны быть в допустимом формате. | Проверка типов, структур, форматов значений, соответствие схеме данных. |
 
-**Пример: Проверка качества данных**
-
-```python
-
-import pandas as pd
-import numpy as np
-
-class DataQualityChecker:
-    """Проверка качества научных данных"""
-    
-    def __init__(self):
-        self.checks = []
-    
-    def check_completeness(self, data):
-        """Проверка полноты данных"""
-        missing = data.isna().sum()
-        total = len(data)
-        completeness = 1 - (missing.sum() / (total * len(data.columns)))
-        
-        result = {
-            'check': 'completeness',
-            'score': completeness,
-            'missing_count': missing.sum(),
-            'passed': completeness >= 0.95
-        }
-        self.checks.append(result)
-        return result
-    
-    def check_consistency(self, data, rules):
-        """Проверка согласованности по правилам"""
-        violations = []
-        for column, rule in rules.items():
-            if 'min' in rule and (data[column] < rule['min']).any():
-                violations.append(f"{column} < {rule['min']}")
-            if 'max' in rule and (data[column] > rule['max']).any():
-                violations.append(f"{column} > {rule['max']}")
-        
-        result = {
-            'check': 'consistency',
-            'violations': violations,
-            'passed': len(violations) == 0
-        }
-        self.checks.append(result)
-        return result
-    
-    def get_summary(self):
-        """Сводка проверок"""
-        passed = sum(1 for c in self.checks if c['passed'])
-        total = len(self.checks)
-        return {
-            'total_checks': total,
-            'passed': passed,
-            'failed': total - passed,
-            'checks': self.checks
-        }
-
-# Пример использования
-data = pd.DataFrame({
-    'temperature': [20, 25, 30, None, 40],
-    'reaction_rate': [10.5, 12.3, 15.2, 18.1, 20.5],
-    'pressure': [1.0, 1.0, 1.0, 1.0, 1.0]
-})
-
-checker = DataQualityChecker()
-checker.check_completeness(data)
-checker.check_consistency(data, {
-    'temperature': {'min': 0, 'max': 100},
-    'reaction_rate': {'min': 0, 'max': 50}
-})
-
-summary = checker.get_summary()
-print("Data Quality Summary:")
-print(f"  Total checks: {summary['total_checks']}")
-print(f"  Passed: {summary['passed']}")
-print(f"  Failed: {summary['failed']}")
-```
-
-**Output:**
-```
-
-Data Quality Summary:
-  Total checks: 2
-  Passed: 1
-  Failed: 1
-```
+Проверка качества данных должна быть систематической и автоматизированной. Например, для данных эксперимента можно проверить полноту (есть ли пропущенные значения), согласованность (находятся ли значения в допустимых диапазонах: температура от 0 до 100°C, скорость реакции от 0 до 50). Результаты проверок показывают, какие аспекты качества данных требуют внимания.
 
 ### 1.2 Обнаружение аномалий
 
+Аномалии в данных — это значения, которые значительно отличаются от остальных. Они могут быть ошибками измерений, артефактами инструментов или реальными, но необычными наблюдениями. Важно различать эти случаи, так как подход к обработке будет разным.
+
 **Методы обнаружения аномалий:**
 
-```python
+Существует несколько методов обнаружения аномалий, каждый со своими преимуществами и ограничениями:
 
-def detect_outliers_iqr(data, column):
-    """Выявление выбросов методом IQR"""
-    Q1 = data[column].quantile(0.25)
-    Q3 = data[column].quantile(0.75)
-    IQR = Q3 - Q1
-    lower_bound = Q1 - 1.5 * IQR
-    upper_bound = Q3 + 1.5 * IQR
-    
-    outliers = data[(data[column] < lower_bound) | (data[column] > upper_bound)]
-    return outliers
+- **Метод IQR (Interquartile Range)** — использует межквартильный размах для определения выбросов. Значения за пределами Q1 - 1.5×IQR и Q3 + 1.5×IQR считаются выбросами. Этот метод устойчив к выбросам и не требует предположений о распределении данных.
 
-def detect_outliers_zscore(data, column, threshold=3):
-    """Выявление выбросов методом Z-score"""
-    mean = data[column].mean()
-    std = data[column].std()
-    z_scores = np.abs((data[column] - mean) / std)
-    outliers = data[z_scores > threshold]
+- **Метод Z-score** — использует стандартное отклонение для определения выбросов. Значения с Z-score больше порога (обычно 3) считаются выбросами. Этот метод требует нормального распределения данных и чувствителен к выбросам при вычислении среднего и стандартного отклонения.
     return outliers
 
 # Пример
+
 data = pd.DataFrame({
     'value': [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 100]  # 100 - выброс
 })
@@ -160,6 +67,7 @@ outliers_z = detect_outliers_zscore(data, 'value')
 
 print(f"IQR outliers: {len(outliers_iqr)}")
 print(f"Z-score outliers: {len(outliers_z)}")
+
 ```
 
 **Output:**
@@ -167,6 +75,7 @@ print(f"Z-score outliers: {len(outliers_z)}")
 
 IQR outliers: 1
 Z-score outliers: 1
+
 ```
 
 ---
@@ -258,15 +167,19 @@ class DataVersionControl:
             return False, "Checksum mismatch - data may be corrupted"
 
 # Пример использования
+
 dvc = DataVersionControl()
 # dvc.create_version('exp001', '1.0.0', Path('data.csv'), 'Initial data collection')
+
 print("Data version control system created")
+
 ```
 
 **Output:**
 ```
 
 Data version control system created
+
 ```
 
 ### 2.2 Отслеживание изменений
@@ -302,6 +215,7 @@ class ChangeLog:
         return [c for c in self.changes if c['version'] == version]
 
 # Пример
+
 changelog = ChangeLog()
 changelog.add_change('1.0.0', 'Dr. Smith', 'Initial data collection', ['data.csv'])
 changelog.add_change('1.1.0', 'Dr. Smith', 'Added metadata', ['data.csv', 'metadata.json'])
@@ -309,6 +223,7 @@ changelog.add_change('1.1.0', 'Dr. Smith', 'Added metadata', ['data.csv', 'metad
 print("Changelog:")
 for change in changelog.get_changelog():
     print(f"  v{change['version']}: {change['description']}")
+
 ```
 
 **Output:**
@@ -317,6 +232,7 @@ for change in changelog.get_changelog():
 Changelog:
   v1.0.0: Initial data collection
   v1.1.0: Added metadata
+
 ```
 
 ---
@@ -382,6 +298,7 @@ class DataValidator:
         return self.errors
 
 # Пример использования
+
 data = pd.DataFrame({
     'temperature': [20, 25, 30, None, 40],
     'reaction_rate': [10.5, 12.3, 15.2, 18.1, 20.5]
@@ -398,6 +315,7 @@ if not is_valid:
     print("Errors:")
     for error in validator.get_errors():
         print(f"  - {error}")
+
 ```
 
 **Output:**
@@ -405,7 +323,9 @@ if not is_valid:
 
 Data is valid: False
 Errors:
+
   - temperature: 1 null values
+
 ```
 
 ### 3.2 Проверка целостности
@@ -435,13 +355,16 @@ def verify_file_integrity(file_path, expected_hash, algorithm='sha256'):
 # is_valid, actual_hash = verify_file_integrity(file_path, expected_hash)
 # print(f"File integrity: {is_valid}")
 # print(f"Actual hash: {actual_hash}")
+
 print("File integrity checking functions created")
+
 ```
 
 **Output:**
 ```
 
 File integrity checking functions created
+
 ```
 
 ---
@@ -489,6 +412,7 @@ class DataAccessControl:
             del self.permissions[data_id][user]
 
 # Пример
+
 access_control = DataAccessControl()
 access_control.grant_access('researcher1', 'exp001', 'read')
 access_control.grant_access('researcher2', 'exp001', 'write')
@@ -498,6 +422,7 @@ can_write = access_control.check_access('researcher1', 'exp001', 'write')
 
 print(f"Researcher1 can read: {can_read}")
 print(f"Researcher1 can write: {can_write}")
+
 ```
 
 **Output:**
@@ -505,6 +430,7 @@ print(f"Researcher1 can write: {can_write}")
 
 Researcher1 can read: True
 Researcher1 can write: False
+
 ```
 
 ### 4.2 Шифрование данных
@@ -519,6 +445,7 @@ Researcher1 can write: False
 
 ```python
 # Концептуальный пример (для production используйте библиотеки типа cryptography)
+
 import base64
 
 def simple_encrypt(data, key):
@@ -533,6 +460,7 @@ def simple_decrypt(encrypted_data, key):
     return decoded
 
 # Пример
+
 sensitive_data = "Experimental results: 10.5, 12.3, 15.2"
 encrypted = simple_encrypt(sensitive_data, "key")
 decrypted = simple_decrypt(encrypted, "key")
@@ -540,6 +468,7 @@ decrypted = simple_decrypt(encrypted, "key")
 print(f"Original: {sensitive_data}")
 print(f"Encrypted: {encrypted}")
 print(f"Decrypted: {decrypted}")
+
 ```
 
 **Output:**
@@ -548,6 +477,7 @@ print(f"Decrypted: {decrypted}")
 Original: Experimental results: 10.5, 12.3, 15.2
 Encrypted: RXhwZXJpbWVudGFsIHJlc3VsdHM6IDEwLjUsIDEyLjMsIDE1LjI=
 Decrypted: Experimental results: 10.5, 12.3, 15.2
+
 ```
 
 > **⚠️ Warning:**  
@@ -589,6 +519,7 @@ class DataAuditLog:
         return filtered
 
 # Пример
+
 audit_log = DataAuditLog()
 audit_log.log_access('researcher1', 'exp001', 'read')
 audit_log.log_access('researcher2', 'exp001', 'write')
@@ -598,6 +529,7 @@ history = audit_log.get_access_history(data_id='exp001')
 print("Access history for exp001:")
 for entry in history:
     print(f"  {entry['timestamp']}: {entry['user']} - {entry['action']}")
+
 ```
 
 **Output:**
@@ -607,6 +539,7 @@ Access history for exp001:
   2024-01-15T10:30:00.123456: researcher1 - read
   2024-01-15T10:30:00.123456: researcher2 - write
   2024-01-15T10:30:00.123456: researcher1 - read
+
 ```
 
 ---
@@ -687,5 +620,6 @@ Access history for exp001:
 - "Data Security in Scientific Computing" — безопасность данных
 
 ---
+
 
 

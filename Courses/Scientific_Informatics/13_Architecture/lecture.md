@@ -28,55 +28,23 @@
 
 ## 1. Архитектуры Scientific Data Platforms
 
+Проектирование архитектуры научной платформы данных — это сложная задача, требующая понимания требований научных исследований, масштаба данных и доступных ресурсов. Правильная архитектура критически важна для эффективной работы научных проектов.
+
 ### 1.1 Компоненты платформы
+
+Научная платформа данных состоит из нескольких взаимосвязанных компонентов, каждый из которых выполняет критически важную функцию в жизненном цикле данных.
 
 **Компоненты scientific data platform:**
 
-- **Data Ingestion** — приём данных
+- **Data Ingestion** — приём данных. Это первый этап работы с данными, где данные поступают из различных источников (эксперименты, инструменты, симуляции, внешние источники) в различных форматах (CSV, HDF5, NetCDF, FASTA, BAM). Инструменты для ingestion (Kafka, Apache NiFi, custom scripts) должны обрабатывать различные форматы и обеспечивать надёжный приём данных.
 
-- **Storage** — хранение данных
+- **Storage** — хранение данных. Данные хранятся на разных уровнях: сырые данные в Data Lake (неструктурированное хранилище для всех данных), обработанные данные в Data Warehouse (структурированное хранилище для анализа), метаданные в Metadata Store (специализированное хранилище для метаданных).
 
-- **Processing** — обработка данных
+- **Processing** — обработка данных. Обработка может быть batch (Spark, Dask для больших объёмов данных), streaming (Kafka Streams для данных в реальном времени), или interactive (Jupyter, RStudio для интерактивного анализа).
 
-- **Analysis** — анализ и визуализация
+- **Analysis** — анализ и визуализация. Инструменты анализа (Python, R, Jupyter) позволяют исследователям анализировать данные, а инструменты визуализации (Plotly, Tableau) помогают представлять результаты.
 
-- **Metadata Management** — управление метаданными
-
-**Пример: Архитектура платформы**
-
-```python
-# Концептуальная архитектура scientific data platform
-platform_architecture = {
-    'ingestion': {
-        'sources': ['experiments', 'instruments', 'simulations', 'external'],
-        'formats': ['CSV', 'HDF5', 'NetCDF', 'FASTA', 'BAM'],
-        'tools': ['Kafka', 'Apache NiFi', 'custom scripts']
-    },
-    'storage': {
-        'raw_data': 'Data Lake',
-        'processed_data': 'Data Warehouse',
-        'metadata': 'Metadata Store'
-    },
-    'processing': {
-        'batch': 'Spark, Dask',
-        'streaming': 'Kafka Streams',
-        'interactive': 'Jupyter, RStudio'
-    },
-    'analysis': {
-        'tools': ['Python', 'R', 'Jupyter'],
-        'visualization': ['Plotly', 'Tableau']
-    }
-}
-
-print("Scientific Data Platform Architecture:")
-for layer, components in platform_architecture.items():
-    print(f"\n{layer.upper()}:")
-    for key, value in components.items():
-        print(f"  {key}: {value}")
-```
-
-**Output:**
-```
+- **Metadata Management** — управление метаданными. Критически важно для научных данных, где метаданные необходимы для интерпретации и воспроизводимости результатов.
 
 Scientific Data Platform Architecture:
 
@@ -98,6 +66,7 @@ PROCESSING:
 ANALYSIS:
   tools: ['Python', 'R', 'Jupyter']
   visualization: ['Plotly', 'Tableau']
+
 ```
 
 ### 1.2 Типы архитектур
@@ -114,6 +83,7 @@ ANALYSIS:
 
 ```python
 # Lambda Architecture для scientific data
+
 lambda_architecture = {
     'batch_layer': {
         'purpose': 'Обработка исторических данных',
@@ -138,6 +108,7 @@ for layer, props in lambda_architecture.items():
     print(f"\n{layer}:")
     for key, value in props.items():
         print(f"  {key}: {value}")
+
 ```
 
 **Output:**
@@ -160,6 +131,7 @@ speed_layer:
 serving_layer:
   purpose: Объединение результатов batch и streaming
   tools: ['Cassandra', 'Elasticsearch']
+
 ```
 
 ---
@@ -181,6 +153,7 @@ serving_layer:
 
 ```python
 # Структура Data Lake
+
 data_lake_structure = {
     'raw': {
         'experiments': 'raw experimental data',
@@ -203,6 +176,7 @@ for zone, contents in data_lake_structure.items():
     print(f"\n{zone.upper()} Zone:")
     for folder, description in contents.items():
         print(f"  {folder}/: {description}")
+
 ```
 
 **Output:**
@@ -223,6 +197,7 @@ PROCESSED Zone:
 METADATA:
   catalog/: data catalog
   lineage/: data lineage tracking
+
 ```
 
 ### 2.2 Data Warehouse
@@ -240,6 +215,7 @@ METADATA:
 
 ```python
 # Data Warehouse структура (звёздная схема)
+
 warehouse_schema = {
     'fact_tables': {
         'experiments_fact': 'Measurements and results'
@@ -258,6 +234,7 @@ for table, desc in warehouse_schema['fact_tables'].items():
 print("\nDimension Tables:")
 for table, desc in warehouse_schema['dimension_tables'].items():
     print(f"  {table}: {desc}")
+
 ```
 
 **Output:**
@@ -272,6 +249,7 @@ Dimension Tables:
   time_dim: Time dimensions
   experiment_dim: Experiment metadata
   instrument_dim: Instrument information
+
 ```
 
 ### 2.3 Выбор: Lake vs Warehouse
@@ -304,6 +282,7 @@ def choose_storage(data_characteristics):
 print("Storage selection:")
 print(f"Varied formats: {choose_storage({'varied_formats': True})}")
 print(f"Structured + fast queries: {choose_storage({'structured_only': True, 'fast_queries': True})}")
+
 ```
 
 **Output:**
@@ -312,6 +291,7 @@ print(f"Structured + fast queries: {choose_storage({'structured_only': True, 'fa
 Storage selection:
 Varied formats: Data Lake (handles varied formats)
 Structured + fast queries: Data Warehouse (optimized for queries)
+
 ```
 
 ---
@@ -362,6 +342,7 @@ for category, details in on_premise_setup.items():
     print(f"\n{category}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 **Output:**
@@ -383,6 +364,7 @@ costs:
   initial: High (hardware purchase)
   ongoing: Moderate (maintenance, power)
   scaling: High (new hardware)
+
 ```
 
 ### 3.2 Cloud развёртывание
@@ -430,6 +412,7 @@ for category, details in cloud_setup.items():
     print(f"\n{category}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
+
 ```
 
 **Output:**
@@ -451,6 +434,7 @@ costs:
   initial: Low (pay-as-you-go)
   ongoing: Variable (usage-based)
   scaling: Linear (pay for what you use)
+
 ```
 
 ### 3.3 Hybrid подход
@@ -488,6 +472,7 @@ for component, details in hybrid_approach.items():
         print(f"\n{component}:")
         for item in details:
             print(f"  - {item}")
+
 ```
 
 **Output:**
@@ -509,6 +494,7 @@ benefits:
   - Security for sensitive data
   - Scalability when needed
   - Cost optimization
+
 ```
 
 ---
@@ -556,6 +542,7 @@ for component, details in hpc_architecture.items():
             print(f"  {key}: {value}")
     else:
         print(f"  {details}")
+
 ```
 
 **Output:**
@@ -577,6 +564,7 @@ storage:
 scheduler:
   tools: ['SLURM', 'PBS', 'LSF']
   purpose: Job scheduling and resource management
+
 ```
 
 ### 4.2 Когда нужен HPC
@@ -606,6 +594,7 @@ def needs_hpc(requirements):
 print("HPC Requirements:")
 print(f"Compute-intensive: {needs_hpc({'compute_intensive': True})}")
 print(f"Large-scale: {needs_hpc({'large_scale': True})}")
+
 ```
 
 **Output:**
@@ -614,6 +603,7 @@ print(f"Large-scale: {needs_hpc({'large_scale': True})}")
 HPC Requirements:
 Compute-intensive: HPC needed for compute-intensive tasks
 Large-scale: HPC needed for large-scale simulations
+
 ```
 
 ---
@@ -657,6 +647,7 @@ scenarios = [
 
 for i, scenario in enumerate(scenarios, 1):
     print(f"\nScenario {i}: {choose_architecture(scenario)}")
+
 ```
 
 **Output:**
@@ -669,6 +660,7 @@ Scenario 1: HPC + Data Lake
 Scenario 2: Cloud Data Lake
 
 Scenario 3: Data Warehouse (Cloud or On-Premise)
+
 ```
 
 ---
@@ -722,5 +714,6 @@ Scenario 3: Data Warehouse (Cloud or On-Premise)
 - [Azure HPC](https://azure.microsoft.com/solutions/high-performance-computing/)
 
 ---
+
 
 

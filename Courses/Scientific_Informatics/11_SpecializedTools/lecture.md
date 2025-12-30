@@ -28,73 +28,39 @@
 
 ## 1. Bioinformatics Tools
 
+Каждая научная область имеет свои специализированные инструменты, разработанные для решения специфических задач. В биоинформатике эти инструменты критически важны для работы с геномными данными, которые имеют уникальную структуру и требуют специальных методов обработки.
+
 ### 1.1 Biopython
 
-**Biopython** — библиотека Python для работы с биологическими данными.
+**Biopython** — библиотека Python для работы с биологическими данными. Созданная в 2000 году, Biopython стала стандартом для биоинформатики в Python, предоставляя инструменты для работы с последовательностями ДНК, РНК и белков.
 
-**Пример: Работа с последовательностями**
+Biopython предоставляет:
 
-```python
-# Биоинформатика с Biopython
-# from Bio import SeqIO
-# from Bio.Seq import Seq
-# from Bio.SeqUtils import GC
+- **Манипуляции с последовательностями** — операции над последовательностями ДНК/РНК/белков (обращение, транскрипция, трансляция)
 
-# # Чтение FASTA файла
-# sequences = SeqIO.parse("sequences.fasta", "fasta")
-# for record in sequences:
-#     seq = record.seq
-#     gc_content = GC(seq)
-#     print(f"{record.id}: GC content = {gc_content:.2f}%")
+- **Парсинг файловых форматов** — чтение и запись специализированных форматов (FASTA, GenBank, PDB и др.)
 
-print("Biopython provides:")
-print("- Sequence manipulation")
-print("- File format parsing (FASTA, GenBank, etc.)")
-print("- Sequence analysis tools")
-print("- Database access")
-```
+- **Инструменты анализа последовательностей** — вычисление GC-content, поиск мотивов, выравнивание последовательностей
 
-**Output:**
-```
+- **Доступ к базам данных** — интеграция с биологическими базами данных (NCBI, UniProt и др.)
 
-Biopython provides:
-- Sequence manipulation
-- File format parsing (FASTA, GenBank, etc.)
-- Sequence analysis tools
-- Database access
-```
+Например, Biopython позволяет читать FASTA файлы, извлекать последовательности и вычислять их характеристики, такие как GC-content (процент G и C нуклеотидов), что критически важно для анализа геномных данных.
 
 ### 1.2 BLAST
 
-**BLAST** — поиск гомологичных последовательностей.
+**BLAST** (Basic Local Alignment Search Tool) — поиск гомологичных последовательностей. Созданный в 1990 году, BLAST стал одним из самых важных инструментов биоинформатики, используемым миллионами исследователей ежедневно.
 
-**Пример: Концепция BLAST**
+BLAST workflow включает: (1) Ввод запросной последовательности, (2) Поиск в базе данных похожих последовательностей, (3) Вывод похожих последовательностей с оценками сходства.
 
-```python
-# BLAST (Basic Local Alignment Search Tool)
-print("BLAST workflow:")
-print("1. Input: query sequence")
-print("2. Search: against database")
-print("3. Output: similar sequences with scores")
-print("\nBLAST types:")
-print("- BLASTN: nucleotide vs nucleotide")
-print("- BLASTP: protein vs protein")
-print("- BLASTX: translated nucleotide vs protein")
-```
+Различные типы BLAST используются для разных задач:
 
-**Output:**
-```
+- **BLASTN** — сравнение нуклеотидных последовательностей с нуклеотидными
 
-BLAST workflow:
-1. Input: query sequence
-2. Search: against database
-3. Output: similar sequences with scores
+- **BLASTP** — сравнение белковых последовательностей с белковыми
 
-BLAST types:
-- BLASTN: nucleotide vs nucleotide
-- BLASTP: protein vs protein
-- BLASTX: translated nucleotide vs protein
-```
+- **BLASTX** — сравнение переведённой нуклеотидной последовательности с белковыми
+
+BLAST критически важен для идентификации генов, предсказания функций белков и эволюционного анализа.
 
 ---
 
@@ -257,6 +223,7 @@ print("- Reproducibility")
 ```
 
 Snakemake features:
+
 - Python-based syntax
 - Automatic dependency resolution
 - Parallel execution
@@ -310,6 +277,7 @@ print("- Dataflow programming")
 ```
 
 Nextflow features:
+
 - Domain-specific language (DSL)
 - Container support (Docker, Singularity)
 - Cloud execution
@@ -390,6 +358,7 @@ class ScientificPipeline:
         return results
 
 # Пример pipeline
+
 pipeline = ScientificPipeline()
 pipeline.add_step('load', 'pandas', ['raw.csv'], ['data.df'])
 pipeline.add_step('analyze', 'scipy', ['data.df'], ['results.csv'])
@@ -492,5 +461,6 @@ WORKDIR /app
 - [Biopython Tutorial](https://biopython.org/wiki/Documentation)
 
 ---
+
 
 
