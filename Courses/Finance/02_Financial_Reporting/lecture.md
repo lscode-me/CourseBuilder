@@ -1,5 +1,4 @@
-# Основы корпоративных финансов
-## Финансовая отчётность (P&L, Cash Flow, Balance Sheet)
+# Финансовая отчётность (P&L, Cash Flow, Balance Sheet)
 
 ---
 
