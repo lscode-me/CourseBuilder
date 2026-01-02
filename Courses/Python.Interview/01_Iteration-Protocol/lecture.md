@@ -22,7 +22,6 @@
 ### Важно: `range()` — это НЕ итератор!
 
 ```python
-
 >>> r = range(5)
 >>> next(r)  # TypeError: 'range' object is not an iterator
 >>> it = iter(r)
@@ -38,7 +37,6 @@
 ### 1. Генератор чисел Фибоначчи
 
 ```python
-
 def fibonacci():
     a, b = 0, 1
     while True:
@@ -46,6 +44,7 @@ def fibonacci():
         a, b = b, a + b
 
 # Использование
+
 fib = fibonacci()
 print([next(fib) for _ in range(10)])  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
@@ -53,23 +52,23 @@ print([next(fib) for _ in range(10)])  # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ### 2. Функция index через next() и enumerate()
 
 ```python
-
 def index(iterable, element):
     return next((i for i, e in enumerate(iterable) if e == element), -1)
 
 # Однострочник (lambda)
+
 index = lambda it, el: next(i for i, e in enumerate(it) if e == el)
 ```
 
 ### 3. Класс iter_int — итерируемое целое число
 
 ```python
-
 class iter_int(int):
     def __iter__(self):
         return iter(range(self))
 
 # Использование
+
 print(list(iter_int(4)))  # [0, 1, 2, 3]
 print(iter_int(4) + 2)    # 6
 ```
@@ -105,16 +104,17 @@ while True:
 
 ```python
 # List comprehension — создаёт список сразу
+
 squares_list = [x**2 for x in range(1000000)]  # Занимает память
 
 # Generator expression — вычисляет лениво
+
 squares_gen = (x**2 for x in range(1000000))  # Почти не занимает память
 ```
 
 ### Q: Что выведет этот код?
 
 ```python
-
 for i in [lambda x: x**y for y in range(5)]: print(i(2))
 for i in (lambda x: x**y for y in range(5)): print(i(2))
 ```
@@ -133,7 +133,6 @@ for i in (lambda x: x**y for y in range(5)): print(i(2))
 Напишите функцию, которая сливает два отсортированных итератора:
 
 ```python
-
 def merge_sorted(iter1, iter2):
     val1 = next(iter1, None)
     val2 = next(iter2, None)
@@ -147,9 +146,9 @@ def merge_sorted(iter1, iter2):
             val2 = next(iter2, None)
 
 # Тест
+
 list(merge_sorted(iter([1, 3, 5]), iter([2, 4, 6])))
 # [1, 2, 3, 4, 5, 6]
-
 ```
 
 ---
@@ -161,5 +160,6 @@ list(merge_sorted(iter([1, 3, 5]), iter([2, 4, 6])))
 - "Fluent Python" Chapter 14: Iterables, Iterators, and Generators
 
 ---
+
 
 

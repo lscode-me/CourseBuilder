@@ -39,7 +39,6 @@
 ### Задача на интервью
 
 ```python
-
 import threading
 
 class Counter:
@@ -74,7 +73,6 @@ print(f"Expected: 1000000, Got: {counter.val}")
 ### Исправление с Lock
 
 ```python
-
 import threading
 
 class SafeCounter:
@@ -99,7 +97,6 @@ class SafeCounter:
 > "Процесс раздваивается. И parent, и child продолжат выполнение с того же места. В REPL это создаёт путаницу — оба процесса будут писать в терминал. Нужно нажать Ctrl+D дважды для выхода."
 
 ```python
-
 import os
 
 pid = os.fork()
@@ -116,7 +113,6 @@ else:
 ### ThreadPoolExecutor
 
 ```python
-
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
@@ -126,6 +122,7 @@ def fetch(url):
     return requests.get(url).status_code
 
 # I/O-bound — используем threads
+
 with ThreadPoolExecutor(max_workers=5) as executor:
     results = list(executor.map(fetch, urls))
 ```
@@ -133,13 +130,13 @@ with ThreadPoolExecutor(max_workers=5) as executor:
 ### ProcessPoolExecutor
 
 ```python
-
 from concurrent.futures import ProcessPoolExecutor
 
 def cpu_heavy(n):
     return sum(i * i for i in range(n))
 
 # CPU-bound — используем processes
+
 with ProcessPoolExecutor(max_workers=4) as executor:
     results = list(executor.map(cpu_heavy, [10**6] * 10))
 ```
@@ -196,5 +193,6 @@ with ProcessPoolExecutor(max_workers=4) as executor:
 - "Fluent Python" Chapter 19: Concurrency with Futures
 
 ---
+
 
 

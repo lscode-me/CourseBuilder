@@ -33,7 +33,6 @@
 **Example: Рост времени выполнения**
 
 ```python
-
 import time
 
 def measure_time(func, n):
@@ -43,6 +42,7 @@ def measure_time(func, n):
     return time.perf_counter() - start
 
 # O(n) — линейный алгоритм
+
 def linear(n):
     total = 0
     for i in range(n):
@@ -50,6 +50,7 @@ def linear(n):
     return total
 
 # O(n²) — квадратичный алгоритм
+
 def quadratic(n):
     total = 0
     for i in range(n):
@@ -58,6 +59,7 @@ def quadratic(n):
     return total
 
 # Сравнение на разных размерах
+
 for n in [100, 1000, 10000]:
     t_lin = measure_time(linear, n)
     t_quad = measure_time(quadratic, n)
@@ -66,7 +68,6 @@ for n in [100, 1000, 10000]:
 
 **Output:**
 ```
-
 n=  100: linear=0.005ms, quadratic=0.3ms
 n= 1000: linear=0.034ms, quadratic=28.5ms
 n=10000: linear=0.312ms, quadratic=2847.2ms
@@ -87,6 +88,7 @@ n=10000: linear=0.312ms, quadratic=2847.2ms
 
 ```python
 # Высокая временная сложность, низкая пространственная
+
 def has_duplicate_slow(arr):
     """O(n²) время, O(1) память"""
     for i in range(len(arr)):
@@ -96,6 +98,7 @@ def has_duplicate_slow(arr):
     return False
 
 # Низкая временная сложность, высокая пространственная
+
 def has_duplicate_fast(arr):
     """O(n) время, O(n) память"""
     seen = set()
@@ -122,7 +125,6 @@ print(f"O(n) версия: {time_fast*1000:.3f} мс")
 
 **Output:**
 ```
-
 O(n²) версия: 892.3 мс
 O(n) версия: 0.456 мс
 ```
@@ -152,7 +154,6 @@ O(n) версия: 0.456 мс
 **Example: Визуализация роста сложности**
 
 ```python
-
 import math
 
 def show_complexity_growth():
@@ -177,7 +178,6 @@ show_complexity_growth()
 
 **Output:**
 ```
-
      n |     O(1) | O(log n) |     O(n) |   O(n log n) |       O(n²)
 ----------------------------------------------------------------------
     10 |        1 |        3 |       10 |           30 |          100
@@ -193,7 +193,6 @@ show_complexity_growth()
 3. **Вложенные циклы перемножаются**: два вложенных цикла по n = O(n²)
 
 ```python
-
 def example_simplification(n):
     # Цикл 1: O(n)
     for i in range(n):
@@ -273,7 +272,6 @@ def sum_array(arr):
 **Example: Анализ QuickSort**
 
 ```python
-
 import random
 
 def quicksort(arr):
@@ -293,9 +291,11 @@ def quicksort(arr):
     return quicksort(left) + middle + quicksort(right)
 
 # Демонстрация
+
 import time
 
 # Худший случай для наивного quicksort (первый элемент как pivot)
+
 def quicksort_bad_pivot(arr):
     if len(arr) <= 1:
         return arr
@@ -305,17 +305,20 @@ def quicksort_bad_pivot(arr):
     return quicksort_bad_pivot(left) + [pivot] + quicksort_bad_pivot(right)
 
 # Тест на отсортированном массиве
+
 n = 1000
 sorted_arr = list(range(n))
 random_arr = sorted_arr.copy()
 random.shuffle(random_arr)
 
 # Хороший quicksort
+
 start = time.perf_counter()
 quicksort(sorted_arr.copy())
 time_good = time.perf_counter() - start
 
 # Плохой quicksort на отсортированном массиве
+
 import sys
 sys.setrecursionlimit(2000)
 start = time.perf_counter()
@@ -328,7 +331,6 @@ print(f"Плохой pivot на отсортированном: {time_bad*1000:.
 
 **Output:**
 ```
-
 Хороший pivot на отсортированном: 1.23 мс
 Плохой pivot на отсортированном: 156.78 мс
 ```
@@ -352,7 +354,6 @@ print(f"Плохой pivot на отсортированном: {time_bad*1000:.
 ### 5.2 Пример: Динамический массив
 
 ```python
-
 class DynamicArray:
     """
     Динамический массив с амортизированным O(1) добавлением.
@@ -395,7 +396,6 @@ print(f"Итоговая ёмкость: {arr.capacity}")
 
 **Output:**
 ```
-
 Добавлено элементов: 1000
 Расширений массива: 10
 Итоговая ёмкость: 1024
@@ -413,6 +413,7 @@ print(f"Итоговая ёмкость: {arr.capacity}")
 
 ```python
 # Концептуальная демонстрация
+
 class AmortizedAnalysis:
     """
     Каждый append стоит 3 "монеты":
@@ -462,7 +463,6 @@ AmortizedAnalysis().demonstrate(1000)
 
 **Output:**
 ```
-
 Элементов: 1000
 Оплачено: 3000 монет
 Фактическая стоимость: 2023
@@ -483,6 +483,7 @@ AmortizedAnalysis().demonstrate(1000)
 
 ```python
 # O(1) дополнительная память — in-place
+
 def reverse_in_place(arr):
     """Разворачивает массив на месте."""
     left, right = 0, len(arr) - 1
@@ -493,11 +494,13 @@ def reverse_in_place(arr):
     return arr
 
 # O(n) дополнительная память
+
 def reverse_copy(arr):
     """Создаёт новый развёрнутый массив."""
     return arr[::-1]
 
 # Демонстрация
+
 original = [1, 2, 3, 4, 5]
 print(f"In-place: {reverse_in_place(original.copy())}")
 print(f"Copy: {reverse_copy(original)}")
@@ -505,7 +508,6 @@ print(f"Copy: {reverse_copy(original)}")
 
 **Output:**
 ```
-
 In-place: [5, 4, 3, 2, 1]
 Copy: [5, 4, 3, 2, 1]
 ```
@@ -514,6 +516,7 @@ Copy: [5, 4, 3, 2, 1]
 
 ```python
 # O(n) пространства из-за стека вызовов
+
 def factorial_recursive(n):
     """Рекурсивный факториал — O(n) stack space."""
     if n <= 1:
@@ -521,6 +524,7 @@ def factorial_recursive(n):
     return n * factorial_recursive(n - 1)
 
 # O(1) пространства — итеративная версия
+
 def factorial_iterative(n):
     """Итеративный факториал — O(1) space."""
     result = 1
@@ -534,7 +538,6 @@ print(f"Итеративный: {factorial_iterative(10)}")
 
 **Output:**
 ```
-
 Рекурсивный: 3628800
 Итеративный: 3628800
 ```
@@ -555,7 +558,6 @@ print(f"Итеративный: {factorial_iterative(10)}")
 ### 7.1 Пошаговый анализ
 
 ```python
-
 def analyze_algorithm(arr, target):
     """
     Анализ шаг за шагом.
@@ -590,10 +592,12 @@ def analyze_algorithm(arr, target):
 
 ```python
 # O(1) — константное количество операций
+
 def get_first(arr):
     return arr[0] if arr else None
 
 # O(log n) — деление на 2 на каждом шаге
+
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
     while left <= right:  # log n итераций
@@ -607,10 +611,12 @@ def binary_search(arr, target):
     return -1
 
 # O(n) — один проход по данным
+
 def find_sum(arr):
     return sum(arr)
 
 # O(n log n) — обычно сортировка или divide & conquer
+
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -666,6 +672,7 @@ def fib_naive(n):
     return fib_naive(n-1) + fib_naive(n-2)
 
 # Оптимизированная версия с мемоизацией
+
 from functools import lru_cache
 
 @lru_cache(maxsize=None)
@@ -676,6 +683,7 @@ def fib_memo(n):
     return fib_memo(n-1) + fib_memo(n-2)
 
 # Сравнение
+
 import time
 
 start = time.perf_counter()
@@ -692,7 +700,6 @@ print(f"С мемоизацией: {time_memo:.6f} сек")
 
 **Output:**
 ```
-
 Наивный: 0.234 сек
 С мемоизацией: 0.000015 сек
 ```
@@ -744,7 +751,6 @@ practical_limits()
 
 **Output:**
 ```
-
 O(n!): практичный лимит ≈ 12
 O(2^n): практичный лимит ≈ 25
 O(n²): практичный лимит ≈ 10,000
@@ -755,7 +761,6 @@ O(n)): практичный лимит ≈ 100,000,000
 ### 8.3 Профилирование vs теоретический анализ
 
 ```python
-
 import cProfile
 import pstats
 
@@ -773,6 +778,7 @@ def profile_function(func, *args):
     return result
 
 # Теоретически оба O(n), но на практике...
+
 def sum_v1(arr):
     total = 0
     for x in arr:
@@ -827,5 +833,6 @@ profile_function(sum_v2, data)
 - Исследуйте cache-oblivious алгоритмы
 
 ---
+
 
 

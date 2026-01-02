@@ -56,10 +56,12 @@
 
 ```python
 # Создание массива (списка)
+
 numbers = [10, 20, 30, 40, 50]
 print(f"Исходный массив: {numbers}")
 
 # Доступ по индексу
+
 print(f"Элемент с индексом 2: {numbers[2]}")
 
 # Изменение элемента
@@ -68,12 +70,12 @@ numbers[1] = 25
 print(f"После изменения: {numbers}")
 
 # Длина массива
+
 print(f"Длина массива: {len(numbers)}")
 ```
 
 **Output:**
 ```
-
 Исходный массив: [10, 20, 30, 40, 50]
 Элемент с индексом 2: 30
 После изменения: [10, 25, 30, 40, 50]
@@ -91,18 +93,20 @@ print(f"Длина массива: {len(numbers)}")
 **Example: Кэш-локальность**
 
 ```python
-
 import time
 
 # Создаём большой список
+
 large_list = list(range(1000000))
 
 # Доступ к последовательным элементам (хорошая локальность)
+
 start = time.time()
 sum_seq = sum(large_list[i] for i in range(0, 10000, 1))
 time_seq = time.time() - start
 
 # Доступ к случайным элементам (плохая локальность)
+
 import random
 indices = random.sample(range(1000000), 10000)
 start = time.time()
@@ -116,7 +120,6 @@ print(f"Разница: {time_random / time_seq:.2f}x медленнее")
 
 **Output:**
 ```
-
 Последовательный доступ: 0.001234 секунд
 Случайный доступ: 0.002456 секунд
 Разница: 1.99x медленнее
@@ -143,7 +146,6 @@ print(f"Разница: {time_random / time_seq:.2f}x медленнее")
 **Example: Базовый связанный список**
 
 ```python
-
 class Node:
     """Узел связанного списка."""
     def __init__(self, data):
@@ -187,7 +189,6 @@ print(f"Связанный список: {ll.display()}")
 
 **Output:**
 ```
-
 Связанный список: [10, 20, 30]
 ```
 
@@ -202,7 +203,6 @@ print(f"Связанный список: {ll.display()}")
 **Example: Быстрая вставка в начало**
 
 ```python
-
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -230,7 +230,6 @@ print(f"После prepend: {ll.display()}")
 
 **Output:**
 ```
-
 После prepend: [10, 20, 30]
 ```
 
@@ -263,7 +262,6 @@ print(f"После prepend: {ll.display()}")
 **Example: Реализация стека**
 
 ```python
-
 class Stack:
     """Реализация стека через список."""
     def __init__(self):
@@ -294,6 +292,7 @@ class Stack:
         return len(self.items)
 
 # Использование
+
 stack = Stack()
 stack.push(1)
 stack.push(2)
@@ -303,6 +302,7 @@ print(f"Вершина стека: {stack.peek()}")
 print(f"Размер: {stack.size()}")
 
 # Извлечение элементов
+
 print(f"Извлечено: {stack.pop()}")
 print(f"Извлечено: {stack.pop()}")
 print(f"Осталось: {stack.size()}")
@@ -310,7 +310,6 @@ print(f"Осталось: {stack.size()}")
 
 **Output:**
 ```
-
 Вершина стека: 3
 Размер: 3
 Извлечено: 3
@@ -330,7 +329,6 @@ print(f"Осталось: {stack.size()}")
 **Example: Проверка правильности скобок**
 
 ```python
-
 def is_balanced(expression):
     """Проверить, правильно ли расставлены скобки."""
     stack = Stack()
@@ -362,7 +360,6 @@ for expr in test_cases:
 
 **Output:**
 ```
-
 '()': ✓
 '()[]{}': ✓
 '([{}])': ✓
@@ -391,7 +388,6 @@ for expr in test_cases:
 **Example: Реализация очереди**
 
 ```python
-
 from collections import deque
 
 class Queue:
@@ -442,7 +438,6 @@ print(f"Осталось: {queue.size()}")
 
 **Output:**
 ```
-
 Передний элемент: 1
 Размер: 3
 Извлечено: 1
@@ -462,7 +457,6 @@ print(f"Осталось: {queue.size()}")
 **Example: Симуляция очереди задач**
 
 ```python
-
 class TaskQueue:
     """Очередь задач."""
     def __init__(self):
@@ -484,6 +478,7 @@ class TaskQueue:
             return None
 
 # Симуляция
+
 task_queue = TaskQueue()
 task_queue.add_task("Задача 1")
 task_queue.add_task("Задача 2")
@@ -497,7 +492,6 @@ task_queue.process_next()
 
 **Output:**
 ```
-
 Добавлена задача: Задача 1
 Добавлена задача: Задача 2
 Добавлена задача: Задача 3
@@ -528,7 +522,6 @@ task_queue.process_next()
 **Example: Использование deque в Python**
 
 ```python
-
 from collections import deque
 
 # Создание дека
@@ -537,6 +530,7 @@ d = deque([1, 2, 3])
 print(f"Исходный дек: {d}")
 
 # Добавление элементов
+
 d.append(4)  # В конец
 d.appendleft(0)  # В начало
 print(f"После добавления: {d}")
@@ -550,7 +544,6 @@ print(f"Итоговый дек: {d}")
 
 **Output:**
 ```
-
 Исходный дек: deque([1, 2, 3])
 После добавления: deque([0, 1, 2, 3, 4])
 Удалён с конца: 4
@@ -569,10 +562,10 @@ print(f"Итоговый дек: {d}")
 **Example: Дек как стек**
 
 ```python
-
 from collections import deque
 
 # Использование дека как стека
+
 stack = deque()
 stack.append(1)  # push
 stack.append(2)
@@ -585,7 +578,6 @@ print(f"Осталось: {list(stack)}")
 
 **Output:**
 ```
-
 Вершина стека: 3
 Извлечено: 3
 Осталось: [1, 2]
@@ -594,10 +586,10 @@ print(f"Осталось: {list(stack)}")
 **Example: Дек как очередь**
 
 ```python
-
 from collections import deque
 
 # Использование дека как очереди
+
 queue = deque()
 queue.append(1)  # enqueue
 queue.append(2)
@@ -610,7 +602,6 @@ print(f"Осталось: {list(queue)}")
 
 **Output:**
 ```
-
 Передний элемент: 1
 Извлечено: 1
 Осталось: [2, 3]
@@ -672,7 +663,6 @@ print(f"Осталось: {list(queue)}")
 **Example: Навигация назад/вперёд**
 
 ```python
-
 class BrowserHistory:
     """История браузера с навигацией назад/вперёд."""
     def __init__(self):
@@ -723,7 +713,6 @@ browser.forward()
 
 **Output:**
 ```
-
 Посещён: google.com
 Посещён: github.com
 Посещён: stackoverflow.com
@@ -737,7 +726,6 @@ browser.forward()
 **Example: Очередь печати**
 
 ```python
-
 class PrintQueue:
     """Очередь печати документов."""
     def __init__(self):
@@ -758,6 +746,7 @@ class PrintQueue:
         return None
 
 # Симуляция
+
 printer = PrintQueue()
 printer.add_document("Документ1.pdf")
 printer.add_document("Документ2.pdf")
@@ -771,7 +760,6 @@ printer.print_next()
 
 **Output:**
 ```
-
 Добавлен в очередь: Документ1.pdf (позиция: 1)
 Добавлен в очередь: Документ2.pdf (позиция: 2)
 Добавлен в очередь: Документ3.pdf (позиция: 3)
@@ -817,6 +805,7 @@ printer.print_next()
 - Исследуйте реализацию deque в Python
 
 ---
+
 
 
 

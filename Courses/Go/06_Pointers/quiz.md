@@ -79,14 +79,12 @@ D) Panic
 Что выведет код?
 
 ```go
-
 func change(x int) { x = 100 }
 func main() {
     n := 10
     change(n)
     fmt.Println(n)
 }
-
 ```
 
 A) 100
@@ -104,14 +102,12 @@ D) 10
 Что выведет код?
 
 ```go
-
 func change(p *int) { *p = 100 }
 func main() {
     n := 10
     change(&n)
     fmt.Println(n)
 }
-
 ```
 
 A) 100
@@ -283,11 +279,9 @@ D) Зависит от компилятора
 В чём проблема кода (до Go 1.22)?
 
 ```go
-
 for _, item := range items {
     pointers = append(pointers, &item)
 }
-
 ```
 
 A) Синтаксическая ошибка

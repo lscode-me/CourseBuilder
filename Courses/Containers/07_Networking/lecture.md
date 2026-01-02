@@ -44,7 +44,6 @@
 ### 1.2 Компоненты сетевой изоляции
 
 ```
-
 ┌──────────────────────────────────────────────────────────────┐
 │                    Host Network Stack                        │
 │                                                              │
@@ -64,7 +63,6 @@
 │                    veth pair                                 │
 │                         │                                    │
 └─────────────────────────┴────────────────────────────────────┘
-
 ```
 
 ### 1.3 Сетевые примитивы Linux
@@ -88,7 +86,6 @@
 Дефолтный режим — контейнеры подключаются к виртуальному мосту:
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                          Host                           │
 │                                                         │
@@ -110,30 +107,28 @@
 │               │192.168.1.100│                           │
 │               └─────────────┘                           │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 ```bash
 # Запуск контейнера в bridge network
+
 docker run -d --name web nginx
 
 # Проверка сети
-docker inspect web --format '{{.NetworkSettings.IPAddress}}'
 
+docker inspect web --format '{{.NetworkSettings.IPAddress}}'
 ```
 
 **Output:**
 ```
-
 172.17.0.2
-
 ```
 
 ```bash
 # Проверка bridge на хосте
+
 ip link show docker0
 brctl show docker0
-
 ```
 
 ### 2.2 Host Network
@@ -142,11 +137,12 @@ brctl show docker0
 
 ```bash
 # Запуск с host networking
+
 docker run -d --name web --network host nginx
 
 # Контейнер использует порты хоста напрямую
-curl localhost:80
 
+curl localhost:80
 ```
 
 **Преимущества:**
@@ -165,19 +161,15 @@ curl localhost:80
 Контейнер без сети (только loopback):
 
 ```bash
-
 docker run -d --name isolated --network none alpine sleep 3600
 
 docker exec isolated ip link
-
 ```
 
 **Output:**
 ```
-
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-
 ```
 
 ### 2.4 Container Network
@@ -186,11 +178,12 @@ docker exec isolated ip link
 
 ```bash
 # Создаём первый контейнер
+
 docker run -d --name main nginx
 
 # Второй контейнер использует сеть первого
-docker run --rm --network container:main alpine wget -qO- localhost:80
 
+docker run --rm --network container:main alpine wget -qO- localhost:80
 ```
 
 ### 2.5 User-defined Networks
@@ -199,23 +192,23 @@ docker run --rm --network container:main alpine wget -qO- localhost:80
 
 ```bash
 # Создание сети
+
 docker network create --driver bridge --subnet 10.10.0.0/16 mynetwork
 
 # Запуск контейнеров в сети
+
 docker run -d --name web --network mynetwork nginx
 docker run -d --name app --network mynetwork alpine sleep 3600
 
 # Контейнеры могут обращаться по имени (встроенный DNS)
-docker exec app ping web
 
+docker exec app ping web
 ```
 
 **Output:**
 ```
-
 PING web (10.10.0.2): 56 data bytes
 64 bytes from 10.10.0.2: seq=0 ttl=64 time=0.123 ms
-
 ```
 
 ---
@@ -226,47 +219,48 @@ PING web (10.10.0.2): 56 data bytes
 
 ```bash
 # Публикация порта: host:container
+
 docker run -d -p 8080:80 nginx
 
 # Только localhost
+
 docker run -d -p 127.0.0.1:8080:80 nginx
 
 # Случайный порт хоста
+
 docker run -d -p 80 nginx
 docker port <container>
-
 ```
 
 ### 3.2 Как работает port publishing
 
 ```bash
 # Docker создаёт правила iptables
-sudo iptables -t nat -L -n | grep 8080
 
+sudo iptables -t nat -L -n | grep 8080
 ```
 
 **Output:**
 ```
-
 DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:8080 to:172.17.0.2:80
-
 ```
 
 ```bash
 # Проверка DOCKER chain
-sudo iptables -t nat -L DOCKER -n --line-numbers
 
+sudo iptables -t nat -L DOCKER -n --line-numbers
 ```
 
 ### 3.3 Port ranges
 
 ```bash
 # Публикация диапазона портов
+
 docker run -d -p 8080-8090:80-90 myapp
 
 # UDP порты
-docker run -d -p 53:53/udp dns-server
 
+docker run -d -p 53:53/udp dns-server
 ```
 
 ---
@@ -278,7 +272,6 @@ docker run -d -p 53:53/udp dns-server
 CNI — стандартный интерфейс для настройки сети контейнеров:
 
 ```
-
 ┌────────────────────────────────────────────────────────┐
 │                Container Runtime                       │
 │              (Kubernetes, Podman, etc.)                │
@@ -289,13 +282,11 @@ CNI — стандартный интерфейс для настройки се
 │                    CNI Plugin                          │
 │      (bridge, macvlan, calico, flannel, etc.)          │
 └────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Структура CNI конфигурации
 
 ```json
-
 {
     "cniVersion": "1.0.0",
     "name": "mynetwork",
@@ -311,7 +302,6 @@ CNI — стандартный интерфейс для настройки се
         ]
     }
 }
-
 ```
 
 ### 4.3 Основные CNI плагины
@@ -331,11 +321,13 @@ CNI — стандартный интерфейс для настройки се
 
 ```bash
 # Установка CNI плагинов
+
 curl -LO https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz
 mkdir -p /opt/cni/bin
 tar -xzf cni-plugins-linux-amd64-v1.3.0.tgz -C /opt/cni/bin
 
 # Конфигурация
+
 mkdir -p /etc/cni/net.d
 cat > /etc/cni/net.d/10-mynet.conf << 'EOF'
 {
@@ -356,9 +348,11 @@ cat > /etc/cni/net.d/10-mynet.conf << 'EOF'
 EOF
 
 # Создание network namespace
+
 ip netns add test-ns
 
 # Вызов CNI плагина
+
 CNI_PATH=/opt/cni/bin \
 CNI_CONTAINERID=test-container \
 CNI_NETNS=/var/run/netns/test-ns \
@@ -367,8 +361,8 @@ CNI_COMMAND=ADD \
 /opt/cni/bin/bridge < /etc/cni/net.d/10-mynet.conf
 
 # Проверка
-ip netns exec test-ns ip addr
 
+ip netns exec test-ns ip addr
 ```
 
 ---
@@ -380,7 +374,6 @@ Overlay networks позволяют контейнерам на разных х�
 ### 5.1 VXLAN — основа overlay
 
 ```
-
 ┌──────────────────────────────────────────────────────────┐
 │                        Host A                            │
 │                                                          │
@@ -417,21 +410,22 @@ Overlay networks позволяют контейнерам на разных х�
 │                                                          │
 │                        Host B                            │
 └──────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.2 Docker Swarm Overlay
 
 ```bash
 # Инициализация Swarm
+
 docker swarm init
 
 # Создание overlay network
+
 docker network create --driver overlay --attachable myoverlay
 
 # Контейнеры на разных нодах могут общаться
-docker service create --name web --network myoverlay nginx
 
+docker service create --name web --network myoverlay nginx
 ```
 
 ### 5.3 Kubernetes Network Plugins
@@ -454,6 +448,7 @@ docker service create --name web --network myoverlay nginx
 
 ```bash
 # Создание bridge network с параметрами
+
 docker network create \
     --driver bridge \
     --subnet 172.28.0.0/16 \
@@ -463,9 +458,9 @@ docker network create \
     custom-bridge
 
 # Проверка моста
+
 brctl show br-custom
 ip addr show br-custom
-
 ```
 
 ### 6.2 Macvlan Driver
@@ -474,6 +469,7 @@ Macvlan позволяет контейнерам получить IP из фи�
 
 ```bash
 # Создание macvlan network
+
 docker network create -d macvlan \
     --subnet=192.168.1.0/24 \
     --gateway=192.168.1.1 \
@@ -481,8 +477,8 @@ docker network create -d macvlan \
     macvlan-net
 
 # Контейнер получит IP из сети 192.168.1.0/24
-docker run -d --network macvlan-net --ip 192.168.1.50 nginx
 
+docker run -d --network macvlan-net --ip 192.168.1.50 nginx
 ```
 
 **Когда использовать:**
@@ -495,6 +491,7 @@ docker run -d --network macvlan-net --ip 192.168.1.50 nginx
 
 ```bash
 # IPvlan L2 mode (как macvlan, но один MAC)
+
 docker network create -d ipvlan \
     --subnet=192.168.1.0/24 \
     -o parent=eth0 \
@@ -502,12 +499,12 @@ docker network create -d ipvlan \
     ipvlan-l2
 
 # IPvlan L3 mode (роутинг)
+
 docker network create -d ipvlan \
     --subnet=192.168.1.0/24 \
     -o parent=eth0 \
     -o ipvlan_mode=l3 \
     ipvlan-l3
-
 ```
 
 ---
@@ -518,48 +515,49 @@ docker network create -d ipvlan \
 
 ```bash
 # В user-defined networks работает встроенный DNS
+
 docker network create mynet
 
 docker run -d --name web --network mynet nginx
 docker run -d --name app --network mynet alpine sleep 3600
 
 # DNS resolution по имени контейнера
-docker exec app nslookup web
 
+docker exec app nslookup web
 ```
 
 **Output:**
 ```
-
 Server:		127.0.0.11
 Address:	127.0.0.11:53
 
 Non-authoritative answer:
 Name:	web
 Address: 172.18.0.2
-
 ```
 
 ### 7.2 DNS aliases
 
 ```bash
 # Несколько DNS имён для контейнера
+
 docker run -d --name db --network mynet \
     --network-alias database \
     --network-alias mysql \
     mysql:8
 
 # Можно обращаться по любому алиасу
+
 docker exec app ping database
 docker exec app ping mysql
 docker exec app ping db
-
 ```
 
 ### 7.3 Custom DNS
 
 ```bash
 # Свои DNS серверы
+
 docker run -d \
     --dns 8.8.8.8 \
     --dns 8.8.4.4 \
@@ -567,8 +565,8 @@ docker run -d \
     alpine
 
 # Проверка
-docker exec <container> cat /etc/resolv.conf
 
+docker exec <container> cat /etc/resolv.conf
 ```
 
 ---
@@ -579,6 +577,7 @@ docker exec <container> cat /etc/resolv.conf
 
 ```bash
 # Контейнеры в разных сетях не видят друг друга
+
 docker network create net-a
 docker network create net-b
 
@@ -586,38 +585,41 @@ docker run -d --name a --network net-a alpine sleep 3600
 docker run -d --name b --network net-b alpine sleep 3600
 
 # Не смогут общаться
-docker exec a ping b  # Fail: name not resolved
 
+docker exec a ping b  # Fail: name not resolved
 ```
 
 ### 8.2 Internal Networks
 
 ```bash
 # Сеть без доступа к внешнему миру
+
 docker network create --internal internal-net
 
 docker run -d --network internal-net alpine sleep 3600
 
 # Нет доступа к интернету
-docker exec <container> ping 8.8.8.8  # Fail
 
+docker exec <container> ping 8.8.8.8  # Fail
 ```
 
 ### 8.3 iptables и Docker
 
 ```bash
 # Docker добавляет свои chains
+
 sudo iptables -L -n | grep -A10 DOCKER
 
 # Правила NAT
+
 sudo iptables -t nat -L -n
 
 # Отключение автоматического управления iptables
 # /etc/docker/daemon.json
+
 {
     "iptables": false
 }
-
 ```
 
 ### 8.4 Firewall rules для контейнеров
@@ -625,11 +627,11 @@ sudo iptables -t nat -L -n
 ```bash
 # Запретить исходящий трафик для контейнера
 # (требуется знание его veth интерфейса)
+
 VETH=$(docker exec mycontainer cat /sys/class/net/eth0/iflink)
 HOST_VETH=$(ip link | grep "^${VETH}:" | cut -d: -f2 | tr -d ' ')
 
 iptables -I DOCKER-USER -o $HOST_VETH -j DROP
-
 ```
 
 ---
@@ -640,56 +642,62 @@ iptables -I DOCKER-USER -o $HOST_VETH -j DROP
 
 ```bash
 # Информация о сетях
+
 docker network ls
 docker network inspect bridge
 
 # Сеть контейнера
-docker inspect --format '{{json .NetworkSettings.Networks}}' <container> | jq
 
+docker inspect --format '{{json .NetworkSettings.Networks}}' <container> | jq
 ```
 
 ### 9.2 Инструменты отладки
 
 ```bash
 # Запуск контейнера с сетевыми инструментами
+
 docker run --rm -it --network container:<target> \
     nicolaka/netshoot
 
 # Внутри netshoot доступны: tcpdump, iftop, nmap, netstat, etc.
+
 tcpdump -i eth0 -n
 iftop -i eth0
 ss -tulpn
-
 ```
 
 ### 9.3 tcpdump для контейнеров
 
 ```bash
 # На хосте для трафика контейнера
+
 CONTAINER_PID=$(docker inspect -f '{{.State.Pid}}' mycontainer)
 nsenter -t $CONTAINER_PID -n tcpdump -i eth0 -n
 
 # Или через Docker
-docker run --rm --net container:mycontainer nicolaka/netshoot tcpdump -i eth0
 
+docker run --rm --net container:mycontainer nicolaka/netshoot tcpdump -i eth0
 ```
 
 ### 9.4 Проверка связности
 
 ```bash
 # Пинг между контейнерами
+
 docker exec container1 ping container2
 
 # HTTP запрос
+
 docker exec container1 curl -v container2:80
 
 # DNS lookup
+
 docker exec container1 nslookup container2
 docker exec container1 dig container2
 
 # Traceroute
-docker exec container1 traceroute container2
 
+docker exec container1 traceroute container2
 ```
 
 ---
@@ -700,17 +708,20 @@ docker exec container1 traceroute container2
 
 ```bash
 # Создаём сети для разных слоёв
+
 docker network create frontend
 docker network create backend
 docker network create database
 
 # Frontend доступен извне
+
 docker run -d --name nginx \
     --network frontend \
     -p 80:80 \
     nginx
 
 # API подключён к frontend и backend
+
 docker run -d --name api \
     --network frontend \
     --network backend \
@@ -719,23 +730,25 @@ docker run -d --name api \
 docker network connect backend api
 
 # Database только в backend сети
+
 docker run -d --name db \
     --network database \
     postgres
 
 # Backend service подключён к backend и database
+
 docker run -d --name worker \
     --network backend \
     myworker:latest
 
 docker network connect database worker
-
 ```
 
 ### 10.2 Service Discovery pattern
 
 ```bash
 # Несколько инстансов одного сервиса
+
 docker network create app-net
 
 for i in {1..3}; do
@@ -746,6 +759,7 @@ for i in {1..3}; do
 done
 
 # Load balancing через DNS
+
 docker run --rm --network app-net alpine \
     sh -c "for i in \$(seq 1 10); do nslookup web; done"
 
@@ -766,11 +780,12 @@ if [ -z "$CONTAINER" ]; then
 fi
 
 # Получаем PID контейнера
+
 PID=$(docker inspect -f '{{.State.Pid}}' $CONTAINER)
 
 # Входим в network namespace и запускаем iftop
-sudo nsenter -t $PID -n iftop -i eth0 -P
 
+sudo nsenter -t $PID -n iftop -i eth0 -P
 ```
 
 ---
@@ -831,6 +846,7 @@ sudo nsenter -t $PID -n iftop -i eth0 -P
 - [Deep Dive into Docker Networking](https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-cases/)
 
 ---
+
 
 
 

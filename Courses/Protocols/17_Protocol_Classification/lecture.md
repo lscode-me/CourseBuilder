@@ -67,7 +67,6 @@
 
 **Пример:**
 ```
-
 GET /api/users/123 HTTP/1.1
 Authorization: Bearer token123
 ```
@@ -102,7 +101,6 @@ Authorization: Bearer token123
 
 **Пример FTP:**
 ```
-
 Client: USER admin
 Server: 331 Password required
 Client: PASS secret
@@ -115,7 +113,6 @@ Server: [файлы] (сервер помнит, что клиент залог�
 
 **HTTP с сессиями:**
 ```
-
 Stateless протокол + stateful session через cookies
 
 GET /dashboard HTTP/1.1
@@ -161,7 +158,6 @@ Cookie: session_id=abc123
 
 **Пример:**
 ```python
-
 response = requests.get('https://api.example.com/users/123')
 # Блокируется до получения ответа
 
@@ -196,7 +192,6 @@ print(response.json())
 
 **Пример:**
 ```python
-
 import asyncio
 import aiohttp
 

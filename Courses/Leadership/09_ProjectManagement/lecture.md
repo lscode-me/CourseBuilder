@@ -90,7 +90,6 @@
 ### 1.3 Пересечения ролей
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │                          PdM                                    │
@@ -152,7 +151,6 @@
 ### 2.1 Матрица принятия решения
 
 ```
-
                     HIGH COMPLEXITY
                          │
     PM HELPFUL           │        PM ESSENTIAL
@@ -226,7 +224,6 @@
 **Trade-offs:**
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │               TL КАК PM: TRADE-OFFS                             │
 ├─────────────────────────────────────────────────────────────────┤
@@ -251,7 +248,6 @@
 **Сигналы, что пора добавить PM:**
 
 ```
-
 🚨 Пора искать PM когда:
 □ TL тратит > 50% времени на coordination
 □ Команда растёт > 7-8 человек
@@ -270,7 +266,6 @@
 Даже без PM, Team Lead отвечает за:
 
 ```
-
 Planning:
 
 - Участие в estimation
@@ -288,7 +283,6 @@ Tracking:
 - Progress monitoring
 - Risk communication
 - Scope discussions
-
 ```
 
 ### 3.2 Planning как TL
@@ -301,7 +295,6 @@ Tracking:
 
 **Risk identification:**
 ```
-
 Технические риски:
 
 - Незнакомые технологии
@@ -314,19 +307,16 @@ Organizational риски:
 - Зависимости от других команд
 - Key people отпуска/уход
 - Changing requirements
-
 ```
 
 ### 3.3 Execution
 
 **Убирание блокеров:**
 ```
-
 1. Daily standup: выявить блокеры
 2. После standup: immediately action
 3. Escalate если не можете решить
 4. Follow up до разрешения
-
 ```
 
 **Technical decisions:**
@@ -342,21 +332,23 @@ Organizational риски:
 ## Weekly Status: [Project Name]
 
 ### Progress
+
 - [x] Feature A — done
 - [ ] Feature B — in progress (70%)
 - [ ] Feature C — blocked
 
 ### Risks
+
 - Integration with System X delayed (mitigation: parallel work on Y)
 
 ### This Week
+
 - Complete Feature B
 - Start Feature D
 
 ### Needs Decision
 
 - Approach for caching: Option A vs B (need input by Friday)
-
 ```
 
 ---
@@ -385,7 +377,6 @@ Organizational риски:
 **Конфликт 1: "PM давит на сроки"**
 
 ```
-
 Ситуация:
 PM: "Нам нужно сделать это к пятнице."
 TL: (понимает, что это невозможно качественно)
@@ -408,7 +399,6 @@ TL: (понимает, что это невозможно качественно
 **Конфликт 2: "PM не понимает complexity"**
 
 ```
-
 Ситуация:
 PM: "Это же просто добавить кнопку, почему 2 недели?"
 
@@ -435,7 +425,6 @@ PM: "Это же просто добавить кнопку, почему 2 не
 **Конфликт 3: "PM микроменеджит команду"**
 
 ```
-
 Ситуация:
 PM ходит к разработчикам напрямую, спрашивает статус,
 даёт задачи минуя TL.
@@ -458,7 +447,6 @@ PM ходит к разработчикам напрямую, спрашивае
 **Конфликт 4: "Мы не можем договориться о приоритетах"**
 
 ```
-
 Ситуация:
 PM хочет feature A, TL считает нужно сначала 
 исправить tech debt B.
@@ -498,21 +486,25 @@ Trade-off: 0.5 недели сейчас vs [X] недель за год.
 ## PM-TL Weekly Sync
 
 ### 1. Progress Review (10 min)
+
 - What was completed this week?
 - What's in progress?
 - Any delays vs plan?
 
 ### 2. Risks & Blockers (10 min)
+
 - New risks identified?
 - Blocker status?
 - Mitigation updates?
 
 ### 3. Upcoming Week (10 min)
+
 - What's planned?
 - Any concerns about capacity?
 - Dependencies to watch?
 
 ### 4. Stakeholder Updates (5 min)
+
 - What do stakeholders need to know?
 - Any questions to address?
 - Upcoming presentations?
@@ -553,22 +545,18 @@ Trade-off: 0.5 недели сейчас vs [X] недель за год.
 
 **Sprint-based delivery:**
 ```
-
 Week 1, Monday: Sprint Planning
 Week 1-2: Execution
 Week 2, Thursday: Demo
 Week 2, Friday: Retro + Next planning prep
-
 ```
 
 **Kanban-based delivery:**
 ```
-
 - WIP limits enforced
 - Weekly stakeholder sync
 - Regular deployment
 - Metrics: lead time, throughput
-
 ```
 
 ### 5.3 Stakeholder Management для TL
@@ -582,11 +570,9 @@ Week 2, Friday: Retro + Next planning prep
 
 **Формат communication:**
 ```
-
 For executives: High-level, impact focused
 For PdM: Feature progress, scope discussions
 For other teams: Dependencies, interfaces
-
 ```
 
 ---
@@ -619,19 +605,15 @@ For other teams: Dependencies, interfaces
 
 **Burndown Chart:**
 ```
-
 Оставшаяся работа vs время
 Good: линия идёт вниз к нулю
 Bad: плоская или растёт
-
 ```
 
 **Burnup Chart:**
 ```
-
 Сделанная работа vs total scope
 Показывает: scope creep visible
-
 ```
 
 ### 6.3 Как использовать метрики
@@ -662,7 +644,6 @@ Bad: плоская или растёт
 
 **Как управлять:**
 ```
-
 1. Document original scope
 2. Evaluate каждое изменение:
    - Impact на timeline?
@@ -671,28 +652,23 @@ Bad: плоская или растёт
    - Добавляем это → убираем то
    - Добавляем это → двигаем deadline
 4. Formal change request для больших изменений
-
 ```
 
 ### 7.2 Saying "No" (или "Yes, but...")
 
 **Вместо "No":**
 ```
-
 "Да, мы можем это сделать. 
 Это займёт X недель и потребует убрать Y из scope.
 Или мы можем сделать упрощённую версию за Z дней."
-
 ```
 
 **Framework для приоритизации:**
 ```
-
 Must have  — без этого не запускаемся
 Should have — важно, но можно после launch
 Could have  — nice to have
 Won't have  — не в этом релизе
-
 ```
 
 ### 7.3 MVP Mindset
@@ -704,10 +680,8 @@ Won't have  — не в этом релизе
 - Avoid overengineering
 
 ```
-
 ❌ "Давайте сделаем идеально"
 ✅ "Давайте сделаем минимум, который работает, и улучшим по feedback"
-
 ```
 
 ---
@@ -730,14 +704,12 @@ Won't have  — не в этом релизе
 
 **Для каждого риска:**
 ```
-
 Risk: [описание]
 Probability: High / Medium / Low
 Impact: High / Medium / Low
 Mitigation: [что делаем для снижения]
 Contingency: [что делаем если случится]
 Owner: [кто следит]
-
 ```
 
 ### 8.3 Risk Mitigation Strategies
@@ -822,6 +794,7 @@ Owner: [кто следит]
 - DORA Metrics (Deployment Frequency, Lead Time, etc.)
 
 ---
+
 
 
 

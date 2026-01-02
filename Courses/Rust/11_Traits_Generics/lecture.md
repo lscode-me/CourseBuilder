@@ -34,7 +34,6 @@
 **Example: Определение trait**
 
 ```rust
-
 trait Summary {
     fn summarize(&self) -> String;
 }
@@ -66,7 +65,6 @@ fn main() {
 
 **Output:**
 ```
-
 Важные новости, by Иван Иванов (Москва)
 ```
 
@@ -75,7 +73,6 @@ fn main() {
 **Example: Множественная реализация**
 
 ```rust
-
 trait Summary {
     fn summarize(&self) -> String;
 }
@@ -117,7 +114,6 @@ fn main() {
 
 **Output:**
 ```
-
 Новость: Новость
 user: Твит
 ```
@@ -127,7 +123,6 @@ user: Твит
 **Example: Методы по умолчанию**
 
 ```rust
-
 trait Summary {
     fn summarize(&self) -> String {
         String::from("(Читать далее...)")
@@ -152,7 +147,6 @@ fn main() {
 
 **Output:**
 ```
-
 (Читать далее...)
 ```
 
@@ -167,7 +161,6 @@ fn main() {
 **Example: Generic функция**
 
 ```rust
-
 fn largest<T: PartialOrd>(list: &[T]) -> &T {
     let mut largest = &list[0];
     
@@ -189,7 +182,6 @@ fn main() {
 
 **Output:**
 ```
-
 Наибольшее число: 100
 ```
 
@@ -200,7 +192,6 @@ fn main() {
 **Example: Generic структура**
 
 ```rust
-
 struct Point<T> {
     x: T,
     y: T,
@@ -217,7 +208,6 @@ fn main() {
 
 **Output:**
 ```
-
 Целочисленная точка: (5, 10)
 Точка с плавающей точкой: (1, 4)
 ```
@@ -227,7 +217,6 @@ fn main() {
 **Example: Несколько параметров**
 
 ```rust
-
 struct Point<T, U> {
     x: T,
     y: U,
@@ -244,7 +233,6 @@ fn main() {
 
 **Output:**
 ```
-
 (5, 4)
 ```
 
@@ -259,7 +247,6 @@ fn main() {
 **Example: Trait bounds**
 
 ```rust
-
 use std::fmt::Display;
 
 fn print_summary<T: Summary>(item: &T) {
@@ -290,7 +277,6 @@ fn main() {
 
 **Output:**
 ```
-
 Новость
 ```
 
@@ -299,7 +285,6 @@ fn main() {
 **Example: Несколько bounds**
 
 ```rust
-
 use std::fmt::Display;
 
 fn some_function<T: Display + Clone, U: Clone + Copy>(t: &T, u: &U) {
@@ -310,7 +295,6 @@ fn some_function<T: Display + Clone, U: Clone + Copy>(t: &T, u: &U) {
 **Альтернативный синтаксис с where:**
 
 ```rust
-
 fn some_function<T, U>(t: &T, u: &U)
 where
     T: Display + Clone,
@@ -346,7 +330,6 @@ fn main() {
 
 **Output:**
 ```
-
 Point { x: 3, y: 4 }
 Point {
     x: 3,
@@ -377,7 +360,6 @@ fn main() {
 
 **Output:**
 ```
-
 p1: Point { x: 3, y: 4 }, p2: Point { x: 3, y: 4 }
 ```
 
@@ -402,7 +384,6 @@ fn main() {
 
 **Output:**
 ```
-
 p1: Point { x: 3, y: 4 }, p2: Point { x: 3, y: 4 }
 ```
 
@@ -431,7 +412,6 @@ fn main() {
 
 **Output:**
 ```
-
 p1 == p2: true
 p1 == p3: false
 ```
@@ -460,7 +440,6 @@ fn main() {
 
 **Output:**
 ```
-
 p1 < p2: true
 ```
 
@@ -471,7 +450,6 @@ p1 < p2: true
 ### 5.1 Пример: Generic функция с trait bounds
 
 ```rust
-
 use std::fmt::Display;
 
 fn print_and_return<T: Display>(item: T) -> T {
@@ -489,7 +467,6 @@ fn main() {
 
 **Output:**
 ```
-
 Значение: 42
 Значение: hello
 number: 42, text: hello
@@ -498,7 +475,6 @@ number: 42, text: hello
 ### 5.2 Пример: Generic структура с методами
 
 ```rust
-
 struct Container<T> {
     value: T,
 }
@@ -530,7 +506,6 @@ fn main() {
 
 **Output:**
 ```
-
 Значение: 42
 42
 ```
@@ -538,7 +513,6 @@ fn main() {
 ### 5.3 Пример: Trait с ассоциированными типами
 
 ```rust
-
 trait Iterator {
     type Item;
     
@@ -572,7 +546,6 @@ fn main() {
 
 **Output:**
 ```
-
 1
 2
 3

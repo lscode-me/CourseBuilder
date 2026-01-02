@@ -50,6 +50,7 @@ Data Engineering — это инженерная дисциплина, кото�
 
 ```python
 # Проблема: данные из разных источников
+
 data_sources = {
     "user_events": "Clickstream данные (JSON logs)",
     "transactions": "PostgreSQL база данных",
@@ -69,7 +70,6 @@ for source, description in data_sources.items():
 
 **Output:**
 ```
-
 Источники данных:
   - user_events: Clickstream данные (JSON logs)
   - transactions: PostgreSQL база данных
@@ -112,6 +112,7 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 # Данные уже очищены и подготовлены Data Engineer
+
 sales_data = pd.DataFrame({
     'month': [1, 2, 3, 4, 5],
     'advertising_spend': [1000, 1500, 2000, 2500, 3000],
@@ -119,6 +120,7 @@ sales_data = pd.DataFrame({
 })
 
 # Строит модель
+
 model = LinearRegression()
 model.fit(sales_data[['advertising_spend']], sales_data['sales'])
 
@@ -130,7 +132,6 @@ print(f"Предсказанные продажи при бюджете $3500: $
 
 **Output:**
 ```
-
 Предсказанные продажи при бюджете $3500: $10000.00
 ```
 
@@ -151,6 +152,7 @@ print(f"Предсказанные продажи при бюджете $3500: $
 # Analytics создаёт отчёты из данных
 
 # Данные уже подготовлены Data Engineer
+
 daily_sales = pd.DataFrame({
     'date': pd.date_range('2024-01-01', periods=30, freq='D'),
     'revenue': [1000 + i*50 + (i%7)*200 for i in range(30)],
@@ -158,6 +160,7 @@ daily_sales = pd.DataFrame({
 })
 
 # Создаёт агрегации для отчёта
+
 monthly_summary = daily_sales.groupby('region')['revenue'].agg({
     'total': 'sum',
     'average': 'mean',
@@ -170,7 +173,6 @@ print(monthly_summary)
 
 **Output:**
 ```
-
 Месячный отчёт по регионам:
         total    average      max
 region                            
@@ -200,6 +202,7 @@ import json
 from datetime import datetime
 
 # 1. Сбор данных из разных источников
+
 def collect_user_events():
     """Собирает события пользователей из логов"""
     # Симуляция чтения логов
@@ -219,6 +222,7 @@ def collect_transactions():
     return transactions
 
 # 2. Трансформация и объединение
+
 def transform_and_join(events, transactions):
     """Объединяет события и транзакции"""
     result = []
@@ -238,6 +242,7 @@ def transform_and_join(events, transactions):
     return result
 
 # 3. Загрузка в хранилище
+
 def load_to_warehouse(data):
     """Загружает данные в data warehouse"""
     print(f"Загружено {len(data)} записей в warehouse")
@@ -253,7 +258,6 @@ load_to_warehouse(transformed)
 
 **Output:**
 ```
-
 Загружено 2 записей в warehouse
 ```
 
@@ -304,6 +308,7 @@ Data Engineer — это мост между источниками данных
 
 ```python
 # Утро: проверка ночных jobs
+
 def check_nightly_jobs():
     jobs = {
         "user_events_ingestion": {"status": "success", "records": 1000000},
@@ -323,7 +328,6 @@ check_nightly_jobs()
 
 **Output:**
 ```
-
 ✅ user_events_ingestion: 1000000 записей обработано
 ⚠️  transactions_etl: Connection timeout
 ✅ analytics_refresh: 500000 записей обработано
@@ -383,7 +387,6 @@ print(result)
 
 **Output:**
 ```
-
 Модель построена на основе Подготовленные данные для: user behavior prediction
 ```
 
@@ -413,6 +416,7 @@ Data-системы можно классифицировать по разли�
 
 ```python
 # Batch Processing: обработка всех данных раз в день
+
 def batch_process():
     """Обрабатывает все данные за вчера"""
     yesterday_data = load_data_for_date("2024-01-01")
@@ -421,6 +425,7 @@ def batch_process():
     print("Batch processing завершён")
 
 # Streaming Processing: обработка каждого события сразу
+
 def stream_process(event):
     """Обрабатывает событие в реальном времени"""
     processed = transform_event(event)
@@ -429,12 +434,10 @@ def stream_process(event):
 
 # Batch: запускается по расписанию (например, в 2:00 ночи)
 # Streaming: обрабатывает события по мере поступления
-
 ```
 
 **Output:**
 ```
-
 Batch processing завершён
 Событие обработано: event_123
 ```
@@ -459,6 +462,7 @@ Batch processing завершён
 
 ```python
 # OLTP: быстрая запись транзакции
+
 def oltp_write_transaction(user_id, amount):
     """Записывает транзакцию в OLTP базу"""
     transaction = {
@@ -473,6 +477,7 @@ def oltp_write_transaction(user_id, amount):
     print(f"Транзакция {transaction['id']} записана")
 
 # OLAP: аналитический запрос
+
 def olap_get_monthly_revenue():
     """Получает месячную выручку из OLAP хранилища"""
     # Агрегация по денормализованным данным
@@ -489,12 +494,10 @@ def olap_get_monthly_revenue():
 
 # OLTP: оптимизирован для записи одной транзакции
 # OLAP: оптимизирован для агрегации миллионов записей
-
 ```
 
 **Output:**
 ```
-
 Транзакция tx_12345 записана
 Месячная выручка:
   2024-01-01: $50000
@@ -521,6 +524,7 @@ def olap_get_monthly_revenue():
 
 ```python
 # Monolithic: одна база данных
+
 class MonolithicSystem:
     def __init__(self):
         self.database = {}  # Всё в одном месте
@@ -530,6 +534,7 @@ class MonolithicSystem:
         print(f"Сохранено в монолитной системе: {key}")
 
 # Distributed: данные распределены
+
 class DistributedSystem:
     def __init__(self, nodes=3):
         self.nodes = [{} for _ in range(nodes)]
@@ -554,7 +559,6 @@ dist.store("user_1", "data")
 
 **Output:**
 ```
-
 Сохранено в монолитной системе: user_1
 Сохранено на узле 1: user_1
 ```
@@ -594,7 +598,6 @@ dist.store("user_1", "data")
 **Example: Data Product**
 
 ```python
-
 class DataProduct:
     """Данные как продукт с документацией и SLA"""
     
@@ -625,6 +628,7 @@ class DataProduct:
         }
 
 # Создание data product
+
 user_events = DataProduct(
     name="user_events",
     schema={"user_id": "int", "event": "string", "timestamp": "datetime"},
@@ -644,7 +648,6 @@ print(f"  Документировано полей: {info['documented_fields']}
 
 **Output:**
 ```
-
 Пользователь analytics_team добавлен: dashboard updates
 Пользователь ml_team добавлен: feature engineering
 
@@ -694,7 +697,6 @@ Data Product: user_events
 **Example: Сбор данных из разных источников**
 
 ```python
-
 import json
 import csv
 from datetime import datetime
@@ -743,7 +745,6 @@ print(f"\nВсего собрано записей: {total_records}")
 
 **Output:**
 ```
-
 Собрано 2 записей из базы данных
 Собрано 2 записей из API
 Собрано 2 записей из файла sales.csv
@@ -765,7 +766,6 @@ print(f"\nВсего собрано записей: {total_records}")
 **Example: Трансформация данных**
 
 ```python
-
 def clean_data(raw_data):
     """Очистка данных"""
     cleaned = []
@@ -816,7 +816,6 @@ for record in enriched:
 
 **Output:**
 ```
-
 Трансформированные данные:
   {'id': 1, 'name': 'Product A', 'price': 99.99, 'price_with_tax': 119.988, 'category': 'electronics'}
   {'id': 2, 'name': 'Product B', 'price': 149.99, 'price_with_tax': 179.988, 'category': 'electronics'}
@@ -837,7 +836,6 @@ for record in enriched:
 **Example: Загрузка данных**
 
 ```python
-
 class DataWarehouse:
     def __init__(self):
         self.data = {}
@@ -890,7 +888,6 @@ warehouse.incremental_load("products", new_data)
 
 **Output:**
 ```
-
 Full load: 2 записей загружено в products
 Incremental load: 1 новых, 1 обновлено в products
 ```
@@ -964,7 +961,6 @@ print(f"  Хранилище (аналитика): {recommend_tools('storage', '
 
 **Output:**
 ```
-
 Рекомендации инструментов:
   Batch processing (большие данные): Spark on Hadoop
   Streaming (низкая задержка): Kafka + Flink
@@ -1037,7 +1033,6 @@ for category, skills in junior_skills.items():
 
 **Output:**
 ```
-
 Junior Data Engineer навыки:
   programming: Python, SQL
   tools: Pandas, PostgreSQL
@@ -1101,5 +1096,6 @@ Junior Data Engineer навыки:
 - Apache Kafka: https://kafka.apache.org/documentation/
 
 ---
+
 
 

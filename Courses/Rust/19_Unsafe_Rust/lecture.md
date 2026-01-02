@@ -40,7 +40,6 @@
 **Example: unsafe блок**
 
 ```rust
-
 unsafe fn dangerous() {}
 
 fn main() {
@@ -68,7 +67,6 @@ fn main() {
 **Example: Вызов C функции**
 
 ```rust
-
 extern "C" {
     fn abs(input: i32) -> i32;
 }
@@ -82,7 +80,6 @@ fn main() {
 
 **Output:**
 ```
-
 Абсолютное значение -3: 3
 ```
 
@@ -91,7 +88,6 @@ fn main() {
 **Example: Прямой доступ к памяти**
 
 ```rust
-
 fn main() {
     let address = 0x01234usize;
     let r = address as *const i32;
@@ -120,7 +116,6 @@ fn main() {
 **Изолируйте unsafe код в безопасные абстракции:**
 
 ```rust
-
 fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
     let len = slice.len();
     let ptr = slice.as_mut_ptr();
@@ -144,7 +139,6 @@ fn main() {
 
 **Output:**
 ```
-
 left: [1, 2, 3], right: [4, 5, 6]
 ```
 
@@ -155,7 +149,6 @@ left: [1, 2, 3], right: [4, 5, 6]
 **Всегда документируйте инварианты unsafe кода:**
 
 ```rust
-
 /// Безопасно создаёт slice из указателя.
 ///
 /// # Safety
@@ -172,7 +165,6 @@ unsafe fn create_slice(ptr: *const i32, len: usize) -> &[i32] {
 **Проверяйте инварианты перед unsafe операциями:**
 
 ```rust
-
 fn safe_index(slice: &[i32], index: usize) -> Option<&i32> {
     if index < slice.len() {
         unsafe {
@@ -192,7 +184,6 @@ fn main() {
 
 **Output:**
 ```
-
 Some(2)
 None
 ```
@@ -215,7 +206,6 @@ None
 **Example: Вызов C функции**
 
 ```rust
-
 extern "C" {
     fn sqrt(x: f64) -> f64;
 }
@@ -231,7 +221,6 @@ fn main() {
 
 **Output:**
 ```
-
 Квадратный корень из 16: 4
 ```
 
@@ -240,7 +229,6 @@ fn main() {
 **Example: Обход проверок для производительности**
 
 ```rust
-
 fn fast_sum(slice: &[i32]) -> i32 {
     let mut sum = 0;
     let ptr = slice.as_ptr();
@@ -263,7 +251,6 @@ fn main() {
 
 **Output:**
 ```
-
 Сумма: 15
 ```
 
@@ -272,7 +259,6 @@ fn main() {
 **Example: Безопасная обёртка**
 
 ```rust
-
 pub struct SafeVec<T> {
     ptr: *mut T,
     len: usize,
@@ -306,7 +292,6 @@ impl<T> Drop for SafeVec<T> {
 ### 4.4 Пример: Безопасный интерфейс для unsafe кода
 
 ```rust
-
 pub struct SafePointer<T> {
     ptr: *mut T,
 }
@@ -350,7 +335,6 @@ fn main() {
 
 **Output:**
 ```
-
 Значение: 42
 Новое значение: 100
 ```
@@ -398,7 +382,6 @@ mod tests {
 **Всегда документируйте инварианты:**
 
 ```rust
-
 /// Безопасно создаёт slice из указателя.
 ///
 /// # Safety
@@ -420,7 +403,6 @@ unsafe fn create_slice(ptr: *const i32, len: usize) -> &[i32] {
 
 **Ошибка:**
 ```rust
-
 // unsafe {
 //     let ptr: *const i32 = std::ptr::null();
 //     println!("{}", *ptr);  // Неопределённое поведение!
@@ -429,7 +411,6 @@ unsafe fn create_slice(ptr: *const i32, len: usize) -> &[i32] {
 
 **Правильно:**
 ```rust
-
 unsafe {
     let ptr: *const i32 = std::ptr::null();
     if !ptr.is_null() {
@@ -442,7 +423,6 @@ unsafe {
 
 **Ошибка:**
 ```rust
-
 // let ptr = Box::into_raw(Box::new(5));
 // let _ = Box::from_raw(ptr);
 // unsafe {
@@ -452,7 +432,6 @@ unsafe {
 
 **Правильно:**
 ```rust
-
 let ptr = Box::into_raw(Box::new(5));
 unsafe {
     println!("{}", *ptr);

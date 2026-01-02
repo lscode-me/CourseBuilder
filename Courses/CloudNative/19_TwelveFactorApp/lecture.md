@@ -33,7 +33,6 @@
 **The Twelve-Factor App** — методология разработки SaaS-приложений, созданная инженерами Heroku в 2011 году. Эти принципы стали фундаментом Cloud Native разработки.
 
 ```python
-
 twelve_factors = {
     1: "Codebase",
     2: "Dependencies", 
@@ -52,12 +51,10 @@ twelve_factors = {
 print("The Twelve Factors:\n")
 for num, factor in twelve_factors.items():
     print(f"  {num:2}. {factor}")
-
 ```
 
 **Output:**
 ```
-
 The Twelve Factors:
 
    1. Codebase
@@ -72,7 +69,6 @@ The Twelve Factors:
   10. Dev/Prod Parity
   11. Logs
   12. Admin Processes
-
 ```
 
 ---
@@ -82,7 +78,6 @@ The Twelve Factors:
 ### One codebase tracked in revision control, many deploys
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                    Factor I: Codebase                          │
 ├────────────────────────────────────────────────────────────────┤
@@ -106,7 +101,6 @@ The Twelve Factors:
 │  • Один репо для нескольких приложений (монорепо может быть ОК)│
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ```python
@@ -114,6 +108,7 @@ The Twelve Factors:
 # Версия определяется тегами или коммитами
 
 # Пример структуры
+
 project_structure = """
 my-api/
 ├── src/
@@ -125,7 +120,6 @@ my-api/
 ├── .env.example      # Шаблон конфига (не secrets!)
 └── README.md
 """
-
 ```
 
 ---
@@ -141,6 +135,7 @@ my-api/
 # ✅ GOOD: Explicit dependencies
 
 # requirements.txt (Python)
+
 requirements = """
 flask==3.0.0
 gunicorn==21.2.0
@@ -150,6 +145,7 @@ boto3==1.34.0
 """
 
 # Или pyproject.toml с точными версиями
+
 pyproject = """
 [project]
 dependencies = [
@@ -157,23 +153,23 @@ dependencies = [
     "gunicorn>=21.0.0",
 ]
 """
-
 ```
 
 ```dockerfile
 # Dockerfile с изолированными dependencies
+
 FROM python:3.12-slim
 
 WORKDIR /app
 
 # Копируем и устанавливаем зависимости отдельно для кэширования
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
-
 ```
 
 ---
@@ -184,27 +180,30 @@ CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
 
 ```python
 # ❌ BAD: Hardcoded config
+
 DATABASE_URL = "postgresql://user:password@localhost/db"
 API_KEY = "sk-12345secret"
 
 # ❌ BAD: Config в коде с if/else для environments
+
 if environment == "production":
     DATABASE_URL = "postgresql://prod-server/db"
 else:
     DATABASE_URL = "postgresql://localhost/db"
 
 # ✅ GOOD: Config из environment variables
+
 import os
 
 DATABASE_URL = os.environ["DATABASE_URL"]
 API_KEY = os.environ["API_KEY"]
 DEBUG = os.environ.get("DEBUG", "false").lower() == "true"
 LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
-
 ```
 
 ```yaml
 # Kubernetes ConfigMap + Secrets
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -221,7 +220,6 @@ type: Opaque
 stringData:
   DATABASE_URL: "postgresql://..."
   API_KEY: "sk-..."
-
 ```
 
 ```python
@@ -237,7 +235,6 @@ stringData:
 ### Treat backing services as attached resources
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │               Factor IV: Backing Services                      │
 ├────────────────────────────────────────────────────────────────┤
@@ -259,22 +256,23 @@ stringData:
 │           Не требует изменения кода                            │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ```python
 # Приложение не должно знать, где работает backing service
 
 # Development: локальный PostgreSQL
+
 DATABASE_URL = "postgresql://localhost:5432/mydb"
 
 # Production: RDS в AWS
+
 DATABASE_URL = "postgresql://mydb.xxx.us-east-1.rds.amazonaws.com:5432/mydb"
 
 # Код одинаковый:
+
 from sqlalchemy import create_engine
 engine = create_engine(os.environ["DATABASE_URL"])
-
 ```
 
 ---
@@ -284,7 +282,6 @@ engine = create_engine(os.environ["DATABASE_URL"])
 ### Strictly separate build and run stages
 
 ```
-
 ┌───────────────────────────────────────────────────────────────┐
 │            Factor V: Build, Release, Run                      │
 ├───────────────────────────────────────────────────────────────┤
@@ -313,11 +310,11 @@ engine = create_engine(os.environ["DATABASE_URL"])
 │  └──────────────────────────────────────────────────────┘     │
 │                                                               │
 └───────────────────────────────────────────────────────────────┘
-
 ```
 
 ```yaml
 # GitLab CI/CD пример
+
 stages:
   - build
   - release
@@ -339,7 +336,6 @@ deploy:
   stage: deploy
   script:
     - kubectl set image deployment/my-app app=my-app:v1.2.3
-
 ```
 
 ---
@@ -350,6 +346,7 @@ deploy:
 
 ```python
 # ❌ BAD: Stateful process
+
 class BadApp:
     def __init__(self):
         self.user_sessions = {}  # State в памяти!
@@ -359,6 +356,7 @@ class BadApp:
         self.user_sessions[user_id] = {"logged_in": True}
 
 # ✅ GOOD: Stateless process
+
 class GoodApp:
     def __init__(self):
         self.redis = Redis(os.environ["REDIS_URL"])
@@ -367,11 +365,9 @@ class GoodApp:
     def login(self, user_id):
         # Session хранится в Redis
         self.redis.set(f"session:{user_id}", json.dumps({"logged_in": True}))
-
 ```
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                  Stateless vs Stateful                         │
 ├────────────────────────────────────────────────────────────────┤
@@ -390,7 +386,6 @@ class GoodApp:
 │  • S3                                                          │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -404,6 +399,7 @@ class GoodApp:
 # Не зависит от внешнего web-сервера
 
 # ✅ Flask с Gunicorn
+
 from flask import Flask
 app = Flask(__name__)
 
@@ -419,7 +415,6 @@ if __name__ == '__main__':
 ```
 
 ```dockerfile
-
 FROM python:3.12-slim
 
 WORKDIR /app
@@ -427,9 +422,9 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # Приложение слушает PORT
+
 EXPOSE 8000
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
-
 ```
 
 ---
@@ -439,7 +434,6 @@ CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
 ### Scale out via the process model
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │              Factor VIII: Concurrency                          │
 ├────────────────────────────────────────────────────────────────┤
@@ -466,11 +460,11 @@ CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
 │  Heroku: web=10 worker=6                                       │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ```yaml
 # Kubernetes Deployment с масштабированием
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -503,7 +497,6 @@ spec:
       - name: worker
         image: myapp:v1.0
         command: ["python", "worker.py"]
-
 ```
 
 ---
@@ -513,7 +506,6 @@ spec:
 ### Maximize robustness with fast startup and graceful shutdown
 
 ```python
-
 import signal
 import sys
 from flask import Flask
@@ -534,6 +526,7 @@ def graceful_shutdown(signum, frame):
     sys.exit(0)
 
 # Регистрируем обработчики сигналов
+
 signal.signal(signal.SIGTERM, graceful_shutdown)
 signal.signal(signal.SIGINT, graceful_shutdown)
 
@@ -545,6 +538,7 @@ signal.signal(signal.SIGINT, graceful_shutdown)
 
 ```yaml
 # Kubernetes: Graceful shutdown
+
 apiVersion: v1
 kind: Pod
 spec:
@@ -561,7 +555,6 @@ spec:
         port: 8000
       initialDelaySeconds: 5
       periodSeconds: 10
-
 ```
 
 ---
@@ -572,6 +565,7 @@ spec:
 
 ```python
 # ❌ BAD: Разные backing services
+
 dev_config = {
     "database": "sqlite:///local.db",      # SQLite в dev
     "cache": "memory",                      # In-memory cache
@@ -608,11 +602,9 @@ services:
   redis:
     image: redis:7
 """
-
 ```
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                Three Gaps to Minimize                          │
 ├────────────────────────────────────────────────────────────────┤
@@ -630,7 +622,6 @@ services:
 │  ✅ Same tools everywhere (Docker Compose)                     │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -640,11 +631,11 @@ services:
 ### Treat logs as event streams
 
 ```python
-
 import logging
 import sys
 
 # ✅ GOOD: Логи в stdout
+
 logging.basicConfig(
     stream=sys.stdout,
     level=logging.INFO,
@@ -666,7 +657,6 @@ def get_user(user_id):
 ```
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                   Log Aggregation                              │
 ├────────────────────────────────────────────────────────────────┤
@@ -684,7 +674,6 @@ def get_user(user_id):
 │  • Агрегации логов                                             │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -713,6 +702,7 @@ def get_user(user_id):
 
 ```yaml
 # Kubernetes Job для миграций
+
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -731,7 +721,6 @@ spec:
             name: app-secrets
       restartPolicy: Never
   backoffLimit: 1
-
 ```
 
 ---
@@ -741,7 +730,6 @@ spec:
 ### 14.1 Дополнительные факторы (2020+)
 
 ```python
-
 additional_factors = {
     13: {
         "name": "API First",
@@ -756,7 +744,6 @@ additional_factors = {
         "description": "Security as first-class concern"
     }
 }
-
 ```
 
 ---
@@ -791,6 +778,7 @@ additional_factors = {
 - "Beyond the Twelve-Factor App" — книга Kevin Hoffman
 
 ---
+
 
 
 

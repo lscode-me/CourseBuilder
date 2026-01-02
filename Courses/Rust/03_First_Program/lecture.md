@@ -32,7 +32,6 @@
 **Создание нового проекта:**
 
 ```bash
-
 cargo new hello_world
 cd hello_world
 ```
@@ -40,7 +39,6 @@ cd hello_world
 **Структура проекта:**
 
 ```
-
 hello_world/
 ├── Cargo.toml
 └── src/
@@ -52,7 +50,6 @@ hello_world/
 **Автоматически созданный код:**
 
 ```rust
-
 fn main() {
     println!("Hello, world!");
 }
@@ -71,7 +68,6 @@ fn main() {
 **Структура функции:**
 
 ```rust
-
 fn main() {
     // Код программы
 }
@@ -89,7 +85,6 @@ fn main() {
 **Example: Простая программа**
 
 ```rust
-
 fn main() {
     println!("Добро пожаловать в Rust!");
 }
@@ -97,14 +92,12 @@ fn main() {
 
 **Output:**
 ```
-
 Добро пожаловать в Rust!
 ```
 
 **Example: Несколько операций**
 
 ```rust
-
 fn main() {
     println!("Первая строка");
     println!("Вторая строка");
@@ -114,7 +107,6 @@ fn main() {
 
 **Output:**
 ```
-
 Первая строка
 Вторая строка
 Третья строка
@@ -131,7 +123,6 @@ fn main() {
 **Синтаксис:**
 
 ```rust
-
 println!("Текст для вывода");
 ```
 
@@ -142,7 +133,6 @@ println!("Текст для вывода");
 **Example: Простой вывод**
 
 ```rust
-
 fn main() {
     println!("Hello, Rust!");
 }
@@ -150,14 +140,12 @@ fn main() {
 
 **Output:**
 ```
-
 Hello, Rust!
 ```
 
 **Example: Вывод переменных**
 
 ```rust
-
 fn main() {
     let name = "Rust";
     println!("Hello, {}!", name);
@@ -166,7 +154,6 @@ fn main() {
 
 **Output:**
 ```
-
 Hello, Rust!
 ```
 
@@ -177,7 +164,6 @@ Hello, Rust!
 **Example: Несколько переменных**
 
 ```rust
-
 fn main() {
     let name = "Alice";
     let age = 30;
@@ -187,14 +173,12 @@ fn main() {
 
 **Output:**
 ```
-
 Имя: Alice, Возраст: 30
 ```
 
 **Example: Позиционные аргументы**
 
 ```rust
-
 fn main() {
     println!("{0} любит {1}, а {1} любит {0}", "Alice", "Bob");
 }
@@ -202,14 +186,12 @@ fn main() {
 
 **Output:**
 ```
-
 Alice любит Bob, а Bob любит Alice
 ```
 
 **Example: Именованные аргументы**
 
 ```rust
-
 fn main() {
     println!("{name} работает в {company}", 
              name = "Alice", 
@@ -219,7 +201,6 @@ fn main() {
 
 **Output:**
 ```
-
 Alice работает в TechCorp
 ```
 
@@ -228,7 +209,6 @@ Alice работает в TechCorp
 **Example: Выравнивание и ширина**
 
 ```rust
-
 fn main() {
     println!("{:>10}", "right");   // Выравнивание вправо
     println!("{:<10}", "left");    // Выравнивание влево
@@ -239,7 +219,6 @@ fn main() {
 
 **Output:**
 ```
-
      right
 left      
   center  
@@ -249,7 +228,6 @@ left
 **Example: Числовое форматирование**
 
 ```rust
-
 fn main() {
     let number = 42;
     println!("Десятичное: {}", number);
@@ -262,7 +240,6 @@ fn main() {
 
 **Output:**
 ```
-
 Десятичное: 42
 Двоичное: 101010
 Восьмеричное: 52
@@ -279,7 +256,6 @@ fn main() {
 **Example: Разница между print! и println!**
 
 ```rust
-
 fn main() {
     print!("Первая строка");
     print!(" вторая часть");
@@ -290,7 +266,6 @@ fn main() {
 
 **Output:**
 ```
-
 Первая строка вторая часть третья часть
 Вторая строка
 ```
@@ -304,13 +279,11 @@ fn main() {
 **Команда для компиляции и запуска:**
 
 ```bash
-
 cargo run
 ```
 
 **Output:**
 ```
-
 Compiling hello_world v0.1.0 (/path/to/hello_world)
 Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 Running `target/debug/hello_world`
@@ -329,13 +302,11 @@ Hello, world!
 **Компиляция без запуска:**
 
 ```bash
-
 cargo build
 ```
 
 **Output:**
 ```
-
 Compiling hello_world v0.1.0 (/path/to/hello_world)
 Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 ```
@@ -343,13 +314,11 @@ Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 **Запуск скомпилированного файла:**
 
 ```bash
-
 ./target/debug/hello_world
 ```
 
 **Output:**
 ```
-
 Hello, world!
 ```
 
@@ -358,13 +327,11 @@ Hello, world!
 **Оптимизированная сборка:**
 
 ```bash
-
 cargo build --release
 ```
 
 **Output:**
 ```
-
 Compiling hello_world v0.1.0 (/path/to/hello_world)
 Finished release [optimized] target(s) in 0.60s
 ```
@@ -372,7 +339,6 @@ Finished release [optimized] target(s) in 0.60s
 **Запуск release версии:**
 
 ```bash
-
 ./target/release/hello_world
 ```
 
@@ -388,7 +354,6 @@ Finished release [optimized] target(s) in 0.60s
 ### 5.1 Пример: Калькулятор
 
 ```rust
-
 fn main() {
     let a = 10;
     let b = 5;
@@ -404,7 +369,6 @@ fn main() {
 
 **Output:**
 ```
-
 Калькулятор
 a = 10, b = 5
 Сложение: 10 + 5 = 15
@@ -416,7 +380,6 @@ a = 10, b = 5
 ### 5.2 Пример: Приветствие
 
 ```rust
-
 fn main() {
     let name = "Rust";
     let version = "1.75.0";
@@ -429,7 +392,6 @@ fn main() {
 
 **Output:**
 ```
-
 Добро пожаловать в Rust!
 Версия: 1.75.0
 Начнём изучение языка программирования Rust!
@@ -444,7 +406,6 @@ fn main() {
 **Example: Отсутствие точки с запятой**
 
 ```rust
-
 fn main() {
     println!("Hello")
     // Ошибка: ожидается `;`
@@ -453,7 +414,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error: expected `;`, found `}`
  --> src/main.rs:2:24
   |
@@ -464,7 +424,6 @@ error: expected `;`, found `}`
 **Исправление:**
 
 ```rust
-
 fn main() {
     println!("Hello");
 }
@@ -475,7 +434,6 @@ fn main() {
 **Example: Неправильное количество аргументов**
 
 ```rust
-
 fn main() {
     let name = "Alice";
     println!("Hello, {} and {}", name);
@@ -485,7 +443,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error: 2 positional arguments in format string, but there is 1 argument
  --> src/main.rs:2:32
   |
@@ -496,7 +453,6 @@ error: 2 positional arguments in format string, but there is 1 argument
 **Исправление:**
 
 ```rust
-
 fn main() {
     let name = "Alice";
     let name2 = "Bob";
@@ -511,7 +467,6 @@ fn main() {
 ### 7.1 Однострочные комментарии
 
 ```rust
-
 fn main() {
     // Это однострочный комментарий
     println!("Hello, Rust!");
@@ -522,7 +477,6 @@ fn main() {
 ### 7.2 Многострочные комментарии
 
 ```rust
-
 fn main() {
     /* Это многострочный
        комментарий
@@ -534,7 +488,6 @@ fn main() {
 ### 7.3 Документационные комментарии
 
 ```rust
-
 /// Это документационный комментарий
 /// Используется для генерации документации
 fn main() {
@@ -551,13 +504,11 @@ fn main() {
 **Быстрая проверка без компиляции:**
 
 ```bash
-
 cargo check
 ```
 
 **Output:**
 ```
-
 Checking hello_world v0.1.0 (/path/to/hello_world)
 Finished dev [unoptimized + debuginfo] target(s) in 0.20s
 ```
@@ -573,7 +524,6 @@ Finished dev [unoptimized + debuginfo] target(s) in 0.20s
 **Автоматическое форматирование:**
 
 ```bash
-
 cargo fmt
 ```
 
@@ -581,7 +531,6 @@ cargo fmt
 
 **До форматирования:**
 ```rust
-
 fn main(){
 println!("Hello");
 }
@@ -589,7 +538,6 @@ println!("Hello");
 
 **После форматирования:**
 ```rust
-
 fn main() {
     println!("Hello");
 }

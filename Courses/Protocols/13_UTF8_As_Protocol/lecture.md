@@ -30,14 +30,12 @@
 
 **Без протокола:**
 ```
-
 Байты: 0x48 0x65 0x6C 0x6C 0x6F
 Что это? Текст? Число? Команда?
 ```
 
 **С протоколом (UTF-8):**
 ```
-
 Байты: 0x48 0x65 0x6C 0x6C 0x6F
 UTF-8: "Hello"
 ```
@@ -61,27 +59,23 @@ UTF-8: "Hello"
 
 **1 байт (ASCII, U+0000 — U+007F):**
 ```
-
 0xxxxxxx
 ```
 Пример: 'A' = U+0041 = 0x41 = 01000001
 
 **2 байта (U+0080 — U+07FF):**
 ```
-
 110xxxxx 10xxxxxx
 ```
 Пример: 'Ф' = U+0424 = 11010000 10100100
 
 **3 байта (U+0800 — U+FFFF):**
 ```
-
 1110xxxx 10xxxxxx 10xxxxxx
 ```
 
 **4 байта (U+10000 — U+10FFFF):**
 ```
-
 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
 ```
 
@@ -97,7 +91,6 @@ UTF-8: "Hello"
 
 **Пример:**
 ```
-
 Байты: ... 0x91 0xD0 0xA4 0x48 ...
          ↑    ↑    ↑    ↑
          ?    начало  продолжение  начало
@@ -129,7 +122,6 @@ UTF-8: ... [invalid] 'Ф' 'H' ...
 ### 3.2 Пример: Producer
 
 ```python
-
 text = "Привет, мир! 😀"
 utf8_bytes = text.encode('utf-8')
 print(utf8_bytes)
@@ -138,7 +130,6 @@ print(f"Length: {len(utf8_bytes)} bytes")
 
 **Output:**
 ```
-
 b'\xd0\x9f\xd1\x80\xd0\xb8\xd0\xb2\xd0\xb5\xd1\x82, \xd0\xbc\xd0\xb8\xd1\x80! \xf0\x9f\x98\x80'
 Length: 26 bytes
 ```
@@ -146,7 +137,6 @@ Length: 26 bytes
 ### 3.3 Пример: Consumer
 
 ```python
-
 utf8_bytes = b'\xd0\x9f\xd1\x80\xd0\xb8\xd0\xb2\xd0\xb5\xd1\x82'
 text = utf8_bytes.decode('utf-8')
 print(text)
@@ -155,7 +145,6 @@ print(f"Length: {len(text)} characters")
 
 **Output:**
 ```
-
 Привет
 Length: 6 characters
 ```
@@ -180,7 +169,6 @@ Length: 6 characters
 
 **Invalid start byte:**
 ```
-
 Байты: 0x80 (10000000)
        ↑
     Ожидается 0xxxxxxx или 11xxxxxx
@@ -188,7 +176,6 @@ Length: 6 characters
 
 **Missing continuation bytes:**
 ```
-
 Байты: 0xD0 (11010000) [конец данных]
        ↑
     Ожидается продолжение 10xxxxxx
@@ -196,7 +183,6 @@ Length: 6 characters
 
 **Invalid continuation bytes:**
 ```
-
 Байты: 0xD0 0x20
        ↑    ↑
     11010000 00100000 (ожидается 10xxxxxx)
@@ -204,7 +190,6 @@ Length: 6 characters
 
 **Overlong encoding:**
 ```
-
 Байты: 0xC0 0x80
 UTF-8: декодируется как U+0000
 Ошибка: должно быть закодировано как 0x00 (1 байт)
@@ -214,7 +199,6 @@ UTF-8: декодируется как U+0000
 
 **Strict (по умолчанию):**
 ```python
-
 invalid_utf8 = b'\xff\xfe'
 try:
     text = invalid_utf8.decode('utf-8')
@@ -224,13 +208,11 @@ except UnicodeDecodeError as e:
 
 **Output:**
 ```
-
 Error: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
 ```
 
 **Replace (замена на �):**
 ```python
-
 invalid_utf8 = b'Hello \xff World'
 text = invalid_utf8.decode('utf-8', errors='replace')
 print(text)
@@ -238,13 +220,11 @@ print(text)
 
 **Output:**
 ```
-
 Hello � World
 ```
 
 **Ignore (пропуск):**
 ```python
-
 invalid_utf8 = b'Hello \xff World'
 text = invalid_utf8.decode('utf-8', errors='ignore')
 print(text)
@@ -252,7 +232,6 @@ print(text)
 
 **Output:**
 ```
-
 Hello  World
 ```
 
@@ -271,13 +250,11 @@ Hello  World
 
 **ASCII (1 байт, 0-127):**
 ```
-
 'A' = 0x41 (01000001)
 ```
 
 **UTF-8:**
 ```
-
 'A' = 0x41 (01000001)  — то же самое!
 ```
 
@@ -288,11 +265,11 @@ Hello  World
 Можно найти границы символов, начав с любого места:
 
 ```python
-
 utf8_bytes = "Привет".encode('utf-8')
 print(utf8_bytes)
 
 # Начнём с середины
+
 for i in range(len(utf8_bytes)):
     try:
         text = utf8_bytes[i:].decode('utf-8')
@@ -303,7 +280,6 @@ for i in range(len(utf8_bytes)):
 
 **Output:**
 ```
-
 b'\xd0\x9f\xd1\x80\xd0\xb8\xd0\xb2\xd0\xb5\xd1\x82'
 From byte 0: Привет
 From byte 1: [invalid start]
@@ -320,7 +296,6 @@ From byte 3: [invalid start]
 
 **Сравнение с UTF-16:**
 ```
-
 Текст: "Hello мир 😀"
 UTF-8:  5 + 6*2 + 1 + 4 = 22 байта
 UTF-16: 5*2 + 3*2 + 1*2 + 2*2 = 24 байта
@@ -339,7 +314,6 @@ UTF-8 компактнее для текста с преобладанием ASC
 
 **Ошибка в 1 байте:**
 ```
-
 UTF-8:  повреждён 1 символ
 UTF-16: может повредить несколько символов (если surrogates)
 ```
@@ -352,6 +326,7 @@ UTF-16: может повредить несколько символов (ес�
 
 ```python
 # Правильно: указываем кодировку
+
 with open('file.txt', 'r', encoding='utf-8') as f:
     text = f.read()
     print(text)
@@ -366,7 +341,6 @@ with open('file.txt', 'r') as f:  # Опасно!
 
 **Правильный заголовок:**
 ```
-
 Content-Type: text/html; charset=UTF-8
 ```
 
@@ -375,7 +349,6 @@ Content-Type: text/html; charset=UTF-8
 ### 6.3 База данных
 
 ```sql
-
 CREATE DATABASE mydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
@@ -454,5 +427,6 @@ CREATE DATABASE mydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 - Изучите историю Unicode и UTF-8 (изобретение Ken Thompson и Rob Pike)
 
 ---
+
 
 

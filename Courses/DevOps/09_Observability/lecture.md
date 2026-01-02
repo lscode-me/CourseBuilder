@@ -34,7 +34,6 @@
 **Observability** — способность понять внутреннее состояние системы по её внешним выходам (outputs).
 
 ```python
-
 comparison = {
     "monitoring": {
         "approach": "Знаем заранее, что искать",
@@ -47,13 +46,11 @@ comparison = {
         "analogy": "Детективное расследование"
     }
 }
-
 ```
 
 ### 1.2 Три столпа Observability
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                    Three Pillars of Observability              │
 ├────────────────────────────────────────────────────────────────┤
@@ -72,7 +69,6 @@ comparison = {
 │                 Correlation via trace_id, request_id           │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -83,6 +79,7 @@ comparison = {
 
 ```python
 # ❌ Плохо: неструктурированные логи
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -91,6 +88,7 @@ logger.info(f"User {user_id} created order {order_id} for ${amount}")
 # Проблема: сложно парсить, искать, агрегировать
 
 # ✅ Хорошо: structured logging (JSON)
+
 import structlog
 
 logger = structlog.get_logger()
@@ -109,7 +107,6 @@ logger.info(
 ### 2.2 Конфигурация structlog
 
 ```python
-
 import structlog
 import logging
 
@@ -132,15 +129,18 @@ def configure_logging():
     )
 
 # Использование с контекстом
+
 logger = structlog.get_logger()
 
 # Добавляем контекст для всех последующих логов
+
 logger = logger.bind(
     service="order-service",
     environment="production"
 )
 
 # Добавляем request-specific контекст
+
 def process_request(request):
     log = logger.bind(
         trace_id=request.headers.get("X-Trace-ID"),
@@ -150,13 +150,11 @@ def process_request(request):
     log.info("request_started", path=request.path)
     # ... process ...
     log.info("request_completed", status=200, duration_ms=45)
-
 ```
 
 ### 2.3 Log Levels
 
 ```python
-
 log_levels = {
     "DEBUG": {
         "purpose": "Детальная отладочная информация",
@@ -184,13 +182,13 @@ log_levels = {
         "examples": ["Database connection lost", "Out of memory"]
     }
 }
-
 ```
 
 ### 2.4 ELK Stack (Elasticsearch, Logstash, Kibana)
 
 ```yaml
 # filebeat.yml (сбор логов)
+
 filebeat.inputs:
   - type: container
     paths:
@@ -205,7 +203,6 @@ filebeat.inputs:
 output.elasticsearch:
   hosts: ["elasticsearch:9200"]
   index: "logs-%{+yyyy.MM.dd}"
-
 ```
 
 ---
@@ -260,7 +257,6 @@ def handle_request(request):
     )
     
     return response
-
 ```
 
 ---
@@ -270,7 +266,6 @@ def handle_request(request):
 ### 4.1 Distributed Tracing Concepts
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Distributed Trace                             │
 ├──────────────────────────────────────────────────────────────────┤
@@ -302,13 +297,13 @@ def handle_request(request):
 │  0ms                                                    250ms    │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 OpenTelemetry
 
 ```python
 # opentelemetry_setup.py
+
 from opentelemetry import trace
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
@@ -335,6 +330,7 @@ def configure_tracing(service_name: str):
     return trace.get_tracer(__name__)
 
 # Использование
+
 tracer = configure_tracing("order-service")
 
 @tracer.start_as_current_span("process_order")
@@ -351,18 +347,19 @@ def process_order(order_id: int):
     
     with tracer.start_as_current_span("send_notification"):
         notify_user(order_id)
-
 ```
 
 ### 4.3 Автоматическая инструментация
 
 ```python
 # Автоматическая инструментация для FastAPI/Flask/requests
+
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
 from opentelemetry.instrumentation.sqlalchemy import SQLAlchemyInstrumentor
 
 # После настройки tracing
+
 FastAPIInstrumentor.instrument()
 RequestsInstrumentor.instrument()
 SQLAlchemyInstrumentor().instrument()
@@ -374,6 +371,7 @@ SQLAlchemyInstrumentor().instrument()
 
 ```python
 # Передача trace context между сервисами
+
 from opentelemetry import trace
 from opentelemetry.propagate import inject, extract
 import requests
@@ -388,6 +386,7 @@ def call_downstream_service(url: str, data: dict):
     return response
 
 # В downstream сервисе
+
 def handle_request(request):
     # Extract trace context from incoming headers
     context = extract(request.headers)
@@ -395,7 +394,6 @@ def handle_request(request):
     with tracer.start_as_current_span("handle_request", context=context):
         # Process with parent context
         pass
-
 ```
 
 ---
@@ -405,7 +403,6 @@ def handle_request(request):
 ### 5.1 Связывание logs, metrics, traces
 
 ```python
-
 import structlog
 from opentelemetry import trace
 
@@ -433,6 +430,7 @@ def process_request(request):
 
 ```yaml
 # grafana datasources
+
 datasources:
   - name: Prometheus
     type: prometheus
@@ -451,7 +449,6 @@ datasources:
   - name: Tempo
     type: tempo
     url: http://tempo:3200
-
 ```
 
 ---
@@ -461,7 +458,6 @@ datasources:
 ### 6.1 Debugging Slow Request
 
 ```
-
 Шаг 1: Алерт "P99 latency > 2s"
         ↓
 Шаг 2: Смотрим Grafana → какой endpoint медленный?
@@ -473,13 +469,11 @@ datasources:
 Шаг 5: Смотрим логи этого span по trace_id
         ↓
 Шаг 6: Находим причину (slow query, external API timeout, etc.)
-
 ```
 
 ### 6.2 Debugging Error Spike
 
 ```
-
 Шаг 1: Алерт "Error rate > 5%"
         ↓
 Шаг 2: Смотрим метрики → какой сервис, какой статус код?
@@ -491,7 +485,6 @@ datasources:
 Шаг 5: Берём trace_id из лога → смотрим полный trace
         ↓
 Шаг 6: Понимаем контекст ошибки (какой запрос, какие данные)
-
 ```
 
 ---
@@ -538,6 +531,7 @@ datasources:
 - [Grafana Tempo](https://grafana.com/oss/tempo/)
 
 ---
+
 
 
 

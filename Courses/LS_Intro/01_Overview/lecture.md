@@ -39,6 +39,7 @@
 
 ```python
 # Концептуальная модель Life Sciences Informatics
+
 life_sciences_informatics = {
     "научные_дисциплины": [
         "биология",
@@ -71,7 +72,6 @@ for category, items in life_sciences_informatics.items():
 
 **Output:**
 ```
-
 Life Sciences Informatics объединяет:
 
 научные_дисциплины:
@@ -112,6 +112,7 @@ it_методы:
 
 ```python
 # Примеры объёмов данных в различных областях
+
 data_volumes = {
     "геном_человека": {
         "размер": "3 млрд пар оснований",
@@ -145,7 +146,6 @@ for domain, info in data_volumes.items():
 
 **Output:**
 ```
-
 Масштабы данных в Life Sciences:
 
 Геном Человека:
@@ -182,6 +182,7 @@ Ngs Эксперимент:
 
 ```python
 # Факторы роста важности данных
+
 data_importance_factors = {
     "технологический_прогресс": {
         "секвенирование": "Стоимость упала с $100M до $1000",
@@ -210,7 +211,6 @@ for category, factors in data_importance_factors.items():
 
 **Output:**
 ```
-
 Почему данные стали центральными:
 
 Технологический Прогресс:
@@ -235,6 +235,7 @@ for category, factors in data_importance_factors.items():
 
 ```python
 # Сравнение экспериментов разных эпох
+
 experiment_evolution = {
     "1990s": {
         "метод": "Sanger sequencing",
@@ -276,7 +277,6 @@ for era, details in experiment_evolution.items():
 
 **Output:**
 ```
-
 Эволюция геномных экспериментов:
 
 1990s:
@@ -330,6 +330,7 @@ for era, details in experiment_evolution.items():
 
 ```python
 # Роль Informatics в Life Sciences
+
 informatics_role = {
     "сбор_данных": {
         "задачи": [
@@ -383,7 +384,6 @@ for stage, details in informatics_role.items():
 
 **Output:**
 ```
-
 Роль Informatics в Life Sciences:
 
 Сбор Данных:
@@ -413,6 +413,7 @@ for stage, details in informatics_role.items():
 
 ```python
 # Примеры различий в терминологии и подходах
+
 communication_gap = {
     "учёные_думают": {
         "эксперименты": "Нужно провести эксперимент",
@@ -444,7 +445,6 @@ for perspective, concepts in communication_gap.items():
 
 **Output:**
 ```
-
 Мост между наукой и IT:
 
 Учёные Думают:
@@ -478,6 +478,7 @@ Informatics Решает:
 
 ```python
 # Структура Scientific Informatics
+
 scientific_informatics = {
     "управление_данными": {
         "компоненты": [
@@ -536,7 +537,6 @@ for component, details in scientific_informatics.items():
 
 **Output:**
 ```
-
 Компоненты Scientific Informatics:
 
 Управление Данными:
@@ -566,6 +566,7 @@ for component, details in scientific_informatics.items():
 
 ```python
 # Применение Scientific Informatics
+
 sciinf_applications = {
     "healthcare": {
         "управление_данными": "EHR системы, хранение клинических данных",
@@ -607,7 +608,6 @@ for domain, applications in sciinf_applications.items():
 
 **Output:**
 ```
-
 Применение Scientific Informatics:
 
 Healthcare:
@@ -653,6 +653,7 @@ Medical Devices:
 
 ```python
 # Пример структуры научных данных
+
 scientific_data_structure = {
     "raw_data": {
         "описание": "Исходные данные эксперимента",
@@ -687,7 +688,6 @@ for stage, info in scientific_data_structure.items():
 
 **Output:**
 ```
-
 Структура научных данных:
 
 Raw Data:
@@ -719,6 +719,7 @@ Visualizations:
 
 ```python
 # Компоненты воспроизводимого исследования
+
 reproducible_research = {
     "код": {
         "требования": [
@@ -768,7 +769,6 @@ for component, details in reproducible_research.items():
 
 **Output:**
 ```
-
 Компоненты воспроизводимого исследования:
 
 Код:
@@ -800,6 +800,7 @@ Workflow:
 
 ```python
 # Workflow геномного анализа
+
 genomic_analysis_workflow = {
     "шаг_1_сбор_данных": {
         "действие": "Получение FASTQ файлов из секвенатора",
@@ -845,7 +846,6 @@ for step, details in genomic_analysis_workflow.items():
 
 **Output:**
 ```
-
 Workflow геномного анализа:
 
 Шаг 1 Сбор Данных:
@@ -885,6 +885,7 @@ Workflow геномного анализа:
 
 ```python
 # Интеграция клинических данных
+
 clinical_data_integration = {
     "источники_данных": {
         "ehr": "Электронные медицинские карты",
@@ -917,7 +918,6 @@ print(f"\nРезультат: {clinical_data_integration['результат']}"
 
 **Output:**
 ```
-
 Интеграция клинических данных:
 
 Источники данных:
@@ -947,6 +947,7 @@ print(f"\nРезультат: {clinical_data_integration['результат']}"
 
 ```python
 # Вызовы в управлении данными
+
 data_management_challenges = {
     "объёмы": {
         "проблема": "Экспоненциальный рост объёмов данных",
@@ -981,7 +982,6 @@ for challenge, details in data_management_challenges.items():
 
 **Output:**
 ```
-
 Вызовы в управлении данными:
 
 Объёмы:
@@ -1026,7 +1026,6 @@ for challenge, details in data_management_challenges.items():
 **Общая схема:**
 
 ```
-
 Scientific Informatics (базовый слой)
     ↓
     ├── Healthcare Informatics
@@ -1093,5 +1092,6 @@ Scientific Informatics (базовый слой)
 - Introduction to Bioinformatics — обзорные лекции по биоинформатике
 
 ---
+
 
 

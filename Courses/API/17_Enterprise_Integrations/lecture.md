@@ -49,7 +49,6 @@
 **Example: Интеграция через адаптеры**
 
 ```python
-
 class LegacySystemAdapter:
     """Адаптер для legacy системы"""
     
@@ -105,7 +104,6 @@ class LegacySystemAdapter:
 **Example: ESB концепция**
 
 ```python
-
 class ESBIntegration:
     """Концепция ESB интеграции"""
     
@@ -162,7 +160,6 @@ class ESBIntegration:
 **Example: Data Contract**
 
 ```python
-
 from dataclasses import dataclass
 from typing import Optional
 from datetime import datetime
@@ -199,6 +196,7 @@ def create_user_with_contract(data):
 
 ```python
 # Версия 1 контракта
+
 class UserContractV1:
     id: int
     name: str
@@ -232,7 +230,6 @@ class UserContractV2:
 **Example: Change Management**
 
 ```python
-
 class ChangeManager:
     """Управление изменениями в интеграциях"""
     
@@ -296,7 +293,6 @@ class ChangeManager:
 **Example: Управление рисками**
 
 ```python
-
 def assess_integration_risk(integration):
     """Оценка рисков интеграции"""
     risks = []
@@ -318,7 +314,6 @@ def assess_integration_risk(integration):
 **Example: Мониторинг enterprise интеграций**
 
 ```python
-
 class IntegrationMonitor:
     """Мониторинг интеграций"""
     
@@ -368,7 +363,6 @@ class IntegrationMonitor:
 **Example: Откат изменений при проблемах**
 
 ```python
-
 class ChangeRollback:
     """Управление откатом изменений"""
     
@@ -422,12 +416,14 @@ class ChangeRollback:
 ❌ **Incorrect:**
 ```python
 # Плохо: Прямое использование legacy API
+
 legacy_data = legacy_api.get_data()  # Прямая зависимость
 ```
 
 ✅ **Correct:**
 ```python
 # Хорошо: Через ACL
+
 acl = LegacySystemACL(legacy_api)
 normalized_data = acl.get_data()  # Изолированная интеграция
 ```
@@ -439,12 +435,14 @@ normalized_data = acl.get_data()  # Изолированная интеграц�
 ❌ **Incorrect:**
 ```python
 # Плохо: Нет мониторинга интеграций
+
 result = call_external_service()  # Неизвестно, работает ли
 ```
 
 ✅ **Correct:**
 ```python
 # Хорошо: Мониторинг всех интеграций
+
 monitor.register_integration("external_service", health_check)
 status = monitor.check_health("external_service")
 ```
@@ -502,6 +500,7 @@ status = monitor.check_health("external_service")
 - "ESB vs Microservices" — сравнение подходов
 
 ---
+
 
 
 

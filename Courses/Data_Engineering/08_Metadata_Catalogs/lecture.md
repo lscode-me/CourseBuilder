@@ -67,6 +67,7 @@ Schema определяет структуру данных: какие поля
 
 ```python
 # Explicit schema (Avro-подобный)
+
 avro_schema = {
     "type": "record",
     "name": "User",
@@ -79,6 +80,7 @@ avro_schema = {
 }
 
 # Implicit schema (выводится из данных)
+
 json_data = [
     {"id": 1, "name": "Alice", "email": "alice@example.com", "age": 30},
     {"id": 2, "name": "Bob", "email": "bob@example.com"}  # age отсутствует
@@ -109,7 +111,6 @@ print(f"  {inferred}")
 
 **Output:**
 ```
-
 Explicit schema (Avro):
   {'type': 'record', 'name': 'User', 'fields': [{'name': 'id', 'type': 'int'}, {'name': 'name', 'type': 'string'}, {'name': 'email', 'type': 'string'}, {'name': 'age', 'type': ['int', 'null']}]}
 
@@ -133,6 +134,7 @@ Schema evolution — это изменение схемы со временем 
 
 ```python
 # Версия 1 схемы
+
 schema_v1 = {
     "id": "int",
     "name": "string",
@@ -140,6 +142,7 @@ schema_v1 = {
 }
 
 # Версия 2: добавлено поле (backward compatible)
+
 schema_v2 = {
     "id": "int",
     "name": "string",
@@ -148,6 +151,7 @@ schema_v2 = {
 }
 
 # Версия 3: удалено поле (forward compatible если optional)
+
 schema_v3 = {
     "id": "int",
     "name": "string",
@@ -184,7 +188,6 @@ print(f"  Added fields: {compat['added_fields']}")
 
 **Output:**
 ```
-
 Schema v1 -> v2:
   Backward compatible: True
   Forward compatible: False
@@ -220,7 +223,6 @@ Data Catalog — это централизованный реестр метад
 **Example: Data Catalog**
 
 ```python
-
 class DataCatalog:
     def __init__(self):
         self.tables = {}
@@ -266,9 +268,11 @@ class DataCatalog:
         return info
 
 # Использование
+
 catalog = DataCatalog()
 
 # Регистрация таблиц
+
 catalog.register_table(
     "users",
     {"id": "int", "name": "string", "email": "string"},
@@ -284,6 +288,7 @@ catalog.register_table(
 )
 
 # Lineage
+
 catalog.add_lineage(
     "orders",
     sources=["raw_orders_api", "users"],
@@ -296,6 +301,7 @@ results = catalog.search("user")
 print(f"\nПоиск 'user': {results}")
 
 # Информация о таблице
+
 info = catalog.get_table_info("orders")
 print(f"\nИнформация о 'orders':")
 print(f"  Описание: {info['description']}")
@@ -304,7 +310,6 @@ print(f"  Lineage sources: {info['lineage']['sources']}")
 
 **Output:**
 ```
-
 ✅ Таблица 'users' зарегистрирована в каталоге
 ✅ Таблица 'orders' зарегистрирована в каталоге
 ✅ Lineage для 'orders' добавлен
@@ -359,7 +364,6 @@ Lineage отслеживает происхождение данных: отку
 **Example: Lineage отслеживание**
 
 ```python
-
 class LineageTracker:
     def __init__(self):
         self.lineage_graph = {}
@@ -412,11 +416,13 @@ class LineageTracker:
 tracker = LineageTracker()
 
 # Построение lineage
+
 tracker.add_transformation("cleaned_users", ["raw_users_api"], "clean")
 tracker.add_transformation("user_profiles", ["cleaned_users"], "enrich")
 tracker.add_transformation("analytics_users", ["user_profiles", "orders"], "join")
 
 # Upstream для analytics_users
+
 upstream = tracker.get_upstream("analytics_users")
 print(f"\nUpstream для 'analytics_users': {upstream}")
 
@@ -428,7 +434,6 @@ print(f"Downstream для 'cleaned_users': {downstream}")
 
 **Output:**
 ```
-
 ✅ Lineage обновлён: ['raw_users_api'] -> cleaned_users
 ✅ Lineage обновлён: ['cleaned_users'] -> user_profiles
 ✅ Lineage обновлён: ['user_profiles', 'orders'] -> analytics_users
@@ -477,7 +482,6 @@ Data Discovery — это процесс поиска и понимания до
 **Example: Data Discovery**
 
 ```python
-
 class DataDiscovery:
     def __init__(self, catalog):
         self.catalog = catalog
@@ -519,6 +523,7 @@ class DataDiscovery:
 discovery = DataDiscovery(catalog)
 
 # Индексация
+
 discovery.index_table("users", {
     "description": "Таблица пользователей системы",
     "tags": ["user", "profile", "authentication"]
@@ -539,7 +544,6 @@ for result in results:
 
 **Output:**
 ```
-
 Результаты поиска 'user':
   users: Таблица пользователей системы
   orders: Таблица заказов пользователей
@@ -574,7 +578,6 @@ for result in results:
 **Example: Управление метаданными**
 
 ```python
-
 class MetadataManager:
     def __init__(self):
         self.metadata = {}
@@ -641,7 +644,6 @@ manager.apply_policy("users", "retention_1year")
 
 **Output:**
 ```
-
 ✅ Метаданные для 'users' добавлены
 ✅ Теги добавлены к 'users': ['PII', 'sensitive']
 ✅ Политика 'retention_1year' применена к 'users'
@@ -704,5 +706,6 @@ manager.apply_policy("users", "retention_1year")
 - Great Expectations: https://greatexpectations.io/ (data quality)
 
 ---
+
 
 

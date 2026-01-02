@@ -46,7 +46,6 @@ $ ls -l *.txt
 
 **Output:**
 ```
-
 -rw-r--r-- 1 user user 14 Jan 15 10:00 destination.txt
 -rw-r--r-- 1 user user 14 Jan 15 10:00 source.txt
 ```
@@ -68,7 +67,6 @@ $ ls backup/
 
 **Output:**
 ```
-
 source.txt
 ```
 
@@ -91,7 +89,6 @@ $ ls backup/
 
 **Output:**
 ```
-
 file1.txt  file2.txt  file3.txt  source.txt
 ```
 
@@ -115,7 +112,6 @@ $ find project_backup -type f
 
 **Output:**
 ```
-
 project_backup/src/main.sh
 project_backup/tests/test.sh
 ```
@@ -172,7 +168,6 @@ $ ls newname.txt
 
 **Output:**
 ```
-
 newname.txt
 ```
 
@@ -196,7 +191,6 @@ $ ls target/
 
 **Output:**
 ```
-
 file.txt
 ```
 
@@ -224,7 +218,6 @@ $ ls archive/
 
 **Output:**
 ```
-
 file1.txt  file2.txt  file3.txt
 ```
 
@@ -248,7 +241,6 @@ $ find newdir -type f
 
 **Output:**
 ```
-
 newdir/file.txt
 newdir/subdir/nested.txt
 ```
@@ -377,7 +369,6 @@ $ ls -d newdir
 
 **Output:**
 ```
-
 newdir
 ```
 
@@ -395,7 +386,6 @@ $ ls -d dir*
 
 **Output:**
 ```
-
 dir1  dir2  dir3
 ```
 
@@ -413,7 +403,6 @@ $ find path -type d
 
 **Output:**
 ```
-
 path
 path/to
 path/to/newdir
@@ -433,7 +422,6 @@ $ tree project/ 2>/dev/null || find project -type d | sort
 
 **Output:**
 ```
-
 project/
 project/docs
 project/docs/main
@@ -462,7 +450,6 @@ $ ls -ld privatedir
 
 **Output:**
 ```
-
 drwx------ 2 user user 4096 Jan 15 10:00 privatedir
 ```
 
@@ -488,7 +475,6 @@ $ ls -l newfile.txt
 
 **Output:**
 ```
-
 -rw-r--r-- 1 user user 0 Jan 15 10:00 newfile.txt
 ```
 
@@ -508,7 +494,6 @@ $ ls -l file*.txt
 
 **Output:**
 ```
-
 -rw-r--r-- 1 user user 0 Jan 15 10:00 file1.txt
 -rw-r--r-- 1 user user 0 Jan 15 10:00 file2.txt
 -rw-r--r-- 1 user user 0 Jan 15 10:00 file3.txt
@@ -532,7 +517,6 @@ $ stat oldfile.txt | grep Modify
 
 **Output:**
 ```
-
 Modify: 2024-01-15 10:00:02.000000000 +0000
 ```
 
@@ -552,7 +536,6 @@ $ ls -l file.txt
 
 **Output:**
 ```
-
 -rw-r--r-- 1 user user 0 Jan  1 12:00 file.txt
 ```
 
@@ -578,7 +561,6 @@ $ ls *.txt
 
 **Output:**
 ```
-
 file1.txt  file2.txt  file4.txt
 ```
 
@@ -596,7 +578,6 @@ $ ls file?.txt
 
 **Output:**
 ```
-
 file1.txt  file2.txt
 ```
 
@@ -616,7 +597,6 @@ $ ls file[1-3].txt
 
 **Output:**
 ```
-
 file1.txt  file2.txt  file3.txt
 ```
 
@@ -634,7 +614,6 @@ $ ls file[1-9a-z].txt
 
 **Output:**
 ```
-
 file1.txt  file2.txt  filea.txt  fileb.txt
 ```
 
@@ -652,7 +631,6 @@ $ ls file[!0-9].txt
 
 **Output:**
 ```
-
 filea.txt
 ```
 
@@ -673,7 +651,6 @@ $ ls */file.txt
 
 **Output:**
 ```
-
 dir1/file.txt  dir2/file.txt
 ```
 
@@ -699,7 +676,6 @@ $ echo file{1,2,3}.txt
 
 **Output:**
 ```
-
 file1.txt file2.txt file3.txt
 ```
 
@@ -717,7 +693,6 @@ $ ls file*.txt
 
 **Output:**
 ```
-
 file1.txt  file2.txt  file3.txt
 ```
 
@@ -735,7 +710,6 @@ $ ls file*.txt
 
 **Output:**
 ```
-
 file1.txt  file2.txt  file3.txt  file4.txt  file5.txt
 ```
 
@@ -753,7 +727,6 @@ $ ls file*.txt
 
 **Output:**
 ```
-
 filea.txt  fileb.txt  filec.txt
 ```
 
@@ -768,7 +741,6 @@ $ echo {a,b}{1,2}
 
 **Output:**
 ```
-
 a1 a2 b1 b2
 ```
 
@@ -786,7 +758,6 @@ $ find project -type d | sort
 
 **Output:**
 ```
-
 project
 project/src
 project/src/main
@@ -810,7 +781,6 @@ $ ls file*.txt
 
 **Output:**
 ```
-
 file1.txt  file3.txt  file5.txt  file7.txt  file9.txt
 ```
 
@@ -833,7 +803,6 @@ $ echo ~
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -848,7 +817,6 @@ $ echo ~john
 
 **Output:**
 ```
-
 /home/john
 ```
 
@@ -871,7 +839,6 @@ $ ls ~/myfile.txt
 
 **Output:**
 ```
-
 /home/user/myfile.txt
 ```
 
@@ -888,7 +855,6 @@ $ echo ~+
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -900,7 +866,6 @@ $ echo ~-
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -924,7 +889,6 @@ $ ls file{1,2,3}.txt
 
 **Output:**
 ```
-
 file1.txt  file2.txt  file3.txt
 ```
 
@@ -945,7 +909,6 @@ $ ls ~/projects/*/README.md
 
 **Output:**
 ```
-
 /home/user/projects/api/README.md
 /home/user/projects/mobile/README.md
 /home/user/projects/web/README.md

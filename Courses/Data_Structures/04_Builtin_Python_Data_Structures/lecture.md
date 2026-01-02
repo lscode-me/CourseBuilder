@@ -52,14 +52,17 @@ Python предоставляет четыре основных встроенн
 
 ```python
 # Пустой список
+
 empty_list = []
 print(f"Пустой список: {empty_list}")
 
 # Список с элементами
+
 numbers = [1, 2, 3, 4, 5]
 print(f"Числа: {numbers}")
 
 # Список с разными типами
+
 mixed = [1, "hello", 3.14, True]
 print(f"Смешанные типы: {mixed}")
 
@@ -71,7 +74,6 @@ print(f"Матрица: {matrix}")
 
 **Output:**
 ```
-
 Пустой список: []
 Числа: [1, 2, 3, 4, 5]
 Смешанные типы: [1, 'hello', 3.14, True]
@@ -81,10 +83,10 @@ print(f"Матрица: {matrix}")
 **Example: Доступ к элементам**
 
 ```python
-
 numbers = [10, 20, 30, 40, 50]
 
 # Доступ по индексу
+
 print(f"Первый элемент: {numbers[0]}")
 print(f"Последний элемент: {numbers[-1]}")
 
@@ -97,7 +99,6 @@ print(f"Средние элементы: {numbers[1:4]}")
 
 **Output:**
 ```
-
 Первый элемент: 10
 Последний элемент: 50
 Первые три: [10, 20, 30]
@@ -110,14 +111,15 @@ print(f"Средние элементы: {numbers[1:4]}")
 **Example: Добавление элементов**
 
 ```python
-
 fruits = ['apple', 'banana']
 
 # Добавление в конец
+
 fruits.append('orange')
 print(f"После append: {fruits}")
 
 # Добавление в позицию
+
 fruits.insert(1, 'grape')
 print(f"После insert: {fruits}")
 
@@ -129,7 +131,6 @@ print(f"После extend: {fruits}")
 
 **Output:**
 ```
-
 После append: ['apple', 'banana', 'orange']
 После insert: ['apple', 'grape', 'banana', 'orange']
 После extend: ['apple', 'grape', 'banana', 'orange', 'kiwi', 'mango']
@@ -138,18 +139,20 @@ print(f"После extend: {fruits}")
 **Example: Удаление элементов**
 
 ```python
-
 numbers = [1, 2, 3, 4, 5, 3]
 
 # Удаление по значению
+
 numbers.remove(3)
 print(f"После remove(3): {numbers}")
 
 # Удаление по индексу
+
 deleted = numbers.pop(1)
 print(f"Удалён элемент {deleted}: {numbers}")
 
 # Удаление последнего
+
 last = numbers.pop()
 print(f"Удалён последний {last}: {numbers}")
 
@@ -161,7 +164,6 @@ print(f"После clear: {numbers}")
 
 **Output:**
 ```
-
 После remove(3): [1, 2, 4, 5, 3]
 Удалён элемент 2: [1, 4, 5, 3]
 Удалён последний 3: [1, 4, 5]
@@ -173,10 +175,10 @@ print(f"После clear: {numbers}")
 **Example: Поиск и подсчёт**
 
 ```python
-
 numbers = [1, 2, 3, 4, 5, 3, 3]
 
 # Индекс элемента
+
 print(f"Индекс 3: {numbers.index(3)}")
 
 # Подсчёт элементов
@@ -191,7 +193,6 @@ print(f"Есть ли 10: {10 in numbers}")
 
 **Output:**
 ```
-
 Индекс 3: 2
 Количество 3: 3
 Есть ли 5: True
@@ -201,14 +202,15 @@ print(f"Есть ли 10: {10 in numbers}")
 **Example: Сортировка**
 
 ```python
-
 numbers = [3, 1, 4, 1, 5, 9, 2, 6]
 
 # Сортировка (изменяет список)
+
 numbers.sort()
 print(f"Отсортировано: {numbers}")
 
 # Обратная сортировка
+
 numbers.sort(reverse=True)
 print(f"Обратная сортировка: {numbers}")
 
@@ -222,7 +224,6 @@ print(f"Отсортированная копия: {sorted_list}")
 
 **Output:**
 ```
-
 Отсортировано: [1, 1, 2, 3, 4, 5, 6, 9]
 Обратная сортировка: [9, 6, 5, 4, 3, 2, 1, 1]
 Оригинал: [3, 1, 4, 1, 5]
@@ -243,18 +244,22 @@ print(f"Отсортированная копия: {sorted_list}")
 
 ```python
 # Пустой кортеж
+
 empty_tuple = ()
 print(f"Пустой кортеж: {empty_tuple}")
 
 # Кортеж с элементами
+
 coordinates = (10, 20)
 print(f"Координаты: {coordinates}")
 
 # Кортеж из одного элемента (нужна запятая!)
+
 single = (42,)
 print(f"Один элемент: {single}")
 
 # Кортеж без скобок (tuple packing)
+
 point = 1, 2, 3
 print(f"Без скобок: {point}")
 
@@ -266,7 +271,6 @@ print(f"Распаковано: x={x}, y={y}, z={z}")
 
 **Output:**
 ```
-
 Пустой кортеж: ()
 Координаты: (10, 20)
 Один элемент: (42,)
@@ -287,6 +291,7 @@ print(f"Распаковано: x={x}, y={y}, z={z}")
 
 ```python
 # Кортеж как ключ словаря
+
 locations = {
     (0, 0): "Начало",
     (1, 1): "Угол",
@@ -297,22 +302,20 @@ print(f"Позиция (1, 1): {locations[(1, 1)]}")
 
 # Список не может быть ключом
 # locations[[0, 0]] = "Ошибка"  # TypeError!
-
 ```
 
 **Output:**
 ```
-
 Позиция (1, 1): Угол
 ```
 
 **Example: Сравнение памяти**
 
 ```python
-
 import sys
 
 # Список
+
 list_data = [1, 2, 3, 4, 5]
 list_size = sys.getsizeof(list_data)
 
@@ -328,7 +331,6 @@ print(f"Кортеж экономит: {list_size - tuple_size} байт")
 
 **Output:**
 ```
-
 Размер списка: 104 байт
 Размер кортежа: 88 байт
 Кортеж экономит: 16 байт
@@ -339,17 +341,19 @@ print(f"Кортеж экономит: {list_size - tuple_size} байт")
 **Example: Базовые операции**
 
 ```python
-
 numbers = (1, 2, 3, 4, 5)
 
 # Доступ по индексу
+
 print(f"Первый элемент: {numbers[0]}")
 print(f"Последний элемент: {numbers[-1]}")
 
 # Срезы
+
 print(f"Первые три: {numbers[:3]}")
 
 # Конкатенация
+
 combined = numbers + (6, 7)
 print(f"Объединённый: {combined}")
 
@@ -359,12 +363,12 @@ repeated = numbers * 2
 print(f"Повторённый: {repeated}")
 
 # Длина
+
 print(f"Длина: {len(numbers)}")
 ```
 
 **Output:**
 ```
-
 Первый элемент: 1
 Последний элемент: 5
 Первые три: (1, 2, 3)
@@ -387,10 +391,12 @@ print(f"Длина: {len(numbers)}")
 
 ```python
 # Пустое множество
+
 empty_set = set()
 print(f"Пустое множество: {empty_set}")
 
 # Множество из списка
+
 numbers = {1, 2, 3, 4, 5}
 print(f"Числа: {numbers}")
 
@@ -400,13 +406,13 @@ with_duplicates = {1, 2, 2, 3, 3, 3}
 print(f"С дубликатами (удалены): {with_duplicates}")
 
 # Множество из строки
+
 chars = set("hello")
 print(f"Символы из 'hello': {chars}")
 ```
 
 **Output:**
 ```
-
 Пустое множество: set()
 Числа: {1, 2, 3, 4, 5}
 С дубликатами (удалены): {1, 2, 3}
@@ -418,14 +424,15 @@ print(f"Символы из 'hello': {chars}")
 **Example: Добавление и удаление**
 
 ```python
-
 fruits = {'apple', 'banana'}
 
 # Добавление элемента
+
 fruits.add('orange')
 print(f"После add: {fruits}")
 
 # Добавление нескольких
+
 fruits.update(['kiwi', 'mango'])
 print(f"После update: {fruits}")
 
@@ -435,13 +442,13 @@ fruits.remove('banana')
 print(f"После remove: {fruits}")
 
 # Удаление без ошибки, если элемента нет
+
 fruits.discard('grape')  # Не вызывает ошибку
 print(f"После discard: {fruits}")
 ```
 
 **Output:**
 ```
-
 После add: {'apple', 'banana', 'orange'}
 После update: {'apple', 'banana', 'orange', 'kiwi', 'mango'}
 После remove: {'apple', 'orange', 'kiwi', 'mango'}
@@ -451,19 +458,21 @@ print(f"После discard: {fruits}")
 **Example: Операции над множествами**
 
 ```python
-
 set1 = {1, 2, 3, 4, 5}
 set2 = {4, 5, 6, 7, 8}
 
 # Объединение
+
 union = set1 | set2
 print(f"Объединение: {union}")
 
 # Пересечение
+
 intersection = set1 & set2
 print(f"Пересечение: {intersection}")
 
 # Разность
+
 difference = set1 - set2
 print(f"Разность (set1 - set2): {difference}")
 
@@ -473,13 +482,13 @@ symmetric = set1 ^ set2
 print(f"Симметрическая разность: {symmetric}")
 
 # Проверка подмножества
+
 print(f"set1 подмножество union: {set1.issubset(union)}")
 print(f"set1 надмножество intersection: {set1.issuperset(intersection)}")
 ```
 
 **Output:**
 ```
-
 Объединение: {1, 2, 3, 4, 5, 6, 7, 8}
 Пересечение: {4, 5}
 Разность (set1 - set2): {1, 2, 3}
@@ -502,7 +511,6 @@ print(f"Уникальные элементы: {unique}")
 
 **Output:**
 ```
-
 Уникальные элементы: [1, 2, 3, 4]
 ```
 
@@ -510,6 +518,7 @@ print(f"Уникальные элементы: {unique}")
 
 ```python
 # Множество для быстрой проверки
+
 valid_users = {'alice', 'bob', 'charlie'}
 
 # Быстрая проверка
@@ -523,7 +532,6 @@ else:
 
 **Output:**
 ```
-
 alice - валидный пользователь
 ```
 
@@ -541,10 +549,12 @@ alice - валидный пользователь
 
 ```python
 # Пустой словарь
+
 empty_dict = {}
 print(f"Пустой словарь: {empty_dict}")
 
 # Словарь с элементами
+
 student = {
     'name': 'Alice',
     'age': 20,
@@ -553,6 +563,7 @@ student = {
 print(f"Студент: {student}")
 
 # Создание через dict()
+
 another = dict(name='Bob', age=21)
 print(f"Другой способ: {another}")
 
@@ -565,7 +576,6 @@ print(f"Из пар: {from_pairs}")
 
 **Output:**
 ```
-
 Пустой словарь: {}
 Студент: {'name': 'Alice', 'age': 20, 'grade': 'A'}
 Другой способ: {'name': 'Bob', 'age': 21}
@@ -575,10 +585,10 @@ print(f"Из пар: {from_pairs}")
 **Example: Доступ к элементам**
 
 ```python
-
 student = {'name': 'Alice', 'age': 20, 'grade': 'A'}
 
 # Доступ по ключу
+
 print(f"Имя: {student['name']}")
 
 # Доступ с get() (безопасный)
@@ -587,13 +597,13 @@ print(f"Возраст: {student.get('age')}")
 print(f"Город: {student.get('city', 'Не указан')}")
 
 # Проверка наличия ключа
+
 print(f"Есть 'name': {'name' in student}")
 print(f"Есть 'city': {'city' in student}")
 ```
 
 **Output:**
 ```
-
 Имя: Alice
 Возраст: 20
 Город: Не указан
@@ -606,14 +616,15 @@ print(f"Есть 'city': {'city' in student}")
 **Example: Добавление и обновление**
 
 ```python
-
 student = {'name': 'Alice', 'age': 20}
 
 # Добавление/обновление
+
 student['grade'] = 'A'
 print(f"После добавления grade: {student}")
 
 # Обновление нескольких элементов
+
 student.update({'age': 21, 'city': 'NYC'})
 print(f"После update: {student}")
 
@@ -623,13 +634,13 @@ del student['city']
 print(f"После удаления city: {student}")
 
 # Удаление с возвратом значения
+
 grade = student.pop('grade', None)
 print(f"Удалён grade: {grade}, словарь: {student}")
 ```
 
 **Output:**
 ```
-
 После добавления grade: {'name': 'Alice', 'age': 20, 'grade': 'A'}
 После update: {'name': 'Alice', 'age': 21, 'city': 'NYC'}
 После удаления city: {'name': 'Alice', 'age': 21}
@@ -641,15 +652,16 @@ print(f"Удалён grade: {grade}, словарь: {student}")
 **Example: Разные способы итерации**
 
 ```python
-
 student = {'name': 'Alice', 'age': 20, 'grade': 'A'}
 
 # Итерация по ключам
+
 print("Ключи:")
 for key in student:
     print(f"  {key}")
 
 # Итерация по значениям
+
 print("Значения:")
 for value in student.values():
     print(f"  {value}")
@@ -663,7 +675,6 @@ for key, value in student.items():
 
 **Output:**
 ```
-
 Ключи:
   name
   age
@@ -683,14 +694,15 @@ for key, value in student.items():
 **Example: Дополнительные методы**
 
 ```python
-
 student = {'name': 'Alice', 'age': 20, 'grade': 'A'}
 
 # Получение всех ключей
+
 keys = list(student.keys())
 print(f"Ключи: {keys}")
 
 # Получение всех значений
+
 values = list(student.values())
 print(f"Значения: {values}")
 
@@ -700,13 +712,13 @@ copy = student.copy()
 print(f"Копия: {copy}")
 
 # Очистка
+
 copy.clear()
 print(f"После clear: {copy}")
 ```
 
 **Output:**
 ```
-
 Ключи: ['name', 'age', 'grade']
 Значения: ['Alice', 20, 'A']
 Копия: {'name': 'Alice', 'age': 20, 'grade': 'A'}
@@ -784,6 +796,7 @@ for x in range(10):
     squares.append(x**2)
 
 # List comprehension
+
 squares_lc = [x**2 for x in range(10)]
 
 print(f"Обычный способ: {squares[:5]}")
@@ -792,7 +805,6 @@ print(f"List comprehension: {squares_lc[:5]}")
 
 **Output:**
 ```
-
 Обычный способ: [0, 1, 4, 9, 16]
 List comprehension: [0, 1, 4, 9, 16]
 ```
@@ -808,7 +820,6 @@ print(f"Чётные квадраты: {even_squares}")
 
 **Output:**
 ```
-
 Чётные квадраты: [0, 4, 16, 36, 64]
 ```
 
@@ -818,6 +829,7 @@ print(f"Чётные квадраты: {even_squares}")
 
 ```python
 # Словарь квадратов
+
 squares_dict = {x: x**2 for x in range(5)}
 print(f"Словарь квадратов: {squares_dict}")
 
@@ -829,7 +841,6 @@ print(f"Чётные квадраты: {even_squares_dict}")
 
 **Output:**
 ```
-
 Словарь квадратов: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
 Чётные квадраты: {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}
 ```
@@ -840,6 +851,7 @@ print(f"Чётные квадраты: {even_squares_dict}")
 
 ```python
 # Множество квадратов
+
 squares_set = {x**2 for x in range(10)}
 print(f"Множество квадратов: {squares_set}")
 
@@ -851,7 +863,6 @@ print(f"Чётные квадраты: {even_squares_set}")
 
 **Output:**
 ```
-
 Множество квадратов: {0, 1, 64, 4, 36, 9, 16, 49, 25, 81}
 Чётные квадраты: {0, 64, 4, 36, 16}
 ```
@@ -892,5 +903,6 @@ print(f"Чётные квадраты: {even_squares_set}")
 - Исследуйте производительность разных операций на больших данных
 
 ---
+
 
 

@@ -60,7 +60,6 @@
 **Пример: Обработка ошибок вычислений**
 
 ```python
-
 def safe_divide(a, b):
     """Безопасное деление с обработкой ошибок"""
     try:
@@ -79,7 +78,6 @@ print(f"10 / 'a' = {safe_divide(10, 'a')}")
 
 **Output:**
 ```
-
 10 / 2 = 5.0
 10 / 0 = nan
 Error in division: unsupported operand type(s) for /: 'int' and 'str'
@@ -97,7 +95,6 @@ Error in division: unsupported operand type(s) for /: 'int' and 'str'
 **Пример: Структурированное логирование**
 
 ```python
-
 import logging
 
 # Настройка логирования
@@ -127,7 +124,6 @@ result = process_data(data, "mean_calculation")
 
 **Output:**
 ```
-
 2024-01-15 10:30:00 - pipeline - INFO - Starting mean_calculation
 2024-01-15 10:30:00 - pipeline - INFO - mean_calculation completed successfully: 3.000
 ```
@@ -137,7 +133,6 @@ result = process_data(data, "mean_calculation")
 **Пример: Валидация промежуточных результатов**
 
 ```python
-
 def validate_intermediate_result(value, expected_range, step_name):
     """Валидация промежуточного результата"""
     min_val, max_val = expected_range
@@ -160,7 +155,6 @@ except ValueError as e:
 
 **Output:**
 ```
-
 ✓ temperature_check: 15.5 is within expected range
 ```
 
@@ -175,7 +169,6 @@ except ValueError as e:
 **Пример: Sanity checks**
 
 ```python
-
 def sanity_check_results(results):
     """Проверка разумности результатов"""
     checks = []
@@ -207,7 +200,6 @@ for check in checks:
 
 **Output:**
 ```
-
 WARNING: NaN values in results
 WARNING: Infinite values in results
 WARNING: Negative values found
@@ -219,7 +211,6 @@ WARNING: Very large values detected
 **Пример: Сравнение результатов**
 
 ```python
-
 def compare_results(actual, expected, tolerance=0.01):
     """Сравнение фактических и ожидаемых результатов"""
     if isinstance(actual, (list, np.ndarray)) and isinstance(expected, (list, np.ndarray)):
@@ -257,7 +248,6 @@ print(comparison['message'])
 
 **Output:**
 ```
-
 Results match within tolerance
 ```
 
@@ -272,7 +262,6 @@ Results match within tolerance
 **Пример: Простое профилирование**
 
 ```python
-
 import time
 
 def profile_function(func, *args, **kwargs):
@@ -310,7 +299,6 @@ print(f"Speedup: {slow_profile['execution_time'] / fast_profile['execution_time'
 
 **Output:**
 ```
-
 Slow function: 0.0234s
 Fast function: 0.0012s
 Speedup: 19.5x
@@ -321,7 +309,6 @@ Speedup: 19.5x
 **Пример: Поиск узких мест**
 
 ```python
-
 def identify_bottlenecks(steps_with_times):
     """Идентификация узких мест в pipeline"""
     total_time = sum(steps_with_times.values())
@@ -354,7 +341,6 @@ for b in bottlenecks:
 
 **Output:**
 ```
-
 Performance bottlenecks:
   analyze: 5.00s (73.5%)
 ```
@@ -377,7 +363,6 @@ Performance bottlenecks:
 **Пример: Troubleshooting framework**
 
 ```python
-
 class TroubleshootingFramework:
     """Систематический подход к troubleshooting"""
     
@@ -421,7 +406,6 @@ print(troubleshooter.get_report())
 
 **Output:**
 ```
-
 ✓ input: Data OK
 ✓ Computation: OK
 ```

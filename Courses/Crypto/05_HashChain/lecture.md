@@ -53,6 +53,7 @@
 **Пример структуры:**
 ```python
 # Упрощённая структура блока
+
 block = {
     "header": {
         "previous_hash": "0000000000000000000abc123...",
@@ -71,7 +72,6 @@ print("Блок содержит заголовок и список транза
 
 **Output:**
 ```
-
 Блок содержит заголовок и список транзакций
 ```
 
@@ -105,15 +105,16 @@ print("Блок содержит заголовок и список транза
 
 **Пример:**
 ```python
-
 import hashlib
 
 # Упрощённый пример связывания блоков
+
 def create_block_hash(previous_hash, transactions, nonce):
     data = f"{previous_hash}{transactions}{nonce}"
     return hashlib.sha256(data.encode()).hexdigest()
 
 # Genesis блок
+
 genesis_hash = "0" * 64
 block1_hash = create_block_hash(genesis_hash, "tx1,tx2", 12345)
 block2_hash = create_block_hash(block1_hash, "tx3,tx4", 67890)
@@ -126,7 +127,6 @@ print("Каждый блок содержит хэш предыдущего")
 
 **Output:**
 ```
-
 Genesis: 0000000000000000...
 Block 1: a3b5c7d9e1f2a4b6...
 Block 2: b4c6d8e0f1a3b5c7...
@@ -143,7 +143,6 @@ Block 2: b4c6d8e0f1a3b5c7...
 
 **Визуализация:**
 ```
-
 Genesis Block → Block 1 → Block 2 → Block 3 → ...
      |            |          |          |
    hash0       hash1      hash2      hash3
@@ -181,7 +180,6 @@ print(f"Хэши полностью разные: {original_hash != modified_has
 
 **Output:**
 ```
-
 Оригигинальный хэш: a3b5c7d9e1f2a4b6c8d0e2f4a6b8c0...
 Изменённый хэш:   b4c6d8e0f1a3b5c7d9e1f3a5b7c9d1...
 Хэши полностью разные: True
@@ -218,17 +216,18 @@ Merkle Tree (дерево Меркла) — структура данных дл
 
 **Пример:**
 ```python
-
 def merkle_hash(left, right):
     return hashlib.sha256((left + right).encode()).hexdigest()
 
 # Упрощённый пример Merkle Tree
+
 tx1_hash = hashlib.sha256("tx1".encode()).hexdigest()
 tx2_hash = hashlib.sha256("tx2".encode()).hexdigest()
 tx3_hash = hashlib.sha256("tx3".encode()).hexdigest()
 tx4_hash = hashlib.sha256("tx4".encode()).hexdigest()
 
 # Уровень 1
+
 hash12 = merkle_hash(tx1_hash, tx2_hash)
 hash34 = merkle_hash(tx3_hash, tx4_hash)
 
@@ -242,7 +241,6 @@ print("Корень представляет все транзакции в бл
 
 **Output:**
 ```
-
 Merkle Root: c5d7e9f1a3b5c7d9e1f3a5b7c9d1e3...
 Корень представляет все транзакции в блоке
 ```
@@ -309,7 +307,6 @@ print("Но это экономически невыгодно для больш
 
 **Output:**
 ```
-
 Атакующий контролирует 50.5% мощности
 Но это экономически невыгодно для больших сетей
 ```
@@ -378,5 +375,6 @@ print("Но это экономически невыгодно для больш
 - Документация по Merkle Trees
 
 ---
+
 
 

@@ -81,7 +81,6 @@ fi
 **Example: Сравнение строк**
 
 ```bash
-
 if [ "$var" = "value" ]; then
     echo "Equal"
 fi
@@ -96,7 +95,6 @@ fi
 **Example: Числовые сравнения**
 
 ```bash
-
 if [ "$num" -eq 10 ]; then    # равно
     echo "Equal to 10"
 fi
@@ -117,7 +115,6 @@ fi
 **Example: Проверка файлов**
 
 ```bash
-
 if [ -f "$file" ]; then       # обычный файл
     echo "File exists"
 fi
@@ -154,7 +151,6 @@ if [[ $var == value ]]; then
 **Example: Pattern matching**
 
 ```bash
-
 if [[ $file == *.txt ]]; then
     echo "Text file"
 fi
@@ -173,7 +169,6 @@ fi
 **Example: Логические операторы**
 
 ```bash
-
 if [ "$var" -gt 0 ] && [ "$var" -lt 100 ]; then
     echo "Between 0 and 100"
 fi
@@ -188,7 +183,6 @@ fi
 **Example: Логические операторы в [[ ]]**
 
 ```bash
-
 if [[ $num -gt 0 && $num -lt 100 ]]; then
     echo "Valid range"
 fi

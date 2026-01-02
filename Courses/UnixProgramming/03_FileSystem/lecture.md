@@ -31,7 +31,6 @@
 ### 1.1 os.stat — получение метаданных
 
 ```python
-
 import os
 import stat
 from datetime import datetime
@@ -50,12 +49,10 @@ print(f"Change time: {datetime.fromtimestamp(st.st_ctime)}")
 print(f"Inode: {st.st_ino}")
 print(f"Device: {st.st_dev}")
 print(f"Hard links: {st.st_nlink}")
-
 ```
 
 **Output:**
 ```
-
 File: /etc/passwd
 Size: 1843 bytes
 Mode: 0o100644
@@ -67,13 +64,11 @@ Change time: 2024-11-15 14:30:00
 Inode: 98304
 Device: 0
 Hard links: 1
-
 ```
 
 ### 1.2 Структура st_mode
 
 ```python
-
 import stat as stat_module
 
 mode = os.stat("/etc/passwd").st_mode
@@ -96,13 +91,11 @@ print(f"User exec: {bool(mode & stat_module.S_IXUSR)}")
 print(f"Setuid: {bool(mode & stat_module.S_ISUID)}")
 print(f"Setgid: {bool(mode & stat_module.S_ISGID)}")
 print(f"Sticky: {bool(mode & stat_module.S_ISVTX)}")
-
 ```
 
 ### 1.3 os.lstat vs os.stat
 
 ```python
-
 import os
 
 # Создадим символическую ссылку для примера
@@ -115,20 +108,17 @@ print(f"stat size: {st.st_size}")  # Размер /etc/passwd
 # os.lstat НЕ следует за ссылками
 st = os.lstat("/tmp/passwd_link")
 print(f"lstat size: {st.st_size}")  # Размер самой ссылки
-
 ```
 
 ### 1.4 fstat — stat по дескриптору
 
 ```python
-
 import os
 
 fd = os.open("/etc/passwd", os.O_RDONLY)
 st = os.fstat(fd)
 print(f"Size via fstat: {st.st_size}")
 os.close(fd)
-
 ```
 
 ---
@@ -138,7 +128,6 @@ os.close(fd)
 ### 2.1 os.chmod — изменение прав
 
 ```python
-
 import os
 import stat
 
@@ -160,13 +149,11 @@ os.chmod(path, 0o744)
 
 # Символьный способ (через stat константы)
 os.chmod(path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)
-
 ```
 
 ### 2.2 os.chown — изменение владельца
 
 ```python
-
 import os
 import pwd
 import grp
@@ -190,7 +177,6 @@ gid = grp.getgrnam("staff").gr_gid
 ### 2.3 os.access — проверка доступа
 
 ```python
-
 import os
 
 path = "/etc/passwd"
@@ -203,13 +189,11 @@ print(f"Executable: {os.access(path, os.X_OK)}")
 
 # Комбинированная проверка
 print(f"Read+Write: {os.access(path, os.R_OK | os.W_OK)}")
-
 ```
 
 ### 2.4 umask — маска прав по умолчанию
 
 ```python
-
 import os
 
 # Получить текущую umask (и установить новую)
@@ -227,7 +211,6 @@ os.umask(old_umask)
 ### 2.5 Утилита для отображения прав
 
 ```python
-
 import os
 import stat
 
@@ -265,7 +248,6 @@ def format_mode(mode):
 # Пример
 mode = os.stat("/etc/passwd").st_mode
 print(format_mode(mode))  # -rw-r--r--
-
 ```
 
 ---
@@ -275,7 +257,6 @@ print(format_mode(mode))  # -rw-r--r--
 ### 3.1 Жёсткие ссылки
 
 ```python
-
 import os
 
 # Создать жёсткую ссылку
@@ -290,13 +271,11 @@ print(f"Link count: {st1.st_nlink}")
 
 # Удаление
 os.unlink("/tmp/passwd_hard")
-
 ```
 
 ### 3.2 Символические ссылки
 
 ```python
-
 import os
 
 # Создать символическую ссылку
@@ -311,13 +290,11 @@ print(f"Is symlink: {os.path.islink('/tmp/passwd_sym')}")
 
 # Удаление (unlink удаляет ссылку, не цель)
 os.unlink("/tmp/passwd_sym")
-
 ```
 
 ### 3.3 Разрешение пути
 
 ```python
-
 import os
 
 # Получить абсолютный путь
@@ -331,7 +308,6 @@ print(f"Real path: {real_path}")
 # Нормализовать путь
 norm = os.path.normpath("/home/user/../user/./file.txt")
 print(f"Normalized: {norm}")
-
 ```
 
 ---
@@ -341,7 +317,6 @@ print(f"Normalized: {norm}")
 ### 4.1 Создание и удаление
 
 ```python
-
 import os
 
 # Создать директорию
@@ -358,13 +333,11 @@ os.rmdir("/tmp/mydir")
 
 # Удалить вложенные пустые директории
 os.removedirs("/tmp/a/b/c")
-
 ```
 
 ### 4.2 os.listdir и os.scandir
 
 ```python
-
 import os
 
 # Простой список
@@ -379,13 +352,11 @@ with os.scandir("/etc") as it:
             print(f"File: {entry.name}, size: {entry.stat().st_size}")
         elif entry.is_dir():
             print(f"Dir: {entry.name}")
-
 ```
 
 ### 4.3 os.walk — рекурсивный обход
 
 ```python
-
 import os
 
 def find_files(directory, extension):
@@ -406,13 +377,11 @@ def find_files(directory, extension):
 conf_files = find_files("/etc", ".conf")
 for f in conf_files[:10]:
     print(f)
-
 ```
 
 ### 4.4 Подсчёт размера директории
 
 ```python
-
 import os
 
 def get_dir_size(path):
@@ -441,7 +410,6 @@ def format_size(size):
 
 size = get_dir_size("/var/log")
 print(f"/var/log size: {format_size(size)}")
-
 ```
 
 ---
@@ -451,7 +419,6 @@ print(f"/var/log size: {format_size(size)}")
 ### 5.1 Переименование и перемещение
 
 ```python
-
 import os
 
 # Переименовать файл
@@ -467,7 +434,6 @@ os.replace("/tmp/temp.txt", "/tmp/config.txt")
 ### 5.2 os.truncate — изменение размера
 
 ```python
-
 import os
 
 # Создать файл
@@ -483,13 +449,11 @@ with open("/tmp/test.txt", "r") as f:
 
 # Расширить (заполнится нулями)
 os.truncate("/tmp/test.txt", 100)
-
 ```
 
 ### 5.3 Изменение времени
 
 ```python
-
 import os
 import time
 
@@ -506,7 +470,6 @@ os.utime(path, (atime, mtime))
 
 # None — использовать текущее время
 os.utime(path, None)
-
 ```
 
 ---
@@ -516,7 +479,6 @@ os.utime(path, None)
 ### 6.1 Основы pathlib
 
 ```python
-
 from pathlib import Path
 
 # Создание пути
@@ -532,13 +494,11 @@ print(f"Exists: {p.exists()}")
 print(f"Is file: {p.is_file()}")
 print(f"Is dir: {p.is_dir()}")
 print(f"Is symlink: {p.is_symlink()}")
-
 ```
 
 ### 6.2 Операции с путями
 
 ```python
-
 from pathlib import Path
 
 # Конкатенация путей
@@ -555,13 +515,11 @@ print(content)
 # Бинарные данные
 p.write_bytes(b"Binary data")
 data = p.read_bytes()
-
 ```
 
 ### 6.3 Поиск файлов
 
 ```python
-
 from pathlib import Path
 
 # Найти все .py файлы в текущей директории
@@ -576,13 +534,11 @@ for py_file in Path(".").rglob("*.py"):
 for item in Path("/etc").iterdir():
     if item.is_file():
         print(f"File: {item}")
-
 ```
 
 ### 6.4 Создание и удаление
 
 ```python
-
 from pathlib import Path
 
 # Создать директории
@@ -596,7 +552,6 @@ Path("/tmp/new_file.txt").unlink()
 
 # Удалить пустую директорию
 Path("/tmp/a/b/c").rmdir()
-
 ```
 
 ---
@@ -606,7 +561,6 @@ Path("/tmp/a/b/c").rmdir()
 ### 7.1 kqueue на BSD (select.kqueue)
 
 ```python
-
 import os
 import select
 
@@ -789,7 +743,6 @@ for group in dups:
     print("Duplicates:")
     for f in group:
         print(f"  {f}")
-
 ```
 
 ---

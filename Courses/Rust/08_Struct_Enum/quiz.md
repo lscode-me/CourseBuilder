@@ -37,7 +37,6 @@ D) Ссылка на экземпляр структуры
 Что выведет код?
 
 ```rust
-
 enum Color {
     Red,
     Blue,
@@ -97,7 +96,6 @@ D) Option с ошибкой
 Что произойдёт при компиляции?
 
 ```rust
-
 enum State {
     Idle,
     Running,
@@ -182,7 +180,6 @@ D) Struct с полями
 Что выведет код?
 
 ```rust
-
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
@@ -213,7 +210,6 @@ D) Ничего
 Что выведет код?
 
 ```rust
-
 fn main() {
     let some_number = Some(5);
     match some_number {
@@ -238,7 +234,6 @@ D) Ошибка компиляции
 Что выведет код?
 
 ```rust
-
 fn main() {
     let some_value = Some(3);
     if let Some(x) = some_value {
@@ -332,7 +327,6 @@ D) Удаляет значение
 Что произойдёт при компиляции?
 
 ```rust
-
 fn main() {
     let opt = Some(&5);
     match opt {

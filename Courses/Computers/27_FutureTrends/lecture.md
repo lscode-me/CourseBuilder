@@ -104,7 +104,6 @@
 **Идея:** Комбинация разных типов процессоров в одной системе
 
 ```
-
 SoC (System on Chip)
 ├── CPU (general)
 ├── GPU (graphics, ML)
@@ -267,7 +266,6 @@ SoC (System on Chip)
 **Trend:** От cloud обратно к edge
 
 ```
-
 Cloud (centralized)
     ↓
 Edge servers (regional)

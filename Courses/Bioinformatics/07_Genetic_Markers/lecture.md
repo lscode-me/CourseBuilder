@@ -63,7 +63,6 @@
 **SNP (Single Nucleotide Polymorphism)** — замена одного нуклеотида, которая встречается в популяции с частотой >1%.
 
 ```
-
                      rs12345 (ID маркера в базе данных dbSNP)
                          ↓
 Референс:    ...ATCGATCGATCGATCG...
@@ -72,7 +71,6 @@
 Вариант 2:   ...ATCGATCGATCGATCG...  (аллель G) — частота 40%
 
 Человек может иметь генотип: AA, AG, или GG
-
 ```
 
 **Характеристики SNP:**
@@ -83,6 +81,7 @@
 
 ```python
 # Пример: работа с SNP данными
+
 class SNP:
     def __init__(self, rsid, chromosome, position, ref_allele, alt_allele):
         self.rsid = rsid              # ID в базе данных (rs12345)
@@ -95,6 +94,7 @@ class SNP:
         return f"{self.rsid}: chr{self.chromosome}:{self.position} {self.ref_allele}>{self.alt_allele}"
 
 # Пример SNP, связанного с метаболизмом кофеина
+
 cyp1a2_snp = SNP(
     rsid="rs762551",
     chromosome=15,
@@ -113,7 +113,6 @@ def interpret_caffeine_metabolism(genotype):
         return "Средний метаболизм кофеина"
     else:  # CC
         return "Медленный метаболизм кофеина"
-
 ```
 
 ### 2.4 STR — Микросателлиты
@@ -121,14 +120,12 @@ def interpret_caffeine_metabolism(genotype):
 **STR (Short Tandem Repeats)** — короткие последовательности (2-6 нуклеотидов), повторённые много раз подряд.
 
 ```
-
 Пример STR локуса D13S317:
                     (GATA)n - повтор из 4 букв
 
 Человек 1:  ...GATA GATA GATA GATA GATA GATA GATA...  = 7 повторов
 Человек 2:  ...GATA GATA GATA GATA GATA GATA GATA GATA GATA GATA GATA...  = 11 повторов
 Человек 3:  ...GATA GATA GATA GATA GATA GATA GATA GATA GATA...  = 9 повторов
-
 ```
 
 **Применение STR:**
@@ -141,6 +138,7 @@ def interpret_caffeine_metabolism(genotype):
 
 ```python
 # Пример: сравнение STR-профилей
+
 def compare_str_profiles(profile1, profile2, loci):
     """
     Сравнение двух STR-профилей
@@ -160,6 +158,7 @@ def compare_str_profiles(profile1, profile2, loci):
     return match_rate
 
 # Пример: проверка отцовства
+
 child_profile = {
     'D13S317': (8, 11),    # Унаследовал 8 или 11 от каждого родителя
     'D7S820': (10, 12),
@@ -175,7 +174,6 @@ alleged_father = {
 # Все аллели ребёнка должны быть у родителей
 # match_rate = 1.0 — отцовство не исключено
 # match_rate < 1.0 — отцовство исключено
-
 ```
 
 ### 2.5 CNV — Вариации Числа Копий
@@ -183,7 +181,6 @@ alleged_father = {
 **CNV (Copy Number Variation)** — участки ДНК от 1 кб до нескольких Мб, количество копий которых варьирует между людьми.
 
 ```
-
 Нормальный геном:    [Ген A] [Ген B] [Ген C] [Ген D]
                         1       1       1       1     (по 2 копии каждого гена)
 
@@ -195,7 +192,6 @@ CNV - дупликация:    [Ген A] [Ген B] [Ген B] [Ген C] [Ге
 
 CNV - амплификация:  [Ген A] [Ген B] [Ген B] [Ген B] [Ген B] [Ген C] [Ген D]
                         1       4       4       4       4       1       1     (много копий)
-
 ```
 
 **Клиническое значение CNV:**
@@ -208,6 +204,7 @@ CNV - амплификация:  [Ген A] [Ген B] [Ген B] [Ген B] [Г
 
 ```python
 # Пример: детекция CNV
+
 def detect_cnv(read_depth, normal_depth, threshold=0.5):
     """
     Обнаружение CNV по глубине покрытия
@@ -229,10 +226,10 @@ def detect_cnv(read_depth, normal_depth, threshold=0.5):
         return f"Норма (log2 ratio: {log2_ratio:.2f})"
 
 # Примеры
+
 print(detect_cnv(15, 30))   # Делеция (половина от нормы)
 print(detect_cnv(60, 30))   # Амплификация (вдвое больше нормы)
 print(detect_cnv(28, 30))   # Норма
-
 ```
 
 ---
@@ -261,6 +258,7 @@ print(detect_cnv(28, 30))   # Норма
 
 ```python
 # Пример: рекомендации по варфарину
+
 def warfarin_dosing(vkorc1_genotype, cyp2c9_genotype):
     """
     Расчёт стартовой дозы варфарина по генотипу
@@ -292,9 +290,9 @@ def warfarin_dosing(vkorc1_genotype, cyp2c9_genotype):
     return round(dose, 1)
 
 # Пример
+
 print(f"Рекомендуемая доза: {warfarin_dosing('GA', '*1/*3')} мг/день")
 # Output: Рекомендуемая доза: 2.4 мг/день
-
 ```
 
 ### 3.3 Криминалистика
@@ -309,6 +307,7 @@ print(f"Рекомендуемая доза: {warfarin_dosing('GA', '*1/*3')} м
 
 ```python
 # Пример: расчёт вероятности случайного совпадения
+
 def random_match_probability(allele_frequencies, profile):
     """
     Расчёт вероятности случайного совпадения профиля
@@ -334,7 +333,6 @@ def random_match_probability(allele_frequencies, profile):
     return probability
 
 # При 20 локусах вероятность случайного совпадения ~10^-24
-
 ```
 
 ### 3.4 Популяционная генетика
@@ -360,7 +358,6 @@ def random_match_probability(allele_frequencies, profile):
 | **CNV** | Число копий регионов | Сильный эффект на фенотип | Сложный вызов, большие артефакты | Онкология, редкие синдромы |
 
 ```python
-
 def choose_marker_type(task: str) -> str:
     """
     Упрощённый "решатель" типа маркера по задаче.
@@ -405,6 +402,7 @@ def choose_marker_type(task: str) -> str:
 1. Составьте небольшую SNP‑панель (5–10 вариантов) для гипотетического фармакогенетического теста и опишите, какие гены/препараты вы бы включили.
 2. Придумайте пример задачи, где STR будет предпочтительнее SNP, и объясните почему.
 3. Напишите функцию на Python, которая по VCF файлу считает, сколько SNP и инделей у пациента в заданном списке генов.
+
 
 
 

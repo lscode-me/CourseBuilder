@@ -38,18 +38,17 @@ OpenBSD следует принципу минимальных привилег�
 
 ```sh
 # Только необходимые службы запущены после установки
+
 $ rcctl ls started
 cron
 ntpd
 pflogd
 sshd
-
 ```
 
 ### 1.2 Многослойная защита
 
 ```
-
 ┌─────────────────────────────────────────────────────┐
 │                   Securelevel                       │
 ├─────────────────────────────────────────────────────┤
@@ -61,7 +60,6 @@ sshd
 ├─────────────────────────────────────────────────────┤
 │    Memory protections (W^X, ASLR, KARL)             │
 └─────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -84,7 +82,6 @@ int main() {
     // После этого fork(), exec(), сеть — запрещены
     // Попытка их использовать = SIGABRT
 }
-
 ```
 
 ### 2.2 Категории pledge
@@ -109,7 +106,6 @@ int main() {
 ### 2.3 Пример использования
 
 ```c
-
 // cat_safe.c - безопасная версия cat
 #include <stdio.h>
 #include <unistd.h>
@@ -139,25 +135,26 @@ int main(int argc, char *argv[]) {
     fclose(f);
     return 0;
 }
-
 ```
 
 ### 2.4 Проверка pledge в программах
 
 ```sh
 # Многие базовые утилиты используют pledge
+
 $ ktrace -tc pledge cat /etc/passwd | kdump
   1234 cat      CALL  pledge(0x7f7fffffddd0,0)
   1234 cat      RET   pledge 0
 
 # Если программа нарушает pledge
+
 $ ./bad_program
 Abort trap (core dumped)
 
 # В логах:
+
 $ dmesg | tail
 bad_program(1234): pledge "stdio", syscall 97
-
 ```
 
 ---
@@ -180,7 +177,6 @@ int main() {
     // Теперь /home, /root и т.д. недоступны
     // fopen("/home/user/file", "r") вернёт ENOENT
 }
-
 ```
 
 ### 3.2 Права unveil
@@ -195,7 +191,6 @@ int main() {
 ### 3.3 Пример: безопасный веб-сервер
 
 ```c
-
 // Ограничить веб-сервер только его директориями
 unveil("/var/www", "r");           // Документы
 unveil("/var/www/logs", "rwc");    // Логи
@@ -204,13 +199,11 @@ unveil("/usr/lib", "r");           // Библиотеки
 unveil(NULL, NULL);                // Заблокировать
 
 pledge("stdio rpath wpath inet", NULL);
-
 ```
 
 ### 3.4 Комбинация pledge и unveil
 
 ```c
-
 // Типичный паттерн безопасности
 int main() {
     // Сначала unveil — пока есть полный доступ
@@ -224,7 +217,6 @@ int main() {
     
     // Теперь программа максимально ограничена
 }
-
 ```
 
 ---
@@ -260,6 +252,7 @@ OpenBSD поддерживает уровни защиты ядра:
 
 ```sh
 # Проверить текущий уровень
+
 $ sysctl kern.securelevel
 kern.securelevel=1
 
@@ -267,8 +260,8 @@ kern.securelevel=1
 # doas sysctl kern.securelevel=2
 
 # Для постоянной установки в /etc/sysctl.conf
-kern.securelevel=2
 
+kern.securelevel=2
 ```
 
 > **⚠️ Warning:**  
@@ -282,6 +275,7 @@ kern.securelevel=2
 # doas chflags schg /etc/pf.conf
 
 # Проверить флаги
+
 $ ls -lo /bsd
 -r-xr-xr-x  1 root  wheel  schg 24789504 Oct  9 13:57 /bsd
 
@@ -301,8 +295,8 @@ $ ls -lo /bsd
 
 ```sh
 # Проверить защиту
-$ dmesg | grep "protection"
 
+$ dmesg | grep "protection"
 ```
 
 ### 5.2 ASLR (Address Space Layout Randomization)
@@ -311,6 +305,7 @@ $ dmesg | grep "protection"
 
 ```sh
 # Каждый запуск — разные адреса
+
 $ cat /proc/self/maps
 # Адреса стека, heap, библиотек — случайные
 ```
@@ -321,6 +316,7 @@ $ cat /proc/self/maps
 
 ```sh
 # После установки патчей
+
 Relinking to create unique kernel... done.
 
 # Каждая загрузка — уникальное ядро
@@ -365,7 +361,6 @@ $ ps aux | grep sshd
 root     78123  0.0  0.1  1234  5678 ??  Is   10:00  0:00 /usr/sbin/sshd
 _sshd    78456  0.0  0.1  2345  6789 ??  S    10:01  0:00 sshd: user [priv]
 user     78457  0.0  0.1  2345  6790 ??  S    10:01  0:00 sshd: user@pts/0
-
 ```
 
 ### 6.3 Минимизация служб
@@ -376,10 +371,10 @@ user     78457  0.0  0.1  2345  6790 ??  S    10:01  0:00 sshd: user@pts/0
 # doas rcctl disable lpd
 
 # Проверить, что слушает сеть
+
 $ netstat -an | grep LISTEN
 tcp        0      0  *.22                   *.*                    LISTEN
 tcp        0      0  127.0.0.1.25           *.*                    LISTEN
-
 ```
 
 ### 6.4 Безопасность SSH
@@ -388,25 +383,29 @@ tcp        0      0  127.0.0.1.25           *.*                    LISTEN
 # /etc/ssh/sshd_config
 
 # Запретить root
+
 PermitRootLogin no
 
 # Только ключи
+
 PasswordAuthentication no
 PubkeyAuthentication yes
 
 # Ограничить алгоритмы
+
 KexAlgorithms curve25519-sha256
 Ciphers chacha20-poly1305@openssh.com
 
 # Лимиты
+
 MaxAuthTries 3
 MaxSessions 5
 ClientAliveInterval 300
 ClientAliveCountMax 2
 
 # Ограничить пользователей
-AllowUsers admin operator
 
+AllowUsers admin operator
 ```
 
 ---
@@ -417,27 +416,29 @@ AllowUsers admin operator
 
 ```sh
 # Важные файлы логов
+
 /var/log/authlog    # Аутентификация
 /var/log/secure     # Безопасность
 /var/log/messages   # Общие сообщения
 /var/log/daemon     # Демоны
 /var/log/pflog      # Файрвол
-
 ```
 
 ### 7.2 Мониторинг входов
 
 ```sh
 # Последние входы
+
 $ last
 admin    pts/0    192.168.1.100    Dec  1 10:00   still logged in
 
 # Неудачные попытки
+
 $ lastb
 
 # Текущие пользователи
-$ who
 
+$ who
 ```
 
 ### 7.3 Проверка целостности
@@ -445,26 +446,28 @@ $ who
 ```sh
 # mtree — проверка целостности файлов
 # Создать спецификацию
+
 $ mtree -c -K sha256digest -p /etc > /root/etc.mtree
 
 # Проверить изменения
+
 $ mtree -p /etc < /root/etc.mtree
 ./ssh/sshd_config changed
         modification time expected Fri Nov 15 14:30:00 2023 found Mon Dec  1 10:00:00 2023
         SHA-256 expected abc123... found def456...
-
 ```
 
 ### 7.4 Проверка портов
 
 ```sh
 # Что слушает
+
 $ netstat -an | grep LISTEN
 
 # Какие процессы
 # doas fstat | grep internet
-root     sshd       1234   3* internet stream tcp *:22
 
+root     sshd       1234   3* internet stream tcp *:22
 ```
 
 ---
@@ -478,10 +481,12 @@ root     sshd       1234   3* internet stream tcp *:22
 # doas syspatch
 
 # 2. Настроить doas (не sudo)
+
 echo "permit persist :wheel" | doas tee /etc/doas.conf
 
 # 3. Отключить root по SSH
 # В /etc/ssh/sshd_config:
+
 PermitRootLogin no
 
 # 4. Настроить PF
@@ -489,8 +494,8 @@ PermitRootLogin no
 # doas pfctl -ef /etc/pf.conf
 
 # 5. Включить securelevel 2 (опционально)
-echo "kern.securelevel=2" | doas tee -a /etc/sysctl.conf
 
+echo "kern.securelevel=2" | doas tee -a /etc/sysctl.conf
 ```
 
 ### 8.2 Регулярные проверки
@@ -501,14 +506,16 @@ echo "kern.securelevel=2" | doas tee -a /etc/sysctl.conf
 # doas syspatch -c
 
 # 2. Проверить логи
+
 $ doas grep -i "fail\|error\|denied" /var/log/authlog
 
 # 3. Проверить процессы
+
 $ ps auxww
 
 # 4. Проверить соединения
-$ netstat -an
 
+$ netstat -an
 ```
 
 ---
@@ -564,6 +571,7 @@ $ netstat -an
 - [Pledge presentation](https://www.openbsd.org/papers/)
 
 ---
+
 
 
 

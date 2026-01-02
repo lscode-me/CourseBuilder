@@ -39,7 +39,6 @@
 **Example: Raw pointers**
 
 ```rust
-
 fn main() {
     let mut num = 5;
     
@@ -55,7 +54,6 @@ fn main() {
 
 **Output:**
 ```
-
 r1: 5
 r2: 5
 ```
@@ -81,7 +79,6 @@ r2: 5
 **Example: Box**
 
 ```rust
-
 fn main() {
     let b = Box::new(5);
     println!("b = {}", b);
@@ -90,7 +87,6 @@ fn main() {
 
 **Output:**
 ```
-
 b = 5
 ```
 
@@ -105,7 +101,6 @@ b = 5
 **Example: Рекурсивная структура**
 
 ```rust
-
 enum List {
     Cons(i32, Box<List>),
     Nil,
@@ -127,7 +122,6 @@ fn main() {
 **Example: Rc**
 
 ```rust
-
 use std::rc::Rc;
 
 fn main() {
@@ -141,7 +135,6 @@ fn main() {
 
 **Output:**
 ```
-
 Счётчик ссылок: 3
 ```
 
@@ -160,7 +153,6 @@ fn main() {
 **Example: Arc**
 
 ```rust
-
 use std::sync::Arc;
 use std::thread;
 
@@ -184,7 +176,6 @@ fn main() {
 
 **Output:**
 ```
-
 Поток 1: 5
 Поток 2: 5
 ```
@@ -241,7 +232,6 @@ fn main() {
 ### 6.1 Пример: Box для рекурсивной структуры
 
 ```rust
-
 enum List {
     Cons(i32, Box<List>),
     Nil,
@@ -255,7 +245,6 @@ fn main() {
 ### 6.2 Пример: Rc для множественного владения
 
 ```rust
-
 use std::rc::Rc;
 
 struct Node {
@@ -280,14 +269,12 @@ fn main() {
 
 **Output:**
 ```
-
 Счётчик node1: 2
 ```
 
 ### 6.3 Пример: Arc для многопоточности
 
 ```rust
-
 use std::sync::Arc;
 use std::thread;
 
@@ -313,7 +300,6 @@ fn main() {
 
 **Output:**
 ```
-
 Поток 1: 5
 Поток 2: 5
 Основной поток: 5
@@ -324,7 +310,6 @@ fn main() {
 **Weak** позволяет избежать циклических ссылок:
 
 ```rust
-
 use std::rc::{Rc, Weak};
 
 struct Node {
@@ -393,7 +378,6 @@ fn main() {
 ### 8.1 Пример: Дерево с Rc
 
 ```rust
-
 use std::rc::Rc;
 
 struct TreeNode {
@@ -421,14 +405,12 @@ fn main() {
 
 **Output:**
 ```
-
 Счётчик leaf: 3
 ```
 
 ### 8.2 Пример: Разделяемые данные с Arc
 
 ```rust
-
 use std::sync::Arc;
 use std::thread;
 
@@ -457,7 +439,6 @@ fn main() {
 ### 8.3 Пример: Raw pointers для оптимизации
 
 ```rust
-
 fn unsafe_fast_sum(slice: &[i32]) -> i32 {
     let mut sum = 0;
     let ptr = slice.as_ptr();
@@ -480,7 +461,6 @@ fn main() {
 
 **Output:**
 ```
-
 Сумма: 15
 ```
 

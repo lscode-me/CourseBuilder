@@ -45,7 +45,6 @@
 **Example: Представление кучи в массиве**
 
 ```python
-
 class MinHeap:
     """Минимальная куча."""
     def __init__(self):
@@ -68,6 +67,7 @@ class MinHeap:
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
 # Создание кучи
+
 heap = MinHeap()
 heap.heap = [1, 3, 2, 5, 4, 6, 7]
 
@@ -78,7 +78,6 @@ print(f"Левый ребёнок индекса 1: индекс {heap.left_chil
 
 **Output:**
 ```
-
 Куча: [1, 3, 2, 5, 4, 6, 7]
 Родитель индекса 3: индекс 1, значение 3
 Левый ребёнок индекса 1: индекс 3, значение 5
@@ -99,7 +98,6 @@ print(f"Левый ребёнок индекса 1: индекс {heap.left_chil
 **Example: Вставка в min-heap**
 
 ```python
-
 class MinHeap:
     def __init__(self):
         self.heap = []
@@ -122,6 +120,7 @@ class MinHeap:
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
 # Использование
+
 heap = MinHeap()
 heap.insert(5)
 heap.insert(3)
@@ -134,7 +133,6 @@ print(f"Куча после вставок: {heap.heap}")
 
 **Output:**
 ```
-
 Куча после вставок: [1, 3, 7, 5, 9]
 ```
 
@@ -143,7 +141,6 @@ print(f"Куча после вставок: {heap.heap}")
 **Example: Извлечение минимума**
 
 ```python
-
 class MinHeap:
     def __init__(self):
         self.heap = []
@@ -190,6 +187,7 @@ class MinHeap:
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
 # Использование
+
 heap = MinHeap()
 for val in [5, 3, 7, 1, 9, 2]:
     heap.insert(val)
@@ -203,7 +201,6 @@ print(f"Куча после извлечения: {heap.heap}")
 
 **Output:**
 ```
-
 Куча: [1, 3, 2, 5, 9, 7]
 Извлечён минимум: 1
 Куча после извлечения: [2, 3, 7, 5, 9]
@@ -214,12 +211,12 @@ print(f"Куча после извлечения: {heap.heap}")
 **Example: Получение минимума без удаления**
 
 ```python
-
 def peek(self):
     """Получить минимальный элемент без удаления."""
     return self.heap[0] if self.heap else None
 
 # Добавляем метод к классу
+
 MinHeap.peek = peek
 
 heap = MinHeap()
@@ -233,7 +230,6 @@ print(f"Куча не изменилась: {heap.heap}")
 
 **Output:**
 ```
-
 Минимум: 3
 Куча не изменилась: [3, 5, 7]
 ```
@@ -247,10 +243,10 @@ print(f"Куча не изменилась: {heap.heap}")
 **Example: Использование heapq**
 
 ```python
-
 import heapq
 
 # Создание кучи (min-heap)
+
 heap = []
 heapq.heappush(heap, 5)
 heapq.heappush(heap, 3)
@@ -260,6 +256,7 @@ heapq.heappush(heap, 1)
 print(f"Куча: {heap}")
 
 # Извлечение минимума
+
 min_val = heapq.heappop(heap)
 print(f"Извлечён минимум: {min_val}")
 print(f"Куча после извлечения: {heap}")
@@ -267,7 +264,6 @@ print(f"Куча после извлечения: {heap}")
 
 **Output:**
 ```
-
 Куча: [1, 3, 7, 5]
 Извлечён минимум: 1
 Куча после извлечения: [3, 5, 7]
@@ -278,18 +274,20 @@ print(f"Куча после извлечения: {heap}")
 **Example: heapify**
 
 ```python
-
 import heapq
 
 # Создание списка
+
 data = [5, 3, 7, 1, 9, 2, 6]
 
 # Преобразование в кучу за O(n)
+
 heapq.heapify(data)
 
 print(f"Куча: {data}")
 
 # Извлечение элементов по порядку
+
 print("Извлечение элементов:")
 while data:
     print(f"  {heapq.heappop(data)}")
@@ -297,7 +295,6 @@ while data:
 
 **Output:**
 ```
-
 Куча: [1, 3, 2, 5, 9, 7, 6]
 Извлечение элементов:
   1
@@ -314,10 +311,10 @@ while data:
 **Example: Реализация max-heap**
 
 ```python
-
 import heapq
 
 # Max-heap через инвертирование значений
+
 class MaxHeap:
     def __init__(self):
         self.heap = []
@@ -332,6 +329,7 @@ class MaxHeap:
         return -self.heap[0] if self.heap else None
 
 # Использование
+
 max_heap = MaxHeap()
 max_heap.push(5)
 max_heap.push(3)
@@ -344,7 +342,6 @@ print(f"Извлечён максимум: {max_heap.pop()}")
 
 **Output:**
 ```
-
 Максимум: 7
 Извлечён максимум: 7
 ```
@@ -362,7 +359,6 @@ print(f"Извлечён максимум: {max_heap.pop()}")
 **Example: Приоритетная очередь задач**
 
 ```python
-
 import heapq
 
 class PriorityQueue:
@@ -386,6 +382,7 @@ class PriorityQueue:
         return len(self.heap) == 0
 
 # Использование
+
 pq = PriorityQueue()
 pq.enqueue("Задача 1", 3)  # Низкий приоритет
 pq.enqueue("Задача 2", 1)  # Высокий приоритет
@@ -399,7 +396,6 @@ while not pq.is_empty():
 
 **Output:**
 ```
-
 Обработка задач по приоритету:
   Обработано: Задача 2
   Обработано: Задача 3
@@ -411,7 +407,6 @@ while not pq.is_empty():
 **Example: Концептуальное использование в алгоритме Дейкстры**
 
 ```python
-
 import heapq
 
 def dijkstra_shortest_path(graph, start):
@@ -435,6 +430,7 @@ def dijkstra_shortest_path(graph, start):
     return distances
 
 # Концептуальный пример
+
 graph = {
     'A': [('B', 1), ('C', 4)],
     'B': [('C', 2)],
@@ -447,7 +443,6 @@ print(f"Расстояния: {distances}")
 
 **Output:**
 ```
-
 Расстояния: {'A': 0}
 ```
 
@@ -470,19 +465,21 @@ print(f"Расстояния: {distances}")
 **Example: Эффективное построение кучи**
 
 ```python
-
 import heapq
 import time
 
 # Большой список
+
 large_list = list(range(10000, 0, -1))  # Обратный порядок
 
 # Построение кучи
+
 start = time.time()
 heapq.heapify(large_list)
 heapify_time = time.time() - start
 
 # Проверка, что это куча
+
 print(f"Построение кучи заняло: {heapify_time:.6f} секунд")
 print(f"Минимум: {large_list[0]}")
 print(f"Первые 10 элементов: {large_list[:10]}")
@@ -490,7 +487,6 @@ print(f"Первые 10 элементов: {large_list[:10]}")
 
 **Output:**
 ```
-
 Построение кучи заняло: 0.001234 секунд
 Минимум: 1
 Первые 10 элементов: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -505,7 +501,6 @@ print(f"Первые 10 элементов: {large_list[:10]}")
 **Example: Heapsort**
 
 ```python
-
 import heapq
 
 def heapsort(arr):
@@ -514,6 +509,7 @@ def heapsort(arr):
     return [heapq.heappop(arr) for _ in range(len(arr))]
 
 # Тестирование
+
 unsorted = [5, 2, 8, 1, 9, 3, 7, 4, 6]
 sorted_arr = heapsort(unsorted.copy())
 
@@ -523,7 +519,6 @@ print(f"Отсортированный: {sorted_arr}")
 
 **Output:**
 ```
-
 Неотсортированный: [5, 2, 8, 1, 9, 3, 7, 4, 6]
 Отсортированный: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
@@ -535,7 +530,6 @@ print(f"Отсортированный: {sorted_arr}")
 **Example: Найти k наибольших элементов**
 
 ```python
-
 import heapq
 
 def find_k_largest(arr, k):
@@ -552,6 +546,7 @@ def find_k_largest(arr, k):
     return sorted(heap, reverse=True)
 
 # Тестирование
+
 data = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 k = 3
 
@@ -562,7 +557,6 @@ print(f"{k} наибольших: {result}")
 
 **Output:**
 ```
-
 Данные: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 3 наибольших: [9, 6, 5]
 ```
@@ -576,7 +570,6 @@ print(f"{k} наибольших: {result}")
 **Example: Диспетчер задач с приоритетами**
 
 ```python
-
 import heapq
 from datetime import datetime
 
@@ -608,6 +601,7 @@ class TaskScheduler:
         return len(self.tasks)
 
 # Использование
+
 scheduler = TaskScheduler()
 scheduler.add_task("Критическая задача", 1)
 scheduler.add_task("Обычная задача", 3)
@@ -621,7 +615,6 @@ while scheduler.get_queue_size() > 0:
 
 **Output:**
 ```
-
 Обработка задач:
   Критическая задача
   Важная задача
@@ -664,5 +657,6 @@ while scheduler.get_queue_size() > 0:
 - Исследуйте оптимизации операций с кучей
 
 ---
+
 
 

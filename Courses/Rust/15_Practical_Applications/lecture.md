@@ -76,7 +76,6 @@
 **Example: Базовая структура**
 
 ```rust
-
 // Используя clap для парсинга аргументов
 // Требует: clap = { version = "4", features = ["derive"] }
 // use clap::Parser;
@@ -102,7 +101,6 @@
 **Example: Более сложная утилита**
 
 ```rust
-
 // use clap::{Parser, Subcommand};
 //
 // #[derive(Parser)]
@@ -180,7 +178,6 @@
 **Example: actix-web**
 
 ```rust
-
 // Требует: actix-web = "4"
 // use actix_web::{web, App, HttpServer, Responder};
 
@@ -202,7 +199,6 @@
 **Example: warp**
 
 ```rust
-
 // Требует: warp = "0.3"
 // tokio = { version = "1", features = ["full"] }
 // use warp::Filter;
@@ -221,7 +217,6 @@
 ### 2.4 Пример: REST API
 
 ```rust
-
 // Требует: actix-web = "4"
 // serde = { version = "1.0", features = ["derive"] }
 // use actix_web::{web, App, HttpServer, Responder};
@@ -271,7 +266,6 @@
 **Example: Базовый FFI**
 
 ```rust
-
 // extern "C" {
 //     fn abs(input: i32) -> i32;
 // }
@@ -288,7 +282,6 @@
 **Example: Экспорт функции**
 
 ```rust
-
 // #[no_mangle]
 // pub extern "C" fn add(a: i32, b: i32) -> i32 {
 //     a + b
@@ -298,7 +291,6 @@
 **Example: Экспорт структуры**
 
 ```rust
-
 // #[repr(C)]
 // pub struct Point {
 //     x: i32,
@@ -315,7 +307,6 @@
 
 **Cargo.toml:**
 ```toml
-
 [lib]
 crate-type = ["cdylib"]
 ```
@@ -323,7 +314,6 @@ crate-type = ["cdylib"]
 **Example: Полный пример**
 
 ```rust
-
 // #[no_mangle]
 // pub extern "C" fn rust_function(input: i32) -> i32 {
 //     input * 2
@@ -332,7 +322,6 @@ crate-type = ["cdylib"]
 
 **Использование из C:**
 ```c
-
 // extern int rust_function(int input);
 //
 // int main() {
@@ -349,7 +338,6 @@ crate-type = ["cdylib"]
 **Example: Безопасная обёртка**
 
 ```rust
-
 // extern "C" {
 //     fn unsafe_c_function(ptr: *const i32) -> i32;
 // }
@@ -478,7 +466,6 @@ crate-type = ["cdylib"]
 ### 6.3 Пример: Миграция компонента
 
 ```rust
-
 // Старый код на C
 // int process_data(int* data, int len);
 

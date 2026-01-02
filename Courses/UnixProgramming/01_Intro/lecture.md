@@ -80,7 +80,6 @@
 ### 2.1 Уровни абстракции
 
 ```
-
 ┌──────────────────────────────────────────────┐
 │           User Applications                  │
 │        (Python, shell scripts)               │
@@ -99,7 +98,6 @@
 ├──────────────────────────────────────────────┤
 │                 Hardware                     │
 └──────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 Системные вызовы (syscalls)
@@ -107,7 +105,6 @@
 **Системный вызов** — запрос к ядру для выполнения привилегированной операции.
 
 ```python
-
 import os
 
 # os.open() → вызывает syscall open(2)
@@ -120,16 +117,13 @@ data = os.read(fd, 1024)
 os.close(fd)
 
 print(data.decode())
-
 ```
 
 **Output:**
 ```
-
 root:*:0:0:Charlie &:/root:/bin/ksh
 daemon:*:1:1:The devil himself:/root:/sbin/nologin
 ...
-
 ```
 
 ### 2.3 Просмотр системных вызовов
@@ -137,21 +131,17 @@ daemon:*:1:1:The devil himself:/root:/sbin/nologin
 **На OpenBSD (ktrace):**
 
 ```bash
-
 $ ktrace -tc python3 -c "import os; os.getpid()"
 $ kdump
   1234 python3  CALL  getpid
   1234 python3  RET   getpid 1234
-
 ```
 
 **На Linux (strace):**
 
 ```bash
-
 $ strace -e trace=getpid python3 -c "import os; os.getpid()"
 getpid()                                = 1234
-
 ```
 
 ### 2.4 Основные категории syscalls
@@ -172,7 +162,6 @@ getpid()                                = 1234
 ### 3.1 Информация о процессе
 
 ```python
-
 import os
 
 # Идентификаторы процесса
@@ -187,12 +176,10 @@ print(f"Groups: {os.getgroups()}")
 
 # Имя пользователя
 print(f"Login: {os.getlogin()}")
-
 ```
 
 **Output:**
 ```
-
 PID: 12345
 Parent PID: 12344
 User ID: 1000
@@ -200,13 +187,11 @@ Group ID: 1000
 Effective UID: 1000
 Groups: [1000, 0, 20]
 Login: admin
-
 ```
 
 ### 3.2 Переменные окружения
 
 ```python
-
 import os
 
 # Получить переменную
@@ -224,13 +209,11 @@ del os.environ["MY_VAR"]
 # Все переменные
 for key, value in os.environ.items():
     print(f"{key}={value}")
-
 ```
 
 ### 3.3 Текущий каталог
 
 ```python
-
 import os
 
 # Получить текущий каталог
@@ -243,13 +226,11 @@ print(f"New directory: {os.getcwd()}")
 
 # Вернуться
 os.chdir(cwd)
-
 ```
 
 ### 3.4 Информация о системе
 
 ```python
-
 import os
 
 # Имя ОС
@@ -262,25 +243,21 @@ print(f"Node: {uname.nodename}")
 print(f"Release: {uname.release}")
 print(f"Version: {uname.version}")
 print(f"Machine: {uname.machine}")
-
 ```
 
 **Output:**
 ```
-
 OS name: posix
 System: OpenBSD
 Node: server.home.local
 Release: 7.4
 Version: GENERIC.MP#0
 Machine: amd64
-
 ```
 
 ### 3.5 Работа с путями
 
 ```python
-
 import os.path
 from pathlib import Path
 
@@ -299,7 +276,6 @@ print(f"Stem: {p.stem}")
 print(f"Suffix: {p.suffix}")
 print(f"Parent: {p.parent}")
 print(f"Exists: {p.exists()}")
-
 ```
 
 ---
@@ -309,7 +285,6 @@ print(f"Exists: {p.exists()}")
 ### 4.1 errno — коды ошибок Unix
 
 ```python
-
 import os
 import errno
 
@@ -320,17 +295,14 @@ except OSError as e:
     print(f"Error name: {errno.errorcode.get(e.errno)}")
     print(f"Error message: {e.strerror}")
     print(f"Filename: {e.filename}")
-
 ```
 
 **Output:**
 ```
-
 Error number: 2
 Error name: ENOENT
 Error message: No such file or directory
 Filename: /nonexistent
-
 ```
 
 ### 4.2 Распространённые коды ошибок
@@ -349,7 +321,6 @@ Filename: /nonexistent
 ### 4.3 Безопасная обработка ошибок
 
 ```python
-
 import os
 import errno
 
@@ -375,7 +346,6 @@ def safe_remove(path):
 ### 4.4 Проверка возможностей перед действием (LBYL vs EAFP)
 
 ```python
-
 import os
 
 # LBYL (Look Before You Leap) — не рекомендуется
@@ -388,7 +358,6 @@ try:
     os.remove(path)
 except FileNotFoundError:
     pass  # Файл уже не существует
-
 ```
 
 > **💡 Pro Tip:**  
@@ -403,7 +372,6 @@ except FileNotFoundError:
 Иногда Python не предоставляет обёртку для нужного syscall или C-функции. `ctypes` позволяет вызывать их напрямую.
 
 ```python
-
 import ctypes
 import ctypes.util
 
@@ -413,20 +381,16 @@ libc = ctypes.CDLL(ctypes.util.find_library("c"))
 # Вызвать getpid()
 pid = libc.getpid()
 print(f"PID from ctypes: {pid}")
-
 ```
 
 **Output:**
 ```
-
 PID from ctypes: 12345
-
 ```
 
 ### 5.2 Пример: gethostname
 
 ```python
-
 import ctypes
 
 libc = ctypes.CDLL(None)  # Загрузить libc по умолчанию
@@ -442,13 +406,11 @@ if result == 0:
     print(f"Hostname: {hostname}")
 else:
     print("Error getting hostname")
-
 ```
 
 ### 5.3 Пример: sysctl на OpenBSD
 
 ```python
-
 import ctypes
 import struct
 
@@ -475,7 +437,6 @@ result = libc.sysctl(
 
 if result == 0:
     print(f"Hostname via sysctl: {buf.value.decode()}")
-
 ```
 
 ### 5.4 Типы данных ctypes
@@ -581,18 +542,15 @@ def list_directory(path="."):
 if __name__ == "__main__":
     path = sys.argv[1] if len(sys.argv) > 1 else "."
     list_directory(path)
-
 ```
 
 **Output:**
 ```
-
 $ python3 myls.py /etc
 drwxr-xr-x   2 root     wheel     512B Dec  1 10:00 ssh
 -rw-r--r--   1 root     wheel     1.8K Nov 15 14:30 passwd
 -rw-r--r--   1 root     wheel     2.1K Nov 15 14:30 group
 ...
-
 ```
 
 ### 6.2 Версия ps (список процессов)
@@ -637,7 +595,6 @@ def list_processes():
 
 if __name__ == "__main__":
     list_processes()
-
 ```
 
 ---
@@ -655,7 +612,6 @@ $ kdump | less
 $ ktrace -tc python3 myscript.py  # Syscalls
 $ ktrace -ti python3 myscript.py  # I/O
 $ ktrace -tn python3 myscript.py  # Namei (lookups)
-
 ```
 
 ### 7.2 strace на Linux
@@ -669,13 +625,11 @@ $ strace -e trace=open,read,write python3 myscript.py
 
 # Статистика
 $ strace -c python3 myscript.py
-
 ```
 
 ### 7.3 Пример вывода ktrace
 
 ```
-
 $ ktrace python3 -c "open('/etc/passwd').read()"
 $ kdump
   1234 python3  CALL  openat(AT_FDCWD,"/etc/passwd",O_RDONLY|O_CLOEXEC)
@@ -686,13 +640,11 @@ $ kdump
   1234 python3  RET   read 1843
   1234 python3  CALL  close(3)
   1234 python3  RET   close 0
-
 ```
 
 ### 7.4 Логирование в системных программах
 
 ```python
-
 import logging
 import sys
 
@@ -721,7 +673,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ---
@@ -770,7 +721,6 @@ pledge("stdio rpath wpath cpath")
 ### 8.2 Проверка платформы
 
 ```python
-
 import sys
 import platform
 
@@ -786,7 +736,6 @@ elif sys.platform == "darwin":
 print(f"Platform: {platform.platform()}")
 print(f"System: {platform.system()}")
 print(f"Release: {platform.release()}")
-
 ```
 
 ---

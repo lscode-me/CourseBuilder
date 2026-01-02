@@ -39,7 +39,6 @@
 **Проблема без JOIN:**
 
 ```sql
-
 -- Две отдельные таблицы
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
@@ -60,7 +59,6 @@ SELECT name FROM countries WHERE id = (SELECT country_id FROM users WHERE id = 1
 **Решение с JOIN:**
 
 ```sql
-
 -- Один запрос объединяет данные
 SELECT 
     u.name AS user_name,
@@ -93,7 +91,6 @@ WHERE u.id = 1;
 ### 2.1 Базовый синтаксис
 
 ```sql
-
 SELECT columns
 FROM table1
 INNER JOIN table2 ON table1.column = table2.column;
@@ -102,7 +99,6 @@ INNER JOIN table2 ON table1.column = table2.column;
 **Пример:**
 
 ```sql
-
 INSERT INTO countries VALUES
     (1, 'Russia'),
     (2, 'USA'),
@@ -124,7 +120,6 @@ INNER JOIN countries c ON u.country_id = c.id;
 
 **Output:**
 ```
-
 user_name | country_name
 ----------+--------------
 Иван      | Russia
@@ -137,7 +132,6 @@ John      | USA
 ### 2.2 JOIN с несколькими условиями
 
 ```sql
-
 -- JOIN с несколькими условиями
 SELECT 
     u.name,
@@ -154,7 +148,6 @@ WHERE o.amount > 100;
 **Алиасы делают запросы читаемее:**
 
 ```sql
-
 -- Без алиасов (менее читаемо)
 SELECT users.name, countries.name
 FROM users
@@ -175,7 +168,6 @@ INNER JOIN countries c ON u.country_id = c.id;
 ### 3.1 Базовый LEFT JOIN
 
 ```sql
-
 -- Все пользователи, даже без страны
 SELECT 
     u.name AS user_name,
@@ -186,7 +178,6 @@ LEFT JOIN countries c ON u.country_id = c.id;
 
 **Output:**
 ```
-
 user_name | country_name
 ----------+--------------
 Иван      | Russia
@@ -202,7 +193,6 @@ John      | USA
 **Найти пользователей без страны:**
 
 ```sql
-
 SELECT 
     u.name,
     u.country_id
@@ -213,7 +203,6 @@ WHERE c.id IS NULL;
 
 **Output:**
 ```
-
 name | country_id
 
 -----+------------
@@ -225,7 +214,6 @@ name | country_id
 **Разница:**
 
 ```sql
-
 -- INNER JOIN: только пользователи со страной
 SELECT COUNT(*) FROM users u
 INNER JOIN countries c ON u.country_id = c.id;
@@ -247,7 +235,6 @@ LEFT JOIN countries c ON u.country_id = c.id;
 ### 4.1 Базовый RIGHT JOIN
 
 ```sql
-
 -- Все страны, даже без пользователей
 SELECT 
     u.name AS user_name,
@@ -258,7 +245,6 @@ RIGHT JOIN countries c ON u.country_id = c.id;
 
 **Output:**
 ```
-
 user_name | country_name
 ----------+--------------
 Иван      | Russia
@@ -274,7 +260,6 @@ John      | USA
 **Найти страны без пользователей:**
 
 ```sql
-
 SELECT 
     c.name AS country_name
 FROM users u
@@ -284,7 +269,6 @@ WHERE u.id IS NULL;
 
 **Output:**
 ```
-
 country_name
 
 ------------
@@ -303,7 +287,6 @@ Germany
 ### 5.1 Базовый FULL JOIN
 
 ```sql
-
 -- Все пользователи и все страны
 SELECT 
     u.name AS user_name,
@@ -314,7 +297,6 @@ FULL JOIN countries c ON u.country_id = c.id;
 
 **Output:**
 ```
-
 user_name | country_name
 ----------+--------------
 Иван      | Russia
@@ -335,7 +317,6 @@ John      | USA
 **Найти все несоответствия:**
 
 ```sql
-
 SELECT 
     u.name AS user_name,
     c.name AS country_name,
@@ -357,7 +338,6 @@ FULL JOIN countries c ON u.country_id = c.id;
 ### 6.1 Базовый CROSS JOIN
 
 ```sql
-
 -- Все комбинации пользователей и стран
 SELECT 
     u.name AS user_name,
@@ -368,7 +348,6 @@ CROSS JOIN countries c;
 
 **Output:**
 ```
-
 user_name | country_name
 ----------+--------------
 Иван      | Russia
@@ -395,7 +374,6 @@ John      | Germany
 **Полезные случаи:**
 
 ```sql
-
 -- Генерация всех комбинаций для тестирования
 CREATE TABLE sizes (size VARCHAR(10));
 CREATE TABLE colors (color VARCHAR(10));
@@ -418,7 +396,6 @@ CROSS JOIN colors c;
 **ON** определяет, как таблицы соединяются:
 
 ```sql
-
 SELECT u.name, c.name
 FROM users u
 LEFT JOIN countries c ON u.country_id = c.id;
@@ -434,7 +411,6 @@ LEFT JOIN countries c ON u.country_id = c.id;
 **WHERE** фильтрует результат после соединения:
 
 ```sql
-
 SELECT u.name, c.name
 FROM users u
 LEFT JOIN countries c ON u.country_id = c.id
@@ -451,7 +427,6 @@ WHERE c.name = 'Russia';
 **Важная разница:**
 
 ```sql
-
 -- ON: условие соединения (все пользователи, фильтр только по стране)
 SELECT u.name, c.name
 FROM users u
@@ -474,7 +449,6 @@ WHERE c.name = 'Russia';
 ### 8.1 Цепочка JOIN
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER,
     user_id INTEGER,
@@ -501,7 +475,6 @@ INNER JOIN products p ON o.product_id = p.id;
 ### 8.2 Смешанные типы JOIN
 
 ```sql
-
 -- Комбинация LEFT и INNER JOIN
 SELECT 
     u.name AS user_name,
@@ -524,7 +497,6 @@ INNER JOIN products p ON o.product_id = p.id;
 **Найти менеджеров для сотрудников:**
 
 ```sql
-
 CREATE TABLE employees (
     id INTEGER,
     name VARCHAR(100),
@@ -547,7 +519,6 @@ LEFT JOIN employees m ON e.manager_id = m.id;
 
 **Output:**
 ```
-
 employee | manager
 
 ---------+--------
@@ -564,7 +535,6 @@ employee | manager
 ### 10.1 Отчёт по заказам с пользователями
 
 ```sql
-
 SELECT 
     u.name AS user_name,
     c.name AS country,
@@ -580,7 +550,6 @@ ORDER BY total_spent DESC;
 ### 10.2 Найти пользователей без заказов
 
 ```sql
-
 SELECT 
     u.name,
     u.id
@@ -592,7 +561,6 @@ WHERE o.id IS NULL;
 ### 10.3 Полный отчёт с FULL JOIN
 
 ```sql
-
 SELECT 
     COALESCE(u.name, 'Нет пользователя') AS user_name,
     COALESCE(c.name, 'Нет страны') AS country_name,
@@ -612,7 +580,6 @@ GROUP BY u.id, u.name, c.id, c.name;
 **JOIN работает быстрее с индексами:**
 
 ```sql
-
 -- Создать индекс для ускорения JOIN
 CREATE INDEX idx_users_country_id ON users(country_id);
 CREATE INDEX idx_orders_user_id ON orders(user_id);
@@ -623,7 +590,6 @@ CREATE INDEX idx_orders_user_id ON orders(user_id);
 **Порядок может влиять на производительность:**
 
 ```sql
-
 -- Может быть быстрее, если users меньше
 SELECT ...
 FROM users u

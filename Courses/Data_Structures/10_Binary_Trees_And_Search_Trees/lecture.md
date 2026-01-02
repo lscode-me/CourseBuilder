@@ -40,7 +40,6 @@
 **Example: Базовый узел бинарного дерева**
 
 ```python
-
 class TreeNode:
     """Узел бинарного дерева."""
     def __init__(self, data):
@@ -52,6 +51,7 @@ class TreeNode:
         return str(self.data)
 
 # Создание простого бинарного дерева
+
 root = TreeNode(1)
 root.left = TreeNode(2)
 root.right = TreeNode(3)
@@ -66,7 +66,6 @@ print(f"Левый-левый внук: {root.left.left.data}")
 
 **Output:**
 ```
-
 Корень: 1
 Левый ребёнок: 2
 Правый ребёнок: 3
@@ -94,7 +93,6 @@ print(f"Левый-левый внук: {root.left.left.data}")
 **Example: Создание BST**
 
 ```python
-
 class BSTNode:
     """Узел бинарного дерева поиска."""
     def __init__(self, data):
@@ -139,6 +137,7 @@ class BST:
             return self._search_recursive(node.right, data)
 
 # Использование
+
 bst = BST()
 bst.insert(5)
 bst.insert(3)
@@ -152,7 +151,6 @@ print(f"Поиск 4: {'Найден' if result else 'Не найден'}")
 
 **Output:**
 ```
-
 Поиск 4: Найден
 ```
 
@@ -177,7 +175,6 @@ In-order обход даёт элементы в отсортированном 
 **Example: In-order обход**
 
 ```python
-
 def inorder_traversal(node, result=None):
     """In-order обход: слева, корень, справа."""
     if result is None:
@@ -191,6 +188,7 @@ def inorder_traversal(node, result=None):
     return result
 
 # Создание BST
+
 bst = BST()
 for val in [5, 3, 7, 2, 4, 6, 8]:
     bst.insert(val)
@@ -201,7 +199,6 @@ print(f"In-order обход: {result}")
 
 **Output:**
 ```
-
 In-order обход: [2, 3, 4, 5, 6, 7, 8]
 ```
 
@@ -210,7 +207,6 @@ In-order обход: [2, 3, 4, 5, 6, 7, 8]
 **Example: Pre-order обход**
 
 ```python
-
 def preorder_traversal(node, result=None):
     """Pre-order обход: корень, слева, справа."""
     if result is None:
@@ -229,7 +225,6 @@ print(f"Pre-order обход: {result}")
 
 **Output:**
 ```
-
 Pre-order обход: [5, 3, 2, 4, 7, 6, 8]
 ```
 
@@ -238,7 +233,6 @@ Pre-order обход: [5, 3, 2, 4, 7, 6, 8]
 **Example: Post-order обход**
 
 ```python
-
 def postorder_traversal(node, result=None):
     """Post-order обход: слева, справа, корень."""
     if result is None:
@@ -257,7 +251,6 @@ print(f"Post-order обход: {result}")
 
 **Output:**
 ```
-
 Post-order обход: [2, 4, 3, 6, 8, 7, 5]
 ```
 
@@ -266,7 +259,6 @@ Post-order обход: [2, 4, 3, 6, 8, 7, 5]
 **Example: Level-order обход**
 
 ```python
-
 from collections import deque
 
 def levelorder_traversal(root):
@@ -294,7 +286,6 @@ print(f"Level-order обход: {result}")
 
 **Output:**
 ```
-
 Level-order обход: [5, 3, 7, 2, 4, 6, 8]
 ```
 
@@ -307,7 +298,6 @@ Level-order обход: [5, 3, 7, 2, 4, 6, 8]
 **Example: Поиск в BST**
 
 ```python
-
 def search_bst(node, target):
     """Поиск элемента в BST."""
     if node is None:
@@ -329,7 +319,6 @@ print(f"Поиск 9: {'Найден' if search_bst(bst.root, 9) else 'Не на
 
 **Output:**
 ```
-
 Поиск 4: Найден
 Поиск 9: Не найден
 ```
@@ -341,7 +330,6 @@ print(f"Поиск 9: {'Найден' if search_bst(bst.root, 9) else 'Не на
 **Example: Вставка в BST**
 
 ```python
-
 def insert_bst(node, data):
     """Вставить элемент в BST."""
     if node is None:
@@ -355,6 +343,7 @@ def insert_bst(node, data):
     return node
 
 # Вставка
+
 new_bst = BST()
 for val in [5, 3, 7, 2, 4]:
     new_bst.root = insert_bst(new_bst.root, val)
@@ -365,7 +354,6 @@ print(f"После вставки: {result}")
 
 **Output:**
 ```
-
 После вставки: [2, 3, 4, 5, 7]
 ```
 
@@ -374,7 +362,6 @@ print(f"После вставки: {result}")
 **Example: Удаление из BST**
 
 ```python
-
 def find_min(node):
     """Найти минимальный элемент в поддереве."""
     while node.left:
@@ -413,7 +400,6 @@ print(f"После удаления 3: {result}")
 
 **Output:**
 ```
-
 После удаления 3: [2, 4, 5, 6, 7, 8]
 ```
 
@@ -429,6 +415,7 @@ print(f"После удаления 3: {result}")
 
 ```python
 # Создание вырожденного BST (вставка в отсортированном порядке)
+
 degenerate_bst = BST()
 for val in [1, 2, 3, 4, 5, 6, 7]:
     degenerate_bst.insert(val)
@@ -440,6 +427,7 @@ def get_height(node):
     return 1 + max(get_height(node.left), get_height(node.right))
 
 # Создание сбалансированного BST
+
 balanced_bst = BST()
 for val in [4, 2, 6, 1, 3, 5, 7]:
     balanced_bst.insert(val)
@@ -450,7 +438,6 @@ print(f"Высота сбалансированного BST: {get_height(balance
 
 **Output:**
 ```
-
 Высота вырожденного BST: 6
 Высота сбалансированного BST: 2
 ```
@@ -466,15 +453,16 @@ print(f"Высота сбалансированного BST: {get_height(balance
 **Example: Сравнение производительности**
 
 ```python
-
 import time
 
 # Вырожденное дерево
+
 degenerate = BST()
 for i in range(1000):
     degenerate.insert(i)
 
 # Сбалансированное дерево (вставка в случайном порядке)
+
 import random
 balanced = BST()
 values = list(range(1000))
@@ -483,11 +471,13 @@ for val in values:
     balanced.insert(val)
 
 # Поиск в вырожденном дереве
+
 start = time.time()
 degenerate.search(999)
 time_degenerate = time.time() - start
 
 # Поиск в сбалансированном дереве
+
 start = time.time()
 balanced.search(999)
 time_balanced = time.time() - start
@@ -498,7 +488,6 @@ print(f"Поиск в сбалансированном: {time_balanced:.6f} се
 
 **Output:**
 ```
-
 Поиск в вырожденном: 0.000234 секунд
 Поиск в сбалансированном: 0.000012 секунд
 ```
@@ -520,7 +509,6 @@ print(f"Поиск в сбалансированном: {time_balanced:.6f} се
 **Example: Поиск минимального элемента**
 
 ```python
-
 def find_minimum(node):
     """Найти минимальный элемент в BST."""
     if node is None:
@@ -537,7 +525,6 @@ print(f"Минимальный элемент: {minimum}")
 
 **Output:**
 ```
-
 Минимальный элемент: 2
 ```
 
@@ -546,7 +533,6 @@ print(f"Минимальный элемент: {minimum}")
 **Example: Поиск максимального элемента**
 
 ```python
-
 def find_maximum(node):
     """Найти максимальный элемент в BST."""
     if node is None:
@@ -563,7 +549,6 @@ print(f"Максимальный элемент: {maximum}")
 
 **Output:**
 ```
-
 Максимальный элемент: 8
 ```
 
@@ -576,7 +561,6 @@ print(f"Максимальный элемент: {maximum}")
 **Example: BST как упорядоченный словарь**
 
 ```python
-
 class OrderedDictBST:
     """Упорядоченный словарь на основе BST."""
     def __init__(self):
@@ -603,7 +587,6 @@ print(f"Отсортированные ключи: {keys}")
 
 **Output:**
 ```
-
 Отсортированные ключи: [1, 2, 5, 8]
 ```
 
@@ -643,5 +626,6 @@ print(f"Отсортированные ключи: {keys}")
 - Исследуйте применение BST в компиляторах
 
 ---
+
 
 

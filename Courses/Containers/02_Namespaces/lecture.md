@@ -68,7 +68,6 @@ Namespaces — механизм ядра Linux для изоляции глоб�
 ### 1.3 Системные вызовы для работы с namespaces
 
 ```c
-
 // Создание нового namespace
 int clone(int (*fn)(void *), void *stack, int flags, void *arg);
 
@@ -77,7 +76,6 @@ int unshare(int flags);
 
 // Присоединение к существующему namespace
 int setns(int fd, int nstype);
-
 ```
 
 ---
@@ -90,9 +88,11 @@ Mount namespace изолирует точки монтирования. Кажд
 
 ```bash
 # Создаём новый mount namespace
+
 sudo unshare --mount /bin/bash
 
 # Теперь изменения монтирования видны только в этом namespace
+
 mount -t tmpfs tmpfs /mnt
 ls /mnt  # Пустая директория
 
@@ -152,15 +152,12 @@ int main() {
     
     return 0;
 }
-
 ```
 
 **Компиляция и запуск:**
 ```bash
-
 gcc -o mount_ns mount_ns.c
 sudo ./mount_ns
-
 ```
 
 ### 2.3 Типы распространения монтирования
@@ -176,14 +173,16 @@ Mount namespace поддерживает разные типы propagation:
 
 ```bash
 # Сделать точку монтирования приватной
+
 mount --make-private /mnt
 
 # Сделать всё дерево приватным рекурсивно
+
 mount --make-rprivate /
 
 # Проверить propagation type
-cat /proc/self/mountinfo | grep " / "
 
+cat /proc/self/mountinfo | grep " / "
 ```
 
 ---
@@ -196,45 +195,40 @@ UTS namespace изолирует hostname и NIS domain name. UTS расшифр
 
 ```bash
 # Текущий hostname
-hostname
 
+hostname
 ```
 
 **Output:**
 ```
-
 myserver
-
 ```
 
 ```bash
 # Создаём новый UTS namespace
+
 sudo unshare --uts /bin/bash
 
 # Изменяем hostname
+
 hostname container-host
 hostname
-
 ```
 
 **Output:**
 ```
-
 container-host
-
 ```
 
 ```bash
 # В другом терминале hostname не изменился
-hostname
 
+hostname
 ```
 
 **Output:**
 ```
-
 myserver
-
 ```
 
 ### 3.2 Программная работа с UTS namespace
@@ -277,7 +271,6 @@ int main() {
     
     return 0;
 }
-
 ```
 
 ---
@@ -300,37 +293,35 @@ IPC namespace изолирует System V IPC объекты и POSIX message qu
 
 ```bash
 # Создаём shared memory segment
+
 ipcmk -M 1024
 
 # Просматриваем IPC объекты
-ipcs -m
 
+ipcs -m
 ```
 
 **Output:**
 ```
-
 ------ Shared Memory Segments --------
 key        shmid      owner      perms      bytes      nattch
 0x52012296 0          root       644        1024       0
-
 ```
 
 ```bash
 # Создаём новый IPC namespace
+
 sudo unshare --ipc /bin/bash
 
 # В новом namespace нет IPC объектов
-ipcs -m
 
+ipcs -m
 ```
 
 **Output:**
 ```
-
 ------ Shared Memory Segments --------
 key        shmid      owner      perms      bytes      nattch
-
 ```
 
 ### 4.3 Практический пример: изоляция очередей сообщений
@@ -387,7 +378,6 @@ int main() {
     
     return 0;
 }
-
 ```
 
 ---
@@ -399,7 +389,6 @@ PID namespace изолирует пространство идентификат
 ### 5.1 Как работает PID namespace
 
 ```
-
 ┌─────────────────────────────────────────────────┐
 │                Host PID Namespace               │
 │                                                 │
@@ -416,7 +405,6 @@ PID namespace изолирует пространство идентификат
 │  │  PID 3 (worker)         ←── PID 1237 host  │ │
 │  └────────────────────────────────────────────┘ │
 └─────────────────────────────────────────────────┘
-
 ```
 
 ### 5.2 Создание PID namespace
@@ -424,33 +412,30 @@ PID namespace изолирует пространство идентификат
 ```bash
 # Создаём новый PID namespace
 # --fork нужен потому что unshare сам не становится PID 1
+
 sudo unshare --pid --fork --mount-proc /bin/bash
 
 # Проверяем PID
-echo $$
 
+echo $$
 ```
 
 **Output:**
 ```
-
 1
-
 ```
 
 ```bash
 # Смотрим процессы
-ps aux
 
+ps aux
 ```
 
 **Output:**
 ```
-
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         1  0.0  0.0   8304  5200 pts/0    S    12:00   0:00 /bin/bash
 root         8  0.0  0.0  10072  3280 pts/0    R+   12:00   0:00 ps aux
-
 ```
 
 ### 5.3 Вложенные PID namespaces
@@ -510,7 +495,6 @@ int main() {
     
     return 0;
 }
-
 ```
 
 ### 5.4 PID 1 в namespace
@@ -523,6 +507,7 @@ int main() {
 
 ```bash
 # Демонстрация: что происходит при завершении PID 1
+
 sudo unshare --pid --fork /bin/bash -c '
     sleep 1000 &
     echo "Started background process"
@@ -552,45 +537,46 @@ Network namespace изолирует сетевой стек: интерфейс
 
 ```bash
 # Создаём network namespace
+
 sudo ip netns add isolated
 
 # Список namespaces
-ip netns list
 
+ip netns list
 ```
 
 **Output:**
 ```
-
 isolated
-
 ```
 
 ```bash
 # Выполняем команду в namespace
-sudo ip netns exec isolated ip link
 
+sudo ip netns exec isolated ip link
 ```
 
 **Output:**
 ```
-
 1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-
 ```
 
 ```bash
 # Поднимаем loopback
+
 sudo ip netns exec isolated ip link set lo up
 
 # Создаём veth-пару для связи с host
+
 sudo ip link add veth0 type veth peer name veth1
 
 # Перемещаем один конец в namespace
+
 sudo ip link set veth1 netns isolated
 
 # Настраиваем адреса
+
 sudo ip addr add 10.0.0.1/24 dev veth0
 sudo ip link set veth0 up
 
@@ -598,16 +584,14 @@ sudo ip netns exec isolated ip addr add 10.0.0.2/24 dev veth1
 sudo ip netns exec isolated ip link set veth1 up
 
 # Проверяем связность
-ping -c 1 10.0.0.2
 
+ping -c 1 10.0.0.2
 ```
 
 **Output:**
 ```
-
 PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
 64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.045 ms
-
 ```
 
 ### 6.3 Программное создание network namespace
@@ -657,7 +641,6 @@ int main() {
     
     return 0;
 }
-
 ```
 
 ### 6.4 Практический пример: изолированная сеть
@@ -669,33 +652,39 @@ int main() {
 NS_NAME="mycontainer"
 
 # Создаём namespace
+
 ip netns add $NS_NAME
 
 # Создаём veth-пару
+
 ip link add veth-host type veth peer name veth-ns
 
 # Перемещаем один конец в namespace
+
 ip link set veth-ns netns $NS_NAME
 
 # Настраиваем host-сторону
+
 ip addr add 172.20.0.1/24 dev veth-host
 ip link set veth-host up
 
 # Настраиваем namespace-сторону
+
 ip netns exec $NS_NAME ip addr add 172.20.0.2/24 dev veth-ns
 ip netns exec $NS_NAME ip link set veth-ns up
 ip netns exec $NS_NAME ip link set lo up
 
 # Добавляем маршрут по умолчанию в namespace
+
 ip netns exec $NS_NAME ip route add default via 172.20.0.1
 
 # Включаем NAT для доступа в интернет
+
 iptables -t nat -A POSTROUTING -s 172.20.0.0/24 -j MASQUERADE
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
 echo "Network namespace $NS_NAME created"
 echo "Enter with: ip netns exec $NS_NAME bash"
-
 ```
 
 ---
@@ -709,47 +698,46 @@ User namespace изолирует UID и GID. Позволяет процесс�
 User namespace использует маппинг идентификаторов:
 
 ```
-
 Host                    User Namespace
 ─────────────────       ─────────────────
 UID 1000 (user)   ───►  UID 0 (root)
 UID 1001              ►  UID 1
 UID 1002              ►  UID 2
-
 ```
 
 ### 7.2 Создание user namespace без root
 
 ```bash
 # Создаём user namespace (можно без sudo!)
+
 unshare --user --map-root-user /bin/bash
 
 # Проверяем
-id
 
+id
 ```
 
 **Output:**
 ```
-
 uid=0(root) gid=0(root) groups=0(root),65534(nogroup)
-
 ```
 
 ```bash
 # Но мы не настоящий root!
-cat /etc/shadow  # Permission denied
 
+cat /etc/shadow  # Permission denied
 ```
 
 ### 7.3 Настройка UID mapping
 
 ```bash
 # Создаём user namespace
+
 unshare --user /bin/bash &
 PID=$!
 
 # Настраиваем mapping (из другого терминала)
+
 echo "0 1000 1" > /proc/$PID/uid_map
 echo "0 1000 1" > /proc/$PID/gid_map
 
@@ -824,7 +812,6 @@ int main() {
     
     return 0;
 }
-
 ```
 
 ### 7.5 Rootless containers
@@ -833,15 +820,13 @@ User namespace позволяет запускать контейнеры без
 
 ```bash
 # Podman может работать в rootless режиме
-podman run --rm alpine id
 
+podman run --rm alpine id
 ```
 
 **Output:**
 ```
-
 uid=0(root) gid=0(root)
-
 ```
 
 Процесс видит себя как root внутри контейнера, но на хосте работает от обычного пользователя.
@@ -856,45 +841,37 @@ Cgroup namespace виртуализирует view иерархии cgroups.
 
 Без cgroup namespace процесс видит полный путь cgroup:
 ```
-
 /sys/fs/cgroup/cpu/docker/abc123.../
-
 ```
 
 С cgroup namespace процесс видит:
 ```
-
 /sys/fs/cgroup/cpu/
-
 ```
 
 ### 8.2 Демонстрация cgroup namespace
 
 ```bash
 # Без cgroup namespace
-cat /proc/self/cgroup
 
+cat /proc/self/cgroup
 ```
 
 **Output:**
 ```
-
 0::/user.slice/user-1000.slice/session-1.scope
-
 ```
 
 ```bash
 # С cgroup namespace
+
 sudo unshare --cgroup /bin/bash
 cat /proc/self/cgroup
-
 ```
 
 **Output:**
 ```
-
 0::/
-
 ```
 
 ---
@@ -907,17 +884,20 @@ Time namespace (Linux 5.6+) позволяет иметь разные сист�
 
 ```bash
 # Создаём time namespace со смещением +1 день
+
 sudo unshare --time /bin/bash
 
 # Устанавливаем смещение (в наносекундах)
+
 echo "86400 0" > /proc/self/timens_offsets
 
 # Форкаем процесс, чтобы применить смещение
+
 exec bash
 
 # Проверяем время
-date
 
+date
 ```
 
 ### 9.2 Применение time namespace
@@ -934,13 +914,12 @@ date
 
 ```bash
 # Справка
-unshare --help
 
+unshare --help
 ```
 
 **Основные флаги:**
 ```
-
 --mount, -m       Create mount namespace
 --uts, -u         Create UTS namespace
 --ipc, -i         Create IPC namespace
@@ -953,7 +932,6 @@ unshare --help
 --fork, -f        Fork before executing command
 --mount-proc      Mount /proc in new mount namespace
 --map-root-user   Map current user to root in user namespace
-
 ```
 
 ### 10.2 Утилита nsenter
@@ -962,37 +940,35 @@ unshare --help
 
 ```bash
 # Найти PID контейнера
-docker inspect --format '{{.State.Pid}}' mycontainer
 
+docker inspect --format '{{.State.Pid}}' mycontainer
 ```
 
 **Output:**
 ```
-
 12345
-
 ```
 
 ```bash
 # Войти в namespaces контейнера
+
 sudo nsenter --target 12345 --mount --uts --ipc --net --pid /bin/bash
 
 # Или все namespaces сразу
-sudo nsenter --target 12345 --all /bin/bash
 
+sudo nsenter --target 12345 --all /bin/bash
 ```
 
 ### 10.3 Просмотр namespaces процесса
 
 ```bash
 # Список namespaces процесса
-ls -la /proc/self/ns/
 
+ls -la /proc/self/ns/
 ```
 
 **Output:**
 ```
-
 lrwxrwxrwx 1 user user 0 Dec  1 12:00 cgroup -> 'cgroup:[4026531835]'
 lrwxrwxrwx 1 user user 0 Dec  1 12:00 ipc -> 'ipc:[4026531839]'
 lrwxrwxrwx 1 user user 0 Dec  1 12:00 mnt -> 'mnt:[4026531840]'
@@ -1003,7 +979,6 @@ lrwxrwxrwx 1 user user 0 Dec  1 12:00 time -> 'time:[4026531834]'
 lrwxrwxrwx 1 user user 0 Dec  1 12:00 time_for_children -> 'time:[4026531834]'
 lrwxrwxrwx 1 user user 0 Dec  1 12:00 user -> 'user:[4026531837]'
 lrwxrwxrwx 1 user user 0 Dec  1 12:00 uts -> 'uts:[4026531838]'
-
 ```
 
 ### 10.4 Сравнение namespaces двух процессов
@@ -1034,7 +1009,6 @@ compare_ns() {
 }
 
 compare_ns $1 $2
-
 ```
 
 ### 10.5 Создание мини-контейнера
@@ -1163,7 +1137,6 @@ int main(int argc, char *argv[]) {
     
     return WEXITSTATUS(status);
 }
-
 ```
 
 ---
@@ -1223,6 +1196,7 @@ int main(int argc, char *argv[]) {
 - "Linux Kernel Development" by Robert Love — глава о процессах
 
 ---
+
 
 
 

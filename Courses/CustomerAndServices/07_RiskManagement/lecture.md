@@ -31,7 +31,6 @@
 ### 1.1 Категории рисков
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    RISK CATEGORIES                                      │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -63,7 +62,6 @@
   │  • Market changes                 • Force majeure                    │
   │  • Technology obsolescence        • Security threats                 │
   └──────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Top-10 рисков в аутсорсинге
@@ -88,9 +86,7 @@
 ### 2.1 Формула риска
 
 ```
-
 Risk Score = Likelihood × Impact
-
 ```
 
 ### 2.2 Шкала оценки
@@ -118,7 +114,6 @@ Risk Score = Likelihood × Impact
 ### 2.3 Risk Matrix
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    RISK ASSESSMENT MATRIX                               │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -148,7 +143,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
   5-9:   MEDIUM   - Mitigate, regular review
   10-15: HIGH     - Active management, escalate
   16-25: CRITICAL - Immediate action required
-
 ```
 
 ---
@@ -158,7 +152,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
 ### 3.1 Структура Risk Register
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    RISK REGISTER                                        │
 │                    Project: Phoenix App                                 │
@@ -187,13 +180,11 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
 │      │                       │   │   │ MED   │        │       │ value, QBR
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Risk Lifecycle
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    RISK LIFECYCLE                                       │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -211,7 +202,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
               │ Prioritize│                 │ Update    │   │ Close or  │
               │           │                 │ Register  │   │ Escalate  │
               └───────────┘                 └───────────┘   └───────────┘
-
 ```
 
 ### 3.3 Стратегии митигации
@@ -230,7 +220,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
 ### 4.1 Warning Signs
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    CLIENT DISSATISFACTION SIGNALS                       │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -258,7 +247,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
   ⚠️ Замораживает scope additions
   ⚠️ Сокращает бюджет
   ⚠️ Упоминает "пересмотр partnership"
-
 ```
 
 ### 4.2 Escalation Triggers
@@ -278,7 +266,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
 ### 5.1 Типы эскалаций
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    ESCALATION TYPES                                     │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -293,7 +280,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
   
   Цель: Решить                         Цель: Получить
   технически                           authority, resources
-
 ```
 
 ### 5.2 Когда эскалировать
@@ -315,7 +301,6 @@ D   1    │   1    │    2   │    3   │    4   │    5   │  Rare
 ### 5.3 Структура escalation message
 
 ```
-
 ESCALATION EMAIL TEMPLATE
 
 Subject: [ESCALATION] [Priority] Brief description
@@ -342,13 +327,11 @@ ASK:
 TIMELINE:
 • Когда нужно решение
 • Когда следующий update
-
 ```
 
 ### 5.4 Пример эскалации
 
 ```
-
 Subject: [ESCALATION P1] Payment service outage - Client Phoenix
 
 Hi Alex,
@@ -382,7 +365,6 @@ Best regards,
 John
 Delivery Manager
 Mobile: +1-555-0123
-
 ```
 
 ---
@@ -397,7 +379,6 @@ Mobile: +1-555-0123
 
 **1. 5 Whys:**
 ```
-
 Problem: Service was down for 2 hours
 
 Why 1: Why was service down?
@@ -417,12 +398,10 @@ Why 5: Why didn't load test cover error scenarios?
 
 ROOT CAUSE: Missing load test coverage for error scenarios
 ACTION: Add error scenario coverage to load testing requirements
-
 ```
 
 **2. Fishbone Diagram (Ishikawa):**
 ```
-
                                         ┌────────────────┐
                                         │    PROBLEM:    │
                                         │   Service down │
@@ -439,13 +418,11 @@ ACTION: Add error scenario coverage to load testing requirements
    │ conn    │    │ tests     │           │ pool      │           │           │        │
    │ mgmt    │    │           │           │ monitoring│           │           │        │
    └─────────┘    └───────────┘           └───────────┘           └───────────┘        │
-
 ```
 
 ### 6.3 RCA Document Template
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────────┐
 │                    ROOT CAUSE ANALYSIS REPORT                          │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -535,7 +512,6 @@ ACTION: Add error scenario coverage to load testing requirements
 │ 4. Quick rollback capability saved significant impact                  │
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -554,7 +530,6 @@ ACTION: Add error scenario coverage to load testing requirements
 ### 7.2 Баланс защиты и accountability
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    PROTECTION vs ACCOUNTABILITY                         │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -568,14 +543,12 @@ ACTION: Add error scenario coverage to load testing requirements
   ✓ Blame culture                      ✓ Professional behavior
   ✓ Constant overtime                  ✓ Communication
   ✓ Micromanagement                    ✓ Continuous improvement
-
 ```
 
 ### 7.3 Как защищать команду
 
 **Правильно:**
 ```
-
 Client: "Developer X made a mistake, we want them removed!"
 
 DM Response:
@@ -588,12 +561,10 @@ Removing team members isn't something we do lightly, as it
 creates knowledge loss and transition costs. Let's give the 
 improvement plan 2 weeks to show results. If issues persist, 
 we can discuss further options."
-
 ```
 
 **Неправильно:**
 ```
-
 ❌ "Да, согласен, X плохо работает, уберём его"
    (предаёт команду, не решает системную проблему)
 
@@ -602,7 +573,6 @@ we can discuss further options."
 
 ❌ "Команда, клиент очень зол на вас!"
    (передаёт стресс команде)
-
 ```
 
 ---
@@ -612,7 +582,6 @@ we can discuss further options."
 ### 8.1 Continual Improvement
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    INCIDENT → IMPROVEMENT CYCLE                         │
 └─────────────────────────────────────────────────────────────────────────┘
@@ -640,7 +609,6 @@ we can discuss further options."
         │ (implement    │
         │  fixes)       │
         └───────────────┘
-
 ```
 
 ### 8.2 Tracking Action Items

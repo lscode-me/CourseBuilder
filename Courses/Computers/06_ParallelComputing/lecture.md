@@ -63,7 +63,6 @@
 
 **Современный процессор:**
 ```
-
 ┌─────────────────────────────┐
 │        CPU Package          │
 │  ┌─────┐  ┌─────┐  ┌─────┐  │
@@ -152,7 +151,6 @@ Race condition (состояние гонки) является одной из 
 Race condition возникает, когда два или более потока обращаются к общим данным, и результат выполнения зависит от порядка выполнения операций. Это создаёт недетерминированное поведение программы, где результат может быть разным при каждом запуске. Race condition особенно опасны, потому что они могут проявляться редко и быть трудно воспроизводимыми, что делает их сложными для отладки.
 
 ```c
-
 int counter = 0;
 
 // Thread 1            // Thread 2
@@ -171,7 +169,6 @@ counter++;             counter++;
 Проблема возникает из-за того, что операция `counter++` не является атомарной:
 
 ```
-
 counter++ это не атомарная операция:
 
 1. READ counter (0)
@@ -194,7 +191,6 @@ Thread 2:         READ(0) → ADD → WRITE(1)
 Mutex — это примитив синхронизации, который обеспечивает взаимное исключение доступа к критической секции. Когда поток захватывает mutex, другие потоки должны ждать, пока mutex не будет освобождён. Это гарантирует, что только один поток может выполнять критическую секцию одновременно, что предотвращает race condition.
 
 ```c
-
 pthread_mutex_t lock;
 
 void increment() {
@@ -223,7 +219,6 @@ void increment() {
 **Atomic operations** — операции, которые выполняются неделимо
 
 ```c
-
 atomic_int counter = 0;
 
 atomic_fetch_add(&counter, 1);  // атомарно, без mutex
@@ -248,7 +243,6 @@ atomic_fetch_add(&counter, 1);  // атомарно, без mutex
 **Пример проблемы:**
 
 ```c
-
 // Thread 1          // Thread 2
 x = 1;               while (flag == 0);
 flag = 1;            assert(x == 1);  // может упасть!
@@ -256,7 +250,6 @@ flag = 1;            assert(x == 1);  // может упасть!
 
 **Компилятор или CPU может переставить операции в Thread 1:**
 ```c
-
 flag = 1;
 x = 1;  // слишком поздно!
 ```
@@ -266,7 +259,6 @@ x = 1;  // слишком поздно!
 **Решение:** Memory barriers (fences) запрещают переупорядочивание
 
 ```c
-
 x = 1;
 __sync_synchronize();  // memory barrier
 flag = 1;
@@ -289,7 +281,6 @@ flag = 1;
 **Определение:** Все ядра имеют равный доступ к общей памяти.
 
 ```
-
 Core 0 ─┐
 Core 1 ─┼─ Shared Bus ─ Memory
 Core 2 ─┘
@@ -311,7 +302,6 @@ Core 2 ─┘
 
 **NUMA решение:**
 ```
-
 ┌──────────┐      ┌──────────┐
 │ CPU 0    │◄────►│ CPU 1    │
 │ Memory 0 │      │ Memory 1 │
@@ -352,7 +342,6 @@ Core 2 ─┘
 
 **Thread Pool:**
 ```
-
 ┌─────────┐
 │ Queue   │ → Worker Thread 1
 │ of Tasks│ → Worker Thread 2
@@ -363,7 +352,6 @@ Core 2 ─┘
 
 **Fork-Join:**
 ```
-
 Main ──fork──┬─ Task 1
              ├─ Task 2
              └─ Task 3
@@ -374,7 +362,6 @@ Main ──fork──┬─ Task 1
 
 **Producer-Consumer:**
 ```
-
 Producer → [Buffer] → Consumer
 ```
 
@@ -391,7 +378,6 @@ Producer → [Buffer] → Consumer
 **Что происходит:**
 
 ```c
-
 // Thread 1 на Core 0        // Thread 2 на Core 1
 int counter1 = 0;             int counter2 = 0;
 
@@ -403,7 +389,6 @@ counter1++;                   counter2++;
 ### 7.2 Механизм
 
 ```
-
 Cache Line (64 bytes):
 ┌─────────────────────────────────────┐
 │ counter1 │ counter2 │ ... padding   │
@@ -425,7 +410,6 @@ Cache Line (64 bytes):
 **Cache Line Padding:**
 
 ```c
-
 struct {
     int counter1;
     char padding[64 - sizeof(int)];  // выравнивание до cache line
@@ -440,7 +424,6 @@ struct {
 **Или использовать `alignas(64)` в C++:**
 
 ```cpp
-
 alignas(64) int counter1;
 alignas(64) int counter2;
 ```

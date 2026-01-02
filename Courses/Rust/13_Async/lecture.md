@@ -34,7 +34,6 @@
 **Example: Создание потока**
 
 ```rust
-
 use std::thread;
 use std::time::Duration;
 
@@ -55,7 +54,6 @@ fn main() {
 
 **Output:**
 ```
-
 Главный поток: 1
 Поток: 1
 Главный поток: 2
@@ -68,7 +66,6 @@ fn main() {
 **Example: join()**
 
 ```rust
-
 use std::thread;
 
 fn main() {
@@ -83,7 +80,6 @@ fn main() {
 
 **Output:**
 ```
-
 Поток выполняется
 Поток завершён
 ```
@@ -93,7 +89,6 @@ fn main() {
 **Example: move замыкания**
 
 ```rust
-
 use std::thread;
 
 fn main() {
@@ -109,7 +104,6 @@ fn main() {
 
 **Output:**
 ```
-
 Вектор: [1, 2, 3]
 ```
 
@@ -122,7 +116,6 @@ fn main() {
 **Example: Arc и Mutex**
 
 ```rust
-
 use std::sync::{Arc, Mutex};
 use std::thread;
 
@@ -149,7 +142,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 10
 ```
 
@@ -163,7 +155,6 @@ fn main() {
 **Example: Каналы**
 
 ```rust
-
 use std::sync::mpsc;
 use std::thread;
 
@@ -182,7 +173,6 @@ fn main() {
 
 **Output:**
 ```
-
 Получено: привет
 ```
 
@@ -193,7 +183,6 @@ fn main() {
 **Example: Несколько отправителей**
 
 ```rust
-
 use std::sync::mpsc;
 use std::thread;
 
@@ -217,7 +206,6 @@ fn main() {
 
 **Output:**
 ```
-
 Получено: привет
 Получено: мир
 ```
@@ -233,7 +221,6 @@ fn main() {
 **Example: async функция**
 
 ```rust
-
 async fn hello() -> String {
     String::from("Hello, async!")
 }
@@ -249,7 +236,6 @@ fn main() {
 **Example: await**
 
 ```rust
-
 use std::time::Duration;
 use tokio::time::sleep;
 
@@ -267,7 +253,6 @@ async fn main() {
 
 **Output:**
 ```
-
 Начало
 Конец
 ```
@@ -277,7 +262,6 @@ async fn main() {
 **Example: tokio::join!**
 
 ```rust
-
 use tokio::time::{sleep, Duration};
 
 async fn task1() {
@@ -299,7 +283,6 @@ async fn main() {
 
 **Output:**
 ```
-
 Задача 1 завершена
 Задача 2 завершена
 Обе задачи завершены
@@ -312,7 +295,6 @@ async fn main() {
 **Example: Result в async функциях**
 
 ```rust
-
 use std::io;
 
 async fn read_file() -> Result<String, io::Error> {
@@ -331,7 +313,6 @@ async fn main() {
 
 **Output:**
 ```
-
 содержимое файла
 ```
 
@@ -340,7 +321,6 @@ async fn main() {
 **Example: Асинхронные потоки с tokio::spawn**
 
 ```rust
-
 use tokio::time::{sleep, Duration};
 
 async fn async_task(id: u32) {
@@ -365,7 +345,6 @@ async fn main() {
 
 **Output:**
 ```
-
 Задача 1 завершена
 Задача 2 завершена
 Задача 3 завершена
@@ -378,7 +357,6 @@ async fn main() {
 **Example: tokio::select!**
 
 ```rust
-
 use tokio::time::{sleep, Duration, timeout};
 
 async fn task1() -> &'static str {
@@ -402,7 +380,6 @@ async fn main() {
 
 **Output:**
 ```
-
 Задача 2
 ```
 
@@ -419,7 +396,6 @@ async fn main() {
 **Example: Понимание Future**
 
 ```rust
-
 use std::future::Future;
 
 async fn example() -> i32 {
@@ -438,7 +414,6 @@ fn main() {
 **Example: Создание Future**
 
 ```rust
-
 use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
@@ -468,7 +443,6 @@ fn main() {
 **Example: Ленивость Futures**
 
 ```rust
-
 async fn expensive_computation() -> i32 {
     println!("Выполняется вычисление");
     42
@@ -484,7 +458,6 @@ fn main() {
 
 **Output:**
 ```
-
 Future создан, но не запущен
 ```
 
@@ -495,7 +468,6 @@ Future создан, но не запущен
 **Example: Композиция**
 
 ```rust
-
 async fn add_one(x: i32) -> i32 {
     x + 1
 }
@@ -518,7 +490,6 @@ async fn main() {
 
 **Output:**
 ```
-
 Результат: 12
 ```
 
@@ -571,7 +542,6 @@ async fn main() {
 ### 5.1 Пример: Асинхронный HTTP запрос
 
 ```rust
-
 // Требует зависимости: tokio, reqwest
 
 // use reqwest;
@@ -587,7 +557,6 @@ async fn main() {
 ### 5.2 Пример: Параллельная обработка
 
 ```rust
-
 use tokio::time::{sleep, Duration};
 
 async fn process_item(item: i32) {
@@ -609,7 +578,6 @@ async fn main() {
 
 **Output:**
 ```
-
 Обработан элемент: 1
 Обработан элемент: 2
 Обработан элемент: 3
@@ -620,7 +588,6 @@ async fn main() {
 ### 5.3 Пример: Асинхронный сервер
 
 ```rust
-
 // Требует: tokio = { version = "1", features = ["full"] }
 // use tokio::io::{AsyncReadExt, AsyncWriteExt};
 // use tokio::net::TcpListener;
@@ -654,7 +621,6 @@ async fn main() {
 ### 5.4 Пример: Таймауты
 
 ```rust
-
 use tokio::time::{sleep, Duration, timeout};
 
 async fn slow_task() -> &'static str {
@@ -673,14 +639,12 @@ async fn main() {
 
 **Output:**
 ```
-
 Таймаут!
 ```
 
 ### 5.5 Пример: Семафор для ограничения конкурентности
 
 ```rust
-
 // Требует: tokio = { version = "1", features = ["full"] }
 // use tokio::sync::Semaphore;
 // use tokio::time::{sleep, Duration};

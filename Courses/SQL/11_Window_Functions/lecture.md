@@ -45,7 +45,6 @@
 **Пример:**
 
 ```sql
-
 CREATE TABLE sales (
     id INTEGER,
     product VARCHAR(100),
@@ -72,7 +71,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | amount | total_by_product
 ----------+--------+-----------------
 Product A | 100    | 250
@@ -88,7 +86,6 @@ Product B | 250    | 450
 ### 2.1 Базовый синтаксис
 
 ```sql
-
 function() OVER (
     [PARTITION BY column]
     [ORDER BY column]
@@ -111,7 +108,6 @@ function() OVER (
 **Применение ко всей таблице:**
 
 ```sql
-
 SELECT 
     product,
     amount,
@@ -121,7 +117,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | amount | total_all
 ----------+--------+----------
 Product A | 100    | 700
@@ -139,7 +134,6 @@ Product B | 250    | 700
 **PARTITION BY** разделяет строки на группы (окна):
 
 ```sql
-
 SELECT 
     product,
     amount,
@@ -150,7 +144,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | amount | total_by_product | avg_by_product
 ----------+--------+------------------+---------------
 Product A | 100    | 250              | 125.00
@@ -162,7 +155,6 @@ Product B | 250    | 450              | 225.00
 ### 3.2 Несколько столбцов в PARTITION BY
 
 ```sql
-
 SELECT 
     product,
     sale_date,
@@ -180,7 +172,6 @@ FROM sales;
 **ORDER BY** упорядочивает строки внутри окна:
 
 ```sql
-
 SELECT 
     product,
     sale_date,
@@ -194,7 +185,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | sale_date  | amount | running_total
 ----------+------------+--------+---------------
 Product A | 2024-01-01 | 100    | 100
@@ -214,7 +204,6 @@ Product B | 2024-01-02 | 250    | 450
 **ROW_NUMBER** — уникальный номер строки в окне:
 
 ```sql
-
 SELECT 
     product,
     amount,
@@ -224,7 +213,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | amount | rn
 ----------+--------+----
 Product A | 150    | 1
@@ -238,7 +226,6 @@ Product B | 200    | 2
 **RANK** — ранг с пропусками при равенстве:
 
 ```sql
-
 INSERT INTO sales VALUES (5, 'Product A', '2024-01-03', 150);
 
 SELECT 
@@ -250,7 +237,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | amount | rank
 ----------+--------+-----
 Product A | 150    | 1
@@ -265,7 +251,6 @@ Product B | 200    | 2
 **DENSE_RANK** — ранг без пропусков:
 
 ```sql
-
 SELECT 
     product,
     amount,
@@ -275,7 +260,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | amount | dense_rank
 ----------+--------+-----------
 Product A | 150    | 1
@@ -294,7 +278,6 @@ Product B | 200    | 2
 **LAG** получает значение из предыдущей строки:
 
 ```sql
-
 SELECT 
     product,
     sale_date,
@@ -305,7 +288,6 @@ FROM sales;
 
 **Output:**
 ```
-
 product   | sale_date  | amount | prev_amount
 ----------+------------+--------+------------
 Product A | 2024-01-01 | 100    | NULL
@@ -319,7 +301,6 @@ Product B | 2024-01-02 | 250    | 200
 **LEAD** получает значение из следующей строки:
 
 ```sql
-
 SELECT 
     product,
     sale_date,
@@ -333,7 +314,6 @@ FROM sales;
 **Указание смещения:**
 
 ```sql
-
 -- Значение 2 строки назад
 LAG(amount, 2) OVER (PARTITION BY product ORDER BY sale_date)
 
@@ -348,7 +328,6 @@ LEAD(amount, 2) OVER (PARTITION BY product ORDER BY sale_date)
 ### 7.1 SUM, AVG, COUNT в окнах
 
 ```sql
-
 SELECT 
     product,
     amount,
@@ -363,7 +342,6 @@ FROM sales;
 **Первое и последнее значение в окне:**
 
 ```sql
-
 SELECT 
     product,
     sale_date,
@@ -389,7 +367,6 @@ FROM sales;
 **ROWS** — физические строки:
 
 ```sql
-
 -- Текущая строка и предыдущая
 SUM(amount) OVER (
     PARTITION BY product 
@@ -401,7 +378,6 @@ SUM(amount) OVER (
 **RANGE** — логические значения:
 
 ```sql
-
 -- Все строки с тем же значением
 SUM(amount) OVER (
     PARTITION BY product 
@@ -419,7 +395,6 @@ SUM(amount) OVER (
 **Топ-3 продажи по каждому продукту:**
 
 ```sql
-
 SELECT * FROM (
     SELECT 
         product,
@@ -434,7 +409,6 @@ WHERE rn <= 3;
 ### 9.2 Изменение по сравнению с предыдущим периодом
 
 ```sql
-
 SELECT 
     product,
     sale_date,
@@ -447,7 +421,6 @@ FROM sales;
 ### 9.3 Процент от общего
 
 ```sql
-
 SELECT 
     product,
     amount,

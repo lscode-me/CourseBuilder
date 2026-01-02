@@ -40,7 +40,6 @@
 **Example: Перемещение владения**
 
 ```rust
-
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1;  // s1 перемещается в s2
@@ -52,13 +51,11 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 ```
 
 **Ошибка при использовании s1:**
 ```
-
 error[E0382]: borrow of moved value: `s1`
 ```
 
@@ -66,7 +63,6 @@ error[E0382]: borrow of moved value: `s1`
 
 **Без ownership (как в C/C++):**
 ```c
-
 // C код - возможна утечка памяти или double-free
 char* s1 = malloc(10);
 char* s2 = s1;
@@ -76,7 +72,6 @@ free(s1);
 
 **С ownership (Rust):**
 ```rust
-
 // Rust предотвращает это на этапе компиляции
 let s1 = String::from("hello");
 let s2 = s1;  // s1 перемещается, больше не валидна
@@ -92,7 +87,6 @@ let s2 = s1;  // s1 перемещается, больше не валидна
 **Example: Перемещение для String**
 
 ```rust
-
 fn main() {
     let s1 = String::from("hello");
     println!("s1 = {}", s1);
@@ -106,7 +100,6 @@ fn main() {
 
 **Output:**
 ```
-
 s1 = hello
 s2 = hello
 ```
@@ -124,7 +117,6 @@ s2 = hello
 **Example: Copy типы**
 
 ```rust
-
 fn main() {
     let x = 5;
     let y = x;  // x копируется, не перемещается
@@ -135,7 +127,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 5, y = 5
 ```
 
@@ -148,7 +139,6 @@ x = 5, y = 5
 **Example: Move типы**
 
 ```rust
-
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1;  // s1 перемещается
@@ -160,7 +150,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 ```
 
@@ -173,7 +162,6 @@ hello
 **Example: Владение передаётся в функцию**
 
 ```rust
-
 fn take_ownership(s: String) {
     println!("{}", s);
 }  // s выходит из области видимости и удаляется
@@ -188,7 +176,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 ```
 
@@ -197,7 +184,6 @@ hello
 **Example: Возврат владения**
 
 ```rust
-
 fn give_ownership() -> String {
     let s = String::from("hello");
     s  // Владение возвращается
@@ -218,7 +204,6 @@ fn main() {
 
 **Output:**
 ```
-
 s1 = hello, s3 = world
 ```
 
@@ -233,7 +218,6 @@ s1 = hello, s3 = world
 **Example: Неизменяемая ссылка**
 
 ```rust
-
 fn calculate_length(s: &String) -> usize {
     s.len()
 }  // s не выходит из области видимости, так как не владеет
@@ -248,7 +232,6 @@ fn main() {
 
 **Output:**
 ```
-
 Длина 'hello' равна 5
 ```
 
@@ -259,7 +242,6 @@ fn main() {
 **Example: Изменяемая ссылка**
 
 ```rust
-
 fn change(s: &mut String) {
     s.push_str(", world");
 }
@@ -274,7 +256,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello, world
 ```
 
@@ -287,7 +268,6 @@ hello, world
 **Example: Ошибка — несколько изменяемых ссылок**
 
 ```rust
-
 fn main() {
     let mut s = String::from("hello");
     let r1 = &mut s;
@@ -299,7 +279,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error[E0499]: cannot borrow `s` as mutable more than once at a time
 ```
 
@@ -308,7 +287,6 @@ error[E0499]: cannot borrow `s` as mutable more than once at a time
 **Example: Несколько неизменяемых ссылок**
 
 ```rust
-
 fn main() {
     let s = String::from("hello");
     let r1 = &s;
@@ -320,7 +298,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello, hello
 ```
 
@@ -343,7 +320,6 @@ hello, hello
 **Example: Конфликт ссылок**
 
 ```rust
-
 fn main() {
     let mut s = String::from("hello");
     let r1 = &s;      // Неизменяемая ссылка
@@ -356,7 +332,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
 ```
 
@@ -365,7 +340,6 @@ error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immuta
 **Example: Область видимости**
 
 ```rust
-
 fn main() {
     let mut s = String::from("hello");
     
@@ -381,7 +355,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 hello
 ```
@@ -399,7 +372,6 @@ hello
 **Example: Попытка создать dangling reference**
 
 ```rust
-
 fn dangle() -> &String {
     let s = String::from("hello");
     &s  // Ошибка: s удаляется в конце функции
@@ -412,7 +384,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error[E0106]: missing lifetime specifier
 ```
 
@@ -421,7 +392,6 @@ error[E0106]: missing lifetime specifier
 **Example: Возврат владения вместо ссылки**
 
 ```rust
-
 fn no_dangle() -> String {
     let s = String::from("hello");
     s  // Возвращаем владение
@@ -435,7 +405,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 ```
 
@@ -450,7 +419,6 @@ hello
 **Example: Строковый срез**
 
 ```rust
-
 fn main() {
     let s = String::from("hello world");
     
@@ -463,7 +431,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello world
 ```
 
@@ -479,7 +446,6 @@ hello world
 **Example: Срезы массивов**
 
 ```rust
-
 fn main() {
     let arr = [1, 2, 3, 4, 5];
     let slice = &arr[1..4];
@@ -492,7 +458,6 @@ fn main() {
 
 **Output:**
 ```
-
 2
 3
 4
@@ -505,7 +470,6 @@ fn main() {
 ### 8.1 Пример: Функция, не принимающая владение
 
 ```rust
-
 fn first_word(s: &String) -> usize {
     let bytes = s.as_bytes();
     
@@ -529,7 +493,6 @@ fn main() {
 
 **Output:**
 ```
-
 Первый пробел на позиции 5
 Строка всё ещё валидна: hello world
 ```
@@ -537,7 +500,6 @@ fn main() {
 ### 8.2 Пример: Изменение через ссылку
 
 ```rust
-
 fn add_one(n: &mut i32) {
     *n += 1;  // * разыменовывает ссылку
 }
@@ -551,7 +513,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 6
 ```
 
@@ -570,7 +531,6 @@ x = 6
 **Example: Автоматическое определение lifetime**
 
 ```rust
-
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -590,7 +550,6 @@ fn main() {
 
 **Output:**
 ```
-
 Самая длинная строка: long string
 ```
 

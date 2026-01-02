@@ -62,6 +62,7 @@
 
 ```python
 # Структурированные данные в виде таблицы
+
 import pandas as pd
 
 structured_data = pd.DataFrame({
@@ -82,7 +83,6 @@ print(f"Data types: {structured_data.dtypes.to_dict()}")
 
 **Output:**
 ```
-
 Structured Data:
    user_id    name              email  age  created_at
 0        1   Alice   alice@example.com   30  2024-01-01
@@ -112,7 +112,6 @@ Data types: {'user_id': dtype('int64'), 'name': dtype('O'), 'email': dtype('O'),
 **Example: SQL таблица**
 
 ```sql
-
 -- Structured data в реляционной БД
 CREATE TABLE users (
     user_id INT PRIMARY KEY,
@@ -171,10 +170,10 @@ INSERT INTO users VALUES
 **Example: Semi-structured Data**
 
 ```python
-
 import json
 
 # Semi-structured данные в JSON
+
 semi_structured_data = [
     {
         "id": 1,
@@ -214,6 +213,7 @@ print("Semi-structured Data (JSON):")
 print(json.dumps(semi_structured_data, indent=2, ensure_ascii=False))
 
 # Разные записи имеют разные поля
+
 print(f"\nПоля в записи 1: {set(semi_structured_data[0].keys())}")
 print(f"Поля в записи 2: {set(semi_structured_data[1].keys())}")
 print(f"Поля в записи 3: {set(semi_structured_data[2].keys())}")
@@ -221,7 +221,6 @@ print(f"Поля в записи 3: {set(semi_structured_data[2].keys())}")
 
 **Output:**
 ```
-
 Semi-structured Data (JSON):
 [
   {
@@ -285,7 +284,6 @@ Semi-structured Data (JSON):
 **Example: XML данные**
 
 ```xml
-
 <!-- Semi-structured данные в XML -->
 <users>
     <user id="1">
@@ -354,6 +352,7 @@ Semi-structured Data (JSON):
 
 ```python
 # Неструктурированные данные
+
 unstructured_examples = {
     "text": """
     Привет! Это обычный текст без структуры.
@@ -395,7 +394,6 @@ for data_type, content in unstructured_examples.items():
 
 **Output:**
 ```
-
 Unstructured Data Examples:
 
 TEXT:
@@ -467,6 +465,7 @@ VIDEO_PATH:
 
 ```python
 # Симуляция обработки unstructured текста
+
 def extract_structured_info(text):
     """Извлекает структурированную информацию из текста"""
     # В реальности используется NLP
@@ -500,7 +499,6 @@ print(structured_info)
 
 **Output:**
 ```
-
 Извлечённая структурированная информация:
 {'entities': ['email'], 'sentiment': 'negative', 'keywords': []}
 ```
@@ -574,6 +572,7 @@ print(structured_info)
 
 ```python
 # Operational данные: транзакции в реальном времени
+
 operational_transactions = [
     {
         "transaction_id": "tx_001",
@@ -600,7 +599,6 @@ for tx in operational_transactions:
 
 **Output:**
 ```
-
 Operational Data (Real-time transactions):
   tx_001: User 123 - $99.99 - completed
   tx_002: User 124 - $149.99 - pending
@@ -628,6 +626,7 @@ Operational Data (Real-time transactions):
 
 ```python
 # Analytical данные: агрегированные метрики
+
 analytical_metrics = {
     "date": "2024-01-01",
     "total_revenue": 50000.00,
@@ -652,7 +651,6 @@ print(f"  Average Order Value: ${analytical_metrics['average_order_value']:.2f}"
 
 **Output:**
 ```
-
 Analytical Data (Aggregated metrics):
   Date: 2024-01-01
   Total Revenue: $50,000.00
@@ -699,6 +697,7 @@ OLTP системы оптимизированы для обработки тр�
 
 ```python
 # OLTP: быстрая запись и чтение отдельных записей
+
 oltp_operations = [
     {
         "operation": "INSERT",
@@ -727,7 +726,6 @@ for op in oltp_operations:
 
 **Output:**
 ```
-
 OLTP Operations (Fast individual record operations):
   INSERT on orders: 10ms
   SELECT on users: 5ms
@@ -756,6 +754,7 @@ OLAP системы оптимизированы для аналитически
 
 ```python
 # OLAP: сложные аналитические запросы
+
 olap_queries = [
     {
         "query": """
@@ -796,7 +795,6 @@ for i, q in enumerate(olap_queries, 1):
 
 **Output:**
 ```
-
 OLAP Queries (Complex analytical queries):
 
 Query 1:
@@ -851,7 +849,6 @@ Query 2:
 **Example: Выбор типа данных**
 
 ```python
-
 def recommend_data_type(requirements):
     """Рекомендует тип данных на основе требований"""
     if requirements.get("fixed_schema") and requirements.get("complex_queries"):
@@ -880,7 +877,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации типа данных:
   Пример 1: Structured (RDBMS)
   Пример 2: Semi-structured (JSON/NoSQL)
@@ -945,5 +941,6 @@ for i, req in enumerate(examples, 1):
 - Apache Parquet: https://parquet.apache.org/docs/
 
 ---
+
 
 

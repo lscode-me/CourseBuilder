@@ -33,7 +33,6 @@
 **Ключевые отличия от других доменов:**
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                Healthcare IT vs Другие домены                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -45,13 +44,11 @@
 │  ✓ Стандартизация             — ICD-10, SNOMED CT, LOINC, FHIR             │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Экосистема Healthcare IT
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                       Healthcare IT Ecosystem                               │
 │                                                                             │
@@ -77,7 +74,6 @@
 │  └──────────────┘    └──────────────┘    └──────────────┘                   │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -94,6 +90,7 @@
 
 ```python
 # Структура данных пациента (упрощённо)
+
 patient = {
     "id": "patient-12345",
     "mrn": "MRN-2024-123456",  # Medical Record Number
@@ -115,7 +112,6 @@ patient = {
     ],
     "active": True
 }
-
 ```
 
 **Ключевые атрибуты:**
@@ -132,6 +128,7 @@ patient = {
 
 ```python
 # Типы encounters
+
 encounter_types = {
     "AMB": "Ambulatory (амбулаторный визит)",
     "EMER": "Emergency (экстренный)",
@@ -141,6 +138,7 @@ encounter_types = {
 }
 
 # Пример encounter
+
 encounter = {
     "id": "encounter-789",
     "status": "finished",  # planned, arrived, in-progress, finished, cancelled
@@ -154,7 +152,6 @@ encounter = {
     "practitioner": {"reference": "Practitioner/doc-456"},
     "reason": "Плановый осмотр"
 }
-
 ```
 
 **Важность:** Encounter связывает пациента с конкретным визитом и всеми событиями во время этого визита (диагнозы, назначения, измерения).
@@ -165,6 +162,7 @@ encounter = {
 
 ```python
 # Пример диагноза
+
 diagnosis = {
     "id": "condition-456",
     "patient": {"reference": "Patient/patient-12345"},
@@ -183,7 +181,6 @@ diagnosis = {
     "onset_date": "2020-01-15",
     "recorded_date": "2024-03-15"
 }
-
 ```
 
 **Типы диагнозов:**
@@ -199,7 +196,6 @@ diagnosis = {
 **Определение:** Любое медицинское вмешательство — операция, обследование, манипуляция.
 
 ```python
-
 procedure = {
     "id": "procedure-789",
     "status": "completed",
@@ -215,7 +211,6 @@ procedure = {
     "performer": {"reference": "Practitioner/surgeon-123"},
     "location": "Операционная №3"
 }
-
 ```
 
 #### Medication (Лекарство)
@@ -224,6 +219,7 @@ procedure = {
 
 ```python
 # Назначение лекарства
+
 medication_request = {
     "id": "rx-123",
     "status": "active",
@@ -251,7 +247,6 @@ medication_request = {
         "expected_supply_duration": {"value": 30, "unit": "d"}
     }
 }
-
 ```
 
 #### Vital Signs (Жизненные показатели)
@@ -260,6 +255,7 @@ medication_request = {
 
 ```python
 # Основные vital signs
+
 vital_signs = {
     "blood_pressure": {
         "systolic": {"value": 120, "unit": "mmHg"},
@@ -289,6 +285,7 @@ vital_signs = {
 }
 
 # Референсные диапазоны
+
 reference_ranges = {
     "systolic_bp": {"low": 90, "high": 140, "unit": "mmHg"},
     "diastolic_bp": {"low": 60, "high": 90, "unit": "mmHg"},
@@ -297,7 +294,6 @@ reference_ranges = {
     "respiratory_rate": {"low": 12, "high": 20, "unit": "/min"},
     "oxygen_saturation": {"low": 95, "high": 100, "unit": "%"}
 }
-
 ```
 
 #### Allergy (Аллергия)
@@ -305,7 +301,6 @@ reference_ranges = {
 **Определение:** Непереносимость или аллергическая реакция на вещество.
 
 ```python
-
 allergy = {
     "id": "allergy-001",
     "patient": {"reference": "Patient/patient-12345"},
@@ -332,7 +327,6 @@ allergy = {
         "severity": "severe"  # mild, moderate, severe
     }]
 }
-
 ```
 
 > **⚠️ Критически важно:** Информация об аллергиях используется системой Clinical Decision Support для предотвращения назначения опасных препаратов. Врач увидит предупреждение, если попытается назначить лекарство, на которое у пациента аллергия.
@@ -341,6 +335,7 @@ allergy = {
 
 ```python
 # Категоризация медицинских данных
+
 medical_data_types = {
     "Demographics": {
         "description": "Идентификационная информация о пациенте",
@@ -391,7 +386,6 @@ medical_data_types = {
         "sensitivity": "PHI"
     }
 }
-
 ```
 
 ---
@@ -403,7 +397,6 @@ medical_data_types = {
 В healthcare часто работают с данными из разных источников. Неправильная идентификация пациента может привести к катастрофическим последствиям.
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │            Сценарий: Ошибка идентификации пациента                          │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -418,13 +411,13 @@ medical_data_types = {
 │  Решение: Уникальные идентификаторы + правила matching                      │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Типы идентификаторов
 
 ```python
 # Идентификаторы пациента
+
 patient_identifiers = {
     "MRN": {
         "full_name": "Medical Record Number",
@@ -460,6 +453,7 @@ patient_identifiers = {
 }
 
 # Пример пациента с несколькими идентификаторами
+
 patient_with_ids = {
     "id": "patient-abc123",
     "identifier": [
@@ -483,13 +477,11 @@ patient_with_ids = {
         }
     ]
 }
-
 ```
 
 ### 3.3 Patient Matching
 
 ```python
-
 def match_patients(patient1: dict, patient2: dict) -> float:
     """
     Вычисляет вероятность того, что два пациента — один и тот же человек.
@@ -526,12 +518,12 @@ def match_patients(patient1: dict, patient2: dict) -> float:
     return min(score, 1.0)
 
 # Thresholds для принятия решений
+
 MATCH_THRESHOLDS = {
     "automatic_match": 0.9,    # Автоматическое связывание
     "review_required": 0.7,    # Требуется ручная проверка
     "no_match": 0.5            # Разные пациенты
 }
-
 ```
 
 ---
@@ -541,7 +533,6 @@ MATCH_THRESHOLDS = {
 ### 4.1 Зачем нужны стандарты
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                  Проблема без стандартов                                    │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -558,13 +549,11 @@ MATCH_THRESHOLDS = {
 │  • 10 стандартных интерфейсов вместо 45 custom                              │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Карта стандартов
 
 ```python
-
 healthcare_standards = {
     "Messaging Standards": {
         "HL7 v2": {
@@ -606,7 +595,6 @@ healthcare_standards = {
         }
     }
 }
-
 ```
 
 ### 4.3 Когда использовать какой стандарт
@@ -627,7 +615,6 @@ healthcare_standards = {
 ### 5.1 Типичный клинический workflow
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                     Амбулаторный визит: Workflow                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -666,13 +653,13 @@ healthcare_standards = {
 │         • Следующий визит                                                   │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.2 Потоки данных
 
 ```python
 # Пример: результаты лабораторных анализов
+
 lab_workflow = """
 1. Врач назначает анализ (EHR → LIS)
    └─► ORM^O01 (Order Message)
@@ -692,7 +679,6 @@ lab_workflow = """
 6. Clinical Decision Support
    └─► Если результат критический → Alert врачу
 """
-
 ```
 
 ---
@@ -702,7 +688,6 @@ lab_workflow = """
 ### 6.1 Чтение данных пациента
 
 ```python
-
 def display_patient_summary(patient: dict) -> str:
     """Форматирует сводку по пациенту."""
     
@@ -739,6 +724,7 @@ def display_patient_summary(patient: dict) -> str:
     return summary
 
 # Пример использования
+
 patient_data = {
     "name": [{"family": "Иванов", "given": ["Иван", "Петрович"]}],
     "birth_date": "1980-05-15",
@@ -749,13 +735,11 @@ patient_data = {
 }
 
 print(display_patient_summary(patient_data))
-
 ```
 
 ### 6.2 Проверка аллергий перед назначением
 
 ```python
-
 def check_medication_safety(patient_id: str, medication_code: str) -> dict:
     """
     Проверяет безопасность назначения лекарства.
@@ -796,12 +780,12 @@ def check_medication_safety(patient_id: str, medication_code: str) -> dict:
     }
 
 # Пример использования
+
 result = check_medication_safety("patient-12345", "amoxicillin")
 if not result["safe"]:
     print("⛔ Назначение заблокировано!")
     for warning in result["warnings"]:
         print(f"  - {warning['message']}")
-
 ```
 
 ---
@@ -849,6 +833,7 @@ if not result["safe"]:
 - [LOINC](https://loinc.org/)
 
 ---
+
 
 
 

@@ -32,19 +32,15 @@
 
 **Unmarked word order** = standard, neutral, default:
 ```
-
 Subject + Verb + Object
 "She has never seen such a mess."
-
 ```
 
 **Marked word order** = non-standard, draws attention:
 ```
-
 "Never has she seen such a mess."
 → Emphasis on "never"
 → Sounds dramatic, formal, literary
-
 ```
 
 ### 1.2 Why Use Marked Structures?
@@ -80,36 +76,30 @@ Use them **deliberately**, for **effect**, not as defaults.
 When a **negative or restrictive element** begins the sentence, **subject-auxiliary inversion** occurs:
 
 ```
-
 Standard:        I have never seen such a thing.
 Negative inversion: Never have I seen such a thing.
 
 Standard:        She had rarely been so happy.
 Neg. inversion:  Rarely had she been so happy.
-
 ```
 
 ### 2.2 Triggering Words
 
 **Negative words:**
 ```
-
 never, rarely, seldom, barely, scarcely, hardly
 little, nowhere, not (only), under no circumstances
 at no time, in no way, on no account
-
 ```
 
 **Examples:**
 ```
-
 "Never have I heard such nonsense."
 "Rarely do we see such talent."
 "Seldom has there been such controversy."
 "Barely had he arrived when it started raining."
 "Under no circumstances should you open this door."
 "Not only did she pass, but she got the highest mark."
-
 ```
 
 ### 2.3 "Not Only... But Also"
@@ -117,13 +107,11 @@ at no time, in no way, on no account
 A common pattern with double emphasis:
 
 ```
-
 Standard:
 "She not only wrote the book but also illustrated it."
 
 Inverted (formal):
 "Not only did she write the book, but she also illustrated it."
-
 ```
 
 ### 2.4 "Only" Phrases
@@ -131,12 +119,10 @@ Inverted (formal):
 Inversion after **only + adverbial**:
 
 ```
-
 "Only after the meeting did I realize my mistake."
 "Only then did she understand the truth."
 "Only by working hard can you succeed."
 "Only when he left did I notice the letter."
-
 ```
 
 ### 2.5 "So/Such... That" with Inversion
@@ -144,40 +130,32 @@ Inversion after **only + adverbial**:
 Emphasis on degree:
 
 ```
-
 Standard: "The problem was so complex that no one solved it."
 Inverted: "So complex was the problem that no one could solve it."
 
 Standard: "The results were such that we had to redo the experiment."
 Inverted: "Such were the results that we had to redo the experiment."
-
 ```
 
 ### 2.6 Inversion Mechanics
 
 **With auxiliary verb:**
 ```
-
 "Never have I seen..."    (have inverts)
 "Rarely does she go..."   (do inserted)
 "Seldom had they met..."  (had inverts)
-
 ```
 
 **With BE as main verb:**
 ```
-
 "Rarely is he late."
 "Seldom was she wrong."
-
 ```
 
 **With modal verbs:**
 ```
-
 "Never could I have imagined..."
 "Under no circumstances should you..."
-
 ```
 
 ---
@@ -198,26 +176,20 @@ In formal/written English, conditions can be expressed **without "if"** using in
 
 **Second conditional (were):**
 ```
-
 "If I were rich, I would help."
 → "Were I rich, I would help."
-
 ```
 
 **Third conditional (had):**
 ```
-
 "If I had known, I would have come."
 → "Had I known, I would have come."
-
 ```
 
 **First conditional with "should":**
 ```
-
 "If you should need assistance, call me."
 → "Should you need assistance, call me."
-
 ```
 
 ### 3.3 Usage Notes
@@ -239,7 +211,6 @@ Conditional inversion is:
 ### 3.4 Examples in Context
 
 ```
-
 "Had the government acted sooner, the crisis might have been averted."
 (formal report)
 
@@ -248,7 +219,6 @@ Conditional inversion is:
 
 "Should any problems arise, please contact the manager."
 (business communication)
-
 ```
 
 ---
@@ -260,7 +230,6 @@ Conditional inversion is:
 **Cleft sentences** split a simple sentence into two clauses to **focus** on one element:
 
 ```
-
 Simple: "John broke the window."
 Cleft: "It was John who broke the window."
        → Focus on WHO did it
@@ -268,7 +237,6 @@ Cleft: "It was John who broke the window."
 Simple: "She said something interesting."
 Cleft: "What she said was interesting."
        → Focus on WHAT was said
-
 ```
 
 ### 4.2 It-Clefts
@@ -276,14 +244,12 @@ Cleft: "What she said was interesting."
 **Pattern:** It + BE + focused element + relative clause
 
 ```
-
 Basic: "Mary called yesterday."
 
 It-clefts (different focus):
 "It was Mary who called yesterday."    (focus on WHO)
 "It was yesterday that Mary called."   (focus on WHEN)
 "It was the wrong number that she called." (focus on WHAT)
-
 ```
 
 ### 4.3 What-Clefts (Pseudo-Clefts)
@@ -291,20 +257,16 @@ It-clefts (different focus):
 **Pattern:** What + clause + BE + focused element
 
 ```
-
 "What I need is some peace and quiet."
 "What happened was a complete disaster."
 "What bothers me is his attitude."
 "What she did was resign."
-
 ```
 
 **Reversed what-cleft:**
 ```
-
 "Some peace and quiet is what I need."
 "A complete disaster is what happened."
-
 ```
 
 ### 4.4 All-Clefts
@@ -312,11 +274,9 @@ It-clefts (different focus):
 For emphasis on **completeness**:
 
 ```
-
 "All I want is a cup of coffee."
 "All she did was complain."
 "All that matters is your happiness."
-
 ```
 
 ### 4.5 The Thing/The Reason/The Way
@@ -324,12 +284,10 @@ For emphasis on **completeness**:
 Other pseudo-cleft patterns:
 
 ```
-
 "The thing I love about him is his humor."
 "The reason I'm calling is to confirm the meeting."
 "The way she handled it was impressive."
 "The person you need to talk to is the manager."
-
 ```
 
 ### 4.6 When to Use Clefts
@@ -356,11 +314,9 @@ Other pseudo-cleft patterns:
 **Fronting** = moving an element to the beginning for emphasis or cohesion:
 
 ```
-
 Standard: "I don't like this weather."
 Fronted:  "This weather I don't like."
           → Emphasis on "this weather"
-
 ```
 
 ### 5.2 Object Fronting
@@ -368,11 +324,9 @@ Fronted:  "This weather I don't like."
 Moving the **object** to the front:
 
 ```
-
 "This problem we can solve."  (This problem = object)
 "That book I've already read."
 "Such behavior I cannot tolerate."
-
 ```
 
 ### 5.3 Complement Fronting
@@ -380,11 +334,9 @@ Moving the **object** to the front:
 Moving a **complement** (adjective phrase, participle):
 
 ```
-
 "Happy they were not." 
 "Surprised though I was, I said nothing."
 "Strange as it may seem, it's true."
-
 ```
 
 ### 5.4 Adverbial Fronting
@@ -392,21 +344,17 @@ Moving a **complement** (adjective phrase, participle):
 Moving **adverbials** (location, time, manner):
 
 ```
-
 "On the table sat a cat."
 "In the garden stood an old tree."
 "Slowly and carefully, he opened the door."
-
 ```
 
 **Note:** Some adverbial fronting triggers **inversion** (especially with intransitive verbs of position/movement):
 
 ```
-
 "On the hill stands a castle."
 "Into the room walked the professor."
 "Down came the rain."
-
 ```
 
 ### 5.5 Fronting for Cohesion
@@ -414,13 +362,11 @@ Moving **adverbials** (location, time, manner):
 Fronting can **link** to previous discourse:
 
 ```
-
 "She offered me tea. This I gratefully accepted."
 (Fronting links "This" to previous sentence)
 
 "They promised to help. And help they did."
 (Fronting emphasizes fulfillment of promise)
-
 ```
 
 ---
@@ -432,13 +378,11 @@ Fronting can **link** to previous discourse:
 Adding **stressed DO/DID** for emphasis:
 
 ```
-
 Neutral: "I like your work."
 Emphatic: "I DO like your work."
 
 Neutral: "She finished on time."
 Emphatic: "She DID finish on time."
-
 ```
 
 **Uses:**
@@ -448,10 +392,8 @@ Emphatic: "She DID finish on time."
 - Showing contrast
 
 ```
-
 "I know you thought I didn't care, but I DID care."
 "Although it was difficult, she DID succeed in the end."
-
 ```
 
 ### 6.2 Auxiliary Focus
@@ -459,11 +401,9 @@ Emphatic: "She DID finish on time."
 Stress can fall on **any auxiliary** for emphasis:
 
 ```
-
 "She WILL come, I promise."
 "We HAVE finished the project."
 "He COULD do better if he tried."
-
 ```
 
 ### 6.3 The Empty "There"
@@ -471,14 +411,12 @@ Stress can fall on **any auxiliary** for emphasis:
 Using **existential "there"** to present new information:
 
 ```
-
 Standard: "A problem exists."
 Existential: "There is a problem."
              "There exists a problem." (formal)
 
 "There remains one question."
 "There arose a controversy."
-
 ```
 
 ### 6.4 Right/Left Dislocation
@@ -487,18 +425,14 @@ Moving elements to the **edges** of a sentence (spoken English):
 
 **Right dislocation:**
 ```
-
 "She's nice, your sister."
 "It's expensive, that restaurant."
-
 ```
 
 **Left dislocation:**
 ```
-
 "Your sister, she's really nice."
 "That restaurant, it's expensive."
-
 ```
 
 These are more **spoken** than written.
@@ -512,14 +446,12 @@ These are more **spoken** than written.
 Participle clauses create **smooth, sophisticated** prose:
 
 ```
-
 Full: "Because she was tired, she went to bed early."
 Reduced: "Being tired, she went to bed early."
          "Tired, she went to bed early."
 
 Full: "After he finished work, he went home."
 Reduced: "Having finished work, he went home."
-
 ```
 
 ### 7.2 Participial Fronting
@@ -527,11 +459,9 @@ Reduced: "Having finished work, he went home."
 Putting participles at the **beginning** for cohesion:
 
 ```
-
 "Built in the 18th century, the house has great historical value."
 "Having considered all options, we decided to proceed."
 "Surrounded by mountains, the village felt isolated."
-
 ```
 
 ### 7.3 Absolute Constructions
@@ -539,11 +469,9 @@ Putting participles at the **beginning** for cohesion:
 **Independent** participial phrases:
 
 ```
-
 "Weather permitting, we'll have the event outdoors."
 "All things considered, it was a success."
 "This being the case, we should reconsider."
-
 ```
 
 ---
@@ -574,7 +502,6 @@ Putting participles at the **beginning** for cohesion:
 As a guideline: **one marked structure per paragraph** is enough. More sounds pompous.
 
 ```
-
 ❌ Too much:
 "Never had I seen such chaos. Not only was the office in disarray, 
 but so too were the computer systems. Under no circumstances 
@@ -585,7 +512,6 @@ have been different."
 "I had never seen such chaos. The office was in disarray, and the 
 computer systems were failing. Never had I felt so overwhelmed. 
 We needed to act quickly."
-
 ```
 
 ### 8.4 Russian Speakers' Issues
@@ -607,7 +533,6 @@ Russian speakers may:
 Transform these sentences:
 
 ```
-
 1. "I have never seen such dedication."
    → "Never have I seen such dedication."
 
@@ -616,7 +541,6 @@ Transform these sentences:
 
 3. "He had barely finished when the phone rang."
    → "Barely had he finished when the phone rang."
-
 ```
 
 ### 9.2 Create Cleft Sentences
@@ -624,7 +548,6 @@ Transform these sentences:
 Focus on the underlined element:
 
 ```
-
 1. "JOHN broke the window."
    → "It was John who broke the window."
 
@@ -633,7 +556,6 @@ Focus on the underlined element:
 
 3. "She left BECAUSE of the argument."
    → "The reason she left was the argument."
-
 ```
 
 ### 9.3 Create Conditional Inversion
@@ -641,7 +563,6 @@ Focus on the underlined element:
 Transform with inversion:
 
 ```
-
 1. "If I had known, I would have helped."
    → "Had I known, I would have helped."
 
@@ -650,7 +571,6 @@ Transform with inversion:
 
 3. "If she were here, she could explain."
    → "Were she here, she could explain."
-
 ```
 
 ---
@@ -660,38 +580,30 @@ Transform with inversion:
 ### 10.1 Missing Inversion
 
 ```
-
 ❌ "Never I have seen such a thing."
 ✅ "Never have I seen such a thing."
-
 ```
 
 ### 10.2 Double Inversion
 
 ```
-
 ❌ "Never have I not seen such..."
 ✅ "Never have I seen such..."
-
 ```
 
 ### 10.3 Wrong Context
 
 ```
-
 ❌ (Casual) "Hey, never have I seen such a cool phone!"
 ✅ (Casual) "I've never seen such a cool phone!"
-
 ```
 
 ### 10.4 Cleft Without Focus Need
 
 ```
-
 ❌ "It was yesterday that I had breakfast."
    (If there's no reason to emphasize "yesterday")
 ✅ "I had breakfast yesterday."
-
 ```
 
 ---

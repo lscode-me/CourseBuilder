@@ -43,44 +43,37 @@ The Common European Framework describes C2 as:
 **1. Appropriate Choice (уместный выбор)**
 
 ```
-
 "Can I see you tomorrow?"    — OK
 "Could I see you tomorrow?"  — more tentative  
 "I was wondering if I might see you tomorrow?" — very polite
 
 C1 knows all three. C2 knows WHEN to use which.
-
 ```
 
 **2. Natural Collocation (естественная сочетаемость)**
 
 ```
-
 C1: "She was very angry."
 C2: "She was absolutely furious." / "She was seething."
 
 C1: "He explained it very well."
 C2: "He explained it beautifully." / "He laid it out clearly."
-
 ```
 
 **3. Stylistic Flexibility (стилистическая гибкость)**
 
 ```
-
 Casual:   "So basically, he just kind of went off on one."
 Neutral:  "He started complaining loudly."
 Formal:   "He proceeded to voice his displeasure at some length."
 Academic: "The subject exhibited signs of verbal escalation."
 
 C2 can produce ALL of these appropriately.
-
 ```
 
 **4. Pragmatic Competence (прагматическая компетенция)**
 
 ```
-
 "Your presentation was interesting."
 C1 hears: compliment
 C2 hears: polite deflection (it wasn't very good)
@@ -88,7 +81,6 @@ C2 hears: polite deflection (it wasn't very good)
 "We should do lunch sometime."
 C1 hears: invitation
 C2 hears: social formula (probably won't happen)
-
 ```
 
 ### 1.3 The "Last Mile" Problem
@@ -96,7 +88,6 @@ C2 hears: social formula (probably won't happen)
 The gap from C1 to C2 is paradoxically the **hardest** part of language learning:
 
 ```
-
 A1 → A2: Obvious progress, quick wins
 A2 → B1: New structures, noticeable improvement
 B1 → B2: Major leap, academic English unlocks
@@ -108,7 +99,6 @@ C1 → C2: "The last mile"
 - Feedback is rare
 - Native speakers don't correct you
 - You can communicate everything — так зачем стараться?
-
 ```
 
 ---
@@ -129,24 +119,20 @@ C1 → C2: "The last mile"
 
 **C1 Writing:**
 ```
-
 The government should take action on climate change. This is important 
 because it affects everyone. Many scientists agree that we need to 
 reduce emissions. If we don't act now, the situation will get worse.
-
 ```
 
 *Correct, clear, but somewhat flat.*
 
 **C2 Writing:**
 ```
-
 The case for governmental intervention on climate change has never been 
 more compelling. With the scientific consensus now beyond dispute, the 
 question is no longer whether to act, but how decisively. Inaction, 
 as a growing body of evidence suggests, carries risks that far outweigh 
 the costs of meaningful policy reform.
-
 ```
 
 *More varied structure, better hedging, more sophisticated vocabulary.*
@@ -157,45 +143,35 @@ the costs of meaningful policy reform.
 
 1. **Use hedging naturally:**
    ```
-
    "It might arguably be the case that..."
    "There's a sense in which..."
    "One could potentially argue..."
-
    ```
 
 2. **Employ stylistic inversion:**
    ```
-
    "Not only did he fail to respond, but he actually made things worse."
    "Rarely have I encountered such a clear case of..."
    "Little did she know that..."
-
    ```
 
 3. **Use advanced cohesion:**
    ```
-
    "The former approach... the latter..."
    "The aforementioned study..."
    "This notwithstanding..."
-
    ```
 
 4. **Manipulate register freely:**
    ```
-
    Academic → Conversational → Journalistic → Literary
-
    ```
 
 5. **Understand pragmatic meaning:**
    ```
-
    "That's one way of looking at it." = I disagree
    "I hear what you're saying." = I disagree
    "With respect..." = I'm about to disagree
-
    ```
 
 ---
@@ -228,13 +204,11 @@ By C1, some errors have become **fossilized** — automatic and resistant to cha
 **Common fossilized patterns for Russian speakers:**
 
 ```
-
 1. "I am agree" — still slips out
 2. "It depends from" — automatic translation
 3. "Feel myself" — reflexive transfer
 4. Too much "the" before abstracts — "the life", "the love"
 5. Direct requests — "Give me..." instead of "Could I have..."
-
 ```
 
 ### 3.3 The "Glass Ceiling"
@@ -363,49 +337,41 @@ If you got these wrong, focus on Modules 05 and 10 (Modals and Pragmatics).
 **1. NOTICE — Замечать**
 
 ```
-
 Reading authentic texts and noticing:
 
 - Why did the writer choose this structure?
 - How does this differ from what I would write?
 - What's the effect of this choice?
-
 ```
 
 **2. DISCRIMINATE — Различать**
 
 ```
-
 Before producing, learn to HEAR/SEE the difference:
 
 - Which sounds more natural?
 - Which is more formal?
 - Which is more hedged?
-
 ```
 
 **3. ANALYSE — Анализировать**
 
 ```
-
 Understand WHY something works:
 
 - Corpus evidence
 - Pragmatic principles
 - Register requirements
-
 ```
 
 **4. PRODUCE — Производить**
 
 ```
-
 Finally, practice producing:
 
 - With feedback
 - In appropriate contexts
 - With conscious attention
-
 ```
 
 ### 5.2 The Receptive-Productive Gap
@@ -413,7 +379,6 @@ Finally, practice producing:
 At C1+, your **receptive** knowledge (what you understand) is much greater than your **productive** knowledge (what you can produce).
 
 ```
-
 What you understand when reading:
 
 - Stylistic inversion
@@ -427,7 +392,6 @@ What you typically produce:
 - Less hedging
 - More direct style
 - Mixed registers
-
 ```
 
 **Goal:** Close this gap through deliberate practice.
@@ -447,7 +411,6 @@ Throughout this course, we use corpus data to show **what native speakers actual
 **Example corpus insight:**
 
 ```
-
 "Very" + adjective patterns (COCA data):
 
 very important   — 234,567 hits ✓
@@ -456,7 +419,6 @@ very essential   — 432 hits    (essential is absolute)
 
 Native speakers rarely say "very crucial" or "very essential".
 Non-native speakers often do.
-
 ```
 
 ---
@@ -466,7 +428,6 @@ Non-native speakers often do.
 ### 6.1 Grammaticality vs Acceptability vs Naturalness
 
 ```
-
 GRAMMATICAL = follows the rules
 ACCEPTABLE = native speakers use it
 NATURAL = what native speakers would spontaneously say
@@ -480,7 +441,6 @@ NATURAL = what native speakers would spontaneously say
 - Grammatical: ? (debatable)
 - Acceptable: ✗
 - Natural: ✗
-
 ```
 
 ### 6.2 Marked vs Unmarked Choices
@@ -489,13 +449,11 @@ NATURAL = what native speakers would spontaneously say
 **MARKED** = special, draws attention, has extra meaning
 
 ```
-
 "I have never seen such a mess." — unmarked (normal word order)
 "Never have I seen such a mess." — marked (inversion = emphasis)
 
 Using marked forms without reason sounds "off".
 Using only unmarked forms sounds flat.
-
 ```
 
 ### 6.3 Prescriptive vs Descriptive Grammar
@@ -504,18 +462,15 @@ Using only unmarked forms sounds flat.
 **DESCRIPTIVE:** What people actually do
 
 ```
-
 Prescriptive: "Whom did you see?"
 Descriptive:  "Who did you see?" (what most people say)
 
 This course focuses on DESCRIPTIVE grammar with awareness of prescriptive norms.
-
 ```
 
 ### 6.4 Register Continuum
 
 ```
-
 FROZEN        │ Legal documents, prayers, pledges
               │ "Wherefore art thou Romeo?"
               │
@@ -530,7 +485,6 @@ CASUAL        │ Conversations with friends
               │
 INTIMATE      │ Close relationships, private language
               │ "Wanna grab coffee?"
-
 ```
 
 C2 means moving **freely** along this continuum.
@@ -577,44 +531,34 @@ If any of these feel shaky, review them first.
 **1. Don't skip modules**
 
 ```
-
 Each module builds on previous concepts.
-
 ```
 
 **2. Do the quizzes honestly**
 
 ```
-
 Check your weak spots. Return to them.
-
 ```
 
 **3. Read native texts actively**
 
 ```
-
 After each module, find examples in real texts.
 Notice how native speakers use the structures.
-
 ```
 
 **4. Get feedback**
 
 ```
-
 Writing without feedback won't fix errors.
 Find a teacher, tutor, or language partner.
-
 ```
 
 **5. Be patient**
 
 ```
-
 C1 → C2 is slow. Months, not weeks.
 But the changes are permanent.
-
 ```
 
 ### 8.2 Recommended External Practice

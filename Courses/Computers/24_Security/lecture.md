@@ -39,7 +39,6 @@
 **x86 архитектура: 4 уровня (Ring 0-3)**
 
 ```
-
 Ring 0: Kernel Mode
   ↓
 Ring 1-2: Device Drivers (rarely used)
@@ -91,7 +90,6 @@ Ring 3: User Mode (приложения)
 
 **Примеры:**
 ```
-
 Code section: R-X (можно читать и выполнять, нельзя писать)
 Data section: RW- (можно читать/писать, нельзя выполнять)
 Stack: RW- (защита от выполнения кода на стеке)
@@ -113,7 +111,6 @@ Stack: RW- (защита от выполнения кода на стеке)
 
 **Без ASLR:**
 ```
-
 Process 1:
   Stack at 0x7fff1234
   Libraries at 0x4000abcd
@@ -125,7 +122,6 @@ Process 2:
 
 **С ASLR:**
 ```
-
 Process 1:
   Stack at 0x7fff1234
   Libraries at 0x4000abcd
@@ -140,7 +136,6 @@ Process 2:
 **Пример: Эксплойт без ASLR**
 
 ```c
-
 // Атакующий знает адрес функции system()
 void exploit() {
     char buffer[100];
@@ -152,7 +147,6 @@ void exploit() {
 
 **С ASLR:**
 ```c
-
 // Атакующий не знает адрес (он меняется каждый запуск)
 void exploit() {
     char buffer[100];
@@ -167,12 +161,14 @@ void exploit() {
 **Проверка ASLR:**
 ```bash
 # Проверка статуса ASLR в Linux
+
 cat /proc/sys/kernel/randomize_va_space
 # 0 = отключено
 # 1 = частично (только stack)
 # 2 = полностью включено
 
 # Включение ASLR
+
 echo 2 > /proc/sys/kernel/randomize_va_space
 ```
 
@@ -186,7 +182,6 @@ echo 2 > /proc/sys/kernel/randomize_va_space
 
 **Как это работает:**
 ```c
-
 if (x < array_size) {   // Предсказание: true
     y = array[x];       // Спекулятивно выполняется
                         // даже если x >= array_size!
@@ -208,7 +203,6 @@ if (x < array_size) {   // Предсказание: true
 **Проблема:** Kernel memory читается из user space через спекуляцию
 
 ```c
-
 // В user space:
 char value = *kernel_address;  // должен быть exception
 // Но спекулятивно читается ДО проверки прав!
@@ -228,7 +222,6 @@ char value = *kernel_address;  // должен быть exception
 
 **Атака:**
 ```
-
 Быстро читать строки A и C в DRAM
 → Биты в строке B между ними могут flip!
 ```
@@ -249,7 +242,6 @@ char value = *kernel_address;  // должен быть exception
 **Идея:** Изолированная область памяти (enclave), защищена даже от OS
 
 ```
-
 ┌──────────────────────┐
 │   Enclave Memory     │ ← Encrypted
 │  (protected by CPU)  │
@@ -275,7 +267,6 @@ char value = *kernel_address;  // должен быть exception
 **Secure World vs Normal World:**
 
 ```
-
 ┌─────────────┬─────────────┐
 │ Normal World│ Secure World│
 │   (Rich OS) │  (Trusted OS│
@@ -328,7 +319,6 @@ char value = *kernel_address;  // должен быть exception
 **Compiler-generated protection:**
 
 ```c
-
 void function() {
     int canary = RANDOM_VALUE;
     char buffer[100];
@@ -346,7 +336,6 @@ void function() {
 
 **Проблема без CFI:**
 ```c
-
 // Атакующий может перезаписать function pointer
 void (*func_ptr)() = legitimate_function;
 // ... overflow ...
@@ -356,7 +345,6 @@ func_ptr();  // Выполнение attacker code
 
 **С CFI:**
 ```c
-
 // CFI добавляет проверки
 void (*func_ptr)() = legitimate_function;
 // ... overflow ...
@@ -373,12 +361,12 @@ func_ptr();
 **1. Compiler-based CFI (LLVM):**
 ```bash
 # Включение CFI в LLVM
+
 clang -fsanitize=cfi program.c
 ```
 
 **2. Hardware CFI (Intel CET):**
 ```
-
 - Indirect Branch Tracking (IBT): Защита indirect calls/jumps
 - Shadow Stack: Отдельный стек для return addresses
 ```
@@ -386,7 +374,6 @@ clang -fsanitize=cfi program.c
 **Пример: Shadow Stack**
 
 ```
-
 Normal Stack:          Shadow Stack:
 [return addr 1]  ←→   [return addr 1]
 [local vars]          [protected copy]
@@ -400,9 +387,11 @@ Normal Stack:          Shadow Stack:
 ```bash
 # Требует поддержку в CPU и OS
 # Проверка поддержки
+
 grep cet /proc/cpuinfo
 
 # Компиляция с CET
+
 gcc -fcf-protection=full program.c
 ```
 
@@ -411,7 +400,6 @@ gcc -fcf-protection=full program.c
 **Runtime detection of memory errors:**
 
 ```c
-
 // ASan обнаруживает use-after-free, buffer overflow и др.
 #include <stdlib.h>
 
@@ -425,7 +413,6 @@ int main() {
 
 **Компиляция с ASan:**
 ```bash
-
 gcc -fsanitize=address -g program.c
 ./a.out
 # Output: AddressSanitizer: heap-use-after-free
@@ -438,7 +425,6 @@ gcc -fsanitize=address -g program.c
 **Проблема: Format string vulnerabilities**
 
 ```c
-
 // Уязвимый код
 char user_input[100];
 fgets(user_input, 100, stdin);
@@ -451,14 +437,12 @@ printf(user_input);  // Опасно! Если user_input содержит %x, %
 
 **Защита:**
 ```c
-
 // Правильно: всегда использовать format string
 printf("%s", user_input);  // Безопасно
 ```
 
 **Compiler warning:**
 ```bash
-
 gcc -Wformat-security program.c
 # Предупреждение при использовании user input в format string
 ```
@@ -472,7 +456,6 @@ gcc -Wformat-security program.c
 **Идея:** Каждый компонент проверяет следующий перед загрузкой
 
 ```
-
 Hardware (ROM) → Bootloader → Kernel → OS
      ↓              ↓           ↓       ↓
   Verified      Verified   Verified  Verified
@@ -482,9 +465,11 @@ Hardware (ROM) → Bootloader → Kernel → OS
 
 ```bash
 # Проверка статуса Secure Boot
+
 mokutil --sb-state
 
 # Просмотр загруженных ключей
+
 mokutil --list-enrolled
 ```
 
@@ -493,7 +478,6 @@ mokutil --list-enrolled
 **TPM измеряет каждый компонент при загрузке:**
 
 ```
-
 1. Bootloader → Hash → TPM PCR[0]
 2. Kernel → Hash → TPM PCR[1]
 3. Initrd → Hash → TPM PCR[2]
@@ -506,12 +490,15 @@ mokutil --list-enrolled
 
 ```python
 # Упрощённый пример
+
 import tpm2_pytss
 
 # Чтение PCR values из TPM
+
 pcr_values = tpm2_pytss.read_pcr()
 
 # Отправка на сервер для проверки
+
 server.verify_boot_integrity(pcr_values)
 # Сервер сравнивает с известными good values
 ```
@@ -527,7 +514,6 @@ server.verify_boot_integrity(pcr_values)
 **Пример: Уязвимое сравнение паролей**
 
 ```c
-
 // Уязвимый код
 int compare_passwords(char *input, char *correct) {
     for (int i = 0; i < strlen(correct); i++) {
@@ -548,7 +534,6 @@ uint64_t end = rdtsc();
 **Защита: Constant-time comparison**
 
 ```c
-
 // Безопасное сравнение
 int secure_compare(char *a, char *b, size_t len) {
     int result = 0;
@@ -566,7 +551,6 @@ int secure_compare(char *a, char *b, size_t len) {
 **Пример: Flush+Reload**
 
 ```c
-
 // Атакующий процесс
 void attack() {
     // 1. Flush shared memory из cache
@@ -624,5 +608,6 @@ void attack() {
 - Spectre & Meltdown papers
 
 ---
+
 
 

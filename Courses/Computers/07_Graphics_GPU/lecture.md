@@ -55,7 +55,6 @@
 Framebuffer — это критически важная концепция, которая создала прямое соответствие между памятью и экраном. Каждый пиксель на экране представлен одним или несколькими байтами в памяти. Это означает, что программа может "рисовать" на экране, просто записывая значения в память. Простота и элегантность этой идеи трудно переоценить — она стала основой всей современной компьютерной графики:
 
 ```
-
 Экран 640x480, 8-bit color → 307,200 bytes
 ```
 
@@ -100,7 +99,6 @@ Framebuffer — это критически важная концепция, к�
 **Пример: BitBlt операция**
 
 ```c
-
 // Копирование прямоугольной области экрана
 BitBlt(
     hDestDC,      // Destination device context
@@ -164,7 +162,6 @@ GPU (Graphics Processing Unit) оптимизирован для паралле�
 
 Чтобы понять революционность SIMD, важно увидеть разницу в подходах. CPU выполняет одну инструкцию для одного элемента:
 ```c
-
 // CPU: последовательное выполнение
 for (int i = 0; i < 1000; i++) {
     result[i] = a[i] + b[i];
@@ -174,7 +171,6 @@ for (int i = 0; i < 1000; i++) {
 
 **CPU с SIMD (SSE/AVX):**
 ```c
-
 // CPU с AVX-512: 16 элементов за раз
 #include <immintrin.h>
 for (int i = 0; i < 1000; i += 16) {
@@ -188,7 +184,6 @@ for (int i = 0; i < 1000; i += 16) {
 
 GPU выполняет одну инструкцию для тысяч элементов одновременно:
 ```c
-
 // GPU: параллельное выполнение
 // Все 1000 элементов обрабатываются одновременно
 result[0..1000] = a[0..1000] + b[0..1000];  // параллельно!
@@ -208,7 +203,6 @@ result[0..1000] = a[0..1000] + b[0..1000];  // параллельно!
 
 **NVIDIA Ampere/Ada (пример):**
 ```
-
 GPU
 ├── Streaming Multiprocessors (SM) x 128
 │   ├── CUDA Cores x 64
@@ -232,7 +226,6 @@ GPU
 **Пример: Warp execution**
 
 ```c
-
 // 32 потока в warp выполняют одну инструкцию
 __global__ void vectorAdd(float *a, float *b, float *c, int n) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -244,7 +237,6 @@ __global__ void vectorAdd(float *a, float *b, float *c, int n) {
 
 **Важно:** Если потоки в warp идут по разным путям (divergence), производительность падает:
 ```c
-
 // Плохо: divergence в warp
 if (threadIdx.x % 2 == 0) {
     result = a + b;  // 16 потоков
@@ -263,7 +255,6 @@ GPU решает эту проблему через иерархию памят�
 **Уровни памяти (от быстрого к медленному):**
 
 ```
-
 Registers (per thread)     → ~1 cycle, ~256 KB per SM
 Shared Memory (per block)   → ~5 cycles, ~100 KB per SM
 L1/L2 Cache                 → ~50 cycles, несколько MB
@@ -275,7 +266,6 @@ Global Memory (VRAM)        → ~400 cycles, GB
 **Пример: Использование shared memory**
 
 ```c
-
 __global__ void matrixMultiply(float *A, float *B, float *C, int N) {
     __shared__ float tileA[16][16];  // Shared memory
     __shared__ float tileB[16][16];
@@ -303,14 +293,12 @@ __global__ void matrixMultiply(float *A, float *B, float *C, int N) {
 ### 3.1 Rendering Pipeline
 
 ```
-
 3D Model → Vertex Processing → Rasterization → Fragment Processing → Display
 ```
 
 **Детальный pipeline:**
 
 ```
-
 1. Input Assembler      → Собирает вершины в примитивы (треугольники)
 2. Vertex Shader       → Трансформация координат, освещение
 3. Hull Shader         → Tessellation (разбиение на подтреугольники)
@@ -323,7 +311,6 @@ __global__ void matrixMultiply(float *A, float *B, float *C, int N) {
 
 **Vertex Shader (GLSL пример):**
 ```glsl
-
 // Vertex shader
 #version 330 core
 layout (location = 0) in vec3 aPos;      // Позиция вершины
@@ -344,7 +331,6 @@ void main() {
 
 **Fragment Shader (GLSL пример):**
 ```glsl
-
 // Fragment shader
 #version 330 core
 in vec2 TexCoord;
@@ -377,7 +363,6 @@ void main() {
 **Пример: OpenGL инициализация**
 
 ```c
-
 // Создание окна и контекста
 GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL", NULL, NULL);
 glfwMakeContextCurrent(window);
@@ -404,7 +389,6 @@ glLinkProgram(shaderProgram);
 **Пример: Vulkan setup (упрощённо)**
 
 ```c
-
 // Vulkan требует больше boilerplate, но даёт больше контроля
 VkInstance instance;
 VkInstanceCreateInfo createInfo = {};
@@ -430,7 +414,6 @@ vkAllocateCommandBuffers(device, &allocInfo, &cmdBuffer);
 **Пример: Metal shader (MSL)**
 
 ```metal
-
 // Metal Shading Language
 vertex VertexOut vertex_main(VertexIn in [[stage_in]]) {
     VertexOut out;
@@ -546,7 +529,6 @@ int main() {
 
 **Иерархия потоков:**
 ```
-
 Grid (весь kernel launch)
   └── Block 0
       ├── Thread 0
@@ -558,7 +540,6 @@ Grid (весь kernel launch)
 
 **Вычисление индекса:**
 ```c
-
 int globalIndex = blockIdx.x * blockDim.x + threadIdx.x;
 // blockIdx.x    - номер блока в grid
 // blockDim.x    - размер блока (количество threads)
@@ -570,7 +551,6 @@ int globalIndex = blockIdx.x * blockDim.x + threadIdx.x;
 **OpenCL** — открытый стандарт для GPGPU (работает на NVIDIA, AMD, Intel):
 
 ```c
-
 // OpenCL kernel (похож на CUDA)
 __kernel void vectorAdd(__global int *a, 
                         __global int *b, 
@@ -597,7 +577,6 @@ __kernel void vectorAdd(__global int *a,
 **Пример: Matrix Multiplication для нейросетей**
 
 ```c
-
 // Упрощённый пример умножения матриц на GPU
 __global__ void matrixMultiply(float *A, float *B, float *C, 
                                 int M, int N, int K) {
@@ -626,7 +605,6 @@ __global__ void matrixMultiply(float *A, float *B, float *C,
 **Пример: Molecular Dynamics**
 
 ```c
-
 // Вычисление сил между частицами
 __global__ void computeForces(float3 *positions, 
                                float3 *forces, 
@@ -666,7 +644,6 @@ __global__ void computeForces(float3 *positions,
 **Пример: Video Encoding**
 
 ```c
-
 // Упрощённый пример обработки кадра
 __global__ void processFrame(uchar4 *input, uchar4 *output, 
                              int width, int height) {
@@ -731,7 +708,6 @@ __global__ void processFrame(uchar4 *input, uchar4 *output,
 **Пример: Unified Memory в CUDA**
 
 ```c
-
 // Unified Memory автоматически управляется системой
 __managed__ int *data;  // Доступна и CPU, и GPU
 
@@ -779,7 +755,6 @@ printf("%d\n", data[0]);
 **1. Minimize Host-Device Transfers**
 
 ```c
-
 // Плохо: много маленьких копирований
 for (int i = 0; i < 1000; i++) {
     cudaMemcpy(d_data, h_data, size, cudaMemcpyHostToDevice);
@@ -796,7 +771,6 @@ for (int i = 0; i < 1000; i++) {
 **2. Использование Pinned Memory**
 
 ```c
-
 // Pinned memory быстрее для Host-Device transfers
 float *h_pinned;
 cudaMallocHost(&h_pinned, size);  // Pinned (page-locked)
@@ -807,7 +781,6 @@ cudaFreeHost(h_pinned);
 **3. Memory Coalescing**
 
 ```c
-
 // Хорошо: coalesced access (последовательные адреса)
 __global__ void good(float *data) {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -850,7 +823,6 @@ __global__ void bad(float *data) {
 
 **Как работает RT Core:**
 ```
-
 Ray → BVH Traversal → Triangle Intersection → Result
       (RT Core)        (RT Core)              (Shader)
 ```
@@ -858,7 +830,6 @@ Ray → BVH Traversal → Triangle Intersection → Result
 **Пример: Ray Tracing в Vulkan/GLSL**
 
 ```glsl
-
 // Ray tracing shader
 #version 460
 #extension GL_EXT_ray_tracing : require
@@ -907,7 +878,6 @@ void main() {
 **Современный подход:** Комбинация rasterization + ray tracing
 
 ```
-
 Base Pass (Rasterization)     → Быстро, 60+ FPS
   └── Ray Traced Reflections   → Медленно, но реалистично
   └── Ray Traced Shadows       → Точные тени
@@ -928,7 +898,6 @@ Base Pass (Rasterization)     → Быстро, 60+ FPS
 **Специализированные блоки для matrix operations:**
 
 ```
-
 D = A × B + C
 ```
 
@@ -949,7 +918,6 @@ D = A × B + C
 
 **Как работает DLSS:**
 ```
-
 1. Render в низком разрешении (1080p) → быстро
 2. Motion vectors (куда движутся объекты)
 3. Tensor Core обрабатывает через нейросеть
@@ -989,7 +957,6 @@ engine = load_engine("model.trt")
 
 context = engine.create_execution_context()
 # ... обработка кадра за ~10ms (vs 100ms на CPU)
-
 ```
 
 **Применения:**
@@ -1015,7 +982,6 @@ context = engine.create_execution_context()
 
 **Метрики производительности:**
 ```
-
 Occupancy          → % использования SM (цель: >50%)
 Memory Throughput  → Bandwidth использования (цель: >80%)
 Instruction Throughput → Сколько инструкций выполняется
@@ -1026,7 +992,6 @@ Instruction Throughput → Сколько инструкций выполняе�
 **1. Maximize Occupancy**
 
 ```c
-
 // Плохо: мало threads per block
 kernel<<<1000, 32>>>();  // 32 threads/block
 
@@ -1037,7 +1002,6 @@ kernel<<<125, 256>>>();  // 256 threads/block → лучше occupancy
 **2. Avoid Divergence**
 
 ```c
-
 // Плохо: divergence в warp
 if (threadIdx.x < 16) {
     // 16 threads идут сюда
@@ -1052,7 +1016,6 @@ int value = array[threadIdx.x];  // Нет divergence
 **3. Coalesced Memory Access**
 
 ```c
-
 // Хорошо: последовательный доступ
 int i = blockIdx.x * blockDim.x + threadIdx.x;
 data[i] = ...;  // Coalesced
@@ -1065,7 +1028,6 @@ data[random[i]] = ...;  // Uncoalesced → медленно
 **4. Использование Shared Memory**
 
 ```c
-
 // Кэширование данных в shared memory
 __shared__ float cache[256];
 cache[threadIdx.x] = global_data[blockIdx.x * 256 + threadIdx.x];

@@ -70,7 +70,6 @@ Batch pipeline — это последовательность шагов для
 **Example: Простой Batch Pipeline**
 
 ```python
-
 class BatchPipeline:
     def __init__(self, name):
         self.name = name
@@ -136,7 +135,6 @@ pipeline.run("users.csv", "data_warehouse.users")
 
 **Output:**
 ```
-
 🚀 Запуск batch pipeline: user_data_pipeline
 ==================================================
 📥 Extract: чтение данных из users.csv
@@ -171,7 +169,6 @@ pipeline.run("users.csv", "data_warehouse.users")
 **Example: ETL Pipeline**
 
 ```python
-
 class ETLPipeline:
     def extract(self, source):
         """Extract: извлечение сырых данных"""
@@ -212,7 +209,6 @@ etl.run("source.csv", "warehouse.table")
 
 **Output:**
 ```
-
 📥 ETL Extract: чтение из источника
 ⚙️  ETL Transform: обработка в промежуточной системе
 ✅ ETL Transform: 1 записей готовы
@@ -237,7 +233,6 @@ etl.run("source.csv", "warehouse.table")
 **Example: ELT Pipeline**
 
 ```python
-
 class ELTPipeline:
     def extract(self, source):
         """Extract: извлечение сырых данных"""
@@ -272,13 +267,13 @@ class ELTPipeline:
         self.transform(target)
 
 # Использование
+
 elt = ELTPipeline()
 elt.run("source.csv", "warehouse")
 ```
 
 **Output:**
 ```
-
 📥 ELT Extract: чтение из источника
 💾 ELT Load: загрузка сырых данных в warehouse_bronze
 ✅ ELT: данные загружены как есть (Bronze layer)
@@ -319,7 +314,6 @@ Scheduling — это автоматический запуск batch jobs по 
 **Example: Scheduling**
 
 ```python
-
 from datetime import datetime, timedelta
 
 class Scheduler:
@@ -378,12 +372,15 @@ class Scheduler:
         return upcoming
 
 # Использование
+
 scheduler = Scheduler()
 
 # Daily job
+
 scheduler.schedule_daily("daily_sales_etl", "02:00")
 
 # Hourly job
+
 scheduler.schedule_hourly("hourly_metrics_update")
 
 # Event-based job
@@ -391,6 +388,7 @@ scheduler.schedule_hourly("hourly_metrics_update")
 scheduler.schedule_on_event("analytics_refresh", "daily_sales_etl")
 
 # Предстоящие jobs
+
 upcoming = scheduler.get_upcoming_jobs()
 print(f"\nПредстоящие jobs: {len(upcoming)}")
 for job in upcoming[:3]:
@@ -399,7 +397,6 @@ for job in upcoming[:3]:
 
 **Output:**
 ```
-
 ✅ Запланирован daily job 'daily_sales_etl' на 02:00
 ✅ Запланирован hourly job 'hourly_metrics_update'
 ✅ Запланирован event-based job 'analytics_refresh' после 'daily_sales_etl'
@@ -432,7 +429,6 @@ Idempotency — это свойство операции: повторное в�
 **Example: Идемпотентный Pipeline**
 
 ```python
-
 class IdempotentPipeline:
     def __init__(self):
         self.processed_dates = set()
@@ -483,16 +479,17 @@ pipeline = IdempotentPipeline()
 pipeline.run("2024-01-01")
 
 # Повторный запуск (идемпотентный)
+
 print("Повторный запуск того же pipeline:")
 pipeline.run("2024-01-01")
 
 # Новый запуск
+
 pipeline.run("2024-01-02")
 ```
 
 **Output:**
 ```
-
 🚀 Запуск pipeline для 2024-01-01
 🔄 Обработка данных за 2024-01-01
 ✅ Дата 2024-01-01 помечена как обработанная
@@ -529,7 +526,6 @@ pipeline.run("2024-01-02")
 **Example: Upsert стратегия**
 
 ```python
-
 def upsert_data(target_table, data, key_column):
     """Upsert: обновление существующих, вставка новых"""
     print(f"🔄 Upsert в {target_table} по ключу {key_column}")
@@ -555,6 +551,7 @@ def upsert_data(target_table, data, key_column):
     return updated, inserted
 
 # Использование
+
 data = [
     {"id": 1, "name": "Alice Updated"},
     {"id": 2, "name": "Bob New"},
@@ -566,7 +563,6 @@ upsert_data("users", data, "id")
 
 **Output:**
 ```
-
 🔄 Upsert в users по ключу id
   UPDATE: запись 1
   INSERT: запись 2
@@ -603,7 +599,6 @@ upsert_data("users", data, "id")
 **Example: Best Practices**
 
 ```python
-
 class RobustPipeline:
     def __init__(self, name):
         self.name = name
@@ -644,9 +639,11 @@ class RobustPipeline:
         return self.metrics
 
 # Использование
+
 pipeline = RobustPipeline("robust_pipeline")
 
 # Успешный запуск
+
 pipeline.run_with_retry()
 
 # Метрики
@@ -659,7 +656,6 @@ for key, value in metrics.items():
 
 **Output:**
 ```
-
 🔄 Попытка 1/3
 ✅ Pipeline выполнен успешно
 
@@ -727,5 +723,6 @@ for key, value in metrics.items():
 - Apache Spark: https://spark.apache.org/docs/latest/
 
 ---
+
 
 

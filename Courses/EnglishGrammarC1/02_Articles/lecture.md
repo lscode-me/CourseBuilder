@@ -38,33 +38,27 @@
 Когда русскоязычный говорит по-английски, он должен для **каждого существительного** решить:
 
 ```
-
 "Я видел [?] кошку на [?] улице"
 → I saw [a/the/∅] cat on [a/the/∅] street.
 
 Русский мозг: "Зачем?! Это же очевидно из контекста!"
 Английский: "Не очевидно. Ты должен ПОКАЗАТЬ это артиклем."
-
 ```
 
 ### 1.2 The Mental Shift
 
 **Russian logic:**
 ```
-
 Context determines meaning. Articles are redundant.
 "Кошка на улице" — понятно, о какой кошке речь (или нет).
-
 ```
 
 **English logic:**
 ```
-
 Articles MARK the information status.
 - "a cat" = new information, hearer doesn't know which one
 - "the cat" = shared knowledge, hearer should know which one
 - "∅ cats" = cats in general, or cats we mentioned before (plural)
-
 ```
 
 ### 1.3 Frequency of Errors
@@ -90,18 +84,15 @@ English has **three** article choices (not two!):
 Before using any noun, ask yourself:
 
 ```
-
 "Can the listener identify which one I mean?"
 
 YES → THE (the listener knows which one)
 NO → A (if singular countable) or ∅ (if plural/uncountable)
-
 ```
 
 **Example:**
 
 ```
-
 "I saw a cat." 
 → You don't know which cat. First mention. New information.
 
@@ -110,7 +101,6 @@ NO → A (if singular countable) or ∅ (if plural/uncountable)
 
 "I like cats."
 → Not a specific cat. Cats in general. Generic reference.
-
 ```
 
 ---
@@ -122,12 +112,10 @@ NO → A (if singular countable) or ∅ (if plural/uncountable)
 **A/AN** introduces a **new, singular, countable** noun:
 
 ```
-
 I bought a book yesterday.          — New information
 She's a doctor.                     — Classification
 What a beautiful day!               — Exclamation
 Once upon a time, there was a king. — First mention in narrative
-
 ```
 
 ### 3.2 Classification Function
@@ -135,23 +123,19 @@ Once upon a time, there was a king. — First mention in narrative
 One of the most important uses: telling WHAT CATEGORY something belongs to:
 
 ```
-
 He's a teacher.         — profession (категория)
 This is a laptop.       — type of thing
 It's a mammal.          — class of animal
 That was a mistake.     — type of action
-
 ```
 
 **Russian interference:**
 ```
-
 ❌ He is teacher.  (Russian: "Он учитель" — no article)
 ✅ He is a teacher.
 
 ❌ This is laptop.
 ✅ This is a laptop.
-
 ```
 
 ### 3.3 "One of Many" Meaning
@@ -159,11 +143,9 @@ That was a mistake.     — type of action
 **A/AN** often implies "one example from a group":
 
 ```
-
 I need a pen.           — any pen, one from the category
 Can I have a coffee?    — one coffee, please
 I saw a great film.     — one film (among many great ones)
-
 ```
 
 ### 3.4 A vs AN
@@ -171,7 +153,6 @@ I saw a great film.     — one film (among many great ones)
 Rule: Use **AN** before vowel **sounds** (not letters!):
 
 ```
-
 an apple      (starts with vowel sound /æ/)
 an hour       (silent h, starts with /aʊ/)
 an MBA        (M pronounced /em/, starts with vowel)
@@ -179,7 +160,6 @@ an MBA        (M pronounced /em/, starts with vowel)
 a university  (starts with /j/, consonant sound)
 a European    (starts with /j/, consonant sound)
 a one-time    (starts with /w/, consonant sound)
-
 ```
 
 ---
@@ -194,36 +174,28 @@ The knowledge can be shared through:
 
 **1. Previous mention (anaphoric):**
 ```
-
 I bought a car. The car is blue.
 → "The car" = the one I just told you about
-
 ```
 
 **2. Physical situation (situational):**
 ```
-
 Can you close the door?
 → The door we can both see / the door of this room
-
 ```
 
 **3. World knowledge:**
 ```
-
 The sun rises in the east.
 The President signed the bill.
 → There's only one sun, one president (in context)
-
 ```
 
 **4. Specifying phrase:**
 ```
-
 The book on the table...
 The man who called yesterday...
 → "which one?" is answered by the following phrase
-
 ```
 
 ### 4.2 Anecdotal Examples: When Wrong Articles Create Comedy
@@ -233,37 +205,31 @@ The man who called yesterday...
 **Example 1: The Bar Joke**
 
 ```
-
 A man walks into a bar.
 He orders a pint.
 A man drinks it straight away.
 
 Wait... WHO drank it?!
-
 ```
 
 Проблема: второй раз использовали "A man" вместо "THE man". По правилам английского, "a man" означает **другой** человек. Получается, что кто-то третий выпил пиво!
 
 **Правильная версия:**
 ```
-
 A man walks into a bar.
 He orders a pint.
 THE man drinks it straight away.
-
 ```
 
 **Example 2: The Job Interview**
 
 ```
-
 Interviewer: "Tell me about yourself."
 Candidate: "I am honest person."
 
 (pause)
 
 Interviewer: "...A honest person, or THE honest person?"
-
 ```
 
 Без артикля звучит так, будто человек говорит на ломаном английском. А с артиклем "THE honest person" — будто он единственный честный человек в мире!
@@ -271,12 +237,10 @@ Interviewer: "...A honest person, or THE honest person?"
 **Example 3: The Romantic Disaster**
 
 ```
-
 She: "I want to marry a rich man."
 He: "I want to marry THE woman I love."
 
 She: "That's so sweet! Who is she?"
-
 ```
 
 "A rich man" = любой богатый (она ищет категорию). "THE woman" = конкретная женщина (он любит кого-то определённого). Комизм в том, что она не поняла, что речь о ней.
@@ -284,23 +248,19 @@ She: "That's so sweet! Who is she?"
 **Example 4: The Murder Mystery**
 
 ```
-
 Detective: "The killer left a fingerprint."
 Assistant: "A fingerprint? Or THE fingerprint?"
 Detective: "...Does it matter?"
 Assistant: "A fingerprint means we found one of many. 
            THE fingerprint means we found THE one that solves the case."
-
 ```
 
 **Example 5: The Restaurant Order**
 
 ```
-
 Waiter: "Would you like a dessert?"
 Customer: "No, THE dessert. That one. On that table. 
            Bring me THAT person's cake."
-
 ```
 
 "A dessert" = любой из меню. "THE dessert" = конкретный, который я вижу.
@@ -312,13 +272,11 @@ Customer: "No, THE dessert. That one. On that table.
 Use **THE** for items that are one-of-a-kind in the context:
 
 ```
-
 the sun, the moon, the sky
 the government, the president, the prime minister
 the internet, the environment, the economy
 the beginning, the end, the middle
 the first, the second, the last, the only
-
 ```
 
 ### 4.4 Superlatives and Ordinals
@@ -326,7 +284,6 @@ the first, the second, the last, the only
 **THE** is required with superlatives and ordinal numbers:
 
 ```
-
 the best solution
 the worst mistake
 the most important thing
@@ -334,16 +291,13 @@ the most important thing
 the first time
 the second chapter
 the third floor
-
 ```
 
 **Note:** In informal speech, sometimes omitted:
 ```
-
 "Best movie ever!" (informal)
 vs.
 "It's the best movie I've ever seen." (full form)
-
 ```
 
 ### 4.5 Specifying Context
@@ -351,11 +305,9 @@ vs.
 **THE** is used when a phrase specifies which one:
 
 ```
-
 The book [that you lent me] was excellent.
 The man [in the blue coat] is my uncle.
 The idea [of going to Paris] excited her.
-
 ```
 
 **Test:** If you can add "the one that..." it's likely THE.
@@ -372,20 +324,16 @@ When talking about things **in general**, use zero article with:
 
 **Plural nouns:**
 ```
-
 ∅ Dogs are loyal animals.        — dogs in general
 ∅ Books are expensive nowadays.  — books as a category
 ∅ Children need love.            — all children
-
 ```
 
 **Uncountable nouns:**
 ```
-
 ∅ Water is essential for life.   — water as a concept
 ∅ Music can change your mood.    — music in general
 ∅ Time flies.                    — abstract time
-
 ```
 
 ### 5.2 The Generic "The" Trap
@@ -393,7 +341,6 @@ When talking about things **in general**, use zero article with:
 **Russian speakers often overuse THE for generic reference:**
 
 ```
-
 ❌ The life is hard.
 ✅ Life is hard. (generic — life in general)
 
@@ -405,7 +352,6 @@ When talking about things **in general**, use zero article with:
 
 ❌ The love is important.
 ✅ Love is important. (abstract concept)
-
 ```
 
 ### 5.3 Categories and Types
@@ -413,7 +359,6 @@ When talking about things **in general**, use zero article with:
 Zero article for categories, but THE for specific instances:
 
 ```
-
 ∅ Coffee is grown in Brazil.     — coffee as a crop/type
 The coffee is cold.              — this specific coffee
 
@@ -422,7 +367,6 @@ The history of Russia is complex. — specific history
 
 ∅ Education is important.        — concept of education
 The education I received was excellent. — my specific education
-
 ```
 
 ### 5.4 Meals, Transport, Time
@@ -431,32 +375,26 @@ Traditional zero article contexts:
 
 **Meals (as institution):**
 ```
-
 ∅ Breakfast is at 8.
 ∅ Let's have lunch.
 ∅ What's for dinner?
 
 BUT: The breakfast was delicious. (specific meal)
-
 ```
 
 **Transport (means):**
 ```
-
 by ∅ car, by ∅ bus, by ∅ train, by ∅ plane
 on ∅ foot
 
 BUT: The bus was late. (specific bus)
-
 ```
 
 **Time expressions:**
 ```
-
 at ∅ night, at ∅ noon, at ∅ midnight
 in ∅ January, in ∅ summer
 next ∅ week, last ∅ year
-
 ```
 
 ### 5.5 Places and Institutions
@@ -464,7 +402,6 @@ next ∅ week, last ∅ year
 Zero article when referring to **function**, THE when referring to **building**:
 
 ```
-
 She's in ∅ hospital. (as a patient — BrE)
 She's at the hospital. (the building — AmE preference)
 
@@ -476,7 +413,6 @@ The church is beautiful. (the building)
 
 She's at ∅ university. (as a student)
 The university is old. (the institution/building)
-
 ```
 
 ---
@@ -490,7 +426,6 @@ Geography is a major source of article errors.
 **Use THE with:**
 
 ```
-
 PLURAL names:
 the Netherlands, the Philippines, the United States
 the Alps, the Himalayas, the Andes
@@ -513,7 +448,6 @@ Hotels, theaters, museums:
 the Hilton, the Ritz
 the Globe (Theatre)
 the Louvre, the British Museum
-
 ```
 
 ### 6.2 NO Article (Zero) With Geographic Names
@@ -521,7 +455,6 @@ the Louvre, the British Museum
 **No article with:**
 
 ```
-
 Continents:
 ∅ Europe, ∅ Asia, ∅ Africa
 
@@ -543,16 +476,13 @@ Streets, squares:
 
 Parks:
 ∅ Hyde Park, ∅ Central Park
-
 ```
 
 ### 6.3 Memory Tricks
 
 ```
-
 THE = "plural/united/republic/range/body of water"
 ∅ = "single/city/country (most)/lake/mountain/street"
-
 ```
 
 ---
@@ -564,7 +494,6 @@ THE = "plural/united/republic/range/body of water"
 Abstract nouns are usually zero article, but NOT always:
 
 ```
-
 ∅ Freedom is precious.           — generic concept
 The freedom to speak is a right. — specific freedom
 
@@ -573,7 +502,6 @@ The love she showed was remarkable. — specific love
 
 ∅ Time is money.                 — abstract concept
 The time we spent together...    — specific time
-
 ```
 
 **Pattern:** Abstract → generic → ∅. Specific → THE.
@@ -583,7 +511,6 @@ The time we spent together...    — specific time
 The SAME noun can take different articles with different meanings:
 
 ```
-
 I'm going to ∅ school.           — as a student, for education
 I'm going to the school.         — the building
 
@@ -592,7 +519,6 @@ There's a book on the bed.       — furniture
 
 Let's have ∅ lunch.              — the meal
 The lunch was delicious.         — that specific meal
-
 ```
 
 ### 7.3 Newspaper Headlines and Titles
@@ -600,13 +526,11 @@ The lunch was delicious.         — that specific meal
 Headlines often drop articles (for brevity):
 
 ```
-
 "President meets Queen" (newspaper)
 = The President meets the Queen
 
 "Man bites dog"
 = A man bites a dog
-
 ```
 
 Don't imitate this in normal writing!
@@ -616,7 +540,6 @@ Don't imitate this in normal writing!
 Many expressions have fixed article usage (or lack thereof):
 
 ```
-
 at ∅ home, at ∅ work, at ∅ sea
 in ∅ fact, in ∅ general, in ∅ particular
 by ∅ heart, by ∅ chance, by ∅ mistake
@@ -626,7 +549,6 @@ BUT:
 in the morning, in the end
 at the moment, at the same time
 on the whole, on the other hand
-
 ```
 
 These must be memorized!
@@ -640,7 +562,6 @@ These must be memorized!
 **The most common error:**
 
 ```
-
 ❌ The life is beautiful.
 ✅ Life is beautiful.
 
@@ -655,7 +576,6 @@ These must be memorized!
 
 ❌ The Russian literature is world-famous.
 ✅ Russian literature is world-famous.
-
 ```
 
 **Why it happens:** In Russian, these sentences have definite meaning in context. English uses zero article for generic/abstract.
@@ -663,7 +583,6 @@ These must be memorized!
 ### 8.2 Missing A in Classification
 
 ```
-
 ❌ He is teacher.
 ✅ He is a teacher.
 
@@ -675,7 +594,6 @@ These must be memorized!
 
 ❌ I need new computer.
 ✅ I need a new computer.
-
 ```
 
 **Why it happens:** Russian has no indefinite article. "Он учитель" is complete in Russian.
@@ -683,7 +601,6 @@ These must be memorized!
 ### 8.3 THE With Languages, Subjects
 
 ```
-
 ❌ I study the English.
 ✅ I study English.
 
@@ -692,7 +609,6 @@ These must be memorized!
 
 ❌ She teaches the history.
 ✅ She teaches history.
-
 ```
 
 **Why it happens:** Russian uses case endings, English uses nothing.
@@ -700,7 +616,6 @@ These must be memorized!
 ### 8.4 Wrong Article With Uncountables
 
 ```
-
 ❌ Can you give me an advice?
 ✅ Can you give me some advice?
 ✅ Can you give me a piece of advice?
@@ -711,7 +626,6 @@ These must be memorized!
 ❌ This is an important news.
 ✅ This is important news.
 ✅ This is an important piece of news.
-
 ```
 
 **Why it happens:** "Совет", "информация", "новость" are countable in Russian.
@@ -719,13 +633,11 @@ These must be memorized!
 ### 8.5 THE With Possessives
 
 ```
-
 ❌ I broke the my phone.
 ✅ I broke my phone.
 
 ❌ The her husband is a doctor.
 ✅ Her husband is a doctor.
-
 ```
 
 **Why it happens:** Possessive pronouns already make the noun definite. No need for "the".
@@ -739,7 +651,6 @@ These must be memorized!
 Normally, proper nouns (names) have no article. But sometimes A is used:
 
 ```
-
 There's a Mr. Smith here to see you.
 → Someone called Mr. Smith (I don't know him)
 
@@ -751,7 +662,6 @@ I'd like a Picasso on my wall.
 
 Is that a Rolex?
 → A watch of that brand
-
 ```
 
 ### 9.2 "The" With Proper Nouns
@@ -759,7 +669,6 @@ Is that a Rolex?
 THE + proper noun can show:
 
 ```
-
 The Shakespeare who wrote Hamlet...
 → Specifying WHICH Shakespeare
 
@@ -768,7 +677,6 @@ Is this the John you were telling me about?
 
 The London I knew is gone.
 → London in a particular state/time
-
 ```
 
 ### 9.3 Generic THE (Formal)
@@ -776,7 +684,6 @@ The London I knew is gone.
 In formal/scientific writing, THE + singular noun can mean "the whole class":
 
 ```
-
 The tiger is endangered.
 = Tigers are endangered.
 
@@ -785,7 +692,6 @@ The computer has changed our lives.
 
 The novel emerged in the 18th century.
 = Novels emerged in the 18th century.
-
 ```
 
 This is more formal than plural. Use in academic writing.
@@ -795,13 +701,11 @@ This is more formal than plural. Use in academic writing.
 In literary/poetic language, articles are sometimes dropped for effect:
 
 ```
-
 "Sun shone, birds sang, life was good."
 → Poetic rhythm, not standard prose
 
 "Man cannot live by bread alone."
 → Biblical/formal style
-
 ```
 
 Don't use in ordinary writing.
@@ -815,7 +719,6 @@ When you're unsure, follow this process:
 ### 10.1 The Flowchart
 
 ```
-
 Is the noun UNCOUNTABLE or PLURAL?
 │
 ├─YES → Is it GENERIC (all things of this type)?
@@ -840,7 +743,6 @@ Is the noun UNCOUNTABLE or PLURAL?
            │
            └─NO → A/AN (first mention, any one)
                    "I bought a book."
-
 ```
 
 ### 10.2 Quick Tests
@@ -848,37 +750,31 @@ Is the noun UNCOUNTABLE or PLURAL?
 **Test 1: "Which one?"**
 
 ```
-
 If you can reasonably ask "Which one?" → probably A
 "I saw a dog." — "Which dog?" "I don't know, just some dog."
 
 If the answer is obvious → probably THE
 "Can you close the door?" — "Which door?" "The only one in the room!"
-
 ```
 
 **Test 2: "Any one of many?"**
 
 ```
-
 If you mean "any one from a category" → A
 "I need a pen." (any pen will do)
 
 If you mean "that specific one" → THE
 "I need the pen." (you know which one)
-
 ```
 
 **Test 3: Generic meaning test**
 
 ```
-
 Can you replace the noun with "all [plural]" without changing meaning?
 YES → Zero article
 
 "∅ Dogs are loyal." = "All dogs are loyal." ✓
 "The dogs are loyal." ≠ "All dogs are loyal." ✗
-
 ```
 
 ---
@@ -892,7 +788,6 @@ Translate these sentences thinking about article choice:
 **Russian → English:**
 
 ```
-
 1. Жизнь коротка.
    Think: Is "life" generic? → Yes → ∅
    → Life is short.
@@ -913,7 +808,6 @@ Translate these sentences thinking about article choice:
 5. Любовь важнее денег.
    Think: Both generic concepts → ∅
    → Love is more important than money.
-
 ```
 
 ### 11.2 Error Correction
@@ -921,7 +815,6 @@ Translate these sentences thinking about article choice:
 Find and fix the article errors:
 
 ```
-
 1. ❌ The happiness is what everyone wants.
    ✅ Happiness is what everyone wants. (generic)
 
@@ -937,7 +830,6 @@ Find and fix the article errors:
 
 5. ❌ The English is international language.
    ✅ English is an international language. (generic + classification)
-
 ```
 
 ---

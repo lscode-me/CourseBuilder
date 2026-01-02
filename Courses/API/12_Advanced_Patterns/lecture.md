@@ -39,7 +39,6 @@
 **Example: Anti-Corruption Layer**
 
 ```python
-
 class LegacySystemACL:
     """Anti-Corruption Layer для legacy системы"""
     
@@ -76,8 +75,10 @@ class LegacySystemACL:
         return datetime.strptime(date_str, "%Y%m%d").isoformat()
 
 # Использование
+
 acl = LegacySystemACL(legacy_api)
 # Современная система работает с нормализованным интерфейсом
+
 user = acl.get_user(123)
 ```
 
@@ -98,7 +99,6 @@ user = acl.get_user(123)
 **Example: API Gateway**
 
 ```python
-
 from flask import Flask, request, jsonify
 import requests
 
@@ -156,7 +156,6 @@ def gateway_route(service, path):
 **Example: Централизованная аутентификация**
 
 ```python
-
 from functools import wraps
 from flask import request, jsonify
 
@@ -189,7 +188,6 @@ def gateway_route(service, path):
 **Example: Rate limiting на уровне Gateway**
 
 ```python
-
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -232,7 +230,6 @@ def check_rate_limit():
 **Example: Кэширование ответов**
 
 ```python
-
 from functools import lru_cache
 import hashlib
 import json
@@ -294,7 +291,6 @@ def gateway_route_cached(service, path):
 **Example: BFF для мобильного приложения**
 
 ```python
-
 class MobileBFF:
     """Backend for Frontend для мобильного приложения"""
     
@@ -374,7 +370,6 @@ dashboard = bff.get_user_dashboard(123)
 # - Retry logic
 # - Security
 # - Observability
-
 ```
 
 ### 4.2 Service Discovery
@@ -382,7 +377,6 @@ dashboard = bff.get_user_dashboard(123)
 **Example: Service Discovery концепция**
 
 ```python
-
 class ServiceRegistry:
     """Регистр сервисов для Service Discovery"""
     
@@ -412,6 +406,7 @@ class ServiceRegistry:
         return instances[0]
 
 # Использование
+
 registry = ServiceRegistry()
 registry.register("user-service", [
     "http://user-service-1:8001",
@@ -427,7 +422,6 @@ instance = registry.get_instance("user-service")
 **Example: Circuit Breaker для надёжности**
 
 ```python
-
 class CircuitBreaker:
     """Circuit Breaker для защиты от каскадных отказов"""
     
@@ -475,6 +469,7 @@ class CircuitBreaker:
         return False
 
 # Использование
+
 circuit_breaker = CircuitBreaker()
 
 def call_external_service():
@@ -503,7 +498,6 @@ except Exception as e:
 **Example: Retry с экспоненциальной задержкой**
 
 ```python
-
 import time
 from functools import wraps
 
@@ -541,7 +535,6 @@ def call_service():
 **Example: ACL через API Gateway**
 
 ```python
-
 class GatewayWithACL:
     """API Gateway с поддержкой ACL для legacy систем"""
     
@@ -572,7 +565,6 @@ class GatewayWithACL:
 **Example: BFF через API Gateway**
 
 ```python
-
 class GatewayBFF:
     """BFF, использующий API Gateway для доступа к сервисам"""
     
@@ -630,7 +622,6 @@ class GatewayBFF:
 ### 7.1 Пример: Полноценный API Gateway
 
 ```python
-
 class FullFeaturedGateway:
     """Полнофункциональный API Gateway"""
     
@@ -672,7 +663,6 @@ class FullFeaturedGateway:
 ### 7.2 Пример: Множественные BFF
 
 ```python
-
 class BFFManager:
     """Управление множественными BFF"""
     
@@ -691,6 +681,7 @@ class BFFManager:
         return bff.get_user_dashboard(user_id)
 
 # Использование
+
 bff_manager = BFFManager()
 mobile_dashboard = bff_manager.get_dashboard("mobile", 123)
 web_dashboard = bff_manager.get_dashboard("web", 123)
@@ -703,12 +694,14 @@ web_dashboard = bff_manager.get_dashboard("web", 123)
 ❌ **Incorrect:**
 ```python
 # Плохо: Service Mesh для простой архитектуры из 2-3 сервисов
+
 setup_service_mesh(services)  # Избыточная сложность
 ```
 
 ✅ **Correct:**
 ```python
 # Хорошо: Service Mesh только для крупных систем
+
 if len(services) > 10:
     setup_service_mesh(services)
 else:
@@ -722,12 +715,14 @@ else:
 ❌ **Incorrect:**
 ```python
 # Плохо: Прямое использование legacy API
+
 legacy_data = legacy_api.get_data()  # Прямая зависимость
 ```
 
 ✅ **Correct:**
 ```python
 # Хорошо: ACL изолирует legacy
+
 acl = LegacySystemACL(legacy_api)
 normalized_data = acl.get_data()  # Нормализованный интерфейс
 ```
@@ -784,6 +779,7 @@ normalized_data = acl.get_data()  # Нормализованный интерф�
 - "Service Mesh Explained" — объяснение Service Mesh
 
 ---
+
 
 
 

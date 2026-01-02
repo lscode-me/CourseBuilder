@@ -31,7 +31,6 @@
 **Example: Синтаксис function**
 
 ```bash
-
 function my_function() {
     echo "Hello from function"
 }
@@ -40,7 +39,6 @@ function my_function() {
 **Example: Синтаксис без function**
 
 ```bash
-
 my_function() {
     echo "Hello from function"
 }
@@ -57,7 +55,6 @@ my_function() {
 **Example: Аргументы функции**
 
 ```bash
-
 greet() {
     echo "Hello, $1!"
 }
@@ -67,7 +64,6 @@ greet "Alice"
 
 **Output:**
 ```
-
 Hello, Alice!
 ```
 
@@ -80,7 +76,6 @@ Hello, Alice!
 **Example: Exit code**
 
 ```bash
-
 is_even() {
     if [ $(($1 % 2)) -eq 0 ]; then
         return 0
@@ -97,7 +92,6 @@ fi
 **Example: Вывод**
 
 ```bash
-
 get_name() {
     echo "Alice"
 }
@@ -113,7 +107,6 @@ echo "Name: $name"
 **Example: local переменные**
 
 ```bash
-
 my_function() {
     local local_var="Local value"
     global_var="Global value"

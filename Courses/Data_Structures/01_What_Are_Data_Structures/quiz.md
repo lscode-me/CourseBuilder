@@ -106,7 +106,6 @@ D) Важен только для очень больших данных
 
 Рассмотрим код:
 ```python
-
 def count_frequency(data):
     result = {}
     for item in data:
@@ -230,6 +229,7 @@ D) Влияют только на маленькие объёмы данных
 
 ```python
 # Вариант 1
+
 def has_duplicates_v1(data):
     for i in range(len(data)):
         for j in range(i + 1, len(data)):
@@ -238,6 +238,7 @@ def has_duplicates_v1(data):
     return False
 
 # Вариант 2
+
 def has_duplicates_v2(data):
     return len(data) != len(set(data))
 ```
@@ -424,5 +425,6 @@ D) list
 | **Менее 13 правильных (<50%)** | 📚 Нужно повторить | Внимательно перечитайте лекцию и попробуйте ещё раз. |
 
 ---
+
 
 

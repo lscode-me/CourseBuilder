@@ -51,7 +51,6 @@
 
 **Пример:**
 ```solidity
-
 // Простой смарт-контракт
 contract SimpleStorage {
     uint256 public value;
@@ -110,7 +109,6 @@ Solidity — основной язык для разработки смарт-к
 
 **Пример:**
 ```solidity
-
 pragma solidity ^0.8.0;
 
 contract Token {
@@ -158,7 +156,6 @@ ERC-20 (Ethereum Request for Comments 20) — это стандарт для с�
 
 **Пример:**
 ```solidity
-
 contract ERC20Token {
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
@@ -215,7 +212,6 @@ contract ERC20Token {
 
 **Пример уязвимости:**
 ```solidity
-
 // УЯЗВИМЫЙ КОД - НЕ ИСПОЛЬЗУЙТЕ
 contract Vulnerable {
     mapping(address => uint256) public balances;

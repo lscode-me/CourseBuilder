@@ -143,13 +143,11 @@ SSTable — это не просто список "ключ-значение". �
 
 Файл SSTable состоит из блоков (обычно 4KB):
 ```text
-
 [Block 1: keys a..d] [Block 2: keys e..h] ... [Meta Block] [Footer]
 ```
 
 Также в файле (обычно в конце) хранится **Sparse Index (Разреженный индекс)**:
 ```text
-
 Key "a" -> offset 0
 Key "e" -> offset 4096
 Key "i" -> offset 8192
@@ -184,7 +182,6 @@ Bloom Filter экономит 99% ненужных чтений. Обычно н
 Давайте напишем игрушечную БД за 5 минут.
 
 ```python
-
 import os
 import pickle
 

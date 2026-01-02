@@ -38,7 +38,6 @@
 ### Неправильные решения
 
 ```sql
-
 -- ❌ Добавить author_id в books
 -- Не работает: книга может иметь несколько авторов
 
@@ -53,7 +52,6 @@
 ### Правильное решение
 
 ```sql
-
 CREATE TABLE authors (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -85,7 +83,6 @@ CREATE TABLE book_authors (
 ### Найти все книги автора
 
 ```sql
-
 SELECT b.title, b.publication_date
 FROM books b
 JOIN book_authors ba ON b.id = ba.book_id
@@ -96,7 +93,6 @@ WHERE a.name = 'Пушкин';
 ### Найти авторов книги
 
 ```sql
-
 SELECT a.name
 FROM authors a
 JOIN book_authors ba ON a.id = ba.author_id
@@ -107,7 +103,6 @@ WHERE b.title = 'Война и мир';
 ### Посчитать количество книг каждого автора
 
 ```sql
-
 SELECT a.name, COUNT(ba.book_id) as book_count
 FROM authors a
 LEFT JOIN book_authors ba ON a.id = ba.author_id

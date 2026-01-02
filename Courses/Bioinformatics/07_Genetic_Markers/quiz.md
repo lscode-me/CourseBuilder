@@ -149,7 +149,6 @@ D) >50%
 В примере:
 
 ```text
-
 Референс: ...ATCGATCGATCG...
 Вариант:  ...ATCGATCAATCG...
 ```
@@ -199,7 +198,6 @@ D) Профили проверяют только по полу
 Рассмотрим упрощённую функцию:
 
 ```python
-
 import math
 
 def detect_cnv(read_depth, normal_depth, threshold=0.5):

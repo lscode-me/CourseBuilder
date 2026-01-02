@@ -34,7 +34,6 @@
 **Example: Создание вектора**
 
 ```rust
-
 fn main() {
     let v: Vec<i32> = Vec::new();
     let v2 = vec![1, 2, 3];  // Макрос для создания с начальными значениями
@@ -46,7 +45,6 @@ fn main() {
 
 **Output:**
 ```
-
 v: []
 v2: [1, 2, 3]
 ```
@@ -56,7 +54,6 @@ v2: [1, 2, 3]
 **Example: Добавление элементов**
 
 ```rust
-
 fn main() {
     let mut v = Vec::new();
     
@@ -70,7 +67,6 @@ fn main() {
 
 **Output:**
 ```
-
 [1, 2, 3]
 ```
 
@@ -79,7 +75,6 @@ fn main() {
 **Example: Доступ по индексу**
 
 ```rust
-
 fn main() {
     let v = vec![1, 2, 3, 4, 5];
     
@@ -95,7 +90,6 @@ fn main() {
 
 **Output:**
 ```
-
 Третий элемент: 3
 Третий элемент: 3
 ```
@@ -110,7 +104,6 @@ fn main() {
 **Example: Итерация**
 
 ```rust
-
 fn main() {
     let v = vec![100, 32, 57];
     
@@ -129,7 +122,6 @@ fn main() {
 
 **Output:**
 ```
-
 100
 32
 57
@@ -147,7 +139,6 @@ fn main() {
 **Example: Создание HashMap**
 
 ```rust
-
 use std::collections::HashMap;
 
 fn main() {
@@ -162,7 +153,6 @@ fn main() {
 
 **Output:**
 ```
-
 {"Blue": 10, "Yellow": 50}
 ```
 
@@ -171,7 +161,6 @@ fn main() {
 **Example: Получение значения**
 
 ```rust
-
 use std::collections::HashMap;
 
 fn main() {
@@ -191,7 +180,6 @@ fn main() {
 
 **Output:**
 ```
-
 Счёт Blue: 10
 ```
 
@@ -200,7 +188,6 @@ fn main() {
 **Example: Итерация**
 
 ```rust
-
 use std::collections::HashMap;
 
 fn main() {
@@ -216,7 +203,6 @@ fn main() {
 
 **Output:**
 ```
-
 Blue: 10
 Yellow: 50
 ```
@@ -226,7 +212,6 @@ Yellow: 50
 **Example: Обновление**
 
 ```rust
-
 use std::collections::HashMap;
 
 fn main() {
@@ -246,7 +231,6 @@ fn main() {
 
 **Output:**
 ```
-
 {"Blue": 25}
 {"Blue": 25, "Yellow": 50}
 ```
@@ -262,7 +246,6 @@ fn main() {
 **Example: Создание String**
 
 ```rust
-
 fn main() {
     let mut s = String::new();
     
@@ -277,7 +260,6 @@ fn main() {
 
 **Output:**
 ```
-
 initial contents
 ```
 
@@ -286,7 +268,6 @@ initial contents
 **Example: Добавление к строке**
 
 ```rust
-
 fn main() {
     let mut s = String::from("foo");
     s.push_str("bar");
@@ -305,7 +286,6 @@ fn main() {
 
 **Output:**
 ```
-
 foobar!
 Hello, world!
 ```
@@ -315,7 +295,6 @@ Hello, world!
 **Example: format! макрос**
 
 ```rust
-
 fn main() {
     let s1 = String::from("tic");
     let s2 = String::from("tac");
@@ -328,7 +307,6 @@ fn main() {
 
 **Output:**
 ```
-
 tic-tac-toe
 ```
 
@@ -339,7 +317,6 @@ tic-tac-toe
 **Example: Работа со строками**
 
 ```rust
-
 fn main() {
     let s = String::from("hello");
     
@@ -358,7 +335,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 h
 e
@@ -378,7 +354,6 @@ o
 **Example: Базовое использование**
 
 ```rust
-
 fn main() {
     let v1 = vec![1, 2, 3];
     let v1_iter = v1.iter();
@@ -391,7 +366,6 @@ fn main() {
 
 **Output:**
 ```
-
 1
 2
 3
@@ -402,7 +376,6 @@ fn main() {
 **Example: map и collect**
 
 ```rust
-
 fn main() {
     let v1 = vec![1, 2, 3];
     let v2: Vec<_> = v1.iter().map(|x| x * 2).collect();
@@ -413,7 +386,6 @@ fn main() {
 
 **Output:**
 ```
-
 [2, 4, 6]
 ```
 
@@ -422,7 +394,6 @@ fn main() {
 **Example: filter**
 
 ```rust
-
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5, 6];
     let evens: Vec<_> = numbers.iter()
@@ -435,7 +406,6 @@ fn main() {
 
 **Output:**
 ```
-
 [2, 4, 6]
 ```
 
@@ -444,7 +414,6 @@ fn main() {
 **Example: Цепочка**
 
 ```rust
-
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5];
     let result: Vec<i32> = numbers.iter()
@@ -458,7 +427,6 @@ fn main() {
 
 **Output:**
 ```
-
 [6, 8, 10]
 ```
 
@@ -469,7 +437,6 @@ fn main() {
 **Example: Ленивые вычисления**
 
 ```rust
-
 fn main() {
     let v1 = vec![1, 2, 3];
     let v1_iter = v1.iter().map(|x| x + 1);  // Пока ничего не вычислено
@@ -481,7 +448,6 @@ fn main() {
 
 **Output:**
 ```
-
 [2, 3, 4]
 ```
 
@@ -492,7 +458,6 @@ fn main() {
 ### 5.1 Пример: Подсчёт слов
 
 ```rust
-
 use std::collections::HashMap;
 
 fn main() {
@@ -510,14 +475,12 @@ fn main() {
 
 **Output:**
 ```
-
 {"world": 2, "hello": 1, "wonderful": 1}
 ```
 
 ### 5.2 Пример: Фильтрация и преобразование
 
 ```rust
-
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     
@@ -532,7 +495,6 @@ fn main() {
 
 **Output:**
 ```
-
 Чётные числа в квадрате: [4, 16, 36, 64, 100]
 ```
 

@@ -54,13 +54,11 @@ HTTP — основа веба, обеспечивает передачу гип
 ### 2.2 Структура HTTP запроса
 
 ```
-
 GET /api/users/123 HTTP/1.1
 Host: example.com
 User-Agent: Mozilla/5.0
 Accept: application/json
 Authorization: Bearer token123
-
 ```
 
 **Компоненты:**
@@ -76,7 +74,6 @@ Authorization: Bearer token123
 ### 2.3 Структура HTTP ответа
 
 ```
-
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 85
@@ -162,7 +159,6 @@ SMTP обеспечивает передачу электронной почты
 ### 3.2 Структура SMTP взаимодействия
 
 ```
-
 Клиент: HELO client.example.com
 Сервер: 250 Hello client.example.com
 
@@ -251,7 +247,6 @@ FTP обеспечивает передачу файлов между клиен
 ### 4.3 Пример FTP сессии
 
 ```
-
 Клиент: USER username
 Сервер: 331 Password required
 
@@ -308,7 +303,6 @@ WebSocket обеспечивает двустороннюю коммуникац
 
 **HTTP Upgrade запрос:**
 ```
-
 GET /chat HTTP/1.1
 Host: example.com
 Upgrade: websocket
@@ -319,7 +313,6 @@ Sec-WebSocket-Version: 13
 
 **HTTP Upgrade ответ:**
 ```
-
 HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade

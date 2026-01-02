@@ -41,6 +41,7 @@
 ```python
 # Шаг 1: Определить контракт (OpenAPI)
 # openapi.yaml
+
 """
 openapi: 3.0.0
 info:
@@ -67,7 +68,6 @@ paths:
 # Шаг 2: Сгенерировать код из контракта
 # Шаг 3: Реализовать логику
 # Шаг 4: Валидировать по контракту
-
 ```
 
 ### 1.2 Преимущества
@@ -90,7 +90,6 @@ paths:
 **Example: Базовая OpenAPI спецификация**
 
 ```yaml
-
 openapi: 3.0.0
 info:
   title: User API
@@ -171,6 +170,7 @@ components:
 # openapi-generator generate -i openapi.yaml -g python-flask -o ./server
 
 # Валидация запросов по OpenAPI
+
 from openapi_core import validate_request
 from openapi_core.contrib.flask import FlaskOpenAPIRequest
 
@@ -191,7 +191,6 @@ def validate_api_request(request):
 **Example: JSON Schema для пользователя**
 
 ```python
-
 import jsonschema
 
 user_schema = {
@@ -221,6 +220,7 @@ user_schema = {
 }
 
 # Валидация
+
 def validate_user(data):
     try:
         jsonschema.validate(instance=data, schema=user_schema)
@@ -234,7 +234,6 @@ def validate_user(data):
 **Example: JSON Schema в OpenAPI**
 
 ```yaml
-
 components:
   schemas:
     User:
@@ -268,13 +267,13 @@ components:
 **Example: Swagger UI из OpenAPI**
 
 ```python
-
 from flask import Flask
 from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
 
 # Swagger UI
+
 SWAGGER_URL = '/api/docs'
 API_URL = '/api/openapi.json'
 
@@ -287,6 +286,7 @@ swaggerui_blueprint = get_swaggerui_blueprint(
 app.register_blueprint(swaggerui_blueprint)
 
 # OpenAPI JSON endpoint
+
 @app.route('/api/openapi.json')
 def openapi_spec():
     return jsonify(load_openapi_spec())
@@ -318,12 +318,14 @@ def openapi_spec():
 
 ```yaml
 # openapi.v1.yaml
+
 openapi: 3.0.0
 info:
   title: User API
   version: 1.0.0
 
 # openapi.v2.yaml
+
 openapi: 3.0.0
 info:
   title: User API
@@ -335,7 +337,6 @@ info:
 **Example: Валидация запросов**
 
 ```python
-
 from openapi_core import validate_request
 from openapi_core.contrib.flask import FlaskOpenAPIRequest
 from openapi_core.exceptions import OpenAPIError
@@ -362,12 +363,14 @@ def validate_api_request():
 # openapi-generator generate -i openapi.yaml -g python -o ./client
 
 # Использование сгенерированного клиента
+
 from client import ApiClient, UsersApi
 
 client = ApiClient(host="https://api.example.com")
 users_api = UsersApi(client)
 
 # Автоматически типизированные методы из контракта
+
 user = users_api.get_user(user_id=123)
 users = users_api.list_users()
 new_user = users_api.create_user({
@@ -384,6 +387,7 @@ new_user = users_api.create_user({
 # Генерация: openapi-generator generate -i openapi.yaml -g python-flask -o ./server
 
 # Сгенерированный сервер имеет заглушки методов
+
 from server import UsersApi
 
 class UsersApiImpl(UsersApi):
@@ -409,7 +413,6 @@ class UsersApiImpl(UsersApi):
 **Example: Сложная JSON Schema**
 
 ```python
-
 complex_schema = {
     "type": "object",
     "properties": {
@@ -452,7 +455,6 @@ def validate_complex_data(data):
 **Example: Кастомная валидация**
 
 ```python
-
 from jsonschema import validate, ValidationError
 
 def validate_phone(validator, phone, instance, schema):
@@ -463,6 +465,7 @@ def validate_phone(validator, phone, instance, schema):
         yield ValidationError(f"{instance} is not a valid phone number")
 
 # Расширение валидатора
+
 from jsonschema.validators import extend
 CustomValidator = extend(jsonschema.Draft7Validator, {
     "phone": validate_phone
@@ -485,6 +488,7 @@ CustomValidator(schema).validate({"phone": "+1234567890"})
 ❌ **Incorrect:**
 ```python
 # Плохо: Реализация перед контрактом
+
 def get_user(user_id):
     return {"id": user_id, "name": "Иван"}
 
@@ -497,6 +501,7 @@ def get_user(user_id):
 # 1. Создать OpenAPI контракт
 # 2. Сгенерировать код
 # 3. Реализовать логику
+
 def get_user(user_id):
     return {"id": user_id, "name": "Иван"}  # Соответствует контракту
 ```
@@ -515,6 +520,7 @@ def get_user(user_id):
 ```python
 # Хорошо: Документация генерируется из контракта
 # Всегда актуальна
+
 swagger_ui = get_swaggerui_blueprint(
     '/api/docs',
     '/api/openapi.json'  # Генерируется из контракта
@@ -575,6 +581,7 @@ swagger_ui = get_swaggerui_blueprint(
 - "OpenAPI Best Practices" — лучшие практики OpenAPI
 
 ---
+
 
 
 

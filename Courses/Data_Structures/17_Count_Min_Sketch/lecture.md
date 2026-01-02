@@ -46,7 +46,6 @@ Count-Min Sketch состоит из:
 **Example: Базовая структура**
 
 ```python
-
 import hashlib
 
 class CountMinSketch:
@@ -76,6 +75,7 @@ class CountMinSketch:
         return min_count
 
 # Использование
+
 cms = CountMinSketch(width=10, depth=3)
 cms.add("apple", 5)
 cms.add("banana", 3)
@@ -87,7 +87,6 @@ print(f"Оценка частоты 'banana': {cms.estimate('banana')}")
 
 **Output:**
 ```
-
 Оценка частоты 'apple': 7
 Оценка частоты 'banana': 3
 ```
@@ -117,7 +116,6 @@ Count-Min Sketch даёт следующие гарантии:
 **Example: Влияние параметров на точность**
 
 ```python
-
 import math
 
 def calculate_parameters(epsilon, delta):
@@ -127,6 +125,7 @@ def calculate_parameters(epsilon, delta):
     return width, depth
 
 # Разные требования к точности
+
 configs = [
     (0.1, 0.01),   # ε=0.1, δ=0.01
     (0.01, 0.01),  # ε=0.01, δ=0.01
@@ -142,7 +141,6 @@ for epsilon, delta in configs:
 
 **Output:**
 ```
-
 Параметры Count-Min Sketch:
   ε=0.1, δ=0.01: width=3, depth=5, память≈0.06 KB
   ε=0.01, δ=0.01: width=28, depth=5, память≈0.55 KB
@@ -154,13 +152,14 @@ for epsilon, delta in configs:
 **Example: Сравнение с реальной частотой**
 
 ```python
-
 from collections import Counter
 
 # Реальные частоты
+
 real_frequencies = Counter(['apple', 'banana', 'apple', 'cherry', 'apple', 'banana'])
 
 # Count-Min Sketch
+
 cms = CountMinSketch(width=20, depth=3)
 for item in ['apple', 'banana', 'apple', 'cherry', 'apple', 'banana']:
     cms.add(item)
@@ -174,7 +173,6 @@ for item in ['apple', 'banana', 'cherry']:
 
 **Output:**
 ```
-
 Сравнение оценок:
   apple: реальная=3, оценка=3, разница=0
   banana: реальная=2, оценка=2, разница=0
@@ -192,7 +190,6 @@ for item in ['apple', 'banana', 'cherry']:
 **Example: Подсчёт частоты в потоке**
 
 ```python
-
 class StreamProcessor:
     """Обработчик потоковых данных с Count-Min Sketch."""
     def __init__(self):
@@ -213,6 +210,7 @@ class StreamProcessor:
         return sorted(frequencies, key=lambda x: x[1], reverse=True)[:k]
 
 # Симуляция потока
+
 processor = StreamProcessor()
 stream = ['apple', 'banana', 'apple', 'cherry', 'apple', 'banana', 'date'] * 100
 
@@ -226,7 +224,6 @@ print(f"Всего обработано: {processor.total_count}")
 
 **Output:**
 ```
-
 Топ-3 элемента (оценка): [('apple', 300), ('banana', 200), ('date', 100)]
 Всего обработано: 700
 ```
@@ -248,10 +245,10 @@ print(f"Всего обработано: {processor.total_count}")
 **Example: Сравнение памяти**
 
 ```python
-
 import sys
 
 # Точный подсчёт
+
 exact_counter = {}
 for i in range(100000):
     item = f"item_{i % 1000}"  # 1000 уникальных элементов
@@ -260,6 +257,7 @@ for i in range(100000):
 exact_memory = sys.getsizeof(exact_counter)
 
 # Count-Min Sketch
+
 cms = CountMinSketch(width=1000, depth=5)
 for i in range(100000):
     item = f"item_{i % 1000}"
@@ -276,7 +274,6 @@ print(f"Экономия: {exact_memory / cms_memory:.1f}x")
 
 **Output:**
 ```
-
 Точный подсчёт: 36.50 KB
 Count-Min Sketch: 19.53 KB
 Экономия: 1.9x
@@ -293,7 +290,6 @@ Count-Min Sketch: 19.53 KB
 **Example: Подсчёт частоты ошибок в логах**
 
 ```python
-
 class LogAnalyzer:
     """Анализатор логов с Count-Min Sketch."""
     def __init__(self):
@@ -311,6 +307,7 @@ class LogAnalyzer:
         return {error: self.cms.estimate(error) for error in error_types}
 
 # Симуляция логов
+
 analyzer = LogAnalyzer()
 logs = [
     "2024-01-01 ERROR DatabaseConnection failed",
@@ -330,7 +327,6 @@ for error, freq in frequencies.items():
 
 **Output:**
 ```
-
 Частоты ошибок:
   DatabaseConnection: 3000
   FileNotFound: 1000
@@ -341,7 +337,6 @@ for error, freq in frequencies.items():
 **Example: Подсчёт запросов по IP**
 
 ```python
-
 class TrafficMonitor:
     """Мониторинг сетевого трафика."""
     def __init__(self):
@@ -356,6 +351,7 @@ class TrafficMonitor:
         return self.cms.estimate(ip_address)
 
 # Симуляция
+
 monitor = TrafficMonitor()
 ips = ['192.168.1.1', '192.168.1.2', '192.168.1.1', '192.168.1.3'] * 100
 
@@ -370,7 +366,6 @@ for ip in ['192.168.1.1', '192.168.1.2', '192.168.1.3']:
 
 **Output:**
 ```
-
 Количество запросов по IP:
   192.168.1.1: 200
   192.168.1.2: 100
@@ -441,5 +436,6 @@ for ip in ['192.168.1.1', '192.168.1.2', '192.168.1.3']:
 - Исследуйте применение в распределённых системах
 
 ---
+
 
 

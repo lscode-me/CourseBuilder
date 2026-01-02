@@ -45,7 +45,6 @@
 **Пример:**
 
 ```sql
-
 -- ❌ Плохо
 SELECT * FROM users WHERE id = 1;
 
@@ -78,7 +77,6 @@ SELECT id, name, email FROM users WHERE id = 1;
 **Пример:**
 
 ```sql
-
 -- ❌ Плохо: N+1 queries
 -- 1 запрос для пользователей
 SELECT * FROM users;
@@ -93,7 +91,6 @@ SELECT * FROM orders WHERE user_id = 3;
 **✅ Решение: один запрос с JOIN**
 
 ```sql
-
 -- ✅ Хорошо: 1 запрос
 SELECT 
     u.id,
@@ -109,7 +106,6 @@ LEFT JOIN orders o ON u.id = o.user_id;
 **❌ Плохо (Python пример):**
 
 ```python
-
 users = db.query("SELECT * FROM users")
 for user in users:
     orders = db.query(f"SELECT * FROM orders WHERE user_id = {user.id}")
@@ -120,6 +116,7 @@ for user in users:
 
 ```python
 # Один запрос с JOIN
+
 result = db.query("""
     SELECT u.*, o.*
     FROM users u
@@ -136,7 +133,6 @@ result = db.query("""
 **❌ Без индексов:**
 
 ```sql
-
 -- Seq Scan (медленно на больших таблицах)
 SELECT * FROM users WHERE email = 'ivan@example.com';
 ```
@@ -144,7 +140,6 @@ SELECT * FROM users WHERE email = 'ivan@example.com';
 **✅ С индексами:**
 
 ```sql
-
 CREATE INDEX idx_users_email ON users(email);
 -- Index Scan (быстро)
 SELECT * FROM users WHERE email = 'ivan@example.com';
@@ -168,7 +163,6 @@ SELECT * FROM users WHERE email = 'ivan@example.com';
 **❌ Плохо: слишком сложный запрос**
 
 ```sql
-
 SELECT u.id, u.name, 
     (SELECT COUNT(*) FROM orders o WHERE o.user_id = u.id AND o.status = 'completed') AS completed_orders,
     (SELECT SUM(amount) FROM orders o WHERE o.user_id = u.id) AS total_spent,
@@ -181,7 +175,6 @@ AND EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.id AND o.order_date > CUR
 **✅ Хорошо: разбить на CTE**
 
 ```sql
-
 WITH user_orders AS (
     SELECT 
         user_id,
@@ -227,7 +220,6 @@ LEFT JOIN user_orders o ON u.id = o.user_id;
 **❌ Плохо:**
 
 ```sql
-
 -- Индекс не используется
 SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
 ```
@@ -235,7 +227,6 @@ SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
 **✅ Хорошо:**
 
 ```sql
-
 -- Функциональный индекс
 CREATE INDEX idx_users_email_lower ON users(LOWER(email));
 SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
@@ -246,7 +237,6 @@ SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
 **❌ Плохо:**
 
 ```sql
-
 -- Индекс не используется
 SELECT * FROM users WHERE email LIKE '%@example.com';
 ```
@@ -254,7 +244,6 @@ SELECT * FROM users WHERE email LIKE '%@example.com';
 **✅ Хорошо:**
 
 ```sql
-
 -- Если возможно, используйте префикс
 SELECT * FROM users WHERE email LIKE 'user%@example.com';
 -- Или полнотекстовый поиск
@@ -265,7 +254,6 @@ SELECT * FROM users WHERE email LIKE 'user%@example.com';
 **❌ Плохо:**
 
 ```sql
-
 -- Может вернуть миллионы строк
 SELECT * FROM orders ORDER BY order_date;
 ```
@@ -273,7 +261,6 @@ SELECT * FROM orders ORDER BY order_date;
 **✅ Хорошо:**
 
 ```sql
-
 -- Ограничение результата
 SELECT * FROM orders ORDER BY order_date LIMIT 100;
 ```
@@ -283,7 +270,6 @@ SELECT * FROM orders ORDER BY order_date LIMIT 100;
 **❌ Плохо:**
 
 ```sql
-
 -- Может пропустить NULL значения
 SELECT * FROM users WHERE age != 25;
 ```
@@ -291,7 +277,6 @@ SELECT * FROM users WHERE age != 25;
 **✅ Хорошо:**
 
 ```sql
-
 -- Явная обработка NULL
 SELECT * FROM users WHERE age IS NULL OR age != 25;
 ```
@@ -305,7 +290,6 @@ SELECT * FROM users WHERE age IS NULL OR age != 25;
 **❌ Плохо:**
 
 ```sql
-
 -- CROSS JOIN на больших таблицах
 SELECT * FROM users CROSS JOIN orders;
 ```
@@ -313,7 +297,6 @@ SELECT * FROM users CROSS JOIN orders;
 **✅ Хорошо:**
 
 ```sql
-
 -- Правильные JOIN с условиями
 SELECT * FROM users u
 INNER JOIN orders o ON u.id = o.user_id;
@@ -324,7 +307,6 @@ INNER JOIN orders o ON u.id = o.user_id;
 **❌ Плохо:**
 
 ```sql
-
 SELECT 
     (SELECT COUNT(*) FROM orders WHERE user_id = u.id) AS orders_count,
     (SELECT SUM(amount) FROM orders WHERE user_id = u.id) AS total
@@ -334,7 +316,6 @@ FROM users u;
 **✅ Хорошо:**
 
 ```sql
-
 SELECT 
     u.id,
     COUNT(o.id) AS orders_count,
@@ -349,7 +330,6 @@ GROUP BY u.id;
 **❌ Плохо:**
 
 ```sql
-
 SELECT 
     user_id,
     COUNT(*) AS order_count
@@ -368,7 +348,6 @@ HAVING COUNT(*) > (
 **✅ Хорошо:**
 
 ```sql
-
 WITH user_order_counts AS (
     SELECT user_id, COUNT(*) AS order_count
     FROM orders
@@ -388,7 +367,6 @@ WHERE order_count > (SELECT AVG(order_count) FROM user_order_counts);
 **❌ Проблема:**
 
 ```sql
-
 -- Если подзапрос вернёт NULL, результат может быть пустым
 SELECT * FROM users
 WHERE id NOT IN (SELECT user_id FROM orders);
@@ -398,7 +376,6 @@ WHERE id NOT IN (SELECT user_id FROM orders);
 **✅ Решение:**
 
 ```sql
-
 -- Используйте NOT EXISTS
 SELECT * FROM users u
 WHERE NOT EXISTS (
@@ -412,7 +389,6 @@ WHERE NOT EXISTS (
 **❌ Плохо:**
 
 ```sql
-
 SELECT * FROM users WHERE email = NULL;  -- Не работает!
 SELECT * FROM users WHERE email != NULL;  -- Не работает!
 ```
@@ -420,7 +396,6 @@ SELECT * FROM users WHERE email != NULL;  -- Не работает!
 **✅ Хорошо:**
 
 ```sql
-
 SELECT * FROM users WHERE email IS NULL;
 SELECT * FROM users WHERE email IS NOT NULL;
 ```
@@ -430,7 +405,6 @@ SELECT * FROM users WHERE email IS NOT NULL;
 **Проблема с COUNT:**
 
 ```sql
-
 -- COUNT(*) считает все строки, включая NULL
 SELECT COUNT(*) FROM users;  -- Все строки
 
@@ -447,7 +421,6 @@ SELECT COUNT(email) FROM users;  -- Только строки с email
 **❌ Плохо:**
 
 ```sql
-
 -- Индекс не используется
 SELECT * FROM orders 
 WHERE DATE(order_date) = '2024-01-01';
@@ -456,7 +429,6 @@ WHERE DATE(order_date) = '2024-01-01';
 **✅ Хорошо:**
 
 ```sql
-
 -- Использует индекс
 SELECT * FROM orders 
 WHERE order_date >= '2024-01-01' 
@@ -468,7 +440,6 @@ WHERE order_date >= '2024-01-01'
 **❌ Плохо:**
 
 ```sql
-
 -- Может не использовать индекс
 SELECT * FROM orders 
 WHERE EXTRACT(YEAR FROM order_date) = 2024;
@@ -477,7 +448,6 @@ WHERE EXTRACT(YEAR FROM order_date) = 2024;
 **✅ Хорошо:**
 
 ```sql
-
 -- Использует индекс
 SELECT * FROM orders 
 WHERE order_date >= '2024-01-01' 
@@ -493,7 +463,6 @@ WHERE order_date >= '2024-01-01'
 **❌ Плохо:**
 
 ```sql
-
 -- Ошибка: агрегаты нельзя использовать в WHERE
 SELECT user_id, COUNT(*) 
 FROM orders 
@@ -504,7 +473,6 @@ GROUP BY user_id;
 **✅ Хорошо:**
 
 ```sql
-
 -- Используйте HAVING
 SELECT user_id, COUNT(*) 
 FROM orders 
@@ -517,7 +485,6 @@ HAVING COUNT(*) > 5;
 **❌ Избыточный DISTINCT:**
 
 ```sql
-
 -- DISTINCT не нужен, GROUP BY уже обеспечивает уникальность
 SELECT DISTINCT user_id, COUNT(*)
 FROM orders
@@ -527,7 +494,6 @@ GROUP BY user_id;
 **✅ Хорошо:**
 
 ```sql
-
 SELECT user_id, COUNT(*)
 FROM orders
 GROUP BY user_id;
@@ -542,7 +508,6 @@ GROUP BY user_id;
 **❌ Плохо:**
 
 ```sql
-
 -- Старый синтаксис, не рекомендуется
 SELECT * 
 FROM users u, orders o
@@ -552,7 +517,6 @@ WHERE u.id = o.user_id;
 **✅ Хорошо:**
 
 ```sql
-
 -- Явный JOIN
 SELECT * 
 FROM users u
@@ -564,7 +528,6 @@ INNER JOIN orders o ON u.id = o.user_id;
 **❌ Плохо:**
 
 ```sql
-
 -- Забыли условие JOIN
 SELECT * 
 FROM users u
@@ -574,7 +537,6 @@ JOIN orders o;  -- CROSS JOIN! Огромное количество строк
 **✅ Хорошо:**
 
 ```sql
-
 SELECT * 
 FROM users u
 INNER JOIN orders o ON u.id = o.user_id;
@@ -589,7 +551,6 @@ INNER JOIN orders o ON u.id = o.user_id;
 **❌ Плохо:**
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
@@ -605,7 +566,6 @@ INNER JOIN orders o ON u.id = o.user_id;
 **✅ Хорошо:**
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
@@ -619,7 +579,6 @@ CREATE INDEX idx_orders_user_id ON orders(user_id);  -- Индекс!
 **❌ Плохо:**
 
 ```sql
-
 -- Вычисление повторяется для каждой строки
 SELECT 
     name,
@@ -631,7 +590,6 @@ FROM users;
 **✅ Хорошо:**
 
 ```sql
-
 -- Вычисление один раз
 SELECT 
     name,
@@ -652,14 +610,12 @@ FROM (
 **❌ Плохо:**
 
 ```sql
-
 SELECT u.id,u.name,o.amount FROM users u JOIN orders o ON u.id=o.user_id WHERE u.age>25 ORDER BY o.amount DESC;
 ```
 
 **✅ Хорошо:**
 
 ```sql
-
 SELECT 
     u.id,
     u.name,
@@ -675,7 +631,6 @@ ORDER BY o.amount DESC;
 **❌ Плохо:**
 
 ```sql
-
 SELECT 
     u.id AS a,
     u.name AS b,
@@ -687,7 +642,6 @@ JOIN orders o ON u.id = o.user_id;
 **✅ Хорошо:**
 
 ```sql
-
 SELECT 
     u.id AS user_id,
     u.name AS user_name,
@@ -701,7 +655,6 @@ INNER JOIN orders o ON u.id = o.user_id;
 **❌ Плохо:**
 
 ```sql
-
 -- Сложная логика без объяснений
 SELECT ... FROM ... WHERE ...;
 ```
@@ -709,7 +662,6 @@ SELECT ... FROM ... WHERE ...;
 **✅ Хорошо:**
 
 ```sql
-
 -- Найти пользователей с заказами больше среднего
 -- Используем подзапрос для вычисления среднего
 WITH avg_order AS (
@@ -793,5 +745,6 @@ WHERE o.amount > ao.avg_amount;
 - [PostgreSQL Performance](https://www.postgresql.org/docs/current/performance-tips.html) — советы по производительности
 
 ---
+
 
 

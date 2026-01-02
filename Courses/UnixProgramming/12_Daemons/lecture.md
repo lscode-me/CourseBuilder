@@ -33,7 +33,6 @@
 **Демон (daemon)** — фоновый процесс без управляющего терминала, работающий непрерывно.
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                    User Space                           │
 ├─────────────────────────────────────────────────────────┤
@@ -47,7 +46,6 @@
 │               No controlling terminal                   │
 │               Parent: init/systemd (PID 1)              │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Характеристики демона
@@ -138,7 +136,6 @@ if __name__ == "__main__":
     import time
     while True:
         time.sleep(60)
-
 ```
 
 ### 2.2 Современный подход с python-daemon
@@ -190,7 +187,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ---
@@ -200,7 +196,6 @@ if __name__ == "__main__":
 ### 3.1 Работа с PID файлами
 
 ```python
-
 import os
 import fcntl
 import sys
@@ -272,7 +267,6 @@ class PIDFile:
 with PIDFile("/var/run/mydaemon.pid"):
     # Код демона
     pass
-
 ```
 
 ---
@@ -282,7 +276,6 @@ with PIDFile("/var/run/mydaemon.pid"):
 ### 4.1 syslog модуль
 
 ```python
-
 import syslog
 
 # Открыть соединение с syslog
@@ -299,13 +292,11 @@ syslog.syslog(syslog.LOG_ERR, "Error occurred")
 
 # Закрыть соединение
 syslog.closelog()
-
 ```
 
 ### 4.2 logging с SysLogHandler
 
 ```python
-
 import logging
 import logging.handlers
 
@@ -333,7 +324,6 @@ def setup_logging(name, level=logging.INFO):
 logger = setup_logging('mydaemon')
 logger.info("Daemon started")
 logger.error("Something went wrong", exc_info=True)
-
 ```
 
 ### 4.3 Уровни syslog
@@ -356,7 +346,6 @@ logger.error("Something went wrong", exc_info=True)
 ### 5.1 Graceful shutdown
 
 ```python
-
 import signal
 import sys
 import threading
@@ -396,13 +385,11 @@ while not shutdown.should_shutdown():
 
 # Cleanup
 print("Cleaning up...")
-
 ```
 
 ### 5.2 Reload конфигурации по SIGHUP
 
 ```python
-
 import signal
 import json
 import threading
@@ -445,7 +432,6 @@ class ConfigurableDaemon:
             
             # Работа
             time.sleep(interval)
-
 ```
 
 ---
@@ -471,7 +457,6 @@ rc_pre() {
 }
 
 rc_cmd $1
-
 ```
 
 ```python
@@ -516,7 +501,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ### 6.2 systemd unit для Linux
@@ -544,7 +528,6 @@ PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 ```python
@@ -586,7 +569,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ---
@@ -705,7 +687,6 @@ class Daemon:
         self.release_pidfile()
         self.logger.info("Daemon stopped")
 
-
 class MyDaemon(Daemon):
     """Пример конкретного демона."""
     
@@ -717,7 +698,6 @@ class MyDaemon(Daemon):
         """Реальная работа."""
         self.logger.info("Processing tasks...")
         # Ваш код здесь
-
 
 def main():
     parser = argparse.ArgumentParser(description='My Daemon')
@@ -732,10 +712,8 @@ def main():
     daemon = MyDaemon(args.config, args.pidfile)
     daemon.run()
 
-
 if __name__ == "__main__":
     main()
-
 ```
 
 ---

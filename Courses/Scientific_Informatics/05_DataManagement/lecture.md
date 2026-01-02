@@ -145,7 +145,6 @@ for seq_id, seq in sequences.items():
 
 **Output:**
 ```
-
 FASTA sequences:
 seq1: ATGCGATCGATCGATCG...
 seq2: GCTAGCTAGCTAGCTA...
@@ -177,7 +176,6 @@ print("BAM используется для хранения выравниван
 **Структура директорий для научных данных:**
 
 ```
-
 data/
 ├── raw/              # Исходные данные
 │   ├── experiment_001/
@@ -192,7 +190,6 @@ data/
 **Пример: Управление версиями данных**
 
 ```python
-
 from pathlib import Path
 import json
 from datetime import datetime
@@ -250,7 +247,6 @@ print(f"Metadata: {meta}")
 
 **Output:**
 ```
-
 Data:    value
 0      1
 1      2
@@ -263,7 +259,6 @@ Metadata: {'researcher': 'Dr. Smith', 'version': '1.0', 'created': '2024-01-15T1
 **Структура метаданных версии:**
 
 ```python
-
 version_metadata = {
     'version': '1.0.0',
     'created': '2024-01-15T10:00:00',
@@ -284,7 +279,6 @@ print(json.dumps(version_metadata, indent=2))
 
 **Output:**
 ```
-
 Version metadata structure:
 {
   "version": "1.0.0",
@@ -312,7 +306,6 @@ Version metadata structure:
 **Пример: Базовые графики**
 
 ```python
-
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -335,7 +328,6 @@ print("Matplotlib plot created")
 
 **Output:**
 ```
-
 Matplotlib plot created
 ```
 
@@ -363,7 +355,6 @@ print("Error bar plot created")
 
 **Output:**
 ```
-
 Error bar plot created
 ```
 
@@ -374,7 +365,6 @@ Error bar plot created
 **Пример: Статистические графики**
 
 ```python
-
 import seaborn as sns
 
 # Настройка стиля
@@ -401,7 +391,6 @@ print("Seaborn boxplot created")
 
 **Output:**
 ```
-
 Seaborn boxplot created
 ```
 
@@ -427,7 +416,6 @@ print("Correlation heatmap created")
 
 **Output:**
 ```
-
 Correlation heatmap created
 ```
 
@@ -438,7 +426,6 @@ Correlation heatmap created
 **Пример: Интерактивный график**
 
 ```python
-
 import plotly.graph_objects as go
 import plotly.express as px
 
@@ -467,7 +454,6 @@ print("Plotly interactive plot created")
 
 **Output:**
 ```
-
 Plotly interactive plot created
 ```
 
@@ -509,7 +495,6 @@ print("3D plot created")
 
 **Output:**
 ```
-
 3D plot created
 ```
 
@@ -532,7 +517,6 @@ print("3D plot created")
 **Пример: Выбор формата**
 
 ```python
-
 def choose_data_format(data_size_mb, has_metadata, data_type):
     """Выбор формата данных на основе характеристик"""
     if data_size_mb < 100 and not has_metadata:
@@ -557,7 +541,6 @@ print(f"DNA sequence: {choose_data_format(200, False, 'sequence')}")
 
 **Output:**
 ```
-
 Small table: CSV
 Large array: HDF5
 DNA sequence: FASTA
@@ -611,7 +594,6 @@ print("Scientific visualization created")
 
 **Output:**
 ```
-
 Scientific visualization created
 ```
 
@@ -644,7 +626,6 @@ print("Color scheme applied")
 
 **Output:**
 ```
-
 Color scheme applied
 ```
 

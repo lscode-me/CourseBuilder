@@ -33,11 +33,12 @@
 
 ```sh
 # Скачивание install образа для amd64 (версия 7.4)
+
 $ curl -O https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/install74.img
 
 # Или через ftp (встроенный в OpenBSD)
-$ ftp https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/install74.img
 
+$ ftp https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/install74.img
 ```
 
 **Типы образов:**
@@ -55,16 +56,18 @@ OpenBSD подписывает все образы криптографичес�
 
 ```sh
 # Скачать файл с контрольными суммами
+
 $ curl -O https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/SHA256
 
 # Проверить контрольную сумму
+
 $ sha256 install74.img
 SHA256 (install74.img) = abc123...
 
 # Сравнить с файлом SHA256
+
 $ grep install74.img SHA256
 SHA256 (install74.img) = abc123...
-
 ```
 
 > **🔒 Security:**  
@@ -76,6 +79,7 @@ SHA256 (install74.img) = abc123...
 
 ```sh
 # Определить устройство USB (ОСТОРОЖНО!)
+
 $ dmesg | tail
 sd1 at scsibus2 targ 1 lun 0: <USB, Flash Drive, 1.00>
 
@@ -87,14 +91,16 @@ sd1 at scsibus2 targ 1 lun 0: <USB, Flash Drive, 1.00>
 
 ```sh
 # Найти диск
+
 $ diskutil list
 
 # Отмонтировать
+
 $ diskutil unmountDisk /dev/disk2
 
 # Записать образ
-$ sudo dd if=install74.img of=/dev/rdisk2 bs=1m
 
+$ sudo dd if=install74.img of=/dev/rdisk2 bs=1m
 ```
 
 > **⚠️ Warning:**  
@@ -106,29 +112,34 @@ $ sudo dd if=install74.img of=/dev/rdisk2 bs=1m
 
 ```sh
 # Создание VM
+
 VBoxManage createvm --name "OpenBSD" --ostype OpenBSD_64 --register
 
 # Настройка параметров
+
 VBoxManage modifyvm "OpenBSD" --memory 2048 --cpus 2
 VBoxManage modifyvm "OpenBSD" --nic1 bridged --bridgeadapter1 en0
 
 # Создание диска
+
 VBoxManage createhd --filename OpenBSD.vdi --size 20480
 
 # Подключение диска и ISO
+
 VBoxManage storagectl "OpenBSD" --name "SATA" --add sata
 VBoxManage storageattach "OpenBSD" --storagectl "SATA" --port 0 --type hdd --medium OpenBSD.vdi
 VBoxManage storageattach "OpenBSD" --storagectl "SATA" --port 1 --type dvddrive --medium install74.iso
-
 ```
 
 **QEMU/KVM:**
 
 ```sh
 # Создание диска
+
 qemu-img create -f qcow2 openbsd.qcow2 20G
 
 # Запуск установки
+
 qemu-system-x86_64 \
     -enable-kvm \
     -m 2048 \
@@ -137,7 +148,6 @@ qemu-system-x86_64 \
     -cdrom install74.iso \
     -drive file=openbsd.qcow2,format=qcow2 \
     -boot d
-
 ```
 
 ---
@@ -149,19 +159,15 @@ qemu-system-x86_64 \
 При загрузке вы увидите:
 
 ```
-
 >> OpenBSD/amd64 BOOT 3.52
 boot>
-
 ```
 
 Просто нажмите Enter для продолжения. Через несколько секунд появится:
 
 ```
-
 Welcome to the OpenBSD/amd64 7.4 installation program.
 (I)nstall, (U)pgrade, (A)utoinstall or (S)hell?
-
 ```
 
 Введите `I` для новой установки.
@@ -171,9 +177,7 @@ Welcome to the OpenBSD/amd64 7.4 installation program.
 **Раскладка клавиатуры:**
 
 ```
-
 Choose your keyboard layout ('?' or 'L' for list) [default]
-
 ```
 
 Для русской раскладки введите `ru`, для стандартной US — просто Enter.
@@ -181,9 +185,7 @@ Choose your keyboard layout ('?' or 'L' for list) [default]
 **Имя хоста:**
 
 ```
-
 System hostname? (short form, e.g. 'foo') puffy
-
 ```
 
 Введите короткое имя, например `puffy` или `server1`.
@@ -191,46 +193,36 @@ System hostname? (short form, e.g. 'foo') puffy
 ### 2.3 Настройка сети
 
 ```
-
 Available network interfaces are: em0 vlan0
 Which network interface do you wish to configure? (or 'done') [em0]
-
 ```
 
 **Автоматическая настройка (DHCP):**
 
 ```
-
 IPv4 address for em0? (or 'autoconf' or 'none') [autoconf]
-
 ```
 
 **Статический IP:**
 
 ```
-
 IPv4 address for em0? (or 'autoconf' or 'none') 192.168.1.100
 Netmask for em0? [255.255.255.0]
-
 ```
 
 **DNS и шлюз:**
 
 ```
-
 Default IPv4 route? (IPv4 address or 'none') 192.168.1.1
 DNS domain name? (e.g. 'example.com') [my.domain] home.local
 DNS nameservers? (IP address list or 'none') [none] 8.8.8.8 1.1.1.1
-
 ```
 
 ### 2.4 Пароль root
 
 ```
-
 Password for root account? (will not echo)
 Password for root account? (again)
-
 ```
 
 > **🔒 Security:**  
@@ -239,9 +231,7 @@ Password for root account? (again)
 ### 2.5 Запуск sshd
 
 ```
-
 Start sshd(8) by default? [yes]
-
 ```
 
 Ответьте `yes` для удалённого доступа.
@@ -249,9 +239,7 @@ Start sshd(8) by default? [yes]
 ### 2.6 X Window System
 
 ```
-
 Do you expect to run the X Window System? [yes]
-
 ```
 
 - `yes` — если планируете графический интерфейс
@@ -260,11 +248,9 @@ Do you expect to run the X Window System? [yes]
 ### 2.7 Создание пользователя
 
 ```
-
 Setup a user? (enter a lower-case loginname, or 'no') [no] admin
 Full name for user admin? [admin] System Administrator
 Password for user admin? (will not echo)
-
 ```
 
 > **💡 Pro Tip:**  
@@ -273,9 +259,7 @@ Password for user admin? (will not echo)
 ### 2.8 Разрешить root SSH
 
 ```
-
 Allow root ssh login? (yes, no, prohibit-password) [no]
-
 ```
 
 - `no` — рекомендуется (входить через обычного пользователя, затем `doas`)
@@ -289,27 +273,21 @@ Allow root ssh login? (yes, no, prohibit-password) [no]
 ### 3.1 Выбор диска
 
 ```
-
 Available disks are: sd0 sd1
 Which disk is the root disk? ('?' for details) [sd0]
-
 ```
 
 Введите `?` для просмотра информации о дисках:
 
 ```
-
 sd0: NVMe, SAMSUNG, 1TB (1953525168 512-byte sectors)
 sd1: USB, Flash, 32GB (62533296 512-byte sectors)
-
 ```
 
 ### 3.2 Инициализация диска
 
 ```
-
 Use (W)hole disk MBR, whole disk (G)PT, (O)penBSD area, or (E)dit? [GPT]
-
 ```
 
 - **GPT** — рекомендуется для UEFI и дисков >2TB
@@ -321,15 +299,12 @@ Use (W)hole disk MBR, whole disk (G)PT, (O)penBSD area, or (E)dit? [GPT]
 ### 3.3 Схема разделов
 
 ```
-
 Use (A)uto layout, (E)dit auto layout, or create (C)ustom layout? [a]
-
 ```
 
 **Auto layout** создаст стандартную схему:
 
 ```
-
 /dev/sd0a    /           1G
 /dev/sd0b    swap        RAM * 2
 /dev/sd0d    /tmp        2G
@@ -340,7 +315,6 @@ Use (A)uto layout, (E)dit auto layout, or create (C)ustom layout? [a]
 /dev/sd0i    /usr/src    2G
 /dev/sd0j    /usr/obj    4G
 /dev/sd0k    /home       остаток
-
 ```
 
 ### 3.4 Кастомная разметка
@@ -348,10 +322,8 @@ Use (A)uto layout, (E)dit auto layout, or create (C)ustom layout? [a]
 Для ручной настройки выберите `C`:
 
 ```
-
 Label editor (enter '?' for help at any prompt)
 sd0>
-
 ```
 
 Полезные команды в редакторе:
@@ -369,7 +341,6 @@ sd0>
 **Пример создания раздела:**
 
 ```
-
 sd0> a a
 offset: [64]
 size: [1953525104] 2G
@@ -377,13 +348,11 @@ FS type: [4.2BSD]
 mount point: [none] /
 sd0*> w
 sd0> q
-
 ```
 
 ### 3.5 Рекомендуемая схема для сервера
 
 ```
-
 Раздел    Точка монтирования    Размер    Назначение
 ───────────────────────────────────────────────────────
 a         /                     2G        Корневая система
@@ -393,7 +362,6 @@ e         /var                  10G       Логи, почта, базы
 f         /usr                  6G        Системные программы
 g         /usr/local            10G       Пакеты
 h         /home                 остаток   Данные пользователей
-
 ```
 
 > **💡 Pro Tip:**  
@@ -406,9 +374,7 @@ h         /home                 остаток   Данные пользоват
 ### 4.1 Источник установки
 
 ```
-
 Location of sets? (cd0 disk http nfs or 'done') [cd0]
-
 ```
 
 - **cd0** — с CD/DVD или ISO
@@ -420,7 +386,6 @@ Location of sets? (cd0 disk http nfs or 'done') [cd0]
 ### 4.2 Наборы файлов (Sets)
 
 ```
-
 Set name(s)? (or 'abort' or 'done') [done]
 
     [X] bsd           - ядро
@@ -436,7 +401,6 @@ Set name(s)? (or 'abort' or 'done') [done]
     [ ] xshare74.tgz  - общие файлы X
 
 Set name(s)? (or 'abort' or 'done') [done]
-
 ```
 
 **Минимальный сервер:**
@@ -449,24 +413,23 @@ Set name(s)? (or 'abort' or 'done') [done]
 
 ```
 # Убрать ненужные наборы
+
 Set name(s)? -game74.tgz -x*
 
 # Добавить нужные
-Set name(s)? +xbase74.tgz
 
+Set name(s)? +xbase74.tgz
 ```
 
 ### 4.3 Процесс установки
 
 ```
-
 Installing bsd          100% |**************************|  24.2 MB    00:02
 Installing bsd.mp       100% |**************************|  24.3 MB    00:02
 Installing bsd.rd       100% |**************************|  4.39 MB    00:00
 Installing base74.tgz   100% |**************************|   297 MB    00:45
 Installing comp74.tgz   100% |**************************|  74.2 MB    00:12
 Installing man74.tgz    100% |**************************|  8.92 MB    00:01
-
 ```
 
 ---
@@ -476,9 +439,7 @@ Installing man74.tgz    100% |**************************|  8.92 MB    00:01
 ### 5.1 Часовой пояс
 
 ```
-
 What timezone are you in? ('?' for list) [US/Eastern]
-
 ```
 
 Для России:
@@ -489,15 +450,12 @@ What timezone are you in? ('?' for list) [US/Eastern]
 - `Asia/Vladivostok` — Владивосток
 
 ```
-
 What timezone are you in? Europe/Moscow
-
 ```
 
 ### 5.2 Завершающие шаги
 
 ```
-
 Saving configuration files... done.
 Making all device nodes... done.
 Multiprocessor machine; using bsd.mp instead of bsd.
@@ -508,7 +466,6 @@ When you login to your new system the first time, please read your mail
 using the 'mail' command.
 
 Exit to (S)hell, (H)alt or (R)eboot? [reboot]
-
 ```
 
 Выберите `R` для перезагрузки.
@@ -522,17 +479,14 @@ Exit to (S)hell, (H)alt or (R)eboot? [reboot]
 После перезагрузки вы увидите:
 
 ```
-
 >> OpenBSD/amd64 BOOT 3.52
 boot>
 booting hd0a:/bsd: ...
-
 ```
 
 Затем приглашение входа:
 
 ```
-
 OpenBSD/amd64 (puffy.home.local) (ttyC0)
 
 login:
@@ -543,14 +497,12 @@ login:
 После первого входа прочитайте системное сообщение:
 
 ```sh
-
 $ mail
 Mail version 8.1.2 01/15/2001.  Type ? for help.
 "/var/mail/root": 1 message 1 new
 >N  1 root@puffy.home.local  Mon Dec  1 12:00   18/661   Welcome to OpenBSD
 
 & 1
-
 ```
 
 Это письмо содержит важную информацию о системе.
@@ -560,9 +512,7 @@ Mail version 8.1.2 01/15/2001.  Type ? for help.
 Самый важный man после установки:
 
 ```sh
-
 $ man afterboot
-
 ```
 
 Этот документ описывает все шаги для настройки системы.
@@ -581,7 +531,6 @@ Checking for available patches... done.
 Installing patch 001_wifi... done.
 Installing patch 002_libcrypto... done.
 Relinking to create unique kernel... done.
-
 ```
 
 > **⚠️ Warning:**  
@@ -599,26 +548,26 @@ Relinking to create unique kernel... done.
 Теперь пользователи группы `wheel` могут выполнять команды от root:
 
 ```sh
-
 $ doas whoami
 Password:
 root
-
 ```
 
 **Полезные настройки doas.conf:**
 
 ```sh
 # Пользователи wheel могут выполнять любые команды
+
 permit persist :wheel
 
 # Конкретному пользователю без пароля для определённых команд
+
 permit nopass admin cmd /sbin/reboot
 permit nopass admin cmd /sbin/halt
 
 # Сохранять переменные окружения
-permit persist keepenv :wheel
 
+permit persist keepenv :wheel
 ```
 
 ### 7.3 Настройка пакетного менеджера
@@ -644,7 +593,6 @@ htop-3.2.2: ok
 git-2.42.0: ok
 curl-8.4.0: ok
 wget-1.21.4: ok
-
 ```
 
 ---
@@ -655,23 +603,24 @@ wget-1.21.4: ok
 
 ```sh
 # На клиентской машине (не на сервере)
+
 $ ssh-keygen -t ed25519 -C "admin@workstation"
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/home/admin/.ssh/id_ed25519):
 Enter passphrase (empty for no passphrase):
 Your public key has been saved in /home/admin/.ssh/id_ed25519.pub
-
 ```
 
 ### 8.2 Копирование ключа на сервер
 
 ```sh
 # Скопировать ключ на OpenBSD сервер
+
 $ ssh-copy-id admin@192.168.1.100
 
 # Или вручную
-$ cat ~/.ssh/id_ed25519.pub | ssh admin@192.168.1.100 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
+$ cat ~/.ssh/id_ed25519.pub | ssh admin@192.168.1.100 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 ```
 
 ### 8.3 Усиление безопасности SSH
@@ -682,27 +631,30 @@ $ cat ~/.ssh/id_ed25519.pub | ssh admin@192.168.1.100 "mkdir -p ~/.ssh && cat >>
 # doas vim /etc/ssh/sshd_config
 
 # Запретить вход root
+
 PermitRootLogin no
 
 # Только аутентификация по ключам
+
 PasswordAuthentication no
 PubkeyAuthentication yes
 
 # Ограничить попытки входа
+
 MaxAuthTries 3
 
 # Отключить X11 forwarding если не нужен
-X11Forwarding no
 
+X11Forwarding no
 ```
 
 Перезапустить sshd:
 
 ```sh
 # doas rcctl restart sshd
-sshd(ok)
-sshd(ok)
 
+sshd(ok)
+sshd(ok)
 ```
 
 ---
@@ -723,11 +675,12 @@ sshd(ok)
 
 ```sh
 # Проверить доступные интерфейсы
+
 $ ifconfig
 
 # Посмотреть сообщения ядра о сети
-$ dmesg | grep -i net
 
+$ dmesg | grep -i net
 ```
 
 Если сетевая карта не определилась:
@@ -739,6 +692,7 @@ $ dmesg | grep -i net
 
 ```sh
 # Проверить использование
+
 $ df -h
 Filesystem     Size    Used   Avail Capacity  Mounted on
 /dev/sd0a      1.0G    890M    60M    94%    /
@@ -769,11 +723,12 @@ Filesystem     Size    Used   Avail Capacity  Mounted on
 
 ```sh
 # Скачать образ для arm64
+
 $ curl -O https://cdn.openbsd.org/pub/OpenBSD/7.4/arm64/miniroot74.img
 
 # Записать на SD карту
-$ dd if=miniroot74.img of=/dev/sdX bs=1M
 
+$ dd if=miniroot74.img of=/dev/sdX bs=1M
 ```
 
 ### 10.2 AWS/Cloud
@@ -787,6 +742,7 @@ OpenBSD доступен как AMI в AWS:
 
 ```
 # При разметке диска выберите:
+
 Use (W)hole disk MBR, whole disk (G)PT, (O)penBSD area, or (E)dit? O
 
 # Это установит OpenBSD в существующий раздел
@@ -845,6 +801,7 @@ Use (W)hole disk MBR, whole disk (G)PT, (O)penBSD area, or (E)dit? O
 - [arm64 Platform](https://www.openbsd.org/arm64.html)
 
 ---
+
 
 
 

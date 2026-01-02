@@ -55,21 +55,27 @@ ZFS (Zettabyte File System) была революционной файловой
 
 ```bash
 # Создание ZFS pool
+
 zpool create tank mirror /dev/sda /dev/sdb
 
 # Создание файловой системы
+
 zfs create tank/documents
 
 # Создание snapshot
+
 zfs snapshot tank/documents@backup1
 
 # Клонирование snapshot
+
 zfs clone tank/documents@backup1 tank/documents-clone
 
 # Проверка целостности
+
 zfs scrub tank
 
 # Информация о pool
+
 zpool status tank
 zfs list
 ```
@@ -102,6 +108,7 @@ Solaris Zones были одной из первых реализаций кон�
 
 ```bash
 # Создание zone
+
 zonecfg -z myzone
 zonecfg:myzone> create
 zonecfg:myzone> set zonepath=/zones/myzone
@@ -110,9 +117,11 @@ zonecfg:myzone> commit
 zonecfg:myzone> exit
 
 # Установка zone
+
 zoneadm -z myzone install
 
 # Запуск zone
+
 zoneadm -z myzone boot
 ```
 
@@ -165,7 +174,6 @@ Solaris была спроектирована для масштабирован�
 
 **TCP/IP стек:**
 ```c
-
 // BSD sockets API (стал стандартом)
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -211,10 +219,12 @@ connect(sockfd, (struct sockaddr*)&addr, sizeof(addr));
 
 ```bash
 # Ports system для установки ПО
+
 cd /usr/ports/www/nginx
 make install clean
 
 # Jail (контейнеры)
+
 jail -c name=myjail path=/jails/myjail \
      command=/bin/sh
 
@@ -341,6 +351,7 @@ RAID (Redundant Array of Independent Disks) был одной из ключев�
 
 ```bash
 # Solaris Volume Manager
+
 metainit d10 1 1 c0t0d0s0
 metainit d20 1 1 c0t1d0s0
 metainit d0 -m d10
@@ -361,7 +372,6 @@ metattach d0 d20  # Mirror
 # Высокая доступность через кластеризацию
 # Автоматический failover при отказе узла
 # Shared storage между узлами
-
 ```
 
 **Резервное копирование:**
@@ -376,6 +386,7 @@ metattach d0 d20  # Mirror
 
 ```bash
 # Автоматические snapshots
+
 zfs set snapdir=visible tank/documents
 zfs snapshot -r tank/documents@$(date +%Y%m%d)
 
@@ -391,9 +402,11 @@ zfs send tank/documents@snapshot1 | \
 
 ```bash
 # Solaris prstat (аналог top)
+
 prstat -a
 
 # iostat для I/O статистики
+
 iostat -xn 1
 
 # DTrace для детального анализа
@@ -545,6 +558,7 @@ dtrace -n 'syscall:::entry { @[execname] = count(); }'
 - История развития BSD и Solaris
 
 ---
+
 
 
 

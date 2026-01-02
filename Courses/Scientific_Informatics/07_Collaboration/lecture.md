@@ -67,7 +67,6 @@
 **Пример: Структура Git репозитория**
 
 ```
-
 scientific-project/
 ├── .git/
 ├── data/
@@ -195,13 +194,11 @@ print("DVC позволяет версионировать большие фай
 pip install -r requirements.txt
 
 ```
-
 ## Использование
 ```bash
 python scripts/analyze.py --input data/raw/ --output results/
 
 ```
-
 ## Структура проекта
 - `data/` — данные
 - `code/` — код анализа
@@ -245,7 +242,6 @@ print(json.dumps(reproducibility_config, indent=2))
 
 **Output:**
 ```
-
 Reproducibility Configuration:
 {
   "code_version": "1.0.0",
@@ -272,7 +268,6 @@ Reproducibility Configuration:
 **Best practices:**
 
 ```python
-
 def analyze_experimental_data(data_path, output_path, random_seed=42):
     """
     Анализ экспериментальных данных.
@@ -325,7 +320,6 @@ print("Function documented with docstring")
 
 **Output:**
 ```
-
 Function documented with docstring
 ```
 
@@ -352,7 +346,6 @@ Function documented with docstring
 **Пример: Структура для Open Science**
 
 ```python
-
 open_science_structure = {
     'data': {
         'repository': 'Zenodo / Figshare',
@@ -376,7 +369,6 @@ print(json.dumps(open_science_structure, indent=2))
 
 **Output:**
 ```
-
 Open Science Structure:
 {
   "data": {
@@ -408,7 +400,6 @@ Open Science Structure:
 **Баланс открытости и закрытости:**
 
 ```python
-
 class ResearchOpenness:
     """Управление открытостью исследования"""
     
@@ -444,7 +435,6 @@ print(f"Openness: {summary['openness_percentage']:.1f}%")
 
 **Output:**
 ```
-
 Openness: 66.7%
 ```
 

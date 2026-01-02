@@ -46,7 +46,6 @@
 **Example: Упрощённая реализация LRU Cache**
 
 ```python
-
 from collections import OrderedDict
 
 class LRUCache:
@@ -78,6 +77,7 @@ class LRUCache:
         self.cache[key] = value
 
 # Использование
+
 cache = LRUCache(capacity=3)
 cache.put('a', 1)
 cache.put('b', 2)
@@ -92,7 +92,6 @@ print(f"Получено 'c': {cache.get('c')}")
 
 **Output:**
 ```
-
 Получено 'a': 1
 Получено 'b': None
 Получено 'c': 3
@@ -111,7 +110,6 @@ print(f"Получено 'c': {cache.get('c')}")
 **Example: Концептуальная реализация LFU**
 
 ```python
-
 from collections import defaultdict
 
 class LFUCache:
@@ -150,6 +148,7 @@ class LFUCache:
             self.cache[key] = (value, 1)
 
 # Использование
+
 lfu = LFUCache(capacity=3)
 lfu.put('a', 1)
 lfu.put('b', 2)
@@ -164,7 +163,6 @@ print(f"Кэш: {dict(lfu.cache)}")
 
 **Output:**
 ```
-
 Кэш: {'a': (1, 3), 'c': (3, 1), 'd': (4, 1)}
 ```
 
@@ -185,7 +183,6 @@ print(f"Кэш: {dict(lfu.cache)}")
 **Example: Концептуальный индекс БД**
 
 ```python
-
 class DatabaseIndex:
     """Концептуальный индекс базы данных."""
     def __init__(self):
@@ -210,6 +207,7 @@ class DatabaseIndex:
         return sorted(result)
 
 # Использование
+
 db_index = DatabaseIndex()
 db_index.insert(100, page_id=5, offset=1024)
 db_index.insert(200, page_id=5, offset=2048)
@@ -224,7 +222,6 @@ print(f"Диапазон [120, 180]: {range_result}")
 
 **Output:**
 ```
-
 Запись 150: страница 6, смещение 512
 Диапазон [120, 180]: [(150, (6, 512))]
 ```
@@ -254,7 +251,6 @@ print(f"Диапазон [120, 180]: {range_result}")
 **Example: Очередь сообщений с приоритетами**
 
 ```python
-
 import heapq
 from datetime import datetime
 
@@ -293,7 +289,6 @@ while mq.queue:
 
 **Output:**
 ```
-
 Обработка сообщений:
   Критическое сообщение
   Важное сообщение
@@ -326,7 +321,6 @@ while mq.queue:
 **Example: Обработка потока с Count-Min Sketch**
 
 ```python
-
 from collections import defaultdict
 
 class StreamProcessor:
@@ -347,6 +341,7 @@ class StreamProcessor:
         return sorted_items[:k]
 
 # Симуляция потока
+
 processor = StreamProcessor()
 stream = ['user_1', 'user_2', 'user_1', 'user_3', 'user_1', 'user_2'] * 1000
 
@@ -360,7 +355,6 @@ for item, count in top:
 
 **Output:**
 ```
-
 Топ-3 элемента:
   user_1: 3000
   user_2: 2000
@@ -424,7 +418,6 @@ for item, count in top:
 **Example: Анализ требований**
 
 ```python
-
 def choose_cache_strategy(requirements):
     """Выбрать стратегию кэширования."""
     if requirements.get('need_frequency_tracking'):
@@ -449,7 +442,6 @@ print(f"Требования 3: {choose_cache_strategy(req3)}")
 
 **Output:**
 ```
-
 Требования 1: LRU Cache
 Требования 2: LFU Cache
 Требования 3: Ring Buffer
@@ -492,6 +484,7 @@ print(f"Требования 3: {choose_cache_strategy(req3)}")
 - Исследуйте применение в распределённых системах
 
 ---
+
 
 
 

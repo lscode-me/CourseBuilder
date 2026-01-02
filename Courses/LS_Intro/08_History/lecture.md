@@ -174,6 +174,7 @@
 
 ```python
 # Достижения Human Genome Project
+
 hgp_achievements = {
     "временные_рамки": "1990-2003 (13 лет)",
     "стоимость": "$3 млрд",
@@ -204,7 +205,6 @@ for category, details in hgp_achievements.items():
 
 **Output:**
 ```
-
 Human Genome Project:
 
 Временные Рамки:
@@ -258,6 +258,7 @@ Human Genome Project:
 
 ```python
 # Изменения с появлением NGS
+
 ngs_changes = {
     "стоимость": {
         "до": "$100M за геном (2003)",
@@ -296,7 +297,6 @@ for category, details in ngs_changes.items():
 
 **Output:**
 ```
-
 Изменения с появлением NGS:
 
 Стоимость:
@@ -351,6 +351,7 @@ for category, details in ngs_changes.items():
 
 ```python
 # Применение AI/ML в Life Sciences
+
 ai_applications = {
     "drug_discovery": [
         "Предсказание активности молекул",
@@ -384,7 +385,6 @@ for domain, applications in ai_applications.items():
 
 **Output:**
 ```
-
 Применение AI/ML в Life Sciences:
 
 Drug Discovery:
@@ -540,7 +540,6 @@ Drug Discovery:
 **Полная временная линия ключевых событий:**
 
 ```
-
 1953 ──────────────────────────────────────────────────────────────→ 2024
  │                                                                      │
  ├─ Структура ДНК                                                       │
@@ -619,6 +618,7 @@ Drug Discovery:
 - "Bioinformatics and Functional Genomics" — исторический контекст
 
 ---
+
 
 
 

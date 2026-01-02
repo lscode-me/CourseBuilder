@@ -62,7 +62,6 @@
 **Example: Явный panic!**
 
 ```rust
-
 fn main() {
     panic!("Что-то пошло не так!");
 }
@@ -70,7 +69,6 @@ fn main() {
 
 **Output:**
 ```
-
 thread 'main' panicked at 'Что-то пошло не так!', src/main.rs:2:5
 ```
 
@@ -79,7 +77,6 @@ thread 'main' panicked at 'Что-то пошло не так!', src/main.rs:2:5
 **Example: Выход за границы массива**
 
 ```rust
-
 fn main() {
     let v = vec![1, 2, 3];
     println!("{}", v[10]);  // panic!
@@ -88,7 +85,6 @@ fn main() {
 
 **Output:**
 ```
-
 thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 10'
 ```
 
@@ -116,7 +112,6 @@ thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 10
 ### 3.1 Напоминание: Result
 
 ```rust
-
 enum Result<T, E> {
     Ok(T),
     Err(E),
@@ -126,7 +121,6 @@ enum Result<T, E> {
 **Example: Базовое использование Result**
 
 ```rust
-
 use std::fs::File;
 
 fn main() {
@@ -141,7 +135,6 @@ fn main() {
 
 **Output (если файл не существует):**
 ```
-
 Ошибка: Os { code: 2, kind: NotFound, message: "No such file or directory" }
 ```
 
@@ -150,7 +143,6 @@ fn main() {
 **Example: Детальная обработка ошибок**
 
 ```rust
-
 use std::fs::File;
 use std::io::ErrorKind;
 
@@ -177,7 +169,6 @@ fn main() {
 
 **Output:**
 ```
-
 Файл не найден. Создаём новый...
 ```
 
@@ -192,7 +183,6 @@ fn main() {
 **Example: unwrap()**
 
 ```rust
-
 use std::fs::File;
 
 fn main() {
@@ -211,7 +201,6 @@ fn main() {
 **Example: expect()**
 
 ```rust
-
 use std::fs::File;
 
 fn main() {
@@ -223,7 +212,6 @@ fn main() {
 
 **Output (если ошибка):**
 ```
-
 thread 'main' panicked at 'Не удалось открыть hello.txt'
 ```
 
@@ -234,7 +222,6 @@ thread 'main' panicked at 'Не удалось открыть hello.txt'
 **Example: unwrap_or()**
 
 ```rust
-
 fn main() {
     let result: Result<i32, &str> = Err("ошибка");
     let value = result.unwrap_or(0);
@@ -244,7 +231,6 @@ fn main() {
 
 **Output:**
 ```
-
 Значение: 0
 ```
 
@@ -255,7 +241,6 @@ fn main() {
 **Example: unwrap_or_else()**
 
 ```rust
-
 fn main() {
     let result: Result<i32, &str> = Err("ошибка");
     let value = result.unwrap_or_else(|err| {
@@ -268,7 +253,6 @@ fn main() {
 
 **Output:**
 ```
-
 Ошибка: ошибка
 Значение: 42
 ```
@@ -284,7 +268,6 @@ fn main() {
 **Example: Без ? оператора**
 
 ```rust
-
 use std::fs::File;
 use std::io;
 use std::io::Read;
@@ -314,7 +297,6 @@ fn main() {
 **Example: С ? оператором**
 
 ```rust
-
 use std::fs;
 use std::io;
 
@@ -342,7 +324,6 @@ fn main() {
 **Example: Цепочка операций**
 
 ```rust
-
 use std::fs::File;
 use std::io;
 use std::io::Read;
@@ -371,7 +352,6 @@ fn main() {
 **Example: Кастомный тип ошибки**
 
 ```rust
-
 use std::fmt;
 
 #[derive(Debug)]
@@ -410,7 +390,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 10
 Ошибка: Отрицательное число
 ```
@@ -422,7 +401,6 @@ fn main() {
 ### 7.1 Пример: Парсинг числа
 
 ```rust
-
 fn parse_number(s: &str) -> Result<i32, std::num::ParseIntError> {
     s.parse::<i32>()
 }
@@ -442,7 +420,6 @@ fn main() {
 
 **Output:**
 ```
-
 Число: 42
 Ошибка парсинга: invalid digit found in string
 ```
@@ -450,7 +427,6 @@ fn main() {
 ### 7.2 Пример: Деление с обработкой ошибок
 
 ```rust
-
 fn divide(a: f64, b: f64) -> Result<f64, String> {
     if b == 0.0 {
         Err(String::from("Деление на ноль"))
@@ -474,7 +450,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 5
 Ошибка: Деление на ноль
 ```

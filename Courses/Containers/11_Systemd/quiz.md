@@ -247,11 +247,9 @@ D) `--userns=random`
 Какая секция в .nspawn файле отвечает за настройку сети?
 
 ```ini
-
 [???]
 VirtualEthernet=yes
 Bridge=br0
-
 ```
 
 A) [Files]

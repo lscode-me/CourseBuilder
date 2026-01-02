@@ -78,16 +78,18 @@
 **Example: Сравнение времени выполнения**
 
 ```python
-
 import time
 
 # Создаём структуры данных
+
 size = 100000
 
 # Массив
+
 arr = list(range(size))
 
 # Связанный список (упрощённо)
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -100,25 +102,31 @@ for i in range(1, size):
     current = current.next
 
 # Хеш-таблица
+
 hash_table = {i: i for i in range(size)}
 
 # Отсортированный массив
+
 sorted_arr = sorted(arr)
 
 # Тест: поиск элемента
+
 target = size // 2
 
 # Поиск в массиве (линейный)
+
 start = time.time()
 result = target in arr
 time_arr = time.time() - start
 
 # Поиск в хеш-таблице
+
 start = time.time()
 result = target in hash_table
 time_hash = time.time() - start
 
 # Поиск в отсортированном массиве (бинарный)
+
 import bisect
 start = time.time()
 index = bisect.bisect_left(sorted_arr, target)
@@ -132,7 +140,6 @@ print(f"Поиск в отсортированном массиве (бинар�
 
 **Output:**
 ```
-
 Поиск в массиве (линейный): 0.002345 секунд
 Поиск в хеш-таблице: 0.000001 секунд
 Поиск в отсортированном массиве (бинарный): 0.000001 секунд
@@ -148,9 +155,11 @@ print(f"Поиск в отсортированном массиве (бинар�
 
 ```python
 # Задача: хранение оценок студентов с доступом по ID
+
 grades = [85, 90, 78, 92, 88]  # ID = индекс
 
 # Быстрый доступ
+
 student_id = 2
 grade = grades[student_id]  # O(1)
 print(f"Оценка студента {student_id}: {grade}")
@@ -158,7 +167,6 @@ print(f"Оценка студента {student_id}: {grade}")
 
 **Output:**
 ```
-
 Оценка студента 2: 78
 ```
 
@@ -168,9 +176,11 @@ print(f"Оценка студента {student_id}: {grade}")
 
 ```python
 # Задача: проверка, есть ли пользователь в системе
+
 users = {'alice': True, 'bob': True, 'charlie': True}
 
 # Быстрый поиск
+
 username = 'alice'
 if username in users:  # O(1)
     print(f"{username} найден в системе")
@@ -178,7 +188,6 @@ if username in users:  # O(1)
 
 **Output:**
 ```
-
 alice найден в системе
 ```
 
@@ -188,6 +197,7 @@ alice найден в системе
 
 ```python
 # Задача: история операций (стек отмены)
+
 class OperationHistory:
     def __init__(self):
         self.operations = []
@@ -205,6 +215,7 @@ class OperationHistory:
 
 ```python
 # Задача: найти все оценки в диапазоне [80, 90]
+
 import bisect
 
 grades = [65, 72, 78, 85, 88, 92, 95]
@@ -222,7 +233,6 @@ print(f"Оценки в диапазоне [{start}, {end}]: {result}")
 
 **Output:**
 ```
-
 Оценки в диапазоне [80, 90]: [85, 88]
 ```
 
@@ -235,21 +245,23 @@ print(f"Оценки в диапазоне [{start}, {end}]: {result}")
 **Example: Сравнение использования памяти**
 
 ```python
-
 import sys
 
 size = 1000
 
 # Массив
+
 arr = list(range(size))
 arr_size = sys.getsizeof(arr)
 
 # Хеш-таблица
+
 hash_table = {i: i for i in range(size)}
 hash_size = sys.getsizeof(hash_table)
 
 # Связанный список (приблизительно)
 # Каждый узел: данные + указатель + overhead
+
 node_overhead = 56
 estimated_ll_size = size * (8 + 8 + node_overhead)
 
@@ -261,7 +273,6 @@ print(f"\nХеш-таблица использует примерно в {hash_s
 
 **Output:**
 ```
-
 Массив: 8056 байт
 Хеш-таблица: 36968 байт
 Связанный список (приблизительно): 72000 байт
@@ -275,11 +286,13 @@ print(f"\nХеш-таблица использует примерно в {hash_s
 
 ```python
 # Массив: ограниченный набор операций, но быстрый доступ
+
 arr = [1, 2, 3, 4, 5]
 print(f"Доступ по индексу: {arr[2]}")  # O(1)
 print(f"Поиск элемента: {3 in arr}")  # O(n)
 
 # Хеш-таблица: гибкий, быстрый поиск, но нет порядка (в старых версиях)
+
 hash_table = {'a': 1, 'b': 2, 'c': 3}
 print(f"Поиск по ключу: {hash_table.get('b')}")  # O(1)
 print(f"Порядок элементов: {list(hash_table.keys())}")  # В Python 3.7+ сохраняется
@@ -287,7 +300,6 @@ print(f"Порядок элементов: {list(hash_table.keys())}")  # В Pyt
 
 **Output:**
 ```
-
 Доступ по индексу: 3
 Поиск элемента: True
 Поиск по ключу: 2
@@ -305,7 +317,6 @@ print(f"Порядок элементов: {list(hash_table.keys())}")  # В Pyt
 **Выбор:** Хеш-таблица (dict)
 
 ```python
-
 class Cache:
     """Простой кэш на основе хеш-таблицы."""
     def __init__(self):
@@ -326,7 +337,6 @@ print(f"Получено: {cache.get('result_1')}")
 
 **Output:**
 ```
-
 Получено: 42
 ```
 
@@ -339,7 +349,6 @@ print(f"Получено: {cache.get('result_1')}")
 **Выбор:** Очередь (deque или связанный список)
 
 ```python
-
 from collections import deque
 
 class TaskQueue:
@@ -363,7 +372,6 @@ print(f"Обработано: {queue.dequeue()}")
 
 **Output:**
 ```
-
 Обработано: Задача 1
 ```
 
@@ -376,7 +384,6 @@ print(f"Обработано: {queue.dequeue()}")
 **Выбор:** Отсортированный массив
 
 ```python
-
 import bisect
 from datetime import datetime, timedelta
 
@@ -388,9 +395,11 @@ events = [
 ]
 
 # Сортируем по времени
+
 events.sort(key=lambda x: x[0])
 
 # Найти события в диапазоне
+
 start = datetime(2024, 1, 1, 11, 0)
 end = datetime(2024, 1, 1, 15, 0)
 
@@ -406,7 +415,6 @@ for time, event in result:
 
 **Output:**
 ```
-
 События в диапазоне:
   11:00: Обед
   14:00: Презентация
@@ -447,7 +455,6 @@ for time, event in result:
 **Example: Интерактивный выбор**
 
 ```python
-
 def choose_data_structure(requirements):
     """Выбрать структуру данных на основе требований."""
     score = {
@@ -492,6 +499,7 @@ def choose_data_structure(requirements):
     return best, score
 
 # Пример использования
+
 requirements = {
     'frequent_search': True,
     'frequent_index_access': False,
@@ -507,7 +515,6 @@ print(f"Оценки: {scores}")
 
 **Output:**
 ```
-
 Рекомендуемая структура: hash_table
 Оценки: {'array': 0, 'linked_list': 0, 'hash_table': 3, 'sorted_array': 2}
 ```
@@ -527,7 +534,6 @@ print(f"Оценки: {scores}")
 **Выбор:** Хеш-таблица (dict)
 
 ```python
-
 class UserManager:
     """Управление пользователями через хеш-таблицу."""
     def __init__(self):
@@ -549,7 +555,6 @@ print(f"Пользователь: {user}")
 
 **Output:**
 ```
-
 Пользователь: {'name': 'Alice', 'email': 'alice@example.com'}
 ```
 
@@ -564,7 +569,6 @@ print(f"Пользователь: {user}")
 **Выбор:** Отсортированный массив
 
 ```python
-
 import bisect
 from datetime import datetime
 
@@ -600,7 +604,6 @@ for time, msg in result:
 
 **Output:**
 ```
-
 Логи в диапазоне:
   11:00: Ошибка соединения
 ```
@@ -641,5 +644,6 @@ for time, msg in result:
 - Исследуйте гибридные структуры данных
 
 ---
+
 
 

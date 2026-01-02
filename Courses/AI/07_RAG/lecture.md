@@ -30,7 +30,6 @@
 ### 1.1 Ограничения LLM
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │              Проблемы "чистого" LLM                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -56,7 +55,6 @@
 RAG (Retrieval-Augmented Generation) — подход, где LLM дополняется релевантной информацией из внешних источников:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                     RAG Pipeline                            │
 ├─────────────────────────────────────────────────────────────┤
@@ -199,6 +197,7 @@ embeddings = model.encode(texts)
 # embeddings[0] далёк от embeddings[2] (разные темы)
 
 # Similarity измеряется косинусным расстоянием
+
 from sklearn.metrics.pairwise import cosine_similarity
 print(cosine_similarity([embeddings[0]], [embeddings[1]]))  # ~0.8
 print(cosine_similarity([embeddings[0]], [embeddings[2]]))  # ~0.1
@@ -251,26 +250,29 @@ vector_databases = {
 ### 3.4 Пример с Chroma
 
 ```python
-
 import chromadb
 from chromadb.utils import embedding_functions
 
 # Создаём клиент
+
 client = chromadb.Client()
 
 # Используем OpenAI embeddings
+
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(
     api_key="your-api-key",
     model_name="text-embedding-3-small"
 )
 
 # Создаём коллекцию
+
 collection = client.create_collection(
     name="my_docs",
     embedding_function=openai_ef
 )
 
 # Добавляем документы
+
 collection.add(
     documents=[
         "Возврат товара возможен в течение 14 дней",
@@ -281,6 +283,7 @@ collection.add(
 )
 
 # Поиск
+
 results = collection.query(
     query_texts=["как вернуть покупку"],
     n_results=2
@@ -305,6 +308,7 @@ print(results['documents'])
 
 ```python
 # 1. Fixed-size chunking
+
 def fixed_size_chunks(text, chunk_size=500, overlap=50):
     chunks = []
     start = 0
@@ -315,6 +319,7 @@ def fixed_size_chunks(text, chunk_size=500, overlap=50):
     return chunks
 
 # 2. Sentence-based chunking
+
 import nltk
 def sentence_chunks(text, sentences_per_chunk=5):
     sentences = nltk.sent_tokenize(text)
@@ -329,13 +334,11 @@ def sentence_chunks(text, sentences_per_chunk=5):
 
 # 4. Document-structure chunking
 # Используем структуру документа (заголовки, параграфы)
-
 ```
 
 ### 4.3 Рекомендации по chunking
 
 ```python
-
 chunking_guidelines = {
     "chunk_size": "256-1024 токенов (зависит от задачи)",
     "overlap": "10-20% от chunk_size",
@@ -351,7 +354,6 @@ chunking_guidelines = {
 ### 5.1 RAG нужен
 
 ```python
-
 use_rag_when = [
     "Нужны актуальные данные (после training cutoff)",
     "Работа с внутренними документами компании",
@@ -365,7 +367,6 @@ use_rag_when = [
 ### 5.2 RAG не нужен
 
 ```python
-
 skip_rag_when = [
     "Общие знания, покрытые training data",
     "Креативные задачи (генерация, рерайт)",
@@ -378,7 +379,6 @@ skip_rag_when = [
 ### 5.3 Альтернативы RAG
 
 ```python
-
 alternatives = {
     "Fine-tuning": "Для специфичного стиля или формата",
     "Long context": "Если данные умещаются в 128K+ токенов",
@@ -393,7 +393,6 @@ alternatives = {
 ### 6.1 Проблемы базового RAG
 
 ```python
-
 basic_rag_problems = {
     "Низкое качество retrieval": "Находим не те документы",
     "Lost in the middle": "LLM игнорирует середину контекста",
@@ -406,6 +405,7 @@ basic_rag_problems = {
 
 ```python
 # 1. Reranking — переранжирование результатов
+
 from sentence_transformers import CrossEncoder
 
 reranker = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
@@ -417,6 +417,7 @@ def rerank_results(query, documents, top_k=3):
     return [doc for doc, score in ranked[:top_k]]
 
 # 2. Hybrid search — комбинация semantic + keyword
+
 def hybrid_search(query, alpha=0.5):
     semantic_results = vector_search(query)
     keyword_results = bm25_search(query)
@@ -430,6 +431,7 @@ def hybrid_search(query, alpha=0.5):
     return combined
 
 # 3. Query expansion — расширение запроса
+
 def expand_query(query):
     prompt = f"""
     Generate 3 alternative phrasings of this question:
@@ -504,5 +506,6 @@ rag_metrics = {
 - [Chroma](https://www.trychroma.com/)
 
 ---
+
 
 

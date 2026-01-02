@@ -23,10 +23,12 @@
 
 ```python
 # Immutable: создаётся новый объект
+
 s = "hello"
 s = s + " world"  # Новый объект str
 
 # Mutable: изменяется тот же объект
+
 lst = [1, 2, 3]
 lst.append(4)  # Тот же объект list
 ```
@@ -38,7 +40,6 @@ lst.append(4)  # Тот же объект list
 ### Код-ловушка (вас попросят объяснить)
 
 ```python
-
 def append_to(element, lst=[]):
     lst.append(element)
     return lst
@@ -54,7 +55,6 @@ print(append_to(3))  # [1, 2, 3] — НЕ [3]!
 ### Правильное решение
 
 ```python
-
 def append_to(element, lst=None):
     if lst is None:
         lst = []
@@ -62,6 +62,7 @@ def append_to(element, lst=None):
     return lst
 
 # Или короче:
+
 def append_to(element, lst=None):
     lst = lst or []
     lst.append(element)
@@ -79,15 +80,18 @@ def append_to(element, lst=None):
 
 ```python
 # ❌ Это НЕ копия, это ссылка на тот же объект
+
 a = [1, 2, 3]
 b = a
 b.append(4)
 print(a)  # [1, 2, 3, 4] — изменился и a!
 
 # ✅ Shallow copy
+
 b = a.copy()  # или b = a[:] или b = list(a)
 
 # ✅ Deep copy (для вложенных структур)
+
 import copy
 b = copy.deepcopy(a)
 ```
@@ -95,12 +99,12 @@ b = copy.deepcopy(a)
 ### Почему tuple может содержать mutable объекты?
 
 ```python
-
 t = ([1, 2], [3, 4])
 t[0].append(5)  # Работает!
 print(t)  # ([1, 2, 5], [3, 4])
 
 # Но нельзя заменить элемент
+
 t[0] = [6, 7]  # TypeError: tuple doesn't support item assignment
 ```
 
@@ -129,7 +133,6 @@ t[0] = [6, 7]  # TypeError: tuple doesn't support item assignment
 > "Нет, потому что list — mutable. Ключи словаря должны быть hashable, а hashable могут быть только immutable объекты. Используйте tuple вместо list."
 
 ```python
-
 d = {}
 d[[1, 2, 3]] = "value"  # TypeError: unhashable type: 'list'
 d[(1, 2, 3)] = "value"  # Работает
@@ -139,7 +142,6 @@ d[(1, 2, 3)] = "value"  # Работает
 
 **A:**
 ```python
-
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -160,5 +162,6 @@ p.x = 3  # FrozenInstanceError
 - [Real Python: Pass by Reference in Python](https://realpython.com/python-pass-by-reference/)
 
 ---
+
 
 

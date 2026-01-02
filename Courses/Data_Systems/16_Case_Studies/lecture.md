@@ -69,7 +69,6 @@
 **Реализация URL Shortener:**
 
 ```python
-
 import hashlib
 import base64
 
@@ -144,7 +143,6 @@ class URLShortener:
 **Snowflake ID Generator:**
 
 ```python
-
 class SnowflakeIDGenerator:
     """Генератор уникальных ID в стиле Twitter Snowflake."""
     
@@ -236,7 +234,6 @@ for _ in range(10):
 Решение: Atomicity via Lua.
 
 ```lua
-
 -- rate_limit.lua
 local key = KEYS[1]
 local limit = tonumber(ARGV[1])
@@ -257,7 +254,6 @@ end
 **Реализация Token Bucket:**
 
 ```python
-
 class TokenBucket:
     """Token Bucket алгоритм для rate limiting."""
     
@@ -301,7 +297,6 @@ for i in range(15):
 **Sliding Window Log:**
 
 ```python
-
 class SlidingWindowLog:
     """Sliding Window Log для точного rate limiting."""
     

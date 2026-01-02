@@ -67,7 +67,6 @@ Control Groups (cgroups) — механизм ядра Linux для органи
 ### 1.3 Архитектура cgroups
 
 ```
-
                     ┌─────────────────────┐
                     │      Root Cgroup    │
                     │     (all processes) │
@@ -84,7 +83,6 @@ Control Groups (cgroups) — механизм ядра Linux для органи
       │ user-   │         │ nginx   │         │ docker- │
       │ 1000    │         │ service │         │ abc123  │
       └─────────┘         └─────────┘         └─────────┘
-
 ```
 
 ---
@@ -96,7 +94,6 @@ Control Groups (cgroups) — механизм ядра Linux для органи
 В v1 каждый контроллер (cpu, memory, blkio) имеет собственную иерархию:
 
 ```
-
 /sys/fs/cgroup/
 ├── cpu/
 │   ├── docker/
@@ -110,7 +107,6 @@ Control Groups (cgroups) — механизм ядра Linux для органи
 │   └── ...
 └── devices/
     └── ...
-
 ```
 
 **Проблемы v1:**
@@ -125,7 +121,6 @@ Control Groups (cgroups) — механизм ядра Linux для органи
 В v2 все контроллеры используют одну иерархию:
 
 ```
-
 /sys/fs/cgroup/
 ├── cgroup.controllers      # Доступные контроллеры
 ├── cgroup.subtree_control  # Активные контроллеры для потомков
@@ -140,7 +135,6 @@ Control Groups (cgroups) — механизм ядра Linux для органи
         ├── cpu.max
         ├── memory.max
         └── io.max
-
 ```
 
 ### 2.3 Сравнение v1 и v2
@@ -158,37 +152,31 @@ Control Groups (cgroups) — механизм ядра Linux для органи
 
 ```bash
 # Проверить версию cgroups
-mount | grep cgroup
 
+mount | grep cgroup
 ```
 
 **Output (v2):**
 ```
-
 cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime)
-
 ```
 
 **Output (v1):**
 ```
-
 tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
 cgroup on /sys/fs/cgroup/cpu type cgroup (rw,nosuid,nodev,noexec,relatime,cpu)
 cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
-
 ```
 
 ```bash
 # Проверить текущую cgroup процесса
-cat /proc/self/cgroup
 
+cat /proc/self/cgroup
 ```
 
 **Output (v2):**
 ```
-
 0::/user.slice/user-1000.slice/session-1.scope
-
 ```
 
 ---
@@ -209,35 +197,40 @@ cat /proc/self/cgroup
 
 ```bash
 # Ограничение до 50% одного CPU
+
 echo "50000 100000" > /sys/fs/cgroup/mygroup/cpu.max
 
 # Формат: $QUOTA $PERIOD (в микросекундах)
 # 50000/100000 = 50% CPU
 
 # Ограничение до 2 CPU
-echo "200000 100000" > /sys/fs/cgroup/mygroup/cpu.max
 
+echo "200000 100000" > /sys/fs/cgroup/mygroup/cpu.max
 ```
 
 **Пример: ограничение CPU для процесса:**
 
 ```bash
 # Создаём cgroup
+
 sudo mkdir /sys/fs/cgroup/cpu-limited
 
 # Включаем cpu контроллер
+
 echo "+cpu" | sudo tee /sys/fs/cgroup/cgroup.subtree_control
 
 # Устанавливаем лимит 25% CPU
+
 echo "25000 100000" | sudo tee /sys/fs/cgroup/cpu-limited/cpu.max
 
 # Запускаем процесс в cgroup
+
 echo $$ | sudo tee /sys/fs/cgroup/cpu-limited/cgroup.procs
 
 # Проверяем ограничение
+
 stress --cpu 1 --timeout 10
 top  # CPU usage должен быть ~25%
-
 ```
 
 ### 3.2 Memory Controller
@@ -256,38 +249,45 @@ top  # CPU usage должен быть ~25%
 
 ```bash
 # Ограничение памяти до 512MB
+
 echo "536870912" > /sys/fs/cgroup/mygroup/memory.max
 
 # Или с суффиксами (если поддерживается)
+
 echo "512M" > /sys/fs/cgroup/mygroup/memory.max
 
 # Мягкий лимит (начинается throttling)
+
 echo "256M" > /sys/fs/cgroup/mygroup/memory.high
 
 # Отключение swap
-echo "0" > /sys/fs/cgroup/mygroup/memory.swap.max
 
+echo "0" > /sys/fs/cgroup/mygroup/memory.swap.max
 ```
 
 **Пример: тестирование memory limits:**
 
 ```bash
 # Создаём cgroup с ограничением памяти
+
 sudo mkdir /sys/fs/cgroup/mem-limited
 echo "+memory" | sudo tee /sys/fs/cgroup/cgroup.subtree_control
 
 # Устанавливаем лимит 100MB
+
 echo "104857600" | sudo tee /sys/fs/cgroup/mem-limited/memory.max
 
 # Отключаем swap для чистоты эксперимента
+
 echo "0" | sudo tee /sys/fs/cgroup/mem-limited/memory.swap.max
 
 # Запускаем процесс
+
 echo $$ | sudo tee /sys/fs/cgroup/mem-limited/cgroup.procs
 
 # Пытаемся выделить больше памяти
-python3 -c "x = 'a' * (200 * 1024 * 1024)"  # OOM killed!
 
+python3 -c "x = 'a' * (200 * 1024 * 1024)"  # OOM killed!
 ```
 
 ### 3.3 I/O Controller
@@ -306,33 +306,33 @@ python3 -c "x = 'a' * (200 * 1024 * 1024)"  # OOM killed!
 # Формат io.max: MAJ:MIN rbps=X wbps=Y riops=Z wiops=W
 
 # Ограничение чтения до 10MB/s для диска 8:0
+
 echo "8:0 rbps=10485760" > /sys/fs/cgroup/mygroup/io.max
 
 # Ограничение записи до 1000 IOPS
+
 echo "8:0 wiops=1000" > /sys/fs/cgroup/mygroup/io.max
 
 # Комбинированное ограничение
-echo "8:0 rbps=10485760 wbps=5242880 riops=1000 wiops=500" > /sys/fs/cgroup/mygroup/io.max
 
+echo "8:0 rbps=10485760 wbps=5242880 riops=1000 wiops=500" > /sys/fs/cgroup/mygroup/io.max
 ```
 
 **Определение major:minor устройства:**
 
 ```bash
 # Найти major:minor для диска
-lsblk -o NAME,MAJ:MIN
 
+lsblk -o NAME,MAJ:MIN
 ```
 
 **Output:**
 ```
-
 NAME   MAJ:MIN
 sda      8:0
 ├─sda1   8:1
 └─sda2   8:2
 nvme0n1 259:0
-
 ```
 
 ### 3.4 PIDs Controller
@@ -341,27 +341,30 @@ nvme0n1 259:0
 
 ```bash
 # Максимум 100 процессов в cgroup
+
 echo "100" > /sys/fs/cgroup/mygroup/pids.max
 
 # Текущее количество процессов
-cat /sys/fs/cgroup/mygroup/pids.current
 
+cat /sys/fs/cgroup/mygroup/pids.current
 ```
 
 **Защита от fork-бомб:**
 
 ```bash
 # Создаём cgroup с ограничением PIDs
+
 sudo mkdir /sys/fs/cgroup/fork-limited
 echo "+pids" | sudo tee /sys/fs/cgroup/cgroup.subtree_control
 echo "50" | sudo tee /sys/fs/cgroup/fork-limited/pids.max
 
 # Добавляем shell
+
 echo $$ | sudo tee /sys/fs/cgroup/fork-limited/cgroup.procs
 
 # Fork-бомба теперь безопасна (будет ограничена)
-:(){ :|:& };:  # Остановится на 50 процессах
 
+:(){ :|:& };:  # Остановится на 50 процессах
 ```
 
 ---
@@ -372,13 +375,12 @@ echo $$ | sudo tee /sys/fs/cgroup/fork-limited/cgroup.procs
 
 ```bash
 # Список файлов в cgroup
-ls -la /sys/fs/cgroup/
 
+ls -la /sys/fs/cgroup/
 ```
 
 **Output:**
 ```
-
 -r--r--r-- 1 root root 0 Dec  1 12:00 cgroup.controllers
 -rw-r--r-- 1 root root 0 Dec  1 12:00 cgroup.max.depth
 -rw-r--r-- 1 root root 0 Dec  1 12:00 cgroup.max.descendants
@@ -387,7 +389,6 @@ ls -la /sys/fs/cgroup/
 -rw-r--r-- 1 root root 0 Dec  1 12:00 cgroup.subtree_control
 drwxr-xr-x 2 root root 0 Dec  1 12:00 system.slice
 drwxr-xr-x 2 root root 0 Dec  1 12:00 user.slice
-
 ```
 
 ### 4.2 Создание и настройка cgroup
@@ -400,33 +401,39 @@ CGROUP_NAME="${1:-myapp}"
 CGROUP_PATH="/sys/fs/cgroup/$CGROUP_NAME"
 
 # Создаём cgroup
+
 sudo mkdir -p "$CGROUP_PATH"
 
 # Включаем контроллеры для root cgroup
+
 echo "+cpu +memory +io +pids" | sudo tee /sys/fs/cgroup/cgroup.subtree_control
 
 # Устанавливаем ограничения
 # CPU: 50% одного ядра
+
 echo "50000 100000" | sudo tee "$CGROUP_PATH/cpu.max"
 
 # Memory: 512MB
+
 echo "536870912" | sudo tee "$CGROUP_PATH/memory.max"
 
 # PIDs: максимум 100 процессов
+
 echo "100" | sudo tee "$CGROUP_PATH/pids.max"
 
 echo "Cgroup $CGROUP_NAME created at $CGROUP_PATH"
 echo "To add a process: echo \$PID | sudo tee $CGROUP_PATH/cgroup.procs"
-
 ```
 
 ### 4.3 Добавление процессов в cgroup
 
 ```bash
 # Добавить текущий shell
+
 echo $$ | sudo tee /sys/fs/cgroup/myapp/cgroup.procs
 
 # Добавить по PID
+
 echo 12345 | sudo tee /sys/fs/cgroup/myapp/cgroup.procs
 
 # Все дочерние процессы автоматически наследуют cgroup
@@ -436,50 +443,47 @@ echo 12345 | sudo tee /sys/fs/cgroup/myapp/cgroup.procs
 
 ```bash
 # Текущее использование CPU
-cat /sys/fs/cgroup/myapp/cpu.stat
 
+cat /sys/fs/cgroup/myapp/cpu.stat
 ```
 
 **Output:**
 ```
-
 usage_usec 1234567
 user_usec 1000000
 system_usec 234567
 nr_periods 100
 nr_throttled 5
 throttled_usec 50000
-
 ```
 
 ```bash
 # Использование памяти
+
 cat /sys/fs/cgroup/myapp/memory.current
 cat /sys/fs/cgroup/myapp/memory.stat
-
 ```
 
 **Output:**
 ```
-
 anon 52428800
 file 10485760
 kernel_stack 163840
 ...
-
 ```
 
 ### 4.5 Удаление cgroup
 
 ```bash
 # Перед удалением нужно переместить все процессы
+
 cat /sys/fs/cgroup/myapp/cgroup.procs | while read pid; do
     echo $pid | sudo tee /sys/fs/cgroup/cgroup.procs
 done
 
 # Удаляем cgroup
-sudo rmdir /sys/fs/cgroup/myapp
 
+sudo rmdir /sys/fs/cgroup/myapp
 ```
 
 ---
@@ -492,7 +496,6 @@ Systemd полностью интегрирован с cgroups и являетс
 
 **Slice** — группа unit'ов, делящих ресурсы:
 ```
-
 -.slice (root)
 ├── user.slice
 │   └── user-1000.slice
@@ -500,7 +503,6 @@ Systemd полностью интегрирован с cgroups и являетс
 │   └── nginx.service
 └── machine.slice
     └── docker containers
-
 ```
 
 **Service** — управляемый systemd сервис
@@ -510,13 +512,12 @@ Systemd полностью интегрирован с cgroups и являетс
 
 ```bash
 # Просмотр cgroup unit'а
-systemctl status nginx
 
+systemctl status nginx
 ```
 
 **Output:**
 ```
-
 ● nginx.service - A high performance web server
      Loaded: loaded (/lib/systemd/system/nginx.service; enabled)
      Active: active (running)
@@ -528,13 +529,13 @@ systemctl status nginx
      CGroup: /system.slice/nginx.service
              ├─1235 nginx: master process /usr/sbin/nginx
              └─1236 nginx: worker process
-
 ```
 
 ### 5.3 Настройка ограничений в unit-файле
 
 ```ini
 # /etc/systemd/system/myapp.service
+
 [Unit]
 Description=My Application
 After=network.target
@@ -545,46 +546,50 @@ ExecStart=/usr/bin/myapp
 Restart=always
 
 # Resource limits
+
 CPUQuota=50%
 MemoryMax=512M
 MemoryHigh=384M
 TasksMax=100
 
 # I/O limits
+
 IOReadBandwidthMax=/dev/sda 10M
 IOWriteBandwidthMax=/dev/sda 5M
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 ### 5.4 Runtime изменение ограничений
 
 ```bash
 # Изменить CPU limit для запущенного сервиса
+
 sudo systemctl set-property nginx.service CPUQuota=25%
 
 # Изменить memory limit
+
 sudo systemctl set-property nginx.service MemoryMax=256M
 
 # Посмотреть текущие ограничения
-systemctl show nginx.service | grep -E "(CPU|Memory|Tasks)"
 
+systemctl show nginx.service | grep -E "(CPU|Memory|Tasks)"
 ```
 
 ### 5.5 Transient units (одноразовые)
 
 ```bash
 # Запустить команду с ограничениями без создания unit-файла
+
 systemd-run --scope --property=MemoryMax=100M ./memory-hungry-app
 
 # С именем для отслеживания
+
 systemd-run --unit=mytest --scope \
     --property=CPUQuota=25% \
     --property=MemoryMax=256M \
     stress --cpu 2 --vm 1 --vm-bytes 128M --timeout 60
-
 ```
 
 ---
@@ -601,29 +606,35 @@ APP_NAME="webapp"
 CGROUP="/sys/fs/cgroup/$APP_NAME"
 
 # Создаём cgroup
+
 sudo mkdir -p "$CGROUP"
 
 # Включаем контроллеры
+
 echo "+cpu +memory +io +pids" | sudo tee /sys/fs/cgroup/cgroup.subtree_control
 
 # CPU: максимум 2 ядра
+
 echo "200000 100000" | sudo tee "$CGROUP/cpu.max"
 
 # Memory: 2GB max, 1.5GB high (throttling начнётся раньше)
+
 echo "2147483648" | sudo tee "$CGROUP/memory.max"
 echo "1610612736" | sudo tee "$CGROUP/memory.high"
 
 # Swap отключен для предсказуемости
+
 echo "0" | sudo tee "$CGROUP/memory.swap.max"
 
 # Максимум 500 процессов/потоков
+
 echo "500" | sudo tee "$CGROUP/pids.max"
 
 # I/O: ограничение для SSD (259:0)
+
 echo "259:0 rbps=104857600 wbps=52428800" | sudo tee "$CGROUP/io.max"
 
 echo "Cgroup for $APP_NAME configured"
-
 ```
 
 ### 6.2 Мониторинг контейнера
@@ -676,7 +687,6 @@ while true; do
     
     sleep 2
 done
-
 ```
 
 ### 6.3 Защита от OOM
@@ -685,12 +695,13 @@ done
 # Настройка OOM killer для cgroup
 
 # memory.oom.group - при OOM убить всю группу, а не один процесс
+
 echo "1" | sudo tee /sys/fs/cgroup/myapp/memory.oom.group
 
 # Приоритет OOM (чем выше, тем раньше убьют)
 # Для критических сервисов понизить приоритет
-echo "-1000" | sudo tee /proc/$(cat /sys/fs/cgroup/critical/cgroup.procs | head -1)/oom_score_adj
 
+echo "-1000" | sudo tee /proc/$(cat /sys/fs/cgroup/critical/cgroup.procs | head -1)/oom_score_adj
 ```
 
 ---
@@ -703,59 +714,65 @@ echo "-1000" | sudo tee /proc/$(cat /sys/fs/cgroup/critical/cgroup.procs | head 
 
 ```bash
 # В v1 каждый контроллер монтируется отдельно
-mount | grep cgroup
 
+mount | grep cgroup
 ```
 
 **Output:**
 ```
-
 cgroup on /sys/fs/cgroup/cpu type cgroup (rw,cpu,cpuacct)
 cgroup on /sys/fs/cgroup/memory type cgroup (rw,memory)
 cgroup on /sys/fs/cgroup/blkio type cgroup (rw,blkio)
 cgroup on /sys/fs/cgroup/devices type cgroup (rw,devices)
 cgroup on /sys/fs/cgroup/freezer type cgroup (rw,freezer)
-
 ```
 
 ### 7.2 Настройка CPU в v1
 
 ```bash
 # Создаём cgroup в иерархии cpu
+
 sudo mkdir /sys/fs/cgroup/cpu/myapp
 
 # CPU shares (относительный вес, default = 1024)
+
 echo "512" | sudo tee /sys/fs/cgroup/cpu/myapp/cpu.shares
 
 # CPU quota (CFS bandwidth control)
 # Period в микросекундах
+
 echo "100000" | sudo tee /sys/fs/cgroup/cpu/myapp/cpu.cfs_period_us
 # Quota - сколько микросекунд CPU можно использовать за период
+
 echo "50000" | sudo tee /sys/fs/cgroup/cpu/myapp/cpu.cfs_quota_us
 
 # Добавляем процесс
-echo $$ | sudo tee /sys/fs/cgroup/cpu/myapp/tasks
 
+echo $$ | sudo tee /sys/fs/cgroup/cpu/myapp/tasks
 ```
 
 ### 7.3 Настройка Memory в v1
 
 ```bash
 # Создаём cgroup в иерархии memory
+
 sudo mkdir /sys/fs/cgroup/memory/myapp
 
 # Hard limit (OOM при превышении)
+
 echo "536870912" | sudo tee /sys/fs/cgroup/memory/myapp/memory.limit_in_bytes
 
 # Soft limit (начало reclaim)
+
 echo "268435456" | sudo tee /sys/fs/cgroup/memory/myapp/memory.soft_limit_in_bytes
 
 # Лимит swap + memory
+
 echo "1073741824" | sudo tee /sys/fs/cgroup/memory/myapp/memory.memsw.limit_in_bytes
 
 # Добавляем процесс
-echo $$ | sudo tee /sys/fs/cgroup/memory/myapp/tasks
 
+echo $$ | sudo tee /sys/fs/cgroup/memory/myapp/tasks
 ```
 
 ### 7.4 Таблица соответствия v1 и v2
@@ -779,6 +796,7 @@ echo $$ | sudo tee /sys/fs/cgroup/memory/myapp/tasks
 
 ```bash
 # Docker использует cgroups для ограничения ресурсов контейнера
+
 docker run -d \
     --name limited-container \
     --cpus="0.5" \
@@ -788,39 +806,38 @@ docker run -d \
     nginx
 
 # Проверяем cgroup контейнера
+
 CONTAINER_ID=$(docker inspect --format '{{.Id}}' limited-container)
 ls /sys/fs/cgroup/system.slice/docker-${CONTAINER_ID}.scope/
-
 ```
 
 ### 8.2 Просмотр ограничений Docker
 
 ```bash
 # Docker stats показывает использование ресурсов
-docker stats --no-stream limited-container
 
+docker stats --no-stream limited-container
 ```
 
 **Output:**
 ```
-
 CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT   MEM %     NET I/O     BLOCK I/O
 abc123         limited-container   0.50%     10MiB / 256MiB      3.91%     1kB / 0B    0B / 0B
-
 ```
 
 ### 8.3 Podman (rootless) и cgroups
 
 ```bash
 # Podman использует cgroups v2 delegation для rootless
+
 podman run -d \
     --cpus=1 \
     --memory=512m \
     alpine sleep 1000
 
 # Cgroup находится в пользовательской иерархии
-cat /sys/fs/cgroup/user.slice/user-$(id -u).slice/user@$(id -u).service/*/cgroup.procs
 
+cat /sys/fs/cgroup/user.slice/user-$(id -u).slice/user@$(id -u).service/*/cgroup.procs
 ```
 
 ---
@@ -831,36 +848,32 @@ cat /sys/fs/cgroup/user.slice/user-$(id -u).slice/user@$(id -u).service/*/cgroup
 
 ```bash
 # Топ процессов по cgroups
-systemd-cgtop
 
+systemd-cgtop
 ```
 
 **Output:**
 ```
-
 Control Group                     Tasks   %CPU   Memory  Input/s Output/s
 /                                   234   15.2     2.1G        -        -
 /system.slice                        45    8.3   512.0M        -        -
 /system.slice/docker.service         12    5.1   256.0M        -        -
 /user.slice                         189    6.9     1.6G        -        -
-
 ```
 
 ### 9.2 Анализ CPU throttling
 
 ```bash
 # Проверка throttling
-cat /sys/fs/cgroup/myapp/cpu.stat
 
+cat /sys/fs/cgroup/myapp/cpu.stat
 ```
 
 **Если `nr_throttled` растёт — процесс достиг лимита:**
 ```
-
 nr_periods 1000
 nr_throttled 150      # 15% периодов throttled
 throttled_usec 750000 # 0.75 секунды суммарно
-
 ```
 
 ### 9.3 Pressure Stall Information (PSI)
@@ -869,16 +882,14 @@ PSI показывает, насколько процессы "страдают"
 
 ```bash
 # CPU pressure
-cat /sys/fs/cgroup/myapp/cpu.pressure
 
+cat /sys/fs/cgroup/myapp/cpu.pressure
 ```
 
 **Output:**
 ```
-
 some avg10=5.00 avg60=3.50 avg300=2.10 total=123456
 full avg10=2.00 avg60=1.50 avg300=1.00 total=56789
-
 ```
 
 - **some**: какой-то процесс ждал CPU
@@ -887,19 +898,20 @@ full avg10=2.00 avg60=1.50 avg300=1.00 total=56789
 
 ```bash
 # Memory pressure
-cat /sys/fs/cgroup/myapp/memory.pressure
 
+cat /sys/fs/cgroup/myapp/memory.pressure
 ```
 
 ### 9.4 Логирование событий cgroup
 
 ```bash
 # Логирование OOM событий
+
 dmesg | grep -i "killed process"
 
 # Или через journalctl
-journalctl -k | grep -i oom
 
+journalctl -k | grep -i oom
 ```
 
 ---
@@ -918,23 +930,23 @@ journalctl -k | grep -i oom
 ❌ **Не устанавливать memory.swap.max:**
 ```bash
 # Процесс может использовать много swap и замедлить систему
-echo "0" | sudo tee /sys/fs/cgroup/myapp/memory.swap.max
 
+echo "0" | sudo tee /sys/fs/cgroup/myapp/memory.swap.max
 ```
 
 ❌ **Слишком жёсткие CPU limits:**
 ```bash
 # Лучше использовать веса для справедливого распределения
-echo "100" | sudo tee /sys/fs/cgroup/myapp/cpu.weight  # Относительно 100 default
 
+echo "100" | sudo tee /sys/fs/cgroup/myapp/cpu.weight  # Относительно 100 default
 ```
 
 ❌ **Забыть о наследовании:**
 ```bash
 # Дочерние cgroups наследуют ограничения
 # Нужно явно включать контроллеры
-echo "+cpu +memory" | sudo tee /sys/fs/cgroup/parent/cgroup.subtree_control
 
+echo "+cpu +memory" | sudo tee /sys/fs/cgroup/parent/cgroup.subtree_control
 ```
 
 ### 10.3 Паттерн: Graceful degradation
@@ -942,6 +954,7 @@ echo "+cpu +memory" | sudo tee /sys/fs/cgroup/parent/cgroup.subtree_control
 ```bash
 # Настройка для graceful degradation
 # memory.high < memory.max
+
 echo "384M" | sudo tee /sys/fs/cgroup/myapp/memory.high  # Throttling
 echo "512M" | sudo tee /sys/fs/cgroup/myapp/memory.max   # OOM kill
 
@@ -1006,6 +1019,7 @@ echo "512M" | sudo tee /sys/fs/cgroup/myapp/memory.max   # OOM kill
 - "Linux Kernel Development" by Robert Love
 
 ---
+
 
 
 

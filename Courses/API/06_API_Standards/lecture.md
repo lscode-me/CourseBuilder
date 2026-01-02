@@ -56,6 +56,7 @@
 # REST API использует ресурсы и HTTP методы
 
 # Ресурс: пользователи
+
 GET    /api/users           # Список пользователей
 GET    /api/users/123       # Конкретный пользователь
 POST   /api/users           # Создать пользователя
@@ -63,15 +64,18 @@ PUT    /api/users/123       # Обновить пользователя
 DELETE /api/users/123       # Удалить пользователя
 
 # Вложенные ресурсы
+
 GET    /api/users/123/orders        # Заказы пользователя
 POST   /api/users/123/orders        # Создать заказ
 
 import requests
 
 # RESTful вызовы
+
 base_url = "https://api.example.com"
 
 # Получить пользователя (GET)
+
 user = requests.get(f"{base_url}/users/123").json()
 print(f"User: {user['name']}")
 
@@ -86,7 +90,6 @@ print(f"Created: {new_user['id']}")
 
 **Output:**
 ```
-
 User: Иван
 Created: 456
 ```
@@ -113,7 +116,6 @@ Created: 456
 **Example: SOAP сообщение**
 
 ```xml
-
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Header>
     <Authentication>
@@ -135,7 +137,6 @@ Created: 456
 **Example: WSDL определение**
 
 ```xml
-
 <?xml version="1.0"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
@@ -197,6 +198,7 @@ Created: 456
 
 ```python
 # GraphQL запрос — клиент определяет, какие поля нужны
+
 query = """
 {
   user(id: 123) {
@@ -216,6 +218,7 @@ query = """
 """
 
 # Один запрос получает все нужные данные
+
 import requests
 
 response = requests.post(
@@ -229,7 +232,6 @@ print(f"Orders: {len(data['data']['user']['orders'])}")
 
 **Output:**
 ```
-
 User: Иван
 Orders: 3
 ```
@@ -241,7 +243,6 @@ Orders: 3
 **Example: GraphQL Schema**
 
 ```graphql
-
 type User {
   id: ID!
   name: String!
@@ -316,7 +317,6 @@ type Query {
 ### 5.1 Пример: RESTful API
 
 ```python
-
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -356,6 +356,7 @@ def create_user():
 
 ```python
 # GraphQL позволяет запрашивать только нужные поля
+
 query_simple = """
 {
   user(id: 123) {
@@ -398,6 +399,7 @@ POST /api/calculateTotal
 ✅ **Correct:**
 ```python
 # Хорошо: REST стиль
+
 GET /api/users/123
 POST /api/orders (с total в теле)
 ```
@@ -409,10 +411,10 @@ POST /api/orders (с total в теле)
 ❌ **Incorrect:**
 ```python
 # REST: всегда возвращает все поля
+
 GET /api/users/123
 # Возвращает: id, name, email, address, phone, orders, preferences...
 # Но клиенту нужен только name
-
 ```
 
 ✅ **Correct:**
@@ -480,5 +482,6 @@ query {
 - "Understanding SOAP and WSDL" — понимание SOAP и WSDL
 
 ---
+
 
 

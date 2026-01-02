@@ -58,7 +58,6 @@
 
 **Ресурсы как URI:**
 ```
-
 GET    /api/users          — получить список пользователей
 GET    /api/users/123      — получить пользователя 123
 POST   /api/users          — создать пользователя
@@ -68,7 +67,6 @@ DELETE /api/users/123      — удалить пользователя 123
 
 **Вложенные ресурсы:**
 ```
-
 GET /api/users/123/posts        — посты пользователя 123
 GET /api/users/123/posts/456    — пост 456 пользователя 123
 ```
@@ -77,7 +75,6 @@ GET /api/users/123/posts/456    — пост 456 пользователя 123
 
 **Запрос:**
 ```
-
 GET /api/users/123 HTTP/1.1
 Host: api.example.com
 Accept: application/json
@@ -86,7 +83,6 @@ Authorization: Bearer token123
 
 **Ответ:**
 ```json
-
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -123,7 +119,6 @@ Content-Type: application/json
 
 **Структура запроса:**
 ```json
-
 {
   "jsonrpc": "2.0",
   "method": "getUserById",
@@ -134,7 +129,6 @@ Content-Type: application/json
 
 **Структура ответа:**
 ```json
-
 {
   "jsonrpc": "2.0",
   "result": {
@@ -148,7 +142,6 @@ Content-Type: application/json
 
 **Ошибка:**
 ```json
-
 {
   "jsonrpc": "2.0",
   "error": {
@@ -163,7 +156,6 @@ Content-Type: application/json
 
 **Запрос:**
 ```xml
-
 <?xml version="1.0"?>
 <methodCall>
   <methodName>getUserById</methodName>
@@ -191,7 +183,6 @@ Content-Type: application/json
 ### 4.2 Protocol Buffers определение
 
 ```protobuf
-
 syntax = "proto3";
 
 message User {
@@ -215,7 +206,6 @@ service UserService {
 **Unary RPC:** один запрос → один ответ
 
 ```
-
 Client: GetUser(id=123)
 Server: User{id=123, name="John"}
 ```
@@ -223,7 +213,6 @@ Server: User{id=123, name="John"}
 **Server streaming:** один запрос → поток ответов
 
 ```
-
 Client: ListUsers()
 Server: User{id=1, name="Alice"}
 Server: User{id=2, name="Bob"}
@@ -261,7 +250,6 @@ Server: User{id=3, name="Charlie"}
 ### 5.2 GraphQL схема
 
 ```graphql
-
 type User {
   id: ID!
   name: String!
@@ -293,7 +281,6 @@ type Mutation {
 
 **Запрос:**
 ```graphql
-
 query {
   user(id: "123") {
     id
@@ -309,7 +296,6 @@ query {
 
 **Ответ:**
 ```json
-
 {
   "data": {
     "user": {
@@ -328,7 +314,6 @@ query {
 ### 5.4 Мутации
 
 ```graphql
-
 mutation {
   createUser(name: "Alice", email: "alice@example.com") {
     id
@@ -388,7 +373,6 @@ mutation {
 ### 7.2 OpenAPI пример
 
 ```yaml
-
 openapi: 3.0.0
 info:
   title: User API
@@ -443,27 +427,23 @@ components:
 
 **URL версионирование:**
 ```
-
 /api/v1/users
 /api/v2/users
 ```
 
 **Header версионирование:**
 ```
-
 GET /api/users
 Accept: application/vnd.myapi.v2+json
 ```
 
 **Query параметр:**
 ```
-
 /api/users?version=2
 ```
 
 **Content negotiation:**
 ```
-
 GET /api/users
 Accept: application/json; version=2
 ```
@@ -498,7 +478,6 @@ Accept: application/json; version=2
 ### 9.2 Структура ошибки
 
 ```json
-
 {
   "error": {
     "code": "USER_NOT_FOUND",
@@ -523,7 +502,6 @@ Accept: application/json; version=2
 ### 9.4 GraphQL ошибки
 
 ```json
-
 {
   "data": null,
   "errors": [

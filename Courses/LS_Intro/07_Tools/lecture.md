@@ -69,6 +69,7 @@
 
 ```python
 # Применение Python в Life Sciences
+
 python_applications = {
     "биоинформатика": {
         "библиотеки": ["Biopython", "pysam", "pandas"],
@@ -98,7 +99,6 @@ for domain, details in python_applications.items():
 
 **Output:**
 ```
-
 Применение Python в Life Sciences:
 
 Биоинформатика:
@@ -486,18 +486,22 @@ process variant_calling {
 # Snakefile - workflow для анализа RNA-seq данных
 
 # Конфигурация
+
 configfile: "config.yaml"
 
 # Получение списка образцов из config
+
 SAMPLES = config["samples"]
 
 # Финальное правило: определяет все выходные файлы
+
 rule all:
     input:
         expand("results/counts/{sample}.counts", sample=SAMPLES),
         "results/qc/multiqc_report.html"
 
 # Правило 1: Контроль качества
+
 rule fastqc:
     input:
         "data/{sample}.fastq.gz"
@@ -511,6 +515,7 @@ rule fastqc:
         "fastqc -t {threads} -o results/qc {input}"
 
 # Правило 2: Выравнивание с STAR
+
 rule align:
     input:
         reads="data/{sample}.fastq.gz",
@@ -534,6 +539,7 @@ rule align:
         """
 
 # Правило 3: Подсчёт экспрессии с использованием Python
+
 rule count_reads:
     input:
         bam="results/aligned/{sample}.bam",
@@ -546,6 +552,7 @@ rule count_reads:
         "scripts/count_reads.py"
 
 # Правило 4: Объединённый QC отчёт
+
 rule multiqc:
     input:
         expand("results/qc/{sample}_fastqc.zip", sample=SAMPLES)
@@ -650,9 +657,11 @@ rule multiqc:
 # Multi-stage build для оптимизации размера
 
 # Stage 1: Build environment
+
 FROM python:3.11-slim as builder
 
 # Установка системных зависимостей для компиляции
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     g++ \
@@ -661,34 +670,42 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Установка Python зависимостей
+
 COPY requirements.txt /tmp/
 RUN pip install --user --no-cache-dir -r /tmp/requirements.txt
 
 # Stage 2: Runtime environment
+
 FROM python:3.11-slim as runtime
 
 # Метаданные контейнера
+
 LABEL maintainer="bioinformatics@example.com"
 LABEL version="1.0"
 LABEL description="Container for genomic analysis pipeline"
 
 # Создание непривилегированного пользователя
+
 RUN useradd --create-home --shell /bin/bash analyst
 USER analyst
 WORKDIR /home/analyst
 
 # Копирование установленных пакетов из builder
+
 COPY --from=builder /root/.local /home/analyst/.local
 ENV PATH=/home/analyst/.local/bin:$PATH
 
 # Копирование кода приложения
+
 COPY --chown=analyst:analyst scripts/ ./scripts/
 COPY --chown=analyst:analyst config/ ./config/
 
 # Определение volume для данных
+
 VOLUME ["/home/analyst/data", "/home/analyst/results"]
 
 # Точка входа
+
 ENTRYPOINT ["python", "scripts/run_analysis.py"]
 CMD ["--help"]
 ```
@@ -696,7 +713,6 @@ CMD ["--help"]
 **Пример requirements.txt:**
 
 ```text
-
 biopython==1.81
 pandas==2.0.0
 numpy==1.24.0
@@ -709,9 +725,11 @@ matplotlib==3.7.0
 
 ```bash
 # Сборка образа
+
 docker build -t genomic-analysis:1.0 .
 
 # Запуск с монтированием данных
+
 docker run -v $(pwd)/data:/home/analyst/data \
            -v $(pwd)/results:/home/analyst/results \
            genomic-analysis:1.0 --input data/sample.fastq --output results/
@@ -796,7 +814,6 @@ docker run -v $(pwd)/data:/home/analyst/data \
 **Как инструменты работают вместе:**
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │              Life Sciences Informatics Stack            │
 ├─────────────────────────────────────────────────────────┤
@@ -885,6 +902,7 @@ docker run -v $(pwd)/data:/home/analyst/data \
 - [Snakemake Documentation](https://snakemake.readthedocs.io/)
 
 ---
+
 
 
 

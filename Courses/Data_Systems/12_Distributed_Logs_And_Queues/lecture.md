@@ -52,7 +52,6 @@
 ### 1.1 Event Sourcing: Лог как источник правды
 
 ```python
-
 class EventStore:
     """Хранилище событий (Event Sourcing)."""
     
@@ -90,6 +89,7 @@ class EventStore:
         return state
 
 # Пример использования
+
 store = EventStore()
 store.append_event('UserCreated', 'user:1', {'id': 1})
 store.append_event('Deposit', 'user:1', {'amount': 50})
@@ -104,7 +104,6 @@ print(f"User balance: {state['balance']}")  # 100
 ### 1.2 Лог как очередь сообщений
 
 ```python
-
 class SimpleLogQueue:
     """Простая очередь на основе лога."""
     
@@ -140,6 +139,7 @@ class SimpleLogQueue:
         self.consumer_offsets[consumer_id] = offset
 
 # Пример
+
 queue = SimpleLogQueue()
 queue.produce("Message 1")
 queue.produce("Message 2")
@@ -178,7 +178,6 @@ Kafka пишет только в конец последнего файла (Act
 **Структура сегментов:**
 
 ```python
-
 class KafkaSegment:
     """Упрощенная реализация сегмента Kafka."""
     
@@ -236,7 +235,6 @@ print(segment.get(1))  # {'offset': 1, 'message': 'Message 1', ...}
 ### 2.4 Consumer Groups
 
 ```python
-
 class ConsumerGroup:
     """Управление группой консьюмеров."""
     
@@ -293,7 +291,6 @@ group.add_consumer("consumer-2")
 group.add_consumer("consumer-3")
 
 # Результат: каждый консьюмер получит по 2 партиции
-
 ```
 
 ---
@@ -332,7 +329,6 @@ CPU почти не нагружается. Kafka просто "соединяе
 **C Code Example (Traditional vs Sendfile)**
 
 ```c
-
 /* Traditional Read/Write (Slow) */
 char buf[8192];
 ssize_t n;
@@ -353,7 +349,6 @@ sendfile(socket_fd, disk_fd, &offset, stat_buf.st_size);
 **Python пример с mmap (Memory-Mapped Files):**
 
 ```python
-
 import mmap
 import os
 
@@ -375,6 +370,7 @@ class MappedLogReader:
         self.file.close()
 
 # Использование
+
 reader = MappedLogReader('/var/kafka-logs/topic-0/00000000000000000000.log')
 data = reader.read_at(offset=0, length=1024)  # Нет копирования в user space!
 ```
@@ -382,7 +378,6 @@ data = reader.read_at(offset=0, length=1024)  # Нет копирования в
 **Бенчмарк производительности:**
 
 ```python
-
 import time
 
 def benchmark_traditional_read(file_path, size):
@@ -404,7 +399,6 @@ def benchmark_mmap_read(file_path, size):
 # Результаты (примерные):
 # Traditional: ~2ms для 1MB
 # Mmap: ~0.1ms для 1MB (в 20 раз быстрее!)
-
 ```
 
 ### 3.3 Batching
@@ -414,7 +408,6 @@ Kafka не шлет сообщения по одному. Producer собира�
 **Реализация батчинга:**
 
 ```python
-
 class BatchedProducer:
     """Producer с батчингом сообщений."""
     
@@ -477,7 +470,6 @@ producer.flush()  # Отправляем остатки
 ### 3.4 Compression Comparison
 
 ```python
-
 import gzip
 import lz4.frame
 import zlib
@@ -501,6 +493,7 @@ def compare_compression(data):
     return results
 
 # Тест на типичных данных Kafka (JSON события)
+
 test_data = '\n'.join([
     '{"user_id": 123, "action": "click", "timestamp": 1234567890}'
     for _ in range(1000)
@@ -511,7 +504,6 @@ compare_compression(test_data)
 # gzip     : 15000 bytes (85% compression)
 # lz4      : 18000 bytes (82% compression) - быстрее
 # snappy   : 20000 bytes (80% compression) - самый быстрый
-
 ```
 
 ---
@@ -568,7 +560,6 @@ compare_compression(test_data)
 Вам не нужно писать Java Consumer. Пишите SQL:
 
 ```sql
-
 SELECT 
     userid, 
     count(*) 
@@ -582,7 +573,6 @@ HAVING count(*) > 100;
 **Реализация оконных функций:**
 
 ```python
-
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -615,6 +605,7 @@ class WindowedAggregator:
         return sorted(results.items(), key=lambda x: x[1], reverse=True)[:k]
 
 # Пример использования
+
 aggregator = WindowedAggregator(window_size_seconds=3600)  # 1 час
 
 # Симулируем события
@@ -631,6 +622,7 @@ for key, ts in events:
     aggregator.add_event(key, ts)
 
 # Получаем топ пользователей за первый час
+
 top = aggregator.get_top_k(1000, k=2)
 print(top)  # [('user1', 3), ('user2', 1)]
 ```
@@ -638,7 +630,6 @@ print(top)  # [('user1', 3), ('user2', 1)]
 **Sliding Window реализация:**
 
 ```python
-
 class SlidingWindow:
     """Скользящее окно для подсчета событий."""
     
@@ -793,5 +784,6 @@ def check_rate_limit(user_id, max_requests=100):
 4.  Посмотрите папку `/tmp/kafka-logs`. Найдите файлы `.log`. Откройте их `hexdump`.
 
 В следующем модуле мы изучим **In-Memory** хранилища, которые живут в RAM, а не на диске. [Data Structures As Architecture (Redis)](../13_Data_Structures_As_Architecture/).
+
 
 

@@ -39,13 +39,13 @@
 ```sh
 # Проверить статус PF
 # doas pfctl -s info
+
 Status: Enabled for 5 days 03:21:45
 
 State Table                          Total             Rate
   current entries                       42
   searches                         1234567           2.8/s
   inserts                           12345           0.0/s
-
 ```
 
 ### 1.2 Включение PF
@@ -65,6 +65,7 @@ State Table                          Total             Rate
 
 ```sh
 # Основной файл
+
 /etc/pf.conf
 
 # Загрузить конфигурацию
@@ -81,11 +82,9 @@ State Table                          Total             Rate
 ### 2.1 Базовая структура
 
 ```
-
 action [direction] [log] [quick] [on interface] [af] [proto protocol]
     [from src_addr [port src_port]] [to dst_addr [port dst_port]]
     [flags tcp_flags] [state]
-
 ```
 
 ### 2.2 Основные действия
@@ -108,17 +107,20 @@ action [direction] [log] [quick] [on interface] [af] [proto protocol]
 
 ```sh
 # Блокировать всё по умолчанию
+
 block all
 
 # Разрешить весь исходящий
+
 pass out all
 
 # Разрешить SSH на всех интерфейсах
+
 pass in proto tcp to port 22
 
 # Разрешить HTTP/HTTPS на конкретном интерфейсе
-pass in on em0 proto tcp to port { 80, 443 }
 
+pass in on em0 proto tcp to port { 80, 443 }
 ```
 
 ---
@@ -131,22 +133,26 @@ pass in on em0 proto tcp to port { 80, 443 }
 # /etc/pf.conf
 
 # Макросы
+
 ext_if = "em0"
 
 # Опции
+
 set skip on lo0
 set block-policy drop
 
 # Нормализация
+
 match in all scrub (no-df)
 
 # Правила по умолчанию
+
 block in all
 pass out all keep state
 
 # Разрешить SSH
-pass in on $ext_if proto tcp to port 22
 
+pass in on $ext_if proto tcp to port 22
 ```
 
 ### 3.2 Применение и проверка
@@ -160,10 +166,10 @@ pass in on $ext_if proto tcp to port 22
 
 # Показать правила
 # doas pfctl -sr
+
 block drop in all
 pass out all flags S/SA keep state
 pass in on em0 proto tcp from any to any port = 22 flags S/SA keep state
-
 ```
 
 ---
@@ -174,6 +180,7 @@ pass in on em0 proto tcp from any to any port = 22 flags S/SA keep state
 
 ```sh
 # Определение макросов
+
 ext_if = "em0"
 int_if = "em1"
 ssh_port = "22"
@@ -181,9 +188,9 @@ web_ports = "{ 80, 443 }"
 allowed_hosts = "{ 192.168.1.0/24, 10.0.0.0/8 }"
 
 # Использование
+
 pass in on $ext_if proto tcp to port $ssh_port
 pass in on $int_if from $allowed_hosts
-
 ```
 
 ### 4.2 Таблицы
@@ -192,14 +199,15 @@ pass in on $int_if from $allowed_hosts
 
 ```sh
 # Определение таблицы
+
 table <bruteforce> persist
 table <trusted> { 192.168.1.0/24, 10.0.0.0/8 }
 table <blocked> file "/etc/pf.blocked"
 
 # Использование
+
 block in quick from <bruteforce>
 pass in from <trusted>
-
 ```
 
 ### 4.3 Управление таблицами
@@ -229,39 +237,43 @@ pass in from <trusted>
 
 ```sh
 # Простой NAT для внутренней сети
+
 ext_if = "em0"
 int_if = "em1"
 int_net = "192.168.1.0/24"
 
 # NAT исходящего трафика
+
 match out on $ext_if from $int_net nat-to ($ext_if)
 
 # Или с явным указанием
-match out on $ext_if from $int_net to any nat-to ($ext_if:0)
 
+match out on $ext_if from $int_net to any nat-to ($ext_if:0)
 ```
 
 ### 5.2 Port Forwarding
 
 ```sh
 # Перенаправление порта на внутренний сервер
+
 ext_if = "em0"
 webserver = "192.168.1.10"
 
 # Перенаправить порт 80 на веб-сервер
+
 pass in on $ext_if proto tcp to ($ext_if) port 80 rdr-to $webserver port 80
 
 # Перенаправление нескольких портов
-pass in on $ext_if proto tcp to port { 80, 443 } rdr-to $webserver
 
+pass in on $ext_if proto tcp to port { 80, 443 } rdr-to $webserver
 ```
 
 ### 5.3 1:1 NAT (Binat)
 
 ```sh
 # Двунаправленный NAT
-pass on $ext_if from 192.168.1.10 binat-to 203.0.113.10
 
+pass on $ext_if from 192.168.1.10 binat-to 203.0.113.10
 ```
 
 ---
@@ -274,14 +286,16 @@ PF по умолчанию использует stateful filtering:
 
 ```sh
 # keep state — создать запись состояния
+
 pass out all keep state
 
 # modulate state — для TCP, рандомизирует ISN
+
 pass out proto tcp all modulate state
 
 # synproxy state — защита от SYN flood
-pass in on $ext_if proto tcp to port 80 synproxy state
 
+pass in on $ext_if proto tcp to port 80 synproxy state
 ```
 
 ### 6.2 Просмотр состояний
@@ -289,29 +303,31 @@ pass in on $ext_if proto tcp to port 80 synproxy state
 ```sh
 # Все состояния
 # doas pfctl -ss
+
 all tcp 192.168.1.100:54321 -> 142.250.74.110:443       ESTABLISHED:ESTABLISHED
 all tcp 192.168.1.100:54322 -> 93.184.216.34:80         TIME_WAIT:TIME_WAIT
 
 # Статистика состояний
 # doas pfctl -si
+
 State Table
   current entries                       42
   searches                         1234567
   inserts                           12345
   removals                          12303
-
 ```
 
 ### 6.3 Опции состояний
 
 ```sh
 # Лимиты состояний для правила
+
 pass in proto tcp to port 22 keep state (max 100, source-track rule, max-src-conn 10)
 
 # Глобальные лимиты
+
 set limit states 100000
 set limit src-nodes 50000
-
 ```
 
 ---
@@ -321,31 +337,32 @@ set limit src-nodes 50000
 ### 7.1 Защита от брутфорса SSH
 
 ```sh
-
 table <bruteforce> persist
 
 # Блокировать адреса из таблицы
+
 block in quick from <bruteforce>
 
 # Добавлять в таблицу при превышении лимита
+
 pass in on $ext_if proto tcp to port 22 \
     keep state (max-src-conn 5, max-src-conn-rate 3/30, \
     overload <bruteforce> flush global)
-
 ```
 
 ### 7.2 SYN Flood защита
 
 ```sh
 # synproxy — прокси TCP handshake
-pass in on $ext_if proto tcp to port 80 synproxy state
 
+pass in on $ext_if proto tcp to port 80 synproxy state
 ```
 
 ### 7.3 Scrubbing (нормализация)
 
 ```sh
 # Нормализация всех пакетов
+
 match in all scrub (no-df max-mss 1440)
 
 # no-df — очистить бит "don't fragment"
@@ -361,14 +378,16 @@ match in all scrub (no-df max-mss 1440)
 
 ```sh
 # Логировать заблокированные пакеты
+
 block in log all
 
 # Логировать определённый трафик
+
 pass in log on $ext_if proto tcp to port 22
 
 # Логировать всё (для отладки)
-pass in log (all) on $ext_if
 
+pass in log (all) on $ext_if
 ```
 
 ### 8.2 Просмотр логов
@@ -404,11 +423,11 @@ pass in log (all) on $ext_if
 
 ```sh
 # /etc/pf.conf
+
 anchor "ssh_rules"
 load anchor "ssh_rules" from "/etc/pf.d/ssh.conf"
 
 anchor "dynamic_rules"  # пустой якорь для динамических правил
-
 ```
 
 ### 9.2 Управление якорями
@@ -436,37 +455,44 @@ anchor "dynamic_rules"  # пустой якорь для динамически�
 ext_if = "em0"
 
 # Таблицы
+
 table <bruteforce> persist
 table <abusive_clients> persist
 
 # Опции
+
 set skip on lo0
 set block-policy drop
 set loginterface $ext_if
 
 # Нормализация
+
 match in all scrub (no-df)
 
 # Блокировать известных нарушителей
+
 block in quick from <bruteforce>
 block in quick from <abusive_clients>
 
 # По умолчанию
+
 block in all
 pass out all keep state
 
 # SSH с защитой от брутфорса
+
 pass in on $ext_if proto tcp to port 22 \
     keep state (max-src-conn 5, max-src-conn-rate 3/30, \
     overload <bruteforce> flush global)
 
 # HTTP/HTTPS
+
 pass in on $ext_if proto tcp to port { 80, 443 } \
     synproxy state
 
 # ICMP ping
-pass in on $ext_if proto icmp icmp-type echoreq
 
+pass in on $ext_if proto icmp icmp-type echoreq
 ```
 
 ### 10.2 Роутер с NAT
@@ -484,29 +510,35 @@ set skip on lo0
 set block-policy drop
 
 # Нормализация
+
 match in all scrub (no-df)
 
 # NAT для внутренней сети
+
 match out on $ext_if from $int_net nat-to ($ext_if)
 
 # Port forwarding
+
 pass in on $ext_if proto tcp to port 80 rdr-to $webserver
 pass in on $ext_if proto tcp to port 443 rdr-to $webserver
 pass in on $ext_if proto tcp to port 25 rdr-to $mailserver
 
 # Правила фильтрации
+
 block in all
 pass out all keep state
 
 # Разрешить внутренней сети выходить наружу
+
 pass in on $int_if from $int_net
 
 # SSH только из внутренней сети
+
 pass in on $int_if proto tcp to port 22
 
 # ICMP
-pass in proto icmp icmp-type echoreq
 
+pass in proto icmp icmp-type echoreq
 ```
 
 ### 10.3 VPN сервер (WireGuard)
@@ -521,17 +553,19 @@ wg_net = "10.0.0.0/24"
 set skip on lo0
 
 # NAT для VPN клиентов
+
 match out on $ext_if from $wg_net nat-to ($ext_if)
 
 block in all
 pass out all keep state
 
 # WireGuard UDP
+
 pass in on $ext_if proto udp to port 51820
 
 # Разрешить трафик VPN клиентов
-pass in on $wg_if from $wg_net
 
+pass in on $wg_if from $wg_net
 ```
 
 ---
@@ -542,40 +576,48 @@ pass in on $wg_if from $wg_net
 
 ```sh
 # Статус PF
+
 pfctl -s info
 
 # Показать правила
+
 pfctl -sr
 
 # Показать NAT правила
+
 pfctl -sn
 
 # Показать таблицы
+
 pfctl -sT
 
 # Показать состояния
+
 pfctl -ss
 
 # Показать всё
+
 pfctl -sa
 
 # Статистика интерфейсов
+
 pfctl -si
 
 # Статистика по правилам
-pfctl -vsr
 
+pfctl -vsr
 ```
 
 ### 11.2 Тестирование правил
 
 ```sh
 # Проверить синтаксис
+
 pfctl -nf /etc/pf.conf
 
 # Проверить, какое правило сработает
-pfctl -s rules -vvv
 
+pfctl -s rules -vvv
 ```
 
 ---
@@ -626,6 +668,7 @@ pfctl -s rules -vvv
 - "The Book of PF" by Peter N. M. Hansteen — отличная книга
 
 ---
+
 
 
 

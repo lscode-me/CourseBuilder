@@ -26,7 +26,6 @@
 **Amazon RDS (Relational Database Service)** — управляемый сервис реляционных баз данных. AWS берёт на себя: установку, патчинг, бэкапы, репликацию, failover.
 
 ```python
-
 rds_supported_engines = {
     "MySQL": {"versions": "5.7, 8.0", "port": 3306},
     "PostgreSQL": {"versions": "12-16", "port": 5432},
@@ -40,13 +39,11 @@ rds_supported_engines = {
 print("RDS Supported Engines:")
 for engine, details in rds_supported_engines.items():
     print(f"  • {engine}: {details['versions']}")
-
 ```
 
 ### 1.2 RDS vs Self-Managed
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │              RDS vs Self-Managed Database                          │
 ├────────────────────────────────────────────────────────────────────┤
@@ -68,7 +65,6 @@ for engine, details in rds_supported_engines.items():
 │  Data                     You             You                      │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -78,7 +74,6 @@ for engine, details in rds_supported_engines.items():
 ### 2.1 Через CLI
 
 ```bash
-
 aws rds create-db-instance \
     --db-instance-identifier mydb \
     --db-instance-class db.t3.medium \
@@ -98,18 +93,17 @@ aws rds create-db-instance \
     --multi-az \
     --publicly-accessible false \
     --tags Key=Environment,Value=production
-
 ```
 
 ### 2.2 DB Subnet Group
 
 ```bash
 # RDS требует subnet group с subnets минимум в 2 AZ
+
 aws rds create-db-subnet-group \
     --db-subnet-group-name my-db-subnet-group \
     --db-subnet-group-description "Subnets for RDS" \
     --subnet-ids subnet-1a subnet-1b subnet-1c
-
 ```
 
 ---
@@ -119,7 +113,6 @@ aws rds create-db-subnet-group \
 ### 3.1 Как работает Multi-AZ
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                    RDS Multi-AZ Deployment                       │
 ├──────────────────────────────────────────────────────────────────┤
@@ -152,13 +145,11 @@ aws rds create-db-subnet-group \
 │  • Standby not accessible for reads                              │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Когда происходит Failover
 
 ```python
-
 failover_triggers = [
     "Primary instance failure",
     "AZ failure",
@@ -183,7 +174,6 @@ for trigger in failover_triggers:
 ### 4.1 Как работают Read Replicas
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    RDS Read Replicas                               │
 ├────────────────────────────────────────────────────────────────────┤
@@ -212,31 +202,30 @@ for trigger in failover_triggers:
 │  • Отдельный endpoint для каждой реплики                           │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Создание Read Replica
 
 ```bash
 # Создание Read Replica
+
 aws rds create-db-instance-read-replica \
     --db-instance-identifier mydb-replica \
     --source-db-instance-identifier mydb \
     --db-instance-class db.t3.medium
 
 # Cross-Region Replica
+
 aws rds create-db-instance-read-replica \
     --db-instance-identifier mydb-eu-replica \
     --source-db-instance-identifier arn:aws:rds:us-east-1:123456789012:db:mydb \
     --db-instance-class db.t3.medium \
     --region eu-west-1
-
 ```
 
 ### 4.3 Read Replica vs Multi-AZ
 
 ```python
-
 comparison = {
     "Purpose": {
         "Multi-AZ": "High Availability (failover)",
@@ -265,7 +254,6 @@ for aspect, values in comparison.items():
     print(f"  {aspect}:")
     print(f"    Multi-AZ: {values['Multi-AZ']}")
     print(f"    Read Replica: {values['Read Replica']}\n")
-
 ```
 
 ---
@@ -277,7 +265,6 @@ for aspect, values in comparison.items():
 **Amazon Aurora** — облачная реляционная БД, совместимая с MySQL и PostgreSQL, но с улучшенной производительностью и доступностью.
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    Aurora Architecture                            │
 ├───────────────────────────────────────────────────────────────────┤
@@ -312,13 +299,11 @@ for aspect, values in comparison.items():
 │  • Sub-10ms replica lag                                           │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.2 Aurora vs Standard RDS
 
 ```python
-
 aurora_benefits = {
     "Performance": "5x MySQL, 3x PostgreSQL throughput",
     "Storage": "Auto-scaling 10GB-128TB, 6 copies",
@@ -333,13 +318,13 @@ aurora_benefits = {
 print("Aurora Benefits:")
 for benefit, description in aurora_benefits.items():
     print(f"  ✓ {benefit}: {description}")
-
 ```
 
 ### 5.3 Aurora Serverless v2
 
 ```bash
 # Aurora Serverless v2 - автомасштабирование compute
+
 aws rds create-db-cluster \
     --db-cluster-identifier my-aurora-serverless \
     --engine aurora-postgresql \
@@ -360,7 +345,6 @@ aws rds create-db-cluster \
 ### 6.1 Automated Backups
 
 ```python
-
 backup_features = {
     "Automated Backups": {
         "retention": "1-35 days",
@@ -386,23 +370,23 @@ for backup_type, details in backup_features.items():
     print(f"\n{backup_type}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
-
 ```
 
 ### 6.2 Восстановление
 
 ```bash
 # Point-in-Time Recovery
+
 aws rds restore-db-instance-to-point-in-time \
     --source-db-instance-identifier mydb \
     --target-db-instance-identifier mydb-restored \
     --restore-time "2024-01-15T10:30:00Z"
 
 # Restore from snapshot
+
 aws rds restore-db-instance-from-db-snapshot \
     --db-instance-identifier mydb-restored \
     --db-snapshot-identifier mydb-snapshot-20240115
-
 ```
 
 ---
@@ -412,7 +396,6 @@ aws rds restore-db-instance-from-db-snapshot \
 ### 7.1 Encryption
 
 ```python
-
 rds_security = {
     "Encryption at Rest": {
         "how": "AWS KMS (AES-256)",
@@ -435,13 +418,11 @@ rds_security = {
         "secrets": "AWS Secrets Manager with rotation"
     }
 }
-
 ```
 
 ### 7.2 IAM Database Authentication
 
 ```python
-
 import boto3
 import psycopg2
 
@@ -457,6 +438,7 @@ def get_iam_auth_token(host: str, port: int, user: str, region: str) -> str:
     return token
 
 # Использование
+
 host = "mydb.xxx.us-east-1.rds.amazonaws.com"
 token = get_iam_auth_token(host, 5432, "iam_user", "us-east-1")
 
@@ -468,7 +450,6 @@ conn = psycopg2.connect(
     password=token,
     sslmode="require"
 )
-
 ```
 
 ---
@@ -477,6 +458,7 @@ conn = psycopg2.connect(
 
 ```bash
 # Включение Performance Insights
+
 aws rds modify-db-instance \
     --db-instance-identifier mydb \
     --enable-performance-insights \
@@ -494,7 +476,6 @@ aws rds modify-db-instance \
 ## 9. Pricing
 
 ```python
-
 rds_cost_components = {
     "Instance hours": "Per hour, based on instance class",
     "Storage": "Per GB-month (gp3, io1, magnetic)",
@@ -505,6 +486,7 @@ rds_cost_components = {
 }
 
 # Примерные цены (us-east-1)
+
 example_pricing = {
     "db.t3.medium": "$0.068/hour",
     "db.r6g.large": "$0.26/hour", 
@@ -515,7 +497,6 @@ example_pricing = {
 print("RDS Pricing Components:")
 for component, description in rds_cost_components.items():
     print(f"  • {component}: {description}")
-
 ```
 
 ---
@@ -523,7 +504,6 @@ for component, description in rds_cost_components.items():
 ## 10. Best Practices
 
 ```python
-
 rds_best_practices = [
     "Используйте Multi-AZ для production",
     "Включите automated backups (7+ days retention)",
@@ -540,7 +520,6 @@ rds_best_practices = [
 print("RDS Best Practices:")
 for i, practice in enumerate(rds_best_practices, 1):
     print(f"  {i}. {practice}")
-
 ```
 
 ---
@@ -574,6 +553,7 @@ for i, practice in enumerate(rds_best_practices, 1):
 - [Aurora User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/)
 
 ---
+
 
 
 

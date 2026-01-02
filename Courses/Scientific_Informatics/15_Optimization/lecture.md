@@ -87,7 +87,6 @@ print(f"Speedup: {linear_time/binary_time:.1f}x")
 
 **Output:**
 ```
-
 Linear search: 0.012345s
 Binary search: 0.000012s
 Speedup: 1028.8x
@@ -102,7 +101,6 @@ Speedup: 1028.8x
 **Пример: Параллельная обработка**
 
 ```python
-
 from multiprocessing import Pool
 import numpy as np
 
@@ -128,7 +126,6 @@ print(f"Parallel processing result: {result:.6f}")
 
 **Output:**
 ```
-
 Parallel processing result: 1.000234
 ```
 
@@ -169,7 +166,6 @@ for category, details in distributed_computing.items():
 
 **Output:**
 ```
-
 Distributed Computing:
 
 architecture:
@@ -197,7 +193,6 @@ tools:
 **Пример: Расчёт стоимости вычислений**
 
 ```python
-
 def calculate_compute_cost(hours, cpu_hour_cost=0.1, memory_gb_hour=0.01):
     """Расчёт стоимости вычислений"""
     cpu_cost = hours * cpu_hour_cost
@@ -221,7 +216,6 @@ print(f"  Total: ${cost['total_cost']:.2f}")
 
 **Output:**
 ```
-
 Compute cost for 100 hours:
   CPU: $10.00
   Memory: $64.00
@@ -233,7 +227,6 @@ Compute cost for 100 hours:
 **Пример: Стратегии оптимизации**
 
 ```python
-
 def optimize_cost(strategy, current_cost):
     """Оптимизация стоимости вычислений"""
     optimizations = {
@@ -266,7 +259,6 @@ print(f"  Savings: ${result['savings']:.2f} ({result['savings_percent']:.1f}%)")
 
 **Output:**
 ```
-
 Cost optimization (spot_instances):
   Original: $1000.00
   Optimized: $700.00
@@ -282,7 +274,6 @@ Cost optimization (spot_instances):
 **Пример: Retry механизм**
 
 ```python
-
 import time
 from functools import wraps
 
@@ -325,7 +316,6 @@ except ValueError as e:
 
 **Output:**
 ```
-
 Attempt 1 failed: Temporary failure. Retrying in 1s...
 Attempt 2 failed: Temporary failure. Retrying in 2s...
 Result: Success
@@ -336,7 +326,6 @@ Result: Success
 **Пример: Сохранение промежуточных результатов**
 
 ```python
-
 import pickle
 import os
 
@@ -379,7 +368,6 @@ print(f"Loaded data: {loaded}")
 
 **Output:**
 ```
-
 Checkpoint saved: checkpoints/step1.pkl
 Checkpoint loaded: checkpoints/step1.pkl
 Loaded data: {'step1_result': 10.5}
@@ -394,7 +382,6 @@ Loaded data: {'step1_result': 10.5}
 **Пример: Кэширование результатов**
 
 ```python
-
 from functools import lru_cache
 
 @lru_cache(maxsize=128)
@@ -421,7 +408,6 @@ print(f"Speedup: {time1/time2:.1f}x")
 
 **Output:**
 ```
-
 First call: 0.123456s
 Second call (cached): 0.000001s
 Speedup: 123456.0x
@@ -452,7 +438,6 @@ print("- Compress data for storage")
 
 **Output:**
 ```
-
 I/O Optimization:
 - Use buffering for file I/O
 - Batch read/write operations

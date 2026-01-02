@@ -52,27 +52,31 @@
 **Example: Сравнение отсортированного и неотсортированного массива**
 
 ```python
-
 import time
 
 # Неотсортированный массив
+
 unsorted_arr = [5, 2, 8, 1, 9, 3, 7, 4, 6]
 
 # Отсортированный массив
+
 sorted_arr = sorted(unsorted_arr)
 
 print(f"Неотсортированный: {unsorted_arr}")
 print(f"Отсортированный: {sorted_arr}")
 
 # Поиск элемента 7
+
 target = 7
 
 # Линейный поиск в неотсортированном
+
 start = time.time()
 found_linear = target in unsorted_arr
 time_linear = time.time() - start
 
 # Бинарный поиск в отсортированном
+
 import bisect
 start = time.time()
 index = bisect.bisect_left(sorted_arr, target)
@@ -85,7 +89,6 @@ print(f"Бинарный поиск: {time_binary:.9f} секунд")
 
 **Output:**
 ```
-
 Неотсортированный: [5, 2, 8, 1, 9, 3, 7, 4, 6]
 Отсортированный: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 Линейный поиск: 0.000000000 секунд
@@ -97,7 +100,6 @@ print(f"Бинарный поиск: {time_binary:.9f} секунд")
 **Example: Вставка с сохранением порядка**
 
 ```python
-
 def insert_sorted(arr, value):
     """Вставить значение в отсортированный массив."""
     import bisect
@@ -105,9 +107,11 @@ def insert_sorted(arr, value):
     return arr
 
 # Отсортированный массив
+
 sorted_list = [1, 3, 5, 7, 9]
 
 # Вставка элементов
+
 insert_sorted(sorted_list, 4)
 insert_sorted(sorted_list, 6)
 insert_sorted(sorted_list, 2)
@@ -117,7 +121,6 @@ print(f"После вставок: {sorted_list}")
 
 **Output:**
 ```
-
 После вставок: [1, 2, 3, 4, 5, 6, 7, 9]
 ```
 
@@ -137,7 +140,6 @@ print(f"После вставок: {sorted_list}")
 **Example: Реализация бинарного поиска**
 
 ```python
-
 def binary_search(arr, target):
     """Бинарный поиск в отсортированном массиве."""
     left, right = 0, len(arr) - 1
@@ -155,6 +157,7 @@ def binary_search(arr, target):
     return -1  # Не найдено
 
 # Тестирование
+
 sorted_arr = [1, 3, 5, 7, 9, 11, 13, 15]
 
 targets = [5, 9, 2, 16]
@@ -169,7 +172,6 @@ for target in targets:
 
 **Output:**
 ```
-
 Элемент 5 найден на позиции 2
 Элемент 9 найден на позиции 4
 Элемент 2 не найден
@@ -185,7 +187,6 @@ for target in targets:
 **Example: Визуализация количества шагов**
 
 ```python
-
 import math
 
 sizes = [10, 100, 1000, 10000, 100000, 1000000]
@@ -202,7 +203,6 @@ for size in sizes:
 
 **Output:**
 ```
-
 Количество шагов бинарного поиска:
 Размер     Шагов (log₂)   Линейный поиск
 ----------------------------------------
@@ -221,7 +221,6 @@ for size in sizes:
 **Example: Рекурсивный бинарный поиск**
 
 ```python
-
 def binary_search_recursive(arr, target, left=0, right=None):
     """Рекурсивный бинарный поиск."""
     if right is None:
@@ -248,7 +247,6 @@ print(f"Элемент 7 найден на позиции: {result}")
 
 **Output:**
 ```
-
 Элемент 7 найден на позиции: 3
 ```
 
@@ -272,17 +270,18 @@ print(f"Элемент 7 найден на позиции: {result}")
 **Example: Использование bisect_left**
 
 ```python
-
 import bisect
 
 sorted_arr = [1, 3, 5, 7, 9]
 
 # Найти позицию для вставки
+
 target = 4
 index = bisect.bisect_left(sorted_arr, target)
 print(f"Позиция для вставки {target}: {index}")
 
 # Вставить элемент
+
 bisect.insort_left(sorted_arr, target)
 print(f"После вставки: {sorted_arr}")
 
@@ -296,7 +295,6 @@ print(f"Элемент найден: {sorted_arr[index] == target}")
 
 **Output:**
 ```
-
 Позиция для вставки 4: 2
 После вставки: [1, 3, 4, 5, 7, 9]
 Позиция элемента 5: 3
@@ -306,10 +304,10 @@ print(f"Элемент найден: {sorted_arr[index] == target}")
 **Example: Разница между bisect_left и bisect_right**
 
 ```python
-
 import bisect
 
 # Массив с дубликатами
+
 arr = [1, 2, 2, 2, 3, 4]
 
 target = 2
@@ -325,7 +323,6 @@ print(f"Количество элементов {target}: {right_pos - left_pos}
 
 **Output:**
 ```
-
 Массив: [1, 2, 2, 2, 3, 4]
 bisect_left(2): 1
 bisect_right(2): 4
@@ -337,12 +334,12 @@ bisect_right(2): 4
 **Example: Вставка с сохранением порядка**
 
 ```python
-
 import bisect
 
 sorted_list = [1, 3, 5, 7, 9]
 
 # Вставка слева
+
 bisect.insort_left(sorted_list, 4)
 print(f"После insort_left(4): {sorted_list}")
 
@@ -354,7 +351,6 @@ print(f"После insort_right(4): {sorted_list}")
 
 **Output:**
 ```
-
 После insort_left(4): [1, 3, 4, 5, 7, 9]
 После insort_right(4): [1, 3, 4, 4, 5, 7, 9]
 ```
@@ -364,7 +360,6 @@ print(f"После insort_right(4): {sorted_list}")
 **Example: Поиск диапазона**
 
 ```python
-
 import bisect
 
 def find_range(arr, start, end):
@@ -383,14 +378,12 @@ print(f"Элементы в диапазоне [3, 7): {result}")
 
 **Output:**
 ```
-
 Элементы в диапазоне [3, 7): [3, 4, 5, 6]
 ```
 
 **Example: Вставка с поддержанием отсортированности**
 
 ```python
-
 import bisect
 
 class SortedList:
@@ -413,6 +406,7 @@ class SortedList:
         return str(self.items)
 
 # Использование
+
 sl = SortedList()
 sl.insert(5)
 sl.insert(2)
@@ -425,7 +419,6 @@ print(f"Поиск 5: индекс {sl.search(5)}")
 
 **Output:**
 ```
-
 Отсортированный список: [1, 2, 5, 8]
 Поиск 5: индекс 2
 ```
@@ -450,12 +443,15 @@ print(f"Поиск 5: индекс {sl.search(5)}")
 
 ```python
 # Задача: найти все оценки в диапазоне [80, 90]
+
 grades = [65, 72, 78, 85, 88, 92, 95]
 
 # Сортируем
+
 sorted_grades = sorted(grades)
 
 # Используем bisect для поиска диапазона
+
 import bisect
 start = 80
 end = 90
@@ -469,7 +465,6 @@ print(f"Оценки в диапазоне [{start}, {end}]: {result}")
 
 **Output:**
 ```
-
 Оценки в диапазоне [80, 90]: [85, 88]
 ```
 
@@ -499,7 +494,6 @@ print(f"Оценки в диапазоне [{start}, {end}]: {result}")
 **Example: Интерполяционный поиск**
 
 ```python
-
 def interpolation_search(arr, target):
     """Интерполяционный поиск (для равномерно распределённых данных)."""
     left, right = 0, len(arr) - 1
@@ -523,6 +517,7 @@ def interpolation_search(arr, target):
     return -1
 
 # Тестирование на равномерно распределённых данных
+
 uniform_data = list(range(0, 100, 2))  # [0, 2, 4, ..., 98]
 result = interpolation_search(uniform_data, 50)
 print(f"Элемент 50 найден на позиции: {result}")
@@ -530,7 +525,6 @@ print(f"Элемент 50 найден на позиции: {result}")
 
 **Output:**
 ```
-
 Элемент 50 найден на позиции: 25
 ```
 
@@ -539,7 +533,6 @@ print(f"Элемент 50 найден на позиции: {result}")
 **Example: Экспоненциальный поиск**
 
 ```python
-
 def exponential_search(arr, target):
     """Экспоненциальный поиск."""
     if arr[0] == target:
@@ -572,7 +565,6 @@ print(f"Элемент 50 найден на позиции: {result}")
 **Example: Поиск студентов по оценкам**
 
 ```python
-
 import bisect
 
 class GradeSystem:
@@ -596,6 +588,7 @@ class GradeSystem:
         return self.grades[index] if index < len(self.grades) else None
 
 # Использование
+
 system = GradeSystem()
 system.add_grade(85)
 system.add_grade(92)
@@ -610,7 +603,6 @@ print(f"90-й процентиль: {system.get_percentile(90)}")
 
 **Output:**
 ```
-
 Оценки: [78, 85, 88, 92, 95]
 Оценки в диапазоне [80, 90]: [85, 88]
 90-й процентиль: 92
@@ -621,7 +613,6 @@ print(f"90-й процентиль: {system.get_percentile(90)}")
 **Example: Управление событиями по времени**
 
 ```python
-
 import bisect
 from datetime import datetime, timedelta
 
@@ -645,6 +636,7 @@ class EventCalendar:
         return self.events[left:right]
 
 # Использование
+
 calendar = EventCalendar()
 base_time = datetime(2024, 1, 1, 10, 0)
 
@@ -663,7 +655,6 @@ for time, event in events:
 
 **Output:**
 ```
-
 События в диапазоне:
   11:00: Обед
   12:00: Встреча
@@ -705,5 +696,6 @@ for time, event in events:
 - Исследуйте применение бинарного поиска в задачах оптимизации
 
 ---
+
 
 

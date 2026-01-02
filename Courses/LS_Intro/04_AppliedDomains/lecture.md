@@ -59,6 +59,7 @@
 
 ```python
 # Характеристики Healthcare Informatics
+
 healthcare_informatics = {
     "фокус": {
         "данные": "Данные пациентов",
@@ -93,7 +94,6 @@ for category, details in healthcare_informatics.items():
 
 **Output:**
 ```
-
 Healthcare Informatics:
 
 Фокус:
@@ -258,6 +258,7 @@ Healthcare Informatics:
 
 ```python
 # Характеристики Pharmaceuticals Informatics
+
 pharma_informatics = {
     "фокус": "Разработка лекарств (R&D)",
     "задачи": [
@@ -294,7 +295,6 @@ for i, stage in enumerate(pharma_informatics['этапы'], 1):
 
 **Output:**
 ```
-
 Pharmaceuticals Informatics:
 
 Фокус: Разработка лекарств (R&D)
@@ -333,7 +333,6 @@ Pharmaceuticals Informatics:
 **Воронка разработки:**
 
 ```
-
 10,000 соединений (начало)
     ↓
 250 соединений (preclinical)
@@ -468,6 +467,7 @@ Pharmaceuticals Informatics:
 
 ```python
 # Характеристики Medical Devices Informatics
+
 meddevices_informatics = {
     "фокус": "Медицинские приборы и сенсоры",
     "задачи": [
@@ -503,7 +503,6 @@ for category, details in meddevices_informatics.items():
 
 **Output:**
 ```
-
 Medical Devices Informatics:
 
 Фокус:
@@ -611,6 +610,7 @@ Medical Devices Informatics:
 
 ```python
 # Характеристики Agricultural Informatics
+
 agritech_informatics = {
     "фокус": {
         "объекты": "Растения, почвы, климат, урожайность",
@@ -650,7 +650,6 @@ for category, details in agritech_informatics.items():
 
 **Output:**
 ```
-
 Agricultural Informatics:
 
 Фокус:
@@ -709,6 +708,7 @@ Agricultural Informatics:
 
 ```python
 # Характеристики Technology Solutions
+
 tech_solutions = {
     "фокус": "IT-платформы и сервисы для науки и индустрии",
     "примеры_решений": [
@@ -740,7 +740,6 @@ for solution_type, description in tech_solutions['типы_решений'].item
 
 **Output:**
 ```
-
 Technology Solutions for Life Sciences:
 
 Фокус: IT-платформы и сервисы для науки и индустрии
@@ -912,6 +911,7 @@ Technology Solutions for Life Sciences:
 - [FDA Guidance](https://www.fda.gov/) — регуляции для Pharma и Medical Devices
 
 ---
+
 
 
 

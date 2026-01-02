@@ -155,6 +155,7 @@
 
 ```python
 # Эффективность аккреции
+
 accretion_efficiency = {
     "термоядерный_синтез": {
         "эффективность": "~0.7% (E=mc²)",
@@ -176,7 +177,6 @@ for process, details in accretion_efficiency.items():
 
 **Output:**
 ```
-
 Эффективность аккреции:
   Термоядерный Синтез:
     Эффективность: ~0.7% (E=mc²)
@@ -226,7 +226,6 @@ for process, details in accretion_efficiency.items():
 
 **Output:**
 ```
-
 Релятивистские джеты:
   Направление: Перпендикулярно аккреционному диску
   Скорость: 0.99c - близка к скорости света
@@ -382,5 +381,6 @@ for process, details in accretion_efficiency.items():
 - Лекции о квазарах и активных галактиках
 
 ---
+
 
 

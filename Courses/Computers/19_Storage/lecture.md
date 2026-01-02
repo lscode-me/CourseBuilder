@@ -41,7 +41,6 @@
 
 **Структура магнитной ленты:**
 ```
-
 ┌─────────────────────────────────┐
 │  Tape Header  │  Data Blocks    │
 │  (metadata)   │  (sequential)   │
@@ -51,7 +50,6 @@
 **Пример: Работа с магнитной лентой**
 
 ```c
-
 // Упрощённый пример работы с лентой
 void write_to_tape(FILE *tape, void *data, size_t size) {
     // Запись header
@@ -92,7 +90,6 @@ void read_from_tape(FILE *tape, void *buffer, size_t size) {
 
 **Современные ленты (LTO):**
 ```
-
 LTO-8: 12 TB native, 30 TB compressed
 LTO-9: 18 TB native, 45 TB compressed
 Скорость: до 400 MB/s
@@ -146,7 +143,6 @@ LTO-9: 18 TB native, 45 TB compressed
 
 **Структура HDD:**
 ```
-
 ┌─────────────────────────┐
 │  Platter (магнитный диск│
 │  ├── Track (дорожка)    │
@@ -167,7 +163,6 @@ LTO-9: 18 TB native, 45 TB compressed
 
 **Время доступа:**
 ```c
-
 // Компоненты времени доступа
 total_time = seek_time + rotational_latency + transfer_time;
 
@@ -185,6 +180,7 @@ total_time = seek_time + rotational_latency + transfer_time;
 
 ```bash
 # Тест последовательного чтения
+
 dd if=/dev/sda of=/dev/null bs=1M count=1000
 # Типично: 100-200 MB/s
 
@@ -194,7 +190,6 @@ fio --name=random-read --ioengine=libaio --iodepth=1 \
 
     --rw=randread --bs=4k --size=1G --filename=/dev/sda
 # Типично: 50-150 IOPS (очень медленно!)
-
 ```
 
 **Ёмкость:**
@@ -212,7 +207,6 @@ fio --name=random-read --ioengine=libaio --iodepth=1 \
 
 **Производительность HDD:**
 ```
-
 Sequential Read:  100-200 MB/s
 Sequential Write: 100-200 MB/s
 Random Read:      50-150 IOPS (очень медленно!)
@@ -231,7 +225,6 @@ Latency:          5-15 ms
 
 **Структура NAND Flash:**
 ```
-
 Block (128-512 KB)
   └── Page (4-16 KB)
       └── Cell (SLC/MLC/TLC/QLC)
@@ -239,7 +232,6 @@ Block (128-512 KB)
 
 **Типы NAND Flash:**
 ```
-
 SLC (Single-Level Cell):  1 bit per cell, быстрый, дорогой, долговечный
 MLC (Multi-Level Cell):   2 bits per cell, баланс
 TLC (Triple-Level Cell):  3 bits per cell, дешёвый, медленнее
@@ -249,7 +241,6 @@ QLC (Quad-Level Cell):    4 bits per cell, самый дешёвый, медле
 **Пример: Структура SSD**
 
 ```c
-
 // Упрощённая структура SSD
 struct ssd_block {
     struct ssd_page pages[64];  // 64 страницы по 4 KB = 256 KB блок
@@ -281,7 +272,6 @@ void wear_leveling_write(struct ssd *ssd, uint32_t lba, void *data) {
 
 **Производительность SSD:**
 ```
-
 Sequential Read:  500-3500 MB/s
 Sequential Write: 400-3000 MB/s
 Random Read:      50,000-500,000 IOPS (в 1000x быстрее HDD!)
@@ -304,6 +294,7 @@ Latency:          0.1-0.5 ms
 
 ```bash
 # Тест последовательного чтения
+
 dd if=/dev/nvme0n1 of=/dev/null bs=1M count=1000
 # Типично: 2000-3500 MB/s
 
@@ -317,7 +308,6 @@ fio --name=random-read --ioengine=libaio --iodepth=32 \
 
 **Контроллер SSD:**
 ```
-
 Функции:
 - Wear leveling (равномерный износ)
 - Bad block management (управление плохими блоками)
@@ -422,7 +412,6 @@ SSD предпочтительны в сценариях, где скорост�
 
 **RAID 0 (Striping):**
 ```
-
 Диск 1: [A1] [A3] [A5]
 Диск 2: [A2] [A4] [A6]
 
@@ -433,7 +422,6 @@ SSD предпочтительны в сценариях, где скорост�
 
 **RAID 1 (Mirroring):**
 ```
-
 Диск 1: [A] [B] [C]
 Диск 2: [A] [B] [C]  (копия)
 
@@ -445,7 +433,6 @@ SSD предпочтительны в сценариях, где скорост�
 **Пример: RAID 1 реализация**
 
 ```c
-
 // Упрощённая реализация RAID 1
 void raid1_write(void *data, size_t size, uint64_t offset) {
     // Запись на оба диска
@@ -465,7 +452,6 @@ void raid1_read(void *buffer, size_t size, uint64_t offset) {
 
 **RAID 5:**
 ```
-
 Диск 1: [A1] [A2] [P1] [A5]
 Диск 2: [A3] [P2] [A4] [A6]
 Диск 3: [P3] [A7] [A8] [P4]
@@ -488,7 +474,6 @@ P = Parity (XOR всех данных)
 **Пример: RAID 5 parity**
 
 ```c
-
 // Вычисление parity для RAID 5
 void calculate_parity(char *data1, char *data2, char *parity, size_t size) {
     for (size_t i = 0; i < size; i++) {
@@ -507,7 +492,6 @@ void recover_data(char *data1, char *parity, char *recovered, size_t size) {
 
 **RAID 6:**
 ```
-
 Два диска для parity (двойная защита)
 Защита от двух отказов одновременно
 Использование: (n-2)/n
@@ -515,7 +499,6 @@ void recover_data(char *data1, char *parity, char *recovered, size_t size) {
 
 **RAID 10 (1+0):**
 ```
-
 Комбинация RAID 1 и RAID 0
 Сначала mirroring, потом striping
 
@@ -530,9 +513,11 @@ void recover_data(char *data1, char *parity, char *recovered, size_t size) {
 
 ```bash
 # Создание RAID 1
+
 mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sda /dev/sdb
 
 # Создание RAID 5
+
 mdadm --create /dev/md0 --level=5 --raid-devices=3 \
     /dev/sda /dev/sdb /dev/sdc
 
@@ -555,7 +540,6 @@ mdadm --add /dev/md0 /dev/sdd
 
 **Синхронная репликация:**
 ```c
-
 // Упрощённый пример синхронной репликации
 int sync_replicate(void *data, size_t size) {
     // Запись на primary
@@ -579,7 +563,6 @@ int sync_replicate(void *data, size_t size) {
 
 **Асинхронная репликация:**
 ```c
-
 // Упрощённый пример асинхронной репликации
 int async_replicate(void *data, size_t size) {
     // Запись на primary (не ждём replica)
@@ -606,7 +589,6 @@ int async_replicate(void *data, size_t size) {
 
 **Географическое распределение:**
 ```
-
 Primary (US East)
   ├── Replica 1 (US West)      - синхронная
   ├── Replica 2 (Europe)        - асинхронная
@@ -616,7 +598,6 @@ Primary (US East)
 **Пример: Репликация в базе данных**
 
 ```sql
-
 -- MySQL Master-Slave репликация
 -- Master
 CHANGE MASTER TO
@@ -727,6 +708,7 @@ sudo systemctl enable fstrim.timer
 - Технологии хранения данных
 
 ---
+
 
 
 

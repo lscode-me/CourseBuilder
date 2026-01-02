@@ -39,6 +39,7 @@
 
 ```python
 # Иерархия биологических объектов в Bioinformatics
+
 bioinformatics_objects = {
     "молекулярный_уровень": {
         "днк": "Последовательности нуклеотидов (A, T, G, C)",
@@ -65,7 +66,6 @@ for level, objects in bioinformatics_objects.items():
 
 **Output:**
 ```
-
 Объекты изучения в Bioinformatics:
 
 Молекулярный Уровень:
@@ -88,6 +88,7 @@ for level, objects in bioinformatics_objects.items():
 
 ```python
 # Типовые задачи Bioinformatics
+
 bioinformatics_tasks = {
     "анализ_последовательностей": {
         "задачи": [
@@ -146,7 +147,6 @@ for category, details in bioinformatics_tasks.items():
 
 **Output:**
 ```
-
 Типовые задачи Bioinformatics:
 
 Анализ Последовательностей:
@@ -184,6 +184,7 @@ for category, details in bioinformatics_tasks.items():
 
 ```python
 # Форматы данных в Bioinformatics
+
 bioinformatics_formats = {
     "последовательности": {
         "fasta": "Формат для хранения последовательностей ДНК/РНК/белков",
@@ -215,7 +216,6 @@ for category, formats in bioinformatics_formats.items():
 
 **Output:**
 ```
-
 Форматы данных в Bioinformatics:
 
 Последовательности:
@@ -260,6 +260,7 @@ for category, formats in bioinformatics_formats.items():
 
 ```python
 # Объекты изучения в Cheminformatics
+
 cheminformatics_objects = {
     "молекулы": {
         "описание": "Химические соединения",
@@ -285,7 +286,6 @@ for obj, details in cheminformatics_objects.items():
 
 **Output:**
 ```
-
 Объекты изучения в Cheminformatics:
 
 Молекулы:
@@ -307,6 +307,7 @@ for obj, details in cheminformatics_objects.items():
 
 ```python
 # Типовые задачи Cheminformatics
+
 cheminformatics_tasks = {
     "представление_молекул": {
         "задачи": [
@@ -358,7 +359,6 @@ for category, details in cheminformatics_tasks.items():
 
 **Output:**
 ```
-
 Типовые задачи Cheminformatics:
 
 Представление Молекул:
@@ -399,6 +399,7 @@ Drug Design:
 
 ```python
 # Инструменты Cheminformatics
+
 cheminformatics_tools = {
     "rdkit": {
         "тип": "Python библиотека",
@@ -433,7 +434,6 @@ for tool, info in cheminformatics_tools.items():
 
 **Output:**
 ```
-
 Инструменты Cheminformatics:
 
 Rdkit:
@@ -469,6 +469,7 @@ Schrodinger:
 
 ```python
 # Объекты изучения в Medical Informatics
+
 medical_informatics_objects = {
     "клинические_данные": {
         "типы": [
@@ -506,7 +507,6 @@ for obj, details in medical_informatics_objects.items():
 
 **Output:**
 ```
-
 Объекты изучения в Medical Informatics:
 
 Клинические Данные:
@@ -526,6 +526,7 @@ for obj, details in medical_informatics_objects.items():
 
 ```python
 # Типовые задачи Medical Informatics
+
 medical_informatics_tasks = {
     "анализ_ehr": {
         "задачи": [
@@ -574,7 +575,6 @@ for category, details in medical_informatics_tasks.items():
 
 **Output:**
 ```
-
 Типовые задачи Medical Informatics:
 
 Анализ Ehr:
@@ -610,6 +610,7 @@ Clinical Decision Support:
 
 ```python
 # Инструменты Medical Informatics
+
 medical_informatics_tools = {
     "ehr_systems": {
         "примеры": ["Epic", "Cerner", "Allscripts"],
@@ -635,7 +636,6 @@ for category, info in medical_informatics_tools.items():
 
 **Output:**
 ```
-
 Инструменты Medical Informatics:
 
 Ehr Systems:
@@ -779,5 +779,6 @@ Imaging Systems:
 - "Cheminformatics: An Introduction" — обзор химической информатики
 
 ---
+
 
 

@@ -57,7 +57,6 @@
 **Жизненный цикл сбора данных:**
 
 ```
-
 ┌──────────────────────────────────────────┐
 │         Data Collection Pipeline         │
 ├──────────────────────────────────────────┤
@@ -77,6 +76,7 @@
 
 ```python
 # Источники данных в Life Sciences
+
 data_sources = {
     "экспериментальные": {
         "примеры": [
@@ -125,7 +125,6 @@ for source_type, details in data_sources.items():
 
 **Output:**
 ```
-
 Источники данных в Life Sciences:
 
 Экспериментальные:
@@ -150,7 +149,6 @@ for source_type, details in data_sources.items():
 **Архитектура хранения данных:**
 
 ```
-
 ┌─────────────────────────────────────────┐
 │      Data Storage Architecture          │
 ├─────────────────────────────────────────┤
@@ -197,6 +195,7 @@ for source_type, details in data_sources.items():
 
 ```python
 # Задачи хранения данных
+
 storage_tasks = {
     "структурирование": {
         "подходы": [
@@ -237,7 +236,6 @@ for task, details in storage_tasks.items():
 
 **Output:**
 ```
-
 Задачи хранения данных:
 
 Структурирование:
@@ -280,7 +278,6 @@ for task, details in storage_tasks.items():
 **Процесс очистки данных:**
 
 ```
-
 Raw Data
     ↓
 [Detection] → Обнаружение проблем
@@ -307,6 +304,7 @@ Clean Data
 
 ```python
 # Задачи очистки данных
+
 data_cleaning_tasks = {
     "удаление_шума": {
         "примеры": [
@@ -352,7 +350,6 @@ for task, details in data_cleaning_tasks.items():
 
 **Output:**
 ```
-
 Задачи очистки данных:
 
 Удаление Шума:
@@ -377,7 +374,6 @@ for task, details in data_cleaning_tasks.items():
 **QC Pipeline:**
 
 ```
-
 Data Input
     ↓
 [QC Checks] → Множество проверок качества
@@ -423,6 +419,7 @@ Data Input
 
 ```python
 # Задачи контроля качества
+
 qc_tasks = {
     "валидация": {
         "примеры": [
@@ -460,7 +457,6 @@ for task, examples in qc_tasks.items():
 
 **Output:**
 ```
-
 Задачи контроля качества:
 
 Валидация:
@@ -510,7 +506,6 @@ for task, examples in qc_tasks.items():
 **Процесс анализа данных:**
 
 ```
-
 Clean Data
     ↓
 [Exploratory Analysis] → Исследовательский анализ
@@ -539,6 +534,7 @@ Results & Insights
 
 ```python
 # Задачи анализа данных
+
 analysis_tasks = {
     "описательная_статистика": {
         "примеры": [
@@ -584,7 +580,6 @@ for task, examples in analysis_tasks.items():
 
 **Output:**
 ```
-
 Задачи анализа данных:
 
 Описательная Статистика:
@@ -627,6 +622,7 @@ for task, examples in analysis_tasks.items():
 
 ```python
 # Задачи моделирования в Life Sciences
+
 modeling_tasks = {
     "предсказательное_моделирование": {
         "задачи": [
@@ -677,7 +673,6 @@ for task, details in modeling_tasks.items():
 
 **Output:**
 ```
-
 Задачи моделирования:
 
 Предсказательное Моделирование:
@@ -707,6 +702,7 @@ for task, details in modeling_tasks.items():
 
 ```python
 # Задачи автоматизации workflows
+
 workflow_tasks = {
     "определение_workflows": {
         "примеры": [
@@ -744,7 +740,6 @@ for task, examples in workflow_tasks.items():
 
 **Output:**
 ```
-
 Задачи автоматизации workflows:
 
 Определение Workflows:
@@ -785,6 +780,7 @@ for task, examples in workflow_tasks.items():
 
 ```python
 # Инструменты визуализации в Life Sciences
+
 visualization_tools = {
     "статические_графики": {
         "инструменты": ["matplotlib", "ggplot2", "seaborn"],
@@ -814,7 +810,6 @@ for viz_type, details in visualization_tools.items():
 
 **Output:**
 ```
-
 Инструменты визуализации:
 
 Статические Графики:
@@ -848,6 +843,7 @@ for viz_type, details in visualization_tools.items():
 
 ```python
 # Задачи отчётности
+
 reporting_tasks = {
     "автоматическая_генерация": {
         "задачи": [
@@ -885,7 +881,6 @@ for task, details in reporting_tasks.items():
 
 **Output:**
 ```
-
 Задачи отчётности:
 
 Автоматическая Генерация:
@@ -940,6 +935,7 @@ for task, details in reporting_tasks.items():
 - [Snakemake Documentation](https://snakemake.readthedocs.io/) — workflow management
 
 ---
+
 
 
 

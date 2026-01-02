@@ -26,7 +26,6 @@
 **Amazon DynamoDB** — полностью управляемая NoSQL база данных с миллисекундной latency при любом масштабе. Запущена в 2012 году на основе опыта Amazon с Dynamo (внутренний сервис).
 
 ```python
-
 dynamodb_features = {
     "Performance": "Single-digit millisecond latency",
     "Scalability": "Virtually unlimited throughput",
@@ -40,13 +39,11 @@ dynamodb_features = {
 print("DynamoDB Key Features:")
 for feature, description in dynamodb_features.items():
     print(f"  • {feature}: {description}")
-
 ```
 
 ### 1.2 When to Use DynamoDB
 
 ```python
-
 good_fit = [
     "Key-value or document data",
     "High traffic with predictable patterns",
@@ -73,7 +70,6 @@ for case in good_fit[:5]:
 print("\n❌ Not ideal for:")
 for case in not_a_fit[:3]:
     print(f"  • {case}")
-
 ```
 
 ---
@@ -83,7 +79,6 @@ for case in not_a_fit[:3]:
 ### 2.1 Core Concepts
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    DynamoDB Data Model                            │
 ├───────────────────────────────────────────────────────────────────┤
@@ -114,7 +109,6 @@ for case in not_a_fit[:3]:
 │  └────────────┴────────────┴──────────┴──────────────┘            │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 Partition Key Design
@@ -142,7 +136,6 @@ for case in not_a_fit[:3]:
 ### 3.1 Global Secondary Index (GSI)
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    Global Secondary Index                         │
 ├───────────────────────────────────────────────────────────────────┤
@@ -167,7 +160,6 @@ for case in not_a_fit[:3]:
 │  • Можно создать после таблицы                                    │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Local Secondary Index (LSI)
@@ -197,7 +189,6 @@ lsi_characteristics = {
 ### 4.1 Создание таблицы
 
 ```bash
-
 aws dynamodb create-table \
     --table-name Orders \
     --attribute-definitions \
@@ -210,13 +201,11 @@ aws dynamodb create-table \
     --global-secondary-indexes \
         "IndexName=created_at-index,KeySchema=[{AttributeName=customer_id,KeyType=HASH},{AttributeName=created_at,KeyType=RANGE}],Projection={ProjectionType=ALL}" \
     --billing-mode PAY_PER_REQUEST
-
 ```
 
 ### 4.2 CRUD Operations
 
 ```python
-
 import boto3
 from boto3.dynamodb.conditions import Key
 
@@ -224,6 +213,7 @@ dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Orders')
 
 # CREATE
+
 table.put_item(Item={
     'customer_id': 'cust123',
     'order_id': 'order456',
@@ -233,6 +223,7 @@ table.put_item(Item={
 })
 
 # READ - GetItem (by primary key)
+
 response = table.get_item(Key={
     'customer_id': 'cust123',
     'order_id': 'order456'
@@ -240,12 +231,14 @@ response = table.get_item(Key={
 item = response.get('Item')
 
 # READ - Query (by PK, optional SK condition)
+
 response = table.query(
     KeyConditionExpression=Key('customer_id').eq('cust123') & Key('order_id').begins_with('order')
 )
 items = response['Items']
 
 # UPDATE
+
 table.update_item(
     Key={'customer_id': 'cust123', 'order_id': 'order456'},
     UpdateExpression='SET #s = :status',
@@ -254,11 +247,11 @@ table.update_item(
 )
 
 # DELETE
+
 table.delete_item(Key={
     'customer_id': 'cust123',
     'order_id': 'order456'
 })
-
 ```
 
 ### 4.3 Query vs Scan
@@ -290,7 +283,6 @@ response = table.scan(
 ### 5.1 On-Demand vs Provisioned
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Capacity Modes                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -313,13 +305,11 @@ response = table.scan(
 │    RCU: $0.00013 per hour                                          │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.2 RCU/WCU Calculation
 
 ```python
-
 def calculate_rcu(item_size_kb: float, reads_per_sec: int, 
                    strongly_consistent: bool = False) -> int:
     """Calculate required Read Capacity Units"""
@@ -340,9 +330,9 @@ def calculate_wcu(item_size_kb: float, writes_per_sec: int) -> int:
     return write_units_per_item * writes_per_sec
 
 # Example
+
 print(f"Reading 100 items/sec (2KB each, eventually consistent): {calculate_rcu(2, 100)} RCU")
 print(f"Writing 50 items/sec (3KB each): {calculate_wcu(3, 50)} WCU")
-
 ```
 
 ---
@@ -350,7 +340,6 @@ print(f"Writing 50 items/sec (3KB each): {calculate_wcu(3, 50)} WCU")
 ## 6. DynamoDB Streams
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    DynamoDB Streams                                │
 ├────────────────────────────────────────────────────────────────────┤
@@ -374,7 +363,6 @@ print(f"Writing 50 items/sec (3KB each): {calculate_wcu(3, 50)} WCU")
 │  Ordering: per-partition key ordered                               │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -410,7 +398,6 @@ dax_features = {
 ## 8. Global Tables
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    Global Tables                                  │
 ├───────────────────────────────────────────────────────────────────┤
@@ -432,7 +419,6 @@ dax_features = {
 │  • 99.999% availability SLA                                       │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -440,7 +426,6 @@ dax_features = {
 ## 9. Best Practices
 
 ```python
-
 dynamodb_best_practices = [
     "Design for access patterns first, not data model",
     "Use composite keys (PK + SK) for flexibility",
@@ -453,7 +438,6 @@ dynamodb_best_practices = [
     "Consider DAX for read-heavy, low-latency needs",
     "Use DynamoDB Streams for event-driven patterns"
 ]
-
 ```
 
 ---
@@ -495,6 +479,7 @@ dynamodb_best_practices = [
 1. Создайте DynamoDB таблицу с partition и sort key
 2. Реализуйте CRUD операции через boto3
 3. Настройте GSI для альтернативного доступа к данным
+
 
 
 

@@ -37,7 +37,6 @@
 **Все или ничего** — либо все операции выполняются, либо ни одна.
 
 ```sql
-
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 UPDATE accounts SET balance = balance + 100 WHERE id = 2;
@@ -52,7 +51,6 @@ COMMIT;    -- Сохраняем всё
 **Данные остаются валидными** — ограничения целостности соблюдаются.
 
 ```sql
-
 BEGIN;
 INSERT INTO orders (user_id, amount) VALUES (999, 100);  -- user_id не существует
 -- Ошибка: нарушение внешнего ключа
@@ -90,7 +88,6 @@ ROLLBACK;  -- Транзакция откатывается, данные ост
 **Пример non-repeatable read:**
 
 ```sql
-
 -- Транзакция 1
 BEGIN;
 SELECT balance FROM accounts WHERE id = 1;  -- 1000
@@ -125,7 +122,6 @@ COMMIT;
 ### 2.5 Установка уровня изоляции
 
 ```sql
-
 -- PostgreSQL
 BEGIN TRANSACTION ISOLATION LEVEL READ COMMITTED;
 -- или
@@ -153,7 +149,6 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 **Взаимная блокировка:**
 
 ```sql
-
 -- Транзакция 1
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;  -- Блокирует id=1
@@ -180,7 +175,6 @@ UPDATE accounts SET balance = balance - 100 WHERE id = 2;  -- Блокирует
 ### 4.1 Безопасный перевод денег
 
 ```sql
-
 BEGIN;
 -- Блокируем обе записи
 SELECT * FROM accounts WHERE id IN (1, 2) FOR UPDATE;
@@ -198,7 +192,6 @@ COMMIT;
 **Использование версий:**
 
 ```sql
-
 CREATE TABLE accounts (
     id INTEGER,
     balance DECIMAL(10, 2),
@@ -226,7 +219,6 @@ SELECT ROW_COUNT();  -- Если 0, значит версия изменилас
 **FOR UPDATE блокирует строки:**
 
 ```sql
-
 BEGIN;
 -- Блокируем строку для обновления
 SELECT * FROM accounts WHERE id = 1 FOR UPDATE;
@@ -241,7 +233,6 @@ COMMIT;
 **FOR UPDATE NOWAIT** — не ждать, если строка заблокирована:
 
 ```sql
-
 BEGIN;
 SELECT * FROM accounts WHERE id = 1 FOR UPDATE NOWAIT;
 -- Если строка заблокирована, получим ошибку сразу
@@ -250,7 +241,6 @@ SELECT * FROM accounts WHERE id = 1 FOR UPDATE NOWAIT;
 **FOR UPDATE SKIP LOCKED** — пропустить заблокированные строки:
 
 ```sql
-
 -- Обработка очереди задач
 SELECT * FROM tasks 
 WHERE status = 'pending' 
@@ -268,7 +258,6 @@ LIMIT 1;
 **Savepoint** — точка внутри транзакции, к которой можно откатиться.
 
 ```sql
-
 BEGIN;
 
 -- Начальные операции
@@ -291,7 +280,6 @@ COMMIT;
 **Обработка ошибок:**
 
 ```sql
-
 BEGIN;
 INSERT INTO orders (user_id, amount) VALUES (1, 100);
 SAVEPOINT before_items;
@@ -331,7 +319,6 @@ COMMIT;
 ### 6.2 Пример работы MVCC
 
 ```sql
-
 -- Транзакция 1 (начало: 10:00)
 BEGIN;
 SELECT balance FROM accounts WHERE id = 1;  -- 1000
@@ -358,7 +345,6 @@ COMMIT;
 **Пример:**
 
 ```sql
-
 -- Транзакция 1
 BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 SELECT COUNT(*) FROM orders WHERE user_id = 1;  -- 5 заказов
@@ -379,7 +365,6 @@ COMMIT;
 **Serializable уровень изоляции:**
 
 ```sql
-
 BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 -- Гарантирует отсутствие phantom reads
 ```
@@ -393,7 +378,6 @@ BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 **По умолчанию каждая команда — отдельная транзакция:**
 
 ```sql
-
 -- Автокоммит включён (по умолчанию)
 INSERT INTO users (name) VALUES ('Иван');
 -- Автоматически COMMIT
@@ -408,7 +392,6 @@ SET autocommit = OFF;
 **Python пример:**
 
 ```python
-
 import psycopg2
 
 conn = psycopg2.connect(...)
@@ -431,7 +414,6 @@ finally:
 **Некоторые СУБД поддерживают вложенные транзакции через savepoints:**
 
 ```sql
-
 BEGIN;
 -- Внешняя транзакция
 SAVEPOINT inner;
@@ -449,7 +431,6 @@ COMMIT;  -- Коммит внешней
 **После COMMIT данные гарантированно сохранены:**
 
 ```sql
-
 BEGIN;
 UPDATE accounts SET balance = 1000 WHERE id = 1;
 COMMIT;
@@ -469,7 +450,6 @@ COMMIT;
 **Настройки (PostgreSQL):**
 
 ```sql
-
 -- Синхронная запись (по умолчанию)
 synchronous_commit = on;
 -- Гарантирует запись на диск перед возвратом COMMIT
@@ -488,7 +468,6 @@ synchronous_commit = off;
 **Повтор при deadlock:**
 
 ```python
-
 max_retries = 3
 for attempt in range(max_retries):
     try:
@@ -527,7 +506,6 @@ for attempt in range(max_retries):
 **Просмотр активных транзакций (PostgreSQL):**
 
 ```sql
-
 SELECT 
     pid,
     usename,
@@ -547,7 +525,6 @@ WHERE state = 'active';
 **Найти долгие транзакции:**
 
 ```sql
-
 SELECT 
     pid,
     now() - xact_start AS duration,
@@ -563,7 +540,6 @@ ORDER BY duration DESC;
 **Просмотр блокировок:**
 
 ```sql
-
 SELECT 
     blocked_locks.pid AS blocked_pid,
     blocking_locks.pid AS blocking_pid,
@@ -591,7 +567,6 @@ WHERE NOT blocked_locks.granted;
 **❌ Плохо:**
 
 ```sql
-
 BEGIN;
 -- Долгие вычисления
 -- Сетевые запросы
@@ -602,7 +577,6 @@ COMMIT;
 **✅ Хорошо:**
 
 ```sql
-
 -- Короткие транзакции
 BEGIN;
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
@@ -628,7 +602,6 @@ COMMIT;
 **Всегда обрабатывайте ошибки транзакций:**
 
 ```sql
-
 BEGIN;
 BEGIN
     -- Операции

@@ -49,7 +49,6 @@ $ ./hello.sh
 
 **Output:**
 ```
-
 Hello, World!
 ```
 
@@ -89,7 +88,6 @@ $ echo "Name: $name, Age: $age"
 
 **Output:**
 ```
-
 Name: John, Age: 25
 ```
 
@@ -104,7 +102,6 @@ echo "$greeting"
 
 **Output:**
 ```
-
 Hello, Alice!
 ```
 
@@ -117,7 +114,6 @@ Hello, Alice!
 **Example: Валидные имена**
 
 ```bash
-
 $ var1="value"
 $ my_var="value"
 $ MY_VAR="value"
@@ -129,7 +125,6 @@ $ _var="value"
 **Example: Различия кавычек**
 
 ```bash
-
 $ name="John"
 $ echo "Hello, $name"      # Подстановка переменной
 Hello, John
@@ -168,7 +163,6 @@ echo "Global: $global_var"
 
 **Output:**
 ```
-
 Inside function: Local
 Global in function: Global
 Outside: 
@@ -194,7 +188,6 @@ bash -c 'echo $MY_VAR'
 
 **Output:**
 ```
-
 Hello
 ```
 
@@ -216,7 +209,6 @@ PI=3.14  # Ошибка!
 
 **Output:**
 ```
-
 ./script.sh: line 3: PI: readonly variable
 ```
 
@@ -229,7 +221,6 @@ PI=3.14  # Ошибка!
 **Example: Основные переменные окружения**
 
 ```bash
-
 $ echo $HOME      # Домашний каталог
 /home/user
 
@@ -252,7 +243,6 @@ Bash предоставляет множество специальных пер
 **Example: Специальные переменные**
 
 ```bash
-
 $ echo $PWD           # Текущая директория
 /home/user
 
@@ -295,13 +285,11 @@ echo "Third argument: $3"
 ```
 
 ```bash
-
 $ ./script.sh one two three
 ```
 
 **Output:**
 ```
-
 First argument: one
 Second argument: two
 Third argument: three
@@ -324,13 +312,11 @@ echo "Current PID: $$"
 ```
 
 ```bash
-
 $ ./script.sh arg1 arg2 arg3
 ```
 
 **Output:**
 ```
-
 Script name: ./script.sh
 All arguments: arg1 arg2 arg3
 All arguments (quoted): arg1 arg2 arg3
@@ -355,7 +341,6 @@ Current PID: 12345
 **Example: Проверка exit code**
 
 ```bash
-
 $ ls /existing
 $ echo $?
 0
@@ -381,7 +366,6 @@ fi
 
 **Output:**
 ```
-
 Failed with code: 2
 ```
 

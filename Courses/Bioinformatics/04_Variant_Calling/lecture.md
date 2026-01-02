@@ -36,7 +36,6 @@ Variant calling — это процесс идентификации генет�
 ## 1. Обзор Полного Пайплайна
 
 ```
-
 Сырые данные (FASTQ)
     ↓
 Quality Control (FastQC)
@@ -58,7 +57,6 @@ Variant Filtering (GATK VariantFiltration)
 Annotation (SnpEff, VEP)
     ↓
 Final Variants (VCF)
-
 ```
 
 ---
@@ -73,10 +71,10 @@ Final Variants (VCF)
 
 ```bash
 # Запуск FastQC
+
 fastqc sample_R1.fastq.gz sample_R2.fastq.gz
 
 # Вывод: HTML отчёт с метриками
-
 ```
 
 **Что проверяем:**
@@ -92,9 +90,7 @@ fastqc sample_R1.fastq.gz sample_R2.fastq.gz
 Агрегирует отчёты от многих инструментов:
 
 ```bash
-
 multiqc .
-
 ```
 
 ---
@@ -107,18 +103,21 @@ multiqc .
 
 ```bash
 # Скачать hg38 референс
+
 wget ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 
 # Индексировать для BWA
+
 bwa index reference.fasta
 
 # Создать .fai индекс
+
 samtools faidx reference.fasta
 
 # Создать .dict словарь
-samtools dict reference.fasta > reference.dict
 
+samtools dict reference.fasta > reference.dict
 ```
 
 ### 3.2 BWA Alignment
@@ -127,6 +126,7 @@ BWA (Burrows-Wheeler Aligner) — основной инструмент для �
 
 ```bash
 # BWA MEM для paired-end ридов
+
 bwa mem -t 8 -R '@RG\tID:sample\tSM:sample\tPL:ILLUMINA' \
     reference.fasta \
     sample_R1.fastq.gz \
@@ -135,7 +135,6 @@ bwa mem -t 8 -R '@RG\tID:sample\tSM:sample\tPL:ILLUMINA' \
 
 # -t 8: использовать 8 потоков
 # -R: read group (важно для GATK!)
-
 ```
 
 **Read Group (@RG):**
@@ -154,14 +153,16 @@ bwa mem -t 8 -R '@RG\tID:sample\tSM:sample\tPL:ILLUMINA' \
 
 ```bash
 # Конвертировать в BAM и сразу отсортировать
+
 samtools view -b sample.sam | samtools sort -o sample.sorted.bam
 
 # Индексировать
+
 samtools index sample.sorted.bam
 
 # Удалить SAM (он огромный)
-rm sample.sam
 
+rm sample.sam
 ```
 
 ### 4.2 Mark Duplicates
@@ -170,14 +171,15 @@ rm sample.sam
 
 ```bash
 # Picard MarkDuplicates
+
 java -jar picard.jar MarkDuplicates \
     I=sample.sorted.bam \
     O=sample.dedup.bam \
     M=sample.metrics.txt
 
 # Индексировать
-samtools index sample.dedup.bam
 
+samtools index sample.dedup.bam
 ```
 
 **Зачем:** Дубликаты искажают частоты аллелей.
@@ -188,6 +190,7 @@ GATK перекалибрует quality scores на основе известн�
 
 ```bash
 # 1. BuildBQSRModel
+
 gatk BaseRecalibrator \
     -I sample.dedup.bam \
     -R reference.fasta \
@@ -196,12 +199,12 @@ gatk BaseRecalibrator \
     -O recal_data.table
 
 # 2. ApplyBQSR
+
 gatk ApplyBQSR \
     -R reference.fasta \
     -I sample.dedup.bam \
     --bqsr-recal-file recal_data.table \
     -O sample.recal.bam
-
 ```
 
 ---
@@ -213,12 +216,10 @@ gatk ApplyBQSR \
 Best practice для germline variants.
 
 ```bash
-
 gatk HaplotypeCaller \
     -R reference.fasta \
     -I sample.recal.bam \
     -O sample.raw.vcf
-
 ```
 
 **Что делает:**
@@ -231,6 +232,7 @@ gatk HaplotypeCaller \
 
 ```bash
 # Шаг 1: создать GVCF для каждого сэмпла
+
 gatk HaplotypeCaller \
     -R reference.fasta \
     -I sample1.recal.bam \
@@ -238,6 +240,7 @@ gatk HaplotypeCaller \
     -ERC GVCF
 
 # Шаг 2: объединить все GVCF
+
 gatk CombineGVCFs \
     -R reference.fasta \
     --variant sample1.g.vcf \
@@ -245,11 +248,11 @@ gatk CombineGVCFs \
     -O cohort.g.vcf
 
 # Шаг 3: joint genotyping
+
 gatk GenotypeGVCFs \
     -R reference.fasta \
     -V cohort.g.vcf \
     -O cohort.vcf
-
 ```
 
 ---
@@ -262,6 +265,7 @@ gatk GenotypeGVCFs \
 
 ```bash
 # Фильтровать SNPs
+
 gatk VariantFiltration \
     -R reference.fasta \
     -V sample.raw.vcf \
@@ -269,7 +273,6 @@ gatk VariantFiltration \
     --filter-name "QD_filter" --filter-expression "QD < 2.0" \
     --filter-name "FS_filter" --filter-expression "FS > 60.0" \
     --filter-name "MQ_filter" --filter-expression "MQ < 40.0"
-
 ```
 
 **Критерии (для SNPs):**
@@ -288,6 +291,7 @@ Machine learning подход (для больших когорт):
 
 ```bash
 # Построить модель
+
 gatk VariantRecalibrator \
     -R reference.fasta \
     -V cohort.vcf \
@@ -299,6 +303,7 @@ gatk VariantRecalibrator \
     --tranches-file cohort.tranches
 
 # Применить
+
 gatk ApplyVQSR \
     -R reference.fasta \
     -V cohort.vcf \
@@ -306,7 +311,6 @@ gatk ApplyVQSR \
     --tranches-file cohort.tranches \
     -mode SNP \
     -O cohort.vqsr.vcf
-
 ```
 
 ---
@@ -319,11 +323,12 @@ gatk ApplyVQSR \
 
 ```bash
 # Скачать базу данных
+
 java -jar snpEff.jar download GRCh38.99
 
 # Аннотировать
-java -jar snpEff.jar GRCh38.99 sample.filtered.vcf > sample.annotated.vcf
 
+java -jar snpEff.jar GRCh38.99 sample.filtered.vcf > sample.annotated.vcf
 ```
 
 **Аннотации:**
@@ -338,13 +343,11 @@ java -jar snpEff.jar GRCh38.99 sample.filtered.vcf > sample.annotated.vcf
 Более детальная аннотация:
 
 ```bash
-
 vep -i sample.filtered.vcf \
     -o sample.vep.vcf \
     --cache \
     --everything \
     --vcf
-
 ```
 
 **Добавляет:**
@@ -361,9 +364,7 @@ vep -i sample.filtered.vcf \
 ### 8.1 Ключевые метрики в VCF
 
 ```vcf
-
 chr1  12345  .  A  G  999  PASS  DP=100;AF=0.5;QD=25  GT:DP:GQ  0/1:50:99
-
 ```
 
 - **DP** (Depth): покрытие (чем выше, тем лучше, обычно 20-100x)
@@ -379,7 +380,6 @@ chr1  12345  .  A  G  999  PASS  DP=100;AF=0.5;QD=25  GT:DP:GQ  0/1:50:99
 ### 8.2 Фильтрация для клинического анализа
 
 ```python
-
 import pysam
 
 vcf = pysam.VariantFile("sample.annotated.vcf")
@@ -406,7 +406,6 @@ for variant in vcf:
     impact = variant.info.get('ANN', [''])[0].split('|')[2]
     if impact in ['HIGH', 'MODERATE']:
         print(f"Pathogenic variant: {variant.chrom}:{variant.pos} {variant.ref}>{variant.alts[0]}")
-
 ```
 
 ---
@@ -416,9 +415,7 @@ for variant in vcf:
 ### 9.1 GATK Best Practices
 
 ```
-
 1. QC → 2. Align → 3. MarkDuplicates → 4. BQSR → 5. Call Variants → 6. Filter → 7. Annotate
-
 ```
 
 ### 9.2 Минимальные требования к данным
@@ -517,6 +514,7 @@ for variant in vcf:
 1. Установите GATK и запустите HaplotypeCaller на тестовых данных
 2. Отфильтруйте VCF по QUAL ≥ 30 и DP ≥ 10
 3. Аннотируйте варианты с SnpEff и найдите HIGH impact мутации
+
 
 
 

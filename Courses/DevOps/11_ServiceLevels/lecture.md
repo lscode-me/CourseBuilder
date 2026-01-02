@@ -32,7 +32,6 @@
 **SLI** — количественная метрика, описывающая аспект надёжности сервиса.
 
 ```python
-
 sli_examples = {
     "availability": {
         "formula": "successful_requests / total_requests",
@@ -55,7 +54,6 @@ sli_examples = {
         "example": "95% данных обновлены за последние 5 минут"
     }
 }
-
 ```
 
 ### 1.2 SLO (Service Level Objective)
@@ -64,6 +62,7 @@ sli_examples = {
 
 ```python
 # SLO = Target для SLI
+
 slo_examples = {
     "availability_slo": {
         "sli": "Successful requests / Total requests",
@@ -76,7 +75,6 @@ slo_examples = {
         "period": "Rolling 7 days"
     }
 }
-
 ```
 
 ### 1.3 SLA (Service Level Agreement)
@@ -84,7 +82,6 @@ slo_examples = {
 **SLA** — юридический контракт с последствиями при невыполнении.
 
 ```python
-
 sla_example = {
     "commitment": "99.9% availability",
     "measurement_period": "Monthly",
@@ -99,13 +96,11 @@ sla_example = {
         "Force majeure"
     ]
 }
-
 ```
 
 ### 1.4 Взаимосвязь
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    SLI → SLO → SLA                              │
 ├─────────────────────────────────────────────────────────────────┤
@@ -126,7 +121,6 @@ sla_example = {
 │  SLO > SLA (всегда оставляем buffer)                            │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -136,7 +130,6 @@ sla_example = {
 ### 2.1 Категории SLI
 
 ```python
-
 sli_categories = {
     "request_driven": {
         "services": ["API", "Web servers", "Microservices"],
@@ -163,13 +156,11 @@ sli_categories = {
         ]
     }
 }
-
 ```
 
 ### 2.2 Good SLI Characteristics
 
 ```python
-
 good_sli_characteristics = [
     "User-centric — отражает опыт пользователя",
     "Measurable — можно измерить автоматически",
@@ -179,6 +170,7 @@ good_sli_characteristics = [
 ]
 
 # Хорошие SLI
+
 good_slis = [
     "% HTTP 2xx responses",
     "P99 response time",
@@ -186,18 +178,19 @@ good_slis = [
 ]
 
 # Плохие SLI
+
 bad_slis = [
     "CPU usage",  # Не user-centric
     "Number of tickets",  # Не измеримо автоматически
     "Developer happiness"  # Субъективно
 ]
-
 ```
 
 ### 2.3 Формулы SLI
 
 ```python
 # Availability SLI
+
 def availability_sli(
     successful_requests: int,
     total_requests: int
@@ -210,6 +203,7 @@ def availability_sli(
     return (successful_requests / total_requests) * 100
 
 # Latency SLI
+
 def latency_sli(
     requests_under_threshold: int,
     total_requests: int,
@@ -223,6 +217,7 @@ def latency_sli(
     return (requests_under_threshold / total_requests) * 100
 
 # PromQL для SLI
+
 sli_promql = {
     "availability": """
         sum(rate(http_requests_total{status=~"2.."}[5m]))
@@ -242,7 +237,6 @@ sli_promql = {
         * 100
     """
 }
-
 ```
 
 ---
@@ -252,7 +246,6 @@ sli_promql = {
 ### 3.1 Расчёт Error Budget
 
 ```python
-
 def calculate_error_budget(
     slo_target: float,  # например 99.9
     period_minutes: int  # например 43200 (30 дней)
@@ -274,6 +267,7 @@ def calculate_error_budget(
     }
 
 # Примеры
+
 budgets = {
     "99%": calculate_error_budget(99.0, 43200),
     "99.9%": calculate_error_budget(99.9, 43200),
@@ -282,16 +276,13 @@ budgets = {
 
 for target, budget in budgets.items():
     print(f"{target}: {budget['allowed_downtime_hours']} hours/month")
-
 ```
 
 **Output:**
 ```
-
 99%: 7.2 hours/month
 99.9%: 0.72 hours/month (43 minutes)
 99.99%: 0.07 hours/month (4.3 minutes)
-
 ```
 
 ### 3.2 Error Budget Tracking
@@ -300,6 +291,7 @@ for target, budget in budgets.items():
 # PromQL для tracking error budget
 
 # Текущее потребление error budget (за последние 30 дней)
+
 error_budget_consumption = """
     (
         1 - (
@@ -319,7 +311,6 @@ error_budget_consumption = """
 ### 3.3 Error Budget Policies
 
 ```python
-
 error_budget_policy = {
     "budget_healthy": {
         "condition": "consumption < 50%",
@@ -347,7 +338,6 @@ error_budget_policy = {
         ]
     }
 }
-
 ```
 
 ---
@@ -357,7 +347,6 @@ error_budget_policy = {
 ### 4.1 Установка SLO
 
 ```python
-
 slo_setting_guidelines = {
     "start_conservative": {
         "advice": "Начните с менее строгого SLO",
@@ -380,7 +369,6 @@ slo_setting_guidelines = {
         "reason": "Запас для неожиданностей"
     }
 }
-
 ```
 
 ### 4.2 SLO Document Template
@@ -389,6 +377,7 @@ slo_setting_guidelines = {
 # Service: Order API
 
 ## SLO Summary
+
 | SLI | Target | Period | Priority |
 |-----|--------|--------|----------|
 | Availability | 99.9% | 30 days | P1 |
@@ -398,6 +387,7 @@ slo_setting_guidelines = {
 ## SLI Definitions
 
 ### Availability
+
 - **Definition**: Percentage of HTTP requests with 2xx status
 
 - **Measurement**: Prometheus query on nginx ingress
@@ -405,20 +395,22 @@ slo_setting_guidelines = {
 - **Exclusions**: Health checks, admin endpoints
 
 ### Latency
+
 - **Definition**: Response time measured at ingress
 
 - **Measurement**: histogram_quantile on http_request_duration_seconds
 
 ## Error Budget Policy
+
 - Budget > 50%: Normal operations
 - Budget 20-50%: Increased caution, more testing
 - Budget < 20%: Feature freeze, reliability focus
 - Budget exhausted: Only critical fixes
 
 ## Stakeholders
+
 - SLO Owner: @sre-team
 - Service Owner: @order-team
-
 ```
 
 ### 4.3 SLO-based Alerting
@@ -467,7 +459,6 @@ groups:
           severity: warning
         annotations:
           summary: "Elevated error budget consumption"
-
 ```
 
 ---
@@ -503,7 +494,6 @@ burn_rate_windows = {
         "response": "Track and plan"
     }
 }
-
 ```
 
 ---
@@ -513,7 +503,6 @@ burn_rate_windows = {
 ### 6.1 E-commerce API
 
 ```python
-
 ecommerce_slos = {
     "checkout_api": {
         "availability": {
@@ -542,13 +531,11 @@ ecommerce_slos = {
         }
     }
 }
-
 ```
 
 ### 6.2 Internal Tool
 
 ```python
-
 internal_tool_slos = {
     "admin_dashboard": {
         "availability": {
@@ -561,7 +548,6 @@ internal_tool_slos = {
         }
     }
 }
-
 ```
 
 ---
@@ -603,6 +589,7 @@ internal_tool_slos = {
 - "Implementing Service Level Objectives" by Alex Hidalgo
 
 ---
+
 
 
 

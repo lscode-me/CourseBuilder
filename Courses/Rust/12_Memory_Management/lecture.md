@@ -41,7 +41,6 @@
 **Example: Stack данные**
 
 ```rust
-
 fn main() {
     let x = 5;        // i32 на stack
     let y = x;        // Копирование на stack
@@ -51,7 +50,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 5, y = 5
 ```
 
@@ -69,7 +67,6 @@ x = 5, y = 5
 **Example: Heap данные**
 
 ```rust
-
 fn main() {
     let s1 = String::from("hello");  // Данные на heap
     let s2 = s1;  // Владение перемещается, данные не копируются
@@ -80,7 +77,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 ```
 
@@ -95,7 +91,6 @@ hello
 **Example: RAII в действии**
 
 ```rust
-
 fn main() {
     {
         let s = String::from("hello");  // Ресурс получен
@@ -108,7 +103,6 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 ```
 
@@ -119,7 +113,6 @@ hello
 **Example: Автоматическое освобождение**
 
 ```rust
-
 fn main() {
     let s = String::from("hello");
     // В конце функции s автоматически освобождается
@@ -139,7 +132,6 @@ fn main() {
 **Example: Кастомный Drop**
 
 ```rust
-
 struct CustomSmartPointer {
     data: String,
 }
@@ -160,7 +152,6 @@ fn main() {
 
 **Output:**
 ```
-
 CustomSmartPointer создан
 Освобождаем мои данные
 ```
@@ -170,7 +161,6 @@ CustomSmartPointer создан
 **Example: std::mem::drop**
 
 ```rust
-
 struct CustomSmartPointer {
     data: String,
 }
@@ -192,7 +182,6 @@ fn main() {
 
 **Output:**
 ```
-
 Освобождаем данные
 После drop
 ```
@@ -245,7 +234,6 @@ fn main() {
 **Example: Stack данные**
 
 ```rust
-
 fn main() {
     let x = 5;           // i32 на stack
     let y = 3.14;        // f64 на stack
@@ -262,7 +250,6 @@ fn main() {
 
 **Output:**
 ```
-
 x: 5, y: 3.14, b: true, c: A
 tuple: (1, 2.0, true)
 ```
@@ -278,7 +265,6 @@ tuple: (1, 2.0, true)
 **Example: Heap данные**
 
 ```rust
-
 fn main() {
     let s = String::from("hello");  // Данные на heap
     let v = vec![1, 2, 3];          // Данные на heap
@@ -290,7 +276,6 @@ fn main() {
 
 **Output:**
 ```
-
 s: hello, v: [1, 2, 3], boxed: 5
 ```
 
@@ -315,7 +300,6 @@ s: hello, v: [1, 2, 3], boxed: 5
 ### 6.1 Пример: Владение и освобождение
 
 ```rust
-
 fn takes_ownership(s: String) {
     println!("{}", s);
 }  // s освобождается здесь
@@ -329,14 +313,12 @@ fn main() {
 
 **Output:**
 ```
-
 hello
 ```
 
 ### 6.2 Пример: Множественное владение
 
 ```rust
-
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1.clone();  // Глубокое копирование
@@ -347,14 +329,12 @@ fn main() {
 
 **Output:**
 ```
-
 s1 = hello, s2 = hello
 ```
 
 ### 6.3 Пример: Вложенные структуры
 
 ```rust
-
 struct Person {
     name: String,
     age: u32,
@@ -372,14 +352,12 @@ fn main() {
 
 **Output:**
 ```
-
 Alice: 30
 ```
 
 ### 6.4 Пример: Векторы и память
 
 ```rust
-
 fn main() {
     let mut v = Vec::new();
     
@@ -393,7 +371,6 @@ fn main() {
 
 **Output:**
 ```
-
 [1, 2, 3, 4, 5]
 ```
 
@@ -413,7 +390,6 @@ fn main() {
 **Example: Оптимизация**
 
 ```rust
-
 fn add_one(x: i32) -> i32 {
     x + 1
 }
@@ -431,7 +407,6 @@ fn main() {
 **Компилятор старается размещать данные на stack когда возможно:**
 
 ```rust
-
 fn main() {
     let small_array = [1, 2, 3, 4, 5];  // На stack
     let large_vec = vec![1; 1000];      // На heap

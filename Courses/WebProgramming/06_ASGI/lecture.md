@@ -51,7 +51,6 @@ def wsgi_app(environ, start_response):
     
     start_response('200 OK', [('Content-Type', 'text/plain')])
     return [data.encode()]
-
 ```
 
 ### 1.2 Что такое ASGI
@@ -59,7 +58,6 @@ def wsgi_app(environ, start_response):
 **ASGI (Asynchronous Server Gateway Interface)** — духовный наследник WSGI для асинхронных Python приложений.
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                   ASGI vs WSGI                             │
 ├────────────────────────────────────────────────────────────┤
@@ -84,7 +82,6 @@ def wsgi_app(environ, start_response):
 │  └────────────┘               └────────────────────────┘   │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.3 ASGI протокол
@@ -114,7 +111,6 @@ async def app(scope: dict, receive: callable, send: callable) -> None:
         await send(event)
     """
     pass
-
 ```
 
 ---
@@ -124,7 +120,6 @@ async def app(scope: dict, receive: callable, send: callable) -> None:
 ### 2.1 Минимальное ASGI приложение
 
 ```python
-
 async def app(scope, receive, send):
     """Минимальное ASGI приложение."""
     
@@ -142,13 +137,11 @@ async def app(scope, receive, send):
             'type': 'http.response.body',
             'body': b'Hello, ASGI!',
         })
-
 ```
 
 ### 2.2 Структура scope
 
 ```python
-
 async def debug_app(scope, receive, send):
     """Показывает структуру scope."""
     
@@ -183,13 +176,11 @@ async def debug_app(scope, receive, send):
         'type': 'http.response.body',
         'body': body.encode(),
     })
-
 ```
 
 ### 2.3 HTTP события
 
 ```python
-
 async def http_app(scope, receive, send):
     """Обработка HTTP запроса с телом."""
     
@@ -230,7 +221,6 @@ async def http_app(scope, receive, send):
         'type': 'http.response.body',
         'body': response_body.encode(),
     })
-
 ```
 
 ### 2.4 Типы HTTP событий
@@ -261,7 +251,6 @@ http_response_body = {
     'body': b'response body',
     'more_body': False,  # True для streaming
 }
-
 ```
 
 ---
@@ -279,7 +268,6 @@ asgi_app.py — полноценное ASGI приложение.
 import json
 from datetime import datetime
 from urllib.parse import parse_qs
-
 
 class ASGIApplication:
     """ASGI приложение с роутингом."""
@@ -405,10 +393,8 @@ class ASGIApplication:
             'body': body,
         })
 
-
 # Создаём приложение
 app = ASGIApplication()
-
 
 # --- Маршруты ---
 
@@ -430,7 +416,6 @@ async def index(scope, receive, send):
 </html>"""
     await app.send_html(send, html)
 
-
 @app.route('/api/info')
 async def api_info(scope, receive, send):
     """Информация о запросе."""
@@ -451,7 +436,6 @@ async def api_info(scope, receive, send):
     
     await app.send_json(send, data)
 
-
 @app.route('/api/time')
 async def api_time(scope, receive, send):
     """Текущее время."""
@@ -465,7 +449,6 @@ async def api_time(scope, receive, send):
         'time': now.isoformat(),
         'timestamp': now.timestamp(),
     })
-
 
 @app.route('/api/echo', methods=['GET', 'POST'])
 async def api_echo(scope, receive, send):
@@ -496,7 +479,6 @@ async def api_echo(scope, receive, send):
     
     await app.send_json(send, data)
 
-
 @app.route('/stream')
 async def streaming(scope, receive, send):
     """Streaming response — отправка данных частями."""
@@ -526,12 +508,10 @@ async def streaming(scope, receive, send):
         'more_body': False,
     })
 
-
 # Для тестирования
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=8000)
-
 ```
 
 ---
@@ -557,7 +537,6 @@ uvicorn asgi_app:app \
     --loop uvloop \
     --http httptools \
     --reload  # для разработки
-
 ```
 
 ```python
@@ -573,7 +552,6 @@ if __name__ == '__main__':
         log_level="info",
         reload=True,  # только для разработки
     )
-
 ```
 
 ### 4.2 Daphne
@@ -589,7 +567,6 @@ daphne -b 0.0.0.0 -p 8000 asgi_app:app
 
 # С несколькими воркерами (через supervisor/systemd)
 daphne -u /tmp/daphne.sock asgi_app:app
-
 ```
 
 ### 4.3 Hypercorn
@@ -606,7 +583,6 @@ hypercorn asgi_app:app --bind 0.0.0.0:8000
 # С HTTP/2
 hypercorn asgi_app:app --bind 0.0.0.0:443 \
     --certfile cert.pem --keyfile key.pem
-
 ```
 
 ### 4.4 Сравнение серверов
@@ -658,13 +634,11 @@ server {
         alias /var/www/app/static/;
     }
 }
-
 ```
 
 ```bash
 # Запуск Uvicorn с Unix socket
 uvicorn asgi_app:app --uds /tmp/uvicorn.sock --workers 4
-
 ```
 
 ---
@@ -674,7 +648,6 @@ uvicorn asgi_app:app --uds /tmp/uvicorn.sock --workers 4
 ### 5.1 Структура middleware
 
 ```python
-
 class ASGIMiddleware:
     """Базовый ASGI middleware."""
     
@@ -694,12 +667,10 @@ class ASGIMiddleware:
 ### 5.2 Logging Middleware
 
 ```python
-
 import time
 import logging
 
 logger = logging.getLogger(__name__)
-
 
 class LoggingMiddleware:
     """Middleware для логирования запросов."""
@@ -731,16 +702,13 @@ class LoggingMiddleware:
             duration = (time.time() - start_time) * 1000
             logger.info(f"{method} {path} - {status_code} ({duration:.2f}ms)")
 
-
 # Применение
 app = LoggingMiddleware(app)
-
 ```
 
 ### 5.3 CORS Middleware
 
 ```python
-
 class CORSMiddleware:
     """CORS middleware для ASGI."""
     
@@ -796,13 +764,11 @@ class CORSMiddleware:
         if origin in self.allow_origins:
             return origin
         return ''
-
 ```
 
 ### 5.4 Authentication Middleware
 
 ```python
-
 class AuthMiddleware:
     """Simple JWT authentication middleware."""
     
@@ -862,7 +828,6 @@ class AuthMiddleware:
             ],
         })
         await send({'type': 'http.response.body', 'body': body})
-
 ```
 
 ---
@@ -874,17 +839,14 @@ class AuthMiddleware:
 **Starlette** — легковесный ASGI фреймворк.
 
 ```python
-
 from starlette.applications import Starlette
 from starlette.responses import JSONResponse, HTMLResponse
 from starlette.routing import Route
 from starlette.middleware import Middleware
 from starlette.middleware.cors import CORSMiddleware
 
-
 async def homepage(request):
     return HTMLResponse('<h1>Hello, Starlette!</h1>')
-
 
 async def api_info(request):
     return JSONResponse({
@@ -893,11 +855,9 @@ async def api_info(request):
         'query_params': dict(request.query_params),
     })
 
-
 async def api_user(request):
     user_id = request.path_params['user_id']
     return JSONResponse({'user_id': user_id})
-
 
 routes = [
     Route('/', homepage),
@@ -910,7 +870,6 @@ middleware = [
 ]
 
 app = Starlette(routes=routes, middleware=middleware)
-
 ```
 
 ### 6.2 FastAPI
@@ -918,7 +877,6 @@ app = Starlette(routes=routes, middleware=middleware)
 **FastAPI** — современный фреймворк на базе Starlette и Pydantic.
 
 ```python
-
 from fastapi import FastAPI, Query, Path, Body, HTTPException
 from pydantic import BaseModel
 from typing import Optional
@@ -926,12 +884,10 @@ from datetime import datetime
 
 app = FastAPI(title="My API", version="1.0.0")
 
-
 class Item(BaseModel):
     name: str
     price: float
     description: Optional[str] = None
-
 
 class ItemResponse(BaseModel):
     id: int
@@ -939,16 +895,13 @@ class ItemResponse(BaseModel):
     price: float
     created_at: datetime
 
-
 # Хранилище (в памяти)
 items_db = {}
 item_id_counter = 0
 
-
 @app.get("/")
 async def root():
     return {"message": "Hello, FastAPI!"}
-
 
 @app.get("/items")
 async def list_items(
@@ -958,13 +911,11 @@ async def list_items(
     items = list(items_db.values())
     return items[skip:skip + limit]
 
-
 @app.get("/items/{item_id}")
 async def get_item(item_id: int = Path(..., ge=1)):
     if item_id not in items_db:
         raise HTTPException(status_code=404, detail="Item not found")
     return items_db[item_id]
-
 
 @app.post("/items", response_model=ItemResponse, status_code=201)
 async def create_item(item: Item):
@@ -979,7 +930,6 @@ async def create_item(item: Item):
     items_db[item_id_counter] = item_data
     return item_data
 
-
 @app.put("/items/{item_id}")
 async def update_item(item_id: int, item: Item):
     if item_id not in items_db:
@@ -988,7 +938,6 @@ async def update_item(item_id: int, item: Item):
     items_db[item_id].update(item.dict())
     return items_db[item_id]
 
-
 @app.delete("/items/{item_id}", status_code=204)
 async def delete_item(item_id: int):
     if item_id not in items_db:
@@ -996,12 +945,10 @@ async def delete_item(item_id: int):
     
     del items_db[item_id]
 
-
 # Запуск
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=8000)
-
 ```
 
 ### 6.3 Django + ASGI
@@ -1015,7 +962,6 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 application = get_asgi_application()
-
 ```
 
 ```python
@@ -1033,7 +979,6 @@ application = ProtocolTypeRouter({
         )
     ),
 })
-
 ```
 
 ---
@@ -1059,7 +1004,6 @@ application = ProtocolTypeRouter({
 ### 7.3 Сравнение производительности
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │              I/O Bound Request Handling                    │
 ├────────────────────────────────────────────────────────────┤
@@ -1080,7 +1024,6 @@ application = ProtocolTypeRouter({
 │  (все запросы обрабатываются параллельно!)                 │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ---

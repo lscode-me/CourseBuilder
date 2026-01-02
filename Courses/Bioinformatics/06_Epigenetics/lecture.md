@@ -40,13 +40,11 @@
 **Аналогия:** Если ДНК — это книга, то эпигенетика — это закладки, подчёркивания и заметки на полях. Текст книги не меняется, но читается по-разному.
 
 ```
-
 Последовательность ДНК:     ATCGATCGATCG... (одинаковая у всех клеток)
                                   ↓
 Эпигенетические метки:      ●  ●     ●  ●   (разные в разных клетках)
                                   ↓
 Экспрессия:                 [ген ВКЛ] или [ген ВЫКЛ]
-
 ```
 
 ### 1.2 Основные эпигенетические механизмы
@@ -69,7 +67,6 @@
 - Особенно важны **CpG островки** — участки с высокой концентрацией CpG, часто расположенные в промоторах генов
 
 ```
-
 Немелированный цитозин:     5'-...ATCG ATCG...
                                       ↑
                                   CpG сайт
@@ -81,7 +78,6 @@
                               метильная группа (-CH₃)
                                       ↓
                             Ген ВЫКЛЮЧЕН (не читается)
-
 ```
 
 **Как это работает:**
@@ -92,6 +88,7 @@
 
 ```python
 # Пример: анализ метилирования
+
 def analyze_methylation(cpg_sites):
     """
     Анализ уровня метилирования в регионе
@@ -110,6 +107,7 @@ def analyze_methylation(cpg_sites):
         return f"Промежуточный уровень ({methylation_level:.1f}%) - требуется дополнительный анализ"
 
 # Пример данных
+
 promoter_cpg_sites = [
     {'position': 1000, 'methylated': False},
     {'position': 1020, 'methylated': False},
@@ -120,7 +118,6 @@ promoter_cpg_sites = [
 
 print(analyze_methylation(promoter_cpg_sites))
 # Output: "Низкое метилирование (20.0%) - ген вероятно АКТИВЕН"
-
 ```
 
 ### 1.4 Модификация гистонов
@@ -129,7 +126,6 @@ print(analyze_methylation(promoter_cpg_sites))
 
 **Структура хроматина:**
 ```
-
     ДНК (двойная спираль)
          ↓
 ┌─────────────────────────────┐
@@ -139,7 +135,6 @@ print(analyze_methylation(promoter_cpg_sites))
 └─────────────────────────────┘
          ↓
 Компактная упаковка → Хромосома
-
 ```
 
 **Основные модификации гистонов:**
@@ -155,6 +150,7 @@ print(analyze_methylation(promoter_cpg_sites))
 
 ```python
 # Пример: интерпретация гистоновых меток
+
 def interpret_histone_marks(marks):
     """
     Интерпретация набора гистоновых модификаций
@@ -173,10 +169,10 @@ def interpret_histone_marks(marks):
         return "Бивалентный или poised регион"
 
 # Пример
+
 gene_marks = ['H3K4me3', 'H3K27ac']
 print(interpret_histone_marks(gene_marks))
 # Output: "Активный промотор/энхансер"
-
 ```
 
 ### 1.5 Что влияет на эпигенетику?
@@ -196,6 +192,7 @@ print(interpret_histone_marks(gene_marks))
 
 ```python
 # Упрощённый пример эпигенетических часов
+
 def estimate_biological_age(methylation_data, clock_cpg_sites):
     """
     Оценка биологического возраста по метилированию
@@ -217,7 +214,6 @@ def estimate_biological_age(methylation_data, clock_cpg_sites):
 # Пример: биологический возраст может отличаться от хронологического
 # Здоровый образ жизни → биол. возраст < хронологического
 # Курение, стресс → биол. возраст > хронологического
-
 ```
 
 ### 1.6 Почему эпигенетика важна?
@@ -247,6 +243,7 @@ def estimate_biological_age(methylation_data, clock_cpg_sites):
 
 ```python
 # Пример: эпигенетические изменения при раке
+
 def detect_tumor_suppressor_silencing(gene_methylation):
     """
     Обнаружение аберрантного метилирования генов-супрессоров опухолей
@@ -269,7 +266,6 @@ def detect_tumor_suppressor_silencing(gene_methylation):
             })
     
     return silenced_genes
-    
 ```
 
 ---
@@ -290,6 +286,7 @@ def detect_tumor_suppressor_silencing(gene_methylation):
 
 ```python
 # Упрощённое представление данных метилирования из BS-seq
+
 from dataclasses import dataclass
 from statistics import mean
 
@@ -306,13 +303,11 @@ class CpGMethylation:
         total = self.methylated_reads + self.unmethylated_reads
         return self.methylated_reads / total if total > 0 else 0.0
 
-
 def region_methylation(cpg_list: list[CpGMethylation]) -> float:
     """Средний уровень метилирования региона"""
     if not cpg_list:
         return 0.0
     return mean(cpg.beta for cpg in cpg_list)
-
 
 promoter = [
     CpGMethylation("chr17", 43044295, methylated_reads=5, unmethylated_reads=45),
@@ -328,7 +323,6 @@ print(f"Среднее метилирование промотора: {region_me
 Частая задача — найти CpG или регионы, которые **по-разному метилированы** между группами (например, "здоровые" vs "больные").
 
 ```python
-
 def differential_methylation(cases: list[float], controls: list[float], threshold: float = 0.2):
     """
     Очень упрощённая метрика дифференциального метилирования.
@@ -351,7 +345,6 @@ def differential_methylation(cases: list[float], controls: list[float], threshol
         "status": status,
     }
 
-
 case_values = [0.8, 0.85, 0.9]    # больные
 control_values = [0.2, 0.25, 0.3] # контролі
 print(differential_methylation(case_values, control_values))
@@ -370,7 +363,6 @@ print(differential_methylation(case_values, control_values))
 - Специфические паттерны модификаций гистонов в онкогенах
 
 ```python
-
 def classify_tumor_profile(mutations: list[str], methylation: dict[str, float]) -> list[str]:
     """
     Игрушечный пример интеграции мутаций и эпигенетики
@@ -412,7 +404,6 @@ def classify_tumor_profile(mutations: list[str], methylation: dict[str, float]) 
 6. Связать эпигенетические изменения с генами и путями (pathways)
 
 ```python
-
 class SimpleMethylationPipeline:
     """
     Упрощённый пример пайплайна анализа метилирования.
@@ -439,7 +430,6 @@ class SimpleMethylationPipeline:
         self.align()
         self.call_methylation()
         self.differential_analysis()
-
 
 pipeline = SimpleMethylationPipeline(
     fastq_paths=["sample1_R1.fastq.gz", "sample1_R2.fastq.gz"],
@@ -482,5 +472,6 @@ pipeline.run()
 - Статьи и обзоры по эпигенетическим часам и их применению в клинике.
 - Методы single-cell эпигенетики (scATAC-seq, single-cell BS-seq).
 - Связь эпигенетики с иммунной системой и старением.
+
 
 

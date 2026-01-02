@@ -32,6 +32,7 @@
 
 ```sh
 # Показать все интерфейсы
+
 $ ifconfig
 lo0: flags=8049<UP,LOOPBACK,RUNNING,MULTICAST> mtu 32768
         index 1 priority 0 llprio 3
@@ -45,7 +46,6 @@ em0: flags=8b43<UP,BROADCAST,RUNNING,PROMISC,ALLMULTI,SIMPLEX,MULTICAST> mtu 150
         media: Ethernet autoselect (1000baseT full-duplex)
         status: active
         inet 192.168.1.100 netmask 0xffffff00 broadcast 192.168.1.255
-
 ```
 
 **Типы интерфейсов:**
@@ -65,10 +65,10 @@ em0: flags=8b43<UP,BROADCAST,RUNNING,PROMISC,ALLMULTI,SIMPLEX,MULTICAST> mtu 150
 
 ```sh
 # egress — интерфейс по умолчанию для исходящего трафика
+
 $ ifconfig egress
 em0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
         ...
-
 ```
 
 ---
@@ -81,34 +81,34 @@ em0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 
 ```sh
 # /etc/hostname.em0
-inet 192.168.1.100 255.255.255.0
 
+inet 192.168.1.100 255.255.255.0
 ```
 
 Или с CIDR нотацией:
 
 ```sh
 # /etc/hostname.em0
-inet 192.168.1.100/24
 
+inet 192.168.1.100/24
 ```
 
 ### 2.2 DHCP
 
 ```sh
 # /etc/hostname.em0
-dhcp
 
+dhcp
 ```
 
 ### 2.3 Полный пример
 
 ```sh
 # /etc/hostname.em0
+
 inet 192.168.1.100 255.255.255.0
 inet6 autoconf
 up
-
 ```
 
 ### 2.4 Применение настроек
@@ -130,14 +130,13 @@ up
 
 ```sh
 # /etc/mygate
-192.168.1.1
 
+192.168.1.1
 ```
 
 ### 3.2 Просмотр таблицы маршрутизации
 
 ```sh
-
 $ netstat -rn
 Routing tables
 
@@ -146,7 +145,6 @@ Destination        Gateway            Flags   Refs      Use   Mtu  Prio Iface
 default            192.168.1.1        UGS        0        0     -     8 em0
 192.168.1.0/24     192.168.1.100      UCn        1        0     -     4 em0
 192.168.1.100      192.168.1.100      UHl        0        0     -     1 lo0
-
 ```
 
 ### 3.3 Управление маршрутами
@@ -171,11 +169,12 @@ default            192.168.1.1        UGS        0        0     -     8 em0
 # doas sysctl net.inet.ip.forwarding=1
 
 # Постоянно в /etc/sysctl.conf
+
 net.inet.ip.forwarding=1
 
 # Для IPv6
-net.inet6.ip6.forwarding=1
 
+net.inet6.ip6.forwarding=1
 ```
 
 ---
@@ -186,11 +185,11 @@ net.inet6.ip6.forwarding=1
 
 ```sh
 # /etc/resolv.conf
+
 nameserver 8.8.8.8
 nameserver 1.1.1.1
 search home.local
 lookup file bind
-
 ```
 
 ### 4.2 Автоматическое обновление при DHCP
@@ -215,8 +214,8 @@ lookup file bind
 # doas rcctl start unbound
 
 # В /etc/resolv.conf указать локальный
-nameserver 127.0.0.1
 
+nameserver 127.0.0.1
 ```
 
 ---
@@ -227,29 +226,30 @@ nameserver 127.0.0.1
 
 ```sh
 # /etc/myname
+
 server.home.local
 
 # Применить
 # doas hostname server.home.local
 
 # Проверить
+
 $ hostname
 server.home.local
 
 $ hostname -s
 server
-
 ```
 
 ### 5.2 /etc/hosts
 
 ```sh
 # /etc/hosts
+
 127.0.0.1       localhost
 ::1             localhost
 192.168.1.100   server.home.local server
 192.168.1.1     gateway.home.local gateway
-
 ```
 
 ---
@@ -261,30 +261,30 @@ server
 ```sh
 # Сканирование
 # doas ifconfig iwn0 scan
+
 iwn0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
         nwid MyNetwork chan 6 bssid 00:11:22:33:44:55 -65dBm
         nwid OtherNetwork chan 11 bssid aa:bb:cc:dd:ee:ff -78dBm
-
 ```
 
 ### 6.2 Подключение к WPA2
 
 ```sh
 # /etc/hostname.iwn0
+
 join "MyNetwork" wpakey "MyPassword"
 dhcp
-
 ```
 
 ### 6.3 Несколько сетей
 
 ```sh
 # /etc/hostname.iwn0
+
 join "HomeNetwork" wpakey "home123"
 join "WorkNetwork" wpakey "work456"
 join "OpenCafe"
 dhcp
-
 ```
 
 ---
@@ -295,10 +295,10 @@ dhcp
 
 ```sh
 # /etc/hostname.vlan100
+
 vnetid 100
 parent em0
 inet 10.100.0.1/24
-
 ```
 
 ### 7.2 Применение
@@ -307,12 +307,12 @@ inet 10.100.0.1/24
 # doas sh /etc/netstart vlan100
 
 # Проверка
+
 $ ifconfig vlan100
 vlan100: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
         lladdr 00:11:22:33:44:55
         vnetid 100 parent em0
         inet 10.100.0.1 netmask 0xffffff00 broadcast 10.100.0.255
-
 ```
 
 ---
@@ -323,28 +323,30 @@ vlan100: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 
 ```sh
 # /etc/hostname.em0
+
 up
 
 # /etc/hostname.em1
+
 up
 
 # /etc/hostname.trunk0
+
 trunkproto lacp
 trunkport em0
 trunkport em1
 inet 192.168.1.100/24
-
 ```
 
 ### 8.2 Failover
 
 ```sh
 # /etc/hostname.trunk0
+
 trunkproto failover
 trunkport em0 master
 trunkport em1
 inet 192.168.1.100/24
-
 ```
 
 ---
@@ -355,6 +357,7 @@ inet 192.168.1.100/24
 
 ```sh
 # IPv4
+
 $ ping -c 3 8.8.8.8
 PING 8.8.8.8 (8.8.8.8): 56 data bytes
 64 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=15.234 ms
@@ -362,53 +365,55 @@ PING 8.8.8.8 (8.8.8.8): 56 data bytes
 64 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=15.102 ms
 
 # IPv6
-$ ping6 -c 3 2001:4860:4860::8888
 
+$ ping6 -c 3 2001:4860:4860::8888
 ```
 
 ### 9.2 traceroute
 
 ```sh
-
 $ traceroute google.com
 traceroute to google.com (142.250.74.110), 64 hops max, 40 byte packets
  1  192.168.1.1  1.234 ms  0.987 ms  0.876 ms
  2  10.0.0.1  5.432 ms  5.123 ms  4.987 ms
  3  ...
-
 ```
 
 ### 9.3 netstat
 
 ```sh
 # Открытые порты
+
 $ netstat -an | grep LISTEN
 tcp        0      0  *.22                   *.*                    LISTEN
 tcp        0      0  127.0.0.1.25           *.*                    LISTEN
 
 # Статистика интерфейсов
+
 $ netstat -i
 Name    Mtu   Network     Address              Ipkts Ierrs    Opkts Oerrs  Coll
 em0     1500  <Link>      00:11:22:33:44:55  1234567     0   987654     0     0
-
 ```
 
 ### 9.4 nc (netcat)
 
 ```sh
 # Проверить порт
+
 $ nc -vz google.com 443
 Connection to google.com 443 port [tcp/https] succeeded!
 
 # Простой сервер
+
 $ nc -l 8080
 
 # Передача файла
 # На сервере:
+
 $ nc -l 8080 > file.txt
 # На клиенте:
-$ nc server 8080 < file.txt
 
+$ nc server 8080 < file.txt
 ```
 
 ### 9.5 tcpdump
@@ -431,23 +436,26 @@ $ nc server 8080 < file.txt
 
 ```sh
 # DNS запрос
+
 $ dig google.com
 ;; ANSWER SECTION:
 google.com.             300     IN      A       142.250.74.110
 
 # Краткий вывод
+
 $ dig +short google.com
 142.250.74.110
 
 # Reverse lookup
+
 $ dig -x 8.8.8.8
 ;; ANSWER SECTION:
 8.8.8.8.in-addr.arpa.   21600   IN      PTR     dns.google.
 
 # Простой запрос
+
 $ host google.com
 google.com has address 142.250.74.110
-
 ```
 
 ---
@@ -458,6 +466,7 @@ google.com has address 142.250.74.110
 
 ```sh
 # /etc/dhcpd.conf
+
 subnet 192.168.1.0 netmask 255.255.255.0 {
     range 192.168.1.100 192.168.1.200;
     option routers 192.168.1.1;
@@ -467,11 +476,11 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 }
 
 # Статические адреса
+
 host server {
     hardware ethernet 00:11:22:33:44:55;
     fixed-address 192.168.1.10;
 }
-
 ```
 
 ```sh
@@ -490,14 +499,17 @@ host server {
 ```sh
 # 1. Внешний интерфейс (DHCP от провайдера)
 # /etc/hostname.em0
+
 dhcp
 
 # 2. Внутренний интерфейс
 # /etc/hostname.em1
+
 inet 192.168.1.1/24
 
 # 3. Включить forwarding
 # /etc/sysctl.conf
+
 net.inet.ip.forwarding=1
 
 # 4. Настроить NAT в /etc/pf.conf
@@ -505,6 +517,7 @@ net.inet.ip.forwarding=1
 
 # 5. DHCP сервер
 # /etc/dhcpd.conf
+
 subnet 192.168.1.0 netmask 255.255.255.0 {
     range 192.168.1.100 192.168.1.200;
     option routers 192.168.1.1;
@@ -521,12 +534,15 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 ```sh
 # /etc/hostname.em0
+
 up
 
 # /etc/hostname.em1
+
 up
 
 # /etc/hostname.trunk0
+
 trunkproto failover
 trunkport em0 master
 trunkport em1
@@ -540,10 +556,10 @@ inet 192.168.1.100/24
 
 ```sh
 # /etc/hostname.em0
+
 inet 192.168.1.100/24
 inet alias 192.168.1.101/32
 inet alias 192.168.1.102/32
-
 ```
 
 ---
@@ -596,6 +612,7 @@ inet alias 192.168.1.102/32
 - [OpenBSD FAQ 6](https://www.openbsd.org/faq/faq6.html) — сетевая настройка
 
 ---
+
 
 
 

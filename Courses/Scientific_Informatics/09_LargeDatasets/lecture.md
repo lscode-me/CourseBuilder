@@ -110,7 +110,6 @@ print("Minimal memory usage")
 
 **Output:**
 ```
-
 Streaming processing:
 Reads file line by line
 Processes data incrementally
@@ -165,7 +164,6 @@ print(f"Reduction: {result['reduction_percent']:.1f}%")
 
 **Output:**
 ```
-
 Original size: 24.00 MB
 Optimized size: 16.00 MB
 Reduction: 33.3%
@@ -221,7 +219,6 @@ print("- Combines results")
 
 **Output:**
 ```
-
 Chunked processing with Pandas:
 - Reads file in chunks
 - Processes each chunk
@@ -256,7 +253,6 @@ except ImportError:
 
 **Output:**
 ```
-
 Dask allows:
 - Lazy evaluation
 - Parallel processing
@@ -272,7 +268,6 @@ Dask allows:
 **Пример: Параллельная обработка**
 
 ```python
-
 from multiprocessing import Pool
 import numpy as np
 
@@ -303,7 +298,6 @@ print(f"Overall mean: {np.mean(results):.4f}")
 
 **Output:**
 ```
-
 Parallel processing results: [0.0012, -0.0008, 0.0005, -0.0003]
 Overall mean: 0.0002
 ```
@@ -330,7 +324,6 @@ print("Vectorized operations are automatically optimized")
 
 **Output:**
 ```
-
 Vectorized result: 1.0002
 Vectorized operations are automatically optimized
 ```
@@ -361,7 +354,6 @@ print("4. Save or display results")
 
 **Output:**
 ```
-
 Apache Spark:
 - Distributed data processing
 - Resilient Distributed Datasets (RDD)
@@ -389,7 +381,6 @@ Example workflow:
 **Пример: Выбор инструмента**
 
 ```python
-
 def choose_tool(data_size_gb, complexity='simple'):
     """Выбор инструмента для обработки данных"""
     if data_size_gb < 10:
@@ -410,7 +401,6 @@ print(f"5000 GB: {choose_tool(5000)}")
 
 **Output:**
 ```
-
 Tool selection:
 5 GB: Pandas (fits in memory)
 50 GB: Dask or Pandas with chunking

@@ -123,6 +123,7 @@ Solana — высокопроизводительный блокчейн с фо
 **Пример:**
 ```python
 # Сравнение характеристик
+
 blockchains = {
     "Bitcoin": {"tps": 7, "finality": "10 min", "fees": "high"},
     "Ethereum": {"tps": 15, "finality": "15 sec", "fees": "high"},
@@ -135,7 +136,6 @@ for chain, specs in blockchains.items():
 
 **Output:**
 ```
-
 Bitcoin: 7 TPS, 10 min finality
 Ethereum: 15 TPS, 15 sec finality
 Solana: 65000 TPS, 400ms finality
@@ -290,5 +290,6 @@ Polkadot — мультичейн протокол, соединяющий ра�
 - Технические спецификации
 
 ---
+
 
 

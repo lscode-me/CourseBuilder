@@ -41,7 +41,6 @@
 **Example: Процесс аутентификации**
 
 ```python
-
 def authenticate(username, password):
     """Аутентификация — проверка личности"""
     # Проверка: существует ли пользователь и правильный ли пароль
@@ -51,6 +50,7 @@ def authenticate(username, password):
     return None  # Аутентификация не удалась
 
 # Аутентификация
+
 user = authenticate("ivan", "password123")
 if user:
     print(f"Пользователь {user.username} аутентифицирован")
@@ -60,7 +60,6 @@ else:
 
 **Output:**
 ```
-
 Пользователь ivan аутентифицирован
 ```
 
@@ -71,7 +70,6 @@ else:
 **Example: Процесс авторизации**
 
 ```python
-
 def authorize(user, resource, action):
     """Авторизация — проверка прав доступа"""
     # Проверка: имеет ли пользователь право на действие
@@ -83,6 +81,7 @@ def authorize(user, resource, action):
     return False  # Доступ запрещён
 
 # Авторизация
+
 user = authenticate("ivan", "password123")
 if user:
     # Пользователь аутентифицирован, проверяем права
@@ -94,7 +93,6 @@ if user:
 
 **Output:**
 ```
-
 Доступ к чтению пользователей разрешён
 ```
 
@@ -125,13 +123,14 @@ API Key — это секретный ключ, который идентифи�
 **Example: Использование API Key**
 
 ```python
-
 import requests
 
 # API Key передаётся в заголовке или параметре запроса
+
 api_key = "sk_live_1234567890abcdef"
 
 # Вариант 1: В заголовке (рекомендуется)
+
 headers = {
     "X-API-Key": api_key,
     "Content-Type": "application/json"
@@ -142,6 +141,7 @@ response = requests.get(
 )
 
 # Вариант 2: В параметре запроса
+
 response = requests.get(
     "https://api.example.com/users",
     params={"api_key": api_key}
@@ -152,7 +152,6 @@ print(f"Status: {response.status_code}")
 
 **Output:**
 ```
-
 Status: 200
 ```
 
@@ -161,7 +160,6 @@ Status: 200
 **Example: Генерация API Key**
 
 ```python
-
 import secrets
 import hashlib
 
@@ -181,21 +179,23 @@ def verify_api_key(provided_key, stored_hash):
     return provided_hash == stored_hash
 
 # Генерация ключа
+
 api_key = generate_api_key()
 print(f"Generated API Key: {api_key}")
 
 # Хеширование для хранения
+
 hashed_key = hash_api_key(api_key)
 print(f"Hashed (for storage): {hashed_key}")
 
 # Проверка ключа
+
 is_valid = verify_api_key(api_key, hashed_key)
 print(f"Key valid: {is_valid}")
 ```
 
 **Output:**
 ```
-
 Generated API Key: abc123xyz...
 Hashed (for storage): 5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d
 Key valid: True
@@ -206,12 +206,12 @@ Key valid: True
 **Example: Валидация API Key в API**
 
 ```python
-
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
 # Хранилище API ключей (в реальности — база данных)
+
 valid_api_keys = {
     "sk_live_1234567890abcdef": {"user_id": 123, "permissions": ["read", "write"]},
     "sk_test_abcdef1234567890": {"user_id": 456, "permissions": ["read"]}
@@ -273,7 +273,6 @@ Basic Auth кодирует username и password в Base64 и передаёт �
 **Example: Basic Auth на клиенте**
 
 ```python
-
 import requests
 import base64
 
@@ -284,6 +283,7 @@ def basic_auth_header(username, password):
     return f"Basic {encoded}"
 
 # Использование Basic Auth
+
 username = "ivan"
 password = "password123"
 
@@ -301,7 +301,6 @@ print(f"Status: {response.status_code}")
 
 **Output:**
 ```
-
 Status: 200
 ```
 
@@ -310,13 +309,13 @@ Status: 200
 **Example: Обработка Basic Auth на сервере**
 
 ```python
-
 from flask import Flask, request, jsonify
 import base64
 
 app = Flask(__name__)
 
 # Хранилище пользователей (в реальности — база данных)
+
 users = {
     "ivan": "password123",
     "maria": "securepass456"
@@ -365,6 +364,7 @@ def get_users():
 
 ```python
 # ❌ НЕБЕЗОПАСНО: HTTP
+
 response = requests.get("http://api.example.com/users", headers=headers)
 
 # ✅ БЕЗОПАСНО: HTTPS
@@ -405,6 +405,7 @@ OAuth решает проблему: как дать приложению дос
 
 ```python
 # Шаг 1: Клиент запрашивает авторизацию
+
 def request_authorization(client_id, redirect_uri, scope):
     """Запрос авторизации"""
     auth_url = f"https://auth.example.com/authorize"
@@ -417,9 +418,11 @@ def request_authorization(client_id, redirect_uri, scope):
     return f"{auth_url}?{urlencode(params)}"
 
 # Шаг 2: Пользователь авторизуется и получает код
+
 authorization_code = "abc123xyz"
 
 # Шаг 3: Клиент обменивает код на токен
+
 def exchange_code_for_token(authorization_code, client_id, client_secret):
     """Обмен кода на токен доступа"""
     token_url = "https://auth.example.com/token"
@@ -433,6 +436,7 @@ def exchange_code_for_token(authorization_code, client_id, client_secret):
     return response.json()["access_token"]
 
 # Шаг 4: Использование токена для доступа к API
+
 def access_api_with_token(access_token):
     """Доступ к API с токеном"""
     headers = {
@@ -470,6 +474,7 @@ print(f"Users: {users}")
 
 ```python
 # Scopes определяют права доступа
+
 scopes = {
     "read:users": "Чтение данных пользователей",
     "write:users": "Создание/изменение пользователей",
@@ -477,18 +482,21 @@ scopes = {
 }
 
 # Токен с ограниченными правами
+
 token_with_read_only = {
     "access_token": "token123",
     "scope": "read:users"  # Только чтение
 }
 
 # Проверка scope при доступе
+
 def check_scope(token, required_scope):
     """Проверка scope токена"""
     token_scopes = token["scope"].split()
     return required_scope in token_scopes
 
 # Использование
+
 if check_scope(token_with_read_only, "read:users"):
     print("Доступ разрешён")
 else:
@@ -497,7 +505,6 @@ else:
 
 **Output:**
 ```
-
 Доступ разрешён
 ```
 
@@ -541,7 +548,6 @@ else:
 ### 6.1 Пример: API с API Key
 
 ```python
-
 class APIKeyAuth:
     """Аутентификация через API Key"""
     
@@ -571,7 +577,6 @@ if user_info:
 
 **Output:**
 ```
-
 User 1 authenticated
 ```
 
@@ -610,6 +615,7 @@ response = requests.get("http://api.example.com/users", auth=("user", "pass"))
 ✅ **Correct:**
 ```python
 # HTTPS — зашифрованное соединение
+
 response = requests.get("https://api.example.com/users", auth=("user", "pass"))
 ```
 
@@ -619,7 +625,6 @@ response = requests.get("https://api.example.com/users", auth=("user", "pass"))
 
 ❌ **Incorrect:**
 ```python
-
 def check_access(api_key):
     # Смешивание: проверка и личности, и прав одновременно
     if api_key == "admin_key":
@@ -629,7 +634,6 @@ def check_access(api_key):
 
 ✅ **Correct:**
 ```python
-
 def authenticate(api_key):
     # Сначала аутентификация
     user = get_user_by_api_key(api_key)
@@ -693,5 +697,6 @@ def authorize(user, resource, action):
 - "API Key vs OAuth: When to Use What" — сравнение методов аутентификации
 
 ---
+
 
 

@@ -69,7 +69,6 @@ print(f"IQR outliers: {len(outliers_iqr)}")
 print(f"Z-score outliers: {len(outliers_z)}")
 
 ```
-
 **Output:**
 ```
 
@@ -77,7 +76,6 @@ IQR outliers: 1
 Z-score outliers: 1
 
 ```
-
 ---
 
 ## 2. Контроль изменений
@@ -91,7 +89,6 @@ Z-score outliers: 1
 3. **Метаданные** — описание изменений в каждой версии
 
 **Пример: Система версионирования**
-
 ```python
 
 import hashlib
@@ -174,18 +171,15 @@ dvc = DataVersionControl()
 print("Data version control system created")
 
 ```
-
 **Output:**
 ```
 
 Data version control system created
 
 ```
-
 ### 2.2 Отслеживание изменений
 
 **Логирование изменений:**
-
 ```python
 
 class ChangeLog:
@@ -225,7 +219,6 @@ for change in changelog.get_changelog():
     print(f"  v{change['version']}: {change['description']}")
 
 ```
-
 **Output:**
 ```
 
@@ -234,7 +227,6 @@ Changelog:
   v1.1.0: Added metadata
 
 ```
-
 ---
 
 ## 3. Проверка корректности данных
@@ -248,7 +240,6 @@ Changelog:
 3. **Бизнес-правила** — доменные ограничения
 
 **Пример: Валидация данных**
-
 ```python
 
 class DataValidator:
@@ -317,7 +308,6 @@ if not is_valid:
         print(f"  - {error}")
 
 ```
-
 **Output:**
 ```
 
@@ -327,11 +317,9 @@ Errors:
   - temperature: 1 null values
 
 ```
-
 ### 3.2 Проверка целостности
 
 **Checksums и хэши:**
-
 ```python
 
 import hashlib
@@ -359,14 +347,12 @@ def verify_file_integrity(file_path, expected_hash, algorithm='sha256'):
 print("File integrity checking functions created")
 
 ```
-
 **Output:**
 ```
 
 File integrity checking functions created
 
 ```
-
 ---
 
 ## 4. Основы data security
@@ -380,7 +366,6 @@ File integrity checking functions created
 3. **Авторизация** — проверка прав доступа
 
 **Пример: Система контроля доступа**
-
 ```python
 
 class DataAccessControl:
@@ -424,7 +409,6 @@ print(f"Researcher1 can read: {can_read}")
 print(f"Researcher1 can write: {can_write}")
 
 ```
-
 **Output:**
 ```
 
@@ -432,7 +416,6 @@ Researcher1 can read: True
 Researcher1 can write: False
 
 ```
-
 ### 4.2 Шифрование данных
 
 **Типы шифрования:**
@@ -442,7 +425,6 @@ Researcher1 can write: False
 3. **End-to-end** — шифрование от источника до получателя
 
 **Пример: Базовое шифрование (концептуально)**
-
 ```python
 # Концептуальный пример (для production используйте библиотеки типа cryptography)
 
@@ -470,7 +452,6 @@ print(f"Encrypted: {encrypted}")
 print(f"Decrypted: {decrypted}")
 
 ```
-
 **Output:**
 ```
 
@@ -479,14 +460,12 @@ Encrypted: RXhwZXJpbWVudGFsIHJlc3VsdHM6IDEwLjUsIDEyLjMsIDE1LjI=
 Decrypted: Experimental results: 10.5, 12.3, 15.2
 
 ```
-
 > **⚠️ Warning:**  
 > Для production используйте проверенные библиотеки шифрования (например, `cryptography` в Python).
 
 ### 4.3 Аудит данных
 
 **Логирование доступа:**
-
 ```python
 
 class DataAuditLog:
@@ -531,7 +510,6 @@ for entry in history:
     print(f"  {entry['timestamp']}: {entry['user']} - {entry['action']}")
 
 ```
-
 **Output:**
 ```
 

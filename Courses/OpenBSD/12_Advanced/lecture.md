@@ -34,6 +34,7 @@
 
 ```sh
 # Проверить поддержку виртуализации
+
 $ dmesg | grep vmm
 vmm0 at mainbus0: VMX/EPT
 
@@ -57,6 +58,7 @@ vmm0 at mainbus0: VMX/EPT
 # doas vmctl create -s 10G /var/vm/linux.qcow2
 
 # Скачать образ для установки
+
 $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/install74.iso
 # doas mv install74.iso /var/vm/
 
@@ -66,6 +68,7 @@ $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.4/amd64/install74.iso
 
 ```sh
 # /etc/vm.conf
+
 switch "local" {
     interface bridge0
 }
@@ -78,7 +81,6 @@ vm "openbsd-vm" {
     owner admin
     disable
 }
-
 ```
 
 ### 1.4 Управление VM
@@ -100,10 +102,10 @@ vm "openbsd-vm" {
 # doas vmctl stop -f openbsd-vm
 
 # Статус всех VM
+
 $ vmctl status
    ID   PID VCPUS  MAXMEM  CURMEM     TTY        OWNER    NAME
     1  1234     1    1.0G    256M   ttyp0        admin    openbsd-vm
-
 ```
 
 ### 1.5 Сеть для VM
@@ -121,9 +123,9 @@ $ vmctl status
 # echo "inet 10.0.0.1/24 up" | doas tee /etc/hostname.vether0
 
 # NAT в pf.conf
+
 match out on egress from 10.0.0.0/24 nat-to (egress)
 pass out on egress from 10.0.0.0/24
-
 ```
 
 ### 1.6 Linux гости
@@ -133,6 +135,7 @@ pass out on egress from 10.0.0.0/24
 # doas vmctl create -s 20G /var/vm/debian.qcow2
 
 # /etc/vm.conf
+
 vm "debian" {
     memory 2G
     disk /var/vm/debian.qcow2
@@ -140,7 +143,6 @@ vm "debian" {
     interface { switch "local" }
     boot cdrom
 }
-
 ```
 
 ---
@@ -152,7 +154,6 @@ vm "debian" {
 **CARP** (Common Address Redundancy Protocol) — протокол для создания отказоустойчивых конфигураций.
 
 ```
-
 ┌──────────────┐     ┌──────────────┐
 │   Master     │     │   Backup     │
 │  (Active)    │     │  (Standby)   │
@@ -165,7 +166,6 @@ vm "debian" {
          │ Virtual IP  │
          │192.168.1.1  │
          └─────────────┘
-
 ```
 
 ### 2.2 Настройка CARP
@@ -174,22 +174,23 @@ vm "debian" {
 
 ```sh
 # /etc/hostname.carp0
-inet 192.168.1.1 255.255.255.0 192.168.1.255 vhid 1 pass secretkey advskew 0
 
+inet 192.168.1.1 255.255.255.0 192.168.1.255 vhid 1 pass secretkey advskew 0
 ```
 
 **Backup (резервный сервер):**
 
 ```sh
 # /etc/hostname.carp0
-inet 192.168.1.1 255.255.255.0 192.168.1.255 vhid 1 pass secretkey advskew 100
 
+inet 192.168.1.1 255.255.255.0 192.168.1.255 vhid 1 pass secretkey advskew 100
 ```
 
 ### 2.3 Проверка CARP
 
 ```sh
 # Статус CARP интерфейсов
+
 $ ifconfig carp0
 carp0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
         carp: MASTER vhid 1 advbase 1 advskew 0
@@ -203,12 +204,13 @@ carp0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 ```sh
 # Синхронизация состояний файрвола между нодами
 # /etc/hostname.pfsync0
+
 syncdev em1
 
 # В pf.conf
+
 set syncookies adaptive (start 25%, end 12%)
 set state-defaults pflow
-
 ```
 
 ---
@@ -219,6 +221,7 @@ set state-defaults pflow
 
 ```sh
 # Скачать исходники
+
 $ cd /usr
 $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.4/sys.tar.gz
 # doas tar -xzf sys.tar.gz
@@ -228,6 +231,7 @@ $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.4/sys.tar.gz
 
 ```sh
 # Скопировать конфигурацию
+
 $ cd /usr/src/sys/arch/amd64/conf
 $ doas cp GENERIC.MP MYKERNEL
 
@@ -244,10 +248,12 @@ $ doas cp GENERIC.MP MYKERNEL
 
 ```sh
 # Создать конфигурацию
+
 $ cd /usr/src/sys/arch/amd64/conf
 # doas config MYKERNEL
 
 # Собрать ядро
+
 $ cd /usr/src/sys/arch/amd64/compile/MYKERNEL
 # doas make clean
 # doas make
@@ -263,11 +269,12 @@ $ cd /usr/src/sys/arch/amd64/compile/MYKERNEL
 
 ```sh
 # При загрузке:
+
 boot> boot /obsd
 
 # Или если совсем не грузится — boot с bsd.rd
-boot> boot /bsd.rd
 
+boot> boot /bsd.rd
 ```
 
 ---
@@ -282,18 +289,20 @@ boot> boot /bsd.rd
 
 # Внешний интерфейс (DHCP от провайдера)
 # /etc/hostname.em0
+
 dhcp
 
 # Внутренний интерфейс
 # /etc/hostname.em1
-inet 192.168.1.1/24
 
+inet 192.168.1.1/24
 ```
 
 ### 4.2 NAT и файрвол для роутера
 
 ```sh
 # /etc/pf.conf
+
 ext_if = "em0"
 int_if = "em1"
 int_net = "192.168.1.0/24"
@@ -302,24 +311,28 @@ set skip on lo0
 set block-policy drop
 
 # NAT
+
 match out on $ext_if from $int_net nat-to ($ext_if)
 
 # Блокировать входящий, разрешить исходящий
+
 block in all
 pass out all keep state
 
 # Разрешить от внутренней сети
+
 pass in on $int_if from $int_net
 
 # SSH к роутеру только из внутренней сети
-pass in on $int_if proto tcp to port 22
 
+pass in on $int_if proto tcp to port 22
 ```
 
 ### 4.3 DHCP сервер
 
 ```sh
 # /etc/dhcpd.conf
+
 subnet 192.168.1.0 netmask 255.255.255.0 {
     range 192.168.1.100 192.168.1.200;
     option routers 192.168.1.1;
@@ -339,6 +352,7 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 ```sh
 # /var/unbound/etc/unbound.conf
+
 server:
     interface: 192.168.1.1
     interface: 127.0.0.1
@@ -369,23 +383,25 @@ server:
 # doas ifconfig wg0 create
 
 # Сгенерировать ключи
+
 $ openssl rand -base64 32 > /etc/wireguard/private.key
 $ chmod 600 /etc/wireguard/private.key
 $ cat /etc/wireguard/private.key | wg pubkey > /etc/wireguard/public.key
 
 # /etc/hostname.wg0
+
 wgkey $(cat /etc/wireguard/private.key)
 wgport 51820
 wgpeer <client_public_key> wgaip 10.0.0.2/32
 inet 10.0.0.1/24
 up
-
 ```
 
 ### 5.2 Настройка клиента
 
 ```sh
 # /etc/hostname.wg0
+
 wgkey <client_private_key>
 wgpeer <server_public_key> wgendpoint server.example.com 51820 wgaip 0.0.0.0/0 wgpka 25
 inet 10.0.0.2/24
@@ -393,22 +409,24 @@ wgrtable 1
 up
 
 # Маршрут через VPN
-!/sbin/route -T1 add default 10.0.0.1
 
+!/sbin/route -T1 add default 10.0.0.1
 ```
 
 ### 5.3 PF правила для WireGuard
 
 ```sh
 # Разрешить WireGuard трафик
+
 pass in on egress proto udp to port 51820
 
 # NAT для VPN клиентов
+
 match out on egress from 10.0.0.0/24 nat-to (egress)
 
 # Трафик от VPN клиентов
-pass in on wg0
 
+pass in on wg0
 ```
 
 ---
@@ -419,9 +437,11 @@ pass in on wg0
 
 ```sh
 # /etc/hostname.pflow0
+
 flowsrc 192.168.1.1 flowdst 192.168.1.10:9995 pflowproto 10
 
 # В pf.conf
+
 set state-defaults pflow
 
 # Включить интерфейс
@@ -461,15 +481,17 @@ set state-defaults pflow
 
 ```sh
 # Трассировать команду
+
 $ ktrace ls
 
 # Просмотреть результат
+
 $ kdump
 
 # Фильтр по типу
+
 $ ktrace -tc syscall ls
 $ kdump | grep open
-
 ```
 
 ### 7.2 DTrace (экспериментальный)
@@ -483,14 +505,15 @@ $ kdump | grep open
 
 ```sh
 # Включить core dumps
+
 $ ulimit -c unlimited
 
 # Местоположение
 # Обычно в текущем каталоге или /var/crash
 
 # Анализ с gdb
-$ gdb /path/to/program /path/to/core
 
+$ gdb /path/to/program /path/to/core
 ```
 
 ---
@@ -500,11 +523,9 @@ $ gdb /path/to/program /path/to/core
 ### 8.1 Домашний роутер/файрвол
 
 ```
-
 ISP ─── em0 [OpenBSD Router] em1 ─── LAN
                    │
                    └─ wg0 ─── VPN Clients
-
 ```
 
 Компоненты:
@@ -518,21 +539,17 @@ ISP ─── em0 [OpenBSD Router] em1 ─── LAN
 ### 8.2 VPN сервер
 
 ```
-
 Internet ─── [OpenBSD VPN] ─── Secure Access
                    │
               wg0/tun0
-
 ```
 
 ### 8.3 Web-хостинг
 
 ```
-
 Internet ─── PF ─── httpd/nginx ─── Applications
                          │
                     PostgreSQL
-
 ```
 
 ---
@@ -604,6 +621,7 @@ Internet ─── PF ─── httpd/nginx ─── Applications
 **Продолжайте изучать и экспериментировать!**
 
 ---
+
 
 
 

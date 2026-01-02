@@ -32,7 +32,6 @@
 Современные LLM проходят через несколько этапов обучения:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │              Этапы обучения LLM                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -103,6 +102,7 @@ training_stages = {
 # на ОГРОМНОМ количестве текста
 
 # Loss function: Cross-entropy
+
 loss = -log(P(next_token | previous_tokens))
 
 # Минимизируя loss на триллионах токенов,
@@ -112,7 +112,6 @@ loss = -log(P(next_token | previous_tokens))
 ### 2.2 Данные для предобучения
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │            Источники данных для pretraining                 │
 ├─────────────────────────────────────────────────────────────┤
@@ -200,6 +199,7 @@ data_quality_steps = {
 
 ```python
 # Base model (после pretraining только)
+
 prompt = "What is the capital of France?"
 # Base model может продолжить:
 # "What is the capital of France? This is a common question..."
@@ -215,7 +215,6 @@ prompt = "What is the capital of France?"
 ### 3.2 Данные для SFT
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │              Данные для Supervised Fine-tuning              │
 ├─────────────────────────────────────────────────────────────┤
@@ -267,7 +266,6 @@ def sft_training_step(model, example):
 ### 3.4 Различные подходы к fine-tuning
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │              Подходы к Fine-tuning                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -352,7 +350,6 @@ sft_problems = {
 ### 4.2 Три шага RLHF
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    Процесс RLHF                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -422,6 +419,7 @@ class RewardModel(nn.Module):
         return reward
 
 # Обучение: Bradley-Terry loss
+
 def compute_loss(reward_chosen, reward_rejected):
     return -log(sigmoid(reward_chosen - reward_rejected))
 
@@ -492,7 +490,6 @@ def ppo_step(policy, reward_model, prompt, reference_policy):
 Alignment — это процесс приведения поведения модели в соответствие с человеческими ценностями:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    AI Alignment                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -602,6 +599,7 @@ from openai import OpenAI
 client = OpenAI()
 
 # 1. Подготовка данных (JSONL формат)
+
 training_data = [
     {
         "messages": [
@@ -614,6 +612,7 @@ training_data = [
 ]
 
 # 2. Загрузка файла
+
 with open("training.jsonl", "w") as f:
     for item in training_data:
         f.write(json.dumps(item) + "\n")
@@ -624,12 +623,14 @@ file = client.files.create(
 )
 
 # 3. Запуск fine-tuning
+
 job = client.fine_tuning.jobs.create(
     training_file=file.id,
     model="gpt-4o-mini-2024-07-18"
 )
 
 # 4. Использование fine-tuned модели
+
 response = client.chat.completions.create(
     model=f"ft:gpt-4o-mini:my-org:custom-name:id",
     messages=[...]
@@ -702,7 +703,6 @@ model_differences = {
 ### 7.2 Trade-offs в обучении
 
 ```
-
 ┌──────────────────────────────────────────────────────────────┐
 │              Trade-offs в обучении LLM                       │
 ├──────────────────────────────────────────────────────────────┤
@@ -782,5 +782,6 @@ model_differences = {
 - [RLHF explained](https://www.youtube.com/watch?v=2MBJi6mbMO4) — визуальное объяснение
 
 ---
+
 
 

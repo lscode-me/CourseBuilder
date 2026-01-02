@@ -34,7 +34,6 @@
 Популярная аналогия для понимания облачных моделей:
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────────┐
 │                        Pizza as a Service                              │
 ├────────────────────────────────────────────────────────────────────────┤
@@ -60,13 +59,11 @@
 │   █ You manage   ░ Vendor manages                                      │
 │                                                                        │
 └────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Реальные компоненты IT-стека
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────────┐
 │              Cloud Service Models: Responsibility Layers              │
 ├───────────────────────────────────────────────────────────────────────┤
@@ -96,7 +93,6 @@
 │   █ Cloud Provider manages                                            │
 │                                                                       │
 └───────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -110,7 +106,6 @@
 ### 2.2 AWS IaaS сервисы
 
 ```python
-
 aws_iaas_services = {
     "compute": {
         "EC2": "Virtual servers",
@@ -133,12 +128,10 @@ for category, services in aws_iaas_services.items():
     print(f"\n{category.upper()}:")
     for name, desc in services.items():
         print(f"  • {name}: {desc}")
-
 ```
 
 **Output:**
 ```
-
 COMPUTE:
   • EC2: Virtual servers
   • EC2 Auto Scaling: Automatic scaling of EC2
@@ -153,7 +146,6 @@ NETWORKING:
   • VPC: Virtual Private Cloud
   • ELB: Load Balancers
   • Direct Connect: Dedicated network connection
-
 ```
 
 ### 2.3 Пример: развёртывание на IaaS
@@ -163,6 +155,7 @@ NETWORKING:
 # Вы отвечаете за: ОС, runtime, middleware, app, data
 
 # 1. Запуск инстанса
+
 aws ec2 run-instances \
     --image-id ami-0c55b159cbfafe1f0 \
     --instance-type t3.medium \
@@ -171,22 +164,25 @@ aws ec2 run-instances \
     --subnet-id subnet-12345678
 
 # 2. Подключение и настройка (ваша ответственность)
+
 ssh -i my-key.pem ec2-user@<public-ip>
 
 # Установка и настройка всего стека
+
 sudo yum update -y
 sudo yum install -y python3 nginx postgresql
 
 # Настройка nginx
+
 sudo systemctl enable nginx
 sudo systemctl start nginx
 
 # Развёртывание приложения
+
 git clone https://github.com/myapp/myapp.git
 cd myapp
 pip3 install -r requirements.txt
 python3 app.py
-
 ```
 
 ### 2.4 Когда использовать IaaS
@@ -202,7 +198,6 @@ python3 app.py
 ### 2.5 Плюсы и минусы IaaS
 
 ```
-
 ✅ ПЛЮСЫ                          ❌ МИНУСЫ
 ─────────────────────────────     ─────────────────────────────
 • Полный контроль над ОС          • Вы отвечаете за патчинг ОС
@@ -210,7 +205,6 @@ python3 app.py
 • Знакомая модель для IT          • Больше операционной работы
 • Любой софт можно установить     • Нужна экспертиза в Linux/Windows
 • Предсказуемая производительность• Дороже при неэффективном использовании
-
 ```
 
 ---
@@ -224,7 +218,6 @@ python3 app.py
 ### 3.2 AWS PaaS сервисы
 
 ```python
-
 aws_paas_services = {
     "application_platforms": {
         "Elastic Beanstalk": "Deploy web apps (Java, .NET, Node, Python, etc.)",
@@ -251,14 +244,11 @@ aws_paas_services = {
 
 total_services = sum(len(v) for v in aws_paas_services.values())
 print(f"Примеры AWS PaaS сервисов: {total_services} сервисов")
-
 ```
 
 **Output:**
 ```
-
 Примеры AWS PaaS сервисов: 12 сервисов
-
 ```
 
 ### 3.3 Пример: развёртывание на PaaS
@@ -268,12 +258,15 @@ print(f"Примеры AWS PaaS сервисов: {total_services} сервис�
 # Вы отвечаете только за: код приложения и данные
 
 # 1. Инициализация проекта
+
 eb init -p python-3.9 my-flask-app --region us-east-1
 
 # 2. Создание environment
+
 eb create production
 
 # 3. Деплой приложения (всё остальное - забота AWS)
+
 eb deploy
 
 # AWS автоматически:
@@ -288,7 +281,6 @@ eb deploy
 **application.py для Elastic Beanstalk:**
 
 ```python
-
 from flask import Flask
 
 application = Flask(__name__)
@@ -303,7 +295,6 @@ def health():
 
 if __name__ == '__main__':
     application.run(host='0.0.0.0', port=5000)
-
 ```
 
 ### 3.4 Когда использовать PaaS
@@ -320,6 +311,7 @@ if __name__ == '__main__':
 
 ```python
 # Self-managed PostgreSQL на EC2 (IaaS)
+
 self_managed_tasks = [
     "Установка PostgreSQL",
     "Настройка postgresql.conf",
@@ -335,6 +327,7 @@ self_managed_tasks = [
 ]
 
 # RDS PostgreSQL (PaaS)
+
 rds_tasks = [
     "Выбор instance type",
     "Настройка parameter group",
@@ -345,16 +338,13 @@ rds_tasks = [
 print(f"Self-managed: {len(self_managed_tasks)} задач")
 print(f"RDS (PaaS): {len(rds_tasks)} задач")
 print(f"Экономия времени: ~{100 - len(rds_tasks)/len(self_managed_tasks)*100:.0f}%")
-
 ```
 
 **Output:**
 ```
-
 Self-managed: 11 задач
 RDS (PaaS): 4 задач
 Экономия времени: ~64%
-
 ```
 
 ---
@@ -368,7 +358,6 @@ RDS (PaaS): 4 задач
 ### 4.2 Примеры SaaS
 
 ```python
-
 saas_examples = {
     "productivity": {
         "Google Workspace": "Docs, Sheets, Gmail",
@@ -400,12 +389,10 @@ for category, apps in saas_examples.items():
     print(f"\n{category.upper().replace('_', '/')}:")
     for app, desc in list(apps.items())[:2]:
         print(f"  • {app}: {desc}")
-
 ```
 
 **Output:**
 ```
-
 SaaS — вы просто используете приложение:
 
 PRODUCTIVITY:
@@ -423,13 +410,11 @@ DEVELOPMENT:
 AWS/SAAS:
   • AWS Console: Cloud management UI
   • AWS WorkMail: Managed email
-
 ```
 
 ### 4.3 Характеристики SaaS
 
 ```
-
 ┌───────────────────────────────────────────────────────────────┐
 │                    SaaS Characteristics                       │
 ├───────────────────────────────────────────────────────────────┤
@@ -453,7 +438,6 @@ AWS/SAAS:
 │     └── Возможность интеграции с другими системами            │
 │                                                               │
 └───────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.4 Когда использовать SaaS
@@ -478,6 +462,7 @@ AWS/SAAS:
 
 ```python
 # AWS Lambda function example
+
 import json
 import boto3
 
@@ -504,13 +489,11 @@ def lambda_handler(event, context):
             'remaining_time_ms': context.get_remaining_time_in_millis()
         })
     }
-
 ```
 
 ### 5.3 Характеристики FaaS
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                    FaaS / Serverless                           │
 ├────────────────────────────────────────────────────────────────┤
@@ -540,13 +523,11 @@ def lambda_handler(event, context):
 │     └── Provisioned Concurrency решает проблему                │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.4 Lambda vs EC2: сравнение стоимости
 
 ```python
-
 def compare_lambda_ec2(
     requests_per_day: int,
     avg_duration_ms: int,
@@ -583,12 +564,14 @@ def compare_lambda_ec2(
     }
 
 # Сценарий 1: Низкая нагрузка
+
 low_traffic = compare_lambda_ec2(
     requests_per_day=1000,
     avg_duration_ms=100
 )
 
 # Сценарий 2: Высокая нагрузка
+
 high_traffic = compare_lambda_ec2(
     requests_per_day=1_000_000,
     avg_duration_ms=100
@@ -603,12 +586,10 @@ print("\n=== High Traffic (1M requests/day) ===")
 print(f"Lambda: ${high_traffic['lambda_cost']}/month")
 print(f"EC2 (t3.micro 24/7): ${high_traffic['ec2_cost']}/month")
 print(f"Winner: {high_traffic['winner']}")
-
 ```
 
 **Output:**
 ```
-
 === Low Traffic (1K requests/day) ===
 Lambda: $0.01/month
 EC2 (t3.micro 24/7): $7.49/month
@@ -618,7 +599,6 @@ Winner: Lambda
 Lambda: $18.5/month
 EC2 (t3.micro 24/7): $7.49/month
 Winner: EC2
-
 ```
 
 > **💡 Pro Tip:**  
@@ -646,7 +626,6 @@ Winner: EC2
 ### 6.2 AWS Container Services
 
 ```python
-
 aws_container_services = {
     "orchestration": {
         "ECS": {
@@ -682,12 +661,10 @@ for name, details in aws_container_services["compute"].items():
     print(f"\n{name}:")
     print(f"  {details['description']}")
     print(f"  You manage: {details['you_manage']}")
-
 ```
 
 **Output:**
 ```
-
 Container Compute Options:
 
 EC2:
@@ -697,13 +674,11 @@ EC2:
 Fargate:
   Serverless containers
   You manage: Just containers
-
 ```
 
 ### 6.3 ECS Task Definition
 
 ```json
-
 {
     "family": "my-web-app",
     "networkMode": "awsvpc",
@@ -739,7 +714,6 @@ Fargate:
         }
     ]
 }
-
 ```
 
 ---
@@ -749,7 +723,6 @@ Fargate:
 ### 7.1 Обзор *aaS моделей
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    XaaS: Everything as a Service                   │
 ├────────────────────────────────────────────────────────────────────┤
@@ -779,13 +752,11 @@ Fargate:
 │  └── S3, EBS, EFS — managed storage                                │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 7.2 Тренд: всё становится сервисом
 
 ```python
-
 evolution_timeline = {
     "2006-2010": {
         "focus": "IaaS",
@@ -812,12 +783,10 @@ evolution_timeline = {
 for period, data in evolution_timeline.items():
     print(f"\n{period}: {data['focus']}")
     print(f"  Mindset: {data['mindset']}")
-
 ```
 
 **Output:**
 ```
-
 2006-2010: IaaS
   Mindset: Rent servers instead of buying
 
@@ -829,7 +798,6 @@ for period, data in evolution_timeline.items():
 
 2021+: AI/ML Services + Low-code
   Mindset: AI-assisted development
-
 ```
 
 ---
@@ -839,7 +807,6 @@ for period, data in evolution_timeline.items():
 ### 8.1 Кто за что отвечает
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                AWS Shared Responsibility Model                     │
 ├────────────────────────────────────────────────────────────────────┤
@@ -869,13 +836,11 @@ for period, data in evolution_timeline.items():
 │  └────────────────────────────────────────────────────────────┘    │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 8.2 Ответственность по моделям сервисов
 
 ```python
-
 responsibility_matrix = {
     "IaaS (EC2)": {
         "customer": [
@@ -937,12 +902,10 @@ for model, resp in responsibility_matrix.items():
     print(f"\n{model}:")
     print(f"  Customer responsibilities: {customer_count}")
     print(f"  AWS responsibilities: {aws_count}")
-
 ```
 
 **Output:**
 ```
-
 IaaS (EC2):
   Customer responsibilities: 6
   AWS responsibilities: 4
@@ -958,7 +921,6 @@ FaaS (Lambda):
 SaaS (WorkMail):
   Customer responsibilities: 2
   AWS responsibilities: 1
-
 ```
 
 ---
@@ -968,7 +930,6 @@ SaaS (WorkMail):
 ### 9.1 Decision Tree
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                 Choosing a Service Model                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -992,7 +953,6 @@ SaaS (WorkMail):
 │                                     └── НЕТ ──► SaaS?           │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 9.2 Сравнительная таблица
@@ -1009,7 +969,6 @@ SaaS (WorkMail):
 ### 9.3 Реальные сценарии
 
 ```python
-
 scenarios = {
     "Стартап MVP": {
         "recommendation": "Lambda + API Gateway + DynamoDB",
@@ -1042,12 +1001,10 @@ for scenario, details in scenarios.items():
     print(f"\n📋 {scenario}")
     print(f"   Model: {details['model']}")
     print(f"   Services: {details['recommendation']}")
-
 ```
 
 **Output:**
 ```
-
 📋 Стартап MVP
    Model: FaaS + DBaaS
    Services: Lambda + API Gateway + DynamoDB
@@ -1067,7 +1024,6 @@ for scenario, details in scenarios.items():
 📋 Email для компании
    Model: SaaS
    Services: AWS WorkMail или Google Workspace
-
 ```
 
 ---
@@ -1079,6 +1035,7 @@ for scenario, details in scenarios.items():
 ❌ **Проблема:**
 ```bash
 # "У нас всегда был PostgreSQL на серверах, давайте так же в облаке"
+
 aws ec2 run-instances ... # Установим PostgreSQL сами!
 
 # Результат:
@@ -1091,6 +1048,7 @@ aws ec2 run-instances ... # Установим PostgreSQL сами!
 ✅ **Решение:**
 ```bash
 # Используйте RDS PostgreSQL
+
 aws rds create-db-instance \
     --db-instance-identifier mydb \
     --db-instance-class db.t3.micro \
@@ -1113,6 +1071,7 @@ aws rds create-db-instance \
 # "Lambda serverless — используем везде!"
 
 # Проблема 1: Long-running процессы
+
 def process_video(event, context):
     # Lambda timeout: 15 минут максимум!
     # Обработка видео может занять часы
@@ -1134,7 +1093,6 @@ use_cases = {
     "Fargate": ["Web apps", "background workers", "steady traffic"],
     "EC2": ["High performance", "GPU", "custom OS"]
 }
-
 ```
 
 ---
@@ -1193,6 +1151,7 @@ use_cases = {
 - [AWS re:Invent: Choosing the Right Compute](https://www.youtube.com/watch?v=dPdac4LL884)
 
 ---
+
 
 
 

@@ -37,14 +37,12 @@ D) Программа завершится с traceback
 Что выведет следующий код?
 
 ```python
-
 try:
     result = 10 / 0
 except ValueError:
     print("ValueError")
 except ZeroDivisionError:
     print("ZeroDivisionError")
-
 ```
 
 A) ValueError
@@ -202,7 +200,6 @@ D) При обращении к несуществующему индексу с
 Что выведет следующий код?
 
 ```python
-
 lst = [1, 2, 3]
 try:
     print(lst[10])
@@ -210,7 +207,6 @@ except KeyError:
     print("KeyError")
 except IndexError:
     print("IndexError")
-
 ```
 
 A) IndexError
@@ -242,10 +238,8 @@ D) При операции с несовместимыми типами
 Что вызовет следующий код?
 
 ```python
-
 x = 5
 x.append(10)
-
 ```
 
 A) IndexError

@@ -50,7 +50,6 @@
 **COUNT(*)** — считает все строки, включая NULL:
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER,
     name VARCHAR(100),
@@ -71,7 +70,6 @@ SELECT COUNT(*) AS total_users FROM users;
 
 **Output:**
 ```
-
 total_users
 -----------
 5
@@ -80,14 +78,12 @@ total_users
 **COUNT(column)** — считает строки, где column не NULL:
 
 ```sql
-
 -- Пользователи с указанным возрастом
 SELECT COUNT(age) AS users_with_age FROM users;
 ```
 
 **Output:**
 ```
-
 users_with_age
 --------------
 4
@@ -96,14 +92,12 @@ users_with_age
 **COUNT(DISTINCT column)** — считает уникальные значения:
 
 ```sql
-
 -- Количество уникальных стран
 SELECT COUNT(DISTINCT country) AS unique_countries FROM users;
 ```
 
 **Output:**
 ```
-
 unique_countries
 ---------------
 2
@@ -114,7 +108,6 @@ unique_countries
 **SUM** — суммирует числовые значения:
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER,
     user_id INTEGER,
@@ -133,7 +126,6 @@ SELECT SUM(amount) AS total_amount FROM orders;
 
 **Output:**
 ```
-
 total_amount
 ------------
 751.50
@@ -142,7 +134,6 @@ total_amount
 **SUM с NULL:**
 
 ```sql
-
 -- NULL значения игнорируются
 INSERT INTO orders VALUES (5, 4, NULL);
 
@@ -154,14 +145,12 @@ SELECT SUM(amount) FROM orders;  -- Всё ещё 751.50
 **AVG** — вычисляет среднее арифметическое:
 
 ```sql
-
 -- Средняя сумма заказа
 SELECT AVG(amount) AS avg_amount FROM orders;
 ```
 
 **Output:**
 ```
-
 avg_amount
 ----------
 187.875
@@ -170,7 +159,6 @@ avg_amount
 **AVG с NULL:**
 
 ```sql
-
 -- NULL значения не учитываются
 SELECT AVG(amount) FROM orders;  -- Среднее по 4 заказам, не 5
 ```
@@ -180,14 +168,12 @@ SELECT AVG(amount) FROM orders;  -- Среднее по 4 заказам, не 5
 **MIN** — минимальное значение:
 
 ```sql
-
 -- Минимальная сумма заказа
 SELECT MIN(amount) AS min_amount FROM orders;
 ```
 
 **Output:**
 ```
-
 min_amount
 ----------
 100.50
@@ -196,14 +182,12 @@ min_amount
 **MAX** — максимальное значение:
 
 ```sql
-
 -- Максимальная сумма заказа
 SELECT MAX(amount) AS max_amount FROM orders;
 ```
 
 **Output:**
 ```
-
 max_amount
 ----------
 300.25
@@ -212,7 +196,6 @@ max_amount
 **MIN/MAX с датами:**
 
 ```sql
-
 ALTER TABLE orders ADD COLUMN order_date DATE;
 
 UPDATE orders SET order_date = '2024-01-15' WHERE id = 1;
@@ -229,7 +212,6 @@ FROM orders;
 
 **Output:**
 ```
-
 earliest_order | latest_order
 --------------+-------------
 2024-01-10    | 2024-01-25
@@ -240,7 +222,6 @@ earliest_order | latest_order
 **Несколько агрегаций в одном запросе:**
 
 ```sql
-
 SELECT 
     COUNT(*) AS total_orders,
     SUM(amount) AS total_amount,
@@ -252,7 +233,6 @@ FROM orders;
 
 **Output:**
 ```
-
 total_orders | total_amount | avg_amount | min_amount | max_amount
 ------------+--------------+------------+------------+------------
 4           | 751.50       | 187.875    | 100.50     | 300.25
@@ -269,7 +249,6 @@ total_orders | total_amount | avg_amount | min_amount | max_amount
 **Группировка по одному столбцу:**
 
 ```sql
-
 -- Количество пользователей по странам
 SELECT 
     country,
@@ -280,7 +259,6 @@ GROUP BY country;
 
 **Output:**
 ```
-
 country | users_count
 --------+------------
 Russia  | 3
@@ -298,7 +276,6 @@ USA     | 2
 **Группировка по нескольким столбцам:**
 
 ```sql
-
 -- Количество заказов по пользователю и дате
 SELECT 
     user_id,
@@ -311,7 +288,6 @@ GROUP BY user_id, order_date;
 
 **Output:**
 ```
-
 user_id | order_date | orders_count | total_amount
 --------+------------+--------------+-------------
 1       | 2024-01-15 | 1            | 100.50
@@ -325,7 +301,6 @@ user_id | order_date | orders_count | total_amount
 **Разные агрегаты для групп:**
 
 ```sql
-
 -- Статистика по странам
 SELECT 
     country,
@@ -340,7 +315,6 @@ GROUP BY country;
 
 **Output:**
 ```
-
 country | users_count | avg_age | min_age | max_age
 --------+-------------+---------+---------+---------
 Russia  | 3           | 30.0    | 25      | 35
@@ -357,7 +331,6 @@ USA     | 1           | 28.0    | 28      | 28
 **❌ Неправильно:**
 
 ```sql
-
 -- Ошибка: name не в GROUP BY
 SELECT country, name, COUNT(*) 
 FROM users 
@@ -367,7 +340,6 @@ GROUP BY country;
 **✅ Правильно:**
 
 ```sql
-
 SELECT country, COUNT(*) 
 FROM users 
 GROUP BY country;
@@ -384,7 +356,6 @@ GROUP BY country;
 **WHERE** — фильтрует строки ДО группировки:
 
 ```sql
-
 -- Сначала фильтруем (WHERE), потом группируем
 SELECT 
     country,
@@ -397,7 +368,6 @@ GROUP BY country;
 **HAVING** — фильтрует группы ПОСЛЕ группировки:
 
 ```sql
-
 -- Сначала группируем, потом фильтруем группы (HAVING)
 SELECT 
     country,
@@ -409,7 +379,6 @@ HAVING COUNT(*) > 2;  -- Фильтр групп
 
 **Output:**
 ```
-
 country | users_count
 --------+-------------
 Russia  | 3
@@ -420,7 +389,6 @@ Russia  | 3
 **HAVING может использовать агрегатные функции:**
 
 ```sql
-
 -- Страны со средним возрастом больше 28
 SELECT 
     country,
@@ -434,7 +402,6 @@ HAVING AVG(age) > 28;
 
 **Output:**
 ```
-
 country | avg_age | users_count
 --------+---------+-------------
 Russia  | 30.0    | 3
@@ -445,7 +412,6 @@ Russia  | 30.0    | 3
 **Можно использовать оба:**
 
 ```sql
-
 -- Пользователи старше 25, сгруппированные по странам,
 -- где в группе больше 1 пользователя
 SELECT 
@@ -461,7 +427,6 @@ HAVING COUNT(*) > 1;  -- Фильтр групп ПОСЛЕ группировк
 **Порядок выполнения:**
 
 ```
-
 1. FROM users
 2. WHERE age > 25        (фильтр строк)
 3. GROUP BY country      (группировка)
@@ -478,7 +443,6 @@ HAVING COUNT(*) > 1;  -- Фильтр групп ПОСЛЕ группировк
 **Топ пользователей по сумме заказов:**
 
 ```sql
-
 SELECT 
     user_id,
     COUNT(*) AS orders_count,
@@ -491,7 +455,6 @@ ORDER BY total_spent DESC;
 
 **Output:**
 ```
-
 user_id | orders_count | total_spent | avg_order_amount
 --------+--------------+-------------+-----------------
 3       | 1            | 300.25      | 300.25
@@ -504,7 +467,6 @@ user_id | orders_count | total_spent | avg_order_amount
 **Статистика заказов по дням:**
 
 ```sql
-
 SELECT 
     order_date,
     COUNT(*) AS orders_count,
@@ -520,7 +482,6 @@ ORDER BY order_date;
 **Статистика по месяцам (PostgreSQL):**
 
 ```sql
-
 SELECT 
     DATE_TRUNC('month', order_date) AS month,
     COUNT(*) AS orders_count,
@@ -535,7 +496,6 @@ ORDER BY month;
 **Группы с определёнными характеристиками:**
 
 ```sql
-
 -- Страны, где больше 2 пользователей И средний возраст > 28
 SELECT 
     country,
@@ -556,7 +516,6 @@ HAVING COUNT(*) > 2 AND AVG(age) > 28;
 **❌ Ошибка:**
 
 ```sql
-
 -- Ошибка: агрегат без GROUP BY
 SELECT country, COUNT(*) 
 FROM users;
@@ -565,7 +524,6 @@ FROM users;
 **✅ Правильно:**
 
 ```sql
-
 SELECT country, COUNT(*) 
 FROM users 
 GROUP BY country;
@@ -576,7 +534,6 @@ GROUP BY country;
 **❌ Ошибка:**
 
 ```sql
-
 -- Ошибка: name не в GROUP BY
 SELECT country, name, COUNT(*) 
 FROM users 
@@ -586,7 +543,6 @@ GROUP BY country;
 **✅ Правильно:**
 
 ```sql
-
 -- Либо добавить name в GROUP BY
 SELECT country, name, COUNT(*) 
 FROM users 
@@ -603,7 +559,6 @@ GROUP BY country;
 **❌ Неправильно:**
 
 ```sql
-
 -- Ошибка: нельзя использовать агрегат в WHERE
 SELECT country, COUNT(*) 
 FROM users 
@@ -614,7 +569,6 @@ GROUP BY country;
 **✅ Правильно:**
 
 ```sql
-
 SELECT country, COUNT(*) 
 FROM users 
 GROUP BY country
@@ -626,7 +580,6 @@ HAVING COUNT(*) > 2;
 **NULL значения группируются вместе:**
 
 ```sql
-
 -- Группировка по возрасту (NULL будет отдельной группой)
 SELECT 
     age,
@@ -637,7 +590,6 @@ GROUP BY age;
 
 **Output:**
 ```
-
 age | count
 ----+-------
 25  | 1
@@ -656,7 +608,6 @@ age | count
 **Использование CASE в агрегатах:**
 
 ```sql
-
 -- Количество пользователей по возрастным группам
 SELECT 
     country,
@@ -673,7 +624,6 @@ GROUP BY country;
 **FILTER clause (PostgreSQL):**
 
 ```sql
-
 -- Более читаемый способ условных агрегатов
 SELECT 
     country,
@@ -690,7 +640,6 @@ GROUP BY country;
 **COUNT(DISTINCT ...):**
 
 ```sql
-
 -- Количество уникальных пользователей, сделавших заказы
 SELECT COUNT(DISTINCT user_id) AS unique_customers
 FROM orders;

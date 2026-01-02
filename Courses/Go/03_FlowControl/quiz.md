@@ -79,11 +79,9 @@ D) `while true { }`
 Что выведет код?
 
 ```go
-
 for i, v := range []int{10, 20, 30} {
     fmt.Print(i, " ")
 }
-
 ```
 
 A) 0 10 1 20 2 30
@@ -143,7 +141,6 @@ D) `case 1 or 2 or 3:`
 Что выведет код?
 
 ```go
-
 x := 15
 switch {
 case x < 10:
@@ -153,7 +150,6 @@ case x < 20:
 default:
     fmt.Println("large")
 }
-
 ```
 
 A) medium
@@ -213,11 +209,9 @@ D) При выходе из функции
 Что выведет код?
 
 ```go
-
 x := 10
 defer fmt.Println(x)
 x = 20
-
 ```
 
 A) Ошибка компиляции
@@ -235,12 +229,10 @@ D) 20
 Что выведет код?
 
 ```go
-
 for i := 0; i < 3; i++ {
     defer fmt.Print(i, " ")
 }
 fmt.Print("done ")
-
 ```
 
 A) 2 1 0 done
@@ -370,12 +362,10 @@ D) В любом месте
 Что произойдёт при изменении v в цикле?
 
 ```go
-
 nums := []int{1, 2, 3}
 for _, v := range nums {
     v = v * 2
 }
-
 ```
 
 A) Ошибка компиляции
@@ -449,7 +439,6 @@ D) `switch x := getValue(); x { case 1: ... }`
 Что выведет код?
 
 ```go
-
 type Counter struct{ value int }
 func (c *Counter) Print() { fmt.Println(c.value) }
 
@@ -458,7 +447,6 @@ func main() {
     defer c.Print()
     c.value = 20
 }
-
 ```
 
 A) Ошибка компиляции
@@ -476,12 +464,10 @@ D) 20
 Что выведет код?
 
 ```go
-
 defer fmt.Print("1 ")
 defer fmt.Print("2 ")
 defer fmt.Print("3 ")
 fmt.Print("start ")
-
 ```
 
 A) start 3 2 1

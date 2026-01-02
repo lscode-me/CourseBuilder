@@ -31,11 +31,11 @@
 Без индекса любой поиск требует **Full Table Scan** — чтения всех страниц таблицы.
 
 ```python
-
 import time
 import random
 
 # Симуляция таблицы без индекса
+
 class TableWithoutIndex:
     def __init__(self):
         self.rows = []
@@ -51,6 +51,7 @@ class TableWithoutIndex:
         return None
 
 # Симуляция таблицы с индексом
+
 class TableWithIndex:
     def __init__(self):
         self.rows = []
@@ -67,6 +68,7 @@ class TableWithIndex:
         return self.rows[self.id_index[target_id]]
 
 # Сравнение
+
 n = 100000
 data = [{'id': i, 'name': f'User_{i}', 'email': f'user{i}@example.com'} for i in range(n)]
 
@@ -94,7 +96,6 @@ print(f"Ускорение: {time_no_idx/time_with_idx:.0f}x")
 
 **Output:**
 ```
-
 Без индекса: 5.234 мс
 С индексом: 0.000234 мс
 Ускорение: 22367x
@@ -121,7 +122,6 @@ print(f"Ускорение: {time_no_idx/time_with_idx:.0f}x")
 - Данные отсортированы
 
 ```
-
                     [50, 100]
                    /    |    \
          [10, 25]    [75]    [125, 150]
@@ -142,7 +142,6 @@ print(f"Ускорение: {time_no_idx/time_with_idx:.0f}x")
 ### 2.3 Реализация B-tree индекса
 
 ```python
-
 class BTreeIndex:
     """
     Упрощённый B-tree индекс.
@@ -212,24 +211,27 @@ class BTreeIndex:
             self._insert_leaf(node['children'][i], key, value)
 
 # Демонстрация
+
 index = BTreeIndex()
 
 # Вставка данных
+
 for i in range(1000):
     index.insert(i, f"row_pointer_{i}")
 
 # Точечный поиск
+
 print(f"Search 500: {index.search(500)}")
 print(f"Search 9999: {index.search(9999)}")
 
 # Range query
+
 range_results = index.range_search(10, 15)
 print(f"Range [10, 15]: {range_results}")
 ```
 
 **Output:**
 ```
-
 Search 500: row_pointer_500
 Search 9999: None
 Range [10, 15]: [(10, 'row_pointer_10'), (11, 'row_pointer_11'), (12, 'row_pointer_12'), (13, 'row_pointer_13'), (14, 'row_pointer_14'), (15, 'row_pointer_15')]
@@ -251,7 +253,6 @@ Range [10, 15]: [(10, 'row_pointer_10'), (11, 'row_pointer_11'), (12, 'row_point
 | Дублирование ключей | Нет | Да (в листьях) |
 
 ```
-
 B+ tree структура:
 
 Internal nodes (только ключи для навигации):
@@ -266,7 +267,6 @@ Leaf nodes (данные + связанный список):
 ### 3.2 Почему B+ tree лучше для БД
 
 ```python
-
 class BPlusTreeLeaf:
     """Лист B+ дерева со ссылкой на следующий лист."""
     
@@ -323,12 +323,14 @@ class SimpleBPlusTree:
         return results
 
 # Демонстрация
+
 bplus = SimpleBPlusTree(leaf_size=5)
 
 for i in range(50):
     bplus.insert(i * 2, f"data_{i*2}")
 
 # Range scan — очень эффективен благодаря связанным листьям
+
 results = bplus.range_scan(10, 30)
 print(f"Range [10, 30]:")
 for key, value in results:
@@ -337,7 +339,6 @@ for key, value in results:
 
 **Output:**
 ```
-
 Range [10, 30]:
   10: data_10
   12: data_12
@@ -364,7 +365,6 @@ Range [10, 30]:
 - Не поддерживает ORDER BY
 
 ```python
-
 class HashIndex:
     """
     Hash индекс: O(1) поиск, но только для equality.
@@ -406,6 +406,7 @@ class HashIndex:
         return results
 
 # Демонстрация
+
 hash_idx = HashIndex()
 
 for i in range(10000):
@@ -414,12 +415,14 @@ for i in range(10000):
 import time
 
 # Точечный поиск — O(1)
+
 start = time.perf_counter()
 for _ in range(1000):
     hash_idx.search(5000)
 time_point = time.perf_counter() - start
 
 # Range query — O(n), очень медленно!
+
 start = time.perf_counter()
 hash_idx.range_search(100, 200)
 time_range = time.perf_counter() - start
@@ -430,7 +433,6 @@ print(f"Один range query: {time_range*1000:.2f} мс")
 
 **Output:**
 ```
-
 1000 точечных запросов: 0.45 мс
 Один range query: 2.34 мс
 ```
@@ -457,7 +459,6 @@ print(f"Один range query: {time_range*1000:.2f} мс")
 - Отлично сжимается
 
 ```python
-
 class BitmapIndex:
     """
     Bitmap индекс для колонки с низкой кардинальностью.
@@ -508,6 +509,7 @@ class BitmapIndex:
 
 # Демонстрация
 # Данные с низкой кардинальностью
+
 genders = ['M', 'F', 'M', 'M', 'F', 'F', 'M', 'F', 'M', 'F']
 statuses = ['active', 'active', 'inactive', 'active', 'inactive', 
             'active', 'active', 'inactive', 'active', 'inactive']
@@ -526,6 +528,7 @@ print(f"\nWHERE gender = 'M': {gender_idx.query_equals('M')}")
 print(f"WHERE status = 'active': {status_idx.query_equals('active')}")
 
 # AND: пересечение bitmaps
+
 male_and_active = gender_idx.query_and([
     gender_idx.bitmaps['M'],
     status_idx.bitmaps['active']
@@ -535,7 +538,6 @@ print(f"WHERE gender = 'M' AND status = 'active': {male_and_active}")
 
 **Output:**
 ```
-
 Исходные данные:
   0: gender=M, status=active
   1: gender=F, status=active
@@ -568,7 +570,6 @@ WHERE gender = 'M' AND status = 'active': [0, 3, 6, 8]
 ### 6.1 Порядок колонок важен
 
 ```python
-
 class CompositeIndex:
     """
     Составной индекс: (country, city, name).
@@ -627,6 +628,7 @@ class CompositeIndex:
         return results
 
 # Демонстрация
+
 comp_idx = CompositeIndex()
 
 data = [
@@ -655,7 +657,6 @@ print(f"  {comp_idx.query_skip('USA', 'Alice')}")
 
 **Output:**
 ```
-
 WHERE country='USA' AND city='NYC' AND name='Alice':
   [1]
 
@@ -683,7 +684,6 @@ WHERE country='USA' AND name='Alice' (skip city — неэффективно!):
 ### 7.1 Стоимость индексов
 
 ```python
-
 import time
 import random
 
@@ -712,6 +712,7 @@ class TableWithMultipleIndexes:
             index[key].append(row_id)
 
 # Измерение стоимости
+
 table_no_idx = TableWithMultipleIndexes()
 table_3_idx = TableWithMultipleIndexes()
 table_3_idx.add_index('id')
@@ -723,6 +724,7 @@ categories = ['A', 'B', 'C', 'D', 'E']
 statuses = ['active', 'inactive', 'pending']
 
 # Вставка без индексов
+
 start = time.perf_counter()
 for i in range(n):
     table_no_idx.insert({
@@ -734,6 +736,7 @@ for i in range(n):
 time_no_idx = time.perf_counter() - start
 
 # Вставка с 3 индексами
+
 start = time.perf_counter()
 for i in range(n):
     table_3_idx.insert({
@@ -752,7 +755,6 @@ print(f"  Замедление: {time_3_idx/time_no_idx:.1f}x")
 
 **Output:**
 ```
-
 Вставка 10000 записей:
   Без индексов: 12.3 мс
   С 3 индексами: 45.6 мс
@@ -811,4 +813,5 @@ print(f"  Замедление: {time_3_idx/time_no_idx:.1f}x")
 - Исследуйте covering indexes
 
 ---
+
 

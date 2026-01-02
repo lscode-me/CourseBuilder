@@ -41,7 +41,6 @@
 **Example: Синхронный API вызов**
 
 ```python
-
 import requests
 import time
 
@@ -58,13 +57,13 @@ def sync_api_call():
     return response.json()
 
 # Клиент блокируется на время обработки
+
 result = sync_api_call()
 print(f"User: {result['name']}")
 ```
 
 **Output:**
 ```
-
 Отправка запроса...
 Получен ответ за 0.45 секунд
 User: Иван
@@ -84,7 +83,6 @@ User: Иван
 **Example: Асинхронный API вызов**
 
 ```python
-
 import asyncio
 import aiohttp
 
@@ -103,6 +101,7 @@ async def async_api_call():
     return result
 
 # Клиент может делать другую работу параллельно
+
 async def main():
     # Можно запустить несколько запросов параллельно
     tasks = [
@@ -114,13 +113,13 @@ async def main():
     return results
 
 # Асинхронное выполнение
+
 results = asyncio.run(main())
 print(f"Выполнено {len(results)} запросов параллельно")
 ```
 
 **Output:**
 ```
-
 Отправка запроса...
 Отправка запроса...
 Отправка запроса...
@@ -157,7 +156,6 @@ print(f"Выполнено {len(results)} запросов параллельн�
 **Example: Классический Request-Response**
 
 ```python
-
 import requests
 
 class RequestResponseAPI:
@@ -183,9 +181,11 @@ class RequestResponseAPI:
         return response.json()
 
 # Использование
+
 api = RequestResponseAPI('https://api.example.com')
 
 # Синхронный вызов - ждём ответа
+
 user = api.get_user(123)
 print(f"User: {user['name']}")
 
@@ -197,7 +197,6 @@ print(f"Created: {new_user['id']}")
 
 **Output:**
 ```
-
 User: Иван
 Created: 456
 ```
@@ -207,7 +206,6 @@ Created: 456
 **Example: Request-Response с timeout и обработкой ошибок**
 
 ```python
-
 import requests
 from requests.exceptions import Timeout, RequestException
 
@@ -229,6 +227,7 @@ def robust_request_response(url, timeout=5, retries=3):
     return None
 
 # Использование с обработкой ошибок
+
 try:
     result = robust_request_response('https://api.example.com/users/123')
     print(f"Success: {result}")
@@ -249,7 +248,6 @@ except Exception as e:
 **Example: Асинхронный вызов с callback**
 
 ```python
-
 import threading
 import time
 
@@ -267,10 +265,12 @@ def async_api_call_with_callback(url, callback):
     return thread
 
 # Callback функция
+
 def handle_response(data):
     print(f"Получен ответ: {data['name']}")
 
 # Асинхронный вызов
+
 print("Отправка запроса...")
 thread = async_api_call_with_callback(
     'https://api.example.com/users/123',
@@ -278,6 +278,7 @@ thread = async_api_call_with_callback(
 )
 
 # Клиент может продолжать работу
+
 print("Продолжаем работу...")
 time.sleep(0.5)
 print("Делаем что-то ещё...")
@@ -289,7 +290,6 @@ thread.join()
 
 **Output:**
 ```
-
 Отправка запроса...
 Продолжаем работу...
 Делаем что-то ещё...
@@ -303,7 +303,6 @@ thread.join()
 **Example: Асинхронный вызов с Promise**
 
 ```python
-
 import asyncio
 import aiohttp
 
@@ -337,7 +336,6 @@ asyncio.run(main())
 
 **Output:**
 ```
-
 Запросы отправлены, продолжаем работу...
 Users: Иван, Мария, Петр
 ```
@@ -349,7 +347,6 @@ Users: Иван, Мария, Петр
 **Example: Polling статуса операции**
 
 ```python
-
 import time
 import requests
 
@@ -378,6 +375,7 @@ def poll_task_status(task_id, interval=2, max_attempts=30):
     raise TimeoutError("Task timeout")
 
 # Использование
+
 task_id = start_long_operation()
 print(f"Задача создана: {task_id}")
 
@@ -400,7 +398,6 @@ print(f"Результат: {result}")
 **Example: Регистрация и обработка webhook**
 
 ```python
-
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -456,6 +453,7 @@ class WebhookAPI:
             print(f"Ошибка отправки webhook: {e}")
 
 # Webhook endpoint на стороне клиента
+
 @app.route('/webhook', methods=['POST'])
 def webhook_handler():
     """Обработчик входящих webhooks"""
@@ -465,10 +463,12 @@ def webhook_handler():
     return jsonify({'status': 'ok'}), 200
 
 # Использование
+
 api = WebhookAPI()
 api.register_webhook('user.created', 'http://client.example.com/webhook')
 
 # При создании пользователя отправляется webhook
+
 api.trigger_webhook('user.created', {
     'id': 123,
     'name': 'Иван',
@@ -478,7 +478,6 @@ api.trigger_webhook('user.created', {
 
 **Output:**
 ```
-
 Webhook зарегистрирован: user.created -> http://client.example.com/webhook
 Webhook отправлен: user.created -> http://client.example.com/webhook
 Получен webhook: user.created
@@ -490,7 +489,6 @@ Webhook отправлен: user.created -> http://client.example.com/webhook
 **Example: Верификация webhook подписи**
 
 ```python
-
 import hmac
 import hashlib
 
@@ -505,6 +503,7 @@ def verify_webhook_signature(payload, signature, secret):
     return hmac.compare_digest(expected_signature, signature)
 
 # На стороне клиента
+
 @app.route('/webhook', methods=['POST'])
 def secure_webhook_handler():
     """Безопасный обработчик webhook"""
@@ -537,7 +536,6 @@ def secure_webhook_handler():
 **Example: Использование очереди сообщений**
 
 ```python
-
 import json
 import pika
 
@@ -588,6 +586,7 @@ class MessageQueueAPI:
         self.channel.start_consuming()
 
 # Публикация события
+
 queue = MessageQueueAPI('amqp://localhost')
 queue.publish_event('user.created', {
     'id': 123,
@@ -596,6 +595,7 @@ queue.publish_event('user.created', {
 })
 
 # Подписка на события
+
 def handle_user_created(ch, method, properties, body):
     data = json.loads(body)
     print(f"Обработка события: user.created")
@@ -665,7 +665,6 @@ queue.subscribe('user.created', handle_user_created)
 
 ❌ **Incorrect:**
 ```python
-
 async def bad_async():
     # Блокирующий вызов в async функции
     result = requests.get('https://api.example.com/data')
@@ -674,7 +673,6 @@ async def bad_async():
 
 ✅ **Correct:**
 ```python
-
 async def good_async():
     # Неблокирующий async вызов
     async with aiohttp.ClientSession() as session:
@@ -688,7 +686,6 @@ async def good_async():
 
 ❌ **Incorrect:**
 ```python
-
 def unsafe_webhook_handler():
     data = request.json
     process_data(data)  # Нет проверки подписи
@@ -696,7 +693,6 @@ def unsafe_webhook_handler():
 
 ✅ **Correct:**
 ```python
-
 def safe_webhook_handler():
     signature = request.headers.get('X-Webhook-Signature')
     if not verify_signature(signature):
@@ -758,5 +754,6 @@ def safe_webhook_handler():
 - "Webhooks vs Polling: When to Use What" — сравнение webhooks и polling
 
 ---
+
 
 

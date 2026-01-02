@@ -52,12 +52,10 @@ $ echo "Hello, World!"
 
 # Shell интерпретирует команду и передаёт её системе
 # Система выполняет команду и возвращает результат
-
 ```
 
 **Output:**
 ```
-
 Hello, World!
 ```
 
@@ -74,7 +72,6 @@ Hello, World!
 **Example: Иерархия взаимодействия**
 
 ```
-
 Пользователь
     ↓
 Shell (оболочка)
@@ -119,7 +116,6 @@ $ cp *.txt /backup/
 # 3. Скопировать
 # 4. Перейти в папку назначения
 # 5. Вставить
-
 ```
 
 CLI подход позволяет выполнить задачу одной командой, которую можно сохранить в скрипт и использовать многократно.
@@ -225,13 +221,11 @@ endif
 **Example: Проверка версии bash**
 
 ```bash
-
 $ bash --version
 ```
 
 **Output:**
 ```
-
 GNU bash, version 5.1.16(1)-release (x86_64-pc-linux-gnu)
 Copyright (C) 2020 Free Software Foundation, Inc.
 ```
@@ -266,7 +260,6 @@ $ echo $SHELL
 
 **Output:**
 ```
-
 /bin/bash
 ```
 
@@ -296,7 +289,6 @@ $ cat /etc/shells
 
 **Output:**
 ```
-
 /bin/sh
 /bin/bash
 /usr/bin/zsh
@@ -374,7 +366,6 @@ $ echo $PS1
 
 **Output:**
 ```
-
 \u@\h:\w\$ 
 ```
 
@@ -449,7 +440,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home
 Hello
 /home/user
@@ -471,7 +461,6 @@ $ which ls
 
 **Output:**
 ```
-
 /bin/ls
 ```
 
@@ -487,18 +476,15 @@ $ type cd
 
 **Output:**
 ```
-
 cd is a shell builtin
 ```
 
 ```bash
-
 $ type ls
 ```
 
 **Output:**
 ```
-
 ls is /bin/ls
 ```
 
@@ -522,7 +508,6 @@ $ ll
 
 **Output:**
 ```
-
 total 24
 drwxr-xr-x 2 user user 4096 Jan 15 10:00 Documents
 drwxr-xr-x 2 user user 4096 Jan 15 10:00 Downloads
@@ -531,13 +516,11 @@ drwxr-xr-x 2 user user 4096 Jan 15 10:00 Downloads
 **Example: Просмотр всех алиасов**
 
 ```bash
-
 $ alias
 ```
 
 **Output:**
 ```
-
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
@@ -593,7 +576,6 @@ $ echo $HOME
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -605,7 +587,6 @@ $ env
 
 **Output:**
 ```
-
 HOME=/home/user
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 USER=user
@@ -631,7 +612,6 @@ $ echo $MY_VAR
 
 **Output:**
 ```
-
 Hello World
 ```
 
@@ -668,7 +648,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -679,7 +658,6 @@ $ ls
 
 **Output:**
 ```
-
 Documents  Downloads  Pictures  Videos
 ```
 
@@ -692,7 +670,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -709,7 +686,6 @@ $ ls --help
 
 **Output:**
 ```
-
 Usage: ls [OPTION]... [FILE]...
 List information about the files (the current directory by default).
 ...
@@ -731,7 +707,6 @@ $ help cd
 
 **Output:**
 ```
-
 cd: cd [-L|[-P [-e]]] [dir]
     Change the shell working directory.
 ...

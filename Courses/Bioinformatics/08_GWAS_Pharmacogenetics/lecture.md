@@ -48,7 +48,6 @@ GWAS и фармакогенетика — это мост от "сырых" г�
 - Полиморфизмы в генах этих белков → различия в ответе и рисках побочных эффектов
 
 ```python
-
 from dataclasses import dataclass
 
 @dataclass
@@ -57,7 +56,6 @@ class PharmVariant:
     variant: str
     phenotype: str
     recommendation: str
-
 
 warfarin_vkorc1 = PharmVariant(
     gene="VKORC1",
@@ -99,14 +97,12 @@ print(warfarin_vkorc1)
 4. SNP с значимо разной частотой — потенциальные маркеры
 
 ```
-
            Случаи (болезнь)    Контроль (здоровы)
 SNP rs123:     AA: 60%             AA: 30%
                AG: 30%             AG: 50%
                GG: 10%             GG: 20%
                
 → Аллель A чаще у больных → rs123 ассоциирован с болезнью
-
 ```
 
 ### 4.2 Манхэттенский график
@@ -118,7 +114,6 @@ SNP rs123:     AA: 60%             AA: 30%
 - Пик выше порога (обычно p < 5×10⁻⁸) — значимый сигнал
 
 ```
-
 -log10(p)
     |
  12 |                    *
@@ -129,13 +124,11 @@ SNP rs123:     AA: 60%             AA: 30%
   2 | ********************* *****
     +---------------------------------> позиция в геноме
       chr1  chr2  chr3  ... chr22
-
 ```
 
 ### 4.3 Реализация GWAS
 
 ```python
-
 import numpy as np
 from scipy import stats
 
@@ -180,8 +173,8 @@ def gwas_analysis(genotypes, phenotypes, snp_ids):
     return sorted(results, key=lambda x: x['p_value'])
 
 # Стандартный порог значимости для GWAS
-GWAS_SIGNIFICANCE_THRESHOLD = 5e-8  # Коррекция на множественное тестирование
 
+GWAS_SIGNIFICANCE_THRESHOLD = 5e-8  # Коррекция на множественное тестирование
 ```
 
 ### 4.4 Ограничения GWAS
@@ -202,7 +195,6 @@ GWAS_SIGNIFICANCE_THRESHOLD = 5e-8  # Коррекция на множестве
 **Биомаркер** — любой измеримый показатель, связанный с биологическим состоянием.
 
 ```
-
 Биомаркеры по типу данных:
 
 ┌─────────────────────────────────────────────────────────────┐
@@ -216,7 +208,6 @@ GWAS_SIGNIFICANCE_THRESHOLD = 5e-8  # Коррекция на множестве
 ├─────────────┴─────────────┴─────────────┴───────────────────┤
 │ Постоянные ←──────────────────────────────────→ Динамичные  │
 └─────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.2 Примеры биомаркеров
@@ -234,7 +225,6 @@ GWAS_SIGNIFICANCE_THRESHOLD = 5e-8  # Коррекция на множестве
 ## 6. Практический Пример: Интеграция Данных
 
 ```python
-
 class PatientGenomicProfile:
     """
     Интегрированный геномный профиль пациента
@@ -301,6 +291,7 @@ class PatientGenomicProfile:
         return report
 
 # Пример использования
+
 patient = PatientGenomicProfile("P001")
 patient.add_snp("rs9923231", "GA")
 patient.add_snp("rs762551", "AA")
@@ -309,7 +300,6 @@ patient.add_methylation("MLH1", 0.20)
 patient.add_expression("TP53", 45.2)
 
 print(patient.generate_report())
-
 ```
 
 ---
@@ -471,6 +461,7 @@ print(patient.generate_report())
 - Machine Learning в биоинформатике
 - Анализ RNA-seq данных
 - Клиническая биоинформатика
+
 
 
 

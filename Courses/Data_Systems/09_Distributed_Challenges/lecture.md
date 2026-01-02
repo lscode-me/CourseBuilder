@@ -169,7 +169,6 @@ CAP описывает только ситуацию аварии (Partition). �
 В базе хранятся две версии (Siblings).
 
 ```python
-
 import copy
 
 class VectorClock:
@@ -227,21 +226,26 @@ class VectorClock:
 # --- Simulation ---
 
 # 1. Initial State
+
 clock_a = VectorClock("A")
 clock_b = VectorClock("B")
 
 # 2. Node A adds 'Book'
+
 v1 = clock_a.increment() # A:{'A':1}
 print(f"Version 1 (A): {v1.versions}")
 
 # 3. Node A syncs to Node B
+
 clock_b.merge(v1) # B knows about A's update
 
 # 4. Node B adds 'Watch'
+
 v2 = clock_b.increment() # B:{'A':1, 'B':1}
 print(f"Version 2 (B): {v2.versions}")
 
 # Check relationship: Did V1 happen before V2?
+
 res = v1.compare(v2)
 print(f"V1 vs V2: {res}") # -1 (True)
 
@@ -256,7 +260,6 @@ res = v2.compare(v3)
 print(f"V2 vs V3 (Conflict?): {res}") # None. 
 # v2 has B:1 (v3 doesn't). v3 has A:2 (v2 has A:1).
 # We have a conflict! The application must resolve it.
-
 ```
 
 ---
@@ -442,4 +445,5 @@ Google показал, что если у вас есть свои атомны�
 3.  Разберитесь, что будет, если сообщение A->B задержится.
 
 В следующем модуле мы узнаем, как построить "Телефонную книгу интернета" — **Distributed Hash Tables**. [Distributed Hash Tables](../10_Distributed_Hash_Tables/).
+
 

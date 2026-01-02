@@ -31,7 +31,6 @@
 Каждый AI-продукт создаёт свои интеграции:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │          Проблема: N×M интеграций                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -56,7 +55,6 @@
 ### 1.2 Проблемы текущего подхода
 
 ```python
-
 integration_problems = {
     "Дублирование": "Каждый клиент реализует похожую логику",
     "Несовместимость": "Разные форматы, API, протоколы",
@@ -75,7 +73,6 @@ integration_problems = {
 MCP (Model Context Protocol) — открытый стандарт от Anthropic для стандартизации взаимодействия AI с внешними системами:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │              MCP: Стандартный протокол                      │
 ├─────────────────────────────────────────────────────────────┤
@@ -116,7 +113,6 @@ usb_analogy = {
 ### 3.1 Компоненты
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                   Архитектура MCP                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -178,12 +174,14 @@ from mcp import Server, Resource, Tool
 server = Server("my-company-data")
 
 # Ресурсы
+
 @server.resource("docs://{path}")
 async def get_document(path: str) -> str:
     """Получить документ из базы знаний"""
     return knowledge_base.get(path)
 
 # Инструменты
+
 @server.tool("search_docs")
 async def search_docs(query: str, limit: int = 10):
     """Поиск по документации"""
@@ -195,6 +193,7 @@ async def create_ticket(title: str, description: str):
     return jira.create_issue(title, description)
 
 # Запуск
+
 server.run()
 ```
 
@@ -205,7 +204,6 @@ server.run()
 ### 4.1 Настройка MCP в Cursor
 
 ```json
-
 // ~/.cursor/mcp.json
 {
   "mcpServers": {
@@ -227,7 +225,6 @@ server.run()
 ### 4.2 Доступные MCP серверы
 
 ```python
-
 available_mcp_servers = {
     "Official (Anthropic)": [
         "filesystem — доступ к файлам",
@@ -252,7 +249,6 @@ available_mcp_servers = {
 ### 5.1 Преимущества
 
 ```python
-
 enterprise_benefits = {
     "Стандартизация": "Единый способ интеграции AI с системами",
     "Переиспользование": "Один MCP сервер для всех AI-инструментов",
@@ -265,7 +261,6 @@ enterprise_benefits = {
 ### 5.2 Enterprise сценарии
 
 ```python
-
 enterprise_scenarios = [
     "Внутренняя документация через MCP сервер",
     "Интеграция с CRM/ERP системами",
@@ -301,5 +296,6 @@ enterprise_scenarios = [
 - [MCP GitHub](https://github.com/modelcontextprotocol)
 
 ---
+
 
 

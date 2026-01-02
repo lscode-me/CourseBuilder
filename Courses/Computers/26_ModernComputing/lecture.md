@@ -33,7 +33,6 @@
 
 **Современные вычисления:**
 ```
-
 Приложения
     ↓
 Контейнеры / Оркестрация
@@ -109,9 +108,11 @@
 
 ```bash
 # IaaS: Создание VM
+
 aws ec2 run-instances --image-id ami-12345 --instance-type t2.micro
 
 # PaaS: Развёртывание приложения
+
 heroku create myapp
 git push heroku main
 
@@ -123,13 +124,16 @@ git push heroku main
 
 ```python
 # Приложение использует облачные сервисы
+
 import boto3
 
 # S3 для хранения
+
 s3 = boto3.client('s3')
 s3.upload_file('data.txt', 'my-bucket', 'data.txt')
 
 # RDS для базы данных
+
 import psycopg2
 conn = psycopg2.connect(
     host='my-db.rds.amazonaws.com',
@@ -186,6 +190,7 @@ Serverless вычисления имеют несколько ограничен
 
 ```python
 # Lambda функция
+
 import json
 
 def lambda_handler(event, context):
@@ -208,7 +213,6 @@ def lambda_handler(event, context):
 **Пример: Холодный старт**
 
 ```
-
 Первый запрос:
   Загрузка функции → Инициализация → Выполнение
   (медленно, 1-5 секунд)
@@ -268,11 +272,13 @@ def lambda_handler(event, context):
 
 ```python
 # Сервис 1: User Service
+
 class UserService:
     def get_user(self, user_id):
         return user_db.get(user_id)
 
 # Сервис 2: Order Service
+
 class OrderService:
     def create_order(self, user_id, items):
         user = user_service.get_user(user_id)  # Вызов другого сервиса
@@ -281,13 +287,13 @@ class OrderService:
 
 # Модульность, разделение ответственности
 # Можно масштабировать каждый сервис отдельно
-
 ```
 
 **Пример: Плохая архитектура (монолит)**
 
 ```python
 # Всё в одном приложении
+
 class MonolithApp:
     def handle_user_request(self, ...):
         # Всё связано
@@ -334,7 +340,6 @@ class MonolithApp:
 **Пример: Повторяющийся паттерн**
 
 ```
-
 Централизация:
   Мейнфреймы (1950-1970) → Облако (2010-)
 
@@ -442,6 +447,7 @@ class MonolithApp:
 - Следите за развитием технологий
 
 ---
+
 
 
 

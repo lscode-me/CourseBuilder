@@ -40,6 +40,7 @@ API развиваются со временем. Версионирование
 
 ```python
 # Версия 1: API возвращает
+
 {
   "id": 123,
   "name": "Иван",
@@ -47,6 +48,7 @@ API развиваются со временем. Версионирование
 }
 
 # Версия 2: API изменён (добавлено поле)
+
 {
   "id": 123,
   "name": "Иван",
@@ -56,7 +58,6 @@ API развиваются со временем. Версионирование
 
 # Клиент версии 1 ожидает только id, name, email
 # Но получает phone — это может сломать клиента!
-
 ```
 
 ### 1.2 Решение через версионирование
@@ -65,16 +66,17 @@ API развиваются со временем. Версионирование
 
 ```python
 # Версия 1
+
 GET /api/v1/users/123
 # Возвращает: {"id": 123, "name": "Иван", "email": "ivan@example.com"}
 
 # Версия 2
+
 GET /api/v2/users/123
 # Возвращает: {"id": 123, "name": "Иван", "email": "ivan@example.com", "phone": "+1234567890"}
 
 # Клиенты версии 1 продолжают работать с /api/v1
 # Новые клиенты используют /api/v2
-
 ```
 
 ---
@@ -90,6 +92,7 @@ GET /api/v2/users/123
 ```python
 # Добавление новых полей (обратно совместимо)
 # Старый клиент игнорирует новые поля
+
 {
   "id": 123,
   "name": "Иван",
@@ -98,9 +101,11 @@ GET /api/v2/users/123
 }
 
 # Добавление новых endpoints (обратно совместимо)
+
 GET /api/v1/users/123/orders  # Новый endpoint
 
 # Добавление новых query параметров (обратно совместимо)
+
 GET /api/v1/users?status=active  # Новый параметр опционален
 ```
 
@@ -120,7 +125,6 @@ GET /api/v1/users?status=active  # Новый параметр опционал�
 # ❌ Изменение обязательности поля (breaking change)
 # Было: {"name": "Иван"}  # email опционален
 # Стало: {"name": "Иван", "email": "required"}  # email обязателен — сломает клиента!
-
 ```
 
 ---
@@ -134,7 +138,6 @@ GET /api/v1/users?status=active  # Новый параметр опционал�
 **Example: Deprecation процесс**
 
 ```python
-
 from flask import Flask, jsonify, request
 from datetime import datetime, timedelta
 
@@ -202,7 +205,6 @@ def get_user_v2(user_id):
 # 4. Изменение обязательности полей
 # ❌ Было: {"name": "Иван"}  # email опционален
 # ❌ Стало: {"name": "Иван", "email": "required"}  # email обязателен
-
 ```
 
 ### 4.2 Управление breaking changes
@@ -224,13 +226,13 @@ def get_user_v2(user_id):
 
 ```python
 # Версии в URI
+
 GET /api/v1/users/123
 GET /api/v2/users/123
 GET /api/v3/users/123
 
 # Преимущества: Явное, понятное
 # Недостатки: Загрязняет URI
-
 ```
 
 ### 5.2 Версионирование в заголовках
@@ -239,12 +241,12 @@ GET /api/v3/users/123
 
 ```python
 # Версия в заголовке Accept
+
 GET /api/users/123
 Headers: Accept: application/vnd.api.v1+json
 
 # Преимущества: Чистые URI
 # Недостатки: Менее явное
-
 ```
 
 ### 5.3 Выбор стратегии
@@ -285,7 +287,6 @@ GET /api/v2/users
 **Example: Параллельная поддержка версий**
 
 ```python
-
 from flask import Flask, request, jsonify
 from datetime import datetime, timedelta
 
@@ -365,7 +366,6 @@ def get_user(version, user_id):
 **Example: Определение версии из заголовка**
 
 ```python
-
 from flask import request
 
 def get_api_version():
@@ -396,7 +396,6 @@ def get_user_versioned(user_id):
 **Example: Миграция данных для совместимости**
 
 ```python
-
 class DataMigrator:
     """Миграция данных между версиями"""
     
@@ -459,12 +458,14 @@ def get_user_v1(user_id):
 ❌ **Incorrect:**
 ```python
 # Плохо: Deprecation на 1 месяц
+
 sunset_date = datetime.now() + timedelta(days=30)  # Слишком мало времени
 ```
 
 ✅ **Correct:**
 ```python
 # Хорошо: Deprecation на 6-12 месяцев
+
 sunset_date = datetime.now() + timedelta(days=180)  # Достаточно времени для миграции
 ```
 
@@ -475,6 +476,7 @@ sunset_date = datetime.now() + timedelta(days=180)  # Достаточно вр�
 ❌ **Incorrect:**
 ```python
 # Плохо: Удаление версии без предупреждения
+
 if version == "v1":
     return 404  # Неожиданно для клиентов
 ```
@@ -482,6 +484,7 @@ if version == "v1":
 ✅ **Correct:**
 ```python
 # Хорошо: Deprecation перед удалением
+
 if version == "v1":
     if datetime.now() < sunset_date:
         # Deprecated, но ещё работает
@@ -546,6 +549,7 @@ if version == "v1":
 - "Managing Breaking Changes in APIs" — управление breaking changes
 
 ---
+
 
 
 

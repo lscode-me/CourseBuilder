@@ -41,7 +41,6 @@
 **Example: Point-to-Point интеграция**
 
 ```python
-
 class PointToPointIntegration:
     """Прямое соединение между двумя системами"""
     
@@ -62,6 +61,7 @@ class PointToPointIntegration:
         return False
 
 # Использование
+
 integration = PointToPointIntegration()
 integration.connect("CRM", "Payment")
 integration.send("CRM", "Payment", {"action": "create_payment"})
@@ -69,7 +69,6 @@ integration.send("CRM", "Payment", {"action": "create_payment"})
 
 **Output:**
 ```
-
 Connected CRM <-> Payment
 CRM -> Payment: {'action': 'create_payment'}
 ```
@@ -99,7 +98,6 @@ CRM -> Payment: {'action': 'create_payment'}
 **Example: Request-Response**
 
 ```python
-
 import requests
 
 def request_response_call(url, data):
@@ -108,6 +106,7 @@ def request_response_call(url, data):
     return response.json()
 
 # Клиент отправляет запрос и ждёт ответа
+
 result = request_response_call(
     "https://api.example.com/process",
     {"data": "value"}
@@ -133,7 +132,6 @@ print(f"Result: {result}")
 **Example: Publish-Subscribe**
 
 ```python
-
 class PubSubIntegration:
     """Publish-Subscribe интеграция"""
     
@@ -158,9 +156,11 @@ class PubSubIntegration:
                 print(f"Event {event_type} delivered to {sub['subscriber']}")
 
 # Использование
+
 pubsub = PubSubIntegration()
 
 # Подписка
+
 def handle_user_created(data):
     print(f"Processing user created: {data}")
 
@@ -174,7 +174,6 @@ pubsub.publish("user.created", {"id": 123, "name": "Иван"})
 
 **Output:**
 ```
-
 Analytics subscribed to user.created
 EmailService subscribed to user.created
 Event user.created delivered to Analytics
@@ -202,7 +201,6 @@ Processing user created: {'id': 123, 'name': 'Иван'}
 **Example: Message Queue**
 
 ```python
-
 import queue
 import threading
 
@@ -232,6 +230,7 @@ class MessageQueue:
         print(f"{consumer_name} subscribed to queue")
 
 # Использование
+
 mq = MessageQueue()
 
 def process_order(message):
@@ -256,7 +255,6 @@ mq.publish({"order_id": 123, "total": 100.0})
 **Example: Надёжная доставка с подтверждением**
 
 ```python
-
 class ReliableMessageQueue:
     """Message Queue с надёжной доставкой"""
     
@@ -296,7 +294,6 @@ class ReliableMessageQueue:
 **Example: Message Queue с приоритетами**
 
 ```python
-
 import heapq
 
 class PriorityMessageQueue:
@@ -319,12 +316,14 @@ class PriorityMessageQueue:
         return None
 
 # Использование
+
 pq = PriorityMessageQueue()
 pq.publish({"type": "critical", "data": "urgent"}, priority=1)
 pq.publish({"type": "normal", "data": "regular"}, priority=5)
 pq.publish({"type": "low", "data": "background"}, priority=10)
 
 # Обработка в порядке приоритета
+
 while True:
     message = pq.consume()
     if message:
@@ -338,7 +337,6 @@ while True:
 **Example: Dead Letter Queue для неудачных сообщений**
 
 ```python
-
 class MessageQueueWithDLQ:
     """Message Queue с Dead Letter Queue"""
     
@@ -448,6 +446,7 @@ for system in systems:
 ❌ **Incorrect:**
 ```python
 # Плохо: Синхронный вызов для долгой операции
+
 result = request_response_call("http://api/process-large-data", data)
 # Клиент блокируется на долгое время
 ```
@@ -455,6 +454,7 @@ result = request_response_call("http://api/process-large-data", data)
 ✅ **Correct:**
 ```python
 # Хорошо: Асинхронная обработка через Message Queue
+
 mq.publish({"task": "process-large-data", "data": data})
 # Клиент не блокируется, получает результат позже
 ```
@@ -466,6 +466,7 @@ mq.publish({"task": "process-large-data", "data": data})
 ❌ **Incorrect:**
 ```python
 # Плохо: Нет обработки ошибок подписчиков
+
 def publish(event_type, data):
     for subscriber in subscribers[event_type]:
         subscriber.callback(data)  # Может упасть
@@ -474,6 +475,7 @@ def publish(event_type, data):
 ✅ **Correct:**
 ```python
 # Хорошо: Обработка ошибок для каждого подписчика
+
 def publish(event_type, data):
     for subscriber in subscribers[event_type]:
         try:
@@ -492,7 +494,6 @@ def publish(event_type, data):
 **Example: Request-Response с Message Queue**
 
 ```python
-
 class HybridIntegration:
     """Комбинирование Request-Response и Message Queue"""
     
@@ -516,7 +517,6 @@ class HybridIntegration:
 **Example: Event Sourcing через Pub/Sub**
 
 ```python
-
 class EventSourcedSystem:
     """Система с Event Sourcing через Pub/Sub"""
     
@@ -598,6 +598,7 @@ class EventSourcedSystem:
 - "Pub/Sub vs Message Queues" — сравнение паттернов
 
 ---
+
 
 
 

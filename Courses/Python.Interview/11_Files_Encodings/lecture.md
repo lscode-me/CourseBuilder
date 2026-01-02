@@ -36,7 +36,6 @@
 Используйте контекстный менеджер и итерацию по строкам (это экономит память).
 
 ```python
-
 with open('data.txt', 'r', encoding='utf-8') as f:
     for line in f:
         process(line.strip())
@@ -47,7 +46,6 @@ with open('data.txt', 'r', encoding='utf-8') as f:
 В бинарном режиме кодировка не указывается.
 
 ```python
-
 with open('image.jpg', 'rb') as f:
     content = f.read(1024)  # Читаем первый килобайт
     print(type(content))   # <class 'bytes'>
@@ -95,7 +93,6 @@ with open('corrupted.txt', 'r', encoding='utf-8', errors='replace') as f:
 Начиная с Python 3.4, рекомендуется использовать `pathlib` вместо `os.path`.
 
 ```python
-
 from pathlib import Path
 
 p = Path('data/results.txt')

@@ -73,6 +73,7 @@ Databases — это системы управления данными, опт�
 
 ```python
 # Симуляция работы с реляционной БД
+
 class RelationalDB:
     def __init__(self):
         self.tables = {}
@@ -110,9 +111,11 @@ class RelationalDB:
         return data
 
 # Использование
+
 db = RelationalDB()
 
 # Создание таблицы с фиксированной схемой
+
 db.create_table("users", {
     "user_id": "INT",
     "name": "VARCHAR(100)",
@@ -120,6 +123,7 @@ db.create_table("users", {
 })
 
 # Вставка данных
+
 db.insert("users", {
     "user_id": 1,
     "name": "Alice",
@@ -127,13 +131,13 @@ db.insert("users", {
 })
 
 # Запрос
+
 users = db.query("users")
 print(f"\nПользователи в БД: {len(users)}")
 ```
 
 **Output:**
 ```
-
 ✅ Таблица 'users' создана со схемой: {'user_id': 'INT', 'name': 'VARCHAR(100)', 'email': 'VARCHAR(255)'}
 ✅ Запись добавлена в 'users'
 
@@ -162,6 +166,7 @@ print(f"\nПользователи в БД: {len(users)}")
 
 ```python
 # Симуляция Document DB (MongoDB-подобная)
+
 class DocumentDB:
     def __init__(self):
         self.collections = {}
@@ -196,9 +201,11 @@ class DocumentDB:
         return docs
 
 # Использование
+
 doc_db = DocumentDB()
 
 # Гибкая схема - разные документы могут иметь разные поля
+
 doc_db.insert("users", {
     "name": "Alice",
     "email": "alice@example.com",
@@ -222,7 +229,6 @@ print(f"Разные схемы документов: {[set(u.keys()) for u in u
 
 **Output:**
 ```
-
 ✅ Коллекция 'users' создана
 ✅ Документ добавлен в 'users'
 ✅ Документ добавлен в 'users'
@@ -262,6 +268,7 @@ Data Warehouses — это специализированные хранилищ
 
 ```python
 # Симуляция Data Warehouse (columnar storage)
+
 class DataWarehouse:
     def __init__(self):
         self.tables = {}
@@ -295,9 +302,11 @@ class DataWarehouse:
         return results
 
 # Использование
+
 warehouse = DataWarehouse()
 
 # Загрузка данных (денормализованные)
+
 sales_data = [
     {"date": "2024-01-01", "product": "Laptop", "revenue": 999.99, "quantity": 10},
     {"date": "2024-01-01", "product": "Mouse", "revenue": 29.99, "quantity": 50},
@@ -308,6 +317,7 @@ sales_data = [
 warehouse.load_data("sales", sales_data)
 
 # Аналитический запрос
+
 results = warehouse.analytical_query("sales", [
     {"field": "revenue", "operation": "sum"},
     {"field": "quantity", "operation": "sum"},
@@ -321,7 +331,6 @@ for key, value in results.items():
 
 **Output:**
 ```
-
 ✅ Данные загружены в 'sales': 4 записей
 
 Аналитические результаты:
@@ -375,6 +384,7 @@ Data Lakes — это хранилища сырых данных в их нат�
 
 ```python
 # Симуляция Data Lake
+
 class DataLake:
     def __init__(self):
         self.buckets = {}
@@ -408,9 +418,11 @@ class DataLake:
         return data
 
 # Использование
+
 lake = DataLake()
 
 # Хранение данных в различных форматах
+
 lake.store_raw_data("raw-data", "users/2024-01-01.json", 
                    [{"id": 1, "name": "Alice"}], "JSON")
 
@@ -427,7 +439,6 @@ for path, info in lake.buckets["raw-data"].items():
 
 **Output:**
 ```
-
 ✅ Данные сохранены в raw-data/users/2024-01-01.json (формат: JSON)
 ✅ Данные сохранены в raw-data/logs/2024-01-01.txt (формат: TEXT)
 ✅ Данные сохранены в raw-data/images/product_001.jpg (формат: BINARY)
@@ -479,6 +490,7 @@ Lakehouse — это современная архитектура, объеди
 
 ```python
 # Симуляция Lakehouse
+
 class Lakehouse:
     def __init__(self):
         self.layers = {
@@ -535,6 +547,7 @@ lakehouse.store_bronze("raw/users_2024-01-01.json",
                        [{"id": "1", "name": "Alice", "email": "alice@example.com"}])
 
 # Silver: очищенные с схемой
+
 lakehouse.process_to_silver(
     "raw/users_2024-01-01.json",
     "cleaned/users_2024-01-01.parquet",
@@ -556,7 +569,6 @@ for layer, files in lakehouse.layers.items():
 
 **Output:**
 ```
-
 🥉 Bronze: raw/users_2024-01-01.json сохранён
 🥈 Silver: cleaned/users_2024-01-01.parquet создан со схемой
 🥇 Gold: analytics/daily_users_summary.parquet создан
@@ -638,7 +650,6 @@ for layer, files in lakehouse.layers.items():
 **Example: Выбор хранилища**
 
 ```python
-
 def recommend_storage(requirements):
     """Рекомендует хранилище на основе требований"""
     if requirements.get("operational") and requirements.get("transactions"):
@@ -669,7 +680,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации хранилищ:
   Пример 1: Database (PostgreSQL, MySQL)
   Пример 2: Data Warehouse (Snowflake, BigQuery)
@@ -706,7 +716,6 @@ for i, req in enumerate(examples, 1):
 **Example: Многослойная архитектура**
 
 ```python
-
 class MultiLayerStorage:
     def __init__(self):
         self.operational = {}  # Database
@@ -760,7 +769,6 @@ for layer, info in arch.items():
 
 **Output:**
 ```
-
 💾 Operational: данные сохранены в Database
 📊 Analytical: данные сохранены в Data Warehouse
 🌊 Raw: данные сохранены в Data Lake (logs/2024-01-01.json)
@@ -828,5 +836,6 @@ for layer, info in arch.items():
 - Snowflake: https://docs.snowflake.com/
 
 ---
+
 
 

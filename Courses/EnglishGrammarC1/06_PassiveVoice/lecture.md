@@ -36,93 +36,73 @@
 Passive voice существует не просто как "другая форма." Это **информационный выбор:**
 
 ```
-
 ACTIVE: Agent is important, new, or focus
 "John broke the window." (focus on John)
 
 PASSIVE: Patient is important, agent is unknown/unimportant
 "The window was broken." (focus on window)
-
 ```
 
 ### 1.2 Reasons to Use Passive
 
 **1. Agent unknown:**
 ```
-
 "My car was stolen last night."
 (I don't know who did it)
-
 ```
 
 **2. Agent unimportant/obvious:**
 ```
-
 "English is spoken worldwide."
 "The building was completed in 2020."
 (Who speaks it or built it doesn't matter)
-
 ```
 
 **3. Focus on action/result:**
 ```
-
 "The suspect has been arrested."
 "A new policy was announced yesterday."
 (Result matters more than who did it)
-
 ```
 
 **4. Academic/scientific objectivity:**
 ```
-
 "The experiment was conducted over six months."
 "The data were analysed using statistical methods."
 (Removing personal agent sounds more objective)
-
 ```
 
 **5. Tact/diplomacy:**
 ```
-
 "Mistakes were made." (avoiding blame)
 "You will be informed shortly." (impersonal)
-
 ```
 
 **6. Maintaining topic:**
 ```
-
 "The company was founded in 1990. It was acquired by Google in 2015."
 (Keeping "the company" as topic)
-
 ```
 
 ### 1.3 When NOT to Use Passive
 
 **1. When agent is important:**
 ```
-
 ✅ "Shakespeare wrote Hamlet."
 NOT: "Hamlet was written by Shakespeare."
 (We want to emphasize Shakespeare)
-
 ```
 
 **2. When passive sounds awkward:**
 ```
-
 ❌ "A good time was had by all."
 ✅ "Everyone had a good time."
-
 ```
 
 **3. When active is simpler:**
 ```
-
 ❌ "The book was read by me."
 ✅ "I read the book."
-
 ```
 
 ---
@@ -145,7 +125,6 @@ NOT: "Hamlet was written by Shakespeare."
 ### 2.2 Modal Passives
 
 ```
-
 Modal + be + past participle
 
 "This must be done immediately."
@@ -153,31 +132,26 @@ Modal + be + past participle
 "The decision could be changed."
 "Problems might be caused by this."
 "The error can be fixed easily."
-
 ```
 
 ### 2.3 Perfect Infinitive Passive
 
 ```
-
 To have been + past participle
 
 "The building appears to have been damaged."
 "He claims to have been mistreated."
 "She seems to have been promoted."
-
 ```
 
 ### 2.4 Gerund Passive
 
 ```
-
 Being + past participle / Having been + past participle
 
 "I don't like being interrupted." (present)
 "She admitted having been warned." (past)
 "He remembered being taken there as a child."
-
 ```
 
 ---
@@ -189,19 +163,15 @@ Being + past participle / Having been + past participle
 Some verbs take two objects. Both can become the subject:
 
 ```
-
 ACTIVE: "They gave him a prize."
 
 PASSIVE 1: "He was given a prize." (more common)
 PASSIVE 2: "A prize was given to him."
-
 ```
 
 **Verbs that allow this:**
 ```
-
 give, send, show, tell, offer, teach, ask, pay, promise, lend, sell
-
 ```
 
 ### 3.2 Passive with Reporting Verbs
@@ -209,7 +179,6 @@ give, send, show, tell, offer, teach, ask, pay, promise, lend, sell
 Very common in academic and news writing:
 
 ```
-
 "It is said that..." / "He is said to..."
 
 "It is said that he is very rich."
@@ -220,7 +189,6 @@ Very common in academic and news writing:
 
 "It was reported that the minister had resigned."
 = "The minister was reported to have resigned."
-
 ```
 
 **Common verbs:** say, believe, think, know, report, consider, expect, understand
@@ -230,12 +198,10 @@ Very common in academic and news writing:
 In informal English, "get" can replace "be":
 
 ```
-
 "She got promoted." (= was promoted)
 "He got fired last week."
 "I got invited to the party."
 "Don't get caught!"
-
 ```
 
 **Connotations:** Get-passive often implies:
@@ -245,10 +211,8 @@ In informal English, "get" can replace "be":
 - The subject was somewhat involved
 
 ```
-
 "He was killed." (neutral)
 "He got killed." (informal, implies some involvement/bad luck)
-
 ```
 
 ### 3.4 Born
@@ -256,12 +220,10 @@ In informal English, "get" can replace "be":
 "Born" is always passive (from "bear"):
 
 ```
-
 "I was born in Moscow."
 ❌ "I born in Moscow."
 ❌ "I am born in Moscow."
 ✅ "She was born in 1990."
-
 ```
 
 ---
@@ -273,34 +235,28 @@ In informal English, "get" can replace "be":
 When you arrange for someone else to do something:
 
 ```
-
 "I had my car repaired." (someone repaired it for me)
 "She's having her hair cut." (at the salon)
 "We got the house painted." (we arranged it)
-
 ```
 
 **Structure:**
 ```
-
 have/get + object + past participle
 
 "I had my phone fixed."
 "She got her nails done."
 "We're having the kitchen renovated."
-
 ```
 
 ### 4.2 Have vs Get
 
 ```
-
 HAVE: More formal, neutral
 "I had the document translated."
 
 GET: More informal, often implies effort/arrangement
 "I got the document translated."
-
 ```
 
 ### 4.3 Experience Passive
@@ -308,19 +264,15 @@ GET: More informal, often implies effort/arrangement
 The same structure can describe (often negative) experiences:
 
 ```
-
 "I had my wallet stolen." (= My wallet was stolen)
 "She got her car scratched." (= Her car got scratched)
 "We had our flight cancelled."
-
 ```
 
 **Context makes the difference:**
 ```
-
 "I had my hair cut." (arranged service)
 "I had my hair pulled." (unpleasant experience)
-
 ```
 
 ### 4.4 Have/Get Someone Do Something
@@ -328,7 +280,6 @@ The same structure can describe (often negative) experiences:
 Different structure for instructing someone:
 
 ```
-
 have + person + infinitive (without to)
 "I had him check the figures."
 "She had her assistant send the email."
@@ -336,7 +287,6 @@ have + person + infinitive (without to)
 get + person + to-infinitive
 "I got him to check the figures."
 "She got her assistant to send the email."
-
 ```
 
 **Get implies persuasion:** "I got her to agree" (I convinced her)
@@ -350,7 +300,6 @@ get + person + to-infinitive
 Some verbs can be both transitive AND intransitive with the same meaning:
 
 ```
-
 "I opened the door." (transitive: I did it)
 "The door opened." (intransitive: it happened)
 
@@ -358,13 +307,11 @@ Both focus on the same action, but:
 
 - Active transitive: agent does it
 - Ergative intransitive: it happens (no agent needed)
-
 ```
 
 ### 5.2 Common Ergative Verbs
 
 ```
-
 change:    "He changed the plan." / "The plan changed."
 break:     "She broke the vase." / "The vase broke."
 open:      "I opened the window." / "The window opened."
@@ -378,28 +325,23 @@ melt:      "Heat melts ice." / "Ice melts."
 sink:      "They sank the ship." / "The ship sank."
 grow:      "She grows vegetables." / "Vegetables grow."
 cook:      "I'm cooking dinner." / "Dinner is cooking."
-
 ```
 
 ### 5.3 Ergative vs Passive: The Difference
 
 ```
-
 ERGATIVE: No agent, focus on process
 "The door opened."
 
 PASSIVE: Agent implied (but not stated)
 "The door was opened."
 (By someone — agent exists but unknown)
-
 ```
 
 For Russian speakers: Ergative often corresponds to Russian reflexive verbs (-ся):
 ```
-
 "Дверь открылась" = "The door opened" (ergative)
 NOT: "The door was opened" (unless someone opened it)
-
 ```
 
 ---
@@ -411,12 +353,10 @@ NOT: "The door was opened" (unless someone opened it)
 Academic writing traditionally uses passive for objectivity:
 
 ```
-
 "The samples were collected from three sites."
 "The data were analysed using SPSS."
 "It was found that..."
 "The results are presented in Table 1."
-
 ```
 
 ### 6.2 Modern Trends
@@ -424,13 +364,11 @@ Academic writing traditionally uses passive for objectivity:
 Many style guides now allow/encourage active voice:
 
 ```
-
 TRADITIONAL: "The experiment was conducted."
 MODERN: "We conducted the experiment."
 
 TRADITIONAL: "It was concluded that..."
 MODERN: "We concluded that..." / "The study concludes that..."
-
 ```
 
 ### 6.3 When to Choose
@@ -452,13 +390,11 @@ MODERN: "We concluded that..." / "The study concludes that..."
 Too much passive makes text heavy:
 
 ```
-
 ❌ "The research was carried out and the data were collected. 
     The results were analysed and conclusions were drawn."
 
 ✅ "We carried out the research, collecting data from 100 participants.
     Analysis revealed three main trends."
-
 ```
 
 ---
@@ -468,47 +404,39 @@ Too much passive makes text heavy:
 ### 7.1 Missing "Be"
 
 ```
-
 ❌ "The building constructed in 1900."
 ✅ "The building was constructed in 1900."
 
 ❌ "This book written by Tolstoy."
 ✅ "This book was written by Tolstoy."
-
 ```
 
 ### 7.2 Active/Passive Confusion
 
 ```
-
 ❌ "I was born in Moscow in 1990 and raised by my grandparents."
    (First passive is correct, but context matters)
 
 ✅ "I was born in Moscow in 1990 and was raised by my grandparents."
    (Parallel structure)
-
 ```
 
 ### 7.3 Unnecessary Passive
 
 ```
-
 ❌ "A decision was made by the committee."
 ✅ "The committee made a decision."
    (Agent is important — use active)
-
 ```
 
 ### 7.4 Causative Errors
 
 ```
-
 ❌ "I had cut my hair." (= I cut it myself)
 ✅ "I had my hair cut." (= at the salon)
 
 ❌ "I got my hair to cut."
 ✅ "I got my hair cut."
-
 ```
 
 ### 7.5 Get-Passive Overuse
@@ -516,10 +444,8 @@ Too much passive makes text heavy:
 Get-passive is informal. Don't overuse in formal writing:
 
 ```
-
 FORMAL: "The report was completed."
 INFORMAL: "The report got done."
-
 ```
 
 ---
@@ -529,7 +455,6 @@ INFORMAL: "The report got done."
 ### 8.1 Decision Guide
 
 ```
-
 1. Is the agent known?
    NO → Consider passive
 
@@ -546,7 +471,6 @@ INFORMAL: "The report got done."
 
 5. Does it sound natural?
    Test both versions
-
 ```
 
 ### 8.2 Examples
@@ -554,7 +478,6 @@ INFORMAL: "The report got done."
 **Sentence:** Someone stole my bike.
 
 ```
-
 Context: Telling a friend
 → ACTIVE: "Someone stole my bike!"
    (Expressing emotion, informal)
@@ -562,13 +485,11 @@ Context: Telling a friend
 Context: Police report
 → PASSIVE: "My bike was stolen."
    (Focus on the bike, agent unknown)
-
 ```
 
 **Sentence:** Scientists discovered a new species.
 
 ```
-
 Context: News headline focusing on discovery
 → PASSIVE: "A new species has been discovered."
    (Focus on the discovery)
@@ -576,7 +497,6 @@ Context: News headline focusing on discovery
 Context: Article about the scientists
 → ACTIVE: "Dr. Smith and her team discovered a new species."
    (Focus on who did it)
-
 ```
 
 ---

@@ -55,7 +55,6 @@
 
 **Структура inode:**
 ```c
-
 struct inode {
     mode_t mode;           // Permissions + file type
     uid_t uid;             // Owner user ID
@@ -78,7 +77,6 @@ struct inode {
 
 **Структура directory entry:**
 ```c
-
 struct dirent {
     ino_t d_ino;           // Inode number
     char d_name[256];      // Filename
@@ -109,6 +107,7 @@ closedir(dir);
 
 ```bash
 # Создание файловой системы с разными размерами блоков
+
 mkfs.ext4 -b 1024 /dev/sda1   # 1 KB blocks (много маленьких файлов)
 mkfs.ext4 -b 4096 /dev/sda1   # 4 KB blocks (стандарт)
 mkfs.ext4 -b 8192 /dev/sda1   # 8 KB blocks (большие файлы)
@@ -201,7 +200,6 @@ ext4 стала значительным улучшением ext3 с новым
 
 **Структура MFT Entry:**
 ```c
-
 // Упрощённая структура
 typedef struct {
     uint32_t magic;        // "FILE"
@@ -226,7 +224,6 @@ typedef struct {
 
 **1. ACL (Access Control Lists):**
 ```c
-
 // Каждый файл имеет список разрешений
 struct acl_entry {
     sid_t sid;              // Security ID (пользователь/группа)
@@ -238,29 +235,33 @@ struct acl_entry {
 **2. Compression:**
 ```bash
 # Включение сжатия на файле/каталоге
+
 compact /c /s:C:\folder
 
 # Проверка сжатых файлов
+
 compact /q C:\folder
 ```
 
 **3. Encryption (EFS):**
 ```bash
 # Шифрование файла
+
 cipher /e /a file.txt
 
 # Расшифровка
+
 cipher /d /a file.txt
 ```
 
 **4. Hard Links:**
 ```bash
 # Создание hard link (Windows 10+)
+
 mklink /H link.txt original.txt
 
 # Оба файла указывают на одни данные
 # Удаление одного не удаляет данные, пока есть другой
-
 ```
 
 **Применение:** Windows default
@@ -269,9 +270,11 @@ mklink /H link.txt original.txt
 
 ```bash
 # Проверка диска
+
 chkdsk C: /f
 
 # Детальная информация
+
 fsutil fsinfo ntfsinfo C:
 ```
 
@@ -283,7 +286,6 @@ fsutil fsinfo ntfsinfo C:
 
 **Сценарий сбоя:**
 ```
-
 1. Выделить block для файла
 2. Обновить inode
 3. Обновить bitmap свободных блоков
@@ -297,7 +299,6 @@ fsutil fsinfo ntfsinfo C:
 
 **Процесс записи:**
 ```
-
 1. Записать намерение в journal: "собираюсь сделать X, Y, Z"
 2. Выполнить операции
 3. Отметить в journal: "завершено"
@@ -308,7 +309,6 @@ fsutil fsinfo ntfsinfo C:
 **Пример: Journal entry**
 
 ```c
-
 // Упрощённая структура journal entry
 struct journal_entry {
     uint32_t transaction_id;
@@ -340,12 +340,15 @@ struct journal_entry {
 
 ```bash
 # Проверка текущего режима
+
 dumpe2fs /dev/sda1 | grep "Default mount options"
 
 # Изменение режима (требует remount)
+
 mount -o remount,journal=ordered /dev/sda1 /mnt
 
 # Для постоянного изменения
+
 tune2fs -o journal_data_writeback /dev/sda1
 ```
 
@@ -363,13 +366,11 @@ tune2fs -o journal_data_writeback /dev/sda1
 
 **Традиционная FS:**
 ```
-
 Modify block → overwrite in place
 ```
 
 **CoW FS:**
 ```
-
 Modify block → write new version, update pointer
 ```
 
@@ -410,20 +411,21 @@ Modify block → write new version, update pointer
 **ZFS Pool (объединение дисков):**
 ```bash
 # Создание ZFS pool (RAID-Z1, аналог RAID5)
+
 zpool create tank raidz1 /dev/sda /dev/sdb /dev/sdc
 
 # Создание файловой системы
+
 zfs create tank/documents
 
 # Создание snapshot
+
 zfs snapshot tank/documents@backup1
 # Мгновенно!
-
 ```
 
 **Self-healing:**
 ```c
-
 // ZFS проверяет checksums при чтении
 read_block(block_number) {
     data = read_from_disk(block_number);
@@ -443,6 +445,7 @@ read_block(block_number) {
 **Deduplication:**
 ```bash
 # Включение deduplication (требует много RAM!)
+
 zfs set dedup=on tank/documents
 
 # Проверка эффективности
@@ -453,6 +456,7 @@ zfs get dedup tank/documents
 **Compression:**
 ```bash
 # Включение сжатия
+
 zfs set compression=lz4 tank/documents
 
 # Проверка сжатия
@@ -466,13 +470,16 @@ zfs get compressratio tank/documents
 
 ```bash
 # Информация о pool
+
 zpool status tank
 
 # Информация о файловой системе
+
 zfs list
 zfs get all tank/documents
 
 # Восстановление из snapshot
+
 zfs rollback tank/documents@backup1
 
 # Клонирование snapshot
@@ -515,7 +522,6 @@ zfs clone tank/documents@backup1 tank/documents-clone
 
 **Как работает:**
 ```c
-
 // Запись файла
 write(fd, data, size);  // 10 MB данных
 // FS сжимает на лету
@@ -541,6 +547,7 @@ read(fd, buffer, size);  // Приложение получает 10 MB
 **Btrfs:**
 ```bash
 # Включение LZ4 сжатия
+
 mount -o compress=lz4 /dev/sda1 /mnt
 
 # Проверка эффективности
@@ -552,13 +559,13 @@ compsize /mnt  # Показывает сжатие
 **ZFS:**
 ```bash
 # Включение сжатия
+
 zfs set compression=lz4 tank/documents
 
 # Проверка
 
 zfs get compressratio tank/documents
 # compressratio 2.5x означает, что данные сжаты в 2.5 раза
-
 ```
 
 **ext4 (только для отдельных файлов):**
@@ -613,7 +620,6 @@ e4compress -d /mnt/file.txt  # Распаковка
 
 **Структура exFAT:**
 ```
-
 - 64-bit file sizes (до 16 EB)
 - Улучшенная структура каталогов
 - Файловая таблица (как FAT, но расширенная)
@@ -623,6 +629,7 @@ e4compress -d /mnt/file.txt  # Распаковка
 
 ```bash
 # Форматирование в exFAT
+
 sudo mkfs.exfat -n "MyUSB" /dev/sdb1
 
 # Монтирование
@@ -675,16 +682,18 @@ exfatfsck /dev/sdb1
 **Пример: AWS S3**
 
 ```python
-
 import boto3
 
 # Создание клиента
+
 s3 = boto3.client('s3')
 
 # Загрузка объекта
+
 s3.upload_file('local_file.txt', 'my-bucket', 'remote_file.txt')
 
 # Скачивание объекта
+
 s3.download_file('my-bucket', 'remote_file.txt', 'local_file.txt')
 
 # Список объектов
@@ -748,9 +757,11 @@ mkfs.ext4 -b 1024 /dev/sda1  # 1 KB blocks
 **3. Фрагментация:**
 ```bash
 # Проверка фрагментации (ext4)
+
 filefrag -v /path/to/file
 
 # Дефрагментация
+
 e4defrag /path/to/file
 ```
 
@@ -803,7 +814,6 @@ mount -o noatime,nodiratime /dev/sda1 /mnt
 
 # noatime: не обновлять access time (меньше записей)
 # nodiratime: не обновлять access time каталогов
-
 ```
 
 **3. I/O Scheduler:**
@@ -847,5 +857,6 @@ echo deadline > /sys/block/sda/queue/scheduler
 - Kernel.org documentation (ext4, Btrfs)
 
 ---
+
 
 

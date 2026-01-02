@@ -23,7 +23,6 @@ D) Только `__iter__()`
 Что произойдёт при выполнении этого кода?
 
 ```python
-
 r = range(5)
 print(next(r))
 ```
@@ -57,7 +56,6 @@ D) Generator expression нельзя использовать в for-цикле
 Что вернёт этот код?
 
 ```python
-
 it = iter([1, 2, 3])
 next(it)
 next(it)
@@ -81,7 +79,6 @@ D) StopIteration exception
 Что выведет этот код?
 
 ```python
-
 funcs = [lambda x: x * i for i in range(3)]
 print(funcs[0](10))
 ```

@@ -64,7 +64,6 @@
 **Пример ELT:**
 
 ```sql
-
 -- 1. Load: загрузка raw данных
 CREATE TABLE raw_orders AS SELECT * FROM source_system.orders;
 
@@ -99,7 +98,6 @@ WHERE amount > 0;  -- Фильтрация
 **Пример:**
 
 ```sql
-
 -- Трансформация: очистка и обогащение
 CREATE TABLE transformed_sales AS
 SELECT 
@@ -123,7 +121,6 @@ WHERE o.amount IS NOT NULL
 **Обновление только новых данных:**
 
 ```sql
-
 -- Добавление только новых записей
 INSERT INTO transformed_sales
 SELECT ...
@@ -149,7 +146,6 @@ WHERE order_date > (SELECT MAX(sale_date) FROM transformed_sales);
 ### 3.2 Структура dbt проекта
 
 ```
-
 models/
   staging/
     stg_orders.sql
@@ -162,7 +158,6 @@ models/
 **Пример модели:**
 
 ```sql
-
 -- models/staging/stg_orders.sql
 SELECT 
     id,
@@ -178,7 +173,6 @@ WHERE amount > 0;
 **Проверки качества данных:**
 
 ```sql
-
 -- models/schema.yml
 models:
   - name: stg_orders
@@ -203,7 +197,6 @@ models:
 **Проверка на дубликаты:**
 
 ```sql
-
 -- Найти дубликаты
 SELECT 
     user_id,
@@ -217,7 +210,6 @@ HAVING COUNT(*) > 1;
 **Проверка на NULL:**
 
 ```sql
-
 -- Найти записи с NULL в критичных полях
 SELECT * FROM orders
 WHERE user_id IS NULL 
@@ -227,7 +219,6 @@ WHERE user_id IS NULL
 **Проверка диапазонов:**
 
 ```sql
-
 -- Найти некорректные значения
 SELECT * FROM orders
 WHERE amount < 0 
@@ -239,7 +230,6 @@ WHERE amount < 0
 **Создание таблицы с результатами проверок:**
 
 ```sql
-
 CREATE TABLE data_quality_checks (
     check_date TIMESTAMP,
     check_name VARCHAR(100),
@@ -269,7 +259,6 @@ FROM (
 ### 5.1 ETL пайплайн на SQL
 
 ```sql
-
 -- 1. Extract & Load (raw данные)
 CREATE TABLE raw_orders AS 
 SELECT * FROM external_source.orders;
@@ -307,7 +296,6 @@ GROUP BY DATE(order_date), country;
 ### 5.2 Инкрементальная загрузка
 
 ```sql
-
 -- Загрузка только новых данных
 INSERT INTO transformed_sales
 SELECT ...
@@ -323,7 +311,6 @@ WHERE order_date > (
 **Обновление существующих и вставка новых:**
 
 ```sql
-
 -- PostgreSQL: ON CONFLICT
 INSERT INTO transformed_sales (id, sale_date, amount)
 SELECT id, sale_date, amount
@@ -344,7 +331,6 @@ DO UPDATE SET
 **Airflow DAG с SQL задачами:**
 
 ```python
-
 from airflow import DAG
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from datetime import datetime
@@ -382,7 +368,6 @@ extract_task >> transform_task
 **Prefect flow с SQL:**
 
 ```python
-
 from prefect import flow, task
 from prefect_sqlalchemy import SqlAlchemyConnector
 
@@ -414,7 +399,6 @@ if __name__ == "__main__":
 **Удаление дубликатов:**
 
 ```sql
-
 -- Найти дубликаты
 WITH duplicates AS (
     SELECT 
@@ -436,7 +420,6 @@ WHERE id IN (
 **Добавление данных из других источников:**
 
 ```sql
-
 -- Обогащение заказов данными о пользователях
 CREATE TABLE enriched_orders AS
 SELECT 
@@ -460,7 +443,6 @@ LEFT JOIN users u ON o.user_id = u.id;
 **Приведение к стандартному формату:**
 
 ```sql
-
 -- Нормализация email
 UPDATE users
 SET email = LOWER(TRIM(email))
@@ -477,7 +459,6 @@ WHERE phone IS NOT NULL;
 **Создание агрегированных таблиц:**
 
 ```sql
-
 -- Ежедневная статистика
 CREATE TABLE daily_stats AS
 SELECT 
@@ -501,7 +482,6 @@ GROUP BY DATE(order_date);
 **Проверка внешних ключей:**
 
 ```sql
-
 -- Найти "осиротевшие" записи
 SELECT o.*
 FROM orders o
@@ -514,7 +494,6 @@ WHERE u.id IS NULL;
 **Валидация данных:**
 
 ```sql
-
 -- Проверка бизнес-правил
 WITH validation_errors AS (
     SELECT 
@@ -547,7 +526,6 @@ SELECT * FROM validation_errors;
 **Таблица результатов проверок:**
 
 ```sql
-
 CREATE TABLE data_quality_checks (
     check_id SERIAL PRIMARY KEY,
     check_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -580,7 +558,6 @@ FROM (
 **Партиционирование для параллелизма:**
 
 ```sql
-
 -- Обработка по партициям
 INSERT INTO transformed_sales_2024_01
 SELECT * FROM raw_orders_2024_01
@@ -597,7 +574,6 @@ WHERE amount > 0;
 **Обработка больших объёмов порциями:**
 
 ```sql
-
 -- Обработка по батчам
 DO $$
 DECLARE
@@ -621,7 +597,6 @@ END $$;
 **Оптимизация больших JOIN:**
 
 ```sql
-
 -- Создание индексов для JOIN
 CREATE INDEX idx_orders_user_id ON raw_orders(user_id);
 CREATE INDEX idx_users_id ON users(id);

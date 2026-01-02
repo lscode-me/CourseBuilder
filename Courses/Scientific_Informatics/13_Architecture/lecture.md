@@ -68,7 +68,6 @@ ANALYSIS:
   visualization: ['Plotly', 'Tableau']
 
 ```
-
 ### 1.2 Типы архитектур
 
 **Архитектурные паттерны:**
@@ -80,7 +79,6 @@ ANALYSIS:
 - **Data Mesh** — децентрализованная архитектура
 
 **Пример: Lambda Architecture**
-
 ```python
 # Lambda Architecture для scientific data
 
@@ -110,7 +108,6 @@ for layer, props in lambda_architecture.items():
         print(f"  {key}: {value}")
 
 ```
-
 **Output:**
 ```
 
@@ -133,7 +130,6 @@ serving_layer:
   tools: ['Cassandra', 'Elasticsearch']
 
 ```
-
 ---
 
 ## 2. Data Lakes и Data Warehouses
@@ -150,7 +146,6 @@ serving_layer:
 - Экономичность
 
 **Пример: Data Lake структура**
-
 ```python
 # Структура Data Lake
 
@@ -178,7 +173,6 @@ for zone, contents in data_lake_structure.items():
         print(f"  {folder}/: {description}")
 
 ```
-
 **Output:**
 ```
 
@@ -199,7 +193,6 @@ METADATA:
   lineage/: data lineage tracking
 
 ```
-
 ### 2.2 Data Warehouse
 
 **Data Warehouse** — структурированное хранилище для анализа.
@@ -212,7 +205,6 @@ METADATA:
 - Быстрый доступ
 
 **Пример: Data Warehouse структура**
-
 ```python
 # Data Warehouse структура (звёздная схема)
 
@@ -236,7 +228,6 @@ for table, desc in warehouse_schema['dimension_tables'].items():
     print(f"  {table}: {desc}")
 
 ```
-
 **Output:**
 ```
 
@@ -251,7 +242,6 @@ Dimension Tables:
   instrument_dim: Instrument information
 
 ```
-
 ### 2.3 Выбор: Lake vs Warehouse
 
 **Критерии выбора:**
@@ -265,7 +255,6 @@ Dimension Tables:
 | **Гибкость** | Высокая | Ниже |
 
 **Пример: Выбор хранилища**
-
 ```python
 
 def choose_storage(data_characteristics):
@@ -284,7 +273,6 @@ print(f"Varied formats: {choose_storage({'varied_formats': True})}")
 print(f"Structured + fast queries: {choose_storage({'structured_only': True, 'fast_queries': True})}")
 
 ```
-
 **Output:**
 ```
 
@@ -293,7 +281,6 @@ Varied formats: Data Lake (handles varied formats)
 Structured + fast queries: Data Warehouse (optimized for queries)
 
 ```
-
 ---
 
 ## 3. On-Premise vs Cloud
@@ -316,7 +303,6 @@ Structured + fast queries: Data Warehouse (optimized for queries)
 - Ограниченная масштабируемость
 
 **Пример: On-Premise архитектура**
-
 ```python
 
 on_premise_setup = {
@@ -344,7 +330,6 @@ for category, details in on_premise_setup.items():
         print(f"  {key}: {value}")
 
 ```
-
 **Output:**
 ```
 
@@ -366,7 +351,6 @@ costs:
   scaling: High (new hardware)
 
 ```
-
 ### 3.2 Cloud развёртывание
 
 **Cloud** — развёртывание на облачной инфраструктуре.
@@ -386,7 +370,6 @@ costs:
 - Задержки сети
 
 **Пример: Cloud архитектура**
-
 ```python
 
 cloud_setup = {
@@ -414,7 +397,6 @@ for category, details in cloud_setup.items():
         print(f"  {key}: {value}")
 
 ```
-
 **Output:**
 ```
 
@@ -436,13 +418,11 @@ costs:
   scaling: Linear (pay for what you use)
 
 ```
-
 ### 3.3 Hybrid подход
 
 **Hybrid** — комбинация on-premise и cloud.
 
 **Пример: Hybrid архитектура**
-
 ```python
 
 hybrid_approach = {
@@ -474,7 +454,6 @@ for component, details in hybrid_approach.items():
             print(f"  - {item}")
 
 ```
-
 **Output:**
 ```
 
@@ -496,7 +475,6 @@ benefits:
   - Cost optimization
 
 ```
-
 ---
 
 ## 4. High-Performance Computing (HPC)
@@ -513,7 +491,6 @@ benefits:
 - Кластерная архитектура
 
 **Пример: HPC архитектура**
-
 ```python
 
 hpc_architecture = {
@@ -544,7 +521,6 @@ for component, details in hpc_architecture.items():
         print(f"  {details}")
 
 ```
-
 **Output:**
 ```
 
@@ -566,7 +542,6 @@ scheduler:
   purpose: Job scheduling and resource management
 
 ```
-
 ### 4.2 Когда нужен HPC
 
 **Примеры использования HPC:**
@@ -577,7 +552,6 @@ scheduler:
 - Физические симуляции
 
 **Пример: Критерии для HPC**
-
 ```python
 
 def needs_hpc(requirements):
@@ -596,7 +570,6 @@ print(f"Compute-intensive: {needs_hpc({'compute_intensive': True})}")
 print(f"Large-scale: {needs_hpc({'large_scale': True})}")
 
 ```
-
 **Output:**
 ```
 
@@ -605,7 +578,6 @@ Compute-intensive: HPC needed for compute-intensive tasks
 Large-scale: HPC needed for large-scale simulations
 
 ```
-
 ---
 
 ## 5. Выбор архитектуры
@@ -622,7 +594,6 @@ Large-scale: HPC needed for large-scale simulations
 - Масштабируемость
 
 **Пример: Матрица выбора**
-
 ```python
 
 def choose_architecture(requirements):
@@ -649,7 +620,6 @@ for i, scenario in enumerate(scenarios, 1):
     print(f"\nScenario {i}: {choose_architecture(scenario)}")
 
 ```
-
 **Output:**
 ```
 

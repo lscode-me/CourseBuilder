@@ -31,7 +31,6 @@
 На высоком уровне база данных — это способ хранить и извлекать данные. Но на низком уровне база данных — это **набор структур данных**, оптимизированных для определённых операций.
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                     SQL Query                               │
 │                    "SELECT * FROM users WHERE id = 42"      │
@@ -67,7 +66,6 @@
 **Example: Простейшая "база данных"**
 
 ```python
-
 class SimpleDB:
     """
     Простейшая key-value база данных.
@@ -110,6 +108,7 @@ class SimpleDB:
             return value
 
 # Демонстрация
+
 import os
 import tempfile
 
@@ -130,7 +129,6 @@ os.unlink(db_file)
 
 **Output:**
 ```
-
 user:1 = Alice Updated
 user:2 = Bob
 user:3 = None
@@ -162,6 +160,7 @@ user:3 = None
 
 ```python
 # Логическая модель: как мы думаем о данных
+
 """
 users                    orders
 +----+--------+         +----+---------+--------+
@@ -179,10 +178,12 @@ GROUP BY users.id
 """
 
 # Эмуляция логической модели
+
 users = {1: "Alice", 2: "Bob"}
 orders = [(1, 1, 100), (2, 1, 200), (3, 2, 150)]
 
 # "Запрос" на Python
+
 result = {}
 for order_id, user_id, amount in orders:
     name = users[user_id]
@@ -194,7 +195,6 @@ for name, total in result.items():
 
 **Output:**
 ```
-
 Alice: 300
 Bob: 150
 ```
@@ -230,7 +230,6 @@ class Page:
     def __repr__(self):
         return f"Page({self.page_id}, {len(self.records)} records, {self.used_space}B used)"
 
-
 class HeapFile:
     """
     Heap file — неупорядоченный набор страниц.
@@ -260,9 +259,11 @@ class HeapFile:
                 yield record
 
 # Демонстрация
+
 heap = HeapFile()
 
 # Вставка записей
+
 for i in range(100):
     heap.insert({"id": i, "name": f"User_{i}", "email": f"user{i}@example.com"})
 
@@ -273,7 +274,6 @@ for page in heap.pages[:3]:
 
 **Output:**
 ```
-
 Всего страниц: 3
   Page(0, 42 records, 3990B used)
   Page(1, 42 records, 3990B used)
@@ -304,7 +304,6 @@ for page in heap.pages[:3]:
 ### 3.2 Компоненты Storage Engine
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                     Storage Engine                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -328,7 +327,6 @@ for page in heap.pages[:3]:
 ### 3.3 Buffer Pool: кэш страниц
 
 ```python
-
 from collections import OrderedDict
 
 class BufferPool:
@@ -368,6 +366,7 @@ class BufferPool:
         return self.hit_count / total if total > 0 else 0
 
 # Демонстрация
+
 import random
 
 def disk_read(page_id):
@@ -377,6 +376,7 @@ def disk_read(page_id):
 pool = BufferPool(capacity=10)
 
 # Симуляция workload с locality
+
 for _ in range(1000):
     # 80% запросов к "горячим" страницам
     if random.random() < 0.8:
@@ -393,7 +393,6 @@ print(f"Hit rate: {pool.hit_rate():.1%}")
 
 **Output:**
 ```
-
 Cache hits: 891
 Cache misses: 109
 Hit rate: 89.1%
@@ -416,7 +415,6 @@ Hit rate: 89.1%
 ### 4.2 Пример: Простой B-tree индекс
 
 ```python
-
 class BTreeNode:
     """Узел B-дерева."""
     
@@ -425,7 +423,6 @@ class BTreeNode:
         self.keys = []
         self.values = []  # Только для листьев
         self.children = []  # Только для внутренних узлов
-
 
 class SimpleBTree:
     """
@@ -518,9 +515,11 @@ class SimpleBTree:
             self.insert_non_full(root, key, value)
 
 # Демонстрация
+
 btree = SimpleBTree(order=4)
 
 # Вставка данных
+
 for i in [10, 20, 5, 15, 25, 30, 35, 40, 3, 7]:
     btree.insert(i, f"value_{i}")
 
@@ -533,7 +532,6 @@ print(f"Search 100: {btree.search(100)}")
 
 **Output:**
 ```
-
 Search 15: value_15
 Search 25: value_25
 Search 100: None
@@ -559,12 +557,14 @@ Search 100: None
 
 ```python
 # Row Store
+
 """
 Page 1: [id:1, name:"Alice", age:30] [id:2, name:"Bob", age:25] ...
 Page 2: [id:3, name:"Carol", age:35] ...
 """
 
 # Column Store
+
 """
 id column:   [1, 2, 3, 4, 5, ...]
 name column: ["Alice", "Bob", "Carol", ...]
@@ -574,6 +574,7 @@ age column:  [30, 25, 35, ...]
 import sys
 
 # Демонстрация разницы в объёме данных для запроса
+
 class RowStore:
     def __init__(self):
         self.rows = []
@@ -586,7 +587,6 @@ class RowStore:
         bytes_read = sum(sys.getsizeof(row) for row in self.rows)
         result = sum(row[column] for row in self.rows)
         return result, bytes_read
-
 
 class ColumnStore:
     def __init__(self, columns):
@@ -603,6 +603,7 @@ class ColumnStore:
         return result, bytes_read
 
 # Сравнение
+
 row_store = RowStore()
 col_store = ColumnStore(['id', 'name', 'email', 'age', 'salary'])
 
@@ -627,7 +628,6 @@ print(f"Column store reads {bytes_row // bytes_col}x less data")
 
 **Output:**
 ```
-
 Row Store: sum=529950000, bytes read≈2880000
 Column Store: sum=529950000, bytes read≈87616
 Column store reads 32x less data
@@ -651,7 +651,6 @@ Column store reads 32x less data
 ### 6.1 Read vs Write оптимизация
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    Read-Optimized                           │
 │  B-tree index: O(log n) чтение, O(log n) запись             │
@@ -674,6 +673,7 @@ Column store reads 32x less data
 import time
 
 # Симуляция разницы в скорости
+
 class InMemoryTable:
     def __init__(self):
         self.data = {}
@@ -683,7 +683,6 @@ class InMemoryTable:
     
     def get(self, key):
         return self.data.get(key)
-
 
 class SimulatedDiskTable:
     def __init__(self):
@@ -699,6 +698,7 @@ class SimulatedDiskTable:
         return self.data.get(key)
 
 # Сравнение
+
 n = 1000
 
 mem_table = InMemoryTable()
@@ -720,7 +720,6 @@ print(f"Disk is {disk_time/mem_time:.0f}x slower")
 
 **Output:**
 ```
-
 In-memory: 0.15 ms for 1000 inserts
 Simulated disk: 105.23 ms for 1000 inserts
 Disk is 701x slower
@@ -747,15 +746,18 @@ import time
 import random
 
 # Данные
+
 n = 100000
 data = [(i, f"user_{i}", random.randint(1, 100)) for i in range(n)]
 
 # Без индекса: Full Table Scan
+
 def find_by_age_no_index(data, target_age):
     """O(n) — проверяем все записи."""
     return [row for row in data if row[2] == target_age]
 
 # С индексом по age
+
 age_index = {}
 for row in data:
     age = row[2]
@@ -768,6 +770,7 @@ def find_by_age_with_index(age_index, target_age):
     return age_index.get(target_age, [])
 
 # Сравнение
+
 target = 42
 
 start = time.perf_counter()
@@ -786,7 +789,6 @@ print(f"Ускорение: {time_no_index/time_with_index:.0f}x")
 
 **Output:**
 ```
-
 Найдено: 1023 записей с age=42
 Без индекса: 8.234 ms
 С индексом: 0.012 ms
@@ -836,4 +838,5 @@ print(f"Ускорение: {time_no_index/time_with_index:.0f}x")
 - Исследуйте устройство RocksDB
 
 ---
+
 

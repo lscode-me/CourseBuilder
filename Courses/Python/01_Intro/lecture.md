@@ -38,15 +38,13 @@ Python отличается простым и читаемым синтакси�
 
 ```python
 # Код выполняется построчно интерпретатором
-print("Hello, Python!")
 
+print("Hello, Python!")
 ```
 
 **Output:**
 ```
-
 Hello, Python!
-
 ```
 
 В отличие от компилируемых языков (C, C++, Go), код Python не требует предварительной компиляции в машинный код. Интерпретатор читает и выполняет код построчно.
@@ -55,6 +53,7 @@ Hello, Python!
 
 ```python
 # Переменная может менять тип
+
 x = 42        # x — целое число
 print(type(x))
 
@@ -63,16 +62,13 @@ print(type(x))
 
 x = [1, 2, 3] # теперь x — список
 print(type(x))
-
 ```
 
 **Output:**
 ```
-
 <class 'int'>
 <class 'str'>
 <class 'list'>
-
 ```
 
 Тип переменной определяется автоматически во время выполнения программы, а не при компиляции.
@@ -82,14 +78,11 @@ print(type(x))
 Python следует особой философии, записанной в документе "The Zen of Python" (PEP 20). Посмотреть её можно, выполнив:
 
 ```python
-
 import this
-
 ```
 
 **Output:**
 ```
-
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -111,7 +104,6 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
-
 ```
 
 Главные принципы:
@@ -135,44 +127,41 @@ Namespaces are one honking great idea -- let's do more of those!
 # Сравните с аналогичным кодом на других языках
 
 # Python
+
 numbers = [1, 2, 3, 4, 5]
 doubled = [n * 2 for n in numbers]
 print(doubled)
-
 ```
 
 **Output:**
 ```
-
 [2, 4, 6, 8, 10]
-
 ```
 
 **Богатая стандартная библиотека:**
 
 ```python
 # Работа с датами "из коробки"
+
 from datetime import datetime
 
 now = datetime.now()
 print(f"Сейчас: {now.strftime('%Y-%m-%d %H:%M:%S')}")
 
 # Работа с JSON
+
 import json
 data = {"name": "Python", "year": 1991}
 print(json.dumps(data, indent=2))
-
 ```
 
 **Output:**
 ```
-
 Сейчас: 2024-12-02 15:30:00
 {
   "name": "Python",
   "year": 1991
 }
-
 ```
 
 **Огромная экосистема:**
@@ -220,21 +209,20 @@ Python имеет две основные ветки: Python 2 и Python 3. **Py
 
 ```python
 # Python 3 синтаксис
+
 print("Hello, World!")  # print — функция
 
 # Деление в Python 3
+
 print(5 / 2)   # Истинное деление
 print(5 // 2)  # Целочисленное деление
-
 ```
 
 **Output:**
 ```
-
 Hello, World!
 2.5
 2
-
 ```
 
 **Основные различия:**
@@ -257,16 +245,12 @@ Hello, World!
 Проверить версию Python:
 
 ```bash
-
 python3 --version
-
 ```
 
 **Output:**
 ```
-
 Python 3.11.5
-
 ```
 
 > **💡 Pro Tip:**  
@@ -282,19 +266,18 @@ Python 3.11.5
 
 ```bash
 # Проверка версии Python 3
+
 python3 --version
 
 # Проверка пути к интерпретатору
-which python3
 
+which python3
 ```
 
 **Output:**
 ```
-
 Python 3.11.5
 /usr/bin/python3
-
 ```
 
 ### 4.2 Установка на macOS
@@ -303,14 +286,16 @@ Python 3.11.5
 
 ```bash
 # Установка Homebrew (если не установлен)
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Установка Python
+
 brew install python3
 
 # Проверка
-python3 --version
 
+python3 --version
 ```
 
 ### 4.3 Установка на Linux
@@ -319,26 +304,29 @@ python3 --version
 
 ```bash
 # Обновление списка пакетов
+
 sudo apt update
 
 # Установка Python 3 и pip
+
 sudo apt install python3 python3-pip python3-venv
 
 # Проверка
+
 python3 --version
 pip3 --version
-
 ```
 
 **Fedora/RHEL:**
 
 ```bash
 # Установка Python 3
+
 sudo dnf install python3 python3-pip
 
 # Проверка
-python3 --version
 
+python3 --version
 ```
 
 ### 4.4 Использование pyenv (рекомендуется)
@@ -347,32 +335,35 @@ python3 --version
 
 ```bash
 # Установка pyenv (macOS/Linux)
+
 curl https://pyenv.run | bash
 
 # Добавьте в ~/.bashrc или ~/.zshrc:
+
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # Перезагрузите shell
+
 source ~/.bashrc
 
 # Установка конкретной версии Python
+
 pyenv install 3.11.5
 
 # Установка версии по умолчанию
+
 pyenv global 3.11.5
 
 # Проверка
-python --version
 
+python --version
 ```
 
 **Output:**
 ```
-
 Python 3.11.5
-
 ```
 
 > **⚠️ Warning:**  
@@ -387,20 +378,16 @@ Python 3.11.5
 REPL (Read-Eval-Print Loop) — отличный способ экспериментировать с Python:
 
 ```bash
-
 python3
-
 ```
 
 ```python
-
 >>> 2 + 2
 4
 >>> name = "Python"
 >>> print(f"Hello, {name}!")
 Hello, Python!
 >>> exit()
-
 ```
 
 Для выхода из интерактивного режима используйте `exit()` или `Ctrl+D`.
@@ -411,25 +398,21 @@ Hello, Python!
 
 ```python
 # hello.py
+
 name = input("Как тебя зовут? ")
 print(f"Привет, {name}! Добро пожаловать в Python!")
-
 ```
 
 Запуск:
 
 ```bash
-
 python3 hello.py
-
 ```
 
 **Output:**
 ```
-
 Как тебя зовут? Мир
 Привет, Мир! Добро пожаловать в Python!
-
 ```
 
 ### 5.3 Исполняемые скрипты
@@ -445,23 +428,21 @@ python3 hello.py
 """
 
 print("Я исполняемый Python-скрипт!")
-
 ```
 
 ```bash
 # Делаем файл исполняемым
+
 chmod +x executable_script.py
 
 # Запускаем напрямую
-./executable_script.py
 
+./executable_script.py
 ```
 
 **Output:**
 ```
-
 Я исполняемый Python-скрипт!
-
 ```
 
 Строка `#!/usr/bin/env python3` называется **shebang** и указывает системе, какой интерпретатор использовать.
@@ -472,15 +453,15 @@ chmod +x executable_script.py
 
 ```bash
 # Установка
+
 pip3 install ipython
 
 # Запуск
-ipython
 
+ipython
 ```
 
 ```python
-
 In [1]: import math
 
 In [2]: math.sqrt(16)
@@ -488,18 +469,18 @@ Out[2]: 4.0
 
 In [3]: %timeit sum(range(1000))
 12.8 µs ± 156 ns per loop
-
 ```
 
 **Jupyter Notebook** — интерактивная среда для экспериментов:
 
 ```bash
 # Установка
+
 pip3 install jupyter
 
 # Запуск
-jupyter notebook
 
+jupyter notebook
 ```
 
 ---
@@ -512,26 +493,32 @@ jupyter notebook
 
 ```bash
 # Установка пакета
+
 pip3 install requests
 
 # Установка конкретной версии
+
 pip3 install requests==2.28.0
 
 # Обновление пакета
+
 pip3 install --upgrade requests
 
 # Удаление пакета
+
 pip3 uninstall requests
 
 # Просмотр установленных пакетов
+
 pip3 list
 
 # Сохранение зависимостей проекта
+
 pip3 freeze > requirements.txt
 
 # Установка из файла зависимостей
-pip3 install -r requirements.txt
 
+pip3 install -r requirements.txt
 ```
 
 ### 6.2 Виртуальные окружения
@@ -540,47 +527,57 @@ pip3 install -r requirements.txt
 
 ```bash
 # Создание виртуального окружения
+
 python3 -m venv myproject_env
 
 # Активация (Linux/macOS)
+
 source myproject_env/bin/activate
 
 # Проверка — теперь python указывает на окружение
+
 which python
 # /path/to/myproject_env/bin/python
 
 # Установка пакетов в окружение
+
 pip install requests pandas
 
 # Деактивация окружения
-deactivate
 
+deactivate
 ```
 
 **Пример workflow:**
 
 ```bash
 # 1. Создаем директорию проекта
+
 mkdir my_project && cd my_project
 
 # 2. Создаем виртуальное окружение
+
 python3 -m venv venv
 
 # 3. Активируем его
+
 source venv/bin/activate
 
 # 4. Устанавливаем зависимости
+
 pip install requests
 
 # 5. Работаем над проектом
+
 python main.py
 
 # 6. Сохраняем зависимости
+
 pip freeze > requirements.txt
 
 # 7. По завершении работы деактивируем
-deactivate
 
+deactivate
 ```
 
 > **💡 Pro Tip:**  
@@ -613,15 +610,13 @@ deactivate
 
 ```python
 # hello_world.py
-print("Hello, World!")
 
+print("Hello, World!")
 ```
 
 **Output:**
 ```
-
 Hello, World!
-
 ```
 
 ### 7.2 Чуть сложнее
@@ -632,32 +627,32 @@ Hello, World!
 # greeting.py
 
 # Объявление переменных
+
 language = "Python"
 version = 3.11
 creator = "Guido van Rossum"
 
 # Вывод информации
+
 print(f"Добро пожаловать в {language}!")
 print(f"Версия: {version}")
 print(f"Создатель: {creator}")
 print(f"Python существует с 1991 года")
 
 # Простые вычисления
+
 current_year = 2024
 age = current_year - 1991
 print(f"Возраст языка: {age} лет")
-
 ```
 
 **Output:**
 ```
-
 Добро пожаловать в Python!
 Версия: 3.11
 Создатель: Guido van Rossum
 Python существует с 1991 года
 Возраст языка: 33 лет
-
 ```
 
 ### 7.3 Интерактивная программа
@@ -668,29 +663,31 @@ Python существует с 1991 года
 # calculator.py
 
 # Получаем ввод от пользователя
+
 print("Простой калькулятор")
 print("-" * 20)
 
 # input() всегда возвращает строку
+
 num1 = input("Введите первое число: ")
 num2 = input("Введите второе число: ")
 
 # Преобразуем строки в числа
+
 num1 = float(num1)
 num2 = float(num2)
 
 # Выполняем вычисления
+
 print(f"\nРезультаты:")
 print(f"{num1} + {num2} = {num1 + num2}")
 print(f"{num1} - {num2} = {num1 - num2}")
 print(f"{num1} * {num2} = {num1 * num2}")
 print(f"{num1} / {num2} = {num1 / num2}")
-
 ```
 
 **Output:**
 ```
-
 Простой калькулятор
 --------------------
 Введите первое число: 10
@@ -701,7 +698,6 @@ print(f"{num1} / {num2} = {num1 / num2}")
 10.0 - 3.0 = 7.0
 10.0 * 3.0 = 30.0
 10.0 / 3.0 = 3.3333333333333335
-
 ```
 
 ---
@@ -714,28 +710,26 @@ Python использует отступы для обозначения бло�
 
 ```python
 # Правильно — отступы определяют блоки
+
 if True:
     print("Этот код внутри блока if")
     print("И этот тоже")
 print("А этот уже снаружи")
-
 ```
 
 **Output:**
 ```
-
 Этот код внутри блока if
 И этот тоже
 А этот уже снаружи
-
 ```
 
 ❌ **Неправильно:**
 ```python
 # Это вызовет ошибку IndentationError
+
 if True:
 print("Нет отступа!")
-
 ```
 
 > **⚠️ Warning:**  
@@ -769,13 +763,12 @@ def greet(name):
     return f"Привет, {name}!"
 
 # Посмотреть документацию функции
-print(greet.__doc__)
 
+print(greet.__doc__)
 ```
 
 **Output:**
 ```
-
     Приветствует пользователя по имени.
     
     Args:
@@ -783,37 +776,37 @@ print(greet.__doc__)
     
     Returns:
         Строка приветствия
-    
 ```
 
 ### 8.3 Переменные и присваивание
 
 ```python
 # Простое присваивание
+
 x = 10
 name = "Python"
 
 # Множественное присваивание
+
 a, b, c = 1, 2, 3
 print(f"a={a}, b={b}, c={c}")
 
 # Обмен значениями
+
 a, b = b, a
 print(f"После обмена: a={a}, b={b}")
 
 # Присваивание одного значения нескольким переменным
+
 x = y = z = 0
 print(f"x={x}, y={y}, z={z}")
-
 ```
 
 **Output:**
 ```
-
 a=1, b=2, c=3
 После обмена: a=2, b=1
 x=0, y=0, z=0
-
 ```
 
 ### 8.4 Именование переменных
@@ -828,6 +821,7 @@ x=0, y=0, z=0
 
 ```python
 # snake_case для переменных и функций
+
 user_name = "John"
 max_value = 100
 
@@ -835,16 +829,18 @@ def calculate_total():
     pass
 
 # UPPER_CASE для констант
+
 MAX_SIZE = 1000
 PI = 3.14159
 
 # PascalCase для классов
+
 class UserAccount:
     pass
 
 # _prefix для "приватных" имён
-_internal_value = 42
 
+_internal_value = 42
 ```
 
 ---
@@ -860,8 +856,8 @@ _internal_value = 42
 # print "Hello"
 
 # Python 3 (правильно)
-print("Hello")
 
+print("Hello")
 ```
 
 ### 9.2 Неправильные отступы
@@ -870,40 +866,39 @@ print("Hello")
 
 ```python
 # Настройте редактор на 4 пробела!
+
 if True:
     print("4 пробела")
     print("Тоже 4 пробела")  # Правильно
-
 ```
 
 ### 9.3 Путаница с версией интерпретатора
 
 ```bash
 # Убедитесь, что используете правильную версию
+
 python3 --version      # Рекомендуется
 python --version       # Может быть Python 2!
 
 # Используйте python3 явно
-python3 my_script.py
 
+python3 my_script.py
 ```
 
 ### 9.4 Установка пакетов без виртуального окружения
 
 ❌ **Плохо:**
 ```bash
-
 pip install some_package  # В системный Python!
-
 ```
 
 ✅ **Хорошо:**
 ```bash
 # Сначала создаём и активируем виртуальное окружение
+
 python3 -m venv venv
 source venv/bin/activate
 pip install some_package  # Теперь в изолированное окружение
-
 ```
 
 ---
@@ -962,6 +957,7 @@ pip install some_package  # Теперь в изолированное окру�
 - [VS Code Python Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) — расширение для VS Code
 
 ---
+
 
 
 

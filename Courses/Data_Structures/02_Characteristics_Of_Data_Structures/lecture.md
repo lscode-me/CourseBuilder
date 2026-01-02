@@ -56,10 +56,12 @@
 
 ```python
 # Список — прямой доступ по индексу
+
 my_list = [10, 20, 30, 40, 50]
 print(f"Элемент с индексом 2: {my_list[2]}")
 
 # Словарь — доступ по ключу
+
 my_dict = {'a': 10, 'b': 20, 'c': 30}
 print(f"Элемент с ключом 'b': {my_dict['b']}")
 
@@ -67,12 +69,10 @@ print(f"Элемент с ключом 'b': {my_dict['b']}")
 
 my_set = {10, 20, 30}
 # print(my_set[0])  # Ошибка! Множество не поддерживает индексацию
-
 ```
 
 **Output:**
 ```
-
 Элемент с индексом 2: 30
 Элемент с ключом 'b': 20
 ```
@@ -97,12 +97,15 @@ my_set = {10, 20, 30}
 
 ```python
 # Список — прямой доступ по индексу
+
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Доступ к первому элементу
+
 print(f"Первый элемент: {numbers[0]}")
 
 # Доступ к последнему элементу
+
 print(f"Последний элемент: {numbers[-1]}")
 
 # Доступ к элементу в середине
@@ -112,7 +115,6 @@ print(f"Элемент в середине: {numbers[len(numbers)//2]}")
 
 **Output:**
 ```
-
 Первый элемент: 1
 Последний элемент: 10
 Элемент в середине: 5
@@ -124,6 +126,7 @@ print(f"Элемент в середине: {numbers[len(numbers)//2]}")
 
 ```python
 # Словарь — доступ по ключу
+
 student_grades = {
     'Alice': 95,
     'Bob': 87,
@@ -139,7 +142,6 @@ print(f"Оценка Bob: {student_grades.get('Bob', 'Не найдено')}")
 
 **Output:**
 ```
-
 Оценка Alice: 95
 Оценка Bob: 87
 ```
@@ -150,6 +152,7 @@ print(f"Оценка Bob: {student_grades.get('Bob', 'Не найдено')}")
 
 ```python
 # В Python нет встроенного связанного списка, но можно показать концепцию
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -171,6 +174,7 @@ class LinkedList:
         raise IndexError("Индекс вне диапазона")
 
 # Создание списка
+
 ll = LinkedList()
 ll.head = Node(10)
 ll.head.next = Node(20)
@@ -181,7 +185,6 @@ print(f"Элемент с индексом 1: {ll.get_at_index(1)}")
 
 **Output:**
 ```
-
 Элемент с индексом 1: 20
 ```
 
@@ -201,6 +204,7 @@ print(f"Элемент с индексом 1: {ll.get_at_index(1)}")
 
 ```python
 # Поиск в неотсортированном списке
+
 numbers = [5, 2, 8, 1, 9, 3, 7, 4, 6]
 
 def search_in_list(data, target):
@@ -217,7 +221,6 @@ print(f"Элемент 10 найден: {search_in_list(numbers, 10) != -1}")
 
 **Output:**
 ```
-
 Элемент 7 найден на позиции: 6
 False
 ```
@@ -227,14 +230,15 @@ False
 **Example: Поиск в отсортированном списке (бинарный поиск)**
 
 ```python
-
 import bisect
 
 # Отсортированный список
+
 sorted_numbers = sorted([5, 2, 8, 1, 9, 3, 7, 4, 6])
 print(f"Отсортированный список: {sorted_numbers}")
 
 # Бинарный поиск
+
 def binary_search(data, target):
     """Бинарный поиск в отсортированном списке."""
     index = bisect.bisect_left(data, target)
@@ -248,7 +252,6 @@ print(f"Элемент 7 найден на позиции: {result}")
 
 **Output:**
 ```
-
 Отсортированный список: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 Элемент 7 найден на позиции: 6
 ```
@@ -259,6 +262,7 @@ print(f"Элемент 7 найден на позиции: {result}")
 
 ```python
 # Множество — оптимизировано для проверки принадлежности
+
 numbers_set = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 # Проверка принадлежности
@@ -269,7 +273,6 @@ print(f"15 в множестве: {15 in numbers_set}")
 
 **Output:**
 ```
-
 7 в множестве: True
 15 в множестве: False
 ```
@@ -280,6 +283,7 @@ print(f"15 в множестве: {15 in numbers_set}")
 
 ```python
 # Поиск ключа в словаре
+
 student_grades = {
     'Alice': 95,
     'Bob': 87,
@@ -287,6 +291,7 @@ student_grades = {
 }
 
 # Проверка наличия ключа
+
 print(f"'Alice' в словаре: {'Alice' in student_grades}")
 print(f"'David' в словаре: {'David' in student_grades}")
 
@@ -298,7 +303,6 @@ print(f"Оценка Bob: {grade}")
 
 **Output:**
 ```
-
 'Alice' в словаре: True
 'David' в словаре: False
 Оценка Bob: 87
@@ -320,11 +324,13 @@ print(f"Оценка Bob: {grade}")
 
 ```python
 # Вставка в конец списка
+
 numbers = [1, 2, 3, 4, 5]
 numbers.append(6)
 print(f"После append: {numbers}")
 
 # Вставка в начало списка
+
 numbers.insert(0, 0)
 print(f"После insert(0, 0): {numbers}")
 
@@ -336,7 +342,6 @@ print(f"После insert(3, 2.5): {numbers}")
 
 **Output:**
 ```
-
 После append: [1, 2, 3, 4, 5, 6]
 После insert(0, 0): [0, 1, 2, 3, 4, 5, 6]
 После insert(3, 2.5): [0, 1, 2, 2.5, 3, 4, 5, 6]
@@ -351,9 +356,11 @@ print(f"После insert(3, 2.5): {numbers}")
 
 ```python
 # Вставка в словарь
+
 student_grades = {'Alice': 95, 'Bob': 87}
 
 # Добавление нового элемента
+
 student_grades['Charlie'] = 92
 print(f"После добавления Charlie: {student_grades}")
 
@@ -365,7 +372,6 @@ print(f"После обновления Alice: {student_grades}")
 
 **Output:**
 ```
-
 После добавления Charlie: {'Alice': 95, 'Bob': 87, 'Charlie': 92}
 После обновления Alice: {'Alice': 96, 'Bob': 87, 'Charlie': 92}
 ```
@@ -376,9 +382,11 @@ print(f"После обновления Alice: {student_grades}")
 
 ```python
 # Вставка в множество
+
 numbers = {1, 2, 3, 4, 5}
 
 # Добавление элемента
+
 numbers.add(6)
 print(f"После add(6): {numbers}")
 
@@ -390,7 +398,6 @@ print(f"После add(3) (уже существует): {numbers}")
 
 **Output:**
 ```
-
 После add(6): {1, 2, 3, 4, 5, 6}
 После add(3) (уже существует): {1, 2, 3, 4, 5, 6}
 ```
@@ -411,13 +418,16 @@ print(f"После add(3) (уже существует): {numbers}")
 
 ```python
 # Удаление из списка
+
 numbers = [1, 2, 3, 4, 5, 6]
 
 # Удаление по значению
+
 numbers.remove(3)
 print(f"После remove(3): {numbers}")
 
 # Удаление по индексу
+
 deleted = numbers.pop(1)
 print(f"После pop(1), удалён элемент: {deleted}, список: {numbers}")
 
@@ -429,7 +439,6 @@ print(f"После pop(), удалён элемент: {last}, список: {nu
 
 **Output:**
 ```
-
 После remove(3): [1, 2, 4, 5, 6]
 После pop(1), удалён элемент: 2, список: [1, 4, 5, 6]
 После pop(), удалён элемент: 6, список: [1, 4, 5]
@@ -445,9 +454,11 @@ print(f"После pop(), удалён элемент: {last}, список: {nu
 
 ```python
 # Удаление из словаря
+
 student_grades = {'Alice': 95, 'Bob': 87, 'Charlie': 92}
 
 # Удаление по ключу
+
 del student_grades['Bob']
 print(f"После del: {student_grades}")
 
@@ -459,7 +470,6 @@ print(f"Удалённая оценка Alice: {grade}, словарь: {student
 
 **Output:**
 ```
-
 После del: {'Alice': 95, 'Charlie': 92}
 Удалённая оценка Alice: 95, словарь: {'Charlie': 92}
 ```
@@ -470,9 +480,11 @@ print(f"Удалённая оценка Alice: {grade}, словарь: {student
 
 ```python
 # Удаление из множества
+
 numbers = {1, 2, 3, 4, 5, 6}
 
 # Удаление элемента
+
 numbers.remove(3)
 print(f"После remove(3): {numbers}")
 
@@ -484,7 +496,6 @@ print(f"После discard(10) (элемента нет): {numbers}")
 
 **Output:**
 ```
-
 После remove(3): {1, 2, 4, 5, 6}
 После discard(10) (элемента нет): {1, 2, 4, 5, 6}
 ```
@@ -504,14 +515,15 @@ print(f"После discard(10) (элемента нет): {numbers}")
 **Example: Сравнение списка и множества**
 
 ```python
-
 import sys
 
 # Список
+
 numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 list_size = sys.getsizeof(numbers_list)
 
 # Множество
+
 numbers_set = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 set_size = sys.getsizeof(numbers_set)
 
@@ -522,7 +534,6 @@ print(f"Разница: {set_size - list_size} байт")
 
 **Output:**
 ```
-
 Размер списка (10 элементов): 152 байт
 Размер множества (10 элементов): 736 байт
 Разница: 584 байт
@@ -534,14 +545,15 @@ print(f"Разница: {set_size - list_size} байт")
 **Example: Влияние размера на память**
 
 ```python
-
 import sys
 
 # Маленький список
+
 small_list = list(range(10))
 small_size = sys.getsizeof(small_list)
 
 # Большой список
+
 large_list = list(range(1000))
 large_size = sys.getsizeof(large_list)
 
@@ -552,7 +564,6 @@ print(f"Увеличение в {large_size / small_size:.1f} раз")
 
 **Output:**
 ```
-
 Список из 10 элементов: 200 байт
 Список из 1000 элементов: 8056 байт
 Увеличение в 40.3 раз
@@ -572,6 +583,7 @@ print(f"Увеличение в {large_size / small_size:.1f} раз")
 
 ```python
 # Список сохраняет порядок
+
 ordered_list = [3, 1, 4, 1, 5, 9, 2, 6]
 print(f"Список сохраняет порядок: {ordered_list}")
 
@@ -583,7 +595,6 @@ for i, value in enumerate(ordered_list):
 
 **Output:**
 ```
-
 Список сохраняет порядок: [3, 1, 4, 1, 5, 9, 2, 6]
 Индекс 0: 3
 Индекс 1: 1
@@ -600,6 +611,7 @@ for i, value in enumerate(ordered_list):
 ```python
 # Множество не гарантирует порядок (в старых версиях Python)
 # В Python 3.7+ порядок вставки сохраняется, но это деталь реализации
+
 unordered_set = {3, 1, 4, 1, 5, 9, 2, 6}
 print(f"Множество (порядок может отличаться): {unordered_set}")
 
@@ -611,7 +623,6 @@ print(f"Отсортированное множество: {sorted_list}")
 
 **Output:**
 ```
-
 Множество (порядок может отличаться): {1, 2, 3, 4, 5, 6, 9}
 Отсортированное множество: [1, 2, 3, 4, 5, 6, 9]
 ```
@@ -620,6 +631,7 @@ print(f"Отсортированное множество: {sorted_list}")
 
 ```python
 # В Python 3.7+ словари сохраняют порядок вставки
+
 ordered_dict = {}
 ordered_dict['first'] = 1
 ordered_dict['second'] = 2
@@ -632,7 +644,6 @@ for key, value in ordered_dict.items():
 
 **Output:**
 ```
-
 Порядок в словаре (Python 3.7+):
   first: 1
   second: 2
@@ -677,7 +688,6 @@ for key, value in ordered_dict.items():
 **Example: Визуализация сложности**
 
 ```python
-
 import time
 import math
 
@@ -702,7 +712,6 @@ demonstrate_complexity()
 
 **Output:**
 ```
-
 Сравнение сложностей:
 Размер     O(1)            O(log n)        O(n)            O(n²)          
 
@@ -721,6 +730,7 @@ demonstrate_complexity()
 
 ```python
 # Создаём большие структуры для демонстрации
+
 large_list = list(range(100000))
 large_set = set(range(100000))
 large_dict = {i: i*2 for i in range(100000)}
@@ -728,11 +738,13 @@ large_dict = {i: i*2 for i in range(100000)}
 import time
 
 # Поиск в списке — O(n)
+
 start = time.time()
 result = 99999 in large_list
 time_list = time.time() - start
 
 # Поиск в множестве — O(1)
+
 start = time.time()
 result = 99999 in large_set
 time_set = time.time() - start
@@ -751,7 +763,6 @@ print(f"Ускорение: {time_list / time_set:.1f}x")
 
 **Output:**
 ```
-
 Поиск в списке (O(n)): 0.002345 секунд
 Поиск в множестве (O(1)): 0.000001 секунд
 Поиск в словаре (O(1)): 0.000001 секунд
@@ -831,5 +842,6 @@ print(f"Ускорение: {time_list / time_set:.1f}x")
 - Исследуйте, как Python реализует встроенные структуры данных
 
 ---
+
 
 

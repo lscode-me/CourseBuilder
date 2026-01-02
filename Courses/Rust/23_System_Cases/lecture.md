@@ -151,7 +151,6 @@
 **Example: Serde для сериализации**
 
 ```rust
-
 // Требует: serde = { version = "1.0", features = ["derive"] }
 // serde_json = "1.0"
 // use serde::{Serialize, Deserialize};
@@ -176,7 +175,6 @@
 **Example: Tokio для асинхронности**
 
 ```rust
-
 // Требует: tokio = { version = "1", features = ["full"] }
 // use tokio::time::{sleep, Duration};
 //

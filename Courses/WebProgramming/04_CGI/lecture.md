@@ -37,7 +37,6 @@
 **CGI (Common Gateway Interface)** — стандарт интерфейса между веб-сервером и внешней программой для генерации динамического контента.
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                    CGI Architecture                        │
 ├────────────────────────────────────────────────────────────┤
@@ -57,7 +56,6 @@
 │    │◄── HTTP Response │                       │            │
 │    │                 │                       │             │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 **Принцип работы:**
@@ -74,12 +72,10 @@
 ### 1.2 История CGI
 
 ```
-
 1993 — NCSA HTTPd вводит CGI/1.0
 1995 — CGI/1.1 становится стандартом
 1997 — RFC 3875 формализует CGI/1.1
 2004+ — FastCGI, SCGI, WSGI постепенно заменяют CGI
-
 ```
 
 CGI был **революцией**: первый способ создавать динамические веб-страницы.
@@ -129,7 +125,6 @@ cat << EOF
 </body>
 </html>
 EOF
-
 ```
 
 ### 2.2 CGI на Python
@@ -203,10 +198,8 @@ def main():
 </body>
 </html>""")
 
-
 if __name__ == '__main__':
     main()
-
 ```
 
 ### 2.3 CGI на Perl (классика)
@@ -233,7 +226,6 @@ my $name = $cgi->param('name') || 'World';
 print $cgi->p("Hello, $name!");
 
 print $cgi->end_html();
-
 ```
 
 ### 2.4 CGI для обработки форм
@@ -296,10 +288,8 @@ def main():
 </body>
 </html>""")
 
-
 if __name__ == '__main__':
     main()
-
 ```
 
 ---
@@ -329,7 +319,6 @@ if __name__ == '__main__':
         AddHandler cgi-script .cgi
     </Directory>
 </VirtualHost>
-
 ```
 
 ```bash
@@ -340,7 +329,6 @@ sudo systemctl restart apache2
 
 # Сделать скрипты исполняемыми
 chmod +x /var/www/cgi-bin/*.py
-
 ```
 
 ### 3.2 Nginx CGI (через fcgiwrap)
@@ -354,7 +342,6 @@ sudo apt install fcgiwrap
 # Запустить
 sudo systemctl start fcgiwrap
 sudo systemctl enable fcgiwrap
-
 ```
 
 ```nginx
@@ -374,7 +361,6 @@ server {
         include fastcgi_params;
     }
 }
-
 ```
 
 ---
@@ -386,7 +372,6 @@ server {
 **Главная проблема CGI: fork() на каждый запрос.**
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                    CGI Overhead                            │
 ├────────────────────────────────────────────────────────────┤
@@ -408,7 +393,6 @@ server {
 │  расходы на fork(), загрузку интерпретатора, библиотек...  │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Сравнение накладных расходов
@@ -438,7 +422,6 @@ server {
 **FastCGI** решает проблему накладных расходов CGI:
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                   FastCGI Architecture                     │
 ├────────────────────────────────────────────────────────────┤
@@ -467,7 +450,6 @@ server {
 │  Request 3 ────────► Worker 1 (уже освободился)            │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 **Ключевые отличия от CGI:**
@@ -482,7 +464,6 @@ server {
 FastCGI использует бинарные записи (records):
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                FastCGI Record Format                    │
 ├─────────────────────────────────────────────────────────┤
@@ -506,7 +487,6 @@ FastCGI использует бинарные записи (records):
   FCGI_STDOUT           (6)  — ответ (тело)
   FCGI_STDERR           (7)  — ошибки
   FCGI_DATA             (8)  — дополнительные данные
-
 ```
 
 ### 5.3 PHP-FPM (FastCGI Process Manager)
@@ -514,7 +494,6 @@ FastCGI использует бинарные записи (records):
 Самое популярное использование FastCGI — PHP-FPM:
 
 ```ini
-
 ; /etc/php/8.1/fpm/pool.d/www.conf
 
 [www]
@@ -544,7 +523,6 @@ pm.max_requests = 500       ; перезапуск воркера после N �
 access.log = /var/log/php-fpm/access.log
 slowlog = /var/log/php-fpm/slow.log
 request_slowlog_timeout = 5s
-
 ```
 
 ```nginx
@@ -580,7 +558,6 @@ server {
         fastcgi_read_timeout 180;
     }
 }
-
 ```
 
 ### 5.4 Python FastCGI
@@ -618,7 +595,6 @@ def application(environ, start_response):
 if __name__ == '__main__':
     # Запуск FastCGI сервера
     WSGIServer(application, bindAddress='/tmp/python-fcgi.sock').run()
-
 ```
 
 ---
@@ -630,7 +606,6 @@ if __name__ == '__main__':
 **SCGI** — упрощённая версия FastCGI с более простым протоколом.
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                    SCGI Protocol                           │
 ├────────────────────────────────────────────────────────────┤
@@ -646,7 +621,6 @@ if __name__ == '__main__':
 │  - Request body                                            │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 6.2 Сравнение CGI, FastCGI, SCGI
@@ -663,7 +637,6 @@ if __name__ == '__main__':
 ### 6.3 SCGI в Nginx
 
 ```nginx
-
 server {
     listen 80;
     server_name example.com;
@@ -673,7 +646,6 @@ server {
         include scgi_params;
     }
 }
-
 ```
 
 ---
@@ -766,7 +738,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 ```
 
 ### 7.2 CGI: Простой API
@@ -827,7 +798,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 ```
 
 ### 7.3 FastCGI: Python Application Server
@@ -904,7 +874,6 @@ def not_found(environ, start_response):
 if __name__ == '__main__':
     from flup.server.fcgi import WSGIServer
     WSGIServer(application).run()
-
 ```
 
 ---
@@ -930,7 +899,6 @@ python3 -m py_compile script.py
 # Apache: /var/log/apache2/error.log
 # Nginx: /var/log/nginx/error.log
 tail -f /var/log/apache2/error.log
-
 ```
 
 ### 8.2 Тестирование CGI из командной строки
@@ -948,7 +916,6 @@ REQUEST_METHOD=POST \
 CONTENT_TYPE="application/x-www-form-urlencoded" \
 CONTENT_LENGTH=24 \
 ./script.py
-
 ```
 
 ### 8.3 cgitb для отладки Python

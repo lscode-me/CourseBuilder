@@ -205,11 +205,9 @@ D) `math.sin()`
 Что произойдёт при выполнении этого кода?
 
 ```python
-
 from os import path
 from sys import path
 print(path)
-
 ```
 
 A) Ошибка импорта

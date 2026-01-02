@@ -70,6 +70,7 @@ REST основан на нескольких ключевых принципа�
 # REST API для работы с пользователями
 
 # GET /api/users - получить список пользователей
+
 def get_users():
     """Получить список всех пользователей"""
     return [
@@ -78,16 +79,19 @@ def get_users():
     ]
 
 # GET /api/users/1 - получить конкретного пользователя
+
 def get_user(user_id):
     """Получить пользователя по ID"""
     return {'id': 1, 'name': 'Иван', 'email': 'ivan@example.com'}
 
 # POST /api/users - создать нового пользователя
+
 def create_user(data):
     """Создать нового пользователя"""
     return {'id': 3, 'name': data['name'], 'email': data['email']}
 
 # PUT /api/users/1 - обновить пользователя
+
 def update_user(user_id, data):
     """Обновить данные пользователя"""
     return {'id': user_id, **data}
@@ -99,13 +103,13 @@ def delete_user(user_id):
     return {'status': 'deleted', 'id': user_id}
 
 # Использование
+
 users = get_users()
 print(f"Users: {len(users)}")
 ```
 
 **Output:**
 ```
-
 Users: 2
 ```
 
@@ -119,23 +123,28 @@ Users: 2
 # Ресурсы в REST API
 
 # Коллекция пользователей
+
 GET    /api/users           # Список всех пользователей
 POST   /api/users           # Создать пользователя
 
 # Конкретный пользователь
+
 GET    /api/users/123       # Получить пользователя 123
 PUT    /api/users/123       # Обновить пользователя 123
 DELETE /api/users/123       # Удалить пользователя 123
 
 # Вложенные ресурсы
+
 GET    /api/users/123/orders        # Заказы пользователя 123
 POST   /api/users/123/orders        # Создать заказ для пользователя 123
 GET    /api/users/123/orders/456    # Конкретный заказ
 
 # Использование
+
 import requests
 
 # Получить пользователя
+
 response = requests.get('https://api.example.com/users/123')
 user = response.json()
 print(f"User: {user['name']}")
@@ -153,7 +162,6 @@ print(f"Order created: {order['id']}")
 
 **Output:**
 ```
-
 User: Иван
 Order created: 456
 ```
@@ -173,7 +181,6 @@ Order created: 456
 **Example: Использование HTTP методов**
 
 ```python
-
 import requests
 
 class UserRESTAPI:
@@ -210,6 +217,7 @@ class UserRESTAPI:
         return response.status_code == 204
 
 # Использование
+
 api = UserRESTAPI('https://api.example.com')
 user = api.get_user(123)
 print(f"Retrieved: {user['name']}")
@@ -217,7 +225,6 @@ print(f"Retrieved: {user['name']}")
 
 **Output:**
 ```
-
 Retrieved: Иван
 ```
 
@@ -259,7 +266,6 @@ SOAP имеет строгую структуру и формализованн�
 **Example: SOAP запрос и ответ**
 
 ```xml
-
 <!-- SOAP запрос -->
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
@@ -286,10 +292,10 @@ SOAP имеет строгую структуру и формализованн�
 **Example: Использование SOAP API в Python**
 
 ```python
-
 from zeep import Client
 
 # SOAP клиент использует WSDL для понимания API
+
 wsdl_url = 'http://example.com/api?wsdl'
 client = Client(wsdl_url)
 
@@ -303,7 +309,6 @@ print(f"Email: {result.Email}")
 
 **Output:**
 ```
-
 User: Иван Иванов
 Email: ivan@example.com
 ```
@@ -320,7 +325,6 @@ Email: ivan@example.com
 **Example: Фрагмент WSDL**
 
 ```xml
-
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <schema>
@@ -385,9 +389,11 @@ Email: ivan@example.com
 # RPC API фокусируется на методах, а не ресурсах
 
 # REST подход: работа с ресурсами
+
 GET /api/users/123
 
 # RPC подход: вызов метода
+
 POST /api/rpc
 {
   "method": "getUser",
@@ -395,6 +401,7 @@ POST /api/rpc
 }
 
 # Пример RPC клиента
+
 import requests
 
 class RPCClient:
@@ -429,7 +436,6 @@ print(f"User: {user['name']}")
 
 **Output:**
 ```
-
 User: Иван
 ```
 
@@ -441,6 +447,7 @@ User: Иван
 
 ```python
 # JSON-RPC запрос
+
 request = {
     "jsonrpc": "2.0",
     "method": "subtract",
@@ -449,6 +456,7 @@ request = {
 }
 
 # JSON-RPC ответ
+
 response = {
     "jsonrpc": "2.0",
     "result": 19,
@@ -456,6 +464,7 @@ response = {
 }
 
 # Обработка ошибки
+
 error_response = {
     "jsonrpc": "2.0",
     "error": {
@@ -466,6 +475,7 @@ error_response = {
 }
 
 # Реализация JSON-RPC клиента
+
 import requests
 
 def jsonrpc_call(url, method, params=None, request_id=1):
@@ -497,7 +507,6 @@ print(f"Result: {result}")
 
 **Output:**
 ```
-
 Result: {'id': 123, 'name': 'Иван'}
 ```
 
@@ -508,7 +517,6 @@ Result: {'id': 123, 'name': 'Иван'}
 **Example: gRPC определение и использование**
 
 ```protobuf
-
 // user.proto - определение gRPC сервиса
 syntax = "proto3";
 
@@ -555,7 +563,6 @@ print(f"User: {user.name}")
 
 **Output:**
 ```
-
 User: Иван
 ```
 
@@ -616,6 +623,7 @@ class EventPublisher:
         self.publish('order.placed', order_data)
 
 # Использование
+
 publisher = EventPublisher()
 
 # Подписка на события
@@ -637,7 +645,6 @@ publisher.order_placed({'id': 456, 'total': 100.0})
 
 **Output:**
 ```
-
 New user created: Иван
 New order placed: 456
 ```
@@ -649,7 +656,6 @@ New order placed: 456
 **Example: Webhook реализация**
 
 ```python
-
 import requests
 from flask import Flask, request
 
@@ -681,6 +687,7 @@ class WebhookPublisher:
                     print(f"Failed to send webhook to {url}: {e}")
 
 # Webhook endpoint для получения событий
+
 @app.route('/webhook', methods=['POST'])
 def webhook_handler():
     """Обработчик входящих webhooks"""
@@ -690,6 +697,7 @@ def webhook_handler():
     return {'status': 'ok'}, 200
 
 # Использование
+
 publisher = WebhookPublisher()
 publisher.register_webhook('user.created', 'http://client.example.com/webhook')
 
@@ -704,7 +712,6 @@ publisher.trigger_webhook('user.created', {
 
 **Output:**
 ```
-
 Received event: user.created
 Data: {'id': 123, 'name': 'Иван', 'email': 'ivan@example.com'}
 ```
@@ -888,7 +895,6 @@ def create_post():
     return jsonify(new_post), 201
 
 # REST использует ресурсы и HTTP методы
-
 ```
 
 ### 7.2 Пример: RPC API для вычислений
@@ -921,7 +927,6 @@ print(f"5 + 3 = {result}")
 
 **Output:**
 ```
-
 5 + 3 = 8
 ```
 
@@ -944,6 +949,7 @@ POST /api/getUser
 ✅ **Correct:**
 ```python
 # Хорошо: REST подход
+
 GET /api/users/123
 
 # Или RPC подход
@@ -969,6 +975,7 @@ POST /api/getUsers
 ✅ **Correct:**
 ```python
 # Хорошо: GET для получения данных
+
 GET /api/users
 ```
 
@@ -980,7 +987,6 @@ GET /api/users
 ```python
 # Использование SOAP для простого CRUD API
 # Избыточная сложность для простой задачи
-
 ```
 
 ✅ **Correct:**
@@ -1047,6 +1053,7 @@ DELETE /api/users/123
 - "Understanding Event-Driven Architecture" — понимание событийно-ориентированной архитектуры
 
 ---
+
 
 
 

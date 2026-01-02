@@ -24,7 +24,6 @@
 ### 1.1 Три основных сервиса
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │              AWS Messaging Services                                │
 ├────────────────────────────────────────────────────────────────────┤
@@ -45,7 +44,6 @@
 │  └── Schema registry                                               │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -55,7 +53,6 @@
 ### 2.1 Queue Types
 
 ```python
-
 sqs_queue_types = {
     "Standard Queue": {
         "throughput": "Nearly unlimited",
@@ -75,13 +72,11 @@ for queue_type, details in sqs_queue_types.items():
     print(f"\n{queue_type}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
-
 ```
 
 ### 2.2 SQS Operations
 
 ```python
-
 import boto3
 import json
 
@@ -89,6 +84,7 @@ sqs = boto3.client('sqs')
 queue_url = 'https://sqs.us-east-1.amazonaws.com/123456789012/my-queue'
 
 # Send message
+
 sqs.send_message(
     QueueUrl=queue_url,
     MessageBody=json.dumps({'order_id': '12345', 'action': 'process'}),
@@ -98,6 +94,7 @@ sqs.send_message(
 )
 
 # Receive messages (long polling)
+
 response = sqs.receive_message(
     QueueUrl=queue_url,
     MaxNumberOfMessages=10,
@@ -115,13 +112,11 @@ for message in response.get('Messages', []):
         QueueUrl=queue_url,
         ReceiptHandle=message['ReceiptHandle']
     )
-
 ```
 
 ### 2.3 Key Concepts
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    SQS Key Concepts                               │
 ├───────────────────────────────────────────────────────────────────┤
@@ -143,7 +138,6 @@ for message in response.get('Messages', []):
 │  └── Default: 4 days, Max: 14 days                                │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -153,7 +147,6 @@ for message in response.get('Messages', []):
 ### 3.1 Pub/Sub Pattern
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    SNS Pub/Sub                                     │
 ├────────────────────────────────────────────────────────────────────┤
@@ -177,7 +170,6 @@ for message in response.get('Messages', []):
 │  • SQS, Lambda, HTTP/S, Email, SMS, Mobile Push, Firehose          │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 SNS + SQS Fan-out
@@ -191,6 +183,7 @@ sns = boto3.client('sns')
 topic_arn = 'arn:aws:sns:us-east-1:123456789012:order-events'
 
 # Publish to topic
+
 response = sns.publish(
     TopicArn=topic_arn,
     Message=json.dumps({
@@ -213,13 +206,11 @@ response = sns.publish(
 ### 3.3 Message Filtering
 
 ```json
-
 {
     "event_type": ["OrderConfirmed", "OrderShipped"],
     "amount": [{"numeric": [">=", 100]}],
     "customer_type": ["premium"]
 }
-
 ```
 
 ---
@@ -229,7 +220,6 @@ response = sns.publish(
 ### 4.1 Event Bus
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    EventBridge                                    │
 ├───────────────────────────────────────────────────────────────────┤
@@ -252,18 +242,17 @@ response = sns.publish(
 │           Kinesis, CodePipeline, EventBridge (cross-account)      │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Event Pattern Rules
 
 ```python
-
 import boto3
 
 events = boto3.client('events')
 
 # Создание rule
+
 events.put_rule(
     Name='order-confirmed-rule',
     EventPattern=json.dumps({
@@ -277,6 +266,7 @@ events.put_rule(
 )
 
 # Добавление target
+
 events.put_targets(
     Rule='order-confirmed-rule',
     Targets=[
@@ -288,6 +278,7 @@ events.put_targets(
 )
 
 # Отправка события
+
 events.put_events(
     Entries=[
         {
@@ -301,7 +292,6 @@ events.put_events(
         }
     ]
 )
-
 ```
 
 ### 4.3 Scheduler
@@ -320,7 +310,6 @@ scheduler.create_schedule(
     },
     FlexibleTimeWindow={'Mode': 'OFF'}
 )
-
 ```
 
 ---
@@ -328,7 +317,6 @@ scheduler.create_schedule(
 ## 5. Выбор сервиса
 
 ```python
-
 decision_guide = {
     "SQS": [
         "Decoupling between services",
@@ -357,7 +345,6 @@ for service, use_cases in decision_guide.items():
     for case in use_cases:
         print(f"  • {case}")
     print()
-
 ```
 
 ---
@@ -367,7 +354,6 @@ for service, use_cases in decision_guide.items():
 ### 6.1 SNS + SQS для надёжности
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │              SNS + SQS Pattern                                     │
 ├────────────────────────────────────────────────────────────────────┤
@@ -396,7 +382,6 @@ for service, use_cases in decision_guide.items():
 │  • Retry logic per consumer                                        │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -437,6 +422,7 @@ for service, use_cases in decision_guide.items():
 1. Создайте SQS очередь и обработайте сообщения Lambda
 2. Настройте SNS topic с email подпиской
 3. Реализуйте event-driven архитектуру с EventBridge
+
 
 
 

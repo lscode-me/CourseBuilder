@@ -35,7 +35,6 @@
 AWS имеет самую обширную глобальную инфраструктуру среди облачных провайдеров:
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                   AWS Global Infrastructure (2024)                 │
 ├────────────────────────────────────────────────────────────────────┤
@@ -60,13 +59,11 @@ AWS имеет самую обширную глобальную инфрастр
 │      └── 5G edge computing                                         │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Иерархия инфраструктуры
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Infrastructure Hierarchy                     │
 ├─────────────────────────────────────────────────────────────────┤
@@ -102,7 +99,6 @@ AWS имеет самую обширную глобальную инфрастр
 │  └── Local Zones                                                │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -114,14 +110,15 @@ AWS имеет самую обширную глобальную инфрастр
 **Region** — это географически изолированная локация, состоящая из нескольких Availability Zones. Каждый регион полностью независим от других.
 
 ```python
-
 import boto3
 
 # Получение списка всех регионов
+
 ec2 = boto3.client('ec2', region_name='us-east-1')
 regions = ec2.describe_regions()
 
 # Фильтруем включённые регионы
+
 enabled_regions = [
     r['RegionName'] for r in regions['Regions']
     if r['OptInStatus'] in ['opt-in-not-required', 'opted-in']
@@ -131,12 +128,10 @@ print(f"Количество регионов: {len(enabled_regions)}")
 print("\nПримеры регионов:")
 for region in enabled_regions[:10]:
     print(f"  • {region}")
-
 ```
 
 **Output:**
 ```
-
 Количество регионов: 27
 Примеры регионов:
   • us-east-1
@@ -149,13 +144,11 @@ for region in enabled_regions[:10]:
   • ap-southeast-1
   • ap-northeast-1
   • sa-east-1
-
 ```
 
 ### 2.2 Карта регионов AWS
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                       AWS Regions Map                              │
 ├────────────────────────────────────────────────────────────────────┤
@@ -184,7 +177,6 @@ for region in enabled_regions[:10]:
 │    • ap-northeast-3 (Osaka)       • cn-northwest-1 (Ningxia)       │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.3 Выбор региона
@@ -192,7 +184,6 @@ for region in enabled_regions[:10]:
 **Факторы выбора:**
 
 ```python
-
 region_selection_criteria = {
     "latency": {
         "description": "Близость к пользователям",
@@ -226,12 +217,10 @@ for criterion, details in region_selection_criteria.items():
     print(f"[{details['priority']}] {criterion.upper()}")
     print(f"    {details['description']}")
     print(f"    Example: {details['example']}\n")
-
 ```
 
 **Output:**
 ```
-
 Критерии выбора региона:
 
 [HIGH] LATENCY
@@ -253,13 +242,13 @@ for criterion, details in region_selection_criteria.items():
 [MEDIUM] DISASTER_RECOVERY
     Географическое распределение для DR
     Example: Primary: eu-west-1, DR: eu-central-1
-
 ```
 
 ### 2.4 Сравнение цен по регионам
 
 ```python
 # Примерные цены EC2 t3.medium (Linux) по регионам
+
 ec2_pricing_t3_medium = {
     "us-east-1": 0.0416,      # N. Virginia (базовая цена)
     "us-east-2": 0.0416,      # Ohio
@@ -279,12 +268,10 @@ for region, price in sorted(ec2_pricing_t3_medium.items(), key=lambda x: x[1]):
     diff = ((price - base_price) / base_price) * 100
     sign = "+" if diff > 0 else ""
     print(f"  {region:18} ${price:.4f}/hr  ({sign}{diff:.0f}%)")
-
 ```
 
 **Output:**
 ```
-
 EC2 t3.medium hourly pricing by region:
 
   us-east-1          $0.0416/hr  (+0%)
@@ -296,7 +283,6 @@ EC2 t3.medium hourly pricing by region:
   ap-southeast-1     $0.0528/hr  (+27%)
   ap-northeast-1     $0.0544/hr  (+31%)
   sa-east-1          $0.0680/hr  (+63%)
-
 ```
 
 ---
@@ -308,7 +294,6 @@ EC2 t3.medium hourly pricing by region:
 **Availability Zone** — это один или несколько физически изолированных дата-центров внутри региона с независимым питанием, охлаждением и сетью.
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                    Availability Zone Design                      │
 ├──────────────────────────────────────────────────────────────────┤
@@ -343,7 +328,6 @@ EC2 t3.medium hourly pricing by region:
 │  • Расстояние: несколько километров до ~100 км                   │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 AZ Naming
@@ -364,12 +348,10 @@ for az in azs['AvailabilityZones']:
     print(f"  Zone ID: {az['ZoneId']}")  # Уникальный ID (одинаков везде)
     print(f"  State: {az['State']}")
     print()
-
 ```
 
 **Output:**
 ```
-
 Availability Zones in us-east-1:
 
   Name: us-east-1a
@@ -395,7 +377,6 @@ Availability Zones in us-east-1:
   Name: us-east-1f
   Zone ID: use1-az5
   State: available
-
 ```
 
 > **💡 Pro Tip:**  
@@ -404,7 +385,6 @@ Availability Zones in us-east-1:
 ### 3.3 Multi-AZ архитектура
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │               Multi-AZ High Availability Architecture            │
 ├──────────────────────────────────────────────────────────────────┤
@@ -448,7 +428,6 @@ Availability Zones in us-east-1:
 │  • Low latency между AZ (< 2ms)                                  │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.4 Latency между AZ
@@ -480,12 +459,10 @@ for scenario, data in latency_measurements.items():
     print(f"  {data['description']}")
     print(f"  Latency: ~{data['latency_ms']} ms")
     print(f"  Use case: {data['use_case']}\n")
-
 ```
 
 **Output:**
 ```
-
 Network Latency in AWS:
 
 SAME_AZ
@@ -502,7 +479,6 @@ CROSS_REGION
   EC2 to EC2 в разных регионах
   Latency: ~50-200+ ms
   Use case: Disaster recovery
-
 ```
 
 ---
@@ -514,7 +490,6 @@ CROSS_REGION
 **Edge Location** — это точка присутствия (Point of Presence, PoP) для сервисов доставки контента. AWS имеет 600+ Edge Locations по всему миру.
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Edge Network Architecture                       │
 ├────────────────────────────────────────────────────────────────────┤
@@ -545,13 +520,11 @@ CROSS_REGION
 │  └─────────────────────┘                                           │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Сервисы на Edge
 
 ```python
-
 edge_services = {
     "CloudFront": {
         "type": "CDN",
@@ -591,12 +564,10 @@ for service, details in edge_services.items():
     print(f"   {details['description']}")
     print(f"   Use cases: {', '.join(details['use_cases'][:2])}")
     print()
-
 ```
 
 **Output:**
 ```
-
 AWS Edge Services:
 
 📡 CloudFront (CDN)
@@ -618,13 +589,13 @@ AWS Edge Services:
 📡 Global Accelerator (Networking)
    Improve availability and performance
    Use cases: Gaming, IoT
-
 ```
 
 ### 4.3 CloudFront Distribution
 
 ```bash
 # Создание CloudFront distribution через CLI
+
 aws cloudfront create-distribution \
     --distribution-config '{
         "CallerReference": "my-distribution-2024",
@@ -649,7 +620,6 @@ aws cloudfront create-distribution \
         "Enabled": true,
         "Comment": "My CloudFront Distribution"
     }'
-
 ```
 
 ---
@@ -661,7 +631,6 @@ aws cloudfront create-distribution \
 **Local Zone** — расширение региона AWS, расположенное ближе к конечным пользователям в крупных городах.
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                       Local Zones                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -691,7 +660,6 @@ aws cloudfront create-distribution \
 │  • Application Load Balancer                                       │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.2 Wavelength Zones
@@ -699,7 +667,6 @@ aws cloudfront create-distribution \
 **Wavelength Zone** — инфраструктура AWS внутри 5G сетей операторов для ultra-low latency приложений.
 
 ```python
-
 wavelength_use_cases = {
     "mobile_gaming": {
         "latency_requirement": "< 10ms",
@@ -724,12 +691,10 @@ for use_case, details in wavelength_use_cases.items():
     print(f"📱 {use_case.replace('_', ' ').title()}")
     print(f"   Latency: {details['latency_requirement']}")
     print(f"   {details['description']}\n")
-
 ```
 
 **Output:**
 ```
-
 Wavelength Zone Use Cases:
 
 📱 Mobile Gaming
@@ -747,7 +712,6 @@ Wavelength Zone Use Cases:
 📱 Smart Factories
    Latency: < 5ms
    Industrial IoT, robotics
-
 ```
 
 ---
@@ -757,7 +721,6 @@ Wavelength Zone Use Cases:
 ### 6.1 Классификация сервисов
 
 ```python
-
 service_scope = {
     "global": {
         "description": "Работают глобально, не привязаны к региону",
@@ -804,12 +767,10 @@ for scope, data in service_scope.items():
         print(f"  • {svc}")
     if len(data['services']) > 5:
         print(f"  ... and {len(data['services']) - 5} more")
-
 ```
 
 **Output:**
 ```
-
 GLOBAL SERVICES
 Работают глобально, не привязаны к региону
 ----------------------------------------
@@ -836,7 +797,6 @@ AZ_SPECIFIC SERVICES
   • EBS volumes
   • Subnets
   • RDS instances (single-AZ)
-
 ```
 
 ### 6.2 ARN и регионы
@@ -860,12 +820,10 @@ for resource, arn in arn_examples.items():
     print(f"{resource}:")
     print(f"  ARN: {arn}")
     print(f"  Region: {region}\n")
-
 ```
 
 **Output:**
 ```
-
 ARN Format: arn:aws:service:region:account-id:resource
 
 EC2 Instance:
@@ -887,7 +845,6 @@ IAM Role:
 DynamoDB Table:
   ARN: arn:aws:dynamodb:ap-northeast-1:123456789012:table/MyTable
   Region: ap-northeast-1
-
 ```
 
 ---
@@ -897,7 +854,6 @@ DynamoDB Table:
 ### 7.1 Уровни отказоустойчивости
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │              Levels of High Availability                           │
 ├────────────────────────────────────────────────────────────────────┤
@@ -927,13 +883,11 @@ DynamoDB Table:
 │  • Complexity: VERY HIGH                                           │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 7.2 Multi-Region Architecture
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                Multi-Region Active-Passive                        │
 ├───────────────────────────────────────────────────────────────────┤
@@ -970,13 +924,11 @@ DynamoDB Table:
 │  RPO: ~1 second (Aurora Global Database async replication)        │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 7.3 RTO и RPO
 
 ```python
-
 disaster_recovery_metrics = {
     "RTO": {
         "full_name": "Recovery Time Objective",
@@ -1006,12 +958,10 @@ for metric, data in disaster_recovery_metrics.items():
     for use_case, value in data['examples'].items():
         print(f"    • {use_case.replace('_', ' ').title()}: {value}")
     print()
-
 ```
 
 **Output:**
 ```
-
 Disaster Recovery Metrics:
 
 RTO (Recovery Time Objective)
@@ -1027,7 +977,6 @@ RPO (Recovery Point Objective)
     • Financial Transactions: 0 (no data loss)
     • E Commerce Orders: < 1 hour
     • Analytics: < 24 hours
-
 ```
 
 ---
@@ -1039,6 +988,7 @@ RPO (Recovery Point Objective)
 ❌ **Проблема:**
 ```python
 # Все ресурсы в одном AZ для "простоты"
+
 resources = {
     "ec2": "us-east-1a",
     "rds": "us-east-1a",
@@ -1050,12 +1000,12 @@ resources = {
 ✅ **Решение:**
 ```python
 # Распределение по AZ
+
 resources = {
     "ec2": ["us-east-1a", "us-east-1b", "us-east-1c"],
     "rds": "Multi-AZ (automatic failover)",
     "elasticache": "Cluster mode (multiple nodes in multiple AZs)"
 }
-
 ```
 
 ### 8.2 Pitfall: Hardcoded AZ names
@@ -1063,6 +1013,7 @@ resources = {
 ❌ **Проблема:**
 ```python
 # Hardcoded AZ в коде
+
 availability_zone = "us-east-1a"  # Плохо!
 
 # При деплое в другой аккаунт us-east-1a может быть другим физическим AZ
@@ -1070,7 +1021,6 @@ availability_zone = "us-east-1a"  # Плохо!
 
 ✅ **Решение:**
 ```python
-
 import boto3
 
 def get_available_azs(region: str) -> list:
@@ -1095,23 +1045,21 @@ def get_available_azs(region: str) -> list:
 # Data transfer between AZs: $0.01/GB в каждую сторону
 
 # При 10TB/месяц между AZ:
+
 monthly_cross_az_traffic = 10 * 1024  # GB
 cost_per_gb = 0.01 * 2  # оба направления
 monthly_cost = monthly_cross_az_traffic * cost_per_gb
 print(f"Cross-AZ traffic cost: ${monthly_cost}")  # $204.80!
-
 ```
 
 ✅ **Решение:**
 ```python
-
 strategies = [
     "Размещать взаимодействующие компоненты в одном AZ когда возможно",
     "Использовать compression для уменьшения объёма данных",
     "Кэшировать данные локально (ElastiCache)",
     "Использовать VPC Endpoints для AWS сервисов"
 ]
-
 ```
 
 ---
@@ -1121,7 +1069,6 @@ strategies = [
 ### 9.1 Сценарий
 
 ```python
-
 scenario = {
     "application": "E-commerce website",
     "users": "Primarily in Europe",
@@ -1137,24 +1084,20 @@ scenario = {
 print("Scenario Analysis:")
 for key, value in scenario.items():
     print(f"  {key}: {value}")
-
 ```
 
 **Output:**
 ```
-
 Scenario Analysis:
   application: E-commerce website
   users: Primarily in Europe
   requirements: {'availability': '99.95%', 'rto': '1 hour', 'rpo': '5 minutes', 'compliance': 'GDPR (data must stay in EU)'}
   traffic_pattern: Peaks during Black Friday (10x normal)
-
 ```
 
 ### 9.2 Рекомендуемая архитектура
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │            Recommended Architecture: E-commerce                    │
 ├────────────────────────────────────────────────────────────────────┤
@@ -1193,7 +1136,6 @@ Scenario Analysis:
 │  Secrets Manager: Multi-region secrets                             │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -1252,6 +1194,7 @@ Scenario Analysis:
 - [AWS re:Invent: Global Infrastructure](https://www.youtube.com/results?search_query=aws+reinvent+global+infrastructure)
 
 ---
+
 
 
 

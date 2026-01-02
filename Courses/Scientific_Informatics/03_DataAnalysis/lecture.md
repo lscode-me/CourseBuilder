@@ -94,7 +94,6 @@ print("Visualizations created")
 
 **Output:**
 ```
-
 Visualizations created
 ```
 
@@ -124,7 +123,6 @@ print(outliers)
 
 **Output:**
 ```
-
 Found 2 outliers:
    temperature  reaction_rate
 5           25       8.123456
@@ -154,7 +152,6 @@ Found 2 outliers:
 **Стандартная ошибка среднего (SEM):**
 
 ```python
-
 from scipy import stats
 
 # Оценка неопределённости
@@ -175,7 +172,6 @@ print(f"95% Confidence interval: [{confidence_interval[0]:.3f}, {confidence_inte
 
 **Output:**
 ```
-
 Mean: 10.300
 Standard deviation: 0.158
 Standard error of mean: 0.071
@@ -210,7 +206,6 @@ print(f"Result: {result:.3f} ± {error:.3f}")
 
 **Output:**
 ```
-
 Result: 15.000 ± 0.112
 ```
 
@@ -274,7 +269,6 @@ print(f"Mean: {result1['mean']:.6f}")
 
 **Output:**
 ```
-
 Results match: True
 Mean: 10.012345
 ```
@@ -310,7 +304,6 @@ print(json.dumps(reproducible_project, indent=2))
 
 **Output:**
 ```
-
 Reproducible Project Structure:
 {
   "code_version": "1.0.0",
@@ -374,12 +367,10 @@ plt.xlabel('Value')
 plt.ylabel('Frequency')
 plt.title('Distribution of Measurements')
 # plt.show()
-
 ```
 
 **Output:**
 ```
-
 Loaded 100 measurements
        value
 count  100.000000
@@ -441,7 +432,6 @@ print(results)
 
 **Output:**
 ```
-
              mean       std
 temperature                
 20         11.234   1.987
@@ -501,7 +491,6 @@ for key, value in summary.items():
 
 **Output:**
 ```
-
 Scientific Summary:
   n: 8
   mean: 10.338
@@ -541,7 +530,6 @@ for key, value in test_result.items():
 
 **Output:**
 ```
-
 Hypothesis Test Results:
   t_statistic: -5.2345
   p_value: 0.0001

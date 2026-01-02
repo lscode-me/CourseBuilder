@@ -33,11 +33,9 @@
 OpenBSD использует простую систему инициализации на основе shell-скриптов:
 
 ```
-
 Загрузка → /etc/rc → /etc/rc.d/* → /etc/rc.local
                          ↓
               /etc/rc.conf.local (настройки)
-
 ```
 
 ### 1.2 Основные файлы
@@ -55,6 +53,7 @@ OpenBSD использует простую систему инициализа�
 
 ```sh
 # Все доступные службы
+
 $ ls /etc/rc.d/
 apmd        ftpproxy    ntpd        smtpd       unbound
 bgpd        httpd       ospfd       snmpd       vmd
@@ -62,9 +61,9 @@ cron        iked        pflogd      spamd       watchdogd
 dhcpd       inetd       ppp         sshd        ...
 
 # Службы базовой системы
+
 $ ls /etc/rc.d/ | wc -l
 42
-
 ```
 
 ---
@@ -93,10 +92,12 @@ $ ls /etc/rc.d/ | wc -l
 # doas rcctl reload nginx
 
 # Проверить статус
+
 $ doas rcctl check sshd
 sshd(ok)
 
 # Получить все настройки службы
+
 $ rcctl get sshd
 sshd_class=daemon
 sshd_flags=
@@ -104,13 +105,13 @@ sshd_logger=
 sshd_rtable=0
 sshd_timeout=30
 sshd_user=root
-
 ```
 
 ### 2.2 Просмотр состояния
 
 ```sh
 # Статус всех служб
+
 $ rcctl ls all
 apmd
 bgpd(disabled)
@@ -123,6 +124,7 @@ sshd
 ...
 
 # Только запущенные
+
 $ rcctl ls started
 cron
 ntpd
@@ -130,6 +132,7 @@ pflogd
 sshd
 
 # Только включённые (автозапуск)
+
 $ rcctl ls on
 cron
 ntpd
@@ -137,11 +140,11 @@ pflogd
 sshd
 
 # Выключенные
+
 $ rcctl ls off
 httpd
 nginx
 smtpd
-
 ```
 
 ### 2.3 Настройка параметров службы
@@ -157,9 +160,9 @@ smtpd
 # doas rcctl set slowservice timeout 60
 
 # Просмотреть флаги
+
 $ rcctl get httpd flags
 httpd_flags=-f /etc/httpd.custom.conf
-
 ```
 
 ---
@@ -172,16 +175,18 @@ httpd_flags=-f /etc/httpd.custom.conf
 # /etc/rc.conf.local
 
 # Включить службу
+
 sshd_flags=""
 ntpd_flags="-s"
 httpd_flags=""
 
 # Выключенные службы (не запускать)
+
 smtpd_flags=NO
 
 # Пакетные службы
-pkg_scripts="nginx php82_fpm redis"
 
+pkg_scripts="nginx php82_fpm redis"
 ```
 
 ### 3.2 Порядок запуска
@@ -190,8 +195,8 @@ pkg_scripts="nginx php82_fpm redis"
 
 ```sh
 # Указать порядок
-pkg_scripts="mysqld php82_fpm nginx"
 
+pkg_scripts="mysqld php82_fpm nginx"
 ```
 
 ---
@@ -210,7 +215,6 @@ daemon_flags=""
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
-
 ```
 
 ### 4.2 Расширенный шаблон
@@ -223,9 +227,11 @@ daemon_user="_myapp"
 daemon_flags="-c /etc/myapp.conf"
 
 # Файл PID (если не стандартный)
+
 pexp="/usr/local/bin/myapp.*"
 
 # Зависимости
+
 rc_pre() {
     # Проверки перед запуском
     if [ ! -f /etc/myapp.conf ]; then
@@ -242,7 +248,6 @@ rc_post() {
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
-
 ```
 
 ### 4.3 Переменные rc.subr
@@ -281,6 +286,7 @@ rc_cmd $1
 
 ```sh
 # /etc/httpd.conf
+
 server "example.com" {
     listen on * port 80
     root "/htdocs/example.com"
@@ -303,6 +309,7 @@ server "example.com" {
 
 ```sh
 # /etc/mail/smtpd.conf
+
 listen on lo0
 listen on egress tls pki mail.example.com
 
@@ -321,6 +328,7 @@ match from local for any action "relay"
 
 ```sh
 # /etc/ntpd.conf
+
 servers pool.ntp.org
 sensor *
 
@@ -334,6 +342,7 @@ sensor *
 
 ```sh
 # /var/unbound/etc/unbound.conf
+
 server:
     interface: 127.0.0.1
     interface: ::1
@@ -366,9 +375,9 @@ server:
 # doas rcctl start nginx
 
 # Проверить
+
 $ doas rcctl check nginx
 nginx(ok)
-
 ```
 
 ### 6.2 PHP-FPM
@@ -410,6 +419,7 @@ nginx(ok)
 
 # Инициализация
 # doas su - _postgresql
+
 $ initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W
 $ exit
 
@@ -426,30 +436,32 @@ $ exit
 
 ```sh
 # Проверить все службы
+
 for s in $(rcctl ls on); do
     rcctl check $s
 done
 
 # Проверить конкретную
+
 $ doas rcctl check nginx
 nginx(ok)
 
 $ doas rcctl check httpd
 httpd(failed)
-
 ```
 
 ### 7.2 Логирование
 
 ```sh
 # Системные логи
+
 $ tail -f /var/log/messages
 $ tail -f /var/log/daemon
 
 # Логи служб
+
 $ tail -f /var/log/nginx/error.log
 $ tail -f /var/www/logs/error.log
-
 ```
 
 ### 7.3 Автоматический перезапуск
@@ -458,8 +470,8 @@ $ tail -f /var/www/logs/error.log
 
 ```sh
 # /etc/cron.d/check_services
-*/5 * * * * root rcctl check nginx || rcctl restart nginx
 
+*/5 * * * * root rcctl check nginx || rcctl restart nginx
 ```
 
 ---
@@ -486,7 +498,6 @@ daemon_flags="-c /etc/myapp.conf"
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
-
 ```
 
 ```sh
@@ -521,7 +532,6 @@ rc_start() {
 . /etc/rc.d/rc.subr
 
 rc_cmd $1
-
 ```
 
 ---
@@ -536,6 +546,7 @@ rc_cmd $1
 
 # Настройка nginx с PHP
 # /etc/nginx/nginx.conf
+
 server {
     listen 80;
     root /var/www/htdocs;
@@ -561,6 +572,7 @@ server {
 
 # Настроить smtpd
 # /etc/mail/smtpd.conf
+
 listen on lo0
 listen on egress tls pki mail.example.com
 
@@ -592,38 +604,41 @@ match from local for any action "outbound"
 # doas -u _nginx nginx -g "daemon off;"
 
 # Проверить логи
+
 $ tail -50 /var/log/messages
 $ tail -50 /var/log/daemon
-
 ```
 
 ### 10.2 Служба падает после запуска
 
 ```sh
 # Проверить права на файлы
+
 $ ls -la /var/run/nginx.pid
 $ ls -la /var/www/
 
 # Проверить лимиты
+
 $ ulimit -a
 
 # Проверить процесс
-$ ps aux | grep nginx
 
+$ ps aux | grep nginx
 ```
 
 ### 10.3 Служба не отвечает
 
 ```sh
 # Проверить, слушает ли порт
+
 $ netstat -an | grep LISTEN | grep 80
 
 # Проверить файрвол
 # doas pfctl -sr | grep 80
 
 # Проверить соединение локально
-$ nc -vz localhost 80
 
+$ nc -vz localhost 80
 ```
 
 ---
@@ -675,6 +690,7 @@ $ nc -vz localhost 80
 - [man smtpd.conf](https://man.openbsd.org/smtpd.conf) — почтовый сервер
 
 ---
+
 
 
 

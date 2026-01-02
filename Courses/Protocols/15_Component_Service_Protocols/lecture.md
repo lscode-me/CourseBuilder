@@ -53,7 +53,6 @@
 ### 2.2 Базовая модель
 
 ```
-
 Producer → [Queue] → Consumer
 
 Producer отправляет: {"order_id": 123, "action": "process"}
@@ -70,10 +69,10 @@ Consumer получает и обрабатывает
 ### 2.3 Пример: RabbitMQ
 
 ```python
-
 import pika
 
 # Producer
+
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
 channel.queue_declare(queue='tasks')
@@ -87,6 +86,7 @@ print("Sent message")
 connection.close()
 
 # Consumer
+
 def callback(ch, method, properties, body):
     print(f"Received: {body}")
     # Process message
@@ -106,7 +106,6 @@ channel.start_consuming()
 **Решение:** Acknowledgments (ACK)
 
 ```
-
 1. Consumer получает сообщение
 2. Consumer обрабатывает сообщение
 3. Consumer отправляет ACK
@@ -134,7 +133,6 @@ channel.start_consuming()
 ### 3.2 Пример: Order Processing
 
 ```
-
 Order Service → Event: OrderCreated
     ↓
 Event Bus
@@ -153,7 +151,6 @@ Event Bus
 ### 3.3 Event structure
 
 ```json
-
 {
   "event_id": "550e8400-e29b-41d4-a716-446655440000",
   "event_type": "OrderCreated",
@@ -171,7 +168,6 @@ Event Bus
 **Event Sourcing** — хранение всех изменений как последовательность событий.
 
 ```
-
 Events:
 
 1. OrderCreated {order_id: 123, items: [...]}
@@ -204,7 +200,6 @@ Current state = применение всех событий
 ### 4.2 Модель
 
 ```
-
 Publisher → Topic: "orders" → Subscriber 1 (Inventory)
                            → Subscriber 2 (Notifications)
                            → Subscriber 3 (Analytics)
@@ -215,7 +210,6 @@ Publisher → Topic: "orders" → Subscriber 1 (Inventory)
 ### 4.3 Пример: Redis Pub/Sub
 
 ```python
-
 import redis
 
 # Publisher
@@ -224,6 +218,7 @@ r = redis.Redis()
 r.publish('orders', 'New order: 123')
 
 # Subscriber
+
 p = r.pubsub()
 p.subscribe('orders')
 
@@ -236,7 +231,6 @@ for message in p.listen():
 
 **Hierarchical topics:**
 ```
-
 orders/created
 orders/paid
 orders/shipped
@@ -244,7 +238,6 @@ orders/shipped
 
 **Wildcards:**
 ```
-
 orders/*           # все события orders
 orders/created     # только created
 
@@ -260,7 +253,6 @@ orders/created     # только created
 **Проблема:** Producer быстрее consumer, очередь растёт → OOM (Out of Memory).
 
 ```
-
 Producer: 1000 msg/sec
 Consumer: 100 msg/sec
 Queue: растёт на 900 msg/sec → через 100 сек = 90k сообщений!
@@ -270,14 +262,12 @@ Queue: растёт на 900 msg/sec → через 100 сек = 90k сообщ�
 
 **1. Blocking (блокировка producer):**
 ```python
-
 queue.put(message, block=True, timeout=5)
 # Блокируется, если очередь заполнена
 ```
 
 **2. Drop (отбрасывание сообщений):**
 ```python
-
 try:
     queue.put_nowait(message)
 except queue.Full:
@@ -286,15 +276,12 @@ except queue.Full:
 
 **3. Buffering with limit:**
 ```python
-
 queue = Queue(maxsize=1000)
 # Ограничение размера очереди
-
 ```
 
 **4. Rate limiting (ограничение скорости):**
 ```python
-
 import time
 
 for message in messages:
@@ -306,7 +293,6 @@ for message in messages:
 
 **Protocol for backpressure:**
 ```
-
 Consumer: Request(10) → Producer
 Producer: onNext(msg1), onNext(msg2), ... onNext(msg10)
 Consumer: Request(10) → Producer
@@ -323,7 +309,6 @@ Consumer контролирует скорость через requests.
 
 **Application level:**
 ```python
-
 class RateLimitedProducer:
     def __init__(self, max_rate):
         self.max_rate = max_rate
@@ -378,7 +363,6 @@ class RateLimitedProducer:
 **Для at-least-once нужна идемпотентность:**
 
 ```python
-
 def process_order(order_id):
     # Проверка, не обработан ли уже
     if is_already_processed(order_id):
@@ -436,6 +420,7 @@ def process_order(order_id):
 - Изучите Reactive Streams spec для стандартизированного backpressure
 
 ---
+
 
 
 

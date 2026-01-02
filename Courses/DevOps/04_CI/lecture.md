@@ -32,7 +32,6 @@
 **Continuous Integration (CI)** — практика частой интеграции изменений кода в общий репозиторий с автоматической проверкой каждого изменения.
 
 ```
-
 Developer A ──┐
               │
 Developer B ──┼──▶ Main Branch ──▶ Automated Build ──▶ Automated Tests
@@ -40,7 +39,6 @@ Developer B ──┼──▶ Main Branch ──▶ Automated Build ──▶ A
 Developer C ──┘          │
                          │
               Fast feedback ◀────────────────────────────┘
-
 ```
 
 ### 1.2 Ключевые принципы CI
@@ -85,6 +83,7 @@ Developer C ──┘          │
 
 ```python
 # Сравнение: с CI vs без CI
+
 comparison = {
     "integration_frequency": {
         "without_ci": "Раз в неделю/месяц (merge hell)",
@@ -107,7 +106,6 @@ comparison = {
         "with_ci": "Минуты"
     }
 }
-
 ```
 
 ---
@@ -119,7 +117,6 @@ comparison = {
 **Рекомендуемый подход для CI/CD:**
 
 ```
-
 main ─────●─────●─────●─────●─────●─────●─────●─────▶
           │     │     │     │     │     │     │
           │     ├──○──┘     │     ├──○──┘     │
@@ -129,7 +126,6 @@ main ─────●─────●─────●─────●─
     (direct commits        (direct commits   (direct commits
      to main OR             to main OR        to main)
      short branches)        short branches)
-
 ```
 
 **Правила trunk-based:**
@@ -144,7 +140,6 @@ main ─────●─────●─────●─────●─
 **Упрощённый workflow:**
 
 ```
-
 main ─────●─────●─────────────●─────────────●─────▶
           │                   │             │
           └──○──○──○──────────┘             │
@@ -153,7 +148,6 @@ main ─────●─────●─────────────
                                            │
                         └──○──○────────────┘
                             hotfix branch
-
 ```
 
 **Шаги:**
@@ -170,7 +164,6 @@ main ─────●─────●─────────────
 **Сложный workflow, менее подходит для CI/CD:**
 
 ```
-
 main     ─────●───────────────────●───────────────▶
               │                   │
 develop  ─────●─────●─────●───────●─────●─────▶
@@ -180,7 +173,6 @@ feature  ─────○─────┘     │       │     │
 release  ─────────────────○───────┘     │
                                         │
 hotfix   ───────────────────────────────○──▶
-
 ```
 
 **Недостатки GitFlow:**
@@ -193,7 +185,6 @@ hotfix   ───────────────────────�
 ### 2.4 Выбор стратегии
 
 ```python
-
 def choose_branching_strategy(context: dict) -> str:
     """Recommend branching strategy based on context."""
     
@@ -209,7 +200,6 @@ def choose_branching_strategy(context: dict) -> str:
         return "trunk-based"
     
     return "github-flow"  # Safe default
-
 ```
 
 ---
@@ -219,7 +209,6 @@ def choose_branching_strategy(context: dict) -> str:
 ### 3.1 Структура Pipeline
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         CI Pipeline                                 │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -236,13 +225,13 @@ def choose_branching_strategy(context: dict) -> str:
 │  Total pipeline time target: < 15 minutes                           │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 GitHub Actions Example
 
 ```yaml
 # .github/workflows/ci.yml
+
 name: CI Pipeline
 
 on:
@@ -348,13 +337,13 @@ jobs:
           image-ref: myapp:${{ github.sha }}
           exit-code: '1'
           severity: 'CRITICAL,HIGH'
-
 ```
 
 ### 3.3 GitLab CI Example
 
 ```yaml
 # .gitlab-ci.yml
+
 stages:
   - lint
   - test
@@ -425,7 +414,6 @@ security_scan:
     - trivy image --exit-code 1 --severity HIGH,CRITICAL $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
-
 ```
 
 ---
@@ -435,7 +423,6 @@ security_scan:
 ### 4.1 Test Pyramid
 
 ```
-
                     ┌─────────────┐
                    │    E2E      │  Slow, expensive
                    │   Tests     │  Few tests
@@ -446,7 +433,6 @@ security_scan:
               │    Unit Tests     │  Fast, cheap
              │                    │  Many tests
             └──────────────────────┘
-
 ```
 
 **Рекомендуемое соотношение:**
@@ -459,14 +445,17 @@ security_scan:
 
 ```python
 # pytest markers для разных типов тестов
+
 import pytest
 
 # Unit test - быстрый, изолированный
+
 @pytest.mark.unit
 def test_calculate_discount():
     assert calculate_discount(100, 0.1) == 90
 
 # Integration test - проверяет взаимодействие компонентов
+
 @pytest.mark.integration
 def test_order_service_creates_order(db_session):
     service = OrderService(db_session)
@@ -475,6 +464,7 @@ def test_order_service_creates_order(db_session):
     assert order.status == "pending"
 
 # E2E test - проверяет весь flow
+
 @pytest.mark.e2e
 def test_user_can_complete_checkout(browser):
     browser.visit("/products")
@@ -485,12 +475,12 @@ def test_user_can_complete_checkout(browser):
     assert "Order confirmed" in browser.page_source
 
 # Slow test marker
+
 @pytest.mark.slow
 def test_large_data_processing():
     # Этот тест занимает много времени
     result = process_million_records()
     assert result.success
-
 ```
 
 ### 4.3 CI Test Strategy
@@ -529,7 +519,6 @@ jobs:
       - name: Run E2E tests
         run: pytest -m "e2e" --timeout=120
     timeout-minutes: 30
-
 ```
 
 ### 4.4 Flaky Tests
@@ -538,6 +527,7 @@ jobs:
 
 ```python
 # Пример flaky test
+
 def test_api_response_time():
     start = time.time()
     response = requests.get("https://api.example.com/data")
@@ -547,19 +537,20 @@ def test_api_response_time():
     assert duration < 1.0  # Может fail при медленной сети
 
 # Исправленная версия
+
 def test_api_returns_valid_data():
     response = requests.get("https://api.example.com/data")
     
     # Проверяем функциональность, не performance
     assert response.status_code == 200
     assert "data" in response.json()
-
 ```
 
 **Стратегия работы с flaky tests:**
 
 ```yaml
 # Quarantine flaky tests
+
 jobs:
   stable-tests:
     runs-on: ubuntu-latest
@@ -573,7 +564,6 @@ jobs:
     steps:
       - name: Run flaky tests (quarantine)
         run: pytest -m "flaky" --reruns 3
-
 ```
 
 ---
@@ -584,6 +574,7 @@ jobs:
 
 ```yaml
 # Параллельное выполнение независимых jobs
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -603,13 +594,13 @@ jobs:
   integration-tests:
     needs: [lint, unit-tests]  # Зависимость
     runs-on: ubuntu-latest
-
 ```
 
 **Параллельные тесты (test sharding):**
 
 ```yaml
 # Разбиение тестов на части
+
 test:
   runs-on: ubuntu-latest
   strategy:
@@ -619,13 +610,13 @@ test:
     - name: Run test shard
       run: |
         pytest --shard-id=${{ matrix.shard }} --num-shards=4
-
 ```
 
 ### 5.2 Caching
 
 ```yaml
 # Кэширование зависимостей
+
 steps:
   - uses: actions/checkout@v4
   
@@ -651,13 +642,13 @@ steps:
       key: ${{ runner.os }}-buildx-${{ github.sha }}
       restore-keys: |
         ${{ runner.os }}-buildx-
-
 ```
 
 ### 5.3 Incremental Builds
 
 ```yaml
 # Запуск только изменённых компонентов
+
 jobs:
   detect-changes:
     runs-on: ubuntu-latest
@@ -691,13 +682,13 @@ jobs:
     steps:
       - name: Test frontend
         run: npm test
-
 ```
 
 ### 5.4 Target Pipeline Times
 
 ```python
 # Целевые времена для CI pipeline
+
 target_times = {
     "commit_to_feedback": "< 10 min",  # Идеально
     "acceptable": "< 15 min",
@@ -722,7 +713,6 @@ def diagnose_slow_pipeline(actual_times: dict) -> list[str]:
         if target and actual > parse_time(target):
             issues.append(f"{stage}: {actual} (target: {target})")
     return issues
-
 ```
 
 ---
@@ -733,6 +723,7 @@ def diagnose_slow_pipeline(actual_times: dict) -> list[str]:
 
 ```yaml
 # Обязательные проверки качества
+
 name: Quality Gates
 
 on: [pull_request]
@@ -764,13 +755,13 @@ jobs:
       # Dependency check
       - name: Check dependencies
         run: pip-audit
-
 ```
 
 ### 6.2 Branch Protection Rules
 
 ```yaml
 # Рекомендуемые настройки Branch Protection (GitHub)
+
 branch_protection:
   main:
     required_status_checks:
@@ -790,7 +781,6 @@ branch_protection:
     restrictions:
       users: []
       teams: ["maintainers"]
-
 ```
 
 ### 6.3 CODEOWNERS
@@ -799,21 +789,24 @@ branch_protection:
 # .github/CODEOWNERS
 
 # Default owners
+
 * @team-leads
 
 # Backend
+
 /backend/ @backend-team
 /backend/api/ @api-team @backend-team
 
 # Infrastructure
+
 /terraform/ @platform-team
 /k8s/ @platform-team
 /.github/workflows/ @platform-team
 
 # Security-sensitive
+
 /auth/ @security-team @backend-team
 **/secrets* @security-team
-
 ```
 
 ---
@@ -824,6 +817,7 @@ branch_protection:
 
 ```yaml
 # Собираем artifact один раз, используем во всех environments
+
 build:
   runs-on: ubuntu-latest
   outputs:
@@ -855,13 +849,13 @@ deploy-production:
       run: |
         # Тот же image, другой environment
         helm upgrade app ./chart --set image.tag=${{ needs.build.outputs.image-tag }}
-
 ```
 
 ### 7.2 Environment Variables
 
 ```yaml
 # Правильное управление секретами
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -886,6 +880,7 @@ jobs:
 
 ```yaml
 # Уведомления о статусе pipeline
+
 notify:
   runs-on: ubuntu-latest
   needs: [test, build]
@@ -912,13 +907,13 @@ notify:
           }
       env:
         SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-
 ```
 
 ### 7.4 Self-Hosted Runners
 
 ```yaml
 # Когда использовать self-hosted runners
+
 self_hosted_use_cases:
   - "Нужен доступ к internal resources"
   - "Специфическое hardware (GPU, ARM)"
@@ -926,13 +921,13 @@ self_hosted_use_cases:
   - "Большой объём CI (экономия на GitHub Actions minutes)"
 
 # Пример использования
+
 jobs:
   build:
     runs-on: self-hosted  # Вместо ubuntu-latest
     steps:
       - name: Build on internal server
         run: make build
-
 ```
 
 ---
@@ -943,6 +938,7 @@ jobs:
 
 ```python
 # CI Metrics
+
 ci_metrics = {
     "pipeline_duration": {
         "description": "Время выполнения pipeline",
@@ -970,7 +966,6 @@ ci_metrics = {
         "measurement": "time from failure to green"
     }
 }
-
 ```
 
 ### 8.2 CI Dashboard
@@ -991,7 +986,6 @@ metrics:
   - name: ci_test_count
     type: gauge
     labels: [repository, test_type, status]
-
 ```
 
 ---
@@ -1052,6 +1046,7 @@ metrics:
 - [Trunk Based Development](https://trunkbaseddevelopment.com/)
 
 ---
+
 
 
 

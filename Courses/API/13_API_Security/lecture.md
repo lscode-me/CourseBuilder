@@ -40,6 +40,7 @@
 
 ```python
 # Шаг 1: Клиент запрашивает авторизацию
+
 def get_authorization_url(client_id, redirect_uri, scope):
     """Генерация URL для авторизации"""
     auth_url = "https://auth.example.com/authorize"
@@ -53,9 +54,11 @@ def get_authorization_url(client_id, redirect_uri, scope):
     return f"{auth_url}?{urlencode(params)}"
 
 # Шаг 2: Пользователь авторизуется, получает код
+
 authorization_code = "abc123xyz"
 
 # Шаг 3: Обмен кода на токен
+
 def exchange_code_for_token(code, client_id, client_secret, redirect_uri):
     """Обмен authorization code на access token"""
     token_url = "https://auth.example.com/token"
@@ -70,6 +73,7 @@ def exchange_code_for_token(code, client_id, client_secret, redirect_uri):
     return response.json()
 
 # Шаг 4: Использование access token
+
 def access_api_with_token(access_token):
     """Доступ к API с токеном"""
     headers = {"Authorization": f"Bearer {access_token}"}
@@ -108,7 +112,6 @@ def access_api_with_token(access_token):
 **Example: Работа с JWT**
 
 ```python
-
 import jwt
 from datetime import datetime, timedelta
 
@@ -144,7 +147,6 @@ payload, error = verify_jwt_token(token, secret)
 **Example: JWT с scopes**
 
 ```python
-
 def create_jwt_with_scopes(user_id, scopes, secret):
     """Создание JWT с scopes"""
     payload = {
@@ -175,7 +177,6 @@ def check_scope(token, secret, required_scope):
 **Example: Управление scopes**
 
 ```python
-
 class ScopeManager:
     """Управление scopes и permissions"""
     
@@ -219,7 +220,6 @@ if scope_manager.validate_scope(token_scopes, "read:users"):
 **Example: Детальные permissions**
 
 ```python
-
 def check_permission(user, resource, action):
     """Проверка детального permission"""
     user_permissions = get_user_permissions(user.id)
@@ -243,7 +243,6 @@ if check_permission(user, "users", "read"):
 **Example: Rate Limiting**
 
 ```python
-
 from functools import wraps
 from flask import request, jsonify
 import time
@@ -301,7 +300,6 @@ def get_users():
 **Example: Throttling**
 
 ```python
-
 class Throttler:
     """Throttling для ограничения скорости запросов"""
     
@@ -339,7 +337,6 @@ class Throttler:
 **Example: Валидация и санитизация**
 
 ```python
-
 def validate_and_sanitize_input(data):
     """Валидация и санитизация входных данных"""
     # Валидация
@@ -411,5 +408,6 @@ def validate_and_sanitize_input(data):
 - "JWT Security Best Practices" — лучшие практики безопасности JWT
 
 ---
+
 
 

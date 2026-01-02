@@ -47,7 +47,6 @@
 **Пример проблемы без подзапросов:**
 
 ```sql
-
 -- Нужно найти пользователей, которые сделали заказы больше среднего
 -- Без подзапросов нужны два запроса:
 SELECT AVG(amount) FROM orders;  -- Сначала узнаём среднее
@@ -58,7 +57,6 @@ SELECT * FROM orders WHERE amount > 187.50;
 **С подзапросом:**
 
 ```sql
-
 SELECT * FROM orders 
 WHERE amount > (SELECT AVG(amount) FROM orders);
 ```
@@ -72,7 +70,6 @@ WHERE amount > (SELECT AVG(amount) FROM orders);
 **Скалярные подзапросы (возвращают одно значение):**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100),
@@ -103,7 +100,6 @@ WHERE amount > (SELECT AVG(amount) FROM orders);
 
 **Output:**
 ```
-
 id | user_id | amount
 ---+---------+--------
 2  | 1       | 200.75
@@ -115,7 +111,6 @@ id | user_id | amount
 **IN с подзапросом (возвращает список значений):**
 
 ```sql
-
 -- Пользователи, которые делали заказы
 SELECT * FROM users
 WHERE id IN (SELECT DISTINCT user_id FROM orders);
@@ -123,7 +118,6 @@ WHERE id IN (SELECT DISTINCT user_id FROM orders);
 
 **Output:**
 ```
-
 id | name  | age
 ---+-------+-----
 1  | Иван  | 25
@@ -134,7 +128,6 @@ id | name  | age
 **NOT IN:**
 
 ```sql
-
 -- Пользователи без заказов
 SELECT * FROM users
 WHERE id NOT IN (SELECT DISTINCT user_id FROM orders WHERE user_id IS NOT NULL);
@@ -148,7 +141,6 @@ WHERE id NOT IN (SELECT DISTINCT user_id FROM orders WHERE user_id IS NOT NULL);
 **ANY/SOME — хотя бы одно значение:**
 
 ```sql
-
 -- Заказы больше любого заказа пользователя 1
 SELECT * FROM orders
 WHERE amount > ANY (SELECT amount FROM orders WHERE user_id = 1);
@@ -157,7 +149,6 @@ WHERE amount > ANY (SELECT amount FROM orders WHERE user_id = 1);
 **ALL — все значения:**
 
 ```sql
-
 -- Заказы больше всех заказов пользователя 1
 SELECT * FROM orders
 WHERE amount > ALL (SELECT amount FROM orders WHERE user_id = 1);
@@ -172,7 +163,6 @@ WHERE amount > ALL (SELECT amount FROM orders WHERE user_id = 1);
 **Вычисление значений на основе других таблиц:**
 
 ```sql
-
 -- Количество заказов для каждого пользователя
 SELECT 
     u.name,
@@ -183,7 +173,6 @@ FROM users u;
 
 **Output:**
 ```
-
 name  | age | orders_count
 ------+-----+-------------
 Иван  | 25  | 2
@@ -196,7 +185,6 @@ name  | age | orders_count
 **Сумма заказов для каждого пользователя:**
 
 ```sql
-
 SELECT 
     u.name,
     (SELECT SUM(amount) FROM orders o WHERE o.user_id = u.id) AS total_spent
@@ -205,7 +193,6 @@ FROM users u;
 
 **Output:**
 ```
-
 name  | total_spent
 ------+-------------
 Иван  | 301.25
@@ -236,7 +223,6 @@ name  | total_spent
 **EXISTS проверяет существование строк:**
 
 ```sql
-
 -- Пользователи, которые делали заказы
 SELECT * FROM users u
 WHERE EXISTS (
@@ -247,7 +233,6 @@ WHERE EXISTS (
 
 **Output:**
 ```
-
 id | name  | age
 ---+-------+-----
 1  | Иван  | 25
@@ -266,7 +251,6 @@ id | name  | age
 **NOT EXISTS — отсутствие строк:**
 
 ```sql
-
 -- Пользователи без заказов
 SELECT * FROM users u
 WHERE NOT EXISTS (
@@ -280,7 +264,6 @@ WHERE NOT EXISTS (
 **EXISTS обычно быстрее:**
 
 ```sql
-
 -- EXISTS (останавливается при первом совпадении)
 SELECT * FROM users u
 WHERE EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.id);
@@ -312,7 +295,6 @@ WHERE id IN (SELECT user_id FROM orders);
 **Пример:**
 
 ```sql
-
 -- Для каждого пользователя найти его самый большой заказ
 SELECT 
     u.name,
@@ -335,7 +317,6 @@ FROM users u;
 **Пример:**
 
 ```sql
-
 -- Заказы больше среднего (среднее вычисляется один раз)
 SELECT * FROM orders
 WHERE amount > (SELECT AVG(amount) FROM orders);
@@ -356,7 +337,6 @@ WHERE amount > (SELECT AVG(amount) FROM orders);
 **Подзапросы можно использовать в FROM:**
 
 ```sql
-
 -- Статистика по пользователям
 SELECT 
     user_stats.name,
@@ -377,7 +357,6 @@ WHERE user_stats.orders_count > 0;
 
 **Output:**
 ```
-
 name  | orders_count | total_spent
 ------+--------------+-------------
 Иван  | 2            | 301.25
@@ -390,7 +369,6 @@ name  | orders_count | total_spent
 **Всегда давайте алиасы подзапросам в FROM:**
 
 ```sql
-
 -- ✅ Правильно
 SELECT * FROM (SELECT ...) AS subquery;
 
@@ -407,7 +385,6 @@ SELECT * FROM (SELECT ...);
 **Пользователи с заказами больше среднего:**
 
 ```sql
-
 SELECT 
     u.name,
     SUM(o.amount) AS total_spent
@@ -426,7 +403,6 @@ HAVING SUM(o.amount) > (SELECT AVG(total) FROM (
 **Заказы, которые больше среднего заказа пользователя:**
 
 ```sql
-
 SELECT 
     o1.id,
     o1.user_id,
@@ -444,7 +420,6 @@ WHERE o1.amount > (
 **Пользователи с заказами за последний месяц:**
 
 ```sql
-
 ALTER TABLE orders ADD COLUMN order_date DATE;
 UPDATE orders SET order_date = CURRENT_DATE - INTERVAL '10 days' WHERE id = 1;
 UPDATE orders SET order_date = CURRENT_DATE - INTERVAL '5 days' WHERE id = 2;
@@ -468,7 +443,6 @@ WHERE EXISTS (
 **Часто подзапросы можно переписать как JOIN:**
 
 ```sql
-
 -- Подзапрос
 SELECT * FROM users
 WHERE id IN (SELECT user_id FROM orders);
@@ -483,7 +457,6 @@ INNER JOIN orders o ON u.id = o.user_id;
 **EXISTS быстрее COUNT:**
 
 ```sql
-
 -- ❌ Медленно
 SELECT * FROM users u
 WHERE (SELECT COUNT(*) FROM orders o WHERE o.user_id = u.id) > 0;
@@ -498,7 +471,6 @@ WHERE EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.id);
 **❌ Слишком много вложенности:**
 
 ```sql
-
 SELECT * FROM table1
 WHERE id IN (
     SELECT id FROM table2
@@ -512,7 +484,6 @@ WHERE id IN (
 **✅ Перепишите с JOIN или CTE:**
 
 ```sql
-
 -- С JOIN
 SELECT t1.* FROM table1 t1
 INNER JOIN table2 t2 ON t1.id = t2.id
@@ -528,7 +499,6 @@ INNER JOIN table3 t3 ON t2.col = t3.col;
 **❌ Ошибка:**
 
 ```sql
-
 -- Если подзапрос вернёт несколько строк, будет ошибка
 SELECT * FROM users
 WHERE age = (SELECT age FROM users WHERE name LIKE 'И%');
@@ -537,7 +507,6 @@ WHERE age = (SELECT age FROM users WHERE name LIKE 'И%');
 **✅ Решение:**
 
 ```sql
-
 -- Используйте IN или ANY
 SELECT * FROM users
 WHERE age IN (SELECT age FROM users WHERE name LIKE 'И%');
@@ -548,7 +517,6 @@ WHERE age IN (SELECT age FROM users WHERE name LIKE 'И%');
 **Проблема с NULL в NOT IN:**
 
 ```sql
-
 -- Если подзапрос вернёт NULL, NOT IN может работать неожиданно
 SELECT * FROM users
 WHERE id NOT IN (SELECT user_id FROM orders);
@@ -558,7 +526,6 @@ WHERE id NOT IN (SELECT user_id FROM orders);
 **✅ Решение:**
 
 ```sql
-
 -- Используйте NOT EXISTS
 SELECT * FROM users u
 WHERE NOT EXISTS (SELECT 1 FROM orders o WHERE o.user_id = u.id);

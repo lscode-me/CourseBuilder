@@ -237,7 +237,6 @@
 Давайте напишем примитивный менеджер блокировок, чтобы понять механику.
 
 ```python
-
 import threading
 import time
 
@@ -300,6 +299,7 @@ class LockManager:
         return False
 
 # Simulation Scenario
+
 lm = LockManager()
 
 def tx_a():
@@ -372,7 +372,6 @@ t1.join(); t2.join()
 Смотрим в таблицу `pg_stat_activity`.
 
 ```sql
-
 -- Кто кого блокирует?
 SELECT
     blocking.pid AS blocking_pid,
@@ -497,4 +496,5 @@ WHERE NOT blocked_locks.granted;
 4.  Посмотрите логи базы данных и статус процесса.
 
 В следующем модуле мы выйдем за пределы одной машины и узнаем, как ACID разваливается в **Распределенных Системах**. [Distributed Challenges](../09_Distributed_Challenges/).
+
 

@@ -49,6 +49,7 @@
 **Эмуляция игровых консолей:**
 ```python
 # Упрощённый пример эмулятора
+
 class GameBoyEmulator:
     def __init__(self):
         self.cpu = CPU()
@@ -127,7 +128,6 @@ class GameBoyEmulator:
 **Пример: Виртуализация vs Эмуляция**
 
 ```
-
 Эмуляция:
   Guest Instruction → Интерпретация → Host Instruction
   (медленно, каждая команда интерпретируется)
@@ -174,7 +174,6 @@ JIT-компиляция обеспечивает несколько ключе�
 **Пример: JIT процесс**
 
 ```java
-
 // Java код
 public int hotMethod(int x) {
     return x * 2;
@@ -216,7 +215,6 @@ public int hotMethod(int x) {
 **Пример: Изоляция VM**
 
 ```
-
 Physical Server
 ├── VM 1 (Linux)     - изолирована
 ├── VM 2 (Windows)   - изолирована
@@ -237,7 +235,6 @@ Physical Server
 **Пример: Консолидация**
 
 ```
-
 Без виртуализации:
   Server 1: 10% использования
   Server 2: 15% использования
@@ -268,7 +265,6 @@ virsh migrate --live vm1 qemu+ssh://otherhost/system
 
 **Type 1 (Bare-metal):**
 ```
-
 Hardware
     ↓
 Hypervisor (KVM, VMware ESXi, Hyper-V)
@@ -284,7 +280,6 @@ VM 1    VM 2    VM 3
 
 **Type 2 (Hosted):**
 ```
-
 Hardware
     ↓
 Host OS (Linux, Windows, macOS)
@@ -353,7 +348,6 @@ Docker предоставляет несколько ключевых особе
 **Пример: WASM использование**
 
 ```rust
-
 // Rust → WASM
 #[no_mangle]
 pub extern "C" fn add(a: i32, b: i32) -> i32 {
@@ -385,7 +379,6 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 
 **Иерархия:**
 ```
-
 Приложения
     ↓
 Контейнеры / VM
@@ -486,6 +479,7 @@ Hypervisor (для VM)
 - Документация Docker и контейнеризации
 
 ---
+
 
 
 

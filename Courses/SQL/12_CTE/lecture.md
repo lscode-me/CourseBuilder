@@ -39,7 +39,6 @@
 **Синтаксис:**
 
 ```sql
-
 WITH cte_name AS (
     SELECT ...
 )
@@ -57,7 +56,6 @@ SELECT ... FROM cte_name;
 **Без CTE (подзапрос):**
 
 ```sql
-
 SELECT * FROM (
     SELECT user_id, SUM(amount) AS total
     FROM orders
@@ -69,7 +67,6 @@ WHERE total > 1000;
 **С CTE (читаемее):**
 
 ```sql
-
 WITH user_totals AS (
     SELECT user_id, SUM(amount) AS total
     FROM orders
@@ -86,7 +83,6 @@ WHERE total > 1000;
 ### 2.1 Несколько CTE в одном запросе
 
 ```sql
-
 WITH 
     active_users AS (
         SELECT id, name FROM users WHERE is_active = true
@@ -121,7 +117,6 @@ LEFT JOIN user_orders o ON u.id = o.user_id;
 2. **Recursive (рекурсивная)** — рекурсивная часть
 
 ```sql
-
 WITH RECURSIVE cte_name AS (
     -- Anchor: базовый случай
     SELECT ...
@@ -135,7 +130,6 @@ SELECT * FROM cte_name;
 ### 3.2 Пример: числа от 1 до 10
 
 ```sql
-
 WITH RECURSIVE numbers AS (
     -- Anchor: начинаем с 1
     SELECT 1 AS n
@@ -148,7 +142,6 @@ SELECT * FROM numbers;
 
 **Output:**
 ```
-
 n
 --
 1
@@ -167,7 +160,6 @@ n
 **Таблица с иерархией:**
 
 ```sql
-
 CREATE TABLE employees (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100),
@@ -189,7 +181,6 @@ INSERT INTO employees VALUES
 **Рекурсивный CTE для иерархии:**
 
 ```sql
-
 WITH RECURSIVE subordinates AS (
     -- Anchor: начальный менеджер
     SELECT id, name, manager_id, 0 AS level
@@ -208,7 +199,6 @@ SELECT * FROM subordinates;
 
 **Output:**
 ```
-
 id | name      | manager_id | level
 ---+-----------+------------+-------
 2  | Manager A | 1          | 0
@@ -221,7 +211,6 @@ id | name      | manager_id | level
 **Путь от сотрудника к CEO:**
 
 ```sql
-
 WITH RECURSIVE managers AS (
     -- Anchor: начальный сотрудник
     SELECT id, name, manager_id, 0 AS level
@@ -247,7 +236,6 @@ SELECT * FROM managers ORDER BY level;
 **Сложный запрос с подзапросами:**
 
 ```sql
-
 SELECT 
     u.name,
     (SELECT COUNT(*) FROM orders o WHERE o.user_id = u.id) AS orders_count,
@@ -258,7 +246,6 @@ FROM users u;
 **С CTE (читаемее):**
 
 ```sql
-
 WITH user_stats AS (
     SELECT 
         user_id,
@@ -278,7 +265,6 @@ LEFT JOIN user_stats s ON u.id = s.user_id;
 ### 5.2 Многоэтапные вычисления
 
 ```sql
-
 WITH 
     daily_sales AS (
         SELECT 
@@ -310,7 +296,6 @@ WHERE weekly_total > 10000;
 **PostgreSQL ограничивает глубину рекурсии:**
 
 ```sql
-
 -- По умолчанию: 100 уровней
 SET max_recursion_depth = 1000;  -- Изменить лимит
 ```
@@ -318,7 +303,6 @@ SET max_recursion_depth = 1000;  -- Изменить лимит
 **Защита в запросе:**
 
 ```sql
-
 WITH RECURSIVE hierarchy AS (
     SELECT id, name, manager_id, 0 AS level
     FROM employees WHERE id = 1
@@ -342,7 +326,6 @@ SELECT * FROM hierarchy;
 **Обновление на основе CTE:**
 
 ```sql
-
 WITH user_stats AS (
     SELECT 
         user_id,
@@ -364,7 +347,6 @@ WHERE users.id = us.user_id;
 **Удаление на основе CTE:**
 
 ```sql
-
 WITH inactive_users AS (
     SELECT id
     FROM users
@@ -384,7 +366,6 @@ WHERE id IN (SELECT id FROM inactive_users);
 **Вставка на основе CTE:**
 
 ```sql
-
 WITH new_orders AS (
     SELECT 
         user_id,
@@ -407,7 +388,6 @@ SELECT * FROM new_orders;
 **Принудительная материализация:**
 
 ```sql
-
 WITH MATERIALIZED expensive_cte AS (
     SELECT 
         user_id,
@@ -450,7 +430,6 @@ WHERE order_count > 10;
 **Найти все пути между узлами:**
 
 ```sql
-
 CREATE TABLE graph (
     from_node INTEGER,
     to_node INTEGER,
@@ -497,7 +476,6 @@ SELECT * FROM paths;
 **Найти кратчайший путь:**
 
 ```sql
-
 WITH RECURSIVE shortest_path AS (
     SELECT 
         from_node,
@@ -541,7 +519,6 @@ LIMIT 1;
 **Сравнение производительности:**
 
 ```sql
-
 -- Подзапрос (может выполняться несколько раз)
 SELECT * FROM users
 WHERE id IN (
@@ -587,7 +564,6 @@ AND id IN (SELECT user_id FROM high_value_orders);  -- Использует кэ
 **Дерево категорий с уровнями:**
 
 ```sql
-
 WITH RECURSIVE category_tree AS (
     -- Anchor: корневые категории
     SELECT 
@@ -620,7 +596,6 @@ ORDER BY path;
 **Генерация дат:**
 
 ```sql
-
 WITH RECURSIVE date_series AS (
     SELECT CURRENT_DATE AS date
     UNION ALL
@@ -636,7 +611,6 @@ SELECT * FROM date_series;
 **Развёртка всех уровней иерархии:**
 
 ```sql
-
 WITH RECURSIVE full_hierarchy AS (
     SELECT id, name, manager_id, 0 AS level
     FROM employees WHERE manager_id IS NULL

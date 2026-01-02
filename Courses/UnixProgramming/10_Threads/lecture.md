@@ -41,7 +41,6 @@
 ### 1.2 Global Interpreter Lock (GIL)
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                     Python Process                      │
 ├─────────────────────────────────────────────────────────┤
@@ -56,7 +55,6 @@
 │                                                         │
 │  Только один поток выполняет Python bytecode!           │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 **Когда GIL НЕ мешает:**
@@ -76,7 +74,6 @@
 ### 2.1 threading.Thread
 
 ```python
-
 import threading
 import time
 
@@ -99,13 +96,11 @@ t1.join()
 t2.join()
 
 print("All workers finished")
-
 ```
 
 ### 2.2 Наследование от Thread
 
 ```python
-
 import threading
 import time
 
@@ -129,13 +124,11 @@ worker = MyWorker("Counter", 100)
 worker.start()
 worker.join()
 print(f"Result: {worker.result}")
-
 ```
 
 ### 2.3 Daemon потоки
 
 ```python
-
 import threading
 import time
 
@@ -153,7 +146,6 @@ t.start()
 print("Main thread working...")
 time.sleep(3)
 print("Main thread exiting (daemon will be killed)")
-
 ```
 
 ---
@@ -163,7 +155,6 @@ print("Main thread exiting (daemon will be killed)")
 ### 3.1 Lock
 
 ```python
-
 import threading
 
 counter = 0
@@ -184,13 +175,11 @@ for t in threads:
     t.join()
 
 print(f"Counter: {counter}")  # Должно быть 400000
-
 ```
 
 ### 3.2 RLock (Recursive Lock)
 
 ```python
-
 import threading
 
 rlock = threading.RLock()
@@ -203,13 +192,11 @@ def recursive_function(n):
 
 # RLock можно захватить несколько раз одним потоком
 recursive_function(5)
-
 ```
 
 ### 3.3 Condition
 
 ```python
-
 import threading
 import time
 import random
@@ -247,13 +234,11 @@ consumer_thread.start()
 
 producer_thread.join()
 consumer_thread.join()
-
 ```
 
 ### 3.4 Semaphore
 
 ```python
-
 import threading
 import time
 
@@ -274,13 +259,11 @@ for t in threads:
 
 for t in threads:
     t.join()
-
 ```
 
 ### 3.5 Event
 
 ```python
-
 import threading
 import time
 
@@ -307,13 +290,11 @@ setter_thread.start()
 for t in threads:
     t.join()
 setter_thread.join()
-
 ```
 
 ### 3.6 Barrier
 
 ```python
-
 import threading
 import time
 import random
@@ -334,7 +315,6 @@ for t in threads:
 
 for t in threads:
     t.join()
-
 ```
 
 ---
@@ -344,7 +324,6 @@ for t in threads:
 ### 4.1 queue.Queue
 
 ```python
-
 import threading
 import queue
 import time
@@ -375,13 +354,11 @@ consumer_thread.start()
 
 producer_thread.join()
 consumer_thread.join()
-
 ```
 
 ### 4.2 Типы очередей
 
 ```python
-
 import queue
 
 # FIFO очередь (по умолчанию)
@@ -398,13 +375,11 @@ priority.put((2, "medium"))
 
 while not priority.empty():
     print(priority.get())  # (1, "high"), (2, "medium"), (3, "low")
-
 ```
 
 ### 4.3 Bounded Queue
 
 ```python
-
 import queue
 import threading
 import time
@@ -434,7 +409,6 @@ cons.start()
 
 prod.join()
 cons.join()
-
 ```
 
 ---
@@ -444,7 +418,6 @@ cons.join()
 ### 5.1 Базовое использование
 
 ```python
-
 from concurrent.futures import ThreadPoolExecutor
 import time
 
@@ -462,13 +435,11 @@ with ThreadPoolExecutor(max_workers=4) as executor:
     for future in futures:
         result = future.result()
         print(f"Result: {result}")
-
 ```
 
 ### 5.2 executor.map()
 
 ```python
-
 from concurrent.futures import ThreadPoolExecutor
 import time
 
@@ -488,13 +459,11 @@ with ThreadPoolExecutor(max_workers=3) as executor:
     
 for result in results:
     print(result)
-
 ```
 
 ### 5.3 as_completed()
 
 ```python
-
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 import random
@@ -512,7 +481,6 @@ with ThreadPoolExecutor(max_workers=4) as executor:
         task_id = futures[future]
         result, delay = future.result()
         print(f"Task {task_id} completed in {delay:.2f}s")
-
 ```
 
 ---
@@ -522,7 +490,6 @@ with ThreadPoolExecutor(max_workers=4) as executor:
 ### 6.1 threading.local()
 
 ```python
-
 import threading
 
 # Данные, уникальные для каждого потока
@@ -546,7 +513,6 @@ for t in threads:
 
 for t in threads:
     t.join()
-
 ```
 
 ---
@@ -556,7 +522,6 @@ for t in threads:
 ### 7.1 Race Condition
 
 ```python
-
 import threading
 
 # ПРОБЛЕМА: Race condition
@@ -577,13 +542,11 @@ def good_increment():
     for _ in range(100000):
         with lock:
             counter_safe += 1
-
 ```
 
 ### 7.2 Deadlock
 
 ```python
-
 import threading
 
 lock_a = threading.Lock()
@@ -609,7 +572,6 @@ def safe_thread():
     with lock_a:
         with lock_b:
             pass
-
 ```
 
 ---
@@ -663,7 +625,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ### 8.2 Worker Pool Pattern
@@ -735,7 +696,6 @@ while not pool.results.empty():
     print(f"Task {task_id}: {result}")
 
 pool.shutdown()
-
 ```
 
 ---

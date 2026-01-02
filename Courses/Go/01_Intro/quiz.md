@@ -107,7 +107,6 @@ D) `func run()`
 Какой код правильно выведет "Hello, World!" на экран?
 
 ```go
-
 package main
 
 import "fmt"
@@ -115,7 +114,6 @@ import "fmt"
 func main() {
     // Какая строка?
 }
-
 ```
 
 A) `fmt.Println("Hello, World!")`
@@ -133,13 +131,11 @@ D) `console.log("Hello, World!")`
 Что произойдёт при компиляции следующего кода?
 
 ```go
-
 package main
 
 func main() {
     x := 42
 }
-
 ```
 
 A) Программа успешно скомпилируется

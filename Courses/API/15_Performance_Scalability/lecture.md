@@ -39,7 +39,6 @@
 **Example: Измерение latency**
 
 ```python
-
 import time
 from functools import wraps
 
@@ -74,7 +73,6 @@ def log_latency(endpoint, duration_ms):
 **Example: Измерение throughput**
 
 ```python
-
 class ThroughputMonitor:
     """Мониторинг throughput"""
     
@@ -99,6 +97,7 @@ class ThroughputMonitor:
         self.requests = [req_time for req_time in self.requests if req_time > cutoff]
 
 # Использование
+
 throughput_monitor = ThroughputMonitor()
 throughput_monitor.record_request()
 print(f"Throughput: {throughput_monitor.get_throughput()} req/s")
@@ -115,7 +114,6 @@ print(f"Throughput: {throughput_monitor.get_throughput()} req/s")
 **Example: Rate Limiting**
 
 ```python
-
 from collections import defaultdict
 from datetime import datetime, timedelta
 
@@ -186,7 +184,6 @@ def get_users():
 **Example: HTTP кэширование**
 
 ```python
-
 from flask import make_response
 from datetime import datetime, timedelta
 
@@ -215,17 +212,18 @@ def generate_etag(data):
 **Example: Кэширование в приложении**
 
 ```python
-
 from functools import lru_cache
 import redis
 
 # In-memory кэш
+
 @lru_cache(maxsize=1000)
 def get_user_cached(user_id):
     """Кэширование в памяти"""
     return find_user(user_id)
 
 # Redis кэш
+
 redis_client = redis.Redis(host='localhost', port=6379)
 
 def get_user_with_redis_cache(user_id):
@@ -258,6 +256,7 @@ def get_user_with_redis_cache(user_id):
 
 ```python
 # Конфигурация load balancer (Nginx)
+
 """
 upstream api_servers {
     server api1.example.com:8000;
@@ -274,7 +273,6 @@ server {
 
 # Приложение должно быть stateless для горизонтального масштабирования
 # Не хранить состояние в памяти приложения
-
 ```
 
 ### 4.2 Stateless архитектура
@@ -295,6 +293,7 @@ server {
 
 ```python
 # ❌ Плохо: N+1 проблема
+
 def get_users_with_orders():
     users = get_all_users()
     for user in users:
@@ -302,6 +301,7 @@ def get_users_with_orders():
     return users
 
 # ✅ Хорошо: Batch запрос
+
 def get_users_with_orders_optimized():
     users = get_all_users()
     user_ids = [u["id"] for u in users]
@@ -322,7 +322,6 @@ def get_users_with_orders_optimized():
 **Example: Пагинация для производительности**
 
 ```python
-
 @app.route("/api/users", methods=["GET"])
 def get_users():
     page = request.args.get("page", 1, type=int)
@@ -353,11 +352,11 @@ def get_user_by_email(email):
 **Example: Connection Pooling для производительности**
 
 ```python
-
 from sqlalchemy import create_engine
 from sqlalchemy.pool import QueuePool
 
 # Connection pool для переиспользования соединений
+
 engine = create_engine(
     "postgresql://user:pass@localhost/db",
     poolclass=QueuePool,
@@ -372,7 +371,6 @@ engine = create_engine(
 **Example: Асинхронная обработка долгих операций**
 
 ```python
-
 from celery import Celery
 
 celery_app = Celery('tasks', broker='redis://localhost:6379')
@@ -399,7 +397,6 @@ def start_processing():
 **Example: Измерение latency и throughput**
 
 ```python
-
 import time
 from functools import wraps
 
@@ -433,7 +430,6 @@ def get_user(user_id):
 **Example: Профилирование медленных запросов**
 
 ```python
-
 import cProfile
 import pstats
 
@@ -505,6 +501,7 @@ class PerformanceProfiler:
 - "Caching Strategies for APIs" — стратегии кэширования
 
 ---
+
 
 
 

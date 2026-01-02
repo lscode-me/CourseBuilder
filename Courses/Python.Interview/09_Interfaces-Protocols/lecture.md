@@ -14,7 +14,6 @@
 > "В Python используется duck typing: 'Если оно ходит как утка и крякает как утка, это утка'. Мы не проверяем тип объекта, а только наличие нужных методов."
 
 ```python
-
 def process(obj):
     # Не проверяем тип, просто вызываем метод
     return obj.read()
@@ -44,7 +43,6 @@ def process(obj):
 ### Зачем нужны ABC
 
 ```python
-
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
@@ -57,6 +55,7 @@ class Dog(Animal):
         return "Woof!"
 
 # dog = Animal()  # TypeError: Can't instantiate abstract class
+
 dog = Dog()
 print(dog.speak())  # Woof!
 ```
@@ -67,7 +66,6 @@ print(dog.speak())  # Woof!
 ### Абстрактный Iterable
 
 ```python
-
 from abc import ABC, abstractmethod
 
 class MyIterable(ABC):
@@ -79,7 +77,6 @@ class MyIterable(ABC):
 ### Абстрактный Mapping
 
 ```python
-
 from abc import ABC, abstractmethod
 
 class MyMapping(ABC):
@@ -111,22 +108,25 @@ class MyMapping(ABC):
 ### Через collections.abc
 
 ```python
-
 from collections.abc import Iterable, Hashable, Callable, Mapping
 
 # Проверка iterable
+
 isinstance([1, 2, 3], Iterable)  # True
 isinstance(42, Iterable)          # False
 
 # Проверка hashable
+
 isinstance("hello", Hashable)     # True
 isinstance([1, 2], Hashable)      # False (list mutable)
 
 # Проверка callable
+
 isinstance(print, Callable)       # True
 isinstance(42, Callable)          # False
 
 # Проверка mapping
+
 isinstance({}, Mapping)           # True
 isinstance([], Mapping)           # False
 ```
@@ -134,7 +134,6 @@ isinstance([], Mapping)           # False
 ### Через hasattr (duck typing)
 
 ```python
-
 def is_iterable(obj):
     return hasattr(obj, '__iter__')
 
@@ -150,16 +149,18 @@ def is_callable(obj):
 
 **A:**
 ```python
-
 from collections.abc import Iterable
 
 # Способ 1: isinstance
+
 isinstance(obj, Iterable)
 
 # Способ 2: hasattr
+
 hasattr(obj, '__iter__')
 
 # Способ 3: try/except
+
 try:
     iter(obj)
     print("Iterable")
@@ -174,9 +175,11 @@ except TypeError:
 
 ```python
 # Можно: str, int, tuple (если элементы hashable)
+
 d = {"key": 1, (1, 2): 2}
 
 # Нельзя: list, dict, set
+
 d = {[1, 2]: 1}  # TypeError: unhashable type: 'list'
 ```
 
@@ -211,5 +214,6 @@ d = {[1, 2]: 1}  # TypeError: unhashable type: 'list'
 - "Fluent Python" Chapter 11: Interfaces, Protocols, and ABCs
 
 ---
+
 
 

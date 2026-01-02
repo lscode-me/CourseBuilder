@@ -65,7 +65,6 @@ Log (журнал) — это append-only структура данных, гд�
 **Example: Log структура**
 
 ```python
-
 class EventLog:
     def __init__(self, name):
         self.name = name
@@ -103,14 +102,17 @@ class EventLog:
         return self.read_from_offset(from_offset)
 
 # Использование
+
 log = EventLog("user-events")
 
 # Добавление событий
+
 log.append({"user_id": 1, "action": "click"})
 log.append({"user_id": 2, "action": "purchase"})
 log.append({"user_id": 1, "action": "view"})
 
 # Чтение с offset
+
 records = log.read_from_offset(1)
 print(f"Записей прочитано: {len(records)}")
 
@@ -122,7 +124,6 @@ print(f"Replay записей: {len(replay_records)}")
 
 **Output:**
 ```
-
 ✅ Событие добавлено в log 'user-events' на offset 0
 ✅ Событие добавлено в log 'user-events' на offset 1
 ✅ Событие добавлено в log 'user-events' на offset 2
@@ -176,7 +177,6 @@ Retention определяет, как долго хранятся данные 
 **Example: Retention policies**
 
 ```python
-
 from datetime import datetime, timedelta
 
 class RetentionManager:
@@ -226,9 +226,11 @@ class RetentionManager:
         return deleted
 
 # Использование
+
 manager = RetentionManager()
 
 # Добавление записей с разными датами
+
 base_date = datetime.now() - timedelta(days=10)
 for i in range(15):
     manager.add_entry({"id": i}, base_date + timedelta(days=i))
@@ -236,6 +238,7 @@ for i in range(15):
 print(f"Всего записей: {len(manager.entries)}")
 
 # Time retention (7 дней)
+
 manager.apply_time_retention(7)
 
 # Size retention (5MB)
@@ -245,7 +248,6 @@ manager.apply_size_retention(5)
 
 **Output:**
 ```
-
 Всего записей: 15
 ⏰ Time retention (7 дней): удалено 4 записей, осталось 11
 💾 Size retention (5MB): все записи в пределах лимита (11)
@@ -274,7 +276,6 @@ Compaction удаляет старые версии записей, оставл
 **Example: Log Compaction**
 
 ```python
-
 class LogCompaction:
     def __init__(self):
         self.entries = []
@@ -310,9 +311,11 @@ class LogCompaction:
         return self.entries
 
 # Использование
+
 compactor = LogCompaction()
 
 # Добавление записей с обновлениями значений
+
 compactor.append("user_1", "Alice", 0)
 compactor.append("user_2", "Bob", 1)
 compactor.append("user_1", "Alice Updated", 2)  # Обновление
@@ -322,6 +325,7 @@ compactor.append("user_2", "Bob Updated", 4)  # Обновление
 print(f"До compaction: {len(compactor.entries)} записей")
 
 # Compaction
+
 compactor.compact()
 
 print(f"После compaction: {len(compactor.get_entries())} записей")
@@ -331,7 +335,6 @@ for entry in compactor.get_entries():
 
 **Output:**
 ```
-
 До compaction: 5 записей
 🗜️  Compaction: удалено 2 старых версий, осталось 3 уникальных ключей
 После compaction: 3 записей
@@ -361,7 +364,6 @@ Replay позволяет переобработать данные из log, н
 **Example: Replay процесс**
 
 ```python
-
 class ReplayProcessor:
     def __init__(self, log):
         self.log = log
@@ -400,16 +402,17 @@ for i in range(5):
 processor = ReplayProcessor(log)
 
 # Replay всех событий
+
 processor.replay_all()
 
 # Replay с определённого offset
+
 print("\n" + "="*50)
 processor.replay_from(2)
 ```
 
 **Output:**
 ```
-
 ✅ Событие добавлено в log 'events' на offset 0
 ✅ Событие добавлено в log 'events' на offset 1
 ✅ Событие добавлено в log 'events' на offset 2
@@ -456,7 +459,6 @@ Tiered storage использует разные уровни хранения �
 **Example: Tiered Storage**
 
 ```python
-
 class TieredStorage:
     def __init__(self):
         self.hot_storage = []  # Быстрый доступ
@@ -509,6 +511,7 @@ class TieredStorage:
         return migrated
 
 # Использование
+
 storage = TieredStorage()
 storage.store("event_1", "2024-01-01T10:00:00Z")
 storage.store("event_2", "2024-01-15T10:00:00Z")
@@ -518,7 +521,6 @@ storage.migrate()
 
 **Output:**
 ```
-
 🔥 Hot storage: event_1 (дней назад: 5)
 🌡️  Warm storage: event_2 (дней назад: 15)
 ❄️  Cold storage: event_3 (дней назад: 30)
@@ -548,7 +550,6 @@ storage.migrate()
 **Example: Выбор Retention Policy**
 
 ```python
-
 def recommend_retention_policy(requirements):
     """Рекомендует retention policy"""
     if requirements.get("compliance") and requirements.get("regulatory"):
@@ -561,6 +562,7 @@ def recommend_retention_policy(requirements):
         return "Time-based retention (по умолчанию)"
 
 # Примеры
+
 examples = [
     {"compliance": True, "regulatory": True, "retention_days": 365},
     {"cost_optimization": True, "size_limit": True, "max_size_gb": 100},
@@ -575,7 +577,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации retention policies:
   Пример 1: Time-based retention (соответствие требованиям)
   Пример 2: Size-based retention (контроль размера)
@@ -599,7 +600,6 @@ for i, req in enumerate(examples, 1):
 **Example: Решение об использовании Compaction**
 
 ```python
-
 def should_use_compaction(requirements):
     """Определяет, нужно ли использовать compaction"""
     if requirements.get("key_value") and requirements.get("latest_value_only"):
@@ -610,6 +610,7 @@ def should_use_compaction(requirements):
         return False, "Compaction не требуется: используйте retention policy"
 
 # Примеры
+
 examples = [
     {"key_value": True, "latest_value_only": True, "has_keys": True},
     {"all_events_important": True, "historical_data": True},
@@ -624,7 +625,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации по compaction:
   Пример 1: Compaction рекомендуется: key-value данные, важны только последние значения
   Пример 2: Compaction НЕ рекомендуется: все события важны или нет ключей
@@ -648,7 +648,6 @@ for i, req in enumerate(examples, 1):
 **Example: Оптимизация производительности**
 
 ```python
-
 class StorageOptimizer:
     def __init__(self):
         self.partitions = {}
@@ -689,6 +688,7 @@ class StorageOptimizer:
         return optimizations
 
 # Использование
+
 optimizer = StorageOptimizer()
 optimizer.partition_data("user-events", 5)
 optimizer.create_index("user-events", "offset")
@@ -697,7 +697,6 @@ optimizer.optimize("user-events")
 
 **Output:**
 ```
-
 📦 Topic 'user-events' разделён на 5 партиций
 🔍 Индекс создан для 'user-events': тип offset
 ⚡ Оптимизации для 'user-events':
@@ -763,6 +762,7 @@ optimizer.optimize("user-events")
 - Event Sourcing: паттерн проектирования
 
 ---
+
 
 
 

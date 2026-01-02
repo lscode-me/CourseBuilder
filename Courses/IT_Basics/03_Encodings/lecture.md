@@ -33,10 +33,8 @@
 Компьютер понимает только числа. Как сохранить текст?
 
 ```
-
 Человек видит:  Hello, мир!
 Компьютер хранит:  48 65 6C 6C 6F 2C 20 D0 BC D0 B8 D1 80 21
-
 ```
 
 **Кодировка** — это таблица соответствия между символами и числами.
@@ -46,14 +44,12 @@
 До появления Unicode каждая страна создавала свои кодировки:
 
 ```
-
 Символ "Я" закодирован как:
 
 - КОИ-8:        0xD1 (209)
 - Windows-1251: 0xDF (223)
 - ISO-8859-5:   0xEF (239)
 - MacCyrillic:  0x9F (159)
-
 ```
 
 Один и тот же байт — разные символы в разных кодировках!
@@ -61,28 +57,22 @@
 ### 1.3 "Кракозябры" — классическая проблема
 
 ```
-
 Ожидалось:   Привет, мир!
 Получилось:  ÐŸÑ€Ð¸Ð²ÐµÑ‚, Ð¼Ð¸Ñ€!
-
 ```
 
 Или:
 
 ```
-
 Ожидалось:   Привет, мир!
 Получилось:  Пpивeт, миp!  (выглядит почти нормально, но часть букв — латиница!)
-
 ```
 
 Или:
 
 ```
-
 Ожидалось:   Привет, мир!
 Получилось:  ?????, ???!
-
 ```
 
 ---
@@ -102,7 +92,6 @@
 ### 2.2 Таблица ASCII
 
 ```
-
 Dec  Hex  Char     Dec  Hex  Char     Dec  Hex  Char
 ───────────────    ───────────────    ───────────────
 32   20   SPACE    48   30   0        65   41   A
@@ -115,7 +104,6 @@ Dec  Hex  Char     Dec  Hex  Char     Dec  Hex  Char
 39   27   '        59   3B   ;        ...
 ...                ...               122  7A   z
 47   2F   /        64   40   @
-
 ```
 
 **Ключевые значения:**
@@ -136,38 +124,39 @@ Dec  Hex  Char     Dec  Hex  Char     Dec  Hex  Char
 
 ```bash
 # Смотрим ASCII код символа
+
 printf "%d\n" "'A"
 # 65
 
 # Символ по ASCII коду
+
 printf "\x41\n"
 # A
 
 # Таблица ASCII
-man ascii
 
+man ascii
 ```
 
 ```python
 # Python: символ ↔ код
+
 print(ord('A'))     # 65
 print(chr(65))      # A
 
 # Проверка ASCII
+
 text = "Hello"
 print(text.isascii())  # True
 print("Привет".isascii())  # False
-
 ```
 
 **Output:**
 ```
-
 65
 A
 True
 False
-
 ```
 
 ### 2.4 Ограничения ASCII
@@ -215,14 +204,12 @@ ASCII использует 7 бит (0-127). В байте 8 бит!
 Советская кодировка. Особенность: если обнулить старший бит, кириллица превращается в похожую латиницу:
 
 ```
-
 КОИ-8: П = 0xD0
        0xD0 = 11010000
        AND  = 01111111
               01010000 = 0x50 = 'P'
 
 Поэтому: ПРИВЕТ → PRIVET при потере 8-го бита
-
 ```
 
 ### 3.4 Windows-1251
@@ -230,7 +217,6 @@ ASCII использует 7 бит (0-127). В байте 8 бит!
 Самая распространённая кодировка для русского в Windows:
 
 ```
-
 Символ  Код (hex)  Код (dec)
 ──────────────────────────────
 А       0xC0       192
@@ -243,20 +229,17 @@ ASCII использует 7 бит (0-127). В байте 8 бит!
 б       0xE1       225
 ...
 я       0xFF       255
-
 ```
 
 ### 3.5 Проблема совместимости
 
 ```
-
 Файл в KOI8-R открыт как Windows-1251:
 
 Байт 0xD0 (KOI8-R: "П") → Windows-1251: "Р"
 Байт 0xD2 (KOI8-R: "Р") → Windows-1251: "Т"
 
 "ПРИВЕТ" → "ПТЙЧЕ|"
-
 ```
 
 ---
@@ -270,12 +253,10 @@ ASCII использует 7 бит (0-127). В байте 8 бит!
 На 2024 год: **149,813** символов в Unicode 15.1
 
 ```
-
 U+0041 = A (латинская заглавная A)
 U+0410 = А (кириллическая заглавная А)
 U+4E2D = 中 (китайский иероглиф "середина")
 U+1F600 = 😀 (эмодзи)
-
 ```
 
 ### 4.2 Кодовые точки (Code Points)
@@ -285,10 +266,8 @@ U+1F600 = 😀 (эмодзи)
 Записывается как: `U+XXXX` или `U+XXXXX`
 
 ```
-
 U+0000 — U+FFFF:   Basic Multilingual Plane (BMP)
 U+10000 — U+10FFFF: Дополнительные плоскости (эмодзи, редкие символы)
-
 ```
 
 ### 4.3 Плоскости Unicode
@@ -321,7 +300,6 @@ U+10000 — U+10FFFF: Дополнительные плоскости (эмод�
 Символы в Unicode сгруппированы в блоки по языкам и назначению:
 
 ```
-
 U+0000-U+007F    Basic Latin (ASCII)
 U+0080-U+00FF    Latin-1 Supplement
 U+0100-U+017F    Latin Extended-A
@@ -330,7 +308,6 @@ U+0500-U+052F    Cyrillic Supplement
 U+4E00-U+9FFF    CJK Unified Ideographs (Китайский/Японский/Корейский)
 U+1F600-U+1F64F  Emoticons
 U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
-
 ```
 
 ### 4.6 Unicode — это не кодировка!
@@ -344,7 +321,6 @@ U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
 - UTF-32
 
 ```
-
 Символ "A" (U+0041):
 
 - UTF-8:  0x41 (1 байт)
@@ -356,7 +332,6 @@ U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
 - UTF-8:  0xF0 0x9F 0x98 0x80 (4 байта)
 - UTF-16: 0xD8 0x3D 0xDE 0x00 (4 байта, surrogate pair)
 - UTF-32: 0x00 0x01 0xF6 0x00 (4 байта)
-
 ```
 
 ### 4.7 Unicode — это набор спецификаций
@@ -480,6 +455,7 @@ U+1F300-U+1F5FF  Miscellaneous Symbols and Pictographs
 
 ```python
 # Получение всех свойств символа в Python
+
 import unicodedata
 
 def show_char_properties(char):
@@ -502,12 +478,10 @@ print()
 show_char_properties('Ж')
 print()
 show_char_properties('😀')
-
 ```
 
 **Output:**
 ```
-
 Символ: 5
   Code Point: U+0035
   Name: DIGIT FIVE
@@ -537,7 +511,6 @@ show_char_properties('😀')
   Combining: 0
   Mirrored: 0
   Numeric Value: N/A
-
 ```
 
 > **📝 Note:**  
@@ -579,20 +552,17 @@ show_char_properties('😀')
 **Пример 1: "A" (U+0041)**
 
 ```
-
 U+0041 = 65 = 1000001
 Диапазон: U+0000-U+007F (1 байт)
 
 Результат: 0 1000001 = 0x41
            ^
            ASCII совместимо!
-
 ```
 
 **Пример 2: "й" (U+0439)**
 
 ```
-
 U+0439 = 1081 = 10000111001
 Диапазон: U+0080-U+07FF (2 байта)
 
@@ -600,13 +570,11 @@ U+0439 = 1081 = 10000111001
 Биты:      10000   111001
 
 Результат: 11010000 10111001 = 0xD0 0xB9
-
 ```
 
 **Пример 3: "€" (U+20AC)**
 
 ```
-
 U+20AC = 8364 = 10000010101100
 Диапазон: U+0800-U+FFFF (3 байта)
 
@@ -614,13 +582,11 @@ U+20AC = 8364 = 10000010101100
 Биты:       0010   000010   101100
 
 Результат: 11100010 10000010 10101100 = 0xE2 0x82 0xAC
-
 ```
 
 **Пример 4: "😀" (U+1F600)**
 
 ```
-
 U+1F600 = 128512 = 11111011000000000
 Диапазон: U+10000-U+10FFFF (4 байта)
 
@@ -628,40 +594,35 @@ U+1F600 = 128512 = 11111011000000000
 Биты:       000   011111   011000   000000
 
 Результат: 11110000 10011111 10011000 10000000 = 0xF0 0x9F 0x98 0x80
-
 ```
 
 ### 5.4 UTF-8 на практике
 
 ```python
 # Кодирование строки в UTF-8
+
 text = "Привет 😀"
 utf8_bytes = text.encode('utf-8')
 print(f"Bytes: {utf8_bytes}")
 print(f"Hex: {utf8_bytes.hex()}")
 print(f"Length: {len(utf8_bytes)} bytes, {len(text)} chars")
-
 ```
 
 **Output:**
 ```
-
 Bytes: b'\xd0\x9f\xd1\x80\xd0\xb8\xd0\xb2\xd0\xb5\xd1\x82 \xf0\x9f\x98\x80'
 Hex: d09fd180d0b8d0b2d0b5d18220f09f9880
 Length: 18 bytes, 9 chars
-
 ```
 
 ```bash
 # В bash
+
 echo -n "Привет" | xxd
-
 ```
 
 ```
-
 00000000: d09f d180 d0b8 d0b2 d0b5 d182            ............
-
 ```
 
 ---
@@ -673,16 +634,13 @@ echo -n "Привет" | xxd
 **UTF-16** — кодировка с минимумом 2 байта на символ.
 
 ```
-
 BMP (U+0000-U+FFFF): 2 байта
 За пределами BMP: 4 байта (surrogate pairs)
-
 ```
 
 **Surrogate pairs для символов за пределами BMP:**
 
 ```
-
 Символ U+1F600 (😀):
 
 1. Вычитаем 0x10000: 0x1F600 - 0x10000 = 0xF600
@@ -690,7 +648,6 @@ BMP (U+0000-U+FFFF): 2 байта
 3. Младшие 10 бит + 0xDC00 = Low surrogate: 0xDE00
 
 UTF-16: 0xD83D 0xDE00
-
 ```
 
 **Проблема UTF-16:**
@@ -713,6 +670,7 @@ UTF-16: 0xD83D 0xDE00
 
 ```bash
 # Файл с BOM
+
 xxd -l 4 file_with_bom.txt
 # 00000000: efbb bf48                                ...H
 #           ^^^^^^ UTF-8 BOM
@@ -753,6 +711,7 @@ xxd -l 4 file_with_bom.txt
 
 ```bash
 # Команда file
+
 file document.txt
 # document.txt: UTF-8 Unicode text
 
@@ -768,27 +727,32 @@ file russian_cp1251.txt
 
 ```bash
 # iconv: из Windows-1251 в UTF-8
+
 iconv -f WINDOWS-1251 -t UTF-8 input.txt > output.txt
 
 # Список доступных кодировок
+
 iconv -l | head -20
 
 # С заменой недекодируемых символов
+
 iconv -f CP1251 -t UTF-8//TRANSLIT input.txt > output.txt
 
 # Игнорировать ошибки
-iconv -f CP1251 -t UTF-8//IGNORE input.txt > output.txt
 
+iconv -f CP1251 -t UTF-8//IGNORE input.txt > output.txt
 ```
 
 ### 7.3 Просмотр в hex
 
 ```bash
 # Смотрим байты UTF-8 текста
+
 echo -n "Привет" | xxd
 # 00000000: d09f d180 d0b8 d0b2 d0b5 d182            ............
 
 # То же самое в Python
+
 echo -n "Привет" | python3 -c "import sys; print(sys.stdin.buffer.read().hex())"
 # d09fd180d0b8d0b2d0b5d182
 ```
@@ -797,17 +761,19 @@ echo -n "Привет" | python3 -c "import sys; print(sys.stdin.buffer.read().h
 
 ```bash
 # Текущая локаль
+
 locale
 
 # Переменные окружения для кодировки
+
 echo $LANG
 # en_US.UTF-8
 
 echo $LC_ALL
 
 # Установка локали
-export LANG=ru_RU.UTF-8
 
+export LANG=ru_RU.UTF-8
 ```
 
 ---
@@ -818,15 +784,18 @@ export LANG=ru_RU.UTF-8
 
 ```python
 # В Python 3: str = Unicode, bytes = сырые байты
+
 text = "Привет"  # str (Unicode)
 data = b"Hello"  # bytes (ASCII только)
 
 # Кодирование: str → bytes
+
 encoded = text.encode('utf-8')
 print(type(encoded), encoded)
 # <class 'bytes'> b'\xd0\x9f\xd1\x80\xd0\xb8\xd0\xb2\xd0\xb5\xd1\x82'
 
 # Декодирование: bytes → str
+
 decoded = encoded.decode('utf-8')
 print(type(decoded), decoded)
 # <class 'str'> Привет
@@ -836,30 +805,34 @@ print(type(decoded), decoded)
 
 ```python
 # Явно указывайте кодировку!
+
 with open('file.txt', 'r', encoding='utf-8') as f:
     content = f.read()
 
 # Файл в Windows-1251
+
 with open('russian.txt', 'r', encoding='cp1251') as f:
     content = f.read()
 
 # Файл с BOM
+
 with open('bom_file.txt', 'r', encoding='utf-8-sig') as f:
     content = f.read()
 
 # Обработка ошибок декодирования
+
 with open('mixed.txt', 'r', encoding='utf-8', errors='replace') as f:
     content = f.read()  # Неизвестные байты → �
 
 with open('mixed.txt', 'r', encoding='utf-8', errors='ignore') as f:
     content = f.read()  # Неизвестные байты пропускаются
-
 ```
 
 ### 8.3 Определение кодировки
 
 ```python
 # Библиотека chardet
+
 import chardet
 
 with open('unknown.txt', 'rb') as f:
@@ -869,14 +842,13 @@ with open('unknown.txt', 'rb') as f:
     # {'encoding': 'utf-8', 'confidence': 0.99, 'language': ''}
 
 # Декодируем с определённой кодировкой
-text = raw_data.decode(result['encoding'])
 
+text = raw_data.decode(result['encoding'])
 ```
 
 ### 8.4 Unicode нормализация
 
 ```python
-
 import unicodedata
 
 # Один и тот же символ может быть представлен по-разному
@@ -889,10 +861,10 @@ print(len(s1), len(s2))  # Может быть разная длина!
 print(s1 == s2)          # Может быть False!
 
 # Нормализация
+
 s1_nfc = unicodedata.normalize('NFC', s1)
 s2_nfc = unicodedata.normalize('NFC', s2)
 print(s1_nfc == s2_nfc)  # True
-
 ```
 
 ### 8.5 Модуль unicodedata — работа с метаданными Unicode
@@ -900,110 +872,99 @@ print(s1_nfc == s2_nfc)  # True
 Модуль `unicodedata` предоставляет доступ к базе данных Unicode:
 
 ```python
-
 import unicodedata
 
 # Получить название символа
+
 print(unicodedata.name('А'))       # CYRILLIC CAPITAL LETTER A
 print(unicodedata.name('€'))       # EURO SIGN
 print(unicodedata.name('😀'))      # GRINNING FACE
 print(unicodedata.name('∞'))       # INFINITY
-
 ```
 
 **Output:**
 ```
-
 CYRILLIC CAPITAL LETTER A
 EURO SIGN
 GRINNING FACE
 INFINITY
-
 ```
 
 ```python
 # Получить символ по имени
+
 print(unicodedata.lookup('CYRILLIC SMALL LETTER ZHE'))  # ж
 print(unicodedata.lookup('SNOWMAN'))                    # ☃
 print(unicodedata.lookup('ROCKET'))                     # 🚀
 print(unicodedata.lookup('PILE OF POO'))                # 💩
-
 ```
 
 **Output:**
 ```
-
 ж
 ☃
 🚀
 💩
-
 ```
 
 ```python
 # Категория символа
+
 print(unicodedata.category('A'))   # Lu (Letter, uppercase)
 print(unicodedata.category('a'))   # Ll (Letter, lowercase)
 print(unicodedata.category('5'))   # Nd (Number, decimal digit)
 print(unicodedata.category('€'))   # Sc (Symbol, currency)
 print(unicodedata.category(' '))   # Zs (Separator, space)
 print(unicodedata.category('\n'))  # Cc (Other, control)
-
 ```
 
 **Output:**
 ```
-
 Lu
 Ll
 Nd
 Sc
 Zs
 Cc
-
 ```
 
 ```python
 # Числовое значение символа (для цифр и дробей)
+
 print(unicodedata.numeric('5'))    # 5.0
 print(unicodedata.numeric('½'))    # 0.5
 print(unicodedata.numeric('¾'))    # 0.75
 print(unicodedata.numeric('Ⅳ'))    # 4.0 (римская цифра)
 print(unicodedata.numeric('๕'))    # 5.0 (тайская цифра)
-
 ```
 
 **Output:**
 ```
-
 5.0
 0.5
 0.75
 4.0
 5.0
-
 ```
 
 ```python
 # Проверка типа символа
+
 char = 'Ж'
 print(f"Символ: {char}")
 print(f"  Имя: {unicodedata.name(char)}")
 print(f"  Категория: {unicodedata.category(char)}")
 print(f"  Двунаправленность: {unicodedata.bidirectional(char)}")
 print(f"  Ширина (East Asian): {unicodedata.east_asian_width(char)}")
-
 ```
 
 **Output:**
 ```
-
 Символ: Ж
   Имя: CYRILLIC CAPITAL LETTER ZHE
   Категория: Lu
   Двунаправленность: L
   Ширина (East Asian): A
-
 ```
 
 ### 8.6 Практические примеры с unicodedata
@@ -1011,7 +972,6 @@ print(f"  Ширина (East Asian): {unicodedata.east_asian_width(char)}")
 **Пример 1: Удаление диакритических знаков**
 
 ```python
-
 import unicodedata
 
 def remove_accents(text):
@@ -1030,16 +990,13 @@ print(remove_accents("Cześć świat"))
 
 **Output:**
 ```
-
 cafe resume naive
 Czesc swiat
-
 ```
 
 **Пример 2: Определение языка текста**
 
 ```python
-
 import unicodedata
 from collections import Counter
 
@@ -1075,17 +1032,14 @@ print(detect_script("混合 text テスト"))
 
 **Output:**
 ```
-
 [('Cyrillic', 9)]
 [('Latin', 10)]
 [('CJK', 5), ('Latin', 4)]
-
 ```
 
 **Пример 3: Поиск похожих символов (homoglyphs)**
 
 ```python
-
 import unicodedata
 
 def find_homoglyphs(char):
@@ -1113,35 +1067,30 @@ def find_homoglyphs(char):
     return []
 
 # Поиск "A" в разных алфавитах
+
 for char, name in find_homoglyphs('A')[:5]:
     print(f"  {char} - {name}")
-
 ```
 
 **Output:**
 ```
-
   Α - GREEK CAPITAL LETTER ALPHA
   А - CYRILLIC CAPITAL LETTER A
-
 ```
 
 **Пример 4: Информация о версии Unicode**
 
 ```python
-
 import unicodedata
 
 # Версия базы данных Unicode в Python
-print(f"Unicode version: {unicodedata.unidata_version}")
 
+print(f"Unicode version: {unicodedata.unidata_version}")
 ```
 
 **Output:**
 ```
-
 Unicode version: 15.0.0
-
 ```
 
 ---
@@ -1164,37 +1113,40 @@ Unicode version: 15.0.0
 
 ```python
 # Как получается mojibake
+
 original = "Привет"
 # 1. Кодируем в UTF-8
+
 utf8_bytes = original.encode('utf-8')
 print(utf8_bytes)  # b'\xd0\x9f\xd1\x80...'
 
 # 2. Неправильно декодируем как Latin-1
+
 wrong = utf8_bytes.decode('latin-1')
 print(wrong)  # ÐŸÑ€Ð¸Ð²ÐµÑ‚
-
 ```
 
 ### 9.3 Исправление mojibake
 
 ```python
 # Если текст выглядит как: ÐŸÑ€Ð¸Ð²ÐµÑ‚
+
 broken = "ÐŸÑ€Ð¸Ð²ÐµÑ‚"
 
 # Шаг 1: Кодируем обратно как Latin-1 (чтобы получить оригинальные байты)
+
 raw_bytes = broken.encode('latin-1')
 print(raw_bytes)  # b'\xd0\x9f\xd1\x80\xd0\xb8\xd0\xb2\xd0\xb5\xd1\x82'
 
 # Шаг 2: Декодируем правильно как UTF-8
+
 fixed = raw_bytes.decode('utf-8')
 print(fixed)  # Привет
-
 ```
 
 ### 9.4 Утилита для исправления
 
 ```python
-
 def fix_mojibake(text, wrong_encoding='latin-1', correct_encoding='utf-8'):
     """
     Исправляет mojibake.
@@ -1210,9 +1162,9 @@ def fix_mojibake(text, wrong_encoding='latin-1', correct_encoding='utf-8'):
         return text
 
 # Использование
+
 broken = "ÐŸÑ€Ð¸Ð²ÐµÑ‚"
 print(fix_mojibake(broken))  # Привет
-
 ```
 
 ### 9.5 Скрипт для массового исправления
@@ -1230,7 +1182,6 @@ find . -name "*.txt" | while read file; do
         mv "$file.tmp" "$file"
     fi
 done
-
 ```
 
 ---
@@ -1245,11 +1196,12 @@ done
 
 ```python
 # Плохо
+
 open('file.txt')
 
 # Хорошо
-open('file.txt', encoding='utf-8')
 
+open('file.txt', encoding='utf-8')
 ```
 
 3. **Храните текст как Unicode** — конвертируйте на границах (ввод/вывод)
@@ -1259,26 +1211,20 @@ open('file.txt', encoding='utf-8')
 ### 10.2 HTTP и кодировки
 
 ```http
-
 Content-Type: text/html; charset=utf-8
-
 ```
 
 ```html
-
 <meta charset="UTF-8">
-
 ```
 
 ### 10.3 Базы данных
 
 ```sql
-
 -- MySQL: создание базы с UTF-8
 CREATE DATABASE mydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- PostgreSQL: по умолчанию UTF-8
-
 ```
 
 > **⚠️ Warning:**  
@@ -1288,10 +1234,10 @@ CREATE DATABASE mydb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 ```bash
 # Настройка Git для UTF-8
+
 git config --global core.quotepath false
 git config --global i18n.commitencoding utf-8
 git config --global i18n.logoutputencoding utf-8
-
 ```
 
 ---
@@ -1311,24 +1257,24 @@ git config --global i18n.logoutputencoding utf-8
 
 ```python
 # Невидимые символы могут сломать сравнение
+
 s1 = "hello"
 s2 = "hello\u200b"  # с zero-width space
 
 print(s1 == s2)  # False
 print(len(s1), len(s2))  # 5, 6
-
 ```
 
 ### 11.2 Homoglyphs — похожие символы
 
 ```python
 # Кириллическая 'а' vs латинская 'a'
+
 cyrillic_a = 'а'  # U+0430
 latin_a = 'a'     # U+0061
 
 print(cyrillic_a == latin_a)  # False
 print(ord(cyrillic_a), ord(latin_a))  # 1072, 97
-
 ```
 
 Это используется в фишинговых атаках:
@@ -1339,11 +1285,13 @@ print(ord(cyrillic_a), ord(latin_a))  # 1072, 97
 
 ```python
 # Эмодзи могут занимать больше одного code point
+
 emoji = "👨‍👩‍👧‍👦"  # Family emoji
 
 print(len(emoji))  # 11 (!) — 7 code points + 4 ZWJ
 
 # Это: 👨 + ZWJ + 👩 + ZWJ + 👧 + ZWJ + 👦
+
 for char in emoji:
     print(f"U+{ord(char):04X}", end=" ")
 # U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466
@@ -1358,19 +1306,15 @@ for char in emoji:
 ❌ **Ошибка:**
 
 ```python
-
 with open('file.txt') as f:
     content = f.read()  # Какая кодировка? Зависит от системы!
-
 ```
 
 ✅ **Решение:**
 
 ```python
-
 with open('file.txt', encoding='utf-8') as f:
     content = f.read()
-
 ```
 
 ### 12.2 MySQL utf8 vs utf8mb4
@@ -1378,18 +1322,14 @@ with open('file.txt', encoding='utf-8') as f:
 ❌ **Ошибка:**
 
 ```sql
-
 CREATE TABLE posts (content TEXT) CHARACTER SET utf8;
 -- Не поддерживает эмодзи!
-
 ```
 
 ✅ **Решение:**
 
 ```sql
-
 CREATE TABLE posts (content TEXT) CHARACTER SET utf8mb4;
-
 ```
 
 ### 12.3 Сравнение строк с разной нормализацией
@@ -1398,17 +1338,15 @@ CREATE TABLE posts (content TEXT) CHARACTER SET utf8mb4;
 
 ```python
 # Может дать False даже для "одинаковых" строк
-s1 == s2
 
+s1 == s2
 ```
 
 ✅ **Решение:**
 
 ```python
-
 import unicodedata
 unicodedata.normalize('NFC', s1) == unicodedata.normalize('NFC', s2)
-
 ```
 
 ### 12.4 Доверять file -i
@@ -1416,7 +1354,6 @@ unicodedata.normalize('NFC', s1) == unicodedata.normalize('NFC', s2)
 ❌ **Ошибка:** Слепо верить `file -i`
 
 ```bash
-
 file -i russian.txt
 # Может показать iso-8859-1 для CP1251!
 ```
@@ -1516,7 +1453,6 @@ file -i russian.txt
 Как определить кодировку по байтам:
 
 ```
-
 UTF-8 BOM:           EF BB BF
 UTF-16 LE BOM:       FF FE
 UTF-16 BE BOM:       FE FF
@@ -1538,13 +1474,11 @@ UTF-32 BE BOM:       00 00 FE FF
   - Каждая буква = 1 байт
   - Заглавные: C0-DF
   - Строчные: E0-FF
-
 ```
 
 ### 13.5 Как выбрать кодировку
 
 ```
-
                     ┌─────────────────────────────────┐
                     │    Какую кодировку выбрать?     │
                     └───────────────┬─────────────────┘
@@ -1571,7 +1505,6 @@ UTF-32 BE BOM:       00 00 FE FF
                               │ конвертируйте  │
                               │ в UTF-8        │
                               └────────────────┘
-
 ```
 
 **Правило:** Если сомневаетесь — выбирайте **UTF-8**.
@@ -1637,6 +1570,7 @@ UTF-32 BE BOM:       00 00 FE FF
 - [chardet](https://github.com/chardet/chardet) — определение кодировки
 
 ---
+
 
 
 

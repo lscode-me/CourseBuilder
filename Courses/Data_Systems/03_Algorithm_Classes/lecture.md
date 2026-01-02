@@ -54,7 +54,6 @@
 Простейший алгоритм — проверяем каждый элемент по очереди.
 
 ```python
-
 def linear_search(arr, target):
     """
     Линейный поиск: O(n) время, O(1) память.
@@ -66,6 +65,7 @@ def linear_search(arr, target):
     return -1
 
 # Пример
+
 data = [5, 2, 8, 1, 9, 3, 7]
 print(f"Индекс 8: {linear_search(data, 8)}")
 print(f"Индекс 10: {linear_search(data, 10)}")
@@ -73,7 +73,6 @@ print(f"Индекс 10: {linear_search(data, 10)}")
 
 **Output:**
 ```
-
 Индекс 8: 2
 Индекс 10: -1
 ```
@@ -83,7 +82,6 @@ print(f"Индекс 10: {linear_search(data, 10)}")
 Работает только на отсортированных данных, но намного быстрее.
 
 ```python
-
 def binary_search(arr, target):
     """
     Бинарный поиск: O(log n) время, O(1) память.
@@ -104,6 +102,7 @@ def binary_search(arr, target):
     return -1
 
 # Пример на отсортированных данных
+
 sorted_data = [1, 2, 3, 5, 7, 8, 9]
 print(f"Индекс 7: {binary_search(sorted_data, 7)}")
 print(f"Индекс 4: {binary_search(sorted_data, 4)}")
@@ -111,7 +110,6 @@ print(f"Индекс 4: {binary_search(sorted_data, 4)}")
 
 **Output:**
 ```
-
 Индекс 7: 4
 Индекс 4: -1
 ```
@@ -119,7 +117,6 @@ print(f"Индекс 4: {binary_search(sorted_data, 4)}")
 ### 2.3 Вариации бинарного поиска
 
 ```python
-
 import bisect
 
 def find_first_occurrence(arr, target):
@@ -143,6 +140,7 @@ def count_occurrences(arr, target):
     return right - left
 
 # Пример
+
 data = [1, 2, 2, 2, 3, 4, 5]
 print(f"Первое вхождение 2: {find_first_occurrence(data, 2)}")
 print(f"Последнее вхождение 2: {find_last_occurrence(data, 2)}")
@@ -151,7 +149,6 @@ print(f"Количество 2: {count_occurrences(data, 2)}")
 
 **Output:**
 ```
-
 Первое вхождение 2: 1
 Последнее вхождение 2: 3
 Количество 2: 3
@@ -176,7 +173,6 @@ print(f"Количество 2: {count_occurrences(data, 2)}")
 Эффективна для почти отсортированных данных.
 
 ```python
-
 def insertion_sort(arr):
     """
     Сортировка вставками: O(n²) в среднем, O(n) для почти отсортированных.
@@ -198,6 +194,7 @@ def insertion_sort(arr):
     return arr
 
 # Пример
+
 data = [5, 2, 8, 1, 9]
 print(f"До: {data}")
 print(f"После: {insertion_sort(data)}")
@@ -205,7 +202,6 @@ print(f"После: {insertion_sort(data)}")
 
 **Output:**
 ```
-
 До: [5, 2, 8, 1, 9]
 После: [1, 2, 5, 8, 9]
 ```
@@ -215,7 +211,6 @@ print(f"После: {insertion_sort(data)}")
 Классический пример Divide and Conquer.
 
 ```python
-
 def merge_sort(arr):
     """
     Сортировка слиянием: O(n log n) всегда, O(n) память.
@@ -248,6 +243,7 @@ def merge(left, right):
     return result
 
 # Пример
+
 data = [38, 27, 43, 3, 9, 82, 10]
 print(f"До: {data}")
 print(f"После: {merge_sort(data)}")
@@ -255,7 +251,6 @@ print(f"После: {merge_sort(data)}")
 
 **Output:**
 ```
-
 До: [38, 27, 43, 3, 9, 82, 10]
 После: [3, 9, 10, 27, 38, 43, 82]
 ```
@@ -265,7 +260,6 @@ print(f"После: {merge_sort(data)}")
 На практике часто самая быстрая.
 
 ```python
-
 def quicksort(arr):
     """
     Быстрая сортировка: O(n log n) в среднем, O(n²) в худшем.
@@ -291,7 +285,6 @@ print(f"QuickSort: {quicksort(data)}")
 
 **Output:**
 ```
-
 QuickSort: [1, 1, 2, 3, 6, 8, 10]
 ```
 
@@ -312,7 +305,6 @@ QuickSort: [1, 1, 2, 3, 6, 8, 10]
 ### 4.2 Пример: Задача о сдаче
 
 ```python
-
 def coin_change_greedy(amount, coins):
     """
     Жадный алгоритм для размена монет.
@@ -329,6 +321,7 @@ def coin_change_greedy(amount, coins):
     return result if amount == 0 else None
 
 # Работает для стандартных монет
+
 print(f"Размен 93: {coin_change_greedy(93, [1, 5, 10, 25, 50])}")
 
 # НЕ работает для некоторых наборов
@@ -341,7 +334,6 @@ print(f"Оптимальное: [3, 3] (монет: 2)")
 
 **Output:**
 ```
-
 Размен 93: [50, 25, 10, 5, 1, 1, 1]
 Жадный для 6 с [1,3,4]: [4, 1, 1] (монет: 3)
 Оптимальное: [3, 3] (монет: 2)
@@ -352,7 +344,6 @@ print(f"Оптимальное: [3, 3] (монет: 2)")
 Жадный подход работает идеально для задачи о максимальном количестве непересекающихся интервалов.
 
 ```python
-
 def max_non_overlapping_intervals(intervals):
     """
     Выбирает максимальное количество непересекающихся интервалов.
@@ -383,7 +374,6 @@ print(f"Максимум без пересечений: {selected}")
 
 **Output:**
 ```
-
 Все встречи: [(1, 3), (2, 5), (3, 6), (5, 7), (8, 10)]
 Максимум без пересечений: [(1, 3), (3, 6), (8, 10)]
 ```
@@ -391,7 +381,6 @@ print(f"Максимум без пересечений: {selected}")
 ### 4.4 Пример: Кодирование Хаффмана
 
 ```python
-
 import heapq
 from collections import Counter
 
@@ -423,6 +412,7 @@ def huffman_encoding(text):
     return {char: code for char, code in heap[0][1:]}
 
 # Пример
+
 text = "abracadabra"
 codes = huffman_encoding(text)
 print(f"Текст: {text}")
@@ -437,7 +427,6 @@ print(f"ASCII: {original_bits} бит, Huffman: {huffman_bits} бит")
 
 **Output:**
 ```
-
 Текст: abracadabra
 Коды Хаффмана: {'a': '0', 'r': '10', 'b': '110', 'c': '1110', 'd': '1111'}
 ASCII: 88 бит, Huffman: 23 бит
@@ -473,7 +462,6 @@ ASCII: 88 бит, Huffman: 23 бит
 ### 5.3 Пример: Возведение в степень
 
 ```python
-
 def power_naive(x, n):
     """Наивное возведение в степень: O(n)."""
     result = 1
@@ -499,6 +487,7 @@ def power_divide_conquer(x, n):
         return half * half * x
 
 # Сравнение
+
 import time
 
 n = 100000
@@ -518,7 +507,6 @@ print(f"D&C O(log n): {time_dc*1000:.3f} мс")
 
 **Output:**
 ```
-
 Наивный O(n): 8.234 мс
 D&C O(log n): 0.021 мс
 ```
@@ -526,7 +514,6 @@ D&C O(log n): 0.021 мс
 ### 5.4 Пример: Поиск максимума в массиве (D&C)
 
 ```python
-
 def find_max_dc(arr, left, right):
     """
     Divide and Conquer для поиска максимума.
@@ -556,7 +543,6 @@ print(f"Максимум: {result}")
 
 **Output:**
 ```
-
 Максимум: 9
 ```
 
@@ -580,17 +566,18 @@ print(f"Максимум: {result}")
 ### 6.2 Пример: Числа Фибоначчи
 
 ```python
-
 from functools import lru_cache
 import time
 
 # Наивная рекурсия: O(2^n)
+
 def fib_naive(n):
     if n <= 1:
         return n
     return fib_naive(n-1) + fib_naive(n-2)
 
 # Top-down с мемоизацией: O(n)
+
 @lru_cache(maxsize=None)
 def fib_memo(n):
     if n <= 1:
@@ -598,6 +585,7 @@ def fib_memo(n):
     return fib_memo(n-1) + fib_memo(n-2)
 
 # Bottom-up: O(n) время, O(1) память
+
 def fib_tabulation(n):
     if n <= 1:
         return n
@@ -607,6 +595,7 @@ def fib_tabulation(n):
     return curr
 
 # Сравнение
+
 n = 35
 
 start = time.perf_counter()
@@ -629,7 +618,6 @@ print(f"Табуляция: {time_tab:.6f} сек")
 
 **Output:**
 ```
-
 fib(35) = 9227465
 Наивный: 1.892 сек
 Мемоизация: 0.000018 сек
@@ -639,7 +627,6 @@ fib(35) = 9227465
 ### 6.3 Пример: Задача о рюкзаке (Knapsack)
 
 ```python
-
 def knapsack_01(weights, values, capacity):
     """
     0/1 Knapsack: каждый предмет можно взять только один раз.
@@ -677,7 +664,6 @@ print(f"Максимальная ценность: {max_value}")
 
 **Output:**
 ```
-
 Веса: [2, 3, 4, 5]
 Ценности: [3, 4, 5, 6]
 Вместимость: 8
@@ -687,7 +673,6 @@ print(f"Максимальная ценность: {max_value}")
 ### 6.4 Пример: Наибольшая общая подпоследовательность (LCS)
 
 ```python
-
 def lcs(s1, s2):
     """
     Longest Common Subsequence.
@@ -732,7 +717,6 @@ print(f"LCS: {result} (длина: {len(result)})")
 
 **Output:**
 ```
-
 s1: ABCDGH
 s2: AEDFHR
 LCS: ADH (длина: 3)
@@ -755,7 +739,6 @@ LCS: ADH (длина: 3)
 ### 7.2 Дерево решений
 
 ```python
-
 def choose_algorithm_class(problem):
     """
     Псевдокод для выбора класса алгоритма.
@@ -793,6 +776,7 @@ def choose_algorithm_class(problem):
 
 ```python
 # Жадный подход (не всегда оптимален!)
+
 def coins_greedy(coins, amount):
     coins = sorted(coins, reverse=True)
     count = 0
@@ -802,6 +786,7 @@ def coins_greedy(coins, amount):
     return count if amount == 0 else float('inf')
 
 # Динамическое программирование (всегда оптимален)
+
 def coins_dp(coins, amount):
     dp = [float('inf')] * (amount + 1)
     dp[0] = 0
@@ -828,7 +813,6 @@ print(f"DP: {dp} монет")
 
 **Output:**
 ```
-
 Монеты: [1, 3, 4], сумма: 6
 Жадный: 3 монет
 DP: 2 монет
@@ -870,4 +854,5 @@ DP: 2 монет
 - Исследуйте NP-полные задачи
 
 ---
+
 

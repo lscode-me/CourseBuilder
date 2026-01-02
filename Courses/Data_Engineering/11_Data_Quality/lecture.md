@@ -66,7 +66,6 @@
 **Example: Валидация данных**
 
 ```python
-
 class DataValidator:
     def __init__(self, schema, rules=None):
         self.schema = schema
@@ -111,6 +110,7 @@ class DataValidator:
         return errors
 
 # Использование
+
 schema = {
     "id": {"type": "int", "required": True},
     "name": {"type": "str", "required": True},
@@ -126,6 +126,7 @@ rules = {
 validator = DataValidator(schema, rules)
 
 # Валидация
+
 test_record = {"id": 1, "name": "Alice", "age": 30, "email": "alice@example.com"}
 errors = validator.validate(test_record)
 
@@ -137,7 +138,6 @@ else:
 
 **Output:**
 ```
-
 ✅ Данные валидны
 ```
 
@@ -162,7 +162,6 @@ else:
 **Example: Измерение полноты**
 
 ```python
-
 class CompletenessChecker:
     def __init__(self, required_fields):
         self.required_fields = required_fields
@@ -209,6 +208,7 @@ class CompletenessChecker:
         return report
 
 # Использование
+
 data = [
     {"id": 1, "name": "Alice", "email": "alice@example.com", "age": 30},
     {"id": 2, "name": "Bob", "email": None, "age": 25},  # Отсутствует email
@@ -226,7 +226,6 @@ for field, stats in report["field_completeness"].items():
 
 **Output:**
 ```
-
 Отчёт о полноте данных:
   Полнота записей: 33.3%
   id: 100.0% (3/3)
@@ -255,7 +254,6 @@ for field, stats in report["field_completeness"].items():
 **Example: Проверка свежести**
 
 ```python
-
 from datetime import datetime, timedelta
 
 class FreshnessChecker:
@@ -297,15 +295,16 @@ class FreshnessChecker:
 checker = FreshnessChecker(expected_frequency_hours=24)
 
 # Свежие данные (обновлены 2 часа назад)
+
 checker.check_table_freshness("users", "2024-01-01T09:00:00")
 
 # Устаревшие данные (обновлены 30 часов назад)
+
 checker.check_table_freshness("orders", "2023-12-31T05:00:00")
 ```
 
 **Output:**
 ```
-
 📊 Свежесть таблицы 'users':
    Последнее обновление: 2024-01-01 09:00:00
    Возраст: 2.0 часов
@@ -341,7 +340,6 @@ checker.check_table_freshness("orders", "2023-12-31T05:00:00")
 **Example: Проверка консистентности**
 
 ```python
-
 class ConsistencyChecker:
     def __init__(self):
         self.references = {}
@@ -384,9 +382,11 @@ class ConsistencyChecker:
         }
 
 # Использование
+
 checker = ConsistencyChecker()
 
 # Referential integrity
+
 users = [1, 2, 3]  # User IDs
 orders = [
     {"order_id": 101, "user_id": 1},
@@ -415,7 +415,6 @@ print(f"  Консистентно: {consistency_check['is_consistent']}")
 
 **Output:**
 ```
-
 Referential Integrity Check:
   Всего записей: 3
   Нарушений: 1
@@ -451,7 +450,6 @@ Cross-system Consistency:
 **Example: Data Quality Framework**
 
 ```python
-
 class DataQualityFramework:
     def __init__(self):
         self.validators = []
@@ -517,19 +515,20 @@ class DataQualityFramework:
 framework = DataQualityFramework()
 
 # Добавление валидаторов
+
 from types import SimpleNamespace
 validator = SimpleNamespace(validate=lambda d: [])
 framework.add_validator(validator, "ingestion")
 framework.add_validator(validator, "transformation")
 
 # Мониторинг
+
 data = [{"id": 1, "name": "Alice"}]
 framework.monitor_quality(data, {})
 ```
 
 **Output:**
 ```
-
 ✅ Валидатор добавлен на этап 'ingestion'
 ✅ Валидатор добавлен на этап 'transformation'
 
@@ -596,5 +595,6 @@ framework.monitor_quality(data, {})
 - Apache Griffin: https://griffin.apache.org/ (data quality)
 
 ---
+
 
 

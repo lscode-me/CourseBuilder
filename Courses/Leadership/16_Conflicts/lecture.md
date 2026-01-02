@@ -40,7 +40,6 @@
 **Матрица конфликтов:**
 
 ```
-
               КОНСТРУКТИВНЫЙ                  ДЕСТРУКТИВНЫЙ
               ──────────────                  ─────────────
 Фокус:        Идеи, проблемы                  Люди, личности
@@ -105,7 +104,6 @@
 **Почему возникают конфликты:**
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    SOURCES OF CONFLICT                          │
 ├─────────────────────────────────────────────────────────────────┤
@@ -140,7 +138,6 @@
 **Стадии escalation:**
 
 ```
-
 Stage 1: DISAGREEMENT (Healthy)
 ├── Разные мнения
 ├── Debate о идеях
@@ -179,7 +176,6 @@ Stage 5: BREAKDOWN (Critical)
 **Пять стилей разрешения конфликтов:**
 
 ```
-
                     High
           ASSERTIVENESS
                      │
@@ -227,7 +223,6 @@ Stage 5: BREAKDOWN (Critical)
 **Позиции vs Интересы:**
 
 ```
-
 ПОЗИЦИЯ:  Что человек говорит, что хочет (surface)
 ИНТЕРЕС:  Почему он это хочет (underlying need)
 
@@ -266,7 +261,6 @@ Stage 5: BREAKDOWN (Critical)
 **Step 1: Acknowledge (Признать конфликт)**
 
 ```
-
 Ваши слова:
 "Я вижу, что у нас разные точки зрения на это."
 "Похоже, у нас disagreement. Давай разберёмся."
@@ -280,7 +274,6 @@ Stage 5: BREAKDOWN (Critical)
 **Step 2: Understand Each Side (Понять обе стороны)**
 
 ```
-
 Вопросы стороне A:
 "[Имя], помоги мне понять твою позицию."
 "Что для тебя важно в этом?"
@@ -297,7 +290,6 @@ Stage 5: BREAKDOWN (Critical)
 **Step 3: Find Common Ground (Найти общее)**
 
 ```
-
 Ваши слова:
 "Что вы оба хотите в итоге?"
 "В чём вы согласны?"
@@ -311,7 +303,6 @@ Stage 5: BREAKDOWN (Critical)
 **Step 4: Generate Options (Генерировать варианты)**
 
 ```
-
 Ваши слова:
 "Какие есть варианты решения?"
 "Что если мы попробуем...?"
@@ -326,7 +317,6 @@ Stage 5: BREAKDOWN (Critical)
 **Step 5: Agree on Solution (Договориться)**
 
 ```
-
 Ваши слова:
 "Какой вариант работает для обоих?"
 "Что каждый готов сделать?"
@@ -342,7 +332,6 @@ Stage 5: BREAKDOWN (Critical)
 **Step 6: Follow Up (Проверить)**
 
 ```
-
 "Давай встретимся через неделю и проверим, как работает."
 "Если что-то не так — сразу скажите, не копите."
 ```
@@ -369,7 +358,6 @@ Stage 5: BREAKDOWN (Critical)
 ### 3.2 Mediation Process
 
 ```
-
 Step 1: Preparation
 ─────────────────────
 - Understand situation (talk to each separately)
@@ -410,13 +398,11 @@ Step 7: Follow Up
 ─────────────────────
 - Check in after 1-2 weeks
 - Ensure agreement holding
-
 ```
 
 ### 3.3 Mediator Guidelines
 
 ```
-
 ✅ DO:
 
 - Stay neutral
@@ -434,7 +420,6 @@ Step 7: Follow Up
 - Share confidences
 - Rush to judgment
 - Allow disrespect
-
 ```
 
 ---
@@ -465,7 +450,6 @@ Step 7: Follow Up
 **Пример 1: Плохие code reviews**
 
 ```
-
 D: "В последних трёх code review я видел комментарии типа 
     'это плохо' и 'неправильно' без объяснений."
 
@@ -482,7 +466,6 @@ C: "Это поможет juniors учиться быстрее и улучши�
 **Пример 2: Опоздания на митинги**
 
 ```
-
 D: "За последние две недели ты опоздал на 4 из 5 standups. 
     Сегодня на 15 минут."
 
@@ -499,7 +482,6 @@ C: "Если проблема в расписании — давай обсуд�
 **Пример 3: Отказ в повышении зарплаты**
 
 ```
-
 D: "Ты просил повышение на 20%. 
     Я обсудил с HR и руководством."
 
@@ -518,7 +500,6 @@ C: "Давай составим план, что нужно для full request.
 **Ситуация: Performance Decline**
 
 ```
-
 Подготовка:
 - Собрать конкретные примеры (даты, факты)
 - Подумать о возможных причинах
@@ -545,7 +526,6 @@ C: "Давай составим план, что нужно для full request.
 **Ситуация: Behavioral Problem (постоянные перебивания)**
 
 ```
-
 "[Имя], я хочу дать тебе feedback о митингах.
 
 Я заметил, что на последних нескольких design reviews 
@@ -566,7 +546,6 @@ C: "Давай составим план, что нужно для full request.
 **Ситуация: Layoff Notification**
 
 ```
-
 "[Имя], у меня для тебя сложная новость.
 Нет хорошего способа это сказать.
 
@@ -594,7 +573,6 @@ C: "Давай составим план, что нужно для full request.
 **Реакция: Defensive (Защита)**
 
 ```
-
 Человек: "Это неправда! Я всё делаю правильно!"
 
 Вы: "Я понимаю, что слышать такое неприятно. 
@@ -610,7 +588,6 @@ C: "Давай составим план, что нужно для full request.
 **Реакция: Emotional (Слёзы, гнев)**
 
 ```
-
 Человек: *Плачет* или *Злится*
 
 Вы: "Я вижу, что это тебя расстроило. Это нормально.
@@ -629,7 +606,6 @@ C: "Давай составим план, что нужно для full request.
 **Реакция: Denial (Отрицание)**
 
 ```
-
 Человек: "Такого не было. Ты ошибаешься."
 
 Вы: "Я понимаю, что ты видишь ситуацию иначе.
@@ -644,7 +620,6 @@ C: "Давай составим план, что нужно для full request.
 **Реакция: Blame (Обвинение других)**
 
 ```
-
 Человек: "Это не я, это [другой человек / система / обстоятельства]!"
 
 Вы: "Я слышу, что ты видишь внешние факторы.
@@ -659,7 +634,6 @@ C: "Давай составим план, что нужно для full request.
 **Реакция: Counter-attack (Контратака)**
 
 ```
-
 Человек: "А ты сам...!" или "А почему [другой] не получает такой feedback?"
 
 Вы: "Я понимаю frustration. 
@@ -676,7 +650,6 @@ C: "Давай составим план, что нужно для full request.
 **Checklist перед разговором:**
 
 ```markdown
-
 □ Цель разговора clear?
 □ Конкретные примеры собраны?
 □ Время и место private?
@@ -709,7 +682,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 1: Говорите с каждым отдельно**
 
 ```
-
 С Алексеем:
 "Я замечаю tension между тобой и Марией. 
  Помоги мне понять, что происходит с твоей стороны."
@@ -731,7 +703,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 3: Mediation meeting (если нужно)**
 
 ```
-
 "Я пригласил вас обоих, потому что хочу решить ситуацию.
  Мы все хотим, чтобы команда работала хорошо.
  
@@ -748,7 +719,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 4: Set Clear Expectations**
 
 ```
-
 "Вот что я ожидаю дальше:
  - Профессиональное общение на митингах
  - Если disagreement — говорите о проблеме, не о человеке
@@ -766,7 +736,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 1: Разговор с другим Team Lead**
 
 ```
-
 "Привет [Имя], я заметил tension между нашими командами.
  Хочу понять ситуацию и найти решение вместе.
  Можем созвониться?"
@@ -781,7 +750,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 2: Find Common Ground**
 
 ```
-
 "Мы оба хотим [общая цель: доставить feature/избежать задержек].
  Давай посмотрим, где breakdown происходит."
  
@@ -792,7 +760,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 3: Joint Problem-Solving**
 
 ```
-
 Варианты:
 - Joint planning session с обеими командами
 - Shared backlog для dependencies
@@ -803,7 +770,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 4: Agreement и Follow-up**
 
 ```
-
 "Давай договоримся:
  - [Конкретные действия]
  - Встречаемся раз в [период] для sync
@@ -819,7 +785,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 1: Request 1-on-1**
 
 ```
-
 "У меня есть concerns по поводу [решение]. 
  Можем обсудить на нашем следующем 1-on-1?"
 ```
@@ -827,7 +792,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 2: Present Your Case (data-driven)**
 
 ```
-
 "Я хочу поделиться моим perspective.
  
  Вот мои concerns:
@@ -843,7 +807,6 @@ C: "Давай составим план, что нужно для full request.
 **Шаг 3: Listen and Understand**
 
 ```
-
 *Слушаете их reasoning*
 *Возможно, у них есть context, который вы не знаете*
 
@@ -862,7 +825,6 @@ C: "Давай составим план, что нужно для full request.
 | Fundamental disagreement | Document, reconsider fit |
 
 ```
-
 "Ok, я понимаю решение. 
  У меня остаются concerns, но я буду выполнять план.
  Прошу только: если [риск] материализуется, 
@@ -876,7 +838,6 @@ C: "Давай составим план, что нужно для full request.
 **Важно понимать:**
 
 ```
-
 "Brilliant Jerk" Formula:
 High performance + Toxic behavior = NET NEGATIVE
 
@@ -890,7 +851,6 @@ High performance + Toxic behavior = NET NEGATIVE
 **Шаг 1: Document Specific Behaviors**
 
 ```
-
 Date       | Behavior                           | Witness
 ───────────────────────────────────────────────────────────
 Jan 15     | Сказал "это идиотское решение"     | Team meeting
@@ -901,7 +861,6 @@ Jan 20     | Email с сарказмом к PM             | Email thread
 **Шаг 2: Private Conversation — Feedback + Expectations**
 
 ```
-
 "[Имя], я хочу обсудить кое-что важное.
 
 Я наблюдаю поведение, которое влияет на команду:
@@ -925,7 +884,6 @@ Jan 20     | Email с сарказмом к PM             | Email thread
 **Шаг 3: Monitor и Document**
 
 ```
-
 Следите за изменениями (или отсутствием).
 Документируйте всё.
 Собирайте feedback от команды.
@@ -934,7 +892,6 @@ Jan 20     | Email с сарказмом к PM             | Email thread
 **Шаг 4: Если нет изменений — Formal Warning**
 
 ```
-
 "[Имя], мы говорили об [X] две недели назад.
  Я не вижу изменений. [Конкретные примеры].
  
@@ -949,7 +906,6 @@ Jan 20     | Email с сарказмом к PM             | Email thread
 **Шаг 5: Если всё равно нет изменений — Exit**
 
 ```
-
 Работайте с HR.
 Процесс зависит от company policy.
 Protect остальную команду.
@@ -965,7 +921,6 @@ Protect остальную команду.
 ### 6.1 Proactive Measures
 
 ```
-
 Clear expectations:
 
 - Roles and responsibilities defined
@@ -983,31 +938,26 @@ Team norms:
 - How we disagree
 - How we make decisions
 - How we give feedback
-
 ```
 
 ### 6.2 Healthy Disagreement
 
 **Encourage:**
 ```
-
 - "Devil's advocate" role
 - Pre-mortem exercises
 - Diverse perspectives invited
 - Debate ideas, not people
-
 ```
 
 **Team agreement:**
 ```
-
 "We commit to:
 
 - Attack problems, not people
 - Listen to understand, not respond
 - Assume good intent
 - Disagree openly, commit together"
-
 ```
 
 ---
@@ -1017,7 +967,6 @@ Team norms:
 ### 7.1 When to Escalate
 
 ```
-
 Escalate to your manager / HR:
 
 - Legal/ethical concerns
@@ -1025,19 +974,16 @@ Escalate to your manager / HR:
 - Safety issues
 - You can't resolve it
 - Pattern of behavior despite intervention
-
 ```
 
 ### 7.2 How to Escalate
 
 ```
-
 1. Document everything first
 2. Be factual, not emotional
 3. Describe what you've tried
 4. Be clear about what you need
 5. Propose solutions if possible
-
 ```
 
 ---
@@ -1048,36 +994,30 @@ Escalate to your manager / HR:
 
 **Before conflict conversation:**
 ```
-
 - Take time to calm down
 - Separate facts from interpretation
 - Consider their perspective
 - Plan your key points
 - Anticipate reactions
-
 ```
 
 **During:**
 ```
-
 - Breathe
 - Pause before responding
 - Focus on issue, not person
 - Ask questions
 - Take breaks if needed
-
 ```
 
 ### 8.2 After Conflict
 
 **Reflection:**
 ```
-
 - What went well?
 - What would I do differently?
 - Did I listen enough?
 - What did I learn about them? About myself?
-
 ```
 
 ---

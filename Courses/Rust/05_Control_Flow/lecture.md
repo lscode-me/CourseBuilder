@@ -34,7 +34,6 @@
 **Example: Простое условие**
 
 ```rust
-
 fn main() {
     let number = 7;
     
@@ -48,7 +47,6 @@ fn main() {
 
 **Output:**
 ```
-
 Число больше или равно 5
 ```
 
@@ -57,7 +55,6 @@ fn main() {
 **Example: Возврат значения**
 
 ```rust
-
 fn main() {
     let condition = true;
     let number = if condition { 5 } else { 6 };
@@ -68,7 +65,6 @@ fn main() {
 
 **Output:**
 ```
-
 Число: 5
 ```
 
@@ -77,7 +73,6 @@ fn main() {
 **Example: Ошибка — разные типы**
 
 ```rust
-
 fn main() {
     let condition = true;
     let number = if condition { 5 } else { "six" };  // Ошибка!
@@ -86,7 +81,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error[E0308]: if and else have incompatible types
 ```
 
@@ -95,7 +89,6 @@ error[E0308]: if and else have incompatible types
 **Example: else if**
 
 ```rust
-
 fn main() {
     let number = 6;
     
@@ -113,7 +106,6 @@ fn main() {
 
 **Output:**
 ```
-
 Число делится на 3
 ```
 
@@ -128,7 +120,6 @@ fn main() {
 **Example: Простой loop**
 
 ```rust
-
 fn main() {
     let mut counter = 0;
     
@@ -145,7 +136,6 @@ fn main() {
 
 **Output:**
 ```
-
 Счётчик: 1
 Счётчик: 2
 Счётчик: 3
@@ -158,7 +148,6 @@ fn main() {
 **Example: Возврат значения**
 
 ```rust
-
 fn main() {
     let mut counter = 0;
     
@@ -176,7 +165,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 20
 ```
 
@@ -185,7 +173,6 @@ fn main() {
 **Example: Вложенные циклы с метками**
 
 ```rust
-
 fn main() {
     let mut count = 0;
     
@@ -213,7 +200,6 @@ fn main() {
 
 **Output:**
 ```
-
 Внешний цикл: 0
   Внутренний цикл: 0
   Внутренний цикл: 1
@@ -237,7 +223,6 @@ fn main() {
 **Example: Простой while**
 
 ```rust
-
 fn main() {
     let mut number = 3;
     
@@ -252,7 +237,6 @@ fn main() {
 
 **Output:**
 ```
-
 3!
 2!
 1!
@@ -264,7 +248,6 @@ fn main() {
 **Example: Обход массива**
 
 ```rust
-
 fn main() {
     let arr = [10, 20, 30, 40, 50];
     let mut index = 0;
@@ -278,7 +261,6 @@ fn main() {
 
 **Output:**
 ```
-
 Элемент 0: 10
 Элемент 1: 20
 Элемент 2: 30
@@ -297,7 +279,6 @@ fn main() {
 **Example: Диапазон чисел**
 
 ```rust
-
 fn main() {
     for number in 1..=5 {
         println!("{}", number);
@@ -307,7 +288,6 @@ fn main() {
 
 **Output:**
 ```
-
 1
 2
 3
@@ -325,7 +305,6 @@ fn main() {
 **Example: Обход массива**
 
 ```rust
-
 fn main() {
     let arr = [10, 20, 30, 40, 50];
     
@@ -337,7 +316,6 @@ fn main() {
 
 **Output:**
 ```
-
 Значение: 10
 Значение: 20
 Значение: 30
@@ -348,7 +326,6 @@ fn main() {
 **Example: Обход с индексом**
 
 ```rust
-
 fn main() {
     let arr = [10, 20, 30, 40, 50];
     
@@ -360,7 +337,6 @@ fn main() {
 
 **Output:**
 ```
-
 Индекс 0: 10
 Индекс 1: 20
 Индекс 2: 30
@@ -373,7 +349,6 @@ fn main() {
 **Example: Обратный порядок**
 
 ```rust
-
 fn main() {
     for number in (1..=5).rev() {
         println!("{}", number);
@@ -383,7 +358,6 @@ fn main() {
 
 **Output:**
 ```
-
 5
 4
 3
@@ -402,7 +376,6 @@ fn main() {
 **Example: Простой match**
 
 ```rust
-
 fn main() {
     let number = 3;
     
@@ -417,7 +390,6 @@ fn main() {
 
 **Output:**
 ```
-
 Три
 ```
 
@@ -428,7 +400,6 @@ fn main() {
 **Example: match как выражение**
 
 ```rust
-
 fn main() {
     let number = 5;
     
@@ -445,7 +416,6 @@ fn main() {
 
 **Output:**
 ```
-
 Число: много
 ```
 
@@ -454,7 +424,6 @@ fn main() {
 **Example: Несколько значений**
 
 ```rust
-
 fn main() {
     let number = 2;
     
@@ -468,7 +437,6 @@ fn main() {
 
 **Output:**
 ```
-
 Маленькое число
 ```
 
@@ -477,7 +445,6 @@ fn main() {
 **Example: Диапазоны**
 
 ```rust
-
 fn main() {
     let number = 42;
     
@@ -492,7 +459,6 @@ fn main() {
 
 **Output:**
 ```
-
 От 21 до 50
 ```
 
@@ -501,7 +467,6 @@ fn main() {
 **Example: Деструктуризация кортежей**
 
 ```rust
-
 fn main() {
     let point = (0, 5);
     
@@ -516,7 +481,6 @@ fn main() {
 
 **Output:**
 ```
-
 На оси Y: 5
 ```
 
@@ -527,7 +491,6 @@ fn main() {
 ### 6.1 Пример: Поиск в массиве
 
 ```rust
-
 fn main() {
     let arr = [10, 20, 30, 40, 50];
     let target = 30;
@@ -549,14 +512,12 @@ fn main() {
 
 **Output:**
 ```
-
 Найдено 30 на позиции 2
 ```
 
 ### 6.2 Пример: Подсчёт суммы
 
 ```rust
-
 fn main() {
     let numbers = [1, 2, 3, 4, 5];
     let mut sum = 0;
@@ -571,14 +532,12 @@ fn main() {
 
 **Output:**
 ```
-
 Сумма: 15
 ```
 
 ### 6.3 Пример: FizzBuzz
 
 ```rust
-
 fn main() {
     for number in 1..=20 {
         match (number % 3, number % 5) {
@@ -593,7 +552,6 @@ fn main() {
 
 **Output:**
 ```
-
 1
 2
 Fizz
@@ -627,7 +585,6 @@ Buzz
 **Example: Пропуск чётных чисел**
 
 ```rust
-
 fn main() {
     for number in 1..=10 {
         if number % 2 == 0 {
@@ -640,7 +597,6 @@ fn main() {
 
 **Output:**
 ```
-
 1
 3
 5

@@ -45,7 +45,6 @@ Hello
 
 **Output:**
 ```
-
 Hello
 ```
 
@@ -89,7 +88,6 @@ $ cat error.txt
 
 **Output:**
 ```
-
 ls: cannot access 'nonexistent.txt': No such file or directory
 ```
 
@@ -113,7 +111,6 @@ $ cat output.txt
 
 **Output:**
 ```
-
 Hello, World!
 ```
 
@@ -134,7 +131,6 @@ $ cat file.txt
 
 **Output:**
 ```
-
 Second line
 ```
 
@@ -157,7 +153,6 @@ $ cat file.txt
 
 **Output:**
 ```
-
 First line
 Second line
 ```
@@ -178,7 +173,6 @@ $ cat log.txt
 
 **Output:**
 ```
-
 Line 1
 Line 2
 Line 3
@@ -198,7 +192,6 @@ $ cat error.log
 
 **Output:**
 ```
-
 ls: cannot access 'nonexistent.txt': No such file or directory
 ```
 
@@ -236,7 +229,6 @@ $ cat < input.txt
 
 **Output:**
 ```
-
 Hello, World!
 ```
 
@@ -254,7 +246,6 @@ $ wc -l < numbers.txt
 
 **Output:**
 ```
-
 3
 ```
 
@@ -277,7 +268,6 @@ EOF
 
 **Output:**
 ```
-
 Line 1
 Line 2
 Line 3
@@ -317,7 +307,6 @@ $ cat <<< "Hello, World!"
 
 **Output:**
 ```
-
 Hello, World!
 ```
 
@@ -340,7 +329,6 @@ $ ls /usr/bin | grep bash
 
 **Output:**
 ```
-
 bash
 bashbug
 ```
@@ -359,7 +347,6 @@ $ cat fruits.txt | grep a | wc -l
 
 **Output:**
 ```
-
 3
 ```
 
@@ -379,7 +366,6 @@ $ cat bash_files.txt
 
 **Output:**
 ```
-
 bash
 bashbug
 ```
@@ -401,7 +387,6 @@ $ cat filtered.txt
 
 **Output:**
 ```
-
 4
 3
 2
@@ -427,7 +412,6 @@ $ jobs
 
 **Output:**
 ```
-
 [1]+  Running                 sleep 10 &
 ```
 
@@ -522,7 +506,6 @@ $ echo "$result"
 
 **Output:**
 ```
-
 Hello
 ```
 

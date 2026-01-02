@@ -98,7 +98,6 @@ int main() {
     
     return 0;
 }
-
 ```
 
 ### 2.2 Практическое использование chroot
@@ -107,35 +106,37 @@ int main() {
 
 ```bash
 # Создаем структуру директорий
+
 mkdir -p /var/chroot/jail/{bin,lib,lib64,usr/lib}
 
 # Копируем bash и необходимые библиотеки
+
 cp /bin/bash /var/chroot/jail/bin/
 
 # Определяем зависимости bash
-ldd /bin/bash
 
+ldd /bin/bash
 ```
 
 **Output:**
 ```
-
 linux-vdso.so.1 (0x00007ffcc3bfe000)
 libtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6
 libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2
 libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6
 /lib64/ld-linux-x86-64.so.2
-
 ```
 
 ```bash
 # Копируем библиотеки
+
 cp /lib/x86_64-linux-gnu/libtinfo.so.6 /var/chroot/jail/lib/
 cp /lib/x86_64-linux-gnu/libdl.so.2 /var/chroot/jail/lib/
 cp /lib/x86_64-linux-gnu/libc.so.6 /var/chroot/jail/lib/
 cp /lib64/ld-linux-x86-64.so.2 /var/chroot/jail/lib64/
 
 # Копируем дополнительные утилиты
+
 for cmd in ls cat echo; do
     cp /bin/$cmd /var/chroot/jail/bin/
     # Копируем зависимости каждой утилиты
@@ -144,20 +145,18 @@ for cmd in ls cat echo; do
 done
 
 # Входим в chroot
-sudo chroot /var/chroot/jail /bin/bash
 
+sudo chroot /var/chroot/jail /bin/bash
 ```
 
 **Output (внутри chroot):**
 ```bash
-
 bash-5.1# pwd
 /
 bash-5.1# ls
 bin  lib  lib64  usr
 bash-5.1# cat /etc/passwd
 cat: /etc/passwd: No such file or directory
-
 ```
 
 ### 2.3 Автоматизация создания chroot
@@ -172,10 +171,12 @@ CHROOT_DIR="${1:-/var/chroot/minimal}"
 COMMANDS="bash ls cat echo pwd mkdir rm cp mv"
 
 # Создаем структуру директорий
+
 mkdir -p "$CHROOT_DIR"/{bin,lib,lib64,etc,tmp,proc,dev}
 chmod 1777 "$CHROOT_DIR/tmp"
 
 # Функция для копирования команды с зависимостями
+
 copy_command() {
     local cmd="$1"
     local cmd_path=$(which "$cmd" 2>/dev/null)
@@ -200,21 +201,23 @@ copy_command() {
 }
 
 # Копируем команды
+
 for cmd in $COMMANDS; do
     echo "Copying $cmd..."
     copy_command "$cmd"
 done
 
 # Копируем динамический линкер
+
 cp /lib64/ld-linux-x86-64.so.2 "$CHROOT_DIR/lib64/" 2>/dev/null
 
 # Создаем базовые файлы
+
 echo "root:x:0:0:root:/root:/bin/bash" > "$CHROOT_DIR/etc/passwd"
 echo "root:x:0:" > "$CHROOT_DIR/etc/group"
 
 echo "Chroot environment created at $CHROOT_DIR"
 echo "Enter with: sudo chroot $CHROOT_DIR /bin/bash"
-
 ```
 
 ---
@@ -260,7 +263,6 @@ int main() {
     
     return 0;
 }
-
 ```
 
 ### 3.2 Отсутствие изоляции процессов
@@ -269,8 +271,8 @@ int main() {
 
 ```bash
 # Внутри chroot (если /proc примонтирован)
-ps aux  # Покажет ВСЕ процессы системы
 
+ps aux  # Покажет ВСЕ процессы системы
 ```
 
 ### 3.3 Отсутствие изоляции сети
@@ -279,8 +281,8 @@ ps aux  # Покажет ВСЕ процессы системы
 
 ```bash
 # Внутри chroot
-netstat -tlnp  # Покажет все сетевые соединения host-системы
 
+netstat -tlnp  # Покажет все сетевые соединения host-системы
 ```
 
 ### 3.4 Отсутствие ограничения ресурсов
@@ -323,13 +325,16 @@ FreeBSD Jails обеспечивают:
 
 ```bash
 # Создание базовой структуры jail
+
 mkdir -p /jails/www
 cd /jails/www
 
 # Распаковка базовой системы
+
 tar -xf /path/to/base.txz -C /jails/www
 
 # Конфигурация jail в /etc/jail.conf
+
 cat << 'EOF' >> /etc/jail.conf
 www {
     host.hostname = "www.jail";
@@ -342,11 +347,12 @@ www {
 EOF
 
 # Запуск jail
+
 jail -c www
 
 # Вход в jail
-jexec www /bin/sh
 
+jexec www /bin/sh
 ```
 
 ### 4.3 Сравнение chroot и Jails
@@ -382,6 +388,7 @@ Solaris 10 (2005) представил Zones — ещё более продви�
 
 ```bash
 # Создание зоны
+
 zonecfg -z myzone << EOF
 create
 set zonepath=/zones/myzone
@@ -395,14 +402,16 @@ commit
 EOF
 
 # Установка зоны
+
 zoneadm -z myzone install
 
 # Запуск зоны
+
 zoneadm -z myzone boot
 
 # Вход в зону
-zlogin myzone
 
+zlogin myzone
 ```
 
 ### 5.3 Resource Management в Solaris
@@ -411,6 +420,7 @@ Solaris предоставлял продвинутое управление р�
 
 ```bash
 # Ограничение CPU для зоны
+
 zonecfg -z myzone << EOF
 add dedicated-cpu
     set ncpus=2
@@ -419,6 +429,7 @@ commit
 EOF
 
 # Ограничение памяти
+
 zonecfg -z myzone << EOF
 add capped-memory
     set physical=2G
@@ -426,7 +437,6 @@ add capped-memory
 end
 commit
 EOF
-
 ```
 
 ---
@@ -497,7 +507,6 @@ LXC (2008) — первая полноценная система контейн
 ### 7.1 Архитектура LXC
 
 ```
-
 ┌─────────────────────────────────────────┐
 │              Host System                │
 ├─────────────────────────────────────────┤
@@ -512,52 +521,55 @@ LXC (2008) — первая полноценная система контейн
 │           Linux Kernel                  │
 │    (Namespaces + Cgroups + Seccomp)     │
 └─────────────────────────────────────────┘
-
 ```
 
 ### 7.2 Работа с LXC
 
 ```bash
 # Установка LXC
+
 apt install lxc lxc-templates
 
 # Создание контейнера
+
 lxc-create -t download -n mycontainer -- \
     --dist ubuntu --release focal --arch amd64
 
 # Запуск контейнера
+
 lxc-start -n mycontainer
 
 # Проверка статуса
-lxc-info -n mycontainer
 
+lxc-info -n mycontainer
 ```
 
 **Output:**
 ```
-
 Name:           mycontainer
 State:          RUNNING
 PID:            12345
 IP:             10.0.3.100
 CPU use:        0.50 seconds
 Memory use:     48.00 MiB
-
 ```
 
 ```bash
 # Вход в контейнер
+
 lxc-attach -n mycontainer
 
 # Выполнение команды в контейнере
+
 lxc-attach -n mycontainer -- ls -la /
 
 # Остановка контейнера
+
 lxc-stop -n mycontainer
 
 # Удаление контейнера
-lxc-destroy -n mycontainer
 
+lxc-destroy -n mycontainer
 ```
 
 ### 7.3 Конфигурация LXC
@@ -566,28 +578,33 @@ lxc-destroy -n mycontainer
 # /var/lib/lxc/mycontainer/config
 
 # Базовые настройки
+
 lxc.uts.name = mycontainer
 lxc.arch = linux64
 
 # Сеть
+
 lxc.net.0.type = veth
 lxc.net.0.link = lxcbr0
 lxc.net.0.flags = up
 lxc.net.0.hwaddr = 00:16:3e:xx:xx:xx
 
 # Ограничение ресурсов (cgroups v1)
+
 lxc.cgroup.memory.limit_in_bytes = 512M
 lxc.cgroup.cpu.shares = 512
 
 # Файловая система
+
 lxc.rootfs.path = dir:/var/lib/lxc/mycontainer/rootfs
 
 # Точки монтирования
+
 lxc.mount.auto = proc:mixed sys:ro cgroup:mixed
 
 # Capabilities
-lxc.cap.drop = sys_admin net_admin
 
+lxc.cap.drop = sys_admin net_admin
 ```
 
 ---
@@ -610,7 +627,6 @@ Docker (2013) не изобрёл контейнеры, но радикальн�
 
 **1. Image Layers:**
 ```
-
 ┌────────────────────────────┐
 │      Application Code      │  ← Layer 4 (your code)
 ├────────────────────────────┤
@@ -620,12 +636,10 @@ Docker (2013) не изобрёл контейнеры, но радикальн�
 ├────────────────────────────┤
 │       Debian Base          │  ← Layer 1 (base image)
 └────────────────────────────┘
-
 ```
 
 **2. Dockerfile:**
 ```dockerfile
-
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -636,7 +650,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["python", "app.py"]
-
 ```
 
 **3. Docker Hub:**
@@ -648,7 +661,6 @@ CMD ["python", "app.py"]
 ### 8.3 Изначальная архитектура Docker
 
 ```
-
 ┌──────────────────────────────────────────┐
 │                Docker CLI                │
 │              docker run ...              │
@@ -671,7 +683,6 @@ CMD ["python", "app.py"]
 │              Linux Kernel                │
 │      (namespaces, cgroups, etc.)         │
 └──────────────────────────────────────────┘
-
 ```
 
 ---
@@ -691,7 +702,6 @@ CMD ["python", "app.py"]
 ### 9.2 Современная архитектура
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │              High-Level Container Runtimes              │
 │    ┌─────────┐  ┌──────────┐  ┌─────────┐  ┌──────────┐ │
@@ -710,7 +720,6 @@ CMD ["python", "app.py"]
 │                      Linux Kernel                       │
 │     Namespaces │ Cgroups │ Seccomp │ Capabilities       │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 ### 9.3 Инструменты экосистемы
@@ -808,6 +817,7 @@ CMD ["python", "app.py"]
 - "Docker Deep Dive" by Nigel Poulton — история и архитектура
 
 ---
+
 
 
 

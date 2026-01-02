@@ -104,7 +104,6 @@ Rust построен на трёх столпах:
 **Example: Попытка использовать освобожденную память**
 
 ```rust
-
 fn main() {
     let s = String::from("hello");
     let s2 = s;  // s перемещается в s2
@@ -114,7 +113,6 @@ fn main() {
 
 **Output (ошибка компиляции):**
 ```
-
 error[E0382]: borrow of moved value: `s`
  --> src/main.rs:4:20
   |
@@ -151,7 +149,6 @@ Rust гарантирует отсутствие data races на этапе ко
 **Example: Безопасная многопоточность**
 
 ```rust
-
 use std::thread;
 
 fn main() {
@@ -178,7 +175,6 @@ fn main() {
 **Example: Итераторы**
 
 ```rust
-
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5];
     
@@ -195,7 +191,6 @@ fn main() {
 
 **Output:**
 ```
-
 [6, 8, 10]
 ```
 
@@ -208,7 +203,6 @@ fn main() {
 **Example: Pattern matching с Option**
 
 ```rust
-
 fn divide(a: i32, b: i32) -> Option<i32> {
     if b != 0 {
         Some(a / b)
@@ -232,7 +226,6 @@ fn main() {
 
 **Output:**
 ```
-
 Result: 5
 Division by zero!
 ```
@@ -244,7 +237,6 @@ Division by zero!
 **Example: Использование trait**
 
 ```rust
-
 trait Greet {
     fn greet(&self) -> String;
 }
@@ -269,7 +261,6 @@ fn main() {
 
 **Output:**
 ```
-
 Hello, I'm Alice
 ```
 

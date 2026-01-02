@@ -55,7 +55,6 @@
 ### 1.2 Опасность чрезмерных процессов
 
 ```
-
           Хаос ←───────────────────────────────► Бюрократия
             │                                       │
      Нет процессов                           Слишком много
@@ -70,7 +69,6 @@
                         │ Минимально  │
                         │ достаточно  │
                         └─────────────┘
-
 ```
 
 > **⚠️ Warning:**  
@@ -119,7 +117,6 @@
 - Squash and merge
 - Author merges after approval
 - Delete branch after merge
-
 ```
 
 ### 2.2 Planning Processes
@@ -159,14 +156,12 @@
 ### 3.1 Framework для внедрения
 
 ```
-
 1. IDENTIFY  — Найти проблему
 2. DESIGN    — Спроектировать решение  
 3. PILOT     — Попробовать на части команды
 4. ITERATE   — Улучшить по feedback
 5. ROLL OUT  — Внедрить полностью
 6. MAINTAIN  — Поддерживать и эволюционировать
-
 ```
 
 ### 3.2 Identify: Найти проблему
@@ -180,7 +175,6 @@
 
 **Не внедряйте процесс без проблемы:**
 ```
-
 ❌ "В Google так делают"
 ❌ "Я прочитал в книге"
 ❌ "Может пригодиться"
@@ -188,7 +182,6 @@
 ✅ "Мы 3 раза за месяц сломали prod из-за X"
 ✅ "Команда жалуется на Y"
 ✅ "Мы тратим Z часов на ручную работу"
-
 ```
 
 ### 3.3 Design: Спроектировать решение
@@ -219,12 +212,10 @@
 
 **Как делать pilot:**
 ```
-
 1. Выберите 1-2 человека / один проект
 2. Договоритесь о периоде (2-4 недели)
 3. Собирайте feedback регулярно
 4. Документируйте issues и изменения
-
 ```
 
 ### 3.5 Iterate и Roll Out
@@ -297,7 +288,6 @@
 
 - 1 approval for features
 - 2 approvals for critical paths
-
 ```
 
 ### 4.2 Release Process
@@ -329,7 +319,6 @@
 - Error rate > 1%
 - P1 bug discovered
 - Performance degradation > 20%
-
 ```
 
 ### 4.3 Incident Response
@@ -346,6 +335,7 @@
 - P4: Cosmetic, no impact
 
 ### Response Times:
+
 | Severity | Response | Resolution Target |
 |----------|----------|-------------------|
 | P1 | 15 min | 4 hours |
@@ -361,7 +351,6 @@
 4. Mitigate → Stop bleeding
 5. Fix → Root cause resolution
 6. Post-mortem → Learn and prevent
-
 ```
 
 ### 4.4 On-call Rotation
@@ -392,7 +381,6 @@
 - Recent deployments
 - Upcoming changes
 - Known fragile areas
-
 ```
 
 ### 4.5 Documentation Process
@@ -427,7 +415,6 @@
 - Answer: Why, What, How
 - Include examples
 - Keep up to date (or delete)
-
 ```
 
 ---
@@ -438,42 +425,34 @@
 
 **Sprint Planning:**
 ```
-
 Частота: Начало каждого спринта
 Длительность: 2-4 часа (для 2-недельного спринта)
 Участники: Team + PO
 Output: Sprint backlog
-
 ```
 
 **Daily Standup:**
 ```
-
 Частота: Ежедневно
 Длительность: 15 минут max
 Формат: What did / What will / Blockers
 Output: Awareness, unblock
-
 ```
 
 **Sprint Review (Demo):**
 ```
-
 Частота: Конец спринта
 Длительность: 1-2 часа
 Участники: Team + Stakeholders
 Output: Feedback, acceptance
-
 ```
 
 **Sprint Retrospective:**
 ```
-
 Частота: Конец спринта
 Длительность: 1-1.5 часа
 Участники: Team only
 Output: Action items for improvement
-
 ```
 
 ### 5.2 Kanban альтернатива
@@ -517,34 +496,26 @@ Output: Action items for improvement
 
 **Involve early:**
 ```
-
 ❌ "Мы решили, теперь делаем так"
 ✅ "У нас проблема X. Какие идеи есть у команды?"
-
 ```
 
 **Show the problem:**
 ```
-
 ❌ "Нужен процесс code review"
 ✅ "Мы 3 раза сломали prod. Давайте разберём, как избежать"
-
 ```
 
 **Start small:**
 ```
-
 ❌ "Вот 20 новых правил с сегодняшнего дня"
 ✅ "Попробуем одно изменение на 2 недели"
-
 ```
 
 **Measure and share:**
 ```
-
 ❌ "Верьте, это работает"
 ✅ "После внедрения количество багов снизилось на 30%"
-
 ```
 
 ### 6.3 Что делать с chronic resisters
@@ -712,6 +683,7 @@ Output: Action items for improvement
 - PagerDuty, Opsgenie — incident management
 
 ---
+
 
 
 

@@ -57,7 +57,6 @@
 **Example: Визуализация дерева**
 
 ```python
-
 class TreeNode:
     """Узел дерева."""
     def __init__(self, data):
@@ -72,6 +71,7 @@ class TreeNode:
         return str(self.data)
 
 # Создание простого дерева
+
 root = TreeNode("Корень")
 child1 = TreeNode("Ребёнок 1")
 child2 = TreeNode("Ребёнок 2")
@@ -90,7 +90,6 @@ print(f"Дети ребёнка 1: {[str(c) for c in child1.children]}")
 
 **Output:**
 ```
-
 Корень: Корень
 Дети корня: ['Ребёнок 1', 'Ребёнок 2']
 Дети ребёнка 1: ['Внук 1', 'Внук 2']
@@ -125,7 +124,6 @@ print(f"Дети ребёнка 1: {[str(c) for c in child1.children]}")
 **Example: Демонстрация терминов**
 
 ```python
-
 class TreeNode:
     def __init__(self, data):
         self.data = data
@@ -158,6 +156,7 @@ class TreeNode:
         return depth
 
 # Создание дерева
+
 root = TreeNode("A")
 b = TreeNode("B")
 c = TreeNode("C")
@@ -178,7 +177,6 @@ print(f"Узел D - корень: {d.is_root()}, лист: {d.is_leaf()}, ст�
 
 **Output:**
 ```
-
 Узел A - корень: True, лист: False, степень: 2, глубина: 0
 Узел B - корень: False, лист: False, степень: 2, глубина: 1
 Узел D - корень: False, лист: True, степень: 0, глубина: 2
@@ -195,7 +193,6 @@ print(f"Узел D - корень: {d.is_root()}, лист: {d.is_leaf()}, ст�
 **Example: Бинарное дерево**
 
 ```python
-
 class BinaryTreeNode:
     """Узел бинарного дерева."""
     def __init__(self, data):
@@ -204,6 +201,7 @@ class BinaryTreeNode:
         self.right = None
 
 # Создание бинарного дерева
+
 root = BinaryTreeNode(1)
 root.left = BinaryTreeNode(2)
 root.right = BinaryTreeNode(3)
@@ -217,7 +215,6 @@ print(f"Правый ребёнок: {root.right.data}")
 
 **Output:**
 ```
-
 Корень: 1
 Левый ребёнок: 2
 Правый ребёнок: 3
@@ -230,7 +227,6 @@ print(f"Правый ребёнок: {root.right.data}")
 **Example: N-арное дерево (общее дерево)**
 
 ```python
-
 class GeneralTreeNode:
     """Узел общего дерева (N-арного)."""
     def __init__(self, data):
@@ -238,6 +234,7 @@ class GeneralTreeNode:
         self.children = []
 
 # Создание N-арного дерева
+
 root = GeneralTreeNode("Корень")
 root.children = [
     GeneralTreeNode("Ребёнок 1"),
@@ -250,7 +247,6 @@ print(f"Корень имеет {len(root.children)} детей")
 
 **Output:**
 ```
-
 Корень имеет 3 детей
 ```
 
@@ -265,7 +261,6 @@ print(f"Корень имеет {len(root.children)} детей")
 **Example: Рекурсивный обход в глубину**
 
 ```python
-
 def dfs_traversal(node, result=None):
     """Обход дерева в глубину."""
     if result is None:
@@ -279,6 +274,7 @@ def dfs_traversal(node, result=None):
     return result
 
 # Создание дерева
+
 root = TreeNode("A")
 b = TreeNode("B")
 c = TreeNode("C")
@@ -298,7 +294,6 @@ print(f"Обход в глубину: {result}")
 
 **Output:**
 ```
-
 Обход в глубину: ['A', 'B', 'D', 'E', 'C']
 ```
 
@@ -309,7 +304,6 @@ print(f"Обход в глубину: {result}")
 **Example: Обход в ширину**
 
 ```python
-
 from collections import deque
 
 def bfs_traversal(root):
@@ -338,7 +332,6 @@ print(f"Обход в ширину: {result}")
 
 **Output:**
 ```
-
 Обход в ширину: ['A', 'B', 'C', 'D', 'E']
 ```
 
@@ -351,7 +344,6 @@ print(f"Обход в ширину: {result}")
 **Example: Вычисление высоты дерева**
 
 ```python
-
 def get_height(node):
     """Вычислить высоту дерева."""
     if not node or node.is_leaf():
@@ -365,6 +357,7 @@ def get_height(node):
     return 1 + max_child_height
 
 # Создание дерева
+
 root = TreeNode("A")
 b = TreeNode("B")
 c = TreeNode("C")
@@ -384,7 +377,6 @@ print(f"Высота дерева: {height}")
 
 **Output:**
 ```
-
 Высота дерева: 3
 ```
 
@@ -393,7 +385,6 @@ print(f"Высота дерева: {height}")
 **Example: Вычисление глубины**
 
 ```python
-
 def get_depth(node):
     """Вычислить глубину узла."""
     depth = 0
@@ -412,7 +403,6 @@ print(f"Глубина узла F: {get_depth(f)}")
 
 **Output:**
 ```
-
 Глубина узла A: 0
 Глубина узла B: 1
 Глубина узла F: 3
@@ -432,12 +422,14 @@ print(f"Глубина узла F: {get_depth(f)}")
 
 ```python
 # Несбалансированное дерево (вырожденное)
+
 unbalanced_root = BinaryTreeNode(1)
 unbalanced_root.right = BinaryTreeNode(2)
 unbalanced_root.right.right = BinaryTreeNode(3)
 unbalanced_root.right.right.right = BinaryTreeNode(4)
 
 # Сбалансированное дерево
+
 balanced_root = BinaryTreeNode(2)
 balanced_root.left = BinaryTreeNode(1)
 balanced_root.right = BinaryTreeNode(3)
@@ -461,7 +453,6 @@ print(f"Сбалансированное: узлов={count_nodes(balanced_root)
 
 **Output:**
 ```
-
 Несбалансированное: узлов=4, высота=3
 Сбалансированное: узлов=4, высота=2
 ```
@@ -485,7 +476,6 @@ print(f"Сбалансированное: узлов={count_nodes(balanced_root)
 **Example: Моделирование файловой системы**
 
 ```python
-
 class FileSystemNode:
     """Узел файловой системы."""
     def __init__(self, name, is_file=False):
@@ -508,6 +498,7 @@ class FileSystemNode:
         return "/" + "/".join(path)
 
 # Создание файловой системы
+
 root = FileSystemNode("", is_file=False)
 home = FileSystemNode("home", is_file=False)
 user = FileSystemNode("user", is_file=False)
@@ -524,7 +515,6 @@ print(f"Путь к файлу: {file1.get_path()}")
 
 **Output:**
 ```
-
 Путь к файлу: /home/user/documents/file1.txt
 ```
 
@@ -533,7 +523,6 @@ print(f"Путь к файлу: {file1.get_path()}")
 **Example: Иерархия компании**
 
 ```python
-
 class Employee:
     """Сотрудник в организационной структуре."""
     def __init__(self, name, position):
@@ -555,6 +544,7 @@ class Employee:
         return all_subs
 
 # Создание структуры
+
 ceo = Employee("Alice", "CEO")
 cto = Employee("Bob", "CTO")
 manager1 = Employee("Charlie", "Manager")
@@ -572,7 +562,6 @@ print(f"{manager1.name} ({manager1.position}) имеет {len(manager1.subordina
 
 **Output:**
 ```
-
 Alice (CEO) имеет 4 подчинённых
 Charlie (Manager) имеет 2 прямых подчинённых
 ```
@@ -591,7 +580,6 @@ Charlie (Manager) имеет 2 прямых подчинённых
 **Example: Проверка свойств**
 
 ```python
-
 def count_edges(node, visited=None):
     """Подсчитать количество рёбер."""
     if visited is None:
@@ -625,6 +613,7 @@ def count_nodes(node, visited=None):
     return count
 
 # Создание дерева
+
 root = TreeNode("A")
 b = TreeNode("B")
 c = TreeNode("C")
@@ -643,7 +632,6 @@ print(f"Свойство: рёбер = узлов - 1? {edges == nodes - 1}")
 
 **Output:**
 ```
-
 Узлов: 4, Рёбер: 3
 Свойство: рёбер = узлов - 1? True
 ```
@@ -684,5 +672,6 @@ print(f"Свойство: рёбер = узлов - 1? {edges == nodes - 1}")
 - Исследуйте применение деревьев в компиляторах и парсерах
 
 ---
+
 
 

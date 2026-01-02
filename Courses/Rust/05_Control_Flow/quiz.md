@@ -9,7 +9,6 @@
 Что выведет код?
 
 ```rust
-
 fn main() {
     let number = if true { 5 } else { 6 };
     println!("{}", number);
@@ -31,7 +30,6 @@ D) Ошибка компиляции
 Что произойдёт при компиляции?
 
 ```rust
-
 fn main() {
     let x = if true { 5 } else { "six" };
 }
@@ -52,7 +50,6 @@ D) Код скомпилируется
 Что выведет код?
 
 ```rust
-
 fn main() {
     let mut counter = 0;
     let result = loop {
@@ -80,7 +77,6 @@ D) 3
 Что выведет код?
 
 ```rust
-
 fn main() {
     let mut x = 3;
     while x != 0 {
@@ -105,7 +101,6 @@ D) 3, 2, 1
 Что выведет код?
 
 ```rust
-
 fn main() {
     for i in 1..5 {
         print!("{} ", i);
@@ -128,7 +123,6 @@ D) Ошибка компиляции
 Что выведет код?
 
 ```rust
-
 fn main() {
     for i in 1..=3 {
         print!("{} ", i);
@@ -151,7 +145,6 @@ D) 0 1 2 3
 Что произойдёт при компиляции?
 
 ```rust
-
 fn main() {
     let x = 5;
     match x {
@@ -176,7 +169,6 @@ D) Ошибка: не все случаи покрыты
 Что выведет код?
 
 ```rust
-
 fn main() {
     let x = 10;
     match x {
@@ -202,7 +194,6 @@ D) много
 Что выведет код?
 
 ```rust
-
 fn main() {
     for i in 1..=5 {
         if i == 3 {
@@ -228,7 +219,6 @@ D) Ошибка компиляции
 Что выведет код?
 
 ```rust
-
 fn main() {
     'outer: for i in 1..=3 {
         for j in 1..=3 {
@@ -270,7 +260,6 @@ D) Условный оператор
 Что выведет код?
 
 ```rust
-
 fn main() {
     let opt = Some(5);
     match opt {
@@ -310,7 +299,6 @@ D) Дополнительные условия в match
 Что выведет код?
 
 ```rust
-
 fn main() {
     let opt = None;
     if let Some(x) = opt {
@@ -350,7 +338,6 @@ D) Да, для выхода из функции
 Что выведет код?
 
 ```rust
-
 fn main() {
     let x = 5;
     if x > 0 {
@@ -376,7 +363,6 @@ D) Паника
 Что выведет код?
 
 ```rust
-
 fn main() {
     let age = 25;
     match age {
@@ -402,7 +388,6 @@ D) взрослый
 Что выведет код?
 
 ```rust
-
 fn main() {
     let v = vec![1, 2, 3];
     for item in &v {
@@ -427,7 +412,6 @@ D) Ошибка компиляции
 Что выведет код?
 
 ```rust
-
 fn main() {
     let point = (0, 5);
     match point {
@@ -453,7 +437,6 @@ D) Ошибка компиляции
 Что выведет код?
 
 ```rust
-
 fn main() {
     let mut x = 0;
     while x < 5 {

@@ -66,7 +66,6 @@ Event analytics анализирует события пользователей
 **Example: Event Analytics**
 
 ```python
-
 class EventAnalytics:
     def __init__(self):
         self.events = []
@@ -107,9 +106,11 @@ class EventAnalytics:
         }
 
 # Использование
+
 analytics = EventAnalytics()
 
 # Обработка событий
+
 analytics.process_event({"type": "page_view", "user_id": 1, "page": "/products"})
 analytics.process_event({"type": "purchase", "user_id": 1, "revenue": 99.99})
 analytics.process_event({"type": "page_view", "user_id": 2, "page": "/home"})
@@ -122,7 +123,6 @@ for key, value in stats.items():
 
 **Output:**
 ```
-
 📊 Событие обработано: page_view от user 1
 📊 Событие обработано: purchase от user 1
 📊 Событие обработано: page_view от user 2
@@ -157,7 +157,6 @@ Streaming используется для мониторинга систем в
 **Example: System Monitoring**
 
 ```python
-
 class SystemMonitor:
     def __init__(self):
         self.metrics = {
@@ -212,9 +211,11 @@ class SystemMonitor:
         }
 
 # Использование
+
 monitor = SystemMonitor()
 
 # Обработка метрик
+
 monitor.process_metric("cpu_usage", 75, "2024-01-01T10:00:00Z")
 monitor.process_metric("cpu_usage", 85, "2024-01-01T10:01:00Z")  # Превышение threshold
 monitor.process_metric("memory_usage", 95, "2024-01-01T10:02:00Z")  # Превышение threshold
@@ -227,7 +228,6 @@ for key, value in current.items():
 
 **Output:**
 ```
-
 ⚠️  ALERT: cpu_usage = 85 превышает threshold 80
 ⚠️  ALERT: memory_usage = 95 превышает threshold 90
 
@@ -262,7 +262,6 @@ Fraud detection требует обработки в реальном време
 **Example: Fraud Detection**
 
 ```python
-
 class FraudDetection:
     def __init__(self):
         self.user_profiles = {}
@@ -319,9 +318,11 @@ class FraudDetection:
         return {"is_fraud": is_fraud, "risk_score": risk_score, "flags": flags}
 
 # Использование
+
 fraud_detector = FraudDetection()
 
 # Нормальная транзакция
+
 fraud_detector.analyze_transaction({
     "id": "tx_001",
     "user_id": 1,
@@ -343,7 +344,6 @@ fraud_detector.analyze_transaction({
 
 **Output:**
 ```
-
 ✅ Transaction tx_001 approved, Risk Score: 0
 🚨 FRAUD DETECTED: Transaction tx_002, Risk Score: 70, Flags: ['high_amount', 'unusual_location']
 ```
@@ -371,7 +371,6 @@ Real-time dashboards отображают данные, обновляющиес
 **Example: Real-time Dashboard**
 
 ```python
-
 class RealTimeDashboard:
     def __init__(self):
         self.widgets = {}
@@ -414,14 +413,17 @@ class RealTimeDashboard:
         self.update_callbacks.append(callback)
 
 # Использование
+
 dashboard = RealTimeDashboard()
 
 # Добавление виджетов
+
 dashboard.add_widget("revenue", "metric", "kafka://revenue-events")
 dashboard.add_widget("users_online", "counter", "kafka://user-events")
 dashboard.add_widget("top_products", "table", "kafka://product-events")
 
 # Обновление виджетов (симуляция streaming)
+
 dashboard.update_widget("revenue", {"value": 50000, "trend": "+5%"})
 dashboard.update_widget("users_online", {"count": 1250})
 dashboard.update_widget("top_products", [
@@ -430,6 +432,7 @@ dashboard.update_widget("top_products", [
 ])
 
 # Данные дашборда
+
 dashboard_data = dashboard.get_dashboard_data()
 print("\nReal-time Dashboard Data:")
 for widget_id, widget in dashboard_data.items():
@@ -438,7 +441,6 @@ for widget_id, widget in dashboard_data.items():
 
 **Output:**
 ```
-
 ✅ Виджет 'revenue' добавлен: metric
 ✅ Виджет 'users_online' добавлен: counter
 ✅ Виджет 'top_products' добавлен: table
@@ -475,7 +477,6 @@ IoT устройства генерируют огромные объёмы да
 **Example: IoT Data Processing**
 
 ```python
-
 class IoTStreamProcessor:
     def __init__(self):
         self.devices = {}
@@ -536,9 +537,11 @@ class IoTStreamProcessor:
             print(f"⚠️  ALERT: {device_id}/{sensor_type} = {value} превышает {threshold}")
 
 # Использование
+
 processor = IoTStreamProcessor()
 
 # Обработка данных с разных устройств
+
 processor.process_sensor_data("device_1", "temperature", 25, "2024-01-01T10:00:00Z")
 processor.process_sensor_data("device_1", "temperature", 105, "2024-01-01T10:01:00Z")  # Аномалия
 processor.process_sensor_data("device_2", "humidity", 60, "2024-01-01T10:00:00Z")
@@ -549,7 +552,6 @@ print(f"Алертов: {len(processor.alerts)}")
 
 **Output:**
 ```
-
 📡 Обработано: device=device_1, sensor=temperature, value=25
 📡 Обработано: device=device_1, sensor=temperature, value=105
 ⚠️  ALERT: device_1/temperature = 105 превышает 100
@@ -580,7 +582,6 @@ print(f"Алертов: {len(processor.alerts)}")
 **Example: Выбор подходящего use case**
 
 ```python
-
 def recommend_use_case(requirements):
     """Рекомендует use case на основе требований"""
     if requirements.get("low_latency") and requirements.get("high_throughput") and requirements.get("fraud"):
@@ -597,6 +598,7 @@ def recommend_use_case(requirements):
         return "Определить на основе детальных требований"
 
 # Примеры
+
 examples = [
     {"low_latency": True, "high_throughput": True, "fraud": True},
     {"monitoring": True, "alerts": True, "system_metrics": True},
@@ -611,7 +613,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации use cases:
   Пример 1: Fraud Detection (очень низкая задержка, высокая пропускная способность)
   Пример 2: Monitoring (низкая задержка, алерты)
@@ -676,6 +677,7 @@ for i, req in enumerate(examples, 1):
 - Kafka Streams: https://kafka.apache.org/documentation/streams/ (event processing)
 
 ---
+
 
 
 

@@ -33,7 +33,6 @@
 **Файловый дескриптор (fd)** — целое число, идентифицирующее открытый файл в процессе.
 
 ```
-
 ┌─────────────────────────────────────────────────────┐
 │                    Process                          │
 ├─────────────────────────────────────────────────────┤
@@ -44,27 +43,22 @@
 │  fd 4 → socket                                      │
 │  ...                                                │
 └─────────────────────────────────────────────────────┘
-
 ```
 
 ```python
-
 import sys
 
 # Стандартные дескрипторы
 print(f"stdin fd: {sys.stdin.fileno()}")   # 0
 print(f"stdout fd: {sys.stdout.fileno()}")  # 1
 print(f"stderr fd: {sys.stderr.fileno()}")  # 2
-
 ```
 
 **Output:**
 ```
-
 stdin fd: 0
 stdout fd: 1
 stderr fd: 2
-
 ```
 
 ### 1.2 Связь между fd и файловыми объектами Python
@@ -75,15 +69,12 @@ f = open("/etc/passwd", "r")
 print(f"File object: {f}")
 print(f"File descriptor: {f.fileno()}")
 f.close()
-
 ```
 
 **Output:**
 ```
-
 File object: <_io.TextIOWrapper name='/etc/passwd' mode='r' encoding='UTF-8'>
 File descriptor: 3
-
 ```
 
 ---
@@ -93,7 +84,6 @@ File descriptor: 3
 ### 2.1 os.open — открытие файла
 
 ```python
-
 import os
 
 # Открыть файл для чтения
@@ -102,7 +92,6 @@ print(f"Opened fd: {fd}")
 
 # Обязательно закрыть!
 os.close(fd)
-
 ```
 
 **Флаги открытия:**
@@ -121,7 +110,6 @@ os.close(fd)
 | `O_CLOEXEC` | Закрыть при exec |
 
 ```python
-
 import os
 
 # Создать новый файл (или ошибка если существует)
@@ -137,13 +125,11 @@ fd = os.open(
     os.O_WRONLY | os.O_CREAT | os.O_TRUNC,
     0o644
 )
-
 ```
 
 ### 2.2 os.read и os.write
 
 ```python
-
 import os
 
 # Открыть для чтения
@@ -155,20 +141,16 @@ print(f"Read {len(data)} bytes")
 print(data.decode())
 
 os.close(fd)
-
 ```
 
 **Output:**
 ```
-
 Read 100 bytes
 root:*:0:0:Charlie &:/root:/bin/ksh
 daemon:*:1:1:The devil himself:/root:/sbin/n
-
 ```
 
 ```python
-
 import os
 
 # Открыть для записи
@@ -180,13 +162,11 @@ written = os.write(fd, message.encode())
 print(f"Written {written} bytes")
 
 os.close(fd)
-
 ```
 
 ### 2.3 Полное чтение файла
 
 ```python
-
 import os
 
 def read_file_low_level(path):
@@ -205,13 +185,11 @@ def read_file_low_level(path):
 
 content = read_file_low_level("/etc/passwd")
 print(content.decode())
-
 ```
 
 ### 2.4 Копирование файла
 
 ```python
-
 import os
 
 def copy_file(src, dst, buffer_size=8192):
@@ -235,7 +213,6 @@ def copy_file(src, dst, buffer_size=8192):
         os.close(src_fd)
 
 copy_file("/etc/passwd", "/tmp/passwd_copy")
-
 ```
 
 ---
@@ -245,7 +222,6 @@ copy_file("/etc/passwd", "/tmp/passwd_copy")
 ### 3.1 os.lseek
 
 ```python
-
 import os
 
 fd = os.open("/etc/passwd", os.O_RDONLY)
@@ -275,7 +251,6 @@ position = os.lseek(fd, 0, os.SEEK_CUR)
 print(f"File size: {position}")
 
 os.close(fd)
-
 ```
 
 **Константы SEEK:**
@@ -289,7 +264,6 @@ os.close(fd)
 ### 3.2 Создание sparse файла
 
 ```python
-
 import os
 
 # Sparse файл — файл с "дырками" (нулевые участки не занимают место)
@@ -310,15 +284,12 @@ os.close(fd)
 stat = os.stat("/tmp/sparse.dat")
 print(f"Apparent size: {stat.st_size} bytes")
 print(f"Actual blocks: {stat.st_blocks * 512} bytes")
-
 ```
 
 **Output:**
 ```
-
 Apparent size: 1073741828 bytes
 Actual blocks: 8192 bytes
-
 ```
 
 ---
@@ -328,7 +299,6 @@ Actual blocks: 8192 bytes
 ### 4.1 Разница между уровнями
 
 ```
-
 ┌────────────────────────────────────────────────────┐
 │            Python high-level I/O                   │
 │   open(), file.read(), file.write()                │
@@ -344,7 +314,6 @@ Actual blocks: 8192 bytes
 ├────────────────────────────────────────────────────┤
 │                  Disk                              │
 └────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Буферизация Python
@@ -361,7 +330,6 @@ f = open("/tmp/test.txt", "w", buffering=1)
 
 # Без буферизации (только для бинарных)
 f = open("/tmp/test.txt", "wb", buffering=0)
-
 ```
 
 ### 4.3 Когда использовать unbuffered I/O
@@ -379,20 +347,17 @@ f = open("/tmp/test.txt", "wb", buffering=0)
 - Обрабатываете текст построчно
 
 ```python
-
 import os
 
 # Unbuffered write — данные сразу идут в ядро
 fd = os.open("/var/log/myapp.log", os.O_WRONLY | os.O_APPEND | os.O_CREAT, 0o644)
 os.write(fd, b"Log message\n")  # Сразу на диске (после sync ядра)
 os.close(fd)
-
 ```
 
 ### 4.4 os.fsync и os.fdatasync
 
 ```python
-
 import os
 
 fd = os.open("/tmp/important.dat", os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644)
@@ -406,7 +371,6 @@ os.fsync(fd)
 # os.fdatasync(fd)  # Не на всех системах
 
 os.close(fd)
-
 ```
 
 ---
@@ -416,7 +380,6 @@ os.close(fd)
 ### 5.1 os.dup и os.dup2
 
 ```python
-
 import os
 
 # dup — создать копию дескриптора
@@ -432,13 +395,11 @@ os.write(fd_copy, b"World\n")
 
 os.close(fd)
 os.close(fd_copy)
-
 ```
 
 ### 5.2 Перенаправление stdout
 
 ```python
-
 import os
 import sys
 
@@ -469,13 +430,11 @@ print("This goes to file")  # Пишется в файл!
 restore_stdout(saved)
 
 print("This goes to terminal")  # Снова на экран
-
 ```
 
 ### 5.3 Пример: логирование stderr
 
 ```python
-
 import os
 import sys
 from datetime import datetime
@@ -503,7 +462,6 @@ class StderrLogger:
 # Использование
 with StderrLogger("/tmp/error.log"):
     print("Error message", file=sys.stderr)
-
 ```
 
 ---
@@ -513,7 +471,6 @@ with StderrLogger("/tmp/error.log"):
 ### 6.1 fcntl — управление дескрипторами
 
 ```python
-
 import fcntl
 import os
 import struct
@@ -537,13 +494,11 @@ def lock_file(fd, exclusive=True, blocking=True):
 def unlock_file(fd):
     """Разблокировать файл."""
     fcntl.flock(fd, fcntl.LOCK_UN)
-
 ```
 
 ### 6.2 Практический пример: блокировка PID файла
 
 ```python
-
 import os
 import fcntl
 import sys
@@ -602,7 +557,6 @@ try:
 except RuntimeError as e:
     print(f"Error: {e}")
     sys.exit(1)
-
 ```
 
 ### 6.3 Типы блокировок
@@ -621,7 +575,6 @@ except RuntimeError as e:
 ### 7.1 Безопасное создание временных файлов
 
 ```python
-
 import os
 import tempfile
 
@@ -639,13 +592,11 @@ print(f"File exists: {os.path.exists(temp_path)}")
 
 # Удалить вручную
 os.unlink(temp_path)
-
 ```
 
 ### 7.2 os.mkstemp — низкоуровневый аналог
 
 ```python
-
 import os
 
 # Создать временный файл и вернуть (fd, path)
@@ -658,13 +609,11 @@ os.close(fd)
 
 # Не забыть удалить!
 os.unlink(path)
-
 ```
 
 ### 7.3 Временные директории
 
 ```python
-
 import tempfile
 import shutil
 import os
@@ -679,13 +628,11 @@ with open(os.path.join(temp_dir, "file.txt"), "w") as f:
 
 # Удалить со всем содержимым
 shutil.rmtree(temp_dir)
-
 ```
 
 ### 7.4 Context manager для временных файлов
 
 ```python
-
 import os
 import tempfile
 from contextlib import contextmanager
@@ -715,7 +662,6 @@ def atomic_write(path, mode=0o644):
 # Использование
 with atomic_write("/etc/myapp.conf") as fd:
     os.write(fd, b"key=value\n")
-
 ```
 
 ---
@@ -777,7 +723,6 @@ if __name__ == "__main__":
         sys.exit(1)
     
     tail_follow(sys.argv[1])
-
 ```
 
 ### 8.2 Безопасное обновление конфигурации
@@ -836,7 +781,6 @@ config = update_config("/etc/myapp/config.json", {
     "port": 8080
 })
 print(f"Updated config: {config}")
-
 ```
 
 ---

@@ -28,7 +28,6 @@
 ### 1.1 Карта ролей
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                    DevOps/SRE Career Map                         │
 ├──────────────────────────────────────────────────────────────────┤
@@ -57,13 +56,11 @@
 │  └── Principal SRE                                               │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Описания ролей
 
 ```python
-
 roles = {
     "devops_engineer": {
         "focus": "CI/CD, automation, collaboration",
@@ -106,7 +103,6 @@ roles = {
         ]
     }
 }
-
 ```
 
 ---
@@ -116,7 +112,6 @@ roles = {
 ### 2.1 Technical Skills
 
 ```python
-
 technical_skills = {
     "core": {
         "essential": True,
@@ -165,13 +160,11 @@ technical_skills = {
         ]
     }
 }
-
 ```
 
 ### 2.2 Soft Skills
 
 ```python
-
 soft_skills = {
     "communication": {
         "importance": "Critical",
@@ -206,7 +199,6 @@ soft_skills = {
         ]
     }
 }
-
 ```
 
 ---
@@ -216,7 +208,6 @@ soft_skills = {
 ### 3.1 Cloud сертификации
 
 ```python
-
 certifications = {
     "aws": {
         "entry": "AWS Certified Cloud Practitioner",
@@ -259,7 +250,6 @@ certifications = {
         "security": "CompTIA Security+"
     }
 }
-
 ```
 
 ---
@@ -269,7 +259,6 @@ certifications = {
 ### 4.1 От Junior к Senior
 
 ```python
-
 career_progression = {
     "junior": {
         "years": "0-2",
@@ -326,13 +315,11 @@ career_progression = {
         ]
     }
 }
-
 ```
 
 ### 4.2 IC vs Management
 
 ```python
-
 career_tracks = {
     "individual_contributor": {
         "path": "Senior → Staff → Principal → Distinguished",
@@ -347,7 +334,6 @@ career_tracks = {
         "cons": ["Меньше hands-on", "People problems"]
     }
 }
-
 ```
 
 ---
@@ -357,7 +343,6 @@ career_tracks = {
 ### 5.1 Тренды 2024-2025
 
 ```python
-
 trends = {
     "platform_engineering": {
         "description": "Internal Developer Platforms",
@@ -385,13 +370,11 @@ trends = {
         "technologies": ["SBOM", "Sigstore", "SLSA"]
     }
 }
-
 ```
 
 ### 5.2 Зарплаты (примерные, варьируются)
 
 ```python
-
 salary_ranges = {
     "us": {
         "junior": "$80K - $120K",
@@ -410,7 +393,6 @@ salary_ranges = {
         "trend": "Рост remote opportunities"
     }
 }
-
 ```
 
 ---
@@ -420,7 +402,6 @@ salary_ranges = {
 ### 6.1 Типичные вопросы
 
 ```python
-
 interview_topics = {
     "technical": [
         "Расскажите о CI/CD pipeline, который вы настраивали",
@@ -441,13 +422,11 @@ interview_topics = {
         "Спроектируйте disaster recovery план"
     ]
 }
-
 ```
 
 ### 6.2 Практика
 
 ```python
-
 preparation_tips = [
     "Создайте portfolio проектов (GitHub)",
     "Практикуйте system design на бумаге",
@@ -455,7 +434,6 @@ preparation_tips = [
     "Подготовьте STAR stories для behavioral",
     "Практикуйте объяснение сложных концепций просто"
 ]
-
 ```
 
 ---
@@ -465,7 +443,6 @@ preparation_tips = [
 ### 7.1 Обучение
 
 ```python
-
 learning_resources = {
     "books": [
         "The Phoenix Project",
@@ -490,7 +467,6 @@ learning_resources = {
         "Reddit: r/devops, r/sre"
     ]
 }
-
 ```
 
 ---

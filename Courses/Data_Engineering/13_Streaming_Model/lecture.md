@@ -62,7 +62,6 @@ Event-driven системы реагируют на события в реаль
 **Example: Event-driven система**
 
 ```python
-
 class EventDrivenSystem:
     def __init__(self):
         self.event_handlers = {}
@@ -93,9 +92,11 @@ class EventDrivenSystem:
         return self.event_stream
 
 # Использование
+
 system = EventDrivenSystem()
 
 # Регистрация обработчиков
+
 def handle_user_click(event):
     print(f"  🖱️  Обработка клика: пользователь {event.get('user_id')}")
 
@@ -113,7 +114,6 @@ system.emit_event({"type": "purchase", "order_id": 1001, "amount": 99.99})
 
 **Output:**
 ```
-
 ✅ Обработчик зарегистрирован для 'user_click'
 ✅ Обработчик зарегистрирован для 'purchase'
 📡 Событие 'user_click' отправлено
@@ -164,6 +164,7 @@ system.emit_event({"type": "purchase", "order_id": 1001, "amount": 99.99})
 
 ```python
 # Batch: обработка накопленных данных
+
 def batch_process(data_batch):
     """Обрабатывает батч данных"""
     print(f"📦 Batch: обработка {len(data_batch)} записей")
@@ -173,6 +174,7 @@ def batch_process(data_batch):
     return result
 
 # Streaming: обработка по мере поступления
+
 def stream_process(event):
     """Обрабатывает одно событие"""
     print(f"📡 Streaming: обработка события {event.get('id')}")
@@ -182,6 +184,7 @@ def stream_process(event):
     return result
 
 # Сравнение
+
 data = [{"id": i, "value": i*10} for i in range(1, 6)]
 
 print("BATCH Processing:")
@@ -200,7 +203,6 @@ print(f"  Streaming: обработано {len(stream_results)} событий �
 
 **Output:**
 ```
-
 BATCH Processing:
 📦 Batch: обработка 5 записей
 ✅ Batch результат: 150
@@ -240,7 +242,6 @@ STREAMING Processing:
 **Example: At-least-once**
 
 ```python
-
 class AtLeastOnceDelivery:
     def __init__(self):
         self.processed_events = set()
@@ -262,6 +263,7 @@ class AtLeastOnceDelivery:
         return result
 
 # Использование
+
 delivery = AtLeastOnceDelivery()
 
 # Первая обработка
@@ -269,13 +271,13 @@ delivery = AtLeastOnceDelivery()
 delivery.process_event("evt_001", {"data": "value1"})
 
 # Дубликат (at-least-once может доставить дважды)
+
 print("\nПовторная доставка (дубликат):")
 delivery.process_event("evt_001", {"data": "value1"})
 ```
 
 **Output:**
 ```
-
 📡 Получено событие evt_001
 ✅ Событие evt_001 обработано
 
@@ -296,7 +298,6 @@ delivery.process_event("evt_001", {"data": "value1"})
 **Example: Exactly-once концепция**
 
 ```python
-
 class ExactlyOnceDelivery:
     def __init__(self):
         self.processed_events = set()
@@ -334,13 +335,13 @@ exactly_once = ExactlyOnceDelivery()
 exactly_once.process_event_transactional("evt_001", {"data": "value1"})
 
 # Попытка повторной обработки
+
 print("\nПопытка повторной обработки:")
 exactly_once.process_event_transactional("evt_001", {"data": "value1"})
 ```
 
 **Output:**
 ```
-
 🔄 Транзакция tx_evt_001 начата для события evt_001
 ✅ Событие evt_001 обработано (exactly-once)
 
@@ -388,7 +389,6 @@ Windowing позволяет агрегировать потоковые дан�
 **Example: Windowing**
 
 ```python
-
 from datetime import datetime, timedelta
 
 class WindowProcessor:
@@ -439,9 +439,11 @@ class WindowProcessor:
         }
 
 # Использование
+
 processor = WindowProcessor(window_size_minutes=5)
 
 # Добавление событий
+
 base_time = datetime(2024, 1, 1, 10, 0, 0)
 for i in range(10):
     processor.add_event({"id": i, "value": i*10}, base_time + timedelta(minutes=i))
@@ -453,6 +455,7 @@ print(f"Tumbling Window (10:00-10:05):")
 print(f"  Событий: {tumbling['count']}")
 
 # Sliding window
+
 sliding = processor.sliding_window(base_time + timedelta(minutes=7), 5)
 print(f"\nSliding Window (последние 5 минут до 10:07):")
 print(f"  Событий: {sliding['count']}")
@@ -460,7 +463,6 @@ print(f"  Событий: {sliding['count']}")
 
 **Output:**
 ```
-
 Tumbling Window (10:00-10:05):
   Событий: 5
 
@@ -485,7 +487,6 @@ Streaming подходит для различных use cases.
 **Example: Real-time Analytics**
 
 ```python
-
 class RealTimeAnalytics:
     def __init__(self):
         self.metrics = {
@@ -531,6 +532,7 @@ class RealTimeAnalytics:
 analytics = RealTimeAnalytics()
 
 # Обработка событий
+
 analytics.process_event({"type": "purchase", "revenue": 99.99})
 analytics.process_event({"type": "purchase", "revenue": 149.99})
 analytics.process_event({"type": "view"})
@@ -543,7 +545,6 @@ for key, value in dashboard.items():
 
 **Output:**
 ```
-
 Real-time Dashboard:
   total_events: 3
   total_revenue: $249.98
@@ -606,5 +607,6 @@ Real-time Dashboard:
 - Apache Flink: https://flink.apache.org/docs/
 
 ---
+
 
 

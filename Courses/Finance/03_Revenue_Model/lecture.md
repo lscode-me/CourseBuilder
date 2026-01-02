@@ -93,7 +93,6 @@ $$\text{Revenue} = \text{Hours worked} \times \text{Hourly Rate}$$
 **Реальный кейс T&M:**
 
 ```
-
 Проект: Разработка MVP мобильного приложения для стартапа
 
 Исходная оценка:
@@ -147,7 +146,6 @@ $$\text{Revenue} = \text{Fixed Amount (Milestones)}$$
 **1. Scope Creep (Раздувание объёма):**
 
 ```
-
 Исходное ТЗ: "Кнопка 'Войти' на главной странице"
 Реализация: Простая форма, 2 часа работы ✅
 
@@ -165,7 +163,6 @@ $$\text{Revenue} = \text{Fixed Amount (Milestones)}$$
 **2. Estimation Error (Ошибка оценки):**
 
 ```
-
 Проект: E-commerce платформа
 
 Оценка команды:

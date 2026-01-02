@@ -37,7 +37,6 @@
 
 **Традиционный подход:**
 ```
-
 ┌──────────────────────────────────────────────────────────────┐
 │            Traditional Daemon Startup                        │
 ├──────────────────────────────────────────────────────────────┤
@@ -62,7 +61,6 @@
 │  └─────────────┘                                             │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
-
 ```
 
 **Проблемы:**
@@ -73,7 +71,6 @@
 
 **Socket Activation:**
 ```
-
 ┌──────────────────────────────────────────────────────────────┐
 │            Socket Activation (systemd)                       │
 ├──────────────────────────────────────────────────────────────┤
@@ -105,7 +102,6 @@
 │  └─────────────┘                                             │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Преимущества socket activation
@@ -129,7 +125,6 @@ echo       stream  tcp       nowait root  internal
 daytime    stream  tcp       nowait root  internal
 ftp        stream  tcp       nowait root  /usr/sbin/ftpd  ftpd
 telnet     stream  tcp       nowait root  /usr/sbin/telnetd  telnetd
-
 ```
 
 inetd слушает все порты и запускает соответствующую программу при подключении.
@@ -193,7 +188,6 @@ echo -en "Connection: close\r\n"
 echo -en "Server: ShellHTTP/1.0\r\n"
 echo -en "\r\n"
 echo -n "$body"
-
 ```
 
 ### 2.2 Тестирование с netcat
@@ -210,7 +204,6 @@ while true; do nc -l -p 8080 -e ./simple_http.sh; done
 curl http://localhost:8080/
 curl http://localhost:8080/time
 curl http://localhost:8080/json
-
 ```
 
 ### 2.3 Расширенный shell сервер
@@ -316,7 +309,6 @@ main() {
 }
 
 main
-
 ```
 
 ---
@@ -334,7 +326,6 @@ simple_http.py — HTTP сервер для socket activation.
 
 import sys
 from datetime import datetime
-
 
 def parse_request():
     """Парсит HTTP запрос из stdin."""
@@ -362,7 +353,6 @@ def parse_request():
     
     return method, path, headers
 
-
 def send_response(status: str, body: str, content_type: str = "text/html"):
     """Отправляет HTTP ответ в stdout."""
     body_bytes = body.encode('utf-8')
@@ -376,7 +366,6 @@ def send_response(status: str, body: str, content_type: str = "text/html"):
     sys.stdout.write("\r\n")
     sys.stdout.write(body)
     sys.stdout.flush()
-
 
 def handle_request(method: str, path: str, headers: dict):
     """Обработка HTTP запроса."""
@@ -417,7 +406,6 @@ def handle_request(method: str, path: str, headers: dict):
         body = f"<html><body><h1>404 Not Found</h1><p>Path {path} not found</p></body></html>"
         send_response("404 Not Found", body)
 
-
 def main():
     method, path, headers = parse_request()
     
@@ -430,10 +418,8 @@ def main():
     
     handle_request(method, path, headers)
 
-
 if __name__ == "__main__":
     main()
-
 ```
 
 ### 3.2 Python сервер с сокетом
@@ -450,7 +436,6 @@ import sys
 import socket
 from datetime import datetime
 import json
-
 
 def get_listen_socket(port: int = 8080) -> socket.socket:
     """
@@ -481,7 +466,6 @@ def get_listen_socket(port: int = 8080) -> socket.socket:
     sock.listen(5)
     return sock
 
-
 def parse_request(data: bytes) -> tuple:
     """Парсит HTTP запрос."""
     try:
@@ -508,7 +492,6 @@ def parse_request(data: bytes) -> tuple:
         print(f"Parse error: {e}", file=sys.stderr)
         return 'GET', '/', {}
 
-
 def build_response(status: str, body: str, content_type: str = "text/html") -> bytes:
     """Строит HTTP ответ."""
     body_bytes = body.encode('utf-8')
@@ -524,7 +507,6 @@ def build_response(status: str, body: str, content_type: str = "text/html") -> b
     )
     
     return response.encode('utf-8') + body_bytes
-
 
 def handle_request(method: str, path: str, headers: dict) -> bytes:
     """Обработка запроса, возвращает HTTP ответ."""
@@ -585,7 +567,6 @@ def handle_request(method: str, path: str, headers: dict) -> bytes:
         body = f"<html><body><h1>404 Not Found</h1><p>Path: {path}</p></body></html>"
         return build_response("404 Not Found", body)
 
-
 def handle_client(client: socket.socket, address: tuple):
     """Обработка одного клиента."""
     try:
@@ -605,7 +586,6 @@ def handle_client(client: socket.socket, address: tuple):
     finally:
         client.close()
 
-
 def main():
     port = int(os.environ.get('PORT', 8080))
     server = get_listen_socket(port)
@@ -623,10 +603,8 @@ def main():
     finally:
         server.close()
 
-
 if __name__ == "__main__":
     main()
-
 ```
 
 ---
@@ -646,7 +624,6 @@ Accept=no
 
 [Install]
 WantedBy=sockets.target
-
 ```
 
 **Параметры [Socket]:**
@@ -686,7 +663,6 @@ ProtectHome=yes
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 ### 4.3 Активация и запуск
@@ -708,7 +684,6 @@ curl http://localhost:8080/
 
 # Теперь сервис запущен
 sudo systemctl status myhttp.service
-
 ```
 
 ### 4.4 Accept=yes vs Accept=no
@@ -720,7 +695,6 @@ sudo systemctl status myhttp.service
 - Эффективнее для высокой нагрузки
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │  Accept=no                                              │
 ├─────────────────────────────────────────────────────────┤
@@ -738,7 +712,6 @@ sudo systemctl status myhttp.service
 │      │                          └─────────┘             │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 **Accept=yes:**
@@ -748,7 +721,6 @@ sudo systemctl status myhttp.service
 - Простой код, но дорого при высокой нагрузке
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │  Accept=yes                                             │
 ├─────────────────────────────────────────────────────────┤
@@ -766,7 +738,6 @@ sudo systemctl status myhttp.service
 │      ...                                                │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.5 Socket unit с Accept=yes
@@ -783,7 +754,6 @@ MaxConnections=100
 
 [Install]
 WantedBy=sockets.target
-
 ```
 
 ```ini
@@ -799,7 +769,6 @@ StandardInput=socket
 StandardOutput=socket
 StandardError=journal
 User=www-data
-
 ```
 
 ---
@@ -809,7 +778,6 @@ User=www-data
 ### 5.1 Структура проекта
 
 ```
-
 /opt/myhttp/
 ├── http_server.py      # Основной сервер
 ├── handlers.py         # Обработчики маршрутов
@@ -819,7 +787,6 @@ User=www-data
 │   └── script.js
 └── templates/          # HTML шаблоны
     └── base.html
-
 ```
 
 ### 5.2 Продвинутый HTTP сервер
@@ -847,7 +814,6 @@ import json
 BASE_DIR = Path(__file__).parent
 STATIC_DIR = BASE_DIR / 'static'
 SERVER_NAME = "PythonHTTP/2.0"
-
 
 class HTTPRequest:
     """Представление HTTP запроса."""
@@ -897,7 +863,6 @@ class HTTPRequest:
         except Exception as e:
             print(f"Parse error: {e}", file=sys.stderr)
 
-
 class HTTPResponse:
     """Построитель HTTP ответа."""
     
@@ -940,7 +905,6 @@ class HTTPResponse:
         
         return '\r\n'.join(lines).encode('utf-8') + self.body
 
-
 class Router:
     """Простой роутер."""
     
@@ -957,10 +921,8 @@ class Router:
                 return handler
         return None
 
-
 # Создаём роутер
 router = Router()
-
 
 def index_handler(request: HTTPRequest) -> HTTPResponse:
     html = """<!DOCTYPE html>
@@ -995,7 +957,6 @@ def index_handler(request: HTTPRequest) -> HTTPResponse:
     )
     return HTTPResponse().html(html)
 
-
 def json_handler(request: HTTPRequest) -> HTTPResponse:
     data = {
         "status": "ok",
@@ -1010,7 +971,6 @@ def json_handler(request: HTTPRequest) -> HTTPResponse:
     }
     return HTTPResponse().json(data)
 
-
 def env_handler(request: HTTPRequest) -> HTTPResponse:
     # Фильтруем чувствительные данные
     safe_env = {}
@@ -1022,7 +982,6 @@ def env_handler(request: HTTPRequest) -> HTTPResponse:
     
     return HTTPResponse().json(safe_env)
 
-
 def echo_handler(request: HTTPRequest) -> HTTPResponse:
     message = request.query_params.get('message', [''])[0]
     return HTTPResponse().json({
@@ -1030,7 +989,6 @@ def echo_handler(request: HTTPRequest) -> HTTPResponse:
         "method": request.method,
         "timestamp": datetime.now().isoformat()
     })
-
 
 def static_handler(request: HTTPRequest) -> HTTPResponse:
     # Безопасность: убираем .. и нормализуем путь
@@ -1068,13 +1026,11 @@ def static_handler(request: HTTPRequest) -> HTTPResponse:
     
     return HTTPResponse().set_body(content, mime_type)
 
-
 # Регистрируем маршруты
 router.add_route('/', index_handler)
 router.add_route('/json', json_handler)
 router.add_route('/env', env_handler)
 router.add_route('/echo', echo_handler)
-
 
 def handle_request(request: HTTPRequest) -> HTTPResponse:
     """Главный обработчик запросов."""
@@ -1092,7 +1048,6 @@ def handle_request(request: HTTPRequest) -> HTTPResponse:
     return HTTPResponse(404, "Not Found").html(
         f"<h1>404 Not Found</h1><p>Path: {request.path}</p>"
     )
-
 
 def get_listen_socket(port: int = 8080) -> socket.socket:
     """Получить сокет (от systemd или создать свой)."""
@@ -1113,7 +1068,6 @@ def get_listen_socket(port: int = 8080) -> socket.socket:
     sock.bind(('0.0.0.0', port))
     sock.listen(128)
     return sock
-
 
 def main():
     port = int(os.environ.get('PORT', 8080))
@@ -1152,16 +1106,13 @@ def main():
     finally:
         server.close()
 
-
 if __name__ == "__main__":
     main()
-
 ```
 
 ### 5.3 Создание статических файлов
 
 ```bash
-
 mkdir -p /opt/myhttp/static
 
 cat > /opt/myhttp/static/index.html << 'EOF'
@@ -1196,7 +1147,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.innerHTML += '<p><em>JavaScript is working!</em></p>';
 });
 EOF
-
 ```
 
 ---
@@ -1209,7 +1159,6 @@ EOF
 # /etc/inetd.conf
 # service  socket  protocol  wait/nowait  user     program        args
 8080       stream  tcp       nowait       www-data /opt/myhttp/simple_http.py simple_http.py
-
 ```
 
 ### 6.2 xinetd (расширенный inetd)
@@ -1231,7 +1180,6 @@ service myhttp
     log_on_failure  = HOST
     disable         = no
 }
-
 ```
 
 ### 6.3 OpenBSD inetd
@@ -1239,13 +1187,11 @@ service myhttp
 ```
 # /etc/inetd.conf на OpenBSD
 8080 stream tcp nowait www /opt/myhttp/simple_http.py simple_http.py
-
 ```
 
 ```bash
 # Перезапуск inetd
 rcctl restart inetd
-
 ```
 
 ---
@@ -1272,7 +1218,6 @@ systemctl list-sockets
 
 # Детали socket unit
 systemctl show myhttp.socket
-
 ```
 
 ### 7.2 Отладка сети
@@ -1291,7 +1236,6 @@ curl -v http://localhost:8080/json
 
 # Смотреть пакеты
 sudo tcpdump -i lo port 8080 -A
-
 ```
 
 ### 7.3 Тестирование socket activation
@@ -1306,7 +1250,6 @@ LISTEN_PID=$$ LISTEN_FDS=1 ./http_server.py 3<>/dev/tcp/localhost/8080
 
 # Используем systemd-socket-activate для тестирования
 systemd-socket-activate -l 8080 ./http_server.py
-
 ```
 
 ---

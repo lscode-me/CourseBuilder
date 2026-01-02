@@ -59,16 +59,14 @@ OpenBSD известна тремя главными качествами:
 
 ```sh
 # Узнать версию OpenBSD
+
 $ uname -a
 OpenBSD puffy.my.domain 7.4 GENERIC.MP#0 amd64
-
 ```
 
 **Output:**
 ```
-
 OpenBSD puffy.my.domain 7.4 GENERIC.MP#0 amd64
-
 ```
 
 ### 1.2 Талисман — Puffy
@@ -123,6 +121,7 @@ OpenBSD предпочитает:
 
 ```sh
 # Базовая система OpenBSD включает:
+
 $ ls /bin /sbin /usr/bin /usr/sbin | head -20
 /bin:
 cat
@@ -145,7 +144,6 @@ pax
 ps
 pwd
 rm
-
 ```
 
 ---
@@ -160,16 +158,14 @@ OpenBSD создала множество технологий, которые �
 
 ```sh
 # OpenSSH используется на ~90% серверов в интернете
+
 $ ssh -V
 OpenSSH_9.5, LibreSSL 3.8.2
-
 ```
 
 **Output:**
 ```
-
 OpenSSH_9.5, LibreSSL 3.8.2
-
 ```
 
 Возможности OpenSSH:
@@ -186,16 +182,19 @@ OpenSSH_9.5, LibreSSL 3.8.2
 
 ```sh
 # Пример простого правила PF
+
 $ cat /etc/pf.conf
 # Разрешить весь исходящий трафик
+
 pass out all
 
 # Блокировать весь входящий по умолчанию
+
 block in all
 
 # Разрешить SSH
-pass in on egress proto tcp to port 22
 
+pass in on egress proto tcp to port 22
 ```
 
 Особенности PF:
@@ -212,16 +211,14 @@ pass in on egress proto tcp to port 22
 
 ```sh
 # LibreSSL — версия по умолчанию в OpenBSD
+
 $ openssl version
 LibreSSL 3.8.2
-
 ```
 
 **Output:**
 ```
-
 LibreSSL 3.8.2
-
 ```
 
 Улучшения в LibreSSL:
@@ -238,7 +235,6 @@ LibreSSL 3.8.2
 **pledge()** — ограничивает системные вызовы процесса:
 
 ```c
-
 // Программа обещает использовать только stdio и rpath
 #include <unistd.h>
 
@@ -250,7 +246,6 @@ int main() {
     // Безопасная работа с файлами
     // ...
 }
-
 ```
 
 **unveil()** — ограничивает видимость файловой системы:
@@ -266,7 +261,6 @@ int main() {
     
     // Теперь доступ к /home вызовет ошибку
 }
-
 ```
 
 > **🔒 Security:**  
@@ -337,6 +331,7 @@ OpenBSD пионер в технологиях защиты памяти:
 
 ```sh
 # Стандартная иерархия OpenBSD
+
 /           # Корень
 ├── bin/    # Базовые утилиты пользователя
 ├── sbin/   # Базовые утилиты администратора
@@ -358,7 +353,6 @@ OpenBSD пионер в технологиях защиты памяти:
 │   ├── mail/    # Почта
 │   └── run/     # PID файлы
 └── altroot/ # Альтернативный root (для восстановления)
-
 ```
 
 ### 5.2 Особенности файловой системы
@@ -367,24 +361,22 @@ OpenBSD использует **FFS2** (Fast File System) с расширения
 
 ```sh
 # Просмотр смонтированных файловых систем
+
 $ mount
 /dev/sd0a on / type ffs (local)
 /dev/sd0d on /home type ffs (local, nodev, nosuid)
 /dev/sd0e on /tmp type ffs (local, nodev, nosuid)
 /dev/sd0f on /usr type ffs (local, nodev)
 /dev/sd0g on /var type ffs (local, nodev, nosuid)
-
 ```
 
 **Output:**
 ```
-
 /dev/sd0a on / type ffs (local)
 /dev/sd0d on /home type ffs (local, nodev, nosuid)
 /dev/sd0e on /tmp type ffs (local, nodev, nosuid)
 /dev/sd0f on /usr type ffs (local, nodev)
 /dev/sd0g on /var type ffs (local, nodev, nosuid)
-
 ```
 
 Особенности:
@@ -407,6 +399,7 @@ $ mount
 
 ```sh
 # Просмотр процесса загрузки
+
 $ dmesg | head -30
 OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
     deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
@@ -418,7 +411,6 @@ scsibus0 at mpath0: 256 targets
 mainbus0 at root
 bios0 at mainbus0: SMBIOS rev. 2.8 @ 0xbfbb5000 (87 entries)
 ...
-
 ```
 
 ---
@@ -435,12 +427,12 @@ OpenBSD выпускает новые версии **дважды в год**:
 
 ```sh
 # Текущая версия и дата
+
 $ uname -r
 7.4
 
 $ cat /etc/motd
 OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
-
 ```
 
 ### 6.2 Поддержка версий
@@ -463,9 +455,9 @@ OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
 
 ```sh
 # Проверить, какую ветку используете
+
 $ sysctl kern.version
 kern.version=OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
-
 ```
 
 ---
@@ -478,11 +470,11 @@ OpenBSD славится качеством документации:
 
 ```sh
 # Man-страницы — главный источник информации
+
 $ man afterboot    # Что делать после установки
 $ man intro        # Введение в систему
 $ man hier         # Структура файловой системы
 $ man ports        # Система портов
-
 ```
 
 **Ключевые man-страницы для начала:**
@@ -529,44 +521,42 @@ $ man ports        # Система портов
 
 **Файрвол/Роутер:**
 ```
-
 ┌─────────┐     ┌──────────────┐     ┌─────────┐
 │ Internet│────▶│   OpenBSD    │────▶│   LAN   │
 └─────────┘     │   (PF/NAT)   │     └─────────┘
                 └──────────────────────────────────────────────┘
-
 ```
 
 **VPN-сервер:**
 ```sh
 # OpenBSD включает WireGuard в базовой системе
+
 $ ifconfig wg0 create
 $ cat /etc/hostname.wg0
 wgkey <private_key>
 wgpeer <public_key> wgendpoint 1.2.3.4 51820 wgaip 10.0.0.2/32
 inet 10.0.0.1/24
-
 ```
 
 **Почтовый сервер:**
 ```sh
 # OpenSMTPD — почтовый сервер из OpenBSD
+
 $ cat /etc/mail/smtpd.conf
 listen on egress
 action "local" mbox
 match from any for local action "local"
-
 ```
 
 **Web-сервер:**
 ```sh
 # httpd — встроенный веб-сервер
+
 $ cat /etc/httpd.conf
 server "example.com" {
     listen on * port 80
     root "/htdocs/example.com"
 }
-
 ```
 
 ### 8.2 Известные пользователи
@@ -634,6 +624,7 @@ server "example.com" {
 - [Theo de Raadt presentations](https://www.youtube.com/results?search_query=theo+de+raadt) — выступления основателя
 
 ---
+
 
 
 

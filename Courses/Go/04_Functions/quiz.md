@@ -163,14 +163,12 @@ D) Функция, которая закрывает файл
 Что выведет код?
 
 ```go
-
 func counter() func() int {
     n := 0
     return func() int { n++; return n }
 }
 c := counter()
 fmt.Println(c(), c(), c())
-
 ```
 
 A) 1 1 1
@@ -202,12 +200,10 @@ D) `typedef Checker func(string) bool`
 Что вернёт `factorial(5)`?
 
 ```go
-
 func factorial(n int) int {
     if n <= 1 { return 1 }
     return n * factorial(n-1)
 }
-
 ```
 
 A) 120
@@ -253,11 +249,9 @@ D) Только две
 Что возвращает эта функция?
 
 ```go
-
 func maker(x int) func() int {
     return func() int { return x * 2 }
 }
-
 ```
 
 A) *func() int
@@ -275,11 +269,9 @@ D) Ошибку компиляции
 Что выведет код?
 
 ```go
-
 x := 10
 defer fmt.Println(x)
 x = 20
-
 ```
 
 A) 0
@@ -297,11 +289,9 @@ D) Ничего
 Что выведет код?
 
 ```go
-
 x := 10
 defer func() { fmt.Println(x) }()
 x = 20
-
 ```
 
 A) Ошибка компиляции
@@ -333,11 +323,9 @@ D) В функциях с именованными возвращаемыми з
 Что выведет код?
 
 ```go
-
 apply := func(f func(int) int, x int) int { return f(x) }
 double := func(n int) int { return n * 2 }
 fmt.Println(apply(double, 5))
-
 ```
 
 A) 25
@@ -453,13 +441,11 @@ D) Зависит от типа переменной
 Что выведет (до Go 1.22)?
 
 ```go
-
 funcs := []func(){}
 for i := 0; i < 3; i++ {
     funcs = append(funcs, func() { fmt.Print(i) })
 }
 for _, f := range funcs { f() }
-
 ```
 
 A) 321

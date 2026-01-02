@@ -148,7 +148,6 @@ D) Batch интеграция устарела и не должна исполь
 
 Рассмотрим следующий контракт API:
 ```
-
 POST /api/users
 Request: {"name": "string", "email": "string"}
 Response 201: {"id": int, "name": "string", "email": "string"}

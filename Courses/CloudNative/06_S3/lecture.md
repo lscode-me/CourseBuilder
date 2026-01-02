@@ -33,7 +33,6 @@
 **Amazon Simple Storage Service (S3)** — объектное хранилище с практически неограниченной масштабируемостью. Запущен в марте 2006 года — первый публичный сервис AWS.
 
 ```python
-
 s3_characteristics = {
     "durability": "99.999999999% (11 nines)",
     "availability": "99.99% (S3 Standard)",
@@ -45,25 +44,21 @@ s3_characteristics = {
 print("S3 Key Characteristics:")
 for key, value in s3_characteristics.items():
     print(f"  {key}: {value}")
-
 ```
 
 **Output:**
 ```
-
 S3 Key Characteristics:
   durability: 99.999999999% (11 nines)
   availability: 99.99% (S3 Standard)
   max_object_size: 5 TB
   max_bucket_objects: Unlimited
   pricing: Pay for storage, requests, data transfer
-
 ```
 
 ### 1.2 Ключевые концепции
 
 ```
-
 ┌───────────────────────────────────────────────────────────────┐
 │                    S3 Key Concepts                            │
 ├───────────────────────────────────────────────────────────────┤
@@ -85,7 +80,6 @@ S3 Key Characteristics:
 │  └── "folder/" — логическая группировка по prefix             │
 │                                                               │
 └───────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -95,7 +89,6 @@ S3 Key Characteristics:
 ### 2.1 Обзор классов хранения
 
 ```python
-
 storage_classes = {
     "S3 Standard": {
         "availability": "99.99%",
@@ -153,12 +146,10 @@ print(f"{'Class':<25} {'$/GB/month':<12} {'Use Case'}")
 print("-" * 70)
 for cls, details in storage_classes.items():
     print(f"{cls:<25} ${details['price_gb_month']:<10} {details['use_case'][:30]}")
-
 ```
 
 **Output:**
 ```
-
 S3 Storage Classes (us-east-1 pricing):
 
 Class                     $/GB/month   Use Case
@@ -170,7 +161,6 @@ S3 One Zone-IA            $0.01       Recreatable data, single AZ
 S3 Glacier Instant        $0.004      Archive with instant access
 S3 Glacier Flexible       $0.0036     Archive, 1-12 hour retrieval
 S3 Glacier Deep Archive   $0.00099    Long-term archive, 12-48 hours
-
 ```
 
 ---
@@ -181,28 +171,31 @@ S3 Glacier Deep Archive   $0.00099    Long-term archive, 12-48 hours
 
 ```bash
 # Создание bucket
+
 aws s3 mb s3://my-unique-bucket-name-12345
 
 # Загрузка файла
+
 aws s3 cp myfile.txt s3://my-bucket/folder/myfile.txt
 
 # Загрузка директории
+
 aws s3 sync ./local-folder s3://my-bucket/folder/
 
 # Загрузка с указанием storage class
+
 aws s3 cp largefile.zip s3://my-bucket/ --storage-class STANDARD_IA
 
 # Multipart upload (автоматически для больших файлов)
 # Рекомендуется для файлов > 100MB
+
 aws s3 cp large-file.tar.gz s3://my-bucket/ \
     --expected-size 5368709120
-
 ```
 
 ### 3.2 Presigned URLs
 
 ```python
-
 import boto3
 from botocore.exceptions import ClientError
 
@@ -224,9 +217,9 @@ def generate_presigned_url(bucket: str, key: str, expiration: int = 3600) -> str
         return None
 
 # Пример использования
+
 url = generate_presigned_url('my-bucket', 'reports/report.pdf', 3600)
 print(f"Download link (valid 1 hour): {url}")
-
 ```
 
 ---
@@ -237,23 +230,23 @@ print(f"Download link (valid 1 hour): {url}")
 
 ```bash
 # Включение Block Public Access на уровне аккаунта (рекомендуется)
+
 aws s3control put-public-access-block \
     --account-id 123456789012 \
     --public-access-block-configuration \
     "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
 
 # На уровне bucket
+
 aws s3api put-public-access-block \
     --bucket my-bucket \
     --public-access-block-configuration \
     "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
-
 ```
 
 ### 4.2 Bucket Policy
 
 ```json
-
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -288,7 +281,6 @@ aws s3api put-public-access-block \
         }
     ]
 }
-
 ```
 
 ### 4.3 Encryption
@@ -298,11 +290,13 @@ aws s3api put-public-access-block \
 # Все новые объекты автоматически шифруются
 
 # SSE-KMS для управляемых ключей
+
 aws s3 cp file.txt s3://my-bucket/ \
     --sse aws:kms \
     --sse-kms-key-id alias/my-key
 
 # Bucket default encryption
+
 aws s3api put-bucket-encryption \
     --bucket my-bucket \
     --server-side-encryption-configuration '{
@@ -314,7 +308,6 @@ aws s3api put-bucket-encryption \
             "BucketKeyEnabled": true
         }]
     }'
-
 ```
 
 ---
@@ -325,11 +318,13 @@ aws s3api put-bucket-encryption \
 
 ```bash
 # Включение версионирования
+
 aws s3api put-bucket-versioning \
     --bucket my-bucket \
     --versioning-configuration Status=Enabled
 
 # Получение конкретной версии
+
 aws s3api get-object \
     --bucket my-bucket \
     --key myfile.txt \
@@ -337,17 +332,16 @@ aws s3api get-object \
     output.txt
 
 # Удаление версии (permanent)
+
 aws s3api delete-object \
     --bucket my-bucket \
     --key myfile.txt \
     --version-id "3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY"
-
 ```
 
 ### 5.2 Lifecycle Policy
 
 ```json
-
 {
     "Rules": [
         {
@@ -385,7 +379,6 @@ aws s3api delete-object \
         }
     ]
 }
-
 ```
 
 ---
@@ -395,7 +388,6 @@ aws s3api delete-object \
 ### 6.1 Cross-Region Replication (CRR)
 
 ```json
-
 {
     "Role": "arn:aws:iam::123456789012:role/S3ReplicationRole",
     "Rules": [
@@ -420,7 +412,6 @@ aws s3api delete-object \
         }
     ]
 }
-
 ```
 
 ---
@@ -430,7 +421,6 @@ aws s3api delete-object \
 ### 7.1 Оптимизация производительности
 
 ```python
-
 performance_tips = {
     "Use S3 Transfer Acceleration": {
         "when": "Uploads/downloads from distant locations",
@@ -459,7 +449,6 @@ for tip, details in performance_tips.items():
     print(f"📌 {tip}")
     print(f"   When: {details['when']}")
     print(f"   How: {details['how']}\n")
-
 ```
 
 ---
@@ -481,6 +470,7 @@ event_types = [
 ]
 
 # Пример Lambda trigger для обработки загруженных изображений
+
 lambda_handler_example = '''
 def handler(event, context):
     for record in event['Records']:
@@ -492,7 +482,6 @@ def handler(event, context):
             # Resize, generate thumbnails, etc.
             process_image(bucket, key)
 '''
-
 ```
 
 ---
@@ -563,6 +552,7 @@ def handler(event, context):
 - [S3 Pricing](https://aws.amazon.com/s3/pricing/)
 
 ---
+
 
 
 

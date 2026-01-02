@@ -94,7 +94,6 @@ UDP предоставляет минималистичный протокол �
 **Пример: TCP vs UDP**
 
 ```c
-
 // TCP — надёжная доставка
 int tcp_socket = socket(AF_INET, SOCK_STREAM, 0);
 // Установление соединения (3-way handshake)
@@ -111,7 +110,6 @@ sendto(udp_socket, data, len, 0, ...);
 
 **TCP 3-way handshake:**
 ```
-
 Client                    Server
   |                         |
   |---- SYN ---------------->|
@@ -146,7 +144,6 @@ DNS преобразует доменные имена в IP адреса.
 
 **Структура:**
 ```
-
 . (корень)
 ├── com
 │   └── google
@@ -216,7 +213,6 @@ DNS является критически важной инфраструкту�
 **Пример: HTTP запрос**
 
 ```http
-
 GET /index.html HTTP/1.1
 Host: example.com
 User-Agent: Mozilla/5.0
@@ -228,7 +224,6 @@ Accept: text/html
 **Пример: HTTP ответ**
 
 ```http
-
 HTTP/1.1 200 OK
 Content-Type: text/html
 Content-Length: 1234
@@ -239,10 +234,10 @@ Content-Length: 1234
 **Пример: HTTP клиент (Python)**
 
 ```python
-
 import requests
 
 # HTTP/1.1 запрос
+
 response = requests.get('https://example.com')
 print(response.status_code)  # 200
 print(response.text)         # HTML содержимое
@@ -250,7 +245,6 @@ print(response.text)         # HTML содержимое
 
 **HTTP/2 мультиплексирование:**
 ```
-
 HTTP/1.1: Один запрос на соединение
   Request 1 ──┐
   Request 2 ──┤── Connection ── Server
@@ -340,7 +334,6 @@ HTTP/2: Множество запросов параллельно
 **Пример: Веб-приложение**
 
 ```javascript
-
 // Современное веб-приложение (SPA)
 // Работает в браузере, данные с сервера
 fetch('/api/data')
@@ -355,6 +348,7 @@ fetch('/api/data')
 
 ```python
 # Загрузка в облако
+
 import boto3
 
 s3 = boto3.client('s3')
@@ -379,7 +373,6 @@ s3.download_file('my-bucket', 'remote_file.txt', 'local_file.txt')
 
 **TLS (Transport Layer Security):**
 ```
-
 HTTP (незашифрованный)
     ↓
 TLS Handshake (установление безопасного соединения)
@@ -390,14 +383,12 @@ HTTPS (зашифрованный HTTP)
 **Пример: HTTPS**
 
 ```python
-
 import requests
 
 # HTTPS автоматически использует TLS
 
 response = requests.get('https://example.com')
 # Данные зашифрованы при передаче
-
 ```
 
 ### 6.2 Сетевая безопасность
@@ -453,6 +444,7 @@ response = requests.get('https://example.com')
 - История развития интернета и протоколов
 
 ---
+
 
 
 

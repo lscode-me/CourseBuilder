@@ -49,7 +49,6 @@ NIST (National Institute of Standards and Technology) определяет пя�
 **Проблемы традиционной инфраструктуры (on-premise):**
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    On-Premise Challenges                    │
 ├─────────────────────────────────────────────────────────────┤
@@ -72,7 +71,6 @@ NIST (National Institute of Standards and Technology) определяет пя�
 │     └── Under-provisioning (нехватка в пиковые нагрузки)    │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
-
 ```
 
 **Что даёт облако:**
@@ -81,6 +79,7 @@ NIST (National Institute of Standards and Technology) определяет пя�
 # Пример: запуск 100 серверов
 
 # On-Premise подход:
+
 on_premise_timeline = {
     "planning": "2-4 weeks",
     "procurement": "4-8 weeks", 
@@ -91,6 +90,7 @@ on_premise_timeline = {
 }
 
 # Cloud подход:
+
 cloud_timeline = {
     "write_terraform": "1 hour",
     "apply": "5 minutes",
@@ -99,15 +99,12 @@ cloud_timeline = {
 
 print(f"On-premise: {on_premise_timeline['total']}")
 print(f"Cloud: {cloud_timeline['total']}")
-
 ```
 
 **Output:**
 ```
-
 On-premise: 10-20 weeks
 Cloud: ~1 hour
-
 ```
 
 ---
@@ -119,7 +116,6 @@ Cloud: ~1 hour
 **1960-е годы:** Концепция разделения вычислительных ресурсов
 
 ```
-
 ┌──────────────────────────────────────────────────────────────┐
 │  1960s: Time-Sharing Systems                                 │
 │                                                              │
@@ -136,7 +132,6 @@ Cloud: ~1 hour
 │ └─────┘  └─────┘  └─────┘                                    │
 │                                                              │
 └──────────────────────────────────────────────────────────────┘
-
 ```
 
 John McCarthy (создатель Lisp) в 1961 году предсказал:
@@ -161,7 +156,6 @@ Amazon столкнулся с проблемой: инженерные кома
 **2006 — AWS запускает публичные сервисы:**
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │  AWS Launch Timeline (2006)                                │
 ├────────────────────────────────────────────────────────────┤
@@ -178,7 +172,6 @@ Amazon столкнулся с проблемой: инженерные кома
 │                  — Werner Vogels, CTO Amazon               │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 **Почему Amazon?**
@@ -191,7 +184,6 @@ Amazon столкнулся с проблемой: инженерные кома
 ### 2.4 Эволюция сервисов AWS
 
 ```python
-
 aws_services_evolution = {
     2006: ["S3", "EC2", "SQS"],
     2007: ["SimpleDB"],
@@ -216,21 +208,17 @@ aws_services_evolution = {
 
 print(f"AWS начал с {len(aws_services_evolution[2006])} сервисов в 2006")
 print(f"Сегодня AWS предлагает 200+ сервисов")
-
 ```
 
 **Output:**
 ```
-
 AWS начал с 3 сервисов в 2006
 Сегодня AWS предлагает 200+ сервисов
-
 ```
 
 ### 2.5 Появление конкурентов
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │  Cloud Provider Timeline                                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -252,7 +240,6 @@ AWS начал с 3 сервисов в 2006
 │  2017 ──── Oracle Cloud Infrastructure (Gen 2)                  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -262,7 +249,6 @@ AWS начал с 3 сервисов в 2006
 ### 3.1 Доля рынка (Q3 2024)
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │  Cloud Infrastructure Market Share                         │
 ├────────────────────────────────────────────────────────────┤
@@ -277,7 +263,6 @@ AWS начал с 3 сервисов в 2006
 │  Growth: ~20% year-over-year                               │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Сравнение провайдеров
@@ -324,6 +309,7 @@ AWS начал с 3 сервисов в 2006
 
 ```python
 # Традиционный подход (CapEx)
+
 traditional_costs = {
     "servers": 500_000,          # Закупка серверов
     "networking": 100_000,        # Сетевое оборудование
@@ -334,6 +320,7 @@ traditional_costs = {
 }
 
 # Облачный подход (OpEx)
+
 cloud_costs = {
     "monthly_compute": 15_000,
     "monthly_storage": 2_000,
@@ -342,6 +329,7 @@ cloud_costs = {
 }
 
 # Сравнение за 3 года
+
 traditional_3y = (
     traditional_costs["servers"] + 
     traditional_costs["networking"] + 
@@ -359,16 +347,13 @@ cloud_3y = (
 print(f"Traditional (3 years): ${traditional_3y:,}")
 print(f"Cloud (3 years): ${cloud_3y:,}")
 print(f"Savings: ${traditional_3y - cloud_3y:,}")
-
 ```
 
 **Output:**
 ```
-
 Traditional (3 years): $1,850,000
 Cloud (3 years): $1,098,000
 Savings: $752,000
-
 ```
 
 > **⚠️ Warning:**  
@@ -377,7 +362,6 @@ Savings: $752,000
 ### 4.2 Технические преимущества
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │  Cloud Technical Benefits                                      │
 ├────────────────────────────────────────────────────────────────┤
@@ -408,7 +392,6 @@ Savings: $752,000
 │     └── High availability из коробки                           │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.3 Бизнес-преимущества
@@ -436,14 +419,11 @@ improvement = (
 )
 
 print(f"Product development time increased by: {improvement:.0%}")
-
 ```
 
 **Output:**
 ```
-
 Product development time increased by: 200%
-
 ```
 
 ---
@@ -485,6 +465,7 @@ lock_in_levels = {
 }
 
 # Стратегия минимизации lock-in
+
 strategies = [
     "Использовать Kubernetes вместо ECS/Fargate",
     "Terraform вместо CloudFormation",
@@ -492,7 +473,6 @@ strategies = [
     "Абстракции поверх облачных SDK",
     "Multi-cloud для критичных workloads"
 ]
-
 ```
 
 > **💡 Pro Tip:**  
@@ -505,7 +485,6 @@ strategies = [
 ### 6.1 Компоненты Total Cost of Ownership
 
 ```python
-
 def calculate_tco(
     servers: int,
     monthly_compute_hours: int,
@@ -545,6 +524,7 @@ def calculate_tco(
     }
 
 # Пример расчёта
+
 result = calculate_tco(
     servers=10,
     monthly_compute_hours=7200,      # 10 серверов * 720 часов
@@ -557,19 +537,16 @@ print("=== TCO Comparison (3 years) ===")
 print(f"\nOn-Premise Total: ${result['on_premise']['total']:,.0f}")
 print(f"Cloud Total: ${result['cloud']['total']:,.0f}")
 print(f"\nSavings: ${result['savings']:,.0f} ({result['savings_percent']:.1f}%)")
-
 ```
 
 **Output:**
 ```
-
 === TCO Comparison (3 years) ===
 
 On-Premise Total: $545,000
 Cloud Total: $50,112
 
 Savings: $494,888 (90.8%)
-
 ```
 
 > **⚠️ Warning:**  
@@ -584,7 +561,6 @@ Savings: $494,888 (90.8%)
 ### 7.1 Типы облаков
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Cloud Deployment Models                         │
 ├────────────────────────────────────────────────────────────────────┤
@@ -609,7 +585,6 @@ Savings: $494,888 (90.8%)
 │  requirements                                                      │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 7.2 Когда какой выбрать?
@@ -624,7 +599,6 @@ Savings: $494,888 (90.8%)
 ### 7.3 Hybrid Cloud Architectures
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                    Hybrid Cloud Pattern                        │
 ├────────────────────────────────────────────────────────────────┤
@@ -646,7 +620,6 @@ Savings: $494,888 (90.8%)
 │  • Disaster recovery in cloud                                  │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -658,7 +631,6 @@ AWS Well-Architected Framework — набор best practices для проект
 ### 8.1 Шесть столпов (Pillars)
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │              AWS Well-Architected Framework                    │
 ├────────────────────────────────────────────────────────────────┤
@@ -682,13 +654,11 @@ AWS Well-Architected Framework — набор best practices для проект
 │     └── Минимизация environmental impact                       │
 │                                                                │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 8.2 Ключевые принципы
 
 ```python
-
 well_architected_principles = {
     "operational_excellence": [
         "Perform operations as code",
@@ -741,12 +711,10 @@ for pillar, principles in well_architected_principles.items():
     print(f"\n{pillar.upper().replace('_', ' ')}:")
     for i, p in enumerate(principles[:3], 1):  # Показываем первые 3
         print(f"  {i}. {p}")
-
 ```
 
 **Output:**
 ```
-
 OPERATIONAL EXCELLENCE:
   1. Perform operations as code
   2. Make frequent, small, reversible changes
@@ -776,7 +744,6 @@ SUSTAINABILITY:
   1. Understand your impact
   2. Establish sustainability goals
   3. Maximize utilization
-
 ```
 
 ---
@@ -799,9 +766,11 @@ SUSTAINABILITY:
 
 ```bash
 # macOS (через Homebrew)
+
 brew install awscli
 
 # Linux
+
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -810,21 +779,20 @@ sudo ./aws/install
 # Скачайте с https://aws.amazon.com/cli/
 
 # Проверка установки
-aws --version
 
+aws --version
 ```
 
 **Output:**
 ```
-
 aws-cli/2.15.0 Python/3.11.6 Darwin/23.0.0 exe/x86_64 prompt/off
-
 ```
 
 ### 9.3 Настройка credentials
 
 ```bash
 # Настройка профиля по умолчанию
+
 aws configure
 
 # AWS Access Key ID: AKIAIOSFODNN7EXAMPLE
@@ -833,33 +801,33 @@ aws configure
 # Default output format: json
 
 # Проверка конфигурации
-aws sts get-caller-identity
 
+aws sts get-caller-identity
 ```
 
 **Output:**
 ```json
-
 {
     "UserId": "AIDAEXAMPLEID",
     "Account": "123456789012",
     "Arn": "arn:aws:iam::123456789012:user/myuser"
 }
-
 ```
 
 ### 9.4 Первые команды
 
 ```bash
 # Список S3 buckets
+
 aws s3 ls
 
 # Список EC2 инстансов
+
 aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId,State.Name,InstanceType]' --output table
 
 # Список регионов
-aws ec2 describe-regions --query 'Regions[*].RegionName' --output table
 
+aws ec2 describe-regions --query 'Regions[*].RegionName' --output table
 ```
 
 ---
@@ -871,6 +839,7 @@ aws ec2 describe-regions --query 'Regions[*].RegionName' --output table
 ❌ **Проблема:**
 ```bash
 # Запустили EC2 для тестов
+
 aws ec2 run-instances --image-id ami-12345 --instance-type m5.large
 
 # Забыли выключить... месяц спустя счёт $500+
@@ -879,17 +848,18 @@ aws ec2 run-instances --image-id ami-12345 --instance-type m5.large
 ✅ **Решение:**
 ```bash
 # Всегда помечайте ресурсы тегами
+
 aws ec2 run-instances \
     --image-id ami-12345 \
     --instance-type m5.large \
     --tag-specifications 'ResourceType=instance,Tags=[{Key=Environment,Value=test},{Key=Owner,Value=yourname},{Key=AutoStop,Value=true}]'
 
 # Настройте Budget Alerts
+
 aws budgets create-budget \
     --account-id 123456789012 \
     --budget file://budget.json \
     --notifications-with-subscribers file://notifications.json
-
 ```
 
 ### 10.2 Pitfall: Публичные S3 buckets
@@ -897,6 +867,7 @@ aws budgets create-budget \
 ❌ **Проблема:**
 ```bash
 # Создали bucket с публичным доступом для "удобства"
+
 aws s3api put-bucket-acl --bucket my-bucket --acl public-read
 # Данные клиентов утекли в интернет
 ```
@@ -904,11 +875,11 @@ aws s3api put-bucket-acl --bucket my-bucket --acl public-read
 ✅ **Решение:**
 ```bash
 # Block Public Access на уровне аккаунта
+
 aws s3control put-public-access-block \
     --account-id 123456789012 \
     --public-access-block-configuration \
     "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
-
 ```
 
 ### 10.3 Pitfall: Root аккаунт для повседневной работы
@@ -921,7 +892,6 @@ aws s3control put-public-access-block \
 
 ✅ **Решение:**
 ```python
-
 best_practices = [
     "Включить MFA на root аккаунте",
     "Никогда не создавать Access Keys для root",
@@ -929,7 +899,6 @@ best_practices = [
     "Использовать IAM Roles для приложений",
     "Принцип наименьших привилегий"
 ]
-
 ```
 
 ---
@@ -993,6 +962,7 @@ best_practices = [
 - [A Brief History of AWS](https://www.youtube.com/watch?v=f8Uc6WGnpqY) — история в 10 минут
 
 ---
+
 
 
 

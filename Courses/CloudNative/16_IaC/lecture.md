@@ -24,7 +24,6 @@
 ### 1.1 Принципы
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │              Infrastructure as Code                                │
 ├────────────────────────────────────────────────────────────────────┤
@@ -45,13 +44,11 @@
 │  4. Self-documenting: code describes current state                 │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 IaC Tools
 
 ```python
-
 iac_tools = {
     "CloudFormation": {
         "provider": "AWS only",
@@ -83,7 +80,6 @@ for tool, details in iac_tools.items():
     print(f"\n{tool}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
-
 ```
 
 ---
@@ -93,7 +89,6 @@ for tool, details in iac_tools.items():
 ### 2.1 Template Structure
 
 ```yaml
-
 AWSTemplateFormatVersion: '2010-09-09'
 Description: My CloudFormation template
 
@@ -140,41 +135,47 @@ Outputs:
     Value: !Ref MyVPC
     Export:
       Name: !Sub '${Environment}-VPCId'
-
 ```
 
 ### 2.2 Intrinsic Functions
 
 ```yaml
 # Reference another resource or parameter
+
 VPCId: !Ref MyVPC
 
 # Get attribute of resource
+
 PublicIP: !GetAtt MyInstance.PublicIp
 
 # String substitution
+
 Name: !Sub '${Environment}-${AWS::StackName}-bucket'
 
 # Join strings
+
 SecurityGroups: !Join [',', [!Ref SG1, !Ref SG2]]
 
 # Conditional
+
 InstanceType: !If [IsProd, m5.large, t3.micro]
 
 # Import from another stack
+
 VPCId: !ImportValue prod-VPCId
 
 # Base64 encode (for UserData)
+
 UserData: !Base64 |
   #!/bin/bash
   yum update -y
-
 ```
 
 ### 2.3 Deploy Stack
 
 ```bash
 # Create stack
+
 aws cloudformation create-stack \
     --stack-name my-app-stack \
     --template-body file://template.yaml \
@@ -182,14 +183,17 @@ aws cloudformation create-stack \
     --capabilities CAPABILITY_IAM
 
 # Update stack
+
 aws cloudformation update-stack \
     --stack-name my-app-stack \
     --template-body file://template.yaml
 
 # Delete stack
+
 aws cloudformation delete-stack --stack-name my-app-stack
 
 # Create change set (preview changes)
+
 aws cloudformation create-change-set \
     --stack-name my-app-stack \
     --template-body file://template.yaml \
@@ -198,7 +202,6 @@ aws cloudformation create-change-set \
 aws cloudformation describe-change-set \
     --stack-name my-app-stack \
     --change-set-name my-changes
-
 ```
 
 ---
@@ -209,6 +212,7 @@ aws cloudformation describe-change-set \
 
 ```hcl
 # providers.tf
+
 terraform {
   required_version = ">= 1.0"
   
@@ -238,11 +242,11 @@ provider "aws" {
     }
   }
 }
-
 ```
 
 ```hcl
 # variables.tf
+
 variable "environment" {
   type        = string
   description = "Environment name"
@@ -257,11 +261,11 @@ variable "instance_type" {
   type    = string
   default = "t3.micro"
 }
-
 ```
 
 ```hcl
 # main.tf
+
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
@@ -293,6 +297,7 @@ resource "aws_instance" "web" {
 }
 
 # outputs.tf
+
 output "vpc_id" {
   value       = aws_vpc.main.id
   description = "VPC ID"
@@ -301,43 +306,50 @@ output "vpc_id" {
 output "instance_ip" {
   value = aws_instance.web.public_ip
 }
-
 ```
 
 ### 3.2 Terraform Commands
 
 ```bash
 # Initialize (download providers, configure backend)
+
 terraform init
 
 # Format code
+
 terraform fmt
 
 # Validate configuration
+
 terraform validate
 
 # Plan (preview changes)
+
 terraform plan -out=tfplan
 
 # Apply changes
+
 terraform apply tfplan
 
 # Destroy infrastructure
+
 terraform destroy
 
 # Import existing resource
+
 terraform import aws_instance.web i-1234567890abcdef0
 
 # Show state
+
 terraform state list
 terraform state show aws_vpc.main
-
 ```
 
 ### 3.3 Modules
 
 ```hcl
 # modules/vpc/main.tf
+
 variable "cidr_block" {}
 variable "environment" {}
 
@@ -353,6 +365,7 @@ output "vpc_id" {
 }
 
 # main.tf (root)
+
 module "vpc" {
   source = "./modules/vpc"
   
@@ -369,7 +382,6 @@ module "eks" {
   vpc_id          = module.vpc.vpc_id
   subnet_ids      = module.vpc.private_subnet_ids
 }
-
 ```
 
 ---
@@ -377,7 +389,6 @@ module "eks" {
 ## 4. CloudFormation vs Terraform
 
 ```python
-
 comparison = {
     "State Management": {
         "CloudFormation": "AWS manages state",
@@ -410,7 +421,6 @@ for aspect, values in comparison.items():
     print(f"{aspect}:")
     print(f"  CF: {values['CloudFormation']}")
     print(f"  TF: {values['Terraform']}\n")
-
 ```
 
 ---
@@ -418,7 +428,6 @@ for aspect, values in comparison.items():
 ## 5. Best Practices
 
 ```python
-
 iac_best_practices = [
     "Version control ALL infrastructure code",
     "Use modules/nested stacks for reusability",
@@ -435,7 +444,6 @@ iac_best_practices = [
 print("IaC Best Practices:")
 for i, practice in enumerate(iac_best_practices, 1):
     print(f"  {i}. {practice}")
-
 ```
 
 ---
@@ -475,6 +483,7 @@ for i, practice in enumerate(iac_best_practices, 1):
 1. Разверните VPC + EC2 через CloudFormation
 2. Перепишите тот же стек на Terraform
 3. Настройте remote state в S3 для Terraform
+
 
 
 

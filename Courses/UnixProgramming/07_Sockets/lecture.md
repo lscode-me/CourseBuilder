@@ -33,7 +33,6 @@
 **Сокет** — конечная точка двунаправленного канала связи.
 
 ```
-
 ┌─────────────────┐                    ┌─────────────────┐
 │     Client      │                    │     Server      │
 │                 │                    │                 │
@@ -47,7 +46,6 @@
 │                 │                    │     send()      │
 │  close() ───────┼────────────────────┼─── close()      │
 └─────────────────┘                    └─────────────────┘
-
 ```
 
 ### 1.2 Типы сокетов
@@ -61,7 +59,6 @@
 ### 1.3 Создание сокета
 
 ```python
-
 import socket
 
 # Создать TCP сокет
@@ -75,7 +72,6 @@ ipv6_sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
 
 # Не забыть закрыть!
 tcp_sock.close()
-
 ```
 
 ---
@@ -85,7 +81,6 @@ tcp_sock.close()
 ### 2.1 Базовый сервер
 
 ```python
-
 import socket
 
 def simple_server(host='0.0.0.0', port=8080):
@@ -125,13 +120,11 @@ def simple_server(host='0.0.0.0', port=8080):
 
 if __name__ == "__main__":
     simple_server()
-
 ```
 
 ### 2.2 Использование context manager
 
 ```python
-
 import socket
 
 def server_with_context():
@@ -149,13 +142,11 @@ def server_with_context():
                 print(f"Connection from {address}")
                 data = client.recv(1024)
                 client.sendall(b"OK\n")
-
 ```
 
 ### 2.3 Обработка нескольких клиентов (потоки)
 
 ```python
-
 import socket
 import threading
 
@@ -197,7 +188,6 @@ def threaded_server(host='0.0.0.0', port=8080):
             thread.start()
     finally:
         server.close()
-
 ```
 
 ---
@@ -207,7 +197,6 @@ def threaded_server(host='0.0.0.0', port=8080):
 ### 3.1 Базовый клиент
 
 ```python
-
 import socket
 
 def simple_client(host='localhost', port=8080):
@@ -226,13 +215,11 @@ def simple_client(host='localhost', port=8080):
 
 if __name__ == "__main__":
     simple_client()
-
 ```
 
 ### 3.2 Клиент с таймаутом
 
 ```python
-
 import socket
 
 def client_with_timeout(host, port, timeout=5.0):
@@ -251,13 +238,11 @@ def client_with_timeout(host, port, timeout=5.0):
         return None
     finally:
         sock.close()
-
 ```
 
 ### 3.3 Полное чтение данных
 
 ```python
-
 import socket
 
 def recv_all(sock, length):
@@ -279,7 +264,6 @@ def recv_until(sock, delimiter=b"\n"):
             raise ConnectionError("Connection closed")
         data += chunk
     return data
-
 ```
 
 ---
@@ -289,7 +273,6 @@ def recv_until(sock, delimiter=b"\n"):
 ### 4.1 UDP Server
 
 ```python
-
 import socket
 
 def udp_server(host='0.0.0.0', port=8080):
@@ -306,13 +289,11 @@ def udp_server(host='0.0.0.0', port=8080):
             
             # Отправить ответ
             server.sendto(b"ACK", address)
-
 ```
 
 ### 4.2 UDP Client
 
 ```python
-
 import socket
 
 def udp_client(host='localhost', port=8080):
@@ -328,13 +309,11 @@ def udp_client(host='localhost', port=8080):
         # Получить ответ
         data, address = sock.recvfrom(1024)
         print(f"Response from {address}: {data.decode()}")
-
 ```
 
 ### 4.3 UDP с connect()
 
 ```python
-
 import socket
 
 def udp_connected_client(host, port):
@@ -348,7 +327,6 @@ def udp_connected_client(host, port):
         sock.send(b"Hello")
         data = sock.recv(1024)
         print(f"Response: {data.decode()}")
-
 ```
 
 ---
@@ -358,7 +336,6 @@ def udp_connected_client(host, port):
 ### 5.1 getaddrinfo — универсальное разрешение
 
 ```python
-
 import socket
 
 def resolve_address(host, port, family=socket.AF_UNSPEC):
@@ -381,13 +358,11 @@ def resolve_address(host, port, family=socket.AF_UNSPEC):
 
 # Пример
 resolve_address("google.com", 80)
-
 ```
 
 ### 5.2 Универсальный клиент (IPv4/IPv6)
 
 ```python
-
 import socket
 
 def universal_connect(host, port):
@@ -413,13 +388,11 @@ sock = universal_connect("google.com", 80)
 sock.sendall(b"GET / HTTP/1.0\r\n\r\n")
 print(sock.recv(1024).decode())
 sock.close()
-
 ```
 
 ### 5.3 gethostname и gethostbyname
 
 ```python
-
 import socket
 
 # Имя текущего хоста
@@ -433,7 +406,6 @@ print(f"google.com IP: {ip}")
 # Обратное разрешение
 hostname, aliases, ips = socket.gethostbyaddr("8.8.8.8")
 print(f"8.8.8.8 hostname: {hostname}")
-
 ```
 
 ---
@@ -443,20 +415,17 @@ print(f"8.8.8.8 hostname: {hostname}")
 ### 6.1 SO_REUSEADDR
 
 ```python
-
 import socket
 
 # Разрешить переиспользование адреса (важно для серверов!)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server.bind(('0.0.0.0', 8080))
-
 ```
 
 ### 6.2 SO_KEEPALIVE
 
 ```python
-
 import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -473,20 +442,17 @@ sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
 ### 6.3 TCP_NODELAY (отключение алгоритма Nagle)
 
 ```python
-
 import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Отключить буферизацию Nagle для низкой задержки
 sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-
 ```
 
 ### 6.4 Размеры буферов
 
 ```python
-
 import socket
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -500,7 +466,6 @@ print(f"Send buffer: {send_buf}")
 # Установить размеры
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 65536)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 65536)
-
 ```
 
 ---
@@ -510,7 +475,6 @@ sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 65536)
 ### 7.1 Основные исключения
 
 ```python
-
 import socket
 
 try:
@@ -533,13 +497,11 @@ except socket.error as e:
     print(f"Socket error: {e}")
 finally:
     sock.close()
-
 ```
 
 ### 7.2 Graceful shutdown
 
 ```python
-
 import socket
 
 def graceful_close(sock):
@@ -557,7 +519,6 @@ def graceful_close(sock):
         pass
     finally:
         sock.close()
-
 ```
 
 ---
@@ -593,7 +554,6 @@ def http_get(host, path="/", port=80):
 if __name__ == "__main__":
     response = http_get("example.com")
     print(response)
-
 ```
 
 ### 8.2 Echo сервер с протоколом
@@ -660,7 +620,6 @@ def echo_server(port=8080):
 
 if __name__ == "__main__":
     echo_server()
-
 ```
 
 ### 8.3 Простой чат сервер
@@ -737,7 +696,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ---

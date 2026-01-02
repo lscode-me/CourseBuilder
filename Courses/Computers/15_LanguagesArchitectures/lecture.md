@@ -44,7 +44,6 @@
 **Пример: x86-64 Assembly**
 
 ```assembly
-
 ; Простая функция на ассемблере
 section .text
 global _start
@@ -90,7 +89,6 @@ message db 'Hello, World!', 10
 **Пример: C код**
 
 ```c
-
 // Простой пример на C
 #include <stdio.h>
 
@@ -115,7 +113,6 @@ int main() {
 
 **C компиляция:**
 ```
-
 Исходный код (C)
     ↓
 Препроцессор (cpp)
@@ -156,7 +153,6 @@ int main() {
 **FORTRAN** — научные вычисления
 
 ```fortran
-
 ! FORTRAN пример
 program hello
     integer :: i
@@ -169,7 +165,6 @@ end program hello
 **COBOL** — бизнес-приложения
 
 ```cobol
-
 IDENTIFICATION DIVISION.
 PROGRAM-ID. HELLO.
 PROCEDURE DIVISION.
@@ -180,7 +175,6 @@ PROCEDURE DIVISION.
 **Pascal** — обучение программированию
 
 ```pascal
-
 program Hello;
 begin
     writeln('Hello, World!');
@@ -234,6 +228,7 @@ int main() {
 
 ```python
 # Упрощённый интерпретатор
+
 def interpret(code):
     lines = code.split('\n')
     for line in lines:
@@ -285,7 +280,6 @@ def interpret(code):
 
 **Java байткод:**
 ```java
-
 // Исходный код
 public int add(int a, int b) {
     return a + b;
@@ -300,7 +294,6 @@ ireturn    // Вернуть результат
 
 **.NET CIL (Common Intermediate Language):**
 ```csharp
-
 // Исходный код C#
 public int Add(int a, int b) {
     return a + b;
@@ -316,6 +309,7 @@ ret        // Вернуть
 **Python bytecode:**
 ```python
 # Исходный код
+
 def add(a, b):
     return a + b
 
@@ -358,7 +352,6 @@ JVM предоставляет несколько ключевых особен�
 **Класс-лоадер** — загрузка классов
 
 ```java
-
 // Класс-лоадеры в иерархии
 Bootstrap ClassLoader (JVM встроенный)
     ↓
@@ -370,7 +363,6 @@ Application ClassLoader (приложение)
 **Execution Engine** — выполнение байткода
 
 ```
-
 Байткод
     ↓
 Interpreter (интерпретация)
@@ -392,7 +384,6 @@ JIT Compiler (компиляция в нативный код)
 **Пример: JVM JIT компиляция**
 
 ```java
-
 // HotSpot JVM
 // Методы, вызываемые часто, компилируются в нативный код
 // "Hot spots" оптимизируются
@@ -417,13 +408,11 @@ public int hotMethod(int x) {
 **Пример: .NET многоязычность**
 
 ```csharp
-
 // C#
 public int Add(int a, int b) => a + b;
 ```
 
 ```vb
-
 ' VB.NET
 Public Function Add(a As Integer, b As Integer) As Integer
     Return a + b
@@ -431,14 +420,12 @@ End Function
 ```
 
 ```fsharp
-
 // F#
 let add a b = a + b
 ```
 
 **Все компилируются в один CIL:**
 ```
-
 C# → CIL
 VB.NET → CIL
 F# → CIL
@@ -510,7 +497,6 @@ CLR (выполнение)
 **Пример: Erlang процессы**
 
 ```erlang
-
 % Erlang процессы (легковесные)
 spawn(fun() -> 
     io:format("Hello from process~n")
@@ -549,7 +535,6 @@ end).
 **Пример: Rust → WASM**
 
 ```rust
-
 // Rust код
 #[no_mangle]
 pub extern "C" fn add(a: i32, b: i32) -> i32 {
@@ -627,6 +612,7 @@ pub extern "C" fn add(a: i32, b: i32) -> i32 {
 - История языков программирования
 
 ---
+
 
 
 

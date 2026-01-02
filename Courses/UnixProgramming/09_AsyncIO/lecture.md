@@ -30,7 +30,6 @@
 ### 1.1 Blocking vs Non-blocking
 
 ```
-
 Blocking I/O:
 ┌─────────┐         ┌─────────┐
 │ Thread  │─────────│  recv() │  Ждёт данные...
@@ -51,7 +50,6 @@ Non-blocking I/O:
      │
      ▼
    Делает другую работу
-
 ```
 
 ### 1.2 Способы обработки множества соединений
@@ -72,7 +70,6 @@ Non-blocking I/O:
 ### 2.1 Основы select
 
 ```python
-
 import select
 import socket
 
@@ -123,7 +120,6 @@ def select_server(host='0.0.0.0', port=8080):
             sock.close()
     
     server.close()
-
 ```
 
 ### 2.2 Ограничения select
@@ -139,7 +135,6 @@ def select_server(host='0.0.0.0', port=8080):
 ### 3.1 Основы poll
 
 ```python
-
 import select
 import socket
 
@@ -195,7 +190,6 @@ def poll_server(host='0.0.0.0', port=8080):
 
 if __name__ == "__main__":
     poll_server()
-
 ```
 
 ### 3.2 Флаги poll
@@ -215,7 +209,6 @@ if __name__ == "__main__":
 ### 4.1 Основы kqueue
 
 ```python
-
 import select
 import socket
 
@@ -290,7 +283,6 @@ def kqueue_server(host='0.0.0.0', port=8080):
 
 if __name__ == "__main__":
     kqueue_server()
-
 ```
 
 ---
@@ -300,7 +292,6 @@ if __name__ == "__main__":
 ### 5.1 DefaultSelector
 
 ```python
-
 import selectors
 import socket
 
@@ -345,7 +336,6 @@ def selectors_server(host='0.0.0.0', port=8080):
 
 if __name__ == "__main__":
     selectors_server()
-
 ```
 
 ---
@@ -355,7 +345,6 @@ if __name__ == "__main__":
 ### 6.1 Базовый asyncio сервер
 
 ```python
-
 import asyncio
 
 async def handle_client(reader, writer):
@@ -392,13 +381,11 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ### 6.2 Asyncio клиент
 
 ```python
-
 import asyncio
 
 async def tcp_client(message):
@@ -418,13 +405,11 @@ async def tcp_client(message):
 
 if __name__ == "__main__":
     asyncio.run(tcp_client("Hello, asyncio!"))
-
 ```
 
 ### 6.3 Параллельные задачи
 
 ```python
-
 import asyncio
 
 async def fetch_url(url, delay):
@@ -448,13 +433,11 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ### 6.4 Таймауты
 
 ```python
-
 import asyncio
 
 async def slow_operation():
@@ -470,7 +453,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ---
@@ -480,7 +462,6 @@ if __name__ == "__main__":
 ### 7.1 Протоколы и транспорты
 
 ```python
-
 import asyncio
 
 class EchoProtocol(asyncio.Protocol):
@@ -513,13 +494,11 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ### 7.2 Работа с файлами
 
 ```python
-
 import asyncio
 import aiofiles  # pip install aiofiles
 
@@ -547,7 +526,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ---
@@ -605,7 +583,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ### 8.2 Параллельный сканер портов
@@ -658,7 +635,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ---

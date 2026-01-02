@@ -38,7 +38,6 @@
 - Состоянием (running, sleeping, zombie...)
 
 ```python
-
 import os
 
 # Информация о текущем процессе
@@ -47,13 +46,11 @@ print(f"Parent PID: {os.getppid()}")
 print(f"User ID: {os.getuid()}")
 print(f"Group ID: {os.getgid()}")
 print(f"Working dir: {os.getcwd()}")
-
 ```
 
 ### 1.2 Жизненный цикл процесса
 
 ```
-
       fork()
 Parent ──────► Child
    │              │
@@ -70,7 +67,6 @@ Parent ──────► Child
          │
          ▼
       Removed
-
 ```
 
 ---
@@ -80,7 +76,6 @@ Parent ──────► Child
 ### 2.1 Базовый fork
 
 ```python
-
 import os
 
 print(f"Before fork, PID: {os.getpid()}")
@@ -93,16 +88,13 @@ if pid == 0:
 else:
     # Родительский процесс
     print(f"Parent process, PID: {os.getpid()}, Child: {pid}")
-
 ```
 
 **Output:**
 ```
-
 Before fork, PID: 1234
 Parent process, PID: 1234, Child: 1235
 Child process, PID: 1235, Parent: 1234
-
 ```
 
 ### 2.2 Возвращаемое значение fork()
@@ -116,7 +108,6 @@ Child process, PID: 1235, Parent: 1234
 ### 2.3 Что копируется при fork
 
 ```python
-
 import os
 
 data = ["original"]
@@ -133,15 +124,12 @@ else:
     time.sleep(0.1)
     # Родитель видит оригинальные данные
     print(f"Parent: {data}")
-
 ```
 
 **Output:**
 ```
-
 Child: ['original', 'child']
 Parent: ['original']
-
 ```
 
 ### 2.4 Copy-on-Write
@@ -153,7 +141,6 @@ Parent: ['original']
 - Экономит память и время
 
 ```python
-
 import os
 
 # Создать большой объект
@@ -168,7 +155,6 @@ if pid == 0:
 else:
     os.wait()
     print("Parent done")
-
 ```
 
 ---
@@ -178,7 +164,6 @@ else:
 ### 3.1 Семейство exec
 
 ```python
-
 import os
 
 # exec заменяет текущий процесс новой программой
@@ -194,7 +179,6 @@ if pid == 0:
 else:
     os.wait()
     print("Child finished")
-
 ```
 
 ### 3.2 Варианты exec
@@ -209,7 +193,6 @@ else:
 | `execvp(file, args)` | Поиск в PATH + список |
 
 ```python
-
 import os
 
 pid = os.fork()
@@ -221,13 +204,11 @@ if pid == 0:
         ["env"],
         {"MY_VAR": "hello", "PATH": "/usr/bin"}
     )
-
 ```
 
 ### 3.3 Паттерн fork + exec
 
 ```python
-
 import os
 import sys
 
@@ -250,7 +231,6 @@ def run_command(cmd, args):
 # Использование
 exit_code = run_command("ls", ["-la", "/tmp"])
 print(f"Command exited with: {exit_code}")
-
 ```
 
 ---
@@ -260,7 +240,6 @@ print(f"Command exited with: {exit_code}")
 ### 4.1 os.wait()
 
 ```python
-
 import os
 import time
 
@@ -278,13 +257,11 @@ else:
     if os.WIFEXITED(status):
         exit_code = os.WEXITSTATUS(status)
         print(f"Child {child_pid} exited with code {exit_code}")
-
 ```
 
 ### 4.2 os.waitpid()
 
 ```python
-
 import os
 
 pid1 = os.fork()
@@ -302,7 +279,6 @@ print(f"PID {pid1} exited with {os.WEXITSTATUS(status1)}")
 # Ждать любой процесс
 _, status2 = os.waitpid(-1, 0)
 print(f"Another child exited with {os.WEXITSTATUS(status2)}")
-
 ```
 
 ### 4.3 Флаги waitpid
@@ -314,7 +290,6 @@ print(f"Another child exited with {os.WEXITSTATUS(status2)}")
 | `WUNTRACED` | Также возвращать остановленные процессы |
 
 ```python
-
 import os
 import time
 
@@ -331,13 +306,11 @@ else:
         print("Child still running")
     else:
         print(f"Child {result} finished")
-
 ```
 
 ### 4.4 Анализ статуса
 
 ```python
-
 import os
 import signal
 
@@ -352,7 +325,6 @@ def analyze_status(status):
     elif os.WIFSTOPPED(status):
         sig = os.WSTOPSIG(status)
         print(f"Stopped by signal {sig}")
-
 ```
 
 ---
@@ -364,7 +336,6 @@ def analyze_status(status):
 **Зомби** — процесс, который завершился, но родитель не вызвал wait().
 
 ```python
-
 import os
 import time
 
@@ -377,7 +348,6 @@ else:
     print(f"Parent sleeping, child {pid} becomes zombie")
     time.sleep(60)  # Зомби существует 60 секунд
     os.wait()       # Только теперь зомби удаляется
-
 ```
 
 ### 5.2 Предотвращение зомби
@@ -385,7 +355,6 @@ else:
 **Способ 1: Всегда вызывать wait()**
 
 ```python
-
 import os
 
 for i in range(5):
@@ -399,13 +368,11 @@ while True:
         os.wait()
     except ChildProcessError:
         break  # Нет больше детей
-
 ```
 
 **Способ 2: Двойной fork**
 
 ```python
-
 import os
 
 pid = os.fork()
@@ -422,7 +389,6 @@ if pid == 0:
         os._exit(0)  # Первый ребёнок сразу завершается
 else:
     os.wait()  # Быстро освобождаем первого ребёнка
-
 ```
 
 **Способ 3: Обработчик SIGCHLD (см. модуль Signals)**
@@ -434,7 +400,6 @@ else:
 ### 6.1 subprocess.run()
 
 ```python
-
 import subprocess
 
 # Простой запуск
@@ -458,7 +423,6 @@ result = subprocess.run(["ls", "/nonexistent"], check=True)
 ### 6.2 Передача ввода
 
 ```python
-
 import subprocess
 
 # Передать данные на stdin
@@ -474,13 +438,11 @@ print(result.stdout)
 with open("/etc/passwd") as f:
     result = subprocess.run(["head", "-5"], stdin=f, capture_output=True, text=True)
     print(result.stdout)
-
 ```
 
 ### 6.3 Конвейеры (pipes)
 
 ```python
-
 import subprocess
 
 # Pipe: ls | grep .txt
@@ -495,13 +457,11 @@ grep = subprocess.Popen(
 ls.stdout.close()  # Позволить ls получить SIGPIPE
 output, _ = grep.communicate()
 print(output)
-
 ```
 
 ### 6.4 subprocess.Popen
 
 ```python
-
 import subprocess
 import time
 
@@ -525,13 +485,11 @@ except subprocess.TimeoutExpired:
     print("Timeout, killing...")
     proc.kill()
     proc.wait()
-
 ```
 
 ### 6.5 Shell команды
 
 ```python
-
 import subprocess
 
 # shell=True — выполнить через оболочку
@@ -548,7 +506,6 @@ print(result.stdout)
 import shlex
 user_input = "file with spaces.txt"
 cmd = f"ls -la {shlex.quote(user_input)}"
-
 ```
 
 ---
@@ -558,7 +515,6 @@ cmd = f"ls -la {shlex.quote(user_input)}"
 ### 7.1 Process class
 
 ```python
-
 from multiprocessing import Process
 import os
 
@@ -577,13 +533,11 @@ if __name__ == "__main__":
         p.join()
     
     print("All workers finished")
-
 ```
 
 ### 7.2 Pool
 
 ```python
-
 from multiprocessing import Pool
 import time
 
@@ -600,13 +554,11 @@ if __name__ == "__main__":
         # imap — ленивый итератор
         for result in pool.imap(square, range(10)):
             print(f"Got: {result}")
-
 ```
 
 ### 7.3 Обмен данными
 
 ```python
-
 from multiprocessing import Process, Queue
 
 def producer(q):
@@ -632,7 +584,6 @@ if __name__ == "__main__":
     
     p1.join()
     p2.join()
-
 ```
 
 ---
@@ -692,7 +643,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ### 8.2 Параллельный загрузчик
@@ -729,7 +679,6 @@ if __name__ == "__main__":
         # ...
     ]
     main(urls)
-
 ```
 
 ---

@@ -34,7 +34,6 @@
 **Example: Простая функция**
 
 ```rust
-
 fn greet() {
     println!("Hello, Rust!");
 }
@@ -46,7 +45,6 @@ fn main() {
 
 **Output:**
 ```
-
 Hello, Rust!
 ```
 
@@ -55,7 +53,6 @@ Hello, Rust!
 **Example: Функция с параметрами**
 
 ```rust
-
 fn greet(name: &str) {
     println!("Hello, {}!", name);
 }
@@ -68,7 +65,6 @@ fn main() {
 
 **Output:**
 ```
-
 Hello, Alice!
 Hello, Bob!
 ```
@@ -80,7 +76,6 @@ Hello, Bob!
 **Example: Несколько параметров**
 
 ```rust
-
 fn add(x: i32, y: i32) {
     println!("{} + {} = {}", x, y, x + y);
 }
@@ -93,7 +88,6 @@ fn main() {
 
 **Output:**
 ```
-
 5 + 3 = 8
 10 + 20 = 30
 ```
@@ -107,7 +101,6 @@ fn main() {
 **Example: Использование return**
 
 ```rust
-
 fn add(x: i32, y: i32) -> i32 {
     return x + y;
 }
@@ -120,7 +113,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 8
 ```
 
@@ -131,7 +123,6 @@ fn main() {
 **Example: Выражение как возвращаемое значение**
 
 ```rust
-
 fn add(x: i32, y: i32) -> i32 {
     x + y  // Нет точки с запятой - это выражение
 }
@@ -144,7 +135,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 8
 ```
 
@@ -153,7 +143,6 @@ fn main() {
 **Example: Ошибка — точка с запятой**
 
 ```rust
-
 fn add(x: i32, y: i32) -> i32 {
     x + y;  // Ошибка: это оператор, не выражение
 }
@@ -166,7 +155,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error[E0308]: mismatched types
  --> src/main.rs:2:5
   |
@@ -178,20 +166,17 @@ error[E0308]: mismatched types
 
 **Выражение** — вычисляет значение:
 ```rust
-
 5 + 3  // Выражение, возвращает 8
 ```
 
 **Оператор** — выполняет действие, не возвращает значение:
 ```rust
-
 let x = 5;  // Оператор, возвращает ()
 ```
 
 **Example: Выражения vs операторы**
 
 ```rust
-
 fn main() {
     let x = 5;           // Оператор
     let y = {
@@ -205,7 +190,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 5, y = 5
 ```
 
@@ -218,7 +202,6 @@ x = 5, y = 5
 **Example: Различные типы**
 
 ```rust
-
 fn get_number() -> i32 {
     42
 }
@@ -240,7 +223,6 @@ fn main() {
 
 **Output:**
 ```
-
 Число: 42
 Дробное: 3.14
 Булево: true
@@ -251,7 +233,6 @@ fn main() {
 **Example: Возврат нескольких значений**
 
 ```rust
-
 fn calculate(x: i32, y: i32) -> (i32, i32, i32, i32) {
     (x + y, x - y, x * y, x / y)
 }
@@ -265,7 +246,6 @@ fn main() {
 
 **Output:**
 ```
-
 Сумма: 15, Разность: 5, Произведение: 50, Частное: 2
 ```
 
@@ -276,7 +256,6 @@ fn main() {
 ### 4.1 Пример: Факториал
 
 ```rust
-
 fn factorial(n: u32) -> u32 {
     if n <= 1 {
         1
@@ -294,7 +273,6 @@ fn main() {
 
 **Output:**
 ```
-
 1! = 1
 2! = 2
 3! = 6
@@ -305,7 +283,6 @@ fn main() {
 ### 4.2 Пример: Проверка простого числа
 
 ```rust
-
 fn is_prime(n: u32) -> bool {
     if n < 2 {
         return false;
@@ -331,7 +308,6 @@ fn main() {
 
 **Output:**
 ```
-
 2 - простое число
 3 - простое число
 5 - простое число
@@ -353,7 +329,6 @@ fn main() {
 **Example: Простой модуль**
 
 ```rust
-
 mod math {
     pub fn add(x: i32, y: i32) -> i32 {
         x + y
@@ -372,7 +347,6 @@ fn main() {
 
 **Output:**
 ```
-
 5 + 3 = 8
 ```
 
@@ -383,7 +357,6 @@ fn main() {
 **Example: Публичные и приватные функции**
 
 ```rust
-
 mod calculator {
     pub fn add(x: i32, y: i32) -> i32 {
         x + y
@@ -407,7 +380,6 @@ fn main() {
 
 **Output:**
 ```
-
 5 + 3 = 8
 5 * 3 = 15
 ```
@@ -417,7 +389,6 @@ fn main() {
 **Example: Вложенные модули**
 
 ```rust
-
 mod math {
     pub mod basic {
         pub fn add(x: i32, y: i32) -> i32 {
@@ -444,7 +415,6 @@ fn main() {
 
 **Output:**
 ```
-
 5 + 3 = 8
 2^8 = 256
 ```
@@ -460,7 +430,6 @@ fn main() {
 **Example: Импорт модуля**
 
 ```rust
-
 mod math {
     pub fn add(x: i32, y: i32) -> i32 {
         x + y
@@ -481,7 +450,6 @@ fn main() {
 
 **Output:**
 ```
-
 5 + 3 = 8
 5 * 3 = 15
 ```
@@ -491,7 +459,6 @@ fn main() {
 **Example: Импорт нескольких функций**
 
 ```rust
-
 mod math {
     pub fn add(x: i32, y: i32) -> i32 {
         x + y
@@ -512,7 +479,6 @@ fn main() {
 
 **Output:**
 ```
-
 5 + 3 = 8
 5 * 3 = 15
 ```
@@ -522,7 +488,6 @@ fn main() {
 **Example: Импорт всего модуля**
 
 ```rust
-
 mod math {
     pub fn add(x: i32, y: i32) -> i32 {
         x + y
@@ -543,7 +508,6 @@ fn main() {
 
 **Output:**
 ```
-
 5 + 3 = 8
 5 * 3 = 15
 ```
@@ -561,7 +525,6 @@ fn main() {
 
 **src/main.rs:**
 ```rust
-
 mod math;
 
 fn main() {
@@ -571,7 +534,6 @@ fn main() {
 
 **src/math.rs:**
 ```rust
-
 pub fn add(x: i32, y: i32) -> i32 {
     x + y
 }
@@ -583,7 +545,6 @@ pub fn multiply(x: i32, y: i32) -> i32 {
 
 **Output:**
 ```
-
 5 + 3 = 8
 ```
 
@@ -593,7 +554,6 @@ pub fn multiply(x: i32, y: i32) -> i32 {
 
 **src/main.rs:**
 ```rust
-
 mod math;
 
 fn main() {
@@ -603,7 +563,6 @@ fn main() {
 
 **src/math/mod.rs:**
 ```rust
-
 pub mod basic;
 
 pub mod advanced {
@@ -619,7 +578,6 @@ pub mod advanced {
 
 **src/math/basic.rs:**
 ```rust
-
 pub fn add(x: i32, y: i32) -> i32 {
     x + y
 }
@@ -627,7 +585,6 @@ pub fn add(x: i32, y: i32) -> i32 {
 
 **Output:**
 ```
-
 5 + 3 = 8
 ```
 
@@ -639,7 +596,6 @@ pub fn add(x: i32, y: i32) -> i32 {
 
 **Структура:**
 ```
-
 my_project/
 ├── Cargo.toml
 └── src/
@@ -650,7 +606,6 @@ my_project/
 
 **src/main.rs:**
 ```rust
-
 mod math;
 mod utils;
 
@@ -666,7 +621,6 @@ fn main() {
 
 **src/math.rs:**
 ```rust
-
 pub fn add(x: i32, y: i32) -> i32 {
     x + y
 }
@@ -678,7 +632,6 @@ pub fn multiply(x: i32, y: i32) -> i32 {
 
 **src/utils.rs:**
 ```rust
-
 pub fn greet(name: &str) {
     println!("Hello, {}!", name);
 }
@@ -686,7 +639,6 @@ pub fn greet(name: &str) {
 
 **Output:**
 ```
-
 Hello, Rust!
 5 + 3 = 8
 5 * 3 = 15

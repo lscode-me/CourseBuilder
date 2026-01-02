@@ -73,7 +73,6 @@ Kubernetes (K8s) — платформа для автоматизации раз
 ### 2.1 Компоненты кластера
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Kubernetes Cluster                       │
 │                                                                 │
@@ -112,7 +111,6 @@ Kubernetes (K8s) — платформа для автоматизации раз
 │  │  └──────────────────────┘  └──────────────────────┘        │ │
 │  └─────────────────────────────────────────────────────────────┘│
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 Control Plane компоненты
@@ -160,6 +158,7 @@ Pod — минимальная единица развёртывания в Kube
 
 ```yaml
 # pod.yaml
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -179,34 +178,37 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "500m"
-
 ```
 
 ```bash
 # Создание Pod
+
 kubectl apply -f pod.yaml
 
 # Список Pods
+
 kubectl get pods
 
 # Детальная информация
+
 kubectl describe pod nginx-pod
 
 # Логи
+
 kubectl logs nginx-pod
 
 # Exec в Pod
+
 kubectl exec -it nginx-pod -- sh
 
 # Удаление
-kubectl delete pod nginx-pod
 
+kubectl delete pod nginx-pod
 ```
 
 ### 3.2 Multi-container Pod
 
 ```yaml
-
 apiVersion: v1
 kind: Pod
 metadata:
@@ -230,7 +232,6 @@ spec:
   volumes:
     - name: shared-data
       emptyDir: {}
-
 ```
 
 ### 3.3 Deployment
@@ -239,6 +240,7 @@ Deployment управляет ReplicaSet и обеспечивает декла�
 
 ```yaml
 # deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -284,28 +286,32 @@ spec:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
-
 ```
 
 ```bash
 # Применение
+
 kubectl apply -f deployment.yaml
 
 # Масштабирование
+
 kubectl scale deployment nginx-deployment --replicas=5
 
 # Обновление образа
+
 kubectl set image deployment/nginx-deployment nginx=nginx:1.26-alpine
 
 # История развёртываний
+
 kubectl rollout history deployment/nginx-deployment
 
 # Откат
+
 kubectl rollout undo deployment/nginx-deployment
 
 # Статус rollout
-kubectl rollout status deployment/nginx-deployment
 
+kubectl rollout status deployment/nginx-deployment
 ```
 
 ### 3.4 Service
@@ -314,6 +320,7 @@ Service обеспечивает стабильный endpoint для досту
 
 ```yaml
 # service.yaml
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -326,7 +333,6 @@ spec:
       port: 80
       targetPort: 80
   type: ClusterIP
-
 ```
 
 **Типы Service:**
@@ -340,6 +346,7 @@ spec:
 
 ```yaml
 # NodePort Service
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -355,6 +362,7 @@ spec:
 
 ---
 # LoadBalancer Service
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -366,13 +374,13 @@ spec:
   ports:
     - port: 80
       targetPort: 80
-
 ```
 
 ### 3.5 ConfigMap и Secret
 
 ```yaml
 # configmap.yaml
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -389,6 +397,7 @@ data:
 
 ---
 # secret.yaml
+
 apiVersion: v1
 kind: Secret
 metadata:
@@ -398,13 +407,11 @@ data:
   # base64 encoded
   DATABASE_PASSWORD: cGFzc3dvcmQxMjM=
   API_KEY: c2VjcmV0a2V5
-
 ```
 
 **Использование в Pod:**
 
 ```yaml
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -440,7 +447,6 @@ spec:
         - name: config-volume
           configMap:
             name: app-config
-
 ```
 
 ---
@@ -450,7 +456,6 @@ spec:
 ### 4.1 Volumes
 
 ```yaml
-
 apiVersion: v1
 kind: Pod
 metadata:
@@ -474,13 +479,13 @@ spec:
     - name: config-volume
       configMap:
         name: app-config
-
 ```
 
 ### 4.2 PersistentVolume и PersistentVolumeClaim
 
 ```yaml
 # persistentvolume.yaml
+
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -497,6 +502,7 @@ spec:
 
 ---
 # persistentvolumeclaim.yaml
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -511,6 +517,7 @@ spec:
 
 ---
 # Использование в Pod
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -526,7 +533,6 @@ spec:
     - name: data
       persistentVolumeClaim:
         claimName: my-pvc
-
 ```
 
 ---
@@ -546,21 +552,24 @@ spec:
 
 ```bash
 # Формат DNS для Service
+
 <service-name>.<namespace>.svc.cluster.local
 
 # Примеры
+
 nginx-service.default.svc.cluster.local
 database.production.svc.cluster.local
 
 # Внутри одного namespace можно использовать короткое имя
-nginx-service
 
+nginx-service
 ```
 
 ### 5.3 Ingress
 
 ```yaml
 # ingress.yaml
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -591,13 +600,11 @@ spec:
     - hosts:
         - myapp.example.com
       secretName: tls-secret
-
 ```
 
 ### 5.4 Network Policies
 
 ```yaml
-
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -626,7 +633,6 @@ spec:
       ports:
         - protocol: TCP
           port: 5432
-
 ```
 
 ---
@@ -637,10 +643,12 @@ spec:
 
 ```bash
 # Nodes
+
 kubectl get nodes
 kubectl describe node <node-name>
 
 # Pods
+
 kubectl get pods
 kubectl get pods -A              # All namespaces
 kubectl get pods -o wide         # Больше информации
@@ -648,72 +656,82 @@ kubectl get pods -l app=nginx    # По label
 kubectl get pods --watch         # Watch mode
 
 # Deployments
+
 kubectl get deployments
 kubectl describe deployment nginx-deployment
 
 # Services
+
 kubectl get services
 kubectl get svc
 
 # Все ресурсы
-kubectl get all
 
+kubectl get all
 ```
 
 ### 6.2 Создание и изменение
 
 ```bash
 # Применение манифеста
+
 kubectl apply -f manifest.yaml
 kubectl apply -f ./manifests/
 
 # Создание из командной строки
+
 kubectl create deployment nginx --image=nginx
 kubectl expose deployment nginx --port=80
 
 # Редактирование
+
 kubectl edit deployment nginx-deployment
 
 # Patch
-kubectl patch deployment nginx -p '{"spec":{"replicas":5}}'
 
+kubectl patch deployment nginx -p '{"spec":{"replicas":5}}'
 ```
 
 ### 6.3 Отладка
 
 ```bash
 # Логи
+
 kubectl logs pod-name
 kubectl logs pod-name -c container-name   # Multi-container
 kubectl logs -f pod-name                   # Follow
 kubectl logs --previous pod-name           # Previous instance
 
 # Exec
+
 kubectl exec -it pod-name -- sh
 kubectl exec pod-name -- cat /etc/config
 
 # Port forward
+
 kubectl port-forward pod/nginx 8080:80
 kubectl port-forward svc/nginx-service 8080:80
 
 # Debug
-kubectl debug pod/nginx -it --image=busybox
 
+kubectl debug pod/nginx -it --image=busybox
 ```
 
 ### 6.4 Namespace management
 
 ```bash
 # Создание namespace
+
 kubectl create namespace production
 
 # Установка default namespace
+
 kubectl config set-context --current --namespace=production
 
 # Ресурсы в namespace
+
 kubectl get pods -n production
 kubectl apply -f manifest.yaml -n production
-
 ```
 
 ---
@@ -724,35 +742,42 @@ kubectl apply -f manifest.yaml -n production
 
 ```bash
 # Установка
+
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 # Запуск
+
 minikube start
 
 # Dashboard
+
 minikube dashboard
 
 # Сервисы
+
 minikube service nginx-service
 
 # Остановка
-minikube stop
 
+minikube stop
 ```
 
 ### 7.2 kind (Kubernetes in Docker)
 
 ```bash
 # Установка
+
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/latest/kind-linux-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 
 # Создание кластера
+
 kind create cluster --name my-cluster
 
 # С конфигурацией
+
 cat <<EOF | kind create cluster --config=-
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -763,22 +788,24 @@ nodes:
 EOF
 
 # Удаление
-kind delete cluster --name my-cluster
 
+kind delete cluster --name my-cluster
 ```
 
 ### 7.3 k3s (lightweight)
 
 ```bash
 # Установка
+
 curl -sfL https://get.k3s.io | sh -
 
 # Проверка
+
 sudo k3s kubectl get nodes
 
 # Kubeconfig
-sudo cat /etc/rancher/k3s/k3s.yaml
 
+sudo cat /etc/rancher/k3s/k3s.yaml
 ```
 
 ---
@@ -835,6 +862,7 @@ sudo cat /etc/rancher/k3s/k3s.yaml
 - [Helm](https://helm.sh/) — Package manager
 
 ---
+
 
 
 

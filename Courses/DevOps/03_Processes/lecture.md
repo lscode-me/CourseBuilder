@@ -32,7 +32,6 @@
 DevOps часто визуализируется как бесконечный цикл (infinity loop), подчёркивающий непрерывность процесса:
 
 ```
-
             ┌────────────────────────────────────────────┐
             │                                            │
     ┌───────▼───────┐                        ┌───────────┴───────┐
@@ -60,7 +59,6 @@ DevOps часто визуализируется как бесконечный �
     │     TEST      │────────────────────────▶    RELEASE        │
     │               │                        │                   │
     └───────────────┘                        └───────────────────┘
-
 ```
 
 ### 1.2 Фазы DevOps Lifecycle
@@ -117,6 +115,7 @@ DevOps часто визуализируется как бесконечный �
 
 ```python
 # Пример: измерение времени по фазам
+
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 
@@ -150,6 +149,7 @@ class FeatureDelivery:
         return self.value_add_time() / self.total_lead_time() * 100
 
 # Пример delivery
+
 feature = FeatureDelivery(
     feature_id="FEAT-123",
     phases=[
@@ -164,15 +164,12 @@ feature = FeatureDelivery(
 
 print(f"Lead Time: {feature.total_lead_time().days} days")
 print(f"Efficiency: {feature.efficiency():.1f}%")
-
 ```
 
 **Output:**
 ```
-
 Lead Time: 14 days
 Efficiency: 57.1%
-
 ```
 
 ---
@@ -182,7 +179,6 @@ Efficiency: 57.1%
 ### 2.1 Уровни планирования
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                      Strategic Planning                          │
 │              (Quarterly/Yearly • OKRs, Vision)                   │
@@ -196,7 +192,6 @@ Efficiency: 57.1%
 │                       Daily Planning                             │
 │                  (Daily • Standup, Tasks)                        │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 OKRs (Objectives and Key Results)
@@ -211,6 +206,7 @@ OKR — система целеполагания, популяризирова�
 
 ```python
 # Пример OKR для DevOps команды
+
 devops_okr = {
     "objective": "Повысить надёжность и скорость delivery",
     "key_results": [
@@ -256,14 +252,11 @@ def calculate_okr_progress(okr: dict) -> float:
 
 progress = calculate_okr_progress(devops_okr)
 print(f"OKR Progress: {progress:.0f}%")
-
 ```
 
 **Output:**
 ```
-
 OKR Progress: 63%
-
 ```
 
 ### 2.3 Roadmap Planning
@@ -272,18 +265,15 @@ OKR Progress: 63%
 
 1. **Feature-based Roadmap:**
 ```
-
 Q1 2024              Q2 2024              Q3 2024
 ├──────────────────┼──────────────────┼──────────────────┤
 │ • Auth v2        │ • Search v2      │ • Mobile app     │
 │ • Performance    │ • Analytics      │ • API v3         │
 │ • GDPR           │ • Notifications  │ • Marketplace    │
-
 ```
 
 2. **Outcome-based Roadmap:**
 ```
-
 Now                  Next                 Later
 ├──────────────────┼──────────────────┼──────────────────┤
 │ Improve          │ Expand market    │ Platform         │
@@ -291,13 +281,11 @@ Now                  Next                 Later
 │                  │                  │                  │
 │ Goal: -20%       │ Goal: +50%       │ Goal: 3rd party  │
 │ churn            │ new users        │ integrations     │
-
 ```
 
 ### 2.4 Capacity Planning
 
 ```python
-
 from dataclasses import dataclass
 
 @dataclass
@@ -317,6 +305,7 @@ class TeamCapacity:
         return int(self.available_hours() / hours_per_point)
 
 # Планирование спринта
+
 team = TeamCapacity(
     team_size=5,
     days_in_sprint=10,  # 2 weeks
@@ -325,15 +314,12 @@ team = TeamCapacity(
 
 print(f"Available hours: {team.available_hours():.0f}")
 print(f"Estimated capacity: {team.story_points()} story points")
-
 ```
 
 **Output:**
 ```
-
 Available hours: 225
 Estimated capacity: 56 story points
-
 ```
 
 ---
@@ -380,11 +366,13 @@ Estimated capacity: 56 story points
 # Daily Standup Agenda (15 min)
 
 ## 1. Production Status (2 min)
+
 - Текущие инциденты?
 - SLO status (green/yellow/red)
 - Pending deployments
 
 ## 2. Team Round-robin (10 min)
+
 Каждый член команды:
 
 - Что сделал вчера
@@ -392,14 +380,13 @@ Estimated capacity: 56 story points
 - Блокеры
 
 ## 3. Quick Topics (3 min)
+
 - Важные анонсы
 - Парковка тем для отдельного обсуждения
-
 ```
 
 **Anti-patterns:**
 ```python
-
 standup_antipatterns = [
     "Status report для менеджера (а не синхронизация команды)",
     "Детальные технические дискуссии",
@@ -408,7 +395,6 @@ standup_antipatterns = [
     "Нет обсуждения блокеров",
     "Игнорирование production status"
 ]
-
 ```
 
 ### 3.3 Retrospectives
@@ -419,26 +405,27 @@ standup_antipatterns = [
 # Sprint Retrospective
 
 ## 🟢 Start (Начать делать)
+
 - Автоматизировать smoke tests после деплоя
 - Проводить architecture reviews перед большими фичами
 - Добавить runbooks для новых сервисов
 
 ## 🔴 Stop (Прекратить делать)
+
 - Деплоить в пятницу вечером
 - Игнорировать flaky tests
 - Пропускать code review для "срочных" фиксов
 
 ## 🟡 Continue (Продолжить делать)
+
 - Парное программирование для сложных задач
 - Ежедневный мониторинг метрик
 - Документирование решений в ADRs
-
 ```
 
 **5 Whys для root cause analysis:**
 
 ```python
-
 def five_whys(problem: str, answers: list[str]) -> None:
     """Demonstrate 5 Whys technique."""
     print(f"Problem: {problem}\n")
@@ -456,12 +443,10 @@ five_whys(
         "Creating data refresh was never prioritized"
     ]
 )
-
 ```
 
 **Output:**
 ```
-
 Problem: Deployment failed and caused 30 min outage
 
 Why #1? → Database migration script failed
@@ -471,7 +456,6 @@ Why #4? → Team doesn't have process for data refresh in staging
 Why #5? → Creating data refresh was never prioritized
 
 Root cause: Creating data refresh was never prioritized
-
 ```
 
 ---
@@ -493,7 +477,6 @@ Value Stream Mapping (VSM) — метод визуализации всего п
 5. Рассчитать efficiency
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                        Value Stream Map: Feature Delivery                    │
 ├──────────────────────────────────────────────────────────────────────────────┤
@@ -514,13 +497,13 @@ Value Stream Mapping (VSM) — метод визуализации всего п
 │  Efficiency: 21%                                                             │
 │                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.3 Типы waste в Value Stream
 
 ```python
 # Семь типов waste (Muda) в software delivery
+
 waste_types = {
     "partially_done_work": {
         "description": "Незавершённая работа",
@@ -573,19 +556,16 @@ def identify_waste(process_step: dict) -> list[str]:
         wastes.append("defects")
     
     return wastes
-
 ```
 
 ### 4.4 Оптимизация Value Stream
 
 **До оптимизации:**
 ```
-
 Ideation (4h) → Wait (48h) → Dev (16h) → Wait (8h) → Review (2h) → 
 Wait (24h) → Test (4h) → Wait (16h) → Deploy (1h) → Wait (4h)
 
 Total: 127 hours, Efficiency: 21%
-
 ```
 
 **Улучшения:**
@@ -597,12 +577,10 @@ Total: 127 hours, Efficiency: 21%
 
 **После оптимизации:**
 ```
-
 Ideation (2h) → Dev (8h) → Review (1h) → Automated Test (0.5h) → 
 Auto Deploy (0.25h)
 
 Total: 12 hours, Efficiency: 98%
-
 ```
 
 ---
@@ -619,14 +597,17 @@ Runbook — документ с пошаговыми инструкциями д
 # Runbook: Database Failover
 
 ## Overview
+
 Процедура переключения на replica при отказе primary database.
 
 ## Prerequisites
+
 - SSH доступ к database servers
 - PagerDuty access
 - Database admin credentials (в Vault)
 
 ## Triggers
+
 - Primary database unavailable > 5 min
 - Replication lag > 30 sec sustained
 - Alert: `db-primary-health-critical`
@@ -634,53 +615,66 @@ Runbook — документ с пошаговыми инструкциями д
 ## Steps
 
 ### 1. Verify the issue (2 min)
+
 \```bash
 # Check primary status
+
 ssh db-primary-01 'pg_isready -h localhost'
 
 # Check replication lag
+
 psql -h db-replica-01 -c "SELECT pg_last_wal_receive_lsn() - pg_last_wal_replay_lsn();"
 \```
 
 ### 2. Notify stakeholders (1 min)
+
 - Post in #incidents channel
 - Page on-call SRE if not already paged
 
 ### 3. Promote replica (5 min)
+
 \```bash
 # On replica server
+
 sudo -u postgres pg_ctl promote -D /var/lib/postgresql/14/main
 
 # Verify promotion
+
 psql -c "SELECT pg_is_in_recovery();"
 # Should return 'f' (false)
+
 \```
 
 ### 4. Update DNS/Load Balancer (2 min)
+
 \```bash
 # Update Route53 (or your DNS)
+
 aws route53 change-resource-record-sets \
   --hosted-zone-id XXXXX \
   --change-batch file://failover-dns.json
 \```
 
 ### 5. Verify application connectivity (3 min)
+
 - Check application logs for connection errors
 - Verify key queries are working
 - Check Grafana dashboard for normal traffic
 
 ## Rollback
+
 If failover fails, revert DNS and investigate primary.
 
 ## Post-incident
+
 - Create incident report
 - Schedule post-mortem
 - Update this runbook if needed
 
 ## Contacts
+
 - Database team: #team-database
 - On-call DBA: page via PagerDuty
-
 ```
 
 ### 5.2 Architecture Decision Records (ADRs)
@@ -691,17 +685,21 @@ ADR — документ, фиксирующий важное архитекту
 # ADR-0015: Use PostgreSQL for User Service Database
 
 ## Status
+
 Accepted
 
 ## Context
+
 User Service needs a database for storing user profiles, 
 authentication data, and preferences. We need to choose 
 between PostgreSQL, MySQL, and MongoDB.
 
 ## Decision
+
 We will use PostgreSQL 15 for User Service.
 
 ## Rationale
+
 1. **ACID compliance** — critical for user data
 2. **JSON support** — flexible schema for preferences
 3. **Team expertise** — 4/5 engineers have PostgreSQL experience
@@ -710,23 +708,26 @@ We will use PostgreSQL 15 for User Service.
 ## Alternatives Considered
 
 ### MySQL
+
 - Pros: Similar to PostgreSQL, widely used
 - Cons: Less rich JSON support, team less familiar
 
 ### MongoDB
+
 - Pros: Flexible schema, easy horizontal scaling
 - Cons: Eventual consistency issues, different query patterns
 
 ## Consequences
+
 - Need PostgreSQL expertise for operations
 - Will use PgBouncer for connection pooling
 - Backup strategy using pg_dump + WAL archiving
 - May need to migrate if scale exceeds PostgreSQL limits
 
 ## Related
+
 - ADR-0010: Database hosting on AWS RDS
 - ADR-0012: Use Vault for database credentials
-
 ```
 
 ### 5.3 Standard Operating Procedures (SOPs)
@@ -737,6 +738,7 @@ We will use PostgreSQL 15 for User Service.
 # SOP: Production Deployment
 
 ## 1. Pre-deployment Checklist
+
 - [ ] All tests passing on main branch
 - [ ] Code review approved
 - [ ] Security scan completed
@@ -745,6 +747,7 @@ We will use PostgreSQL 15 for User Service.
 - [ ] On-call engineer available
 
 ## 2. Deployment Window
+
 - **Standard**: Mon-Thu, 10:00-16:00 UTC
 
 - **Frozen periods**: Last week of quarter, holidays
@@ -752,12 +755,14 @@ We will use PostgreSQL 15 for User Service.
 - **Emergency**: Any time with VP approval
 
 ## 3. Deployment Process
+
 1. Create deployment ticket
 2. Run deployment pipeline
 3. Monitor metrics for 15 min
 4. Confirm deployment in ticket
 
 ## 4. Rollback Criteria
+
 Rollback immediately if:
 
 - Error rate > 5%
@@ -765,10 +770,10 @@ Rollback immediately if:
 - Any critical alert fires
 
 ## 5. Post-deployment
+
 - Update deployment ticket status
 - Notify in #releases channel
 - Monitor for 1 hour
-
 ```
 
 ---
@@ -778,7 +783,6 @@ Rollback immediately if:
 ### 6.1 Типы изменений
 
 ```python
-
 from enum import Enum
 from dataclasses import dataclass
 
@@ -811,6 +815,7 @@ class ChangeRequest:
             return "VP approval, retrospective CAB review"
 
 # Примеры
+
 changes = [
     ChangeRequest(
         ChangeType.STANDARD,
@@ -834,16 +839,13 @@ changes = [
 
 for change in changes:
     print(f"{change.change_type.value}: {change.approval_process()}")
-
 ```
 
 **Output:**
 ```
-
 standard: Auto-approved
 normal: Engineering manager approval
 emergency: VP approval, retrospective CAB review
-
 ```
 
 ### 6.2 Change Advisory Board (CAB)
@@ -870,32 +872,27 @@ emergency: VP approval, retrospective CAB review
 
 **Big Bang Release:**
 ```
-
 Version 1.0 ──────────────────────▶ Version 2.0
               (все изменения сразу)
 
 ❌ Высокий риск
 ❌ Сложный rollback
 ❌ Долгий feedback loop
-
 ```
 
 **Incremental Release:**
 ```
-
 v1.0 → v1.1 → v1.2 → v1.3 → v1.4 → v2.0
        (маленькие частые релизы)
 
 ✅ Низкий риск
 ✅ Простой rollback
 ✅ Быстрый feedback
-
 ```
 
 ### 7.2 Semantic Versioning
 
 ```
-
 MAJOR.MINOR.PATCH
   │     │     │
   │     │     └── Bug fixes (backward compatible)
@@ -907,11 +904,9 @@ Examples:
 - 1.0.0 → 1.0.1 (bug fix)
 - 1.0.1 → 1.1.0 (new feature)
 - 1.1.0 → 2.0.0 (breaking change)
-
 ```
 
 ```python
-
 from dataclasses import dataclass
 import re
 
@@ -941,22 +936,20 @@ class SemanticVersion:
         return f"{self.major}.{self.minor}.{self.patch}"
 
 # Пример использования
+
 current = SemanticVersion.parse("1.4.2")
 print(f"Current: {current}")
 print(f"Bug fix: {current.bump_patch()}")
 print(f"Feature: {current.bump_minor()}")
 print(f"Breaking: {current.bump_major()}")
-
 ```
 
 **Output:**
 ```
-
 Current: 1.4.2
 Bug fix: 1.4.3
 Feature: 1.5.0
 Breaking: 2.0.0
-
 ```
 
 ### 7.3 Release Notes
@@ -967,6 +960,7 @@ Breaking: 2.0.0
 **Release Date:** 2024-01-15
 
 ## 🚀 New Features
+
 - **OAuth2 Integration** — Added support for Google and GitHub login
 
 - **Dark Mode** — User preference for dark theme
@@ -974,26 +968,30 @@ Breaking: 2.0.0
 - **API Pagination** — All list endpoints now support pagination
 
 ## 🐛 Bug Fixes
+
 - Fixed memory leak in WebSocket handler (#1234)
 - Corrected timezone handling in reports (#1256)
 - Fixed race condition in cache invalidation (#1267)
 
 ## ⚠️ Breaking Changes
+
 - Deprecated `/api/v1/users` endpoint removed (use `/api/v2/users`)
 - Minimum supported Python version is now 3.10
 
 ## 🔧 Improvements
+
 - Reduced API response time by 30%
 - Improved error messages for validation errors
 
 ## 📋 Migration Guide
+
 1. Update API clients to use v2 endpoints
 2. Verify Python 3.10+ is installed
 3. Run database migration: `python manage.py migrate`
 
 ## 🙏 Contributors
-@alice, @bob, @carol
 
+@alice, @bob, @carol
 ```
 
 ---
@@ -1003,7 +1001,6 @@ Breaking: 2.0.0
 ### 8.1 On-Call Rotation
 
 ```python
-
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Optional
@@ -1035,13 +1032,13 @@ class OnCallSchedule:
         return min(future_shifts, key=lambda s: s.start) if future_shifts else None
 
 # Пример расписания (1-week rotations)
+
 schedule = OnCallSchedule(shifts=[
     OnCallShift("alice", datetime(2024, 1, 1), datetime(2024, 1, 8)),
     OnCallShift("bob", datetime(2024, 1, 8), datetime(2024, 1, 15)),
     OnCallShift("carol", datetime(2024, 1, 15), datetime(2024, 1, 22)),
     OnCallShift("alice", datetime(2024, 1, 22), datetime(2024, 1, 29)),
 ])
-
 ```
 
 ### 8.2 On-Call Responsibilities
@@ -1067,25 +1064,30 @@ schedule = OnCallSchedule(shifts=[
 ## Outgoing: Alice → Incoming: Bob
 
 ### Active Issues
+
 - **INC-456**: Intermittent 504 errors on /api/search
   - Status: Investigating
   - Suspected: Elasticsearch cluster under load
   - Next step: Check ES metrics, consider adding nodes
 
 ### Recent Incidents
+
 - **INC-455**: Database failover (Jan 5)
   - Resolved, postmortem scheduled for Jan 10
 
 ### Scheduled Maintenance
+
 - **Jan 9, 02:00 UTC**: Kubernetes cluster upgrade
   - Runbook: [link]
   - Expected duration: 2 hours
 
 ### Known Issues
+
 - Flaky alert: `disk-usage-high` on logging-01 (ticket: OPS-789)
   - Safe to acknowledge, being addressed
 
 ### Notes
+
 - New runbook for Redis failover added to wiki
 - Team-platform Slack channel for questions
 
@@ -1093,7 +1095,6 @@ schedule = OnCallSchedule(shifts=[
 
 - [ ] Alice (outgoing)
 - [ ] Bob (incoming)
-
 ```
 
 ---
@@ -1154,6 +1155,7 @@ schedule = OnCallSchedule(shifts=[
 - PagerDuty/OpsGenie — для on-call management
 
 ---
+
 
 
 

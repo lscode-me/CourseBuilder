@@ -73,7 +73,6 @@
 **Example: User space программа**
 
 ```rust
-
 use std::fs::File;
 
 fn main() {
@@ -117,7 +116,6 @@ fn main() {
 **Example: Системный вызов в Rust**
 
 ```rust
-
 use std::fs::File;
 use std::io::Read;
 
@@ -181,7 +179,6 @@ fn main() -> std::io::Result<()> {
 **Example: RAII для файлов**
 
 ```rust
-
 use std::fs::File;
 use std::io::Write;
 
@@ -210,7 +207,6 @@ fn main() {
 **Example: Создание процесса**
 
 ```rust
-
 use std::process::Command;
 
 fn main() {
@@ -235,7 +231,6 @@ fn main() {
 **Example: Системные потоки**
 
 ```rust
-
 use std::thread;
 use std::time::Duration;
 
@@ -344,7 +339,6 @@ fn main() {
 **Example: Простой драйвер (концептуально)**
 
 ```rust
-
 // Концептуальный пример
 struct DeviceDriver {
     device_id: u32,
@@ -380,7 +374,6 @@ impl DeviceDriver {
 **Example: Простой сетевой сервер**
 
 ```rust
-
 // Концептуальный пример
 // use std::net::TcpListener;
 
@@ -434,7 +427,6 @@ impl DeviceDriver {
 ### 6.1 Пример: Системный монитор
 
 ```rust
-
 use std::process::Command;
 
 fn get_system_info() -> String {
@@ -455,7 +447,6 @@ fn main() {
 ### 6.2 Пример: Управление процессами
 
 ```rust
-
 use std::process::{Command, Stdio};
 
 fn main() {
@@ -475,7 +466,6 @@ fn main() {
 ### 6.3 Пример: Работа с файловой системой
 
 ```rust
-
 use std::fs;
 use std::path::Path;
 

@@ -33,7 +33,6 @@
 ### TCP Three-way Handshake
 
 ```
-
 Client          Server
    |               |
    |--- SYN ------>|   1. Клиент: "Хочу соединиться"
@@ -72,7 +71,6 @@ Client          Server
 ### Address families
 
 ```python
-
 import socket
 
 # AF_INET  — IPv4
@@ -90,7 +88,6 @@ import socket
 ### Простой TCP клиент
 
 ```python
-
 import socket
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -103,7 +100,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 ### Простой TCP сервер
 
 ```python
-
 import socket
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -123,7 +119,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 ### Команды
 
 ```bash
-
 ping google.com           # Проверка доступности
 traceroute google.com     # Маршрут до хоста
 telnet host 80            # Проверка порта
@@ -174,5 +169,6 @@ curl -v http://host       # HTTP запрос с деталями
 - [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
 
 ---
+
 
 

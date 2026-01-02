@@ -75,13 +75,11 @@ conn.commit()
 # Закрываем
 cursor.close()
 conn.close()
-
 ```
 
 ### 1.2 Context Manager
 
 ```python
-
 import psycopg2
 from contextlib import contextmanager
 
@@ -118,13 +116,11 @@ with get_db_cursor() as cursor:
 
 with get_db_cursor(commit=True) as cursor:
     cursor.execute("INSERT INTO users (name) VALUES (%s)", ("John",))
-
 ```
 
 ### 1.3 Connection Pool
 
 ```python
-
 from psycopg2 import pool
 
 # Создаём пул при старте приложения
@@ -156,7 +152,6 @@ finally:
 
 # При завершении приложения
 connection_pool.closeall()
-
 ```
 
 ---
@@ -166,7 +161,6 @@ connection_pool.closeall()
 ### 2.1 Подключение и Engine
 
 ```python
-
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String, select
 
 # Создание engine (с пулом соединений)
@@ -192,13 +186,11 @@ users = Table(
 
 # Создание таблиц
 metadata.create_all(engine)
-
 ```
 
 ### 2.2 CRUD операции
 
 ```python
-
 from sqlalchemy import select, insert, update, delete
 
 # INSERT
@@ -234,7 +226,6 @@ with engine.connect() as conn:
     stmt = delete(users).where(users.c.id == user_id)
     conn.execute(stmt)
     conn.commit()
-
 ```
 
 ---
@@ -244,7 +235,6 @@ with engine.connect() as conn:
 ### 3.1 Модели
 
 ```python
-
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from datetime import datetime
@@ -273,7 +263,6 @@ class User(Base):
             'created_at': self.created_at.isoformat() if self.created_at else None,
         }
 
-
 class Order(Base):
     __tablename__ = 'orders'
     
@@ -286,20 +275,17 @@ class Order(Base):
     # Relationship
     user = relationship("User", back_populates="orders")
 
-
 # Создание engine и сессий
 engine = create_engine("postgresql://user:pass@localhost/myapp")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Создание таблиц
 Base.metadata.create_all(bind=engine)
-
 ```
 
 ### 3.2 CRUD с ORM
 
 ```python
-
 from sqlalchemy.orm import Session
 
 # CREATE
@@ -346,13 +332,11 @@ try:
     print(user)
 finally:
     db.close()
-
 ```
 
 ### 3.3 Dependency Injection (FastAPI стиль)
 
 ```python
-
 from contextlib import contextmanager
 
 @contextmanager
@@ -383,7 +367,6 @@ def get_db_dependency():
 @app.get("/users")
 def read_users(db: Session = Depends(get_db_dependency)):
     return get_users(db)
-
 ```
 
 ---
@@ -393,7 +376,6 @@ def read_users(db: Session = Depends(get_db_dependency)):
 ### 4.1 Базовые транзакции
 
 ```python
-
 from sqlalchemy.orm import Session
 
 def transfer_money(db: Session, from_user_id: int, to_user_id: int, amount: int):
@@ -422,13 +404,11 @@ def transfer_money(db: Session, from_user_id: int, to_user_id: int, amount: int)
     except Exception as e:
         db.rollback()  # Откатываем при ошибке
         raise
-
 ```
 
 ### 4.2 Nested Transactions (Savepoints)
 
 ```python
-
 def complex_operation(db: Session):
     """Операция с savepoints."""
     
@@ -453,13 +433,11 @@ def complex_operation(db: Session):
     except Exception:
         db.rollback()
         raise
-
 ```
 
 ### 4.3 Уровни изоляции
 
 ```python
-
 from sqlalchemy import create_engine
 
 # Установка уровня изоляции для всего engine
@@ -472,7 +450,6 @@ engine = create_engine(
 with engine.connect().execution_options(isolation_level="SERIALIZABLE") as conn:
     # Эта транзакция выполнится с SERIALIZABLE
     pass
-
 ```
 
 ---
@@ -482,7 +459,6 @@ with engine.connect().execution_options(isolation_level="SERIALIZABLE") as conn:
 ### 5.1 asyncpg (PostgreSQL)
 
 ```python
-
 import asyncpg
 import asyncio
 
@@ -515,13 +491,11 @@ async def main():
     await conn.close()
 
 asyncio.run(main())
-
 ```
 
 ### 5.2 asyncpg Connection Pool
 
 ```python
-
 import asyncpg
 from contextlib import asynccontextmanager
 
@@ -578,13 +552,11 @@ async def create_user_with_order(name: str, email: str, amount: int):
             user_id, amount
         )
         return user_id
-
 ```
 
 ### 5.3 SQLAlchemy 2.0 Async
 
 ```python
-
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String, select
@@ -632,7 +604,6 @@ async def get_users(db: AsyncSession, skip: int = 0, limit: int = 100) -> list[U
         select(User).offset(skip).limit(limit)
     )
     return result.scalars().all()
-
 ```
 
 ---
@@ -642,7 +613,6 @@ async def get_users(db: AsyncSession, skip: int = 0, limit: int = 100) -> list[U
 ### 6.1 FastAPI + SQLAlchemy
 
 ```python
-
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
@@ -693,13 +663,11 @@ def read_users(
     db: Session = Depends(get_db)
 ):
     return get_users(db, skip=skip, limit=limit)
-
 ```
 
 ### 6.2 Flask + SQLAlchemy
 
 ```python
-
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
@@ -733,7 +701,6 @@ def list_users():
 # Создание таблиц
 with app.app_context():
     db.create_all()
-
 ```
 
 ---
@@ -759,13 +726,11 @@ for user in users:
 from sqlalchemy.orm import selectinload
 
 users = db.query(User).options(selectinload(User.orders)).all()  # 2 запроса
-
 ```
 
 ### 7.2 Пагинация
 
 ```python
-
 from sqlalchemy import select, func
 
 def paginate(db: Session, model, page: int = 1, per_page: int = 20):
@@ -788,7 +753,6 @@ def paginate(db: Session, model, page: int = 1, per_page: int = 20):
 
 # Использование
 result = paginate(db, User, page=2, per_page=10)
-
 ```
 
 ### 7.3 Bulk Operations
@@ -816,13 +780,11 @@ db.execute(
     User.__table__.update().where(User.id.in_(ids)).values(status='active')
 )
 db.commit()
-
 ```
 
 ### 7.4 Индексы
 
 ```python
-
 from sqlalchemy import Index
 
 class User(Base):
@@ -838,7 +800,6 @@ class User(Base):
     __table_args__ = (
         Index('idx_user_status_created', 'status', 'created_at'),
     )
-
 ```
 
 ---
@@ -853,7 +814,6 @@ pip install alembic
 
 # Инициализация
 alembic init alembic
-
 ```
 
 ```python
@@ -863,7 +823,6 @@ target_metadata = Base.metadata
 
 # alembic.ini
 sqlalchemy.url = postgresql://user:pass@localhost/myapp
-
 ```
 
 ### 8.2 Создание и применение миграций
@@ -883,7 +842,6 @@ alembic current
 
 # Показать историю
 alembic history
-
 ```
 
 ```python
@@ -901,7 +859,6 @@ def upgrade():
 def downgrade():
     op.drop_index('ix_users_email', table_name='users')
     op.drop_table('users')
-
 ```
 
 ---

@@ -31,12 +31,10 @@
 **L1 Interference** = applying rules/patterns from your native language to English.
 
 ```
-
 RUSSIAN PATTERN:            ENGLISH ERROR:
 "Я согласен" (I am agree)   → "I am agree" ❌
 "Он учитель" (He teacher)   → "He teacher" ❌
 "Зависит от" (depend from)  → "depend from" ❌
-
 ```
 
 ### 1.2 Why It's Hard to Fix
@@ -56,7 +54,6 @@ RUSSIAN PATTERN:            ENGLISH ERROR:
 **English:** Required article system
 
 ```
-
 ❌ "Life is beautiful." (generic) — sometimes OK
 ❌ "I am student." 
 ✅ "I am a student."
@@ -66,7 +63,6 @@ RUSSIAN PATTERN:            ENGLISH ERROR:
 
 ❌ "He went to hospital."
 ✅ "He went to the hospital." (AmE) / "He went to hospital." (BrE as patient)
-
 ```
 
 **Fix:** Every singular countable noun needs an article or determiner.
@@ -77,7 +73,6 @@ RUSSIAN PATTERN:            ENGLISH ERROR:
 **English:** "Be" always required
 
 ```
-
 ❌ "She very intelligent."
 ✅ "She is very intelligent."
 
@@ -86,7 +81,6 @@ RUSSIAN PATTERN:            ENGLISH ERROR:
 
 ❌ "I 25 years old."
 ✅ "I am 25 years old."
-
 ```
 
 ### 2.3 "I Am Agree" (Согласен)
@@ -95,13 +89,11 @@ RUSSIAN PATTERN:            ENGLISH ERROR:
 **English:** "Agree" is a verb
 
 ```
-
 ❌ "I am agree with you."
 ✅ "I agree with you."
 
 ❌ "Are you agree?"
 ✅ "Do you agree?"
-
 ```
 
 ### 2.4 "Feel Myself" (Чувствовать себя)
@@ -110,7 +102,6 @@ RUSSIAN PATTERN:            ENGLISH ERROR:
 **English:** "Feel" without reflexive
 
 ```
-
 ❌ "I feel myself tired."
 ✅ "I feel tired."
 
@@ -118,7 +109,6 @@ RUSSIAN PATTERN:            ENGLISH ERROR:
 ✅ "How do you feel?"
 
 BUT: "She found herself alone." (different meaning)
-
 ```
 
 ### 2.5 Preposition Errors (Калька с русского)
@@ -126,7 +116,6 @@ BUT: "She found herself alone." (different meaning)
 **Russian prepositions ≠ English prepositions:**
 
 ```
-
 ❌ "It depends from..." (зависит от)
 ✅ "It depends on..."
 
@@ -144,7 +133,6 @@ BUT: "She found herself alone." (different meaning)
 
 ❌ "He explained me..." (объяснил мне)
 ✅ "He explained to me..."
-
 ```
 
 ### 2.6 Double Subjects
@@ -153,13 +141,11 @@ BUT: "She found herself alone." (different meaning)
 **English:** Not grammatical
 
 ```
-
 ❌ "My sister she works in a bank."
 ✅ "My sister works in a bank."
 
 ❌ "Moscow it is a big city."
 ✅ "Moscow is a big city."
-
 ```
 
 ### 2.7 Present for Duration (Живу 5 лет)
@@ -168,7 +154,6 @@ BUT: "She found herself alone." (different meaning)
 **English:** Present Perfect (Continuous)
 
 ```
-
 ❌ "I live here 5 years."
 ✅ "I have lived here for 5 years."
 
@@ -177,7 +162,6 @@ BUT: "She found herself alone." (different meaning)
 
 ❌ "I wait for you for an hour."
 ✅ "I have been waiting for you for an hour."
-
 ```
 
 ### 2.8 Future After "When/If" (Когда приду)
@@ -186,13 +170,11 @@ BUT: "She found herself alone." (different meaning)
 **English:** Present tense in time clauses
 
 ```
-
 ❌ "When I will come, I will call you."
 ✅ "When I come, I will call you."
 
 ❌ "If it will rain, we will stay home."
 ✅ "If it rains, we will stay home."
-
 ```
 
 ### 2.9 Word Order with Adverbs
@@ -201,7 +183,6 @@ BUT: "She found herself alone." (different meaning)
 **English:** Specific positions
 
 ```
-
 ❌ "I yesterday went to the store."
 ✅ "I went to the store yesterday."
 
@@ -210,7 +191,6 @@ BUT: "She found herself alone." (different meaning)
 
 ❌ "I very much like this idea."
 ✅ "I like this idea very much."
-
 ```
 
 ### 2.10 Uncountable Nouns
@@ -218,7 +198,6 @@ BUT: "She found herself alone." (different meaning)
 **Russian:** Many words countable that aren't in English
 
 ```
-
 ❌ "I need an advice."
 ✅ "I need advice." / "I need a piece of advice."
 
@@ -230,7 +209,6 @@ BUT: "She found herself alone." (different meaning)
 
 ❌ "She gave me many advices."
 ✅ "She gave me a lot of advice."
-
 ```
 
 ### 2.11 Actual/Actually (Ложные друзья)
@@ -239,12 +217,10 @@ BUT: "She found herself alone." (different meaning)
 **English:** "Actual" = real, true
 
 ```
-
 ❌ "This is a very actual problem." (meaning: current)
 ✅ "This is a very current/relevant problem."
 
 "Actually" = in fact, really (not "currently")
-
 ```
 
 ### 2.12 Sympathetic (Ложные друзья)
@@ -253,10 +229,8 @@ BUT: "She found herself alone." (different meaning)
 **English:** "Sympathetic" = showing understanding for problems
 
 ```
-
 ❌ "She is very sympathetic." (meaning: pretty)
 ✅ "She is very attractive." / "She is very nice."
-
 ```
 
 ### 2.13 Genitive with "Of" Overuse
@@ -265,13 +239,11 @@ BUT: "She found herself alone." (different meaning)
 **English:** Possessive or compound nouns often better
 
 ```
-
 ❌ "The leg of the table"
 ✅ "The table leg"
 
 ❌ "The door of the car"
 ✅ "The car door"
-
 ```
 
 ### 2.14 Question Formation
@@ -280,13 +252,11 @@ BUT: "She found herself alone." (different meaning)
 **English:** Inversion required
 
 ```
-
 ❌ "You are going where?"
 ✅ "Where are you going?"
 
 ❌ "What means this word?"
 ✅ "What does this word mean?"
-
 ```
 
 ### 2.15 Too Direct (Pragmatic Error)
@@ -295,13 +265,11 @@ BUT: "She found herself alone." (different meaning)
 **English:** Indirect requests polite
 
 ```
-
 ❌ "Give me the salt." (sounds rude)
 ✅ "Could you pass the salt, please?"
 
 ❌ "Tell me the time."
 ✅ "Could you tell me the time?"
-
 ```
 
 ### 2.16 This/That Confusion
@@ -310,13 +278,11 @@ BUT: "She found herself alone." (different meaning)
 **English:** Distinction matters
 
 ```
-
 "This" = close/current
 "That" = distant/previous
 
 ❌ "I don't like that" (pointing at something near you)
 ✅ "I don't like this"
-
 ```
 
 ### 2.17 Make/Do Confusion
@@ -325,10 +291,8 @@ BUT: "She found herself alone." (different meaning)
 **English:** Distinct patterns
 
 ```
-
 ❌ "Do a mistake" → ✅ "Make a mistake"
 ❌ "Make homework" → ✅ "Do homework"
-
 ```
 
 ### 2.18 Would for Present Unreal
@@ -337,10 +301,8 @@ BUT: "She found herself alone." (different meaning)
 **English:** "Would" in result clause ONLY
 
 ```
-
 ❌ "If I would have time, I would help."
 ✅ "If I had time, I would help."
-
 ```
 
 ### 2.19 Born (Рождаться)
@@ -349,17 +311,14 @@ BUT: "She found herself alone." (different meaning)
 **English:** Passive "was born"
 
 ```
-
 ❌ "I born in Moscow."
 ❌ "I am born in Moscow."
 ✅ "I was born in Moscow."
-
 ```
 
 ### 2.20 Since/For Confusion
 
 ```
-
 SINCE = point in time (since 2010, since Monday)
 FOR = period of time (for 5 years, for 2 hours)
 
@@ -368,7 +327,6 @@ FOR = period of time (for 5 years, for 2 hours)
 
 ❌ "I've known him for 2010."
 ✅ "I've known him since 2010."
-
 ```
 
 ---
@@ -427,9 +385,7 @@ When reading/listening:
 ### 4.4 Feedback Loop
 
 ```
-
 Write/Speak → Get feedback → Analyze errors → Practice → Repeat
-
 ```
 
 ---

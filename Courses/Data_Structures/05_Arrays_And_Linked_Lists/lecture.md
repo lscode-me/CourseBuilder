@@ -47,6 +47,7 @@
 
 ```python
 # Массив из 5 элементов
+
 arr = [10, 20, 30, 40, 50]
 
 # В памяти это выглядит примерно так:
@@ -66,7 +67,6 @@ print(f"Разница адресов: {id(arr[1]) - id(arr[0])} байт")
 
 **Output:**
 ```
-
 Элемент с индексом 2: 30
 Адрес элемента 0: 140234567890000
 Адрес элемента 1: 140234567890032
@@ -80,23 +80,26 @@ print(f"Разница адресов: {id(arr[1]) - id(arr[0])} байт")
 **Example: Сравнение времени доступа**
 
 ```python
-
 import time
 
 # Создаём большой массив
+
 large_array = list(range(1000000))
 
 # Доступ к первому элементу
+
 start = time.time()
 first = large_array[0]
 time_first = time.time() - start
 
 # Доступ к среднему элементу
+
 start = time.time()
 middle = large_array[500000]
 time_middle = time.time() - start
 
 # Доступ к последнему элементу
+
 start = time.time()
 last = large_array[999999]
 time_last = time.time() - start
@@ -109,7 +112,6 @@ print(f"Все примерно одинаково: {abs(time_first - time_middl
 
 **Output:**
 ```
-
 Доступ к первому: 0.000000000 секунд
 Доступ к среднему: 0.000000000 секунд
 Доступ к последнему: 0.000000000 секунд
@@ -123,19 +125,21 @@ print(f"Все примерно одинаково: {abs(time_first - time_middl
 **Example: Влияние кэш-локальности**
 
 ```python
-
 import time
 
 # Создаём большой массив
+
 size = 10000000
 arr = list(range(size))
 
 # Последовательный доступ (хорошая локальность)
+
 start = time.time()
 sum_seq = sum(arr[i] for i in range(0, size, 1))
 time_seq = time.time() - start
 
 # Случайный доступ (плохая локальность)
+
 import random
 indices = random.sample(range(size), min(100000, size))
 start = time.time()
@@ -150,7 +154,6 @@ if time_random > time_seq:
 
 **Output:**
 ```
-
 Последовательный доступ: 0.523456 секунд
 Случайный доступ: 1.234567 секунд
 Последовательный доступ быстрее в 2.36 раз
@@ -167,7 +170,6 @@ if time_random > time_seq:
 **Example: Стоимость вставки**
 
 ```python
-
 import time
 
 def insert_middle(arr, index, value):
@@ -175,6 +177,7 @@ def insert_middle(arr, index, value):
     arr.insert(index, value)
 
 # Тестируем на разных размерах
+
 sizes = [1000, 10000, 100000]
 
 for size in sizes:
@@ -187,7 +190,6 @@ for size in sizes:
 
 **Output:**
 ```
-
 Размер   1000: 0.000012 секунд
 Размер  10000: 0.000123 секунд
 Размер 100000: 0.001234 секунд
@@ -202,7 +204,6 @@ for size in sizes:
 **Example: Стоимость удаления**
 
 ```python
-
 import time
 
 def remove_middle(arr, index):
@@ -210,6 +211,7 @@ def remove_middle(arr, index):
     arr.pop(index)
 
 # Тестируем на разных размерах
+
 sizes = [1000, 10000, 100000]
 
 for size in sizes:
@@ -222,7 +224,6 @@ for size in sizes:
 
 **Output:**
 ```
-
 Размер   1000: 0.000010 секунд
 Размер  10000: 0.000098 секунд
 Размер 100000: 0.000987 секунд
@@ -252,7 +253,6 @@ for i in range(10):
 
 **Output:**
 ```
-
 Начальный размер: 0
 После добавления 0: размер = 1
 После добавления 1: размер = 2
@@ -273,7 +273,6 @@ for i in range(10):
 **Example: Реализация узла**
 
 ```python
-
 class Node:
     """Узел связанного списка."""
     def __init__(self, data):
@@ -281,15 +280,18 @@ class Node:
         self.next = None  # Указатель на следующий узел
 
 # Создание узлов
+
 node1 = Node(10)
 node2 = Node(20)
 node3 = Node(30)
 
 # Связывание узлов
+
 node1.next = node2
 node2.next = node3
 
 # Обход списка
+
 current = node1
 while current:
     print(f"Узел: {current.data}")
@@ -298,7 +300,6 @@ while current:
 
 **Output:**
 ```
-
 Узел: 10
 Узел: 20
 Узел: 30
@@ -309,7 +310,6 @@ while current:
 **Example: Полная реализация**
 
 ```python
-
 class LinkedList:
     """Связанный список."""
     def __init__(self):
@@ -355,6 +355,7 @@ class LinkedList:
         return elements
 
 # Использование
+
 ll = LinkedList()
 ll.prepend(30)
 ll.prepend(20)
@@ -367,7 +368,6 @@ print(f"Элемент с индексом 2: {ll.get_at_index(2)}")
 
 **Output:**
 ```
-
 Список: [10, 20, 30, 40]
 Элемент с индексом 2: 30
 ```
@@ -377,22 +377,25 @@ print(f"Элемент с индексом 2: {ll.get_at_index(2)}")
 **Example: Быстрая вставка в начало**
 
 ```python
-
 import time
 
 # Связанный список
+
 ll = LinkedList()
 
 # Вставка в начало
+
 start = time.time()
 for i in range(10000):
     ll.prepend(i)
 time_ll = time.time() - start
 
 # Массив (список Python)
+
 arr = []
 
 # Вставка в начало
+
 start = time.time()
 for i in range(10000):
     arr.insert(0, i)
@@ -405,7 +408,6 @@ print(f"Ускорение: {time_arr / time_ll:.2f}x")
 
 **Output:**
 ```
-
 Связанный список: 0.012345 секунд
 Массив: 0.234567 секунд
 Ускорение: 19.01x
@@ -424,25 +426,28 @@ print(f"Ускорение: {time_arr / time_ll:.2f}x")
 **Example: Стоимость доступа**
 
 ```python
-
 import time
 
 # Создаём большой связанный список
+
 ll = LinkedList()
 for i in range(10000):
     ll.append(i)
 
 # Доступ к первому элементу
+
 start = time.time()
 first = ll.get_at_index(0)
 time_first = time.time() - start
 
 # Доступ к среднему элементу
+
 start = time.time()
 middle = ll.get_at_index(5000)
 time_middle = time.time() - start
 
 # Доступ к последнему элементу
+
 start = time.time()
 last = ll.get_at_index(9999)
 time_last = time.time() - start
@@ -455,7 +460,6 @@ print(f"Средний доступ намного медленнее: {time_mid
 
 **Output:**
 ```
-
 Доступ к первому: 0.000001 секунд
 Доступ к среднему: 0.000234 секунд
 Доступ к последнему: 0.000456 секунд
@@ -471,23 +475,26 @@ print(f"Средний доступ намного медленнее: {time_mid
 **Example: Сравнение производительности**
 
 ```python
-
 import time
 
 # Массив
+
 arr = list(range(100000))
 
 # Связанный список
+
 ll = LinkedList()
 for i in range(100000):
     ll.append(i)
 
 # Последовательный обход массива
+
 start = time.time()
 sum_arr = sum(arr)
 time_arr = time.time() - start
 
 # Последовательный обход связанного списка
+
 start = time.time()
 sum_ll = 0
 current = ll.head
@@ -503,7 +510,6 @@ print(f"Массив быстрее в {time_ll / time_arr:.2f} раз")
 
 **Output:**
 ```
-
 Массив: 0.001234 секунд
 Связанный список: 0.012345 секунд
 Массив быстрее в 10.00 раз
@@ -518,21 +524,23 @@ print(f"Массив быстрее в {time_ll / time_arr:.2f} раз")
 **Example: Сравнение памяти**
 
 ```python
-
 import sys
 
 # Массив
+
 arr = list(range(1000))
 arr_size = sys.getsizeof(arr)
 
 # Связанный список (приблизительно)
 # Каждый узел: данные (8 байт для int) + указатель (8 байт) + overhead
 # Для 1000 элементов: примерно 1000 * (8 + 8 + overhead)
+
 ll = LinkedList()
 for i in range(1000):
     ll.append(i)
 
 # Приблизительная оценка
+
 node_overhead = 56  # Примерный overhead для объекта Python
 estimated_ll_size = 1000 * (8 + 8 + node_overhead)
 
@@ -543,7 +551,6 @@ print(f"Связанный список использует примерно в
 
 **Output:**
 ```
-
 Размер массива: 9024 байт
 Приблизительный размер связанного списка: 72000 байт
 Связанный список использует примерно в 8.0 раз больше памяти
@@ -566,9 +573,11 @@ print(f"Связанный список использует примерно в
 
 ```python
 # Задача: хранение оценок студентов с доступом по индексу
+
 grades = [85, 90, 78, 92, 88]
 
 # Быстрый доступ к любой оценке
+
 student_id = 2
 print(f"Оценка студента {student_id}: {grades[student_id]}")
 
@@ -580,7 +589,6 @@ print(f"После добавления: {grades}")
 
 **Output:**
 ```
-
 Оценка студента 2: 78
 После добавления: [85, 90, 78, 92, 88, 95]
 ```
@@ -598,6 +606,7 @@ print(f"После добавления: {grades}")
 
 ```python
 # Задача: история операций (стек отмены)
+
 class OperationHistory:
     def __init__(self):
         self.operations = LinkedList()
@@ -624,7 +633,6 @@ print(f"Отменено: {history.undo()}")
 
 **Output:**
 ```
-
 Отменено: Сохранить
 ```
 
@@ -635,7 +643,6 @@ print(f"Отменено: {history.undo()}")
 **Example: Двусвязный список с массивом индексов**
 
 ```python
-
 class HybridStructure:
     """Гибрид: связанный список + массив индексов."""
     def __init__(self):
@@ -708,7 +715,6 @@ class HybridStructure:
 **Example: Очередь с приоритетами**
 
 ```python
-
 class PriorityQueue:
     """Очередь с приоритетами на основе связанного списка."""
     def __init__(self):
@@ -747,7 +753,6 @@ print(f"Обработано: {pq.dequeue()}")  # Задача 2 (приорит
 
 **Output:**
 ```
-
 Обработано: Задача 2
 ```
 
@@ -756,7 +761,6 @@ print(f"Обработано: {pq.dequeue()}")  # Задача 2 (приорит
 **Example: LRU Cache с двусвязным списком**
 
 ```python
-
 class LRUCache:
     """LRU Cache с использованием двусвязного списка."""
     def __init__(self, capacity):
@@ -847,5 +851,6 @@ class LRUCache:
 - Исследуйте, как Python реализует динамические массивы
 
 ---
+
 
 

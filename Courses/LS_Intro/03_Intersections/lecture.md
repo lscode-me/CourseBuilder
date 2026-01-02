@@ -38,6 +38,7 @@
 
 ```python
 # Примеры пересечений дисциплин
+
 discipline_intersections = {
     "bioinf_cheminf": {
         "название": "Bioinformatics + Cheminformatics",
@@ -85,7 +86,6 @@ for key, info in discipline_intersections.items():
 
 **Output:**
 ```
-
 Пересечения дисциплин:
 
 Bioinformatics + Cheminformatics:
@@ -110,6 +110,7 @@ Scientific Informatics + все дисциплины:
 
 ```python
 # Drug Discovery workflow
+
 drug_discovery_workflow = {
     "этап_1_target_identification": {
         "дисциплина": "Bioinformatics",
@@ -161,7 +162,6 @@ for stage, details in drug_discovery_workflow.items():
 
 **Output:**
 ```
-
 Drug Discovery Workflow:
 
 Этап 1 Target Identification:
@@ -191,6 +191,7 @@ Drug Discovery Workflow:
 
 ```python
 # Precision Medicine workflow
+
 precision_medicine_workflow = {
     "геномный_анализ": {
         "дисциплина": "Bioinformatics",
@@ -226,7 +227,6 @@ for stage, details in precision_medicine_workflow.items():
 
 **Output:**
 ```
-
 Precision Medicine Workflow:
 
 Геномный Анализ:
@@ -256,6 +256,7 @@ Precision Medicine Workflow:
 
 ```python
 # Роль Scientific Informatics
+
 sciinf_role = {
     "управление_данными": {
         "применение": "Все дисциплины",
@@ -301,7 +302,6 @@ for component, details in sciinf_role.items():
 
 **Output:**
 ```
-
 Роль Scientific Informatics:
 
 Управление Данными:
@@ -342,6 +342,7 @@ Workflow Orchestration:
 
 ```python
 # Типы данных по дисциплинам
+
 data_types_by_discipline = {
     "scientific_informatics": {
         "типы": ["Любые структурированные данные", "Метаданные", "Workflow definitions"],
@@ -376,7 +377,6 @@ for discipline, info in data_types_by_discipline.items():
 
 **Output:**
 ```
-
 Типы данных по дисциплинам:
 
 Scientific Informatics:
@@ -406,6 +406,7 @@ Medical Informatics:
 
 ```python
 # Фокус по дисциплинам
+
 focus_by_discipline = {
     "scientific_informatics": {
         "фокус": "Инфраструктура и процессы",
@@ -451,7 +452,6 @@ for discipline, info in focus_by_discipline.items():
 
 **Output:**
 ```
-
 Фокус по дисциплинам:
 
 Scientific Informatics:
@@ -477,6 +477,7 @@ Medical Informatics:
 
 ```python
 # Инструменты по дисциплинам
+
 tools_by_discipline = {
     "scientific_informatics": {
         "категория": "Универсальные инструменты",
@@ -506,7 +507,6 @@ for discipline, info in tools_by_discipline.items():
 
 **Output:**
 ```
-
 Инструменты по дисциплинам:
 
 Scientific Informatics:
@@ -536,6 +536,7 @@ Medical Informatics:
 
 ```python
 # Руководство по выбору дисциплины
+
 discipline_selection_guide = {
     "bioinformatics": {
         "когда": [
@@ -601,7 +602,6 @@ for discipline, guide in discipline_selection_guide.items():
 
 **Output:**
 ```
-
 Руководство по выбору дисциплины:
 
 Bioinformatics:
@@ -666,5 +666,6 @@ Scientific Informatics:
 - "Precision Medicine: From Genomics to Clinical Practice" — пример интеграции дисциплин
 
 ---
+
 
 

@@ -39,7 +39,6 @@
 ### 1.2 Upper Bound vs Lower Bound
 
 ```
-
 ┌─────────────────────────────────────────────────┐
 │                                                 │
 │  Upper Bound (O): Известный алгоритм            │
@@ -65,6 +64,7 @@
 # Задача: найти элемент в несортированном массиве
 
 # Upper bound: линейный поиск — O(n)
+
 def linear_search(arr, target):
     for i, x in enumerate(arr):
         if x == target:
@@ -85,7 +85,6 @@ print(f"Поиск 10: индекс {linear_search(data, 10)}")
 
 **Output:**
 ```
-
 Поиск 7: индекс 6
 Поиск 10: индекс -1
 ```
@@ -107,7 +106,6 @@ print(f"Поиск 10: индекс {linear_search(data, 10)}")
 ### 2.2 Доказательство через дерево решений
 
 ```
-
                     a < b?
                    /     \
                  yes      no
@@ -132,7 +130,6 @@ print(f"Поиск 10: индекс {linear_search(data, 10)}")
 5. Высота = количество сравнений в худшем случае
 
 ```python
-
 import math
 
 def minimum_comparisons(n):
@@ -147,7 +144,6 @@ for n in [3, 5, 10, 20, 100]:
 
 **Output:**
 ```
-
 n=  3: min сравнений ≥     3, n·log(n) = 4.8
 n=  5: min сравнений ≥     7, n·log(n) = 11.6
 n= 10: min сравнений ≥    22, n·log(n) = 33.2
@@ -160,7 +156,6 @@ n=100: min сравнений ≥   525, n·log(n) = 664.4
 Граница Ω(n log n) применима только к **сортировкам сравнениями**. Если мы знаем больше о данных, можно сортировать быстрее!
 
 ```python
-
 def counting_sort(arr, max_val):
     """
     Counting Sort: O(n + k) где k — диапазон значений.
@@ -189,7 +184,6 @@ print(f"После: {sorted_data}")
 
 **Output:**
 ```
-
 До: [4, 2, 2, 8, 3, 3, 1]
 После: [1, 2, 2, 3, 3, 4, 8]
 ```
@@ -213,7 +207,6 @@ print(f"После: {sorted_data}")
 **Доказательство**: Каждый элемент, кроме минимума, должен "проиграть" хотя бы одно сравнение. Иначе он может быть минимумом.
 
 ```python
-
 def find_min_with_count(arr):
     """Находит минимум, подсчитывая сравнения."""
     comparisons = 0
@@ -235,7 +228,6 @@ print(f"Теоретический минимум: {len(data) - 1}")
 
 **Output:**
 ```
-
 Минимум: 1
 Сравнений: 5
 Теоретический минимум: 5
@@ -248,7 +240,6 @@ print(f"Теоретический минимум: {len(data) - 1}")
 **Оптимальный подход**: ⌈3n/2⌉ - 2 сравнений
 
 ```python
-
 def find_min_max_naive(arr):
     """Наивный поиск min и max: 2(n-1) сравнений."""
     comparisons = 0
@@ -309,6 +300,7 @@ def find_min_max_optimal(arr):
     return min_val, max_val, comparisons
 
 # Сравнение
+
 data = list(range(1, 101))  # 100 элементов
 import random
 random.shuffle(data)
@@ -323,7 +315,6 @@ print(f"Экономия: {comp_naive - comp_optimal} сравнений ({100*(
 
 **Output:**
 ```
-
 Наивный: min=1, max=100, сравнений=198
 Оптимальный: min=1, max=100, сравнений=148
 Экономия: 50 сравнений (25.3%)
@@ -338,7 +329,6 @@ print(f"Экономия: {comp_naive - comp_optimal} сравнений ({100*(
 **Вывод**: Линейный алгоритм оптимален!
 
 ```python
-
 def quickselect(arr, k):
     """
     Quickselect: O(n) в среднем для k-го элемента.
@@ -369,6 +359,7 @@ def median(arr):
         return (quickselect(arr, n // 2 - 1) + quickselect(arr, n // 2)) / 2
 
 # Пример
+
 data = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 print(f"Данные: {data}")
 print(f"Медиана: {median(data)}")
@@ -377,7 +368,6 @@ print(f"Проверка (сортировка): {sorted(data)[len(data)//2]}")
 
 **Output:**
 ```
-
 Данные: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 Медиана: 4
 Проверка (сортировка): 4
@@ -474,6 +464,7 @@ def merge_sort_hybrid(arr, threshold=32):
     return result
 
 # Сравнение
+
 n = 10000
 data = list(range(n))
 random.shuffle(data)
@@ -497,7 +488,6 @@ print(f"Python sorted (Timsort): {time_builtin*1000:.2f} мс")
 
 **Output:**
 ```
-
 Basic merge sort: 45.23 мс
 Hybrid merge sort: 28.56 мс
 Python sorted (Timsort): 1.23 мс
@@ -552,7 +542,6 @@ print(f"list(range()): {time_builtin*1000:.2f} мс")
 
 **Output:**
 ```
-
 Loop append: 5.67 мс
 Comprehension: 2.34 мс
 list(range()): 1.12 мс
@@ -587,6 +576,7 @@ users_list = [(i, f"user_{i}") for i in range(n)]
 random.shuffle(users_list)
 
 # Без индекса: O(n) — поиск в списке
+
 def find_in_list(users_list, user_id):
     for id, name in users_list:
         if id == user_id:
@@ -594,6 +584,7 @@ def find_in_list(users_list, user_id):
     return None
 
 # С индексом (hash table): O(1)
+
 def find_in_dict(users_dict, user_id):
     return users_dict.get(user_id)
 
@@ -614,7 +605,6 @@ print(f"Ускорение: {time_list/time_dict:.0f}x")
 
 **Output:**
 ```
-
 Без индекса (список): 45.67 мс
 С индексом (dict): 0.0001 мс
 Ускорение: 456700x
@@ -651,6 +641,7 @@ class SortedCache:
         return self.cache[key]
 
 # Демонстрация
+
 cache = SortedCache()
 data = [5, 2, 8, 1, 9, 3]
 
@@ -670,7 +661,6 @@ print(f"Кэшированный: {time_cached*1000000:.2f} мкс")
 
 **Output:**
 ```
-
 Первый вызов: 2.34 мкс
 Кэшированный: 0.45 мкс
 ```
@@ -707,6 +697,7 @@ print(f"Кэшированный: {time_cached*1000000:.2f} мкс")
 # Пример: задача коммивояжёра
 
 # Точное решение: O(n!)
+
 def tsp_brute_force(distances):
     """Полный перебор всех маршрутов."""
     from itertools import permutations
@@ -745,7 +736,6 @@ print(f"Количество маршрутов: {4 * 3 * 2 * 1} = 24")
 
 **Output:**
 ```
-
 Лучший маршрут: (0, 1, 3, 4, 2, 0)
 Расстояние: 80
 Количество маршрутов: 24
@@ -798,7 +788,6 @@ print(f"Коэффициент: {dist_approx / dist:.2f}x")
 
 **Output:**
 ```
-
 Приближённый маршрут: (0, 1, 3, 4, 2, 0)
 Приближённое расстояние: 80
 Vs оптимальное: 80
@@ -862,5 +851,6 @@ Vs оптимальное: 80
 - Исследуйте классы сложности P, NP, PSPACE
 
 ---
+
 
 

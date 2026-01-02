@@ -52,7 +52,6 @@
 ### 2.2 Интерфейсы в Python (ABC)
 
 ```python
-
 from abc import ABC, abstractmethod
 
 class PaymentProcessor(ABC):
@@ -87,6 +86,7 @@ class PayPalProcessor(PaymentProcessor):
         return True
 
 # Использование
+
 def checkout(processor: PaymentProcessor, amount: float):
     if processor.process_payment(amount):
         print("Payment successful!")
@@ -97,7 +97,6 @@ checkout(PayPalProcessor(), 50.0)
 
 **Output:**
 ```
-
 Processing $100.0 via Stripe
 Payment successful!
 Processing $50.0 via PayPal
@@ -127,7 +126,6 @@ Payment successful!
 ### 3.2 Пример duck typing
 
 ```python
-
 class File:
     def read(self):
         return "File content"
@@ -167,7 +165,6 @@ process_readable(StringBuffer("Buffer content"))
 
 **Output:**
 ```
-
 Data: File content
 File closed
 Data: Network data
@@ -181,7 +178,6 @@ Buffer cleared
 Python 3.8+ добавил `Protocol` для явного определения duck typing:
 
 ```python
-
 from typing import Protocol
 
 class Readable(Protocol):
@@ -195,7 +191,6 @@ def process_readable(obj: Readable):
     obj.close()
 
 # Любой класс с нужными методами проходит проверку типов
-
 ```
 
 ### 3.4 Duck typing vs интерфейсы
@@ -225,7 +220,6 @@ def process_readable(obj: Readable):
 ### 4.2 Нарушение LSP
 
 ```python
-
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -266,7 +260,6 @@ test_rectangle(Rectangle(0, 0))
 ### 4.3 Правильный дизайн
 
 ```python
-
 from abc import ABC, abstractmethod
 
 class Shape(ABC):
@@ -290,7 +283,6 @@ class Square(Shape):
         return self.side * self.side
 
 # Оба следуют контракту Shape, но не наследуют друг друга
-
 ```
 
 ### 4.4 Правила LSP
@@ -319,7 +311,6 @@ class Square(Shape):
 ### 5.2 Пример с assert
 
 ```python
-
 class BankAccount:
     def __init__(self, balance: float):
         # Invariant: balance >= 0
@@ -362,14 +353,12 @@ print(f"Balance: {account._balance}")
 
 **Output:**
 ```
-
 Balance: 75.0
 ```
 
 ### 5.3 Декораторы для контрактов
 
 ```python
-
 def requires(precondition, message="Precondition failed"):
     def decorator(func):
         def wrapper(*args, **kwargs):
@@ -421,7 +410,6 @@ class BankAccount:
 
 **Плохо:**
 ```python
-
 class Worker(ABC):
     @abstractmethod
     def work(self): pass
@@ -436,7 +424,6 @@ class Robot(Worker):
 
 **Хорошо:**
 ```python
-
 class Workable(ABC):
     @abstractmethod
     def work(self): pass
@@ -459,7 +446,6 @@ class Robot(Workable):
 
 **Плохо:**
 ```python
-
 class EmailSender:
     def send(self, message): pass
 
@@ -470,7 +456,6 @@ class NotificationService:
 
 **Хорошо:**
 ```python
-
 class MessageSender(ABC):
     @abstractmethod
     def send(self, message): pass
@@ -522,5 +507,6 @@ class NotificationService:
 - Изучите refinement types для типизации с ограничениями
 
 ---
+
 
 

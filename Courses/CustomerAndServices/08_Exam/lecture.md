@@ -125,7 +125,6 @@
 **Сообщение от клиента (Slack):**
 
 ```
-
 @John (DM)
 
 URGENT! Production is down!
@@ -140,7 +139,6 @@ revenue loss and reputation damage.
 What's happening? When will this be fixed?
 
 - Sarah
-
 ```
 
 **Дополнительная информация:**
@@ -393,7 +391,6 @@ What's happening? When will this be fixed?
 На основе результатов формируется Individual Development Plan (IDP):
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │              INDIVIDUAL DEVELOPMENT PLAN                                │
 ├─────────────────────────────────────────────────────────────────────────┤
@@ -425,7 +422,6 @@ What's happening? When will this be fixed?
 │ • 90-day final: [Date]                                                  │
 │                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---

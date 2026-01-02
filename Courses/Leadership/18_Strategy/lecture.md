@@ -50,7 +50,6 @@
 **Формула:**
 
 ```
-
 Engineering Strategy = 
   Business Goals (what we're trying to achieve)
   + Technical Bets (how technology helps)
@@ -61,7 +60,6 @@ Engineering Strategy =
 ### 1.2 Strategy vs Tactics
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │   STRATEGY                              TACTICS                 │
@@ -91,7 +89,6 @@ Engineering Strategy =
 ### 1.3 Components of Eng Strategy
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    ENGINEERING STRATEGY                         │
 ├─────────────────────────────────────────────────────────────────┤
@@ -134,7 +131,6 @@ Engineering Strategy =
 **Плохой пример:**
 
 ```
-
 "Мы будем использовать современные технологии и best practices,
 чтобы делать качественные продукты быстро."
 
@@ -148,7 +144,6 @@ Engineering Strategy =
 **Хороший пример:**
 
 ```
-
 Engineering Strategy 2025:
 
 Vision: Стать платформенной компанией с 10x скоростью
@@ -179,7 +174,6 @@ Engineering strategy не существует в вакууме — она до
 ### 2.1 Strategy Cascade
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                      STRATEGY CASCADE                          │
 └────────────────────────────────────────────────────────────────┘
@@ -226,7 +220,6 @@ Engineering strategy не существует в вакууме — она до
 **Как получить эту информацию:**
 
 ```
-
 1. Company all-hands и strategy presentations
 2. 1-on-1 с вашим руководителем
 3. Разговоры с Product leadership
@@ -252,7 +245,6 @@ Engineering strategy не существует в вакууме — она до
 **Ситуация:**
 
 ```
-
 Company: B2B SaaS product
 Business Goal: Grow from $10M to $25M ARR in 2 years
 Strategy: Expand to Enterprise customers
@@ -271,7 +263,6 @@ Strategy: Expand to Enterprise customers
 **Шаг 2: Quantify engineering investment**
 
 ```
-
 SOC2 Certification:
 - Eng work: 3 months, 2 engineers
 - External audit: $50K
@@ -294,24 +285,29 @@ Reliability to 99.9%:
 ## Engineering Strategy: Enterprise Readiness
 
 ### Business Context
+
 Expand from SMB to Enterprise to reach $25M ARR.
 Enterprise requires: SOC2, SSO, SLA guarantees.
 
 ### Strategic Priorities (in order)
+
 1. Security & Compliance (SOC2) — gate for enterprise deals
 2. SSO Integration — top requested feature
 3. Reliability improvements — SLA commitments
 
 ### Investment
+
 - Q1-Q2: 40% capacity on Enterprise readiness
 - Q3-Q4: 20% (maintenance + new compliance needs)
 
 ### Trade-offs
+
 - ❌ Fewer new features for SMB in H1
 - ❌ Delay mobile app by 6 months
 - ✅ Enterprise deals unlock 5x ACV
 
 ### Success Metrics
+
 - SOC2 Type 2 by Q2
 - SSO live by end of Q1
 - 99.9% uptime from Q3
@@ -340,7 +336,6 @@ Enterprise requires: SOC2, SSO, SLA guarantees.
 **Decision Tree:**
 
 ```
-
                     Это core competency?
                     /              \
                   Yes               No
@@ -356,7 +351,6 @@ Enterprise requires: SOC2, SSO, SLA guarantees.
 **Пример: Authentication System**
 
 ```
-
 Question: Build custom auth или использовать Auth0?
 
 Analysis:
@@ -396,7 +390,6 @@ Trade-off: Vendor dependency, но saves 6 months и ongoing work
 **Tech Debt Prioritization:**
 
 ```
-
 Tech Debt Score = Impact × Frequency × Effort_Ratio
 
 Impact: 1-5 (how much it hurts when triggered)
@@ -420,7 +413,6 @@ Priority order: highest score first
 **Когда инвестировать в Platform:**
 
 ```
-
 Platform ROI = (Time_Saved × Num_Teams × Duration) - Build_Cost
 
 Example:
@@ -452,39 +444,47 @@ ROI = (2 weeks × 5 teams × 8 quarters) - (3 months × 2 engineers)
 # ADR-001: Use PostgreSQL as Primary Database
 
 ## Status
+
 Accepted (2024-01-15)
 
 ## Context
+
 We need to choose a primary database for our new service.
 Requirements: ACID transactions, JSON support, scaling to 1M records.
 
 ## Decision
+
 We will use PostgreSQL 15.
 
 ## Alternatives Considered
 
 ### MySQL 8
+
 - Pros: Team familiarity, performance
 - Cons: Weaker JSON support, licensing concerns
 
 ### MongoDB
+
 - Pros: Flexible schema, JSON native
 - Cons: No ACID transactions across documents
 
 ## Consequences
 
 ### Positive
+
 - Strong consistency guarantees
 - Excellent JSON support (JSONB)
 - Rich ecosystem, good tooling
 - Team can leverage existing knowledge
 
 ### Negative
+
 - Need to manage schema migrations
 - Horizontal scaling more complex than MongoDB
 - Some team members need training
 
 ## Trade-offs
+
 We're choosing consistency and reliability over schema flexibility.
 This aligns with our principle "data integrity first."
 ```
@@ -494,7 +494,6 @@ This aligns with our principle "data integrity first."
 Перед принятием стратегического решения:
 
 ```
-
 □ Понимаю ли я ЗАЧЕМ это нужно бизнесу?
 □ Рассмотрел ли я альтернативы? (минимум 2-3)
 □ Записал ли я trade-offs?
@@ -515,7 +514,6 @@ This aligns with our principle "data integrity first."
 ### 4.1 Planning Rhythm Overview
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                    PLANNING RHYTHM                             │
 ├────────────────────────────────────────────────────────────────┤
@@ -563,16 +561,19 @@ This aligns with our principle "data integrity first."
 # Engineering Plan 2025
 
 ## 1. Business Context
+
 - Company goals for 2025
 - Key metrics and targets
 - Major product initiatives
 
 ## 2. Engineering Strategy Recap
+
 - Vision (unchanged or updated?)
 - Principles
 - Key bets for 2025
 
 ## 3. Investment Allocation
+
 | Area | % of Capacity | Key Projects |
 |------|---------------|--------------|
 | Product | 60% | Feature A, B, C |
@@ -581,6 +582,7 @@ This aligns with our principle "data integrity first."
 | Buffer | 5% | Unplanned, support |
 
 ## 4. Headcount Plan
+
 | Team | Current | EOY Target | Key Hires |
 |------|---------|------------|-----------|
 | Product A | 8 | 12 | 2 Sr, 2 Mid |
@@ -589,6 +591,7 @@ This aligns with our principle "data integrity first."
 | Total | 45 | 60 | +15 |
 
 ## 5. Major Milestones
+
 | Quarter | Milestone | Owner |
 |---------|-----------|-------|
 | Q1 | Platform v1 launch | Team X |
@@ -597,6 +600,7 @@ This aligns with our principle "data integrity first."
 | Q4 | International launch | All |
 
 ## 6. Risks and Mitigations
+
 | Risk | Probability | Impact | Mitigation |
 |------|-------------|--------|------------|
 | Hiring slower | High | High | Early start, multiple channels |
@@ -608,7 +612,6 @@ This aligns with our principle "data integrity first."
 **Quarterly Planning Process:**
 
 ```
-
 T-6 weeks: PREPARATION
 ├── Review roadmap status
 ├── Gather inputs from Product, stakeholders
@@ -635,7 +638,6 @@ T-0: QUARTER START
 **Capacity Planning Formula:**
 
 ```
-
 Available Capacity = 
   (Engineers × Working Days × Focus Factor)
   - Vacations
@@ -684,29 +686,34 @@ Convert to story points or project estimates accordingly.
 ## Theme: Enable 10x deployment frequency
 
 ### Committed (80% confidence)
+
 | Project | Owner | Target | Business Value |
 |---------|-------|--------|----------------|
 | CI/CD Pipeline v2 | Алексей | Mid-Q2 | 5x faster builds |
 | Feature Flags | Мария | End-Q2 | Safe rollouts |
 
 ### Stretch (50% confidence)
+
 | Project | Owner | Target | Business Value |
 |---------|-------|--------|----------------|
 | Auto-scaling | TBD | Q2 | Cost optimization |
 
 ### Not This Quarter
+
 | Request | Reason |
 |---------|--------|
 | Kubernetes upgrade | Deferred to Q3, lower priority |
 | New monitoring | Waiting for vendor decision |
 
 ## Dependencies
+
 | From Team | We Need | By When | Status |
 |-----------|---------|---------|--------|
 | Security | SSO integration | April 15 | On track |
 | Product A | API specs | March 30 | At risk |
 
 ## Risks
+
 | Risk | Mitigation |
 |------|------------|
 | Key person vacation | Cross-train by March |
@@ -726,7 +733,6 @@ Convert to story points or project estimates accordingly.
 **Model A: Balanced (typical for growth company)**
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │  PRODUCT/FEATURES         │ 55-65%                      │
 │  ─────────────────────────┼──────────────────────────── │
@@ -749,7 +755,6 @@ Convert to story points or project estimates accordingly.
 **Model B: Speed mode (startup / aggressive growth)**
 
 ```
-
 Product: 75%, Platform: 15%, Innovation: 5%, Buffer: 5%
 Trade-off: Tech debt accumulates, fast now, pay later
 ```
@@ -757,7 +762,6 @@ Trade-off: Tech debt accumulates, fast now, pay later
 **Model C: Scale mode (post product-market fit)**
 
 ```
-
 Product: 50%, Platform: 35%, Innovation: 10%, Buffer: 5%
 Trade-off: Slower features, investing in sustainable speed
 ```
@@ -777,7 +781,6 @@ Trade-off: Slower features, investing in sustainable speed
 **Comprehensive Headcount Formula:**
 
 ```
-
 Target Headcount = 
     Current Sustainable Work
   + New Initiatives
@@ -790,7 +793,6 @@ Target Headcount =
 **Пример расчёта:**
 
 ```
-
 Current team: 20 engineers
 Attrition rate: 15%
 
@@ -813,14 +815,17 @@ Timeline: Start hiring Q1 to have team by Q3
 ## Headcount Request: +4 Engineers for Platform Team
 
 ### Current State
+
 - Team: 4 engineers
 - Coverage: CI/CD, Monitoring, Infrastructure
 - Current capacity: 100% utilized, no slack
 
 ### Request
+
 +2 Senior Engineers, +2 Mid-level Engineers
 
 ### Business Justification
+
 | Initiative | Engineers Needed | Business Impact |
 |------------|-----------------|-----------------|
 | Developer Platform | 2 | 30% faster onboarding |
@@ -828,11 +833,13 @@ Timeline: Start hiring Q1 to have team by Q3
 | Tech debt reduction | 1 | 20% velocity improvement |
 
 ### ROI
+
 - Investment: ~$600K/year (fully loaded)
 - Return: 20% velocity × 20 engineers = 4 engineer-years saved
 - Payback: < 1 year
 
 ### Alternatives Considered
+
 - Contractors: Higher cost, knowledge loss
 - No hire: Continued tech debt, SLA risk
 - Offshore: Timezone challenges for platform work
@@ -855,7 +862,6 @@ Timeline: Start hiring Q1 to have team by Q3
 **Team Investment Matrix:**
 
 ```
-
               HIGH BUSINESS IMPACT
                       │
          INVEST       │      INVEST MORE
@@ -902,7 +908,6 @@ Technical strategy — это **architecture и technology decisions** на го
 **Шаг 2: Define Target State**
 
 ```
-
 Example Target Architecture Statement:
 
 "By end of 2026, we will have:
@@ -916,7 +921,6 @@ Example Target Architecture Statement:
 **Шаг 3: Migration Path**
 
 ```
-
 Current State          Transition              Target State
 ─────────────────────────────────────────────────────────────
    Monolith      →    Modular Monolith    →    Microservices
@@ -930,7 +934,6 @@ Current State          Transition              Target State
 **Technology Radar** — инструмент для категоризации технологий:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    TECHNOLOGY RADAR                         │
 ├─────────────────────────────────────────────────────────────┤
@@ -993,7 +996,6 @@ Technical principles — это **decision-making shortcuts** для коман�
 **Как формулировать принципы:**
 
 ```
-
 Формула: [Action] + [Rationale]
 
 Example:
@@ -1016,7 +1018,6 @@ Example:
 **Как использовать принципы:**
 
 ```
-
 Team: "Мы хотим использовать новую database X для core service"
 
 Check against principles:
@@ -1047,7 +1048,6 @@ Decision: No. Use for non-core experiments first.
 **Как измерять:**
 
 ```
-
 Deployment Frequency:
 - Source: CI/CD system (Jenkins, GitHub Actions, etc.)
 - Query: COUNT(deployments) / time period
@@ -1070,7 +1070,6 @@ MTTR:
 **Balanced Scorecard for Engineering:**
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                 ENGINEERING METRICS DASHBOARD                  │
 ├────────────────────────────────────────────────────────────────┤
@@ -1106,7 +1105,6 @@ MTTR:
 **OKR Structure:**
 
 ```
-
 Objective: Qualitative, inspiring goal
 Key Results: 3-5 quantitative measures of success
 Initiatives: Projects/work that drive Key Results
@@ -1117,7 +1115,6 @@ Initiatives: Projects/work that drive Key Results
 **Objective: Enable 10x deployment speed**
 
 ```
-
 KR1: Reduce lead time from 5 days to 1 day
 KR2: Increase deployment frequency from weekly to daily
 KR3: Reduce build time from 30 min to 5 min
@@ -1132,7 +1129,6 @@ Initiatives:
 **Objective: Achieve enterprise-grade reliability**
 
 ```
-
 KR1: Improve uptime from 99.5% to 99.9%
 KR2: Reduce P1 incidents from 5/month to 1/month
 KR3: Reduce MTTR from 4 hours to 30 minutes
@@ -1147,7 +1143,6 @@ Initiatives:
 **Objective: Build high-performing engineering culture**
 
 ```
-
 KR1: Improve developer NPS from +20 to +40
 KR2: Reduce voluntary attrition from 15% to 10%
 KR3: 100% of engineers have development plans
@@ -1190,10 +1185,12 @@ Initiatives:
 ## Engineering Update - Q2 2025
 
 ### TL;DR
+
 On track for annual goals. Platform migration 70% complete.
 One risk: Enterprise timeline may slip 3 weeks.
 
 ### Key Metrics vs Targets
+
 | Metric | Target | Actual | Trend |
 |--------|--------|--------|-------|
 | Deployment frequency | 10/day | 8/day | ↑ |
@@ -1202,6 +1199,7 @@ One risk: Enterprise timeline may slip 3 weeks.
 | Developer NPS | +40 | +35 | ↑ |
 
 ### Strategic Initiatives Status
+
 | Initiative | Status | Notes |
 |------------|--------|-------|
 | Platform Migration | 🟢 On track | 70% complete |
@@ -1209,6 +1207,7 @@ One risk: Enterprise timeline may slip 3 weeks.
 | Mobile App | 🟡 At risk | 3-week delay, scope reduction option |
 
 ### Decisions Needed
+
 1. Mobile app: Accept 3-week delay or reduce scope?
 2. Q3 hiring: Approve +3 headcount for platform team?
 ```
@@ -1216,7 +1215,6 @@ One risk: Enterprise timeline may slip 3 weeks.
 **Team Communication:**
 
 ```
-
 1. WHY: Connect to business goals and strategy
 2. WHAT: Current progress and upcoming work
 3. HOW: How we measure success
@@ -1232,19 +1230,16 @@ One risk: Enterprise timeline may slip 3 weeks.
 
 **Types:**
 ```
-
 - Technology migrations
 - Platform builds
 - Org restructures
 - Process changes
 - Culture shifts
-
 ```
 
 ### 8.2 Change Management
 
 ```
-
 1. Create urgency — why now?
 2. Build coalition — key supporters
 3. Communicate vision — clear picture
@@ -1252,19 +1247,16 @@ One risk: Enterprise timeline may slip 3 weeks.
 5. Generate wins — show progress
 6. Consolidate — don't declare victory early
 7. Anchor in culture — make it stick
-
 ```
 
 ### 8.3 Common Pitfalls
 
 ```
-
 ❌ Top-down mandates without buy-in
 ❌ Changing everything at once
 ❌ No clear success metrics
 ❌ Underestimating resistance
 ❌ Moving on before change sticks
-
 ```
 
 ---
@@ -1274,21 +1266,18 @@ One risk: Enterprise timeline may slip 3 weeks.
 ### 9.1 Engineering Narrative
 
 ```
-
 Your narrative explains:
 
 - Where engineering is going
 - Why these choices
 - What it enables
 - How we'll get there
-
 ```
 
 ### 9.2 Stakeholder Communication
 
 **Different audiences:**
 ```
-
 Board/Executives:
 
 - Business impact
@@ -1306,20 +1295,17 @@ Engineering:
 - Technical direction
 - Career opportunities
 - Why decisions were made
-
 ```
 
 ### 9.3 Building Alignment
 
 ```
-
 1. Share context broadly
 2. Involve people in planning
 3. Explain the "why"
 4. Listen to feedback
 5. Adjust when wrong
 6. Follow through
-
 ```
 
 ---
@@ -1330,18 +1316,15 @@ Engineering:
 
 **Types:**
 ```
-
 - Stream-aligned teams (features)
 - Platform teams (infrastructure)
 - Enabling teams (help others)
 - Complicated subsystem teams (specialists)
-
 ```
 
 ### 10.2 Evolution Patterns
 
 ```
-
 Early stage:
 
 - Generalist teams
@@ -1359,13 +1342,11 @@ Scale stage:
 - Specialized teams
 - Mature platforms
 - Efficient processes
-
 ```
 
 ### 10.3 Culture Development
 
 ```
-
 Engineering culture includes:
 
 - How we make decisions
@@ -1373,7 +1354,6 @@ Engineering culture includes:
 - How we share knowledge
 - How we treat each other
 - How we grow people
-
 ```
 
 ---
@@ -1383,27 +1363,23 @@ Engineering culture includes:
 ### 11.1 Common Mistakes
 
 ```
-
 ❌ Strategy that's not connected to business
 ❌ Too many priorities (everything is important)
 ❌ No clear trade-offs
 ❌ Strategy that never changes
 ❌ Strategy nobody knows about
 ❌ All strategy, no execution
-
 ```
 
 ### 11.2 Signs of Good Strategy
 
 ```
-
 ✓ Clear choices were made
 ✓ Trade-offs are explicit
 ✓ People can explain it
 ✓ Decisions align with it
 ✓ It evolved based on learning
 ✓ Results are tracked
-
 ```
 
 ---
@@ -1413,7 +1389,6 @@ Engineering culture includes:
 ### 12.1 Creating Strategy
 
 ```
-
 1. Understand business context
 2. Assess current state
 3. Identify gaps and opportunities
@@ -1421,7 +1396,6 @@ Engineering culture includes:
 5. Create roadmap
 6. Communicate broadly
 7. Execute and adapt
-
 ```
 
 ### 12.2 Strategy Document Outline
@@ -1430,41 +1404,46 @@ Engineering culture includes:
 # Engineering Strategy FY25
 
 ## Executive Summary
+
 Key points in 1 page
 
 ## Business Context
+
 What business is trying to achieve
 
 ## Current State
+
 Where engineering is today
 
 ## Strategic Priorities
+
 Top 3-5 focus areas
 
 ## Investment Plan
+
 Where resources go
 
 ## Roadmap
+
 Major milestones by quarter
 
 ## Success Metrics
+
 How we measure progress
 
 ## Risks and Mitigations
-What could go wrong
 
+What could go wrong
 ```
 
 ### 12.3 Keeping Strategy Alive
 
 ```
-
 - Quarterly reviews and updates
 - Reference in planning decisions
 - Celebrate aligned wins
 - Learn from misses
 - Adjust as business changes
-
 ```
 
 ---
@@ -1550,6 +1529,7 @@ What could go wrong
 - [LinearB](https://linearb.io/) — DORA metrics tracking
 
 ---
+
 
 
 

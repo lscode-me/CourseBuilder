@@ -45,7 +45,6 @@
 **Пример проблемы без типов:**
 
 ```sql
-
 -- Если age хранится как строка
 SELECT * FROM users WHERE age > 25;  -- Может работать неправильно!
 -- "30" > "25" = true, но "9" > "25" = false (лексикографическое сравнение)
@@ -68,7 +67,6 @@ SELECT * FROM users WHERE age > 25;  -- Может работать неправ
 **Пример:**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     age SMALLINT,
@@ -80,7 +78,6 @@ INSERT INTO users VALUES (1, 25, 1000000);
 
 **Output:**
 ```
-
 id | age | views_count
 ---+-----+------------
 1  | 25  | 1000000
@@ -99,7 +96,6 @@ id | age | views_count
 **Пример:**
 
 ```sql
-
 CREATE TABLE products (
     id INTEGER,
     price DECIMAL(10, 2),  -- 10 цифр всего, 2 после запятой
@@ -113,7 +109,6 @@ INSERT INTO products VALUES
 
 **Output:**
 ```
-
 id | price | weight | rating
 ---+-------+--------+---------------
 1  | 99.99 | 1.5    | 4.56789012345
@@ -125,7 +120,6 @@ id | price | weight | rating
 **Пример проблемы с плавающей точкой:**
 
 ```sql
-
 -- Проблема точности
 SELECT 0.1 + 0.2;  -- Может быть не 0.3!
 
@@ -139,7 +133,6 @@ SELECT CAST(0.1 AS DECIMAL(10,2)) + CAST(0.2 AS DECIMAL(10,2));  -- 0.30
 
 **PostgreSQL:**
 ```sql
-
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,  -- Автоматически увеличивается
     name VARCHAR(100)
@@ -151,7 +144,6 @@ INSERT INTO users (name) VALUES ('Мария');
 
 **MySQL:**
 ```sql
-
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100)
@@ -160,7 +152,6 @@ CREATE TABLE users (
 
 **Output:**
 ```
-
 id | name
 ---+-------
 1  | Иван
@@ -188,7 +179,6 @@ id | name
 **Пример:**
 
 ```sql
-
 CREATE TABLE test_strings (
     id INTEGER,
     var_col VARCHAR(10),
@@ -201,7 +191,6 @@ INSERT INTO test_strings VALUES (1, 'Hi', 'Hi');
 **Размер в памяти:**
 
 ```sql
-
 SELECT 
     id,
     var_col,
@@ -213,7 +202,6 @@ FROM test_strings;
 
 **Output:**
 ```
-
 id | var_col | var_length | char_col | char_length
 ---+---------+------------+----------+------------
 1  | Hi      | 2          | Hi       | 10
@@ -228,7 +216,6 @@ id | var_col | var_length | char_col | char_length
 
 **PostgreSQL:**
 ```sql
-
 CREATE TABLE articles (
     id INTEGER,
     title VARCHAR(200),
@@ -260,7 +247,6 @@ CREATE TABLE articles (
 **DATE** — хранит только дату (без времени).
 
 ```sql
-
 CREATE TABLE events (
     id INTEGER,
     event_name VARCHAR(100),
@@ -277,7 +263,6 @@ INSERT INTO events VALUES
 **Операции с датами:**
 
 ```sql
-
 -- Разница в днях
 SELECT 
     event_name,
@@ -288,7 +273,6 @@ FROM events;
 
 **Output:**
 ```
-
 event_name  | event_date | days_until
 ------------+------------+-----------
 Конференция | 2024-12-25 | 15
@@ -300,7 +284,6 @@ event_name  | event_date | days_until
 **TIME** — хранит только время (без даты).
 
 ```sql
-
 CREATE TABLE schedule (
     id INTEGER,
     task VARCHAR(100),
@@ -320,7 +303,6 @@ INSERT INTO schedule VALUES
 
 **PostgreSQL:**
 ```sql
-
 CREATE TABLE logs (
     id INTEGER,
     message TEXT,
@@ -334,7 +316,6 @@ INSERT INTO logs VALUES
 **TIMESTAMP WITH TIME ZONE (TIMESTAMPTZ):**
 
 ```sql
-
 CREATE TABLE events_tz (
     id INTEGER,
     event_name VARCHAR(100),
@@ -353,7 +334,6 @@ INSERT INTO events_tz VALUES
 **Текущая дата и время:**
 
 ```sql
-
 -- Текущая дата
 SELECT CURRENT_DATE;
 
@@ -368,7 +348,6 @@ SELECT NOW();  -- Альтернатива
 **Извлечение частей даты:**
 
 ```sql
-
 SELECT 
     created_at,
     EXTRACT(YEAR FROM created_at) AS year,
@@ -380,7 +359,6 @@ FROM logs;
 **Арифметика с датами:**
 
 ```sql
-
 -- Добавить интервал
 SELECT CURRENT_DATE + INTERVAL '7 days' AS next_week;
 
@@ -396,7 +374,6 @@ SELECT CURRENT_DATE - INTERVAL '1 month' AS last_month;
 
 **PostgreSQL:**
 ```sql
-
 CREATE TABLE users (
     id INTEGER,
     name VARCHAR(100),
@@ -416,7 +393,6 @@ INSERT INTO users VALUES
 **Запросы:**
 
 ```sql
-
 -- Найти активных пользователей
 SELECT name FROM users WHERE is_active = true;
 -- Или просто:
@@ -434,7 +410,6 @@ SELECT name FROM users WHERE is_active;
 **NULL ≠ 0, NULL ≠ пустая строка, NULL ≠ false**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER,
     name VARCHAR(100),
@@ -450,7 +425,6 @@ INSERT INTO users VALUES
 
 **Output:**
 ```
-
 id | name  | age | email
 ---+-------+-----+--------------------
 1  | Иван  | 25  | ivan@example.com
@@ -463,28 +437,24 @@ id | name  | age | email
 **IS NULL и IS NOT NULL:**
 
 ```sql
-
 -- Пользователи без указанного возраста
 SELECT name FROM users WHERE age IS NULL;
 ```
 
 **Output:**
 ```
-
 name
 -----
 Мария
 ```
 
 ```sql
-
 -- Пользователи с указанным возрастом
 SELECT name FROM users WHERE age IS NOT NULL;
 ```
 
 **Output:**
 ```
-
 name
 -----
 Иван
@@ -505,7 +475,6 @@ name
 **Примеры:**
 
 ```sql
-
 -- NULL в сравнениях
 SELECT 
     NULL = NULL,      -- NULL (не true!)
@@ -516,7 +485,6 @@ SELECT
 
 **Output:**
 ```
-
 ?column? | ?column? | ?column? | ?column?
 ---------+---------+---------+---------
          |         |         |
@@ -525,7 +493,6 @@ SELECT
 **Логические операции с NULL:**
 
 ```sql
-
 -- AND
 SELECT 
     TRUE AND NULL,    -- NULL
@@ -544,7 +511,6 @@ SELECT
 **COALESCE** возвращает первое не-NULL значение:
 
 ```sql
-
 SELECT 
     name,
     age,
@@ -555,7 +521,6 @@ FROM users;
 
 **Output:**
 ```
-
 name  | age | age_or_zero | email_or_default
 ------+-----+-------------+-----------------
 Иван  | 25  | 25          | ivan@example.com
@@ -568,7 +533,6 @@ name  | age | age_or_zero | email_or_default
 **NULLIF** возвращает NULL, если два значения равны:
 
 ```sql
-
 SELECT 
     name,
     NULLIF(age, 0) AS age_null_if_zero  -- NULL если age = 0
@@ -610,7 +574,6 @@ FROM users;
 **❌ Слишком большой тип:**
 
 ```sql
-
 -- Плохо: BIGINT для возраста
 age BIGINT
 
@@ -621,7 +584,6 @@ age SMALLINT
 **❌ Неправильный тип для денег:**
 
 ```sql
-
 -- Плохо: REAL для денег
 price REAL
 
@@ -632,7 +594,6 @@ price DECIMAL(10, 2)
 **❌ VARCHAR без ограничения:**
 
 ```sql
-
 -- Плохо: TEXT для коротких строк
 email TEXT
 
@@ -649,7 +610,6 @@ email VARCHAR(255)
 **Преобразование типов:**
 
 ```sql
-
 -- Строка в число
 SELECT CAST('123' AS INTEGER);
 
@@ -663,7 +623,6 @@ SELECT CAST(CURRENT_DATE AS VARCHAR);
 **Альтернативный синтаксис:**
 
 ```sql
-
 -- PostgreSQL, MySQL
 SELECT '123'::INTEGER;
 SELECT 123::VARCHAR;
@@ -674,7 +633,6 @@ SELECT 123::VARCHAR;
 **Некоторые СУБД автоматически преобразуют типы:**
 
 ```sql
-
 -- Автоматическое преобразование
 SELECT '123' + 5;  -- Может работать в некоторых СУБД
 ```

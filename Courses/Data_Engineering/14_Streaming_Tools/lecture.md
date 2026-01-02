@@ -66,7 +66,6 @@ Apache Kafka — это распределённая event streaming platform.
 **Example: Kafka концепция**
 
 ```python
-
 class KafkaTopic:
     def __init__(self, name, partitions=3):
         self.name = name
@@ -99,9 +98,11 @@ class KafkaTopic:
         return events
 
 # Использование
+
 topic = KafkaTopic("user-events", partitions=3)
 
 # Producer отправляет события
+
 topic.produce("user_123", {"action": "click", "page": "/products"})
 topic.produce("user_124", {"action": "purchase", "amount": 99.99})
 
@@ -113,7 +114,6 @@ print(f"Получено событий: {len(events)}")
 
 **Output:**
 ```
-
 📤 Produced to 'user-events' partition 1: user_123
 📤 Produced to 'user-events' partition 2: user_124
 📥 Consumed from 'user-events' partition 0: 0 событий
@@ -163,7 +163,6 @@ Apache Pulsar — это cloud-native distributed messaging system.
 **Example: Pulsar концепция**
 
 ```python
-
 class PulsarTopic:
     def __init__(self, name):
         self.name = name
@@ -212,6 +211,7 @@ class PulsarTopic:
 pulsar_topic = PulsarTopic("events")
 
 # Публикация
+
 pulsar_topic.publish({"event": "click"}, schema="json")
 
 # Подписка
@@ -222,7 +222,6 @@ messages = pulsar_topic.consume("analytics-sub", "consumer-1")
 
 **Output:**
 ```
-
 📤 Published to 'events': message_id=0
 ✅ Consumer 'consumer-1' подписан на 'events' через 'analytics-sub'
 📥 Consumed 1 сообщений для 'consumer-1'
@@ -251,7 +250,6 @@ Apache Flink — это distributed stream processing engine.
 **Example: Flink концепция**
 
 ```python
-
 class FlinkJob:
     def __init__(self, name):
         self.name = name
@@ -304,6 +302,7 @@ class FlinkJob:
         return True
 
 # Использование
+
 flink_job = FlinkJob("user_analytics")
 flink_job.source("kafka://user-events") \
     .map("parse_json") \
@@ -316,7 +315,6 @@ flink_job.source("kafka://user-events") \
 
 **Output:**
 ```
-
 📥 Source: kafka://user-events
 ⚙️  Map: parse_json
 🔑 KeyBy: user_id
@@ -359,7 +357,6 @@ Spark Streaming — это расширение Spark для обработки 
 **Example: Spark Streaming концепция**
 
 ```python
-
 class SparkStreaming:
     def __init__(self, batch_interval_seconds=5):
         self.batch_interval = batch_interval_seconds
@@ -401,6 +398,7 @@ class SparkStreaming:
         return True
 
 # Использование
+
 streaming = SparkStreaming(batch_interval_seconds=5)
 
 dstream = streaming.create_stream("user-events", "kafka")
@@ -412,7 +410,6 @@ streaming.start()
 
 **Output:**
 ```
-
 📡 DStream создан: kafka://user-events, batch=5s
 ⚙️  Трансформация добавлена: map(parse_json)
 ⚙️  Трансформация добавлена: filter(valid_events)
@@ -448,7 +445,6 @@ Kafka Streams — это библиотека для stream processing, встр
 **Example: Kafka Streams концепция**
 
 ```python
-
 class KafkaStreamsProcessor:
     def __init__(self, application_id):
         self.application_id = application_id
@@ -500,6 +496,7 @@ class KafkaStreamsProcessor:
         return True
 
 # Использование
+
 streams = KafkaStreamsProcessor("user-analytics")
 streams.source("user-events") \
     .map_values("parse_json") \
@@ -512,7 +509,6 @@ streams.source("user-events") \
 
 **Output:**
 ```
-
 📥 Source: user-events
 ⚙️  MapValues: parse_json
 🔍 Filter: valid_events
@@ -553,7 +549,6 @@ streams.source("user-events") \
 **Example: Сравнение Kafka и Pulsar**
 
 ```python
-
 def compare_kafka_pulsar(requirements):
     """Сравнивает Kafka и Pulsar"""
     kafka_score = 0
@@ -579,6 +574,7 @@ def compare_kafka_pulsar(requirements):
         return "Оба подходят, выбор зависит от детальных требований"
 
 # Примеры
+
 examples = [
     {"mature_ecosystem": True, "high_throughput": True},
     {"cloud_native": True, "multi_tenancy": True, "geo_replication": True}
@@ -592,7 +588,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Сравнение Kafka vs Pulsar:
   Пример 1: Kafka (более зрелая экосистема, высокая пропускная способность)
   Пример 2: Pulsar (cloud-native, multi-tenancy, geo-replication)
@@ -615,7 +610,6 @@ for i, req in enumerate(examples, 1):
 **Example: Сравнение Flink и Spark Streaming**
 
 ```python
-
 def compare_flink_spark_streaming(requirements):
     """Сравнивает Flink и Spark Streaming"""
     if requirements.get("true_streaming") and requirements.get("low_latency"):
@@ -628,6 +622,7 @@ def compare_flink_spark_streaming(requirements):
         return "Оба подходят, выбор зависит от детальных требований"
 
 # Примеры
+
 examples = [
     {"true_streaming": True, "low_latency": True, "exactly_once": True},
     {"spark_ecosystem": True, "micro_batches": True, "batch_and_streaming": True}
@@ -641,7 +636,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Сравнение Flink vs Spark Streaming:
   Пример 1: Flink (true streaming, низкая задержка)
   Пример 2: Spark Streaming (интеграция с Spark, микробатчи)
@@ -688,7 +682,6 @@ for i, req in enumerate(examples, 1):
 **Example: Выбор инструмента**
 
 ```python
-
 def recommend_streaming_tool(requirements):
     """Рекомендует инструмент"""
     if requirements.get("event_streaming") and requirements.get("high_throughput"):
@@ -703,6 +696,7 @@ def recommend_streaming_tool(requirements):
         return "Определить на основе детальных требований"
 
 # Примеры
+
 examples = [
     {"event_streaming": True, "high_throughput": True, "storage": True},
     {"cloud_native": True, "multi_tenancy": True, "geo_replication": True},
@@ -718,7 +712,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации инструментов:
   Пример 1: Kafka (event streaming platform)
   Пример 2: Pulsar (cloud-native messaging)
@@ -742,7 +735,6 @@ for i, req in enumerate(examples, 1):
 **Example: Best Practices**
 
 ```python
-
 class StreamingBestPractices:
     def __init__(self):
         self.practices = {
@@ -768,6 +760,7 @@ class StreamingBestPractices:
         return self.practices.get(tool, [])
 
 # Использование
+
 practices = StreamingBestPractices()
 
 print("Best Practices для Kafka:")
@@ -781,7 +774,6 @@ for i, practice in enumerate(practices.get_practices("flink"), 1):
 
 **Output:**
 ```
-
 Best Practices для Kafka:
   1. Используйте партиционирование для масштабирования
   2. Настройте replication factor для надёжности
@@ -816,7 +808,6 @@ Streaming инструменты часто работают вместе в dat
 **Example: Интеграция Kafka и Flink**
 
 ```python
-
 class KafkaFlinkIntegration:
     def __init__(self):
         self.kafka_topics = {}
@@ -843,6 +834,7 @@ class KafkaFlinkIntegration:
         }
 
 # Использование
+
 integration = KafkaFlinkIntegration()
 pipeline = integration.setup_pipeline("raw-events", "processed-events")
 print(f"\nPipeline конфигурация: {pipeline}")
@@ -850,7 +842,6 @@ print(f"\nPipeline конфигурация: {pipeline}")
 
 **Output:**
 ```
-
 🔗 Настройка pipeline: raw-events -> Flink -> processed-events
   📥 Kafka source: чтение из 'raw-events'
   ⚙️  Flink processing: трансформация данных
@@ -877,7 +868,6 @@ Pipeline конфигурация: {'source': 'raw-events', 'processor': 'Flink'
 **Example: Конфигурация Kafka**
 
 ```python
-
 class KafkaConfiguration:
     def __init__(self):
         self.config = {}
@@ -917,6 +907,7 @@ class KafkaConfiguration:
         return consumer_config
 
 # Использование
+
 kafka_config = KafkaConfiguration()
 kafka_config.configure_topic("user-events", partitions=5, replication=3)
 kafka_config.configure_producer(acks="all")
@@ -925,7 +916,6 @@ kafka_config.configure_consumer(group_id="analytics-group")
 
 **Output:**
 ```
-
 ⚙️  Topic 'user-events' настроен:
    Partitions: 5
    Replication: 3
@@ -995,6 +985,7 @@ kafka_config.configure_consumer(group_id="analytics-group")
 - Apache Flink: https://flink.apache.org/docs/
 
 ---
+
 
 
 

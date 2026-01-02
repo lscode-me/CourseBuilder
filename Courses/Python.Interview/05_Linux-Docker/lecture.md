@@ -11,7 +11,6 @@
 ### Навигация и файлы
 
 ```bash
-
 ls -la          # Список файлов с правами и скрытыми
 cd /path        # Сменить директорию
 pwd             # Текущая директория
@@ -28,7 +27,6 @@ tail -f file    # Последние строки (follow)
 ### Права доступа
 
 ```bash
-
 chmod 755 file  # rwxr-xr-x
 chmod +x file   # Добавить право выполнения
 chown user:group file  # Сменить владельца
@@ -42,7 +40,6 @@ chown user:group file  # Сменить владельца
 ### Управление сервисами (systemctl)
 
 ```bash
-
 sudo systemctl start nginx    # Запустить
 sudo systemctl stop nginx     # Остановить
 sudo systemctl restart nginx  # Перезапустить
@@ -53,7 +50,6 @@ sudo systemctl enable nginx   # Автозапуск при загрузке
 ### Диагностика
 
 ```bash
-
 df -h           # Использование дисков
 du -sh /path    # Размер директории
 free -h         # Использование памяти
@@ -66,12 +62,15 @@ kill -9 PID     # Завершить процесс
 
 ```bash
 # Debian/Ubuntu
+
 sudo apt update && sudo apt install package
 
 # CentOS/RHEL
+
 sudo yum install package
 
 # Fedora/RHEL 8+
+
 sudo dnf install package
 ```
 
@@ -82,7 +81,6 @@ sudo dnf install package
 ### Ключевые команды
 
 ```bash
-
 docker build -t myapp .       # Собрать образ
 docker run -d -p 8080:80 myapp  # Запустить контейнер
 docker ps                     # Запущенные контейнеры
@@ -98,7 +96,6 @@ docker exec -it container bash  # Зайти в контейнер
 ### Базовый Dockerfile
 
 ```dockerfile
-
 FROM python:3.11
 
 COPY . /app
@@ -117,7 +114,6 @@ CMD ["python", "main.py"]
 ### Неоптимальный Dockerfile
 
 ```dockerfile
-
 FROM python:3.11
 
 COPY . /app
@@ -132,22 +128,25 @@ CMD ["python", "main.py"]
 ### Оптимизированный Dockerfile
 
 ```dockerfile
-
 FROM python:3.11-slim
 
 WORKDIR /app
 
 # Сначала копируем только requirements
+
 COPY requirements.txt .
 
 # Устанавливаем зависимости (кэшируется если requirements не изменился)
+
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Теперь копируем код
+
 COPY . .
 
 # Не-root пользователь
+
 RUN useradd -m appuser && chown -R appuser:appuser /app
 USER appuser
 
@@ -171,7 +170,6 @@ CMD ["python", "main.py"]
 
 **A:**
 ```bash
-
 ls -la file      # Проверить права
 whoami           # Текущий пользователь
 groups           # Группы пользователя
@@ -183,7 +181,6 @@ sudo command     # Выполнить от root
 
 **A:**
 ```bash
-
 df -h            # Общее использование
 du -sh /*        # Размер директорий в корне
 du -sh * | sort -hr | head  # Топ больших директорий
@@ -212,5 +209,6 @@ du -sh * | sort -hr | head  # Топ больших директорий
 - "The Docker Book" by James Turnbull
 
 ---
+
 
 

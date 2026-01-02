@@ -117,14 +117,12 @@ with open('file.txt', 'r', newline=None) as f:
 
 **Big-endian (старший байт первым):**
 ```
-
 Адрес: 0x00  0x01  0x02  0x03
 Байт:  0x12  0x34  0x56  0x78
 ```
 
 **Little-endian (младший байт первым):**
 ```
-
 Адрес: 0x00  0x01  0x02  0x03
 Байт:  0x78  0x56  0x34  0x12
 ```
@@ -146,7 +144,6 @@ with open('file.txt', 'r', newline=None) as f:
 ### 3.3 Пример
 
 ```python
-
 import struct
 
 number = 0x12345678
@@ -157,13 +154,13 @@ big_endian_bytes = struct.pack('>I', number)
 print(big_endian_bytes.hex())  # 12345678
 
 # Little-endian
+
 little_endian_bytes = struct.pack('<I', number)
 print(little_endian_bytes.hex())  # 78563412
 ```
 
 **Output:**
 ```
-
 12345678
 78563412
 ```
@@ -173,7 +170,6 @@ print(little_endian_bytes.hex())  # 78563412
 **Сетевые протоколы:** всегда big-endian
 
 ```python
-
 import socket
 
 # Host to network (может изменить порядок байтов)
@@ -198,21 +194,18 @@ host_order = socket.ntohl(network_order)
 **C:** `NULL` (обычно 0)
 
 ```c
-
 int *ptr = NULL;
 ```
 
 **Python:** `None`
 
 ```python
-
 value = None
 ```
 
 **JavaScript:** `null` и `undefined`
 
 ```javascript
-
 let value1 = null;      // явное отсутствие
 let value2 = undefined; // неинициализировано
 ```
@@ -220,7 +213,6 @@ let value2 = undefined; // неинициализировано
 **SQL:** `NULL`
 
 ```sql
-
 SELECT * FROM users WHERE email IS NULL;
 ```
 
@@ -228,7 +220,6 @@ SELECT * FROM users WHERE email IS NULL;
 
 **Nullable types:**
 ```python
-
 def get_user(id: int) -> User | None:
     # Может вернуть User или None
     pass
@@ -245,7 +236,6 @@ Null references приводят к NullPointerException/NullReferenceError.
 
 **IEEE 754 floating point:**
 ```python
-
 import math
 
 nan = float('nan')
@@ -253,13 +243,13 @@ print(nan)           # nan
 print(math.isnan(nan))  # True
 
 # NaN не равен ничему, даже себе!
+
 print(nan == nan)    # False
 print(nan != nan)    # True
 ```
 
 **Output:**
 ```
-
 nan
 True
 False
@@ -276,7 +266,6 @@ True
 
 **Rust Option:**
 ```rust
-
 fn find_user(id: u32) -> Option<User> {
     // Some(user) или None
 }
@@ -297,17 +286,16 @@ match find_user(123) {
 
 **Unix timestamp:**
 ```python
-
 import time
 
 # Секунды с 1970-01-01 00:00:00 UTC
+
 timestamp = time.time()
 print(timestamp)  # 1705324800.123456
 ```
 
 **ISO 8601:**
 ```
-
 2024-01-15T10:00:00Z        # UTC
 2024-01-15T10:00:00+03:00   # с timezone
 2024-01-15T10:00:00.123Z    # с миллисекундами
@@ -317,17 +305,14 @@ print(timestamp)  # 1705324800.123456
 
 **Naïve datetime (без timezone):**
 ```python
-
 from datetime import datetime
 
 dt = datetime(2024, 1, 15, 10, 0, 0)
 # 10:00:00 где? Москва? UTC? Непонятно!
-
 ```
 
 **Aware datetime (с timezone):**
 ```python
-
 from datetime import datetime, timezone
 
 dt = datetime(2024, 1, 15, 10, 0, 0, tzinfo=timezone.utc)
@@ -340,7 +325,6 @@ dt = datetime(2024, 1, 15, 10, 0, 0, tzinfo=timezone.utc)
 
 **Пример:**
 ```
-
 2024-03-10 02:00:00 → 2024-03-10 03:00:00 (skip 1 hour)
 2024-11-03 02:00:00 occurs twice (fall back)
 ```
@@ -353,7 +337,6 @@ dt = datetime(2024, 1, 15, 10, 0, 0, tzinfo=timezone.utc)
 
 **Пример:**
 ```
-
 2016-12-31 23:59:59
 2016-12-31 23:59:60  ← leap second
 2017-01-01 00:00:00
@@ -370,7 +353,6 @@ dt = datetime(2024, 1, 15, 10, 0, 0, tzinfo=timezone.utc)
 **C:** Error codes
 
 ```c
-
 int result = open_file("file.txt");
 if (result < 0) {
     // Ошибка
@@ -381,7 +363,6 @@ if (result < 0) {
 **Python:** Exceptions
 
 ```python
-
 try:
     with open("file.txt") as f:
         data = f.read()
@@ -398,7 +379,6 @@ except FileNotFoundError as e:
 - 5xx: Server error
 
 ```
-
 200 OK
 404 Not Found
 500 Internal Server Error
@@ -410,12 +390,12 @@ except FileNotFoundError as e:
 ```bash
 # 0 = success
 # Non-zero = error
+
 exit 0  # success
 exit 1  # error
 ```
 
 ```python
-
 import sys
 
 if error:
@@ -452,13 +432,11 @@ else:
 
 **Content-Type в HTTP:**
 ```
-
 Content-Type: text/plain; charset=UTF-8
 ```
 
 **XML declaration:**
 ```xml
-
 <?xml version="1.0" encoding="UTF-8"?>
 ```
 
@@ -500,5 +478,6 @@ Content-Type: text/plain; charset=UTF-8
 - Изучите Protocol Buffers для бинарной сериализации с явным endianness
 
 ---
+
 
 

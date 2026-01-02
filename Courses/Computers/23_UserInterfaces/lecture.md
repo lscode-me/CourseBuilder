@@ -55,7 +55,6 @@
 - Революция: feedback за секунды, а не часы
 
 ```
-
 Login: bob
 Password: ****
 $ ls
@@ -88,6 +87,7 @@ $
 **Примеры:**
 ```bash
 # UNIX/Linux shells
+
 sh, bash, zsh, fish
 
 # DOS
@@ -111,9 +111,11 @@ cmd.exe, PowerShell
 **Мощность:**
 ```bash
 # Одна строка заменяет GUI операции с тысячами файлов
+
 find . -name "*.log" -mtime +7 -delete
 
 # Композиция команд через pipes
+
 cat access.log | grep "404" | awk '{print $1}' | sort | uniq -c | sort -rn | head -10
 # Результат: топ-10 IP адресов с ошибками 404
 ```
@@ -123,14 +125,17 @@ cat access.log | grep "404" | awk '{print $1}' | sort | uniq -c | sort -rn | hea
 ```bash
 #!/bin/bash
 # Автоматический backup с логированием
+
 BACKUP_DIR="/backup/$(date +%Y%m%d)"
 mkdir -p "$BACKUP_DIR"
 
 # Копирование с прогрессом
+
 rsync -av --progress /data/ "$BACKUP_DIR/" \
     | tee "$BACKUP_DIR/backup.log"
 
 # Отправка уведомления
+
 if [ $? -eq 0 ]; then
     echo "Backup successful" | mail -s "Backup OK" admin@example.com
 else
@@ -148,12 +153,15 @@ fi
 
 ```bash
 # Подключение к удалённому серверу
+
 ssh user@server.example.com
 
 # Выполнение команды на удалённом сервере
+
 ssh user@server "df -h | grep /dev/sda"
 
 # Туннелирование (port forwarding)
+
 ssh -L 8080:localhost:80 user@server
 # Локальный порт 8080 → удалённый порт 80
 ```
@@ -258,7 +266,6 @@ ssh -L 8080:localhost:80 user@server
 
 **Start Menu, Taskbar, Right-click:**
 ```
-
 ┌─────────────────────────────┐
 │ [Start] [🗁] [⊞] [📁]       │ ← Taskbar
 ├─────────────────────────────┤
@@ -327,7 +334,6 @@ ssh -L 8080:localhost:80 user@server
 **Пример: Mobile-first responsive design**
 
 ```css
-
 /* Mobile-first подход */
 .container {
   width: 100%;
@@ -363,7 +369,6 @@ ssh -L 8080:localhost:80 user@server
 **Пример: Flexbox для responsive**
 
 ```css
-
 /* Гибкая сетка с Flexbox */
 .row {
   display: flex;
@@ -386,7 +391,6 @@ ssh -L 8080:localhost:80 user@server
 **Пример: Grid layout**
 
 ```css
-
 /* CSS Grid для сложных layouts */
 .container {
   display: grid;
@@ -409,7 +413,6 @@ ssh -L 8080:localhost:80 user@server
 **Пример: Fetch API для AJAX**
 
 ```javascript
-
 // Современный подход к AJAX
 async function loadData() {
   try {
@@ -433,7 +436,6 @@ function updateUI(data) {
 **Пример: WebSocket для real-time**
 
 ```javascript
-
 // Real-time обновления через WebSocket
 const socket = new WebSocket('ws://example.com/updates');
 
@@ -500,7 +502,6 @@ socket.send(JSON.stringify({ type: 'subscribe', channel: 'news' }));
 **Пример: Правильные размеры для touch**
 
 ```css
-
 /* Минимальный размер кнопки для touch */
 .touch-button {
   min-width: 44px;
@@ -525,7 +526,6 @@ socket.send(JSON.stringify({ type: 'subscribe', channel: 'news' }));
 **Пример: Адаптация под touch**
 
 ```javascript
-
 // Определение touch устройства
 const isTouchDevice = 'ontouchstart' in window || 
                       navigator.maxTouchPoints > 0;
@@ -545,7 +545,6 @@ if (isTouchDevice) {
 **Пример: Обработка жестов в JavaScript**
 
 ```javascript
-
 // Обработка swipe жеста
 let touchStartX = 0;
 let touchEndX = 0;
@@ -574,7 +573,6 @@ function handleSwipe() {
 **Пример: Pinch-to-zoom**
 
 ```javascript
-
 // Обработка pinch жеста
 let initialDistance = 0;
 
@@ -638,7 +636,6 @@ element.addEventListener('touchmove', (e) => {
 **Пример: Обработка ошибок распознавания**
 
 ```javascript
-
 // Web Speech API
 const recognition = new webkitSpeechRecognition();
 recognition.lang = 'ru-RU';
@@ -673,7 +670,6 @@ Voice дополняет, не заменяет touch/mouse/keyboard.
 **Пример: Hybrid UI (Voice + Visual)**
 
 ```javascript
-
 // Комбинация voice и visual feedback
 function handleVoiceCommand(command) {
   // Выполнение команды
@@ -848,7 +844,6 @@ function handleVoiceCommand(command) {
 **Пример: Поддержка accessibility в CSS**
 
 ```css
-
 /* Уважение к пользовательским настройкам */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -877,7 +872,6 @@ function handleVoiceCommand(command) {
 **Пример: Semantic HTML для screen readers**
 
 ```html
-
 <!-- Правильно: semantic HTML -->
 <nav aria-label="Main navigation">
   <ul>
@@ -903,7 +897,6 @@ function handleVoiceCommand(command) {
 **Пример: ARIA labels**
 
 ```html
-
 <!-- Кнопка без видимого текста нуждается в label -->
 <button aria-label="Close dialog">
   <span class="icon-close"></span>
@@ -926,7 +919,6 @@ function handleVoiceCommand(command) {
 **Пример: Поддержка клавиатурной навигации**
 
 ```javascript
-
 // Обработка Tab navigation
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Tab') {
@@ -949,7 +941,6 @@ document.addEventListener('keydown', (e) => {
 **Пример: Focus management**
 
 ```javascript
-
 // Управление фокусом для accessibility
 function openModal() {
   modal.style.display = 'block';
@@ -982,7 +973,6 @@ function closeModal() {
 
 **1. Virtual Scrolling:**
 ```javascript
-
 // Рендеринг только видимых элементов
 function VirtualList({ items }) {
   const [startIndex, setStartIndex] = useState(0);
@@ -998,7 +988,6 @@ function VirtualList({ items }) {
 
 **2. Debouncing и Throttling:**
 ```javascript
-
 // Debounce: выполнить после паузы
 function debounce(func, wait) {
   let timeout;
@@ -1028,7 +1017,6 @@ function throttle(func, limit) {
 
 **3. Lazy Loading:**
 ```javascript
-
 // Загрузка изображений по требованию
 const images = document.querySelectorAll('img[data-src]');
 
@@ -1050,7 +1038,6 @@ images.forEach(img => imageObserver.observe(img));
 **Пример: Web Vitals**
 
 ```javascript
-
 // Core Web Vitals
 import { getCLS, getFID, getFCP, getLCP, getTTFB } from 'web-vitals';
 
@@ -1115,5 +1102,6 @@ getTTFB(console.log); // Time to First Byte
 - "Mother of All Demos" — Douglas Engelbart (1968)
 
 ---
+
 
 

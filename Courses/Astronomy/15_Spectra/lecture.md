@@ -208,7 +208,6 @@ for application, details in doppler_applications.items():
         print(f"  {key.replace('_', ' ').title()}: {value}")
 
 ```
-
 **Output:**
 ```
 

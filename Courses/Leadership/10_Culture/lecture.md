@@ -52,7 +52,6 @@
 **Формула культуры:**
 
 ```
-
 Culture = Values × Behaviors × Habits × Stories × Incentives
 
 Values:     Что мы считаем важным (на словах и на деле)
@@ -75,7 +74,6 @@ Incentives: Что награждается и что наказывается
 **Пример разрыва:**
 
 ```
-
 Декларируемое:                         Реальное:
 ───────────────────────────────────────────────────────────────
 "Мы ценим work-life balance"     →     Руководители пишут в 11 PM,
@@ -97,7 +95,6 @@ Incentives: Что награждается и что наказывается
 ### 1.3 Edgar Schein's Model: Три уровня культуры
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │  LEVEL 1: ARTIFACTS (Visible)                                   │
@@ -225,7 +222,6 @@ Incentives: Что награждается и что наказывается
 **Тест "что происходит когда...":**
 
 ```
-
 Что происходит когда...                 Здоровая культура        Токсичная культура
 ───────────────────────────────────────────────────────────────────────────────────
 ...кто-то ошибается?                    Разбор, learning         Наказание, shame
@@ -245,7 +241,6 @@ Incentives: Что награждается и что наказывается
 **Три шага для лидера:**
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │  STEP 1: SET THE STAGE                                          │
@@ -391,7 +386,6 @@ Incentives: Что награждается и что наказывается
 **Workshop для команды (2-3 часа):**
 
 ```
-
 1. Individual Reflection (15 min)
    "Когда команда работала лучше всего, что было важно?"
 
@@ -409,7 +403,6 @@ Incentives: Что награждается и что наказывается
 
 6. Anti-patterns (20 min)
    Какие behaviors противоречат ценностям?
-
 ```
 
 ### 4.2 Пример ценностей команды
@@ -418,6 +411,7 @@ Incentives: Что награждается и что наказывается
 ## Team Values
 
 ### 1. Ownership
+
 **Behaviors:**
 - Берём ответственность за результат
 - Если видим проблему — решаем
@@ -428,6 +422,7 @@ Incentives: Что награждается и что наказывается
 - Ожидание инструкций
 
 ### 2. Radical Candor
+
 **Behaviors:**
 - Даём честный feedback
 - Спрашиваем feedback о себе
@@ -438,6 +433,7 @@ Incentives: Что награждается и что наказывается
 - Избегать сложных разговоров
 
 ### 3. Continuous Learning
+
 **Behaviors:**
 - Делимся знаниями
 - Признаём, что не знаем
@@ -447,7 +443,6 @@ Incentives: Что награждается и что наказывается
 
 - "Мы всегда так делали"
 - Скрывать ошибки
-
 ```
 
 ### 4.3 Поддержание ценностей
@@ -469,7 +464,6 @@ Incentives: Что награждается и что наказывается
 **Традиционный подход и его ловушки:**
 
 ```
-
 "Нам нужен человек, который впишется в культуру"
                     ↓
 Часто на практике означает:
@@ -492,7 +486,6 @@ Incentives: Что награждается и что наказывается
 **Формула Culture Add:**
 
 ```
-
 Culture Add = 
   Shares Core Values (necessary)
   + Brings New Perspective (differentiator)
@@ -502,7 +495,6 @@ Culture Add =
 **Матрица оценки кандидата:**
 
 ```
-
                     SHARES VALUES
                     │
            YES      │      NO
@@ -533,7 +525,6 @@ Culture Add =
 **Structured Culture Interview (45-60 min):**
 
 ```
-
 [5 min]  Intro и context
 [15 min] Values alignment questions
 [15 min] Culture add questions  
@@ -624,14 +615,12 @@ Date: _______________
 ### 6.1 Почему это сложно
 
 ```
-
 Culture change is SLOW because:
 
 - Habits глубоко укоренены
 - Incentives часто противоречат
 - Resistance от тех, кому выгоден status quo
 - Требует consistent behavior от лидеров
-
 ```
 
 ### 6.2 Framework для изменений
@@ -639,7 +628,6 @@ Culture change is SLOW because:
 **Kotter's 8 Steps (adapted):**
 
 ```
-
 1. Create Urgency
    Почему нужно меняться сейчас?
    
@@ -663,7 +651,6 @@ Culture change is SLOW because:
    
 8. Anchor in Culture
    Сделать новое нормой
-
 ```
 
 ### 6.3 Практические советы
@@ -695,7 +682,6 @@ Culture change is SLOW because:
 Westrum классифицировал организации по тому, как они обрабатывают информацию:
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                                                                │
 │   PATHOLOGICAL        BUREAUCRATIC        GENERATIVE           │
@@ -752,7 +738,6 @@ Westrum классифицировал организации по тому, к�
 **Netflix Practices:**
 
 ```
-
 Unlimited PTO:           Нет лимита отпуска (но есть expectations)
 No Expense Policy:       "Act in Netflix's best interest"
 Information Sharing:     Вся информация открыта (почти)
@@ -768,7 +753,6 @@ No Performance Reviews:  360 feedback вместо formal reviews
 **Структура Spotify:**
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                         TRIBE                                  │
 │                    (100+ people, business area)                │
@@ -830,7 +814,6 @@ No Performance Reviews:  360 feedback вместо formal reviews
 **Не copy-paste:**
 
 ```
-
 ❌ "Netflix не делает performance reviews, мы тоже не будем"
    Problem: Нет high talent density, feedback не работает
 
@@ -845,7 +828,6 @@ No Performance Reviews:  360 feedback вместо formal reviews
 ### 8.1 Challenges
 
 ```
-
 Remote/distributed teams:
 
 - Меньше casual interactions
@@ -853,30 +835,25 @@ Remote/distributed teams:
 - Сложнее читать signals
 - Onboarding harder
 - Subcultures в locations
-
 ```
 
 ### 8.2 Решения
 
 **Intentional culture building:**
 ```
-
 - Document values explicitly
 - Regular video calls (cameras on!)
 - Virtual social events
 - Team offsites (если возможно)
 - Consistent async communication norms
-
 ```
 
 **Over-communication:**
 ```
-
 - Больше context в messages
 - Explicit expectations
 - Written documentation
 - Regular sync meetings
-
 ```
 
 ---
@@ -886,7 +863,6 @@ Remote/distributed teams:
 ### 9.1 Признаки
 
 ```
-
 🚨 Warning signs:
 
 - Blame culture
@@ -896,7 +872,6 @@ Remote/distributed teams:
 - Unrealistic expectations
 - Burnout normalized
 - High turnover
-
 ```
 
 ### 9.2 Как лидер
@@ -993,6 +968,7 @@ Remote/distributed teams:
 - [Team Health Check (Spotify)](https://engineering.atspotify.com/2014/09/squad-health-check-model/)
 
 ---
+
 
 
 

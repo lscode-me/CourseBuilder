@@ -47,7 +47,6 @@ Electronic Health Record (EHR) системы — это цифровая вер
 ## 2. Архитектура EHR Системы
 
 ```
-
 ┌─────────────────────────────────────────────────┐
 │            User Interface Layer                 │
 │  (Web, Mobile, Desktop Client)                  │
@@ -75,7 +74,6 @@ Electronic Health Record (EHR) системы — это цифровая вер
 │  • Document Store (Clinical Notes)              │
 │  • BLOB Storage (Images)                        │
 └─────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -125,29 +123,23 @@ Electronic Health Record (EHR) системы — это цифровая вер
 **Centralized (Консолидированная)**
 
 ```
-
 Hospital A ──┐
 Hospital B ──┼──→ Central Repository ←── Query
 Hospital C ──┘
-
 ```
 
 **Federated (Федеративная)**
 
 ```
-
 Hospital A ←──┐
 Hospital B ←──┼── Query Router
 Hospital C ←──┘
-
 ```
 
 **Hybrid**
 
 ```
-
 Комбинация централизованной и федеративной моделей
-
 ```
 
 ### 4.2 Query Types
@@ -165,7 +157,6 @@ Hospital C ←──┘
 ### 5.1 HL7 MLLP (Minimal Lower Layer Protocol)
 
 ```python
-
 import socket
 
 def send_hl7_message(host, port, message):
@@ -187,26 +178,26 @@ def send_hl7_message(host, port, message):
     sock.close()
     
     return response
-
 ```
 
 ### 5.2 DICOM Integration
 
 ```python
-
 import pydicom
 
 # Чтение DICOM файла
+
 ds = pydicom.dcmread("image.dcm")
 
 # Метаданные
+
 patient_name = ds.PatientName
 study_date = ds.StudyDate
 modality = ds.Modality  # CT, MRI, X-ray, etc
 
 # Пиксельные данные
-image = ds.pixel_array
 
+image = ds.pixel_array
 ```
 
 ---
@@ -218,7 +209,6 @@ image = ds.pixel_array
 Платформа для интеграции медицинских приложений с EHR.
 
 ```javascript
-
 // SMART on FHIR app launch
 FHIR.oauth2.authorize({
   "client_id": "my_app",
@@ -229,7 +219,6 @@ FHIR.oauth2.authorize({
     console.log(patient);
   });
 });
-
 ```
 
 ---
@@ -335,6 +324,7 @@ FHIR.oauth2.authorize({
 1. Изучите API документацию публичного EHR sandbox (Epic, Cerner)
 2. Создайте простое SMART on FHIR приложение
 3. Реализуйте HL7 MLLP receiver на Python
+
 
 
 

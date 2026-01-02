@@ -91,7 +91,6 @@
 **Пример:**
 
 ```sql
-
 CREATE TABLE sales_fact (
     sale_id INTEGER PRIMARY KEY,
     date_id INTEGER,        -- FK to date_dimension
@@ -116,7 +115,6 @@ CREATE TABLE sales_fact (
 **Пример:**
 
 ```sql
-
 CREATE TABLE product_dimension (
     product_id INTEGER PRIMARY KEY,
     product_name VARCHAR(100),
@@ -141,7 +139,6 @@ CREATE TABLE customer_dimension (
 **Star Schema** — одна Fact таблица в центре, окружённая Dimension таблицами.
 
 ```
-
         [Date Dimension]
               |
 [Product Dimension] -- [Sales Fact] -- [Customer Dimension]
@@ -152,7 +149,6 @@ CREATE TABLE customer_dimension (
 **Пример:**
 
 ```sql
-
 -- Fact таблица
 CREATE TABLE sales_fact (
     sale_id INTEGER,
@@ -207,7 +203,6 @@ GROUP BY d.year, p.category;
 **Snowflake Schema** — нормализованная версия Star Schema.
 
 ```
-
         [Date Dimension]
               |
 [Product Dimension] -- [Sales Fact] -- [Customer Dimension]
@@ -220,7 +215,6 @@ GROUP BY d.year, p.category;
 **Пример:**
 
 ```sql
-
 -- Нормализованные Dimension
 CREATE TABLE category_dimension (
     category_id INTEGER PRIMARY KEY,
@@ -256,7 +250,6 @@ CREATE TABLE product_dimension (
 **Временные тренды:**
 
 ```sql
-
 SELECT 
     d.year,
     d.month,
@@ -270,7 +263,6 @@ ORDER BY d.year, d.month;
 **Сравнение периодов:**
 
 ```sql
-
 SELECT 
     p.category,
     SUM(CASE WHEN d.year = 2023 THEN s.amount ELSE 0 END) AS sales_2023,
@@ -286,7 +278,6 @@ GROUP BY p.category;
 **Топ-N анализ:**
 
 ```sql
-
 SELECT 
     c.customer_name,
     SUM(s.amount) AS total_spent
@@ -312,7 +303,6 @@ LIMIT 10;
 **SQL в Transform:**
 
 ```sql
-
 -- Очистка и трансформация данных
 INSERT INTO sales_fact
 SELECT 
@@ -333,7 +323,6 @@ JOIN customer_dimension c ON o.customer_email = c.email;
 **Загрузка только новых данных:**
 
 ```sql
-
 -- Загрузка только новых заказов
 INSERT INTO sales_fact
 SELECT 
@@ -376,7 +365,6 @@ WHERE o.id > (SELECT COALESCE(MAX(sale_id), 0) FROM sales_fact);
 **SQL синтаксис остаётся тем же:**
 
 ```sql
-
 -- Запрос работает так же
 SELECT 
     d.year,
@@ -411,7 +399,6 @@ GROUP BY d.year, p.category;
 **Запрос для дашборда:**
 
 ```sql
-
 -- Продажи по месяцам и категориям
 SELECT 
     d.year,
@@ -437,7 +424,6 @@ ORDER BY d.year, d.month, total_sales DESC;
 **Оконные функции идеальны для аналитики:**
 
 ```sql
-
 -- Накопительные продажи по месяцам
 SELECT 
     d.year,
@@ -459,7 +445,6 @@ ORDER BY d.year, d.month;
 **YoY (Year over Year) сравнение:**
 
 ```sql
-
 SELECT 
     d.year,
     d.month,
@@ -485,7 +470,6 @@ ORDER BY d.year, d.month;
 **Анализ по когортам пользователей:**
 
 ```sql
-
 -- Первая покупка каждого пользователя
 WITH first_purchase AS (
     SELECT 
@@ -518,7 +502,6 @@ ORDER BY cohort_month, period_number;
 **Recency, Frequency, Monetary анализ:**
 
 ```sql
-
 WITH customer_metrics AS (
     SELECT 
         customer_id,
@@ -569,7 +552,6 @@ ORDER BY recency_score DESC, frequency_score DESC, monetary_score DESC;
 **Анализ воронки:**
 
 ```sql
-
 WITH funnel AS (
     SELECT 
         'Visitors' AS stage,
@@ -617,7 +599,6 @@ FROM funnel;
 **Создавайте индексы на столбцах для фильтрации и группировки:**
 
 ```sql
-
 -- Индексы для аналитических запросов
 CREATE INDEX idx_sales_date ON sales_fact(date_id);
 CREATE INDEX idx_sales_product ON sales_fact(product_id);
@@ -632,7 +613,6 @@ CREATE INDEX idx_sales_date_product ON sales_fact(date_id, product_id);
 **Партиционирование по дате для больших таблиц:**
 
 ```sql
-
 -- Партиционирование по месяцам
 CREATE TABLE sales_fact (
     sale_id INTEGER,

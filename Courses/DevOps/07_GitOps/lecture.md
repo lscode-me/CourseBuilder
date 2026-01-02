@@ -33,7 +33,6 @@
 Термин введён компанией Weaveworks в 2017 году.
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                      GitOps Workflow                             │
 ├──────────────────────────────────────────────────────────────────┤
@@ -55,13 +54,11 @@
 │  Desired State (Git) ←──── Compare ────▶ Actual State (K8s)      │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Ключевые принципы GitOps
 
 ```python
-
 gitops_principles = {
     "declarative": {
         "description": "Вся система описана декларативно",
@@ -80,14 +77,12 @@ gitops_principles = {
         "example": "Если кто-то изменил вручную — будет восстановлено"
     }
 }
-
 ```
 
 ### 1.3 Push vs Pull Model
 
 **Push Model (традиционный CI/CD):**
 ```
-
 ┌─────────┐     ┌─────────┐     ┌─────────┐
 │   CI    │────▶│   CD    │────▶│ Cluster │
 │ (build) │     │(deploy) │     │         │
@@ -98,12 +93,10 @@ gitops_principles = {
 - CI системе нужны credentials к кластеру
 - Drift между Git и actual state
 - Нет continuous reconciliation
-
 ```
 
 **Pull Model (GitOps):**
 ```
-
 ┌─────────┐     ┌─────────┐
 │   CI    │────▶│   Git   │
 │ (build) │     │  Repo   │
@@ -125,7 +118,6 @@ gitops_principles = {
 - Credentials остаются в кластере
 - Continuous reconciliation
 - Self-healing
-
 ```
 
 ---
@@ -149,26 +141,31 @@ ArgoCD — декларативный GitOps continuous delivery tool для Kub
 
 ```bash
 # Создание namespace
+
 kubectl create namespace argocd
 
 # Установка ArgoCD
+
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 # Получение начального пароля
+
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
 # Port-forward для доступа к UI
+
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 # Вход через CLI
-argocd login localhost:8080
 
+argocd login localhost:8080
 ```
 
 ### 2.3 Application CRD
 
 ```yaml
 # argocd/applications/myapp.yaml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -202,7 +199,6 @@ spec:
         duration: 5s
         factor: 2
         maxDuration: 3m
-
 ```
 
 ### 2.4 App of Apps Pattern
@@ -211,6 +207,7 @@ spec:
 
 ```yaml
 # argocd/apps-of-apps/root.yaml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -229,11 +226,9 @@ spec:
     automated:
       prune: true
       selfHeal: true
-
 ```
 
 ```
-
 gitops-config/
 └── argocd/
     └── applications/
@@ -241,7 +236,6 @@ gitops-config/
         ├── another-app.yaml
         ├── monitoring.yaml
         └── ingress.yaml
-
 ```
 
 ---
@@ -252,7 +246,6 @@ gitops-config/
 
 **Monorepo (всё в одном):**
 ```
-
 gitops-repo/
 ├── apps/
 │   ├── app1/
@@ -265,23 +258,19 @@ gitops-repo/
 └── clusters/
     ├── production/
     └── staging/
-
 ```
 
 **Polyrepo (раздельные репозитории):**
 ```
-
 app1-manifests/        # Manifests для app1
 app2-manifests/        # Manifests для app2
 infrastructure-repo/   # Общая инфраструктура
 cluster-config/        # Конфигурация кластеров
-
 ```
 
 ### 3.2 Рекомендуемая структура
 
 ```
-
 gitops-repo/
 ├── README.md
 ├── .github/
@@ -325,13 +314,13 @@ gitops-repo/
     └── staging/
         ├── apps.yaml
         └── infrastructure.yaml
-
 ```
 
 ### 3.3 Kustomize для управления environments
 
 ```yaml
 # apps/myapp/base/kustomization.yaml
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -342,11 +331,11 @@ resources:
 
 commonLabels:
   app: myapp
-
 ```
 
 ```yaml
 # apps/myapp/base/deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -371,11 +360,11 @@ spec:
             limits:
               cpu: 200m
               memory: 256Mi
-
 ```
 
 ```yaml
 # apps/myapp/overlays/production/kustomization.yaml
+
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
@@ -398,11 +387,11 @@ patches:
     target:
       kind: Deployment
       name: myapp
-
 ```
 
 ```yaml
 # apps/myapp/overlays/production/resources.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -419,7 +408,6 @@ spec:
             limits:
               cpu: 1000m
               memory: 1Gi
-
 ```
 
 ---
@@ -429,7 +417,6 @@ spec:
 ### 4.1 Development Flow
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                    GitOps Development Flow                       │
 ├──────────────────────────────────────────────────────────────────┤
@@ -456,13 +443,13 @@ spec:
 │     └──▶ New version deployed                                    │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 CI Pipeline для GitOps репозитория
 
 ```yaml
 # .github/workflows/validate.yaml
+
 name: Validate Manifests
 
 on:
@@ -497,7 +484,6 @@ jobs:
         with:
           files: apps/*/overlays/*
           policy: policies/
-
 ```
 
 ### 4.3 Image Updater
@@ -506,6 +492,7 @@ jobs:
 
 ```yaml
 # ArgoCD Image Updater annotation
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -526,13 +513,13 @@ spec:
 
 ```yaml
 # ❌ Нельзя хранить секреты в Git!
+
 apiVersion: v1
 kind: Secret
 metadata:
   name: db-credentials
 data:
   password: c3VwZXJzZWNyZXQ=  # base64 encoded, NOT encrypted!
-
 ```
 
 ### 5.2 Решения
@@ -540,6 +527,7 @@ data:
 **1. Sealed Secrets:**
 ```yaml
 # Зашифрованный секрет (можно хранить в Git)
+
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
@@ -547,18 +535,18 @@ metadata:
 spec:
   encryptedData:
     password: AgBy8hCi8...  # Зашифровано публичным ключом кластера
-
 ```
 
 ```bash
 # Создание sealed secret
-kubeseal --format yaml < secret.yaml > sealed-secret.yaml
 
+kubeseal --format yaml < secret.yaml > sealed-secret.yaml
 ```
 
 **2. External Secrets Operator:**
 ```yaml
 # Ссылка на секрет в AWS Secrets Manager
+
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
@@ -574,21 +562,21 @@ spec:
     - secretKey: password
       remoteRef:
         key: production/db/password
-
 ```
 
 **3. SOPS (Mozilla):**
 ```yaml
 # .sops.yaml — правила шифрования
+
 creation_rules:
   - path_regex: .*secrets.*\.yaml$
     kms: arn:aws:kms:us-east-1:123456789:key/abc-123
     encrypted_regex: ^(data|stringData)$
-
 ```
 
 ```bash
 # Шифрование
+
 sops --encrypt secrets.yaml > secrets.enc.yaml
 
 # ArgoCD расшифрует при sync (с плагином)
@@ -602,6 +590,7 @@ sops --encrypt secrets.yaml > secrets.enc.yaml
 
 ```yaml
 # clusters/production/apps.yaml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -615,11 +604,11 @@ spec:
   destination:
     server: https://production-cluster.example.com
     namespace: production
-
 ```
 
 ```yaml
 # clusters/staging/apps.yaml
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -633,7 +622,6 @@ spec:
   destination:
     server: https://staging-cluster.example.com
     namespace: staging
-
 ```
 
 ### 6.2 ApplicationSet
@@ -641,7 +629,6 @@ spec:
 Генерация Applications из шаблонов.
 
 ```yaml
-
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -674,7 +661,6 @@ spec:
         automated:
           prune: true
           selfHeal: true
-
 ```
 
 ---
@@ -684,7 +670,6 @@ spec:
 ### 7.1 Git Best Practices
 
 ```python
-
 gitops_git_best_practices = [
     "Atomic commits — один commit = одно логическое изменение",
     "Descriptive commit messages",
@@ -693,13 +678,11 @@ gitops_git_best_practices = [
     "Squash commits при merge",
     "Подписывать commits (GPG)",
 ]
-
 ```
 
 ### 7.2 Repository Best Practices
 
 ```python
-
 repo_best_practices = [
     "Отделять application repo от GitOps config repo",
     "Использовать Kustomize или Helm для environments",
@@ -707,13 +690,11 @@ repo_best_practices = [
     "Документировать структуру в README",
     "Добавить CI для валидации manifests",
 ]
-
 ```
 
 ### 7.3 Security Best Practices
 
 ```python
-
 security_best_practices = [
     "Никогда не хранить plain-text секреты в Git",
     "Использовать Sealed Secrets или External Secrets",
@@ -722,13 +703,13 @@ security_best_practices = [
     "Использовать RBAC в ArgoCD",
     "Регулярно ротировать credentials",
 ]
-
 ```
 
 ### 7.4 Operational Best Practices
 
 ```yaml
 # Рекомендуемые настройки Application
+
 spec:
   syncPolicy:
     automated:
@@ -753,7 +734,6 @@ spec:
       kind: Deployment
       jsonPointers:
         - /spec/replicas  # Игнорировать если HPA управляет
-
 ```
 
 ---
@@ -763,7 +743,6 @@ spec:
 ### 8.1 Общие проблемы
 
 ```python
-
 common_issues = {
     "sync_failed": {
         "symptoms": "Application stuck in 'OutOfSync'",
@@ -793,30 +772,34 @@ common_issues = {
         ]
     }
 }
-
 ```
 
 ### 8.2 Debugging Commands
 
 ```bash
 # Проверить статус приложения
+
 argocd app get myapp
 
 # Посмотреть историю sync
+
 argocd app history myapp
 
 # Принудительный sync
+
 argocd app sync myapp --force
 
 # Rollback
+
 argocd app rollback myapp <revision>
 
 # Diff между Git и cluster
+
 argocd app diff myapp
 
 # Logs ArgoCD
-kubectl logs -n argocd -l app.kubernetes.io/name=argocd-application-controller
 
+kubectl logs -n argocd -l app.kubernetes.io/name=argocd-application-controller
 ```
 
 ---
@@ -877,6 +860,7 @@ kubectl logs -n argocd -l app.kubernetes.io/name=argocd-application-controller
 - [External Secrets Operator](https://external-secrets.io/)
 
 ---
+
 
 
 

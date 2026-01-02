@@ -111,7 +111,6 @@
 **Пример: DOS команды**
 
 ```batch
-
 REM DOS batch file пример
 @echo off
 echo Current directory:
@@ -137,7 +136,6 @@ if exist file.txt (
 **Пример: DOS программирование (упрощённо)**
 
 ```c
-
 // DOS программа на C
 #include <stdio.h>
 #include <dos.h>
@@ -160,7 +158,6 @@ int main() {
 
 **640 KB ограничение:**
 ```
-
 0x00000 - 0x9FFFF: Conventional memory (640 KB)
 0xA0000 - 0xBFFFF: Video memory
 0xC0000 - 0xFFFFF: BIOS, ROM
@@ -168,7 +165,6 @@ int main() {
 
 **Расширенная память (EMS/XMS):**
 ```c
-
 // Expanded Memory Specification (EMS)
 // Использование памяти выше 640 KB
 int handle = _dos_allocmem(64, &segment);  // 64 KB блок
@@ -191,7 +187,6 @@ _dos_freemem(segment);
 
 **Cooperative Multitasking:**
 ```c
-
 // Программа должна добровольно отдавать CPU
 while (running) {
     process_events();  // Обработка сообщений
@@ -210,7 +205,6 @@ while (running) {
 **Пример: Windows API (Win16)**
 
 ```c
-
 // Windows 3.x программирование
 #include <windows.h>
 
@@ -250,7 +244,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
 **Preemptive Multitasking:**
 ```c
-
 // NT kernel сам управляет переключением
 // Программа не может "зависнуть" систему
 while (running) {
@@ -358,7 +351,6 @@ Windows использует несколько механизмов для об
 **Пример: Режимы совместимости**
 
 ```c
-
 // Windows может эмулировать старые версии
 // Compatibility mode для старых программ
 // Registry keys для настройки совместимости
@@ -374,7 +366,6 @@ Microsoft балансирует между инновациями и совме
 
 **Структура:**
 ```
-
 HKEY_CLASSES_ROOT    - Ассоциации файлов, COM
 HKEY_CURRENT_USER    - Настройки текущего пользователя
 HKEY_LOCAL_MACHINE   - Системные настройки

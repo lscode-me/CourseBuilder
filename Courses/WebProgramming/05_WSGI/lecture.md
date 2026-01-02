@@ -37,7 +37,6 @@
 **WSGI (Web Server Gateway Interface)** — стандартный интерфейс между Python веб-приложениями и веб-серверами, определённый в PEP 3333.
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                    WSGI Ecosystem                          │
 ├────────────────────────────────────────────────────────────┤
@@ -61,7 +60,6 @@
 │                    └───────────────────┘                   │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Зачем нужен WSGI
@@ -82,12 +80,10 @@
 ### 1.3 История
 
 ```
-
 2003 — PEP 333: Web Server Gateway Interface v1.0
 2010 — PEP 3333: WSGI для Python 3 (обновлённый)
 2010s — WSGI становится стандартом для Python веб
 2015+ — ASGI для асинхронных приложений
-
 ```
 
 ---
@@ -97,7 +93,6 @@
 ### 2.1 Минимальное WSGI приложение
 
 ```python
-
 def application(environ, start_response):
     """
     Минимальное WSGI приложение.
@@ -117,13 +112,11 @@ def application(environ, start_response):
     start_response(status, headers)
     
     return [b'Hello, WSGI World!']
-
 ```
 
 ### 2.2 Сигнатура WSGI приложения
 
 ```python
-
 def app(environ: dict, start_response: callable) -> Iterable[bytes]:
     """
     WSGI application interface.
@@ -152,13 +145,11 @@ def app(environ: dict, start_response: callable) -> Iterable[bytes]:
         Итерируемый объект с байтами тела ответа
     """
     pass
-
 ```
 
 ### 2.3 environ — переменные окружения
 
 ```python
-
 def debug_app(environ, start_response):
     """Показывает все переменные окружения WSGI."""
     
@@ -196,13 +187,11 @@ def debug_app(environ, start_response):
         lines.append(f"{var}: {environ.get(var, '')}\n")
     
     return [line.encode('utf-8') for line in lines]
-
 ```
 
 ### 2.4 start_response
 
 ```python
-
 def app(environ, start_response):
     """Демонстрация start_response."""
     
@@ -222,13 +211,11 @@ def app(environ, start_response):
     
     # Рекомендуемый способ — возврат iterable
     return [b'<html><body>Hello</body></html>']
-
 ```
 
 ### 2.5 Обработка ошибок
 
 ```python
-
 def app_with_error_handling(environ, start_response):
     """WSGI приложение с обработкой исключений."""
     
@@ -258,7 +245,6 @@ def app_with_error_handling(environ, start_response):
                       exc_info)
         
         return [b'Internal Server Error']
-
 ```
 
 ---
@@ -318,10 +304,8 @@ class WSGIApplication:
         start_response('404 Not Found', [('Content-Type', 'text/plain')])
         return [b'404 Not Found']
 
-
 # Создаём приложение
 app = WSGIApplication()
-
 
 # --- Утилиты ---
 
@@ -337,7 +321,6 @@ def parse_request_body(environ):
     
     return environ['wsgi.input'].read(content_length)
 
-
 def json_response(start_response, data, status='200 OK'):
     """Отправка JSON ответа."""
     body = json.dumps(data, indent=2, ensure_ascii=False).encode('utf-8')
@@ -348,7 +331,6 @@ def json_response(start_response, data, status='200 OK'):
     ])
     
     return [body]
-
 
 def html_response(start_response, body, status='200 OK'):
     """Отправка HTML ответа."""
@@ -361,7 +343,6 @@ def html_response(start_response, body, status='200 OK'):
     ])
     
     return [body]
-
 
 # --- Маршруты ---
 
@@ -382,7 +363,6 @@ def index(environ, start_response):
 </body>
 </html>"""
     return html_response(start_response, html)
-
 
 @app.route('/info')
 def info(environ, start_response):
@@ -409,7 +389,6 @@ def info(environ, start_response):
     
     return json_response(start_response, info_data)
 
-
 @app.route('/api/time')
 def api_time(environ, start_response):
     """API: текущее время."""
@@ -420,7 +399,6 @@ def api_time(environ, start_response):
         'timestamp': now.timestamp(),
         'formatted': now.strftime('%Y-%m-%d %H:%M:%S'),
     })
-
 
 @app.route('/api/echo', methods=['GET', 'POST'])
 def api_echo(environ, start_response):
@@ -447,7 +425,6 @@ def api_echo(environ, start_response):
             data['raw_body'] = body.decode('utf-8', errors='replace')
     
     return json_response(start_response, data)
-
 
 @app.route('/form')
 def form_page(environ, start_response):
@@ -494,7 +471,6 @@ def form_page(environ, start_response):
 </html>"""
     return html_response(start_response, html)
 
-
 # Для запуска напрямую (без WSGI сервера)
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
@@ -506,7 +482,6 @@ if __name__ == '__main__':
         server.serve_forever()
     except KeyboardInterrupt:
         print("\nShutting down...")
-
 ```
 
 ---
@@ -516,7 +491,6 @@ if __name__ == '__main__':
 ### 4.1 Концепция middleware
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                   Middleware Chain                         │
 ├────────────────────────────────────────────────────────────┤
@@ -547,13 +521,11 @@ if __name__ == '__main__':
 │  Response                                                  │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Простой middleware
 
 ```python
-
 class LoggingMiddleware:
     """Middleware для логирования запросов."""
     
@@ -590,16 +562,13 @@ class LoggingMiddleware:
             print(f"[{method}] {path} - ERROR: {e} ({duration:.2f}ms)")
             raise
 
-
 # Использование
 app = LoggingMiddleware(app)
-
 ```
 
 ### 4.3 Полезные middleware
 
 ```python
-
 class CORSMiddleware:
     """Middleware для CORS заголовков."""
     
@@ -635,7 +604,6 @@ class CORSMiddleware:
         if origin in self.allowed_origins:
             return origin
         return self.allowed_origins[0] if self.allowed_origins else ''
-
 
 class GzipMiddleware:
     """Middleware для gzip сжатия."""
@@ -685,7 +653,6 @@ class GzipMiddleware:
         start_response(response_status[0], response_headers)
         return [body]
 
-
 class ErrorHandlerMiddleware:
     """Middleware для обработки ошибок."""
     
@@ -722,13 +689,11 @@ class ErrorHandlerMiddleware:
             ])
             return [body]
 
-
 # Применение middleware (порядок важен!)
 app = ErrorHandlerMiddleware(app, debug=True)
 app = GzipMiddleware(app)
 app = CORSMiddleware(app, allowed_origins=['http://localhost:3000'])
 app = LoggingMiddleware(app)
-
 ```
 
 ---
@@ -766,7 +731,6 @@ gunicorn \
     --access-logfile - \
     --error-logfile - \
     wsgi_app:app
-
 ```
 
 ```python
@@ -816,7 +780,6 @@ def post_fork(server, worker):
 
 def worker_exit(server, worker):
     print(f"Worker {worker.pid} exiting")
-
 ```
 
 ```bash
@@ -828,7 +791,6 @@ kill -HUP $(cat /tmp/gunicorn.pid)
 
 # Graceful shutdown
 kill -TERM $(cat /tmp/gunicorn.pid)
-
 ```
 
 ### 5.3 uWSGI
@@ -852,11 +814,9 @@ uwsgi \
     --vacuum \
     --die-on-term \
     --harakiri 30
-
 ```
 
 ```ini
-
 ; uwsgi.ini — конфигурационный файл
 
 [uwsgi]
@@ -889,7 +849,6 @@ log-format = %(addr) - %(user) [%(ltime)] "%(method) %(uri) %(proto)" %(status) 
 
 ; Статистика
 stats = /tmp/uwsgi-stats.sock
-
 ```
 
 ### 5.4 Nginx + Gunicorn
@@ -941,7 +900,6 @@ server {
         proxy_buffers 8 4k;
     }
 }
-
 ```
 
 ### 5.5 systemd service
@@ -971,7 +929,6 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 ```bash
@@ -983,7 +940,6 @@ sudo systemctl status gunicorn
 
 # Graceful reload
 sudo systemctl reload gunicorn
-
 ```
 
 ---
@@ -993,7 +949,6 @@ sudo systemctl reload gunicorn
 ### 6.1 Flask
 
 ```python
-
 from flask import Flask
 
 app = Flask(__name__)
@@ -1012,7 +967,6 @@ gunicorn 'myapp:app'
 
 # Для фабрики приложений
 gunicorn 'myapp:create_app()'
-
 ```
 
 ### 6.2 Django
@@ -1026,7 +980,6 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 
 application = get_wsgi_application()
-
 ```
 
 ```bash
@@ -1035,13 +988,11 @@ gunicorn myproject.wsgi:application
 
 # uWSGI + Django
 uwsgi --module myproject.wsgi:application
-
 ```
 
 ### 6.3 Bottle
 
 ```python
-
 from bottle import Bottle, run
 
 app = Bottle()
@@ -1077,13 +1028,11 @@ workers = multiprocessing.cpu_count() * 2 + 1
 # С потоками
 workers = multiprocessing.cpu_count()
 threads = 4  # итого: workers * threads обработчиков
-
 ```
 
 ### 7.2 Профилирование
 
 ```python
-
 class ProfilingMiddleware:
     """Middleware для профилирования."""
     
@@ -1109,7 +1058,6 @@ class ProfilingMiddleware:
             stats.print_stats(20)
             
             print(stream.getvalue())
-
 ```
 
 ### 7.3 Мониторинг
@@ -1145,7 +1093,6 @@ class MetricsMiddleware:
             duration = time.time() - start_time
             REQUEST_COUNT.labels(method, path, captured_status[0]).inc()
             REQUEST_LATENCY.observe(duration)
-
 ```
 
 ---

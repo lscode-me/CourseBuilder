@@ -156,7 +156,6 @@ for key, value in summary.items():
 
 **Output:**
 ```
-
 Experiment Design:
   name: Temperature Effect Study
   variables: {'independent': ['temperature'], 'dependent': ['reaction_rate'], 'controlled': ['pressure', 'concentration']}
@@ -207,7 +206,6 @@ print(df_exp.groupby('temperature')['reaction_rate'].agg(['mean', 'std', 'count'
 
 **Output:**
 ```
-
 Experimental Data:
    temperature  reaction_rate  replicate
 0           20      10.496714          1
@@ -259,7 +257,6 @@ print(observational_data[['temperature', 'humidity', 'precipitation']].corr())
 
 **Output:**
 ```
-
 Observational Data (first 10 rows):
         date  temperature   humidity  precipitation
 0 2024-01-01    18.967014  65.230584       1.234567
@@ -325,7 +322,6 @@ print(df_sim)
 
 **Output:**
 ```
-
 Simulated Data:
    temperature   mean_rate    std_rate  iterations
 0          273    0.123456    0.001234        1000
@@ -368,7 +364,6 @@ print(df_structured.dtypes)
 
 **Output:**
 ```
-
 Structured Data:
   experiment_id  temperature  pressure  reaction_rate           timestamp
 0       EXP-001           20       1.0           10.5  2024-01-15 10:00
@@ -415,7 +410,6 @@ for key, value in unstructured_examples.items():
 
 **Output:**
 ```
-
 Unstructured Data Examples:
 text: This is a scientific observation note. Temperature was 25...
 dna_sequence: ATGCGATCGATCGATCGATCG
@@ -458,7 +452,6 @@ print(json.dumps(semi_structured, indent=2))
 
 **Output:**
 ```
-
 Semi-structured Data (JSON):
 [
   {
@@ -575,7 +568,6 @@ print(json.dumps(metadata.to_dict(), indent=2))
 
 **Output:**
 ```
-
 Metadata:
 {
   "data_id": "DATA-001",
@@ -636,7 +628,6 @@ print(json.dumps(interpretation, indent=2))
 
 **Output:**
 ```
-
 Data Interpretation:
 {
   "data_id": "DATA-001",
@@ -684,7 +675,6 @@ for key, value in dublin_core_metadata.items():
 
 **Output:**
 ```
-
 Dublin Core Metadata:
   Title: Temperature Effect Study
   Creator: Dr. Smith
@@ -756,7 +746,6 @@ print(json.dumps(report, indent=2, default=str))
 
 **Output:**
 ```
-
 Experiment Report:
 {
   "experiment_id": "EXP-001",

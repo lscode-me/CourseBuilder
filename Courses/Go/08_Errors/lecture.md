@@ -37,7 +37,6 @@
 В Go нет исключений. Ошибки — обычные значения:
 
 ```go
-
 package main
 
 import (
@@ -56,31 +55,25 @@ func main() {
     
     fmt.Println("File opened:", file.Name())
 }
-
 ```
 
 **Output:**
 ```
-
 Error: open nonexistent.txt: no such file or directory
-
 ```
 
 ### 1.2 Интерфейс error
 
 ```go
-
 // Встроенный интерфейс error
 type error interface {
     Error() string
 }
-
 ```
 
 Любой тип с методом `Error() string` реализует error:
 
 ```go
-
 package main
 
 import "fmt"
@@ -104,14 +97,11 @@ func main() {
         fmt.Println(err)
     }
 }
-
 ```
 
 **Output:**
 ```
-
 error 404: not found
-
 ```
 
 ---
@@ -121,7 +111,6 @@ error 404: not found
 ### 2.1 errors.New
 
 ```go
-
 package main
 
 import (
@@ -144,20 +133,16 @@ func main() {
     }
     fmt.Println("Result:", result)
 }
-
 ```
 
 **Output:**
 ```
-
 Error: division by zero
-
 ```
 
 ### 2.2 fmt.Errorf
 
 ```go
-
 package main
 
 import (
@@ -185,22 +170,18 @@ func main() {
         }
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Age 25 is valid
 Error: invalid age: -5 (must be non-negative)
 Error: invalid age: 200 (too large)
-
 ```
 
 ### 2.3 Custom Error Types
 
 ```go
-
 package main
 
 import "fmt"
@@ -245,16 +226,13 @@ func main() {
         }
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Error for ID -1: validation error in id: must be positive
 User 50 found
 Error for ID 101: User with ID 101 not found
-
 ```
 
 ---
@@ -266,7 +244,6 @@ Error for ID 101: User with ID 101 not found
 Sentinel errors — предопределённые ошибки для сравнения:
 
 ```go
-
 package main
 
 import (
@@ -314,23 +291,19 @@ func main() {
         }
     }
 }
-
 ```
 
 **Output:**
 ```
-
 ID -1: Invalid ID
 ID 50: Found User-50
 ID 101: User not found
 ID 999: Access denied
-
 ```
 
 ### 3.2 io.EOF — пример sentinel error
 
 ```go
-
 package main
 
 import (
@@ -358,17 +331,14 @@ func main() {
         fmt.Printf("Read: %q\n", buf[:n])
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Read: "He"
 Read: "ll"
 Read: "o"
 End of data
-
 ```
 
 ---
@@ -378,7 +348,6 @@ End of data
 ### 4.1 fmt.Errorf с %w
 
 ```go
-
 package main
 
 import (
@@ -415,15 +384,12 @@ func main() {
         }
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Error: loading settings: reading config config.yaml: open config.yaml: no such file or directory
 Config file does not exist
-
 ```
 
 ### 4.2 errors.Is
@@ -431,7 +397,6 @@ Config file does not exist
 `errors.Is` проверяет цепочку ошибок:
 
 ```go
-
 package main
 
 import (
@@ -461,15 +426,12 @@ func main() {
     fmt.Println("Error:", err)
     fmt.Println("Is ErrPermission:", errors.Is(err, ErrPermission))
 }
-
 ```
 
 **Output:**
 ```
-
 Error: layer1: layer2: permission denied
 Is ErrPermission: true
-
 ```
 
 ### 4.3 errors.As
@@ -477,7 +439,6 @@ Is ErrPermission: true
 `errors.As` находит ошибку определённого типа в цепочке:
 
 ```go
-
 package main
 
 import (
@@ -514,21 +475,17 @@ func main() {
     
     fmt.Println("Full error:", err)
 }
-
 ```
 
 **Output:**
 ```
-
 HTTP Error: status=404, message=Not Found
 Full error: fetching data: HTTP 404: Not Found
-
 ```
 
 ### 4.4 errors.Unwrap
 
 ```go
-
 package main
 
 import (
@@ -545,16 +502,13 @@ func main() {
     fmt.Println("Unwrap once:", errors.Unwrap(doubleWrapped))
     fmt.Println("Unwrap twice:", errors.Unwrap(errors.Unwrap(doubleWrapped)))
 }
-
 ```
 
 **Output:**
 ```
-
 Double wrapped: double wrapped: wrapped: original error
 Unwrap once: wrapped: original error
 Unwrap twice: original error
-
 ```
 
 ---
@@ -564,7 +518,6 @@ Unwrap twice: original error
 ### 5.1 Early return
 
 ```go
-
 package main
 
 import (
@@ -595,22 +548,18 @@ func main() {
         }
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Error: empty data
 Processing: hello
 Error: data too long
-
 ```
 
 ### 5.2 Defer для cleanup
 
 ```go
-
 package main
 
 import (
@@ -644,20 +593,16 @@ func main() {
         fmt.Println("Error:", err)
     }
 }
-
 ```
 
 **Output:**
 ```
-
 File: test.txt, Size: 13 bytes
-
 ```
 
 ### 5.3 Error handling middleware
 
 ```go
-
 package main
 
 import "fmt"
@@ -706,15 +651,12 @@ func main() {
         fmt.Println("Error:", result.Err)
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Result: 400
 Error: step1: negative input
-
 ```
 
 ---
@@ -724,7 +666,6 @@ Error: step1: negative input
 ### 6.1 Когда использовать panic
 
 ```go
-
 package main
 
 import "fmt"
@@ -743,20 +684,16 @@ func main() {
     fmt.Println(mustParse("42"))
     // fmt.Println(mustParse("abc"))  // panic!
 }
-
 ```
 
 **Output:**
 ```
-
 42
-
 ```
 
 ### 6.2 recover для перехвата panic
 
 ```go
-
 package main
 
 import "fmt"
@@ -784,15 +721,12 @@ func main() {
     
     fmt.Println("Program continues...")
 }
-
 ```
 
 **Output:**
 ```
-
 Error: panic recovered: something went wrong!
 Program continues...
-
 ```
 
 ---
@@ -802,7 +736,6 @@ Program continues...
 ### 7.1 Игнорирование ошибок
 
 ```go
-
 // ПЛОХО
 file, _ := os.Open("file.txt")  // Игнорируем ошибку!
 
@@ -811,13 +744,11 @@ file, err := os.Open("file.txt")
 if err != nil {
     return err
 }
-
 ```
 
 ### 7.2 Возврат обёрнутых sentinel errors
 
 ```go
-
 package main
 
 import (
@@ -842,15 +773,12 @@ func main() {
     
     fmt.Println("Full error:", err)
 }
-
 ```
 
 **Output:**
 ```
-
 Item not found
 Full error: item 123: not found
-
 ```
 
 ---

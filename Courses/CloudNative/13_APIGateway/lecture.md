@@ -24,7 +24,6 @@
 ### 1.1 Обзор
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │              API Gateway                                          │
 ├───────────────────────────────────────────────────────────────────┤
@@ -54,13 +53,11 @@
 │    └────────┘     └────────┘     └────────┘                       │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Типы API Gateway в AWS
 
 ```python
-
 api_types = {
     "REST API": {
         "features": "Full feature set (caching, WAF, API keys, usage plans)",
@@ -86,7 +83,6 @@ for api_type, details in api_types.items():
     for key, value in details.items():
         print(f"  {key}: {value}")
     print()
-
 ```
 
 ---
@@ -97,29 +93,32 @@ for api_type, details in api_types.items():
 
 ```bash
 # Create REST API
+
 aws apigateway create-rest-api \
     --name "OrderAPI" \
     --description "Order management API" \
     --endpoint-configuration types=REGIONAL
 
 # Get root resource
+
 ROOT_ID=$(aws apigateway get-resources \
     --rest-api-id $API_ID \
     --query 'items[?path==`/`].id' --output text)
 
 # Create resource /orders
+
 aws apigateway create-resource \
     --rest-api-id $API_ID \
     --parent-id $ROOT_ID \
     --path-part "orders"
 
 # Create method
+
 aws apigateway put-method \
     --rest-api-id $API_ID \
     --resource-id $RESOURCE_ID \
     --http-method POST \
     --authorization-type NONE
-
 ```
 
 ### 2.2 Lambda Integration
@@ -149,7 +148,6 @@ def lambda_handler(event, context):
             'status': 'created'
         })
     }
-
 ```
 
 ### 2.3 Request/Response Mapping
@@ -159,6 +157,7 @@ def lambda_handler(event, context):
 # Для не-proxy интеграций
 
 # Request mapping (API Gateway → Backend)
+
 {
     "orderData": {
         "id": "$input.params('orderId')",
@@ -174,7 +173,6 @@ def lambda_handler(event, context):
     "status": "$inputRoot.status",
     "createdAt": "$inputRoot.created_at"
 }
-
 ```
 
 ---
@@ -185,6 +183,7 @@ def lambda_handler(event, context):
 
 ```bash
 # HTTP API - проще и дешевле
+
 aws apigatewayv2 create-api \
     --name "OrderAPI" \
     --protocol-type HTTP \
@@ -200,6 +199,7 @@ aws apigatewayv2 create-api \
 
 ```python
 # HTTP API routes более гибкие
+
 routes = {
     "GET /orders": "list_orders",
     "POST /orders": "create_order",
@@ -210,11 +210,11 @@ routes = {
 }
 
 # В Lambda получаем route key
+
 def lambda_handler(event, context):
     route_key = event.get('routeKey')  # e.g., "GET /orders/{orderId}"
     path_params = event.get('pathParameters', {})
     order_id = path_params.get('orderId')
-
 ```
 
 ---
@@ -224,7 +224,6 @@ def lambda_handler(event, context):
 ### 4.1 Типы авторизации
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │              Authorization Options                                │
 ├───────────────────────────────────────────────────────────────────┤
@@ -250,13 +249,11 @@ def lambda_handler(event, context):
 │  └── Usage plans and quotas                                       │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Lambda Authorizer
 
 ```python
-
 def lambda_authorizer(event, context):
     token = event.get('authorizationToken', '').replace('Bearer ', '')
     method_arn = event['methodArn']
@@ -282,13 +279,13 @@ def lambda_authorizer(event, context):
         }
     except Exception:
         raise Exception('Unauthorized')
-
 ```
 
 ### 4.3 JWT Authorizer (HTTP API)
 
 ```bash
 # Создание JWT authorizer для HTTP API
+
 aws apigatewayv2 create-authorizer \
     --api-id $API_ID \
     --authorizer-type JWT \
@@ -297,7 +294,6 @@ aws apigatewayv2 create-authorizer \
     --jwt-configuration \
         Issuer="https://cognito-idp.us-east-1.amazonaws.com/us-east-1_xxx",\
         Audience="client-id-here"
-
 ```
 
 ---
@@ -307,7 +303,6 @@ aws apigatewayv2 create-authorizer \
 ### 5.1 Rate Limiting
 
 ```python
-
 throttling_config = {
     "Account Level": {
         "default": "10,000 requests/second",
@@ -340,7 +335,6 @@ throttling_config = {
 ## 6. Caching (REST API only)
 
 ```python
-
 caching_config = {
     "TTL": "300 seconds (default), 0-3600",
     "Capacity": "0.5GB - 237GB",
@@ -363,6 +357,7 @@ caching_config = {
 
 ```python
 # CORS для HTTP API (автоматически)
+
 aws apigatewayv2 update-api \
     --api-id $API_ID \
     --cors-configuration \
@@ -380,12 +375,14 @@ aws apigatewayv2 update-api \
 
 ```bash
 # Deploy to stage
+
 aws apigateway create-deployment \
     --rest-api-id $API_ID \
     --stage-name prod \
     --description "Production deployment"
 
 # Stage variables
+
 aws apigateway update-stage \
     --rest-api-id $API_ID \
     --stage-name prod \
@@ -432,6 +429,7 @@ aws apigateway update-stage \
 1. Создайте REST API с Lambda интеграцией
 2. Настройте авторизацию через Cognito или Lambda Authorizer
 3. Реализуйте rate limiting с Usage Plans
+
 
 
 

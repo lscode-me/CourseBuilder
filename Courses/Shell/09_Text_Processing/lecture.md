@@ -28,7 +28,6 @@
 **Example: Базовое использование**
 
 ```bash
-
 $ echo -e "apple\nbanana\ncherry" | grep "an"
 banana
 ```
@@ -36,7 +35,6 @@ banana
 **Example: С опциями**
 
 ```bash
-
 $ grep -i "ERROR" log.txt      # Игнорировать регистр
 $ grep -r "pattern" dir/       # Рекурсивно
 $ grep -v "exclude" file.txt   # Исключить строки
@@ -49,7 +47,6 @@ $ grep -v "exclude" file.txt   # Исключить строки
 **Example: Замена текста**
 
 ```bash
-
 $ echo "Hello World" | sed 's/World/Universe/'
 Hello Universe
 ```
@@ -57,7 +54,6 @@ Hello Universe
 **Example: Удаление строк**
 
 ```bash
-
 $ sed '2d' file.txt            # Удалить строку 2
 $ sed '/pattern/d' file.txt    # Удалить строки с pattern
 ```
@@ -69,7 +65,6 @@ $ sed '/pattern/d' file.txt    # Удалить строки с pattern
 **Example: Базовое использование**
 
 ```bash
-
 $ echo -e "1 apple\n2 banana" | awk '{print $2}'
 apple
 banana
@@ -78,7 +73,6 @@ banana
 **Example: С условиями**
 
 ```bash
-
 $ awk '$1 > 10 {print $2}' data.txt
 ```
 
@@ -89,7 +83,6 @@ $ awk '$1 > 10 {print $2}' data.txt
 **Example: Извлечение колонок**
 
 ```bash
-
 $ echo "name:age:city" | cut -d: -f1,3
 name:city
 ```
@@ -101,7 +94,6 @@ name:city
 **Example: Сортировка**
 
 ```bash
-
 $ sort file.txt
 $ sort -r file.txt             # Обратный порядок
 $ sort -n numbers.txt          # Числовая сортировка
@@ -110,7 +102,6 @@ $ sort -n numbers.txt          # Числовая сортировка
 **Example: Уникальные строки**
 
 ```bash
-
 $ sort file.txt | uniq
 $ uniq -c file.txt             # С подсчётом
 ```

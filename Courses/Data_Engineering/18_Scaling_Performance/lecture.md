@@ -59,7 +59,6 @@
 **Example: Vertical Scaling**
 
 ```python
-
 class VerticalScaling:
     def __init__(self):
         self.server = {
@@ -88,7 +87,6 @@ vertical.scale_up(cpu_cores=8, ram_gb=32, storage_gb=200)
 
 **Output:**
 ```
-
 ⬆️  Vertical scaling: CPU=8, RAM=32GB, Storage=200GB
 ```
 
@@ -104,7 +102,6 @@ vertical.scale_up(cpu_cores=8, ram_gb=32, storage_gb=200)
 **Example: Horizontal Scaling**
 
 ```python
-
 class HorizontalScaling:
     def __init__(self):
         self.servers = []
@@ -127,6 +124,7 @@ class HorizontalScaling:
         return {"total_cpu": total_cpu, "total_ram": total_ram, "servers": len(self.servers)}
 
 # Использование
+
 horizontal = HorizontalScaling()
 horizontal.add_server("server-1")
 horizontal.add_server("server-2")
@@ -138,7 +136,6 @@ print(f"Общая мощность: {capacity}")
 
 **Output:**
 ```
-
 ➡️  Horizontal scaling: добавлен сервер server-1, всего серверов: 1
 ➡️  Horizontal scaling: добавлен сервер server-2, всего серверов: 2
 ➡️  Horizontal scaling: добавлен сервер server-3, всего серверов: 3
@@ -180,7 +177,6 @@ print(f"Общая мощность: {capacity}")
 **Example: Throughput vs Latency**
 
 ```python
-
 class PerformanceMetrics:
     def __init__(self):
         self.operations = []
@@ -216,6 +212,7 @@ class PerformanceMetrics:
         }
 
 # Использование
+
 metrics = PerformanceMetrics()
 
 # Симуляция операций
@@ -231,7 +228,6 @@ for key, value in report.items():
 
 **Output:**
 ```
-
 Performance Report:
   throughput_ops_per_sec: 100.0
   avg_latency_ms: 50.0
@@ -264,7 +260,6 @@ Bottlenecks ограничивают производительность сис
 **Example: Выявление Bottlenecks**
 
 ```python
-
 class BottleneckAnalyzer:
     def __init__(self):
         self.metrics = {
@@ -328,7 +323,6 @@ for bottleneck in bottlenecks:
 
 **Output:**
 ```
-
 Обнаруженные Bottlenecks:
   CPU Bound: 95% > 80%
     Решение: Добавить CPU cores или оптимизировать код
@@ -358,7 +352,6 @@ Auto-scaling автоматически изменяет количество р
 **Example: Auto-scaling**
 
 ```python
-
 class AutoScaler:
     def __init__(self, min_instances=1, max_instances=10):
         self.min_instances = min_instances
@@ -383,9 +376,11 @@ class AutoScaler:
         return self.current_instances
 
 # Использование
+
 scaler = AutoScaler(min_instances=2, max_instances=5)
 
 # Симуляция изменения нагрузки
+
 cpu_levels = [75, 85, 90, 25, 20, 15]
 
 for cpu in cpu_levels:
@@ -394,7 +389,6 @@ for cpu in cpu_levels:
 
 **Output:**
 ```
-
 ➡️  No scaling: CPU=75%, instances=2
 ⬆️  Scale UP: CPU=85%, instances=3
 ⬆️  Scale UP: CPU=90%, instances=4
@@ -426,7 +420,6 @@ for cpu in cpu_levels:
 **Example: Cost Optimization**
 
 ```python
-
 class CostOptimizer:
     def __init__(self):
         self.resources = {}
@@ -467,7 +460,6 @@ optimizer.optimize(workload_hours_per_month=730, required_capacity=10)
 
 **Output:**
 ```
-
 Cost Optimization:
   on_demand: $7300.00
   reserved: $3650.00
@@ -492,7 +484,6 @@ Cost Optimization:
 **Example: Right-sizing анализ**
 
 ```python
-
 class RightSizingAnalyzer:
     def __init__(self):
         self.usage_history = []
@@ -526,6 +517,7 @@ class RightSizingAnalyzer:
         return recommendations
 
 # Использование
+
 analyzer = RightSizingAnalyzer()
 analyzer.analyze_usage(
     cpu_usage=[25, 30, 28, 32],
@@ -536,7 +528,6 @@ analyzer.analyze_usage(
 
 **Output:**
 ```
-
 📊 Right-sizing анализ:
    Средний CPU: 28.8%
    Средний Memory: 48.8%
@@ -569,7 +560,6 @@ Load balancing распределяет нагрузку между нескол
 **Example: Load Balancing**
 
 ```python
-
 class LoadBalancer:
     def __init__(self, strategy="round_robin"):
         self.servers = []
@@ -604,19 +594,20 @@ class LoadBalancer:
             self.connections[server_id] -= 1
 
 # Использование
+
 lb = LoadBalancer(strategy="least_connections")
 lb.add_server("server-1")
 lb.add_server("server-2")
 lb.add_server("server-3")
 
 # Маршрутизация запросов
+
 for i in range(5):
     lb.route_request(f"req_{i}")
 ```
 
 **Output:**
 ```
-
 ➕ Сервер 'server-1' добавлен
 ➕ Сервер 'server-2' добавлен
 ➕ Сервер 'server-3' добавлен
@@ -650,7 +641,6 @@ Caching улучшает производительность за счёт хр
 **Example: Cache-aside паттерн**
 
 ```python
-
 class CacheAside:
     def __init__(self):
         self.cache = {}
@@ -697,16 +687,20 @@ class CacheAside:
         }
 
 # Использование
+
 cache = CacheAside()
 
 # Инициализация данных
+
 cache.set("user_1", "Alice")
 cache.set("user_2", "Bob")
 
 # Чтение (первый раз - cache miss)
+
 cache.get("user_1")
 
 # Чтение (второй раз - cache hit)
+
 cache.get("user_1")
 cache.get("user_2")
 
@@ -716,7 +710,6 @@ print(f"\n📊 Статистика кэша: {stats}")
 
 **Output:**
 ```
-
 💾 Установлено: user_1 = Alice
 💾 Установлено: user_2 = Bob
 ❌ Cache MISS: user_1 = Alice (загружено из БД и сохранено в кэш)
@@ -763,7 +756,6 @@ Performance tuning улучшает производительность сис�
 **Example: Оптимизация запросов**
 
 ```python
-
 class QueryOptimizer:
     def __init__(self):
         self.queries = []
@@ -798,13 +790,16 @@ class QueryOptimizer:
         return [q for q in self.queries if q["execution_time"] > 100]
 
 # Использование
+
 optimizer = QueryOptimizer()
 
 # Анализ запросов
+
 optimizer.analyze_query("SELECT * FROM users WHERE id = 1", 5)
 optimizer.analyze_query("SELECT * FROM orders WHERE user_id = 1", 150)  # Медленный
 
 # Предложение индекса
+
 optimizer.suggest_index("orders", "user_id")
 
 slow = optimizer.get_slow_queries()
@@ -813,7 +808,6 @@ print(f"\n🐌 Медленных запросов: {len(slow)}")
 
 **Output:**
 ```
-
 ✅ Быстрый запрос: SELECT * FROM users WHERE id = 1 (5ms)
 ⚠️  Медленный запрос: SELECT * FROM orders WHERE user_id = 1 (150ms)
 💡 Рекомендуется индекс на orders.user_id
@@ -887,6 +881,7 @@ print(f"\n🐌 Медленных запросов: {len(slow)}")
 - Google Cloud Performance: https://cloud.google.com/performance
 
 ---
+
 
 
 

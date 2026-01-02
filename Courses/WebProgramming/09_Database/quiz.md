@@ -23,7 +23,6 @@ D) Для шифрования соединений с базой данных
 Какой результат выполнения кода?
 
 ```python
-
 with get_db_cursor(commit=True) as cursor:
     cursor.execute("INSERT INTO users (name) VALUES (%s)", ("John",))
 # После выхода из with блока
@@ -114,7 +113,6 @@ D) Автоматически выполняет UPDATE после SELECT
 Что произойдёт с пользователем при откате savepoint?
 
 ```python
-
 user = create_user(db, "John", "john@example.com")
 savepoint = db.begin_nested()
 try:
@@ -123,7 +121,6 @@ try:
 except PaymentError:
     savepoint.rollback()
 db.commit()
-
 ```
 
 A) Возникнет ошибка, так как нельзя commit после rollback
@@ -183,14 +180,12 @@ D) AsyncSession
 Что делает `yield` в FastAPI dependency для базы данных?
 
 ```python
-
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
-
 ```
 
 A) Возвращает значение и завершает функцию
@@ -292,14 +287,12 @@ D) Изменение типа столбца
 Какой индекс создаётся в этом коде?
 
 ```python
-
 class User(Base):
     __tablename__ = 'users'
     email = Column(String(200), unique=True, index=True)
     __table_args__ = (
         Index('idx_user_status_created', 'status', 'created_at'),
     )
-
 ```
 
 A) Три индекса: unique на email, простой на email, составной на status+created_at
@@ -359,7 +352,6 @@ D) Отключает проверку на дубликаты
 Как получить список объектов из async SQLAlchemy запроса?
 
 ```python
-
 result = await db.execute(select(User))
 # Как получить список User объектов?
 ```

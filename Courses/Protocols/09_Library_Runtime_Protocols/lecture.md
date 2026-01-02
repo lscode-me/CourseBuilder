@@ -47,7 +47,6 @@
 
 **Базовые методы:**
 ```python
-
 read(size=-1)    # Читать size байт (-1 = всё)
 write(data)      # Записать data
 close()          # Закрыть файл
@@ -58,10 +57,10 @@ tell()           # Текущая позиция
 ### 2.2 Пример: StringIO
 
 ```python
-
 from io import StringIO
 
 # StringIO ведёт себя как файл, но работает с строкой в памяти
+
 f = StringIO()
 f.write("Hello, ")
 f.write("World!")
@@ -72,7 +71,6 @@ f.close()
 
 **Output:**
 ```
-
 Hello, World!
 ```
 
@@ -80,16 +78,17 @@ Hello, World!
 
 **Замена файлов в тестах:**
 ```python
-
 def process_file(file_obj):
     data = file_obj.read()
     return data.upper()
 
 # В продакшене: с реальным файлом
+
 with open('data.txt') as f:
     result = process_file(f)
 
 # В тестах: с StringIO
+
 from io import StringIO
 test_data = StringIO("test data")
 result = process_file(test_data)
@@ -98,17 +97,16 @@ assert result == "TEST DATA"
 
 **Работа с HTTP response как с файлом:**
 ```python
-
 import requests
 response = requests.get('https://example.com')
 # response.raw ведёт себя как файл
+
 data = response.raw.read(1024)
 ```
 
 ### 2.4 Реализация file-like объекта
 
 ```python
-
 class UpperCaseFile:
     """File wrapper that converts text to uppercase"""
     
@@ -126,6 +124,7 @@ class UpperCaseFile:
         return self.file.close()
 
 # Использование
+
 from io import StringIO
 f = UpperCaseFile(StringIO())
 f.write("hello")
@@ -135,7 +134,6 @@ print(f.read())  # "HELLO"
 
 **Output:**
 ```
-
 HELLO
 ```
 
@@ -149,7 +147,6 @@ HELLO
 
 **Два метода:**
 ```python
-
 __iter__()    # Возвращает итератор (обычно self)
 __next__()    # Возвращает следующий элемент или StopIteration
 ```
@@ -157,7 +154,6 @@ __next__()    # Возвращает следующий элемент или St
 ### 3.2 Простой итератор
 
 ```python
-
 class Counter:
     def __init__(self, start, end):
         self.current = start
@@ -173,13 +169,13 @@ class Counter:
         return self.current - 1
 
 # Использование
+
 for num in Counter(0, 5):
     print(num, end=' ')
 ```
 
 **Output:**
 ```
-
 0 1 2 3 4 
 ```
 
@@ -189,7 +185,6 @@ for num in Counter(0, 5):
 **Iterator** — объект с `__iter__()` и `__next__()`
 
 ```python
-
 class NumberRange:
     """Iterable (не iterator)"""
     def __init__(self, start, end):
@@ -215,6 +210,7 @@ class NumberRangeIterator:
         return self.current - 1
 
 # Можно использовать несколько раз
+
 numbers = NumberRange(0, 3)
 print(list(numbers))  # [0, 1, 2]
 print(list(numbers))  # [0, 1, 2] — работает снова
@@ -222,7 +218,6 @@ print(list(numbers))  # [0, 1, 2] — работает снова
 
 **Output:**
 ```
-
 [0, 1, 2]
 [0, 1, 2]
 ```
@@ -232,7 +227,6 @@ print(list(numbers))  # [0, 1, 2] — работает снова
 **Генераторы** — простой способ создания итераторов через `yield`:
 
 ```python
-
 def counter(start, end):
     current = start
     while current < end:
@@ -245,7 +239,6 @@ for num in counter(0, 5):
 
 **Output:**
 ```
-
 0 1 2 3 4 
 ```
 
@@ -259,7 +252,6 @@ for num in counter(0, 5):
 
 **Два метода:**
 ```python
-
 __enter__()         # Вход в контекст (возвращает ресурс)
 __exit__(exc_type, exc_val, exc_tb)  # Выход из контекста (cleanup)
 ```
@@ -267,7 +259,6 @@ __exit__(exc_type, exc_val, exc_tb)  # Выход из контекста (clean
 ### 4.2 Базовый пример
 
 ```python
-
 class FileManager:
     def __init__(self, filename, mode):
         self.filename = filename
@@ -285,16 +276,15 @@ class FileManager:
         return False
 
 # Использование
+
 with FileManager('test.txt', 'w') as f:
     f.write('Hello, World!')
 # Файл автоматически закрыт
-
 ```
 
 ### 4.3 Обработка ошибок
 
 ```python
-
 class ErrorHandlingContext:
     def __enter__(self):
         print("Entering context")
@@ -316,7 +306,6 @@ print("After context")  # Выполнится, т.к. исключение по
 
 **Output:**
 ```
-
 Entering context
 Inside context
 Exception occurred: ValueError: Test error
@@ -328,7 +317,6 @@ After context
 Python предоставляет `contextlib` для упрощения создания context managers:
 
 ```python
-
 from contextlib import contextmanager
 
 @contextmanager
@@ -342,6 +330,7 @@ def managed_resource():
         release_resource(resource)
 
 # Использование
+
 with managed_resource() as res:
     use_resource(res)
 ```
@@ -364,22 +353,22 @@ with managed_resource() as res:
 ### 5.2 JSON serialization
 
 ```python
-
 import json
 
 # Базовая сериализация
+
 data = {"name": "John", "age": 30, "is_active": True}
 json_str = json.dumps(data)
 print(json_str)
 
 # Десериализация
+
 data_back = json.loads(json_str)
 print(data_back)
 ```
 
 **Output:**
 ```
-
 {"name": "John", "age": 30, "is_active": true}
 {'name': 'John', 'age': 30, 'is_active': True}
 ```
@@ -387,7 +376,6 @@ print(data_back)
 ### 5.3 Кастомная сериализация
 
 ```python
-
 import json
 from datetime import datetime
 
@@ -414,30 +402,29 @@ print(json_str)
 
 **Output:**
 ```
-
 {"name": "Alice", "created_at": "2024-01-15T00:00:00"}
 ```
 
 ### 5.4 Pickle protocol
 
 ```python
-
 import pickle
 
 data = {"users": [{"name": "Alice"}, {"name": "Bob"}]}
 
 # Сериализация
+
 pickled = pickle.dumps(data)
 print(f"Pickled size: {len(pickled)} bytes")
 
 # Десериализация
+
 data_back = pickle.loads(pickled)
 print(data_back)
 ```
 
 **Output:**
 ```
-
 Pickled size: 67 bytes
 {'users': [{'name': 'Alice'}, {'name': 'Bob'}]}
 ```
@@ -452,7 +439,6 @@ Pickled size: 67 bytes
 
 **Методы:**
 ```python
-
 __len__()           # Длина последовательности
 __getitem__(index)  # Получение элемента по индексу
 __setitem__(index, value)  # Установка элемента
@@ -463,7 +449,6 @@ __contains__(item)  # Проверка наличия (in)
 ### 6.2 Пример
 
 ```python
-
 class CircularList:
     def __init__(self, items):
         self.items = list(items)
@@ -479,6 +464,7 @@ class CircularList:
         self.items[index % len(self.items)] = value
 
 # Использование
+
 cl = CircularList([1, 2, 3])
 print(cl[0])   # 1
 print(cl[3])   # 1 (циклический)
@@ -488,7 +474,6 @@ print(len(cl)) # 3
 
 **Output:**
 ```
-
 1
 1
 3
@@ -505,7 +490,6 @@ print(len(cl)) # 3
 
 **Методы:**
 ```python
-
 __get__(self, obj, type=None)
 __set__(self, obj, value)
 __delete__(self, obj)
@@ -514,7 +498,6 @@ __delete__(self, obj)
 ### 7.2 Пример: валидация
 
 ```python
-
 class PositiveNumber:
     def __init__(self, name):
         self.name = name
@@ -539,15 +522,14 @@ class Product:
         self.quantity = quantity
 
 # Использование
+
 p = Product("Apple", 10, 5)
 print(p.price)  # 10
 # p.price = -5  # ValueError: price must be positive
-
 ```
 
 **Output:**
 ```
-
 10
 ```
 
@@ -587,5 +569,6 @@ print(p.price)  # 10
 - Изучите dataclasses и pydantic для автоматической сериализации
 
 ---
+
 
 

@@ -40,7 +40,6 @@
 **Example: RESTful API реализация**
 
 ```python
-
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource
 
@@ -86,6 +85,7 @@ class User(Resource):
         return jsonify({"error": "Not found"}), 404
 
 # Регистрация ресурсов
+
 api.add_resource(UserList, '/api/users')
 api.add_resource(User, '/api/users/<int:user_id>')
 ```
@@ -110,7 +110,6 @@ api.add_resource(User, '/api/users/<int:user_id>')
 **Example: Интеграция CRM, Payment и Email систем**
 
 ```python
-
 class SystemIntegration:
     """Интеграция нескольких систем"""
     
@@ -146,6 +145,7 @@ class SystemIntegration:
         return crm_order
 
 # Использование
+
 integration = SystemIntegration(crm_api, payment_api, email_api)
 order = integration.process_order(order_data)
 ```
@@ -161,7 +161,6 @@ order = integration.process_order(order_data)
 **Example: Преобразование данных**
 
 ```python
-
 class DataTransformer:
     """Преобразование данных между форматами"""
     
@@ -191,6 +190,7 @@ class DataTransformer:
         }
 
 # Использование
+
 transformer = DataTransformer()
 payment_data = transformer.transform_crm_to_payment(crm_order)
 ```
@@ -200,7 +200,6 @@ payment_data = transformer.transform_crm_to_payment(crm_order)
 **Example: Маппинг полей**
 
 ```python
-
 class FieldMapper:
     """Маппинг полей между системами"""
     
@@ -260,7 +259,6 @@ class FieldMapper:
 **Example: Адаптер для интеграции**
 
 ```python
-
 class LegacySystemAdapter:
     """Адаптер для legacy системы"""
     
@@ -304,9 +302,11 @@ class LegacySystemAdapter:
 
 ```python
 # Современная система использует адаптер для legacy системы
+
 legacy_adapter = LegacySystemAdapter(legacy_api)
 
 # Современный код работает с адаптированным интерфейсом
+
 user = legacy_adapter.get_user(123)
 print(f"User: {user['name']}")  # Единый формат
 ```
@@ -320,7 +320,6 @@ print(f"User: {user['name']}")  # Единый формат
 **Example: Оркестрация нескольких систем**
 
 ```python
-
 class IntegrationOrchestrator:
     """Оркестрация интеграций нескольких систем"""
     
@@ -355,6 +354,7 @@ class IntegrationOrchestrator:
         return results
 
 # Использование
+
 orchestrator = IntegrationOrchestrator()
 orchestrator.register_system("crm", crm_api)
 orchestrator.register_system("payment", payment_api, payment_transformer)
@@ -376,6 +376,7 @@ results = orchestrator.integrate(workflow)
 ❌ **Incorrect:**
 ```python
 # Плохо: не следует REST стандартам
+
 @app.route("/api/getUser", methods=["POST"])
 def get_user():
     # POST для получения данных
@@ -385,6 +386,7 @@ def get_user():
 ✅ **Correct:**
 ```python
 # Хорошо: следует REST стандартам
+
 @app.route("/api/users/<int:user_id>", methods=["GET"])
 def get_user(user_id):
     # GET для получения данных
@@ -398,6 +400,7 @@ def get_user(user_id):
 ❌ **Incorrect:**
 ```python
 # Плохо: прямое использование данных без преобразования
+
 crm_order = crm_api.get_order(123)
 payment_api.create_payment(crm_order)  # Форматы не совпадают!
 ```
@@ -405,6 +408,7 @@ payment_api.create_payment(crm_order)  # Форматы не совпадают!
 ✅ **Correct:**
 ```python
 # Хорошо: преобразование данных
+
 crm_order = crm_api.get_order(123)
 payment_data = transformer.transform_crm_to_payment(crm_order)
 payment_api.create_payment(payment_data)
@@ -463,5 +467,6 @@ payment_api.create_payment(payment_data)
 - "Data Transformation Patterns" — паттерны преобразования данных
 
 ---
+
 
 

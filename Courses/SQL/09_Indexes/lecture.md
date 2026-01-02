@@ -51,7 +51,6 @@
 **Пример:**
 
 ```sql
-
 -- Без индекса: полное сканирование таблицы (Seq Scan)
 SELECT * FROM users WHERE email = 'ivan@example.com';
 -- Время: O(n) — нужно проверить все строки
@@ -73,7 +72,6 @@ SELECT * FROM users WHERE email = 'ivan@example.com';
 **Структура:**
 
 ```
-
         [50]
        /    \
     [25]    [75]
@@ -91,7 +89,6 @@ SELECT * FROM users WHERE email = 'ivan@example.com';
 ### 2.2 Создание B-tree индекса
 
 ```sql
-
 -- Простой индекс
 CREATE INDEX idx_users_email ON users(email);
 
@@ -134,7 +131,6 @@ CREATE UNIQUE INDEX idx_users_email_unique ON users(email);
 ### 3.2 Создание Hash индекса
 
 ```sql
-
 -- PostgreSQL
 CREATE INDEX idx_users_email_hash ON users USING HASH (email);
 ```
@@ -169,7 +165,6 @@ CREATE INDEX idx_users_email_hash ON users USING HASH (email);
 **Пример:**
 
 ```sql
-
 -- Без индекса: быстрая вставка
 INSERT INTO users (name, email) VALUES ('Новый', 'new@example.com');
 -- Время: O(1)
@@ -204,7 +199,6 @@ INSERT INTO users (name, email) VALUES ('Новый', 'new@example.com');
 **Правило левого префикса:**
 
 ```sql
-
 -- Индекс: (user_id, order_date)
 CREATE INDEX idx_orders_user_date ON orders(user_id, order_date);
 
@@ -221,7 +215,6 @@ SELECT * FROM orders WHERE order_date = '2024-01-01';
 ### 5.2 Выбор порядка
 
 ```sql
-
 -- Если user_id более селективен (меньше значений на user_id)
 CREATE INDEX idx_orders_user_date ON orders(user_id, order_date);
 
@@ -238,7 +231,6 @@ CREATE INDEX idx_orders_date_user ON orders(order_date, user_id);
 **Частичный индекс** создаётся только для части данных:
 
 ```sql
-
 -- Индекс только для активных пользователей
 CREATE INDEX idx_users_active_email ON users(email)
 WHERE is_active = true;
@@ -261,7 +253,6 @@ WHERE is_active = true;
 **Пример: поиск по нижнему регистру**
 
 ```sql
-
 -- Проблема: индекс не используется
 SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
 -- Seq Scan (медленно)
@@ -275,7 +266,6 @@ SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
 ### 7.2 Индексы на вычисляемых столбцах
 
 ```sql
-
 -- Индекс на вычисляемом столбце
 CREATE TABLE orders (
     id INTEGER,
@@ -290,7 +280,6 @@ CREATE INDEX idx_orders_total ON orders(total_amount);
 ### 7.3 Индексы на датах
 
 ```sql
-
 -- Индекс на части даты
 CREATE INDEX idx_orders_year ON orders(EXTRACT(YEAR FROM order_date));
 CREATE INDEX idx_orders_month ON orders(EXTRACT(MONTH FROM order_date));
@@ -311,7 +300,6 @@ SELECT * FROM orders WHERE EXTRACT(YEAR FROM order_date) = 2024;
 **Пример:**
 
 ```sql
-
 -- Обычный индекс
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 
@@ -342,7 +330,6 @@ SELECT user_id, amount FROM orders WHERE user_id = 1;
 **UNIQUE индекс** гарантирует уникальность значений:
 
 ```sql
-
 -- Создание уникального индекса
 CREATE UNIQUE INDEX idx_users_email_unique ON users(email);
 
@@ -362,7 +349,6 @@ INSERT INTO users (email) VALUES ('ivan@example.com');
 - UNIQUE — может быть несколько, может содержать NULL
 
 ```sql
-
 -- PRIMARY KEY
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,  -- Автоматически создаёт уникальный индекс
@@ -382,7 +368,6 @@ CREATE UNIQUE INDEX idx_users_email ON users(email);
 **Внешние ключи часто используются в JOIN:**
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
@@ -401,7 +386,6 @@ INNER JOIN orders o ON u.id = o.user_id;
 ### 10.2 Множественные JOIN
 
 ```sql
-
 -- Индексы для всех ключей JOIN
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 CREATE INDEX idx_orders_product_id ON orders(product_id);
@@ -428,7 +412,6 @@ INNER JOIN categories c ON p.category_id = c.id;
 **Индекс может использоваться для сортировки:**
 
 ```sql
-
 -- Без индекса: сортировка в памяти
 SELECT * FROM users ORDER BY email;
 -- Sort (медленно на больших таблицах)
@@ -442,7 +425,6 @@ SELECT * FROM users ORDER BY email;
 ### 11.2 ORDER BY с несколькими столбцами
 
 ```sql
-
 -- Составной индекс для сортировки
 CREATE INDEX idx_orders_user_date ON orders(user_id, order_date);
 
@@ -460,7 +442,6 @@ ORDER BY order_date DESC;
 ### 12.1 EXPLAIN для проверки
 
 ```sql
-
 -- Проверить, используется ли индекс
 EXPLAIN SELECT * FROM users WHERE email = 'ivan@example.com';
 ```
@@ -468,7 +449,6 @@ EXPLAIN SELECT * FROM users WHERE email = 'ivan@example.com';
 **Результат:**
 
 ```
-
 Index Scan using idx_users_email on users
   Index Cond: (email = 'ivan@example.com')
 ```
@@ -476,7 +456,6 @@ Index Scan using idx_users_email on users
 **Если индекс не используется:**
 
 ```
-
 Seq Scan on users
   Filter: (email = 'ivan@example.com')
 ```
@@ -484,14 +463,12 @@ Seq Scan on users
 ### 12.2 EXPLAIN ANALYZE для реальных метрик
 
 ```sql
-
 EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ivan@example.com';
 ```
 
 **Результат:**
 
 ```
-
 Index Scan using idx_users_email on users
   (cost=0.42..8.44 rows=1 width=64)
   (actual time=0.123..0.124 rows=1 loops=1)
@@ -505,7 +482,6 @@ Execution Time: 0.456 ms
 **Найти неиспользуемые индексы (PostgreSQL):**
 
 ```sql
-
 SELECT 
     schemaname,
     tablename,
@@ -520,7 +496,6 @@ ORDER BY pg_relation_size(indexrelid) DESC;
 **Удаление неиспользуемых индексов:**
 
 ```sql
-
 -- Проверьте, что индекс действительно не используется
 -- Затем удалите
 DROP INDEX idx_unused_index;
@@ -531,7 +506,6 @@ DROP INDEX idx_unused_index;
 **Проверить размер индексов:**
 
 ```sql
-
 SELECT 
     schemaname,
     tablename,
@@ -551,7 +525,6 @@ ORDER BY pg_relation_size(indexrelid) DESC;
 **Исходный запрос (медленный):**
 
 ```sql
-
 SELECT * FROM users 
 WHERE email LIKE '%@example.com' 
 ORDER BY created_at DESC 
@@ -562,7 +535,6 @@ LIMIT 10;
 **Оптимизация:**
 
 ```sql
-
 -- Индекс для сортировки
 CREATE INDEX idx_users_created_at ON users(created_at DESC);
 
@@ -576,7 +548,6 @@ CREATE INDEX idx_users_email_gin ON users USING GIN (email gin_trgm_ops);
 ### 13.2 Оптимизация аналитического запроса
 
 ```sql
-
 -- Запрос: статистика по пользователям
 SELECT 
     u.country,
@@ -597,7 +568,6 @@ CREATE INDEX idx_orders_amount ON orders(amount);
 ### 13.3 Оптимизация поиска
 
 ```sql
-
 -- Поиск пользователей по имени
 SELECT * FROM users 
 WHERE name ILIKE '%Иван%' 
@@ -626,7 +596,6 @@ ORDER BY name;
 **❌ Проблема:**
 
 ```sql
-
 -- Создание индекса на каждом столбце
 CREATE INDEX idx_users_id ON users(id);
 CREATE INDEX idx_users_name ON users(name);
@@ -651,7 +620,6 @@ CREATE INDEX idx_users_country ON users(country);
 **❌ Плохо:**
 
 ```sql
-
 -- Низкая селективность первой
 CREATE INDEX idx_orders_status_user ON orders(status, user_id);
 -- status имеет мало значений (pending, completed, cancelled)
@@ -664,7 +632,6 @@ SELECT * FROM orders WHERE user_id = 1;
 **✅ Хорошо:**
 
 ```sql
-
 -- Высокая селективность первой
 CREATE INDEX idx_orders_user_status ON orders(user_id, status);
 -- user_id имеет много уникальных значений
@@ -679,7 +646,6 @@ SELECT * FROM orders WHERE user_id = 1;
 **❌ Не нужно:**
 
 ```sql
-
 -- Таблица с 100 строками
 CREATE TABLE small_table (id INTEGER, name VARCHAR(100));
 CREATE INDEX idx_small_name ON small_table(name);  -- Избыточно

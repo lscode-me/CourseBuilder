@@ -96,7 +96,6 @@ print("- Reaction handling")
 
 **Output:**
 ```
-
 RDKit provides:
 - Molecular representation (SMILES, InChI)
 - Molecular descriptors
@@ -160,7 +159,6 @@ for step_id, step in workflow_steps.items():
 
 **Output:**
 ```
-
 Workflow structure:
 
 step1: Data loading
@@ -221,7 +219,6 @@ print("- Reproducibility")
 
 **Output:**
 ```
-
 Snakemake features:
 
 - Python-based syntax
@@ -275,7 +272,6 @@ print("- Dataflow programming")
 
 **Output:**
 ```
-
 Nextflow features:
 
 - Domain-specific language (DSL)
@@ -298,7 +294,6 @@ Nextflow features:
 **Пример: Выбор workflow manager**
 
 ```python
-
 def choose_workflow_manager(requirements):
     """Выбор workflow manager на основе требований"""
     if requirements.get('python_heavy'):
@@ -317,7 +312,6 @@ print(f"Containers: {choose_workflow_manager({'containers': True})}")
 
 **Output:**
 ```
-
 Workflow manager selection:
 Python-heavy: Snakemake (Python integration)
 Containers: Nextflow (container support)
@@ -370,7 +364,6 @@ print(f"\nPipeline results: {results}")
 
 **Output:**
 ```
-
 Executing: load with pandas
 Executing: analyze with scipy
 Executing: visualize with matplotlib
@@ -399,7 +392,6 @@ print("WORKDIR /app")
 
 **Output:**
 ```
-
 Containerization benefits:
 - Reproducibility: same environment everywhere
 - Isolation: no conflicts between tools

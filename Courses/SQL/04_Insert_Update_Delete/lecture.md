@@ -39,7 +39,6 @@
 **Простая вставка:**
 
 ```sql
-
 INSERT INTO table_name (column1, column2, column3)
 VALUES (value1, value2, value3);
 ```
@@ -47,7 +46,6 @@ VALUES (value1, value2, value3);
 **Пример:**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100),
@@ -62,13 +60,11 @@ VALUES (1, 'Иван', 'ivan@example.com', 25);
 **Проверка:**
 
 ```sql
-
 SELECT * FROM users;
 ```
 
 **Output:**
 ```
-
 id | name | email              | age
 ---+------+--------------------+-----
 1  | Иван | ivan@example.com  | 25
@@ -79,7 +75,6 @@ id | name | email              | age
 **Если вставляем значения для всех столбцов в порядке их определения:**
 
 ```sql
-
 INSERT INTO users
 VALUES (2, 'Мария', 'maria@example.com', 30);
 ```
@@ -92,7 +87,6 @@ VALUES (2, 'Мария', 'maria@example.com', 30);
 **Вставка нескольких строк за раз:**
 
 ```sql
-
 INSERT INTO users (id, name, email, age)
 VALUES 
     (3, 'Петр', 'petr@example.com', 28),
@@ -102,7 +96,6 @@ VALUES
 
 **Output:**
 ```
-
 id | name   | email               | age
 ---+--------+---------------------+-----
 1  | Иван   | ivan@example.com   | 25
@@ -117,7 +110,6 @@ id | name   | email               | age
 **Использование DEFAULT:**
 
 ```sql
-
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -136,7 +128,6 @@ VALUES ('Товар 2', DEFAULT);
 
 **Output:**
 ```
-
 id | name    | price | created_at
 ---+---------+-------+----------------------------
 1  | Товар 1 | 0.00  | 2024-12-10 14:30:00
@@ -148,7 +139,6 @@ id | name    | price | created_at
 **Вставка NULL значений:**
 
 ```sql
-
 INSERT INTO users (id, name, email, age)
 VALUES (6, 'Ольга', 'olga@example.com', NULL);
 ```
@@ -158,7 +148,6 @@ VALUES (6, 'Ольга', 'olga@example.com', NULL);
 **Вставка данных из другой таблицы:**
 
 ```sql
-
 -- Создадим таблицу для новых пользователей
 CREATE TABLE new_users (
     name VARCHAR(100),
@@ -183,7 +172,6 @@ WHERE age > 25;
 
 **Output:**
 ```
-
 id | name    | email               | age
 ---+---------+---------------------+-----
 7  | Дмитрий | dmitry@example.com  | 27
@@ -195,7 +183,6 @@ id | name    | email               | age
 **Возврат вставленных данных:**
 
 ```sql
-
 INSERT INTO users (id, name, email, age)
 VALUES (9, 'Алексей', 'alexey@example.com', 31)
 RETURNING id, name;
@@ -203,7 +190,6 @@ RETURNING id, name;
 
 **Output:**
 ```
-
 id | name
 ---+--------
 9  | Алексей
@@ -220,7 +206,6 @@ id | name
 **Обновление всех строк (осторожно!):**
 
 ```sql
-
 -- Обновить всех пользователей (ОПАСНО!)
 UPDATE users SET age = age + 1;
 ```
@@ -233,7 +218,6 @@ UPDATE users SET age = age + 1;
 **Обновление конкретных строк:**
 
 ```sql
-
 -- Обновить возраст конкретного пользователя
 UPDATE users
 SET age = 26
@@ -243,13 +227,11 @@ WHERE id = 1;
 **Проверка:**
 
 ```sql
-
 SELECT id, name, age FROM users WHERE id = 1;
 ```
 
 **Output:**
 ```
-
 id | name | age
 ---+------+-----
 1  | Иван | 26
@@ -260,7 +242,6 @@ id | name | age
 **Обновление нескольких столбцов одновременно:**
 
 ```sql
-
 UPDATE users
 SET 
     name = 'Иван Иванов',
@@ -274,7 +255,6 @@ WHERE id = 1;
 **Использование выражений в SET:**
 
 ```sql
-
 -- Увеличить возраст всех пользователей на 1
 UPDATE users
 SET age = age + 1
@@ -293,7 +273,6 @@ WHERE updated_at IS NULL;
 **Использование подзапросов в UPDATE:**
 
 ```sql
-
 -- Обновить цену товара на основе средней цены
 CREATE TABLE products (
     id INTEGER,
@@ -317,7 +296,6 @@ WHERE price IS NULL;
 **Возврат обновлённых данных:**
 
 ```sql
-
 UPDATE users
 SET age = 30
 WHERE id = 2
@@ -326,7 +304,6 @@ RETURNING id, name, age;
 
 **Output:**
 ```
-
 id | name  | age
 ---+-------+-----
 2  | Мария | 30
@@ -343,7 +320,6 @@ id | name  | age
 **Удаление всех строк (ОПАСНО!):**
 
 ```sql
-
 -- Удалить всех пользователей (ОПАСНО!)
 DELETE FROM users;
 ```
@@ -356,7 +332,6 @@ DELETE FROM users;
 **Удаление конкретных строк:**
 
 ```sql
-
 -- Удалить пользователя по ID
 DELETE FROM users
 WHERE id = 9;
@@ -365,7 +340,6 @@ WHERE id = 9;
 **Удаление по условию:**
 
 ```sql
-
 -- Удалить пользователей младше 18 лет
 DELETE FROM users
 WHERE age < 18;
@@ -376,7 +350,6 @@ WHERE age < 18;
 **Использование подзапросов в DELETE:**
 
 ```sql
-
 -- Удалить пользователей без заказов
 CREATE TABLE orders (
     id INTEGER,
@@ -397,7 +370,6 @@ WHERE id NOT IN (
 **Возврат удалённых данных:**
 
 ```sql
-
 DELETE FROM users
 WHERE age > 40
 RETURNING id, name, age;
@@ -405,7 +377,6 @@ RETURNING id, name, age;
 
 **Output:**
 ```
-
 id | name   | age
 ---+--------+-----
 5  | Сергей | 35
@@ -434,7 +405,6 @@ id | name   | age
 **BEGIN** — начало транзакции:
 
 ```sql
-
 BEGIN;
 
 INSERT INTO users (id, name, email, age)
@@ -447,7 +417,6 @@ SELECT * FROM users WHERE id = 10;
 **COMMIT** — подтверждение изменений:
 
 ```sql
-
 BEGIN;
 
 UPDATE users SET age = 30 WHERE id = 1;
@@ -459,7 +428,6 @@ COMMIT;  -- Все изменения сохраняются
 **ROLLBACK** — откат изменений:
 
 ```sql
-
 BEGIN;
 
 UPDATE users SET age = 100 WHERE id = 1;
@@ -477,7 +445,6 @@ SELECT * FROM users WHERE id IN (1, 2);
 **Перевод денег между счетами:**
 
 ```sql
-
 CREATE TABLE accounts (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100),
@@ -503,7 +470,6 @@ COMMIT;
 
 **Output после COMMIT:**
 ```
-
 id | name  | balance
 ---+-------+--------
 1  | Алиса | 800.00
@@ -513,7 +479,6 @@ id | name  | balance
 **Если что-то пошло не так:**
 
 ```sql
-
 BEGIN;
 
 UPDATE accounts SET balance = balance - 200 WHERE id = 1;
@@ -532,7 +497,6 @@ SELECT * FROM accounts;
 **По умолчанию каждая команда — отдельная транзакция:**
 
 ```sql
-
 -- Автоматически коммитится
 INSERT INTO users (id, name) VALUES (12, 'Авто');
 
@@ -545,7 +509,6 @@ COMMIT;
 **Отключение автокоммита (зависит от СУБД и клиента):**
 
 ```sql
-
 -- PostgreSQL
 SET autocommit = off;
 
@@ -563,7 +526,6 @@ COMMIT;
 **❌ Опасно:**
 
 ```sql
-
 UPDATE users SET age = 0;  -- Обновит всех!
 DELETE FROM users;  -- Удалит всех!
 ```
@@ -571,7 +533,6 @@ DELETE FROM users;  -- Удалит всех!
 **✅ Безопасно:**
 
 ```sql
-
 UPDATE users SET age = 0 WHERE id = 1;
 DELETE FROM users WHERE id = 1;
 ```
@@ -581,7 +542,6 @@ DELETE FROM users WHERE id = 1;
 **Сначала SELECT, потом DELETE:**
 
 ```sql
-
 -- 1. Проверяем, что удалим
 SELECT * FROM users WHERE age < 18;
 
@@ -594,7 +554,6 @@ DELETE FROM users WHERE age < 18;
 **Обёртывание изменений в транзакции:**
 
 ```sql
-
 BEGIN;
 
 -- Все изменения
@@ -613,7 +572,6 @@ COMMIT;
 **Перед массовыми изменениями:**
 
 ```sql
-
 -- Создаём резервную копию
 CREATE TABLE users_backup AS SELECT * FROM users;
 
@@ -635,7 +593,6 @@ COMMIT;
 **Нарушение ограничений:**
 
 ```sql
-
 -- Попытка вставить дубликат первичного ключа
 INSERT INTO users (id, name) VALUES (1, 'Дубликат');
 -- Ошибка: duplicate key value violates unique constraint
@@ -652,7 +609,6 @@ INSERT INTO users (id, name) VALUES (14, NULL);
 **Обновление несуществующих строк:**
 
 ```sql
-
 -- UPDATE не выдаёт ошибку, если строки не найдены
 UPDATE users SET age = 100 WHERE id = 999;
 
@@ -662,7 +618,6 @@ UPDATE users SET age = 100 WHERE id = 999;
 **Проверка количества обновлённых строк:**
 
 ```sql
-
 -- PostgreSQL: использовать RETURNING
 UPDATE users SET age = 100 WHERE id = 999
 RETURNING *;
@@ -675,7 +630,6 @@ RETURNING *;
 **Каскадное удаление:**
 
 ```sql
-
 -- Если есть внешние ключи с ON DELETE CASCADE
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
@@ -697,7 +651,6 @@ DELETE FROM users WHERE id = 1;
 ### 7.1 PostgreSQL: ON CONFLICT
 
 ```sql
-
 -- Вставка, если нет, обновление, если есть
 INSERT INTO users (id, name, email, age)
 VALUES (1, 'Иван Обновлённый', 'ivan.new@example.com', 26)
@@ -713,7 +666,6 @@ DO UPDATE SET
 ### 7.2 MySQL: INSERT ... ON DUPLICATE KEY UPDATE
 
 ```sql
-
 -- MySQL синтаксис
 INSERT INTO users (id, name, email, age)
 VALUES (1, 'Иван Обновлённый', 'ivan.new@example.com', 26)

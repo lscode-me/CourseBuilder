@@ -58,6 +58,7 @@
 
 ```python
 # Симуляция индекса
+
 class Index:
     def __init__(self, column_name):
         self.column_name = column_name
@@ -85,6 +86,7 @@ class Index:
         return results
 
 # Данные без индекса
+
 data = [
     {"id": 1, "name": "Alice", "age": 30, "city": "Moscow"},
     {"id": 2, "name": "Bob", "age": 25, "city": "SPB"},
@@ -93,6 +95,7 @@ data = [
 ]
 
 # Поиск без индекса (full table scan)
+
 def search_without_index(data, column, value):
     """Полное сканирование таблицы"""
     results = []
@@ -102,10 +105,12 @@ def search_without_index(data, column, value):
     return results
 
 # Поиск с индексом
+
 age_index = Index("age")
 age_index.build(data)
 
 # Запрос: найти всех с age = 30
+
 print("\nПоиск без индекса (full scan):")
 results_no_index = search_without_index(data, "age", 30)
 print(f"  Проверено записей: {len(data)}")
@@ -120,7 +125,6 @@ print(f"  Найдено: {len(results_with_index)}")
 
 **Output:**
 ```
-
 ✅ Индекс построен для колонки 'age': 4 уникальных значений
 
 Поиск без индекса (full scan):
@@ -197,6 +201,7 @@ class HashIndex:
         return self.index.get(value, [])
 
 # Сравнение
+
 data = [{"id": i, "age": 20 + i*5} for i in range(10)]
 
 btree = BTreeIndex()
@@ -212,7 +217,6 @@ print(f"Hash exact lookup (30): {len(exact_results)} записей")
 
 **Output:**
 ```
-
 ✅ B-tree индекс построен: 10 значений
 B-tree range query (25-40): 4 записей
 ✅ Hash индекс построен: 10 значений
@@ -260,6 +264,7 @@ Hash exact lookup (30): 1 записей
 
 ```python
 # Симуляция партиционирования
+
 class PartitionedTable:
     def __init__(self, partition_key):
         self.partition_key = partition_key
@@ -302,6 +307,7 @@ class PartitionedTable:
         return results
 
 # Использование
+
 table = PartitionedTable("date")
 
 # Вставка данных
@@ -312,6 +318,7 @@ table.insert({"id": 3, "date": "2024-02-10", "amount": 150})
 table.insert({"id": 4, "date": "2024-02-25", "amount": 300})
 
 # Запрос только за январь (сканируем только одну партицию)
+
 january_records = table.query(
     partition_filter=lambda p: p == "2024-01"
 )
@@ -320,7 +327,6 @@ print(f"\nЗаписи за январь: {len(january_records)}")
 
 **Output:**
 ```
-
 ✅ Запись добавлена в партицию '2024-01'
 ✅ Запись добавлена в партицию '2024-01'
 ✅ Запись добавлена в партицию '2024-02'
@@ -361,6 +367,7 @@ Sharding — это горизонтальное разделение данны
 
 ```python
 # Симуляция sharding
+
 class ShardedDatabase:
     def __init__(self, num_shards, shard_key):
         self.num_shards = num_shards
@@ -396,21 +403,23 @@ class ShardedDatabase:
 db = ShardedDatabase(num_shards=3, shard_key="user_id")
 
 # Вставка данных
+
 for i in range(10):
     db.insert({"user_id": i, "name": f"User{i}", "data": f"data{i}"})
 
 # Распределение
+
 distribution = db.get_distribution()
 print(f"\nРаспределение данных по шардам: {distribution}")
 
 # Запрос
+
 results = db.query(5)
 print(f"Найдено записей: {len(results)}")
 ```
 
 **Output:**
 ```
-
 ✅ Запись добавлена в шард 0
 ✅ Запись добавлена в шард 1
 ✅ Запись добавлена в шард 2
@@ -444,7 +453,6 @@ print(f"Найдено записей: {len(results)}")
 **Example: Сравнение**
 
 ```python
-
 comparison = {
     "Partitioning": {
         "scope": "В рамках одного сервера",
@@ -467,7 +475,6 @@ for technique, info in comparison.items():
 
 **Output:**
 ```
-
 Partitioning vs Sharding:
 
 Partitioning:
@@ -505,6 +512,7 @@ Sharding:
 
 ```python
 # Симуляция trade-offs
+
 def analyze_index_tradeoff(table_size, read_ratio, write_ratio):
     """Анализирует trade-offs индекса"""
     index_size = table_size * 0.15  # 15% от размера таблицы
@@ -522,6 +530,7 @@ def analyze_index_tradeoff(table_size, read_ratio, write_ratio):
     return "Рекомендуется" if net_benefit > 0 else "Не рекомендуется"
 
 # Примеры
+
 print("Сценарий 1: Read-heavy (90% чтение, 10% запись)")
 analyze_index_tradeoff(1000, 0.9, 0.1)
 
@@ -531,7 +540,6 @@ analyze_index_tradeoff(1000, 0.1, 0.9)
 
 **Output:**
 ```
-
 Сценарий 1: Read-heavy (90% чтение, 10% запись)
 Анализ индекса для таблицы 1000MB:
   Размер индекса: 150.0MB
@@ -681,5 +689,6 @@ analyze_index_tradeoff(1000, 0.1, 0.9)
 - MySQL Partitioning: https://dev.mysql.com/doc/refman/8.0/en/partitioning.html
 
 ---
+
 
 

@@ -46,13 +46,11 @@
 **Пример:**
 
 ```sql
-
 EXPLAIN SELECT * FROM users WHERE email = 'ivan@example.com';
 ```
 
 **Output:**
 ```
-
 Seq Scan on users  (cost=0.00..25.00 rows=1 width=64)
   Filter: (email = 'ivan@example.com'::text)
 ```
@@ -64,7 +62,6 @@ Seq Scan on users  (cost=0.00..25.00 rows=1 width=64)
 ### 2.1 Базовое использование
 
 ```sql
-
 EXPLAIN SELECT * FROM users WHERE age > 25;
 ```
 
@@ -81,21 +78,18 @@ EXPLAIN SELECT * FROM users WHERE age > 25;
 **Текстовый формат (по умолчанию):**
 
 ```sql
-
 EXPLAIN SELECT * FROM users;
 ```
 
 **JSON формат:**
 
 ```sql
-
 EXPLAIN (FORMAT JSON) SELECT * FROM users;
 ```
 
 **Визуальный формат:**
 
 ```sql
-
 EXPLAIN (FORMAT TEXT) SELECT * FROM users;
 ```
 
@@ -108,13 +102,11 @@ EXPLAIN (FORMAT TEXT) SELECT * FROM users;
 **EXPLAIN ANALYZE** реально выполняет запрос и показывает фактические метрики:
 
 ```sql
-
 EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ivan@example.com';
 ```
 
 **Output:**
 ```
-
 Index Scan using idx_users_email on users  (cost=0.42..8.44 rows=1 width=64) (actual time=0.123..0.124 rows=1 loops=1)
   Index Cond: (email = 'ivan@example.com'::text)
 Planning Time: 0.234 ms
@@ -156,13 +148,11 @@ Execution Time: 0.456 ms
 **Полное сканирование таблицы:**
 
 ```sql
-
 EXPLAIN SELECT * FROM users WHERE name LIKE '%Иван%';
 ```
 
 **Output:**
 ```
-
 Seq Scan on users  (cost=0.00..25.00 rows=1000 width=64)
   Filter: (name ~~ '%Иван%'::text)
 ```
@@ -184,14 +174,12 @@ Seq Scan on users  (cost=0.00..25.00 rows=1000 width=64)
 **Использование индекса:**
 
 ```sql
-
 CREATE INDEX idx_users_email ON users(email);
 EXPLAIN SELECT * FROM users WHERE email = 'ivan@example.com';
 ```
 
 **Output:**
 ```
-
 Index Scan using idx_users_email on users  (cost=0.42..8.44 rows=1 width=64)
   Index Cond: (email = 'ivan@example.com'::text)
 ```
@@ -213,14 +201,12 @@ Index Scan using idx_users_email on users  (cost=0.42..8.44 rows=1 width=64)
 **Только индекс, без обращения к таблице:**
 
 ```sql
-
 CREATE INDEX idx_users_email_name ON users(email, name);
 EXPLAIN SELECT email, name FROM users WHERE email = 'ivan@example.com';
 ```
 
 **Output:**
 ```
-
 Index Only Scan using idx_users_email_name on users  (cost=0.42..4.44 rows=1 width=64)
   Index Cond: (email = 'ivan@example.com'::text)
 ```
@@ -255,7 +241,6 @@ Index Only Scan using idx_users_email_name on users  (cost=0.42..4.44 rows=1 wid
 **Обновление статистики (PostgreSQL):**
 
 ```sql
-
 ANALYZE users;  -- Обновить статистику для таблицы
 ```
 
@@ -274,7 +259,6 @@ ANALYZE users;  -- Обновить статистику для таблицы
 **Проблема 1: Отсутствие индекса**
 
 ```sql
-
 EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ivan@example.com';
 -- Seq Scan (медленно)
 
@@ -288,7 +272,6 @@ EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'ivan@example.com';
 **Проблема 2: Неэффективный индекс**
 
 ```sql
-
 -- Индекс не используется из-за функции
 EXPLAIN SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
 -- Seq Scan
@@ -315,7 +298,6 @@ EXPLAIN SELECT * FROM users WHERE LOWER(email) = 'ivan@example.com';
 **Проблема 3: Медленный JOIN**
 
 ```sql
-
 EXPLAIN ANALYZE
 SELECT u.name, o.amount
 FROM users u
@@ -330,7 +312,6 @@ CREATE INDEX idx_orders_user_id ON orders(user_id);
 **Проблема 4: Медленная сортировка**
 
 ```sql
-
 EXPLAIN ANALYZE
 SELECT * FROM orders ORDER BY order_date DESC;
 
@@ -350,14 +331,12 @@ CREATE INDEX idx_orders_date_desc ON orders(order_date DESC);
 **Bitmap Scan** — комбинация индекса и таблицы:
 
 ```sql
-
 EXPLAIN SELECT * FROM users WHERE age > 25 AND age < 35;
 ```
 
 **Результат:**
 
 ```
-
 Bitmap Heap Scan on users
   Recheck Cond: ((age > 25) AND (age < 35))
 
@@ -375,7 +354,6 @@ Bitmap Heap Scan on users
 **Создание битовой карты из индекса:**
 
 ```sql
-
 -- Bitmap Index Scan создаёт битовую карту строк
 -- Затем Bitmap Heap Scan читает только нужные страницы
 ```
@@ -389,7 +367,6 @@ Bitmap Heap Scan on users
 **Для маленьких таблиц:**
 
 ```sql
-
 EXPLAIN
 SELECT * FROM small_table s
 INNER JOIN tiny_table t ON s.id = t.id;
@@ -398,7 +375,6 @@ INNER JOIN tiny_table t ON s.id = t.id;
 **Результат:**
 
 ```
-
 Nested Loop
 
   -> Seq Scan on small_table
@@ -415,7 +391,6 @@ Nested Loop
 **Для больших таблиц без индексов:**
 
 ```sql
-
 EXPLAIN
 SELECT * FROM large_table1 l1
 INNER JOIN large_table2 l2 ON l1.id = l2.id;
@@ -424,7 +399,6 @@ INNER JOIN large_table2 l2 ON l1.id = l2.id;
 **Результат:**
 
 ```
-
 Hash Join
   Hash Cond: (l1.id = l2.id)
 
@@ -444,7 +418,6 @@ Hash Join
 **Для отсортированных данных:**
 
 ```sql
-
 EXPLAIN
 SELECT * FROM table1 t1
 INNER JOIN table2 t2 ON t1.id = t2.id
@@ -454,7 +427,6 @@ ORDER BY t1.id;
 **Результат:**
 
 ```
-
 Merge Join
   Merge Cond: (t1.id = t2.id)
 
@@ -477,7 +449,6 @@ Merge Join
 **Настройка стоимости операций (PostgreSQL):**
 
 ```sql
-
 -- В postgresql.conf или для сессии
 SET seq_page_cost = 1.0;      -- Стоимость чтения страницы (Seq Scan)
 SET random_page_cost = 4.0;   -- Стоимость случайного чтения
@@ -495,7 +466,6 @@ SET cpu_index_tuple_cost = 0.005;  -- Стоимость обработки ин
 **Оценка доступной памяти для кэша:**
 
 ```sql
-
 SET effective_cache_size = '1GB';
 ```
 
@@ -509,7 +479,6 @@ SET effective_cache_size = '1GB';
 **Память для сортировки и JOIN:**
 
 ```sql
-
 SET work_mem = '64MB';
 ```
 
@@ -527,7 +496,6 @@ SET work_mem = '64MB';
 **Расширение для статистики запросов:**
 
 ```sql
-
 -- Включить расширение
 CREATE EXTENSION pg_stat_statements;
 
@@ -548,7 +516,6 @@ LIMIT 10;
 **Автоматическое логирование планов:**
 
 ```sql
-
 -- В postgresql.conf
 shared_preload_libraries = 'auto_explain'
 auto_explain.log_min_duration = 1000  -- Логировать запросы > 1 секунды
@@ -565,7 +532,6 @@ auto_explain.log_buffers = true
 **Исходный запрос:**
 
 ```sql
-
 EXPLAIN ANALYZE
 SELECT 
     u.name,
@@ -588,7 +554,6 @@ ORDER BY total_spent DESC;
 **Оптимизация:**
 
 ```sql
-
 -- Индексы
 CREATE INDEX idx_users_created_at ON users(created_at);
 CREATE INDEX idx_orders_user_id ON orders(user_id);
@@ -602,7 +567,6 @@ CREATE INDEX idx_orders_amount ON orders(amount);
 **Сравнение планов:**
 
 ```sql
-
 -- Без индексов
 EXPLAIN SELECT * FROM users u JOIN orders o ON u.id = o.user_id;
 

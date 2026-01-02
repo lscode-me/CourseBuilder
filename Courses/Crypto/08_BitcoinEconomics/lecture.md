@@ -52,6 +52,7 @@
 **Пример:**
 ```python
 # График халвингов
+
 halvings = [
     (2009, 50),
     (2012, 25),
@@ -67,7 +68,6 @@ for year, reward in halvings:
 
 **Output:**
 ```
-
 2009: 50 BTC за блок
 2012: 25 BTC за блок
 2016: 12.5 BTC за блок
@@ -113,6 +113,7 @@ for year, reward in halvings:
 **Пример:**
 ```python
 # Доход майнера
+
 block_reward = 3.125  # BTC (после халвинга 2024)
 transaction_fees = 0.5  # BTC
 btc_price = 50000  # USD
@@ -126,7 +127,6 @@ print(f"Из них: {block_reward} BTC награда, {transaction_fees} BTC �
 
 **Output:**
 ```
-
 Доход за блок: 3.625 BTC ($181,250)
 Из них: 3.125 BTC награда, 0.5 BTC комиссии
 ```
@@ -176,7 +176,6 @@ print(f"Большая транзакция: {fee_large:.8f} BTC")
 
 **Output:**
 ```
-
 Маленькая транзакция: 0.00002500 BTC
 Большая транзакция: 0.00010000 BTC
 ```
@@ -345,5 +344,6 @@ Bitcoin сталкивается с различной критикой.
 - Lightning Network документация
 
 ---
+
 
 

@@ -31,7 +31,6 @@
 
 **Waterfall (каскадная модель):**
 ```
-
 ┌─────────────┐
 │ Requirements│
 └──────┬──────┘
@@ -62,12 +61,10 @@
 - Поздняя обратная связь
 - Сложно реагировать на изменения
 - "Big bang" релизы
-
 ```
 
 **Agile:**
 ```
-
     Sprint 1         Sprint 2         Sprint 3
 ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
 │ Plan→Build→ │  │ Plan→Build→ │  │ Plan→Build→ │
@@ -83,7 +80,6 @@
 - Частая обратная связь
 - Гибкость к изменениям
 - Инкрементальная доставка
-
 ```
 
 ### 1.2 Agile Manifesto (2001)
@@ -115,7 +111,6 @@
 ### 1.3 Связь Agile и DevOps
 
 ```
-
 ┌───────────────────────────────────────────────────────────────┐
 │                          DevOps                               │
 │  ┌──────────────────────────────────────────────────────────┐ │
@@ -131,7 +126,6 @@
 
 Agile оптимизировал Development.
 DevOps расширил эту оптимизацию на весь цикл доставки.
-
 ```
 
 **Agile останавливался на границе с Operations:**
@@ -184,7 +178,6 @@ Scrum — это фреймворк для разработки, доставк�
 - Отвечает за доставку инкремента
 
 ```
-
 ┌────────────────────────────────────────────────────────┐
 │                    Scrum Team                          │
 │                                                        │
@@ -197,7 +190,6 @@ Scrum — это фреймворк для разработки, доставк�
 │  │ • Vision    │  │ • Impediments│ │ • Delivery      │ │
 │  └─────────────┘  └─────────────┘  └─────────────────┘ │
 └────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.3 Scrum Events
@@ -217,6 +209,7 @@ Scrum — это фреймворк для разработки, доставк�
 
 ```python
 # Пример: структура Sprint Planning
+
 from dataclasses import dataclass
 from datetime import datetime
 
@@ -228,6 +221,7 @@ class SprintPlanningOutput:
     committed_points: int
     
 # Sprint Planning результат
+
 sprint_3 = SprintPlanningOutput(
     sprint_goal="Реализовать авторизацию через OAuth",
     sprint_backlog=[
@@ -239,7 +233,6 @@ sprint_3 = SprintPlanningOutput(
     team_capacity=40,
     committed_points=35
 )
-
 ```
 
 **Daily Standup (Daily Scrum):**
@@ -256,6 +249,7 @@ sprint_3 = SprintPlanningOutput(
 # Паттерн: Синхронизация между членами команды
 
 # Плохо:
+
 bad_standup = """
 Developer: Вчера работал над PROJ-101. Сегодня продолжу.
            Блокеров нет.
@@ -263,6 +257,7 @@ Manager: Хорошо, следующий...
 """
 
 # Хорошо:
+
 good_standup = """
 Developer: Вчера закончил интеграцию с Google OAuth API.
            Сегодня начну UI страницы логина.
@@ -270,7 +265,6 @@ Developer: Вчера закончил интеграцию с Google OAuth API.
            синхронизироваться после стендапа?
 Аня: Да, у меня есть 30 минут после обеда.
 """
-
 ```
 
 **Sprint Review:**
@@ -288,7 +282,6 @@ Developer: Вчера закончил интеграцию с Google OAuth API.
 - Action items для следующего спринта
 
 ```
-
 ┌────────────────────────────────────────────────────────┐
 │                    Sprint Cycle                        │
 │                                                        │
@@ -305,7 +298,6 @@ Developer: Вчера закончил интеграцию с Google OAuth API.
 │                        ▼                               │
 │                 Next Sprint Planning                   │
 └────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.4 Scrum Artifacts
@@ -330,6 +322,7 @@ Developer: Вчера закончил интеграцию с Google OAuth API.
 
 ```python
 # Пример: Definition of Done
+
 definition_of_done = [
     "Код написан и прошёл code review",
     "Unit tests написаны и проходят",
@@ -346,7 +339,6 @@ def is_done(task: dict) -> bool:
         task.get(criterion, False) 
         for criterion in definition_of_done
     )
-
 ```
 
 ### 2.5 Scrum и DevOps
@@ -363,7 +355,6 @@ def is_done(task: dict) -> bool:
 **Definition of Done с DevOps:**
 
 ```python
-
 devops_definition_of_done = [
     # Development
     "Код написан и прошёл code review",
@@ -387,7 +378,6 @@ devops_definition_of_done = [
     "API documentation обновлена",
     "Architecture Decision Record (если нужно)",
 ]
-
 ```
 
 ---
@@ -423,7 +413,6 @@ Kanban (看板, "вывеска") — система, разработанная
 **Базовая структура:**
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                         KANBAN BOARD                            │
 ├──────────┬──────────┬──────────┬──────────┬──────────┬──────────┤
@@ -443,7 +432,6 @@ Kanban (看板, "вывеска") — система, разработанная
 │ │-203  │ │          │ │-197  │ │          │          │ │-187  │ │
 │ └──────┘ │          │ └──────┘ │          │          │ └──────┘ │
 └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
-
 ```
 
 ### 3.4 Work in Progress (WIP) Limits
@@ -455,6 +443,7 @@ Kanban (看板, "вывеска") — система, разработанная
 # Lead Time = WIP / Throughput
 
 # Пример:
+
 throughput = 5  # задач в неделю
 wip_high = 20   # много задач в работе
 wip_low = 5     # мало задач в работе
@@ -464,15 +453,12 @@ lead_time_low = wip_low / throughput    # 1 неделя
 
 print(f"High WIP Lead Time: {lead_time_high} weeks")
 print(f"Low WIP Lead Time: {lead_time_low} weeks")
-
 ```
 
 **Output:**
 ```
-
 High WIP Lead Time: 4.0 weeks
 Low WIP Lead Time: 1.0 weeks
-
 ```
 
 **Эффект WIP лимитов:**
@@ -495,7 +481,6 @@ Low WIP Lead Time: 1.0 weeks
 - Не включает время в очереди
 
 ```python
-
 from datetime import datetime, timedelta
 
 def calculate_metrics(task: dict) -> dict:
@@ -516,6 +501,7 @@ def calculate_metrics(task: dict) -> dict:
     }
 
 # Пример задачи
+
 task = {
     "created_at": datetime(2024, 1, 1),
     "started_at": datetime(2024, 1, 8),
@@ -527,23 +513,19 @@ print(f"Lead Time: {metrics['lead_time_days']} days")
 print(f"Cycle Time: {metrics['cycle_time_days']} days")
 print(f"Wait Time: {metrics['wait_time_days']} days")
 print(f"Efficiency: {metrics['efficiency']:.1f}%")
-
 ```
 
 **Output:**
 ```
-
 Lead Time: 11 days
 Cycle Time: 4 days
 Wait Time: 7 days
 Efficiency: 36.4%
-
 ```
 
 **Cumulative Flow Diagram (CFD):**
 
 ```
-
 Items │
   100 ├─────────────────────────────────────────┐ Done
       │                              ┌──────────┤
@@ -561,7 +543,6 @@ Items │
 Стабильная ширина полос = стабильный WIP
 Сужение = bottleneck
 Расширение = накопление работы
-
 ```
 
 ### 3.6 Kanban и DevOps
@@ -569,7 +550,6 @@ Items │
 **DevOps Kanban Board:**
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                     DevOps Kanban Board                            │
 ├────────┬────────┬────────┬────────┬────────┬────────┬────────┬─────┤
@@ -590,7 +570,6 @@ Items │
          ▼                          ▼
     Pull from left            Automated
     when capacity            transitions
-
 ```
 
 ---
@@ -632,6 +611,7 @@ Items │
 
 ```python
 # Выбор методологии
+
 def choose_methodology(context: dict) -> str:
     if context["team_maturity"] == "low":
         return "Scrum"  # Нужна структура
@@ -646,7 +626,6 @@ def choose_methodology(context: dict) -> str:
         return "ScrumBan"  # Гибрид
     
     return "Scrum"  # По умолчанию
-
 ```
 
 ---
@@ -696,6 +675,7 @@ ITIL 4 (2019) значительно изменился, чтобы соотве
 
 ```python
 # ITIL Incident Priority Matrix
+
 severity_matrix = {
     ("critical", "high"): "P1",  # Resolve in 1 hour
     ("critical", "medium"): "P1",
@@ -710,7 +690,6 @@ severity_matrix = {
 
 def calculate_priority(impact: str, urgency: str) -> str:
     return severity_matrix.get((impact, urgency), "P4")
-
 ```
 
 **Problem Management:**
@@ -726,7 +705,6 @@ def calculate_priority(impact: str, urgency: str) -> str:
 - Change Advisory Board (CAB)
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    Change Management Flow                   │
 ├─────────────────────────────────────────────────────────────┤
@@ -741,7 +719,6 @@ def calculate_priority(impact: str, urgency: str) -> str:
 │  Created   Analysis   Approval    Change    (Post Impl      │
 │                                              Review)        │
 └─────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 5.4 ITIL и DevOps: интеграция
@@ -749,12 +726,10 @@ def calculate_priority(impact: str, urgency: str) -> str:
 **Традиционное противостояние:**
 
 ```
-
 ITIL:     "Нужен approval от CAB"
 DevOps:   "Мы деплоим 50 раз в день!"
 ITIL:     "Каждый деплой должен пройти Change Management"
 DevOps:   "Это замедлит нас на недели!"
-
 ```
 
 **Современный подход — интеграция:**
@@ -767,6 +742,7 @@ DevOps:   "Это замедлит нас на недели!"
 
 ```python
 # Автоматическая классификация изменений
+
 def classify_change(change: dict) -> str:
     # Standard: преапproved, автоматизированные
     if change["type"] == "deployment":
@@ -785,7 +761,6 @@ def classify_change(change: dict) -> str:
     
     # Major: CAB review
     return "major"  # Full CAB approval
-
 ```
 
 **DevOps-friendly ITIL:**
@@ -817,7 +792,6 @@ Agile отлично работает для одной команды (5-9 че
 **Уровни SAFe:**
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                        Portfolio Level                           │
 │  Strategic themes, Portfolio Kanban, Lean budgeting              │
@@ -828,7 +802,6 @@ Agile отлично работает для одной команды (5-9 че
 │                         Team Level                               │
 │  Scrum / Kanban teams, iterations                                │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 **Agile Release Train (ART):**
@@ -850,7 +823,6 @@ Agile отлично работает для одной команды (5-9 че
 - Координация между командами минимальная
 
 ```
-
 ┌────────────────────────────────────────────────────────────────┐
 │                            LeSS                                │
 │                                                                │
@@ -873,7 +845,6 @@ Agile отлично работает для одной команды (5-9 че
 │                    │ (общий)          │                        │
 │                    └──────────────────┘                        │
 └────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 6.4 SAFe vs LeSS
@@ -893,7 +864,6 @@ Agile отлично работает для одной команды (5-9 че
 ### 7.1 Decision Framework
 
 ```python
-
 def recommend_methodology(
     team_size: int,
     work_predictability: str,  # "high", "medium", "low"
@@ -938,31 +908,26 @@ def recommend_methodology(
         })
     
     return recommendations
-
 ```
 
 ### 7.2 Гибридные подходы
 
 **DevOps + Scrum:**
 ```
-
 Sprint:
 ├── Feature development (Scrum backlog items)
 ├── Infrastructure improvements (20% capacity)
 ├── Tech debt reduction (10% capacity)
 └── On-call and incident response (buffer)
-
 ```
 
 **DevOps + Kanban:**
 ```
-
 Swimlanes:
 ├── Features (WIP: 3)
 ├── Bugs/Incidents (WIP: 2)
 ├── Infrastructure (WIP: 2)
 └── Expedite (WIP: 1)
-
 ```
 
 ### 7.3 Anti-patterns
@@ -994,14 +959,12 @@ Swimlanes:
 **Шаг 1: Оцените текущее состояние**
 
 ```python
-
 current_state = {
     "delivery_frequency": "monthly",
     "lead_time": "4-6 weeks",
     "team_collaboration": "silos",
     "automation_level": "low"
 }
-
 ```
 
 **Шаг 2: Выберите методологию**
@@ -1017,6 +980,7 @@ current_state = {
 
 ```python
 # Метрики эффективности методологии
+
 methodology_metrics = {
     "delivery": {
         "deployment_frequency": "weekly target",
@@ -1034,7 +998,6 @@ methodology_metrics = {
         "team_satisfaction": "> 4/5"
     }
 }
-
 ```
 
 ---
@@ -1096,6 +1059,7 @@ methodology_metrics = {
 - Azure DevOps — интегрированная платформа
 
 ---
+
 
 
 

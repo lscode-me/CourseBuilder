@@ -35,7 +35,6 @@
 ### 1.1 Timeline развития
 
 ```
-
 1990 ─── CERN httpd (первый веб-сервер, Tim Berners-Lee)
    │
 1991 ─── NCSA HTTPd
@@ -57,13 +56,11 @@
 2016 ─── H2O (HTTP/2 оптимизированный)
    │
 2019 ─── Caddy 2.0
-
 ```
 
 ### 1.2 Доля рынка (исторически)
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │               Web Server Market Share                      │
 ├────────────────────────────────────────────────────────────┤
@@ -83,7 +80,6 @@
 │          [Other  ██████████████ 25%]                       │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -104,7 +100,6 @@
 ### 2.2 MPM (Multi-Processing Modules)
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                   Apache MPM Types                         │
 ├────────────────────────────────────────────────────────────┤
@@ -154,7 +149,6 @@
 │  └─────────┘       └─────────┘       └─────────┘           │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 | MPM | Описание | Когда использовать |
@@ -207,7 +201,6 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined
 
 # Включить конфигурации сайтов
 IncludeOptional sites-enabled/*.conf
-
 ```
 
 ### 2.4 Виртуальные хосты
@@ -256,7 +249,6 @@ IncludeOptional sites-enabled/*.conf
     # HSTS
     Header always set Strict-Transport-Security "max-age=63072000"
 </VirtualHost>
-
 ```
 
 ### 2.5 .htaccess
@@ -298,7 +290,6 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/css application/javascript
 </IfModule>
-
 ```
 
 ### 2.6 Управление Apache
@@ -323,7 +314,6 @@ sudo systemctl reload httpd
 # Проверка
 apachectl -M  # список модулей
 apachectl -S  # список виртуальных хостов
-
 ```
 
 ---
@@ -345,7 +335,6 @@ apachectl -S  # список виртуальных хостов
 ### 3.2 Архитектура Nginx
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                    Nginx Architecture                      │
 ├────────────────────────────────────────────────────────────┤
@@ -377,7 +366,6 @@ apachectl -S  # список виртуальных хостов
 │  Каждый worker: один поток, тысячи соединений (epoll/kqueue│
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.3 Конфигурация Nginx
@@ -427,7 +415,6 @@ http {
     include /etc/nginx/conf.d/*.conf;
     include /etc/nginx/sites-enabled/*;
 }
-
 ```
 
 ### 3.4 Виртуальный хост (server block)
@@ -500,7 +487,6 @@ server {
         deny all;
     }
 }
-
 ```
 
 ### 3.5 Nginx как Reverse Proxy
@@ -551,7 +537,6 @@ server {
         proxy_set_header Connection "upgrade";
     }
 }
-
 ```
 
 ### 3.6 Управление Nginx
@@ -576,7 +561,6 @@ sudo nginx -s reload
 sudo nginx -s reopen  # переоткрыть логи
 sudo nginx -s quit    # graceful shutdown
 sudo nginx -s stop    # немедленная остановка
-
 ```
 
 ---
@@ -617,7 +601,6 @@ sudo nginx -s stop    # немедленная остановка
 ### 4.3 Гибридная архитектура
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │               Nginx + Apache Architecture                  │
 ├────────────────────────────────────────────────────────────┤
@@ -643,7 +626,6 @@ sudo nginx -s stop    # немедленная остановка
 │  └─────────────────────────────────┘                       │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -718,7 +700,6 @@ server "example.com" {
         pass
     }
 }
-
 ```
 
 ### 5.3 Управление
@@ -733,7 +714,6 @@ rcctl enable httpd
 
 # Перезагрузка
 rcctl reload httpd
-
 ```
 
 ---
@@ -764,7 +744,6 @@ example.com {
         output file /var/log/caddy/example.com.log
     }
 }
-
 ```
 
 **Преимущества Caddy:**
@@ -797,7 +776,6 @@ fastcgi.server = (
         "socket" => "/var/run/php-fpm.sock"
     ))
 )
-
 ```
 
 **Когда использовать:**
@@ -823,7 +801,6 @@ hosts:
     paths:
       "/":
         file.dir: /var/www/html
-
 ```
 
 **Особенности:**
@@ -868,7 +845,6 @@ certificatesResolvers:
       storage: /letsencrypt/acme.json
       httpChallenge:
         entryPoint: web
-
 ```
 
 **Особенности:**
@@ -898,7 +874,6 @@ certificatesResolvers:
 ### 7.1 Статический сайт с Nginx
 
 ```nginx
-
 server {
     listen 80;
     server_name static.example.com;
@@ -927,13 +902,11 @@ server {
         try_files $uri $uri/ /index.html;
     }
 }
-
 ```
 
 ### 7.2 Load Balancer
 
 ```nginx
-
 upstream app_servers {
     least_conn;
     
@@ -964,7 +937,6 @@ server {
         return 200 "OK\n";
     }
 }
-
 ```
 
 ### 7.3 SSL/TLS конфигурация (современная)
@@ -991,7 +963,6 @@ add_header Strict-Transport-Security "max-age=63072000" always;
 add_header X-Frame-Options "DENY" always;
 add_header X-Content-Type-Options "nosniff" always;
 add_header Referrer-Policy "strict-origin-when-cross-origin" always;
-
 ```
 
 ---

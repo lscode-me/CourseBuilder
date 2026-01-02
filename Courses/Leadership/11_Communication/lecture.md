@@ -38,7 +38,6 @@
 
 **Типичные stakeholders Team Lead:**
 ```
-
 Internal:
 
 - Ваш руководитель (EM, Director)
@@ -54,7 +53,6 @@ External:
 - Клиенты/пользователи
 - Vendors
 - Partners
-
 ```
 
 ### 1.2 Stakeholder Mapping
@@ -62,7 +60,6 @@ External:
 **Power/Interest Grid:**
 
 ```
-
               High Power
                   │
       ┌───────────┼───────────┐
@@ -78,7 +75,6 @@ External:
               High Interest
               
 ★ = Top priority stakeholders
-
 ```
 
 **Категории:**
@@ -113,7 +109,6 @@ External:
 - Channel: Email/Slack/Meeting/Report
 - Frequency: Daily/Weekly/Monthly/As needed
 - Format: Brief/Detailed/Technical/Business
-
 ```
 
 ---
@@ -129,32 +124,25 @@ External:
 
 **Для CEO:**
 ```
-
 "Мы запустим платформу в Q2, это увеличит retention на 15% 
 и принесёт $2M ARR."
-
 ```
 
 **Для Engineering Director:**
 ```
-
 "Платформа требует 3 месяца, команду из 5 человек, 
 есть риск с интеграцией legacy системы."
-
 ```
 
 **Для команды:**
 ```
-
 "Новый проект! Интересный technical challenge с микросервисами, 
 timeline 3 месяца, начинаем с design phase."
-
 ```
 
 ### 2.2 Уровни детализации
 
 ```
-
 Executive Level:
 
 - Impact на бизнес
@@ -175,7 +163,6 @@ Team Level:
 - Implementation decisions
 - Day-to-day blockers
 - Learning opportunities
-
 ```
 
 ### 2.3 BLUF: Bottom Line Up Front
@@ -183,7 +170,6 @@ Team Level:
 **Военный принцип:** Главное — в начале.
 
 ```markdown
-
 ❌ Poor:
 "We've been working on the new authentication system. 
 The team has explored several options including OAuth, SAML, 
@@ -194,7 +180,6 @@ and custom solutions. After extensive research..."
 ✅ Good (BLUF):
 "We need $15K additional budget for Auth0. 
 Here's why this is the best option for our auth system..."
-
 ```
 
 ---
@@ -223,33 +208,37 @@ Here's why this is the best option for our auth system..."
 ## Week of: [Date]
 
 ### TL;DR (1-2 sentences)
+
 [Самое важное за неделю]
 
 ### Highlights ✅
+
 - [Achievement 1]
 - [Achievement 2]
 
 ### In Progress 🔄
+
 - [Project A] — 70% complete, on track
 - [Project B] — delayed, see Risks
 
 ### Risks ⚠️
+
 - [Risk 1]: [Impact, Mitigation]
 - [Risk 2]: [Impact, Mitigation]
 
 ### Needs from You 🙏
+
 - [Decision needed by Friday]
 - [Resource request]
 
 ### Team Notes 👥
-- [Vacation, new hire, etc.]
 
+- [Vacation, new hire, etc.]
 ```
 
 ### 3.3 Типичные ошибки
 
 ```
-
 ❌ Too much detail:
 Никто не прочитает 10 страниц
 
@@ -264,7 +253,6 @@ Here's why this is the best option for our auth system..."
 
 ✅ Right balance:
 Concise, balanced, actionable
-
 ```
 
 ---
@@ -284,69 +272,53 @@ Concise, balanced, actionable
 
 **Credibility:**
 ```
-
 - Expertise: знайте своё дело
 - Track record: результаты говорят
 - Integrity: делайте что обещаете
-
 ```
 
 **Relationships:**
 ```
-
 - Invest time в отношения
 - Help others (give before ask)
 - Network активно
 - Be visible
-
 ```
 
 **Communication:**
 ```
-
 - Listen more than talk
 - Understand their perspective
 - Frame in their terms
 - Show mutual benefit
-
 ```
 
 ### 4.3 Techniques для влияния
 
 **1. Finding Common Ground:**
 ```
-
 "Я понимаю, что для вас важно X. 
 Мой proposal также помогает достичь X, потому что..."
-
 ```
 
 **2. Building Coalition:**
 ```
-
 Найдите allies → согласуйте с ними → придите к decision-maker вместе
-
 ```
 
 **3. Reciprocity:**
 ```
-
 Помогите им сначала → они более склонны помочь вам
-
 ```
 
 **4. Social Proof:**
 ```
-
 "Team A уже использует этот подход и видит результаты..."
-
 ```
 
 **5. Data over Opinion:**
 ```
-
 "По данным за Q3, подход X на 30% эффективнее..."
-
 ```
 
 ---
@@ -366,18 +338,15 @@ Concise, balanced, actionable
 
 **Prepare:**
 ```
-
 1. What outcome do I want?
 2. What are the facts (not interpretations)?
 3. What might be their perspective?
 4. What emotions might come up?
 5. What's my backup if doesn't go well?
-
 ```
 
 **During:**
 ```
-
 1. State your intent upfront
    "I want to discuss X because I care about Y"
 
@@ -395,16 +364,13 @@ Concise, balanced, actionable
 
 6. Agree on next steps
    Specific, time-bound
-
 ```
 
 **After:**
 ```
-
 1. Follow up в writing
 2. Check in на progress
 3. Recognize improvement
-
 ```
 
 ### 5.3 Пример сложного разговора
@@ -412,7 +378,6 @@ Concise, balanced, actionable
 **Ситуация:** Разработчик систематически опаздывает на митинги.
 
 ```
-
 Prepare:
 
 - Outcome: Приходить вовремя
@@ -433,7 +398,6 @@ After:
 
 - Договорились о конкретном плане
 - Check-in через неделю
-
 ```
 
 ---
@@ -444,7 +408,6 @@ After:
 
 **Structure:**
 ```
-
 Subject: [Action Required] [Topic] by [Date]
 
 Hi [Name],
@@ -459,7 +422,6 @@ Hi [Name],
 
 Best,
 [Name]
-
 ```
 
 **Tips:**
@@ -473,7 +435,6 @@ Best,
 ### 6.2 Slack/Teams Etiquette
 
 ```
-
 ✅ DO:
 
 - Thread conversations
@@ -488,7 +449,6 @@ Best,
 - Send 10 messages instead of 1
 - Expect immediate response
 - Use for urgent/sensitive topics
-
 ```
 
 ### 6.3 Documentation
@@ -516,31 +476,26 @@ Best,
 
 **For business audience:**
 ```
-
 1. Hook (why should they care?)
 2. Problem (what's the issue?)
 3. Solution (what do you propose?)
 4. Evidence (why this will work?)
 5. Ask (what do you need?)
-
 ```
 
 **For technical audience:**
 ```
-
 1. Context (problem space)
 2. Options considered
 3. Recommended approach
 4. Trade-offs
 5. Implementation plan
 6. Questions
-
 ```
 
 ### 7.2 Tips для presenting
 
 ```
-
 Preparation:
 
 - Know your audience
@@ -562,7 +517,6 @@ Handling Questions:
 - Answer concisely
 - "I don't know, I'll find out" is OK
 - Offer to follow up offline if needed
-
 ```
 
 ### 7.3 Executive Presentations
@@ -577,7 +531,6 @@ Handling Questions:
 
 **Format:**
 ```
-
 Slide 1: Title + TL;DR
 Slide 2: Recommendation
 Slide 3: Why (key supporting points)
@@ -585,7 +538,6 @@ Slide 4: Risk & Mitigation
 Slide 5: Ask / Decision needed
 
 [Backup slides with details]
-
 ```
 
 ---
@@ -603,7 +555,6 @@ When we need it: [date]
 Impact if delayed: [consequences]
 Contact: [person]
 Status: On track / At risk / Blocked
-
 ```
 
 ### 8.2 Conflict with Other Teams
@@ -617,25 +568,21 @@ Status: On track / At risk / Blocked
 
 **Resolution approach:**
 ```
-
 1. Assume good intent
 2. Understand their constraints
 3. Find common goals
 4. Propose win-win solutions
 5. Escalate together if needed
-
 ```
 
 ### 8.3 Building Relationships
 
 ```
-
 - Regular sync meetings
 - Help them when you can
 - Share credit
 - Communicate early about changes
 - Say thank you
-
 ```
 
 ---
@@ -693,6 +640,7 @@ Status: On track / At risk / Blocked
 - [TED: How to speak so that people want to listen](https://www.ted.com/talks/julian_treasure_how_to_speak_so_that_people_want_to_listen)
 
 ---
+
 
 
 

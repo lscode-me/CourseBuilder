@@ -37,7 +37,6 @@
 Горутина — легковесный поток, управляемый Go runtime:
 
 ```go
-
 package main
 
 import (
@@ -62,25 +61,21 @@ func main() {
     // Даём время горутине завершиться
     time.Sleep(500 * time.Millisecond)
 }
-
 ```
 
 **Output:**
 ```
-
 Hello, Main! (0)
 Hello, Goroutine! (0)
 Hello, Main! (1)
 Hello, Goroutine! (1)
 Hello, Main! (2)
 Hello, Goroutine! (2)
-
 ```
 
 ### 1.2 Анонимные горутины
 
 ```go
-
 package main
 
 import (
@@ -102,21 +97,17 @@ func main() {
     
     time.Sleep(100 * time.Millisecond)
 }
-
 ```
 
 **Output:**
 ```
-
 Anonymous goroutine
 Hello from closure
-
 ```
 
 ### 1.3 Количество горутин
 
 ```go
-
 package main
 
 import (
@@ -139,17 +130,14 @@ func main() {
     time.Sleep(2 * time.Second)
     fmt.Println("Goroutines after sleep:", runtime.NumGoroutine())
 }
-
 ```
 
 **Output:**
 ```
-
 CPUs: 8
 Goroutines at start: 1
 Goroutines after launch: 11
 Goroutines after sleep: 1
-
 ```
 
 ---
@@ -159,7 +147,6 @@ Goroutines after sleep: 1
 ### 2.1 Создание и использование
 
 ```go
-
 package main
 
 import "fmt"
@@ -177,20 +164,16 @@ func main() {
     message := <-ch
     fmt.Println(message)
 }
-
 ```
 
 **Output:**
 ```
-
 Hello, Channel!
-
 ```
 
 ### 2.2 Буферизованные каналы
 
 ```go
-
 package main
 
 import "fmt"
@@ -217,24 +200,20 @@ func main() {
     
     _ = unbuffered  // Для компиляции
 }
-
 ```
 
 **Output:**
 ```
-
 Buffered length: 3
 Buffered capacity: 3
 1
 2
 3
-
 ```
 
 ### 2.3 Закрытие канала
 
 ```go
-
 package main
 
 import "fmt"
@@ -265,12 +244,10 @@ func main() {
     value, ok := <-ch2
     fmt.Printf("value: %d, ok: %t\n", value, ok)
 }
-
 ```
 
 **Output:**
 ```
-
 Received: 0
 Received: 1
 Received: 2
@@ -278,13 +255,11 @@ Received: 3
 Received: 4
 Channel closed
 value: 0, ok: false
-
 ```
 
 ### 2.4 Направление канала
 
 ```go
-
 package main
 
 import "fmt"
@@ -305,14 +280,11 @@ func main() {
     go sender(ch)
     receiver(ch)
 }
-
 ```
 
 **Output:**
 ```
-
 Received: 42
-
 ```
 
 ---
@@ -322,7 +294,6 @@ Received: 42
 ### 3.1 Множественные каналы
 
 ```go
-
 package main
 
 import (
@@ -354,21 +325,17 @@ func main() {
         }
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Received from ch2
 Received from ch1
-
 ```
 
 ### 3.2 Timeout
 
 ```go
-
 package main
 
 import (
@@ -391,20 +358,16 @@ func main() {
         fmt.Println("Timeout!")
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Timeout!
-
 ```
 
 ### 3.3 Non-blocking select с default
 
 ```go
-
 package main
 
 import "fmt"
@@ -428,15 +391,12 @@ func main() {
         fmt.Println("Cannot send")
     }
 }
-
 ```
 
 **Output:**
 ```
-
 No value ready
 Cannot send
-
 ```
 
 ---
@@ -446,7 +406,6 @@ Cannot send
 ### 4.1 WaitGroup
 
 ```go
-
 package main
 
 import (
@@ -474,12 +433,10 @@ func main() {
     wg.Wait()  // Блокируется до счётчика = 0
     fmt.Println("All workers done")
 }
-
 ```
 
 **Output:**
 ```
-
 Worker 1 starting
 Worker 2 starting
 Worker 3 starting
@@ -487,13 +444,11 @@ Worker 2 done
 Worker 1 done
 Worker 3 done
 All workers done
-
 ```
 
 ### 4.2 Mutex
 
 ```go
-
 package main
 
 import (
@@ -533,20 +488,16 @@ func main() {
     wg.Wait()
     fmt.Println("Counter:", counter.Value())
 }
-
 ```
 
 **Output:**
 ```
-
 Counter: 1000
-
 ```
 
 ### 4.3 RWMutex
 
 ```go
-
 package main
 
 import (
@@ -592,24 +543,20 @@ func main() {
     
     wg.Wait()
 }
-
 ```
 
 **Output:**
 ```
-
 Reader 0: world
 Reader 1: world
 Reader 2: world
 Reader 3: world
 Reader 4: world
-
 ```
 
 ### 4.4 Once
 
 ```go
-
 package main
 
 import (
@@ -643,19 +590,16 @@ func main() {
     
     wg.Wait()
 }
-
 ```
 
 **Output:**
 ```
-
 Loading config...
 Config: loaded
 Config: loaded
 Config: loaded
 Config: loaded
 Config: loaded
-
 ```
 
 ---
@@ -665,7 +609,6 @@ Config: loaded
 ### 5.1 Worker Pool
 
 ```go
-
 package main
 
 import (
@@ -712,12 +655,10 @@ func main() {
         fmt.Println("Result:", result)
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Worker 1 processing job 1
 Worker 2 processing job 2
 Worker 3 processing job 3
@@ -728,13 +669,11 @@ Result: 4
 Result: 6
 Result: 8
 Result: 10
-
 ```
 
 ### 5.2 Fan-out / Fan-in
 
 ```go
-
 package main
 
 import (
@@ -800,7 +739,6 @@ func main() {
         fmt.Println(result)
     }
 }
-
 ```
 
 ---
@@ -810,7 +748,6 @@ func main() {
 ### 6.1 Отмена операций
 
 ```go
-
 package main
 
 import (
@@ -844,12 +781,10 @@ func main() {
     time.Sleep(100 * time.Millisecond)
     fmt.Println("Done")
 }
-
 ```
 
 **Output:**
 ```
-
 Worker 1: working...
 Worker 2: working...
 Worker 1: working...
@@ -859,13 +794,11 @@ Worker 1: working...
 Worker 1: cancelled
 Worker 2: cancelled
 Done
-
 ```
 
 ### 6.2 Timeout с context
 
 ```go
-
 package main
 
 import (
@@ -894,14 +827,11 @@ func main() {
         fmt.Println("Success")
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Error: context deadline exceeded
-
 ```
 
 ---
@@ -911,7 +841,6 @@ Error: context deadline exceeded
 ### 7.1 Race condition
 
 ```go
-
 // ПЛОХО — race condition
 var counter int
 for i := 0; i < 1000; i++ {
@@ -928,13 +857,11 @@ for i := 0; i < 1000; i++ {
         mu.Unlock()
     }()
 }
-
 ```
 
 ### 7.2 Забытый close
 
 ```go
-
 // ПЛОХО — утечка горутины
 ch := make(chan int)
 go func() {
@@ -952,7 +879,6 @@ go func() {
     }
 }()
 close(ch)  // Горутина завершится
-
 ```
 
 ---

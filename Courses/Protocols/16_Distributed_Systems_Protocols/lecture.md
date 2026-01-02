@@ -62,7 +62,6 @@
 
 **Процесс:**
 ```
-
 1. Client отправляет запрос Leader
 2. Leader добавляет в log и реплицирует Followers
 3. Когда большинство (majority) подтвердили:
@@ -74,7 +73,6 @@
 ### 2.3 Log replication
 
 ```
-
 Leader log:    [1] [2] [3] [4]
                commit ↑
 
@@ -116,7 +114,6 @@ Leader: отправляет [4] Followers 2 и 3
 
 **Процесс:**
 ```
-
 1. Узел не получает heartbeat от leader → становится Candidate
 2. Candidate инкрементирует term, голосует за себя
 3. Candidate запрашивает голоса у других узлов
@@ -136,7 +133,6 @@ Leader: отправляет [4] Followers 2 и 3
 
 **Решение:**
 ```
-
 1. Нет победителя → timeout
 2. Новый term, новые выборы
 3. Random timeout для избежания повторных split votes
@@ -145,13 +141,13 @@ Leader: отправляет [4] Followers 2 и 3
 ### 3.4 Zookeeper Leader Election
 
 ```python
-
 from kazoo.client import KazooClient
 
 zk = KazooClient('localhost:2181')
 zk.start()
 
 # Создаём ephemeral sequential node
+
 election_path = "/election"
 zk.ensure_path(election_path)
 
@@ -187,7 +183,6 @@ else:
 ### 4.2 Протокол heartbeat
 
 ```
-
 Leader → Followers: Heartbeat (каждые 100ms)
 Followers: получают heartbeat, сбрасывают election timeout
 
@@ -198,7 +193,6 @@ Followers: получают heartbeat, сбрасывают election timeout
 ### 4.3 Пример реализации
 
 ```python
-
 import time
 import threading
 
@@ -220,6 +214,7 @@ class HeartbeatMonitor:
         return True
 
 # Leader thread
+
 def leader_heartbeat():
     monitor = HeartbeatMonitor()
     while True:
@@ -244,7 +239,6 @@ def follower_check():
 **Решение:** Адаптивный timeout на основе network latency.
 
 ```python
-
 class AdaptiveHeartbeat:
     def __init__(self):
         self.avg_latency = 0.1
@@ -296,7 +290,6 @@ class AdaptiveHeartbeat:
 ### 5.3 Gossip-based failure detection
 
 ```
-
 Узел A → Узел B: "Я живой, C живой, D не отвечает"
 Узел B → Узел C: "Я живой, A живой, D не отвечает"
 Узел C → Узел A: "Я живой, B живой, D не отвечает"
@@ -306,7 +299,6 @@ class AdaptiveHeartbeat:
 
 **SWIM (Scalable Weakly-consistent Infection-style Membership):**
 ```
-
 1. Узел A пингует случайный узел B
 2. Если B не отвечает:
    - A просит K других узлов пропинговать B
@@ -320,7 +312,6 @@ class AdaptiveHeartbeat:
 **Решение:** Quorum
 
 ```
-
 Partition 1: 2 узла (minority) → не может стать leader
 Partition 2: 3 узла (majority) → выбирает leader
 
@@ -335,14 +326,12 @@ Partition 2: 3 узла (majority) → выбирает leader
 
 **Фаза 1 (Prepare):**
 ```
-
 Coordinator → Participants: "Готовы к commit?"
 Participants → Coordinator: "Да" или "Нет"
 ```
 
 **Фаза 2 (Commit):**
 ```
-
 Если все "Да":
     Coordinator → Participants: "Commit"
 Иначе:
@@ -441,5 +430,6 @@ Participants → Coordinator: "Да" или "Нет"
 - Изучите vector clocks и version vectors для eventual consistency
 
 ---
+
 
 

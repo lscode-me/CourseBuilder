@@ -39,7 +39,6 @@
 
 На Linux и macOS:
 ```bash
-
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
@@ -50,14 +49,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 После установки нужно перезагрузить терминал или выполнить:
 ```bash
-
 source $HOME/.cargo/env
 ```
 
 **Проверка установки:**
 
 ```bash
-
 rustc --version
 cargo --version
 rustup --version
@@ -65,7 +62,6 @@ rustup --version
 
 **Output:**
 ```
-
 rustc 1.75.0 (82e1608df 2023-12-21)
 cargo 1.75.0 (1d8b05cdd 2023-11-20)
 rustup 1.26.0 (5af9b9484 2023-04-05)
@@ -91,6 +87,7 @@ Rust состоит из нескольких компонентов:
 
 ```bash
 # Установка rustfmt и clippy
+
 rustup component add rustfmt
 rustup component add clippy
 
@@ -112,7 +109,6 @@ rustup component add rust-analyzer
 Создайте файл `main.rs`:
 
 ```rust
-
 fn main() {
     println!("Hello, Rust!");
 }
@@ -121,26 +117,22 @@ fn main() {
 **Компиляция:**
 
 ```bash
-
 rustc main.rs
 ```
 
 **Output:**
 ```
 # Создаётся исполняемый файл main (или main.exe на Windows)
-
 ```
 
 **Запуск:**
 
 ```bash
-
 ./main
 ```
 
 **Output:**
 ```
-
 Hello, Rust!
 ```
 
@@ -149,13 +141,11 @@ Hello, Rust!
 **Вывод информации о компиляции:**
 
 ```bash
-
 rustc --version --verbose
 ```
 
 **Output:**
 ```
-
 rustc 1.75.0 (82e1608df 2023-12-21)
 binary: rustc
 commit-hash: 82e1608df2b92c5d5b3e8e3c3c3c3c3c3c3c3c3c3
@@ -168,14 +158,12 @@ LLVM version: 17.0.6
 **Оптимизация:**
 
 ```bash
-
 rustc -O main.rs  # Оптимизация для производительности
 ```
 
 **Вывод предупреждений:**
 
 ```bash
-
 rustc -W unused main.rs  # Предупреждения о неиспользуемом коде
 ```
 
@@ -203,20 +191,17 @@ rustc -W unused main.rs  # Предупреждения о неиспользу�
 **Создание бинарного проекта (исполняемый файл):**
 
 ```bash
-
 cargo new hello_rust
 ```
 
 **Output:**
 ```
-
 Created binary (application) `hello_rust` package
 ```
 
 **Структура созданного проекта:**
 
 ```
-
 hello_rust/
 ├── Cargo.toml
 └── src/
@@ -226,20 +211,17 @@ hello_rust/
 **Создание библиотечного проекта:**
 
 ```bash
-
 cargo new my_lib --lib
 ```
 
 **Output:**
 ```
-
 Created library `my_lib` package
 ```
 
 **Структура библиотечного проекта:**
 
 ```
-
 my_lib/
 ├── Cargo.toml
 └── src/
@@ -251,13 +233,11 @@ my_lib/
 **Компиляция проекта:**
 
 ```bash
-
 cargo build
 ```
 
 **Output:**
 ```
-
 Compiling hello_rust v0.1.0 (/path/to/hello_rust)
 Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 ```
@@ -265,13 +245,11 @@ Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 **Компиляция с оптимизацией (release):**
 
 ```bash
-
 cargo build --release
 ```
 
 **Output:**
 ```
-
 Compiling hello_rust v0.1.0 (/path/to/hello_rust)
 Finished release [optimized] target(s) in 0.60s
 ```
@@ -279,13 +257,11 @@ Finished release [optimized] target(s) in 0.60s
 **Запуск проекта:**
 
 ```bash
-
 cargo run
 ```
 
 **Output:**
 ```
-
 Compiling hello_rust v0.1.0 (/path/to/hello_rust)
 Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 Running `target/debug/hello_rust`
@@ -295,13 +271,11 @@ Hello, world!
 **Проверка кода (без компиляции):**
 
 ```bash
-
 cargo check
 ```
 
 **Output:**
 ```
-
 Checking hello_rust v0.1.0 (/path/to/hello_rust)
 Finished dev [unoptimized + debuginfo] target(s) in 0.20s
 ```
@@ -309,26 +283,22 @@ Finished dev [unoptimized + debuginfo] target(s) in 0.20s
 **Форматирование кода:**
 
 ```bash
-
 cargo fmt
 ```
 
 **Output:**
 ```
 # Код отформатирован согласно стандартам Rust
-
 ```
 
 **Проверка с clippy:**
 
 ```bash
-
 cargo clippy
 ```
 
 **Output:**
 ```
-
 Checking hello_rust v0.1.0 (/path/to/hello_rust)
 Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 ```
@@ -344,7 +314,6 @@ Finished dev [unoptimized + debuginfo] target(s) in 0.50s
 **Example: Базовый Cargo.toml**
 
 ```toml
-
 [package]
 name = "hello_rust"
 version = "0.1.0"
@@ -374,7 +343,6 @@ edition = "2021"
 **Стандартная структура проекта:**
 
 ```
-
 my_project/
 ├── Cargo.toml          # Манифест проекта
 ├── Cargo.lock          # Закреплённые версии зависимостей
@@ -397,7 +365,6 @@ my_project/
 **Организация кода в модули:**
 
 ```
-
 src/
 ├── main.rs
 ├── lib.rs
@@ -414,7 +381,6 @@ src/
 
 **src/main.rs:**
 ```rust
-
 mod config;
 mod utils;
 mod models;
@@ -430,7 +396,6 @@ fn main() {
 
 **src/config.rs:**
 ```rust
-
 pub struct Config {
     pub name: String,
 }
@@ -446,13 +411,11 @@ impl Config {
 
 **src/utils/mod.rs:**
 ```rust
-
 pub mod helpers;
 ```
 
 **src/utils/helpers.rs:**
 ```rust
-
 pub fn helper_function() {
     println!("Helper function called");
 }
@@ -467,7 +430,6 @@ pub fn helper_function() {
 **Добавление зависимости в Cargo.toml:**
 
 ```toml
-
 [dependencies]
 serde = "1.0"
 tokio = { version = "1.0", features = ["full"] }
@@ -477,7 +439,6 @@ reqwest = { version = "0.11", default-features = false }
 **Установка зависимостей:**
 
 ```bash
-
 cargo build
 ```
 
@@ -488,9 +449,9 @@ cargo автоматически загрузит и скомпилирует з
 **Семантическое версионирование:**
 
 ```toml
-
 [dependencies]
 # Точная версия
+
 serde = "1.0.0"
 
 # Совместимая версия (1.x.x)
@@ -535,7 +496,6 @@ my_lib = { path = "../my_lib" }
 **Example: Структура workspace**
 
 ```
-
 my_workspace/
 ├── Cargo.toml          # Workspace манифест
 ├── binary_crate/
@@ -551,7 +511,6 @@ my_workspace/
 **my_workspace/Cargo.toml:**
 
 ```toml
-
 [workspace]
 members = [
     "binary_crate",
@@ -589,13 +548,11 @@ mod tests {
 **Запуск тестов:**
 
 ```bash
-
 cargo test
 ```
 
 **Output:**
 ```
-
 running 1 test
 test tests::it_works ... ok
 
@@ -607,7 +564,6 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 **Файл tests/integration_test.rs:**
 
 ```rust
-
 use my_lib;
 
 #[test]
@@ -625,21 +581,18 @@ fn test_integration() {
 **Создание документации:**
 
 ```bash
-
 cargo doc
 ```
 
 **Просмотр документации:**
 
 ```bash
-
 cargo doc --open
 ```
 
 **Example: Документирование кода**
 
 ```rust
-
 /// Adds two numbers together.
 ///
 /// # Examples
@@ -713,7 +666,6 @@ cargo watch -x run
 **Установка:**
 
 ```bash
-
 rustup component add rust-analyzer
 ```
 
@@ -736,7 +688,6 @@ rustup component add rust-analyzer
 **Файл настроек .vscode/settings.json:**
 
 ```json
-
 {
     "rust-analyzer.checkOnSave.command": "clippy",
     "rust-analyzer.inlayHints.enable": true,
@@ -800,6 +751,7 @@ rustup component add rust-analyzer
 - [Clippy](https://github.com/rust-lang/rust-clippy) — линтер для Rust
 
 ---
+
 
 
 

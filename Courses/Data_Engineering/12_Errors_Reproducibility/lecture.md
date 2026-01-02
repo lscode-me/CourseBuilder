@@ -66,7 +66,6 @@ Retry механизмы позволяют автоматически повт�
 **Example: Retry механизм**
 
 ```python
-
 import time
 import random
 
@@ -112,6 +111,7 @@ class RetryHandler:
         raise last_error
 
 # Симуляция операции с временными ошибками
+
 def unreliable_operation():
     """Операция, которая может временно падать"""
     if random.random() < 0.7:  # 70% вероятность ошибки
@@ -119,6 +119,7 @@ def unreliable_operation():
     return "Успех"
 
 # Использование
+
 handler = RetryHandler(max_retries=3, strategy="exponential")
 try:
     result = handler.execute_with_retry(unreliable_operation)
@@ -129,7 +130,6 @@ except Exception as e:
 
 **Output:**
 ```
-
 🔄 Попытка 1/3
 ❌ Ошибка: Временная ошибка сети
 ⏳ Повтор через 2 секунды...
@@ -162,7 +162,6 @@ Backfill — это переобработка исторических данн
 **Example: Backfill процесс**
 
 ```python
-
 class BackfillManager:
     def __init__(self):
         self.processed_dates = set()
@@ -216,6 +215,7 @@ class BackfillManager:
                 print(f"  ⏭️  {date} уже обработана, пропускаем")
 
 # Симуляция pipeline
+
 class SimplePipeline:
     def run(self, date):
         print(f"    Pipeline выполнен для {date}")
@@ -227,12 +227,12 @@ manager = BackfillManager()
 pipeline = SimplePipeline()
 
 # Backfill за последние 3 дня
+
 manager.backfill_date_range("2024-01-01", "2024-01-03", pipeline)
 ```
 
 **Output:**
 ```
-
 🔄 Backfill: 2024-01-01 до 2024-01-03 (3 дней)
   Обработка 2024-01-01...
     Pipeline выполнен для 2024-01-01
@@ -265,7 +265,6 @@ manager.backfill_date_range("2024-01-01", "2024-01-03", pipeline)
 **Example: Версионирование данных**
 
 ```python
-
 class DataVersioning:
     def __init__(self):
         self.versions = {}
@@ -301,9 +300,11 @@ class DataVersioning:
         return list(self.versions.keys())
 
 # Использование
+
 versioning = DataVersioning()
 
 # Создание версий
+
 data_v1 = [{"id": 1, "name": "Alice"}]
 versioning.create_version(data_v1, "Initial data")
 
@@ -311,16 +312,17 @@ data_v2 = [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]
 versioning.create_version(data_v2, "Added Bob")
 
 # Список версий
+
 versioning.list_versions()
 
 # Получение версии
+
 v1_data = versioning.get_version("v1")
 print(f"\nДанные v1: {v1_data}")
 ```
 
 **Output:**
 ```
-
 ✅ Версия v1 создана: Initial data
 ✅ Версия v2 создана: Added Bob
 
@@ -354,7 +356,6 @@ print(f"\nДанные v1: {v1_data}")
 **Example: Воспроизводимый Pipeline**
 
 ```python
-
 class ReproduciblePipeline:
     def __init__(self, code_version, data_version, schema_version):
         self.code_version = code_version
@@ -398,6 +399,7 @@ class ReproduciblePipeline:
         return result
 
 # Использование
+
 pipeline = ReproduciblePipeline(
     code_version="v1.2.3",
     data_version="v2",
@@ -410,17 +412,18 @@ input_data = [{"id": 1, "name": "Alice"}, {"id": 2, "name": "Bob"}]
 result1 = pipeline.run(input_data)
 
 # Повторный запуск с теми же параметрами
+
 print("\n" + "="*50)
 print("Повторный запуск с теми же параметрами:")
 result2 = pipeline.run(input_data)
 
 # Результаты должны быть идентичны
+
 print(f"\nРезультаты идентичны: {result1 == result2}")
 ```
 
 **Output:**
 ```
-
 ✅ Конфигурация установлена: {'threshold': 100, 'enable_feature_x': True}
 
 🚀 Запуск воспроизводимого pipeline:
@@ -487,7 +490,6 @@ print(f"\nРезультаты идентичны: {result1 == result2}")
 **Example: Production Error Handling**
 
 ```python
-
 class ProductionPipeline:
     def __init__(self):
         self.dead_letter_queue = []
@@ -533,6 +535,7 @@ class ProductionPipeline:
         return results
 
 # Использование
+
 pipeline = ProductionPipeline()
 
 records = [
@@ -546,7 +549,6 @@ results = pipeline.process_batch(records, fail_fast=False)
 
 **Output:**
 ```
-
 📊 Статистика обработки:
    Обработано: 2
    Ошибок: 1
@@ -610,5 +612,6 @@ results = pipeline.process_batch(records, fail_fast=False)
 - MLflow: https://mlflow.org/ (ML reproducibility)
 
 ---
+
 
 

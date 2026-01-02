@@ -30,7 +30,6 @@
 **Example: Арифметическое расширение**
 
 ```bash
-
 $ echo $((2 + 3))
 5
 
@@ -45,7 +44,6 @@ $ echo $((x + y))
 **Example: Команда let**
 
 ```bash
-
 $ let "result=2+3"
 $ echo $result
 5
@@ -60,7 +58,6 @@ $ echo $result
 **Example: ${var}**
 
 ```bash
-
 $ name="John"
 $ echo ${name}
 John
@@ -71,7 +68,6 @@ John
 **Example: ${var:-default}**
 
 ```bash
-
 $ echo ${unset_var:-"default"}
 default
 
@@ -85,7 +81,6 @@ value
 **Example: ${var:=default}**
 
 ```bash
-
 $ unset var
 $ echo ${var:=default}
 default
@@ -102,7 +97,6 @@ default
 **Example: Command substitution**
 
 ```bash
-
 $ files=$(ls)
 $ echo "Files: $files"
 ```
@@ -112,7 +106,6 @@ $ echo "Files: $files"
 **Example: Старый синтаксис**
 
 ```bash
-
 $ files=`ls`
 $ echo "Files: $files"
 ```
@@ -126,7 +119,6 @@ $ echo "Files: $files"
 **Example: <()**
 
 ```bash
-
 $ diff <(ls dir1) <(ls dir2)
 ```
 
@@ -137,7 +129,6 @@ $ diff <(ls dir1) <(ls dir2)
 **Example: <<**
 
 ```bash
-
 $ cat << EOF
 Line 1
 Line 2

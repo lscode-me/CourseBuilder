@@ -56,7 +56,6 @@
 **Example: Концептуальная структура B-дерева**
 
 ```python
-
 class BTreeNode:
     """Узел B-дерева (упрощённая версия)."""
     def __init__(self, is_leaf=False):
@@ -92,7 +91,6 @@ for i, child in enumerate(root.children):
 
 **Output:**
 ```
-
 Корень: Keys: [10, 20], Leaf: False
   Ребёнок 1: Keys: [5], Leaf: True
   Ребёнок 2: Keys: [15], Leaf: True
@@ -112,7 +110,6 @@ for i, child in enumerate(root.children):
 **Example: Высота B-дерева**
 
 ```python
-
 import math
 
 def btree_height(n, t):
@@ -123,6 +120,7 @@ def btree_height(n, t):
     return math.ceil(math.log(n, 2 * t))
 
 # Сравнение высот
+
 n = 1000000  # 1 миллион ключей
 t_btree = 100  # B-дерево степени 100
 t_bst = 2  # Обычное BST (бинарное)
@@ -137,7 +135,6 @@ print(f"B-дерево ниже в {height_bst / height_btree:.1f} раз")
 
 **Output:**
 ```
-
 Высота B-дерева (t=100): 3
 Высота BST (бинарное): 20
 B-дерево ниже в 6.7 раз
@@ -166,7 +163,6 @@ B-дерево ниже в 6.7 раз
 **Example: Концептуальная структура B+ дерева**
 
 ```python
-
 class BPlusTreeNode:
     """Узел B+ дерева (упрощённая версия)."""
     def __init__(self, is_leaf=False):
@@ -196,6 +192,7 @@ leaf3.keys = [25, 30]
 leaf3.data = ['data25', 'data30']
 
 # Связываем листья
+
 leaf1.next_leaf = leaf2
 leaf2.next_leaf = leaf3
 
@@ -209,7 +206,6 @@ for i, leaf in enumerate(internal.children):
 
 **Output:**
 ```
-
 B+ дерево:
 Внутренний узел: [10, 20]
   Лист 1: ключи=[5], данные=['data5']
@@ -232,7 +228,6 @@ B+ дерево:
 **Example: Концептуальный индекс БД**
 
 ```python
-
 class DatabaseIndex:
     """Концептуальный индекс базы данных на основе B+ дерева."""
     def __init__(self):
@@ -257,6 +252,7 @@ class DatabaseIndex:
         return sorted(result)
 
 # Использование
+
 db_index = DatabaseIndex()
 db_index.insert(100, "record_1")
 db_index.insert(200, "record_2")
@@ -269,13 +265,13 @@ result = db_index.search(150)
 print(f"Поиск 150: {result}")
 
 # Диапазонный поиск
+
 range_result = db_index.range_search(120, 220)
 print(f"Диапазон [120, 220]: {range_result}")
 ```
 
 **Output:**
 ```
-
 Поиск 150: record_3
 Диапазон [120, 220]: [(150, 'record_3'), (200, 'record_2')]
 ```
@@ -334,6 +330,7 @@ print(f"Диапазон [120, 220]: {range_result}")
 
 ```python
 # Концептуально: БД использует B+ дерево для индексации
+
 class UserTableIndex:
     """Индекс таблицы пользователей."""
     def __init__(self):
@@ -349,6 +346,7 @@ class UserTableIndex:
         return self.index.get(user_id)
 
 # Использование
+
 user_index = UserTableIndex()
 user_index.insert(1001, page_id=5, offset=1024)
 user_index.insert(1002, page_id=5, offset=2048)
@@ -360,7 +358,6 @@ print(f"Запись 1002 находится: страница {location[0]}, с
 
 **Output:**
 ```
-
 Запись 1002 находится: страница 5, смещение 2048
 ```
 
@@ -369,7 +366,6 @@ print(f"Запись 1002 находится: страница {location[0]}, с
 **Example: Поиск пользователей в диапазоне ID**
 
 ```python
-
 def range_query(self, start_id, end_id):
     """Диапазонный запрос (B+ дерево оптимизировано)."""
     result = []
@@ -388,7 +384,6 @@ print(f"Пользователи в диапазоне [1001, 1003]: {result}")
 
 **Output:**
 ```
-
 Пользователи в диапазоне [1001, 1003]: [(1001, (5, 1024)), (1002, (5, 2048)), (1003, (6, 512))]
 ```
 
@@ -454,5 +449,6 @@ print(f"Пользователи в диапазоне [1001, 1003]: {result}")
 - Исследуйте оптимизации для конкретных БД
 
 ---
+
 
 

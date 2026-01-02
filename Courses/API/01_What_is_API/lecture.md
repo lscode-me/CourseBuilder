@@ -47,6 +47,7 @@
 import requests
 
 # Использование API
+
 response = requests.get('https://api.example.com/users/123')
 user_data = response.json()
 
@@ -55,7 +56,6 @@ print(user_data)
 
 **Output:**
 ```json
-
 {
   "id": 123,
   "name": "Иван Иванов",
@@ -111,13 +111,13 @@ def integrate_crm_with_payment(crm_api, payment_api, order_id):
     return payment_result
 
 # Интеграция использует API обеих систем
+
 result = integrate_crm_with_payment(crm_api, payment_api, order_id=456)
 print(f"Payment created: {result['id']}")
 ```
 
 **Output:**
 ```
-
 Payment created: pay_789xyz
 ```
 
@@ -186,6 +186,7 @@ class UserAPI:
         pass
 
 # Клиент использует интерфейс, не зная реализации
+
 api = UserAPI()
 user = api.get_user(123)
 ```
@@ -237,6 +238,7 @@ def create_user_api(request_data: dict) -> dict:
     }, 201
 
 # Клиент полагается на контракт
+
 response, status = create_user_api({
     'name': 'Иван',
     'email': 'ivan@example.com'
@@ -250,7 +252,6 @@ elif status == 409:
 
 **Output:**
 ```
-
 User created: 123
 ```
 
@@ -308,7 +309,6 @@ print("All contract tests passed")
 
 **Output:**
 ```
-
 All contract tests passed
 ```
 
@@ -333,6 +333,7 @@ All contract tests passed
 # Без стандартов каждая система использует свой формат
 
 # Система A использует формат 1
+
 system_a_user = {
     'user_id': 123,
     'full_name': 'Иван Иванов',
@@ -340,6 +341,7 @@ system_a_user = {
 }
 
 # Система B использует формат 2
+
 system_b_user = {
     'id': 123,
     'name': 'Иван Иванов',
@@ -347,6 +349,7 @@ system_b_user = {
 }
 
 # Система C использует формат 3
+
 system_c_user = {
     'ID': 123,
     'Name': 'Иван Иванов',
@@ -355,6 +358,7 @@ system_c_user = {
 }
 
 # Для каждой интеграции нужен свой адаптер
+
 def adapt_to_system_b(user_a):
     return {
         'id': user_a['user_id'],
@@ -373,7 +377,6 @@ def adapt_to_system_c(user_a):
 # N систем = N*(N-1)/2 адаптеров!
 # 3 системы = 3 адаптера
 # 10 систем = 45 адаптеров!
-
 ```
 
 С ростом числа систем количество необходимых адаптеров растёт экспоненциально.
@@ -396,6 +399,7 @@ def adapt_to_system_c(user_a):
 # Со стандартом все системы используют один формат
 
 # Стандарт: JSON API format
+
 standard_user = {
     'id': 123,
     'type': 'user',
@@ -407,6 +411,7 @@ standard_user = {
 }
 
 # Все системы понимают стандартный формат
+
 def process_user(user_data):
     """Обработка пользователя в стандартном формате"""
     user_id = user_data['id']
@@ -424,7 +429,6 @@ print(result)
 
 **Output:**
 ```
-
 Processing user 123: Иван Иванов (ivan@example.com)
 ```
 
@@ -446,6 +450,7 @@ Processing user 123: Иван Иванов (ivan@example.com)
 # OpenAPI стандартизирует описание API
 
 # openapi.yaml (стандартный формат)
+
 """
 openapi: 3.0.0
 info:
@@ -493,7 +498,6 @@ print("API соответствует стандарту OpenAPI")
 
 **Output:**
 ```
-
 API соответствует стандарту OpenAPI
 ```
 
@@ -512,11 +516,11 @@ API соответствует стандарту OpenAPI
 **Example: Синхронная vs асинхронная интеграция**
 
 ```python
-
 import time
 import asyncio
 
 # Синхронная интеграция
+
 def sync_integration():
     """Клиент блокируется, ожидая ответа"""
     print("Отправка запроса...")
@@ -525,6 +529,7 @@ def sync_integration():
     return response
 
 # Асинхронная интеграция
+
 async def async_integration():
     """Клиент не блокируется"""
     print("Отправка запроса...")
@@ -555,6 +560,7 @@ asyncio.run(async_integration())
 
 ```python
 # Однонаправленная: CRM → Analytics
+
 def one_way_integration():
     """Данные идут только от CRM к Analytics"""
     crm_data = crm_system.get_orders()
@@ -562,6 +568,7 @@ def one_way_integration():
     # Analytics не отправляет данные обратно в CRM
 
 # Двунаправленная: CRM ↔ Payment
+
 def two_way_integration():
     """Данные идут в обе стороны"""
     # CRM → Payment: создание платежа
@@ -586,10 +593,10 @@ def two_way_integration():
 **Example: Real-time vs Batch**
 
 ```python
-
 from datetime import datetime
 
 # Real-time: каждое событие обрабатывается сразу
+
 def real_time_integration(event):
     """Обработка события в реальном времени"""
     print(f"[{datetime.now()}] Processing event: {event}")
@@ -597,6 +604,7 @@ def real_time_integration(event):
     update_system(event)
 
 # Batch: события накапливаются и обрабатываются раз в час
+
 events_buffer = []
 
 def batch_integration(event):
@@ -630,6 +638,7 @@ for i in range(1000):
 
 ```python
 # Point-to-Point: прямое соединение
+
 class PointToPointIntegration:
     """Система A напрямую соединена с системой B"""
     def connect(self, system_a, system_b):
@@ -637,6 +646,7 @@ class PointToPointIntegration:
         system_b.set_target(system_a)
 
 # Hub-and-Spoke: центральный узел
+
 class HubIntegration:
     """Все системы соединены через центральный узел"""
     def __init__(self):
@@ -649,6 +659,7 @@ class HubIntegration:
         self.hub.route(from_system, to_system, data)
 
 # Mesh: каждая с каждой
+
 class MeshIntegration:
     """Каждая система знает о каждой"""
     def __init__(self):
@@ -683,7 +694,6 @@ class MeshIntegration:
 **Example: E-commerce интеграция**
 
 ```python
-
 class ECommerceIntegration:
     """Интеграция интернет-магазина с внешними системами"""
     
@@ -734,7 +744,6 @@ print(result)
 
 **Output:**
 ```
-
 {'status': 'success', 'payment_id': 'pay_123', 'shipment_id': 'ship_456'}
 ```
 
@@ -745,7 +754,6 @@ print(result)
 **Example: Микросервисная интеграция**
 
 ```python
-
 class MicroserviceIntegration:
     """Интеграция между микросервисами"""
     
@@ -779,6 +787,7 @@ class MicroserviceIntegration:
 
 # Каждый сервис имеет свой API
 # Интеграция координирует их работу
+
 integration = MicroserviceIntegration()
 order = integration.create_order_with_user(
     'user@example.com',
@@ -789,7 +798,6 @@ print(f"Order created: {order['id']}")
 
 **Output:**
 ```
-
 Order created: order_789
 ```
 
@@ -813,6 +821,7 @@ def bad_design():
 ✅ **Correct:**
 ```python
 # Разделение ответственности
+
 def good_design():
     # API предоставляет интерфейс
     api = UserAPI()
@@ -840,6 +849,7 @@ def bad_api_usage():
 ✅ **Correct:**
 ```python
 # Соблюдение контракта
+
 def good_api_usage():
     response = api.get_user(123)
     # Проверка контракта
@@ -856,6 +866,7 @@ def good_api_usage():
 ❌ **Incorrect:**
 ```python
 # Каждая интеграция использует свой формат
+
 def bad_integration():
     # Система A
     data_a = {'user_id': 123, 'full_name': 'Иван'}
@@ -872,6 +883,7 @@ def bad_integration():
 ✅ **Correct:**
 ```python
 # Использование стандартного формата
+
 def good_integration():
     # Все системы используют стандарт JSON API
     standard_data = {
@@ -938,5 +950,6 @@ def good_integration():
 - "The Importance of API Contracts" — важность контрактов API
 
 ---
+
 
 

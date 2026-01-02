@@ -51,7 +51,6 @@ D) `__init__`
 Что выведет следующий код?
 
 ```python
-
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -59,7 +58,6 @@ class Dog:
 dog1 = Dog("Rex")
 dog2 = Dog("Max")
 print(dog1.name)
-
 ```
 
 A) Dog
@@ -119,7 +117,6 @@ D) Удаляет родительский класс
 Что выведет следующий код?
 
 ```python
-
 class Animal:
     def speak(self):
         return "Some sound"
@@ -130,7 +127,6 @@ class Dog(Animal):
 
 dog = Dog()
 print(dog.speak())
-
 ```
 
 A) Some sound

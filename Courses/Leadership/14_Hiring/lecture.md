@@ -43,7 +43,6 @@
 
 **Indirect costs плохого найма:**
 ```
-
 Bad hire за $100K/год:
 
 - 6 месяцев низкой productivity: $50K
@@ -53,7 +52,6 @@ Bad hire за $100K/год:
 - Rehiring costs: $20K+
 
 Total: $120K+ и месяцы потерянного времени
-
 ```
 
 > **💡 Key Insight:**  
@@ -63,10 +61,8 @@ Total: $120K+ и месяцы потерянного времени
 
 **Принцип:**
 ```
-
 Hire people who raise the average of your team,
 not just fill a seat.
-
 ```
 
 **Questions:**
@@ -85,39 +81,44 @@ not just fill a seat.
 ## [Title] at [Company]
 
 ### About Us
+
 [2-3 sentences about company and mission]
 
 ### About the Role
+
 [What you'll do, why it matters]
 
 ### What You'll Work On
+
 - [Responsibility 1]
 - [Responsibility 2]
 - [Responsibility 3]
 
 ### We're Looking For
+
 - [Must-have skill 1]
 - [Must-have skill 2]
 - [Must-have skill 3]
 
 ### Nice to Have
+
 - [Optional skill 1]
 - [Optional skill 2]
 
 ### What We Offer
+
 - [Benefit 1]
 - [Benefit 2]
 - [Benefit 3]
 
 ### Interview Process
-[Describe steps]
 
+[Describe steps]
 ```
 
 ### 2.2 Избегайте в JD
 
 ```
-
 ❌ Unrealistic requirements:
 "10 years experience in technology that exists 5 years"
 
@@ -133,7 +134,6 @@ TypeScript, Ruby, PHP, Scala..."
 
 ✅ Instead:
 Realistic, specific, inclusive, honest
-
 ```
 
 ---
@@ -170,7 +170,6 @@ Realistic, specific, inclusive, honest
 ### 3.2 Diversity в sourcing
 
 ```
-
 Problem:
 
 - Referrals → similar people
@@ -182,7 +181,6 @@ Solutions:
 - Blind resume review
 - Diverse interview panels
 - Partner with diversity organizations
-
 ```
 
 ---
@@ -192,7 +190,6 @@ Solutions:
 ### 4.1 Типичные этапы
 
 ```
-
 1. Recruiter Screen (30 min)
    - Basics: experience, motivation, logistics
    - Sell the role
@@ -215,7 +212,6 @@ Solutions:
 5. Final / Executive (если нужно)
    - Senior alignment
    - Offer discussion
-
 ```
 
 ### 4.2 Structured Interviews
@@ -229,13 +225,11 @@ Solutions:
 
 **Как сделать structured:**
 ```
-
 1. Define competencies to assess
 2. Prepare questions for each
 3. Use rubric for scoring
 4. Same questions for all candidates
 5. Multiple interviewers rate independently
-
 ```
 
 ### 4.3 Scorecard
@@ -251,12 +245,10 @@ Solutions:
 
 **Scoring:**
 ```
-
 1 - Does not meet expectations
 2 - Partially meets
 3 - Meets expectations
 4 - Exceeds expectations
-
 ```
 
 ---
@@ -273,7 +265,6 @@ Solutions:
 
 **Best practices:**
 ```
-
 ✅ Real-world problems (не algorithmic tricks)
 ✅ Allow internet/docs usage
 ✅ Focus on process, not just result
@@ -284,20 +275,17 @@ Solutions:
 ❌ Obscure algorithms
 ❌ Whiteboard without computer
 ❌ Time pressure that creates anxiety
-
 ```
 
 ### 5.2 System Design
 
 **Для senior+ позиций:**
 ```
-
 - Open-ended problem
 - Discuss trade-offs
 - Scaling considerations
 - Draw architecture
 - Walk through flow
-
 ```
 
 **Оценка:**
@@ -312,7 +300,6 @@ Solutions:
 
 **Take-Home:**
 ```
-
 Плюсы:
 
 - Меньше stress
@@ -324,12 +311,10 @@ Solutions:
 - Time investment (для кандидата)
 - Can be "helped" by others
 - Longer process
-
 ```
 
 **Live Coding:**
 ```
-
 Плюсы:
 
 - See thought process
@@ -341,7 +326,6 @@ Solutions:
 - Stress affects performance
 - Not realistic environment
 - Favors extroverts
-
 ```
 
 ---
@@ -352,7 +336,6 @@ Solutions:
 
 **Структура вопроса:**
 ```
-
 "Tell me about a time when [situation]"
 
 Кандидат отвечает по STAR:
@@ -361,65 +344,52 @@ Solutions:
 - Task: задача
 - Action: что сделал
 - Result: результат
-
 ```
 
 ### 6.2 Примеры вопросов
 
 **Collaboration:**
 ```
-
 "Tell me about a time you had a conflict with a teammate.
 How did you handle it?"
-
 ```
 
 **Initiative:**
 ```
-
 "Tell me about a time you improved something 
 without being asked."
-
 ```
 
 **Failure:**
 ```
-
 "Tell me about a time you failed. 
 What did you learn?"
-
 ```
 
 **Leadership:**
 ```
-
 "Tell me about a time you influenced a decision 
 without formal authority."
-
 ```
 
 ### 6.3 Bias в интервью
 
 **Common biases:**
 ```
-
 - Affinity bias: "Like me"
 - Halo effect: One good thing → everything good
 - Horn effect: One bad thing → everything bad
 - Confirmation bias: Looking for evidence of first impression
 - Recency bias: Remember last candidate better
-
 ```
 
 **Mitigation:**
 ```
-
 1. Structured interviews
 2. Diverse panel
 3. Independent scoring
 4. Calibration sessions
 5. Awareness training
-
 ```
 
 ---
@@ -429,20 +399,17 @@ without formal authority."
 ### 7.1 Debrief Process
 
 ```
-
 1. All interviewers submit written feedback BEFORE meeting
 2. Debrief meeting:
    - Each shares assessment
    - Discuss disagreements
    - No "I don't feel it" without specifics
 3. Decision: Hire / No Hire / Need more data
-
 ```
 
 ### 7.2 Red Flags
 
 ```
-
 🚨 Strong "No Hire" signals:
 
 - Misrepresentation of experience
@@ -450,24 +417,20 @@ without formal authority."
 - Can't explain their own work
 - Blame without ownership
 - Strong resistance to feedback
-
 ```
 
 ### 7.3 Hire Decision
 
 **Questions:**
 ```
-
 1. Does this person meet the bar?
 2. Will they be successful in THIS role?
 3. Would I want to work with them?
 4. Are there concerns I'm ignoring?
-
 ```
 
 **When in doubt:**
 ```
-
 Lean towards "no" for:
 
 - Culture concerns
@@ -479,7 +442,6 @@ Consider "yes" for:
 - Skills gap that's trainable
 - Nervousness that affected performance
 - Non-traditional background with potential
-
 ```
 
 ---
@@ -489,7 +451,6 @@ Consider "yes" for:
 ### 8.1 Goals of Onboarding
 
 ```
-
 By end of Week 1:
 
 - Has all access and tools
@@ -507,13 +468,13 @@ By end of Month 3:
 - Fully productive
 - Contributing independently
 - Integrated into culture
-
 ```
 
 ### 8.2 Onboarding Checklist
 
 ```markdown
 ## Before Day 1
+
 - [ ] Equipment ordered
 - [ ] Accounts created
 - [ ] Buddy assigned
@@ -521,6 +482,7 @@ By end of Month 3:
 - [ ] Team informed
 
 ## Day 1
+
 - [ ] Welcome meeting with manager
 - [ ] Tool setup
 - [ ] Intro to buddy
@@ -528,6 +490,7 @@ By end of Month 3:
 - [ ] First task assigned
 
 ## Week 1
+
 - [ ] Meet all teammates
 - [ ] Read key documentation
 - [ ] Attend team ceremonies
@@ -535,6 +498,7 @@ By end of Month 3:
 - [ ] Daily check-ins with buddy
 
 ## Month 1
+
 - [ ] Complete onboarding docs
 - [ ] First code shipped
 - [ ] 1-on-1 with manager (weekly)
@@ -542,23 +506,21 @@ By end of Month 3:
 - [ ] 30-day feedback
 
 ## Month 3
+
 - [ ] 90-day review
 - [ ] Goals set for next quarter
 - [ ] Fully integrated
-
 ```
 
 ### 8.3 Buddy Program
 
 **Buddy responsibilities:**
 ```
-
 - Daily check-ins (Week 1)
 - Answer "dumb" questions
 - Navigate culture and politics
 - Social connection
 - NOT performance evaluation
-
 ```
 
 **Buddy selection:**
@@ -576,14 +538,12 @@ By end of Month 3:
 
 **During hiring:**
 ```
-
 Be honest about:
 
 - Real challenges
 - Growth opportunities
 - Team dynamics
 - Company stage
-
 ```
 
 **Why:**
@@ -664,6 +624,7 @@ Be honest about:
 - Culture Amp — onboarding feedback
 
 ---
+
 
 
 

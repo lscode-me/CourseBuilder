@@ -45,7 +45,6 @@
 **Пример:**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100),
@@ -58,7 +57,6 @@ CREATE TABLE users (
 **Первичный ключ может состоять из нескольких столбцов:**
 
 ```sql
-
 CREATE TABLE order_items (
     order_id INTEGER,
     product_id INTEGER,
@@ -72,7 +70,6 @@ CREATE TABLE order_items (
 **SERIAL (PostgreSQL) / AUTO_INCREMENT (MySQL):**
 
 ```sql
-
 -- PostgreSQL
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -97,7 +94,6 @@ CREATE TABLE users (
 **Пример:**
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
@@ -111,7 +107,6 @@ CREATE TABLE orders (
 **Поведение при удалении/обновлении:**
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
@@ -164,7 +159,6 @@ CREATE TABLE orders (
 **❌ Не в 1NF:**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER,
     name VARCHAR(100),
@@ -175,7 +169,6 @@ CREATE TABLE users (
 **✅ В 1NF:**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100)
@@ -198,7 +191,6 @@ CREATE TABLE user_phones (
 **❌ Не в 2NF:**
 
 ```sql
-
 CREATE TABLE order_items (
     order_id INTEGER,
     product_id INTEGER,
@@ -211,7 +203,6 @@ CREATE TABLE order_items (
 **✅ В 2NF:**
 
 ```sql
-
 CREATE TABLE products (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100)
@@ -236,7 +227,6 @@ CREATE TABLE order_items (
 **❌ Не в 3NF:**
 
 ```sql
-
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
     user_id INTEGER,
@@ -248,7 +238,6 @@ CREATE TABLE orders (
 **✅ В 3NF:**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     country VARCHAR(100)
@@ -280,7 +269,6 @@ CREATE TABLE orders (
 **Пример:**
 
 ```sql
-
 -- Денормализованная таблица для быстрых отчётов
 CREATE TABLE user_stats (
     user_id INTEGER PRIMARY KEY,
@@ -313,7 +301,6 @@ CREATE TABLE user_stats (
 **Нормализованная схема:**
 
 ```sql
-
 -- Пользователи
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -359,7 +346,6 @@ CREATE TABLE order_items (
 ### 5.2 Индексы для производительности
 
 ```sql
-
 -- Индексы для внешних ключей
 CREATE INDEX idx_orders_user_id ON orders(user_id);
 CREATE INDEX idx_order_items_order_id ON order_items(order_id);
@@ -371,7 +357,6 @@ CREATE INDEX idx_order_items_product_id ON order_items(product_id);
 **Схема для блога:**
 
 ```sql
-
 -- Пользователи
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -435,7 +420,6 @@ CREATE TABLE post_tags (
 **❌ Не в BCNF:**
 
 ```sql
-
 CREATE TABLE course_instructors (
     course_id INTEGER,
     instructor_id INTEGER,
@@ -449,7 +433,6 @@ CREATE TABLE course_instructors (
 **✅ В BCNF:**
 
 ```sql
-
 CREATE TABLE instructors (
     id INTEGER PRIMARY KEY,
     department VARCHAR(100)
@@ -472,7 +455,6 @@ CREATE TABLE course_instructors (
 **Пример: поддержание total_orders в user_stats:**
 
 ```sql
-
 -- Таблица с денормализованными данными
 CREATE TABLE user_stats (
     user_id INTEGER PRIMARY KEY,
@@ -523,7 +505,6 @@ EXECUTE FUNCTION update_user_stats();
 **Натуральный ключ** — имеет бизнес-значение:
 
 ```sql
-
 -- Email как натуральный ключ
 CREATE TABLE users (
     email VARCHAR(100) PRIMARY KEY,
@@ -534,7 +515,6 @@ CREATE TABLE users (
 **Суррогатный ключ** — искусственный идентификатор:
 
 ```sql
-
 -- ID как суррогатный ключ
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -568,7 +548,6 @@ CREATE TABLE users (
 **Проверка значений:**
 
 ```sql
-
 CREATE TABLE orders (
     id SERIAL PRIMARY KEY,
     amount DECIMAL(10, 2) CHECK (amount > 0),
@@ -582,7 +561,6 @@ CREATE TABLE orders (
 **Уникальность значений:**
 
 ```sql
-
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -595,7 +573,6 @@ CREATE TABLE users (
 **Обязательные поля:**
 
 ```sql
-
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -622,7 +599,6 @@ CREATE TABLE users (
 **Комментарии к таблицам и столбцам:**
 
 ```sql
-
 COMMENT ON TABLE users IS 'Пользователи системы';
 COMMENT ON COLUMN users.email IS 'Email адрес пользователя (уникальный)';
 COMMENT ON COLUMN users.created_at IS 'Дата регистрации';
@@ -633,7 +609,6 @@ COMMENT ON COLUMN users.created_at IS 'Дата регистрации';
 **Миграции:**
 
 ```sql
-
 -- Миграция: добавление столбца
 ALTER TABLE users ADD COLUMN phone VARCHAR(20);
 

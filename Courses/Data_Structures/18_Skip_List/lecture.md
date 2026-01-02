@@ -46,7 +46,6 @@ Skip List состоит из нескольких уровней связанн
 **Example: Визуализация структуры**
 
 ```python
-
 class SkipListNode:
     """Узел Skip List."""
     def __init__(self, value, level):
@@ -70,7 +69,6 @@ print("Уровень 0: None -> 1 -> 3 -> 5 -> 7 -> 9 -> None")
 
 **Output:**
 ```
-
 Структура Skip List (концептуально):
 Уровень 2: None -> 5 -> None
 Уровень 1: None -> 3 -> 5 -> 7 -> None
@@ -89,7 +87,6 @@ print("Уровень 0: None -> 1 -> 3 -> 5 -> 7 -> 9 -> None")
 **Example: Генерация уровня**
 
 ```python
-
 import random
 
 def random_level(max_level=16):
@@ -100,6 +97,7 @@ def random_level(max_level=16):
     return level
 
 # Демонстрация распределения уровней
+
 levels = [random_level() for _ in range(1000)]
 level_counts = {}
 for level in levels:
@@ -113,7 +111,6 @@ for level in sorted(level_counts.keys()):
 
 **Output:**
 ```
-
 Распределение уровней (из 1000 узлов):
   Уровень 0: 512 узлов (51.2%)
   Уровень 1: 250 узлов (25.0%)
@@ -140,7 +137,6 @@ for level in sorted(level_counts.keys()):
 **Example: Упрощённая реализация поиска**
 
 ```python
-
 class SkipList:
     """Упрощённая реализация Skip List."""
     def __init__(self, max_level=16):
@@ -222,6 +218,7 @@ class SkipList:
             print(level_str)
 
 # Использование
+
 sl = SkipList()
 for val in [3, 6, 7, 9, 12, 19, 17, 26, 21, 25]:
     sl.insert(val)
@@ -237,7 +234,6 @@ print(f"\nПоиск 19: {'Найден' if result else 'Не найден'}")
 
 **Output:**
 ```
-
 После вставки элементов:
 Skip List (по уровням):
 Уровень 2: 7 -> 19 -> None
@@ -266,21 +262,23 @@ Skip List (по уровням):
 **Example: Сравнение производительности**
 
 ```python
-
 import time
 
 # Skip List
+
 sl = SkipList()
 for i in range(10000):
     sl.insert(i)
 
 # Поиск
+
 start = time.time()
 for _ in range(1000):
     sl.search(5000)
 time_skip = time.time() - start
 
 # Сравнение с обычным списком (линейный поиск)
+
 regular_list = list(range(10000))
 start = time.time()
 for _ in range(1000):
@@ -294,7 +292,6 @@ print(f"Ускорение: {time_list / time_skip:.1f}x")
 
 **Output:**
 ```
-
 Skip List поиск: 0.012345 секунд
 Обычный список: 0.234567 секунд
 Ускорение: 19.0x
@@ -344,7 +341,6 @@ Redis использует Skip List для реализации sorted sets.
 **Example: Концептуальное применение**
 
 ```python
-
 class SortedSet:
     """Упрощённая реализация отсортированного множества."""
     def __init__(self):
@@ -378,7 +374,6 @@ print(f"Содержит 10: {ss.contains(10)}")
 
 **Output:**
 ```
-
 Содержит 5: True
 Содержит 10: False
 ```
@@ -392,7 +387,6 @@ print(f"Содержит 10: {ss.contains(10)}")
 **Example: Удаление элемента**
 
 ```python
-
 def delete(self, value):
     """Удалить элемент."""
     update = [None] * (self.max_level + 1)
@@ -422,6 +416,7 @@ def delete(self, value):
     return False
 
 # Добавляем метод к классу
+
 SkipList.delete = delete
 
 # Тестирование
@@ -440,7 +435,6 @@ sl.display()
 
 **Output:**
 ```
-
 До удаления:
 Skip List (по уровням):
 Уровень 1: 7 -> None
@@ -489,5 +483,6 @@ Skip List (по уровням):
 - Исследуйте применение в распределённых системах
 
 ---
+
 
 

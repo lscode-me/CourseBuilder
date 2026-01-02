@@ -65,7 +65,6 @@
 
 **Output:**
 ```
-
 pid  | usesysid | usename  | application_name | client_addr | state   | sync_state
 
 -----+----------+----------+------------------+-------------+---------+------------
@@ -76,6 +75,7 @@ pid  | usesysid | usename  | application_name | client_addr | state   | sync_sta
 
 ```python
 # Мониторинг задержки репликации
+
 import psycopg2
 import time
 
@@ -141,7 +141,6 @@ print(f"Replication lag: {lag / 1024 / 1024:.2f} MB")
 **Пример: MySQL Replication Configuration**
 
 ```sql
-
 -- На Master:
 -- my.cnf:
 -- [mysqld]
@@ -190,6 +189,7 @@ SHOW SLAVE STATUS\G
 
 ```python
 # Симуляция синхронной репликации
+
 import time
 import random
 
@@ -233,7 +233,6 @@ async_rep = AsyncReplication([Replica(1), Replica(2), Replica(3)])
 
 # Sync: ~40ms (10ms primary + 3 * 10ms replicas)
 # Async: ~10ms (только primary)
-
 ```
 
 ### 2.2 Multi-Leader (Master-Master)
@@ -278,7 +277,6 @@ $$R + W > N$$
 **Реализация Quorum Read/Write:**
 
 ```python
-
 class QuorumStore:
     """Упрощенная реализация Quorum-based хранилища."""
     
@@ -326,6 +324,7 @@ class QuorumStore:
         return values[max_idx]
 
 # Пример использования
+
 nodes = [Node(1), Node(2), Node(3)]
 store = QuorumStore(nodes, n=3, w=2, r=2)  # Strong Consistency
 
@@ -337,6 +336,7 @@ value = store.read("user:123")
 
 ```python
 # Демонстрация пересечения множеств
+
 def visualize_quorum(n, w, r):
     """Показывает, почему R+W>N гарантирует консистентность."""
     nodes = list(range(1, n+1))
@@ -399,7 +399,6 @@ visualize_quorum(n=3, w=1, r=1)  # Может не быть пересечени
 **Raft Log Structure:**
 
 ```python
-
 class RaftLog:
     """Структура лога Raft."""
     
@@ -438,6 +437,7 @@ class RaftLog:
             self.committed_index = index
 
 # Пример лога
+
 log = RaftLog()
 log.append(term=1, command="SET x=1")
 log.append(term=1, command="SET y=2")
@@ -450,7 +450,6 @@ print(f"Committed up to: {log.committed_index}")
 **Leader Election в деталях:**
 
 ```python
-
 class RaftElection:
     """Детальная реализация выборов лидера."""
     
@@ -512,7 +511,6 @@ class RaftElection:
 ### Visualizing Raft Election
 
 ```mermaid
-
 graph TD
     Follower -- Timeout --> Candidate
     Candidate -- Majority Votes --> Leader
@@ -532,7 +530,6 @@ graph TD
 Все узлы видят одни и те же данные в один момент времени. Достигается через синхронную репликацию или Quorum.
 
 ```python
-
 class StrongConsistentStore:
     """Хранилище со строгой консистентностью."""
     
@@ -557,7 +554,6 @@ class StrongConsistentStore:
 Система гарантирует, что если не будет новых записей, все узлы в конечном итоге придут к одному состоянию.
 
 ```python
-
 class EventuallyConsistentStore:
     """Хранилище с финальной консистентностью."""
     
@@ -583,7 +579,6 @@ class EventuallyConsistentStore:
 Если событие A произошло до события B, то все узлы увидят A перед B.
 
 ```python
-
 class CausalConsistentStore:
     """Хранилище с причинной консистентностью."""
     
@@ -623,7 +618,6 @@ class CausalConsistentStore:
 Гарантия, что пользователь сразу видит свои собственные записи.
 
 ```python
-
 class ReadAfterWriteStore:
     """Хранилище с Read-After-Write консистентностью."""
     
@@ -664,7 +658,6 @@ class ReadAfterWriteStore:
 Простая стратегия: побеждает запись с более поздним timestamp.
 
 ```python
-
 class LastWriteWins:
     """Разрешение конфликтов по последней записи."""
     
@@ -688,7 +681,6 @@ class LastWriteWins:
 Структуры данных, которые автоматически разрешают конфликты.
 
 ```python
-
 class CRDTSet:
     """CRDT Set: объединение множеств без конфликтов."""
     
@@ -735,6 +727,7 @@ set_b.add("z")
 set_b.remove("x")
 
 # Объединение
+
 set_a.merge(set_b)
 print(set_a.get())  # {'y', 'z'} - автоматически разрешено!
 ```
@@ -744,7 +737,6 @@ print(set_a.get())  # {'y', 'z'} - автоматически разрешено
 Используется в Google Docs для разрешения конфликтов при одновременном редактировании.
 
 ```python
-
 class OperationalTransform:
     """Упрощенная реализация OT."""
     
@@ -786,10 +778,12 @@ op2 = {'type': 'insert', 'text': 'my ', 'pos': 0}
 doc = OperationalTransform().apply(doc, op2)  # "my Hello world"
 
 # Трансформируем op1 относительно op2
+
 op1_transformed = OperationalTransform().transform_insert(op1, op2)
 # op1_transformed: {'type': 'insert', 'text': ' beautiful', 'pos': 8}
 
 # Применяем трансформированную op1
+
 doc = OperationalTransform().apply(doc, op1_transformed)
 # Результат: "my Hello beautiful world" - корректно!
 ```
@@ -801,7 +795,6 @@ doc = OperationalTransform().apply(doc, op1_transformed)
 Напишем упрощенную машину состояний Raft.
 
 ```python
-
 import random
 import threading
 import time
@@ -916,6 +909,7 @@ for n in nodes:
 
 # Let them run...
 # One will timeout first and become leader.
+
 time.sleep(10)
 for n in nodes: n.running = False
 ```
@@ -927,7 +921,6 @@ for n in nodes: n.running = False
 ### 8.1 Метрики репликации
 
 ```python
-
 class ReplicationMonitor:
     """Мониторинг состояния репликации."""
     
@@ -974,7 +967,6 @@ class ReplicationMonitor:
 ### 8.2 Автоматический failover
 
 ```python
-
 class AutoFailover:
     """Автоматическое переключение при падении Primary."""
     
@@ -1123,4 +1115,5 @@ class AutoFailover:
 3.  Посмотрите, как фолловеры через таймаут начнут новые выборы (Term увеличится).
 
 В следующем модуле мы спустимся на уровень ниже и изучим, как эффективно хранить логи на диске. [Distributed Logs And Queues](../12_Distributed_Logs_And_Queues/).
+
 

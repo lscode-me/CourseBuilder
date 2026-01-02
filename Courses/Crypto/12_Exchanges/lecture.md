@@ -103,7 +103,6 @@
 
 **Пример:**
 ```
-
 Buy Orders          Sell Orders
 10 BTC @ $50,000    5 BTC @ $50,100
 20 BTC @ $49,900    10 BTC @ $50,200
@@ -131,6 +130,7 @@ Buy Orders          Sell Orders
 **Пример:**
 ```python
 # Упрощённая формула AMM
+
 def calculate_price(amount_in, reserve_in, reserve_out):
     # Constant product formula: x * y = k
     k = reserve_in * reserve_out
@@ -151,7 +151,6 @@ print(f"За {eth_amount} ETH получите {usdc_amount:.2f} USDC")
 
 **Output:**
 ```
-
 За 1 ETH получите 1980.20 USDC
 ```
 
@@ -204,7 +203,6 @@ print(f"Прибыль от арбитража: ${profit:.2f}")
 
 **Output:**
 ```
-
 Прибыль от арбитража: $50.00
 ```
 
@@ -370,5 +368,6 @@ print(f"Прибыль от арбитража: ${profit:.2f}")
 - Безопасность торговли
 
 ---
+
 
 

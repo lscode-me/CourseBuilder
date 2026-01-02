@@ -45,7 +45,6 @@
 **Example: Алгоритм поиска максимума**
 
 ```python
-
 def find_maximum(numbers):
     """
     Алгоритм поиска максимального элемента в списке.
@@ -71,7 +70,6 @@ print(f"Максимум в {data}: {result}")
 
 **Output:**
 ```
-
 Максимум в [3, 7, 2, 9, 1, 5]: 9
 ```
 
@@ -90,6 +88,7 @@ print(f"Максимум в {data}: {result}")
 
 ```python
 # Реализация 1: классический цикл
+
 def max_v1(arr):
     result = arr[0]
     for x in arr[1:]:
@@ -98,6 +97,7 @@ def max_v1(arr):
     return result
 
 # Реализация 2: с использованием reduce
+
 from functools import reduce
 def max_v2(arr):
     return reduce(lambda a, b: a if a > b else b, arr)
@@ -108,6 +108,7 @@ def max_v3(arr):
     return sorted(arr)[-1]
 
 # Все три реализации одного алгоритма
+
 data = [5, 2, 8, 1, 9]
 print(f"v1: {max_v1(data)}")
 print(f"v2: {max_v2(data)}")
@@ -116,7 +117,6 @@ print(f"v3: {max_v3(data)}")
 
 **Output:**
 ```
-
 v1: 9
 v2: 9
 v3: 9
@@ -141,11 +141,11 @@ v3: 9
 **Example: Поиск элемента в разных структурах**
 
 ```python
-
 import time
 import random
 
 # Создаём данные
+
 n = 100000
 data_list = list(range(n))
 data_set = set(data_list)
@@ -154,6 +154,7 @@ random.shuffle(data_list)
 target = n - 1  # Ищем элемент
 
 # Поиск в списке
+
 start = time.perf_counter()
 found_list = target in data_list
 time_list = time.perf_counter() - start
@@ -171,7 +172,6 @@ print(f"Ускорение: {time_list/time_set:.0f}x")
 
 **Output:**
 ```
-
 Поиск в списке: 1.234 мс
 Поиск в множестве: 0.000050 мс
 Ускорение: 24680x
@@ -187,7 +187,6 @@ print(f"Ускорение: {time_list/time_set:.0f}x")
 **Example: Бинарный поиск требует упорядоченности**
 
 ```python
-
 def binary_search(arr, target):
     """
     Бинарный поиск требует отсортированного массива.
@@ -212,13 +211,13 @@ sorted_data = [1, 3, 5, 7, 9, 11, 13, 15]
 print(f"Поиск 7 в отсортированном: индекс {binary_search(sorted_data, 7)}")
 
 # Не работает на неотсортированных
+
 unsorted_data = [7, 3, 1, 9, 5, 13, 11, 15]
 print(f"Поиск 7 в неотсортированном: индекс {binary_search(unsorted_data, 7)}")
 ```
 
 **Output:**
 ```
-
 Поиск 7 в отсортированном: индекс 3
 Поиск 7 в неотсортированном: индекс -1
 ```
@@ -237,13 +236,13 @@ print(f"Поиск 7 в неотсортированном: индекс {binary
 **Example: Частые вставки в начало**
 
 ```python
-
 import time
 from collections import deque
 
 n = 50000
 
 # Вставка в начало списка (плохо)
+
 start = time.perf_counter()
 lst = []
 for i in range(n):
@@ -251,6 +250,7 @@ for i in range(n):
 time_list = time.perf_counter() - start
 
 # Вставка в начало deque (хорошо)
+
 start = time.perf_counter()
 dq = deque()
 for i in range(n):
@@ -264,7 +264,6 @@ print(f"Deque быстрее в {time_list/time_deque:.0f} раз")
 
 **Output:**
 ```
-
 Список: 0.892 сек
 Deque: 0.004 сек
 Deque быстрее в 223 раз
@@ -285,6 +284,7 @@ Deque быстрее в 223 раз
 
 ```python
 # Плохой подход: список для проверки уникальности
+
 def count_unique_bad(items):
     unique = []
     for item in items:
@@ -293,10 +293,12 @@ def count_unique_bad(items):
     return len(unique)
 
 # Хороший подход: множество
+
 def count_unique_good(items):
     return len(set(items))  # O(1) на каждую проверку
 
 # Тест
+
 data = list(range(1000)) * 10  # 10000 элементов, 1000 уникальных
 import time
 
@@ -314,7 +316,6 @@ print(f"Хороший подход: {result_good} уникальных за {ti
 
 **Output:**
 ```
-
 Плохой подход: 1000 уникальных за 45.2 мс
 Хороший подход: 1000 уникальных за 0.312 мс
 ```
@@ -344,7 +345,6 @@ print(f"Хороший подход: {result_good} уникальных за {ti
 **Example: Инвариант в алгоритме поиска максимума**
 
 ```python
-
 def find_max_with_invariant(arr):
     """
     Инвариант: после i-й итерации max_val содержит
@@ -374,7 +374,6 @@ print(f"Максимум: {find_max_with_invariant(data)}")
 
 **Output:**
 ```
-
 Максимум: 9
 ```
 
@@ -392,7 +391,6 @@ print(f"Максимум: {find_max_with_invariant(data)}")
 **Example: Инвариант кучи**
 
 ```python
-
 def is_min_heap(arr):
     """Проверяет инвариант min-heap."""
     n = len(arr)
@@ -407,6 +405,7 @@ def is_min_heap(arr):
     return True
 
 # Валидная куча
+
 valid_heap = [1, 3, 2, 7, 6, 4, 5]
 print(f"[1,3,2,7,6,4,5] — куча: {is_min_heap(valid_heap)}")
 
@@ -418,7 +417,6 @@ print(f"[1,3,2,0,6,4,5] — куча: {is_min_heap(invalid_heap)}")
 
 **Output:**
 ```
-
 [1,3,2,7,6,4,5] — куча: True
 [1,3,2,0,6,4,5] — куча: False
 ```
@@ -444,7 +442,6 @@ print(f"[1,3,2,0,6,4,5] — куча: {is_min_heap(invalid_heap)}")
 **Example: Предусловия и постусловия**
 
 ```python
-
 def binary_search_contract(arr, target):
     """
     Предусловие: arr отсортирован по возрастанию
@@ -469,6 +466,7 @@ def binary_search_contract(arr, target):
     return -1
 
 # Корректное использование
+
 sorted_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(f"Поиск 7: индекс {binary_search_contract(sorted_arr, 7)}")
 
@@ -483,7 +481,6 @@ except AssertionError as e:
 
 **Output:**
 ```
-
 Поиск 7: индекс 6
 Ошибка: Массив должен быть отсортирован
 ```
@@ -499,7 +496,6 @@ except AssertionError as e:
 **Example: Доказательство корректности сортировки вставками**
 
 ```python
-
 def insertion_sort_with_proof(arr):
     """
     Инвариант: после i-й итерации arr[0:i] отсортирован.
@@ -535,7 +531,6 @@ print(f"\nРезультат: {result}")
 
 **Output:**
 ```
-
 После шага 1: [2, 5] отсортировано
 После шага 2: [2, 5, 8] отсортировано
 После шага 3: [1, 2, 5, 8] отсортировано
@@ -593,7 +588,6 @@ print(f"\nРезультат: {result}")
 **Решение**: OrderedDict (комбинация dict + двусвязного списка)
 
 ```python
-
 from collections import OrderedDict
 
 class LRUCache:
@@ -617,6 +611,7 @@ class LRUCache:
             self.cache.popitem(last=False)
 
 # Демонстрация
+
 cache = LRUCache(3)
 cache.put("a", 1)
 cache.put("b", 2)
@@ -632,7 +627,6 @@ print(f"После put('d'): {list(cache.cache.items())}")
 
 **Output:**
 ```
-
 Кэш: [('a', 1), ('b', 2), ('c', 3)]
 После get('a'): [('b', 2), ('c', 3), ('a', 1)]
 После put('d'): [('c', 3), ('a', 1), ('d', 4)]
@@ -649,7 +643,6 @@ print(f"После put('d'): {list(cache.cache.items())}")
 **Example: Граф как словарь списков**
 
 ```python
-
 class Graph:
     """Граф на основе словаря + списков (adjacency list)."""
     
@@ -699,7 +692,6 @@ print(f"BFS от A: {g.bfs('A')}")
 
 **Output:**
 ```
-
 Соседи A: ['B', 'C']
 BFS от A: ['A', 'B', 'C', 'D']
 ```
@@ -717,7 +709,6 @@ BFS от A: ['A', 'B', 'C', 'D']
 Распространённый паттерн: основное хранилище + индекс для быстрого поиска.
 
 ```python
-
 class IndexedStorage:
     """Хранилище с индексом для быстрого поиска."""
     
@@ -755,7 +746,6 @@ print(f"По имени 'Charlie': {storage.find_by_name('Charlie')}")
 
 **Output:**
 ```
-
 По ID 2: {'id': 2, 'name': 'Bob', 'age': 25}
 По имени 'Charlie': {'id': 3, 'name': 'Charlie', 'age': 35}
 ```
@@ -772,11 +762,13 @@ print(f"По имени 'Charlie': {storage.find_by_name('Charlie')}")
 
 ```python
 # Начните с простого
+
 data = []  # list
 lookup = {}  # dict
 unique = set()  # set
 
 # Переходите к специализированным только при необходимости
+
 from collections import deque, OrderedDict, defaultdict, Counter
 import heapq
 ```
@@ -784,7 +776,6 @@ import heapq
 ### 8.2 Профилируйте, а не угадывайте
 
 ```python
-
 import time
 
 def benchmark(func, *args, iterations=1000):
@@ -815,7 +806,6 @@ print(f"Множество: {time_set:.6f} мс")
 
 **Output:**
 ```
-
 Список: 0.0892 мс
 Множество: 0.000032 мс
 ```
@@ -823,7 +813,6 @@ print(f"Множество: {time_set:.6f} мс")
 ### 8.3 Документируйте выбор структуры
 
 ```python
-
 class TaskQueue:
     """
     Очередь задач с приоритетами.
@@ -876,4 +865,5 @@ class TaskQueue:
 - Исследуйте амортизированный анализ алгоритмов
 
 ---
+
 

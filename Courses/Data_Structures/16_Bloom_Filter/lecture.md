@@ -49,7 +49,6 @@ Bloom Filter состоит из:
 **Example: Базовая структура**
 
 ```python
-
 import hashlib
 
 class BloomFilter:
@@ -79,6 +78,7 @@ class BloomFilter:
         return True  # Возможно есть (может быть ложное срабатывание)
 
 # Использование
+
 bf = BloomFilter(size=100, num_hashes=3)
 bf.add("apple")
 bf.add("banana")
@@ -89,7 +89,6 @@ print(f"'cherry' возможно в фильтре: {bf.might_contain('cherry')
 
 **Output:**
 ```
-
 'apple' возможно в фильтре: True
 'cherry' возможно в фильтре: False
 ```
@@ -104,10 +103,10 @@ print(f"'cherry' возможно в фильтре: {bf.might_contain('cherry')
 **Example: Визуализация добавления**
 
 ```python
-
 bf = BloomFilter(size=20, num_hashes=3)
 
 # Добавляем элемент
+
 bf.add("test")
 
 # Показываем, какие биты установлены
@@ -119,7 +118,6 @@ print(f"  Установлено битов: {sum(bf.bit_array)}")
 
 **Output:**
 ```
-
 Битовый массив после добавления 'test':
   [0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0]
   Установлено битов: 3
@@ -156,7 +154,6 @@ print(f"  Установлено битов: {sum(bf.bit_array)}")
 **Example: Влияние параметров**
 
 ```python
-
 import math
 
 def false_positive_probability(n, m, k):
@@ -164,6 +161,7 @@ def false_positive_probability(n, m, k):
     return (1 - math.exp(-k * n / m)) ** k
 
 # Разные конфигурации
+
 configs = [
     (1000, 10000, 3),   # n=1000, m=10000, k=3
     (1000, 5000, 3),    # Меньший массив
@@ -178,7 +176,6 @@ for n, m, k in configs:
 
 **Output:**
 ```
-
 Вероятность ложного срабатывания:
   n=1000, m=10000, k=3: 0.0179 (1.79%)
   n=1000, m=5000, k=3: 0.0619 (6.19%)
@@ -192,7 +189,6 @@ for n, m, k in configs:
 **Example: Оптимальное k**
 
 ```python
-
 def optimal_k(m, n):
     """Вычислить оптимальное количество хеш-функций."""
     return round((m / n) * math.log(2))
@@ -208,7 +204,6 @@ print(f"  Вероятность ложного срабатывания: {prob:
 
 **Output:**
 ```
-
 Для m=10000, n=1000:
   Оптимальное k: 7
   Вероятность ложного срабатывания: 0.0062 (0.62%)
@@ -223,7 +218,6 @@ print(f"  Вероятность ложного срабатывания: {prob:
 **Example: Улучшенная реализация**
 
 ```python
-
 import hashlib
 import math
 
@@ -296,7 +290,6 @@ for key, value in stats.items():
 
 **Output:**
 ```
-
 Параметры Bloom Filter:
   size: 9585
   num_hashes: 7
@@ -315,7 +308,6 @@ for key, value in stats.items():
 **Example: Фильтр для кэша**
 
 ```python
-
 class CacheWithBloomFilter:
     """Кэш с Bloom Filter для предварительной проверки."""
     def __init__(self):
@@ -337,6 +329,7 @@ class CacheWithBloomFilter:
         self.cache[key] = value
 
 # Использование
+
 cache = CacheWithBloomFilter()
 cache.set('user_1', {'name': 'Alice'})
 cache.set('user_2', {'name': 'Bob'})
@@ -352,7 +345,6 @@ print(f"Результат для user_999: {result}")
 
 **Output:**
 ```
-
 Результат для user_1: {'name': 'Alice'}
 Результат для user_999: None
 ```
@@ -362,7 +354,6 @@ print(f"Результат для user_999: {result}")
 **Example: Фильтр дубликатов**
 
 ```python
-
 class DuplicateFilter:
     """Фильтр для проверки дубликатов."""
     def __init__(self, expected_items, error_rate=0.01):
@@ -397,7 +388,6 @@ for item in items:
 
 **Output:**
 ```
-
 item_1: Новый
 item_2: Новый
 item_1: Дубликат
@@ -474,5 +464,6 @@ item_3: Новый
 - Исследуйте применение в распределённых системах (Cassandra, Redis)
 
 ---
+
 
 

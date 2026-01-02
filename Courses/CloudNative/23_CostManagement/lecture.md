@@ -24,7 +24,6 @@
 ### 1.1 Основные модели
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │              AWS Pricing Models                                   │
 ├───────────────────────────────────────────────────────────────────┤
@@ -52,13 +51,13 @@
 │  └── Good for: batch, CI/CD, fault-tolerant workloads             │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Сравнение экономии
 
 ```python
 # Example: m5.large in us-east-1
+
 pricing_comparison = {
     "On-Demand": {"hourly": 0.096, "monthly": 70.08, "savings": "0%"},
     "Reserved 1yr No Upfront": {"hourly": 0.060, "monthly": 43.80, "savings": "37%"},
@@ -72,7 +71,6 @@ for plan, details in pricing_comparison.items():
     print(f"{plan}:")
     print(f"  ${details['hourly']}/hour, ${details['monthly']}/month")
     print(f"  Savings: {details['savings']}\n")
-
 ```
 
 ---
@@ -83,6 +81,7 @@ for plan, details in pricing_comparison.items():
 
 ```python
 # Identify underutilized resources
+
 right_sizing_targets = {
     "EC2": {
         "metric": "CPU utilization < 10%, Network < 5%",
@@ -111,7 +110,6 @@ right_sizing_targets = {
 ### 2.2 Architecture Optimizations
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │              Cost-Efficient Architecture                          │
 ├───────────────────────────────────────────────────────────────────┤
@@ -128,13 +126,13 @@ right_sizing_targets = {
 │  Cross-region data transfer CloudFront for distribution           │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.3 Spot Instance Strategies
 
 ```python
 # Spot Instance Best Practices
+
 spot_strategies = {
     "Diversify": "Use multiple instance types and AZs",
     "Spot Fleet": "Request capacity across pools",
@@ -143,6 +141,7 @@ spot_strategies = {
 }
 
 # Auto Scaling Group with Spot
+
 asg_mixed_config = {
     "InstancesDistribution": {
         "OnDemandBaseCapacity": 2,  # Always 2 On-Demand
@@ -157,7 +156,6 @@ asg_mixed_config = {
         {"InstanceType": "m5n.large"}
     ]
 }
-
 ```
 
 ---
@@ -167,7 +165,6 @@ asg_mixed_config = {
 ### 3.1 Storage Classes
 
 ```python
-
 s3_storage_classes = {
     "Standard": {
         "cost": "$0.023/GB",
@@ -200,6 +197,7 @@ s3_storage_classes = {
 }
 
 # Lifecycle policy example
+
 lifecycle_policy = {
     "Rules": [{
         "ID": "archive-old-data",
@@ -212,7 +210,6 @@ lifecycle_policy = {
         "Expiration": {"Days": 2555}  # Delete after 7 years
     }]
 }
-
 ```
 
 ---
@@ -223,6 +220,7 @@ lifecycle_policy = {
 
 ```python
 # Cost Explorer queries
+
 cost_queries = {
     "By Service": "Which services cost the most?",
     "By Tag": "Cost per team/project/environment",
@@ -240,6 +238,7 @@ cost_queries = {
 
 ```bash
 # Create budget alert
+
 aws budgets create-budget \
     --account-id 123456789012 \
     --budget '{
@@ -260,7 +259,6 @@ aws budgets create-budget \
             "Address": "alerts@example.com"
         }]
     }]'
-
 ```
 
 ---
@@ -269,6 +267,7 @@ aws budgets create-budget \
 
 ```python
 # Required tags for cost allocation
+
 required_tags = {
     "Environment": ["dev", "staging", "prod"],
     "Project": "Project or application name",
@@ -282,6 +281,7 @@ required_tags = {
 # AWS Config rule: required-tags
 
 # Example tag policy
+
 tag_policy = {
     "tags": {
         "Environment": {
@@ -291,7 +291,6 @@ tag_policy = {
         }
     }
 }
-
 ```
 
 ---
@@ -299,7 +298,6 @@ tag_policy = {
 ## 6. FinOps Best Practices
 
 ```python
-
 finops_practices = {
     "Visibility": [
         "Enable Cost Explorer",
@@ -329,7 +327,6 @@ for pillar, practices in finops_practices.items():
     print(f"\n{pillar}:")
     for practice in practices:
         print(f"  • {practice}")
-
 ```
 
 ---
@@ -369,6 +366,7 @@ for pillar, practices in finops_practices.items():
 1. Настройте AWS Budgets с алертами
 2. Проанализируйте Cost Explorer для anomalies
 3. Создайте Savings Plan или Reserved Instances план
+
 
 
 

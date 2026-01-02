@@ -45,7 +45,6 @@
 
 **Пример SHA-256:**
 ```python
-
 import hashlib
 
 data1 = "Hello, Blockchain!"
@@ -60,7 +59,6 @@ print(f"Изменение одного символа полностью мен
 
 **Output:**
 ```
-
 Хэш 'Hello, Blockchain!': a3b5c7d9e1f2a4b6c8d0e2f4a6b8c0d2e4f6a8b0c2d4e6f8a0b2c4d6e8f0a2
 Хэш 'Hello, Blockchain! ': b4c6d8e0f1a3b5c7d9e1f3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c3d5e7f9a1
 Изменение одного символа полностью меняет хэш
@@ -134,10 +132,10 @@ print(f"Изменение одного символа полностью мен
 
 **Пример (упрощённо):**
 ```python
-
 import secrets
 
 # Генерация приватного ключа (случайное 256-битное число)
+
 private_key = secrets.token_bytes(32)
 print(f"Приватный ключ: {private_key.hex()}")
 
@@ -149,7 +147,6 @@ print("Публичный ключ вычисляется из приватно�
 
 **Output:**
 ```
-
 Приватный ключ: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0
 Публичный ключ вычисляется из приватного через ECDSA
 ```
@@ -209,6 +206,7 @@ ECDSA (Elliptic Curve Digital Signature Algorithm) — это алгоритм �
 **Пример (концептуально):**
 ```python
 # Упрощённая концепция цифровой подписи
+
 message = "Transfer 1 BTC to address XYZ"
 message_hash = hashlib.sha256(message.encode()).hexdigest()
 
@@ -224,7 +222,6 @@ print("Подпись подтверждает владение приватны
 
 **Output:**
 ```
-
 Хэш сообщения: a3b5c7d9e1f2a4b6c8d0e2f4a6b8c0d2e4f6a8b0c2d4e6f8a0b2c4d6e8f0a2
 Подпись подтверждает владение приватным ключом без его раскрытия
 ```
@@ -259,7 +256,6 @@ print("Bitcoin адрес создаётся из публичного ключ�
 
 **Output:**
 ```
-
 Хэш публичного ключа: a3b5c7d9e1f2a4b6c8d0e2f4a6b8c0d2e4f6a8b0
 Bitcoin адрес создаётся из публичного ключа через несколько шагов
 ```
@@ -300,7 +296,6 @@ Seed фраза (мнемоническая фраза) — это послед�
 
 **Пример:**
 ```
-
 abandon ability able about above absent absorb abstract absurd abuse access accident
 ```
 
@@ -361,5 +356,6 @@ abandon ability able about above absent absorb abstract absurd abuse access acci
 - Документация по ECDSA и эллиптическим кривым
 
 ---
+
 
 

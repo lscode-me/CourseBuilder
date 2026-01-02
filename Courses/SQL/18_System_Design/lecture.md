@@ -38,7 +38,6 @@
 **Типичная архитектура:**
 
 ```
-
 Client → API → Application → SQL Database
 ```
 
@@ -51,7 +50,6 @@ Client → API → Application → SQL Database
 **Пример:**
 
 ```sql
-
 -- API endpoint: GET /users/{id}/orders
 -- SQL запрос в backend
 SELECT 
@@ -103,6 +101,7 @@ ORDER BY o.order_date DESC;
 
 ```python
 # Псевдокод
+
 def get_user(user_id):
     # 1. Проверить кэш
     cached = cache.get(f"user:{user_id}")
@@ -221,7 +220,6 @@ def get_user(user_id):
 **Комбинация SQL и NoSQL:**
 
 ```
-
 SQL Database (основные данные)
     ↓
 Message Queue (события)
@@ -282,7 +280,6 @@ NoSQL (кэш, аналитика)
 **Архитектура:**
 
 ```
-
 Commands (Write) → SQL Database (Write Model)
 Queries (Read)   → Read Model (SQL или NoSQL)
 ```
@@ -290,7 +287,6 @@ Queries (Read)   → Read Model (SQL или NoSQL)
 **Пример:**
 
 ```sql
-
 -- Write Model (SQL для команд)
 CREATE TABLE orders (
     id INTEGER PRIMARY KEY,
@@ -326,7 +322,6 @@ GROUP BY user_id;
 **Традиционный подход:**
 
 ```sql
-
 -- Храним текущее состояние
 UPDATE accounts SET balance = 900 WHERE id = 1;
 ```
@@ -334,7 +329,6 @@ UPDATE accounts SET balance = 900 WHERE id = 1;
 **Event Sourcing:**
 
 ```sql
-
 -- Храним события
 CREATE TABLE events (
     id SERIAL PRIMARY KEY,
@@ -353,7 +347,6 @@ VALUES (1, 'AccountDebited', '{"amount": 100}');
 **Из событий можно восстановить состояние:**
 
 ```sql
-
 -- Восстановление баланса из событий
 SELECT 
     aggregate_id,
@@ -380,7 +373,6 @@ GROUP BY aggregate_id;
 **Архитектура:**
 
 ```
-
 Master (Write) → Replica 1 (Read)
               → Replica 2 (Read)
               → Replica 3 (Read)
@@ -390,6 +382,7 @@ Master (Write) → Replica 1 (Read)
 
 ```python
 # Запись на master
+
 write_db.execute("INSERT INTO users ...")
 
 # Чтение с replica
@@ -446,7 +439,6 @@ users = read_db.query("SELECT * FROM users")
 **Трёхслойная архитектура:**
 
 ```
-
 Presentation Layer (API)
     ↓
 Business Logic Layer
@@ -457,7 +449,6 @@ Data Access Layer (SQL)
 **SQL в Data Access Layer:**
 
 ```python
-
 class UserRepository:
     def get_user(self, user_id):
         return db.query("SELECT * FROM users WHERE id = ?", user_id)
@@ -474,7 +465,6 @@ class UserRepository:
 **Абстракция доступа к данным:**
 
 ```python
-
 class OrderRepository:
     def find_by_user(self, user_id):
         return db.query("""
@@ -500,6 +490,7 @@ class OrderRepository:
 
 ```python
 # SQLAlchemy connection pool
+
 engine = create_engine(
     'postgresql://user:pass@localhost/db',
     pool_size=20,
@@ -513,7 +504,6 @@ engine = create_engine(
 **Ограничение времени выполнения:**
 
 ```sql
-
 -- PostgreSQL
 SET statement_timeout = '30s';
 
@@ -527,7 +517,6 @@ cursor.execute("SELECT * FROM large_table")
 **Мониторинг медленных запросов:**
 
 ```sql
-
 -- Включить логирование
 ALTER DATABASE mydb SET log_min_duration_statement = 1000;
 
@@ -546,10 +535,8 @@ LIMIT 10;
 **❌ Уязвимый код:**
 
 ```python
-
 query = f"SELECT * FROM users WHERE name = '{user_input}'"
 # SQL Injection!
-
 ```
 
 **✅ Безопасный код:**
@@ -566,7 +553,6 @@ cursor.execute(query, (user_input,))
 **Ограничение прав:**
 
 ```sql
-
 -- Создать пользователя только для чтения
 CREATE USER readonly_user WITH PASSWORD 'password';
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO readonly_user;
@@ -581,7 +567,6 @@ GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO app_user;
 **Шифрование данных:**
 
 ```sql
-
 -- Шифрование на уровне приложения
 -- Или использование pgcrypto (PostgreSQL)
 CREATE EXTENSION pgcrypto;
@@ -636,5 +621,6 @@ VALUES ('user@example.com', crypt('password', gen_salt('bf')));
 - [Database per Service](https://microservices.io/patterns/data/database-per-service.html) — паттерн микросервисов
 
 ---
+
 
 

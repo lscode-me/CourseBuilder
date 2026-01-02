@@ -34,7 +34,6 @@
 **Example: Простая структура**
 
 ```rust
-
 struct User {
     username: String,
     email: String,
@@ -56,7 +55,6 @@ fn main() {
 
 **Output:**
 ```
-
 Пользователь: alice
 Email: alice@example.com
 Активен: true
@@ -67,7 +65,6 @@ Email: alice@example.com
 **Example: Изменяемая структура**
 
 ```rust
-
 struct User {
     username: String,
     email: String,
@@ -88,7 +85,6 @@ fn main() {
 
 **Output:**
 ```
-
 Новый email: newemail@example.com
 ```
 
@@ -97,7 +93,6 @@ fn main() {
 **Example: Функция создания структуры**
 
 ```rust
-
 struct User {
     username: String,
     email: String,
@@ -123,7 +118,6 @@ fn main() {
 
 **Output:**
 ```
-
 Пользователь: bob
 ```
 
@@ -134,7 +128,6 @@ fn main() {
 **Example: Struct update syntax**
 
 ```rust
-
 struct User {
     username: String,
     email: String,
@@ -159,7 +152,6 @@ fn main() {
 
 **Output:**
 ```
-
 user2: alice (another@example.com)
 ```
 
@@ -174,7 +166,6 @@ user2: alice (another@example.com)
 **Example: Tuple struct**
 
 ```rust
-
 struct Color(i32, i32, i32);
 struct Point(i32, i32);
 
@@ -189,7 +180,6 @@ fn main() {
 
 **Output:**
 ```
-
 Цвет: (0, 0, 0)
 Точка: (0, 0)
 ```
@@ -205,7 +195,6 @@ fn main() {
 **Example: Методы**
 
 ```rust
-
 struct Rectangle {
     width: u32,
     height: u32,
@@ -240,7 +229,6 @@ fn main() {
 
 **Output:**
 ```
-
 Площадь: 1500
 rect может содержать small? true
 ```
@@ -254,7 +242,6 @@ rect может содержать small? true
 **Example: Ассоциированная функция**
 
 ```rust
-
 struct Rectangle {
     width: u32,
     height: u32,
@@ -277,7 +264,6 @@ fn main() {
 
 **Output:**
 ```
-
 Квадрат: 10x10
 ```
 
@@ -294,7 +280,6 @@ fn main() {
 **Example: Простое перечисление**
 
 ```rust
-
 enum IpAddrKind {
     V4,
     V6,
@@ -318,7 +303,6 @@ fn route(ip_kind: IpAddrKind) {
 
 **Output:**
 ```
-
 IPv4
 IPv6
 ```
@@ -328,7 +312,6 @@ IPv6
 **Example: Enum с ассоциированными данными**
 
 ```rust
-
 enum IpAddr {
     V4(String),
     V6(String),
@@ -347,7 +330,6 @@ fn main() {
 
 **Output:**
 ```
-
 IPv4: 127.0.0.1
 ```
 
@@ -356,7 +338,6 @@ IPv4: 127.0.0.1
 **Example: Разные типы в вариантах**
 
 ```rust
-
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
@@ -378,7 +359,6 @@ fn main() {
 
 **Output:**
 ```
-
 Текст: hello
 ```
 
@@ -391,7 +371,6 @@ fn main() {
 **Option** — перечисление для представления значения, которое может отсутствовать.
 
 ```rust
-
 enum Option<T> {
     Some(T),
     None,
@@ -401,7 +380,6 @@ enum Option<T> {
 **Example: Использование Option**
 
 ```rust
-
 fn main() {
     let some_number = Some(5);
     let some_string = Some("строка");
@@ -416,7 +394,6 @@ fn main() {
 
 **Output:**
 ```
-
 Значение: 5
 ```
 
@@ -424,13 +401,11 @@ fn main() {
 
 **В других языках (например, Java):**
 ```java
-
 String s = null;  // Может быть null, может быть String
 ```
 
 **В Rust:**
 ```rust
-
 let s: Option<String> = None;  // Явно указано, что может отсутствовать
 let s: String = ...;           // Всегда есть значение
 ```
@@ -442,7 +417,6 @@ let s: String = ...;           // Всегда есть значение
 **Example: Pattern matching с Option**
 
 ```rust
-
 fn divide(a: f64, b: f64) -> Option<f64> {
     if b != 0.0 {
         Some(a / b)
@@ -466,7 +440,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 5
 Деление на ноль!
 ```
@@ -480,7 +453,6 @@ fn main() {
 **Result** — перечисление для представления успеха или ошибки.
 
 ```rust
-
 enum Result<T, E> {
     Ok(T),
     Err(E),
@@ -490,7 +462,6 @@ enum Result<T, E> {
 **Example: Использование Result**
 
 ```rust
-
 use std::fs::File;
 
 fn main() {
@@ -505,7 +476,6 @@ fn main() {
 
 **Output (если файл не существует):**
 ```
-
 Ошибка открытия файла: Os { code: 2, kind: NotFound, message: "No such file or directory" }
 ```
 
@@ -514,7 +484,6 @@ fn main() {
 **Example: Обработка разных типов ошибок**
 
 ```rust
-
 use std::fs::File;
 use std::io::ErrorKind;
 
@@ -534,7 +503,6 @@ fn main() {
 
 **Output:**
 ```
-
 Файл не найден
 ```
 
@@ -549,7 +517,6 @@ fn main() {
 **Example: if let**
 
 ```rust
-
 fn main() {
     let some_value = Some(3);
     
@@ -568,7 +535,6 @@ fn main() {
 
 **Output:**
 ```
-
 три
 ```
 
@@ -577,7 +543,6 @@ fn main() {
 **Example: while let**
 
 ```rust
-
 fn main() {
     let mut stack = Vec::new();
     stack.push(1);
@@ -592,7 +557,6 @@ fn main() {
 
 **Output:**
 ```
-
 3
 2
 1
@@ -605,7 +569,6 @@ fn main() {
 ### 8.1 Пример: Структура с методами
 
 ```rust
-
 struct Rectangle {
     width: u32,
     height: u32,
@@ -637,7 +600,6 @@ fn main() {
 
 **Output:**
 ```
-
 Площадь: 200
 Квадрат? false
 Квадрат? true
@@ -646,7 +608,6 @@ fn main() {
 ### 8.2 Пример: Enum для состояний
 
 ```rust
-
 enum State {
     Idle,
     Running,
@@ -668,7 +629,6 @@ fn main() {
 
 **Output:**
 ```
-
 Работает
 ```
 

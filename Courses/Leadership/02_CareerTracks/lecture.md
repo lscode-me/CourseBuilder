@@ -38,12 +38,10 @@
 **Фокус:** Техническая экспертиза, архитектура, технологическое лидерство
 
 ```
-
 Junior → Middle → Senior → Staff → Principal → Distinguished
                               ↓         ↓            ↓
                            Team-wide  Org-wide   Company-wide
                            Impact     Impact     Impact
-
 ```
 
 **Характеристики:**
@@ -59,12 +57,10 @@ Junior → Middle → Senior → Staff → Principal → Distinguished
 **Фокус:** Люди, процессы, организация, стратегия
 
 ```
-
 Senior → Team Lead → Engineering Manager → Senior EM → Director → VP
                            ↓                   ↓          ↓       ↓
                         5-8 people         10-20+     Multiple  100+
                                                       Teams
-
 ```
 
 **Характеристики:**
@@ -134,45 +130,37 @@ Will Larson выделяет четыре архетипа Staff Engineers:
 **Tech Lead**
 
 ```
-
 - Партнёрство с менеджером команды
 - Техническое направление проекта
 - Code review и технические решения
 - 50-70% времени в одной команде
-
 ```
 
 **Architect**
 
 ```
-
 - Фокус на архитектуре и дизайне
 - Работа над критичными системами
 - Меньше кода, больше документов и диаграмм
 - Влияние через технические спецификации
-
 ```
 
 **Solver**
 
 ```
-
 - Решает сложнейшие проблемы
 - Перемещается между командами
 - "Тушит пожары" и разблокирует блокеры
 - Глубокая экспертиза в узких областях
-
 ```
 
 **Right Hand**
 
 ```
-
 - Помощник VP/Director
 - Делегированное лидерство
 - Организационные проекты с техническим уклоном
 - Требует высокого trust от руководства
-
 ```
 
 ### 2.3 Чем занимается Staff Engineer
@@ -189,13 +177,11 @@ Will Larson выделяет четыре архетипа Staff Engineers:
 
 **Соотношение времени (примерное):**
 ```
-
 Coding:           30-40%
 Design/Review:    20-30%
 Mentoring:        15-20%
 Meetings:         15-20%
 Writing:          10-15%
-
 ```
 
 > **💡 Pro Tip:**  
@@ -246,13 +232,11 @@ Writing:          10-15%
 ### 3.2 Эволюция фокуса
 
 ```
-
 TL/TLM:  Tasks → People → Process
 EM:      People → Process → Strategy  
 Sr. EM:  Process → Strategy → Organization
 Director: Strategy → Organization → Business
 VP:      Organization → Business → Industry
-
 ```
 
 ### 3.3 Чем занимается Engineering Manager
@@ -268,14 +252,12 @@ VP:      Organization → Business → Industry
 
 **Соотношение времени (примерное):**
 ```
-
 1-on-1s:           25-30%
 Meetings:          25-30%
 Hiring:            15-20%
 Planning:          10-15%
 Admin:             10-15%
 Strategy/Docs:     10-15%
-
 ```
 
 ---
@@ -306,7 +288,6 @@ Strategy/Docs:     10-15%
 
 **Про удовлетворение:**
 ```
-
 1. Когда я чувствую себя наиболее продуктивным?
    - Когда решил сложную техническую проблему?
    - Когда помог коллеге разобраться с задачей?
@@ -314,12 +295,10 @@ Strategy/Docs:     10-15%
 2. Какие дни работы были лучшими за последний год?
    - Дни глубокой технической работы?
    - Дни успешных разговоров и решения людских проблем?
-
 ```
 
 **Про навыки:**
 ```
-
 3. Что даётся мне легче?
    - Разбираться в сложном коде?
    - Понимать мотивацию людей?
@@ -327,16 +306,13 @@ Strategy/Docs:     10-15%
 4. Какой фидбэк я чаще получаю?
    - "Отличное техническое решение"?
    - "Ты хорошо помог команде"?
-
 ```
 
 **Про будущее:**
 ```
-
 5. Кем я вижу себя через 5 лет?
    - Архитектором, решающим масштабные технические задачи?
    - Лидером, строящим высокоэффективные команды?
-
 ```
 
 ### 4.3 Red Flags при выборе
@@ -407,14 +383,12 @@ Strategy/Docs:     10-15%
 На высоких уровнях часто Principal Engineer работает в паре с Director:
 
 ```
-
 Principal Engineer          Director of Engineering
       │                            │
       ├─ Technical strategy        ├─ People strategy
       ├─ Architecture              ├─ Hiring & retention
       ├─ Cross-team tech work      ├─ Budget & resources
       └─ Technical mentoring       └─ Career development
-
 ```
 
 ---
@@ -426,10 +400,8 @@ Principal Engineer          Director of Engineering
 Charity Majors популяризировала модель "маятника" между IC и Management:
 
 ```
-
 IC ───────► Management ───────► IC ───────► Management
            (2-3 года)         (2-3 года)    (и т.д.)
-
 ```
 
 **Преимущества:**
@@ -486,39 +458,31 @@ IC ───────► Management ───────► IC ────�
 **Траектория 1: Традиционная IC**
 
 ```
-
 Junior → Middle → Senior → Staff → Principal
                               ↓
                     (никогда не management)
-
 ```
 
 **Траектория 2: Традиционная Management**
 
 ```
-
 Junior → Middle → Senior → Team Lead → EM → Director → VP
-
 ```
 
 **Траектория 3: Pendulum**
 
 ```
-
 Junior → Middle → Senior → TL/TLM → EM → Staff → Director
                               ↓                      ↓
                     (2-3 года mgmt)      (вернулся в mgmt)
-
 ```
 
 **Траектория 4: Позднее решение**
 
 ```
-
 Junior → Middle → Senior → Staff → Principal → VP
                                               ↓
                                     (switch to exec)
-
 ```
 
 ---
@@ -532,11 +496,9 @@ Junior → Middle → Senior → Staff → Principal → VP
 **Реальность:** В современных tech компаниях IC и Management на одном уровне получают сопоставимую компенсацию.
 
 ```
-
 Staff Engineer ≈ Engineering Manager
 Principal Engineer ≈ Director
 Distinguished Engineer ≈ VP
-
 ```
 
 ### 7.2 Где IC может зарабатывать больше
@@ -592,19 +554,16 @@ Distinguished Engineer ≈ VP
 
 **Вопросы для обсуждения:**
 ```
-
 1. Какие карьерные пути есть в компании?
 2. Как выглядит рост на IC track здесь?
 3. Какие возможности для management?
 4. Можно ли попробовать другой трек?
 5. Какие навыки мне нужно развить?
-
 ```
 
 ### 8.4 Framework для решения
 
 ```
-
                     ┌─────────────────────┐
                     │  Вы на Senior уровне│
                     └──────────┬──────────┘
@@ -627,7 +586,6 @@ Distinguished Engineer ≈ VP
     │                   │           │                     │
     │ Staff → Principal │           │ TL → EM → Director  │
     └───────────────────┘           └─────────────────────┘
-
 ```
 
 ---

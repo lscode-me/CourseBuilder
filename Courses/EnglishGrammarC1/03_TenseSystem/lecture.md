@@ -38,12 +38,10 @@
 ### 1.1 The English System
 
 ```
-
 TENSE = When? (Past, Present, Future)
 ASPECT = How? (Simple, Continuous, Perfect)
 
 Tense + Aspect = The "12 tenses"
-
 ```
 
 | | Simple | Continuous | Perfect | Perfect Continuous |
@@ -57,7 +55,6 @@ Tense + Aspect = The "12 tenses"
 Understanding tense vs aspect helps you make **meaning-based** choices:
 
 ```
-
 Tense answers: WHEN?
 - Past: before now
 - Present: now (or timeless)
@@ -67,7 +64,6 @@ Aspect answers: HOW does the speaker VIEW the action?
 - Simple: fact, routine, complete
 - Continuous: in progress, temporary, focus on process
 - Perfect: connection to another time point
-
 ```
 
 ### 1.3 Russian Aspect vs English Tense
@@ -75,26 +71,22 @@ Aspect answers: HOW does the speaker VIEW the action?
 Russian has **2 aspects** (совершенный / несовершенный), English has **3**.
 
 ```
-
 Russian:
 
 - "Я читал" (imperfective) — was reading / read / used to read
 - "Я прочитал" (perfective) — read / have read / had read
 
 English doesn't map directly!
-
 ```
 
 **The trap:** Trying to translate Russian aspect into English tense.
 
 ```
-
 ❌ "Я уже прочитал книгу" → "I already read the book" (wrong in BrE)
 ✅ "Я уже прочитал книгу" → "I've already read the book" (Present Perfect)
 
 ❌ "Я живу здесь 5 лет" → "I live here 5 years"
 ✅ "Я живу здесь 5 лет" → "I've lived here for 5 years" (Perfect)
-
 ```
 
 ---
@@ -110,40 +102,34 @@ This is the #1 tense problem for Russian speakers.
 **Present Perfect:** Action with a **connection to NOW**. The time period includes NOW.
 
 ```
-
 PAST SIMPLE                    PRESENT PERFECT
 |----X----|                   |----X----NOW
    past      now                 past
 
 "I saw that film."            "I've seen that film."
 (When? Some time in past)     (Result: I know the film now)
-
 ```
 
 ### 2.2 Time Markers
 
 **Past Simple markers:**
 ```
-
 yesterday, last week, ago, in 2020, when I was young
 → Specific, finished time
 
 "I visited Paris last year."
 "I met her three days ago."
 "When did you arrive?"
-
 ```
 
 **Present Perfect markers:**
 ```
-
 already, yet, just, ever, never, recently, so far, this week
 → Period including now, or unspecified time
 
 "I've already eaten."
 "Have you ever been to Japan?"
 "I haven't seen him this week."
-
 ```
 
 ### 2.3 Common Scenarios
@@ -151,43 +137,36 @@ already, yet, just, ever, never, recently, so far, this week
 **SCENARIO 1: Sharing news**
 
 ```
-
 Present Perfect for announcement, Past Simple for details:
 
 "I've found a new job!" (news — connection to now)
 "Where did you find it?" (asking about the event)
 "I found it on LinkedIn." (event detail)
-
 ```
 
 **SCENARIO 2: Life experience**
 
 ```
-
 Present Perfect for "ever in your life":
 
 "Have you ever tried sushi?" (any time in your life up to now)
 "Yes, I tried it in Japan last year." (specific occasion)
-
 ```
 
 **SCENARIO 3: Duration until now**
 
 ```
-
 Present Perfect (Continuous) for "how long":
 
 "How long have you lived here?"
 "I've lived here for 10 years." (and still do)
 vs.
 "I lived there for 10 years." (but I don't anymore)
-
 ```
 
 ### 2.4 Russian Speakers' Errors
 
 ```
-
 ❌ "I lost my keys." (implies you found them or it's story time)
 ✅ "I've lost my keys." (result now: I can't find them)
 
@@ -199,7 +178,6 @@ vs.
 
 ❌ "I already saw this film."
 ✅ "I've already seen this film." (BrE) / "I already saw this film." (informal AmE)
-
 ```
 
 ### 2.5 British vs American English
@@ -207,14 +185,12 @@ vs.
 American English uses Past Simple more often where British uses Present Perfect:
 
 ```
-
 British English              American English (informal)
 "Have you eaten yet?"        "Did you eat yet?"
 "I've just arrived."         "I just arrived."
 "I've already done it."      "I already did it."
 
 For IELTS: Use British patterns. For everyday American: either is fine.
-
 ```
 
 ---
@@ -226,7 +202,6 @@ For IELTS: Use British patterns. For everyday American: either is fine.
 Present Simple is for **timeless truths and routines**, not usually for "right now":
 
 ```
-
 FACTS & TRUTHS:
 "Water boils at 100°C."
 "The Earth revolves around the Sun."
@@ -240,16 +215,13 @@ ROUTINES & HABITS:
 SCHEDULED FUTURE:
 "The train leaves at 6 pm."
 "The meeting starts in an hour."
-
 ```
 
 **Russian trap:** Using Present Simple for actions happening now.
 
 ```
-
 ❌ "What do you do?" — "I cook dinner."
 ✅ "What are you doing?" — "I'm cooking dinner."
-
 ```
 
 ### 3.2 Present Continuous: Temporary & In Progress
@@ -257,7 +229,6 @@ SCHEDULED FUTURE:
 Present Continuous is for **temporary situations and actions in progress**:
 
 ```
-
 RIGHT NOW:
 "She's talking on the phone."
 "I'm writing an email."
@@ -273,7 +244,6 @@ CHANGING/DEVELOPING:
 ANNOYING HABITS (with 'always'):
 "He's always complaining!"
 "You're constantly interrupting me!"
-
 ```
 
 ### 3.3 Stative Verbs: The Exceptions
@@ -281,7 +251,6 @@ ANNOYING HABITS (with 'always'):
 Some verbs describe **states**, not actions, and don't usually take Continuous:
 
 ```
-
 MENTAL STATES:
 know, believe, think (opinion), understand, remember, forget
 
@@ -296,11 +265,9 @@ have (possess), own, belong, contain
 
 OTHER:
 be, seem, appear, mean, cost, weigh
-
 ```
 
 ```
-
 ❌ "I am knowing the answer."
 ✅ "I know the answer."
 
@@ -310,7 +277,6 @@ be, seem, appear, mean, cost, weigh
 ❌ "I am having a car." (possess)
 ✅ "I have a car."
 BUT: "I'm having lunch." (action = eating)
-
 ```
 
 ### 3.4 Verbs with Dual Meanings
@@ -327,7 +293,6 @@ Some verbs change meaning between Simple and Continuous:
 | **be** | permanent quality | temporary behaviour |
 
 ```
-
 "I think you're right." (opinion)
 "I'm thinking about your offer." (considering)
 
@@ -339,7 +304,6 @@ Some verbs change meaning between Simple and Continuous:
 
 "She's very kind." (permanent characteristic)
 "She's being very kind today." (unusual behaviour)
-
 ```
 
 ---
@@ -351,7 +315,6 @@ Some verbs change meaning between Simple and Continuous:
 Use for **activities continuing up to now** (or just finished) with emphasis on duration/process:
 
 ```
-
 DURATION:
 "I've been waiting for an hour." (still waiting or just stopped)
 "She's been studying English since 2020." (and continues)
@@ -363,13 +326,11 @@ RECENT ACTIVITY (evidence now):
 REPEATED RECENT ACTIONS:
 "He's been calling all day." (multiple calls)
 "They've been having problems lately." (ongoing situation)
-
 ```
 
 ### 4.2 Present Perfect Simple vs Continuous
 
 ```
-
 PERFECT SIMPLE                  PERFECT CONTINUOUS
 Focus on RESULT/COMPLETION      Focus on ACTIVITY/DURATION
 
@@ -381,7 +342,6 @@ Focus on RESULT/COMPLETION      Focus on ACTIVITY/DURATION
 
 "She's painted the room."       "She's been painting the room."
 (Finished)                      (In process, explains paint on clothes)
-
 ```
 
 ### 4.3 Past Perfect: The "Earlier Past"
@@ -389,7 +349,6 @@ Focus on RESULT/COMPLETION      Focus on ACTIVITY/DURATION
 Past Perfect refers to **before another past point**:
 
 ```
-
 SEQUENCE IN NARRATIVE:
 "When I arrived, she had already left."
 (leaving happened BEFORE arriving)
@@ -403,7 +362,6 @@ REPORTED SPEECH:
 
 CONDITIONALS (Type 3):
 "If I had known, I would have helped."
-
 ```
 
 ### 4.4 Past Perfect Continuous
@@ -411,11 +369,9 @@ CONDITIONALS (Type 3):
 For **duration before a past point**:
 
 ```
-
 "I had been waiting for two hours when the train finally arrived."
 "She was tired because she had been working all day."
 "They had been dating for a year before they got married."
-
 ```
 
 ---
@@ -439,7 +395,6 @@ English has **many ways** to talk about the future:
 
 **WILL for:**
 ```
-
 SPONTANEOUS DECISIONS:
 "The phone's ringing." — "I'll get it."
 "I'm hungry." — "I'll make you a sandwich."
@@ -454,12 +409,10 @@ PROMISES/OFFERS/REQUESTS:
 
 FACTS ABOUT FUTURE:
 "The sun will rise at 6:23 tomorrow."
-
 ```
 
 **GOING TO for:**
 ```
-
 PLANS/INTENTIONS (already decided):
 "I'm going to study medicine." (my plan)
 "We're going to buy a house next year."
@@ -467,7 +420,6 @@ PLANS/INTENTIONS (already decided):
 PREDICTIONS (evidence now):
 "Look at those clouds! It's going to rain."
 "She's going to have a baby." (can see she's pregnant)
-
 ```
 
 ### 5.3 Future in Time Clauses
@@ -475,7 +427,6 @@ PREDICTIONS (evidence now):
 After **when, if, after, before, until, as soon as, unless**, use PRESENT, not WILL:
 
 ```
-
 ❌ "When I will arrive, I'll call you."
 ✅ "When I arrive, I'll call you."
 
@@ -484,7 +435,6 @@ After **when, if, after, before, until, as soon as, unless**, use PRESENT, not W
 
 ❌ "I'll wait until you will come back."
 ✅ "I'll wait until you come back."
-
 ```
 
 This is a **major error pattern** for Russian speakers!
@@ -494,30 +444,24 @@ This is a **major error pattern** for Russian speakers!
 **Future Continuous:** Action in progress at a future time.
 
 ```
-
 "This time tomorrow, I'll be flying to Paris."
 "At 8 pm, I'll be having dinner."
 
 POLITE ENQUIRY:
 "Will you be using the car tonight?" (softer than "Will you use...")
-
 ```
 
 **Future Perfect:** Action completed before a future point.
 
 ```
-
 "By next month, I'll have finished the course."
 "By 2030, they will have built the new airport."
-
 ```
 
 **Future Perfect Continuous:** Duration before a future point.
 
 ```
-
 "By June, I'll have been working here for 5 years."
-
 ```
 
 ---
@@ -529,21 +473,17 @@ POLITE ENQUIRY:
 When telling stories, use a combination of past tenses:
 
 ```
-
 PAST SIMPLE: Main events (the story line)
 PAST CONTINUOUS: Background, atmosphere, interrupted actions
 PAST PERFECT: Earlier events (flashback)
-
 ```
 
 **Example:**
 ```
-
 "I was walking home [background] when I saw [main event] 
 an old friend. We hadn't seen [earlier past] each other for years. 
 She was carrying [background detail] several bags, so I offered 
 to help [main event continued]..."
-
 ```
 
 ### 6.2 Used to / Would / Past Simple
@@ -551,7 +491,6 @@ to help [main event continued]..."
 For **past habits and states**:
 
 ```
-
 USED TO + infinitive: Past state or habit (not true now)
 "I used to smoke." (past habit)
 "This used to be a forest." (past state)
@@ -563,7 +502,6 @@ WOULD + infinitive: Repeated past actions (NOT states)
 PAST SIMPLE: Single or repeated past actions
 "I went to Paris in 2019." (single event)
 "I often went to Paris." (repeated)
-
 ```
 
 ### 6.3 Present Tenses in Narration
@@ -571,11 +509,9 @@ PAST SIMPLE: Single or repeated past actions
 In spoken storytelling, Present tenses make it vivid:
 
 ```
-
 "So I'm walking down the street, right? And suddenly 
 this guy comes up to me and says..."
 (Historic Present — informal, dramatic)
-
 ```
 
 In formal writing, stick to past tenses.
@@ -587,7 +523,6 @@ In formal writing, stick to past tenses.
 ### 7.1 Present Simple Instead of Perfect
 
 ```
-
 ❌ "I know him for 10 years."
 ✅ "I've known him for 10 years."
 
@@ -596,7 +531,6 @@ In formal writing, stick to past tenses.
 
 ❌ "She works here since 2015."
 ✅ "She's been working here since 2015."
-
 ```
 
 **Why:** Russian uses present tense for ongoing states: "Я знаю его 10 лет."
@@ -604,7 +538,6 @@ In formal writing, stick to past tenses.
 ### 7.2 Past Simple Instead of Perfect
 
 ```
-
 ❌ "Did you ever try Japanese food?"
 ✅ "Have you ever tried Japanese food?"
 
@@ -613,13 +546,11 @@ In formal writing, stick to past tenses.
 
 ❌ "I just saw him."
 ✅ "I've just seen him." (BrE preference)
-
 ```
 
 ### 7.3 Future After "When/If"
 
 ```
-
 ❌ "When I will have time, I will call you."
 ✅ "When I have time, I'll call you."
 
@@ -628,7 +559,6 @@ In formal writing, stick to past tenses.
 
 ❌ "Call me as soon as you will arrive."
 ✅ "Call me as soon as you arrive."
-
 ```
 
 **Why:** Russian uses future in both clauses: "Когда я прие|ДУ, я позвон|Ю."
@@ -636,7 +566,6 @@ In formal writing, stick to past tenses.
 ### 7.4 Continuous with Stative Verbs
 
 ```
-
 ❌ "I am understanding this concept now."
 ✅ "I understand this concept now."
 
@@ -645,19 +574,16 @@ In formal writing, stick to past tenses.
 
 ❌ "I am knowing the answer."
 ✅ "I know the answer."
-
 ```
 
 ### 7.5 Aspect/Tense Mismatch
 
 ```
-
 ❌ "I was always liking coffee." (for general past habit)
 ✅ "I always liked coffee." / "I used to like coffee."
 
 ❌ "Yesterday at 5 I worked." (for action in progress)
 ✅ "Yesterday at 5 I was working."
-
 ```
 
 ---
@@ -669,11 +595,9 @@ In formal writing, stick to past tenses.
 **To have + past participle** expresses earlier time:
 
 ```
-
 "He seems to have left." (It seems he left)
 "I'd like to have seen that." (Regret about past)
 "She was supposed to have called." (Expected earlier action)
-
 ```
 
 ### 8.2 Continuous Infinitives
@@ -681,10 +605,8 @@ In formal writing, stick to past tenses.
 **To be + -ing** for actions in progress:
 
 ```
-
 "She seems to be sleeping." (appears to be sleeping now)
 "He pretended to be working." (acted as if working)
-
 ```
 
 ### 8.3 Distancing: Past Tenses for Present
@@ -692,11 +614,9 @@ In formal writing, stick to past tenses.
 Use past forms to be more **tentative, polite, or hypothetical**:
 
 ```
-
 "I wondered if you could help me." (more polite than "I wonder")
 "I was hoping you might have time." (very polite request)
 "It was time we left." (= it's time to leave)
-
 ```
 
 ---
@@ -708,7 +628,6 @@ Use past forms to be more **tentative, polite, or hypothetical**:
 Ask yourself:
 
 ```
-
 1. Is there a SPECIFIC TIME mentioned (yesterday, in 2020, ago)?
    YES → Past Simple
    
@@ -720,13 +639,11 @@ Ask yourself:
    
 4. Am I telling a STORY about past events?
    YES → Past Simple
-
 ```
 
 ### 9.2 Simple vs Continuous
 
 ```
-
 1. Is the action IN PROGRESS at the reference time?
    YES → Continuous
    
@@ -738,7 +655,6 @@ Ask yourself:
    
 4. Is it a STATIVE verb?
    YES → Simple (usually)
-
 ```
 
 ### 9.3 Tense Sequence
@@ -746,12 +662,10 @@ Ask yourself:
 In complex sentences, check:
 
 ```
-
 MAIN CLAUSE        SUBORDINATE CLAUSE
 Future             → Present (after when/if/until)
 Past               → Past Perfect (for earlier)
 "She said"         → shift tenses back (reported speech)
-
 ```
 
 ---

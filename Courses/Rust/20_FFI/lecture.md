@@ -42,7 +42,6 @@
 **Example: Вызов C функции**
 
 ```rust
-
 extern "C" {
     fn abs(input: i32) -> i32;
 }
@@ -56,7 +55,6 @@ fn main() {
 
 **Output:**
 ```
-
 Абсолютное значение -3: 3
 ```
 
@@ -72,14 +70,12 @@ fn main() {
 
 **Использование:**
 ```bash
-
 cargo install bindgen
 ```
 
 **Example: Генерация биндингов**
 
 ```rust
-
 // build.rs
 // use bindgen;
 
@@ -103,6 +99,7 @@ cargo install bindgen
 
 ```toml
 # Cargo.toml
+
 [build-dependencies]
 bindgen = "0.65"
 
@@ -168,7 +165,6 @@ pub extern "C" fn get_x(p: *const Point) -> i32 {
 
 **Cargo.toml:**
 ```toml
-
 [lib]
 crate-type = ["cdylib"]
 name = "my_lib"
@@ -185,7 +181,6 @@ pub extern "C" fn rust_function(input: i32) -> i32 {
 
 **Использование из C:**
 ```c
-
 // extern int rust_function(int input);
 //
 // int main() {
@@ -200,7 +195,6 @@ pub extern "C" fn rust_function(input: i32) -> i32 {
 **Используйте cbindgen для генерации заголовков:**
 
 ```bash
-
 cargo install cbindgen
 cbindgen --lang C --output header.h
 ```
@@ -212,7 +206,6 @@ cbindgen --lang C --output header.h
 ### 5.1 Пример: Интеграция с существующей C библиотекой
 
 ```rust
-
 // extern "C" {
 //     fn existing_c_function(data: *const u8, len: usize) -> i32;
 // }
@@ -227,7 +220,6 @@ cbindgen --lang C --output header.h
 ### 5.2 Пример: Экспорт Rust API для C
 
 ```rust
-
 // #[repr(C)]
 // pub struct Config {
 //     timeout: u32,
@@ -256,7 +248,6 @@ cbindgen --lang C --output header.h
 **Example: Конвертация строк**
 
 ```rust
-
 use std::ffi::{CString, CStr};
 use std::os::raw::c_char;
 
@@ -276,7 +267,6 @@ unsafe fn c_to_rust(c_str: *const c_char) -> String {
 **Example: Передача callback из C в Rust**
 
 ```rust
-
 // extern "C" {
 //     type Callback = extern "C" fn(data: *const u8, len: usize);
 //     fn c_function_with_callback(cb: Callback);
@@ -303,7 +293,6 @@ unsafe fn c_to_rust(c_str: *const c_char) -> String {
 **Example: Безопасное управление памятью**
 
 ```rust
-
 use std::ffi::CString;
 
 #[no_mangle]
@@ -348,7 +337,6 @@ pub extern "C" fn free_string(ptr: *mut std::os::raw::c_char) {
 ### 6.3 Пример: Безопасная обёртка
 
 ```rust
-
 use std::ffi::CString;
 
 pub struct SafeCString {
@@ -394,7 +382,6 @@ impl Drop for SafeCString {
 ### 7.2 Пример: Гибридный подход
 
 ```rust
-
 // Rust компонент, вызываемый из C
 #[no_mangle]
 pub extern "C" fn process_data(data: *const u8, len: usize) -> i32 {
@@ -408,7 +395,6 @@ pub extern "C" fn process_data(data: *const u8, len: usize) -> i32 {
 
 **Использование из C:**
 ```c
-
 // extern int process_data(const unsigned char* data, size_t len);
 //
 // int main() {
@@ -469,5 +455,6 @@ pub extern "C" fn process_data(data: *const u8, len: usize) -> i32 {
 - [FFI](https://doc.rust-lang.org/nomicon/ffi.html) — документация по FFI
 
 ---
+
 
 

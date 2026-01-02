@@ -37,7 +37,6 @@
 **Проблема:**
 
 ```sql
-
 -- Без индекса: Seq Scan (медленно)
 SELECT * FROM users WHERE email = 'ivan@example.com';
 ```
@@ -45,7 +44,6 @@ SELECT * FROM users WHERE email = 'ivan@example.com';
 **Решение:**
 
 ```sql
-
 CREATE INDEX idx_users_email ON users(email);
 -- Теперь: Index Scan (быстро)
 ```
@@ -98,7 +96,6 @@ CREATE INDEX idx_users_email ON users(email);
 **Настройки (PostgreSQL):**
 
 ```sql
-
 -- Увеличить shared_buffers для кэширования
 -- В postgresql.conf:
 shared_buffers = 256MB
@@ -137,7 +134,6 @@ work_mem = 4MB  -- Память для сортировки и JOIN
 **Партиционирование по диапазону:**
 
 ```sql
-
 -- PostgreSQL
 CREATE TABLE orders (
     id INTEGER,
@@ -156,7 +152,6 @@ CREATE TABLE orders_2024_02 PARTITION OF orders
 **Запрос автоматически использует нужную партицию:**
 
 ```sql
-
 SELECT * FROM orders WHERE order_date = '2024-01-15';
 -- Сканируется только orders_2024_01
 ```
@@ -166,7 +161,6 @@ SELECT * FROM orders WHERE order_date = '2024-01-15';
 **Партиционирование по списку:**
 
 ```sql
-
 CREATE TABLE users (
     id INTEGER,
     country VARCHAR(50),
@@ -224,7 +218,6 @@ CREATE TABLE users_usa PARTITION OF users
 **Shared Buffers (PostgreSQL):**
 
 ```sql
-
 -- Настройка размера кэша
 -- В postgresql.conf:
 shared_buffers = 256MB  -- 25% от RAM для небольших серверов
@@ -241,7 +234,6 @@ shared_buffers = 256MB  -- 25% от RAM для небольших серверо
 **Кэширование результатов запросов (MySQL):**
 
 ```sql
-
 -- Проверить статус query cache
 SHOW VARIABLES LIKE 'query_cache%';
 
@@ -262,6 +254,7 @@ SET GLOBAL query_cache_type = 1;  -- ON
 
 ```python
 # Псевдокод
+
 def get_user(user_id):
     # Проверить кэш
     cached = cache.get(f"user:{user_id}")
@@ -288,6 +281,7 @@ def get_user(user_id):
 
 ```python
 # Каждый запрос создаёт новое соединение
+
 for request in requests:
     conn = connect_to_db()  # Медленно!
     execute_query(conn)
@@ -298,6 +292,7 @@ for request in requests:
 
 ```python
 # Соединения переиспользуются
+
 pool = create_connection_pool(size=20)
 
 for request in requests:
@@ -311,7 +306,6 @@ for request in requests:
 **PgBouncer (для PostgreSQL):**
 
 ```ini
-
 [databases]
 mydb = host=localhost dbname=mydb
 
@@ -338,7 +332,6 @@ default_pool_size = 25
 **Пример:**
 
 ```sql
-
 -- Создание материализованного представления
 CREATE MATERIALIZED VIEW user_order_stats AS
 SELECT 
@@ -357,7 +350,6 @@ SELECT * FROM user_order_stats WHERE total_spent > 1000;
 ### 7.2 Обновление материализованных представлений
 
 ```sql
-
 -- Ручное обновление
 REFRESH MATERIALIZED VIEW user_order_stats;
 
@@ -387,7 +379,6 @@ REFRESH MATERIALIZED VIEW user_order_stats;
 **Пример:**
 
 ```sql
-
 -- Медленный запрос
 EXPLAIN ANALYZE
 SELECT u.name, o.amount
@@ -408,7 +399,6 @@ CREATE INDEX idx_orders_user_date ON orders(user_id, order_date DESC);
 **Порядок JOIN важен:**
 
 ```sql
-
 -- ❌ Плохо: начинаем с большой таблицы
 SELECT * 
 FROM large_table l
@@ -427,7 +417,6 @@ WHERE s.status = 'active';
 **❌ Плохо:**
 
 ```python
-
 users = db.query("SELECT * FROM users")
 for user in users:
     orders = db.query(f"SELECT * FROM orders WHERE user_id = {user.id}")
@@ -438,6 +427,7 @@ for user in users:
 
 ```python
 # Один запрос с JOIN
+
 result = db.query("""
     SELECT u.*, o.*
     FROM users u
@@ -466,7 +456,6 @@ result = db.query("""
 **Найти медленные запросы (PostgreSQL):**
 
 ```sql
-
 -- Включить логирование медленных запросов
 -- В postgresql.conf:
 log_min_duration_statement = 1000  -- Логировать запросы > 1 секунды
@@ -480,7 +469,6 @@ LIMIT 10;
 ### 9.2 Статистика использования таблиц
 
 ```sql
-
 -- Найти самые используемые таблицы
 SELECT 
     schemaname,
@@ -499,7 +487,6 @@ ORDER BY seq_scan DESC;
 ### 9.3 Размер таблиц и индексов
 
 ```sql
-
 -- Размер таблиц
 SELECT 
     schemaname,
@@ -513,7 +500,6 @@ ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;
 ### 9.4 Активные соединения
 
 ```sql
-
 -- Количество активных соединений
 SELECT 
     count(*) AS total_connections,
@@ -532,15 +518,18 @@ FROM pg_stat_activity;
 
 ```ini
 # Память
+
 shared_buffers = 256MB          # Кэш данных
 work_mem = 4MB                   # Память для сортировки и JOIN
 maintenance_work_mem = 64MB      # Память для обслуживания
 
 # Проверка точек (checkpoints)
+
 checkpoint_completion_target = 0.9
 wal_buffers = 16MB
 
 # Запросы
+
 max_connections = 100
 effective_cache_size = 1GB       # Оценка доступной памяти для кэша
 ```
@@ -550,7 +539,6 @@ effective_cache_size = 1GB       # Оценка доступной памяти 
 **Основные параметры (my.cnf):**
 
 ```ini
-
 [mysqld]
 innodb_buffer_pool_size = 1G     # Кэш InnoDB
 innodb_log_file_size = 256M
@@ -567,7 +555,6 @@ query_cache_size = 64M
 **Исходный запрос (медленный):**
 
 ```sql
-
 SELECT 
     u.name,
     u.email,
@@ -586,7 +573,6 @@ LIMIT 100;
 **Оптимизация:**
 
 ```sql
-
 -- 1. Индексы
 CREATE INDEX idx_users_created_at ON users(created_at);
 CREATE INDEX idx_orders_user_id ON orders(user_id);
@@ -618,7 +604,6 @@ LIMIT 100;
 **Полнотекстовый поиск:**
 
 ```sql
-
 -- Создание полнотекстового индекса
 CREATE INDEX idx_users_name_gin ON users USING GIN (name gin_trgm_ops);
 
@@ -674,5 +659,6 @@ ORDER BY name;
 - [Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html) — партиционирование
 
 ---
+
 
 

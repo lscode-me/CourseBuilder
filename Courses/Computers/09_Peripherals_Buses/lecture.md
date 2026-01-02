@@ -83,7 +83,6 @@ PCI Express (PCIe) стала революционным изменением в
 Архитектура PCIe кардинально отличается от предыдущих шин:
 
 ```
-
 Shared Bus (PCI):
   CPU ──┬── Device 1
         ├── Device 2  (делят bandwidth)
@@ -120,22 +119,25 @@ Point-to-Point (PCIe):
 
 ```bash
 # Просмотр PCIe устройств
+
 lspci
 
 # Детальная информация
+
 lspci -v
 
 # Информация о PCIe слотах
+
 lspci -vv | grep -i "pcie"
 
 # Проверка скорости и ширины
+
 lspci -vv | grep -i "lnksta"
 ```
 
 **Пример: PCIe configuration space**
 
 ```c
-
 // Чтение PCIe configuration (упрощённо)
 uint32_t read_pcie_config(uint8_t bus, uint8_t device, 
                           uint8_t function, uint8_t offset) {
@@ -220,7 +222,6 @@ USB-C был разработан как единый коннектор для 
 
 **USB-C возможности:**
 ```
-
 Один коннектор для:
 - Данные (USB)
 - Питание (Power Delivery)
@@ -232,7 +233,6 @@ USB-C был разработан как единый коннектор для 
 **Пример: USB device enumeration**
 
 ```c
-
 // Упрощённый процесс enumeration
 void usb_enumerate() {
     // 1. Reset device
@@ -256,7 +256,6 @@ void usb_enumerate() {
 
 **USB Hub:**
 ```
-
 Host Controller
     └── Hub
         ├── Device 1
@@ -304,7 +303,6 @@ NVMe использует PCIe напрямую, что обеспечивает
 
 **Архитектура NVMe:**
 ```
-
 Application
     ↓
 NVMe Driver
@@ -319,7 +317,6 @@ NAND Flash
 **Пример: NVMe команда (упрощённо)**
 
 ```c
-
 // NVMe command structure
 struct nvme_command {
     uint32_t opcode;        // Операция (read/write)
@@ -360,12 +357,15 @@ void nvme_read(uint64_t lba, uint32_t count, void *buffer) {
 
 ```bash
 # Просмотр NVMe устройств
+
 lsblk | grep nvme
 
 # Информация о NVMe
+
 nvme list
 
 # Тест производительности
+
 nvme read /dev/nvme0n1 -s 0 -c 1000 -z 4096
 ```
 
@@ -416,7 +416,6 @@ I2C предназначена для устройств, которые не т
 **Пример: Чтение с I2C устройства**
 
 ```c
-
 // I2C чтение (упрощённо)
 void i2c_read(uint8_t device_addr, uint8_t reg_addr, uint8_t *data) {
     // Start condition
@@ -461,7 +460,6 @@ SPI предназначена для устройств, которым тре�
 **Пример: SPI transfer**
 
 ```c
-
 // SPI передача (упрощённо)
 uint8_t spi_transfer(uint8_t data) {
     // Запись данных в shift register
@@ -529,5 +527,6 @@ DisplayPort был разработан как стандарт для комп�
 - NVMe specification
 
 ---
+
 
 

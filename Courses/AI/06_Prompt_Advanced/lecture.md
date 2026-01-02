@@ -32,7 +32,6 @@
 Chain of Thought — техника, заставляющая модель рассуждать пошагово:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                   Chain of Thought                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -81,6 +80,7 @@ cot_hypotheses = {
 
 ```python
 # Способ 1: Zero-shot CoT
+
 zero_shot_cot = """
 Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls.
 Each can has 3 tennis balls. How many tennis balls does he have now?
@@ -89,6 +89,7 @@ Let's think step by step.
 """
 
 # Способ 2: Few-shot CoT
+
 few_shot_cot = """
 Q: There are 15 trees in the grove. Workers will plant trees today.
 After they are done, there will be 21 trees. How many trees did they plant?
@@ -102,6 +103,7 @@ A:
 """
 
 # Способ 3: Явная инструкция
+
 explicit_cot = """
 Solve the following problem. Show your reasoning step by step.
 After showing the steps, provide the final answer on a new line 
@@ -114,7 +116,6 @@ Problem: [problem]
 ### 1.4 Когда использовать CoT
 
 ```python
-
 cot_effectiveness = {
     "Хорошо работает": [
         "Математические задачи",
@@ -141,7 +142,6 @@ cot_effectiveness = {
 Сложные задачи разбиваются на простые подзадачи:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    Декомпозиция                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -164,6 +164,7 @@ cot_effectiveness = {
 
 ```python
 # Вместо одного сложного промпта
+
 bad_approach = """
 Analyze this document, extract key entities, summarize it,
 identify sentiment, and generate action items.
@@ -171,6 +172,7 @@ Document: {document}
 """
 
 # Декомпозиция на подзадачи
+
 step_1 = """
 Extract all named entities (people, organizations, dates) from this document.
 Return as JSON: {"people": [], "organizations": [], "dates": []}
@@ -194,6 +196,7 @@ Summary: {summary}
 """
 
 # Объединяем результаты
+
 def analyze_document(document):
     entities = call_llm(step_1.format(document=document))
     summary = call_llm(step_2.format(document=document))
@@ -211,7 +214,6 @@ def analyze_document(document):
 ### 2.3 Промпт для декомпозиции
 
 ```python
-
 decomposition_prompt = """
 I need to accomplish the following complex task:
 {task_description}
@@ -240,12 +242,15 @@ Finally, combine the results into the final answer.
 
 self_reflection_prompt = """
 # Initial task
+
 {task}
 
 # Your initial response
+
 {initial_response}
 
 # Self-critique
+
 Now critically review your response:
 1. Is it accurate and factually correct?
 2. Does it fully address the question?
@@ -253,6 +258,7 @@ Now critically review your response:
 4. What could be improved?
 
 # Improved response
+
 Based on your critique, provide an improved response:
 """
 ```
@@ -261,12 +267,14 @@ Based on your critique, provide an improved response:
 
 ```python
 # Шаг 1: Генерация
+
 generation_prompt = """
 Write a product description for {product}.
 Target audience: {audience}
 """
 
 # Шаг 2: Критика
+
 critique_prompt = """
 Review this product description and identify:
 1. Strengths (what works well)
@@ -280,6 +288,7 @@ Critique:
 """
 
 # Шаг 3: Улучшение
+
 refine_prompt = """
 Improve this product description based on the critique.
 
@@ -293,7 +302,6 @@ Improved description:
 ### 3.3 Паттерн Reflection
 
 ```python
-
 reflection_prompt = """
 You are solving a {task_type} problem.
 
@@ -320,6 +328,7 @@ Format your response with these headers.
 
 ```python
 # JSON output
+
 json_prompt = """
 Extract information from the text and return as JSON.
 
@@ -337,19 +346,23 @@ JSON:
 """
 
 # Markdown output
+
 markdown_prompt = """
 Summarize this article.
 
 Format your response as:
 # Summary
+
 [2-3 sentence summary]
 
 ## Key Points
+
 - [point 1]
 - [point 2]
 - [point 3]
 
 ## Conclusion
+
 [1 sentence conclusion]
 """
 ```
@@ -357,11 +370,11 @@ Format your response as:
 ### 4.2 JSON Mode (OpenAI)
 
 ```python
-
 from openai import OpenAI
 client = OpenAI()
 
 # Использование JSON mode
+
 response = client.chat.completions.create(
     model="gpt-4o",
     response_format={"type": "json_object"},
@@ -378,13 +391,13 @@ response = client.chat.completions.create(
 )
 
 # Гарантированно валидный JSON!
+
 data = json.loads(response.choices[0].message.content)
 ```
 
 ### 4.3 Structured Outputs с Pydantic
 
 ```python
-
 from pydantic import BaseModel
 from openai import OpenAI
 
@@ -417,7 +430,6 @@ print(person.age)   # 30
 Guardrails — ограничения, предотвращающие нежелательное поведение:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                      Guardrails                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -437,17 +449,18 @@ Guardrails — ограничения, предотвращающие нежел
 ### 5.2 Guardrails в System Prompt
 
 ```python
-
 system_with_guardrails = """
 You are a customer support assistant for TechCorp.
 
 ## What you CAN do:
+
 - Answer questions about our products
 - Help with order status
 - Provide technical troubleshooting
 - Escalate to human support
 
 ## What you CANNOT do:
+
 - Discuss competitors
 - Make promises about refunds without approval
 - Share internal company information
@@ -455,10 +468,12 @@ You are a customer support assistant for TechCorp.
 - Generate harmful, illegal, or inappropriate content
 
 ## If asked about something you cannot do:
+
 Politely decline and offer to help with something else.
 Example: "I'm not able to help with that, but I can assist you with..."
 
 ## Always:
+
 - Be polite and professional
 - Admit when you don't know something
 - Suggest escalation for complex issues
@@ -504,6 +519,7 @@ def is_prompt_injection(text):
 # Пример использования NeMo Guardrails
 
 # config.yml
+
 """
 models:
   - type: main
@@ -540,7 +556,6 @@ response = rails.generate(
 Генерация нескольких ответов и выбор консенсуса:
 
 ```python
-
 def self_consistency(prompt, n=5):
     """Генерируем несколько ответов и выбираем наиболее частый"""
     responses = []
@@ -555,6 +570,7 @@ def self_consistency(prompt, n=5):
     return votes.most_common(1)[0][0]
 
 # Пример
+
 prompt = "What is 17 * 23? Think step by step and give the answer."
 final_answer = self_consistency(prompt, n=5)
 # Если 4 из 5 ответов = 391, то 391 — финальный ответ
@@ -607,7 +623,6 @@ Question: {question}
 ### 7.1 Чеклист продвинутого промптинга
 
 ```python
-
 advanced_checklist = [
     "✅ Используйте CoT для сложных рассуждений",
     "✅ Декомпозируйте сложные задачи",
@@ -622,7 +637,6 @@ advanced_checklist = [
 ### 7.2 Когда что применять
 
 ```python
-
 technique_selection = {
     "Chain of Thought": "Математика, логика, многошаговые задачи",
     "Декомпозиция": "Сложные задачи, требующие разных навыков",
@@ -679,5 +693,6 @@ technique_selection = {
 - [Guardrails AI](https://github.com/guardrails-ai/guardrails)
 
 ---
+
 
 

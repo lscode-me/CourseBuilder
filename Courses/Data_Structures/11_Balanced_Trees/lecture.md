@@ -43,7 +43,6 @@
 **Example: Проверка баланса**
 
 ```python
-
 class AVLNode:
     """Узел AVL-дерева."""
     def __init__(self, data):
@@ -70,6 +69,7 @@ def update_height(node):
         node.height = 1 + max(get_height(node.left), get_height(node.right))
 
 # Создание сбалансированного дерева
+
 root = AVLNode(5)
 root.left = AVLNode(3)
 root.right = AVLNode(7)
@@ -82,7 +82,6 @@ print(f"Дерево сбалансировано: {abs(bf) <= 1}")
 
 **Output:**
 ```
-
 Баланс-фактор корня: 0
 Дерево сбалансировано: True
 ```
@@ -100,7 +99,6 @@ print(f"Дерево сбалансировано: {abs(bf) <= 1}")
 **Example: Правый поворот**
 
 ```python
-
 def right_rotate(y):
     """Правый поворот."""
     x = y.left
@@ -117,6 +115,7 @@ def right_rotate(y):
     return x  # Новый корень
 
 # Демонстрация
+
 node = AVLNode(5)
 node.left = AVLNode(3)
 node.left.left = AVLNode(2)
@@ -129,7 +128,6 @@ print(f"После поворота - баланс: {get_balance_factor(new_root
 
 **Output:**
 ```
-
 До поворота - баланс: 2
 После поворота - баланс: 0
 ```
@@ -139,7 +137,6 @@ print(f"После поворота - баланс: {get_balance_factor(new_root
 **Example: Вставка с балансировкой**
 
 ```python
-
 def insert_avl(node, data):
     """Вставить элемент в AVL-дерево."""
     # Обычная вставка BST
@@ -207,7 +204,6 @@ def left_rotate(x):
 **Example: Структура красно-чёрного узла**
 
 ```python
-
 class RBNode:
     """Узел красно-чёрного дерева."""
     RED = True
@@ -221,6 +217,7 @@ class RBNode:
         self.parent = None
 
 # Создание узлов
+
 root = RBNode(10, RBNode.BLACK)  # Корень чёрный
 left = RBNode(5, RBNode.RED)
 right = RBNode(15, RBNode.RED)
@@ -236,7 +233,6 @@ print(f"Левый: {left.data}, цвет: {'Чёрный' if left.color == RBNo
 
 **Output:**
 ```
-
 Корень: 10, цвет: Чёрный
 Левый: 5, цвет: Красный
 ```
@@ -289,10 +285,10 @@ print(f"Левый: {left.data}, цвет: {'Чёрный' if left.color == RBNo
 **Example: Использование OrderedDict**
 
 ```python
-
 from collections import OrderedDict
 
 # OrderedDict сохраняет порядок вставки
+
 od = OrderedDict()
 od['first'] = 1
 od['second'] = 2
@@ -305,7 +301,6 @@ for key, value in od.items():
 
 **Output:**
 ```
-
 Порядок элементов:
   first: 1
   second: 2
@@ -355,7 +350,6 @@ print(f"Найденная запись: {result}")
 
 **Output:**
 ```
-
 Найденная запись: record_3
 ```
 
@@ -395,5 +389,6 @@ print(f"Найденная запись: {result}")
 - Исследуйте применение в компиляторах и интерпретаторах
 
 ---
+
 
 

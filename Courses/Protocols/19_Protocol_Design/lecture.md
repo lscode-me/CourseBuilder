@@ -59,7 +59,6 @@
 
 **Избыточно:**
 ```
-
 GET /users
 GET /users/:id
 GET /users/:id/profile
@@ -71,7 +70,6 @@ GET /users/filter
 
 **Минимально:**
 ```
-
 GET /users?id=:id&fields=name,email
 ```
 
@@ -105,13 +103,11 @@ GET /users?id=:id&fields=name,email
 
 **Плохо (неявно):**
 ```json
-
 {"u": 123, "n": "John", "s": 1}
 ```
 
 **Хорошо (явно):**
 ```json
-
 {"user_id": 123, "name": "John", "status": "active"}
 ```
 
@@ -119,13 +115,11 @@ GET /users?id=:id&fields=name,email
 
 **Плохо (неявно):**
 ```json
-
 {"created": "2024-01-15"}  // Дата? Время? Timezone?
 ```
 
 **Хорошо (явно):**
 ```json
-
 {"created_at": "2024-01-15T10:00:00Z"}  // ISO 8601, UTC
 ```
 
@@ -133,20 +127,17 @@ GET /users?id=:id&fields=name,email
 
 **Плохо:**
 ```json
-
 {"timeout": 5}  // Секунды? Миллисекунды?
 ```
 
 **Хорошо:**
 ```json
-
 {"timeout_ms": 5000}  // Явно миллисекунды
 ```
 
 или
 
 ```json
-
 {"timeout": {"value": 5, "unit": "seconds"}}
 ```
 
@@ -154,7 +145,6 @@ GET /users?id=:id&fields=name,email
 
 **Документируйте defaults явно:**
 ```
-
 Field "limit":
   Type: integer
   Required: no
@@ -178,7 +168,6 @@ Field "limit":
 
 **URL versioning:**
 ```
-
 /api/v1/users
 /api/v2/users
 ```
@@ -196,7 +185,6 @@ Field "limit":
 
 **Header versioning:**
 ```
-
 GET /api/users
 Accept: application/vnd.myapi.v2+json
 ```
@@ -223,7 +211,6 @@ Accept: application/vnd.myapi.v2+json
 
 **Пример:**
 ```
-
 v1.0.0 → v1.1.0 (добавлено поле, compatible)
 v1.1.0 → v2.0.0 (удалено поле, breaking)
 ```
@@ -239,7 +226,6 @@ v1.1.0 → v2.0.0 (удалено поле, breaking)
 
 **Пример:**
 ```
-
 Deprecated: This endpoint will be removed on 2025-01-01.
 Use /api/v2/users instead.
 ```
@@ -269,13 +255,11 @@ Use /api/v2/users instead.
 
 **Версия 1:**
 ```json
-
 {"id": 123, "name": "John"}
 ```
 
 **Версия 2 (compatible):**
 ```json
-
 {"id": 123, "name": "John", "email": "john@example.com"}
 ```
 
@@ -285,7 +269,6 @@ Use /api/v2/users instead.
 
 **Плохо (breaking):**
 ```json
-
 // v1
 {"user_id": "123"}
 
@@ -295,7 +278,6 @@ Use /api/v2/users instead.
 
 **Хорошо:**
 ```json
-
 // v1
 {"user_id": "123"}
 
@@ -311,7 +293,6 @@ Use /api/v2/users instead.
 
 **Пример:**
 ```
-
 Клиент v1 → Сервер v2
 Сервер возвращает v2 response с новыми полями
 Клиент v1 игнорирует новые поля, работает с известными
@@ -343,7 +324,6 @@ Use /api/v2/users instead.
 
 **Пример:**
 ```yaml
-
 openapi: 3.0.0
 info:
   title: User API
@@ -405,9 +385,7 @@ GET /api/users/123
 Authorization: Bearer token123
 
 ```
-
 ### Response (Success)
-
 ```json
 {
   "id": 123,
@@ -416,7 +394,6 @@ Authorization: Bearer token123
 }
 
 ```
-
 ### Response (Not Found)
 ```json
 {
@@ -425,7 +402,6 @@ Authorization: Bearer token123
 }
 
 ```
-
 ```
 
 ### 6.4 Changelog
@@ -478,7 +454,6 @@ Authorization: Bearer token123
 ### 7.2 Тестирование обратной совместимости
 
 ```python
-
 def test_backward_compatibility():
     # v1 client
     response = old_client.get_user(123)
@@ -599,5 +574,6 @@ def test_backward_compatibility():
 - Изучите Protocol Buffers и gRPC для примеров хорошего дизайна
 
 ---
+
 
 

@@ -104,7 +104,6 @@ for entity, info in entities.items():
 
 **Output:**
 ```
-
 ER Model для E-commerce:
 
 User:
@@ -201,7 +200,6 @@ for rel_type, info in relationships.items():
 
 **Output:**
 ```
-
 Типы связей в ER моделях:
 
 One-to-One:
@@ -243,6 +241,7 @@ Many-to-Many:
 
 ```python
 # Плохая структура: все данные в одной таблице
+
 bad_design = {
     "order_id": [1001, 1002, 1003],
     "user_name": ["Alice", "Alice", "Bob"],
@@ -264,7 +263,6 @@ for i in range(3):
 
 **Output:**
 ```
-
 Проблемы без нормализации:
 
 1. Избыточность: user_name и user_email дублируются для Alice
@@ -354,7 +352,6 @@ for table, info in normalized_design.items():
 
 **Output:**
 ```
-
 Нормализованная структура (3NF):
 
 USERS:
@@ -420,6 +417,7 @@ ORDER_ITEMS:
 
 ```python
 # Нормализованная структура (для транзакций)
+
 normalized = {
     "orders": {
         "order_id": 1001,
@@ -466,7 +464,6 @@ print("  - Эффективна для чтения")
 
 **Output:**
 ```
-
 Сравнение:
 
 Нормализованная (для транзакций):
@@ -503,7 +500,6 @@ print("  - Эффективна для чтения")
 **Example: Типы денормализации**
 
 ```python
-
 denormalization_examples = {
     "duplication": {
         "description": "Дублирование user_name в orders",
@@ -540,7 +536,6 @@ for denorm_type, info in denormalization_examples.items():
 
 **Output:**
 ```
-
 Типы денормализации:
 
 DUPLICATION:
@@ -592,7 +587,6 @@ SUMMARY_TABLES:
 **Example: Выбор стратегии**
 
 ```python
-
 def recommend_strategy(requirements):
     """Рекомендует стратегию моделирования"""
     if requirements.get("oltp") and requirements.get("many_writes"):
@@ -620,7 +614,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации стратегии:
   Пример 1: Normalization (минимизировать избыточность)
   Пример 2: Denormalization (оптимизировать чтение)
@@ -682,7 +675,6 @@ for layer, info in hybrid_architecture.items():
 
 **Output:**
 ```
-
 Hybrid подход:
 
 OPERATIONAL_LAYER:
@@ -761,5 +753,6 @@ ETL:
 - MySQL: https://dev.mysql.com/doc/refman/8.0/en/database-design.html
 
 ---
+
 
 

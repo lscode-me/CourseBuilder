@@ -32,7 +32,6 @@
 **Example: Открытие файла**
 
 ```rust
-
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -48,7 +47,6 @@ fn main() -> std::io::Result<()> {
 **Example: Чтение файла**
 
 ```rust
-
 use std::fs::File;
 use std::io::prelude::*;
 
@@ -70,7 +68,6 @@ fn main() -> std::io::Result<()> {
 **Example: Запуск процесса**
 
 ```rust
-
 use std::process::Command;
 
 fn main() {
@@ -85,7 +82,6 @@ fn main() {
 
 **Output:**
 ```
-
 Hello
 ```
 
@@ -94,7 +90,6 @@ Hello
 **Example: Ожидание процесса**
 
 ```rust
-
 use std::process::Command;
 
 fn main() {
@@ -117,7 +112,6 @@ fn main() {
 **Example: Системные потоки**
 
 ```rust
-
 use std::thread;
 
 fn main() {
@@ -138,7 +132,6 @@ fn main() {
 **Example: Обработка SIGINT**
 
 ```rust
-
 // Требует: ctrlc = "3.2"
 // use ctrlc;
 
@@ -183,7 +176,6 @@ fn main() {
 **Example: Использование nix**
 
 ```rust
-
 // Требует: nix = "0.27"
 // use nix::unistd::{fork, ForkResult};
 // use nix::sys::wait::wait;
@@ -209,7 +201,6 @@ fn main() {
 **Example: Низкоуровневая работа с файлами**
 
 ```rust
-
 use std::fs::File;
 use std::os::unix::io::{AsRawFd, RawFd};
 
@@ -229,7 +220,6 @@ fn main() -> std::io::Result<()> {
 ### 6.1 Пример: Простой процесс-менеджер
 
 ```rust
-
 use std::process::Command;
 
 fn main() {
@@ -262,7 +252,6 @@ fn main() {
 ### 6.2 Пример: Многопоточная обработка файлов
 
 ```rust
-
 use std::fs;
 use std::thread;
 
@@ -297,7 +286,6 @@ fn main() {
 ### 6.3 Пример: Мониторинг процессов
 
 ```rust
-
 use std::process::Command;
 
 fn get_process_info(pid: u32) -> std::io::Result<String> {
@@ -320,7 +308,6 @@ fn main() {
 ### 6.4 Пример: Работа с переменными окружения
 
 ```rust
-
 use std::env;
 
 fn main() {
@@ -347,7 +334,6 @@ fn main() {
 **Example: TCP сервер**
 
 ```rust
-
 // use std::net::{TcpListener, TcpStream};
 // use std::io::{Read, Write};
 //
@@ -372,7 +358,6 @@ fn main() {
 **Example: Концептуальный пример**
 
 ```rust
-
 // use std::sync::mpsc;
 //
 // fn main() {
@@ -390,7 +375,6 @@ fn main() {
 ### 7.3 Работа с временем
 
 ```rust
-
 use std::time::{SystemTime, UNIX_EPOCH};
 
 fn get_timestamp() -> u64 {

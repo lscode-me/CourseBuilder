@@ -91,7 +91,6 @@ HLL делит поток на `m` корзин (buckets).
 ### 2.3 Implementation Logic (Python style)
 
 ```python
-
 import hashlib
 import math
 
@@ -134,6 +133,7 @@ class SimpleHLL:
         return int(raw_estimate)
 
 # Test
+
 hll = SimpleHLL(b=12) # 4096 buckets
 truth = 100000
 for i in range(truth):
@@ -187,7 +187,6 @@ H2("world") -> 99 (Там 0).
 **Counting Bloom Filter:**
 
 ```python
-
 class CountingBloomFilter:
     """Bloom Filter с поддержкой удаления."""
     
@@ -224,6 +223,7 @@ class CountingBloomFilter:
         return True
 
 # Пример использования
+
 cbf = CountingBloomFilter(m=1000, k=3)
 cbf.add("hello")
 cbf.add("world")
@@ -239,7 +239,6 @@ print(cbf.contains("hello"))  # False (корректно удалено)
 **Cuckoo Filter (более эффективный):**
 
 ```python
-
 class CuckooFilter:
     """Cuckoo Filter - более эффективная альтернатива Counting Bloom Filter."""
     
@@ -335,7 +334,6 @@ HashTable (HashMap) съест память. CMS работает с конст�
 **Реализация Count-Min Sketch:**
 
 ```python
-
 import hashlib
 import random
 
@@ -385,9 +383,11 @@ class CountMinSketch:
                 self.table[i][idx] += count
 
 # Пример использования
+
 cms = CountMinSketch(width=1000, depth=5)
 
 # Добавляем элементы
+
 for _ in range(100):
     cms.add("apple")
 for _ in range(50):
@@ -396,6 +396,7 @@ for _ in range(25):
     cms.add("cherry")
 
 # Оценка частоты
+
 print(f"Apple: {cms.estimate('apple')}")    # ~100
 print(f"Banana: {cms.estimate('banana')}")  # ~50
 print(f"Cherry: {cms.estimate('cherry')}")  # ~25
@@ -404,7 +405,6 @@ print(f"Cherry: {cms.estimate('cherry')}")  # ~25
 **Top-K Heavy Hitters:**
 
 ```python
-
 class HeavyHitters:
     """Поиск Top-K наиболее частых элементов."""
     
@@ -573,5 +573,6 @@ Google BigTable использует Bloom Filters, чтобы не делать
 4.  `DEBUG OBJECT hll_key` -> посмотрите `serializedlength`. Будет смешно мало.
 
 В следующем (заключительном) модуле мы применим все эти знания для разбора реальных **Case Studies** проектирования систем. [Case Studies](../16_Case_Studies/).
+
 
 

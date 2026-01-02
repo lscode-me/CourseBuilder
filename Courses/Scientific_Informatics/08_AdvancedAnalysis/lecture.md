@@ -50,7 +50,6 @@ ANOVA проверяет нулевую гипотезу о том, что вс�
 
 **Output:**
 ```
-
 F-statistic: 45.234
 p-value: 0.000001
 Significant difference between groups
@@ -65,7 +64,6 @@ Tukey HSD results:
 **Пример: Линейная регрессия**
 
 ```python
-
 from scipy.stats import linregress
 
 # Данные: температура vs реакция
@@ -88,7 +86,6 @@ print(f"\nPredicted rates: {predicted}")
 
 **Output:**
 ```
-
 Slope: 0.500
 Intercept: 0.500
 R-squared: 0.998
@@ -116,7 +113,6 @@ Predicted rates: [10.5 13.0 15.5 18.0 20.5]
 **Пример: Проверка гипотезы**
 
 ```python
-
 def hypothesis_test(data1, data2, alpha=0.05):
     """Проверка гипотезы о равенстве средних"""
     # H0: mean1 = mean2
@@ -160,7 +156,6 @@ else:
 
 **Output:**
 ```
-
 Test: t-test
 p-value: 0.000234
 Significant: True
@@ -210,7 +205,6 @@ print(f"Type I error rate (should be ~0.05): {type1_rate:.3f}")
 
 **Output:**
 ```
-
 Type I error rate (should be ~0.05): 0.052
 ```
 
@@ -221,7 +215,6 @@ Type I error rate (should be ~0.05): 0.052
 **Пример: Расчёт мощности**
 
 ```python
-
 from statsmodels.stats.power import ttest_power
 
 # Параметры для расчёта мощности
@@ -244,7 +237,6 @@ for n, p in zip(sample_sizes, powers):
 
 **Output:**
 ```
-
 Power: 0.567
 
 Power vs Sample Size:
@@ -301,7 +293,6 @@ print("Correlation plot created")
 
 **Output:**
 ```
-
 Pearson correlation: r=0.987, p=0.000000
 Spearman correlation: r=0.987, p=0.000000
 Correlation plot created
@@ -331,7 +322,6 @@ print("Both depend on temperature (confounding variable)")
 
 **Output:**
 ```
-
 Correlation between ice cream and drownings: r=0.856
 ⚠️ This is a spurious correlation!
 Both depend on temperature (confounding variable)
@@ -390,7 +380,6 @@ print(f"Partial correlation (controlling for confounder): {result['partial_corre
 
 **Output:**
 ```
-
 Correlation without control: 0.723
 Partial correlation (controlling for confounder): 0.456
 ```
@@ -439,7 +428,6 @@ print(f"\nBonferroni corrected alpha: {alpha_corrected:.6f}")
 
 **Output:**
 ```
-
 Test 3: p=0.0234 < 0.05 (False positive!)
 Test 7: p=0.0123 < 0.05 (False positive!)
 
@@ -476,7 +464,6 @@ print(f"Prediction for x={x_new}: y={y_predicted:.2f}")
 
 **Output:**
 ```
-
 Correlation: r=1.000
 Regression: y = 2.00*x + 0.00
 Prediction for x=6: y=12.00
@@ -507,7 +494,6 @@ print("Model may not hold outside observed range")
 
 **Output:**
 ```
-
 Extrapolated rate at 100°C: 50.50
 ⚠️ Warning: Extrapolation beyond data range is risky!
 Model may not hold outside observed range
@@ -546,7 +532,6 @@ print(f"Posterior probability (positive test): {posterior_pos:.3f}")
 
 **Output:**
 ```
-
 Prior probability: 0.010
 Posterior probability (positive test): 0.088
 ```
@@ -558,7 +543,6 @@ Posterior probability (positive test): 0.088
 **Пример: Множественная регрессия**
 
 ```python
-
 from sklearn.linear_model import LinearRegression
 
 # Данные: зависимость от нескольких факторов
@@ -585,7 +569,6 @@ print(f"\nPredictions: {prediction}")
 
 **Output:**
 ```
-
 Coefficients: temp=0.512, pressure=1.987
 Intercept: 9.876
 R-squared: 0.987

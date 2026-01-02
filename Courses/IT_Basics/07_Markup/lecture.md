@@ -31,9 +31,7 @@
 **Язык разметки (Markup Language)** — система аннотирования текста, где разметка синтаксически отличается от контента.
 
 ```html
-
 <p>Это <strong>важный</strong> текст.</p>
-
 ```
 
 Здесь:
@@ -59,7 +57,6 @@
 **HTML** (HyperText Markup Language) — стандартный язык веб-страниц.
 
 ```html
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,13 +68,11 @@
     <p>This is a paragraph.</p>
 </body>
 </html>
-
 ```
 
 ### 2.2 Структура документа
 
 ```
-
 <!DOCTYPE html>          ← Декларация типа документа
 <html>                   ← Корневой элемент
 ├── <head>              ← Метаданные
@@ -88,13 +83,11 @@
     ├── <header>        ← Шапка
     ├── <main>          ← Основной контент
     └── <footer>        ← Подвал
-
 ```
 
 ### 2.3 Основные теги
 
 ```html
-
 <!-- Заголовки -->
 <h1>Главный заголовок</h1>
 <h2>Подзаголовок</h2>
@@ -131,13 +124,11 @@
     <input type="text" name="username">
     <button type="submit">Submit</button>
 </form>
-
 ```
 
 ### 2.4 Семантический HTML5
 
 ```html
-
 <!-- Семантические элементы -->
 <header>Шапка страницы</header>
 <nav>Навигация</nav>
@@ -148,13 +139,11 @@
 <footer>Подвал страницы</footer>
 
 <!-- Вместо <div class="header"> используйте <header> -->
-
 ```
 
 ### 2.5 Атрибуты
 
 ```html
-
 <!-- Глобальные атрибуты -->
 <div id="unique-id">Уникальный ID</div>
 <div class="my-class">CSS класс</div>
@@ -165,7 +154,6 @@
 <a href="url" target="_blank" rel="noopener">Ссылка</a>
 <img src="img.png" alt="Описание" width="100" height="100">
 <input type="email" required placeholder="Email">
-
 ```
 
 ---
@@ -177,7 +165,6 @@
 **XML** (eXtensible Markup Language) — универсальный формат для структурированных данных.
 
 ```xml
-
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
     <book id="1">
@@ -191,7 +178,6 @@
         <year>2008</year>
     </book>
 </library>
-
 ```
 
 ### 3.2 XML vs HTML
@@ -207,7 +193,6 @@
 ### 3.3 Правила XML
 
 ```xml
-
 <!-- 1. Один корневой элемент -->
 <root>
     <child>Content</child>
@@ -233,13 +218,11 @@
 &amp;  <!-- & -->
 &apos; <!-- ' -->
 &quot; <!-- " -->
-
 ```
 
 ### 3.4 XML в реальном мире
 
 ```xml
-
 <!-- RSS Feed -->
 <?xml version="1.0"?>
 <rss version="2.0">
@@ -263,16 +246,15 @@
     android:layout_height="wrap_content">
     <TextView android:text="Hello" />
 </LinearLayout>
-
 ```
 
 ### 3.5 XML в Python
 
 ```python
-
 import xml.etree.ElementTree as ET
 
 # Парсинг XML
+
 xml_string = """
 <users>
     <user id="1">
@@ -285,6 +267,7 @@ xml_string = """
 root = ET.fromstring(xml_string)
 
 # Навигация
+
 for user in root.findall('user'):
     name = user.find('name').text
     email = user.find('email').text
@@ -292,13 +275,13 @@ for user in root.findall('user'):
     print(f"{name} ({user_id}): {email}")
 
 # Создание XML
+
 root = ET.Element('books')
 book = ET.SubElement(root, 'book')
 ET.SubElement(book, 'title').text = 'Python Guide'
 
 xml_str = ET.tostring(root, encoding='unicode')
 print(xml_str)
-
 ```
 
 ---
@@ -352,19 +335,17 @@ print(xml_str)
 
 ![Картинка](image.png)
 ![Alt текст](image.png "Заголовок")
-
 ```
 
 ### 4.3 Расширенный синтаксис (GitHub Flavored Markdown)
 
 ````markdown
-
 ```python
 # Блок кода с подсветкой
+
 def hello():
     print("Hello, World!")
 ```
-
 | Column 1 | Column 2 | Column 3 |
 |----------|:--------:|---------:|
 | Left     | Center   | Right    |
@@ -380,7 +361,6 @@ Footnote reference[^1]
 Автоссылки: https://example.com
 
 :emoji: (на GitHub: :smile:)
-
 ````
 
 ### 4.4 Markdown в документации
@@ -391,20 +371,16 @@ Footnote reference[^1]
 Brief description of the project.
 
 ## Installation
-
 ```bash
 pip install myproject
 
 ```
-
 ## Usage
-
 ```python
 from myproject import main
 main()
 
 ```
-
 ## API Reference
 
 ### `function_name(param1, param2)`
@@ -421,26 +397,28 @@ Description of the function.
 ## License
 
 MIT License
-
 ```
 
 ### 4.5 Конвертация Markdown
 
 ```bash
 # pandoc — универсальный конвертер
+
 pandoc README.md -o README.html
 pandoc README.md -o README.pdf
 
 # marked (Node.js)
+
 npx marked README.md > README.html
 
 # Python markdown
-python -m markdown README.md > README.html
 
+python -m markdown README.md > README.html
 ```
 
 ```python
 # Python
+
 import markdown
 
 md_text = "# Hello\n\nThis is **bold**."
@@ -467,28 +445,29 @@ print(html)
 ### 5.2 Читаемость vs Функциональность
 
 ```
-
 Простота          Мощность
 ←─────────────────────────────→
 Markdown  HTML  XML  LaTeX
-
 ```
 
 ### 5.3 Конвертация между форматами
 
 ```bash
 # Markdown → HTML
+
 pandoc input.md -o output.html
 
 # HTML → Markdown
+
 pandoc input.html -o output.md
 
 # XML → JSON (с xq)
+
 xq '.' input.xml
 
 # Markdown → PDF
-pandoc input.md -o output.pdf
 
+pandoc input.md -o output.pdf
 ```
 
 ---
@@ -511,14 +490,12 @@ Short description.
 - Feature 2
 
 ## Quick Start
-
 ```bash
 git clone https://github.com/user/repo.git
 cd repo
 make install
 
 ```
-
 ## Documentation
 
 See [docs/](docs/) for detailed documentation.
@@ -534,13 +511,11 @@ See [docs/](docs/) for detailed documentation.
 ## License
 
 MIT © [Author](https://github.com/author)
-
 ```
 
 ### 6.2 HTML Email Template
 
 ```html
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -568,13 +543,11 @@ MIT © [Author](https://github.com/author)
     </table>
 </body>
 </html>
-
 ```
 
 ### 6.3 XML Configuration
 
 ```xml
-
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <appSettings>
@@ -590,7 +563,6 @@ MIT © [Author](https://github.com/author)
         </logger>
     </logging>
 </configuration>
-
 ```
 
 ---
@@ -601,44 +573,35 @@ MIT © [Author](https://github.com/author)
 
 ❌ **Ошибка:**
 ```html
-
 <p>Paragraph without closing tag
 <div>Another element
-
 ```
 
 ✅ **Правильно:**
 ```html
-
 <p>Paragraph with closing tag</p>
 <div>Another element</div>
-
 ```
 
 ### 7.2 XML: регистр тегов
 
 ❌ **Ошибка:**
 ```xml
-
 <User>
     <Name>Alice</name>
 </user>
-
 ```
 
 ✅ **Правильно:**
 ```xml
-
 <user>
     <name>Alice</name>
 </user>
-
 ```
 
 ### 7.3 Markdown: пробелы для переноса
 
 ```markdown
-
 Строка 1
 Строка 2 (будет на той же строке!)
 
@@ -648,7 +611,6 @@ MIT © [Author](https://github.com/author)
 Строка 1
 
 Строка 2 (пустая строка = новый параграф)
-
 ```
 
 ---
@@ -689,6 +651,7 @@ MIT © [Author](https://github.com/author)
 - [W3C XML](https://www.w3.org/XML/)
 
 ---
+
 
 
 

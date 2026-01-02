@@ -54,7 +54,6 @@
 **Example: Оценка API**
 
 ```python
-
 class APIQualityAssessment:
     """Оценка качества API"""
     
@@ -101,6 +100,7 @@ class APIQualityAssessment:
 
 ```python
 # ❌ Плохо: глаголы в URI
+
 GET /api/getUser
 POST /api/createUser
 POST /api/deleteUser
@@ -118,6 +118,7 @@ DELETE /api/users/123
 
 ```python
 # ❌ Плохо: POST для получения данных
+
 POST /api/getUsers
 POST /api/getUser/123
 
@@ -133,6 +134,7 @@ GET /api/users/123
 
 ```python
 # ❌ Плохо: разные форматы ответов
+
 GET /api/users/1 → {"user": {...}}
 GET /api/users/2 → {"data": {...}}
 GET /api/users/3 → {...}
@@ -215,7 +217,6 @@ return jsonify({"error": "Not found"}), 404
 **Example: Оценка масштабируемости**
 
 ```python
-
 def assess_scalability(api_spec):
     """Оценка масштабируемости API"""
     factors = {
@@ -254,6 +255,7 @@ def is_stateless(api_spec):
 
 ```python
 # ❌ Плохой API
+
 """
 POST /api/getUser
 Body: {"userId": 123}
@@ -277,7 +279,6 @@ Response: {"id": 123, "name": "Иван", "email": "ivan@example.com"}
 # 2. Ресурс в URI (/users/123)
 # 3. Правильный HTTP метод
 # 4. Единообразная структура ответа
-
 ```
 
 ### 5.1 Автоматизированный Review
@@ -285,7 +286,6 @@ Response: {"id": 123, "name": "Иван", "email": "ivan@example.com"}
 **Example: Автоматическая проверка API**
 
 ```python
-
 class APIReviewer:
     """Автоматизированный review API"""
     
@@ -330,7 +330,6 @@ class APIReviewer:
 **Example: Систематический review**
 
 ```python
-
 class ReviewChecklist:
     """Чек-лист для review"""
     
@@ -376,7 +375,6 @@ class ReviewChecklist:
 **Example: Выявление узких мест**
 
 ```python
-
 class ScalabilityAnalyzer:
     """Анализ масштабируемости"""
     
@@ -461,6 +459,7 @@ class ScalabilityAnalyzer:
 - "Common API Design Mistakes" — типовые ошибки
 
 ---
+
 
 
 

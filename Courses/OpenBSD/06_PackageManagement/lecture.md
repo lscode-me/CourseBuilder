@@ -55,12 +55,13 @@ OpenBSD имеет две системы установки ПО:
 
 ```sh
 # Для текущей сессии
+
 $ export PKG_PATH=https://cdn.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(uname -m)/
 
 # Проверить
+
 $ echo $PKG_PATH
 https://cdn.openbsd.org/pub/OpenBSD/7.4/packages/amd64/
-
 ```
 
 ---
@@ -84,12 +85,12 @@ vim-9.0.1897-no_x11: ok
 
 # Интерактивный выбор (если несколько вариантов)
 # doas pkg_add vim
+
 Ambiguous: choose package for vim
 a       0: <None>
         1: vim-9.0.1897-gtk3
         2: vim-9.0.1897-no_x11
 Your choice: 2
-
 ```
 
 ### 2.2 Flavors (варианты пакетов)
@@ -98,17 +99,19 @@ Your choice: 2
 
 ```sh
 # Пример: vim с GUI и без
+
 vim-9.0.1897-no_x11   # без X11
 vim-9.0.1897-gtk3     # с GTK3
 
 # Python с разными версиями
+
 python-3.10.13
 python-3.11.6
 
 # Firefox ESR и обычный
+
 firefox-119.0
 firefox-esr-115.4.0
-
 ```
 
 ```sh
@@ -125,11 +128,11 @@ pkg_add автоматически устанавливает зависимос
 
 ```sh
 # doas pkg_add git
+
 git-2.42.0:libcurl-8.4.0: ok
 git-2.42.0:p5-Error-0.17029: ok
 git-2.42.0:p5-Authen-SASL-2.16p0: ok
 git-2.42.0: ok
-
 ```
 
 ---
@@ -160,8 +163,8 @@ pkg_add -u 2>&1 | mail -s "Package updates" root
 
 # Или через crontab
 # doas crontab -e
-0 3 * * * /usr/sbin/pkg_add -u >/dev/null 2>&1
 
+0 3 * * * /usr/sbin/pkg_add -u >/dev/null 2>&1
 ```
 
 > **⚠️ Warning:**  
@@ -202,6 +205,7 @@ pkg_add -u 2>&1 | mail -s "Package updates" root
 
 ```sh
 # Список установленных пакетов
+
 $ pkg_info
 bash-5.2.15         GNU Bourne Again Shell
 curl-8.4.0          get files from FTP, Gopher, HTTP or HTTPS servers
@@ -209,6 +213,7 @@ git-2.42.0          distributed version control system
 ...
 
 # Информация о пакете
+
 $ pkg_info vim
 Information for vim-9.0.1897-no_x11
 
@@ -219,6 +224,7 @@ Vim is an almost compatible version of the UNIX editor vi.
 ...
 
 # Файлы пакета
+
 $ pkg_info -L vim | head
 Information for vim-9.0.1897-no_x11
 
@@ -232,24 +238,27 @@ Files:
 ...
 
 # Какому пакету принадлежит файл
+
 $ pkg_info -E /usr/local/bin/vim
 vim-9.0.1897-no_x11
-
 ```
 
 ### 5.2 Поиск пакетов
 
 ```sh
 # Поиск в установленных
+
 $ pkg_info | grep python
 python-3.10.13      interpreted object-oriented programming language
 
 # Поиск в репозитории
+
 $ pkg_info -Q vim
 vim-9.0.1897-gtk3
 vim-9.0.1897-no_x11
 
 # Поиск по описанию
+
 $ pkg_info -Q editor
 ed-1.19             text editor
 joe-4.6p0           Joe's Own Editor
@@ -257,25 +266,25 @@ nano-7.2            pico clone with enhancements
 vim-9.0.1897-gtk3   vi clone, many additional features
 vim-9.0.1897-no_x11 vi clone, many additional features
 ...
-
 ```
 
 ### 5.3 Зависимости
 
 ```sh
 # Зависимости пакета
+
 $ pkg_info -f vim | grep @depend
 @depend :gettext-runtime-*:gettext-runtime-0.22.3
 @depend :libiconv-*:libiconv-1.17
 
 # Что зависит от пакета
+
 $ pkg_info -R curl
 Information for curl-8.4.0
 
 Required by:
 git-2.42.0
 wget-1.21.4
-
 ```
 
 ---
@@ -287,7 +296,6 @@ wget-1.21.4
 **Ports** — система сборки ПО из исходников с автоматическим управлением зависимостями.
 
 ```
-
 /usr/ports/
 ├── archivers/      # архиваторы
 ├── databases/      # базы данных
@@ -301,13 +309,13 @@ wget-1.21.4
 ├── sysutils/       # системные утилиты
 ├── www/            # веб
 └── ...
-
 ```
 
 ### 6.2 Установка портов
 
 ```sh
 # Скачать дерево портов
+
 $ cd /tmp
 $ ftp https://cdn.openbsd.org/pub/OpenBSD/$(uname -r)/ports.tar.gz
 
@@ -323,9 +331,11 @@ $ ftp https://cdn.openbsd.org/pub/OpenBSD/$(uname -r)/ports.tar.gz
 
 ```sh
 # Перейти в каталог порта
+
 $ cd /usr/ports/editors/vim
 
 # Посмотреть информацию
+
 $ make show=COMMENT
 vi clone, many additional features
 
@@ -349,6 +359,7 @@ vi clone, many additional features
 
 ```sh
 # Просмотр доступных flavors
+
 $ cd /usr/ports/editors/vim
 $ make show=FLAVORS
 no_x11 gtk3 huge
@@ -357,16 +368,17 @@ no_x11 gtk3 huge
 # doas env FLAVOR=no_x11 make install clean
 
 # Subpackages
+
 $ cd /usr/ports/databases/postgresql
 $ make show=SUBPACKAGES
 postgresql-client postgresql-server postgresql-contrib
-
 ```
 
 ### 6.5 Обновление портов
 
 ```sh
 # Обновить дерево портов
+
 $ cd /usr/ports
 # doas cvs -q up -Pd
 
@@ -420,7 +432,6 @@ $ cd /usr/ports
 # Включить службы
 # doas rcctl enable nginx php82_fpm mysqld
 # doas rcctl start nginx php82_fpm mysqld
-
 ```
 
 ### 8.2 Установка окружения разработчика
@@ -440,7 +451,6 @@ $ cd /usr/ports
 
 # Редакторы
 # doas pkg_add vim--no_x11 nano
-
 ```
 
 ### 8.3 Установка графического окружения
@@ -459,22 +469,22 @@ $ cd /usr/ports
 
 # Браузер
 # doas pkg_add firefox
-
 ```
 
 ### 8.4 Сборка с кастомными опциями
 
 ```sh
 # Пример: сборка nginx с дополнительными модулями
+
 $ cd /usr/ports/www/nginx
 
 # Посмотреть доступные flavors
+
 $ make show=FLAVORS
 lua naxsi passenger slice stream
 
 # Собрать с нужными опциями
 # doas env FLAVOR="lua stream" make install clean
-
 ```
 
 ---
@@ -489,7 +499,6 @@ lua naxsi passenger slice stream
 
 # Игнорировать зависимости (опасно!)
 # doas pkg_add -D installed vim
-
 ```
 
 ### 9.2 Проверка целостности
@@ -500,18 +509,17 @@ lua naxsi passenger slice stream
 
 # Исправить повреждённые
 # doas pkg_check -f
-
 ```
 
 ### 9.3 Откат к предыдущей версии
 
 ```sh
 # Скачать старую версию
+
 $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.3/packages/amd64/vim-9.0.1500-no_x11.tgz
 
 # Установить
 # doas pkg_add -D installed vim-9.0.1500-no_x11.tgz
-
 ```
 
 ---
@@ -522,15 +530,18 @@ $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.3/packages/amd64/vim-9.0.1500-no_x11
 
 ```sh
 # Установка
+
 pkg_add name            # установить пакет
 pkg_add -u              # обновить все
 pkg_add -u name         # обновить конкретный
 
 # Удаление
+
 pkg_delete name         # удалить пакет
 pkg_delete -a           # удалить orphans
 
 # Информация
+
 pkg_info                # список установленных
 pkg_info name           # информация о пакете
 pkg_info -L name        # файлы пакета
@@ -540,23 +551,24 @@ pkg_info -f name        # зависимости
 pkg_info -R name        # обратные зависимости
 
 # Прочее
-pkg_check               # проверить целостность
 
+pkg_check               # проверить целостность
 ```
 
 ### 10.2 Полезные скрипты
 
 ```sh
 # Найти пакет, предоставляющий файл
+
 $ cat ~/bin/pkg_search
 #!/bin/sh
 pkg_info -E "$1" 2>/dev/null || echo "Not found"
 
 # Обновить с логированием
+
 $ cat ~/bin/pkg_update
 #!/bin/sh
 doas pkg_add -u 2>&1 | tee /var/log/pkg_update.log
-
 ```
 
 ---
@@ -612,6 +624,7 @@ doas pkg_add -u 2>&1 | tee /var/log/pkg_update.log
 - [Ports Guide](https://www.openbsd.org/faq/ports/)
 
 ---
+
 
 
 

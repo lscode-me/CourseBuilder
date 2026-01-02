@@ -40,7 +40,6 @@ Programmed I/O, также известный как polling (опрос), яв�
 **Пример: Polling UART**
 
 ```c
-
 // Простой polling для чтения из UART
 #define UART_STATUS  0x10000000
 #define UART_DATA    0x10000004
@@ -62,7 +61,6 @@ char read_uart() {
 **Пример: Polling с задержкой**
 
 ```c
-
 // Немного лучше: добавляем небольшую задержку
 char read_uart_with_delay() {
     while (!(*(volatile uint32_t*)UART_STATUS & STATUS_READY)) {
@@ -115,7 +113,6 @@ Interrupt-driven I/O (ввод-вывод на основе прерываний
 Механизм обработки прерываний является сложным процессом, который требует тщательной координации между аппаратурой и программным обеспечением:
 
 ```
-
 CPU выполняет программу
     ↓
 Устройство готово → IRQ (Interrupt Request)
@@ -136,7 +133,6 @@ CPU сохраняет контекст (registers, flags)
 **Пример: Interrupt handler для UART**
 
 ```c
-
 // Interrupt handler (упрощённо)
 void uart_interrupt_handler(void) {
     // Проверка источника прерывания
@@ -195,7 +191,6 @@ Interrupt-driven I/O был революционным прорывом в ар�
 
 **Intel 8259 PIC (Programmable Interrupt Controller):**
 ```
-
 - 8 уровней прерываний (IRQ 0-7)
 - Каскадирование до 64 прерываний (master + 8 slaves)
 - Программируемые приоритеты
@@ -203,7 +198,6 @@ Interrupt-driven I/O был революционным прорывом в ар�
 
 **APIC (Advanced PIC):**
 ```
-
 - Локальный APIC в каждом CPU
 - I/O APIC для маршрутизации прерываний
 - Поддержка SMP (Symmetric Multiprocessing)
@@ -213,7 +207,6 @@ Interrupt-driven I/O был революционным прорывом в ар�
 **Пример: Настройка прерывания**
 
 ```c
-
 // Регистрация interrupt handler
 void setup_uart_interrupt() {
     // Установка handler в IDT (Interrupt Descriptor Table)
@@ -239,7 +232,6 @@ void setup_uart_interrupt() {
 
 **Без DMA:**
 ```c
-
 // CPU должен копировать каждый байт
 void copy_without_dma(void *dest, void *src, size_t size) {
     for (size_t i = 0; i < size; i++) {
@@ -258,7 +250,6 @@ DMA представил революционную идею: добавить �
 
 **Процесс DMA transfer:**
 ```
-
 1. CPU настраивает DMA:
    - Источник (device buffer)
    - Назначение (memory address)
@@ -281,7 +272,6 @@ DMA представил революционную идею: добавить �
 **Пример: Использование DMA**
 
 ```c
-
 // Настройка DMA для копирования с диска
 void setup_dma_transfer(void *dest, size_t size) {
     // Настройка DMA контроллера
@@ -318,26 +308,22 @@ void dma_interrupt_handler(void) {
 
 **1. Single Transfer:**
 ```
-
 Один блок данных за раз
 ```
 
 **2. Block Transfer:**
 ```
-
 Весь блок данных за один раз
 ```
 
 **3. Scatter-Gather DMA:**
 ```
-
 Копирование из/в несколько несмежных областей памяти
 ```
 
 **Пример: Scatter-Gather DMA**
 
 ```c
-
 // Копирование из нескольких буферов в один
 struct dma_sg_entry {
     void *addr;
@@ -372,7 +358,6 @@ void scatter_gather_dma(struct dma_sg_entry *entries, int count) {
 
 **Assembly примеры:**
 ```assembly
-
 ; Чтение из порта
 IN  AL, 0x60    ; читать байт с порта клавиатуры (0x60) в AL
 IN  AX, 0x60    ; читать слово (2 байта)
@@ -386,7 +371,6 @@ OUT 0x20, EAX   ; записать двойное слово
 
 **C примеры:**
 ```c
-
 // Встроенные функции для портов
 #include <sys/io.h>
 
@@ -407,7 +391,6 @@ outl(0x20, 0x12345678); // Записать двойное слово
 **Пример: Работа с клавиатурой (PS/2)**
 
 ```c
-
 // Чтение scan code с клавиатуры
 unsigned char read_keyboard() {
     // Ждать готовности данных
@@ -428,7 +411,6 @@ unsigned char read_keyboard() {
 
 **Порты x86:**
 ```
-
 0x0000-0x03FF: System board (timer, keyboard, etc.)
 0x0400-0x04FF: Reserved
 0x0500-0x05FF: Reserved
@@ -445,7 +427,6 @@ unsigned char read_keyboard() {
 **Пример: UART через MMIO**
 
 ```c
-
 // Определение регистров UART
 #define UART_BASE    0x10000000
 #define UART_DATA    (*(volatile uint32_t*)(UART_BASE + 0x00))
@@ -475,7 +456,6 @@ char uart_getchar() {
 **Пример: GPIO через MMIO (ARM)**
 
 ```c
-
 // GPIO регистры на ARM
 #define GPIO_BASE    0x20200000
 #define GPIO_FSEL0   (*(volatile uint32_t*)(GPIO_BASE + 0x00))
@@ -510,7 +490,6 @@ void gpio_clear(int pin) {
 **Важно: `volatile`**
 
 ```c
-
 // БЕЗ volatile - компилятор может оптимизировать
 uint32_t *uart = (uint32_t*)0x10000000;
 *uart = 'A';
@@ -524,7 +503,6 @@ volatile uint32_t *uart = (volatile uint32_t*)0x10000000;
 
 **Memory map пример (Raspberry Pi):**
 ```
-
 0x00000000 - 0x3FFFFFFF: RAM
 0x20000000 - 0x20FFFFFF: Peripherals (MMIO)
   0x20200000: GPIO
@@ -610,7 +588,6 @@ static int __init my_init(void) {
 **Пример: Block device operations**
 
 ```c
-
 // Block device operations (упрощённо)
 static int my_block_open(struct block_device *bdev, fmode_t mode) {
     // Открытие устройства
@@ -677,7 +654,6 @@ static const struct net_device_ops my_net_ops = {
 
 **Типичная структура драйвера:**
 ```c
-
 // 1. Инициализация
 static int __init driver_init(void) {
     // Регистрация устройства
@@ -725,7 +701,6 @@ static void __exit driver_exit(void) {
 **Пример: Чтение PCI configuration**
 
 ```c
-
 // Чтение vendor ID и device ID
 uint16_t read_pci_config(uint8_t bus, uint8_t device, 
                          uint8_t function, uint8_t offset) {
@@ -765,7 +740,6 @@ void find_pci_device(uint16_t vendor_id, uint16_t device_id) {
 
 **USB скорости:**
 ```
-
 USB 1.0: 1.5 Mbps (Low Speed)
 USB 1.1: 12 Mbps (Full Speed)
 USB 2.0: 480 Mbps (High Speed)
@@ -777,7 +751,6 @@ USB 4.0: 40 Gbps
 **Пример: USB device descriptor**
 
 ```c
-
 // USB device descriptor (упрощённо)
 struct usb_device_descriptor {
     uint8_t bLength;
@@ -805,7 +778,6 @@ struct usb_device_descriptor {
 
 **SATA скорости:**
 ```
-
 SATA 1.0: 1.5 Gbps (150 MB/s)
 SATA 2.0: 3 Gbps (300 MB/s)
 SATA 3.0: 6 Gbps (600 MB/s)
@@ -823,7 +795,6 @@ SATA 3.2: 16 Gbps (SATA Express)
 **Пример: Double buffering**
 
 ```c
-
 // Двойная буферизация для плавной передачи
 char buffer1[BUFFER_SIZE];
 char buffer2[BUFFER_SIZE];
@@ -855,7 +826,6 @@ void write_data(char *data, size_t len) {
 **Пример: Write-back cache**
 
 ```c
-
 // Write-back: запись сначала в кэш
 void write_to_disk(char *data, size_t len) {
     // Запись в кэш (быстро)

@@ -78,7 +78,6 @@ PHI — любая информация, которая может иденти�
 2. **Expert Determination** — эксперт подтверждает, что риск минимален
 
 ```python
-
 def deidentify_patient_data(patient):
     """Простая де-идентификация"""
     return {
@@ -88,7 +87,6 @@ def deidentify_patient_data(patient):
         'zip_3': patient['zip'][:3],  # Только первые 3 цифры
         # Все имена, даты, номера удалены
     }
-
 ```
 
 ---
@@ -112,7 +110,6 @@ def deidentify_patient_data(patient):
 ### 2.2 Consent Management
 
 ```python
-
 class ConsentManager:
     def __init__(self):
         self.consents = {}
@@ -130,7 +127,6 @@ class ConsentManager:
         """Проверить разрешение на обработку"""
         consent = self.consents.get(patient_id)
         return consent and consent['granted'] and consent['purpose'] == purpose
-
 ```
 
 ---
@@ -141,35 +137,33 @@ class ConsentManager:
 
 **At Rest:**
 ```python
-
 from cryptography.fernet import Fernet
 
 # Генерация ключа
+
 key = Fernet.generate_key()
 cipher = Fernet(key)
 
 # Шифрование PHI
+
 encrypted_ssn = cipher.encrypt(b"123-45-6789")
 
 # Дешифрование
-decrypted_ssn = cipher.decrypt(encrypted_ssn)
 
+decrypted_ssn = cipher.decrypt(encrypted_ssn)
 ```
 
 **In Transit:**
 ```
-
 - TLS 1.2+ для всех соединений
 - VPN для remote access
 - Encrypted email (S/MIME, PGP)
-
 ```
 
 ### 3.2 Access Control
 
 **RBAC (Role-Based Access Control):**
 ```python
-
 class AccessControl:
     roles = {
         'doctor': ['read_patient', 'write_patient', 'prescribe'],
@@ -180,7 +174,6 @@ class AccessControl:
     
     def has_permission(self, user_role, permission):
         return permission in self.roles.get(user_role, [])
-
 ```
 
 **Принцип наименьших привилегий:**
@@ -191,7 +184,6 @@ class AccessControl:
 ### 3.3 Audit Logging
 
 ```python
-
 class AuditLog:
     def log_access(self, user_id, patient_id, action, timestamp):
         """Логировать доступ к медицинским данным"""
@@ -211,7 +203,6 @@ class AuditLog:
         # Доступ в необычное время
         # Доступ к собственной записи медработником
         pass
-
 ```
 
 **Что логировать:**
@@ -230,7 +221,6 @@ class AuditLog:
 ### 4.1 Authentication
 
 ```python
-
 from flask import Flask, request
 from werkzeug.security import check_password_hash
 import jwt
@@ -253,7 +243,6 @@ def authenticate_user(username, password):
     }, SECRET_KEY)
     
     return token
-
 ```
 
 **Требования:**
@@ -267,29 +256,31 @@ def authenticate_user(username, password):
 
 ```python
 # SQL Injection Prevention
+
 from sqlalchemy import text
 
 # BAD
+
 query = f"SELECT * FROM patients WHERE id = {patient_id}"  # НЕ ДЕЛАЙТЕ ТАК!
 
 # GOOD
+
 query = text("SELECT * FROM patients WHERE id = :id")
 result = db.execute(query, {"id": patient_id})
 
-
 # XSS Prevention
+
 from markupsafe import escape
 
 user_input = request.form['note']
 safe_note = escape(user_input)  # Экранирование HTML
 
-
 # CSRF Protection
+
 from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
-
 ```
 
 ---
@@ -313,11 +304,9 @@ csrf = CSRFProtect(app)
 ### 5.2 Breach Notification Timeline
 
 ```
-
 Обнаружение → 60 дней → Уведомление пациентов
               ↓
           Немедленно → Уведомление HHS (если >500)
-
 ```
 
 ---
@@ -419,6 +408,7 @@ csrf = CSRFProtect(app)
 1. Реализуйте систему аудита доступа к PHI
 2. Напишите скрипт де-идентификации FHIR ресурсов
 3. Изучите требования HIPAA для вашего конкретного use case
+
 
 
 

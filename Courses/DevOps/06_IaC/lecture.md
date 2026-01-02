@@ -32,7 +32,6 @@
 **Infrastructure as Code (IaC)** — практика управления инфраструктурой через машиночитаемые файлы конфигурации, а не через ручные процессы или интерактивные инструменты.
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                     Traditional vs IaC                           │
 ├──────────────────────────────────────────────────────────────────┤
@@ -53,13 +52,11 @@
 │           └── Reproducible, testable                             │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Преимущества IaC
 
 ```python
-
 iac_benefits = {
     "reproducibility": {
         "description": "Одинаковая инфраструктура каждый раз",
@@ -86,7 +83,6 @@ iac_benefits = {
         "example": "terraform apply — и вся инфраструктура снова работает"
     }
 }
-
 ```
 
 ### 1.3 Declarative vs Imperative
@@ -94,6 +90,7 @@ iac_benefits = {
 **Declarative (Что мы хотим):**
 ```hcl
 # Terraform (declarative)
+
 resource "aws_instance" "web" {
   count         = 3
   ami           = "ami-12345678"
@@ -107,6 +104,7 @@ resource "aws_instance" "web" {
 **Imperative (Как это сделать):**
 ```python
 # Python script (imperative)
+
 import boto3
 
 ec2 = boto3.resource('ec2')
@@ -156,7 +154,6 @@ Terraform — декларативный IaC инструмент от HashiCorp
 ### 2.2 Структура проекта
 
 ```
-
 terraform/
 ├── main.tf           # Основные ресурсы
 ├── variables.tf      # Входные переменные
@@ -168,13 +165,13 @@ terraform/
     ├── vpc/
     ├── ec2/
     └── rds/
-
 ```
 
 ### 2.3 Базовый пример
 
 ```hcl
 # providers.tf
+
 terraform {
   required_version = ">= 1.0"
   
@@ -207,11 +204,11 @@ provider "aws" {
     }
   }
 }
-
 ```
 
 ```hcl
 # variables.tf
+
 variable "aws_region" {
   description = "AWS region"
   type        = string
@@ -244,12 +241,12 @@ variable "instance_type" {
   type        = string
   default     = "t3.medium"
 }
-
 ```
 
 ```hcl
 # main.tf
 # VPC
+
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
@@ -261,6 +258,7 @@ resource "aws_vpc" "main" {
 }
 
 # Subnets
+
 resource "aws_subnet" "public" {
   count             = 2
   vpc_id            = aws_vpc.main.id
@@ -276,6 +274,7 @@ resource "aws_subnet" "public" {
 }
 
 # Security Group
+
 resource "aws_security_group" "web" {
   name        = "${var.project_name}-web-sg"
   description = "Security group for web servers"
@@ -304,6 +303,7 @@ resource "aws_security_group" "web" {
 }
 
 # EC2 Instances
+
 resource "aws_instance" "web" {
   count         = var.instance_count
   ami           = data.aws_ami.ubuntu.id
@@ -324,6 +324,7 @@ resource "aws_instance" "web" {
 }
 
 # Data sources
+
 data "aws_availability_zones" "available" {
   state = "available"
 }
@@ -337,11 +338,11 @@ data "aws_ami" "ubuntu" {
     values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
   }
 }
-
 ```
 
 ```hcl
 # outputs.tf
+
 output "vpc_id" {
   description = "VPC ID"
   value       = aws_vpc.main.id
@@ -356,40 +357,46 @@ output "instance_ids" {
   description = "Instance IDs"
   value       = aws_instance.web[*].id
 }
-
 ```
 
 ### 2.4 Terraform Workflow
 
 ```bash
 # 1. Инициализация (скачать провайдеры, настроить backend)
+
 terraform init
 
 # 2. Форматирование кода
+
 terraform fmt -recursive
 
 # 3. Валидация
+
 terraform validate
 
 # 4. План (предварительный просмотр)
+
 terraform plan -out=tfplan
 
 # 5. Применение изменений
+
 terraform apply tfplan
 
 # 6. Просмотр state
+
 terraform state list
 terraform state show aws_instance.web[0]
 
 # 7. Удаление ресурсов
-terraform destroy
 
+terraform destroy
 ```
 
 ### 2.5 Модули Terraform
 
 ```hcl
 # modules/ec2-cluster/variables.tf
+
 variable "name" {
   description = "Cluster name"
   type        = string
@@ -416,11 +423,11 @@ variable "security_group_ids" {
   description = "Security group IDs"
   type        = list(string)
 }
-
 ```
 
 ```hcl
 # modules/ec2-cluster/main.tf
+
 resource "aws_instance" "this" {
   count         = var.instance_count
   ami           = data.aws_ami.ubuntu.id
@@ -443,11 +450,11 @@ data "aws_ami" "ubuntu" {
     values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
   }
 }
-
 ```
 
 ```hcl
 # modules/ec2-cluster/outputs.tf
+
 output "instance_ids" {
   value = aws_instance.this[*].id
 }
@@ -455,11 +462,11 @@ output "instance_ids" {
 output "private_ips" {
   value = aws_instance.this[*].private_ip
 }
-
 ```
 
 ```hcl
 # Использование модуля в main.tf
+
 module "web_cluster" {
   source = "./modules/ec2-cluster"
   
@@ -479,7 +486,6 @@ module "api_cluster" {
   subnet_ids         = aws_subnet.private[*].id
   security_group_ids = [aws_security_group.api.id]
 }
-
 ```
 
 ---
@@ -505,7 +511,6 @@ Ansible — инструмент для configuration management и automation. 
 ### 3.2 Структура проекта
 
 ```
-
 ansible/
 ├── ansible.cfg           # Конфигурация
 ├── inventory/
@@ -527,13 +532,13 @@ ansible/
     ├── all.yml
     ├── webservers.yml
     └── databases.yml
-
 ```
 
 ### 3.3 Inventory
 
 ```yaml
 # inventory/production.yml
+
 all:
   children:
     webservers:
@@ -559,7 +564,6 @@ all:
   vars:
     ansible_user: ubuntu
     ansible_ssh_private_key_file: ~/.ssh/production.pem
-
 ```
 
 ### 3.4 Playbooks
@@ -617,7 +621,6 @@ all:
       systemd:
         name: "{{ app_name }}"
         state: restarted
-
 ```
 
 ### 3.5 Roles
@@ -662,7 +665,6 @@ all:
     state: started
     enabled: true
   tags: nginx
-
 ```
 
 ```yaml
@@ -677,7 +679,6 @@ all:
   systemd:
     name: nginx
     state: restarted
-
 ```
 
 ```yaml
@@ -687,11 +688,9 @@ nginx_worker_processes: auto
 nginx_worker_connections: 1024
 site_name: default
 upstream_servers: []
-
 ```
 
 ```jinja2
-
 {# roles/nginx/templates/site.conf.j2 #}
 upstream {{ site_name }}_backend {
 {% for server in upstream_servers %}
@@ -715,30 +714,34 @@ server {
         add_header Content-Type text/plain;
     }
 }
-
 ```
 
 ### 3.6 Ansible Workflow
 
 ```bash
 # Проверка синтаксиса
+
 ansible-playbook playbooks/site.yml --syntax-check
 
 # Dry run (check mode)
+
 ansible-playbook playbooks/site.yml --check
 
 # Запуск playbook
+
 ansible-playbook -i inventory/production.yml playbooks/site.yml
 
 # Только определённые теги
+
 ansible-playbook playbooks/site.yml --tags "nginx"
 
 # Только определённые хосты
+
 ansible-playbook playbooks/site.yml --limit "web1.example.com"
 
 # С дополнительными переменными
-ansible-playbook playbooks/site.yml -e "app_version=2.0.0"
 
+ansible-playbook playbooks/site.yml -e "app_version=2.0.0"
 ```
 
 ---
@@ -759,7 +762,6 @@ ansible-playbook playbooks/site.yml -e "app_version=2.0.0"
 ### 4.2 Когда что использовать
 
 ```python
-
 def choose_tool(task: str) -> str:
     """Choose between Terraform and Ansible."""
     
@@ -785,13 +787,13 @@ def choose_tool(task: str) -> str:
         return "ansible"
     else:
         return "both"  # Часто используются вместе
-
 ```
 
 ### 4.3 Интеграция Terraform + Ansible
 
 ```hcl
 # Terraform создаёт инфраструктуру
+
 resource "aws_instance" "web" {
   count         = 3
   ami           = data.aws_ami.ubuntu.id
@@ -804,6 +806,7 @@ resource "aws_instance" "web" {
 }
 
 # Генерируем inventory для Ansible
+
 resource "local_file" "ansible_inventory" {
   content = templatefile("${path.module}/inventory.tpl", {
     web_servers = aws_instance.web[*].public_ip
@@ -812,6 +815,7 @@ resource "local_file" "ansible_inventory" {
 }
 
 # Запускаем Ansible после создания
+
 resource "null_resource" "ansible" {
   depends_on = [aws_instance.web, local_file.ansible_inventory]
   
@@ -823,7 +827,6 @@ resource "null_resource" "ansible" {
     }
   }
 }
-
 ```
 
 ---
@@ -834,6 +837,7 @@ resource "null_resource" "ansible" {
 
 ```gitignore
 # .gitignore для Terraform
+
 *.tfstate
 *.tfstate.backup
 .terraform/
@@ -846,13 +850,13 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
-
 ```
 
 ### 5.2 State Management
 
 ```hcl
 # Удалённый state с locking
+
 terraform {
   backend "s3" {
     bucket         = "my-terraform-state"
@@ -862,11 +866,11 @@ terraform {
     dynamodb_table = "terraform-locks"  # Locking
   }
 }
-
 ```
 
 ```python
 # State management best practices
+
 state_best_practices = [
     "Всегда использовать remote state (S3, GCS, Azure Blob)",
     "Включить state locking (DynamoDB, GCS, Azure Blob)",
@@ -875,18 +879,19 @@ state_best_practices = [
     "Использовать workspaces или отдельные states для environments",
     "Регулярно делать backup state",
 ]
-
 ```
 
 ### 5.3 Secrets Management
 
 ```hcl
 # ❌ Плохо: секреты в коде
+
 resource "aws_db_instance" "db" {
   password = "supersecretpassword"  # НЕТ!
 }
 
 # ✅ Хорошо: секреты из Vault или переменных
+
 data "aws_secretsmanager_secret_version" "db_password" {
   secret_id = "production/db/password"
 }
@@ -896,6 +901,7 @@ resource "aws_db_instance" "db" {
 }
 
 # Или через переменные (передаются при запуске)
+
 variable "db_password" {
   description = "Database password"
   type        = string
@@ -905,13 +911,13 @@ variable "db_password" {
 resource "aws_db_instance" "db" {
   password = var.db_password
 }
-
 ```
 
 ### 5.4 Модульность
 
 ```hcl
 # Хорошая модульная структура
+
 module "vpc" {
   source = "./modules/vpc"
   
@@ -941,7 +947,6 @@ module "database" {
   instance_class = "db.r5.large"
   password       = var.db_password
 }
-
 ```
 
 ### 5.5 Testing
@@ -949,21 +954,24 @@ module "database" {
 ```bash
 # Terraform testing
 # 1. Validate
+
 terraform validate
 
 # 2. Plan и сохранить
+
 terraform plan -out=plan.tfplan
 
 # 3. Проверить plan визуально или автоматически
 # (используя tools вроде terraform-compliance, checkov)
 
 # 4. Apply только проверенный plan
-terraform apply plan.tfplan
 
+terraform apply plan.tfplan
 ```
 
 ```yaml
 # CI для Terraform
+
 name: Terraform
 
 on:
@@ -1006,7 +1014,6 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
 ```
 
 ---
@@ -1019,10 +1026,12 @@ IaC с использованием обычных языков программ
 
 ```python
 # Pulumi с Python
+
 import pulumi
 import pulumi_aws as aws
 
 # VPC
+
 vpc = aws.ec2.Vpc(
     "my-vpc",
     cidr_block="10.0.0.0/16",
@@ -1030,6 +1039,7 @@ vpc = aws.ec2.Vpc(
 )
 
 # EC2 Instance
+
 instance = aws.ec2.Instance(
     "web-server",
     instance_type="t3.medium",
@@ -1039,15 +1049,16 @@ instance = aws.ec2.Instance(
 )
 
 # Export outputs
+
 pulumi.export("instance_ip", instance.public_ip)
 pulumi.export("vpc_id", vpc.id)
-
 ```
 
 ### 6.2 CloudFormation (AWS)
 
 ```yaml
 # AWS CloudFormation
+
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Web server stack
 
@@ -1074,7 +1085,6 @@ Outputs:
   InstanceId:
     Description: Instance ID
     Value: !Ref WebServer
-
 ```
 
 ### 6.3 Сравнение инструментов
@@ -1143,6 +1153,7 @@ Outputs:
 - Red Hat Certified Specialist in Ansible Automation
 
 ---
+
 
 
 

@@ -48,7 +48,6 @@
 **Example: Анализ операций**
 
 ```python
-
 class OperationAnalyzer:
     """Анализатор операций для выбора структуры данных."""
     def __init__(self):
@@ -89,6 +88,7 @@ class OperationAnalyzer:
             return "Массив или список"
 
 # Пример анализа
+
 analyzer = OperationAnalyzer()
 analyzer.log_operation('search', 1000)
 analyzer.log_operation('insert', 100)
@@ -103,7 +103,6 @@ print(f"Рекомендация: {recommendation}")
 
 **Output:**
 ```
-
 Критические операции: ['search']
 Рекомендация: Хеш-таблица
 ```
@@ -121,7 +120,6 @@ print(f"Рекомендация: {recommendation}")
 **Example: Анализ объёма данных**
 
 ```python
-
 def choose_structure_by_volume(current_size, expected_growth, memory_limit):
     """Выбрать структуру данных на основе объёма."""
     future_size = current_size * expected_growth
@@ -146,7 +144,6 @@ print(f"Большой объём: {choose_structure_by_volume(1000000, 10, 1000
 
 **Output:**
 ```
-
 Маленький объём: Массив или список (небольшой объём)
 Большой объём: Вероятностные структуры (Bloom Filter, Count-Min Sketch)
 ```
@@ -164,7 +161,6 @@ print(f"Большой объём: {choose_structure_by_volume(1000000, 10, 1000
 **Example: Анализ памяти**
 
 ```python
-
 import sys
 
 def estimate_memory_usage(structure_type, num_elements):
@@ -189,6 +185,7 @@ def choose_by_memory(num_elements, memory_limit):
     return "Нужна вероятностная структура или распределённое решение"
 
 # Пример
+
 num_elements = 1000000
 memory_limit = 10 * 1024 * 1024  # 10 MB
 
@@ -199,7 +196,6 @@ print(f"Рекомендация: {result}")
 
 **Output:**
 ```
-
 Для 1000000 элементов с лимитом 10.0 MB:
 Рекомендация: bloom_filter (использует ~1.14 MB)
 ```
@@ -218,7 +214,6 @@ print(f"Рекомендация: {result}")
 **Example: Анализ latency vs throughput**
 
 ```python
-
 def choose_by_performance_goal(goal, operations):
     """Выбрать структуру на основе цели производительности."""
     if goal == 'low_latency':
@@ -243,13 +238,13 @@ def choose_by_performance_goal(goal, operations):
         return "Сбалансированная структура"
 
 # Примеры
+
 print(f"Низкая задержка: {choose_by_performance_goal('low_latency', ['random_access'])}")
 print(f"Высокая пропускная способность: {choose_by_performance_goal('high_throughput', ['stream_processing'])}")
 ```
 
 **Output:**
 ```
-
 Низкая задержка: Массив или хеш-таблица (O(1) доступ)
 Высокая пропускная способность: Вероятностные структуры (Count-Min Sketch, Bloom Filter)
 ```
@@ -268,7 +263,6 @@ print(f"Высокая пропускная способность: {choose_by_p
 **Example: Анализ точности**
 
 ```python
-
 def choose_by_accuracy_requirement(need_exact, can_afford_memory, volume):
     """Выбрать структуру на основе требований к точности."""
     if need_exact:
@@ -283,13 +277,13 @@ def choose_by_accuracy_requirement(need_exact, can_afford_memory, volume):
             return "Можно использовать детерминированную структуру"
 
 # Примеры
+
 print(f"Точность + память: {choose_by_accuracy_requirement(True, True, 100000)}")
 print(f"Приближение + большой объём: {choose_by_accuracy_requirement(False, False, 10000000)}")
 ```
 
 **Output:**
 ```
-
 Точность + память: Детерминированная структура (хеш-таблица, дерево)
 Приближение + большой объём: Вероятностная структура (Bloom Filter, Count-Min Sketch)
 ```
@@ -323,7 +317,6 @@ print(f"Приближение + большой объём: {choose_by_accuracy_
 **Example: Полный анализ**
 
 ```python
-
 class StructureSelector:
     """Систематический выбор структуры данных."""
     def __init__(self):
@@ -377,6 +370,7 @@ class StructureSelector:
             return "Массив или список (базовая структура)"
 
 # Пример использования
+
 selector = StructureSelector()
 result = selector.analyze(
     operations=['search', 'insert'],
@@ -391,7 +385,6 @@ print(f"Рекомендуемая структура: {result}")
 
 **Output:**
 ```
-
 Рекомендуемая структура: Хеш-таблица (O(1) поиск)
 ```
 
@@ -553,5 +546,6 @@ print(f"Рекомендуемая структура: {result}")
 **Помните:** Структуры данных — это основа алгоритмов, ключевой инструмент архитектурных решений и фундамент производительности и масштабируемости. Сильный инженер понимает структуры данных, знает их ограничения и осознанно выбирает структуры под задачу.
 
 ---
+
 
 

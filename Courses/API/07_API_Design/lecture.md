@@ -47,12 +47,14 @@
 
 ```python
 # ✅ Хорошо: существительные, множественное число
+
 GET    /api/users
 GET    /api/users/123
 GET    /api/users/123/orders
 GET    /api/users/123/orders/456
 
 # ❌ Плохо: глаголы, единственное число
+
 GET    /api/getUser
 GET    /api/user
 GET    /api/getUserOrders
@@ -64,15 +66,18 @@ GET    /api/getUserOrders
 
 ```python
 # Коллекции
+
 GET    /api/users              # Список пользователей
 POST   /api/users              # Создать пользователя
 
 # Конкретный ресурс
+
 GET    /api/users/123          # Получить пользователя
 PUT    /api/users/123          # Обновить пользователя
 DELETE /api/users/123          # Удалить пользователя
 
 # Вложенные ресурсы
+
 GET    /api/users/123/orders           # Заказы пользователя
 POST   /api/users/123/orders           # Создать заказ
 GET    /api/users/123/orders/456       # Конкретный заказ
@@ -80,7 +85,6 @@ GET    /api/users/123/orders/456       # Конкретный заказ
 # Избегайте глубокой вложенности
 # ❌ Плохо: /api/users/123/orders/456/items/789/prices/1
 # ✅ Хорошо: /api/order-items/789/price
-
 ```
 
 ---
@@ -102,33 +106,37 @@ HTTP методы имеют семантическое значение. Пон
 **Example: Использование HTTP методов**
 
 ```python
-
 import requests
 
 base_url = "https://api.example.com"
 
 # GET - безопасное чтение (идемпотентно)
+
 user = requests.get(f"{base_url}/users/123").json()
 
 # POST - создание (не идемпотентно)
+
 new_user = requests.post(
     f"{base_url}/users",
     json={"name": "Иван", "email": "ivan@example.com"}
 ).json()
 
 # PUT - полное обновление (идемпотентно)
+
 updated = requests.put(
     f"{base_url}/users/123",
     json={"name": "Иван Иванов", "email": "ivan@example.com"}
 ).json()
 
 # PATCH - частичное обновление (не идемпотентно)
+
 patched = requests.patch(
     f"{base_url}/users/123",
     json={"name": "Иван Иванов"}
 ).json()
 
 # DELETE - удаление (идемпотентно)
+
 requests.delete(f"{base_url}/users/123")
 ```
 
@@ -140,25 +148,28 @@ requests.delete(f"{base_url}/users/123")
 
 ```python
 # GET - идемпотентен (повторный вызов даёт тот же результат)
+
 user1 = requests.get(f"{base_url}/users/123").json()
 user2 = requests.get(f"{base_url}/users/123").json()
 # user1 == user2
 
 # PUT - идемпотентен (повторное обновление даёт тот же результат)
+
 requests.put(f"{base_url}/users/123", json={"name": "Иван"})
 requests.put(f"{base_url}/users/123", json={"name": "Иван"})
 # Результат одинаковый
 
 # DELETE - идемпотентен (повторное удаление даёт тот же результат)
+
 requests.delete(f"{base_url}/users/123")  # 204 No Content
 requests.delete(f"{base_url}/users/123")  # 404 Not Found (уже удалён)
 # Оба вызова безопасны
 
 # POST - НЕ идемпотентен (каждый вызов создаёт новый ресурс)
+
 requests.post(f"{base_url}/users", json={"name": "Иван"})  # Создаёт пользователя 1
 requests.post(f"{base_url}/users", json={"name": "Иван"})  # Создаёт пользователя 2
 # Разные результаты
-
 ```
 
 ---
@@ -181,7 +192,6 @@ HTTP status codes сообщают результат операции. Прав
 **Example: Использование status codes**
 
 ```python
-
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -220,6 +230,7 @@ def delete_user(user_id):
     return "", 204  # No Content
 
 # Ошибка сервера
+
 @app.errorhandler(500)
 def internal_error(error):
     return jsonify({"error": "Internal server error"}), 500
@@ -251,7 +262,6 @@ def internal_error(error):
 **Example: Стандартизированная структура ошибок**
 
 ```python
-
 def error_response(code, message, details=None):
     """Стандартизированная структура ошибки"""
     error = {
@@ -266,6 +276,7 @@ def error_response(code, message, details=None):
     return error
 
 # Примеры ошибок
+
 validation_error = error_response(
     "VALIDATION_ERROR",
     "Invalid email format",
@@ -290,7 +301,6 @@ conflict_error = error_response(
 **Example: Обработка ошибок в API**
 
 ```python
-
 from flask import Flask, jsonify, request
 from werkzeug.exceptions import BadRequest
 
@@ -353,10 +363,12 @@ def create_user():
 
 ```python
 # Версионирование в URI
+
 GET /api/v1/users
 GET /api/v2/users
 
 # Или в заголовке
+
 GET /api/users
 Headers: Accept: application/vnd.api.v1+json
 ```
@@ -366,7 +378,6 @@ Headers: Accept: application/vnd.api.v1+json
 **Example: Пагинация в API**
 
 ```python
-
 @app.route("/api/users", methods=["GET"])
 def get_users():
     page = request.args.get("page", 1, type=int)
@@ -390,7 +401,6 @@ def get_users():
 **Example: Фильтрация и сортировка**
 
 ```python
-
 @app.route("/api/users", methods=["GET"])
 def get_users():
     # Фильтрация
@@ -414,6 +424,7 @@ def get_users():
 ❌ **Incorrect:**
 ```python
 # Плохо: POST для получения данных
+
 POST /api/getUser
 POST /api/getUsers
 ```
@@ -421,6 +432,7 @@ POST /api/getUsers
 ✅ **Correct:**
 ```python
 # Хорошо: GET для чтения
+
 GET /api/users/123
 GET /api/users
 ```
@@ -432,12 +444,14 @@ GET /api/users
 ❌ **Incorrect:**
 ```python
 # Плохо: 200 для ошибки
+
 return jsonify({"error": "Not found"}), 200
 ```
 
 ✅ **Correct:**
 ```python
 # Хорошо: 404 для не найденного ресурса
+
 return jsonify({"error": "Not found"}), 404
 ```
 
@@ -494,5 +508,6 @@ return jsonify({"error": "Not found"}), 404
 - "Understanding HTTP Methods and Idempotency" — понимание HTTP методов
 
 ---
+
 
 

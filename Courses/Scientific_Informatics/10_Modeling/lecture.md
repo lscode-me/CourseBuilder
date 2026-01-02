@@ -46,7 +46,6 @@
 
 **Output:**
 ```
-
 Deterministic model: predictable
 Stochastic model: includes randomness
 Deterministic at t=5: 11.00
@@ -86,7 +85,6 @@ print(f"Error: {abs(pi_est - np.pi):.6f}")
 
 **Output:**
 ```
-
 Estimated π: 3.141592
 Actual π: 3.141593
 Error: 0.000001
@@ -114,7 +112,6 @@ print(f"Max distance from start: {np.max(np.abs(walk))}")
 
 **Output:**
 ```
-
 Final position: -8
 Max distance from start: 45
 ```
@@ -130,7 +127,6 @@ Max distance from start: 45
 **Пример: Ограничения линейной модели**
 
 ```python
-
 from scipy.stats import linregress
 
 # Данные с нелинейной зависимостью
@@ -153,7 +149,6 @@ print(f"Polynomial model R²: {r_squared_poly:.3f}")
 
 **Output:**
 ```
-
 Linear model R²: 0.987
 ⚠️ Warning: Linear model assumes linear relationship
 But data has quadratic relationship!
@@ -186,7 +181,6 @@ print("Model assumptions may not hold outside observed range")
 
 **Output:**
 ```
-
 Training range: 0.0 to 10.0
 Extrapolation range: [20 30 40]
 ⚠️ Warning: Extrapolation beyond training data is risky!
@@ -204,7 +198,6 @@ Model assumptions may not hold outside observed range
 **Пример: Валидация модели**
 
 ```python
-
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -238,7 +231,6 @@ print(f"Model validation: {'Good' if abs(train_mse - test_mse) < 0.5 else 'Overf
 
 **Output:**
 ```
-
 Train MSE: 0.987, R²: 0.998
 Test MSE: 1.023, R²: 0.997
 Model validation: Good
@@ -251,7 +243,6 @@ Model validation: Good
 **Пример: Калибровка параметров**
 
 ```python
-
 from scipy.optimize import minimize
 
 # Модель с параметрами для калибровки
@@ -285,7 +276,6 @@ print(f"Calibrated: {y_calibrated}")
 
 **Output:**
 ```
-
 Calibrated parameters: a=1.012, b=0.298
 Final error: 0.023456
 Observed: [1.  1.5 2.2 3.3 5.  7.4]
@@ -330,7 +320,6 @@ print(f"Final population: {N[-1]:.1f}")
 
 **Output:**
 ```
-
 Initial population: 10
 Carrying capacity: 1000
 Final population: 999.8
@@ -363,7 +352,6 @@ print(f"Concentration at t={t_half:.2f}: {first_order_kinetics(t_half, C0, k):.3
 
 **Output:**
 ```
-
 Initial concentration: 1.0
 Rate constant: 0.1
 Half-life: 6.93 time units

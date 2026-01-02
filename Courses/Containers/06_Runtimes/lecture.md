@@ -34,7 +34,6 @@
 ### 1.1 Уровни абстракции
 
 ```
-
 ┌──────────────────────────────────────────────────────────────┐
 │                    Container Engines                         │
 │              (Docker, Podman, nerdctl)                       │
@@ -60,7 +59,6 @@
 │                      Linux Kernel                           │
 │              (namespaces, cgroups, seccomp)                 │
 └─────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Сравнение компонентов
@@ -81,7 +79,6 @@ containerd — промышленный container runtime, используем�
 ### 2.1 Архитектура containerd
 
 ```
-
 ┌───────────────────────────────────────────────────────────┐
 │                       containerd                          │
 ├───────────────────────────────────────────────────────────┤
@@ -100,41 +97,44 @@ containerd — промышленный container runtime, используем�
 │  │              containerd-shim-runc-v2                 │ │
 │  └─────────────────────────────────────────────────────┘  │
 └───────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 Установка containerd
 
 ```bash
 # Ubuntu/Debian
+
 apt update && apt install -y containerd
 
 # Или из релизов
+
 VERSION="1.7.8"
 curl -LO https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
 tar -xzf containerd-${VERSION}-linux-amd64.tar.gz -C /usr/local
 
 # Настройка systemd
+
 curl -LO https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
 mv containerd.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable --now containerd
-
 ```
 
 ### 2.3 Конфигурация containerd
 
 ```bash
 # Генерация дефолтной конфигурации
+
 containerd config default > /etc/containerd/config.toml
 
 # Основные параметры
-cat /etc/containerd/config.toml
 
+cat /etc/containerd/config.toml
 ```
 
 ```toml
 # /etc/containerd/config.toml
+
 version = 2
 
 [plugins]
@@ -153,7 +153,6 @@ version = 2
 
   [plugins."io.containerd.snapshotter.v1.overlayfs"]
     root_path = "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs"
-
 ```
 
 ### 2.4 Работа с ctr
@@ -162,45 +161,50 @@ version = 2
 
 ```bash
 # Pull образа
+
 ctr images pull docker.io/library/alpine:latest
 
 # Список образов
-ctr images list
 
+ctr images list
 ```
 
 **Output:**
 ```
-
 REF                            TYPE                                                 DIGEST      SIZE
 docker.io/library/alpine:latest application/vnd.docker.distribution.manifest.v2+json sha256:... 3.2 MiB
-
 ```
 
 ```bash
 # Запуск контейнера
+
 ctr run --rm -t docker.io/library/alpine:latest mycontainer /bin/sh
 
 # Создание контейнера (без запуска)
+
 ctr container create docker.io/library/alpine:latest mycontainer
 
 # Запуск task (процесса)
+
 ctr task start -d mycontainer
 
 # Exec в контейнер
+
 ctr task exec --exec-id exec1 -t mycontainer /bin/sh
 
 # Список контейнеров
+
 ctr containers list
 
 # Список tasks
+
 ctr tasks list
 
 # Удаление
+
 ctr task kill mycontainer
 ctr task delete mycontainer
 ctr container delete mycontainer
-
 ```
 
 ### 2.5 Namespaces в containerd
@@ -209,25 +213,23 @@ containerd использует собственные namespaces (не Linux na
 
 ```bash
 # Список namespaces
-ctr namespaces list
 
+ctr namespaces list
 ```
 
 **Output:**
 ```
-
 NAME    LABELS
 default
 k8s.io
 moby
-
 ```
 
 ```bash
 # Работа в конкретном namespace
+
 ctr -n k8s.io containers list
 ctr -n moby containers list  # Docker контейнеры
-
 ```
 
 ---
@@ -240,36 +242,42 @@ nerdctl предоставляет Docker-совместимый интерфе�
 
 ```bash
 # Скачиваем полную версию (с buildkit и CNI)
+
 VERSION="1.7.0"
 curl -LO https://github.com/containerd/nerdctl/releases/download/v${VERSION}/nerdctl-full-${VERSION}-linux-amd64.tar.gz
 tar -xzf nerdctl-full-${VERSION}-linux-amd64.tar.gz -C /usr/local
 
 # Проверка
-nerdctl version
 
+nerdctl version
 ```
 
 ### 3.2 Использование nerdctl
 
 ```bash
 # Почти как Docker!
+
 nerdctl run --rm -it alpine sh
 
 # Pull
+
 nerdctl pull nginx:alpine
 
 # Build
+
 nerdctl build -t myimage:latest .
 
 # Compose
+
 nerdctl compose up -d
 
 # Список контейнеров
+
 nerdctl ps -a
 
 # Логи
-nerdctl logs mycontainer
 
+nerdctl logs mycontainer
 ```
 
 ### 3.3 Отличия от Docker
@@ -283,9 +291,9 @@ nerdctl logs mycontainer
 
 ```bash
 # Rootless mode
+
 containerd-rootless-setuptool.sh install
 nerdctl run --rm alpine cat /etc/os-release
-
 ```
 
 ---
@@ -297,7 +305,6 @@ CRI-O — container runtime специально для Kubernetes.
 ### 4.1 Архитектура CRI-O
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                      Kubernetes                         │
 │                        kubelet                          │
@@ -322,7 +329,6 @@ CRI-O — container runtime специально для Kubernetes.
 ┌─────────────────────────────────────────────────────────┐
 │                  OCI Runtime (runc)                     │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Особенности CRI-O
@@ -356,21 +362,21 @@ pause_image = "registry.k8s.io/pause:3.9"
 [crio.network]
 network_dir = "/etc/cni/net.d/"
 plugin_dirs = ["/opt/cni/bin/"]
-
 ```
 
 ### 4.4 Инструменты CRI-O
 
 ```bash
 # crictl — CLI для CRI-совместимых runtime
+
 crictl --runtime-endpoint unix:///var/run/crio/crio.sock ps
 crictl images
 crictl logs <container-id>
 crictl exec -it <container-id> /bin/sh
 
 # Проверка конфигурации
-crio config --default
 
+crio config --default
 ```
 
 ---
@@ -382,7 +388,6 @@ Podman — daemonless container engine, совместимый с Docker.
 ### 5.1 Архитектура Podman
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                     podman CLI                          │
 │                                                         │
@@ -406,7 +411,6 @@ Podman — daemonless container engine, совместимый с Docker.
     ┌──────────────────────────────────────┐
     │          OCI Runtime (runc/crun)     │
     └──────────────────────────────────────┘
-
 ```
 
 ### 5.2 Ключевые отличия от Docker
@@ -424,56 +428,59 @@ Podman — daemonless container engine, совместимый с Docker.
 
 ```bash
 # Ubuntu/Debian
+
 apt install podman
 
 # Fedora/RHEL
+
 dnf install podman
 
 # Проверка
-podman version
 
+podman version
 ```
 
 **Output:**
 ```
-
 Client:       Podman Engine
 Version:      4.6.1
 API Version:  4.6.1
 Go Version:   go1.20.6
 Built:        Thu Aug 10 15:00:00 2023
 OS/Arch:      linux/amd64
-
 ```
 
 ### 5.4 Использование Podman
 
 ```bash
 # Идентичный Docker синтаксис
+
 podman pull alpine
 podman run --rm -it alpine sh
 podman images
 podman ps -a
 
 # Совместимость через alias
+
 alias docker=podman
 docker run --rm alpine echo "Hello"
-
 ```
 
 ### 5.5 Rootless Podman
 
 ```bash
 # Работает от обычного пользователя!
+
 podman run --rm alpine whoami
 
 # Где хранятся данные
+
 echo $HOME/.local/share/containers
 ls ~/.local/share/containers/storage/
 
 # Конфигурация
-cat ~/.config/containers/registries.conf
 
+cat ~/.config/containers/registries.conf
 ```
 
 ### 5.6 Pods в Podman
@@ -482,45 +489,49 @@ Podman поддерживает концепцию Pod из Kubernetes:
 
 ```bash
 # Создание pod
+
 podman pod create --name mypod -p 8080:80
 
 # Добавление контейнеров в pod
+
 podman run -d --pod mypod --name web nginx
 podman run -d --pod mypod --name app python:alpine sleep 3600
 
 # Список pods
-podman pod list
 
+podman pod list
 ```
 
 **Output:**
 ```
-
 POD ID        NAME    STATUS   CREATED        INFRA ID      # OF CONTAINERS
 abc123def456  mypod   Running  5 seconds ago  def456abc789  3
-
 ```
 
 ```bash
 # Контейнеры в pod разделяют network namespace
+
 podman exec app curl localhost:80
 
 # Генерация Kubernetes YAML из pod
-podman generate kube mypod > mypod.yaml
 
+podman generate kube mypod > mypod.yaml
 ```
 
 ### 5.7 Интеграция с systemd
 
 ```bash
 # Генерация systemd unit
+
 podman generate systemd --new --name mycontainer > ~/.config/systemd/user/mycontainer.service
 
 # Активация
+
 systemctl --user daemon-reload
 systemctl --user enable --now mycontainer
 
 # Quadlet — современный способ (Podman 4.4+)
+
 cat > ~/.config/containers/systemd/myapp.container << EOF
 [Container]
 Image=docker.io/library/nginx:alpine
@@ -535,7 +546,6 @@ EOF
 
 systemctl --user daemon-reload
 systemctl --user start myapp
-
 ```
 
 ---
@@ -558,35 +568,41 @@ Buildah — инструмент для создания OCI-совместим�
 
 ```bash
 # Создание контейнера из образа
+
 container=$(buildah from alpine)
 
 # Выполнение команд
+
 buildah run $container -- apk add python3
 
 # Копирование файлов
+
 buildah copy $container ./app /app
 
 # Настройка metadata
+
 buildah config --cmd "/app/start.sh" $container
 buildah config --env "APP_ENV=production" $container
 
 # Коммит в образ
+
 buildah commit $container myapp:latest
 
 # Push
-buildah push myapp:latest docker://registry.example.com/myapp:latest
 
+buildah push myapp:latest docker://registry.example.com/myapp:latest
 ```
 
 ### 6.3 Buildah с Dockerfile
 
 ```bash
 # Стандартная сборка
+
 buildah bud -t myimage:latest .
 
 # С альтернативным файлом
-buildah bud -f Dockerfile.prod -t myimage:prod .
 
+buildah bud -f Dockerfile.prod -t myimage:prod .
 ```
 
 ### 6.4 Scripted builds
@@ -598,27 +614,32 @@ buildah bud -f Dockerfile.prod -t myimage:prod .
 container=$(buildah from golang:1.21-alpine)
 
 # Устанавливаем зависимости
+
 buildah run $container -- apk add --no-cache git
 
 # Монтируем исходники
+
 buildah copy $container . /src
 
 # Компилируем
+
 buildah config --workingdir /src $container
 buildah run $container -- go build -o /app/server .
 
 # Создаём финальный образ (multi-stage)
+
 final=$(buildah from alpine:3.18)
 buildah run $final -- apk add --no-cache ca-certificates
 buildah copy --from $container $final /app/server /server
 buildah config --entrypoint '["/server"]' $final
 
 # Коммитим
+
 buildah commit $final myserver:latest
 
 # Очистка
-buildah rm $container $final
 
+buildah rm $container $final
 ```
 
 ---
@@ -628,7 +649,6 @@ buildah rm $container $final
 ### 7.1 Docker архитектура
 
 ```
-
 ┌──────────┐     ┌──────────┐     ┌────────────┐     ┌──────────┐
 │ docker   │────►│ dockerd  │────►│ containerd │────►│   runc   │
 │   CLI    │     │ (daemon) │     │            │     │          │
@@ -636,7 +656,6 @@ buildah rm $container $final
                       │
                       ▼
                /var/run/docker.sock
-
 ```
 
 **Преимущества:**
@@ -654,7 +673,6 @@ buildah rm $container $final
 ### 7.2 Podman архитектура
 
 ```
-
 ┌──────────┐     ┌──────────┐     ┌──────────┐
 │ podman   │────►│  libpod  │────►│   runc   │
 │   CLI    │     │          │     │          │
@@ -663,7 +681,6 @@ buildah rm $container $final
                       ▼
                    conmon
             (per-container monitor)
-
 ```
 
 **Преимущества:**
@@ -680,23 +697,19 @@ buildah rm $container $final
 ### 7.3 Kubernetes с containerd
 
 ```
-
 ┌──────────┐     ┌────────────┐     ┌──────────────┐     ┌──────┐
 │ kubelet  │────►│ containerd │────►│containerd-shim│────►│ runc│
 │          │ CRI │            │     │              │     │      │
 └──────────┘     └────────────┘     └──────────────┘     └──────┘
-
 ```
 
 ### 7.4 Kubernetes с CRI-O
 
 ```
-
 ┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────┐
 │ kubelet  │────►│  CRI-O   │────►│  conmon  │────►│ runc │
 │          │ CRI │          │     │          │     │      │
 └──────────┘     └──────────┘     └──────────┘     └──────┘
-
 ```
 
 ---
@@ -718,15 +731,19 @@ buildah rm $container $final
 
 ```bash
 # 1. Установка Podman
+
 apt install podman
 
 # 2. Создание alias для совместимости
+
 echo "alias docker=podman" >> ~/.bashrc
 
 # 3. Импорт существующих образов
+
 docker save myimage:latest | podman load
 
 # 4. Настройка registries
+
 cat > /etc/containers/registries.conf << EOF
 [registries.search]
 registries = ['docker.io', 'registry.access.redhat.com']
@@ -736,34 +753,39 @@ registries = []
 EOF
 
 # 5. Проверка
+
 podman info
 podman run --rm alpine echo "Migration successful"
-
 ```
 
 ### 8.3 Переключение Kubernetes на containerd
 
 ```bash
 # 1. Установка containerd
+
 apt install containerd
 
 # 2. Конфигурация для Kubernetes
+
 containerd config default > /etc/containerd/config.toml
 
 # Включить SystemdCgroup
+
 sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
 
 # 3. Перезапуск
+
 systemctl restart containerd
 
 # 4. Настройка kubelet
+
 cat > /etc/default/kubelet << EOF
 KUBELET_EXTRA_ARGS=--container-runtime-endpoint=unix:///run/containerd/containerd.sock
 EOF
 
 # 5. Перезапуск kubelet
-systemctl restart kubelet
 
+systemctl restart kubelet
 ```
 
 ---
@@ -774,29 +796,33 @@ systemctl restart kubelet
 
 ```bash
 # Docker
+
 docker run -d --name app -p 8080:80 nginx:alpine
 
 # Podman
+
 podman run -d --name app -p 8080:80 nginx:alpine
 
 # containerd (через nerdctl)
+
 nerdctl run -d --name app -p 8080:80 nginx:alpine
 
 # containerd (через ctr) - более низкоуровневый
+
 ctr images pull docker.io/library/nginx:alpine
 ctr run -d --net-host docker.io/library/nginx:alpine app
-
 ```
 
 ### 9.2 Проверка процессов
 
 ```bash
 # Docker: контейнер — дочерний процесс containerd-shim
+
 ps aux | grep -E "(docker|containerd|nginx)"
 
 # Podman: контейнер — независимый процесс с conmon
-ps aux | grep -E "(conmon|nginx)"
 
+ps aux | grep -E "(conmon|nginx)"
 ```
 
 ---
@@ -858,6 +884,7 @@ ps aux | grep -E "(conmon|nginx)"
 - [skopeo](https://github.com/containers/skopeo)
 
 ---
+
 
 
 

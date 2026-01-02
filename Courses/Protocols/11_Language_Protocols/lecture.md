@@ -78,7 +78,6 @@
 
 **Пример:**
 ```
-
 Библиотека v1.0: функция foo(int a)
 Приложение скомпилировано с v1.0
 
@@ -98,7 +97,6 @@
 
 **Python Limited API (Stable ABI):**
 ```c
-
 // Вместо прямого доступа к структурам
 // PyObject *obj; obj->ob_refcnt++;
 
@@ -149,7 +147,6 @@ Py_INCREF(obj);
 ### 3.3 Пример
 
 ```c
-
 // cdecl
 int add(int a, int b) {
     return a + b;
@@ -197,7 +194,6 @@ add esp, 8  # caller очищает стек (2 параметра * 4 байт�
 ### 4.2 Python bytecode
 
 ```python
-
 def add(a, b):
     return a + b
 
@@ -209,7 +205,6 @@ dis.dis(add)
 
 **Output:**
 ```
-
   2           0 LOAD_FAST                0 (a)
               2 LOAD_FAST                1 (b)
               4 BINARY_ADD
@@ -226,7 +221,6 @@ dis.dis(add)
 ### 4.3 JVM bytecode
 
 ```java
-
 public int add(int a, int b) {
     return a + b;
 }
@@ -271,7 +265,6 @@ public int add(int a, int b) {
 **C:** Программист управляет памятью вручную
 
 ```c
-
 int *p = malloc(sizeof(int) * 10);
 // Использование p
 free(p);  // Программист должен освободить
@@ -280,7 +273,6 @@ free(p);  // Программист должен освободить
 **Python:** Автоматическое управление памятью
 
 ```python
-
 items = [1, 2, 3, 4, 5]
 # GC автоматически освободит память
 ```
@@ -291,7 +283,6 @@ items = [1, 2, 3, 4, 5]
 
 **Bounds checking:**
 ```python
-
 items = [1, 2, 3]
 # Python проверяет границы
 
@@ -300,7 +291,6 @@ print(items[10])  # IndexError
 
 **Type safety:**
 ```python
-
 def add(a: int, b: int) -> int:
     return a + b
 
@@ -332,7 +322,6 @@ add(1, "2")  # TypeError (если используется typing с прове
 ### 6.2 C++ name mangling
 
 ```cpp
-
 namespace Math {
     int add(int a, int b) { return a + b; }
     double add(double a, double b) { return a + b; }
@@ -346,7 +335,6 @@ namespace Math {
 ### 6.3 extern "C"
 
 ```cpp
-
 extern "C" {
     int add(int a, int b) { return a + b; }
 }
@@ -372,7 +360,6 @@ extern "C" {
 ### 7.2 Python ctypes
 
 ```python
-
 from ctypes import CDLL, c_int
 
 # Загрузить C библиотеку
@@ -380,12 +367,12 @@ from ctypes import CDLL, c_int
 libc = CDLL("libc.so.6")
 
 # Вызвать C функцию
+
 result = libc.printf(b"Hello from Python: %d\n", c_int(42))
 ```
 
 **Output:**
 ```
-
 Hello from Python: 42
 ```
 
@@ -399,7 +386,6 @@ Hello from Python: 42
 # Python string → C char*
 # Python int → C int
 # Python list → C array
-
 ```
 
 ---
@@ -438,5 +424,6 @@ Hello from Python: 42
 - Изучите Rust FFI для безопасного взаимодействия с C
 
 ---
+
 
 

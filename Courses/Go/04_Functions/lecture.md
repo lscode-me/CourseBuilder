@@ -36,7 +36,6 @@
 ### 1.1 Определение функции
 
 ```go
-
 package main
 
 import "fmt"
@@ -71,17 +70,14 @@ func main() {
     product := multiply(4, 7)
     fmt.Println("4 * 7 =", product)
 }
-
 ```
 
 **Output:**
 ```
-
 Hello!
 Hello, Gopher!
 3 + 5 = 8
 4 * 7 = 28
-
 ```
 
 ### 1.2 Множественные возвращаемые значения
@@ -89,7 +85,6 @@ Hello, Gopher!
 Go позволяет возвращать несколько значений — это ключевая особенность языка:
 
 ```go
-
 package main
 
 import "fmt"
@@ -130,23 +125,19 @@ func main() {
     onlyName, _, _ := getPersonInfo()
     fmt.Println("Only name:", onlyName)
 }
-
 ```
 
 **Output:**
 ```
-
 10 / 3 = 3.33
 Error: division by zero
 Name: Alice, Age: 30, Active: true
 Only name: Alice
-
 ```
 
 ### 1.3 Именованные возвращаемые значения
 
 ```go
-
 package main
 
 import "fmt"
@@ -182,16 +173,13 @@ func main() {
     x, y := split(17)
     fmt.Printf("split(17) = %d, %d\n", x, y)
 }
-
 ```
 
 **Output:**
 ```
-
 Area: 15.0, Perimeter: 16.0
 17 / 5 = 3 remainder 2
 split(17) = 7, 10
-
 ```
 
 > **💡 Pro Tip:**  
@@ -204,7 +192,6 @@ split(17) = 7, 10
 ### 2.1 Функции с переменным числом аргументов
 
 ```go
-
 package main
 
 import "fmt"
@@ -235,12 +222,10 @@ func main() {
     fmt.Println()
     greetAll("Hello,", "Alice", "Bob", "Charlie")
 }
-
 ```
 
 **Output:**
 ```
-
 sum(): 0
 sum(1): 1
 sum(1, 2, 3): 6
@@ -249,13 +234,11 @@ sum(1, 2, 3, 4, 5): 15
 Hello, Alice
 Hello, Bob
 Hello, Charlie
-
 ```
 
 ### 2.2 Передача слайса в variadic функцию
 
 ```go
-
 package main
 
 import "fmt"
@@ -281,21 +264,17 @@ func main() {
     // Комбинирование не работает!
     // sum(1, 2, nums...)  // Ошибка компиляции
 }
-
 ```
 
 **Output:**
 ```
-
 Direct: 6
 From slice: 100
-
 ```
 
 ### 2.3 fmt.Printf — пример variadic функции
 
 ```go
-
 package main
 
 import "fmt"
@@ -310,17 +289,14 @@ func main() {
     args := []interface{}{"Go", 15, true}
     fmt.Printf("Name: %s, Age: %d, Active: %t\n", args...)
 }
-
 ```
 
 **Output:**
 ```
-
 Name: Go
 Name: Go, Age: 15
 Name: Go, Age: 15, Active: true
 Name: Go, Age: 15, Active: true
-
 ```
 
 ---
@@ -330,7 +306,6 @@ Name: Go, Age: 15, Active: true
 ### 3.1 Определение и немедленный вызов
 
 ```go
-
 package main
 
 import "fmt"
@@ -353,23 +328,19 @@ func main() {
     // Тип переменной — функция
     fmt.Printf("Type of double: %T\n", double)
 }
-
 ```
 
 **Output:**
 ```
-
 IIFE result: 8
 double(5): 10
 double(10): 20
 Type of double: func(int) int
-
 ```
 
 ### 3.2 Функции как параметры
 
 ```go
-
 package main
 
 import "fmt"
@@ -397,21 +368,17 @@ func main() {
     })
     fmt.Println("Squared:", squared)
 }
-
 ```
 
 **Output:**
 ```
-
 Doubled: [2 4 6 8 10]
 Squared: [1 4 9 16 25]
-
 ```
 
 ### 3.3 Функции как возвращаемые значения
 
 ```go
-
 package main
 
 import "fmt"
@@ -443,17 +410,14 @@ func main() {
     fmt.Println(helloGreeter("Alice"))
     fmt.Println(hiGreeter("Bob"))
 }
-
 ```
 
 **Output:**
 ```
-
 double(5): 10
 triple(5): 15
 Hello, Alice!
 Hi, Bob!
-
 ```
 
 ---
@@ -465,7 +429,6 @@ Hi, Bob!
 Замыкание — функция, которая "захватывает" переменные из окружающей области видимости:
 
 ```go
-
 package main
 
 import "fmt"
@@ -492,25 +455,21 @@ func main() {
     
     fmt.Println("c1:", c1())  // 4 — продолжает считать
 }
-
 ```
 
 **Output:**
 ```
-
 c1: 1
 c1: 2
 c1: 3
 c2: 1
 c2: 2
 c1: 4
-
 ```
 
 ### 4.2 Практический пример: генератор ID
 
 ```go
-
 package main
 
 import "fmt"
@@ -533,24 +492,20 @@ func main() {
     fmt.Println(userID())   // USER-0003
     fmt.Println(orderID())  // ORDER-0002
 }
-
 ```
 
 **Output:**
 ```
-
 USER-0001
 USER-0002
 ORDER-0001
 USER-0003
 ORDER-0002
-
 ```
 
 ### 4.3 Замыкание в цикле
 
 ```go
-
 package main
 
 import (
@@ -604,12 +559,10 @@ func main() {
     
     _ = time.Now()  // Используем time для компиляции
 }
-
 ```
 
 **Output:**
 ```
-
 Проблемный вариант:
 Value: 3
 Value: 3
@@ -624,7 +577,6 @@ Value: 2
 Value: 0
 Value: 1
 Value: 2
-
 ```
 
 ---
@@ -634,7 +586,6 @@ Value: 2
 ### 5.1 Определение типа функции
 
 ```go
-
 package main
 
 import "fmt"
@@ -674,23 +625,19 @@ func main() {
     fmt.Println("Even:", filter(nums, isEven))
     fmt.Println(">5:", filter(nums, isGreaterThan5))
 }
-
 ```
 
 **Output:**
 ```
-
 10 + 5 = 15
 10 - 5 = 5
 Even: [2 4 6 8 10]
 >5: [6 7 8 9 10]
-
 ```
 
 ### 5.2 Методы на функциональных типах
 
 ```go
-
 package main
 
 import "fmt"
@@ -729,16 +676,13 @@ func main() {
     fmt.Println("double:", double(nums))
     fmt.Println("double.Then(addOne):", pipeline(nums))
 }
-
 ```
 
 **Output:**
 ```
-
 Original: [1 2 3]
 double: [2 4 6]
 double.Then(addOne): [3 5 7]
-
 ```
 
 ---
@@ -748,7 +692,6 @@ double.Then(addOne): [3 5 7]
 ### 6.1 Базовая рекурсия
 
 ```go
-
 package main
 
 import "fmt"
@@ -780,12 +723,10 @@ func main() {
         fmt.Printf("fibonacci(%d) = %d\n", i, fibonacci(i))
     }
 }
-
 ```
 
 **Output:**
 ```
-
 factorial(0) = 1
 factorial(1) = 1
 factorial(2) = 2
@@ -809,13 +750,11 @@ fibonacci(7) = 13
 fibonacci(8) = 21
 fibonacci(9) = 34
 fibonacci(10) = 55
-
 ```
 
 ### 6.2 Оптимизация рекурсии (мемоизация)
 
 ```go
-
 package main
 
 import "fmt"
@@ -847,16 +786,13 @@ func main() {
     fmt.Println("fib(40):", fib(40))
     fmt.Println("fib(50):", fib(50))
 }
-
 ```
 
 **Output:**
 ```
-
 fib(10): 55
 fib(40): 102334155
 fib(50): 12586269025
-
 ```
 
 ---
@@ -866,7 +802,6 @@ fib(50): 12586269025
 ### 7.1 Специальная функция инициализации
 
 ```go
-
 package main
 
 import "fmt"
@@ -888,23 +823,19 @@ func main() {
     fmt.Println("main() called")
     fmt.Println("message:", message)
 }
-
 ```
 
 **Output:**
 ```
-
 init() called
 second init() called
 main() called
 message: Initialized!
-
 ```
 
 ### 7.2 Порядок инициализации
 
 ```go
-
 // Порядок выполнения:
 // 1. Инициализация переменных пакета
 // 2. init() функции (в порядке появления)
@@ -934,18 +865,15 @@ func init() {
 func main() {
     fmt.Println("main")
 }
-
 ```
 
 **Output:**
 ```
-
 Initializing var a
 Initializing var b
 First init
 Second init
 main
-
 ```
 
 ---
@@ -955,7 +883,6 @@ main
 ### 8.1 Неиспользуемые параметры
 
 ```go
-
 package main
 
 // Ошибка: unused parameter
@@ -971,13 +898,11 @@ func process(data []byte, _ string) {
 func main() {
     process([]byte("test"), "unused")
 }
-
 ```
 
 ### 8.2 Путаница с naked return
 
 ```go
-
 package main
 
 import "fmt"
@@ -1009,21 +934,17 @@ func main() {
     fmt.Println(confusing(5))
     fmt.Println(clear(5))
 }
-
 ```
 
 **Output:**
 ```
-
 5 10
 5 10
-
 ```
 
 ### 8.3 Изменение слайса в функции
 
 ```go
-
 package main
 
 import "fmt"
@@ -1050,16 +971,13 @@ func main() {
     modifyInPlace(nums)
     fmt.Println("After modify:", nums)
 }
-
 ```
 
 **Output:**
 ```
-
 Original: [1 2 3]
 New: [1 2 3 4]
 After modify: [2 4 6]
-
 ```
 
 ---

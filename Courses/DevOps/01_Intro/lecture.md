@@ -50,7 +50,6 @@ DevOps — это не инструмент, не должность и не о�
 Это создаёт **конфликт интересов**: Dev хочет частых релизов, Ops хочет минимума изменений. Результат — «стена» между командами:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    Традиционная модель                      │
 ├─────────────────────────┬───────────────────────────────────┤
@@ -66,7 +65,6 @@ DevOps — это не инструмент, не должность и не о�
 └─────────────────────────┴───────────────────────────────────┘
                           │
                     "The Wall"
-
 ```
 
 ### 1.2 DevOps как мост
@@ -157,13 +155,11 @@ Gene Kim в "The Phoenix Project" сформулировал **Три Пути**
 **Принцип:** Оптимизируй поток работы слева направо (от Dev к Ops к клиенту).
 
 ```
-
 ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐
 │ Dev  │───▶│Build │───▶│ Test │───▶│Deploy│───▶│Client│
 └──────┘    └──────┘    └──────┘    └──────┘    └──────┘
             ───────────────────────────────────────────▶
                         Поток (Flow)
-
 ```
 
 **Практики First Way:**
@@ -178,15 +174,16 @@ Gene Kim в "The Phoenix Project" сформулировал **Три Пути**
 
 ```python
 # Плохо: большой монолитный релиз раз в квартал
+
 releases_per_year = 4
 avg_changes_per_release = 500
 risk_per_release = "HIGH"  # Много изменений = много рисков
 
 # Хорошо: маленькие частые релизы
+
 releases_per_year = 365  # Каждый день
 avg_changes_per_release = 5
 risk_per_release = "LOW"  # Мало изменений = легко откатить
-
 ```
 
 ### 3.2 The Second Way: Feedback (Amplify Feedback Loops)
@@ -194,13 +191,11 @@ risk_per_release = "LOW"  # Мало изменений = легко откат�
 **Принцип:** Создай и усиль петли обратной связи справа налево.
 
 ```
-
 ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐    ┌──────┐
 │ Dev  │◀───│Build │◀───│ Test │◀───│Deploy│◀───│Client│
 └──────┘    └──────┘    └──────┘    └──────┘    └──────┘
 ◀──────────────────────────────────────────────────────
                     Feedback Loop
-
 ```
 
 **Практики Second Way:**
@@ -215,6 +210,7 @@ risk_per_release = "LOW"  # Мало изменений = легко откат�
 
 ```yaml
 # .github/workflows/ci.yml
+
 name: CI Pipeline
 
 on: [push]
@@ -253,6 +249,7 @@ jobs:
 
 ```python
 # Feature flags для безопасных экспериментов
+
 from feature_flags import FeatureFlags
 
 ff = FeatureFlags()
@@ -264,7 +261,6 @@ def get_recommendations(user_id: int) -> list:
     else:
         # Старый проверенный алгоритм
         return legacy_recommendations(user_id)
-
 ```
 
 ---
@@ -286,20 +282,16 @@ CALMS — это акроним, описывающий ключевые асп�
 
 **Anti-pattern:**
 ```
-
 ❌ "Это не мой код — я только деплою"
 ❌ "Operations не понимают наш код"
 ❌ "Developers не думают о production"
-
 ```
 
 **Pattern:**
 ```
-
 ✅ "Мы вместе отвечаем за этот сервис"
 ✅ "Давайте разберёмся, как это предотвратить"
 ✅ "Что мы можем автоматизировать?"
-
 ```
 
 ### 4.2 Automation (Автоматизация)
@@ -319,6 +311,7 @@ CALMS — это акроним, описывающий ключевые асп�
 
 ```hcl
 # Terraform: декларативное описание инфраструктуры
+
 resource "aws_instance" "web" {
   count         = var.web_instance_count
   ami           = data.aws_ami.ubuntu.id
@@ -381,6 +374,7 @@ resource "aws_instance" "web" {
 
 ```python
 # Сбор метрик deployment frequency
+
 from datetime import datetime, timedelta
 from dataclasses import dataclass
 
@@ -409,7 +403,6 @@ def calculate_deployment_frequency(
         "deployments_per_day": total / period_days,
         "period_days": period_days
     }
-
 ```
 
 ### 4.5 Sharing (Обмен знаниями)
@@ -431,10 +424,12 @@ def calculate_deployment_frequency(
 # Incident Postmortem: API Outage 2024-01-15
 
 ## Summary
+
 API service was unavailable for 47 minutes due to database 
 connection pool exhaustion.
 
 ## Timeline
+
 - 14:32 - Alert fired: API error rate > 5%
 - 14:35 - On-call engineer acknowledged
 - 14:42 - Root cause identified: connection pool exhausted
@@ -442,17 +437,19 @@ connection pool exhaustion.
 - 15:19 - Service fully recovered
 
 ## Root Cause
+
 A slow query (introduced in deploy #4521) caused connections 
 to be held longer than expected, exhausting the pool.
 
 ## Action Items
+
 - [ ] Add query performance tests to CI
 - [ ] Implement connection pool monitoring
 - [ ] Add circuit breaker for database calls
 
 ## Lessons Learned
-We need better visibility into database connection usage.
 
+We need better visibility into database connection usage.
 ```
 
 ---
@@ -485,6 +482,7 @@ Google говорит: **"class SRE implements DevOps"**
 
 ```python
 # Концептуально SRE — это конкретная реализация DevOps
+
 class DevOps:
     """Abstract philosophy and culture."""
     
@@ -496,7 +494,6 @@ class DevOps:
     
     def collaborate(self): 
         raise NotImplementedError
-
 
 class SRE(DevOps):
     """Concrete implementation with specific practices."""
@@ -517,7 +514,6 @@ class SRE(DevOps):
     def collaborate(self):
         """Shared ownership with dev teams."""
         return self.embed_with_dev_teams()
-
 ```
 
 ### 5.4 Когда что использовать?
@@ -545,11 +541,9 @@ class SRE(DevOps):
 **Проблема:** Создание отдельной должности "DevOps Engineer" между Dev и Ops.
 
 ```
-
 ❌ Анти-паттерн:
 Dev ──▶ DevOps Engineer ──▶ Ops
         (новая стена)
-
 ```
 
 **Почему это плохо:**
@@ -560,10 +554,8 @@ Dev ──▶ DevOps Engineer ──▶ Ops
 
 **Правильный подход:**
 ```
-
 ✅ Паттерн:
 Dev + Ops = Одна команда с общей ответственностью
-
 ```
 
 ### 6.2 "Мы внедрили DevOps — купили Jenkins"
@@ -572,11 +564,13 @@ Dev + Ops = Одна команда с общей ответственность
 
 ```python
 # Это НЕ DevOps
+
 tools = ["Jenkins", "Docker", "Kubernetes", "Terraform"]
 devops_implemented = all(tool in our_stack for tool in tools)
 # devops_implemented == True, но культура не изменилась
 
 # Это DevOps
+
 culture_changes = [
     "shared_responsibility",
     "blameless_postmortems",
@@ -586,7 +580,6 @@ culture_changes = [
 devops_implemented = all(
     change in our_culture for change in culture_changes
 )
-
 ```
 
 ### 6.3 "DevOps — это только автоматизация"
@@ -618,14 +611,12 @@ devops_implemented = all(
 **Модель 1: Embedded DevOps**
 
 ```
-
 ┌───────────────────────────────────────┐
 │              Product Team             │
 ├──────────┬──────────┬─────────────────┤
 │   Dev    │    QA    │   Ops/DevOps    │
 │ (5 eng)  │ (1 eng)  │    (1 eng)      │
 └──────────┴──────────┴─────────────────┘
-
 ```
 
 - DevOps/Ops engineer встроен в каждую команду
@@ -635,7 +626,6 @@ devops_implemented = all(
 **Модель 2: Platform Team**
 
 ```
-
 ┌────────────────────────────────────────┐
 │           Platform Team                │
 │  (CI/CD, IaC, Monitoring, Security)    │
@@ -647,7 +637,6 @@ devops_implemented = all(
    │ Team A  │ │ Team B  │ │ Team C  │
    │ (Dev)   │ │ (Dev)   │ │ (Dev)   │
    └─────────┘ └─────────┘ └─────────┘
-
 ```
 
 - Централизованная команда создаёт инструменты
@@ -657,7 +646,6 @@ devops_implemented = all(
 **Модель 3: SRE Team**
 
 ```
-
 ┌────────────────────────────────────────┐
 │              SRE Team                  │
 │    (Reliability, Scalability)          │
@@ -669,7 +657,6 @@ devops_implemented = all(
    │ Team A  │ │ Team B  │ │ Team C  │
    │ (Dev)   │ │ (Dev)   │ │ (Dev)   │
    └─────────┘ └─────────┘ └─────────┘
-
 ```
 
 - SRE поддерживает критичные сервисы
@@ -741,6 +728,7 @@ DORA (DevOps Research and Assessment) провела многолетнее ис
 
 ```python
 # Пример расчёта DevOps ROI
+
 from dataclasses import dataclass
 from datetime import timedelta
 
@@ -764,6 +752,7 @@ class DevOpsMetrics:
         }
 
 # До внедрения DevOps
+
 before = DevOpsMetrics(
     deployment_frequency_per_week=0.25,  # Раз в месяц
     lead_time=timedelta(days=90),
@@ -772,6 +761,7 @@ before = DevOpsMetrics(
 )
 
 # После внедрения DevOps
+
 after = DevOpsMetrics(
     deployment_frequency_per_week=7,  # Ежедневно
     lead_time=timedelta(hours=4),
@@ -784,17 +774,14 @@ print(f"Deployment frequency: {improvement['deployment_frequency_improvement']:.
 print(f"Lead time: {improvement['lead_time_improvement']:.0f}x faster")
 print(f"Failure rate: {improvement['failure_rate_improvement']:.0f}x lower")
 print(f"MTTR: {improvement['mttr_improvement']:.0f}x faster")
-
 ```
 
 **Output:**
 ```
-
 Deployment frequency: 28x
 Lead time: 540x faster
 Failure rate: 6x lower
 MTTR: 168x faster
-
 ```
 
 ---
@@ -826,7 +813,6 @@ MTTR: 168x faster
 ### 9.2 Roadmap зрелости
 
 ```
-
       ┌─────────────────────────────────────────────────────┐
       │                  DevOps Roadmap                     │
       └─────────────────────────────────────────────────────┘
@@ -854,7 +840,6 @@ Q4    ┌───────────────────────�
       │ • Chaos engineering эксперименты
       │ • Self-service платформа для разработчиков
       └──────────────────────────────────────────────────────
-
 ```
 
 ---
@@ -919,6 +904,7 @@ Q4    ┌───────────────────────�
 - [SRE Weekly](https://sreweekly.com/) — еженедельная рассылка
 
 ---
+
 
 
 

@@ -93,7 +93,6 @@ IaaS (Infrastructure as a Service) — это самый низкий урове
 
 **Контроль пользователя:**
 ```
-
 [User управляет]
   ↓ Operating System
   ↓ Applications
@@ -117,7 +116,6 @@ IaaS (Infrastructure as a Service) — это самый низкий урове
 
 **Контроль:**
 ```
-
 [User]
   ↓ Applications
   ↓ Data
@@ -139,7 +137,6 @@ IaaS (Infrastructure as a Service) — это самый низкий урове
 
 **Контроль:**
 ```
-
 [User]
   ↓ Data
 [Provider]
@@ -155,7 +152,6 @@ IaaS (Infrastructure as a Service) — это самый низкий урове
 **Типичный датацентр:**
 
 ```
-
 Building
 ├── Cooling Systems (огромные кондиционеры)
 ├── Power (резервные генераторы, UPS)
@@ -174,7 +170,6 @@ Building
 **Three-tier архитектура:**
 
 ```
-
 Core Routers (internet connectivity)
     ↓
 Aggregation Switches
@@ -193,7 +188,6 @@ Servers
 
 **PUE (Power Usage Effectiveness):**
 ```
-
 PUE = Total Power / IT Equipment Power
 ```
 
@@ -217,7 +211,6 @@ PUE = Total Power / IT Equipment Power
 
 **Type 1 (Bare-metal):**
 ```
-
 Hardware
   ↓
 Hypervisor (ESXi, Hyper-V, KVM)
@@ -228,7 +221,6 @@ VM1     VM2     VM3
 
 **Type 2 (Hosted):**
 ```
-
 Hardware
   ↓
 Host OS
@@ -248,7 +240,6 @@ VM1     VM2
 **Идея:** Изоляция на уровне процессов, не отдельные OS
 
 ```
-
 Hardware
   ↓
 Host OS (Linux)
@@ -309,7 +300,6 @@ Container1  Container2  Container3
 
 **Event-driven:**
 ```
-
 HTTP request → Lambda function
 S3 upload → Process image
 Database change → Update cache
@@ -349,7 +339,6 @@ Database change → Update cache
 **Key-Value store для файлов:**
 
 ```
-
 Bucket: my-photos
   Key: "vacation/IMG_001.jpg" → Object (binary data)
   Key: "vacation/IMG_002.jpg" → Object
@@ -371,7 +360,6 @@ Bucket: my-photos
 **Идея:** Кэшировать статику близко к пользователям
 
 ```
-
 User (Москва) → Edge location (Москва) → Origin (US East)
                 ↑
          Кэшируется локально
@@ -392,7 +380,6 @@ User (Москва) → Edge location (Москва) → Origin (US East)
 **Комбинация on-premise + cloud:**
 
 ```
-
 On-Premise DC ←→ Public Cloud
 (sensitive data)  (burst capacity)
 ```
@@ -408,7 +395,6 @@ On-Premise DC ←→ Public Cloud
 **Использование нескольких провайдеров:**
 
 ```
-
 AWS (compute) + Azure (databases) + GCP (ML)
 ```
 

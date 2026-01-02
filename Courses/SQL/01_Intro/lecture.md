@@ -34,7 +34,6 @@
 Представьте, что вы храните информацию о пользователях в текстовом файле:
 
 ```
-
 users.txt:
 Иван, ivan@example.com, 25
 Мария, maria@example.com, 30
@@ -110,7 +109,6 @@ users.txt:
 **Пример: таблицы `users` и `orders`**
 
 ```sql
-
 -- Таблица пользователей
 CREATE TABLE users (
     id INT PRIMARY KEY,
@@ -165,7 +163,6 @@ CREATE TABLE orders (
 
 **Декларативный подход (SQL):**
 ```sql
-
 SELECT name, age
 FROM users
 WHERE age > 25;
@@ -175,7 +172,6 @@ WHERE age > 25;
 
 **Императивный подход (Python):**
 ```python
-
 result = []
 for user in users:
     if user.age > 25:
@@ -203,7 +199,6 @@ SQL операции делятся на несколько категорий:
 **Основные команды:**
 
 ```sql
-
 -- Создание таблицы
 CREATE TABLE users (
     id INT PRIMARY KEY,
@@ -225,7 +220,6 @@ DROP TABLE users;
 **Основные команды:**
 
 ```sql
-
 -- Вставка данных
 INSERT INTO users (name, email) VALUES ('Иван', 'ivan@example.com');
 
@@ -244,7 +238,6 @@ SELECT name, email FROM users WHERE age > 25;
 **DQL** — язык запросов. Хотя `SELECT` технически относится к DML, его часто выделяют отдельно.
 
 ```sql
-
 -- Простой запрос
 SELECT * FROM users;
 
@@ -260,7 +253,6 @@ ORDER BY name;
 **DCL** — язык управления доступом. Используется для управления правами доступа.
 
 ```sql
-
 -- Предоставление прав
 GRANT SELECT ON users TO analyst;
 
@@ -273,7 +265,6 @@ REVOKE SELECT ON users FROM analyst;
 **TCL** — язык управления транзакциями. Используется для управления транзакциями.
 
 ```sql
-
 -- Начало транзакции
 BEGIN;
 
@@ -300,7 +291,6 @@ ROLLBACK;
 
 **Пример использования:**
 ```sql
-
 -- PostgreSQL поддерживает JSON
 SELECT 
     id,
@@ -321,7 +311,6 @@ WHERE metadata @> '{"country": "Russia"}';
 
 **Пример использования:**
 ```sql
-
 -- MySQL синтаксис
 SELECT name, email
 FROM users
@@ -340,7 +329,6 @@ LIMIT 10;
 
 **Пример использования:**
 ```sql
-
 -- SQLite синтаксис (очень похож на стандартный SQL)
 SELECT * FROM users WHERE age > 25;
 ```
@@ -372,7 +360,6 @@ SELECT * FROM users WHERE age > 25;
 Давайте выполним первый запрос. Предположим, у нас есть таблица `users`:
 
 ```sql
-
 -- Создадим таблицу
 CREATE TABLE users (
     id INT PRIMARY KEY,
@@ -392,13 +379,11 @@ INSERT INTO users VALUES
 **Простой запрос: получить всех пользователей**
 
 ```sql
-
 SELECT * FROM users;
 ```
 
 **Output:**
 ```
-
 id | name  | email              | age
 ---+-------+--------------------+-----
 1  | Иван  | ivan@example.com   | 25
@@ -410,7 +395,6 @@ id | name  | email              | age
 **Запрос с условием: пользователи старше 25**
 
 ```sql
-
 SELECT name, email
 FROM users
 WHERE age > 25
@@ -419,7 +403,6 @@ ORDER BY age DESC;
 
 **Output:**
 ```
-
 name  | email
 
 ------+--------------------

@@ -27,7 +27,6 @@
 ## 1. Incident Lifecycle
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Incident Lifecycle                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -42,7 +41,6 @@
 │  Minutes    Minutes    Minutes-Hours  Hours-Days   Days-Week    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -52,7 +50,6 @@
 ### 2.1 On-Call Structure
 
 ```python
-
 on_call_structure = {
     "primary": {
         "role": "Первая линия реагирования",
@@ -65,13 +62,11 @@ on_call_structure = {
         "escalation": "Team lead или management"
     }
 }
-
 ```
 
 ### 2.2 On-Call Best Practices
 
 ```python
-
 on_call_best_practices = {
     "rotation": {
         "length": "1 неделя обычно",
@@ -90,7 +85,6 @@ on_call_best_practices = {
         "escalation": "Чёткий путь эскалации"
     }
 }
-
 ```
 
 ### 2.3 On-Call Handoff
@@ -102,25 +96,30 @@ on_call_best_practices = {
 ## Date: [Date]
 
 ### Active Issues
+
 - [ ] Issue 1: Description, status, next steps
 - [ ] Issue 2: Description, status, next steps
 
 ### Recent Incidents
+
 - INC-123 (Date): Brief summary, resolution, follow-up status
 
 ### Scheduled Maintenance
+
 - Date/Time: Description, runbook link
 
 ### Known Issues / Flaky Alerts
+
 - Alert X: Can be acknowledged, ticket Y tracking fix
 
 ### Notes
+
 - Any context-specific information
 
 ### Handoff Confirmation
+
 - [ ] Outgoing confirmed
 - [ ] Incoming confirmed
-
 ```
 
 ---
@@ -130,7 +129,6 @@ on_call_best_practices = {
 ### 3.1 Severity Levels
 
 ```python
-
 severity_levels = {
     "SEV1": {
         "description": "Critical — сервис недоступен",
@@ -157,13 +155,11 @@ severity_levels = {
         "example": "Cosmetic issue, workaround exists"
     }
 }
-
 ```
 
 ### 3.2 Incident Roles
 
 ```python
-
 incident_roles = {
     "incident_commander": {
         "responsibility": "Координация response",
@@ -199,7 +195,6 @@ incident_roles = {
         ]
     }
 }
-
 ```
 
 ---
@@ -212,37 +207,42 @@ incident_roles = {
 # Incident Response Procedure
 
 ## 1. Detection & Acknowledgment (0-5 min)
+
 - [ ] Acknowledge alert in PagerDuty/OpsGenie
 - [ ] Join incident channel (#incident-YYYYMMDD)
 - [ ] Initial assessment of impact
 
 ## 2. Triage (5-15 min)
+
 - [ ] Determine severity level
 - [ ] Assign incident commander (if SEV1/SEV2)
 - [ ] Identify affected services
 - [ ] Notify stakeholders
 
 ## 3. Investigation (ongoing)
+
 - [ ] Review recent changes (deploys, configs)
 - [ ] Check monitoring dashboards
 - [ ] Analyze logs
 - [ ] Identify root cause or contributing factors
 
 ## 4. Mitigation (priority)
+
 - [ ] Implement immediate mitigation
 - [ ] Options: rollback, feature flag, scaling, restart
 - [ ] Verify mitigation effectiveness
 
 ## 5. Resolution
+
 - [ ] Confirm service restored
 - [ ] Monitor for regression
 - [ ] Update status page
 
 ## 6. Follow-up
+
 - [ ] Schedule postmortem (for SEV1/SEV2)
 - [ ] Create follow-up tickets
 - [ ] Update runbooks if needed
-
 ```
 
 ### 4.2 Communication Templates
@@ -255,22 +255,26 @@ incident_roles = {
 ## Status: [Investigating/Identified/Monitoring/Resolved]
 
 ### Impact
+
 [What services are affected? How many users?]
 
 ### Current Status
+
 [What are we doing now?]
 
 ### Timeline
+
 - HH:MM — Alert triggered
 - HH:MM — Investigation started
 - HH:MM — [Latest update]
 
 ### Next Update
+
 [When will we provide the next update?]
 
 ### Contact
-Incident Commander: @name
 
+Incident Commander: @name
 ```
 
 ---
@@ -280,7 +284,6 @@ Incident Commander: @name
 ### 5.1 Blameless Culture
 
 ```python
-
 blameless_principles = [
     "Люди действуют с лучшими намерениями",
     "Ошибки — результат системных проблем, не людей",
@@ -290,6 +293,7 @@ blameless_principles = [
 ]
 
 # Плохо
+
 blame_language = [
     "Кто это сделал?",
     "Почему вы не проверили?",
@@ -297,12 +301,12 @@ blame_language = [
 ]
 
 # Хорошо
+
 blameless_language = [
     "Что в системе позволило этому произойти?",
     "Какие проверки могли бы предотвратить это?",
     "Как можно улучшить процесс?"
 ]
-
 ```
 
 ### 5.2 Postmortem Template
@@ -320,11 +324,13 @@ blameless_language = [
 ---
 
 ## Summary
+
 [2-3 sentences describing what happened and impact]
 
 ---
 
 ## Impact
+
 - **Duration**: X hours Y minutes
 
 - **Users affected**: [number or percentage]
@@ -349,6 +355,7 @@ blameless_language = [
 ---
 
 ## Root Cause
+
 [Detailed technical explanation of what caused the incident]
 
 A new feature deployed at 14:00 introduced a bug that caused
@@ -359,6 +366,7 @@ the connection pool was exhausted.
 ---
 
 ## Contributing Factors
+
 - [ ] Recent change/deploy
 - [ ] Configuration issue
 - [ ] Capacity/scaling
@@ -374,6 +382,7 @@ the connection pool was exhausted.
 ---
 
 ## Resolution
+
 [How was the incident resolved?]
 
 1. Temporary fix: Increased connection pool from 50 to 200
@@ -385,16 +394,19 @@ the connection pool was exhausted.
 ## Lessons Learned
 
 ### What went well
+
 - Alert fired quickly (< 3 min after problem started)
 - Team responded promptly
 - Clear communication throughout
 
 ### What went wrong
+
 - Load testing didn't cover this scenario
 - Runbook for connection issues was outdated
 - Initial mitigation attempt (restart) didn't help
 
 ### Where we got lucky
+
 - Traffic spike was moderate; worse spike would have been worse
 - Database itself didn't crash
 
@@ -412,16 +424,15 @@ the connection pool was exhausted.
 ---
 
 ## Appendix
+
 - [Link to incident channel]
 - [Link to relevant dashboards]
 - [Link to deploy that caused issue]
-
 ```
 
 ### 5.3 5 Whys Analysis
 
 ```python
-
 def five_whys_example():
     """Example of 5 Whys analysis for root cause."""
     
@@ -451,7 +462,6 @@ def five_whys_example():
         "analysis": whys,
         "root_cause": root_cause
     }
-
 ```
 
 ---
@@ -461,7 +471,6 @@ def five_whys_example():
 ### 6.1 Metrics to Track
 
 ```python
-
 incident_metrics = {
     "mttd": {
         "name": "Mean Time to Detect",
@@ -484,13 +493,11 @@ incident_metrics = {
         "target": "Trending down"
     }
 }
-
 ```
 
 ### 6.2 Continuous Improvement
 
 ```python
-
 improvement_practices = [
     "Регулярный review метрик инцидентов",
     "Quarterly review of top incident causes",
@@ -498,7 +505,6 @@ improvement_practices = [
     "Regular runbook reviews and updates",
     "Post-postmortem: проверка выполнения action items"
 ]
-
 ```
 
 ---
@@ -546,6 +552,7 @@ improvement_practices = [
 - Incident.io
 
 ---
+
 
 
 

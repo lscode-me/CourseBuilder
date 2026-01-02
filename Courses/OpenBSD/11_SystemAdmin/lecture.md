@@ -32,55 +32,62 @@
 
 ```sh
 # Информация о системе
+
 $ uname -a
 OpenBSD server.home.local 7.4 GENERIC.MP#0 amd64
 
 # Uptime и нагрузка
+
 $ uptime
 10:30AM  up 15 days,  3:45, 2 users, load averages: 0.08, 0.03, 0.01
 
 # Версия системы
+
 $ sysctl kern.version
 kern.version=OpenBSD 7.4 (GENERIC.MP) #0: Mon Oct  9 13:57:11 MDT 2023
-
 ```
 
 ### 1.2 Память и процессы
 
 ```sh
 # Память
+
 $ vmstat
  procs    memory       page                    disks    traps          cpu
  r   s   avm     fre  flt  re  pi  po  fr  sr sd0 sd1  int   sys   cs us sy id
  0  28  234M   7098M   12   0   0   0   0   0   0   0   47   127   89  0  0 100
 
 # Подробнее о памяти
+
 $ top -S
 Memory: Real: 234M/993M act/tot Free: 7098M Cache: 404M Swap: 0/2048M
 
 # Процессы (top)
+
 $ top
 load averages:  0.08,  0.03,  0.01    server.home.local 10:30:15
 26 processes: 25 idle, 1 on processor
 CPU:  0.2% user,  0.0% nice,  0.4% sys,  0.0% spin,  0.0% intr, 99.4% idle
 
 # Процессы (ps)
+
 $ ps auxww
 USER     PID %CPU %MEM   VSZ   RSS TT  STAT   STARTED       TIME COMMAND
 root       1  0.0  0.0   524   488 ??  Is   Sun10AM     0:00.02 /sbin/init
-
 ```
 
 ### 1.3 Диски
 
 ```sh
 # Использование дисков
+
 $ df -h
 Filesystem     Size    Used   Avail Capacity  Mounted on
 /dev/sd0a      2.0G    890M    1.0G    47%    /
 /dev/sd0d      4.0G    2.1G    1.7G    55%    /home
 
 # Подробная статистика дисков
+
 $ iostat
       tty              sd0              sd1             cpu
  tin  tout  KB/t  t/s  MB/s   KB/t  t/s  MB/s  us ni sy sp in id
@@ -94,32 +101,34 @@ $ iostat
 
 ```sh
 # Сетевые соединения
+
 $ netstat -an
 Active Internet connections (including servers)
 Proto   Recv-Q Send-Q  Local Address          Foreign Address        State
 tcp          0      0  192.168.1.100.22       192.168.1.50.54321     ESTABLISHED
 
 # Статистика интерфейсов
+
 $ netstat -i
 Name    Mtu   Network     Address              Ipkts Ierrs    Opkts Oerrs  Coll
 em0     1500  <Link>      00:11:22:33:44:55  1234567     0   987654     0     0
 
 # Трафик в реальном времени
-$ systat netstat
 
+$ systat netstat
 ```
 
 ### 1.5 systat — интерактивный мониторинг
 
 ```sh
 # Различные представления
+
 $ systat vmstat    # память и CPU
 $ systat iostat    # диски
 $ systat netstat   # сеть
 $ systat pigs      # процессы по CPU
 $ systat mbufs     # сетевые буферы
 $ systat sensors   # датчики температуры
-
 ```
 
 ---
@@ -141,25 +150,30 @@ $ systat sensors   # датчики температуры
 
 ```sh
 # Последние сообщения
+
 $ tail -f /var/log/messages
 
 # Ошибки за сегодня
+
 $ grep -i error /var/log/messages | tail -50
 
 # Неудачные входы
+
 $ grep -i "failed\|invalid" /var/log/authlog
 
 # Логи по времени
-$ grep "Dec  1 10:" /var/log/messages
 
+$ grep "Dec  1 10:" /var/log/messages
 ```
 
 ### 2.3 newsyslog — ротация логов
 
 ```sh
 # Конфигурация: /etc/newsyslog.conf
+
 $ cat /etc/newsyslog.conf
 # logfile              mode count size  when  flags
+
 /var/log/messages      644  5     300   *     Z
 /var/log/authlog       640  7     *     168   Z
 /var/log/daemon        640  5     300   *     Z
@@ -172,12 +186,12 @@ $ cat /etc/newsyslog.conf
 
 ```sh
 # /etc/syslog.conf
+
 *.notice;auth,authpriv,cron,ftp,kern,lpr,mail,user.none  /var/log/messages
 kern.debug;syslog,user.info                               /var/log/messages
 auth.info                                                 /var/log/authlog
 authpriv.debug                                            /var/log/secure
 daemon.info                                               /var/log/daemon
-
 ```
 
 ---
@@ -204,17 +218,20 @@ daemon.info                                               /var/log/daemon
 
 ```sh
 # Архивация каталога
+
 $ tar -cvzf /backup/home.tar.gz /home
 
 # С исключениями
+
 $ tar -cvzf /backup/etc.tar.gz /etc --exclude="*.log"
 
 # Восстановление
+
 $ tar -xvzf /backup/home.tar.gz -C /
 
 # Просмотр содержимого
-$ tar -tvzf /backup/home.tar.gz
 
+$ tar -tvzf /backup/home.tar.gz
 ```
 
 ### 3.3 rsync
@@ -224,17 +241,20 @@ $ tar -tvzf /backup/home.tar.gz
 # doas pkg_add rsync
 
 # Локальная синхронизация
+
 $ rsync -avz /home/ /backup/home/
 
 # На удалённый сервер
+
 $ rsync -avz -e ssh /home/ user@backup:/backup/home/
 
 # С удалением
+
 $ rsync -avz --delete /home/ /backup/home/
 
 # Сухой запуск
-$ rsync -avzn /home/ /backup/home/
 
+$ rsync -avzn /home/ /backup/home/
 ```
 
 ### 3.4 Скрипт бэкапа
@@ -248,23 +268,27 @@ DATE=$(date +%Y%m%d)
 HOST=$(hostname -s)
 
 # Создать директорию
+
 mkdir -p $BACKUP_DIR/$DATE
 
 # Бэкап конфигурации
+
 tar -cvzf $BACKUP_DIR/$DATE/etc.tar.gz /etc
 
 # Бэкап домашних каталогов
+
 tar -cvzf $BACKUP_DIR/$DATE/home.tar.gz /home
 
 # Бэкап баз данных (если есть)
 # pg_dumpall > $BACKUP_DIR/$DATE/postgres.sql
 
 # Удалить старые бэкапы (старше 7 дней)
+
 find $BACKUP_DIR -type d -mtime +7 -exec rm -rf {} \;
 
 # Отчёт
-echo "Backup completed: $DATE" | mail -s "Backup $HOST" admin@example.com
 
+echo "Backup completed: $DATE" | mail -s "Backup $HOST" admin@example.com
 ```
 
 ---
@@ -278,23 +302,26 @@ echo "Backup completed: $DATE" | mail -s "Backup $HOST" admin@example.com
 # (0-59) (0-23)   (1-31)   (1-12)  (0-7)
 
 # Примеры:
+
 0 3 * * * /root/backup.sh              # Каждый день в 3:00
 */15 * * * * /usr/local/bin/check.sh   # Каждые 15 минут
 0 0 * * 0 /root/weekly.sh              # Каждое воскресенье
 0 9-18 * * 1-5 /root/workhours.sh      # 9-18 по будням
-
 ```
 
 ### 4.2 Управление crontab
 
 ```sh
 # Редактировать свой crontab
+
 $ crontab -e
 
 # Просмотреть
+
 $ crontab -l
 
 # Удалить
+
 $ crontab -r
 
 # Редактировать для другого пользователя (root)
@@ -305,6 +332,7 @@ $ crontab -r
 
 ```sh
 # /etc/crontab — системный
+
 $ cat /etc/crontab
 SHELL=/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin
@@ -315,13 +343,11 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 30      1       *       *       *       root    /bin/sh /etc/daily
 30      3       *       *       6       root    /bin/sh /etc/weekly
 30      5       1       *       *       root    /bin/sh /etc/monthly
-
 ```
 
 ### 4.4 Периодические скрипты
 
 ```sh
-
 /etc/daily       # Ежедневные задачи
 /etc/weekly      # Еженедельные
 /etc/monthly     # Ежемесячные
@@ -329,7 +355,6 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 /etc/daily.local    # Локальные дополнения
 /etc/weekly.local
 /etc/monthly.local
-
 ```
 
 ```sh
@@ -337,11 +362,12 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 #!/bin/sh
 
 # Проверка дисков
+
 df -h | mail -s "Disk usage" admin@example.com
 
 # Проверка обновлений
-syspatch -c
 
+syspatch -c
 ```
 
 ---
@@ -356,6 +382,7 @@ syspatch -c
 
 # Установить патчи
 # doas syspatch
+
 Get/Verify syspatch74-001_wifi... 100% |*****| 12345       00:00
 Installing patch 001_wifi
 Relinking to create unique kernel... done.
@@ -365,15 +392,16 @@ Relinking to create unique kernel... done.
 
 # Список установленных патчей
 # doas syspatch -l
+
 001_wifi
 002_libcrypto
-
 ```
 
 ### 5.2 Обновление между релизами
 
 ```sh
 # 1. Скачать sysupgrade
+
 $ cd /tmp
 $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.5/amd64/bsd.rd
 
@@ -401,44 +429,52 @@ $ ftp https://cdn.openbsd.org/pub/OpenBSD/7.5/amd64/bsd.rd
 
 ```sh
 # Сообщения загрузки
+
 $ dmesg | less
 
 # Сохранённые сообщения
+
 $ cat /var/run/dmesg.boot
 
 # Последние сообщения ядра
-$ dmesg | tail -50
 
+$ dmesg | tail -50
 ```
 
 ### 6.2 Проблемы с железом
 
 ```sh
 # Датчики температуры
+
 $ sysctl hw.sensors
 hw.sensors.cpu0.temp0=45.00 degC
 
 # PCI устройства
+
 $ pcidump
 
 # USB устройства
-$ usbdevs -v
 
+$ usbdevs -v
 ```
 
 ### 6.3 Сетевые проблемы
 
 ```sh
 # Проверить интерфейс
+
 $ ifconfig em0
 
 # Проверить маршрутизацию
+
 $ netstat -rn
 
 # Проверить DNS
+
 $ dig google.com
 
 # Трассировка
+
 $ traceroute google.com
 
 # Захват трафика
@@ -456,9 +492,9 @@ $ traceroute google.com
 # doas smartctl -H /dev/sd0
 
 # Проверить логи на ошибки
+
 $ dmesg | grep -i error
 $ grep -i "error\|fail" /var/log/messages
-
 ```
 
 ---
@@ -472,22 +508,24 @@ $ grep -i "error\|fail" /var/log/messages
 # /root/monitor.sh
 
 # Пороги
+
 DISK_THRESHOLD=90
 LOAD_THRESHOLD=5
 MAIL="admin@example.com"
 
 # Проверка дисков
+
 df -P | awk 'NR>1 {gsub(/%/,"",$5); if($5>'"$DISK_THRESHOLD"') print $6": "$5"%"}' | \
 while read line; do
     echo "Disk warning: $line" | mail -s "Disk Alert" $MAIL
 done
 
 # Проверка нагрузки
+
 LOAD=$(uptime | awk -F'load averages:' '{print $2}' | awk '{print $1}')
 if [ $(echo "$LOAD > $LOAD_THRESHOLD" | bc) -eq 1 ]; then
     echo "Load average: $LOAD" | mail -s "Load Alert" $MAIL
 fi
-
 ```
 
 ### 7.2 Автоматические обновления
@@ -496,8 +534,8 @@ fi
 # /etc/daily.local
 
 # Установить патчи и отправить отчёт
-syspatch 2>&1 | mail -s "Syspatch report $(hostname)" admin@example.com
 
+syspatch 2>&1 | mail -s "Syspatch report $(hostname)" admin@example.com
 ```
 
 ---
@@ -540,7 +578,6 @@ echo
 
 echo "=== PF Rules ==="
 pfctl -sr
-
 ```
 
 ---
@@ -590,6 +627,7 @@ pfctl -sr
 - [man cron](https://man.openbsd.org/cron) — планировщик
 
 ---
+
 
 
 

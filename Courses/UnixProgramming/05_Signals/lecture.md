@@ -33,7 +33,6 @@
 **Сигнал** — асинхронное уведомление процессу о событии. Это механизм "программных прерываний".
 
 ```
-
 ┌──────────────┐     ┌──────────────┐
 │   Kernel     │────►│   Process    │
 │              │     │              │
@@ -43,19 +42,16 @@
 │  - Exception │     │  - Handler   │
 │  - Child exit│     │  - Block     │
 └──────────────┘     └──────────────┘
-
 ```
 
 ### 1.2 Основные сигналы
 
 ```python
-
 import signal
 
 # Посмотреть все сигналы
 for name, value in sorted(signal.Signals.__members__.items()):
     print(f"{value:2d} {name}")
-
 ```
 
 | Сигнал | Номер | Описание | Действие |
@@ -91,7 +87,6 @@ for name, value in sorted(signal.Signals.__members__.items()):
 ### 2.1 signal.signal()
 
 ```python
-
 import signal
 import sys
 
@@ -110,13 +105,11 @@ print("Press Ctrl+C to send SIGINT...")
 # Ожидание сигналов
 while True:
     signal.pause()  # Ждать любой сигнал
-
 ```
 
 ### 2.2 Специальные обработчики
 
 ```python
-
 import signal
 
 # SIG_IGN — игнорировать сигнал
@@ -128,13 +121,11 @@ signal.signal(signal.SIGINT, signal.SIG_DFL)
 # Получить текущий обработчик
 current = signal.getsignal(signal.SIGTERM)
 print(f"Current SIGTERM handler: {current}")
-
 ```
 
 ### 2.3 Безопасное завершение
 
 ```python
-
 import signal
 import sys
 import time
@@ -168,7 +159,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
 ---
@@ -178,7 +168,6 @@ if __name__ == "__main__":
 ### 3.1 os.kill()
 
 ```python
-
 import os
 import signal
 import time
@@ -197,13 +186,11 @@ else:
     print(f"Parent sending SIGUSR1 to {pid}")
     os.kill(pid, signal.SIGUSR1)
     os.wait()
-
 ```
 
 ### 3.2 Отправка группе процессов
 
 ```python
-
 import os
 import signal
 
@@ -216,18 +203,15 @@ pgid = os.getpgid(0)  # Получить PGID текущего процесса
 
 # Отправить сигнал себе
 os.kill(os.getpid(), signal.SIGUSR1)
-
 ```
 
 ### 3.3 signal.raise_signal()
 
 ```python
-
 import signal
 
 # Отправить сигнал текущему процессу (Python 3.8+)
 signal.raise_signal(signal.SIGUSR1)
-
 ```
 
 ---
@@ -237,7 +221,6 @@ signal.raise_signal(signal.SIGUSR1)
 ### 4.1 Автоматический сбор зомби
 
 ```python
-
 import signal
 import os
 import time
@@ -267,13 +250,11 @@ for i in range(3):
 print("Parent doing other work...")
 time.sleep(5)
 print("Parent done")
-
 ```
 
 ### 4.2 Игнорирование SIGCHLD
 
 ```python
-
 import signal
 import os
 
@@ -295,7 +276,6 @@ if pid == 0:
 ### 5.1 Ограничения
 
 ```python
-
 import signal
 import threading
 import time
@@ -321,7 +301,6 @@ t.start()
 ### 5.2 Прерывание потоков через сигналы
 
 ```python
-
 import signal
 import threading
 import time
@@ -345,7 +324,6 @@ handler = SignalHandler()
 t = threading.Thread(target=worker, args=(handler.stop_event,))
 t.start()
 t.join()
-
 ```
 
 ---
@@ -355,7 +333,6 @@ t.join()
 ### 6.1 signal.alarm()
 
 ```python
-
 import signal
 import time
 
@@ -375,13 +352,11 @@ try:
     print(f"Result: {result}")
 except TimeoutError as e:
     print(f"Error: {e}")
-
 ```
 
 ### 6.2 Context manager для таймаута
 
 ```python
-
 import signal
 from contextlib import contextmanager
 
@@ -412,13 +387,11 @@ try:
         time.sleep(10)
 except TimeoutError as e:
     print(e)
-
 ```
 
 ### 6.3 setitimer — более точные таймеры
 
 ```python
-
 import signal
 import time
 
@@ -437,7 +410,6 @@ while time.time() - start < 3:
 
 # Отменить таймер
 signal.setitimer(signal.ITIMER_REAL, 0)
-
 ```
 
 ---
@@ -447,7 +419,6 @@ signal.setitimer(signal.ITIMER_REAL, 0)
 ### 7.1 signal.pthread_sigmask()
 
 ```python
-
 import signal
 import time
 import os
@@ -472,19 +443,16 @@ def critical_section():
 
 # После разблокировки отложенный сигнал будет доставлен
 critical_section()
-
 ```
 
 ### 7.2 Проверка отложенных сигналов
 
 ```python
-
 import signal
 
 # Получить маску отложенных сигналов
 pending = signal.sigpending()
 print(f"Pending signals: {pending}")
-
 ```
 
 ---
@@ -549,7 +517,6 @@ class Daemon:
 if __name__ == "__main__":
     daemon = Daemon("/tmp/daemon.json")
     daemon.run()
-
 ```
 
 ### 8.2 Watchdog процесс
@@ -633,7 +600,6 @@ if __name__ == "__main__":
     
     watchdog = Watchdog(sys.argv[1:])
     watchdog.run()
-
 ```
 
 ---

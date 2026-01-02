@@ -9,7 +9,6 @@
 Что произойдёт при компиляции?
 
 ```rust
-
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1;
@@ -32,7 +31,6 @@ D) Паника во время выполнения
 Что выведет код?
 
 ```rust
-
 fn main() {
     let x = 5;
     let y = x;
@@ -97,7 +95,6 @@ D) Неограниченно
 Что произойдёт при компиляции?
 
 ```rust
-
 fn main() {
     let mut s = String::from("hello");
     let r1 = &s;
@@ -149,7 +146,6 @@ D) Ссылка на удалённые данные
 Что выведет код?
 
 ```rust
-
 fn main() {
     let s = String::from("hello world");
     let slice = &s[0..5];
@@ -228,7 +224,6 @@ D) Ссылка на часть строки
 Что выведет код?
 
 ```rust
-
 fn main() {
     let a = [1, 2, 3, 4, 5];
     let slice = &a[1..4];
@@ -251,7 +246,6 @@ D) [1, 2, 3]
 Что произойдёт при компиляции?
 
 ```rust
-
 fn take_ownership(s: String) {}
 
 fn main() {
@@ -276,7 +270,6 @@ D) Код скомпилируется
 Что выведет код?
 
 ```rust
-
 fn give_ownership() -> String {
     String::from("hello")
 }
@@ -302,7 +295,6 @@ D) Ошибка компиляции
 Что произойдёт при компиляции?
 
 ```rust
-
 fn main() {
     let s = String::from("hello");
     let r1 = &s;
@@ -326,7 +318,6 @@ D) Код скомпилируется и выведет hello hello
 Что произойдёт при компиляции?
 
 ```rust
-
 fn main() {
     let mut s = String::from("hello");
     let r1 = &mut s;

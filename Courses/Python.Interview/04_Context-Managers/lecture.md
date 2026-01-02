@@ -16,7 +16,6 @@ Context managers — важная тема для Python-разработчик�
 ### Методы `__enter__` и `__exit__`
 
 ```python
-
 class MyContext:
     def __enter__(self):
         # Вызывается при входе в with блок
@@ -41,7 +40,6 @@ with MyContext() as ctx:
 ### 1. Контекстный менеджер через класс
 
 ```python
-
 class Timer:
     def __enter__(self):
         import time
@@ -55,6 +53,7 @@ class Timer:
         return False
 
 # Использование
+
 with Timer():
     sum(range(1000000))
 ```
@@ -62,7 +61,6 @@ with Timer():
 ### 2. Контекстный менеджер через @contextmanager
 
 ```python
-
 from contextlib import contextmanager
 
 @contextmanager
@@ -76,6 +74,7 @@ def timer():
         print(f"Elapsed: {elapsed:.4f}s")
 
 # Использование
+
 with timer():
     sum(range(1000000))
 ```
@@ -83,7 +82,6 @@ with timer():
 ### 3. Временная смена директории
 
 ```python
-
 import os
 from contextlib import contextmanager
 
@@ -97,6 +95,7 @@ def change_dir(path):
         os.chdir(old_dir)
 
 # Использование
+
 with change_dir("/tmp"):
     print(os.getcwd())  # /tmp
 print(os.getcwd())  # Вернулись в исходную директорию
@@ -109,7 +108,6 @@ print(os.getcwd())  # Вернулись в исходную директори�
 ### Проблема
 
 ```python
-
 with A():
     with B():
         with C():
@@ -122,7 +120,6 @@ with A():
 **Способ 1: Несколько менеджеров в одном with**
 
 ```python
-
 with A(), B(), C(), D():
     # код
 ```
@@ -130,7 +127,6 @@ with A(), B(), C(), D():
 **Способ 2: ExitStack для динамического количества**
 
 ```python
-
 from contextlib import ExitStack
 
 with ExitStack() as stack:
@@ -148,7 +144,6 @@ with ExitStack() as stack:
 > "Метод `__exit__` всё равно вызывается. Он получает информацию об исключении через параметры `exc_type`, `exc_val`, `exc_tb`. Если `__exit__` возвращает `True`, исключение подавляется."
 
 ```python
-
 class Suppress:
     def __enter__(self):
         return self
@@ -189,5 +184,6 @@ class Suppress:
 - "Fluent Python" Chapter 15: Context Managers and else Blocks
 
 ---
+
 
 

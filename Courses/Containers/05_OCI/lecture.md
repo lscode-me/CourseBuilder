@@ -62,7 +62,6 @@ OCI (Open Container Initiative) — организация, создающая �
 ### 1.3 OCI спецификации
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                    OCI Specifications                   │
 ├─────────────────────────────────────────────────────────┤
@@ -83,7 +82,6 @@ OCI (Open Container Initiative) — организация, создающая �
 │  └─────────────────────────────────────────┘            │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -97,7 +95,6 @@ Runtime Spec определяет как создавать и запускат�
 OCI Bundle — директория с файловой системой контейнера и конфигурацией:
 
 ```
-
 mycontainer/
 ├── config.json      # Конфигурация контейнера
 └── rootfs/          # Корневая файловая система
@@ -106,13 +103,11 @@ mycontainer/
     ├── lib/
     ├── usr/
     └── ...
-
 ```
 
 ### 2.2 Структура config.json
 
 ```json
-
 {
     "ociVersion": "1.0.2",
     "process": {
@@ -185,13 +180,11 @@ mycontainer/
         }
     }
 }
-
 ```
 
 ### 2.3 Жизненный цикл контейнера
 
 ```
-
 ┌─────────┐    create    ┌─────────┐    start     ┌─────────┐
 │ (none)  │ ──────────►  │ created │ ──────────►  │ running │
 └─────────┘              └─────────┘              └─────────┘
@@ -202,7 +195,6 @@ mycontainer/
                          ┌─────────┐    delete    ┌─────────┐
                          │ stopped │ ──────────►  │ (none)  │
                          └─────────┘              └─────────┘
-
 ```
 
 **Операции:**
@@ -222,78 +214,80 @@ runC — низкоуровневый runtime, создающий и запус�
 
 ```bash
 # Ubuntu/Debian
+
 apt install runc
 
 # Или скачать бинарник
+
 curl -LO https://github.com/opencontainers/runc/releases/download/v1.1.9/runc.amd64
 chmod +x runc.amd64
 sudo mv runc.amd64 /usr/local/bin/runc
 
 # Проверка версии
-runc --version
 
+runc --version
 ```
 
 **Output:**
 ```
-
 runc version 1.1.9
 commit: v1.1.9-0-gccaecfc
 spec: 1.0.2-dev
 go: go1.20.8
 libseccomp: 2.5.4
-
 ```
 
 ### 3.2 Создание OCI bundle вручную
 
 ```bash
 # Создаём структуру
+
 mkdir -p mycontainer/rootfs
 
 # Экспортируем rootfs из Docker-образа
+
 docker export $(docker create alpine) | tar -C mycontainer/rootfs -xf -
 
 # Генерируем config.json
+
 cd mycontainer
 runc spec
 
 # Смотрим сгенерированный config
-cat config.json | head -50
 
+cat config.json | head -50
 ```
 
 ### 3.3 Запуск контейнера через runC
 
 ```bash
 # Запуск интерактивного контейнера
+
 sudo runc run mycontainer
 
 # В другом терминале — проверяем статус
-sudo runc list
 
+sudo runc list
 ```
 
 **Output:**
 ```
-
 ID            PID         STATUS      BUNDLE                    CREATED
 mycontainer   12345       running     /home/user/mycontainer   2024-01-01T12:00:00Z
-
 ```
 
 ```bash
 # Выполнение команды в работающем контейнере
+
 sudo runc exec mycontainer ps aux
 
 # Получение состояния
-sudo runc state mycontainer
 
+sudo runc state mycontainer
 ```
 
 **Output:**
 ```json
-
 {
   "ociVersion": "1.0.2",
   "id": "mycontainer",
@@ -303,39 +297,43 @@ sudo runc state mycontainer
   "rootfs": "/home/user/mycontainer/rootfs",
   "created": "2024-01-01T12:00:00.000000000Z"
 }
-
 ```
 
 ### 3.4 Операции runC
 
 ```bash
 # Создать контейнер (без запуска)
+
 sudo runc create -b /path/to/bundle mycontainer
 
 # Запустить созданный контейнер
+
 sudo runc start mycontainer
 
 # Приостановить контейнер
+
 sudo runc pause mycontainer
 
 # Возобновить
+
 sudo runc resume mycontainer
 
 # Послать сигнал
+
 sudo runc kill mycontainer SIGTERM
 
 # Удалить
+
 sudo runc delete mycontainer
 
 # Удалить принудительно (если не остановлен)
-sudo runc delete --force mycontainer
 
+sudo runc delete --force mycontainer
 ```
 
 ### 3.5 Минимальный config.json
 
 ```json
-
 {
     "ociVersion": "1.0.2",
     "process": {
@@ -355,7 +353,6 @@ sudo runc delete --force mycontainer
         ]
     }
 }
-
 ```
 
 ---
@@ -368,8 +365,8 @@ sudo runc delete --force mycontainer
 
 ```bash
 # Справка
-unshare --help
 
+unshare --help
 ```
 
 **Основные флаги:**
@@ -387,14 +384,15 @@ unshare --help
 
 ```bash
 # Создание изолированного окружения
+
 sudo unshare --mount --uts --ipc --net --pid --fork --mount-proc /bin/bash
 
 # Внутри — проверяем изоляцию
+
 hostname isolated-host
 hostname  # isolated-host (не влияет на host)
 ps aux    # видим только процессы namespace
 ip link   # только loopback
-
 ```
 
 ### 4.2 Создание мини-контейнера через unshare
@@ -407,6 +405,7 @@ ROOTFS="${1:-/var/lib/containers/alpine}"
 HOSTNAME="${2:-container}"
 
 # Создаём все namespaces
+
 exec unshare \
     --mount \
     --uts \
@@ -421,7 +420,6 @@ exec unshare \
         hostname $HOSTNAME
         exec /bin/sh
     "
-
 ```
 
 ### 4.3 nsenter — вход в существующие namespaces
@@ -430,36 +428,42 @@ exec unshare \
 
 ```bash
 # Вход во все namespaces процесса
+
 sudo nsenter --target <PID> --all /bin/bash
 
 # Вход в конкретные namespaces
+
 sudo nsenter --target <PID> --mount --uts --ipc --net --pid /bin/bash
 
 # Вход в namespace контейнера Docker
+
 CONTAINER_PID=$(docker inspect --format '{{.State.Pid}}' mycontainer)
 sudo nsenter --target $CONTAINER_PID --mount --uts --ipc --net --pid /bin/bash
-
 ```
 
 ### 4.4 Практический пример: отладка контейнера
 
 ```bash
 # Запускаем "проблемный" контейнер
+
 docker run -d --name debug-me alpine sleep 3600
 
 # Получаем PID
+
 PID=$(docker inspect --format '{{.State.Pid}}' debug-me)
 
 # Входим в namespaces с инструментами с хоста
 # Network namespace контейнера, но с mount namespace хоста
+
 sudo nsenter --target $PID --net /bin/bash
 
 # Теперь можем использовать tcpdump с хоста внутри сети контейнера
+
 tcpdump -i eth0
 
 # Или полный вход
-sudo nsenter --target $PID --all /bin/sh
 
+sudo nsenter --target $PID --all /bin/sh
 ```
 
 ---
@@ -471,7 +475,6 @@ Image Spec определяет формат образов контейнеро
 ### 5.1 Структура OCI Image
 
 ```
-
 image/
 ├── blobs/
 │   └── sha256/
@@ -481,13 +484,11 @@ image/
 │       └── <manifest-hash>      # Image manifest
 ├── index.json                   # Image index
 └── oci-layout                   # Version marker
-
 ```
 
 ### 5.2 Image Manifest
 
 ```json
-
 {
     "schemaVersion": 2,
     "mediaType": "application/vnd.oci.image.manifest.v1+json",
@@ -509,13 +510,11 @@ image/
         }
     ]
 }
-
 ```
 
 ### 5.3 Image Config
 
 ```json
-
 {
     "architecture": "amd64",
     "os": "linux",
@@ -544,26 +543,26 @@ image/
         }
     ]
 }
-
 ```
 
 ### 5.4 Работа с образами через skopeo
 
 ```bash
 # Установка skopeo
+
 apt install skopeo
 
 # Копирование образа в OCI layout
+
 skopeo copy docker://alpine:latest oci:alpine-oci:latest
 
 # Просмотр структуры
-tree alpine-oci/
 
+tree alpine-oci/
 ```
 
 **Output:**
 ```
-
 alpine-oci/
 ├── blobs
 │   └── sha256
@@ -572,18 +571,16 @@ alpine-oci/
 │       └── c1aabb...  # manifest
 ├── index.json
 └── oci-layout
-
 ```
 
 ```bash
 # Просмотр index.json
-cat alpine-oci/index.json | jq
 
+cat alpine-oci/index.json | jq
 ```
 
 **Output:**
 ```json
-
 {
   "schemaVersion": 2,
   "manifests": [
@@ -597,25 +594,27 @@ cat alpine-oci/index.json | jq
     }
   ]
 }
-
 ```
 
 ### 5.5 Конвертация образов
 
 ```bash
 # Docker → OCI
+
 skopeo copy docker://nginx:alpine oci:nginx-oci:alpine
 
 # OCI → Docker
+
 skopeo copy oci:nginx-oci:alpine docker-daemon:nginx:from-oci
 
 # Docker → файл
+
 skopeo copy docker://alpine:latest docker-archive:alpine.tar
 
 # Registry → Registry
+
 skopeo copy docker://docker.io/library/nginx:latest \
     docker://myregistry.com/nginx:latest
-
 ```
 
 ---
@@ -639,35 +638,40 @@ Distribution Spec определяет API для работы с registry.
 
 ```bash
 # Получить токен для Docker Hub
+
 TOKEN=$(curl -s "https://auth.docker.io/token?service=registry.docker.io&scope=repository:library/alpine:pull" | jq -r .token)
 
 # Получить manifest
+
 curl -s -H "Authorization: Bearer $TOKEN" \
     -H "Accept: application/vnd.oci.image.manifest.v1+json" \
     "https://registry-1.docker.io/v2/library/alpine/manifests/latest" | jq
 
 # Получить список тегов
+
 curl -s -H "Authorization: Bearer $TOKEN" \
     "https://registry-1.docker.io/v2/library/alpine/tags/list" | jq
-
 ```
 
 ### 6.3 Локальный OCI registry
 
 ```bash
 # Запуск локального registry
+
 docker run -d -p 5000:5000 --name registry registry:2
 
 # Push образа в локальный registry
+
 docker tag alpine:latest localhost:5000/alpine:latest
 docker push localhost:5000/alpine:latest
 
 # Список репозиториев
+
 curl http://localhost:5000/v2/_catalog
 
 # Теги образа
-curl http://localhost:5000/v2/alpine/tags/list
 
+curl http://localhost:5000/v2/alpine/tags/list
 ```
 
 ---
@@ -678,21 +682,20 @@ curl http://localhost:5000/v2/alpine/tags/list
 
 ```bash
 # Установка crun
+
 apt install crun
 
 # Использование
-crun --version
 
+crun --version
 ```
 
 **Output:**
 ```
-
 crun version 1.8.5
 commit: ...
 rundir: /run/crun
 spec: 1.0.0
-
 ```
 
 **Преимущества crun:**
@@ -706,7 +709,6 @@ spec: 1.0.0
 Kata Containers запускает каждый контейнер в легковесной VM:
 
 ```
-
 ┌─────────────────────────────────────────┐
 │              Host System                │
 ├─────────────────────────────────────────┤
@@ -721,7 +723,6 @@ Kata Containers запускает каждый контейнер в легко
 │  │  └────────────────────────────┘  │   │
 │  └──────────────────────────────────┘   │
 └─────────────────────────────────────────┘
-
 ```
 
 **Когда использовать:**
@@ -735,7 +736,6 @@ Kata Containers запускает каждый контейнер в легко
 gVisor перехватывает системные вызовы и обрабатывает их в userspace:
 
 ```
-
 ┌─────────────────────────────────────────┐
 │            Container Process            │
 │         (thinks it talks to kernel)     │
@@ -751,7 +751,6 @@ gVisor перехватывает системные вызовы и обраб�
 ┌─────────────────────────────────────────┐
 │              Host Kernel                │
 └─────────────────────────────────────────┘
-
 ```
 
 **Когда использовать:**
@@ -783,6 +782,7 @@ ROOTFS="mycontainer/rootfs"
 mkdir -p "$ROOTFS"
 
 # Вариант 1: из Docker
+
 docker export $(docker create alpine) | tar -C "$ROOTFS" -xf -
 
 # Вариант 2: из debootstrap (Debian/Ubuntu)
@@ -952,29 +952,30 @@ cat > mycontainer/config.json << 'EOF'
     }
 }
 EOF
-
 ```
 
 ### 8.3 Запуск и тестирование
 
 ```bash
-
 cd mycontainer
 
 # Запуск через runc
+
 sudo runc run test-container
 
 # В другом терминале
+
 sudo runc list
 sudo runc state test-container
 
 # Exec в работающий контейнер
+
 sudo runc exec test-container ls -la /
 
 # Остановка
+
 sudo runc kill test-container SIGKILL
 sudo runc delete test-container
-
 ```
 
 ---
@@ -984,7 +985,6 @@ sudo runc delete test-container
 ### 9.1 Как Docker использует runC
 
 ```
-
 ┌──────────────────────────────────────────────────────┐
 │                     docker CLI                       │
 │                    docker run ...                    │
@@ -1013,13 +1013,13 @@ sudo runc delete test-container
 │                       runc                           │
 │                  (OCI Runtime)                       │
 └──────────────────────────────────────────────────────┘
-
 ```
 
 ### 9.2 Смена runtime в Docker
 
 ```bash
 # Конфигурация Docker для использования crun
+
 cat > /etc/docker/daemon.json << EOF
 {
     "default-runtime": "crun",
@@ -1037,9 +1037,9 @@ EOF
 systemctl restart docker
 
 # Запуск с конкретным runtime
+
 docker run --runtime=crun alpine echo "Hello from crun"
 docker run --runtime=kata alpine echo "Hello from Kata VM"
-
 ```
 
 ---
@@ -1101,6 +1101,7 @@ docker run --runtime=kata alpine echo "Hello from Kata VM"
 - [From Docker to OCI](https://blog.aquasec.com/oci-container-format)
 
 ---
+
 
 
 

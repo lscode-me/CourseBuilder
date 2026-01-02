@@ -32,7 +32,6 @@
 Prompt engineering — это искусство и наука составления инструкций для LLM. Промпт — это интерфейс между человеком и моделью:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                   Prompt Engineering                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -54,10 +53,12 @@ Prompt engineering — это искусство и наука составле�
 # Один и тот же вопрос, разные промпты → разные результаты
 
 # Плохой промпт
+
 prompt_bad = "напиши про питон"
 # Результат: непредсказуемый, может быть о змее или языке
 
 # Хороший промпт
+
 prompt_good = """
 Напиши краткое введение в язык программирования Python для начинающих.
 Формат: 3 абзаца по 2-3 предложения.
@@ -70,7 +71,6 @@ prompt_good = """
 ### 1.3 Принципы эффективных промптов
 
 ```python
-
 principles = {
     "Clarity": "Будь конкретен и однозначен",
     "Context": "Дай достаточно контекста",
@@ -89,7 +89,6 @@ principles = {
 Современные chat-модели работают с тремя ролями:
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │              Роли в Chat Completion API                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -118,6 +117,7 @@ System prompt задаёт "персону" и правила для ассис�
 # Пример system prompt для разных задач
 
 # Для кодинг-ассистента
+
 system_coding = """
 You are an expert Python developer. 
 Follow these rules:
@@ -129,6 +129,7 @@ Follow these rules:
 """
 
 # Для customer support бота
+
 system_support = """
 You are a friendly customer support agent for TechCorp.
 Rules:
@@ -140,6 +141,7 @@ Rules:
 """
 
 # Для переводчика
+
 system_translator = """
 You are a professional translator from English to Russian.
 Rules:
@@ -156,21 +158,26 @@ Rules:
 
 system_template = """
 # Роль
+
 You are [ROLE] with expertise in [DOMAIN].
 
 # Цель
+
 Your goal is to [PRIMARY OBJECTIVE].
 
 # Правила
+
 Follow these rules:
 - [Rule 1]
 - [Rule 2]
 - [Rule 3]
 
 # Формат ответа
+
 [Describe expected format]
 
 # Ограничения
+
 - [What NOT to do]
 - [Boundaries]
 """
@@ -179,7 +186,6 @@ Follow these rules:
 ### 2.4 Пример полного диалога
 
 ```python
-
 from openai import OpenAI
 client = OpenAI()
 
@@ -218,9 +224,11 @@ LLM не читают мысли — нужно явно указывать, ч�
 
 ```python
 # ❌ Неявно (плохо)
+
 prompt_vague = "Объясни машинное обучение"
 
 # ✅ Явно (хорошо)
+
 prompt_explicit = """
 Объясни машинное обучение для аудитории: менеджеры без технического бэкграунда.
 
@@ -235,7 +243,6 @@ prompt_explicit = """
 ### 3.2 Компоненты хорошего промпта
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │          Компоненты эффективного промпта                    │
 ├─────────────────────────────────────────────────────────────┤
@@ -271,6 +278,7 @@ prompt_explicit = """
 
 ```python
 # Пример 1: Суммаризация
+
 summarization_prompt = """
 Task: Summarize the following article.
 
@@ -287,6 +295,7 @@ Summary:
 """
 
 # Пример 2: Код-ревью
+
 code_review_prompt = """
 Review the following Python code for:
 1. Bugs and potential errors
@@ -305,11 +314,11 @@ Code:
 {code}
 
 ```
-
 Review:
 """
 
 # Пример 3: Перевод
+
 translation_prompt = """
 Translate the following text from English to Russian.
 
@@ -335,6 +344,7 @@ Zero-shot — выполнение задачи без примеров:
 
 ```python
 # Zero-shot: просто инструкция
+
 zero_shot_prompt = """
 Classify the sentiment of the following review as 
 Positive, Negative, or Neutral.
@@ -353,6 +363,7 @@ Few-shot — демонстрация задачи через примеры:
 
 ```python
 # Few-shot: инструкция + примеры
+
 few_shot_prompt = """
 Classify the sentiment of reviews as Positive, Negative, or Neutral.
 
@@ -377,7 +388,6 @@ Sentiment:
 ### 4.3 Когда что использовать
 
 ```python
-
 comparison = {
     "Zero-shot": {
         "when": "Простые, стандартные задачи",
@@ -418,9 +428,11 @@ example_guidelines = {
 
 ```python
 # ❌ Плохо: слишком общий
+
 bad_prompt = "Write about AI"
 
 # ✅ Хорошо: конкретный
+
 good_prompt = """
 Write a 500-word article about AI for:
 - Audience: business executives
@@ -434,9 +446,11 @@ Write a 500-word article about AI for:
 
 ```python
 # ❌ Плохо: формат не указан
+
 bad_prompt = "List the benefits of Python"
 
 # ✅ Хорошо: формат указан
+
 good_prompt = """
 List the top 5 benefits of Python for beginners.
 Format:
@@ -448,6 +462,7 @@ Format:
 
 ```python
 # ❌ Плохо: противоречия
+
 bad_prompt = """
 Write a detailed technical explanation.
 Keep it very brief.
@@ -457,6 +472,7 @@ Make it simple for beginners.
 # Противоречит само себе!
 
 # ✅ Хорошо: согласованные инструкции
+
 good_prompt = """
 Write a technical explanation of REST APIs.
 Target audience: junior developers with basic programming knowledge.
@@ -469,9 +485,11 @@ Include: definition, key concepts, one simple example.
 
 ```python
 # ❌ Плохо: всё в одном блоке
+
 bad_prompt = "I have this data about sales in Q1 which was 100k and Q2 which was 150k and Q3 which was 120k and I want you to analyze trends and suggest what to do in Q4"
 
 # ✅ Хорошо: структурированный промпт
+
 good_prompt = """
 Analyze the following quarterly sales data and provide recommendations.
 
@@ -496,6 +514,7 @@ Format response as:
 
 ```python
 # ❌ Плохо: избыточный промпт
+
 bad_prompt = """
 I want you to help me with something very important and it's 
 really critical that you understand what I'm asking. So basically,
@@ -506,6 +525,7 @@ also comprehensive but not too long and also professional...
 """
 
 # ✅ Хорошо: лаконичный промпт
+
 good_prompt = """
 Summarize this text in 3 sentences. Be clear and professional.
 
@@ -520,7 +540,6 @@ Text: [text]
 ### 6.1 Процесс разработки промпта
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │            Итеративный процесс промптинга                   │
 ├─────────────────────────────────────────────────────────────┤
@@ -547,14 +566,17 @@ Text: [text]
 
 ```python
 # Итерация 1: Базовый промпт
+
 v1 = "Extract names from text: {text}"
 # Проблема: модель возвращает все слова с заглавной буквы
 
 # Итерация 2: Уточнение
+
 v2 = "Extract only person names (not places or companies) from text: {text}"
 # Проблема: модель иногда возвращает прозвища
 
 # Итерация 3: Формат
+
 v3 = """
 Extract person names from the text.
 Return as JSON array: ["Name1", "Name2"]
@@ -565,6 +587,7 @@ Text: {text}
 # Проблема: иногда пустой массив где должен быть null
 
 # Итерация 4: Edge cases
+
 v4 = """
 Extract person names from the text.
 
@@ -613,24 +636,29 @@ def compare_prompts(prompt_a, prompt_b, test_cases):
 ### 7.1 Универсальный шаблон
 
 ```python
-
 universal_template = """
 # Роль (опционально)
+
 You are [role] with expertise in [domain].
 
 # Задача
+
 [Clear task description]
 
 # Контекст
+
 [Background information, constraints]
 
 # Входные данные
+
 [User's input or data to process]
 
 # Формат вывода
+
 [Expected format of the response]
 
 # Примеры (опционально)
+
 [Few-shot examples]
 """
 ```
@@ -639,6 +667,7 @@ You are [role] with expertise in [domain].
 
 ```python
 # Суммаризация
+
 summarize_template = """
 Summarize the following text in {length} sentences.
 Focus on: {focus_points}
@@ -651,6 +680,7 @@ Summary:
 """
 
 # Классификация
+
 classify_template = """
 Classify the following {item_type} into one of these categories:
 {categories}
@@ -661,6 +691,7 @@ Category:
 """
 
 # Извлечение данных
+
 extract_template = """
 Extract the following information from the text:
 {fields}
@@ -675,6 +706,7 @@ Extracted data:
 """
 
 # Генерация контента
+
 generate_template = """
 Write a {content_type} about {topic}.
 
@@ -696,7 +728,6 @@ Requirements:
 ### 8.1 Чеклист промптинга
 
 ```python
-
 checklist = [
     "✅ Задача чётко описана",
     "✅ Указана целевая аудитория/контекст",
@@ -711,7 +742,6 @@ checklist = [
 ### 8.2 Debugging промптов
 
 ```python
-
 debugging_strategies = {
     "Проблема: модель не следует формату": [
         "Добавьте примеры",
@@ -788,5 +818,6 @@ debugging_strategies = {
 - [Prompt Perfect](https://promptperfect.jina.ai/) — оптимизация промптов
 
 ---
+
 
 

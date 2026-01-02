@@ -30,14 +30,12 @@
 ### macOS (Homebrew)
 
 ```bash
-
 brew install go
 ```
 
 ### Linux
 
 ```bash
-
 wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
@@ -46,7 +44,6 @@ export PATH=$PATH:/usr/local/go/bin
 ### Проверка
 
 ```bash
-
 go version
 go env GOPATH
 ```

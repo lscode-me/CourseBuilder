@@ -56,7 +56,6 @@
 
 **Пример:**
 ```
-
 Таблица Users:
 id | name  | email
 1  | Alice | alice@example.com
@@ -72,7 +71,6 @@ id | name  | email
 **Пример: Создание таблицы**
 
 ```sql
-
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -92,7 +90,6 @@ CREATE TABLE orders (
 
 **SELECT — выборка данных:**
 ```sql
-
 -- Простой запрос
 SELECT name, email FROM users WHERE id = 1;
 
@@ -111,7 +108,6 @@ HAVING total > 1000;
 
 **INSERT — вставка данных:**
 ```sql
-
 INSERT INTO users (name, email) 
 VALUES ('Alice', 'alice@example.com');
 
@@ -123,7 +119,6 @@ INSERT INTO users (name, email) VALUES
 
 **UPDATE — обновление данных:**
 ```sql
-
 UPDATE users 
 SET email = 'newemail@example.com'
 WHERE id = 1;
@@ -131,7 +126,6 @@ WHERE id = 1;
 
 **DELETE — удаление данных:**
 ```sql
-
 DELETE FROM users WHERE id = 1;
 
 -- Каскадное удаление (если настроено)
@@ -180,7 +174,6 @@ ACID свойства обеспечивают несколько критиче
 **Пример: Перевод денег**
 
 ```sql
-
 BEGIN TRANSACTION;
 
 -- Снять со счёта A
@@ -197,7 +190,6 @@ ROLLBACK;  -- Откат обеих операций
 
 **Без транзакций:**
 ```sql
-
 -- Плохо: нет атомарности
 UPDATE accounts SET balance = balance - 100 WHERE id = 1;
 -- Если здесь сбой → деньги потеряны!
@@ -206,7 +198,6 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 
 **Isolation уровни:**
 ```sql
-
 -- READ UNCOMMITTED: видим незафиксированные изменения
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
@@ -243,7 +234,6 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 **Пример: MongoDB**
 
 ```javascript
-
 // Вставка документа
 db.users.insertOne({
     name: "Alice",
@@ -267,15 +257,16 @@ db.users.find({ "orders.price": { $gt: 100 } });
 **Пример: Redis**
 
 ```python
-
 import redis
 r = redis.Redis()
 
 # Запись
+
 r.set("user:1:name", "Alice")
 r.set("user:1:email", "alice@example.com")
 
 # Чтение
+
 name = r.get("user:1:name")
 ```
 
@@ -287,7 +278,6 @@ name = r.get("user:1:name")
 **Пример: Cassandra CQL**
 
 ```sql
-
 CREATE TABLE sales (
     date DATE,
     product TEXT,
@@ -307,7 +297,6 @@ SELECT date, SUM(amount) FROM sales GROUP BY date;
 **Пример: Neo4j Cypher**
 
 ```cypher
-
 // Создание узлов и связей
 CREATE (alice:Person {name: "Alice"})
 CREATE (bob:Person {name: "Bob"})
@@ -389,7 +378,6 @@ RETURN a.name, b.name
 **Пример: B-tree индекс**
 
 ```sql
-
 -- Создание индекса
 CREATE INDEX idx_email ON users(email);
 
@@ -409,7 +397,6 @@ SELECT * FROM users WHERE email = 'alice@example.com';
 
 **Query Optimizer:**
 ```sql
-
 -- Плохой запрос (N+1 проблема)
 SELECT * FROM users;
 -- Для каждого user:
@@ -423,7 +410,6 @@ LEFT JOIN orders o ON u.id = o.user_id;
 
 **EXPLAIN для анализа:**
 ```sql
-
 EXPLAIN SELECT * FROM users WHERE email = 'alice@example.com';
 -- Показывает план выполнения, использование индексов
 ```
@@ -467,6 +453,7 @@ EXPLAIN SELECT * FROM users WHERE email = 'alice@example.com';
 - "Designing Data-Intensive Applications" by Martin Kleppmann
 
 ---
+
 
 
 

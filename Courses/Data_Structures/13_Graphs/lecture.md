@@ -45,7 +45,6 @@
 **Example: Неориентированный граф**
 
 ```python
-
 class Graph:
     """Неориентированный граф через список смежности."""
     def __init__(self):
@@ -68,6 +67,7 @@ class Graph:
         return self.graph.get(vertex, [])
 
 # Создание графа
+
 g = Graph()
 g.add_edge('A', 'B')
 g.add_edge('A', 'C')
@@ -79,7 +79,6 @@ print(f"Соседи B: {g.get_neighbors('B')}")
 
 **Output:**
 ```
-
 Соседи A: ['B', 'C']
 Соседи B: ['A', 'C']
 ```
@@ -91,7 +90,6 @@ print(f"Соседи B: {g.get_neighbors('B')}")
 **Example: Ориентированный граф**
 
 ```python
-
 class DirectedGraph:
     """Ориентированный граф."""
     def __init__(self):
@@ -114,6 +112,7 @@ class DirectedGraph:
         return self.graph.get(vertex, [])
 
 # Создание ориентированного графа
+
 dg = DirectedGraph()
 dg.add_edge('A', 'B')
 dg.add_edge('A', 'C')
@@ -126,7 +125,6 @@ print(f"Соседи C (исходящие): {dg.get_neighbors('C')}")
 
 **Output:**
 ```
-
 Соседи A (исходящие): ['B', 'C']
 Соседи B (исходящие): ['C']
 Соседи C (исходящие): []
@@ -139,7 +137,6 @@ print(f"Соседи C (исходящие): {dg.get_neighbors('C')}")
 **Example: Взвешенный граф**
 
 ```python
-
 class WeightedGraph:
     """Взвешенный граф."""
     def __init__(self):
@@ -162,6 +159,7 @@ class WeightedGraph:
         return self.graph.get(vertex, [])
 
 # Создание взвешенного графа (дороги между городами)
+
 wg = WeightedGraph()
 wg.add_edge('Москва', 'СПб', 700)  # км
 wg.add_edge('Москва', 'Казань', 800)
@@ -174,7 +172,6 @@ for city, distance in wg.get_neighbors('Москва'):
 
 **Output:**
 ```
-
 Расстояния от Москвы:
   СПб: 700 км
   Казань: 800 км
@@ -202,6 +199,7 @@ for city, distance in wg.get_neighbors('Москва'):
 
 ```python
 # Представление через словарь списков
+
 adjacency_list = {
     'A': ['B', 'C'],
     'B': ['A', 'C', 'D'],
@@ -216,7 +214,6 @@ for vertex, neighbors in adjacency_list.items():
 
 **Output:**
 ```
-
 Список смежности:
   A: ['B', 'C']
   B: ['A', 'C', 'D']
@@ -242,14 +239,17 @@ for vertex, neighbors in adjacency_list.items():
 
 ```python
 # Матрица смежности
+
 vertices = ['A', 'B', 'C', 'D']
 n = len(vertices)
 vertex_to_index = {v: i for i, v in enumerate(vertices)}
 
 # Создание матрицы
+
 adjacency_matrix = [[0] * n for _ in range(n)]
 
 # Добавление рёбер
+
 edges = [('A', 'B'), ('A', 'C'), ('B', 'C'), ('B', 'D')]
 for v1, v2 in edges:
     i1, i2 = vertex_to_index[v1], vertex_to_index[v2]
@@ -264,7 +264,6 @@ for i, vertex in enumerate(vertices):
 
 **Output:**
 ```
-
 Матрица смежности:
     A B C D
 A: 0 1 1 0
@@ -292,7 +291,6 @@ D: 0 1 0 0
 **Example: DFS для графа**
 
 ```python
-
 def dfs(graph, start, visited=None):
     """Обход графа в глубину."""
     if visited is None:
@@ -308,6 +306,7 @@ def dfs(graph, start, visited=None):
     return result
 
 # Граф
+
 graph = {
     'A': ['B', 'C'],
     'B': ['A', 'D'],
@@ -322,7 +321,6 @@ print(f"DFS обход: {result}")
 
 **Output:**
 ```
-
 DFS обход: ['A', 'B', 'D', 'C', 'E']
 ```
 
@@ -331,7 +329,6 @@ DFS обход: ['A', 'B', 'D', 'C', 'E']
 **Example: BFS для графа**
 
 ```python
-
 from collections import deque
 
 def bfs(graph, start):
@@ -358,7 +355,6 @@ print(f"BFS обход: {result}")
 
 **Output:**
 ```
-
 BFS обход: ['A', 'B', 'C', 'D', 'E']
 ```
 
@@ -371,7 +367,6 @@ BFS обход: ['A', 'B', 'C', 'D', 'E']
 **Example: Моделирование социальной сети**
 
 ```python
-
 class SocialNetwork:
     """Социальная сеть как неориентированный граф."""
     def __init__(self):
@@ -396,6 +391,7 @@ class SocialNetwork:
         return user2 in self.graph.get(user1, [])
 
 # Использование
+
 network = SocialNetwork()
 network.add_friendship('Alice', 'Bob')
 network.add_friendship('Alice', 'Charlie')
@@ -407,7 +403,6 @@ print(f"Alice и Bob друзья: {network.are_friends('Alice', 'Bob')}")
 
 **Output:**
 ```
-
 Друзья Alice: ['Bob', 'Charlie']
 Alice и Bob друзья: True
 ```
@@ -417,7 +412,6 @@ Alice и Bob друзья: True
 **Example: Моделирование дорожной сети**
 
 ```python
-
 class RoadNetwork:
     """Дорожная сеть как взвешенный граф."""
     def __init__(self):
@@ -438,6 +432,7 @@ class RoadNetwork:
         return self.graph.get(city, [])
 
 # Использование
+
 roads = RoadNetwork()
 roads.add_road('Москва', 'СПб', 700)
 roads.add_road('Москва', 'Казань', 800)
@@ -450,7 +445,6 @@ for city, distance in roads.get_connections('Москва'):
 
 **Output:**
 ```
-
 Дороги из Москвы:
   СПб: 700 км
   Казань: 800 км
@@ -510,5 +504,6 @@ for city, distance in roads.get_connections('Москва'):
 - Исследуйте применение графов в компиляторах и анализах зависимостей
 
 ---
+
 
 

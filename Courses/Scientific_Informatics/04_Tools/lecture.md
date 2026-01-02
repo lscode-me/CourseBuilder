@@ -127,7 +127,6 @@ Pandas — это стандартная библиотека Python для ра
 **Пример: Создание и работа с DataFrame**
 
 ```python
-
 import pandas as pd
 
 # Создание DataFrame
@@ -148,7 +147,6 @@ print(df.describe())
 
 **Output:**
 ```
-
 DataFrame:
    temperature  reaction_rate  pressure
 0           20           10.5       1.0
@@ -202,7 +200,6 @@ print(filtered)
 
 **Output:**
 ```
-
 Loaded data:
    temperature  reaction_rate  pressure
 0           20           10.5       1.0
@@ -239,7 +236,6 @@ print(summary)
 
 **Output:**
 ```
-
 Summary by temperature:
              mean   std  count
 temperature                   
@@ -334,7 +330,6 @@ print("Visualization created")
 
 **Output:**
 ```
-
 Loaded 5 measurements
 Mean: 15.320 ± 4.123
 Visualization created
@@ -479,7 +474,6 @@ for tool, info in tools_comparison.items():
 
 **Output:**
 ```
-
 Tools Comparison:
 
 NumPy:

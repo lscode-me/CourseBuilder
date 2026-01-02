@@ -23,7 +23,6 @@
 ### 1.1 Архитектура
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │              E-commerce Architecture                               │
 ├────────────────────────────────────────────────────────────────────┤
@@ -64,13 +63,11 @@
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Компоненты и обоснование
 
 ```python
-
 ecommerce_components = {
     "CloudFront + S3": {
         "purpose": "Static assets (React SPA, images)",
@@ -107,13 +104,13 @@ for component, details in ecommerce_components.items():
     print(f"{component}:")
     print(f"  Purpose: {details['purpose']}")
     print(f"  Why: {details['why']}\n")
-
 ```
 
 ### 1.3 Cost Estimate (medium traffic)
 
 ```python
 # Monthly cost estimate for ~100K DAU
+
 ecommerce_costs = {
     "CloudFront": "$50 (1TB data transfer)",
     "API Gateway": "$35 (10M requests)",
@@ -131,7 +128,6 @@ ecommerce_costs = {
 print("Monthly Cost Estimate:")
 for item, cost in ecommerce_costs.items():
     print(f"  {item}: {cost}")
-
 ```
 
 ---
@@ -141,7 +137,6 @@ for item, cost in ecommerce_costs.items():
 ### 2.1 Архитектура
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │              Real-time Analytics                                 │
 ├──────────────────────────────────────────────────────────────────┤
@@ -181,13 +176,11 @@ for item, cost in ecommerce_costs.items():
 │  Visualization: QuickSight, Grafana                              │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 Data Flow
 
 ```python
-
 analytics_flow = {
     "Ingestion": {
         "service": "Kinesis Data Streams",
@@ -210,7 +203,6 @@ analytics_flow = {
         "latency": "Seconds to minutes"
     }
 }
-
 ```
 
 ---
@@ -220,7 +212,6 @@ analytics_flow = {
 ### 3.1 Архитектура
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │              Serverless API                                        │
 ├────────────────────────────────────────────────────────────────────┤
@@ -257,13 +248,11 @@ analytics_flow = {
 │  └────────────┘     └────────────┘     └────────────┘              │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Преимущества Serverless
 
 ```python
-
 serverless_benefits = {
     "Cost": "Pay only for invocations, scale to zero",
     "Scaling": "Automatic, from 0 to 1000s concurrent",
@@ -285,7 +274,6 @@ for benefit, description in serverless_benefits.items():
 print("\nServerless Challenges:")
 for challenge, description in serverless_challenges.items():
     print(f"  ⚠️ {challenge}: {description}")
-
 ```
 
 ---
@@ -295,7 +283,6 @@ for challenge, description in serverless_challenges.items():
 ### 4.1 Архитектура
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │              Microservices on EKS                                 │
 ├───────────────────────────────────────────────────────────────────┤
@@ -334,7 +321,6 @@ for challenge, description in serverless_challenges.items():
 │  • CloudWatch Logs (logs)                                         │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -342,7 +328,6 @@ for challenge, description in serverless_challenges.items():
 ## 5. Выбор архитектуры
 
 ```python
-
 architecture_decision_matrix = {
     "Simple web app, MVP": {
         "recommendation": "Serverless (Lambda + API Gateway + DynamoDB)",
@@ -371,7 +356,6 @@ for use_case, details in architecture_decision_matrix.items():
     print(f"{use_case}:")
     print(f"  → {details['recommendation']}")
     print(f"  Why: {details['why']}\n")
-
 ```
 
 ---
@@ -400,6 +384,7 @@ for use_case, details in architecture_decision_matrix.items():
 - Hands-on workshops (workshops.aws)
 
 ---
+
 
 
 

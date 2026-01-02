@@ -37,7 +37,6 @@
 Указатель хранит адрес памяти другой переменной:
 
 ```go
-
 package main
 
 import "fmt"
@@ -59,24 +58,20 @@ func main() {
     *p = 100
     fmt.Println("x после *p = 100:", x)
 }
-
 ```
 
 **Output:**
 ```
-
 Значение x: 42
 Адрес x: 0xc0000a6010
 Тип p: *int
 Значение по адресу p: 42
 x после *p = 100: 100
-
 ```
 
 ### 1.2 Операторы & и *
 
 ```go
-
 package main
 
 import "fmt"
@@ -99,23 +94,19 @@ func main() {
     pp := &pointer  // Указатель на указатель
     fmt.Printf("**pp = %d\n", **pp)
 }
-
 ```
 
 **Output:**
 ```
-
 value: 10, адрес: 0xc0000a6010
 *pointer: 10
 После *pointer = 20: value = 20
 **pp = 20
-
 ```
 
 ### 1.3 Zero value для указателей
 
 ```go
-
 package main
 
 import "fmt"
@@ -136,16 +127,13 @@ func main() {
         fmt.Println("p is nil, cannot dereference")
     }
 }
-
 ```
 
 **Output:**
 ```
-
 p: <nil>
 p == nil: true
 p is nil, cannot dereference
-
 ```
 
 ---
@@ -155,7 +143,6 @@ p is nil, cannot dereference
 ### 2.1 Передача по значению
 
 ```go
-
 package main
 
 import "fmt"
@@ -170,21 +157,17 @@ func main() {
     double(n)
     fmt.Println("After double:", n)  // Не изменился!
 }
-
 ```
 
 **Output:**
 ```
-
 Inside double: 20
 After double: 10
-
 ```
 
 ### 2.2 Передача по указателю
 
 ```go
-
 package main
 
 import "fmt"
@@ -198,20 +181,16 @@ func main() {
     double(&n)
     fmt.Println("After double:", n)  // Изменился!
 }
-
 ```
 
 **Output:**
 ```
-
 After double: 20
-
 ```
 
 ### 2.3 Практический пример
 
 ```go
-
 package main
 
 import "fmt"
@@ -240,15 +219,12 @@ func main() {
     updateScore(&user, 50)
     fmt.Println("After updateScore:", user.Score)     // 150
 }
-
 ```
 
 **Output:**
 ```
-
 After updateScoreBad: 100
 After updateScore: 150
-
 ```
 
 ---
@@ -258,7 +234,6 @@ After updateScore: 150
 ### 3.1 Автоматическое разыменование
 
 ```go
-
 package main
 
 import "fmt"
@@ -279,22 +254,18 @@ func main() {
     ptr.X = 100
     fmt.Println("After ptr.X = 100:", p)
 }
-
 ```
 
 **Output:**
 ```
-
 (*ptr).X: 10
 ptr.X: 10
 After ptr.X = 100: {100 20}
-
 ```
 
 ### 3.2 Создание указателя на структуру
 
 ```go
-
 package main
 
 import "fmt"
@@ -321,16 +292,13 @@ func main() {
     fmt.Printf("p2: %+v\n", *p2)
     fmt.Printf("p3: %+v\n", *p3)
 }
-
 ```
 
 **Output:**
 ```
-
 p1: {Host:localhost Port:8080}
 p2: {Host:localhost Port:8080}
 p3: {Host:localhost Port:8080}
-
 ```
 
 ---
@@ -342,7 +310,6 @@ p3: {Host:localhost Port:8080}
 `new(T)` выделяет память и возвращает `*T` с zero value:
 
 ```go
-
 package main
 
 import "fmt"
@@ -368,17 +335,14 @@ func main() {
     p.Age = 30
     fmt.Printf("After init: %+v\n", *p)
 }
-
 ```
 
 **Output:**
 ```
-
 pi: 0xc0000a6010, *pi: 0
 After *pi = 42: 42
 new(Person): {Name: Age:0}
 After init: {Name:Alice Age:30}
-
 ```
 
 ### 4.2 make
@@ -386,7 +350,6 @@ After init: {Name:Alice Age:30}
 `make(T, ...)` только для slice, map, channel:
 
 ```go
-
 package main
 
 import "fmt"
@@ -409,17 +372,14 @@ func main() {
     sp := new([]int)
     fmt.Printf("new([]int): %v, is nil: %t\n", *sp, *sp == nil)
 }
-
 ```
 
 **Output:**
 ```
-
 slice: [0 0 0 0 0], len: 5, cap: 10
 map: map[one:1]
 channel: 0xc00006c060, cap: 5
 new([]int): [], is nil: true
-
 ```
 
 ### 4.3 Сравнение new и make
@@ -432,7 +392,6 @@ new([]int): [], is nil: true
 | Пример | `new(int)` → `*int` | `make([]int, 5)` → `[]int` |
 
 ```go
-
 package main
 
 import "fmt"
@@ -446,15 +405,12 @@ func main() {
     s2 := make([]int, 0)
     fmt.Printf("make([]int, 0): type=%T, value=%v, nil=%t\n", s2, s2, s2 == nil)
 }
-
 ```
 
 **Output:**
 ```
-
 new([]int): type=*[]int, value=[], nil=true
 make([]int, 0): type=[]int, value=[], nil=false
-
 ```
 
 ---
@@ -464,7 +420,6 @@ make([]int, 0): type=[]int, value=[], nil=false
 ### 5.1 Value receiver vs Pointer receiver
 
 ```go
-
 package main
 
 import "fmt"
@@ -500,22 +455,18 @@ func main() {
     c.Increment()  // Эквивалентно (&c).Increment()
     fmt.Println("After second Increment:", c.Value())
 }
-
 ```
 
 **Output:**
 ```
-
 After IncrementBad: 0
 After Increment: 1
 After second Increment: 2
-
 ```
 
 ### 5.2 Правило консистентности
 
 ```go
-
 package main
 
 import "fmt"
@@ -548,17 +499,14 @@ func main() {
     fmt.Println("After Scale(2):", r.String())
     fmt.Println("Area:", r.Area())
 }
-
 ```
 
 **Output:**
 ```
-
 Initial: Rectangle(10.0 x 5.0)
 Area: 50
 After Scale(2): Rectangle(20.0 x 10.0)
 Area: 200
-
 ```
 
 ---
@@ -581,7 +529,6 @@ Area: 200
 - Работа с map ключами (должны быть сравнимы)
 
 ```go
-
 package main
 
 import "fmt"
@@ -628,16 +575,13 @@ func main() {
     user.AddHistory("view_page")
     fmt.Printf("User: %+v\n", user)
 }
-
 ```
 
 **Output:**
 ```
-
 p1: {1 2}
 p2: {100 2}
 User: &{ID:1 Name:Alice Email:alice@example.com Settings:map[] History:[login view_page]}
-
 ```
 
 ---
@@ -647,7 +591,6 @@ User: &{ID:1 Name:Alice Email:alice@example.com Settings:map[] History:[login vi
 ### 7.1 Слайсы уже содержат указатель
 
 ```go
-
 package main
 
 import "fmt"
@@ -670,21 +613,17 @@ func main() {
     nums = appendToSlice(nums)
     fmt.Println("After appendToSlice:", nums)
 }
-
 ```
 
 **Output:**
 ```
-
 After modifySlice: [999 2 3]
 After appendToSlice: [999 2 3 100]
-
 ```
 
 ### 7.2 Указатель на слайс (редко нужно)
 
 ```go
-
 package main
 
 import "fmt"
@@ -701,14 +640,11 @@ func main() {
     
     fmt.Println("Result:", nums)
 }
-
 ```
 
 **Output:**
 ```
-
 Result: [1 2 3 4 5]
-
 ```
 
 ---
@@ -718,7 +654,6 @@ Result: [1 2 3 4 5]
 ### 8.1 Разыменование nil
 
 ```go
-
 package main
 
 import "fmt"
@@ -744,20 +679,16 @@ func main() {
         fmt.Println("No config available")
     }
 }
-
 ```
 
 **Output:**
 ```
-
 No config available
-
 ```
 
 ### 8.2 Возврат адреса локальной переменной
 
 ```go
-
 package main
 
 import "fmt"
@@ -772,20 +703,16 @@ func main() {
     p := createInt()
     fmt.Println("Value:", *p)
 }
-
 ```
 
 **Output:**
 ```
-
 Value: 42
-
 ```
 
 ### 8.3 Указатели в циклах
 
 ```go
-
 package main
 
 import "fmt"
@@ -819,12 +746,10 @@ func main() {
         fmt.Println(p.Name)
     }
 }
-
 ```
 
 **Output:**
 ```
-
 Wrong:
 c
 c
@@ -833,7 +758,6 @@ Correct:
 a
 b
 c
-
 ```
 
 ---

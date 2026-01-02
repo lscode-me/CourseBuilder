@@ -98,7 +98,6 @@
 ### 1.3 Пример JSON
 
 ```json
-
 {
   "name": "Alice",
   "age": 30,
@@ -110,13 +109,11 @@
     "zip": "101000"
   }
 }
-
 ```
 
 **Структура этого примера:**
 
 ```
-
 Object (корневой уровень)
 ├── "name": String ("Alice")
 ├── "age": Number (30)
@@ -163,7 +160,6 @@ JSON поддерживает **6 типов данных** — это мини�
 **Визуальное представление типов:**
 
 ```
-
 JSON Value
 │
 ├─── Primitive Types
@@ -190,7 +186,6 @@ JSON Value
 **Структура строки:**
 
 ```
-
 "  [содержимое строки]  "
  ↑                      ↑
 начало                 конец
@@ -203,7 +198,6 @@ JSON Value
 - Многострочный текст (через `\n`)
 
 ```json
-
 {
   "simple": "Hello, World!",
   "unicode": "Привет, мир! 你好 🎉",
@@ -214,7 +208,6 @@ JSON Value
   "empty": "",
   "multiline_escaped": "First line\nSecond line\nThird line"
 }
-
 ```
 
 **Escape-последовательности:**
@@ -236,7 +229,6 @@ Escape-последовательности позволяют включить 
 **Примеры использования:**
 
 ```json
-
 {
   "message": "He said \"Hello\" to me",
   "windows_path": "C:\\Users\\Documents\\file.txt",
@@ -245,7 +237,6 @@ Escape-последовательности позволяют включить 
   "emoji": "Smile: \u263A or 😊",
   "mixed": "Text with \"quotes\" and\nnewlines"
 }
-
 ```
 
 **Важно:** В JSON строки не могут содержать реальные переносы строк. Все переносы должны быть экранированы через `\n`.
@@ -265,7 +256,6 @@ JSON использует десятичную систему счисления
 **Формат числа в JSON:**
 
 ```
-
 [знак][целая часть][.дробная часть][e/E][знак экспоненты][экспонента]
 
   -      42         .14159         e    -                 3
@@ -283,7 +273,6 @@ JSON использует десятичную систему счисления
 | Ноль | `0` | Ноль (может быть `0.0`) |
 
 ```json
-
 {
   "integer": 42,
   "negative": -17,
@@ -294,7 +283,6 @@ JSON использует десятичную систему счисления
   "large": 1e308,
   "small": 1e-308
 }
-
 ```
 
 **Не поддерживаются:**
@@ -313,12 +301,10 @@ JSON использует десятичную систему счисления
 JSON не определяет точность чисел, что может привести к проблемам:
 
 ```json
-
 {
   "large_integer": 9007199254740992,
   "precision_issue": 0.1 + 0.2
 }
-
 ```
 
 **Проблема:** JavaScript использует IEEE 754 double precision, где максимальное безопасное целое — `2^53 - 1` (9007199254740991). Большие числа могут терять точность.
@@ -326,12 +312,10 @@ JSON не определяет точность чисел, что может п
 **Решение:** Для больших чисел используйте строки:
 
 ```json
-
 {
   "id": "9007199254740993",
   "precise_decimal": "123.45678901234567890"
 }
-
 ```
 
 ### 2.4 Массивы (Arrays)
@@ -339,7 +323,6 @@ JSON не определяет точность чисел, что может п
 **Структура массива:**
 
 ```
-
 [  элемент1, элемент2, элемент3, ...  ]
 ↑                                    ↑
 начало                             конец
@@ -358,7 +341,6 @@ JSON не определяет точность чисел, что может п
 - **Динамический размер** — могут быть пустыми или содержать любое количество элементов
 
 ```json
-
 {
   "numbers": [1, 2, 3, 4, 5],
   "strings": ["apple", "banana", "cherry"],
@@ -370,13 +352,11 @@ JSON не определяет точность чисел, что может п
     {"id": 2, "name": "Bob"}
   ]
 }
-
 ```
 
 **Визуальное представление:**
 
 ```
-
 Array: [1, 2, 3, 4, 5]
        │  │  │  │  │
        │  │  │  │  └─ [4] = 5
@@ -397,7 +377,6 @@ Array: [1, 2, 3, 4, 5]
 **Структура объекта:**
 
 ```
-
 {  "ключ1": значение1, "ключ2": значение2, ...  }
 ↑                                              ↑
 начало                                       конец
@@ -414,7 +393,6 @@ Array: [1, 2, 3, 4, 5]
 3. **Совместимость** — единый формат для всех ключей
 
 ```json
-
 {
   "user": {
     "name": "Alice",
@@ -433,7 +411,6 @@ Array: [1, 2, 3, 4, 5]
     "123numeric": "value"
   }
 }
-
 ```
 
 **Правила объектов:**
@@ -448,7 +425,6 @@ Array: [1, 2, 3, 4, 5]
 **Визуальное представление:**
 
 ```
-
 Object: {"name": "Alice", "age": 30}
         │                │
         │                └─ "age" → 30
@@ -460,7 +436,6 @@ Object: {"name": "Alice", "age": 30}
 Объекты могут быть вложены друг в друга на любую глубину:
 
 ```json
-
 {
   "level1": {
     "level2": {
@@ -470,7 +445,6 @@ Object: {"name": "Alice", "age": 30}
     }
   }
 }
-
 ```
 
 **Использование объектов:**
@@ -483,7 +457,6 @@ Object: {"name": "Alice", "age": 30}
 ### 2.6 Полный пример
 
 ```json
-
 {
   "id": 1,
   "name": "John Doe",
@@ -505,7 +478,6 @@ Object: {"name": "Alice", "age": 30}
     {"action": "purchase", "timestamp": "2024-01-15T11:45:00Z"}
   ]
 }
-
 ```
 
 ---
@@ -531,29 +503,24 @@ Trailing comma (хвостовая запятая) — это запятая п�
 ❌ **Ошибка:**
 
 ```json
-
 {
   "name": "Alice",
   "age": 30,
 }
-
 ```
 
 **Ошибка парсера:**
 ```
-
 SyntaxError: Unexpected token } in JSON at position 25
 ```
 
 ✅ **Правильно:**
 
 ```json
-
 {
   "name": "Alice",
   "age": 30
 }
-
 ```
 
 **Исключение:** В некоторых языках (JavaScript ES5+, Python) trailing comma разрешена в объектах и массивах, но не в JSON.
@@ -575,29 +542,24 @@ JSON требует двойные кавычки для строк и ключ�
 ❌ **Ошибка:**
 
 ```json
-
 {
   'name': 'Alice',
   "description": 'User name'
 }
-
 ```
 
 **Ошибка парсера:**
 ```
-
 SyntaxError: Expected property name or '}' in JSON at position 2
 ```
 
 ✅ **Правильно:**
 
 ```json
-
 {
   "name": "Alice",
   "description": "User name"
 }
-
 ```
 
 **Важно:** Это правило распространяется и на ключи объектов, и на значения строк.
@@ -617,18 +579,15 @@ SyntaxError: Expected property name or '}' in JSON at position 2
 ❌ **Ошибка:**
 
 ```json
-
 {
   "name": "Alice",  // user name
   /* multi-line comment */
   "age": 30
 }
-
 ```
 
 **Ошибка парсера:**
 ```
-
 SyntaxError: Unexpected token / in JSON at position 20
 ```
 
@@ -662,31 +621,26 @@ SyntaxError: Unexpected token / in JSON at position 20
 ❌ **Ошибка:**
 
 ```json
-
 {
   name: "Alice",
   user-name: "Bob",
   "valid-key": "Charlie"
 }
-
 ```
 
 **Ошибка парсера:**
 ```
-
 SyntaxError: Expected property name or '}' in JSON at position 7
 ```
 
 ✅ **Правильно:**
 
 ```json
-
 {
   "name": "Alice",
   "user-name": "Bob",
   "valid-key": "Charlie"
 }
-
 ```
 
 **Важно:** Даже если ключ является валидным идентификатором JavaScript, в JSON он должен быть в кавычках.
@@ -706,25 +660,21 @@ JavaScript имеет специальные числовые значения `
 ❌ **Ошибка:**
 
 ```json
-
 {
   "value": NaN,
   "max": Infinity,
   "min": -Infinity
 }
-
 ```
 
 **Ошибка парсера:**
 ```
-
 SyntaxError: Unexpected token N in JSON at position 15
 ```
 
 ✅ **Альтернативы:**
 
 ```json
-
 {
   "value": null,
   "max": 1e308,
@@ -732,7 +682,6 @@ SyntaxError: Unexpected token N in JSON at position 15
   "is_nan": true,
   "is_infinity": true
 }
-
 ```
 
 **Рекомендации:**
@@ -747,7 +696,6 @@ SyntaxError: Unexpected token N in JSON at position 15
 **Практический пример:**
 
 ```json
-
 {
   "calculation_result": null,
   "error": "Division by zero",
@@ -757,7 +705,6 @@ SyntaxError: Unexpected token N in JSON at position 15
     "error_type": "infinity"
   }
 }
-
 ```
 
 ---
@@ -791,12 +738,15 @@ SyntaxError: Unexpected token N in JSON at position 15
 
 ```bash
 # macOS
+
 brew install jq
 
 # Ubuntu/Debian
+
 sudo apt-get install jq
 
 # Проверка установки
+
 jq --version
 ```
 
@@ -804,6 +754,7 @@ jq --version
 
 ```bash
 # jq — валидация и форматирование
+
 echo '{"name":"Alice"}' | jq .
 # {
 #   "name": "Alice"
@@ -814,13 +765,14 @@ echo '{"name":"Alice"}' | jq .
 jq . config.json
 
 # Если JSON невалидный — ошибка
+
 echo '{"name":}' | jq .
 # parse error: Invalid numeric literal at line 1, column 9
 
 # Компактный вывод (без форматирования)
+
 echo '{"name":"Alice","age":30}' | jq -c .
 # {"name":"Alice","age":30}
-
 ```
 
 **Python json.tool — встроенный валидатор**
@@ -858,7 +810,6 @@ python3 -m json.tool input.json output.json
 ### 4.3 Python валидация
 
 ```python
-
 import json
 
 def validate_json(json_string):
@@ -877,7 +828,6 @@ print(f"Valid: {valid}")  # Valid: True
 valid, error = validate_json('{"name": }')
 print(f"Valid: {valid}, Error: {error}")
 # Valid: False, Error: Expecting value: line 1 column 10 (char 9)
-
 ```
 
 ---
@@ -896,23 +846,26 @@ cat data.json | jq .
 jq -c . data.json
 
 # Извлечение поля
+
 echo '{"name":"Alice","age":30}' | jq '.name'
 # "Alice"
 
 # Без кавычек
+
 echo '{"name":"Alice"}' | jq -r '.name'
 # Alice
-
 ```
 
 ### 5.2 Навигация по структуре
 
 ```bash
 # Вложенные поля
+
 echo '{"user":{"name":"Alice"}}' | jq '.user.name'
 # "Alice"
 
 # Элемент массива
+
 echo '{"items":["a","b","c"]}' | jq '.items[0]'
 # "a"
 
@@ -924,19 +877,21 @@ echo '{"items":["a","b","c"]}' | jq '.items[]'
 # "c"
 
 # Последний элемент
+
 echo '[1,2,3,4,5]' | jq '.[-1]'
 # 5
 
 # Срез
+
 echo '[1,2,3,4,5]' | jq '.[1:3]'
 # [2, 3]
-
 ```
 
 ### 5.3 Фильтрация и трансформация
 
 ```bash
 # Данные для примеров
+
 cat > users.json << 'EOF'
 [
   {"name": "Alice", "age": 30, "active": true},
@@ -946,6 +901,7 @@ cat > users.json << 'EOF'
 EOF
 
 # Фильтрация по условию
+
 jq '.[] | select(.active == true)' users.json
 # {"name": "Alice", "age": 30, "active": true}
 # {"name": "Charlie", "age": 35, "active": true}
@@ -958,18 +914,20 @@ jq '.[].name' users.json
 # "Charlie"
 
 # Создание нового объекта
+
 jq '.[] | {username: .name, years: .age}' users.json
 
 # Преобразование в массив
+
 jq '[.[] | .name]' users.json
 # ["Alice", "Bob", "Charlie"]
-
 ```
 
 ### 5.4 Модификация данных
 
 ```bash
 # Добавление поля
+
 echo '{"name":"Alice"}' | jq '. + {age: 30}'
 # {"name": "Alice", "age": 30}
 
@@ -979,23 +937,26 @@ echo '{"name":"Alice","age":30}' | jq '.age = 31'
 # {"name": "Alice", "age": 31}
 
 # Удаление поля
+
 echo '{"name":"Alice","age":30}' | jq 'del(.age)'
 # {"name": "Alice"}
 
 # Обновление вложенного
+
 echo '{"user":{"name":"Alice"}}' | jq '.user.name = "Bob"'
 # {"user": {"name": "Bob"}}
-
 ```
 
 ### 5.5 Агрегация
 
 ```bash
 # Количество элементов
+
 jq 'length' users.json
 # 3
 
 # Сумма
+
 echo '[1,2,3,4,5]' | jq 'add'
 # 15
 
@@ -1005,24 +966,28 @@ jq '[.[].age] | add / length' users.json
 # 30
 
 # Сортировка
+
 jq 'sort_by(.age)' users.json
 
 # Группировка
+
 jq 'group_by(.active)' users.json
 
 # Уникальные значения
+
 echo '["a","b","a","c","b"]' | jq 'unique'
 # ["a", "b", "c"]
-
 ```
 
 ### 5.6 Практические примеры
 
 ```bash
 # Извлечь все email из API ответа
+
 curl -s https://api.example.com/users | jq '.[].email'
 
 # Конвертировать JSON в CSV
+
 jq -r '.[] | [.name, .age] | @csv' users.json
 # "Alice",30
 # "Bob",25
@@ -1038,11 +1003,11 @@ jq '[.[] | select(.active)] | length' users.json
 # 2
 
 # Форматирование для вставки в скрипт
+
 jq -r '.[] | "User: \(.name), Age: \(.age)"' users.json
 # User: Alice, Age: 30
 # User: Bob, Age: 25
 # User: Charlie, Age: 35
-
 ```
 
 ---
@@ -1052,10 +1017,10 @@ jq -r '.[] | "User: \(.name), Age: \(.age)"' users.json
 ### 6.1 Базовые операции
 
 ```python
-
 import json
 
 # Python dict → JSON string
+
 data = {
     "name": "Alice",
     "age": 30,
@@ -1077,15 +1042,14 @@ print(pretty_json)
 # }
 
 # JSON string → Python dict
+
 parsed = json.loads(json_string)
 print(parsed["name"])  # Alice
-
 ```
 
 ### 6.2 Работа с файлами
 
 ```python
-
 import json
 
 # Запись в файл
@@ -1096,16 +1060,15 @@ with open("data.json", "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2, ensure_ascii=False)
 
 # Чтение из файла
+
 with open("data.json", "r", encoding="utf-8") as f:
     loaded = json.load(f)
     print(loaded)
-
 ```
 
 ### 6.3 Обработка ошибок
 
 ```python
-
 import json
 
 def safe_parse_json(json_string):
@@ -1121,16 +1084,15 @@ def safe_parse_json(json_string):
         }
 
 # Пример
+
 data, error = safe_parse_json('{"name": invalid}')
 if error:
     print(f"Error at line {error['line']}, column {error['column']}: {error['error']}")
-
 ```
 
 ### 6.4 Кастомная сериализация
 
 ```python
-
 import json
 from datetime import datetime, date
 from decimal import Decimal
@@ -1161,7 +1123,6 @@ data = {
 
 json_string = json.dumps(data, cls=CustomEncoder, indent=2)
 print(json_string)
-
 ```
 
 ### 6.5 Работа с большими файлами
@@ -1183,7 +1144,6 @@ JSON Lines — это формат, где каждая строка файла 
 **Формат JSON Lines:**
 
 ```
-
 {"name": "Alice", "age": 30}
 {"name": "Bob", "age": 25}
 {"name": "Charlie", "age": 35}
@@ -1201,10 +1161,10 @@ JSON Lines — это формат, где каждая строка файла 
 | **Параллельная обработка** | Можно обрабатывать разные части файла параллельно |
 
 ```python
-
 import json
 
 # Для очень больших файлов — построчное чтение JSON Lines
+
 def read_jsonl(filepath):
     """Читает JSON Lines файл (один JSON объект на строку)."""
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -1218,6 +1178,7 @@ def read_jsonl(filepath):
                     continue
 
 # Записать JSON Lines
+
 def write_jsonl(filepath, items):
     """Записывает iterable как JSON Lines."""
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -1234,9 +1195,9 @@ users = [
 write_jsonl("users.jsonl", users)
 
 # Чтение построчно
+
 for user in read_jsonl("users.jsonl"):
     print(user)
-
 ```
 
 **Сравнение форматов:**
@@ -1249,7 +1210,6 @@ for user in read_jsonl("users.jsonl"):
 **Пример: обработка большого файла**
 
 ```python
-
 # Обработка файла с миллионами записей
 
 def process_large_file(filepath):
@@ -1263,7 +1223,6 @@ def process_large_file(filepath):
             print(f"Processed {count} records")
 
 # Память используется только для одной записи за раз
-
 ```
 
 ---
@@ -1275,7 +1234,6 @@ def process_large_file(filepath):
 **JSON Schema** — способ описания структуры JSON документа для валидации.
 
 ```json
-
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
@@ -1296,13 +1254,11 @@ def process_large_file(filepath):
   },
   "required": ["name", "email"]
 }
-
 ```
 
 ### 7.2 Валидация по схеме в Python
 
 ```python
-
 from jsonschema import validate, ValidationError
 
 schema = {
@@ -1367,7 +1323,6 @@ JSON — отличный формат, но у него есть огранич
 ### 8.2 JSON5
 
 ```javascript
-
 // JSON5 поддерживает:
 {
   // Комментарии
@@ -1375,13 +1330,11 @@ JSON — отличный формат, но у него есть огранич
   age: 30,        // Trailing comma OK
   'special-key': true,
 }
-
 ```
 
 ### 8.3 JSONC (JSON with Comments)
 
 ```jsonc
-
 {
   // VS Code использует JSONC для settings.json
   "editor.fontSize": 14,
@@ -1389,7 +1342,6 @@ JSON — отличный формат, но у него есть огранич
      comments too */
   "editor.tabSize": 2,
 }
-
 ```
 
 ---
@@ -1421,7 +1373,6 @@ JSON — отличный формат, но у него есть огранич
 | **PascalCase** | `FirstName`, `LastName` | C#, TypeScript types | Ясность, типы |
 
 ```json
-
 // ✅ camelCase (JavaScript style)
 {"firstName": "Alice", "lastName": "Smith"}
 
@@ -1433,7 +1384,6 @@ JSON — отличный формат, но у него есть огранич
 
 // ❌ Пробелы в ключах (технически валидно, но не рекомендуется)
 {"first name": "Alice"}
-
 ```
 
 **Рекомендации:**
@@ -1464,7 +1414,6 @@ ISO 8601 — международный стандарт для представ
 **Формат ISO 8601:**
 
 ```
-
 YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
 │    │  │  │ │  │  │      │  │
 │    │  │  │ │  │  │      │  └─ Часовой пояс
@@ -1479,7 +1428,6 @@ YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
 ```
 
 ```json
-
 // ✅ ISO 8601 format (рекомендуется)
 {
   "created_at": "2024-01-15T10:30:00Z",
@@ -1495,7 +1443,6 @@ YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
   "datetime": "January 15, 2024 10:30 AM",
   "unix_timestamp": 1705312200
 }
-
 ```
 
 **Почему ISO 8601?**
@@ -1510,7 +1457,6 @@ YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
 **Примеры использования:**
 
 ```json
-
 {
   "events": [
     {
@@ -1529,13 +1475,11 @@ YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
     }
   ]
 }
-
 ```
 
 ### 9.3 Nullable поля
 
 ```json
-
 // ✅ Явный null
 {
   "middle_name": null,
@@ -1551,13 +1495,11 @@ YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
 {
   "middle_name": ""
 }
-
 ```
 
 ### 9.4 Числовые ID
 
 ```json
-
 // ⚠️ Большие числа могут терять точность в JavaScript
 {
   "id": 9007199254740993
@@ -1567,7 +1509,6 @@ YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
 {
   "id": "9007199254740993"
 }
-
 ```
 
 ---
@@ -1583,7 +1524,6 @@ YYYY-MM-DDTHH:mm:ss[.sss][Z|±HH:mm]
 
 with open("data.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False)
-
 ```
 
 ### 10.2 Неэкранированные строки
@@ -1591,18 +1531,14 @@ with open("data.json", "w", encoding="utf-8") as f:
 ❌ **Ошибка:**
 
 ```json
-
 {"message": "Line 1
 Line 2"}
-
 ```
 
 ✅ **Правильно:**
 
 ```json
-
 {"message": "Line 1\nLine 2"}
-
 ```
 
 ### 10.3 Decimal и float
@@ -1610,23 +1546,20 @@ Line 2"}
 ❌ **Проблема:**
 
 ```python
-
 import json
 from decimal import Decimal
 
 # Ошибка!
+
 json.dumps({"price": Decimal("19.99")})
 # TypeError: Object of type Decimal is not JSON serializable
-
 ```
 
 ✅ **Решение:**
 
 ```python
-
 json.dumps({"price": Decimal("19.99")}, default=str)
 # или используйте CustomEncoder из раздела 6.4
-
 ```
 
 ### 10.4 Круговые ссылки
@@ -1634,14 +1567,12 @@ json.dumps({"price": Decimal("19.99")}, default=str)
 ❌ **Проблема:**
 
 ```python
-
 a = {"b": None}
 b = {"a": a}
 a["b"] = b
 
 json.dumps(a)
 # ValueError: Circular reference detected
-
 ```
 
 ✅ **Решение:** Избегайте циклических структур или используйте специальные библиотеки.
@@ -1710,4 +1641,5 @@ json.dumps(a)
 - [JSON Schema Tutorial](https://json-schema.org/learn/getting-started-step-by-step)
 
 ---
+
 

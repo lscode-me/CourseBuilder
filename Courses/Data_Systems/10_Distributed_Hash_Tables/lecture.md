@@ -107,7 +107,6 @@ Node B будет перегружен в 10 раз.
 ### 2.4 Code: Consistent Hash Ring
 
 ```python
-
 import hashlib
 import bisect
 
@@ -148,6 +147,7 @@ class ConsistentHashRing:
         return self.ring[self.sorted_keys[idx]]
 
 # Simulation
+
 ring = ConsistentHashRing(replicas=50)
 ring.add_node("10.0.0.1")
 ring.add_node("10.0.0.2")
@@ -162,7 +162,6 @@ for i in range(10000):
     
 print(f"Distribution: {counts}") 
 # Ожидаем примерно 3333 на каждом
-
 ```
 
 ---
@@ -220,7 +219,6 @@ Gossip (Сплетни) — децентрализованный протоко�
 **Python Simulation: Gossip**
 
 ```python
-
 import random
 
 NUM_NODES = 100
@@ -270,7 +268,6 @@ print(f"Cluster synced in {ROUNDS} rounds.")
 *   Git (структура коммитов — это Merkle DAG).
 
 ```python
-
 import hashlib
 
 def get_hash(val):
@@ -298,6 +295,7 @@ def build_merkle(data_list): # Упрощенно
     return nodes[0] # Root
 
 # Test
+
 db_version_a = ["Row1", "Row2", "Row3", "Row4"]
 db_version_b = ["Row1", "Row2", "Row3_MODIFIED", "Row4"]
 
@@ -439,4 +437,5 @@ else:
 2.  Добавьте метод `add_node` и посчитайте, какой процент ключей реально переехал. Убедитесь, что это близко к теоретическому $1/N$.
 
 В следующем модуле мы перейдем к тому, как узлы договариваются друг с другом в условиях хаоса. [Replication And Consistency](../11_Replication_And_Consistency/).
+
 

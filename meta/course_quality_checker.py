@@ -30,11 +30,83 @@ from argparse import ArgumentParser
 # МОДЕЛЬ ДАННЫХ И МЕТРИКИ КАЧЕСТВА
 # ============================================================================
 
+# Типы курсов по отношению к программированию
+COURSE_TYPE_PROGRAMMING = "programming"  # Программистские курсы (Python, JS, etc.)
+COURSE_TYPE_TECHNICAL = "technical"      # Технические курсы (платежи, сети, etc.)
+COURSE_TYPE_NON_TECHNICAL = "non_technical"  # Гуманитарные курсы
+
+# Ключевые слова для определения типа курса
+PROGRAMMING_KEYWORDS = [
+    'python', 'javascript', 'java', 'go', 'rust', 'sql', 'typescript',
+    'programming', 'программирование', 'разработка', 'framework', 'library',
+    'код', 'code', 'development', 'backend', 'frontend', 'fullstack',
+    'algorithm', 'алгоритм', 'react', 'vue', 'angular', 'django', 'flask',
+    'node', 'express', 'fastapi', 'spring', 'rails'
+]
+
+TECHNICAL_KEYWORDS = [
+    'payment', 'платёж', 'платеж', 'система', 'system', 'network', 'сеть',
+    'security', 'безопасность', 'infrastructure', 'инфраструктура', 
+    'devops', 'kubernetes', 'docker', 'cloud', 'облако', 'architecture',
+    'архитектура', 'data', 'данные', 'database', 'криптография', 'crypto',
+    'blockchain', 'api', 'protocol', 'протокол', 'integration', 'интеграция'
+]
+
+NON_TECHNICAL_KEYWORDS = [
+    'history', 'история', 'management', 'менеджмент', 'marketing', 'маркетинг',
+    'sales', 'продажи', 'communication', 'коммуникация', 'psychology', 'психология',
+    'soft skills', 'leadership', 'лидерство', 'business', 'бизнес', 'finance',
+    'финансы', 'law', 'право', 'language', 'язык', 'culture', 'культура'
+]
+
+
+def detect_course_type(course_path: Path) -> str:
+    """Определяет тип курса по его содержимому."""
+    course_name = course_path.name.lower()
+    
+    # Проверяем description.md если есть
+    description_path = course_path / "description.md"
+    description_content = ""
+    if description_path.exists():
+        try:
+            description_content = description_path.read_text(encoding='utf-8').lower()
+        except:
+            pass
+    
+    # Проверяем README.md если есть
+    readme_path = course_path / "README.md"
+    readme_content = ""
+    if readme_path.exists():
+        try:
+            readme_content = readme_path.read_text(encoding='utf-8').lower()
+        except:
+            pass
+    
+    combined_text = f"{course_name} {description_content} {readme_content}"
+    
+    # Подсчитываем совпадения для каждого типа
+    programming_score = sum(1 for kw in PROGRAMMING_KEYWORDS if kw in combined_text)
+    technical_score = sum(1 for kw in TECHNICAL_KEYWORDS if kw in combined_text)
+    non_technical_score = sum(1 for kw in NON_TECHNICAL_KEYWORDS if kw in combined_text)
+    
+    # Программистские курсы имеют приоритет
+    if programming_score > 0 and programming_score >= technical_score:
+        return COURSE_TYPE_PROGRAMMING
+    elif technical_score > non_technical_score:
+        return COURSE_TYPE_TECHNICAL
+    elif non_technical_score > 0:
+        return COURSE_TYPE_NON_TECHNICAL
+    else:
+        # По умолчанию — технический курс (средние требования)
+        return COURSE_TYPE_TECHNICAL
+
+
 @dataclass
 class ModuleMetrics:
     """Метрики одного модуля."""
     course: str
     module: str
+    course_type: str = COURSE_TYPE_TECHNICAL  # Тип курса
     
     # Lecture metrics
     lecture_lines: int = 0
@@ -78,15 +150,33 @@ class ModuleMetrics:
             return "⚠️ Много"
     
     def code_blocks_status(self) -> str:
-        """Статус количества блоков кода."""
-        if self.code_blocks < 10:
-            return "⚠️ Мало"
-        elif self.code_blocks < 15:
-            return "⚠️ Ниже нормы"
-        elif self.code_blocks <= 30:
-            return "✅ Норма"
+        """Статус количества блоков кода с учётом типа курса."""
+        if self.course_type == COURSE_TYPE_PROGRAMMING:
+            # Программистские курсы: 15-30 блоков
+            if self.code_blocks < 10:
+                return "⚠️ Мало"
+            elif self.code_blocks < 15:
+                return "⚠️ Ниже нормы"
+            elif self.code_blocks <= 30:
+                return "✅ Норма"
+            else:
+                return "⚠️ Много"
+        elif self.course_type == COURSE_TYPE_TECHNICAL:
+            # Технические курсы: 5-15 блоков (диаграммы, схемы, примеры API)
+            if self.code_blocks < 3:
+                return "⚠️ Мало"
+            elif self.code_blocks < 5:
+                return "⚠️ Ниже нормы"
+            elif self.code_blocks <= 20:
+                return "✅ Норма"
+            else:
+                return "ℹ️ Много (ок для техн.)"
         else:
-            return "⚠️ Много"
+            # Гуманитарные курсы: 0-5 блоков (опционально)
+            if self.code_blocks <= 10:
+                return "✅ Норма"
+            else:
+                return "ℹ️ Много (необязательно)"
     
     def quiz_status(self) -> str:
         """Статус квиза."""
@@ -135,8 +225,12 @@ class ModuleMetrics:
             issues += 1
         if self.h2_sections < 5 or self.h2_sections > 12:
             issues += 1
-        if self.code_blocks < 15:
+        # Проверка блоков кода с учётом типа курса
+        if self.course_type == COURSE_TYPE_PROGRAMMING and self.code_blocks < 15:
             issues += 1
+        elif self.course_type == COURSE_TYPE_TECHNICAL and self.code_blocks < 5:
+            issues += 1
+        # Для гуманитарных курсов код не обязателен
         if self.has_quiz and self.quiz_questions < 20:
             issues += 1
         
@@ -244,7 +338,8 @@ class QualityAnalyzer:
         }
     
     @staticmethod
-    def analyze_module(course_path: Path, module_name: str, course_name: str) -> Optional[ModuleMetrics]:
+    def analyze_module(course_path: Path, module_name: str, course_name: str, 
+                       course_type: str = COURSE_TYPE_TECHNICAL) -> Optional[ModuleMetrics]:
         """Анализ одного модуля."""
         module_path = course_path / module_name
         lecture_path = module_path / 'lecture.md'
@@ -253,7 +348,7 @@ class QualityAnalyzer:
         if not lecture_path.exists():
             return None
         
-        metrics = ModuleMetrics(course=course_name, module=module_name)
+        metrics = ModuleMetrics(course=course_name, module=module_name, course_type=course_type)
         
         # Анализ лекции
         lecture_data = QualityAnalyzer.analyze_lecture(lecture_path)
@@ -285,9 +380,14 @@ class QualityAnalyzer:
         if not course_path.exists():
             return metrics
         
+        # Определяем тип курса
+        course_type = detect_course_type(course_path)
+        
         for item in sorted(course_path.iterdir()):
             if item.is_dir() and item.name.startswith(('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')):
-                module_metrics = QualityAnalyzer.analyze_module(course_path, item.name, course_name)
+                module_metrics = QualityAnalyzer.analyze_module(
+                    course_path, item.name, course_name, course_type
+                )
                 if module_metrics:
                     metrics.append(module_metrics)
         
@@ -473,25 +573,38 @@ class MarkdownFormatter:
             print(f"❌ Ошибка чтения {filepath}: {e}")
             return 0
         
-        # Здесь для краткости опускаем полную реализацию всех методов исправления
-        # В реальной версии будут все методы fix_code_block_blank_before, 
-        # fix_code_block_blank_after, fix_bold_list_items и т.д.
-        
-        # Простейшие исправления для демонстрации
+        # Простейшие исправления (не модифицируем содержимое внутри блоков кода)
         fixed_lines = lines.copy()
         total_fixes = 0
         
-        # Исправление пустых строк после заголовков
+        # Находим диапазоны блоков кода, чтобы не трогать их содержимое
+        code_block_ranges = MarkdownFormatter.get_code_block_ranges(fixed_lines)
+        
+        # Примечание: Для безопасности отключаем автоматические исправления,
+        # которые могут испортить форматирование внутри code blocks.
+        # Исправления заголовков применяем только ВНЕ блоков кода.
+        
+        # Исправление пустых строк после заголовков (только вне code blocks)
         for i in range(len(fixed_lines) - 1, -1, -1):
             if i == 0:
                 continue
+            # Пропускаем строки внутри блоков кода
+            if MarkdownFormatter.is_in_code_block(i, code_block_ranges):
+                continue
             line = fixed_lines[i]
-            if re.match(r'^#{1,6}\s+', line):
+            # Проверяем, что это Markdown-заголовок (начинается с #, но не внутри кода)
+            if re.match(r'^#{1,6}\s+\w', line):
                 if i + 1 < len(fixed_lines):
                     next_line = fixed_lines[i + 1].strip()
+                    # Добавляем пустую строку только если следующая строка не пустая,
+                    # не заголовок и не разделитель
                     if next_line and not next_line.startswith('#') and next_line != "---":
-                        fixed_lines.insert(i + 1, '')
-                        total_fixes += 1
+                        # Проверяем, что следующая строка тоже не в блоке кода
+                        if not MarkdownFormatter.is_in_code_block(i + 1, code_block_ranges):
+                            fixed_lines.insert(i + 1, '')
+                            total_fixes += 1
+                            # Пересчитываем диапазоны после вставки
+                            code_block_ranges = MarkdownFormatter.get_code_block_ranges(fixed_lines)
         
         if total_fixes > 0 and not dry_run:
             new_content = '\n'.join(fixed_lines)
@@ -686,10 +799,17 @@ class CourseQualityChecker:
         
         # 2. Анализ качества
         course_name = course_path.name
-        metrics = self.quality_analyzer.analyze_module(course_path, module_name, course_name)
+        course_type = detect_course_type(course_path)
+        metrics = self.quality_analyzer.analyze_module(course_path, module_name, course_name, course_type)
         
         if metrics:
-            print(f"  📊 Качество: {metrics.overall_quality()}")
+            # Показываем тип курса
+            type_labels = {
+                COURSE_TYPE_PROGRAMMING: "💻 Программистский",
+                COURSE_TYPE_TECHNICAL: "⚙️ Технический", 
+                COURSE_TYPE_NON_TECHNICAL: "📚 Гуманитарный"
+            }
+            print(f"  📊 Качество: {metrics.overall_quality()} (тип: {type_labels.get(course_type, course_type)})")
             print(f"     - Строк в лекции: {metrics.lecture_lines} ({metrics.lecture_status()})")
             print(f"     - H2 секций: {metrics.h2_sections} ({metrics.sections_status()})")
             print(f"     - Блоков кода: {metrics.code_blocks} ({metrics.code_blocks_status()})")
@@ -703,7 +823,7 @@ class CourseQualityChecker:
                     # В полной версии здесь будет более сложная логика
                     print(f"  🎯 Квиз готов к перемешиванию")
         
-        return metrics or ModuleMetrics(course=course_name, module=module_name)
+        return metrics or ModuleMetrics(course=course_name, module=module_name, course_type=course_type)
     
     def check_course_quality(self, course_name: str, fix_formatting: bool = True,
                            check_completeness: bool = True, shuffle_quiz: bool = True,
@@ -723,8 +843,17 @@ class CourseQualityChecker:
         """
         course_path = self.courses_path / course_name
         
+        # Определяем тип курса
+        course_type = detect_course_type(course_path)
+        type_labels = {
+            COURSE_TYPE_PROGRAMMING: "💻 Программистский",
+            COURSE_TYPE_TECHNICAL: "⚙️ Технический", 
+            COURSE_TYPE_NON_TECHNICAL: "📚 Гуманитарный"
+        }
+        
         print(f"\n{'='*80}")
         print(f"📚 Проверка курса: {course_name}")
+        print(f"   Тип курса: {type_labels.get(course_type, course_type)}")
         print(f"{'='*80}")
         
         # 1. Проверка комплектности (структуры файлов)
@@ -815,8 +944,11 @@ class CourseQualityChecker:
             # Проблемы с содержимым
             if module.lecture_lines < 600:
                 module_recs.append(f"Расширить содержимое лекции (текущая длина: {module.lecture_lines} строк)")
-            if module.code_blocks < 15:
-                module_recs.append("Добавить больше примеров кода")
+            # Рекомендации по коду с учётом типа курса
+            if module.course_type == COURSE_TYPE_PROGRAMMING and module.code_blocks < 15:
+                module_recs.append("Добавить больше примеров кода (программистский курс)")
+            elif module.course_type == COURSE_TYPE_TECHNICAL and module.code_blocks < 5:
+                module_recs.append("Добавить диаграммы/схемы/примеры API (технический курс)")
             if module.h2_sections < 5:
                 module_recs.append("Добавить больше основных секций")
             if module.has_quiz and module.quiz_questions < 20:

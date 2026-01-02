@@ -31,17 +31,16 @@
 
 ```sh
 # Основные файлы
+
 /etc/passwd     # информация о пользователях
 /etc/master.passwd  # пароли (только для root)
 /etc/group      # информация о группах
 /etc/shells     # разрешённые оболочки
-
 ```
 
 **Формат /etc/passwd:**
 
 ```sh
-
 $ cat /etc/passwd
 root:*:0:0:Charlie &:/root:/bin/ksh
 daemon:*:1:1:The devil himself:/root:/sbin/nologin
@@ -59,6 +58,7 @@ admin:*:1000:1000:System Administrator:/home/admin:/bin/ksh
 
 ```sh
 # doas cat /etc/master.passwd
+
 root:$2b$10$abc...xyz:0:0:daemon:0:0:Charlie &:/root:/bin/ksh
 #     │
 #     └── зашифрованный пароль (bcrypt)
@@ -67,7 +67,6 @@ root:$2b$10$abc...xyz:0:0:daemon:0:0:Charlie &:/root:/bin/ksh
 ### 1.2 Группы
 
 ```sh
-
 $ cat /etc/group
 wheel:*:0:root,admin
 daemon:*:1:
@@ -116,12 +115,12 @@ users:*:100:
 ```sh
 # doas useradd -m -G wheel,staff -s /bin/ksh -c "John Doe" john
 # doas passwd john
+
 Changing password for john.
 New password:
 Retype new password:
 passwd: updating the database...
 passwd: done
-
 ```
 
 ### 2.2 adduser (интерактивный)
@@ -150,7 +149,6 @@ Groups:   john staff wheel
 HOME:     /home/john
 Shell:    /bin/ksh
 OK? (y/n) [y]: y
-
 ```
 
 ### 2.3 Шаблон пользователя
@@ -158,7 +156,6 @@ OK? (y/n) [y]: y
 Файлы из `/etc/skel` копируются в домашний каталог:
 
 ```sh
-
 $ ls -la /etc/skel
 -rw-r--r--  1 root  wheel  87 Oct  9 13:57 .Xdefaults
 -rw-r--r--  1 root  wheel  773 Oct  9 13:57 .cshrc
@@ -207,13 +204,13 @@ $ ls -la /etc/skel
 
 ```sh
 # doas rmuser john
+
 Matching password entry:
 john:*:1001:1001:John Doe:/home/john:/bin/ksh
 
 Is this the entry you wish to remove? [y/n] y
 Remove user's home directory (/home/john)? [y/n] y
 Removing user (john): mailspool home passwd.
-
 ```
 
 ---
@@ -224,6 +221,7 @@ Removing user (john): mailspool home passwd.
 
 ```sh
 # Изменить свой пароль
+
 $ passwd
 Changing password for john.
 Old password:
@@ -246,6 +244,7 @@ Retype new password:
 
 ```sh
 # Минимальная длина пароля
+
 default:\
     :passwordtime=90d:\
     :minpasswordlen=8:\
@@ -259,11 +258,12 @@ OpenBSD использует **bcrypt** по умолчанию:
 
 ```sh
 # Алгоритм настраивается в /etc/login.conf
+
 :localcipher=blowfish,a:
 
 # Проверить текущий алгоритм
-$ grep cipher /etc/login.conf
 
+$ grep cipher /etc/login.conf
 ```
 
 > **🔒 Security:**  
@@ -308,8 +308,8 @@ $ grep cipher /etc/login.conf
 
 # Напрямую редактируя /etc/group
 # doas vi /etc/group
-developers:*:500:john,jane,bob
 
+developers:*:500:john,jane,bob
 ```
 
 ---
@@ -323,14 +323,16 @@ developers:*:500:john,jane,bob
 # Синтаксис: permit|deny [options] identity [as target] [cmd command [args]]
 
 # Разрешить wheel выполнять любые команды
+
 permit persist :wheel
 
 # Разрешить конкретному пользователю
+
 permit john
 
 # Разрешить без пароля
-permit nopass john cmd /sbin/reboot
 
+permit nopass john cmd /sbin/reboot
 ```
 
 ### 6.2 Опции doas
@@ -348,41 +350,48 @@ permit nopass john cmd /sbin/reboot
 # /etc/doas.conf
 
 # Администраторы (группа wheel) — полный доступ с кешированием пароля
+
 permit persist :wheel
 
 # Оператор может перезагружать сервер без пароля
+
 permit nopass operator cmd /sbin/reboot
 permit nopass operator cmd /sbin/halt
 
 # Разработчик может управлять своим приложением
+
 permit persist developers cmd /etc/rc.d/myapp
 
 # Запретить пользователю выполнять команды от root
+
 deny baduser
 
 # Сохранять переменные при работе с pkg
-permit persist setenv { PKG_PATH } :wheel cmd pkg_add
 
+permit persist setenv { PKG_PATH } :wheel cmd pkg_add
 ```
 
 ### 6.4 Использование doas
 
 ```sh
 # Выполнить команду от root
+
 $ doas ls /root
 Password:
 .Xauthority  .cshrc  .kshrc  .profile
 
 # Выполнить от другого пользователя
+
 $ doas -u postgres psql
 
 # Запустить shell от root
+
 $ doas -s
 
 # Проверить конфигурацию
+
 $ doas -C /etc/doas.conf && echo "Config OK"
 Config OK
-
 ```
 
 ---
@@ -392,9 +401,9 @@ Config OK
 ### 7.1 Структура login.conf
 
 ```sh
-
 $ cat /etc/login.conf
 # Класс по умолчанию
+
 default:\
     :path=/usr/bin /bin /usr/sbin /sbin /usr/local/bin:\
     :umask=022:\
@@ -409,6 +418,7 @@ default:\
     :tc=auth-defaults:
 
 # Класс для разработчиков
+
 developer:\
     :datasize-max=2048M:\
     :openfiles-max=4096:\
@@ -416,6 +426,7 @@ developer:\
     :tc=default:
 
 # Класс для демонов
+
 daemon:\
     :ignorenologin:\
     :datasize=infinity:\
@@ -445,6 +456,7 @@ daemon:\
 # doas usermod -L developer john
 
 # Проверить лимиты
+
 $ ulimit -a
 -t: cpu time (seconds)         unlimited
 -f: file size (blocks)         unlimited
@@ -455,7 +467,6 @@ $ ulimit -a
 -l: locked-in-memory size (kb) 331085
 -n: file descriptors           512
 -p: processes                  128
-
 ```
 
 ---
@@ -466,23 +477,28 @@ $ ulimit -a
 
 ```sh
 # Текущий пользователь
+
 $ whoami
 admin
 
 # UID и группы
+
 $ id
 uid=1000(admin) gid=1000(admin) groups=1000(admin), 0(wheel), 20(staff)
 
 # Информация о пользователе
+
 $ id john
 uid=1001(john) gid=1001(john) groups=1001(john), 20(staff)
 
 # Кто залогинен
+
 $ who
 admin    ttyC0    Dec  1 10:00
 john     pts/0    Dec  1 10:30 (192.168.1.100)
 
 # Подробнее о залогиненных
+
 $ w
 10:45AM  up 5 days,  3:21, 2 users, load averages: 0.08, 0.03, 0.01
 USER     TTY FROM              LOGIN@  IDLE WHAT
@@ -490,37 +506,36 @@ admin    C0  -                10:00AM     - -ksh
 john     p0  192.168.1.100    10:30AM     1 vim config.txt
 
 # Последние входы
+
 $ last
 admin    ttyC0                     Dec  1 10:00   still logged in
 john     pts/0    192.168.1.100    Dec  1 10:30   still logged in
 reboot   ~                         Dec  1 09:55
-
 ```
 
 ### 8.2 finger
 
 ```sh
-
 $ finger john
 Login: john                             Name: John Doe
 Directory: /home/john                   Shell: /bin/ksh
 Last login Fri Dec  1 10:30 (UTC) on pts/0 from 192.168.1.100
 No mail.
 No Plan.
-
 ```
 
 ### 8.3 getent
 
 ```sh
 # Получить запись из passwd
+
 $ getent passwd john
 john:*:1001:1001:John Doe:/home/john:/bin/ksh
 
 # Получить запись из group
+
 $ getent group wheel
 wheel:*:0:root,admin,john
-
 ```
 
 ---
@@ -542,24 +557,23 @@ wheel:*:0:root,admin,john
 В OpenBSD системные пользователи начинаются с `_`:
 
 ```sh
-
 $ grep "^_" /etc/passwd | head
 _pflogd:*:507:507:pflogd:/var/empty:/sbin/nologin
 _dhcp:*:62:62:DHCP:/var/empty:/sbin/nologin
 _sshd:*:27:27:sshd:/var/empty:/sbin/nologin
 _ntp:*:123:123:NTP:/var/empty:/sbin/nologin
-
 ```
 
 ### 9.3 Запуск процессов от системного пользователя
 
 ```sh
 # В rc.d скриптах
+
 daemon_user="_myapp"
 
 # Через doas
-$ doas -u _myapp /usr/local/bin/myapp
 
+$ doas -u _myapp /usr/local/bin/myapp
 ```
 
 ---
@@ -571,6 +585,7 @@ $ doas -u _myapp /usr/local/bin/myapp
 ```sh
 # 1. Создать класс в login.conf
 # doas vi /etc/login.conf
+
 developer:\
     :datasize=2048M:\
     :openfiles=4096:\
@@ -591,6 +606,7 @@ developer:\
 
 ```sh
 # /etc/doas.conf
+
 permit nopass operator cmd /sbin/reboot
 permit nopass operator cmd /sbin/halt
 permit nopass operator cmd /etc/rc.d/httpd
@@ -664,6 +680,7 @@ permit nopass operator cmd /usr/bin/tail args -f /var/log/messages
 - [man passwd](https://man.openbsd.org/passwd) — управление паролями
 
 ---
+
 
 
 

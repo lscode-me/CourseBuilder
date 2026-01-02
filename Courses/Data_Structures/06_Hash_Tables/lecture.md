@@ -45,7 +45,6 @@
 **Example: Простая хеш-функция для строк**
 
 ```python
-
 def simple_hash(key, table_size):
     """Простая хеш-функция для строк."""
     hash_value = 0
@@ -54,6 +53,7 @@ def simple_hash(key, table_size):
     return hash_value % table_size
 
 # Тестирование
+
 keys = ["apple", "banana", "cherry"]
 table_size = 10
 
@@ -64,7 +64,6 @@ for key in keys:
 
 **Output:**
 ```
-
 'apple' -> индекс 0
 'banana' -> индекс 1
 'cherry' -> индекс 2
@@ -75,7 +74,6 @@ for key in keys:
 **Example: Простая реализация хеш-таблицы**
 
 ```python
-
 class SimpleHashTable:
     """Простая реализация хеш-таблицы."""
     def __init__(self, size=10):
@@ -99,6 +97,7 @@ class SimpleHashTable:
         return None
 
 # Использование
+
 ht = SimpleHashTable()
 ht.put("name", "Alice")
 ht.put("age", 25)
@@ -109,7 +108,6 @@ print(f"age: {ht.get('age')}")
 
 **Output:**
 ```
-
 name: Alice
 age: 25
 ```
@@ -125,7 +123,6 @@ age: 25
 **Example: Демонстрация коллизии**
 
 ```python
-
 def demonstrate_collision():
     """Показать коллизию."""
     table_size = 5
@@ -155,7 +152,6 @@ demonstrate_collision()
 
 **Output:**
 ```
-
 Хеши ключей:
 'apple' -> 2
 'banana' -> 4
@@ -174,7 +170,6 @@ demonstrate_collision()
 **Example: Хеш-таблица с цепочками**
 
 ```python
-
 class HashTableChaining:
     """Хеш-таблица с методом цепочек."""
     def __init__(self, size=10):
@@ -221,6 +216,7 @@ class HashTableChaining:
         return False
 
 # Использование
+
 ht = HashTableChaining(5)
 ht.put("apple", 10)
 ht.put("date", 20)  # Коллизия с "apple"
@@ -233,7 +229,6 @@ print(f"banana: {ht.get('banana')}")
 
 **Output:**
 ```
-
 apple: 10
 date: 20
 banana: 30
@@ -246,7 +241,6 @@ banana: 30
 **Example: Линейное пробирование**
 
 ```python
-
 class HashTableOpenAddressing:
     """Хеш-таблица с открытой адресацией (линейное пробирование)."""
     def __init__(self, size=10):
@@ -289,6 +283,7 @@ class HashTableOpenAddressing:
         return None
 
 # Использование
+
 ht = HashTableOpenAddressing(5)
 ht.put("apple", 10)
 ht.put("date", 20)  # Коллизия, ищем следующий слот
@@ -300,7 +295,6 @@ print(f"date: {ht.get('date')}")
 
 **Output:**
 ```
-
 apple: 10
 date: 20
 ```
@@ -314,7 +308,6 @@ date: 20
 **Load factor** (коэффициент заполнения) — это отношение количества элементов к размеру таблицы:
 
 ```
-
 load_factor = количество_элементов / размер_таблицы
 ```
 
@@ -325,7 +318,6 @@ load_factor = количество_элементов / размер_табли�
 **Example: Демонстрация влияния load factor**
 
 ```python
-
 import time
 import random
 
@@ -353,6 +345,7 @@ def test_performance(size, load_factor):
     return insert_time, search_time
 
 # Тестируем разные load factors
+
 sizes = [100, 1000, 10000]
 load_factors = [0.5, 0.75, 0.9, 1.0]
 
@@ -368,7 +361,6 @@ for size in sizes:
 
 **Output:**
 ```
-
 Влияние load factor на производительность:
 Size     Load Factor   Insert Time     Search Time    
 ------------------------------------------------------------
@@ -388,7 +380,6 @@ Size     Load Factor   Insert Time     Search Time
 **Example: Автоматическое рехеширование**
 
 ```python
-
 class AutoRehashHashTable:
     """Хеш-таблица с автоматическим рехешированием."""
     def __init__(self, initial_size=10, max_load_factor=0.75):
@@ -442,9 +433,11 @@ class AutoRehashHashTable:
         return None
 
 # Использование
+
 ht = AutoRehashHashTable(initial_size=5, max_load_factor=0.75)
 
 # Добавляем элементы, таблица автоматически увеличится
+
 for i in range(10):
     ht.put(f"key_{i}", i * 10)
     print(f"Добавлен key_{i}, размер таблицы: {ht.size}, элементов: {ht.count}")
@@ -454,7 +447,6 @@ print(f"\nПолучение key_5: {ht.get('key_5')}")
 
 **Output:**
 ```
-
 Добавлен key_0, размер таблицы: 5, элементов: 1
 Добавлен key_1, размер таблицы: 5, элементов: 2
 Добавлен key_2, размер таблицы: 5, элементов: 3
@@ -474,6 +466,7 @@ Python использует хеш-таблицы для реализации `d
 
 ```python
 # Создание словаря
+
 student = {
     'name': 'Alice',
     'age': 20,
@@ -481,23 +474,26 @@ student = {
 }
 
 # Быстрый доступ по ключу
+
 print(f"Имя: {student['name']}")
 
 # Проверка наличия ключа
+
 print(f"Есть 'age': {'age' in student}")
 
 # Добавление элемента
+
 student['city'] = 'NYC'
 print(f"После добавления: {student}")
 
 # Удаление
+
 del student['city']
 print(f"После удаления: {student}")
 ```
 
 **Output:**
 ```
-
 Имя: Alice
 Есть 'age': True
 После добавления: {'name': 'Alice', 'age': 20, 'grade': 'A', 'city': 'NYC'}
@@ -512,6 +508,7 @@ print(f"После удаления: {student}")
 
 ```python
 # Хешируемые типы (могут быть ключами)
+
 valid_keys = [
     42,           # int
     "hello",      # str
@@ -520,6 +517,7 @@ valid_keys = [
 ]
 
 # Нехешируемые типы (не могут быть ключами)
+
 invalid_keys = [
     [1, 2, 3],    # list
     {1, 2, 3},    # set
@@ -545,7 +543,6 @@ for key in invalid_keys:
 
 **Output:**
 ```
-
 Хешируемые ключи:
   ✓ int: 42
   ✓ str: hello
@@ -563,24 +560,28 @@ for key in invalid_keys:
 **Example: Сравнение производительности**
 
 ```python
-
 import time
 
 # Создаём большие структуры
+
 size = 100000
 
 # Словарь
+
 dict_data = {i: i*2 for i in range(size)}
 
 # Список для сравнения
+
 list_data = [(i, i*2) for i in range(size)]
 
 # Поиск в словаре
+
 start = time.time()
 result = dict_data.get(50000)
 time_dict = time.time() - start
 
 # Поиск в списке
+
 start = time.time()
 result = next((v for k, v in list_data if k == 50000), None)
 time_list = time.time() - start
@@ -592,7 +593,6 @@ print(f"Словарь быстрее в {time_list / time_dict:.0f} раз")
 
 **Output:**
 ```
-
 Поиск в словаре: 0.000000000 секунд
 Поиск в списке: 0.012345 секунд
 Словарь быстрее в 12345 раз
@@ -614,24 +614,26 @@ Python 3.6+ использует компактное представление
 
 ```python
 # Создаём словарь
+
 d = {}
 d['first'] = 1
 d['second'] = 2
 d['third'] = 3
 
 # Порядок сохраняется
+
 print("Порядок элементов:")
 for key, value in d.items():
     print(f"  {key}: {value}")
 
 # Порядок соответствует порядку вставки
+
 keys_order = list(d.keys())
 print(f"\nПорядок ключей: {keys_order}")
 ```
 
 **Output:**
 ```
-
 Порядок элементов:
   first: 1
   second: 2
@@ -649,7 +651,6 @@ print(f"\nПорядок ключей: {keys_order}")
 **Example: Подсчёт частоты элементов**
 
 ```python
-
 def count_frequency(data):
     """Подсчитать частоту элементов."""
     frequency = {}
@@ -660,6 +661,7 @@ def count_frequency(data):
     return frequency
 
 # Тестирование
+
 data = ['apple', 'banana', 'apple', 'cherry', 'banana', 'apple']
 freq = count_frequency(data)
 
@@ -670,7 +672,6 @@ for item, count in freq.items():
 
 **Output:**
 ```
-
 Частота элементов:
   apple: 3
   banana: 2
@@ -682,7 +683,6 @@ for item, count in freq.items():
 **Example: Простой LRU Cache**
 
 ```python
-
 class SimpleCache:
     """Простой кэш на основе словаря."""
     def __init__(self, max_size=100):
@@ -703,6 +703,7 @@ class SimpleCache:
         self.cache[key] = value
 
 # Использование
+
 cache = SimpleCache(max_size=3)
 cache.put('a', 1)
 cache.put('b', 2)
@@ -716,7 +717,6 @@ print(f"Получение 'a': {cache.get('a')}")  # Не найдено
 
 **Output:**
 ```
-
 Кэш: {'b': 2, 'c': 3, 'd': 4}
 Получение 'b': 2
 Получение 'a': None
@@ -758,5 +758,6 @@ print(f"Получение 'a': {cache.get('a')}")  # Не найдено
 - Исследуйте, как Python оптимизирует хеш-таблицы
 
 ---
+
 
 

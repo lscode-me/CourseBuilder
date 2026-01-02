@@ -28,7 +28,6 @@
 > — Cloud Native Computing Foundation
 
 ```python
-
 cloud_native_pillars = {
     "Containers": "Упаковка приложений с dependencies",
     "Microservices": "Декомпозиция на независимые сервисы",
@@ -42,13 +41,11 @@ cloud_native_pillars = {
 print("Cloud Native Pillars:")
 for pillar, description in cloud_native_pillars.items():
     print(f"  • {pillar}: {description}")
-
 ```
 
 ### 1.2 Cloud Native vs Traditional
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │           Traditional vs Cloud Native                              │
 ├────────────────────────────────────────────────────────────────────┤
@@ -66,7 +63,6 @@ for pillar, description in cloud_native_pillars.items():
 │  Waterfall/ITIL                 Agile/DevOps                       │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -78,7 +74,6 @@ for pillar, description in cloud_native_pillars.items():
 CNCF — часть Linux Foundation, управляет ключевыми open-source проектами:
 
 ```python
-
 cncf_graduated_projects = {
     "Kubernetes": "Container orchestration",
     "Prometheus": "Monitoring & alerting",
@@ -96,13 +91,11 @@ cncf_graduated_projects = {
 print("CNCF Graduated Projects (production-ready):")
 for project, description in list(cncf_graduated_projects.items())[:6]:
     print(f"  ✓ {project}: {description}")
-
 ```
 
 ### 2.2 CNCF Trail Map
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    CNCF Trail Map                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -129,7 +122,6 @@ for project, description in list(cncf_graduated_projects.items())[:6]:
 │     └── Vitess, TiKV, Rook                                         │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -139,7 +131,6 @@ for project, description in list(cncf_graduated_projects.items())[:6]:
 ### 3.1 Design Principles
 
 ```python
-
 cloud_native_principles = {
     "Design for failure": {
         "description": "Assume everything fails",
@@ -167,13 +158,11 @@ for principle, details in cloud_native_principles.items():
     print(f"\n{principle.upper()}")
     print(f"  {details['description']}")
     print(f"  Practices: {', '.join(details['practices'][:3])}")
-
 ```
 
 ### 3.2 Pets vs Cattle
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Pets vs Cattle                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -193,7 +182,6 @@ for principle, details in cloud_native_principles.items():
 │                                  — Randy Bias (2011)               │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -203,7 +191,6 @@ for principle, details in cloud_native_principles.items():
 ### 4.1 Microservices
 
 ```
-
 ┌────────────────────────────────────────────────────────────────────┐
 │                    Microservices Architecture                      │
 ├────────────────────────────────────────────────────────────────────┤
@@ -232,13 +219,11 @@ for principle, details in cloud_native_principles.items():
 │  • Может использовать разные технологии                            │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 4.2 Event-Driven Architecture
 
 ```python
-
 event_driven_patterns = {
     "Event Sourcing": {
         "description": "Store events, not state",
@@ -257,7 +242,6 @@ event_driven_patterns = {
         "aws_services": ["SNS", "EventBridge", "MSK"]
     }
 }
-
 ```
 
 ---
@@ -267,7 +251,6 @@ event_driven_patterns = {
 ### 5.1 AWS Services для Cloud Native
 
 ```python
-
 aws_cloud_native_stack = {
     "Containers": {
         "runtime": "ECS, EKS, Fargate",
@@ -299,7 +282,6 @@ aws_cloud_native_stack = {
         "deploy": "CodeDeploy, CodePipeline"
     }
 }
-
 ```
 
 ---
@@ -307,7 +289,6 @@ aws_cloud_native_stack = {
 ## 6. Когда НЕ нужен Cloud Native
 
 ```python
-
 when_not_cloud_native = [
     "Простое CRUD приложение",
     "Маленькая команда (1-3 разработчика)",
@@ -324,7 +305,6 @@ for reason in when_not_cloud_native:
 
 print("\n'You probably don't need microservices'")
 print("  — Martin Fowler (MonolithFirst)")
-
 ```
 
 ---

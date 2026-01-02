@@ -70,7 +70,6 @@ Data Engineering как system design требует принятия решен
 **Example: Выбор хранилища**
 
 ```python
-
 def recommend_storage(requirements):
     """Рекомендует хранилище на основе требований"""
     if requirements.get("transactional") and requirements.get("acid"):
@@ -85,6 +84,7 @@ def recommend_storage(requirements):
         return "Определить на основе детальных требований"
 
 # Примеры
+
 examples = [
     {"transactional": True, "acid": True, "low_latency_write": True},
     {"analytical": True, "large_volume": True, "complex_queries": True},
@@ -99,7 +99,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации хранилищ:
   Пример 1: PostgreSQL/MySQL (OLTP, ACID транзакции)
   Пример 2: Snowflake/BigQuery (OLAP, аналитика)
@@ -129,7 +128,6 @@ for i, req in enumerate(examples, 1):
 **Example: Выбор формата**
 
 ```python
-
 def recommend_format(requirements):
     """Рекомендует формат данных"""
     if requirements.get("analytical") and requirements.get("large_volume"):
@@ -144,6 +142,7 @@ def recommend_format(requirements):
         return "Определить на основе детальных требований"
 
 # Примеры
+
 examples = [
     {"analytical": True, "large_volume": True, "aggregations": True},
     {"transactional": True, "full_records": True, "low_latency": True},
@@ -158,7 +157,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации форматов:
   Пример 1: Parquet/ORC (columnar, отличное сжатие)
   Пример 2: JSON/Avro (row-based, полные записи)
@@ -188,7 +186,6 @@ for i, req in enumerate(examples, 1):
 **Example: Выбор структур данных**
 
 ```python
-
 def recommend_data_structure(requirements):
     """Рекомендует структуру данных"""
     if requirements.get("range_queries") and requirements.get("ordered"):
@@ -218,7 +215,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации структур данных:
   Пример 1: B-tree индекс (range queries, упорядоченный поиск)
   Пример 2: Hash индекс (точный поиск O(1))
@@ -251,7 +247,6 @@ for i, req in enumerate(examples, 1):
 **Example: Анализ компромиссов**
 
 ```python
-
 class TradeoffAnalyzer:
     def __init__(self):
         self.tradeoffs = {}
@@ -306,6 +301,7 @@ class TradeoffAnalyzer:
 analyzer = TradeoffAnalyzer()
 
 # Анализ компромиссов
+
 consistency_tradeoff = analyzer.analyze_consistency_availability({"strong_consistency": True})
 latency_tradeoff = analyzer.analyze_latency_throughput({"low_latency": True})
 cost_tradeoff = analyzer.analyze_cost_performance({"cost_optimized": False})
@@ -318,7 +314,6 @@ print(f"  Cost: {cost_tradeoff['choice']} - {cost_tradeoff['tradeoff']}")
 
 **Output:**
 ```
-
 Анализ компромиссов:
   Consistency: Strong Consistency - Меньше availability, но гарантированная консистентность
   Latency: Low Latency - Меньше throughput, но быстрый отклик
@@ -351,7 +346,6 @@ CAP theorem описывает компромиссы в распределён�
 **Example: CAP Trade-offs**
 
 ```python
-
 class CAPTheorem:
     def __init__(self):
         self.systems = {}
@@ -380,9 +374,11 @@ class CAPTheorem:
         return self.systems[system_name]
 
 # Использование
+
 cap = CAPTheorem()
 
 # Примеры систем
+
 cap.classify_system("PostgreSQL", consistency=True, availability=True, partition_tolerance=True)
 cap.classify_system("MongoDB", consistency=False, availability=True, partition_tolerance=True)
 cap.classify_system("Cassandra", consistency=False, availability=True, partition_tolerance=True)
@@ -390,7 +386,6 @@ cap.classify_system("Cassandra", consistency=False, availability=True, partition
 
 **Output:**
 ```
-
 📊 PostgreSQL: CP (Consistency + Partition Tolerance)
 📊 MongoDB: AP (Availability + Partition Tolerance)
 📊 Cassandra: AP (Availability + Partition Tolerance)
@@ -445,7 +440,6 @@ cap.classify_system("Cassandra", consistency=False, availability=True, partition
 **Example: System Design Process**
 
 ```python
-
 class SystemDesignProcess:
     def __init__(self, use_case):
         self.use_case = use_case
@@ -504,6 +498,7 @@ class SystemDesignProcess:
         return self.tradeoffs
 
 # Использование
+
 design = SystemDesignProcess("Analytics Platform")
 design.gather_requirements(analytical=True, large_volume=True, low_latency=False)
 design.select_components()
@@ -513,7 +508,6 @@ design.analyze_tradeoffs()
 
 **Output:**
 ```
-
 📋 Требования для 'Analytics Platform':
    analytical: True
    large_volume: True
@@ -553,7 +547,6 @@ design.analyze_tradeoffs()
 **Example: Best Practices Checklist**
 
 ```python
-
 class SystemDesignChecklist:
     def __init__(self):
         self.checklist = {
@@ -600,6 +593,7 @@ class SystemDesignChecklist:
         return all_checked
 
 # Использование
+
 checklist = SystemDesignChecklist()
 checklist.check_requirement("Analytics platform")
 checklist.check_components({"storage": "Snowflake"})
@@ -609,7 +603,6 @@ checklist.validate_design()
 
 **Output:**
 ```
-
 ✅ Требования определены
 ✅ Компоненты выбраны
 ✅ Архитектура спроектирована
@@ -639,7 +632,6 @@ checklist.validate_design()
 **Example: Event Sourcing**
 
 ```python
-
 class EventSourcing:
     def __init__(self):
         self.events = []
@@ -682,22 +674,24 @@ class EventSourcing:
         return self.current_state
 
 # Использование
+
 es = EventSourcing()
 
 # Добавление событий
+
 es.append_event("user_created", {"user_id": 1, "name": "Alice"})
 es.append_event("user_updated", {"name": "Alice Updated"})
 
 print(f"Текущее состояние: {es.get_current_state()}")
 
 # Replay
+
 es.replay_events(0)
 print(f"Состояние после replay: {es.get_current_state()}")
 ```
 
 **Output:**
 ```
-
 📝 Событие добавлено: user_created
 📝 Событие добавлено: user_updated
 Текущее состояние: {'user_id': 1, 'name': 'Alice Updated'}
@@ -722,7 +716,6 @@ print(f"Состояние после replay: {es.get_current_state()}")
 **Example: CQRS**
 
 ```python
-
 class CQRS:
     def __init__(self):
         self.command_store = {}  # Write-optimized
@@ -754,9 +747,11 @@ class CQRS:
         return None
 
 # Использование
+
 cqrs = CQRS()
 
 # Write (command)
+
 cqrs.execute_command("create_user", {
     "user_id": 1,
     "name": "Alice",
@@ -764,13 +759,13 @@ cqrs.execute_command("create_user", {
 })
 
 # Read (query)
+
 user = cqrs.execute_query("get_user", {"user_id": 1})
 print(f"Результат query: {user}")
 ```
 
 **Output:**
 ```
-
 ✍️  Command выполнена: create_user
 📖 Query выполнена: get_user
 Результат query: {'id': 1, 'name': 'Alice', 'email': 'alice@example.com', 'full_profile': 'Alice (alice@example.com)'}
@@ -800,7 +795,6 @@ print(f"Результат query: {user}")
 **Example: Analytics Platform Design**
 
 ```python
-
 class AnalyticsPlatformDesign:
     def __init__(self):
         self.components = {}
@@ -834,13 +828,13 @@ class AnalyticsPlatformDesign:
         return self.components
 
 # Использование
+
 design = AnalyticsPlatformDesign()
 design.design_platform()
 ```
 
 **Output:**
 ```
-
 🏗️  Analytics Platform Design:
 
 Компоненты:
@@ -937,6 +931,7 @@ Data Flow:
 - Google Cloud Architecture: https://cloud.google.com/architecture
 
 ---
+
 
 
 

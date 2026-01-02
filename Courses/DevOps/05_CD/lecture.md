@@ -36,7 +36,6 @@
 Расширение Continuous Delivery, где **каждое** успешное изменение **автоматически** деплоится в production.
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                           CI/CD Pipeline                                     │
 ├──────────────────────────────────────────────────────────────────────────────┤
@@ -54,13 +53,11 @@
 │                    Continuous Deployment                                    ││
 │                    (fully automated)                                        ││
 └─────────────────────────────────────────────────────────────────────────────┘│
-
 ```
 
 ### 1.2 Выбор подхода
 
 ```python
-
 def choose_cd_approach(context: dict) -> str:
     """Determine whether to use CD or Continuous Deployment."""
     
@@ -85,7 +82,6 @@ def choose_cd_approach(context: dict) -> str:
     
     # По умолчанию начинаем с CD
     return "continuous_delivery"
-
 ```
 
 ### 1.3 Преимущества обоих подходов
@@ -105,6 +101,7 @@ def choose_cd_approach(context: dict) -> str:
 
 ```yaml
 # Полный CD pipeline
+
 stages:
   - build          # Сборка artifact
   - test           # Все уровни тестирования
@@ -113,13 +110,13 @@ stages:
   - approve        # Manual gate (для CD)
   - production     # Deploy на production
   - verify         # Post-deploy verification
-
 ```
 
 ### 2.2 Пример полного Pipeline (GitHub Actions)
 
 ```yaml
 # .github/workflows/cd.yml
+
 name: CD Pipeline
 
 on:
@@ -239,7 +236,6 @@ jobs:
         if: failure()
         run: |
           helm rollback myapp --namespace production
-
 ```
 
 ---
@@ -251,13 +247,11 @@ jobs:
 Простейшая стратегия: остановить старую версию, запустить новую.
 
 ```
-
 Version 1: ████████████████████ ──▶ Stop
                                     ↓
                               (Downtime)
                                     ↓
 Version 2:                    Start ──▶ ████████████████████
-
 ```
 
 **Плюсы:**
@@ -281,7 +275,6 @@ Version 2:                    Start ──▶ ███████████�
 Постепенная замена instances одной версии на другую.
 
 ```
-
 Time ──────────────────────────────────────────────▶
 
 Pods: [v1] [v1] [v1] [v1]
@@ -289,11 +282,11 @@ Pods: [v1] [v1] [v1] [v1]
       [v1] [v1] [v2] [v2] ← 2 pods updated
       [v1] [v2] [v2] [v2] ← 3 pods updated
       [v2] [v2] [v2] [v2] ← Complete
-
 ```
 
 ```yaml
 # Kubernetes Rolling Update
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -316,7 +309,6 @@ spec:
               port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
-
 ```
 
 **Плюсы:**
@@ -335,7 +327,6 @@ spec:
 Две идентичные среды: Blue (текущая) и Green (новая).
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                      Load Balancer                          │
 │                           │                                 │
@@ -351,11 +342,11 @@ spec:
 │  После тестирования Green:                                  │
 │  Switch traffic: Blue 0% ↔ Green 100%                       │
 └─────────────────────────────────────────────────────────────┘
-
 ```
 
 ```python
 # Пример: Blue-Green switch с AWS ALB
+
 import boto3
 
 def switch_traffic(target_group_blue: str, target_group_green: str):
@@ -390,7 +381,6 @@ def rollback_to_blue(target_group_blue: str):
     )
     
     print("Rolled back to blue")
-
 ```
 
 **Плюсы:**
@@ -409,7 +399,6 @@ def rollback_to_blue(target_group_blue: str):
 Постепенное направление трафика на новую версию.
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                      Load Balancer                          │
 │                           │                                 │
@@ -425,11 +414,11 @@ def rollback_to_blue(target_group_blue: str):
 │  Progression: 10% → 25% → 50% → 100%                        │
 │  (based on metrics and time)                                │
 └─────────────────────────────────────────────────────────────┘
-
 ```
 
 ```yaml
 # Argo Rollouts Canary
+
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
@@ -473,6 +462,7 @@ spec:
 
 ---
 # Шаблон анализа метрик
+
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
@@ -491,7 +481,6 @@ spec:
             sum(rate(http_requests_total{service="{{args.service-name}}",status=~"2.."}[5m]))
             /
             sum(rate(http_requests_total{service="{{args.service-name}}"}[5m]))
-
 ```
 
 **Плюсы:**
@@ -525,6 +514,7 @@ Feature flags (feature toggles) — техника, позволяющая вк�
 
 ```python
 # Пример: простой feature flag
+
 from typing import Optional
 
 class FeatureFlags:
@@ -559,6 +549,7 @@ class FeatureFlags:
         return flag.get("enabled", default)
 
 # Конфигурация
+
 config = {
     "new_checkout_flow": {
         "enabled": True,
@@ -572,18 +563,17 @@ config = {
 flags = FeatureFlags(config)
 
 # Использование
+
 def get_checkout_page(user_id: str):
     if flags.is_enabled("new_checkout_flow", user_id):
         return render_new_checkout()
     else:
         return render_old_checkout()
-
 ```
 
 ### 4.2 Типы Feature Flags
 
 ```python
-
 feature_flag_types = {
     "release_toggle": {
         "description": "Скрыть незавершённую фичу",
@@ -606,13 +596,13 @@ feature_flag_types = {
         "example": "Premium features"
     }
 }
-
 ```
 
 ### 4.3 Best Practices для Feature Flags
 
 ```python
 # 1. Удаляйте старые flags
+
 class FeatureFlagManager:
     def __init__(self):
         self.flags = {}
@@ -642,6 +632,7 @@ class FeatureFlagManager:
             print(f"⚠️ Flag '{flag}' is stale. Owner: {self.flag_metadata[flag]['owner']}")
 
 # 2. Используйте naming conventions
+
 good_flag_names = [
     "enable_new_search_v2",      # Ясно что это
     "experiment_checkout_flow",   # Эксперимент
@@ -655,6 +646,7 @@ bad_flag_names = [
 ]
 
 # 3. Тестируйте оба пути
+
 def test_feature_with_flag_on():
     with feature_flag_override("new_feature", True):
         result = some_function()
@@ -664,7 +656,6 @@ def test_feature_with_flag_off():
     with feature_flag_override("new_feature", False):
         result = some_function()
         assert result == expected_old_behavior
-
 ```
 
 ### 4.4 Инструменты для Feature Flags
@@ -685,27 +676,29 @@ def test_feature_with_flag_off():
 ```python
 # Проблема: добавление обязательной колонки
 # ❌ Плохо: сломает старый код при деплое
+
 ALTER TABLE users ADD COLUMN phone VARCHAR(20) NOT NULL;
 
 # ✅ Хорошо: backward-compatible migration
 # Step 1: Add nullable column
+
 ALTER TABLE users ADD COLUMN phone VARCHAR(20) NULL;
 
 # Step 2: Deploy new code that writes to phone
 # ... wait for deployment ...
 
 # Step 3: Backfill existing data
+
 UPDATE users SET phone = 'unknown' WHERE phone IS NULL;
 
 # Step 4: Make column NOT NULL
-ALTER TABLE users ALTER COLUMN phone SET NOT NULL;
 
+ALTER TABLE users ALTER COLUMN phone SET NOT NULL;
 ```
 
 ### 5.2 Expand-Contract Pattern
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    Expand-Contract Migration                      │
 ├───────────────────────────────────────────────────────────────────┤
@@ -735,13 +728,13 @@ ALTER TABLE users ALTER COLUMN phone SET NOT NULL;
 │  - Clean up code                                                  │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ```python
 # Пример: переименование колонки (3 деплоя)
 
 # Deploy 1: Add new column, write to both
+
 class User(Base):
     __tablename__ = 'users'
     
@@ -753,6 +746,7 @@ class User(Base):
         self.full_name = value  # Write to both
 
 # Deploy 2: Read from new, write to both
+
 class User(Base):
     name = Column(String)      # Old (deprecated)
     full_name = Column(String) # New (primary)
@@ -762,13 +756,13 @@ class User(Base):
         return self.full_name or self.name  # Prefer new
 
 # Deploy 3: Remove old column
+
 class User(Base):
     full_name = Column(String)  # Only new
     
     @property
     def display_name(self):
         return self.full_name
-
 ```
 
 ---
@@ -778,7 +772,6 @@ class User(Base):
 ### 6.1 Типы Rollback
 
 ```python
-
 rollback_strategies = {
     "instant_rollback": {
         "description": "Немедленный откат на предыдущую версию",
@@ -805,13 +798,13 @@ rollback_strategies = {
         "data_loss": "Нет"
     }
 }
-
 ```
 
 ### 6.2 Автоматический Rollback
 
 ```yaml
 # Kubernetes: автоматический rollback при проблемах
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -846,19 +839,20 @@ spec:
             initialDelaySeconds: 15
             periodSeconds: 20
             failureThreshold: 3
-
 ```
 
 ```bash
 # Ручной rollback в Kubernetes
+
 kubectl rollout undo deployment/myapp
 
 # Rollback на конкретную версию
+
 kubectl rollout undo deployment/myapp --to-revision=5
 
 # История ревизий
-kubectl rollout history deployment/myapp
 
+kubectl rollout history deployment/myapp
 ```
 
 ### 6.3 Rollback Checklist
@@ -867,6 +861,7 @@ kubectl rollout history deployment/myapp
 # Rollback Decision Checklist
 
 ## Когда откатывать?
+
 - [ ] Error rate > 5% (или ваш threshold)
 - [ ] P99 latency > 2x baseline
 - [ ] Critical functionality не работает
@@ -874,20 +869,22 @@ kubectl rollout history deployment/myapp
 - [ ] Security vulnerability discovered
 
 ## Перед rollback
+
 - [ ] Собрать информацию об инциденте
 - [ ] Уведомить команду в #incidents
 - [ ] Оценить impact (сколько пользователей затронуто)
 
 ## Во время rollback
+
 - [ ] Выполнить rollback команду
 - [ ] Мониторить метрики
 - [ ] Проверить восстановление сервиса
 
 ## После rollback
+
 - [ ] Подтвердить стабилизацию
 - [ ] Обновить incident timeline
 - [ ] Запланировать RCA (Root Cause Analysis)
-
 ```
 
 ---
@@ -897,7 +894,6 @@ kubectl rollout history deployment/myapp
 ### 7.1 Environment Promotion
 
 ```
-
 ┌───────────────────────────────────────────────────────────────┐
 │                  Environment Promotion Flow                   │
 ├───────────────────────────────────────────────────────────────┤
@@ -915,7 +911,6 @@ kubectl rollout history deployment/myapp
 │  Different configs per environment                            │
 │                                                               │
 └───────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 7.2 Environment Parity
@@ -957,6 +952,7 @@ volumes:
 ```yaml
 # Разделение config от кода
 # config/production.yaml
+
 database:
   host: ${DATABASE_HOST}
   port: 5432
@@ -974,11 +970,11 @@ features:
 logging:
   level: INFO
   format: json
-
 ```
 
 ```python
 # Загрузка конфигурации
+
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 
@@ -1004,7 +1000,6 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
-
 ```
 
 ---
@@ -1015,6 +1010,7 @@ def get_settings() -> Settings:
 
 ```python
 # scripts/smoke_tests.py
+
 import requests
 import sys
 
@@ -1046,13 +1042,13 @@ if __name__ == "__main__":
     base_url = sys.argv[1]
     success = run_smoke_tests(base_url)
     sys.exit(0 if success else 1)
-
 ```
 
 ### 8.2 Post-Deployment Monitoring
 
 ```python
 # Что проверять после деплоя
+
 post_deploy_checks = {
     "immediate": {  # 0-5 минут
         "error_rate": "< 1%",
@@ -1072,7 +1068,6 @@ post_deploy_checks = {
         "database_performance": "stable"
     }
 }
-
 ```
 
 ---
@@ -1132,6 +1127,7 @@ post_deploy_checks = {
 - [Deployment Strategies at Netflix](https://netflixtechblog.com/)
 
 ---
+
 
 
 

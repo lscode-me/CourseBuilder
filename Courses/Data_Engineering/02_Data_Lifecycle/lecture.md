@@ -84,15 +84,18 @@ class DataLifecycle:
         print(f"✅ Consumption: данные использованы для '{use_case}'")
 
 # Пример использования
+
 lifecycle = DataLifecycle()
 
 # 1. Источник
+
 lifecycle.source("user_events", [
     {"user_id": 1, "event": "click", "timestamp": "2024-01-01T10:00:00"},
     {"user_id": 2, "event": "purchase", "timestamp": "2024-01-01T10:05:00"}
 ])
 
 # 2-6. Полный цикл
+
 raw_data = lifecycle.ingest("user_events")
 lifecycle.store("raw_events", raw_data)
 processed = lifecycle.process("raw_events", lambda x: [{"id": i+1, **r} for i, r in enumerate(x)])
@@ -103,7 +106,6 @@ lifecycle.consume(served, "dashboard_update")
 
 **Output:**
 ```
-
 📥 Источник 'user_events': 2 записей
 📊 Ingestion: собрано 2 записей из 'user_events'
 💾 Storage: сохранено 2 записей в 'raw_events'
@@ -183,6 +185,7 @@ class DataSource:
             ]
 
 # Различные источники
+
 sources = [
     DataSource("database", "PostgreSQL"),
     DataSource("api", "REST API"),
@@ -198,7 +201,6 @@ for source in sources:
 
 **Output:**
 ```
-
 Источники данных:
   PostgreSQL (database): 2 записей
   REST API (api): structured записей
@@ -229,7 +231,6 @@ for source in sources:
 **Example: Характеристики источников**
 
 ```python
-
 source_characteristics = {
     "user_events": {
         "frequency": "real-time",
@@ -257,7 +258,6 @@ for source, chars in source_characteristics.items():
 
 **Output:**
 ```
-
 Характеристики источников:
 
 user_events:
@@ -301,7 +301,6 @@ Ingestion — это процесс сбора данных из источни�
 **Example: Batch vs Streaming Ingestion**
 
 ```python
-
 import time
 from datetime import datetime
 
@@ -331,10 +330,12 @@ class StreamingIngestion:
         return self.buffer
 
 # Сравнение
+
 batch = BatchIngestion("daily")
 streaming = StreamingIngestion()
 
 # Batch: собирает все данные раз в день
+
 batch_data = batch.ingest(DataSource("database", "PostgreSQL"))
 
 # Streaming: обрабатывает события по мере поступления
@@ -352,7 +353,6 @@ for event in events:
 
 **Output:**
 ```
-
 🔄 Batch ingestion запущен (daily)
 ✅ Собрано 2 записей
 📥 Событие получено: evt_1 в 10:00:00
@@ -377,7 +377,6 @@ for event in events:
 **Example: Выбор инструмента**
 
 ```python
-
 ingestion_tools = {
     "batch": {
         "small_volume": "Python scripts",
@@ -401,7 +400,6 @@ print(f"  Streaming (низкая задержка): {recommend_ingestion_tool('
 
 **Output:**
 ```
-
 Рекомендации инструментов ingestion:
   Batch (большие объёмы): Airflow + Spark
   Streaming (низкая задержка): Kafka Connect
@@ -437,7 +435,6 @@ print(f"  Streaming (низкая задержка): {recommend_ingestion_tool('
 **Example: Выбор хранилища**
 
 ```python
-
 class StorageSelector:
     @staticmethod
     def select_storage(data_type, access_pattern, volume):
@@ -470,7 +467,6 @@ for data_type, access, volume in examples:
 
 **Output:**
 ```
-
 Выбор хранилища:
   transactional (random, medium): PostgreSQL/MySQL (OLTP)
   analytical (aggregation, large): Snowflake/BigQuery (OLAP)
@@ -503,7 +499,6 @@ for data_type, access, volume in examples:
 **Example: Слои хранения**
 
 ```python
-
 class DataLakehouse:
     def __init__(self):
         self.bronze = []
@@ -544,6 +539,7 @@ class DataLakehouse:
 lakehouse = DataLakehouse()
 
 # Bronze: сырые данные
+
 raw_data = [
     {"id": "1", "name": "  Product A  ", "price": "99.99"},
     {"id": "2", "name": "Product B", "price": "149.99"},
@@ -562,7 +558,6 @@ lakehouse.aggregate_to_gold()
 
 **Output:**
 ```
-
 🥉 Bronze: сохранено 3 сырых записей
 🥈 Silver: 2 очищенных записей
 🥇 Gold: агрегированные метрики созданы
@@ -603,7 +598,6 @@ Processing включает трансформацию, очистку, обог
 **Example: Обработка данных**
 
 ```python
-
 def transform_data(data):
     """Трансформация структуры"""
     transformed = []
@@ -657,6 +651,7 @@ def aggregate_data(data):
     return dict(category_totals)
 
 # Pipeline обработки
+
 raw_data = [
     {"id": 1, "name": "product a", "price": "99.99"},
     {"id": 2, "name": "product b", "price": "149.99"},
@@ -678,7 +673,6 @@ print(f"  Агрегировано по категориям: {aggregated}")
 
 **Output:**
 ```
-
 Результаты обработки:
   Трансформировано: 4 записей
   Очищено: 2 записей
@@ -718,7 +712,6 @@ Serving — это процесс предоставления обработа�
 **Example: Различные методы serving**
 
 ```python
-
 class DataServing:
     def serve_via_api(self, data, format="json"):
         """Предоставление через API"""
@@ -739,6 +732,7 @@ class DataServing:
         return f"kafka://{topic}"
 
 # Примеры
+
 serving = DataServing()
 sample_data = [
     {"id": 1, "name": "Product A", "price": 99.99},
@@ -763,7 +757,6 @@ print(f"Stream: {stream}")
 
 **Output:**
 ```
-
 API response: {'data': [{'id': 1, 'name': 'Product A', 'price': 99.99}, {'id': 2, 'name': 'Product B', 'price': 149.99}], 'count': 2}
 📊 Данные доступны в таблице 'products'
 Database query: SELECT * FROM products
@@ -817,7 +810,6 @@ Consumption — это использование данных конечным�
 **Example: Различные потребители**
 
 ```python
-
 class DataConsumer:
     def __init__(self, consumer_type, use_case):
         self.consumer_type = consumer_type
@@ -864,7 +856,6 @@ for consumer in consumers:
 
 **Output:**
 ```
-
 📊 Analytics: данные использованы для dashboard
   Результат: {'summary': '10 записей для анализа'}
 
@@ -884,7 +875,6 @@ for consumer in consumers:
 **Example: Полный data pipeline**
 
 ```python
-
 class CompleteDataPipeline:
     def __init__(self):
         self.storage = {}
@@ -949,6 +939,7 @@ class CompleteDataPipeline:
         print(f"   ✅ Данные потреблены: {len(data)} записей использовано")
 
 # Запуск полного pipeline
+
 pipeline = CompleteDataPipeline()
 source_data = [
     {"id": 1, "name": "Product A", "price": 99.99},
@@ -961,7 +952,6 @@ pipeline.run(source_data)
 
 **Output:**
 ```
-
 ==================================================
 🚀 Запуск полного data pipeline
 ==================================================
@@ -1046,5 +1036,6 @@ pipeline.run(source_data)
 - Apache Kafka: https://kafka.apache.org/documentation/
 
 ---
+
 
 

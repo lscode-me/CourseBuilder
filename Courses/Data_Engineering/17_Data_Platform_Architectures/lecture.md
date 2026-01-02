@@ -70,7 +70,6 @@ Lambda архитектура разделяет обработку на batch �
 **Example: Lambda Architecture**
 
 ```python
-
 class LambdaArchitecture:
     def __init__(self):
         self.batch_layer = {}
@@ -109,9 +108,11 @@ class LambdaArchitecture:
         return combined
 
 # Использование
+
 lambda_arch = LambdaArchitecture()
 
 # Batch processing (все данные)
+
 all_data = [1, 2, 3, 4, 5]
 lambda_arch.batch_process(all_data, sum)
 
@@ -121,12 +122,12 @@ new_data = [6, 7]
 lambda_arch.speed_process(new_data, sum)
 
 # Query
+
 result = lambda_arch.serve_query("total_sum")
 ```
 
 **Output:**
 ```
-
 📦 Batch Layer: обработка всех данных
 ✅ Batch результат: 15
 ⚡ Speed Layer: обработка новых данных в реальном времени
@@ -172,7 +173,6 @@ Kappa архитектура использует единый streaming сло�
 **Example: Kappa Architecture**
 
 ```python
-
 class KappaArchitecture:
     def __init__(self):
         self.streaming_layer = []
@@ -220,6 +220,7 @@ class KappaArchitecture:
         return result
 
 # Использование
+
 kappa_arch = KappaArchitecture()
 
 # Streaming processing (все данные через streaming)
@@ -229,15 +230,16 @@ kappa_arch.stream_process({"value": 2}, lambda e: e["value"])
 kappa_arch.stream_process({"value": 3}, lambda e: e["value"])
 
 # Query
+
 result = kappa_arch.serve_query("total_sum")
 
 # Replay
+
 kappa_arch.replay("2024-01-01T09:00:00Z", lambda e: e["value"])
 ```
 
 **Output:**
 ```
-
 📡 Streaming Layer: обработка события {'value': 1}
 ✅ Streaming результат: 1, текущая сумма: 1
 📡 Streaming Layer: обработка события {'value': 2}
@@ -293,7 +295,6 @@ Modern Data Stack использует облачные сервисы и сов
 **Example: Modern Data Stack**
 
 ```python
-
 class ModernDataStack:
     def __init__(self):
         self.components = {
@@ -329,9 +330,11 @@ class ModernDataStack:
         return {"rows": 1000}
 
 # Использование
+
 stack = ModernDataStack()
 
 # Полный цикл
+
 stack.ingest("postgres://source")
 stack.transform(["users", "orders", "analytics"])
 stack.orchestrate("daily_etl")
@@ -340,7 +343,6 @@ stack.query("SELECT * FROM analytics.users")
 
 **Output:**
 ```
-
 📥 Ingestion (Fivetran): загрузка из postgres://source
 ✅ Данные загружены в data warehouse
 ⚙️  Transformation (dbt): выполнение 3 моделей
@@ -394,7 +396,6 @@ Data Mesh — это децентрализованный подход к арх
 **Example: Data Mesh концепция**
 
 ```python
-
 class DataMeshPlatform:
     def __init__(self):
         self.domains = {}
@@ -436,23 +437,26 @@ class DataMeshPlatform:
         return None
 
 # Использование
+
 mesh = DataMeshPlatform()
 
 # Регистрация доменов
+
 mesh.register_domain("sales", "Sales Team")
 mesh.register_domain("marketing", "Marketing Team")
 
 # Создание data products
+
 mesh.create_data_product("sales", "customer_orders", {"customer_id": "string", "order_id": "string"})
 mesh.create_data_product("marketing", "campaign_metrics", {"campaign_id": "string", "impressions": "int"})
 
 # Обнаружение
+
 mesh.discover_data_product("customer_orders")
 ```
 
 **Output:**
 ```
-
 🏢 Домен 'sales' зарегистрирован, владелец: Sales Team
 🏢 Домен 'marketing' зарегистрирован, владелец: Marketing Team
 📦 Data product 'customer_orders' создан в домене 'sales'
@@ -479,7 +483,6 @@ mesh.discover_data_product("customer_orders")
 **Example: Выбор архитектуры**
 
 ```python
-
 def recommend_architecture(requirements):
     """Рекомендует архитектуру"""
     if requirements.get("cloud_first") and requirements.get("sql_based"):
@@ -494,6 +497,7 @@ def recommend_architecture(requirements):
         return "Определить на основе детальных требований"
 
 # Примеры
+
 examples = [
     {"cloud_first": True, "sql_based": True, "managed_services": True},
     {"streaming_first": True, "simplicity": True, "replay": True},
@@ -509,7 +513,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации архитектур:
   Пример 1: Modern Data Stack (облачные сервисы, SQL-first)
   Пример 2: Kappa Architecture (единый streaming слой)
@@ -545,7 +548,6 @@ for i, req in enumerate(examples, 1):
 **Example: Best Practices выбора**
 
 ```python
-
 class ArchitectureBestPractices:
     def __init__(self):
         self.guidelines = {
@@ -579,6 +581,7 @@ class ArchitectureBestPractices:
         return guidelines
 
 # Использование
+
 practices = ArchitectureBestPractices()
 practices.get_recommendation("lambda", {})
 practices.get_recommendation("modern_data_stack", {})
@@ -586,7 +589,6 @@ practices.get_recommendation("modern_data_stack", {})
 
 **Output:**
 ```
-
 📋 Рекомендации для lambda:
    Используйте когда: Требуется высокая точность, Низкая задержка для новых данных
    Избегайте когда: Простая система, Ограниченные ресурсы
@@ -619,7 +621,6 @@ Data Lakehouse объединяет преимущества Data Lake и Data W
 **Example: Data Lakehouse концепция**
 
 ```python
-
 class DataLakehouse:
     def __init__(self):
         self.storage = {}
@@ -654,22 +655,25 @@ class DataLakehouse:
         return {"rows": rows, "data": self.storage[table_name]}
 
 # Использование
+
 lakehouse = DataLakehouse()
 
 # Сохранение данных
+
 lakehouse.store_data("users", [{"id": 1, "name": "Alice"}], format="parquet")
 lakehouse.store_data("orders", [{"id": 1, "user_id": 1, "amount": 100}], format="delta")
 
 # Применение схемы
+
 lakehouse.enforce_schema("users", {"id": "int", "name": "string"})
 
 # SQL запрос
+
 result = lakehouse.query("users", "SELECT * FROM users")
 ```
 
 **Output:**
 ```
-
 💾 Данные сохранены в 'users' (формат: parquet)
 💾 Данные сохранены в 'orders' (формат: delta)
 📋 Схема применена к 'users': {'id': 'int', 'name': 'string'}
@@ -713,7 +717,6 @@ result = lakehouse.query("users", "SELECT * FROM users")
 **Example: План миграции**
 
 ```python
-
 class ArchitectureMigration:
     def __init__(self):
         self.migration_plan = []
@@ -747,6 +750,7 @@ class ArchitectureMigration:
         return self.migration_plan
 
 # Использование
+
 migration = ArchitectureMigration()
 migration.create_migration_plan("lambda", "kappa")
 print("\n" + "="*50)
@@ -755,7 +759,6 @@ migration.create_migration_plan("on_premise", "modern_data_stack")
 
 **Output:**
 ```
-
 📋 План миграции: lambda -> kappa
    1. Унифицировать логику обработки
    2. Настроить replay механизм
@@ -849,6 +852,7 @@ migration.create_migration_plan("on_premise", "modern_data_stack")
 - Apache Airflow: https://airflow.apache.org/docs/
 
 ---
+
 
 
 

@@ -36,7 +36,6 @@
 **FHIR (Fast Healthcare Interoperability Resources)** — современный стандарт HL7 для обмена медицинскими данными через REST API.
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         Почему FHIR?                                        │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -55,13 +54,11 @@
 │  • Всё или ничего              • Модульный подход                           │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Ключевые особенности
 
 ```python
-
 fhir_features = {
     "REST API": {
         "description": "Стандартные HTTP методы",
@@ -83,7 +80,6 @@ fhir_features = {
         "use_case": "Добавление custom полей"
     }
 }
-
 ```
 
 ### 1.3 Версии FHIR
@@ -103,7 +99,6 @@ fhir_features = {
 ### 2.1 Структура ресурса
 
 ```json
-
 {
   "resourceType": "Patient",
   "id": "patient-123",
@@ -127,13 +122,11 @@ fhir_features = {
   "gender": "male",
   "birthDate": "1980-05-15"
 }
-
 ```
 
 ### 2.2 Основные ресурсы
 
 ```python
-
 fhir_resources = {
     "Administrative": {
         "Patient": "Демографические данные пациента",
@@ -158,13 +151,11 @@ fhir_resources = {
         "ImagingStudy": "Исследование изображений"
     }
 }
-
 ```
 
 ### 2.3 Пример Patient Resource
 
 ```json
-
 {
   "resourceType": "Patient",
   "id": "patient-123",
@@ -228,13 +219,11 @@ fhir_resources = {
     }
   ]
 }
-
 ```
 
 ### 2.4 Observation Resource
 
 ```json
-
 {
   "resourceType": "Observation",
   "id": "bp-001",
@@ -290,7 +279,6 @@ fhir_resources = {
     }
   ]
 }
-
 ```
 
 ---
@@ -301,6 +289,7 @@ fhir_resources = {
 
 ```python
 # FHIR REST API операции
+
 fhir_operations = {
     "read": {
         "method": "GET",
@@ -333,46 +322,50 @@ fhir_operations = {
         "description": "Поиск ресурсов"
     }
 }
-
 ```
 
 ### 3.2 Параметры поиска
 
 ```bash
 # Поиск по имени
+
 GET /Patient?name=Иванов
 GET /Patient?given=Иван&family=Иванов
 
 # Поиск по дате рождения
+
 GET /Patient?birthdate=1980-05-15
 GET /Patient?birthdate=ge1980-01-01    # greater or equal
 GET /Patient?birthdate=lt1990-01-01    # less than
 
 # Поиск по идентификатору
+
 GET /Patient?identifier=MRN-123456
 GET /Patient?identifier=http://hospital.org|MRN-123456
 
 # Комбинированный поиск
+
 GET /Patient?name=Иванов&gender=male&birthdate=ge1980-01-01
 
 # Сортировка
+
 GET /Patient?name=Иванов&_sort=birthdate
 GET /Patient?name=Иванов&_sort=-birthdate  # descending
 
 # Пагинация
+
 GET /Patient?_count=20
 GET /Patient?_count=20&_offset=40
 
 # Include связанных ресурсов
+
 GET /Observation?patient=123&_include=Observation:patient
 GET /Patient/123?_revinclude=Observation:patient
-
 ```
 
 ### 3.3 Bundle и Transaction
 
 ```json
-
 {
   "resourceType": "Bundle",
   "type": "transaction",
@@ -402,7 +395,6 @@ GET /Patient/123?_revinclude=Observation:patient
     }
   ]
 }
-
 ```
 
 ---
@@ -412,15 +404,12 @@ GET /Patient/123?_revinclude=Observation:patient
 ### 4.1 Библиотека fhir.resources
 
 ```bash
-
 pip install fhir.resources requests
-
 ```
 
 ### 4.2 Создание ресурсов
 
 ```python
-
 from fhir.resources.patient import Patient
 from fhir.resources.humanname import HumanName
 from fhir.resources.identifier import Identifier
@@ -429,6 +418,7 @@ from fhir.resources.address import Address
 from datetime import date
 
 # Создание пациента
+
 patient = Patient(
     identifier=[
         Identifier(
@@ -470,14 +460,13 @@ patient = Patient(
 )
 
 # Конвертация в JSON
-print(patient.json(indent=2))
 
+print(patient.json(indent=2))
 ```
 
 ### 4.3 FHIR Client
 
 ```python
-
 import requests
 from fhir.resources.patient import Patient
 from fhir.resources.observation import Observation
@@ -542,22 +531,23 @@ class FHIRClient:
         response.raise_for_status()
 
 # Использование
+
 client = FHIRClient("http://hapi.fhir.org/baseR4")
 
 # Создание пациента
+
 created = client.create(patient)
 print(f"Created patient with ID: {created['id']}")
 
 # Поиск пациентов
+
 patients = client.search("Patient", family="Иванов")
 print(f"Found {len(patients)} patients")
-
 ```
 
 ### 4.4 Создание Observation
 
 ```python
-
 from fhir.resources.observation import Observation
 from fhir.resources.codeableconcept import CodeableConcept
 from fhir.resources.coding import Coding
@@ -601,6 +591,7 @@ def create_vital_sign(patient_id: str, code: str, display: str,
     )
 
 # Создание vital signs
+
 heart_rate = create_vital_sign(
     patient_id="patient-123",
     code="8867-4",
@@ -619,7 +610,6 @@ temperature = create_vital_sign(
 
 print("Heart Rate:")
 print(heart_rate.json(indent=2))
-
 ```
 
 ---
@@ -630,6 +620,7 @@ print(heart_rate.json(indent=2))
 
 ```python
 # Способы указания reference
+
 references = {
     "literal": {
         "reference": "Patient/patient-123"
@@ -648,13 +639,11 @@ references = {
         "reference": "http://other-system.org/fhir/Patient/ext-123"
     }
 }
-
 ```
 
 ### 5.2 Связи между ресурсами
 
 ```
-
 Patient ←──────────────────────────────────────────────────────────┐
    │                                                                │
    │ subject                                                        │
@@ -672,7 +661,6 @@ ServiceRequest
    │ result
    ▼
 DiagnosticReport
-
 ```
 
 ---
@@ -680,7 +668,6 @@ DiagnosticReport
 ## 6. Публичные FHIR серверы
 
 ```python
-
 public_fhir_servers = {
     "HAPI FHIR": {
         "url": "http://hapi.fhir.org/baseR4",
@@ -700,6 +687,7 @@ public_fhir_servers = {
 }
 
 # Проверка доступности сервера
+
 import requests
 
 def check_fhir_server(base_url: str) -> dict:
@@ -721,10 +709,10 @@ def check_fhir_server(base_url: str) -> dict:
         return {"status": "error", "message": str(e)}
 
 # Проверка
+
 for name, info in public_fhir_servers.items():
     result = check_fhir_server(info["url"])
     print(f"{name}: {result['status']}")
-
 ```
 
 ---
@@ -735,49 +723,52 @@ for name, info in public_fhir_servers.items():
 
 ```python
 # ❌ Неправильно
+
 observation = Observation(
     subject="patient-123"  # Строка вместо Reference
 )
 
 # ✅ Правильно
+
 observation = Observation(
     subject={"reference": "Patient/patient-123"}
 )
-
 ```
 
 ### 7.2 Пропущенные обязательные поля
 
 ```python
 # ❌ Неправильно — нет status
+
 observation = Observation(
     code={"coding": [{"code": "718-7"}]},
     valueQuantity={"value": 14.5}
 )
 
 # ✅ Правильно
+
 observation = Observation(
     status="final",  # Обязательно!
     code={"coding": [{"code": "718-7"}]},
     valueQuantity={"value": 14.5}
 )
-
 ```
 
 ### 7.3 Неправильный формат даты
 
 ```python
-
 from datetime import date
 
 # ❌ Неправильно
+
 patient = Patient(birthDate="15/05/1980")
 
 # ✅ Правильно
+
 patient = Patient(birthDate=date(1980, 5, 15))
 # или
-patient = Patient(birthDate="1980-05-15")
 
+patient = Patient(birthDate="1980-05-15")
 ```
 
 ---
@@ -822,6 +813,7 @@ patient = Patient(birthDate="1980-05-15")
 - [HAPI FHIR Server](https://hapifhir.io/)
 
 ---
+
 
 
 

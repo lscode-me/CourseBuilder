@@ -58,7 +58,6 @@
 **Архитектура pipeline:**
 
 ```
-
 Input Data → Stage 1 → Stage 2 → Stage 3 → ... → Stage N → Output Data
              ↓          ↓          ↓                    ↓
           Results    Results    Results            Final Results
@@ -68,6 +67,7 @@ Input Data → Stage 1 → Stage 2 → Stage 3 → ... → Stage N → Output Da
 
 ```python
 # Характеристики pipeline-based processing
+
 pipeline_characteristics = {
     "структура": {
         "этапы": "Последовательные стадии обработки",
@@ -101,7 +101,6 @@ for category, details in pipeline_characteristics.items():
 
 **Output:**
 ```
-
 Pipeline-based Processing:
 
 Структура:
@@ -126,7 +125,6 @@ Pipeline-based Processing:
 **Типичный pipeline для анализа генома:**
 
 ```
-
 Raw FASTQ files
     ↓
 [QC] → Quality control (FastQC, MultiQC)
@@ -210,7 +208,6 @@ Final Results
 **Архитектура workflow orchestration:**
 
 ```
-
 Workflow Definition (DSL)
     ↓
 Orchestrator Engine
@@ -231,6 +228,7 @@ Execution Backend
 
 ```python
 # Характеристики workflow orchestration
+
 workflow_characteristics = {
     "возможности": [
         "Условная логика (if/else)",
@@ -261,7 +259,6 @@ for category, details in workflow_characteristics.items():
 
 **Output:**
 ```
-
 Workflow Orchestration:
 
 Возможности:
@@ -335,7 +332,6 @@ Workflow Orchestration:
 **Компоненты воспроизводимости:**
 
 ```
-
 ┌─────────────────────────────────────────┐
 │      Reproducible Research Stack        │
 ├─────────────────────────────────────────┤
@@ -355,6 +351,7 @@ Workflow Orchestration:
 
 ```python
 # Компоненты reproducible research
+
 reproducible_components = {
     "код": {
         "требования": [
@@ -400,7 +397,6 @@ for component, requirements in reproducible_components.items():
 
 **Output:**
 ```
-
 Reproducible Research:
 
 Код:
@@ -479,7 +475,6 @@ Workflow:
 **Архитектура HPC:**
 
 ```
-
 ┌─────────────────────────────────────┐
 │         HPC Cluster                 │
 ├─────────────────────────────────────┤
@@ -528,7 +523,6 @@ Workflow:
 **Архитектура Cloud:**
 
 ```
-
 ┌─────────────────────────────────────┐
 │         Cloud Platform              │
 ├─────────────────────────────────────┤
@@ -772,6 +766,7 @@ Workflow:
 - [Snakemake Documentation](https://snakemake.readthedocs.io/)
 
 ---
+
 
 
 

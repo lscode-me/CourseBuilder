@@ -37,7 +37,6 @@
 ### 1.2 SRE vs DevOps
 
 ```python
-
 comparison = {
     "DevOps": {
         "type": "Культура и философия",
@@ -60,7 +59,6 @@ comparison = {
 ### 1.3 Ключевые принципы SRE
 
 ```python
-
 sre_principles = [
     "Embracing risk — баланс надёжности и скорости развития",
     "SLOs — измеримые цели надёжности",
@@ -70,7 +68,6 @@ sre_principles = [
     "Release engineering — безопасные релизы",
     "Simplicity — простота систем"
 ]
-
 ```
 
 ---
@@ -81,6 +78,7 @@ sre_principles = [
 
 ```python
 # Добавление каждой "девятки" экспоненциально дороже
+
 reliability_cost = {
     "99%": {
         "downtime_per_year": "3.65 days",
@@ -103,7 +101,6 @@ reliability_cost = {
         "cost_multiplier": 1000
     }
 }
-
 ```
 
 ### 2.2 Error Budget
@@ -114,10 +111,12 @@ reliability_cost = {
 # Error Budget = 1 - SLO
 
 # Если SLO = 99.9%
+
 slo = 0.999
 error_budget = 1 - slo  # 0.1% = 0.001
 
 # За 30 дней (43,200 минут):
+
 minutes_per_month = 30 * 24 * 60  # 43,200
 allowed_downtime = minutes_per_month * error_budget  # 43.2 минуты
 
@@ -128,7 +127,6 @@ print(f"Error budget: {allowed_downtime:.1f} minutes per month")
 ### 2.3 Использование Error Budget
 
 ```python
-
 error_budget_policies = {
     "budget_available": {
         "description": "Error budget не исчерпан",
@@ -148,7 +146,6 @@ error_budget_policies = {
         ]
     }
 }
-
 ```
 
 ---
@@ -169,7 +166,6 @@ error_budget_policies = {
 ### 3.2 Примеры Toil
 
 ```python
-
 toil_examples = {
     "is_toil": [
         "Ручной перезапуск сервиса при сбое",
@@ -186,13 +182,13 @@ toil_examples = {
         "On-call (если не чрезмерно)"
     ]
 }
-
 ```
 
 ### 3.3 Измерение и устранение Toil
 
 ```python
 # Цель Google: SRE тратит максимум 50% времени на toil
+
 MAX_TOIL_PERCENTAGE = 50
 
 def calculate_toil_percentage(toil_hours: float, total_hours: float) -> float:
@@ -216,6 +212,7 @@ def should_automate(
     }
 
 # Пример
+
 result = should_automate(
     time_spent_weekly=2,      # 2 часа в неделю
     automation_time=16        # 16 часов на автоматизацию
@@ -223,7 +220,6 @@ result = should_automate(
 print(f"Should automate: {result['should_automate']}")
 print(f"ROI in {result['months_to_roi']:.1f} months")
 print(f"Annual savings: {result['annual_savings']:.0f} hours")
-
 ```
 
 ---
@@ -233,7 +229,6 @@ print(f"Annual savings: {result['annual_savings']:.0f} hours")
 ### 4.1 Capacity Planning
 
 ```python
-
 def capacity_planning(
     current_usage: float,      # Текущее использование (%)
     growth_rate: float,        # Месячный рост (%)
@@ -261,6 +256,7 @@ def capacity_planning(
     }
 
 # Пример
+
 result = capacity_planning(
     current_usage=55,
     growth_rate=5,
@@ -268,13 +264,11 @@ result = capacity_planning(
     lead_time_months=2
 )
 print(f"Provision in {result['provision_at_month']} months")
-
 ```
 
 ### 4.2 Release Engineering
 
 ```python
-
 release_engineering_practices = {
     "hermetic_builds": "Воспроизводимые сборки",
     "progressive_rollouts": "Постепенное развёртывание",
@@ -283,13 +277,11 @@ release_engineering_practices = {
     "quick_rollback": "Быстрый откат (< 5 минут)",
     "canary_releases": "Тестирование на части трафика"
 }
-
 ```
 
 ### 4.3 On-Call Best Practices
 
 ```python
-
 on_call_best_practices = {
     "rotation": {
         "primary_secondary": "Primary + Secondary on-call",
@@ -309,7 +301,6 @@ on_call_best_practices = {
         "postmortem": "Blameless postmortem после инцидентов"
     }
 }
-
 ```
 
 ---
@@ -319,7 +310,6 @@ on_call_best_practices = {
 ### 5.1 Модели организации
 
 ```python
-
 sre_team_models = {
     "embedded": {
         "description": "SRE встроен в product team",
@@ -340,13 +330,11 @@ sre_team_models = {
         "when": "Много продуктовых команд"
     }
 }
-
 ```
 
 ### 5.2 SRE Responsibilities
 
 ```python
-
 sre_responsibilities = {
     "50_percent_engineering": [
         "Разработка инструментов автоматизации",
@@ -361,7 +349,6 @@ sre_responsibilities = {
         "Postmortems"
     ]
 }
-
 ```
 
 ---
@@ -371,7 +358,6 @@ sre_responsibilities = {
 ### 6.1 Production Readiness Review (PRR)
 
 ```python
-
 prr_checklist = {
     "architecture": [
         "Architecture documented",
@@ -401,7 +387,6 @@ prr_checklist = {
         "Secrets management"
     ]
 }
-
 ```
 
 ---
@@ -444,6 +429,7 @@ prr_checklist = {
 - "Seeking SRE" by David Blank-Edelman
 
 ---
+
 
 
 

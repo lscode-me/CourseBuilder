@@ -65,23 +65,19 @@ At C2, you're not eliminating errors entirely—you're reducing their **frequenc
 When an abstract noun is **pre-modified**, do you need THE?
 
 ```
-
 ❌ "The modern technology has changed our lives."
 ✓ "Modern technology has changed our lives." (still generic)
 
 BUT:
 ✓ "The technology used in this device is proprietary."
 (specified by "used in this device")
-
 ```
 
 **Test:** Is it still generic even with the modifier?
 
 ```
-
 "Modern technology" = technology in general → ∅
 "The modern technology of AI" = specified by "of AI" → THE
-
 ```
 
 ### 2.2 THE with Unique-in-Context Items
@@ -89,11 +85,9 @@ BUT:
 **Missing THE when there's only one in context:**
 
 ```
-
 ❌ "I opened fridge and took out milk."
 ✓ "I opened the fridge and took out the milk."
 (the fridge in my kitchen, the milk in the fridge)
-
 ```
 
 ### 2.3 Associative THE
@@ -101,10 +95,8 @@ BUT:
 **Missing THE for associated parts:**
 
 ```
-
 ❌ "I bought a car. Engine is powerful."
 ✓ "I bought a car. The engine is powerful."
-
 ```
 
 ---
@@ -116,35 +108,29 @@ BUT:
 These may still slip through:
 
 ```
-
 ❌ "depend from" → ✓ "depend on"
 ❌ "consist from" → ✓ "consist of"
 ❌ "interested of" → ✓ "interested in"
 ❌ "married with" → ✓ "married to"
-
 ```
 
 ### 3.2 Verb + Preposition Differences
 
 ```
-
 ❌ "explain me" → ✓ "explain to me"
 ❌ "listen me" → ✓ "listen to me"
 ❌ "discuss about" → ✓ "discuss (direct object)"
 ❌ "emphasize on" → ✓ "emphasize (direct object)"
 ❌ "mention about" → ✓ "mention (direct object)"
-
 ```
 
 ### 3.3 Subtle Differences
 
 ```
-
 in/on/at with places:
 "in the street" (BrE) / "on the street" (AmE)
 "at the corner" / "on the corner"
 "in the picture" / "on the wall"
-
 ```
 
 ---
@@ -156,13 +142,11 @@ in/on/at with places:
 **Still appears at C2:**
 
 ```
-
 ❌ "I know him since 2010."
 ✓ "I've known him since 2010."
 
 ❌ "I work here for five years."
 ✓ "I've worked here for five years."
-
 ```
 
 ### 4.2 Future in Time Clauses
@@ -170,25 +154,21 @@ in/on/at with places:
 **Deeply fossilized:**
 
 ```
-
 ❌ "When I will arrive..."
 ✓ "When I arrive..."
 
 ❌ "If it will rain..."
 ✓ "If it rains..."
-
 ```
 
 ### 4.3 Aspect Confusion
 
 ```
-
 ❌ "I am understanding now." (stative verb)
 ✓ "I understand now."
 
 ❌ "He is knowing the answer."
 ✓ "He knows the answer."
-
 ```
 
 ---
@@ -200,22 +180,18 @@ in/on/at with places:
 **Still the #1 pragmatic issue:**
 
 ```
-
 ❌ "Your analysis is wrong."
 ✓ "I wonder if there might be another way to look at this."
 
 ❌ "Send me the report."
 ✓ "Would you mind sending me the report when you have a chance?"
-
 ```
 
 ### 5.2 Under-Hedging in Academic Writing
 
 ```
-
 ❌ "The results prove that X causes Y."
 ✓ "The results suggest that X may contribute to Y."
-
 ```
 
 ### 5.3 Missing Small Talk
@@ -223,10 +199,8 @@ in/on/at with places:
 **In professional contexts:**
 
 ```
-
 ❌ "Please send me the data."
 ✓ "Hi John, hope you're doing well. I was wondering if you could send me the data when you get a chance. Thanks!"
-
 ```
 
 ---
@@ -236,13 +210,11 @@ in/on/at with places:
 ### 6.1 Persistent Calques
 
 ```
-
 ❌ "do a mistake" → ✓ "make a mistake"
 ❌ "strong rain" → ✓ "heavy rain"
 ❌ "say lies" → ✓ "tell lies"
 ❌ "make a photo" → ✓ "take a photo"
 ❌ "open/close the light" → ✓ "turn on/off the light"
-
 ```
 
 ### 6.2 Make vs Do (Persistent Confusion)
@@ -252,31 +224,25 @@ in/on/at with places:
 MAKE: Creating, producing, result-focused
 
 ```
-
 make a decision, make progress, make a mistake
 make money, make sense, make an effort
-
 ```
 
 DO: Activities, tasks, process-focused
 
 ```
-
 do homework, do research, do business
 do damage, do your best, do a favor
-
 ```
 
 ### 6.3 Adjective Collocations
 
 ```
-
 ❌ "big mistake" (OK but...)
 ✓ "serious mistake" (more natural)
 
 ❌ "strong coffee" ✓
 ❌ "strong rain" → ✓ "heavy rain"
-
 ```
 
 ---
@@ -286,7 +252,6 @@ do damage, do your best, do a favor
 ### 7.1 Adverb Position
 
 ```
-
 ❌ "I very much like this idea."
 ✓ "I like this idea very much."
 ✓ "I really like this idea."
@@ -296,19 +261,16 @@ do damage, do your best, do a favor
 
 ❌ "I always am tired."
 ✓ "I am always tired."
-
 ```
 
 ### 7.2 Position of "Also" and "Even"
 
 ```
-
 ❌ "Also she came to the meeting."
 ✓ "She also came to the meeting."
 
 ❌ "Even he didn't know."
 ✓ "He didn't even know." / "Even he didn't know." (OK for emphasis)
-
 ```
 
 ---
@@ -329,13 +291,11 @@ do damage, do your best, do a favor
 ### 8.2 Usage Errors
 
 ```
-
 ❌ "This is a very actual problem." (meaning current)
 ✓ "This is a very relevant/pressing problem."
 
 ❌ "She's very sympathetic." (meaning nice)
 ✓ "She's very likeable/pleasant."
-
 ```
 
 ---
@@ -345,13 +305,11 @@ do damage, do your best, do a favor
 ### 9.1 Over-Formality in Speech
 
 ```
-
 ❌ (Spoken) "I would like to express my gratitude."
 ✓ (Spoken) "Thanks so much!"
 
 ❌ (Spoken) "Could you possibly inform me of the time?"
 ✓ (Spoken) "What time is it?" / "Got the time?"
-
 ```
 
 ### 9.2 Under-Formality in Writing
@@ -359,19 +317,16 @@ do damage, do your best, do a favor
 Sometimes Russian speakers are also **too informal** in formal writing:
 
 ```
-
 ❌ (Academic) "Scientists found out that..."
 ✓ (Academic) "Research has demonstrated that..."
 
 ❌ (Academic) "The thing is..."
 ✓ (Academic) "The issue is that..."
-
 ```
 
 ### 9.3 Russian Academic Style Transfer
 
 ```
-
 ❌ "In the given article, we consider the question of..."
 ✓ "This article examines..."
 
@@ -380,7 +335,6 @@ Sometimes Russian speakers are also **too informal** in formal writing:
 
 ❌ "It is necessary to mention that..."
 ✓ "It should be noted that..." / Simply state the fact
-
 ```
 
 ---
@@ -449,11 +403,9 @@ When reading/listening, ask:
 
 Keep tracking:
 ```
-
 | Date | Error | Correct | Category | Context |
 |------|-------|---------|----------|---------|
 | | | | | |
-
 ```
 
 ---

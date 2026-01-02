@@ -148,7 +148,6 @@ pub extern "C" fn _start() -> ! {
 **Example: Мигание LED**
 
 ```rust
-
 // #![no_std]
 // #![no_main]
 //
@@ -232,7 +231,6 @@ fn main() {
 ### 5.3 Пример: Работа с регистрами
 
 ```rust
-
 // Концептуальный пример работы с регистрами
 // use volatile_register::{RW, RO};
 
@@ -254,7 +252,6 @@ fn main() {
 ### 5.4 Пример: Прерывания
 
 ```rust
-
 // #![no_std]
 // use cortex_m::interrupt;
 
@@ -285,7 +282,6 @@ fn main() {
 ### 6.2 Пример: Real-time задача
 
 ```rust
-
 // #![no_std]
 // use cortex_m_rt::entry;
 
@@ -352,7 +348,6 @@ fn main() {
 ### 8.1 Пример: Чтение датчика
 
 ```rust
-
 // #![no_std]
 // use embedded_hal::adc::OneShot;
 
@@ -367,7 +362,6 @@ fn main() {
 ### 8.2 Пример: Управление мотором
 
 ```rust
-
 // #![no_std]
 // use embedded_hal::PwmPin;
 
@@ -384,7 +378,6 @@ fn main() {
 ### 8.3 Пример: Коммуникация по UART
 
 ```rust
-
 // #![no_std]
 // use embedded_hal::serial::{Read, Write};
 

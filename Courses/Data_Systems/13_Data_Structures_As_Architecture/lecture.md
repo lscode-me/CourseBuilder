@@ -52,12 +52,12 @@ Redis (Remote Dictionary Server) выставляет их наружу.
 Вот как работает Redis (упрощенно).
 
 ```python
-
 import select
 import socket
 import queue
 
 # Create a non-blocking server socket
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setblocking(False)
 server.bind(('localhost', 6379))
@@ -131,7 +131,6 @@ Redis — маньяк оптимизации памяти.
 **Реализация SkipList:**
 
 ```python
-
 import random
 
 class SkipListNode:
@@ -274,7 +273,6 @@ Parent продолжает писать. Если Parent меняет стра�
 **Симуляция AOF:**
 
 ```python
-
 class AOFWriter:
     """Упрощенная реализация AOF."""
     
@@ -328,7 +326,6 @@ aof.close()
 **AOF Rewriting (компактификация):**
 
 ```python
-
 class AOFRewriter:
     """Переписывание AOF для удаления избыточных команд."""
     
@@ -361,7 +358,6 @@ class AOFRewriter:
 # После rewriting (текущее состояние: x=3, y=10)
 # SET x 3
 # SET y 10
-
 ```
 
 ---
@@ -385,7 +381,6 @@ Redis Cluster не использует Consistent Hashing (кольцо).
 **Реализация Hash Slot:**
 
 ```python
-
 import binascii
 
 def crc16(key):
@@ -404,6 +399,7 @@ def get_slot(key):
     return crc16(key) % 16384
 
 # Примеры
+
 print(get_slot("user:1000"))  # 1234
 print(get_slot("{user:1000}:profile"))  # 1234 (тот же слот!)
 print(get_slot("{user:1000}:settings"))  # 1234 (тот же слот!)
@@ -414,7 +410,6 @@ print(get_slot("{user:1000}:settings"))  # 1234 (тот же слот!)
 **Redis Cluster Client:**
 
 ```python
-
 class RedisClusterClient:
     """Упрощенный клиент для Redis Cluster."""
     
@@ -470,7 +465,6 @@ client.set("{user:1000}:profile", "data")  # Попадет на тот же у�
 ### 5.2 Resharding (Перераспределение слотов)
 
 ```python
-
 class ClusterResharding:
     """Перераспределение слотов между узлами."""
     
@@ -611,5 +605,6 @@ Redis расшифровывается как **RE**mote **DI**ctionary **S**erv
 5.  Посмотрите encoding. Если числа малые — `intset`. добавьте строку `SADD myset "hello"`. Encoding станет `hashtable`.
 
 В следующем модуле мы обсудим, как выбирать между SQL, NoSQL и NewSQL. [Choosing Data Systems](../14_Choosing_DS_For_System_Design/).
+
 
 

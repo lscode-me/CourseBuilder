@@ -34,7 +34,6 @@
 **Example: Базовое объявление**
 
 ```rust
-
 fn main() {
     let x = 5;
     println!("x = {}", x);
@@ -43,14 +42,12 @@ fn main() {
 
 **Output:**
 ```
-
 x = 5
 ```
 
 **Попытка изменить неизменяемую переменную:**
 
 ```rust
-
 fn main() {
     let x = 5;
     x = 6;  // Ошибка компиляции!
@@ -60,7 +57,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error[E0384]: cannot assign twice to immutable variable `x`
  --> src/main.rs:3:5
   |
@@ -77,7 +73,6 @@ error[E0384]: cannot assign twice to immutable variable `x`
 **Example: Изменяемая переменная**
 
 ```rust
-
 fn main() {
     let mut x = 5;
     println!("x = {}", x);
@@ -88,7 +83,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 5
 x = 6
 ```
@@ -133,7 +127,6 @@ Rust имеет несколько целочисленных типов раз�
 **Example: Целочисленные типы**
 
 ```rust
-
 fn main() {
     let a: i32 = 42;
     let b: u32 = 42;
@@ -149,7 +142,6 @@ fn main() {
 
 **Output:**
 ```
-
 a (i32) = 42
 b (u32) = 42
 c (i8) = -128
@@ -171,7 +163,6 @@ Rust имеет два типа для чисел с плавающей точк
 **Example: Числа с плавающей точкой**
 
 ```rust
-
 fn main() {
     let x: f32 = 3.14;
     let y: f64 = 2.71828;
@@ -185,7 +176,6 @@ fn main() {
 
 **Output:**
 ```
-
 x (f32) = 3.14
 y (f64) = 2.71828
 z (f64) = 1.5
@@ -198,7 +188,6 @@ z (f64) = 1.5
 **Example: Булев тип**
 
 ```rust
-
 fn main() {
     let is_rust_fun: bool = true;
     let is_learning: bool = false;
@@ -210,7 +199,6 @@ fn main() {
 
 **Output:**
 ```
-
 Rust интересен? true
 Изучаем? false
 ```
@@ -222,7 +210,6 @@ Rust интересен? true
 **Example: Символьный тип**
 
 ```rust
-
 fn main() {
     let letter: char = 'A';
     let emoji: char = '🦀';
@@ -236,7 +223,6 @@ fn main() {
 
 **Output:**
 ```
-
 Буква: A
 Эмодзи: 🦀
 Китайский: 中
@@ -255,7 +241,6 @@ Rust может автоматически определять тип пере�
 **Example: Вывод типов**
 
 ```rust
-
 fn main() {
     let x = 5;        // i32
     let y = 3.14;     // f64
@@ -271,7 +256,6 @@ fn main() {
 
 **Output:**
 ```
-
 x: 5, тип: i32
 y: 3.14, тип: f64
 z: true, тип: bool
@@ -285,7 +269,6 @@ c: A, тип: char
 **Example: Неоднозначность типа**
 
 ```rust
-
 fn main() {
     // Ошибка: неоднозначный тип
     // let x = vec![];
@@ -299,7 +282,6 @@ fn main() {
 **Example: Функции с параметрами**
 
 ```rust
-
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
@@ -312,7 +294,6 @@ fn main() {
 
 **Output:**
 ```
-
 Результат: 8
 ```
 
@@ -329,7 +310,6 @@ fn main() {
 **Example: Явные аннотации**
 
 ```rust
-
 fn main() {
     let x: i32 = 5;
     let y: f64 = 3.14;
@@ -345,7 +325,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 5
 y = 3.14
 is_active = true
@@ -364,7 +343,6 @@ name = Rust
 **Example: Функция с аннотациями**
 
 ```rust
-
 fn calculate_area(width: f64, height: f64) -> f64 {
     width * height
 }
@@ -377,7 +355,6 @@ fn main() {
 
 **Output:**
 ```
-
 Площадь: 50
 ```
 
@@ -390,7 +367,6 @@ fn main() {
 **Example: Различные форматы чисел**
 
 ```rust
-
 fn main() {
     let decimal = 98_222;        // 98222
     let hex = 0xff;              // 255 в десятичной
@@ -408,7 +384,6 @@ fn main() {
 
 **Output:**
 ```
-
 Десятичное: 98222
 Шестнадцатеричное: 255
 Восьмеричное: 63
@@ -423,7 +398,6 @@ fn main() {
 **Example: Указание типа литерала**
 
 ```rust
-
 fn main() {
     let x = 5u32;        // u32
     let y = 3.14f32;     // f32
@@ -437,7 +411,6 @@ fn main() {
 
 **Output:**
 ```
-
 x: 5 (u32)
 y: 3.14 (f32)
 z: 1000 (i64)
@@ -452,7 +425,6 @@ z: 1000 (i64)
 **Example: Преобразование типов**
 
 ```rust
-
 fn main() {
     let x: i32 = 42;
     let y: f64 = x as f64;
@@ -468,7 +440,6 @@ fn main() {
 
 **Output:**
 ```
-
 x (i32) = 42
 y (f64) = 42
 z (u8) = 255
@@ -481,7 +452,6 @@ w (i16) = 255
 **Example: Потенциальная потеря данных**
 
 ```rust
-
 fn main() {
     let x: f64 = 3.14;
     let y: i32 = x as i32;  // Теряется дробная часть
@@ -493,7 +463,6 @@ fn main() {
 
 **Output:**
 ```
-
 x (f64) = 3.14
 y (i32) = 3
 ```
@@ -509,7 +478,6 @@ y (i32) = 3
 **Example: Константы**
 
 ```rust
-
 const MAX_POINTS: u32 = 100_000;
 const PI: f64 = 3.14159;
 
@@ -521,7 +489,6 @@ fn main() {
 
 **Output:**
 ```
-
 Максимум очков: 100000
 Пи: 3.14159
 ```
@@ -540,7 +507,6 @@ fn main() {
 **Example: Статические переменные**
 
 ```rust
-
 static LANGUAGE: &str = "Rust";
 static mut COUNTER: u32 = 0;
 
@@ -556,7 +522,6 @@ fn main() {
 
 **Output:**
 ```
-
 Язык: Rust
 Счётчик: 1
 ```
@@ -575,7 +540,6 @@ fn main() {
 **Example: Shadowing**
 
 ```rust
-
 fn main() {
     let x = 5;
     let x = x + 1;
@@ -587,7 +551,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 12
 ```
 
@@ -602,7 +565,6 @@ x = 12
 **Example: Shadowing позволяет менять тип**
 
 ```rust
-
 fn main() {
     let spaces = "   ";           // &str
     let spaces = spaces.len();    // usize (можно изменить тип!)
@@ -613,14 +575,12 @@ fn main() {
 
 **Output:**
 ```
-
 Количество пробелов: 3
 ```
 
 **С mut это невозможно:**
 
 ```rust
-
 fn main() {
     let mut spaces = "   ";
     spaces = spaces.len();  // Ошибка: несовместимые типы!
@@ -629,7 +589,6 @@ fn main() {
 
 **Ошибка компиляции:**
 ```
-
 error[E0308]: mismatched types
 
  --> src/main.rs:3:13
@@ -652,7 +611,6 @@ error[E0308]: mismatched types
 **Example: Кортежи**
 
 ```rust
-
 fn main() {
     let tup: (i32, f64, bool) = (500, 6.4, true);
     
@@ -665,7 +623,6 @@ fn main() {
 
 **Output:**
 ```
-
 Кортеж: (500, 6.4, true)
 Первый элемент: 500
 Второй элемент: 6.4
@@ -677,7 +634,6 @@ fn main() {
 **Example: Деструктуризация**
 
 ```rust
-
 fn main() {
     let tup = (500, 6.4, true);
     let (x, y, z) = tup;
@@ -690,7 +646,6 @@ fn main() {
 
 **Output:**
 ```
-
 x = 500
 y = 6.4
 z = true
@@ -707,7 +662,6 @@ z = true
 **Example: Массивы**
 
 ```rust
-
 fn main() {
     let arr: [i32; 5] = [1, 2, 3, 4, 5];
     
@@ -719,7 +673,6 @@ fn main() {
 
 **Output:**
 ```
-
 Массив: [1, 2, 3, 4, 5]
 Первый элемент: 1
 Второй элемент: 2
@@ -730,7 +683,6 @@ fn main() {
 **Example: Инициализация одинаковыми значениями**
 
 ```rust
-
 fn main() {
     let arr = [3; 5];  // Массив из 5 элементов, каждый равен 3
     
@@ -740,7 +692,6 @@ fn main() {
 
 **Output:**
 ```
-
 Массив: [3, 3, 3, 3, 3]
 ```
 
@@ -748,7 +699,6 @@ fn main() {
 Выход за границы массива вызывает панику во время выполнения!
 
 ```rust
-
 fn main() {
     let arr = [1, 2, 3];
     println!("{}", arr[10]);  // Паника!

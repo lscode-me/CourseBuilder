@@ -56,7 +56,6 @@
 **Пример: Мейнфрейм архитектура**
 
 ```
-
 Mainframe (IBM System/360)
     ├── Terminal 1 (пользователь 1)
     ├── Terminal 2 (пользователь 2)
@@ -296,6 +295,7 @@ ls -la
 grep "error" log.txt | wc -l
 
 # Windows - PowerShell
+
 Get-ChildItem
 Select-String "error" log.txt | Measure-Object
 
@@ -307,7 +307,6 @@ grep "error" log.txt | wc -l
 
 **Эволюция PC:**
 ```
-
 1980s: IBM PC, DOS
 1990s: Windows 95/98, GUI
 2000s: Windows XP, массовое принятие
@@ -355,7 +354,6 @@ grep "error" log.txt | wc -l
 
 **Оптимизация для батареи:**
 ```swift
-
 // iOS пример оптимизации батареи
 // Background tasks ограничены
 UIApplication.shared.beginBackgroundTask { 
@@ -372,7 +370,6 @@ UIApplication.shared.beginBackgroundTask {
 
 **Мобильные приложения:**
 ```swift
-
 // iOS приложение
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -385,7 +382,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 ```kotlin
-
 // Android приложение
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -471,7 +467,6 @@ def sync_data():
 **Пример: Единая экосистема**
 
 ```
-
 Apple Ecosystem:
   iPhone ──┐
   iPad ────┼── iCloud ── Все устройства синхронизированы
@@ -501,7 +496,6 @@ Google Ecosystem:
 **Пример: IoT устройство**
 
 ```c
-
 // Упрощённый пример IoT устройства
 void iot_device_loop() {
     // Чтение датчика
@@ -598,6 +592,7 @@ void iot_device_loop() {
 - [Apple II, C64, ZX Spectrum, BBC Micro, Amstrad CPC и другие. Почему в войне за пользователя победили не самые лучшие](https://habr.com/ru/companies/timeweb/articles/976818/) — анализ факторов успеха домашних компьютеров 1980-х годов
 
 ---
+
 
 
 

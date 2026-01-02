@@ -43,11 +43,9 @@ Genomics Pipeline:
   Annotation: ANNOVAR -> annotated_variants.vcf
 
 ```
-
 ### 1.2 Адаптация под требования
 
 **Пример: Настройка pipeline под требования**
-
 ```python
 
 class ConfigurablePipeline:
@@ -90,7 +88,6 @@ data = {'needs_qc': False}
 results = pipeline.execute(data)
 
 ```
-
 **Output:**
 ```
 
@@ -98,7 +95,6 @@ Skipping QC (condition not met)
 Executing Analysis with CustomTool
 
 ```
-
 ---
 
 ## 2. Автоматизация Scientific Процессов
@@ -106,7 +102,6 @@ Executing Analysis with CustomTool
 ### 2.1 Автоматизация сбора данных
 
 **Пример: Автоматический сбор данных**
-
 ```python
 
 import schedule
@@ -146,7 +141,6 @@ collector.schedule_collection(interval_minutes=60)
 print("Automated data collection configured")
 
 ```
-
 **Output:**
 ```
 
@@ -154,11 +148,9 @@ Scheduled data collection every 60 minutes
 Automated data collection configured
 
 ```
-
 ### 2.2 Автоматизация анализа
 
 **Пример: Автоматический анализ**
-
 ```python
 
 class AutomatedAnalysis:
@@ -199,7 +191,6 @@ report = analyzer.generate_report()
 print(report)
 
 ```
-
 **Output:**
 ```
 
@@ -208,7 +199,6 @@ Total analyses: 1
 Latest result: {'mean': 3.0, 'std': 1.4142135623730951}
 
 ```
-
 ---
 
 ## 3. Интеграция с лабораторными системами
@@ -218,7 +208,6 @@ Latest result: {'mean': 3.0, 'std': 1.4142135623730951}
 **LIMS (Laboratory Information Management System)** — система управления лабораторией.
 
 **Пример: Интеграция с LIMS**
-
 ```python
 
 class LIMSIntegration:
@@ -256,18 +245,15 @@ samples = lims.fetch_samples('EXP-001')
 print(f"Fetched {len(samples)} samples from LIMS")
 
 ```
-
 **Output:**
 ```
 
 Fetched 2 samples from LIMS
 
 ```
-
 ### 3.2 Интеграция с инструментами
 
 **Пример: Интеграция с научными инструментами**
-
 ```python
 
 class InstrumentIntegration:
@@ -310,7 +296,6 @@ data = instrument.read_data()
 print(f"Read data: {data}")
 
 ```
-
 **Output:**
 ```
 
@@ -318,7 +303,6 @@ Connecting to Spectrophotometer...
 Read data: {'timestamp': '2024-01-15T10:30:00', 'measurements': [10.5, 10.6, 10.4], 'metadata': {'instrument': 'Spectrophotometer'}}
 
 ```
-
 ---
 
 ## 4. Custom Tooling
@@ -326,7 +310,6 @@ Read data: {'timestamp': '2024-01-15T10:30:00', 'measurements': [10.5, 10.6, 10.
 ### 4.1 Разработка специализированных инструментов
 
 **Пример: Создание custom инструмента**
-
 ```python
 
 class ScientificTool:
@@ -393,14 +376,12 @@ result = analyzer.analyze(sequence)
 print(f"Analysis result: {result}")
 
 ```
-
 **Output:**
 ```
 
 Analysis result: {'length': 13, 'gc_content': 53.84615384615385, 'nucleotide_counts': {'A': 4, 'T': 3, 'G': 3, 'C': 3}}
 
 ```
-
 ### 4.2 Best Practices разработки
 
 **Рекомендации:**
@@ -412,7 +393,6 @@ Analysis result: {'length': 13, 'gc_content': 53.84615384615385, 'nucleotide_cou
 - Обработка ошибок
 
 **Пример: Структура проекта**
-
 ```python
 # Структура научного инструмента
 
@@ -443,7 +423,6 @@ for folder, contents in project_structure.items():
             print(f"  {file}: {desc}")
 
 ```
-
 **Output:**
 ```
 

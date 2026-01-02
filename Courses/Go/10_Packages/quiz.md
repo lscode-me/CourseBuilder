@@ -401,11 +401,9 @@ D) Все варианты
 Экспортировано ли поле Name?
 
 ```go
-
 type user struct {
     Name string
 }
-
 ```
 
 A) Частично

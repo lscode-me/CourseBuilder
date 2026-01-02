@@ -9,7 +9,6 @@
 Что выведет следующий код?
 
 ```python
-
 x = 5
 if x > 3:
     print("A")
@@ -17,7 +16,6 @@ elif x > 4:
     print("B")
 else:
     print("C")
-
 ```
 
 A) A
@@ -105,10 +103,8 @@ D) [2, 3, 4, 5, 6, 7, 8, 9]
 Что выведет следующий код?
 
 ```python
-
 for i in range(3):
     print(i, end=" ")
-
 ```
 
 A) 1 2 3
@@ -126,10 +122,8 @@ D) 0 1 2
 Что выведет следующий код?
 
 ```python
-
 for i, char in enumerate("AB", start=1):
     print(f"{i}:{char}", end=" ")
-
 ```
 
 A) 1:AB
@@ -161,12 +155,10 @@ D) Сортирует список
 Что выведет следующий код?
 
 ```python
-
 for i in range(5):
     if i == 3:
         break
     print(i, end=" ")
-
 ```
 
 A) 0 1 2 3 4
@@ -184,12 +176,10 @@ D) 3
 Что выведет следующий код?
 
 ```python
-
 for i in range(5):
     if i == 2:
         continue
     print(i, end=" ")
-
 ```
 
 A) 0 1
@@ -221,14 +211,12 @@ D) Если цикл завершился без break
 Что произойдёт при выполнении этого кода?
 
 ```python
-
 count = 0
 while True:
     count += 1
     if count >= 3:
         break
 print(count)
-
 ```
 
 A) Напечатает 3
@@ -246,10 +234,8 @@ D) Напечатает 2
 Что выведет следующий код?
 
 ```python
-
 result = [x for x in range(10) if x % 2 == 0]
 print(result)
-
 ```
 
 A) [2, 4, 6, 8, 10]
@@ -267,10 +253,8 @@ D) [0, 1, 2, 3, 4]
 Что выведет следующий код?
 
 ```python
-
 matrix = [[j*i for j in range(3)] for i in range(3)]
 print(matrix[1])
-
 ```
 
 A) [0, 1, 2]
@@ -330,11 +314,9 @@ D) Это работает медленнее
 Что выведет следующий код?
 
 ```python
-
 d = {"a": 1, "b": 2}
 for key in d:
     print(key, end=" ")
-
 ```
 
 A) a:1 b:2

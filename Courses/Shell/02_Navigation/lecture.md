@@ -36,13 +36,11 @@
 **Example: Проверка текущей директории**
 
 ```bash
-
 $ pwd
 ```
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -91,7 +89,6 @@ $ pwd
 
 **Output:**
 ```
-
 /etc
 ```
 
@@ -107,7 +104,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -131,7 +127,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -160,7 +155,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -173,7 +167,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -208,7 +201,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -224,7 +216,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -236,7 +227,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -256,13 +246,11 @@ $ pwd
 **Example: Простой список файлов**
 
 ```bash
-
 $ ls
 ```
 
 **Output:**
 ```
-
 Documents  Downloads  Pictures  Videos
 ```
 
@@ -271,13 +259,11 @@ Documents  Downloads  Pictures  Videos
 **Example: Подробный формат**
 
 ```bash
-
 $ ls -l
 ```
 
 **Output:**
 ```
-
 total 16
 drwxr-xr-x 2 user user 4096 Jan 15 10:00 Documents
 drwxr-xr-x 2 user user 4096 Jan 15 10:00 Downloads
@@ -302,13 +288,11 @@ drwxr-xr-x 2 user user 4096 Jan 15 10:00 Videos
 **Example: Показать скрытые файлы**
 
 ```bash
-
 $ ls -a
 ```
 
 **Output:**
 ```
-
 .  ..  .bashrc  .bash_history  .profile  Documents  Downloads
 ```
 
@@ -317,13 +301,11 @@ $ ls -a
 **Example: Комбинация опций**
 
 ```bash
-
 $ ls -la
 ```
 
 **Output:**
 ```
-
 total 48
 drwxr-xr-x 5 user user 4096 Jan 15 10:00 .
 drwxr-xr-x 3 root root 4096 Jan  1 00:00 ..
@@ -341,13 +323,11 @@ drwxr-xr-x 2 user user 4096 Jan 15 10:00 Documents
 **Example: Человекочитаемые размеры**
 
 ```bash
-
 $ ls -lh
 ```
 
 **Output:**
 ```
-
 total 16K
 drwxr-xr-x 2 user user 4.0K Jan 15 10:00 Documents
 drwxr-xr-x 2 user user 4.0K Jan 15 10:00 Downloads
@@ -359,13 +339,11 @@ drwxr-xr-x 2 user user 4.0K Jan 15 10:00 Downloads
 **Example: Сортировка по времени**
 
 ```bash
-
 $ ls -lt
 ```
 
 **Output:**
 ```
-
 total 16
 drwxr-xr-x 2 user user 4096 Jan 15 11:00 Newest
 drwxr-xr-x 2 user user 4096 Jan 15 10:30 Middle
@@ -377,13 +355,11 @@ drwxr-xr-x 2 user user 4096 Jan 15 10:00 Oldest
 **Example: Рекурсивный просмотр**
 
 ```bash
-
 $ ls -R
 ```
 
 **Output:**
 ```
-
 .:
 Documents  Downloads
 
@@ -399,7 +375,6 @@ archive.zip
 **Example: Цветной вывод**
 
 ```bash
-
 $ ls --color=auto
 ```
 
@@ -410,26 +385,22 @@ $ ls --color=auto
 **Example: Показать только директории**
 
 ```bash
-
 $ ls -d */
 ```
 
 **Output:**
 ```
-
 Documents/  Downloads/  Pictures/  Videos/
 ```
 
 **Example: Показать только файлы определённого типа**
 
 ```bash
-
 $ ls *.txt
 ```
 
 **Output:**
 ```
-
 file1.txt  file2.txt  report.txt
 ```
 
@@ -448,7 +419,6 @@ file1.txt  file2.txt  report.txt
 **Example: Структура пути**
 
 ```bash
-
 /home/user/Documents/file.txt
 ```
 
@@ -463,14 +433,12 @@ file1.txt  file2.txt  report.txt
 **Example: Навигация по абсолютному пути**
 
 ```bash
-
 $ cd /usr/local/bin
 $ pwd
 ```
 
 **Output:**
 ```
-
 /usr/local/bin
 ```
 
@@ -494,7 +462,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -509,7 +476,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Downloads
 ```
 
@@ -531,7 +497,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -543,7 +508,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -555,7 +519,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 
@@ -576,7 +539,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/My Documents
 ```
 
@@ -588,9 +550,7 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/My Documents
-
 ```
 
 Обратный слэш `\` экранирует следующий символ, делая пробел частью имени, а не разделителем.
@@ -616,7 +576,6 @@ $ echo $HOME
 
 **Output:**
 ```
-
 /home/username
 ```
 
@@ -628,7 +587,6 @@ $ echo $HOME
 
 **Output:**
 ```
-
 /Users/username
 ```
 
@@ -648,7 +606,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user
 ```
 
@@ -660,7 +617,6 @@ $ ls ~/Documents
 
 **Output:**
 ```
-
 file1.txt  file2.txt
 ```
 
@@ -672,7 +628,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents/Projects
 ```
 
@@ -733,13 +688,11 @@ $ ls -a
 **Example: Типичные скрытые файлы**
 
 ```bash
-
 $ ls -la ~ | grep "^\."
 ```
 
 **Output:**
 ```
-
 drwxr-xr-x 5 user user 4096 Jan 15 10:00 .
 drwxr-xr-x 3 root root 4096 Jan  1 00:00 ..
 -rw-r--r-- 1 user user 220 Jan 15 09:00 .bashrc
@@ -794,7 +747,6 @@ $ cd /usr/l<Tab>
 
 $ cd Doc<Tab>
 # Если есть только одна директория, начинающаяся с Doc, она дополнится
-
 ```
 
 Если есть несколько вариантов, нажмите `Tab` дважды, чтобы увидеть все варианты.
@@ -810,7 +762,6 @@ $ !cd
 # Или использовать стрелки для поиска в истории
 # Стрелка вверх — предыдущая команда
 # Стрелка вниз — следующая команда
-
 ```
 
 ### 7.3 Pushd и Popd (альтернатива cd)
@@ -852,7 +803,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents/Projects
 ```
 
@@ -920,7 +870,6 @@ $ pwd
 
 **Output:**
 ```
-
 /home/user/Documents
 ```
 

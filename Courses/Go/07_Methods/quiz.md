@@ -387,11 +387,9 @@ D) Всегда при неуспехе
 Что выведет код?
 
 ```go
-
 var p *MyType = nil
 var i interface{} = p
 fmt.Println(i == nil)
-
 ```
 
 A) false

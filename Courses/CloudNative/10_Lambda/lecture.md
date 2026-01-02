@@ -27,6 +27,7 @@
 
 ```python
 # Простейшая Lambda функция
+
 def lambda_handler(event, context):
     """
     event: входные данные (JSON)
@@ -38,13 +39,11 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': f'Hello, {name}!'
     }
-
 ```
 
 ### 1.2 Характеристики
 
 ```python
-
 lambda_limits = {
     "memory": "128 MB - 10,240 MB",
     "timeout": "1 second - 15 minutes",
@@ -58,7 +57,6 @@ lambda_limits = {
 print("Lambda Limits:")
 for limit, value in lambda_limits.items():
     print(f"  {limit}: {value}")
-
 ```
 
 ---
@@ -66,7 +64,6 @@ for limit, value in lambda_limits.items():
 ## 2. Триггеры Lambda
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    Lambda Triggers                                │
 ├───────────────────────────────────────────────────────────────────┤
@@ -91,13 +88,11 @@ for limit, value in lambda_limits.items():
 │  └── MSK (Kafka)                                                  │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.1 Пример: S3 Trigger
 
 ```python
-
 import boto3
 import urllib.parse
 
@@ -121,7 +116,6 @@ def lambda_handler(event, context):
         process_file(content)
     
     return {'statusCode': 200}
-
 ```
 
 ---
@@ -131,7 +125,6 @@ def lambda_handler(event, context):
 ### 3.1 Что такое Cold Start
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │                    Cold Start vs Warm Start                       │
 ├───────────────────────────────────────────────────────────────────┤
@@ -156,23 +149,25 @@ def lambda_handler(event, context):
 │  Warm start latency: 1-100ms                                      │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Оптимизация Cold Start
 
 ```python
 # ❌ BAD: Imports внутри handler
+
 def lambda_handler(event, context):
     import boto3  # Импорт при каждом вызове!
     import json
     # ...
 
 # ✅ GOOD: Imports вне handler (один раз при cold start)
+
 import boto3
 import json
 
 # Инициализация клиентов вне handler
+
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('my-table')
 
@@ -180,13 +175,13 @@ def lambda_handler(event, context):
     # Используем уже инициализированные объекты
     response = table.get_item(Key={'id': event['id']})
     return response['Item']
-
 ```
 
 ### 3.3 Provisioned Concurrency
 
 ```bash
 # Для критичных к latency функций
+
 aws lambda put-provisioned-concurrency-config \
     --function-name my-function \
     --qualifier my-alias \
@@ -204,6 +199,7 @@ aws lambda put-provisioned-concurrency-config \
 # Layers — переиспользуемые библиотеки
 
 # Создание layer
+
 mkdir -p python/lib/python3.11/site-packages
 pip install requests -t python/lib/python3.11/site-packages/
 zip -r layer.zip python
@@ -214,10 +210,10 @@ aws lambda publish-layer-version \
     --compatible-runtimes python3.11
 
 # Использование layer
+
 aws lambda update-function-configuration \
     --function-name my-function \
     --layers arn:aws:lambda:us-east-1:123456789012:layer:my-dependencies:1
-
 ```
 
 ---
@@ -226,6 +222,7 @@ aws lambda update-function-configuration \
 
 ```python
 # Lambda для REST API
+
 import json
 
 def lambda_handler(event, context):
@@ -254,7 +251,6 @@ def lambda_handler(event, context):
         'statusCode': 404,
         'body': json.dumps({'error': 'Not found'})
     }
-
 ```
 
 ---
@@ -263,6 +259,7 @@ def lambda_handler(event, context):
 
 ```python
 # Lambda pricing (us-east-1)
+
 def calculate_lambda_cost(
     invocations_per_month: int,
     avg_duration_ms: int,
@@ -291,21 +288,19 @@ def calculate_lambda_cost(
     return round(cost, 2)
 
 # Примеры
+
 print("Lambda Monthly Cost Examples:")
 print(f"  100K invocations, 100ms, 128MB: ${calculate_lambda_cost(100_000, 100, 128)}")
 print(f"  1M invocations, 200ms, 256MB: ${calculate_lambda_cost(1_000_000, 200, 256)}")
 print(f"  10M invocations, 500ms, 512MB: ${calculate_lambda_cost(10_000_000, 500, 512)}")
-
 ```
 
 **Output:**
 ```
-
 Lambda Monthly Cost Examples:
   100K invocations, 100ms, 128MB: $0.0
   1M invocations, 200ms, 256MB: $0.83
   10M invocations, 500ms, 512MB: $43.33
-
 ```
 
 ---
@@ -313,7 +308,6 @@ Lambda Monthly Cost Examples:
 ## 7. Best Practices
 
 ```python
-
 best_practices = [
     "Минимизируйте deployment package size",
     "Инициализируйте SDK clients вне handler",
@@ -325,7 +319,6 @@ best_practices = [
     "Мониторинг через CloudWatch Logs/X-Ray",
     "Dead Letter Queue для failed async invocations"
 ]
-
 ```
 
 ---
@@ -363,6 +356,7 @@ best_practices = [
 1. Создайте Lambda функцию на Python/Node.js
 2. Настройте триггер от S3 или API Gateway
 3. Оптимизируйте cold start время
+
 
 
 

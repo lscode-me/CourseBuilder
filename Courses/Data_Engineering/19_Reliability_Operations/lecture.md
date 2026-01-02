@@ -64,7 +64,6 @@ Fault tolerance — способность системы продолжать �
 **Example: Fault Tolerance**
 
 ```python
-
 class FaultTolerantSystem:
     def __init__(self):
         self.primary = {"status": "active", "data": []}
@@ -102,6 +101,7 @@ class FaultTolerantSystem:
         print("🔄 Failover активирован: replica стала primary")
 
 # Использование
+
 system = FaultTolerantSystem()
 system.write("data1")
 system.write("data2")
@@ -115,7 +115,6 @@ print(f"Данные после failover: {data}")
 
 **Output:**
 ```
-
 ✅ Записано в primary: data1
 ✅ Реплицировано в replica: data1
 ✅ Записано в primary: data2
@@ -153,7 +152,6 @@ Monitoring — непрерывное наблюдение за состояни
 **Example: Monitoring System**
 
 ```python
-
 class MonitoringSystem:
     def __init__(self):
         self.metrics = {
@@ -228,7 +226,6 @@ print(f"  Current metrics: {dashboard['current']}")
 
 **Output:**
 ```
-
 Monitoring Dashboard:
   Current metrics: {'cpu_usage': 75, 'memory_usage': 60, 'error_rate': 0.1, 'request_rate': None}
 ```
@@ -254,7 +251,6 @@ Alerting — автоматические уведомления о пробле
 **Example: Alerting System**
 
 ```python
-
 class AlertingSystem:
     def __init__(self):
         self.alerts = []
@@ -298,7 +294,6 @@ print(f"\nАктивных алертов: {len(active)}")
 
 **Output:**
 ```
-
 🚨 ALERT: cpu_usage = 85 превышает threshold 80 (severity: medium)
 🚨 ALERT: memory_usage = 95 превышает threshold 90 (severity: high)
 Активных алертов: 2
@@ -327,7 +322,6 @@ Distributed tracing отслеживает запросы через распр�
 **Example: Distributed Tracing**
 
 ```python
-
 class DistributedTracer:
     def __init__(self):
         self.traces = {}
@@ -374,9 +368,11 @@ class DistributedTracer:
         }
 
 # Использование
+
 tracer = DistributedTracer()
 
 # Trace запроса через систему
+
 trace_id = tracer.start_trace("trace_001", "user_request")
 tracer.add_span("api_gateway", "gateway", 10)
 tracer.add_span("auth_service", "auth", 5)
@@ -389,7 +385,6 @@ print(f"\nTrace Summary: {summary}")
 
 **Output:**
 ```
-
 🔍 Trace начат: trace_001, операция: user_request
   📍 Span: api_gateway (gateway), duration: 10ms
   📍 Span: auth_service (auth), duration: 5ms
@@ -422,7 +417,6 @@ SLA (Service Level Agreement) и SLO (Service Level Objective) определя�
 **Example: SLA/SLO Tracking**
 
 ```python
-
 class SLATracker:
     def __init__(self, slo_uptime=99.9):
         self.slo_uptime = slo_uptime
@@ -468,6 +462,7 @@ class SLATracker:
 tracker = SLATracker(slo_uptime=99.9)
 
 # Симуляция uptime
+
 for i in range(1000):
     tracker.record_uptime(True, f"2024-01-01T{i:02d}:00:00Z")
 
@@ -480,7 +475,6 @@ tracker.check_slo()
 
 **Output:**
 ```
-
 📊 Uptime: 99.90%, SLO: 99.9%
 ✅ SLO выполняется
 ```
@@ -502,7 +496,6 @@ tracker.check_slo()
 **Example: SLI Tracking**
 
 ```python
-
 class SLITracker:
     def __init__(self):
         self.slis = {
@@ -547,9 +540,11 @@ class SLITracker:
         }
 
 # Использование
+
 sli_tracker = SLITracker()
 
 # Запись метрик
+
 for _ in range(100):
     sli_tracker.record_latency(50)
     sli_tracker.record_error(False)
@@ -566,7 +561,6 @@ for metric, value in slis.items():
 
 **Output:**
 ```
-
 📊 SLI метрики:
    latency: {'p99_latency_ms': 200}
    error_rate: {'error_rate_percent': 0.9900990099009901}
@@ -596,7 +590,6 @@ Chaos Engineering — это практика тестирования отка�
 **Example: Chaos Engineering**
 
 ```python
-
 class ChaosEngineer:
     def __init__(self):
         self.services = {}
@@ -643,14 +636,17 @@ class ChaosEngineer:
         return health_percent
 
 # Использование
+
 chaos = ChaosEngineer()
 
 # Регистрация сервисов
+
 chaos.register_service("api")
 chaos.register_service("database")
 chaos.register_service("cache")
 
 # Chaos эксперименты
+
 chaos.get_system_health()
 chaos.kill_service("cache")
 chaos.inject_latency("api", 1000)
@@ -659,7 +655,6 @@ chaos.get_system_health()
 
 **Output:**
 ```
-
 ✅ Сервис 'api' зарегистрирован: healthy
 ✅ Сервис 'database' зарегистрирован: healthy
 ✅ Сервис 'cache' зарегистрирован: healthy
@@ -698,7 +693,6 @@ Incident Response — это процесс реагирования на про
 **Example: Incident Response**
 
 ```python
-
 class IncidentResponse:
     def __init__(self):
         self.incidents = []
@@ -744,9 +738,11 @@ class IncidentResponse:
         return [i for i in self.incidents if i["status"] == "open"]
 
 # Использование
+
 response = IncidentResponse()
 
 # Создание инцидента
+
 incident = response.create_incident(
     "High error rate on API",
     "high",
@@ -754,9 +750,11 @@ incident = response.create_incident(
 )
 
 # Назначение
+
 response.assign_incident(incident["id"], "on-call-engineer")
 
 # Разрешение
+
 response.resolve_incident(incident["id"], "Fixed database connection pool")
 
 open_incidents = response.get_open_incidents()
@@ -765,7 +763,6 @@ print(f"\n📋 Открытых инцидентов: {len(open_incidents)}")
 
 **Output:**
 ```
-
 🚨 Инцидент #1 создан: High error rate on API (severity: high)
 👤 Инцидент #1 назначен: on-call-engineer
 ✅ Инцидент #1 разрешён: Fixed database connection pool
@@ -796,7 +793,6 @@ Disaster Recovery — это процесс восстановления сис�
 **Example: Disaster Recovery Plan**
 
 ```python
-
 class DisasterRecovery:
     def __init__(self):
         self.backups = []
@@ -833,19 +829,21 @@ class DisasterRecovery:
         return self.restore_from_backup(latest_backup)
 
 # Использование
+
 dr = DisasterRecovery()
 
 # Создание backup
+
 dr.create_backup("full")
 dr.create_backup("incremental")
 
 # Тестирование восстановления
+
 dr.test_recovery()
 ```
 
 **Output:**
 ```
-
 💾 Backup создан: full (100GB)
 💾 Backup создан: incremental (50GB)
 🧪 Тестирование восстановления из backup: incremental
@@ -921,6 +919,7 @@ dr.test_recovery()
 - Grafana: https://grafana.com/docs/ (visualization)
 
 ---
+
 
 
 

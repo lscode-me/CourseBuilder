@@ -30,7 +30,6 @@
 ### 1.1 Зачем нужен мониторинг?
 
 ```python
-
 monitoring_purposes = {
     "alerting": "Узнать о проблеме раньше пользователей",
     "debugging": "Понять, что пошло не так",
@@ -38,13 +37,11 @@ monitoring_purposes = {
     "visibility": "Понимать состояние системы в реальном времени",
     "business_insights": "Связать технические метрики с бизнес-результатами"
 }
-
 ```
 
 ### 1.2 Виды мониторинга
 
 ```
-
 ┌──────────────────────────────────────────────────────────────────┐
 │                     Monitoring Stack                             │
 ├──────────────────────────────────────────────────────────────────┤
@@ -71,13 +68,11 @@ monitoring_purposes = {
 │  └── Actual user experience metrics                              │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.3 Метрики: типы данных
 
 ```python
-
 metric_types = {
     "counter": {
         "description": "Монотонно возрастающее значение",
@@ -100,7 +95,6 @@ metric_types = {
         "use_case": "Percentiles (P50, P99)"
     }
 }
-
 ```
 
 ---
@@ -110,7 +104,6 @@ metric_types = {
 ### 2.1 Архитектура Prometheus
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Prometheus Architecture                      │
 ├─────────────────────────────────────────────────────────────────┤
@@ -144,13 +137,13 @@ metric_types = {
 │  └─────────────┘    └─────────────┘    └─────────────┘          │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 Установка Prometheus
 
 ```yaml
 # prometheus-deployment.yaml
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -188,13 +181,13 @@ spec:
         - name: storage
           persistentVolumeClaim:
             claimName: prometheus-pvc
-
 ```
 
 ### 2.3 Конфигурация Prometheus
 
 ```yaml
 # prometheus.yml
+
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
@@ -236,41 +229,47 @@ scrape_configs:
         regex: (.+);(.+)
         replacement: $1:$2
         target_label: __address__
-
 ```
 
 ### 2.4 PromQL — язык запросов
 
 ```promql
 # Базовые запросы
+
 http_requests_total                           # Все метрики
 http_requests_total{status="200"}             # С фильтром
 http_requests_total{status=~"2.."}            # Regex
 
 # Rate (скорость изменения counter)
+
 rate(http_requests_total[5m])                 # Requests per second за 5 минут
 
 # Агрегация
+
 sum(rate(http_requests_total[5m]))            # Общий RPS
 sum(rate(http_requests_total[5m])) by (service)  # RPS по сервисам
 
 # Percentiles (из histogram)
+
 histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m]))
 
 # Алерт-совместимые выражения
+
 rate(http_requests_total{status="500"}[5m]) / rate(http_requests_total[5m]) > 0.05
 # Error rate > 5%
 
 # Примеры для troubleshooting
 # CPU usage
+
 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
 
 # Memory usage
+
 (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100
 
 # Disk usage
-100 - ((node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100)
 
+100 - ((node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100)
 ```
 
 ---
@@ -280,7 +279,6 @@ rate(http_requests_total{status="500"}[5m]) / rate(http_requests_total[5m]) > 0.
 ### 3.1 Создание дашбордов
 
 ```json
-
 {
   "dashboard": {
     "title": "Application Overview",
@@ -321,13 +319,13 @@ rate(http_requests_total{status="500"}[5m]) / rate(http_requests_total[5m]) > 0.
     ]
   }
 }
-
 ```
 
 ### 3.2 Dashboard as Code
 
 ```yaml
 # grafana-dashboard.yaml (ConfigMap)
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -341,7 +339,6 @@ data:
       "uid": "app-overview",
       "panels": [...]
     }
-
 ```
 
 ---
@@ -352,6 +349,7 @@ data:
 
 ```yaml
 # alertmanager.yml
+
 global:
   smtp_smarthost: 'smtp.example.com:587'
   smtp_from: 'alerts@example.com'
@@ -395,13 +393,13 @@ inhibit_rules:
     target_match:
       severity: 'warning'
     equal: ['alertname', 'service']
-
 ```
 
 ### 4.2 Alert Rules
 
 ```yaml
 # prometheus-rules.yml
+
 groups:
   - name: application
     rules:
@@ -458,7 +456,6 @@ groups:
           severity: warning
         annotations:
           summary: "Low disk space on {{ $labels.instance }}"
-
 ```
 
 ---
@@ -470,7 +467,6 @@ groups:
 **U**tilization, **S**aturation, **E**rrors — для каждого ресурса.
 
 ```python
-
 use_method = {
     "CPU": {
         "utilization": "Процент использования CPU",
@@ -493,33 +489,38 @@ use_method = {
         "errors": "Interface errors, CRC errors"
     }
 }
-
 ```
 
 ```promql
 # USE Method queries
 
 # CPU Utilization
+
 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
 
 # CPU Saturation (load average)
+
 node_load1 / count by (instance) (node_cpu_seconds_total{mode="idle"})
 
 # Memory Utilization
+
 (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100
 
 # Memory Saturation (swap usage)
+
 node_memory_SwapTotal_bytes - node_memory_SwapFree_bytes
 
 # Disk Utilization
+
 100 - ((node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100)
 
 # Disk Saturation (I/O wait)
+
 rate(node_cpu_seconds_total{mode="iowait"}[5m]) * 100
 
 # Network Utilization
-rate(node_network_receive_bytes_total[5m]) + rate(node_network_transmit_bytes_total[5m])
 
+rate(node_network_receive_bytes_total[5m]) + rate(node_network_transmit_bytes_total[5m])
 ```
 
 ### 5.2 RED Method (для сервисов)
@@ -527,49 +528,49 @@ rate(node_network_receive_bytes_total[5m]) + rate(node_network_transmit_bytes_to
 **R**ate, **E**rrors, **D**uration — для каждого сервиса.
 
 ```python
-
 red_method = {
     "rate": "Количество запросов в секунду",
     "errors": "Количество ошибочных запросов",
     "duration": "Время обработки запросов (latency)"
 }
-
 ```
 
 ```promql
 # RED Method queries
 
 # Rate
+
 sum(rate(http_requests_total[5m])) by (service)
 
 # Errors
+
 sum(rate(http_requests_total{status=~"5.."}[5m])) by (service)
 
 # Error Rate (%)
+
 sum(rate(http_requests_total{status=~"5.."}[5m])) by (service)
 /
 sum(rate(http_requests_total[5m])) by (service)
 * 100
 
 # Duration (P99)
+
 histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, service))
 
 # Duration (P50)
-histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, service))
 
+histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le, service))
 ```
 
 ### 5.3 Four Golden Signals (Google SRE)
 
 ```python
-
 golden_signals = {
     "latency": "Время обработки запроса",
     "traffic": "Количество запросов",
     "errors": "Процент неудачных запросов",
     "saturation": "Насколько загружен сервис"
 }
-
 ```
 
 ---
@@ -579,12 +580,12 @@ golden_signals = {
 ### 6.1 Python с prometheus_client
 
 ```python
-
 from prometheus_client import Counter, Histogram, Gauge, start_http_server
 import time
 import random
 
 # Определение метрик
+
 REQUEST_COUNT = Counter(
     'http_requests_total',
     'Total HTTP requests',
@@ -604,6 +605,7 @@ ACTIVE_REQUESTS = Gauge(
 )
 
 # Middleware/decorator
+
 def track_request(method: str, endpoint: str):
     def decorator(func):
         def wrapper(*args, **kwargs):
@@ -627,6 +629,7 @@ def track_request(method: str, endpoint: str):
     return decorator
 
 # Использование
+
 @track_request("GET", "/api/users")
 def get_users():
     time.sleep(random.uniform(0.01, 0.5))
@@ -639,13 +642,11 @@ if __name__ == "__main__":
     while True:
         get_users()
         time.sleep(0.1)
-
 ```
 
 ### 6.2 Kubernetes Pod Annotations
 
 ```yaml
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -663,7 +664,6 @@ spec:
           ports:
             - containerPort: 8080  # App port
             - containerPort: 8000  # Metrics port
-
 ```
 
 ---
@@ -674,6 +674,7 @@ spec:
 
 ```python
 # Хорошие имена метрик
+
 good_metric_names = [
     "http_requests_total",           # counter с _total
     "http_request_duration_seconds", # histogram с единицами
@@ -682,19 +683,20 @@ good_metric_names = [
 ]
 
 # Плохие имена
+
 bad_metric_names = [
     "requests",        # Слишком общее
     "latency",         # Нет единиц
     "MyAppMetric",     # CamelCase
     "cpu-usage",       # Дефисы вместо underscore
 ]
-
 ```
 
 ### 7.2 Labels Best Practices
 
 ```python
 # Хорошо: низкая кардинальность
+
 good_labels = {
     "status": ["200", "201", "400", "404", "500"],  # ~5 значений
     "method": ["GET", "POST", "PUT", "DELETE"],     # ~5 значений
@@ -702,18 +704,17 @@ good_labels = {
 }
 
 # Плохо: высокая кардинальность (убьёт Prometheus)
+
 bad_labels = {
     "user_id": "millions of values",     # НЕТ!
     "request_id": "unique per request",  # НЕТ!
     "timestamp": "infinite values",      # НЕТ!
 }
-
 ```
 
 ### 7.3 Alert Best Practices
 
 ```python
-
 alert_best_practices = [
     "Алерт на симптомы, не причины",
     "Включать runbook URL в аннотации",
@@ -722,7 +723,6 @@ alert_best_practices = [
     "Page только на actionable алерты",
     "Избегать alert fatigue — меньше, но важнее",
 ]
-
 ```
 
 ---
@@ -768,6 +768,7 @@ alert_best_practices = [
 - "Prometheus: Up & Running" by Brian Brazil
 
 ---
+
 
 
 

@@ -31,7 +31,6 @@
 **Collocation** = words that naturally go together.
 
 ```
-
 NATURAL (collocation):
 "make a decision" ✓
 "heavy rain" ✓
@@ -41,7 +40,6 @@ UNNATURAL (not collocation):
 "do a decision" ✗
 "strong rain" ✗
 "make a crime" ✗
-
 ```
 
 ### 1.2 Why They Matter
@@ -49,13 +47,11 @@ UNNATURAL (not collocation):
 Native speakers don't say things "incorrectly" — they say them unnaturally.
 
 ```
-
 CORRECT BUT UNNATURAL:
 "The rain was very strong."
 
 NATURAL:
 "The rain was very heavy." / "It was raining heavily."
-
 ```
 
 ---
@@ -70,7 +66,6 @@ NATURAL:
 ### 2.2 MAKE Collocations
 
 ```
-
 DECISIONS/PLANS:
 make a decision, make a choice, make plans, 
 make arrangements, make a suggestion
@@ -93,13 +88,11 @@ make noise, make trouble, make a difference
 OTHER:
 make friends, make an appointment, make an exception,
 make sense, make sure, make an attempt
-
 ```
 
 ### 2.3 DO Collocations
 
 ```
-
 WORK/TASKS:
 do work, do homework, do housework, do business,
 do research, do a job, do exercise
@@ -116,18 +109,15 @@ do well/badly, do your best, do someone a favor
 
 OTHER:
 do nothing, do something, do anything
-
 ```
 
 ### 2.4 Common Errors
 
 ```
-
 ❌ "do a mistake" → ✓ "make a mistake"
 ❌ "make homework" → ✓ "do homework"
 ❌ "do a decision" → ✓ "make a decision"
 ❌ "make business" → ✓ "do business"
-
 ```
 
 ---
@@ -137,7 +127,6 @@ do nothing, do something, do anything
 ### 3.1 HAVE Collocations
 
 ```
-
 MEALS:
 have breakfast/lunch/dinner, have a meal, have a snack
 
@@ -158,13 +147,11 @@ have a meeting, have a party, have a lesson
 OTHER:
 have a look, have a rest, have a bath/shower,
 have an idea, have an effect, have a chance
-
 ```
 
 ### 3.2 TAKE Collocations
 
 ```
-
 TRANSPORT:
 take a bus/train/taxi/plane, take a flight
 
@@ -186,17 +173,14 @@ take an exam/test, take a course
 OTHER:
 take a break, take a walk, take a seat, take place,
 take part, take advice, take notice
-
 ```
 
 ### 3.3 Have vs Take
 
 ```
-
 BrE "have a bath" / AmE "take a bath"
 BrE "have a rest" / AmE "take a rest"
 BrE "have a shower" / AmE "take a shower"
-
 ```
 
 ---
@@ -206,48 +190,38 @@ BrE "have a shower" / AmE "take a shower"
 ### 4.1 GET Collocations
 
 ```
-
 get married, get divorced, get lost, get tired,
 get ready, get worse, get better, get angry,
 get permission, get a job, get a result
-
 ```
 
 ### 4.2 GIVE Collocations
 
 ```
-
 give advice, give information, give permission,
 give a speech, give a lecture, give a presentation,
 give an answer, give a reason, give an example
-
 ```
 
 ### 4.3 PAY Collocations
 
 ```
-
 pay attention, pay a visit, pay a compliment,
 pay respect, pay the bill, pay the price
-
 ```
 
 ### 4.4 CATCH Collocations
 
 ```
-
 catch a cold, catch fire, catch the bus,
 catch someone's eye, catch someone's attention
-
 ```
 
 ### 4.5 KEEP Collocations
 
 ```
-
 keep a secret, keep a promise, keep calm,
 keep quiet, keep in touch, keep a record
-
 ```
 
 ---
@@ -257,24 +231,20 @@ keep quiet, keep in touch, keep a record
 ### 5.1 Common Patterns
 
 ```
-
 HEAVY: heavy rain, heavy traffic, heavy smoker
 STRONG: strong coffee, strong wind, strong opinion
 HIGH: high temperature, high speed, high quality
 DEEP: deep sleep, deep breath, deep trouble
 FAST: fast food, fast asleep, fast lane
-
 ```
 
 ### 5.2 Russian Interference Examples
 
 ```
-
 ❌ "strong rain" → ✓ "heavy rain"
 ❌ "high man" → ✓ "tall man"
 ❌ "big mistake" (sometimes) → ✓ "serious mistake"
 ❌ "strong tea" (OK in BrE!) but "heavy smoker" not "strong smoker"
-
 ```
 
 ---
@@ -284,7 +254,6 @@ FAST: fast food, fast asleep, fast lane
 ### 6.1 Adjective + Preposition
 
 ```
-
 afraid OF        "She's afraid of spiders."
 interested IN    "I'm interested in history."
 good AT          "He's good at math."
@@ -295,13 +264,11 @@ proud OF         "I'm proud of you."
 tired OF         "I'm tired of waiting."
 worried ABOUT    "I'm worried about the exam."
 angry WITH/AT    "She was angry with him."
-
 ```
 
 ### 6.2 Verb + Preposition
 
 ```
-
 depend ON        "It depends on the weather."
 believe IN       "I believe in you."
 belong TO        "This belongs to me."
@@ -313,13 +280,11 @@ look AT          "Look at this!"
 think ABOUT/OF   "What do you think about it?"
 agree WITH       "I agree with you."
 apologize FOR    "I apologize for being late."
-
 ```
 
 ### 6.3 Common Russian Interference
 
 ```
-
 ❌ depend FROM (зависеть от) → ✓ depend ON
 ❌ interested OF → ✓ interested IN
 ❌ listen (without TO) → ✓ listen TO
@@ -328,7 +293,6 @@ apologize FOR    "I apologize for being late."
 ❌ discuss ABOUT → ✓ discuss (no preposition!)
 ❌ explain ME → ✓ explain TO me
 ❌ enter INTO the room → ✓ enter the room
-
 ```
 
 ---
@@ -338,7 +302,6 @@ apologize FOR    "I apologize for being late."
 ### 7.1 Common Combinations
 
 ```
-
 LOOK: look up (in dictionary), look after (care for),
       look forward to, look into (investigate)
 
@@ -352,7 +315,6 @@ GIVE: give up, give in, give away, give back
 
 PUT: put off (postpone), put up with (tolerate),
      put on, put away
-
 ```
 
 ---
@@ -362,7 +324,6 @@ PUT: put off (postpone), put up with (tolerate),
 ### 8.1 Binomials (Word Pairs)
 
 ```
-
 black and white    (NOT white and black)
 bread and butter   (NOT butter and bread)
 sooner or later
@@ -370,20 +331,17 @@ pros and cons
 ups and downs
 sick and tired
 peace and quiet
-
 ```
 
 ### 8.2 Idioms with Collocations
 
 ```
-
 make ends meet (financially survive)
 keep an eye on (watch)
 have a word with (speak to)
 take it for granted (assume)
 make up your mind (decide)
 pay the price (suffer consequences)
-
 ```
 
 ---

@@ -28,7 +28,6 @@
 ### 1.1 Проприетарные модели
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                 Proprietary LLM Vendors                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -58,7 +57,6 @@
 ### 1.2 Open-Source модели
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                   Open-Source LLMs                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -91,7 +89,6 @@
 ### 2.1 Основные параметры
 
 ```python
-
 model_comparison = {
     "GPT-4o": {
         "context": "128K tokens",
@@ -126,7 +123,6 @@ model_comparison = {
 ### 2.2 Когда какую модель использовать
 
 ```python
-
 use_cases = {
     "Простые задачи": "GPT-4o-mini, Claude 3 Haiku, Llama 8B",
     "Сложный reasoning": "o1, o3, Claude 3.5 Sonnet",
@@ -144,7 +140,6 @@ use_cases = {
 ### 3.1 Сравнение
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │              Open-Source vs Proprietary                     │
 ├─────────────────────────────────────────────────────────────┤
@@ -167,7 +162,6 @@ use_cases = {
 ### 3.2 Когда выбирать Open-Source
 
 ```python
-
 choose_opensource_when = [
     "Строгие требования к приватности данных",
     "Нужен полный контроль над моделью",
@@ -184,7 +178,6 @@ choose_opensource_when = [
 ### 4.1 Варианты
 
 ```python
-
 hosting_options = {
     "API провайдеров": {
         "examples": ["OpenAI API", "Anthropic API", "Google AI"],
@@ -208,15 +201,19 @@ hosting_options = {
 
 ```bash
 # Установка Ollama
+
 curl -fsSL https://ollama.com/install.sh | sh
 
 # Загрузка модели
+
 ollama pull llama3.1:8b
 
 # Запуск
+
 ollama run llama3.1:8b
 
 # API доступен на localhost:11434
+
 curl http://localhost:11434/api/generate -d '{
   "model": "llama3.1:8b",
   "prompt": "Hello, how are you?"
@@ -230,7 +227,6 @@ curl http://localhost:11434/api/generate -d '{
 ### 5.1 Модели ценообразования
 
 ```python
-
 pricing_models = {
     "Pay-per-token": {
         "description": "Платите за использованные токены",
@@ -261,16 +257,19 @@ input_tokens = 500 * monthly_requests   # 500M
 output_tokens = 500 * monthly_requests  # 500M
 
 # GPT-4o
+
 gpt4o_cost = (input_tokens / 1_000_000 * 2.50) + \
              (output_tokens / 1_000_000 * 10)  # $6,250/month
 
 # Claude 3 Haiku
+
 haiku_cost = (input_tokens / 1_000_000 * 0.25) + \
              (output_tokens / 1_000_000 * 1.25)  # $750/month
 
 # Self-hosted Llama 70B (примерно)
 # 2x A100 80GB = ~$30,000/month на облаке
 # Но обрабатывает миллионы запросов
+
 llama_cost = 30_000  # $30,000/month (фиксированно)
 ```
 
@@ -297,5 +296,6 @@ llama_cost = 30_000  # $30,000/month (фиксированно)
 - [13_AGI](../13_AGI/) — AGI: мифы и реальность
 
 ---
+
 
 

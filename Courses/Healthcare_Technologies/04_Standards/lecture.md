@@ -34,7 +34,6 @@
 ### 1.1 Проблема без стандартизации
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                  Без стандартных кодов                                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -60,13 +59,11 @@
 │  → Interoperability                                                         │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Основные системы кодирования
 
 ```python
-
 coding_systems = {
     "ICD-10": {
         "full_name": "International Classification of Diseases, 10th Revision",
@@ -90,7 +87,6 @@ coding_systems = {
         "uri": "http://loinc.org"
     }
 }
-
 ```
 
 ---
@@ -100,7 +96,6 @@ coding_systems = {
 ### 2.1 Структура кода
 
 ```
-
 E 11 . 65
 │ ││   ││
 │ ││   │└─ Подкатегория (гипергликемия)
@@ -108,13 +103,11 @@ E 11 . 65
 │ │└────── Категория (диабет 2 типа)
 │ └─────── Глава (Эндокринные заболевания)
 └───────── Буква главы (E = Endocrine)
-
 ```
 
 ### 2.2 Главы ICD-10
 
 ```python
-
 icd10_chapters = {
     "A00-B99": "Инфекционные и паразитарные болезни",
     "C00-D49": "Новообразования",
@@ -138,13 +131,13 @@ icd10_chapters = {
     "V00-Y99": "Внешние причины",
     "Z00-Z99": "Факторы, влияющие на здоровье"
 }
-
 ```
 
 ### 2.3 Примеры кодов
 
 ```python
 # Примеры ICD-10 кодов с разбором
+
 icd10_examples = {
     # Эндокринные заболевания (E00-E89)
     "E11.9": {
@@ -185,18 +178,17 @@ icd10_examples = {
 }
 
 # 7-й символ для травм
+
 seventh_character = {
     "A": "Initial encounter (первичное обращение)",
     "D": "Subsequent encounter (последующее наблюдение)",
     "S": "Sequela (последствия, отдалённые эффекты)"
 }
-
 ```
 
 ### 2.4 Работа с ICD-10 в Python
 
 ```python
-
 def parse_icd10_code(code: str) -> dict:
     """Разбирает структуру ICD-10 кода."""
     
@@ -238,12 +230,12 @@ def parse_icd10_code(code: str) -> dict:
     return result
 
 # Пример
+
 code_info = parse_icd10_code("E11.65")
 print(f"Code: {code_info['original']}")
 print(f"Chapter: {code_info['chapter']}")
 print(f"Category: {code_info['category']}")
 print(f"Subcategory: {code_info['subcategory']}")
-
 ```
 
 ---
@@ -253,7 +245,6 @@ print(f"Subcategory: {code_info['subcategory']}")
 ### 3.1 Особенности SNOMED CT
 
 ```python
-
 snomed_features = {
     "ontology": "Не просто список кодов, а онтология с отношениями",
     "concepts": "~350,000 активных концепций",
@@ -261,13 +252,11 @@ snomed_features = {
     "hierarchies": "19 top-level иерархий",
     "precision": "Более детальная чем ICD-10"
 }
-
 ```
 
 ### 3.2 Иерархии SNOMED CT
 
 ```python
-
 snomed_hierarchies = {
     "Clinical finding": {
         "count": "~130,000",
@@ -294,13 +283,11 @@ snomed_hierarchies = {
         "examples": ["Metformin", "Aspirin"]
     }
 }
-
 ```
 
 ### 3.3 Примеры SNOMED CT кодов
 
 ```python
-
 snomed_examples = {
     # Clinical Findings
     "73211009": {
@@ -333,13 +320,11 @@ snomed_examples = {
         "fsn": "Excision of appendix (procedure)"
     }
 }
-
 ```
 
 ### 3.4 Отношения в SNOMED CT
 
 ```
-
                     Disease (64572001)
                           │
                           │ is-a
@@ -355,13 +340,11 @@ snomed_examples = {
         ▼                 ▼                 ▼
    Type 1 DM         Type 2 DM        Gestational DM
    (46635009)        (44054006)        (11687002)
-
 ```
 
 ### 3.5 SNOMED CT в FHIR
 
 ```json
-
 {
   "resourceType": "Condition",
   "code": {
@@ -380,7 +363,6 @@ snomed_examples = {
     "text": "Сахарный диабет 2 типа"
   }
 }
-
 ```
 
 ---
@@ -390,7 +372,6 @@ snomed_examples = {
 ### 4.1 Структура LOINC
 
 ```
-
 LOINC состоит из 6 частей:
 
 Component - Property - Timing - System - Scale - Method
@@ -404,13 +385,11 @@ Property:  MCnc (mass concentration - концентрация массы)
 Timing:    Pt (point in time - момент времени)
 System:    Bld (blood - кровь)
 Scale:     Qn (quantitative - количественный)
-
 ```
 
 ### 4.2 Примеры LOINC кодов
 
 ```python
-
 loinc_examples = {
     # Лабораторные анализы
     "718-7": {
@@ -465,13 +444,11 @@ loinc_examples = {
         "unit": "%"
     }
 }
-
 ```
 
 ### 4.3 LOINC в FHIR Observation
 
 ```python
-
 from fhir.resources.observation import Observation
 
 def create_lab_observation(patient_id: str, loinc_code: str, 
@@ -506,6 +483,7 @@ def create_lab_observation(patient_id: str, loinc_code: str,
     }
 
 # Примеры
+
 hemoglobin = create_lab_observation(
     patient_id="patient-123",
     loinc_code="718-7",
@@ -521,7 +499,6 @@ glucose = create_lab_observation(
     value=95,
     unit="mg/dL"
 )
-
 ```
 
 ---
@@ -543,6 +520,7 @@ glucose = create_lab_observation(
 
 ```python
 # SNOMED CT ↔ ICD-10 mapping
+
 snomed_to_icd10 = {
     "44054006": "E11.9",   # Type 2 DM
     "38341003": "I10",     # Hypertension
@@ -556,9 +534,9 @@ def get_icd10_from_snomed(snomed_code: str) -> str | None:
     return snomed_to_icd10.get(snomed_code)
 
 # Использование
+
 icd10_code = get_icd10_from_snomed("44054006")
 print(f"SNOMED 44054006 → ICD-10 {icd10_code}")  # E11.9
-
 ```
 
 ---
@@ -568,7 +546,6 @@ print(f"SNOMED 44054006 → ICD-10 {icd10_code}")  # E11.9
 ### 6.1 Кодирование диагноза
 
 ```python
-
 def code_diagnosis(diagnosis_text: str) -> dict:
     """
     Пример кодирования диагноза несколькими системами.
@@ -614,17 +591,18 @@ def code_diagnosis(diagnosis_text: str) -> dict:
     return {"text": diagnosis_text, "coding": []}
 
 # Пример
+
 result = code_diagnosis("Диабет 2 типа")
 print(f"Текст: {result['text']}")
 for coding in result['coding']:
     print(f"  {coding['system'].split('/')[-1]}: {coding['code']} - {coding['display']}")
-
 ```
 
 ### 6.2 Поиск LOINC для лабораторного теста
 
 ```python
 # База LOINC кодов (упрощённая)
+
 loinc_database = {
     "hemoglobin": ["718-7", "718-7", "30313-1"],
     "glucose": ["2345-7", "2339-0", "14749-6"],
@@ -648,9 +626,9 @@ def find_loinc(test_name: str) -> list:
     return []
 
 # Пример
+
 codes = find_loinc("hemoglobin")
 print(f"LOINC коды для hemoglobin: {codes}")
-
 ```
 
 ---
@@ -694,6 +672,7 @@ print(f"LOINC коды для hemoglobin: {codes}")
 - [UMLS (Unified Medical Language System)](https://www.nlm.nih.gov/research/umls/)
 
 ---
+
 
 
 

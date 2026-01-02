@@ -243,7 +243,6 @@ execve("/bin/ls", argv, envp);                 // Полный контроль
 
 **Типичный паттерн:**
 ```c
-
 pid_t pid = fork();
 if (pid == 0) {
     // Дочерний процесс
@@ -299,17 +298,19 @@ if (pid == 0) {
 
 ```bash
 # Создание FIFO
+
 mkfifo mypipe
 
 # Процесс 1 (пишет)
+
 echo "Hello" > mypipe
 
 # Процесс 2 (читает)
+
 cat < mypipe
 ```
 
 ```c
-
 // Программное создание FIFO
 #include <sys/stat.h>
 mkfifo("/tmp/mypipe", 0666);
@@ -419,7 +420,6 @@ int client = accept(sockfd, NULL, NULL);
 Стандартная структура директорий UNIX была разработана для организации различных типов файлов:
 
 ```
-
 /
 ├── bin/      # Исполняемые программы
 ├── etc/      # Конфигурационные файлы
@@ -447,7 +447,6 @@ int client = accept(sockfd, NULL, NULL);
 
 **Пример:**
 ```bash
-
 -rwxr-xr-- 1 user group 1024 file.txt
 │││││││││
 ││││││││└── others: r-- (read only)
@@ -490,12 +489,15 @@ chmod("file.txt", 0754);  // rwxr-xr--
 **Sticky bit, setuid, setgid:**
 ```bash
 # Sticky bit (t) - только владелец может удалить файл в /tmp
+
 chmod +t /tmp/file
 
 # Setuid (s) - выполняется с правами владельца
+
 chmod u+s /usr/bin/passwd
 
 # Setgid (s) - выполняется с правами группы
+
 chmod g+s /usr/bin/write
 ```
 
@@ -504,6 +506,7 @@ chmod g+s /usr/bin/write
 **Hard links:**
 ```bash
 # Создание hard link
+
 ln original.txt link.txt
 
 # Оба файла указывают на одни данные
@@ -513,6 +516,7 @@ ln original.txt link.txt
 **Symbolic links:**
 ```bash
 # Создание symbolic link
+
 ln -s original.txt symlink.txt
 
 # symlink.txt → указывает на original.txt
@@ -574,9 +578,11 @@ UNIX не просто создал операционную систему — 
 **Контейнеры (Docker):**
 ```bash
 # Используют изоляцию процессов из UNIX
+
 docker run ubuntu ls -l
 
 # Композиция через pipes
+
 docker ps | grep running | awk '{print $1}'
 ```
 
@@ -589,9 +595,11 @@ docker ps | grep running | awk '{print $1}'
 **DevOps инструменты:**
 ```bash
 # Композиция через pipes
+
 kubectl get pods | grep running | awk '{print $1}' | xargs kubectl logs
 
 # Каждая команда делает одну вещь
+
 git log | grep "fix" | wc -l
 ```
 
@@ -606,6 +614,7 @@ git log | grep "fix" | wc -l
 
 ```nix
 # /etc/nixos/configuration.nix
+
 { config, pkgs, ... }:
 {
   services.nginx.enable = true;
@@ -632,7 +641,6 @@ git log | grep "fix" | wc -l
 **Пример: POSIX-совместимый код**
 
 ```c
-
 // POSIX-совместимый код работает на Linux, macOS, BSD
 #include <unistd.h>
 #include <sys/types.h>
@@ -693,6 +701,7 @@ if (pid == 0) {
 - История UNIX и его создателей
 
 ---
+
 
 
 

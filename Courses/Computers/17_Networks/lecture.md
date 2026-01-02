@@ -141,7 +141,6 @@ Ethernet стал стандартом локальных сетей.
 **Пример: Трёхуровневая архитектура**
 
 ```
-
 Browser (Presentation)
     ↓ HTTP
 Web Server (Application)
@@ -158,7 +157,6 @@ Database (Data)
 **Пример: Масштабирование**
 
 ```
-
 Можно добавить:
 - Несколько web серверов (Application)
 - Несколько database серверов (Data)
@@ -177,6 +175,7 @@ Database (Data)
 
 ```python
 # Упрощённая схема P2P
+
 class Peer:
     def __init__(self):
         self.peers = []  # Список других пиров
@@ -220,6 +219,7 @@ class Peer:
 **Сетевая задержка:**
 ```python
 # Задержка в распределённой системе
+
 def get_data_from_remote():
     start = time.time()
     data = remote_server.get_data()  # Сетевая задержка: 10-100ms
@@ -229,7 +229,6 @@ def get_data_from_remote():
 
 **Частичные отказы:**
 ```
-
 Система из 3 серверов:
   Server 1: работает ✓
   Server 2: работает ✓
@@ -241,10 +240,12 @@ def get_data_from_remote():
 **Согласованность данных:**
 ```python
 # Проблема: данные на разных серверах могут расходиться
+
 Server A: x = 10
 Server B: x = 10
 
 # Обновление на Server A
+
 Server A: x = 20
 
 # Server B всё ещё видит x = 10
@@ -261,6 +262,7 @@ Server A: x = 20
 
 ```python
 # Two-Phase Commit (2PC)
+
 def distributed_transaction():
     # Phase 1: Prepare
     if all_servers.prepare():
@@ -319,6 +321,7 @@ def distributed_transaction():
 
 ```python
 # Система с гарантией согласованности
+
 def update_balance(account_id, amount):
     # Блокировка до завершения транзакции
     with transaction_lock(account_id):
@@ -332,6 +335,7 @@ def update_balance(account_id, amount):
 
 ```python
 # Система с гарантией доступности
+
 def get_cached_data(key):
     # Всегда отвечает, даже если данные не самые свежие
     data = cache.get(key)
@@ -349,7 +353,6 @@ def get_cached_data(key):
 
 **Bus (шина):**
 ```
-
 Все устройства подключены к одной шине
 Device1 ──┬── Device2 ──┬── Device3
           │             │
@@ -358,7 +361,6 @@ Device1 ──┬── Device2 ──┬── Device3
 
 **Star (звезда):**
 ```
-
 Все устройства подключены к центральному hub/switch
       Device1
          │
@@ -369,7 +371,6 @@ Device1 ──┬── Device2 ──┬── Device3
 
 **Ring (кольцо):**
 ```
-
 Устройства соединены в кольцо
 Device1 → Device2 → Device3 → Device4 → Device1
 ```
@@ -433,6 +434,7 @@ Device1 → Device2 → Device3 → Device4 → Device1
 - История развития сетей
 
 ---
+
 
 
 

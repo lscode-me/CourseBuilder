@@ -59,10 +59,8 @@
 **Пример простого протокола: HTTP GET**
 
 ```
-
 GET /index.html HTTP/1.1
 Host: example.com
-
 ```
 
 Всё понятно: метод, путь, версия, Host. Никаких сложностей.
@@ -73,7 +71,6 @@ Host: example.com
 
 **Плохо:**
 ```
-
 REQUEST /api/data MODE=sync FLAGS=0x1F OPTIONS="compress,encrypt,retry" TIMEOUT=5000 RETRIES=3 COMPRESSION_LEVEL=9 ENCRYPTION_TYPE=AES256 ...
 ```
 
@@ -81,7 +78,6 @@ REQUEST /api/data MODE=sync FLAGS=0x1F OPTIONS="compress,encrypt,retry" TIMEOUT=
 
 **Хорошо:**
 ```
-
 GET /api/data HTTP/1.1
 Accept-Encoding: gzip
 Authorization: Bearer token
@@ -107,7 +103,6 @@ Authorization: Bearer token
 
 **Хорошо (явно):**
 ```json
-
 {
   "user_id": 123,
   "action": "delete",
@@ -117,7 +112,6 @@ Authorization: Bearer token
 
 **Плохо (неявно):**
 ```json
-
 {
   "u": 123,
   "a": 3
@@ -139,14 +133,12 @@ api.call(123, "John", "john@example.com")
 
 **Хорошо:**
 ```python
-
 api.create_user(user_id=123, name="John", email="john@example.com")
 ```
 
 или
 
 ```json
-
 {
   "user_id": 123,
   "name": "John",
@@ -160,7 +152,6 @@ api.create_user(user_id=123, name="John", email="john@example.com")
 
 **GraphQL introspection:**
 ```graphql
-
 query {
   __schema {
     types {
@@ -195,7 +186,6 @@ query {
 
 **Пример:**
 ```json
-
 // Version 1
 {
   "id": 123,
@@ -218,20 +208,17 @@ query {
 
 **URL версионирование:**
 ```
-
 /api/v1/users
 /api/v2/users
 ```
 
 **Header версионирование:**
 ```
-
 Accept: application/vnd.myapi.v2+json
 ```
 
 **Content negotiation:**
 ```
-
 Accept: application/json; version=2
 ```
 
@@ -241,7 +228,6 @@ Accept: application/json; version=2
 
 **Пример:**
 ```json
-
 {
   "id": 123,
   "name": "John",
@@ -256,7 +242,6 @@ Accept: application/json; version=2
 
 **Плохо:**
 ```
-
 // Version 1
 {"user_id": 123}
 
@@ -276,7 +261,6 @@ Accept: application/json; version=2
 
 **Хорошо:**
 ```json
-
 {
   "users": [
     {"id": 1, "name": "Alice"},
@@ -290,7 +274,6 @@ Partial failures не ломают весь ответ.
 
 **Плохо:**
 ```
-
 Error 500: One of the users not found
 ```
 
@@ -302,7 +285,6 @@ Error 500: One of the users not found
 
 **Хорошо:**
 ```json
-
 {
   "error": {
     "code": "INVALID_EMAIL",
@@ -315,7 +297,6 @@ Error 500: One of the users not found
 
 **Плохо:**
 ```json
-
 {
   "error": "Error 42"
 }
@@ -329,7 +310,6 @@ Error 500: One of the users not found
 
 **Хорошо:**
 ```
-
 Client → Server: Invalid request
 Server → Client: 400 Bad Request
 {
@@ -341,7 +321,6 @@ Server → Client: 400 Bad Request
 
 **Плохо:**
 ```
-
 Client → Server: Invalid request
 Server: начинает обработку...
 Server: в середине обработки обнаруживает ошибку
@@ -354,7 +333,6 @@ Server: частичные изменения, inconsistent state
 
 **Хорошо (idempotent):**
 ```
-
 PUT /api/users/123
 {
   "name": "John"
@@ -365,7 +343,6 @@ PUT /api/users/123
 
 **Плохо (не idempotent):**
 ```
-
 POST /api/users/123/increment_counter
 ```
 
@@ -381,7 +358,6 @@ POST /api/users/123/increment_counter
 
 **Плохо:**
 ```
-
 Client: "Give me all user data"
 Server: returns 50 fields
 
@@ -392,7 +368,6 @@ Client использует только 2 поля, но получает вс�
 
 **Хорошо:**
 ```graphql
-
 query {
   user(id: 123) {
     name
@@ -410,14 +385,12 @@ query {
 
 **REST проблема:**
 ```
-
 GET /users/123        → user data
 GET /users/123/posts  → user posts (дополнительный запрос!)
 ```
 
 **GraphQL решение:**
 ```graphql
-
 query {
   user(id: 123) {
     name
@@ -440,7 +413,6 @@ query {
 
 **Плохо:**
 ```
-
 What happens if field is null?
 What happens if array is empty?
 What happens if timeout?
@@ -452,7 +424,6 @@ What happens if timeout?
 
 **Хорошо:**
 ```
-
 Field "name":
   - Type: string
   - Required: yes

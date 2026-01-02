@@ -39,7 +39,6 @@
 **Example: Стандартизированная структура ошибок**
 
 ```python
-
 def error_response(code, message, details=None, correlation_id=None):
     """Стандартизированная структура ошибки"""
     error = {
@@ -55,6 +54,7 @@ def error_response(code, message, details=None, correlation_id=None):
     return error
 
 # Примеры ошибок
+
 validation_error = error_response(
     "VALIDATION_ERROR",
     "Invalid email format",
@@ -89,7 +89,6 @@ not_found_error = error_response(
 **Example: Correlation ID в запросах**
 
 ```python
-
 import uuid
 from flask import Flask, request, g
 
@@ -146,7 +145,6 @@ def get_user(user_id):
 **Example: Структурированное логирование**
 
 ```python
-
 import logging
 import json
 
@@ -209,7 +207,6 @@ api_logger.log_request("GET", "/api/users/123", 200, 45, "req-123")
 **Example: Сбор метрик**
 
 ```python
-
 from collections import defaultdict
 import time
 
@@ -247,6 +244,7 @@ class APIMetrics:
         return metrics
 
 # Использование
+
 metrics = APIMetrics()
 metrics.record_request("/api/users", "GET", 200, 45)
 metrics.record_request("/api/users", "GET", 500, 1200)
@@ -259,7 +257,6 @@ print(metrics.get_metrics())
 **Example: SLA метрики**
 
 ```python
-
 class SLAMonitor:
     """Мониторинг SLA"""
     
@@ -325,7 +322,6 @@ class SLAMonitor:
 **Example: Настройка алертов**
 
 ```python
-
 class AlertManager:
     """Управление алертами"""
     
@@ -370,7 +366,6 @@ class AlertManager:
 **Example: Создание dashboard метрик**
 
 ```python
-
 class MetricsDashboard:
     """Dashboard для визуализации метрик"""
     
@@ -397,7 +392,6 @@ class MetricsDashboard:
 **Example: Distributed Tracing с Correlation ID**
 
 ```python
-
 class DistributedTracer:
     """Трассировка распределённых запросов"""
     
@@ -430,6 +424,7 @@ class DistributedTracer:
         return self.traces.get(correlation_id)
 
 # Использование
+
 tracer = DistributedTracer()
 correlation_id = "req-123"
 
@@ -448,6 +443,7 @@ full_trace = tracer.get_trace(correlation_id)
 ❌ **Incorrect:**
 ```python
 # Плохо: Логи без Correlation ID
+
 logger.info("Processing request")
 logger.info("Calling service")
 # Невозможно связать логи одного запроса
@@ -456,6 +452,7 @@ logger.info("Calling service")
 ✅ **Correct:**
 ```python
 # Хорошо: Correlation ID во всех логах
+
 correlation_id = request.headers.get("X-Correlation-ID") or str(uuid.uuid4())
 logger.info(f"[{correlation_id}] Processing request")
 logger.info(f"[{correlation_id}] Calling service")
@@ -468,6 +465,7 @@ logger.info(f"[{correlation_id}] Calling service")
 ❌ **Incorrect:**
 ```python
 # Плохо: Текстовые логи
+
 logger.info("User 123 created order 456")
 # Сложно парсить и анализировать
 ```
@@ -475,6 +473,7 @@ logger.info("User 123 created order 456")
 ✅ **Correct:**
 ```python
 # Хорошо: Структурированные JSON логи
+
 logger.info(json.dumps({
     "event": "order_created",
     "user_id": 123,
@@ -536,6 +535,7 @@ logger.info(json.dumps({
 - "Distributed Tracing with Correlation IDs" — трассировка с Correlation IDs
 
 ---
+
 
 
 

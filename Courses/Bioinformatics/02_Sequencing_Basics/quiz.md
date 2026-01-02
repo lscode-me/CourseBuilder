@@ -219,7 +219,6 @@ D) (G × C) / общая длина × 100%
 Допустим, у нас есть функция:
 
 ```python
-
 def gc_content(seq: str) -> float:
     seq = seq.upper()
     gc = seq.count("G") + seq.count("C")

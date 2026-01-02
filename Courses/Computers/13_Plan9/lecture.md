@@ -97,6 +97,7 @@
 ```bash
 # Доступ к процессу на удалённой машине как к файлу
 # Никакого ssh, никакого специального API — просто файловая операция
+
 cat /net/machine.example.com/proc/1/status
 ```
 
@@ -122,7 +123,6 @@ cat /net/machine.example.com/proc/1/status
 
 **9P операции:**
 ```
-
 version    - Согласование версии протокола
 auth       - Аутентификация
 attach     - Подключение к файловой системе
@@ -139,7 +139,6 @@ wstat      - Изменение информации о файле
 **Пример: 9P клиент (упрощённо)**
 
 ```c
-
 // Упрощённый пример работы с 9P
 int connect_9p(char *server) {
     // Подключение к 9P серверу
@@ -216,19 +215,21 @@ void read_remote_file(int fd, char *path) {
 ```bash
 # Plan 9 команды для работы с namespace
 # Монтирование удалённой файловой системы
+
 mount -a tcp!remote.example.com!564 /n/remote
 
 # Теперь /n/remote доступен как локальная файловая система
+
 ls /n/remote/bin
 
 # Каждый процесс может иметь своё представление
+
 bind /n/remote/bin /bin  # Заменить /bin на удалённую версию
 ```
 
 **Пример: Изоляция процессов**
 
 ```c
-
 // Создание изолированного namespace для процесса
 int newns(void) {
     // Создание нового namespace
@@ -259,6 +260,7 @@ Union Mounts позволяли монтировать несколько фай
 # - Файлы из контейнера
 
 # Приложение видит объединённое представление
+
 ls /bin  # Видит файлы из всех источников
 ```
 
@@ -311,6 +313,7 @@ Union Mounts решали проблему композиции ресурсов
 ```bash
 # Linux namespaces (вдохновлены Plan 9)
 # Изоляция процессов, сетей, файловых систем
+
 docker run --network=none alpine  # Изолированная сеть
 docker run --pid=host alpine       # Разделение PID namespace
 ```
@@ -330,7 +333,6 @@ docker run --pid=host alpine       # Разделение PID namespace
 **Пример: FUSE (Filesystem in Userspace)**
 
 ```c
-
 // FUSE позволяет создавать файловые системы в userspace
 // Вдохновлено Plan 9 подходом
 // Пример: SSHFS (монтирование удалённой FS через SSH)
@@ -352,6 +354,7 @@ docker run --pid=host alpine       # Разделение PID namespace
 
 ```bash
 # Монтирование 9P файловой системы в Linux
+
 mount -t 9p -o trans=tcp,port=564 server.example.com /mnt/9p
 
 # Теперь удалённые ресурсы доступны как локальные файлы
@@ -426,6 +429,7 @@ ls /mnt/9p
 - Статьи о влиянии Plan 9 на современные системы
 
 ---
+
 
 
 

@@ -132,7 +132,6 @@ NFT (Non-Fungible Token) — уникальные токены, представ
 
 **Пример:**
 ```solidity
-
 // Упрощённый NFT контракт
 contract SimpleNFT {
     mapping(uint256 => address) public ownerOf;

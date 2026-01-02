@@ -53,7 +53,6 @@
 
 **RFC (Request for Comments) процесс:**
 ```
-
 1. Draft: автор публикует черновик
 2. Review: сообщество обсуждает
 3. Iterations: правки на основе feedback
@@ -173,14 +172,12 @@
 
 **HTTP/0.9 (1991):**
 ```
-
 GET /index.html
 ```
 Только GET, нет заголовков.
 
 **HTTP/1.0 (1996):**
 ```
-
 GET /index.html HTTP/1.0
 Host: example.com
 ```
@@ -249,7 +246,6 @@ Host: example.com
 
 **Пример:**
 ```json
-
 {
   "jsonrpc": "2.0",
   "method": "tools/list",
@@ -292,7 +288,6 @@ Response:
 
 **OpenAI Function Calling:**
 ```json
-
 {
   "name": "get_weather",
   "description": "Get current weather",
@@ -312,7 +307,6 @@ AI решает, когда вызвать функцию, форм ирует �
 
 **Anthropic Tool Use:**
 ```json
-
 {
   "name": "calculator",
   "description": "Perform calculations",
@@ -349,7 +343,6 @@ AI решает, когда вызвать функцию, форм ирует �
 
 **Пример:**
 ```
-
 Agent A (Research): находит информацию
     ↓
 Agent B (Analysis): анализирует

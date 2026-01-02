@@ -31,12 +31,10 @@
 **CSV** (Comma-Separated Values) — текстовый формат для табличных данных.
 
 ```csv
-
 name,age,city
 Alice,30,Moscow
 Bob,25,London
 Charlie,35,Paris
-
 ```
 
 ### 1.2 Преимущества и недостатки
@@ -62,24 +60,20 @@ Charlie,35,Paris
 ### 2.1 Базовый формат
 
 ```csv
-
 header1,header2,header3
 value1,value2,value3
 value4,value5,value6
-
 ```
 
 ### 2.2 Кавычки для специальных значений
 
 ```csv
-
 name,description,price
 "Widget","Simple widget",9.99
 "Gadget","Has a comma, inside",19.99
 "Thing","Has ""quotes"" inside",29.99
 "Item","Has
 newline",39.99
-
 ```
 
 Правила кавычек:
@@ -91,11 +85,9 @@ newline",39.99
 ### 2.3 TSV (Tab-Separated Values)
 
 ```tsv
-
 name	age	city
 Alice	30	Moscow
 Bob	25	London
-
 ```
 
 Преимущество: табы редко встречаются в данных.
@@ -108,10 +100,12 @@ Bob	25	London
 
 ```python
 # Файл в Windows-1251
+
 with open('data.csv', 'r', encoding='cp1251') as f:
     # ...
 
 # Файл с BOM
+
 with open('data.csv', 'r', encoding='utf-8-sig') as f:
     # ...
 ```
@@ -121,21 +115,19 @@ with open('data.csv', 'r', encoding='utf-8-sig') as f:
 ```python
 # Точка с запятой (европейский стандарт)
 # name;age;city
+
 import csv
 with open('data.csv', newline='') as f:
     reader = csv.reader(f, delimiter=';')
-
 ```
 
 ### 3.3 Пустые значения
 
 ```csv
-
 name,age,city
 Alice,30,
 Bob,,London
 ,25,Paris
-
 ```
 
 ---
@@ -146,59 +138,70 @@ Bob,,London
 
 ```bash
 # Просмотр
+
 cat data.csv
 head -5 data.csv
 tail -5 data.csv
 
 # Красивый вывод
+
 column -t -s, data.csv
 
 # Подсчёт строк (минус заголовок)
-wc -l data.csv
 
+wc -l data.csv
 ```
 
 ### 4.2 Обработка с awk
 
 ```bash
 # Выбор колонок (1 и 3)
+
 awk -F, '{print $1,$3}' data.csv
 
 # Фильтрация по условию
+
 awk -F, '$2 > 30 {print $1}' data.csv
 
 # Сумма колонки
-awk -F, 'NR>1 {sum+=$2} END {print sum}' data.csv
 
+awk -F, 'NR>1 {sum+=$2} END {print sum}' data.csv
 ```
 
 ### 4.3 csvkit (рекомендуется)
 
 ```bash
 # Установка
+
 pip install csvkit
 
 # Просмотр
+
 csvlook data.csv
 
 # Статистика
+
 csvstat data.csv
 
 # Выбор колонок
+
 csvcut -c name,age data.csv
 
 # Фильтрация
+
 csvgrep -c age -m 30 data.csv
 
 # Сортировка
+
 csvsort -c age data.csv
 
 # Конвертация в JSON
+
 csvjson data.csv
 
 # SQL запросы к CSV!
-csvsql --query "SELECT name, age FROM data WHERE age > 25" data.csv
 
+csvsql --query "SELECT name, age FROM data WHERE age > 25" data.csv
 ```
 
 ---
@@ -208,10 +211,10 @@ csvsql --query "SELECT name, age FROM data WHERE age > 25" data.csv
 ### 5.1 Модуль csv
 
 ```python
-
 import csv
 
 # Чтение как списки
+
 with open('data.csv', newline='', encoding='utf-8') as f:
     reader = csv.reader(f)
     header = next(reader)  # Первая строка — заголовок
@@ -219,20 +222,20 @@ with open('data.csv', newline='', encoding='utf-8') as f:
         print(row)  # ['Alice', '30', 'Moscow']
 
 # Чтение как словари
+
 with open('data.csv', newline='', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     for row in reader:
         print(row['name'], row['age'])
-
 ```
 
 ### 5.2 Запись CSV
 
 ```python
-
 import csv
 
 # Запись списков
+
 data = [
     ['name', 'age', 'city'],
     ['Alice', 30, 'Moscow'],
@@ -244,6 +247,7 @@ with open('output.csv', 'w', newline='', encoding='utf-8') as f:
     writer.writerows(data)
 
 # Запись словарей
+
 users = [
     {'name': 'Alice', 'age': 30},
     {'name': 'Bob', 'age': 25},
@@ -253,48 +257,49 @@ with open('output.csv', 'w', newline='', encoding='utf-8') as f:
     writer = csv.DictWriter(f, fieldnames=['name', 'age'])
     writer.writeheader()
     writer.writerows(users)
-
 ```
 
 ### 5.3 Параметры csv
 
 ```python
-
 import csv
 
 # Европейский формат (точка с запятой, запятая в числах)
+
 with open('european.csv', newline='') as f:
     reader = csv.reader(f, delimiter=';')
 
 # Excel формат
+
 with open('excel.csv', newline='') as f:
     reader = csv.reader(f, dialect='excel')
 
 # Кастомный формат
+
 csv.register_dialect('custom',
     delimiter='|',
     quoting=csv.QUOTE_ALL)
-
 ```
 
 ### 5.4 pandas для CSV
 
 ```python
-
 import pandas as pd
 
 # Чтение
+
 df = pd.read_csv('data.csv')
 df = pd.read_csv('data.csv', encoding='cp1251', sep=';')
 
 # Базовые операции
+
 print(df.head())
 print(df.describe())
 print(df[df['age'] > 25])
 
 # Запись
-df.to_csv('output.csv', index=False)
 
+df.to_csv('output.csv', index=False)
 ```
 
 ---
@@ -318,7 +323,6 @@ with open('data.csv', 'w', newline='', encoding='utf-8') as f:
 ### 6.2 Валидация
 
 ```python
-
 def validate_csv(filepath):
     """Проверка CSV файла."""
     with open(filepath, newline='', encoding='utf-8') as f:
@@ -329,7 +333,6 @@ def validate_csv(filepath):
         for i, row in enumerate(reader, start=2):
             if len(row) != expected_columns:
                 print(f"Row {i}: expected {expected_columns}, got {len(row)}")
-
 ```
 
 ---
@@ -366,6 +369,7 @@ def validate_csv(filepath):
 1. Обработайте CSV файл с помощью csvkit в командной строке
 2. Загрузите и проанализируйте табличные данные с pandas
 3. Напишите скрипт конвертации между CSV, TSV и JSON
+
 
 
 

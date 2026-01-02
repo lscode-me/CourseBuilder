@@ -65,6 +65,7 @@ SQL engines позволяют выполнять SQL запросы к разл
 
 ```python
 # Симуляция SQL engine
+
 class SQLEngine:
     def __init__(self, engine_type):
         self.engine_type = engine_type
@@ -90,6 +91,7 @@ class SQLEngine:
         return self.execute_query(sql)
 
 # Использование
+
 presto = SQLEngine("Presto")
 result = presto.query("""
     SELECT 
@@ -104,7 +106,6 @@ print(f"Результат: {result}")
 
 **Output:**
 ```
-
 🔍 [Presto] Выполнение запроса:
    SELECT 
         DATE_TRUNC('month', order_date) as month,
@@ -139,6 +140,7 @@ Apache Spark — это распределённый движок для обр�
 
 ```python
 # Симуляция Spark
+
 class SparkJob:
     def __init__(self):
         self.stages = []
@@ -179,7 +181,6 @@ spark_job.read("s3://data/raw/users.parquet") \
 
 **Output:**
 ```
-
 📥 Spark: чтение из s3://data/raw/users.parquet
 ⚙️  Spark: трансформация 'filter(age > 18)'
 ⚙️  Spark: трансформация 'groupBy(city)'
@@ -234,6 +235,7 @@ Apache Airflow — это платформа для оркестрации и п
 
 ```python
 # Симуляция Airflow DAG
+
 class AirflowDAG:
     def __init__(self, dag_id, schedule):
         self.dag_id = dag_id
@@ -279,6 +281,7 @@ transform_task = dag.add_task("transform_data", "PythonOperator")
 load_task = dag.add_task("load_data", "PythonOperator")
 
 # Зависимости
+
 dag.set_dependency(extract_task, transform_task)
 dag.set_dependency(transform_task, load_task)
 
@@ -287,7 +290,6 @@ dag.visualize()
 
 **Output:**
 ```
-
 ✅ Задача 'extract_data' добавлена в DAG 'daily_etl'
 ✅ Задача 'transform_data' добавлена в DAG 'daily_etl'
 ✅ Задача 'load_data' добавлена в DAG 'daily_etl'
@@ -345,6 +347,7 @@ dbt — это инструмент для трансформаций данны
 
 ```python
 # Симуляция dbt
+
 class DBTModel:
     def __init__(self, name, sql, dependencies=None):
         self.name = name
@@ -395,7 +398,6 @@ user_stats_model.run("warehouse")
 
 **Output:**
 ```
-
 ✅ Тест 'not_null' добавлен к модели 'user_stats'
 🔨 Компиляция модели 'user_stats'
    SQL: 
@@ -463,7 +465,6 @@ user_stats_model.run("warehouse")
 **Example: Выбор инструмента**
 
 ```python
-
 def recommend_tool(requirements):
     """Рекомендует инструмент"""
     if requirements.get("orchestration") and requirements.get("scheduling"):
@@ -494,7 +495,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации инструментов:
   Пример 1: Airflow (оркестрация и планирование)
   Пример 2: Spark (распределённая обработка больших объёмов)
@@ -531,7 +531,6 @@ for i, req in enumerate(examples, 1):
 **Example: Комбинированная архитектура**
 
 ```python
-
 class IntegratedPipeline:
     def __init__(self):
         self.components = {}
@@ -566,7 +565,6 @@ pipeline.run_pipeline()
 
 **Output:**
 ```
-
 ✅ Компоненты настроены:
    airflow: Оркестрация workflows
    spark: Обработка больших объёмов
@@ -639,5 +637,6 @@ pipeline.run_pipeline()
 - dbt: https://docs.getdbt.com/
 
 ---
+
 
 

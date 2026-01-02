@@ -35,7 +35,6 @@
 ### 1.1 Концепция пакетов
 
 ```go
-
 // mathutil/math.go
 package mathutil  // Имя пакета
 
@@ -56,13 +55,11 @@ const Pi = 3.14159
 
 // Приватная переменная
 var internalState int
-
 ```
 
 ### 1.2 package main
 
 ```go
-
 // main.go
 package main  // Специальный пакет для исполняемых программ
 
@@ -78,21 +75,17 @@ func main() {
     
     // mathutil.subtract(5, 3)  // Ошибка! subtract не экспортирован
 }
-
 ```
 
 **Output:**
 ```
-
 3 + 5 = 8
 Pi = 3.14159
-
 ```
 
 ### 1.3 Правила именования пакетов
 
 ```go
-
 // ХОРОШО
 package http
 package json
@@ -104,7 +97,6 @@ package httpPackage      // Избыточно
 package user_service     // Подчёркивания
 package myHTTPServer     // Смешанный регистр
 package Util             // Заглавная буква
-
 ```
 
 **Рекомендации:**
@@ -122,30 +114,30 @@ package Util             // Заглавная буква
 
 ```bash
 # Создаём директорию проекта
+
 mkdir myproject
 cd myproject
 
 # Инициализируем модуль
+
 go mod init github.com/username/myproject
 
 # Структура после инициализации
+
 ls -la
 # go.mod
 ```
 
 **go.mod:**
 ```
-
 module github.com/username/myproject
 
 go 1.22
-
 ```
 
 ### 2.2 Структура go.mod
 
 ```
-
 module github.com/username/myproject
 
 go 1.22
@@ -159,45 +151,49 @@ require (
     // Indirect dependencies (транзитивные)
     github.com/json-iterator/go v1.1.12 // indirect
 )
-
 ```
 
 ### 2.3 Управление зависимостями
 
 ```bash
 # Добавить зависимость
+
 go get github.com/gin-gonic/gin
 
 # Добавить конкретную версию
+
 go get github.com/gin-gonic/gin@v1.9.1
 
 # Добавить последнюю версию
+
 go get github.com/gin-gonic/gin@latest
 
 # Обновить зависимость
+
 go get -u github.com/gin-gonic/gin
 
 # Обновить все зависимости
+
 go get -u ./...
 
 # Удалить неиспользуемые зависимости
+
 go mod tidy
 
 # Скачать все зависимости
+
 go mod download
 
 # Показать дерево зависимостей
-go mod graph
 
+go mod graph
 ```
 
 ### 2.4 go.sum
 
 ```
-
 github.com/gin-gonic/gin v1.9.1 h1:4idEAncQnU5cB7BeOkPtxjfCSye0AAm1R0RVIqJ+Jmg=
 github.com/gin-gonic/gin v1.9.1/go.mod h1:hPrL7YrpYKXt5YId3A/Tn+7SEVvEpTQ0iW...
-
 ```
 
 Контрольные суммы для обеспечения целостности зависимостей.
@@ -209,19 +205,16 @@ github.com/gin-gonic/gin v1.9.1/go.mod h1:hPrL7YrpYKXt5YId3A/Tn+7SEVvEpTQ0iW...
 ### 3.1 Простой проект
 
 ```
-
 myproject/
 ├── go.mod
 ├── go.sum
 ├── main.go
 └── utils.go
-
 ```
 
 ### 3.2 Стандартная структура
 
 ```
-
 myproject/
 ├── cmd/
 │   ├── myapp/
@@ -241,13 +234,11 @@ myproject/
 ├── go.mod
 ├── go.sum
 └── README.md
-
 ```
 
 ### 3.3 Пример с несколькими пакетами
 
 ```go
-
 // cmd/myapp/main.go
 package main
 
@@ -264,11 +255,9 @@ func main() {
     result := utils.FormatString("hello")
     fmt.Println("Result:", result)
 }
-
 ```
 
 ```go
-
 // internal/config/config.go
 package config
 
@@ -283,11 +272,9 @@ func Load() *Config {
         Port: 8080,
     }
 }
-
 ```
 
 ```go
-
 // pkg/utils/utils.go
 package utils
 
@@ -296,7 +283,6 @@ import "strings"
 func FormatString(s string) string {
     return strings.ToUpper(s)
 }
-
 ```
 
 ---
@@ -306,7 +292,6 @@ func FormatString(s string) string {
 ### 4.1 Синтаксис импортов
 
 ```go
-
 package main
 
 // Одиночный импорт
@@ -334,13 +319,11 @@ import (
 import (
     _ "image/png"  // Регистрирует PNG decoder
 )
-
 ```
 
 ### 4.2 Группировка импортов
 
 ```go
-
 import (
     // Стандартная библиотека
     "context"
@@ -355,13 +338,11 @@ import (
     "github.com/username/myproject/internal/config"
     "github.com/username/myproject/pkg/utils"
 )
-
 ```
 
 ### 4.3 Циклические импорты
 
 ```go
-
 // ОШИБКА: import cycle not allowed
 
 // package a
@@ -369,7 +350,6 @@ import "myproject/b"
 
 // package b  
 import "myproject/a"  // Цикл!
-
 ```
 
 **Решение:**
@@ -385,7 +365,6 @@ import "myproject/a"  // Цикл!
 ### 5.1 Ограничение видимости
 
 ```
-
 myproject/
 ├── cmd/
 │   └── myapp/
@@ -396,11 +375,9 @@ myproject/
 └── pkg/
     └── public/
         └── public.go   # Виден всем
-
 ```
 
 ```go
-
 // internal/secret/secret.go
 package secret
 
@@ -410,18 +387,15 @@ func Decrypt(data []byte) []byte {
     // ...
     return data
 }
-
 ```
 
 ```go
-
 // cmd/myapp/main.go — МОЖНО использовать internal
 import "github.com/username/myproject/internal/secret"
 
 // Внешний проект — НЕЛЬЗЯ использовать internal
 // import "github.com/username/myproject/internal/secret"
 // Error: use of internal package not allowed
-
 ```
 
 ---
@@ -431,7 +405,6 @@ import "github.com/username/myproject/internal/secret"
 ### 6.1 Правила экспорта
 
 ```go
-
 package mypackage
 
 // Экспортируемые (public) — с заглавной буквы
@@ -451,13 +424,11 @@ func helper() {}  // Не экспортирована
 
 const maxSize = 100  // Не экспортирована
 const MaxRetries = 3  // Экспортирована
-
 ```
 
 ### 6.2 Доступ к приватным полям
 
 ```go
-
 package user
 
 type User struct {
@@ -478,7 +449,6 @@ func (u *User) SetEmail(email string) error {
     u.email = email
     return nil
 }
-
 ```
 
 ---
@@ -488,7 +458,6 @@ func (u *User) SetEmail(email string) error {
 ### 7.1 Порядок инициализации
 
 ```go
-
 package main
 
 import "fmt"
@@ -511,23 +480,19 @@ func init() {  // Можно несколько init
 func main() {  // 3. main
     fmt.Println("Main")
 }
-
 ```
 
 **Output:**
 ```
-
 Init var: a
 Init 1
 Init 2
 Main
-
 ```
 
 ### 7.2 Использование init
 
 ```go
-
 package database
 
 import (
@@ -544,7 +509,6 @@ func init() {
         panic(err)
     }
 }
-
 ```
 
 ---
@@ -554,42 +518,41 @@ func init() {
 ### 8.1 Semantic Versioning
 
 ```
-
 v1.2.3
 │ │ │
 │ │ └── Patch: исправления багов
 │ └──── Minor: новые функции, обратно совместимые
 └────── Major: breaking changes
-
 ```
 
 ### 8.2 Версии в Go modules
 
 ```bash
 # Конкретная версия
+
 go get github.com/pkg/errors@v0.9.1
 
 # Последняя версия
+
 go get github.com/pkg/errors@latest
 
 # Конкретный коммит
+
 go get github.com/pkg/errors@a1b2c3d
 
 # Ветка
-go get github.com/pkg/errors@master
 
+go get github.com/pkg/errors@master
 ```
 
 ### 8.3 Major версии
 
 ```go
-
 // v1.x.x
 import "github.com/user/pkg"
 
 // v2.x.x и выше — путь включает версию
 import "github.com/user/pkg/v2"
-
 ```
 
 ---
@@ -599,7 +562,6 @@ import "github.com/user/pkg/v2"
 ### 9.1 replace директива
 
 ```
-
 // go.mod
 module myproject
 
@@ -609,23 +571,23 @@ require github.com/myorg/mylib v1.0.0
 
 // Использовать локальную версию
 replace github.com/myorg/mylib => ../mylib
-
 ```
 
 ### 9.2 Workspace (Go 1.18+)
 
 ```bash
 # Создание workspace
+
 go work init ./myapp ./mylib
 
 # go.work
+
 go 1.22
 
 use (
     ./myapp
     ./mylib
 )
-
 ```
 
 ---
@@ -635,7 +597,6 @@ use (
 ### 10.1 Организация пакетов
 
 ```go
-
 // ХОРОШО: пакет по функциональности
 package user
 package order
@@ -645,13 +606,11 @@ package payment
 package models
 package controllers
 package utils
-
 ```
 
 ### 10.2 Минимизация API
 
 ```go
-
 // ХОРОШО: минимальный экспортируемый API
 package auth
 
@@ -661,13 +620,11 @@ func Logout(token *Token) error
 // ПЛОХО: всё экспортируется
 func ValidateEmail(email string) bool  // Внутренняя функция
 func HashPassword(pwd string) string   // Внутренняя функция
-
 ```
 
 ### 10.3 Документация
 
 ```go
-
 // Package mathutil provides mathematical utilities.
 package mathutil
 
@@ -676,7 +633,6 @@ package mathutil
 func Add(a, b int) int {
     // Implementation
 }
-
 ```
 
 ---
@@ -709,6 +665,7 @@ func Add(a, b int) int {
 3. Используйте replace для локальной разработки
 
 ---
+
 
 
 

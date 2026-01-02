@@ -86,7 +86,6 @@ Proof of Work — первый и самый известный механизм
 
 **Пример:**
 ```python
-
 import hashlib
 
 def mine_block(previous_hash, transactions, difficulty):
@@ -115,7 +114,6 @@ print(f"Хэш блока: {block_hash}")
 
 **Output:**
 ```
-
 Найден nonce: 12345
 Хэш блока: 0000a3b5c7d9e1f2a4b6c8d0e2f4a6b8c0d2e4f6a8b0c2d4e6f8a0b2c4d6e8f0
 ```
@@ -190,7 +188,6 @@ for v in validators:
 
 **Output:**
 ```
-
 addr1: 28.6% вероятность
 addr2: 57.1% вероятность
 addr3: 14.3% вероятность

@@ -24,7 +24,6 @@
 ### 1.1 Модель разделения ответственности
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │              Shared Responsibility Model                          │
 ├───────────────────────────────────────────────────────────────────┤
@@ -57,7 +56,6 @@
 │  Lambda: AWS manages everything except code                       │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ---
@@ -68,6 +66,7 @@
 
 ```python
 # ❌ BAD: Overly permissive
+
 bad_policy = {
     "Version": "2012-10-17",
     "Statement": [{
@@ -78,6 +77,7 @@ bad_policy = {
 }
 
 # ✅ GOOD: Least privilege
+
 good_policy = {
     "Version": "2012-10-17",
     "Statement": [{
@@ -94,13 +94,11 @@ good_policy = {
         }
     }]
 }
-
 ```
 
 ### 2.2 IAM Best Practices
 
 ```python
-
 iam_best_practices = [
     "Never use root account for daily operations",
     "Enable MFA for all users, especially privileged",
@@ -117,13 +115,13 @@ iam_best_practices = [
 print("IAM Best Practices:")
 for i, practice in enumerate(iam_best_practices, 1):
     print(f"  {i}. {practice}")
-
 ```
 
 ### 2.3 IAM Roles для сервисов
 
 ```yaml
 # Lambda execution role
+
 LambdaRole:
   Type: AWS::IAM::Role
   Properties:
@@ -145,7 +143,6 @@ LambdaRole:
               Action:
                 - s3:GetObject
               Resource: !Sub 'arn:aws:s3:::${Bucket}/*'
-
 ```
 
 ---
@@ -155,7 +152,6 @@ LambdaRole:
 ### 3.1 Defense in Depth
 
 ```
-
 ┌───────────────────────────────────────────────────────────────────┐
 │              Network Security Layers                              │
 ├───────────────────────────────────────────────────────────────────┤
@@ -188,13 +184,13 @@ LambdaRole:
 │  └─────────────────────────────────────────────────────────────┘  │
 │                                                                   │
 └───────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 3.2 Security Groups
 
 ```python
 # Security Group - stateful, allow rules only
+
 sg_web = {
     "Inbound": [
         {"Port": 443, "Source": "0.0.0.0/0", "Description": "HTTPS from internet"},
@@ -216,7 +212,6 @@ sg_db = {
         {"Port": 5432, "Source": "sg-app", "Description": "Only from app tier"}
     ]
 }
-
 ```
 
 ---
@@ -226,7 +221,6 @@ sg_db = {
 ### 4.1 Encryption at Rest
 
 ```python
-
 encryption_at_rest = {
     "S3": {
         "SSE-S3": "AWS managed keys",
@@ -249,6 +243,7 @@ encryption_at_rest = {
 
 ```python
 # Always use TLS/HTTPS
+
 encryption_in_transit = {
     "ALB/CloudFront": "TLS termination, ACM certificates",
     "API Gateway": "HTTPS only endpoint",
@@ -258,6 +253,7 @@ encryption_in_transit = {
 }
 
 # S3 bucket policy to enforce HTTPS
+
 s3_ssl_policy = {
     "Version": "2012-10-17",
     "Statement": [{
@@ -271,7 +267,6 @@ s3_ssl_policy = {
         }
     }]
 }
-
 ```
 
 ---
@@ -281,12 +276,12 @@ s3_ssl_policy = {
 ### 5.1 AWS Secrets Manager
 
 ```python
-
 import boto3
 
 secrets_client = boto3.client('secretsmanager')
 
 # Create secret
+
 secrets_client.create_secret(
     Name='myapp/database',
     SecretString=json.dumps({
@@ -296,22 +291,22 @@ secrets_client.create_secret(
 )
 
 # Retrieve secret
+
 response = secrets_client.get_secret_value(SecretId='myapp/database')
 secret = json.loads(response['SecretString'])
 
 # Enable automatic rotation
+
 secrets_client.rotate_secret(
     SecretId='myapp/database',
     RotationLambdaARN='arn:aws:lambda:...:function:rotation',
     RotationRules={'AutomaticallyAfterDays': 30}
 )
-
 ```
 
 ### 5.2 Parameter Store vs Secrets Manager
 
 ```python
-
 comparison = {
     "Secrets Manager": {
         "purpose": "Sensitive credentials with rotation",
@@ -326,7 +321,6 @@ comparison = {
         "best_for": "Config values, non-rotating secrets"
     }
 }
-
 ```
 
 ---
@@ -336,7 +330,6 @@ comparison = {
 ### 6.1 AWS Security Services
 
 ```python
-
 security_services = {
     "GuardDuty": {
         "function": "Threat detection",
@@ -373,13 +366,13 @@ for service, details in security_services.items():
     print(f"\n{service}:")
     for key, value in details.items():
         print(f"  {key}: {value}")
-
 ```
 
 ### 6.2 WAF Rules
 
 ```python
 # WAF rule examples
+
 waf_rules = [
     "AWSManagedRulesCommonRuleSet",      # OWASP Top 10
     "AWSManagedRulesKnownBadInputsRuleSet",  # Known malicious inputs
@@ -389,6 +382,7 @@ waf_rules = [
 ]
 
 # Custom rule: Block specific IPs
+
 custom_rule = {
     "Name": "BlockBadIPs",
     "Priority": 1,
@@ -399,7 +393,6 @@ custom_rule = {
         }
     }
 }
-
 ```
 
 ---
@@ -407,7 +400,6 @@ custom_rule = {
 ## 7. Compliance
 
 ```python
-
 compliance_frameworks = {
     "SOC 2": "Security, availability, processing integrity",
     "HIPAA": "Healthcare data protection",
@@ -417,6 +409,7 @@ compliance_frameworks = {
 }
 
 # AWS Config Rules for compliance
+
 config_rules = [
     "s3-bucket-public-read-prohibited",
     "encrypted-volumes",
@@ -424,7 +417,6 @@ config_rules = [
     "multi-region-cloudtrail-enabled",
     "rds-instance-public-access-check"
 ]
-
 ```
 
 ---
@@ -464,6 +456,7 @@ config_rules = [
 1. Включите GuardDuty и проанализируйте findings
 2. Настройте Security Hub для compliance checks
 3. Реализуйте secrets rotation через Secrets Manager
+
 
 
 

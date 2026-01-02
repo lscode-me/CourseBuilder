@@ -67,11 +67,9 @@ MONITORING:
   compliance_checks: Verify compliance
 
 ```
-
 ### 1.2 Классификация данных
 
 **Пример: Классификация по чувствительности**
-
 ```python
 # Классификация данных по чувствительности
 
@@ -105,7 +103,6 @@ for level, details in data_classification.items():
         print(f"  {key}: {value}")
 
 ```
-
 **Output:**
 ```
 
@@ -132,7 +129,6 @@ RESTRICTED:
   requirements: Maximum security, compliance required
 
 ```
-
 ---
 
 ## 2. Compliance (GDPR, HIPAA)
@@ -149,7 +145,6 @@ RESTRICTED:
 - Минимизация данных
 
 **Пример: GDPR compliance**
-
 ```python
 
 class GDPRCompliance:
@@ -189,14 +184,12 @@ gdpr.record_consent('SUBJECT-001', 'research', consent_given=True)
 print("GDPR compliance: Consent recorded")
 
 ```
-
 **Output:**
 ```
 
 GDPR compliance: Consent recorded
 
 ```
-
 ### 2.2 HIPAA
 
 **HIPAA (Health Insurance Portability and Accountability Act)** — регулирование защиты медицинских данных.
@@ -209,7 +202,6 @@ GDPR compliance: Consent recorded
 - Шифрование
 
 **Пример: HIPAA compliance**
-
 ```python
 
 class HIPAACompliance:
@@ -260,14 +252,12 @@ access = hipaa.access_phi('USER-001', 'PATIENT-001', 'Treatment')
 print(f"HIPAA compliance: Access logged, {len(hipaa.get_access_logs())} log entries")
 
 ```
-
 **Output:**
 ```
 
 HIPAA compliance: Access logged, 1 log entries
 
 ```
-
 ---
 
 ## 3. Контроль доступа
@@ -275,7 +265,6 @@ HIPAA compliance: Access logged, 1 log entries
 ### 3.1 Role-Based Access Control (RBAC)
 
 **Пример: RBAC система**
-
 ```python
 
 class RBAC:
@@ -319,7 +308,6 @@ print(f"User1 can delete: {rbac.check_permission('user1', 'delete_data')}")
 print(f"User2 can delete: {rbac.check_permission('user2', 'delete_data')}")
 
 ```
-
 **Output:**
 ```
 
@@ -328,11 +316,9 @@ User1 can delete: False
 User2 can delete: True
 
 ```
-
 ### 3.2 Attribute-Based Access Control (ABAC)
 
 **Пример: ABAC система**
-
 ```python
 
 class ABAC:
@@ -371,14 +357,12 @@ can_read = abac.check_access(user, resource, 'read')
 print(f"Can read: {can_read}")
 
 ```
-
 **Output:**
 ```
 
 Can read: True
 
 ```
-
 ---
 
 ## 4. Аудит и трассируемость
@@ -386,7 +370,6 @@ Can read: True
 ### 4.1 Аудит логов
 
 **Пример: Система аудита**
-
 ```python
 
 class AuditSystem:
@@ -442,18 +425,15 @@ report = audit.generate_audit_report()
 print(f"Audit report: {report}")
 
 ```
-
 **Output:**
 ```
 
 Audit report: {'total_accesses': 2, 'unique_users': 2, 'time_range': {'start': '2024-01-15T10:30:00', 'end': '2024-01-15T10:30:00'}}
 
 ```
-
 ### 4.2 Data Lineage
 
 **Пример: Отслеживание происхождения данных**
-
 ```python
 
 class DataLineage:
@@ -508,7 +488,6 @@ for step in full_lineage:
     print(f"  {step}")
 
 ```
-
 **Output:**
 ```
 
@@ -519,7 +498,6 @@ Data Lineage:
   {'id': 'raw_data2', 'type': 'source'}
 
 ```
-
 ---
 
 ## 5. Шифрование данных
@@ -527,7 +505,6 @@ Data Lineage:
 ### 5.1 Шифрование в покое и при передаче
 
 **Пример: Концепция шифрования**
-
 ```python
 # Концепция шифрования данных
 
@@ -556,7 +533,6 @@ for concept, details in encryption_concepts.items():
         print(f"  {key}: {value}")
 
 ```
-
 **Output:**
 ```
 

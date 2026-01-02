@@ -46,9 +46,11 @@
 
 ```python
 # Детерминированная структура: множество
+
 deterministic_set = set([1, 2, 3, 4, 5])
 
 # Точный ответ
+
 print(f"3 в множестве: {3 in deterministic_set}")  # True
 print(f"10 в множестве: {10 in deterministic_set}")  # False
 print(f"Всегда точный ответ: нет ложных срабатываний")
@@ -56,7 +58,6 @@ print(f"Всегда точный ответ: нет ложных срабаты
 
 **Output:**
 ```
-
 3 в множестве: True
 10 в множестве: False
 Всегда точный ответ: нет ложных срабатываний
@@ -89,10 +90,10 @@ print(f"Всегда точный ответ: нет ложных срабаты
 **Example: Концептуальное сравнение**
 
 ```python
-
 import sys
 
 # Детерминированная структура: множество
+
 deterministic = set(range(1000000))
 deterministic_size = sys.getsizeof(deterministic)
 
@@ -107,7 +108,6 @@ print(f"Экономия памяти: ~{deterministic_size / 1024 / 1024 / 1.2:
 
 **Output:**
 ```
-
 Размер детерминированного множества (1M элементов): 35.15 MB
 Вероятностная структура (концептуально): ~1.2 MB
 Экономия памяти: ~29.3x
@@ -131,17 +131,18 @@ print(f"Экономия памяти: ~{deterministic_size / 1024 / 1024 / 1.2:
 **Example: Сравнение использования памяти**
 
 ```python
-
 import sys
 
 # Задача: проверить, есть ли элемент в коллекции из 10 миллионов элементов
 
 # Детерминированный подход: множество
+
 deterministic_set = set(range(10000000))
 memory_deterministic = sys.getsizeof(deterministic_set)
 
 # Вероятностный подход: Bloom Filter (концептуально)
 # Для 10M элементов с вероятностью ошибки 1% нужен ~12 MB
+
 memory_probabilistic = 12 * 1024 * 1024  # ~12 MB
 
 print(f"Детерминированное множество: {memory_deterministic / 1024 / 1024:.2f} MB")
@@ -151,7 +152,6 @@ print(f"Экономия: {memory_deterministic / memory_probabilistic:.1f}x")
 
 **Output:**
 ```
-
 Детерминированное множество: 351.52 MB
 Вероятностная структура: 12.00 MB
 Экономия: 29.3x
@@ -162,13 +162,14 @@ print(f"Экономия: {memory_deterministic / memory_probabilistic:.1f}x")
 **Example: Сравнение скорости**
 
 ```python
-
 import time
 
 # Детерминированная структура
+
 deterministic_set = set(range(1000000))
 
 # Проверка принадлежности
+
 start = time.time()
 for _ in range(10000):
     _ = 500000 in deterministic_set
@@ -183,7 +184,6 @@ print(f"Вероятностная (концептуально): быстрее 
 
 **Output:**
 ```
-
 Детерминированная проверка: 0.001234 секунд
 Вероятностная (концептуально): быстрее благодаря меньшему размеру
 ```
@@ -203,6 +203,7 @@ print(f"Вероятностная (концептуально): быстрее 
 
 ```python
 # Финансовые транзакции требуют точности
+
 class TransactionValidator:
     """Валидатор транзакций (требует точности)."""
     def __init__(self):
@@ -222,7 +223,6 @@ print(f"Дубликат? {validator.is_duplicate('txn_001')}")  # Должно 
 
 **Output:**
 ```
-
 Дубликат? False
 Дубликат? True
 ```
@@ -242,6 +242,7 @@ print(f"Дубликат? {validator.is_duplicate('txn_001')}")  # Должно 
 
 ```python
 # Кэш-фильтр: можно допустить ложные срабатывания
+
 class CacheFilter:
     """Фильтр для кэша (допускает ложные срабатывания)."""
     def __init__(self):
@@ -259,6 +260,7 @@ class CacheFilter:
         self.cache_keys.add(key)
 
 # Использование
+
 cache_filter = CacheFilter()
 cache_filter.add_to_filter('user_123')
 
@@ -272,7 +274,6 @@ else:
 
 **Output:**
 ```
-
 Возможно в кэше, проверяем кэш
 ```
 
@@ -336,11 +337,13 @@ class RecommendationFilter:
         self.viewed_items.add(item_id)
 
 # Использование
+
 filter_rec = RecommendationFilter()
 filter_rec.mark_as_seen('item_1')
 filter_rec.mark_as_seen('item_2')
 
 # Быстрая проверка
+
 if not filter_rec.has_seen('item_3'):
     print("Рекомендовать item_3")
 else:
@@ -349,7 +352,6 @@ else:
 
 **Output:**
 ```
-
 Рекомендовать item_3
 ```
 
@@ -382,6 +384,7 @@ class DistributedDeduplicator:
         return False  # Упрощённо
 
 # Использование
+
 dedup = DistributedDeduplicator()
 dedup.add_to_filter('msg_1')
 
@@ -399,7 +402,6 @@ else:
 
 **Output:**
 ```
-
 Ложное срабатывание, обрабатываем
 ```
 
@@ -439,5 +441,6 @@ else:
 - Исследуйте применение в распределённых системах
 
 ---
+
 
 

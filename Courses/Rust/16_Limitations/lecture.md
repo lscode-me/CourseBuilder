@@ -57,7 +57,6 @@ print(result)
 
 **Rust:**
 ```rust
-
 // Rust - больше кода, требуется компиляция
 let data = vec![1, 2, 3, 4, 5];
 let result: Vec<i32> = data.iter()
@@ -86,12 +85,12 @@ println!("{:?}", result);
 **Bash:**
 ```bash
 # Просто и быстро
+
 grep "error" log.txt | wc -l
 ```
 
 **Rust:**
 ```rust
-
 // Больше кода для простой задачи
 use std::fs;
 use std::io::{BufRead, BufReader};
@@ -166,7 +165,6 @@ fn main() -> std::io::Result<()> {
 **Example: Интеграция с Python**
 
 ```rust
-
 // Используя PyO3
 // use pyo3::prelude::*;
 
@@ -230,7 +228,6 @@ fn main() -> std::io::Result<()> {
 **Example: Rust → WASM**
 
 ```rust
-
 // Требует: wasm-pack
 // use wasm_bindgen::prelude::*;
 
@@ -242,7 +239,6 @@ fn main() -> std::io::Result<()> {
 
 **Использование из JavaScript:**
 ```javascript
-
 // import { add } from './pkg/my_project';
 // console.log(add(5, 3)); // 8
 ```
@@ -362,7 +358,6 @@ fn main() -> std::io::Result<()> {
 **Example: Гибридный подход**
 
 ```
-
 ┌─────────────────────────────────────┐
 │         Веб-приложение              │
 ├─────────────────────────────────────┤
@@ -379,7 +374,6 @@ fn main() -> std::io::Result<()> {
 **PyO3 для интеграции:**
 
 ```rust
-
 // Требует: pyo3 = "0.20"
 // use pyo3::prelude::*;
 
@@ -400,7 +394,6 @@ fn main() -> std::io::Result<()> {
 # import rust_module
 # result = rust_module.fast_computation([1.0, 2.0, 3.0])
 # print(result)  # 6.0
-
 ```
 
 ---
@@ -449,7 +442,6 @@ fn main() -> std::io::Result<()> {
 **Decision tree:**
 
 ```
-
 Нужна максимальная производительность?
 ├─ Да → Rust или C++
 └─ Нет → Быстрая разработка важнее?
@@ -536,5 +528,6 @@ fn main() -> std::io::Result<()> {
 - [wasm-pack](https://rustwasm.github.io/wasm-pack/) — Rust → WebAssembly
 
 ---
+
 
 

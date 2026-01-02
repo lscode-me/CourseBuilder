@@ -72,9 +72,11 @@
 
 ```python
 # Простой список
+
 user_ids = [1, 2, 3, 4, 5]
 
 # Проверка, есть ли ID в списке
+
 def has_user(user_ids, user_id):
     return user_id in user_ids
 
@@ -86,7 +88,6 @@ print(has_user(user_ids, 10))
 
 **Output:**
 ```
-
 True
 False
 ```
@@ -108,7 +109,6 @@ print(10 in user_ids)
 
 **Output:**
 ```
-
 True
 False
 ```
@@ -138,6 +138,7 @@ False
 
 ```python
 # Поиск в списке (неотсортированном)
+
 def search_in_list(data, target):
     for i, value in enumerate(data):
         if value == target:
@@ -151,7 +152,6 @@ print(search_in_list(numbers, 7))
 
 **Output:**
 ```
-
 2
 
 -1
@@ -162,10 +162,10 @@ print(search_in_list(numbers, 7))
 Теперь используем отсортированный список и бинарный поиск:
 
 ```python
-
 import bisect
 
 # Отсортированный список
+
 sorted_numbers = sorted([5, 2, 8, 1, 9, 3])
 print(f"Отсортированный список: {sorted_numbers}")
 
@@ -180,7 +180,6 @@ else:
 
 **Output:**
 ```
-
 Отсортированный список: [1, 2, 3, 5, 8, 9]
 Найдено на позиции: 4
 ```
@@ -231,7 +230,6 @@ ADT **не определяет**, как именно реализованы о
 **Example: Реализация стека на Python**
 
 ```python
-
 class Stack:
     """Реализация стека через список."""
     
@@ -281,7 +279,6 @@ print(f"Осталось элементов: {stack.size()}")
 
 **Output:**
 ```
-
 Вершина стека: 3
 Размер: 3
 Извлечено: 3
@@ -338,6 +335,7 @@ print(f"Осталось элементов: {stack.size()}")
 
 ```python
 # Реализация 1: через список (динамический массив)
+
 class StackList:
     def __init__(self):
         self.items = []
@@ -349,6 +347,7 @@ class StackList:
         return self.items.pop()
 
 # Реализация 2: через связанный список
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -388,7 +387,6 @@ print(f"StackLinkedList: {stack2.pop()}")
 
 **Output:**
 ```
-
 StackList: 2
 StackLinkedList: 2
 ```
@@ -421,7 +419,6 @@ StackLinkedList: 2
 **Подход 1: Использование списка**
 
 ```python
-
 def count_frequency_list(data):
     """Подсчёт через список — неэффективно."""
     result = []
@@ -444,7 +441,6 @@ print(result)
 
 **Output:**
 ```
-
 [[1, 1], [2, 2], [3, 3], [4, 4]]
 ```
 
@@ -453,7 +449,6 @@ print(result)
 **Подход 2: Использование словаря (хеш-таблицы)**
 
 ```python
-
 def count_frequency_dict(data):
     """Подсчёт через словарь — эффективно."""
     result = {}
@@ -468,7 +463,6 @@ print(result)
 
 **Output:**
 ```
-
 {1: 1, 2: 2, 3: 3, 4: 4}
 ```
 
@@ -484,6 +478,7 @@ print(result)
 
 ```python
 # Неочевидный способ
+
 def has_duplicates_v1(data):
     for i in range(len(data)):
         for j in range(i + 1, len(data)):
@@ -505,7 +500,6 @@ print(f"Версия 2: {has_duplicates_v2(test_data)}")
 
 **Output:**
 ```
-
 Версия 1: True
 Версия 2: True
 ```
@@ -519,7 +513,6 @@ print(f"Версия 2: {has_duplicates_v2(test_data)}")
 **Example: Поиск в большой коллекции**
 
 ```python
-
 import time
 
 # Большой список
@@ -527,6 +520,7 @@ import time
 large_list = list(range(1000000))
 
 # Поиск в списке
+
 start = time.time()
 result = 999999 in large_list
 time_list = time.time() - start
@@ -548,7 +542,6 @@ print(f"Ускорение: {time_list / time_set:.1f}x")
 
 **Output:**
 ```
-
 Поиск в списке: 0.012345 секунд
 Поиск в множестве: 0.000001 секунд
 Ускорение: 12345.0x
@@ -603,7 +596,6 @@ print(f"Кортеж: {immutable_tuple}")
 
 **Output:**
 ```
-
 Изменённый список: [1, 2, 3, 4]
 Кортеж: (1, 2, 3)
 ```
@@ -678,7 +670,6 @@ print(f"Уникальные числа: {unique_numbers}")
 
 **Output:**
 ```
-
 Список: ['apple', 'banana', 'orange']
 Координаты: (10, 20)
 Человек: {'name': 'Alice', 'age': 30}
@@ -721,6 +712,7 @@ print(f"Уникальные числа: {unique_numbers}")
 - Исследуйте, как структуры данных реализованы в других языках программирования
 
 ---
+
 
 
 

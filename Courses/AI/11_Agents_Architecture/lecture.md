@@ -27,7 +27,6 @@
 ### 1.1 Single-Agent
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    Single-Agent                             │
 ├─────────────────────────────────────────────────────────────┤
@@ -52,7 +51,6 @@
 ### 1.2 Multi-Agent
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    Multi-Agent                              │
 ├─────────────────────────────────────────────────────────────┤
@@ -85,6 +83,7 @@
 
 ```python
 # Агенты работают последовательно
+
 def sequential_agents(task):
     # Каждый агент передаёт результат следующему
     research = research_agent.run(task)
@@ -97,6 +96,7 @@ def sequential_agents(task):
 
 ```python
 # Агенты работают параллельно
+
 async def parallel_agents(task):
     # Запускаем одновременно
     results = await asyncio.gather(
@@ -111,7 +111,6 @@ async def parallel_agents(task):
 ### 2.3 Hierarchical (Иерархический)
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                   Hierarchical Agents                       │
 ├─────────────────────────────────────────────────────────────┤
@@ -136,6 +135,7 @@ async def parallel_agents(task):
 
 ```python
 # Агенты дебатируют для улучшения качества
+
 def debate_agents(question, rounds=3):
     positions = []
     
@@ -159,7 +159,6 @@ def debate_agents(question, rounds=3):
 ### 3.1 Проблемы
 
 ```python
-
 observability_challenges = {
     "Сложные логи": "Много агентов = много логов",
     "Трассировка": "Сложно отследить путь выполнения",
@@ -171,7 +170,6 @@ observability_challenges = {
 ### 3.2 Инструменты
 
 ```python
-
 observability_tools = {
     "LangSmith": "Трассировка LangChain agents",
     "Langfuse": "Open-source observability",
@@ -187,7 +185,6 @@ observability_tools = {
 ### 4.1 Факторы стоимости
 
 ```python
-
 cost_factors = {
     "API calls": "Каждый шаг агента = API call",
     "Iterations": "Больше итераций = больше токенов",
@@ -196,6 +193,7 @@ cost_factors = {
 }
 
 # Пример расчёта
+
 example_task = {
     "steps": 15,
     "avg_tokens_per_step": 2000,
@@ -207,7 +205,6 @@ example_task = {
 ### 4.2 Оптимизация стоимости
 
 ```python
-
 cost_optimization = [
     "Использовать дешёвые модели для простых задач",
     "Кэшировать повторяющиеся запросы",
@@ -223,7 +220,6 @@ cost_optimization = [
 ### 5.1 Источники нестабильности
 
 ```python
-
 instability_sources = {
     "LLM stochasticity": "Вероятностная генерация → разные результаты",
     "Error propagation": "Ошибка на шаге N → ошибки на N+1, N+2...",
@@ -236,7 +232,6 @@ instability_sources = {
 ### 5.2 Стратегии повышения стабильности
 
 ```python
-
 stability_strategies = [
     "Снизить temperature до 0",
     "Использовать structured outputs",
@@ -269,5 +264,6 @@ stability_strategies = [
 - [12_Market](../12_Market/) — Вендоры и модели LLM
 
 ---
+
 
 

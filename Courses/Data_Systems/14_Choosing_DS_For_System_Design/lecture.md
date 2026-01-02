@@ -49,7 +49,6 @@
 **Пример выбора базы данных:**
 
 ```python
-
 class DatabaseSelector:
     """Помощник для выбора базы данных."""
     
@@ -95,6 +94,7 @@ class DatabaseSelector:
         return score
 
 # Пример использования
+
 selector = DatabaseSelector()
 requirements = {
     'needs_transactions': True,
@@ -195,6 +195,7 @@ class ColumnStore:
         return sum(values) / len(values) if values else 0
 
 # Пример
+
 store = ColumnStore()
 store.insert({'id': 1, 'name': 'Alice', 'city': 'NYC', 'salary': 50000})
 store.insert({'id': 2, 'name': 'Bob', 'city': 'LA', 'salary': 60000})
@@ -207,7 +208,6 @@ print(f"Average salary in NYC: {avg_salary}")  # 60000
 **ETL Pipeline пример:**
 
 ```python
-
 class ETLPipeline:
     """ETL из OLTP в OLAP."""
     
@@ -272,7 +272,6 @@ class ETLPipeline:
 **Реализация Polyglot Persistence:**
 
 ```python
-
 class PolyglotService:
     """Сервис с несколькими базами данных."""
     
@@ -371,7 +370,6 @@ class PolyglotService:
 **Реализация Dual Write:**
 
 ```python
-
 class DualWriteService:
     """Сервис с двойной записью для миграции."""
     
@@ -421,7 +419,6 @@ class DualWriteService:
 **Backfill скрипт:**
 
 ```python
-
 class BackfillScript:
     """Скрипт для копирования исторических данных."""
     
@@ -467,7 +464,6 @@ class BackfillScript:
 **Verification Service:**
 
 ```python
-
 class VerificationService:
     """Сервис для проверки согласованности."""
     
@@ -638,5 +634,6 @@ Serverless удобен, но дорог на большом объеме.
 3.  Попробуйте переложить её на Cassandra (Wide Column). Осознайте боль отсутствия JOIN-ов. Поймите, что вам придется дублировать данные (Data Denormalization).
 
 В следующем модуле мы рассмотрим структуры данных, которые **врут**, но экономят память. [Approximate Data Structures](../15_Approximate_Data_Structures/).
+
 
 

@@ -30,7 +30,6 @@
 
 **До LSP:**
 ```
-
 N языков × M редакторов = N×M интеграций
 
 10 языков × 10 редакторов = 100 интеграций!
@@ -57,7 +56,6 @@ N языков × M редакторов = N×M интеграций
 
 **После LSP:**
 ```
-
 N языков + M редакторов = N+M реализаций
 
 10 языков + 10 редакторов = 20 реализаций!
@@ -72,7 +70,6 @@ N языков + M редакторов = N+M реализаций
 ### 2.2 Архитектура
 
 ```
-
 ┌──────────────┐              ┌──────────────┐
 │   IDE Client │◄────LSP─────►│Lang Server   │
 │  (VS Code)   │              │  (Pyright)   │
@@ -101,7 +98,6 @@ LSP использует **JSON-RPC** через stdio, pipes, или сокет
 
 **Пример инициализации:**
 ```json
-
 Client → Server
 {
   "jsonrpc": "2.0",
@@ -139,7 +135,6 @@ Server → Client
 Сервер отправляет ошибки и предупреждения клиенту:
 
 ```json
-
 Server → Client (notification)
 {
   "jsonrpc": "2.0",
@@ -163,7 +158,6 @@ Server → Client (notification)
 ### 3.2 Автодополнение (Completion)
 
 ```json
-
 Client → Server
 {
   "jsonrpc": "2.0",
@@ -191,7 +185,6 @@ Server → Client
 ### 3.3 Go to Definition
 
 ```json
-
 Client → Server
 {
   "jsonrpc": "2.0",
@@ -238,7 +231,6 @@ Server → Client
 ### 4.1 Установление соединения
 
 ```
-
 1. Client запускает Server процесс
 2. Client отправляет initialize запрос
 3. Server отвечает с capabilities
@@ -249,7 +241,6 @@ Server → Client
 ### 4.2 Работа с документами
 
 ```
-
 Client открывает файл:
   → textDocument/didOpen
 
@@ -267,7 +258,6 @@ Client запрашивает автодополнение:
 ### 4.3 Завершение
 
 ```
-
 Client → shutdown запрос
 Server → подтверждение
 Client → exit уведомление
@@ -364,7 +354,6 @@ Server → завершает процесс
 ### 7.1 Базовая структура (Python)
 
 ```python
-
 from pygls.server import LanguageServer
 from lsprotocol import types
 
@@ -392,7 +381,6 @@ if __name__ == "__main__":
 ### 7.2 Интеграция с VS Code
 
 ```json
-
 // package.json
 {
   "contributes": {
@@ -414,7 +402,6 @@ if __name__ == "__main__":
 ```
 
 ```typescript
-
 // extension.ts
 import { LanguageClient } from 'vscode-languageclient/node';
 

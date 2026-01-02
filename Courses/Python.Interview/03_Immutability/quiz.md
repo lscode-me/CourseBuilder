@@ -9,7 +9,6 @@
 Что выведет этот код?
 
 ```python
-
 def f(n, lst=[]):
     lst.append(n)
     return lst
@@ -47,7 +46,6 @@ D) set
 Что выведет код?
 
 ```python
-
 a = [1, 2, 3]
 b = a
 b.append(4)
@@ -83,7 +81,6 @@ D) int
 Что произойдёт при выполнении?
 
 ```python
-
 t = ([1, 2], [3, 4])
 t[0].append(5)
 ```

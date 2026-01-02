@@ -32,7 +32,6 @@
 **DevSecOps** = Development + Security + Operations
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Shift Left Security                          │
 ├─────────────────────────────────────────────────────────────────┤
@@ -50,13 +49,11 @@
 │    └──────┴──────┴───────┴───────┴────────┴── Security везде    │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Принципы DevSecOps
 
 ```python
-
 devsecops_principles = [
     "Security as Code — безопасность описана в коде",
     "Shift Left — проверки максимально рано",
@@ -64,7 +61,6 @@ devsecops_principles = [
     "Everyone is responsible — безопасность — ответственность всех",
     "Continuous — непрерывные проверки, не разовые"
 ]
-
 ```
 
 ---
@@ -75,6 +71,7 @@ devsecops_principles = [
 
 ```yaml
 # Пример: security gates в GitHub Actions
+
 name: Security Pipeline
 
 on: [push, pull_request]
@@ -153,7 +150,6 @@ jobs:
         with:
           directory: terraform/
           framework: terraform
-
 ```
 
 ---
@@ -164,6 +160,7 @@ jobs:
 
 ```python
 # Пример уязвимости, которую найдёт SAST
+
 import subprocess
 
 def run_command(user_input):
@@ -171,9 +168,9 @@ def run_command(user_input):
     subprocess.call(f"echo {user_input}", shell=True)
 
 # ✅ Безопасная версия
+
 def run_command_safe(user_input):
     subprocess.call(["echo", user_input])
-
 ```
 
 **Инструменты SAST:**
@@ -187,6 +184,7 @@ def run_command_safe(user_input):
 
 ```yaml
 # DAST в CI/CD
+
 - name: Start application
   run: docker-compose up -d
 
@@ -198,21 +196,22 @@ def run_command_safe(user_input):
   with:
     target: 'http://localhost:8080'
     rules_file_name: '.zap/rules.tsv'
-
 ```
 
 ### 3.3 SCA (Software Composition Analysis)
 
 ```bash
 # Проверка зависимостей Python
+
 pip-audit --requirement requirements.txt
 
 # Проверка npm packages
+
 npm audit
 
 # Использование Snyk
-snyk test
 
+snyk test
 ```
 
 ### 3.4 Container Security
@@ -221,21 +220,24 @@ snyk test
 # Безопасный Dockerfile
 
 # ✅ Используем specific version, не latest
+
 FROM python:3.11-slim-bookworm
 
 # ✅ Non-root user
+
 RUN useradd -m -s /bin/bash appuser
 USER appuser
 
 # ✅ Minimal packages
+
 COPY --chown=appuser:appuser requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY --chown=appuser:appuser . .
 
 # ✅ Read-only filesystem где возможно
-CMD ["python", "app.py"]
 
+CMD ["python", "app.py"]
 ```
 
 ---
@@ -245,7 +247,6 @@ CMD ["python", "app.py"]
 ### 4.1 Принципы
 
 ```python
-
 secrets_best_practices = [
     "Никогда не хардкодить секреты в коде",
     "Никогда не коммитить секреты в Git",
@@ -254,36 +255,38 @@ secrets_best_practices = [
     "Минимальные права доступа (least privilege)",
     "Audit logging для доступа к секретам"
 ]
-
 ```
 
 ### 4.2 Инструменты
 
 ```python
 # HashiCorp Vault
+
 import hvac
 
 client = hvac.Client(url='https://vault.example.com')
 client.token = os.environ.get('VAULT_TOKEN')
 
 # Читаем секрет
+
 secret = client.secrets.kv.v2.read_secret_version(
     path='myapp/database'
 )
 db_password = secret['data']['data']['password']
 
 # AWS Secrets Manager
+
 import boto3
 
 client = boto3.client('secretsmanager')
 secret = client.get_secret_value(SecretId='myapp/database')
-
 ```
 
 ### 4.3 GitLeaks Configuration
 
 ```yaml
 # .gitleaks.toml
+
 title = "Gitleaks config"
 
 [[rules]]
@@ -301,7 +304,6 @@ paths = [
     '''test/.*''',
     '''.*_test\.go'''
 ]
-
 ```
 
 ---
@@ -314,6 +316,7 @@ paths = [
 # policy/kubernetes.rego
 
 # Запрет privileged containers
+
 deny[msg] {
     input.kind == "Deployment"
     container := input.spec.template.spec.containers[_]
@@ -322,6 +325,7 @@ deny[msg] {
 }
 
 # Требование resource limits
+
 deny[msg] {
     input.kind == "Deployment"
     container := input.spec.template.spec.containers[_]
@@ -330,19 +334,20 @@ deny[msg] {
 }
 
 # Запрет latest tag
+
 deny[msg] {
     input.kind == "Deployment"
     container := input.spec.template.spec.containers[_]
     endswith(container.image, ":latest")
     msg := sprintf("Container %v uses latest tag", [container.name])
 }
-
 ```
 
 ### 5.2 Checkov для IaC
 
 ```yaml
 # checkov scan
+
 - name: Run Checkov
   run: |
     pip install checkov
@@ -350,6 +355,7 @@ deny[msg] {
 
 # Пример проверки: S3 bucket encryption
 # CKV_AWS_19: Ensure S3 bucket encryption is enabled
+
 resource "aws_s3_bucket" "example" {
   bucket = "my-bucket"
   
@@ -362,7 +368,6 @@ resource "aws_s3_bucket" "example" {
     }
   }
 }
-
 ```
 
 ---
@@ -373,6 +378,7 @@ resource "aws_s3_bucket" "example" {
 
 ```yaml
 # Pod Security Standards
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -398,13 +404,13 @@ spec:
         limits:
           cpu: "500m"
           memory: "256Mi"
-
 ```
 
 ### 6.2 Network Policies
 
 ```yaml
 # Разрешаем трафик только от определённых pods
+
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -430,7 +436,6 @@ spec:
               app: database
       ports:
         - port: 5432
-
 ```
 
 ---
@@ -438,7 +443,6 @@ spec:
 ## 7. Security Metrics
 
 ```python
-
 security_metrics = {
     "vulnerabilities": {
         "critical": "Count of critical vulns (target: 0)",
@@ -454,7 +458,6 @@ security_metrics = {
         "mttr_security": "Mean time to remediate security issues"
     }
 }
-
 ```
 
 ---
@@ -466,7 +469,6 @@ security_metrics = {
 **Compliance as Code** — практика описания, тестирования и применения compliance-требований в виде исполняемого кода.
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Compliance as Code                           │
 ├─────────────────────────────────────────────────────────────────┤
@@ -484,13 +486,11 @@ security_metrics = {
 │                   Continuous & Automated                        │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 8.2 Compliance Frameworks
 
 ```python
-
 compliance_frameworks = {
     "SOC 2": {
         "description": "Security, Availability, Processing Integrity",
@@ -518,16 +518,17 @@ compliance_frameworks = {
         "controls": ["Risk Assessment", "Security Policies", "Asset Management"]
     }
 }
-
 ```
 
 ### 8.3 AWS Config Rules
 
 ```python
 # AWS Config для автоматического compliance monitoring
+
 import boto3
 
 # Пример: проверка encrypted S3 buckets
+
 config_rule = {
     "ConfigRuleName": "s3-bucket-server-side-encryption-enabled",
     "Description": "Checks if S3 buckets have encryption enabled",
@@ -541,6 +542,7 @@ config_rule = {
 }
 
 # Custom rule для специфичных требований
+
 custom_rule_lambda = """
 def evaluate_compliance(configuration_item):
     # Проверка: RDS instance должен быть encrypted
@@ -549,11 +551,11 @@ def evaluate_compliance(configuration_item):
             return 'NON_COMPLIANT'
     return 'COMPLIANT'
 """
-
 ```
 
 ```yaml
 # Terraform: AWS Config Rules
+
 resource "aws_config_config_rule" "s3_encryption" {
   name = "s3-bucket-encryption-check"
 
@@ -582,7 +584,6 @@ resource "aws_config_config_rule" "rds_encryption" {
     source_identifier = "RDS_STORAGE_ENCRYPTED"
   }
 }
-
 ```
 
 ### 8.4 Cloud Custodian
@@ -622,28 +623,31 @@ policies:
       - type: notify
         to: ["security-team@company.com"]
         subject: "Public S3 bucket remediated"
-
 ```
 
 ```bash
 # Запуск Cloud Custodian
+
 pip install c7n
 
 # Проверка policies (dry-run)
+
 custodian run --dryrun -s output policies/s3-compliance.yml
 
 # Применение policies
+
 custodian run -s output policies/s3-compliance.yml
 
 # Генерация compliance report
-custodian report -s output policies/s3-compliance.yml
 
+custodian report -s output policies/s3-compliance.yml
 ```
 
 ### 8.5 Automated Compliance Reporting
 
 ```python
 # Генерация compliance dashboard
+
 from datetime import datetime
 
 def generate_compliance_report(scan_results):
@@ -682,8 +686,8 @@ def generate_compliance_report(scan_results):
     
     return report
 
-
 # Пример результата сканирования
+
 scan_results = [
     {
         "control_id": "CC6.1",
@@ -701,13 +705,13 @@ scan_results = [
         "timestamp": "2024-12-08T10:00:00Z"
     }
 ]
-
 ```
 
 ### 8.6 Continuous Compliance Pipeline
 
 ```yaml
 # GitHub Actions: Compliance Pipeline
+
 name: Compliance Check
 
 on:
@@ -769,13 +773,11 @@ jobs:
               "text": "⚠️ Compliance check failed! Review required.",
               "channel": "security-alerts"
             }
-
 ```
 
 ### 8.7 Compliance as Code Best Practices
 
 ```python
-
 compliance_best_practices = [
     {
         "practice": "Version Control",
@@ -810,14 +812,15 @@ compliance_best_practices = [
 ]
 
 # Пример exception в коде
+
 """
 # checkov:skip=CKV_AWS_19: Legacy bucket, migration planned Q1 2025
 # Approved by: security-team, Ticket: SEC-1234
+
 resource "aws_s3_bucket" "legacy_logs" {
   bucket = "legacy-logs-bucket"
 }
 """
-
 ```
 
 ---
@@ -875,6 +878,7 @@ resource "aws_s3_bucket" "legacy_logs" {
 - CompTIA Security+
 
 ---
+
 
 
 

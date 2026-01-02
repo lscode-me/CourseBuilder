@@ -40,6 +40,7 @@
 
 ```python
 # math_utils.py
+
 """Модуль с математическими утилитами."""
 
 PI = 3.14159
@@ -68,13 +69,13 @@ class Calculator:
     
     def subtract(self, a, b):
         return a - b
-
 ```
 
 ### 1.2 Импорт модуля
 
 ```python
 # main.py
+
 import math_utils
 
 print(f"PI = {math_utils.PI}")
@@ -83,43 +84,44 @@ print(f"factorial(5) = {math_utils.factorial(5)}")
 
 calc = math_utils.Calculator()
 print(f"calc.add(3, 5) = {calc.add(3, 5)}")
-
 ```
 
 **Output:**
 ```
-
 PI = 3.14159
 square(5) = 25
 factorial(5) = 120
 calc.add(3, 5) = 8
-
 ```
 
 ### 1.3 Различные способы импорта
 
 ```python
 # Импорт всего модуля
+
 import math_utils
 result = math_utils.square(5)
 
 # Импорт с псевдонимом
+
 import math_utils as mu
 result = mu.square(5)
 
 # Импорт конкретных объектов
+
 from math_utils import square, PI
 result = square(5)
 print(PI)
 
 # Импорт с переименованием
+
 from math_utils import factorial as fact
 result = fact(5)
 
 # Импорт всего (НЕ рекомендуется!)
+
 from math_utils import *
 result = square(5)  # Непонятно откуда взялось
-
 ```
 
 > **⚠️ Warning:**  
@@ -135,16 +137,19 @@ result = square(5)  # Непонятно откуда взялось
 
 ```python
 # module_a.py
+
 value = "A"
 def get_value():
     return value
 
 # module_b.py
+
 value = "B"
 def get_value():
     return value
 
 # main.py
+
 import module_a
 import module_b
 
@@ -152,7 +157,6 @@ print(module_a.value)       # "A"
 print(module_b.value)       # "B"
 print(module_a.get_value()) # "A"
 print(module_b.get_value()) # "B"
-
 ```
 
 ### 2.2 Атрибут __name__
@@ -161,38 +165,35 @@ print(module_b.get_value()) # "B"
 
 ```python
 # mymodule.py
+
 print(f"__name__ = {__name__}")
 
 def main():
     print("Функция main выполняется")
 
 # Это выполнится только при прямом запуске
+
 if __name__ == "__main__":
     main()
-
 ```
 
 При импорте:
 ```python
 # other.py
-import mymodule  # Выведет: __name__ = mymodule
 
+import mymodule  # Выведет: __name__ = mymodule
 ```
 
 При прямом запуске:
 ```bash
-
 python mymodule.py  # Выведет: __name__ = __main__, затем "Функция main выполняется"
-
 ```
 
 **Output:**
 ```
-
 __name__ = mymodule
 __name__ = __main__
 Функция main выполняется
-
 ```
 
 Это стандартный паттерн для модулей, которые могут использоваться и как библиотека, и как скрипт.
@@ -203,6 +204,7 @@ __name__ = __main__
 
 ```python
 # my_library.py
+
 __all__ = ['public_function', 'PublicClass']
 
 def public_function():
@@ -229,7 +231,6 @@ class _PrivateClass:
 Пакет — это директория с файлом `__init__.py`:
 
 ```
-
 mypackage/
 ├── __init__.py
 ├── module1.py
@@ -237,50 +238,50 @@ mypackage/
 └── subpackage/
     ├── __init__.py
     └── module3.py
-
 ```
 
 ```python
 # mypackage/__init__.py
+
 """Главный пакет."""
 from .module1 import func1
 from .module2 import func2
 
 __version__ = "1.0.0"
-
 ```
 
 ```python
 # mypackage/module1.py
+
 def func1():
     return "func1 from module1"
-
 ```
 
 ```python
 # mypackage/module2.py
+
 def func2():
     return "func2 from module2"
-
 ```
 
 ```python
 # mypackage/subpackage/__init__.py
-from .module3 import func3
 
+from .module3 import func3
 ```
 
 ```python
 # mypackage/subpackage/module3.py
+
 def func3():
     return "func3 from subpackage"
-
 ```
 
 ### 3.2 Импорт из пакета
 
 ```python
 # Разные способы импорта
+
 import mypackage
 print(mypackage.func1())
 print(mypackage.__version__)
@@ -296,19 +297,16 @@ print(func3())
 
 from mypackage.subpackage.module3 import func3
 print(func3())
-
 ```
 
 **Output:**
 ```
-
 func1 from module1
 1.0.0
 func1 from module1
 func1 from module1
 func3 from subpackage
 func3 from subpackage
-
 ```
 
 ### 3.3 Относительные импорты
@@ -317,10 +315,10 @@ func3 from subpackage
 
 ```python
 # mypackage/module2.py
+
 from .module1 import func1  # Из того же пакета
 from ..otherpackage import something  # Из родительского пакета
 from . import module1  # Импорт модуля из того же пакета
-
 ```
 
 > **💡 Pro Tip:**  
@@ -335,18 +333,15 @@ from . import module1  # Импорт модуля из того же пакет
 Python ищет модули в директориях из `sys.path`:
 
 ```python
-
 import sys
 
 print("Пути поиска модулей:")
 for path in sys.path:
     print(f"  {path}")
-
 ```
 
 **Output:**
 ```
-
 Пути поиска модулей:
   /current/directory
   /usr/lib/python3.11
@@ -354,7 +349,6 @@ for path in sys.path:
   /home/user/.local/lib/python3.11/site-packages
   /usr/local/lib/python3.11/dist-packages
   /usr/lib/python3/dist-packages
-
 ```
 
 ### 4.2 Порядок поиска
@@ -367,22 +361,22 @@ for path in sys.path:
 ### 4.3 Добавление путей
 
 ```python
-
 import sys
 
 # Добавление пути программно
+
 sys.path.insert(0, '/path/to/my/modules')
 
 # Теперь можно импортировать модули из этой директории
-import my_custom_module
 
+import my_custom_module
 ```
 
 ```bash
 # Через переменную окружения
+
 export PYTHONPATH="/path/to/modules:$PYTHONPATH"
 python script.py
-
 ```
 
 ### 4.4 Файл .pth
@@ -391,9 +385,9 @@ python script.py
 
 ```
 # myproject.pth
+
 /path/to/my/project
 /another/path
-
 ```
 
 ---
@@ -403,7 +397,6 @@ python script.py
 ### 5.1 Типичная структура проекта
 
 ```
-
 myproject/
 ├── README.md
 ├── requirements.txt
@@ -423,13 +416,13 @@ myproject/
 │   └── test_utils.py
 └── scripts/
     └── run_app.py
-
 ```
 
 ### 5.2 Файл setup.py
 
 ```python
 # setup.py
+
 from setuptools import setup, find_packages
 
 setup(
@@ -457,13 +450,13 @@ setup(
         ],
     },
 )
-
 ```
 
 ### 5.3 Файл pyproject.toml (современный подход)
 
 ```toml
 # pyproject.toml
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
@@ -484,18 +477,18 @@ dev = ["pytest", "black", "flake8"]
 
 [project.scripts]
 mycommand = "mypackage.cli:main"
-
 ```
 
 ### 5.4 Установка в режиме разработки
 
 ```bash
 # Установка пакета в editable mode
+
 pip install -e .
 
 # С dev зависимостями
-pip install -e ".[dev]"
 
+pip install -e ".[dev]"
 ```
 
 ---
@@ -506,37 +499,40 @@ pip install -e ".[dev]"
 
 ```python
 # os — работа с операционной системой
+
 import os
 print(f"Текущая директория: {os.getcwd()}")
 print(f"Переменные окружения: {os.environ.get('HOME')}")
 
 # sys — системные параметры
+
 import sys
 print(f"Версия Python: {sys.version}")
 print(f"Платформа: {sys.platform}")
 
 # datetime — дата и время
+
 from datetime import datetime, timedelta
 now = datetime.now()
 print(f"Сейчас: {now}")
 print(f"Через неделю: {now + timedelta(days=7)}")
 
 # json — работа с JSON
+
 import json
 data = {"name": "Alice", "age": 30}
 json_str = json.dumps(data, indent=2)
 print(f"JSON:\n{json_str}")
 
 # pathlib — современная работа с путями
+
 from pathlib import Path
 home = Path.home()
 print(f"Домашняя директория: {home}")
-
 ```
 
 **Output:**
 ```
-
 Текущая директория: /home/user/project
 Переменные окружения: /home/user
 Версия Python: 3.11.5 (main, Aug 25 2023, 13:19:05)
@@ -549,37 +545,35 @@ JSON:
   "age": 30
 }
 Домашняя директория: /home/user
-
 ```
 
 ### 6.2 Инспекция модулей
 
 ```python
-
 import math
 
 # Просмотр содержимого модуля
+
 print("Атрибуты модуля math:")
 print([attr for attr in dir(math) if not attr.startswith('_')][:10])
 
 # Документация
+
 print(f"\nmath.sqrt.__doc__: {math.sqrt.__doc__}")
 
 # Путь к файлу модуля
-print(f"\nmath.__file__: {getattr(math, '__file__', 'built-in')}")
 
+print(f"\nmath.__file__: {getattr(math, '__file__', 'built-in')}")
 ```
 
 **Output:**
 ```
-
 Атрибуты модуля math:
 ['acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'cbrt', 'ceil', 'comb']
 
 math.sqrt.__doc__: Return the square root of x.
 
 math.__file__: built-in
-
 ```
 
 ---
@@ -589,22 +583,21 @@ math.__file__: built-in
 ### 7.1 Кэширование импортов
 
 ```python
-
 import sys
 
 # Модули кэшируются в sys.modules
+
 print("Загруженные модули (первые 10):")
 for name in list(sys.modules.keys())[:10]:
     print(f"  {name}")
 
 # Проверка, загружен ли модуль
-print(f"\nos загружен: {'os' in sys.modules}")
 
+print(f"\nos загружен: {'os' in sys.modules}")
 ```
 
 **Output:**
 ```
-
 Загруженные модули (первые 10):
   sys
   builtins
@@ -618,19 +611,17 @@ print(f"\nos загружен: {'os' in sys.modules}")
   posix
 
 os загружен: True
-
 ```
 
 ### 7.2 Перезагрузка модуля
 
 ```python
-
 import importlib
 import mymodule
 
 # Если модуль изменился, перезагружаем
-importlib.reload(mymodule)
 
+importlib.reload(mymodule)
 ```
 
 > **⚠️ Warning:**  
@@ -643,26 +634,25 @@ importlib.reload(mymodule)
 ### 8.1 Пример: библиотека валидации
 
 ```
-
 validators/
 ├── __init__.py
 ├── core.py
 ├── string_validators.py
 ├── number_validators.py
 └── exceptions.py
-
 ```
 
 ```python
 # validators/exceptions.py
+
 class ValidationError(Exception):
     """Исключение валидации."""
     pass
-
 ```
 
 ```python
 # validators/core.py
+
 from abc import ABC, abstractmethod
 
 class Validator(ABC):
@@ -675,11 +665,11 @@ class Validator(ABC):
     
     def __call__(self, value):
         return self.validate(value)
-
 ```
 
 ```python
 # validators/string_validators.py
+
 from .core import Validator
 from .exceptions import ValidationError
 
@@ -715,11 +705,11 @@ class LengthValidator(Validator):
         if self.max_length and length > self.max_length:
             raise ValidationError(f"Максимальная длина: {self.max_length}")
         return True
-
 ```
 
 ```python
 # validators/number_validators.py
+
 from .core import Validator
 from .exceptions import ValidationError
 
@@ -742,11 +732,11 @@ class PositiveValidator(RangeValidator):
     
     def __init__(self):
         super().__init__(min_value=0)
-
 ```
 
 ```python
 # validators/__init__.py
+
 """Библиотека валидаторов."""
 
 from .exceptions import ValidationError
@@ -764,13 +754,11 @@ __all__ = [
     'RangeValidator',
     'PositiveValidator',
 ]
-
 ```
 
 ### 8.2 Использование библиотеки
 
 ```python
-
 from validators import (
     EmailValidator, 
     LengthValidator, 
@@ -779,11 +767,13 @@ from validators import (
 )
 
 # Создание валидаторов
+
 email_validator = EmailValidator()
 length_validator = LengthValidator(min_length=3, max_length=50)
 age_validator = RangeValidator(min_value=0, max_value=150)
 
 # Использование
+
 def validate_user(email, username, age):
     try:
         email_validator(email)
@@ -794,21 +784,19 @@ def validate_user(email, username, age):
         return False, str(e)
 
 # Тесты
+
 print(validate_user("alice@example.com", "alice", 30))
 print(validate_user("invalid-email", "alice", 30))
 print(validate_user("alice@example.com", "al", 30))
 print(validate_user("alice@example.com", "alice", 200))
-
 ```
 
 **Output:**
 ```
-
 (True, 'Валидация прошла успешно')
 (False, 'Неверный формат email: invalid-email')
 (False, 'Минимальная длина: 3')
 (False, 'Значение должно быть <= 150')
-
 ```
 
 ---
@@ -835,24 +823,26 @@ def get_heavy_module():
 
 ```python
 # Использование разных библиотек в зависимости от доступности
+
 try:
     import ujson as json  # Быстрая реализация
 except ImportError:
     import json  # Стандартная библиотека
 
 # Проверка версии Python
+
 import sys
 if sys.version_info >= (3, 11):
     from tomllib import load as toml_load
 else:
     from tomli import load as toml_load
-
 ```
 
 ### 9.3 Плагинная система
 
 ```python
 # plugins/__init__.py
+
 import importlib
 import pkgutil
 
@@ -871,28 +861,28 @@ def load_plugins():
     return plugins
 
 # plugins/plugin_a.py
+
 def register():
     return {"name": "Plugin A", "handler": lambda x: x * 2}
 
 # plugins/plugin_b.py
+
 def register():
     return {"name": "Plugin B", "handler": lambda x: x + 10}
 
 # main.py
+
 from plugins import load_plugins
 
 plugins = load_plugins()
 for name, plugin in plugins.items():
     print(f"{plugin['name']}: {plugin['handler'](5)}")
-
 ```
 
 **Output:**
 ```
-
 Plugin A: 10
 Plugin B: 15
-
 ```
 
 ---
@@ -904,15 +894,16 @@ Plugin B: 15
 ❌ **Ошибка:**
 ```python
 # module_a.py
+
 from module_b import func_b
 def func_a():
     return func_b()
 
 # module_b.py
+
 from module_a import func_a  # Циклический импорт!
 def func_b():
     return func_a()
-
 ```
 
 ✅ **Решения:**
@@ -920,18 +911,20 @@ def func_b():
 ```python
 # 1. Импорт внутри функции
 # module_a.py
+
 def func_a():
     from module_b import func_b
     return func_b()
 
 # 2. Реструктуризация — вынести общий код в третий модуль
 # common.py
+
 def shared_func():
     pass
 
 # module_a.py
-from common import shared_func
 
+from common import shared_func
 ```
 
 ### 10.2 Изменение sys.path в __init__.py
@@ -939,9 +932,9 @@ from common import shared_func
 ❌ **Плохо:**
 ```python
 # mypackage/__init__.py
+
 import sys
 sys.path.insert(0, '/some/path')  # Побочный эффект при импорте!
-
 ```
 
 ✅ **Хорошо:**
@@ -953,7 +946,6 @@ sys.path.insert(0, '/some/path')  # Побочный эффект при имп�
 
 ❌ **Плохо:**
 ```python
-
 from os import *
 from sys import *
 # Теперь непонятно, откуда взялись path, getcwd и т.д.
@@ -961,7 +953,6 @@ from sys import *
 
 ✅ **Хорошо:**
 ```python
-
 import os
 import sys
 # Явно видно происхождение: os.path, sys.path
@@ -974,9 +965,9 @@ import sys
 # Но для обычных пакетов лучше его создавать для явности
 
 # mypackage/__init__.py
+
 """Документация пакета."""
 __version__ = "1.0.0"
-
 ```
 
 ---
@@ -1031,6 +1022,7 @@ __version__ = "1.0.0"
 - [PEP 420](https://peps.python.org/pep-0420/) — Implicit Namespace Packages
 
 ---
+
 
 
 

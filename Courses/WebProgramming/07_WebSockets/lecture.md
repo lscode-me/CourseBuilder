@@ -41,7 +41,6 @@
 - Long polling — сложен, ограничен
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                 HTTP Polling vs WebSocket                  │
 ├────────────────────────────────────────────────────────────┤
@@ -65,7 +64,6 @@
 │  Много накладных расходов          Эффективно     │        │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Что такое WebSocket
@@ -85,7 +83,6 @@
 ### 1.3 WebSocket Handshake
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │                  WebSocket Handshake                       │
 ├────────────────────────────────────────────────────────────┤
@@ -112,12 +109,10 @@
 │    │◄═══════════════════════════════════════│              │
 │    │                                          │            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 **Клиентский запрос:**
 ```http
-
 GET /chat HTTP/1.1
 Host: server.example.com
 Upgrade: websocket
@@ -125,17 +120,14 @@ Connection: Upgrade
 Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
 Sec-WebSocket-Version: 13
 Origin: http://example.com
-
 ```
 
 **Серверный ответ:**
 ```http
-
 HTTP/1.1 101 Switching Protocols
 Upgrade: websocket
 Connection: Upgrade
 Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
-
 ```
 
 ### 1.4 Sec-WebSocket-Accept
@@ -143,7 +135,6 @@ Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 Сервер вычисляет `Sec-WebSocket-Accept` по формуле:
 
 ```python
-
 import base64
 import hashlib
 
@@ -159,7 +150,6 @@ def compute_accept(key: str) -> str:
 key = "dGhlIHNhbXBsZSBub25jZQ=="
 accept = compute_accept(key)
 print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
-
 ```
 
 ---
@@ -169,7 +159,6 @@ print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 ### 2.1 Структура фрейма
 
 ```
-
 ┌─────────────────────────────────────────────────────────────┐
 │                    WebSocket Frame                          │
 ├─────────────────────────────────────────────────────────────┤
@@ -192,7 +181,6 @@ print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 │  +---------------------------------------------------------------+
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 2.2 Opcode
@@ -212,7 +200,6 @@ print(accept)  # s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 **Сервер → Клиент**: данные НЕ ДОЛЖНЫ быть замаскированы
 
 ```python
-
 def mask_data(data: bytes, mask_key: bytes) -> bytes:
     """Маскирование данных WebSocket."""
     masked = bytearray(len(data))
@@ -226,7 +213,6 @@ data = b'Hello'
 masked = mask_data(data, mask_key)
 # Демаскирование — та же операция
 original = mask_data(masked, mask_key)
-
 ```
 
 ---
@@ -266,7 +252,6 @@ async def client():
 
 if __name__ == "__main__":
     asyncio.run(client())
-
 ```
 
 ### 3.2 Сервер с библиотекой websockets
@@ -296,7 +281,6 @@ async def handler(websocket, path):
     except websockets.exceptions.ConnectionClosed:
         print(f"Client disconnected: {client_addr}")
 
-
 async def main():
     async with websockets.serve(handler, "0.0.0.0", 8765):
         print("WebSocket server started on ws://0.0.0.0:8765")
@@ -304,7 +288,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ### 3.3 Broadcast сервер (чат)
@@ -321,7 +304,6 @@ from datetime import datetime
 # Множество подключённых клиентов
 connected_clients = set()
 
-
 async def broadcast(message: str, sender=None):
     """Отправить сообщение всем клиентам."""
     if connected_clients:
@@ -330,7 +312,6 @@ async def broadcast(message: str, sender=None):
               for client in connected_clients 
               if client != sender]
         )
-
 
 async def handler(websocket, path):
     """Обработчик соединения."""
@@ -381,16 +362,13 @@ async def handler(websocket, path):
         await broadcast(leave_msg)
         print(f"Client {client_id} disconnected. Total: {len(connected_clients)}")
 
-
 async def main():
     async with websockets.serve(handler, "0.0.0.0", 8765):
         print("Chat server started on ws://0.0.0.0:8765")
         await asyncio.Future()
 
-
 if __name__ == "__main__":
     asyncio.run(main())
-
 ```
 
 ---
@@ -428,7 +406,6 @@ websocket_send = {
     'text': 'Response',  # или 'bytes'
 }
 websocket_close = {'type': 'websocket.close', 'code': 1000}
-
 ```
 
 ### 4.2 ASGI WebSocket приложение
@@ -442,7 +419,6 @@ from datetime import datetime
 
 # Подключённые WebSocket клиенты
 websocket_clients = set()
-
 
 class WebSocketClient:
     """Обёртка для WebSocket соединения."""
@@ -476,7 +452,6 @@ class WebSocketClient:
         
         return None
 
-
 async def broadcast(message: str, exclude=None):
     """Отправить сообщение всем клиентам."""
     for client in websocket_clients:
@@ -485,7 +460,6 @@ async def broadcast(message: str, exclude=None):
                 await client.send_text(message)
             except:
                 pass
-
 
 async def websocket_handler(scope, receive, send):
     """Обработчик WebSocket соединений."""
@@ -533,7 +507,6 @@ async def websocket_handler(scope, receive, send):
             'message': f'User {client.client_id} left',
         }))
         print(f"WebSocket disconnected: {client.client_id}")
-
 
 async def http_handler(scope, receive, send):
     """Обработчик HTTP запросов."""
@@ -621,7 +594,6 @@ async def http_handler(scope, receive, send):
         })
         await send({'type': 'http.response.body', 'body': b'Not Found'})
 
-
 async def app(scope, receive, send):
     """Главное ASGI приложение."""
     
@@ -631,11 +603,9 @@ async def app(scope, receive, send):
     elif scope['type'] == 'websocket':
         await websocket_handler(scope, receive, send)
 
-
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=8000)
-
 ```
 
 ---
@@ -645,13 +615,11 @@ if __name__ == '__main__':
 ### 5.1 FastAPI
 
 ```python
-
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from typing import List
 
 app = FastAPI()
-
 
 class ConnectionManager:
     """Менеджер WebSocket соединений."""
@@ -670,9 +638,7 @@ class ConnectionManager:
         for connection in self.active_connections:
             await connection.send_text(message)
 
-
 manager = ConnectionManager()
-
 
 @app.get("/")
 async def get():
@@ -703,7 +669,6 @@ async def get():
     </html>
     """)
 
-
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await manager.connect(websocket)
@@ -714,7 +679,6 @@ async def websocket_endpoint(websocket: WebSocket):
     except WebSocketDisconnect:
         manager.disconnect(websocket)
         await manager.broadcast("A user left the chat")
-
 ```
 
 ### 5.2 Django Channels
@@ -723,7 +687,6 @@ async def websocket_endpoint(websocket: WebSocket):
 # consumers.py
 from channels.generic.websocket import AsyncWebsocketConsumer
 import json
-
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -763,7 +726,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps({
             'message': event['message']
         }))
-
 ```
 
 ```python
@@ -774,7 +736,6 @@ from . import consumers
 websocket_urlpatterns = [
     re_path(r'ws/chat/(?P<room_name>\w+)/$', consumers.ChatConsumer.as_asgi()),
 ]
-
 ```
 
 ---
@@ -784,7 +745,6 @@ websocket_urlpatterns = [
 ### 6.1 Базовый клиент
 
 ```javascript
-
 // Создание соединения
 const ws = new WebSocket('ws://localhost:8000/ws');
 
@@ -820,13 +780,11 @@ ws.send(JSON.stringify({type: 'message', text: 'Hello'}));
 
 // Закрытие
 ws.close(1000, 'Normal closure');
-
 ```
 
 ### 6.2 Reconnecting WebSocket
 
 ```javascript
-
 class ReconnectingWebSocket {
     constructor(url, options = {}) {
         this.url = url;
@@ -908,7 +866,6 @@ class ReconnectingWebSocket {
 // Использование
 const ws = new ReconnectingWebSocket('ws://localhost:8000/ws');
 ws.onmessage = (event) => console.log(event.data);
-
 ```
 
 ---
@@ -918,7 +875,6 @@ ws.onmessage = (event) => console.log(event.data);
 ### 7.1 Проблема масштабирования
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │              WebSocket Scaling Problem                     │
 ├────────────────────────────────────────────────────────────┤
@@ -935,13 +891,11 @@ ws.onmessage = (event) => console.log(event.data);
 │  (они на разных серверах!)                                 │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ### 7.2 Решение: Pub/Sub с Redis
 
 ```
-
 ┌────────────────────────────────────────────────────────────┐
 │              WebSocket with Redis Pub/Sub                  │
 ├────────────────────────────────────────────────────────────┤
@@ -961,7 +915,6 @@ ws.onmessage = (event) => console.log(event.data);
 │  Client A → Server 1 → Redis → All Servers → All Clients   │
 │                                                            │
 └────────────────────────────────────────────────────────────┘
-
 ```
 
 ```python
@@ -979,7 +932,6 @@ redis = None
 pubsub = None
 connected_websockets: Set[WebSocket] = set()
 
-
 @app.on_event("startup")
 async def startup():
     global redis, pubsub
@@ -987,7 +939,6 @@ async def startup():
     pubsub = redis.pubsub()
     await pubsub.subscribe("chat")
     asyncio.create_task(redis_listener())
-
 
 async def redis_listener():
     """Слушает Redis и рассылает сообщения."""
@@ -1000,7 +951,6 @@ async def redis_listener():
                     await ws.send_text(data)
                 except:
                     connected_websockets.discard(ws)
-
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -1016,7 +966,6 @@ async def websocket_endpoint(websocket: WebSocket):
         pass
     finally:
         connected_websockets.discard(websocket)
-
 ```
 
 ### 7.3 Sticky Sessions
@@ -1024,7 +973,6 @@ async def websocket_endpoint(websocket: WebSocket):
 Альтернативный подход — sticky sessions на load balancer:
 
 ```nginx
-
 upstream websocket_servers {
     ip_hash;  # Sticky sessions по IP
     server server1:8000;
@@ -1040,7 +988,6 @@ server {
         proxy_set_header Connection "upgrade";
     }
 }
-
 ```
 
 ---

@@ -64,11 +64,11 @@ Row-based форматы хранят данные построчно: кажд�
 **Example: CSV формат**
 
 ```python
-
 import csv
 import io
 
 # Создание CSV данных
+
 data = [
     {"id": 1, "name": "Alice", "age": 30, "city": "Moscow"},
     {"id": 2, "name": "Bob", "age": 25, "city": "Saint Petersburg"},
@@ -76,6 +76,7 @@ data = [
 ]
 
 # Запись в CSV
+
 output = io.StringIO()
 writer = csv.DictWriter(output, fieldnames=["id", "name", "age", "city"])
 writer.writeheader()
@@ -92,7 +93,6 @@ print(f"\nРазмер CSV: ~{len(csv_content)} байт")
 
 **Output:**
 ```
-
 CSV формат:
 id,name,age,city
 1,Alice,30,Moscow
@@ -120,10 +120,10 @@ id,name,age,city
 **Example: JSON формат**
 
 ```python
-
 import json
 
 # JSON данные
+
 json_data = [
     {
         "id": 1,
@@ -148,6 +148,7 @@ json_data = [
 ]
 
 # Сериализация
+
 json_string = json.dumps(json_data, indent=2)
 print("JSON формат:")
 print(json_string)
@@ -159,7 +160,6 @@ print(f"\nРазмер JSON: ~{len(json_string)} байт")
 
 **Output:**
 ```
-
 JSON формат:
 [
   {
@@ -206,6 +206,7 @@ JSON формат:
 
 ```python
 # Симуляция Avro (схема + данные)
+
 avro_schema = {
     "type": "record",
     "name": "User",
@@ -233,7 +234,6 @@ print("  - Быстрая сериализация/десериализация"
 
 **Output:**
 ```
-
 Avro формат:
 Schema: {'type': 'record', 'name': 'User', 'fields': [{'name': 'id', 'type': 'int'}, {'name': 'name', 'type': 'string'}, {'name': 'age', 'type': 'int'}]}
 Data: [{'id': 1, 'name': 'Alice', 'age': 30}, {'id': 2, 'name': 'Bob', 'age': 25}]
@@ -273,6 +273,7 @@ Column-based форматы хранят данные по колонкам: в�
 
 ```python
 # Симуляция Parquet (columnar storage)
+
 parquet_data = {
     "columns": {
         "id": [1, 2, 3],
@@ -304,7 +305,6 @@ print("  - Schema встроен")
 
 **Output:**
 ```
-
 Parquet формат (Columnar):
 Структура:
   Column 'id': [1, 2, 3]
@@ -340,6 +340,7 @@ Parquet формат (Columnar):
 
 ```python
 # Симуляция ORC
+
 orc_data = {
     "stripes": [
         {
@@ -373,7 +374,6 @@ print("  - Оптимизация для Hive")
 
 **Output:**
 ```
-
 ORC формат:
 
   - Columnar storage в stripes
@@ -426,7 +426,6 @@ print(f"  Средний возраст: {avg_age}")
 
 **Output:**
 ```
-
 Row-based запрос (средний возраст):
   Прочитано полей: 15 (все поля всех записей)
   Средний возраст: 30.0
@@ -473,7 +472,6 @@ print("  Преимущество: читаем только нужные дан
 
 **Output:**
 ```
-
 Column-based запрос (средний возраст):
   Прочитано полей: 3 (только колонка age)
   Средний возраст: 30.0
@@ -513,6 +511,7 @@ Column-based запрос (средний возраст):
 
 ```python
 # Schema-on-write: схема применяется при записи
+
 schema = {
     "id": "INT",
     "name": "VARCHAR(100)",
@@ -543,7 +542,6 @@ print(f"Записано записей: {len(validated_data)}")
 
 **Output:**
 ```
-
 ✅ Данные записаны с применением схемы
 Записано записей: 2
 ```
@@ -565,6 +563,7 @@ print(f"Записано записей: {len(validated_data)}")
 
 ```python
 # Schema-on-read: схема применяется при чтении
+
 raw_data = [
     {"id": "1", "name": "Alice", "age": "30"},
     {"id": "2", "name": "Bob", "age": "25"}
@@ -598,7 +597,6 @@ print(f"Прочитано записей: {transformed_data}")
 
 **Output:**
 ```
-
 ✅ Данные прочитаны с применением схемы
 Прочитано записей: [{'id': 1, 'name': 'Alice', 'age': 30}, {'id': 2, 'name': 'Bob', 'age': 25}]
 ```
@@ -655,7 +653,6 @@ print(f"Прочитано записей: {transformed_data}")
 **Example: Выбор формата**
 
 ```python
-
 def recommend_format(requirements):
     """Рекомендует формат на основе требований"""
     if requirements.get("small_volume") and requirements.get("exchange"):
@@ -689,7 +686,6 @@ for i, req in enumerate(examples, 1):
 
 **Output:**
 ```
-
 Рекомендации форматов:
   Пример 1: CSV (простота, совместимость)
   Пример 2: JSON (гибкость, вложенные структуры)
@@ -781,5 +777,6 @@ for i, req in enumerate(examples, 1):
 - Apache ORC: https://orc.apache.org/docs/
 
 ---
+
 
 

@@ -53,10 +53,10 @@
 **Example: Базовые типы данных в JSON**
 
 ```python
-
 import json
 
 # JSON поддерживает различные типы данных
+
 json_data = {
     "string": "Hello, World!",
     "number": 42,
@@ -71,13 +71,13 @@ json_data = {
 }
 
 # Сериализация в JSON
+
 json_string = json.dumps(json_data, indent=2)
 print(json_string)
 ```
 
 **Output:**
 ```json
-
 {
   "string": "Hello, World!",
   "number": 42,
@@ -97,11 +97,11 @@ print(json_string)
 **Example: JSON в REST API**
 
 ```python
-
 import requests
 import json
 
 # JSON в запросе
+
 def create_user(name, email):
     """Создание пользователя через API"""
     data = {
@@ -116,6 +116,7 @@ def create_user(name, email):
     return response.json()
 
 # JSON в ответе
+
 def get_user(user_id):
     """Получение пользователя"""
     response = requests.get(f'https://api.example.com/users/{user_id}')
@@ -123,6 +124,7 @@ def get_user(user_id):
     return user_data
 
 # Использование
+
 user = create_user('Иван', 'ivan@example.com')
 print(f"Created user: {user['id']}")
 
@@ -132,7 +134,6 @@ print(f"Retrieved: {retrieved['name']}")
 
 **Output:**
 ```
-
 Created user: 123
 Retrieved: Иван
 ```
@@ -158,10 +159,10 @@ Retrieved: Иван
 **Example: Базовый XML документ**
 
 ```python
-
 from xml.etree import ElementTree as ET
 
 # Создание XML структуры
+
 root = ET.Element("user")
 root.set("id", "123")
 
@@ -185,7 +186,6 @@ print(xml_string)
 
 **Output:**
 ```xml
-
 <user id="123">
   <name>Иван Иванов</name>
   <email>ivan@example.com</email>
@@ -201,7 +201,6 @@ print(xml_string)
 **Example: SOAP сообщение**
 
 ```xml
-
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Body>
     <GetUser xmlns="http://example.com/api">
@@ -269,6 +268,7 @@ print(xml_string)
 
 ```python
 # Стандартная структура ответа
+
 def standard_api_response(data, status="success", message=None):
     """Стандартизированная структура ответа API"""
     response = {
@@ -291,7 +291,6 @@ print(json.dumps(success_response, indent=2))
 
 **Output:**
 ```json
-
 {
   "status": "success",
   "data": {
@@ -307,7 +306,6 @@ print(json.dumps(success_response, indent=2))
 **Example: Стандартизированная структура ошибок**
 
 ```python
-
 def error_response(error_code, error_message, details=None):
     """Стандартизированная структура ошибки"""
     error = {
@@ -322,6 +320,7 @@ def error_response(error_code, error_message, details=None):
     return error
 
 # Примеры ошибок
+
 validation_error = error_response(
     "VALIDATION_ERROR",
     "Invalid email format",
@@ -340,7 +339,6 @@ print(json.dumps(validation_error, indent=2))
 
 **Output:**
 ```json
-
 {
   "error": {
     "code": "VALIDATION_ERROR",
@@ -359,7 +357,6 @@ print(json.dumps(validation_error, indent=2))
 **Example: Структура пагинированного ответа**
 
 ```python
-
 def paginated_response(items, page, per_page, total):
     """Структура пагинированного ответа"""
     return {
@@ -373,6 +370,7 @@ def paginated_response(items, page, per_page, total):
     }
 
 # Пример пагинированного ответа
+
 response = paginated_response(
     items=[{"id": 1}, {"id": 2}, {"id": 3}],
     page=1,
@@ -384,7 +382,6 @@ print(json.dumps(response, indent=2))
 
 **Output:**
 ```json
-
 {
   "data": [
     {"id": 1},
@@ -413,11 +410,11 @@ print(json.dumps(response, indent=2))
 **Example: JSON Schema для пользователя**
 
 ```python
-
 import jsonschema
 from jsonschema import validate
 
 # JSON Schema определение
+
 user_schema = {
     "type": "object",
     "properties": {
@@ -445,6 +442,7 @@ user_schema = {
 }
 
 # Валидация данных
+
 def validate_user(data):
     """Валидация данных пользователя по схеме"""
     try:
@@ -454,6 +452,7 @@ def validate_user(data):
         return False, str(e)
 
 # Валидные данные
+
 valid_user = {
     "id": 123,
     "name": "Иван",
@@ -464,6 +463,7 @@ is_valid, error = validate_user(valid_user)
 print(f"Valid: {is_valid}")
 
 # Невалидные данные
+
 invalid_user = {
     "id": "not-a-number",
     "name": "",
@@ -475,7 +475,6 @@ print(f"Valid: {is_valid}, Error: {error}")
 
 **Output:**
 ```
-
 Valid: True
 Valid: False, Error: 'not-a-number' is not of type 'integer'
 ```
@@ -487,7 +486,6 @@ Valid: False, Error: 'not-a-number' is not of type 'integer'
 **Example: XSD схема**
 
 ```xml
-
 <?xml version="1.0"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="user">
@@ -508,13 +506,13 @@ Valid: False, Error: 'not-a-number' is not of type 'integer'
 **Example: Валидация запроса в API**
 
 ```python
-
 from flask import Flask, request, jsonify
 import jsonschema
 
 app = Flask(__name__)
 
 # Схема для создания пользователя
+
 create_user_schema = {
     "type": "object",
     "properties": {
@@ -557,7 +555,6 @@ def create_user():
 ### 7.1 Пример: API с JSON Schema валидацией
 
 ```python
-
 class ValidatedAPI:
     """API с валидацией через JSON Schema"""
     
@@ -579,6 +576,7 @@ class ValidatedAPI:
         return True, None  # Нет схемы - пропускаем
 
 # Использование
+
 api = ValidatedAPI()
 api.register_schema('/users', create_user_schema)
 
@@ -591,7 +589,6 @@ print(f"Valid: {is_valid}")
 
 **Output:**
 ```
-
 Valid: True
 ```
 
@@ -603,7 +600,6 @@ Valid: True
 
 ❌ **Incorrect:**
 ```python
-
 def unsafe_create_user(data):
     # Нет валидации
     user = {
@@ -616,7 +612,6 @@ def unsafe_create_user(data):
 
 ✅ **Correct:**
 ```python
-
 def safe_create_user(data):
     # Валидация по схеме
     jsonschema.validate(instance=data, schema=user_schema)
@@ -644,6 +639,7 @@ return {"message": "User not found", "code": 404}
 ✅ **Correct:**
 ```python
 # Стандартизированный формат
+
 return {
     "error": {
         "code": "NOT_FOUND",
@@ -706,5 +702,6 @@ return {
 - "API Response Structure Best Practices" — лучшие практики структуры ответов
 
 ---
+
 
 

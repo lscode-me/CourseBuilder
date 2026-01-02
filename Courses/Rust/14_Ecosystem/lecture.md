@@ -49,7 +49,6 @@
 **Example: Поиск через cargo**
 
 ```bash
-
 cargo search serde
 ```
 
@@ -58,7 +57,6 @@ cargo search serde
 **Example: Добавление в Cargo.toml**
 
 ```toml
-
 [dependencies]
 serde = "1.0"
 tokio = { version = "1.0", features = ["full"] }
@@ -81,7 +79,6 @@ reqwest = "0.11"
 **Example: Базовое использование**
 
 ```rust
-
 // Требует: serde = { version = "1.0", features = ["derive"] }
 // serde_json = "1.0"
 // use serde::{Serialize, Deserialize};
@@ -126,7 +123,6 @@ reqwest = "0.11"
 **Example: Базовое использование**
 
 ```rust
-
 // Требует: tokio = { version = "1", features = ["full"] }
 // use tokio::time::{sleep, Duration};
 //
@@ -157,7 +153,6 @@ reqwest = "0.11"
 **Example: Базовое использование**
 
 ```rust
-
 // Требует: reqwest = { version = "0.11", features = ["json"] }
 // tokio = { version = "1", features = ["full"] }
 // use reqwest;
@@ -184,7 +179,6 @@ reqwest = "0.11"
 **Example: Базовое использование**
 
 ```rust
-
 // Требует: clap = { version = "4", features = ["derive"] }
 // use clap::Parser;
 //
@@ -213,7 +207,6 @@ reqwest = "0.11"
 **Example: Базовое использование**
 
 ```rust
-
 // Требует: log = "0.4"
 // env_logger = "0.10"
 // use log::{info, warn, error};
@@ -262,7 +255,6 @@ reqwest = "0.11"
 **Example: Версии в Cargo.toml**
 
 ```toml
-
 [dependencies]
 serde = "1.0"        # 1.0.x (любая 1.0)
 serde = "1.0.0"      # Точная версия
@@ -292,7 +284,6 @@ serde = ">=1.0, <2.0" # Диапазон версий
 **Example: Features в Cargo.toml**
 
 ```toml
-
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1.0", features = ["full"] }
@@ -340,7 +331,6 @@ reqwest = { version = "0.11", default-features = false, features = ["json"] }
 **Example: Git зависимость**
 
 ```toml
-
 [dependencies]
 my_lib = { git = "https://github.com/user/repo", branch = "main" }
 ```
@@ -348,7 +338,6 @@ my_lib = { git = "https://github.com/user/repo", branch = "main" }
 **Example: Локальный путь**
 
 ```toml
-
 [dependencies]
 my_lib = { path = "../my_lib" }
 ```
@@ -361,11 +350,11 @@ my_lib = { path = "../my_lib" }
 
 ```toml
 # Cargo.toml (корень)
+
 [workspace]
 members = ["crate1", "crate2", "crate3"]
 
 # Все члены workspace разделяют один Cargo.lock
-
 ```
 
 **Преимущества:**
@@ -382,21 +371,18 @@ members = ["crate1", "crate2", "crate3"]
 
 **dependencies** — для production кода:
 ```toml
-
 [dependencies]
 serde = "1.0"
 ```
 
 **dev-dependencies** — только для разработки:
 ```toml
-
 [dev-dependencies]
 mockito = "1.0"
 ```
 
 **build-dependencies** — для build.rs:
 ```toml
-
 [build-dependencies]
 bindgen = "0.65"
 ```
@@ -413,10 +399,8 @@ bindgen = "0.65"
 
 **Просто удалите строку из Cargo.toml:**
 ```toml
-
 [dependencies]
 # serde = "1.0"  # Удалено
-
 ```
 
 Затем запустите `cargo build` для обновления Cargo.lock.
@@ -437,7 +421,6 @@ bindgen = "0.65"
 **Example: Cargo.toml для публикации**
 
 ```toml
-
 [package]
 name = "my-awesome-crate"
 version = "0.1.0"
@@ -472,7 +455,6 @@ authors = ["Your Name <you@example.com>"]
 
 **Cargo.toml:**
 ```toml
-
 [package]
 name = "my-project"
 version = "0.1.0"
@@ -490,7 +472,6 @@ tokio-test = "0.4"
 ### 7.2 Пример: Использование features
 
 ```toml
-
 [dependencies]
 my-crate = { version = "1.0", default-features = false, features = ["feature1", "feature2"] }
 ```
@@ -498,7 +479,6 @@ my-crate = { version = "1.0", default-features = false, features = ["feature1", 
 ### 7.3 Пример: Условные зависимости
 
 ```toml
-
 [target.'cfg(unix)'.dependencies]
 libc = "0.2"
 
@@ -557,6 +537,7 @@ winapi = "0.3"
 - [Cargo Book](https://doc.rust-lang.org/cargo/) — документация по cargo
 
 ---
+
 
 
 

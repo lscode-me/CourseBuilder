@@ -31,7 +31,6 @@
 ### 1.1 Defense in Depth
 
 ```
-
 ┌─────────────────────────────────────────────────────────┐
 │                    Application                          │
 ├─────────────────────────────────────────────────────────┤
@@ -47,7 +46,6 @@
 ├─────────────────────────────────────────────────────────┤
 │                    Kernel                               │
 └─────────────────────────────────────────────────────────┘
-
 ```
 
 ### 1.2 Порядок применения
@@ -69,7 +67,6 @@
 **pledge** ограничивает набор syscalls, доступных процессу.
 
 ```python
-
 import ctypes
 
 libc = ctypes.CDLL(None)
@@ -97,7 +94,6 @@ try:
     print("Pledge set successfully")
 except OSError as e:
     print(f"Pledge error (not on OpenBSD?): {e}")
-
 ```
 
 ### 2.2 Основные promises
@@ -166,7 +162,6 @@ def http_get(host, path="/"):
 if __name__ == "__main__":
     host = sys.argv[1] if len(sys.argv) > 1 else "example.com"
     print(http_get(host))
-
 ```
 
 ---
@@ -178,7 +173,6 @@ if __name__ == "__main__":
 **unveil** ограничивает видимость файловой системы для процесса.
 
 ```python
-
 import ctypes
 
 libc = ctypes.CDLL(None)
@@ -213,7 +207,6 @@ try:
     print("Unveil set successfully")
 except OSError as e:
     print(f"Unveil error: {e}")
-
 ```
 
 ### 3.2 Пример: безопасный файловый сервер
@@ -295,7 +288,6 @@ def handle_client(client, root_dir):
 
 if __name__ == "__main__":
     file_server("/var/www", 8080)
-
 ```
 
 ---
@@ -305,7 +297,6 @@ if __name__ == "__main__":
 ### 4.1 setuid/setgid
 
 ```python
-
 import os
 import pwd
 import grp
@@ -355,7 +346,6 @@ def secure_daemon():
 ### 4.2 Проверка привилегий
 
 ```python
-
 import os
 
 def require_root():
@@ -366,7 +356,6 @@ def require_root():
 def is_privileged():
     """Проверить, есть ли дополнительные привилегии."""
     return os.geteuid() == 0 or os.getuid() != os.geteuid()
-
 ```
 
 ---
@@ -376,7 +365,6 @@ def is_privileged():
 ### 5.1 Что такое chroot
 
 ```python
-
 import os
 
 def setup_chroot(new_root):
@@ -416,7 +404,6 @@ def setup_chroot(new_root):
 ### 5.3 Безопасный chroot
 
 ```python
-
 import os
 import pwd
 
@@ -446,7 +433,6 @@ def secure_chroot(new_root, user="nobody"):
 ### 6.1 Очистка памяти
 
 ```python
-
 import ctypes
 import sys
 
@@ -469,13 +455,11 @@ def secure_string_del(s):
 password = bytearray(b"secret")
 # ... использование пароля ...
 secure_zero(password)  # Очистить после использования
-
 ```
 
 ### 6.2 Безопасное сравнение
 
 ```python
-
 import hmac
 
 def secure_compare(a, b):
@@ -489,13 +473,11 @@ def secure_compare(a, b):
 # ПРАВИЛЬНО:
 if secure_compare(token.encode(), expected_token.encode()):
     print("Valid token")
-
 ```
 
 ### 6.3 Безопасная генерация случайных данных
 
 ```python
-
 import os
 import secrets
 
@@ -598,7 +580,6 @@ if __name__ == "__main__":
         sys.exit(1)
     
     secure_daemon("/etc/daemon.conf", 80)
-
 ```
 
 ### 7.2 Обёртка для pledge/unveil
@@ -676,7 +657,6 @@ if security.is_openbsd():
     security.unveil("/tmp", "rwc")
     security.lock_unveil()
     security.pledge("stdio rpath wpath cpath")
-
 ```
 
 ---

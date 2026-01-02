@@ -40,7 +40,6 @@ done
 
 **Output:**
 ```
-
 Fruit: apple
 Fruit: banana
 Fruit: cherry
@@ -71,7 +70,6 @@ done
 
 **Output:**
 ```
-
 Number: 1
 Number: 2
 Number: 3
@@ -100,7 +98,6 @@ done
 
 **Output:**
 ```
-
 Count: 1
 Count: 2
 Count: 3
@@ -158,7 +155,6 @@ done
 
 **Output:**
 ```
-
 1
 2
 3
@@ -181,7 +177,6 @@ done
 
 **Output:**
 ```
-
 1
 3
 5
