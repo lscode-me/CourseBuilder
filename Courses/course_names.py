@@ -130,6 +130,11 @@ COURSE_NAMES = {
         "name": "OpenBSD",
         "sections": {"Systems"}
     },
+    "Payment_Systems": {
+        "icon": "💳",
+        "name": "Платёжные системы",
+        "sections": {"Finance"}
+    },
     "Protocols": {
         "icon": "📡",
         "name": "Протоколы",
