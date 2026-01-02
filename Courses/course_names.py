@@ -9,6 +9,7 @@ SECTIONS = {
     "Integrations",
     "Soft Skills",
     "Systems",
+    "Finance",
 }
 
 # Названия курсов для отображения
@@ -52,7 +53,7 @@ COURSE_NAMES = {
     "Crypto": {
         "icon": "₿",
         "name": "Криптовалюты и блокчейн",
-        "sections": {"IT Basics"}
+        "sections": {"IT Basics", "Finance"}
     },
     "CustomerAndServices": {
         "icon": "🤝",
@@ -92,7 +93,7 @@ COURSE_NAMES = {
     "Finance": {
         "icon": "💰",
         "name": "Корпоративные финансы",
-        "sections": {"Soft Skills"}
+        "sections": {"Finance"}
     },
     "Go": {
         "icon": "🐹",
@@ -108,6 +109,11 @@ COURSE_NAMES = {
         "icon": "💻",
         "name": "IT Basics",
         "sections": {"IT Basics"}
+    },
+    "Intelligence": {
+        "icon": "🧠",
+        "name": "Интеллект и когнитивные науки",
+        "sections": {"Artificial Intelligence", "Soft Skills"}
     },
     "Leadership": {
         "icon": "👔",
@@ -157,7 +163,7 @@ COURSE_NAMES = {
     "Taxes": {
         "icon": "🧾",
         "name": "Налоги",
-        "sections": {"Soft Skills"}
+        "sections": {"Finance"}
     },
     "UnixProgramming": {
         "icon": "🖥️",
